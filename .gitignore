@@ -1,9 +1,14 @@
 .DS_Store
 __pycache__/
 *.pyc
+handoff.md
+logs/
 
-# Downloaded source cache; reproducible via scripts/build_prejudge_set.py
-data/prejudge/raw_cache/
+# Pre-judge candidate set and downloaded source cache.
+data/prejudge/
 
 # Judge inference outputs are append-only runtime artifacts.
 data/judged/
+
+# Local one-off judge runner used to produce the checked-in final dataset.
+scripts/judge_finance_econ.py
