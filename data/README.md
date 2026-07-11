@@ -1,22 +1,24 @@
-# Final Finance/Economics Forecasting Dataset
+# 최종 금융/경제 예측 데이터셋
 
-## Files
+## 파일
 
 - `finance_econ_tasks_final.jsonl`
 
-This is the final filtered dataset intended for use. It contains forecasting tasks that:
+이 파일이 최종 사용 대상 데이터셋입니다. 포함 조건은 다음과 같습니다.
 
-1. were judged as finance/economics relevant by `Qwen/Qwen3-4B`;
-2. have an `answer`;
-3. exclude `ForecastBench`, because those rows do not currently include resolved answers.
+1. `Qwen/Qwen3-4B` judge가 금융/경제 관련 질문으로 판정한 row
+2. `answer`가 존재하는 row
+3. `ForecastBench`를 제외한 row
 
-## Row Count
+`ForecastBench`는 금융/경제로 판정된 row가 일부 있었지만, 현재 파일 안에 resolved answer가 없어서 최종 데이터셋에서는 제거했습니다.
+
+## Row 수
 
 ```text
 finance_econ_tasks_final.jsonl: 9,678 rows
 ```
 
-Source breakdown:
+소스별 구성:
 
 ```text
 Daily Oracle:   6,175
@@ -25,20 +27,20 @@ BTF-2:            455
 ForecastBench:      0
 ```
 
-Answer/date availability:
+정답 및 날짜 상태:
 
 ```text
-Rows with answer:                    9,678 / 9,678
-Rows with forecast_date:             9,675 / 9,678
-Rows with resolution_date:           9,223 / 9,678
-Rows with answer but no resolution_date: 455
+answer가 있는 row:              9,678 / 9,678
+forecast_date가 있는 row:       9,675 / 9,678
+resolution_date가 있는 row:     9,223 / 9,678
+answer는 있지만 resolution_date가 없는 row: 455
 ```
 
-The 455 rows without `resolution_date` are all from BTF-2 and still include answers.
+`resolution_date`가 없는 455개 row는 모두 BTF-2에서 온 row이며, `answer`는 포함되어 있습니다.
 
-## Filtering Process
+## 필터링 방식
 
-The pre-judge candidate set was built from four sources:
+초기 후보셋은 다음 네 소스에서 만들어졌습니다.
 
 ```text
 BTF-2
@@ -47,7 +49,9 @@ Daily Oracle
 ForecastBench
 ```
 
-The judge was run on `data/prejudge/judge_units.jsonl`, which contains deduplicated judge units. The model received only forecast-time/domain context:
+LLM judge는 중복을 줄인 judge unit 단위로 실행했습니다. Judge에는 예측 시점에서 볼 수 있는 도메인 문맥만 전달했습니다.
+
+Judge 입력 필드:
 
 ```text
 source_dataset
@@ -61,40 +65,46 @@ raw_category
 source_url
 ```
 
-The model did not receive `answer`, `resolution_date`, or `extra`.
+Judge에는 다음 필드를 전달하지 않았습니다.
 
-Judge output schema:
+```text
+answer
+resolution_date
+extra
+```
+
+Judge 출력 형식:
 
 ```json
 {"is_finance_econ": true, "confidence": 0.95}
 ```
 
-The final checked-in file was produced by:
+최종 파일은 다음 순서로 만들었습니다.
 
-1. joining judge labels back to task-level rows by `judge_uid`;
-2. keeping rows where `is_finance_econ == true`;
-3. removing all `ForecastBench` rows because their answers are currently missing.
+1. `judge_uid` 기준으로 judge 결과를 task-level row에 join
+2. `is_finance_econ == true`인 row만 유지
+3. resolved answer가 없는 `ForecastBench` row 제거
 
-## Judge Result Summary
+## Judge 결과 요약
 
-Judge-unit level:
-
-```text
-Total judge units: 71,078
-Finance/econ true: 11,138
-Finance/econ false: 59,940
-Invalid/missing judge results: 0
-```
-
-Task-level before removing ForecastBench:
+Judge unit 기준:
 
 ```text
-Finance/econ rows: 14,883
-ForecastBench rows removed: 5,205
-Final rows: 9,678
+총 judge unit: 71,078
+finance/econ true: 11,138
+finance/econ false: 59,940
+invalid/missing judge result: 0
 ```
 
-Confidence distribution in the final file:
+Task-level 기준:
+
+```text
+ForecastBench 제거 전 finance/econ row: 14,883
+제거한 ForecastBench row:              5,205
+최종 row:                              9,678
+```
+
+최종 파일의 confidence 분포:
 
 ```text
 0.90:                   7
