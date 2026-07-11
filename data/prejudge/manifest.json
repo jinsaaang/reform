@@ -1,0 +1,55 @@
+{
+  "sources": {
+    "btf2": {
+      "judge_units": 1417,
+      "task_rows": 1417
+    },
+    "openforesight": {
+      "judge_units": 55301,
+      "task_rows": 55301,
+      "splits": {
+        "aljazeera2026Q1": 330,
+        "aljazeeraLate2025": 491,
+        "skysports2025": 1788,
+        "test": 302,
+        "train": 52183,
+        "validation": 207
+      }
+    },
+    "daily_oracle": {
+      "judge_units": 8832,
+      "task_rows": 8832,
+      "files": {
+        "tf": 4841,
+        "mc": 3991
+      },
+      "pre_filter": "category == \"Economics & Business\""
+    },
+    "forecastbench": {
+      "raw_rows": 22684,
+      "deduped_snapshot_task_rows": 22481,
+      "duplicate_snapshots_skipped": 203,
+      "judge_units": 5528,
+      "source_counts_raw": {
+        "manifold": 3042,
+        "metaculus": 3034,
+        "infer": 944,
+        "polymarket": 3024,
+        "acled": 2577,
+        "dbnomics": 2340,
+        "fred": 2577,
+        "wikipedia": 2573,
+        "yfinance": 2573
+      }
+    }
+  },
+  "total": {
+    "judge_units": 71078,
+    "task_rows": 88031,
+    "unified_task_rows": 88031,
+    "judge_output_columns_to_append": [
+      "is_finance_econ",
+      "confidence"
+    ]
+  }
+}
