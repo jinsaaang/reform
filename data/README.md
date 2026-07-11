@@ -115,3 +115,44 @@ ForecastBench 제거 전 finance/econ row: 14,883
 0.9999999999999999:     3
 1.0:                  521
 ```
+
+## 최종 데이터 형태
+
+`finance_econ_tasks_final.jsonl`은 JSONL 형식입니다. 한 줄이 하나의 forecasting task입니다.
+
+주요 컬럼:
+
+```text
+task_uid: row 단위 고유 ID
+judge_uid: LLM judge에 사용한 고유 ID
+source_dataset: 원본 데이터셋 이름
+question: 예측 질문
+question_type: binary, multiple_choice, open_ended 등 질문 형식
+choices: 선택지가 있는 경우의 보기
+background: 질문 배경 정보
+resolution_criteria: 정답 판정 기준
+forecast_date: 예측 시점 또는 질문 기준 시점
+resolution_date: 정답이 확인된 날짜
+answer: 정답
+answer_type: 정답 형식
+source_url: 원문 URL
+raw_category: 원본 카테고리
+extra: 원본 데이터셋별 추가 정보
+is_finance_econ: 금융/경제 관련 여부
+confidence: judge 판정 confidence
+```
+
+예시 row는 다음과 같은 구조입니다.
+
+```json
+{
+  "task_uid": "...",
+  "source_dataset": "daily_oracle",
+  "question": "...",
+  "forecast_date": "2024-01-01",
+  "resolution_date": "2024-01-15",
+  "answer": "...",
+  "is_finance_econ": true,
+  "confidence": 0.95
+}
+```
