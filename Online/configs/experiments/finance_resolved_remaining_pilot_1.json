@@ -1,0 +1,105 @@
+{
+  "schema_version": "finance-experiment-manifest/v1",
+  "manifest_id": "finance-resolved-remaining-pilot-1",
+  "cutoff": "2024-06-12T00:00:00Z",
+  "run_mode": "historical_backtest",
+  "temporal_policy_version": "public_db_metadata_proxy/v1",
+  "repetitions": 1,
+  "root_seed": 20260718,
+  "arm_order_policy": "fixed",
+  "arm_order": [
+    "direct",
+    "search_only",
+    "search_dag"
+  ],
+  "search": {
+    "source_policy": "public_db_metadata",
+    "backend": "PUBLIC_DB_METADATA_V1",
+    "result_limit": 5,
+    "body_fetch_timeout_seconds": 20.0,
+    "provider_retry_budget": 0
+  },
+  "retrieval": {
+    "evidence_admission_version": "evidence-admission/v1",
+    "eligibility_version": "public-db-bootstrap/v1",
+    "retriever_version": "lexical-retriever/v1",
+    "eligibility_policy": "public_db_bootstrap",
+    "top_k": 3
+  },
+  "forecast": {
+    "model": "openrouter/openai/o4-mini",
+    "reasoning_effort": "high",
+    "temperature": 0.2,
+    "max_output_tokens": 12000,
+    "timeout_seconds": 180.0,
+    "requested_seed": null,
+    "provider_retry_budget": 0,
+    "schema_retry_budget": 0
+  },
+  "judges": [
+    {
+      "member_id": "judge-1",
+      "settings": {
+        "model": "openrouter/openai/o4-mini",
+        "reasoning_effort": "high",
+        "temperature": 0.2,
+        "max_output_tokens": 6000,
+        "timeout_seconds": 180.0,
+        "requested_seed": null,
+        "provider_retry_budget": 0,
+        "schema_retry_budget": 0
+      }
+    },
+    {
+      "member_id": "judge-2",
+      "settings": {
+        "model": "openrouter/openai/o4-mini",
+        "reasoning_effort": "high",
+        "temperature": 0.2,
+        "max_output_tokens": 6000,
+        "timeout_seconds": 180.0,
+        "requested_seed": null,
+        "provider_retry_budget": 0,
+        "schema_retry_budget": 0
+      }
+    },
+    {
+      "member_id": "judge-3",
+      "settings": {
+        "model": "openrouter/openai/o4-mini",
+        "reasoning_effort": "high",
+        "temperature": 0.2,
+        "max_output_tokens": 6000,
+        "timeout_seconds": 180.0,
+        "requested_seed": null,
+        "provider_retry_budget": 0,
+        "schema_retry_budget": 0
+      }
+    }
+  ],
+  "protocol_versions": {
+    "forecast_prompt": "forecast-prompt/v1",
+    "judge_prompt": "judge-prompt/v1",
+    "forecast_result": "forecast-result/v1",
+    "judge_result": "judge-result/v1",
+    "suite_output": "finance-experiment-suite/v1"
+  },
+  "questions": [
+    {
+      "question_id": "q_finance_20251231_002_12e5ef42",
+      "question_text": "Will Saudi Arabia officially announce its withdrawal from the petrodollar agreement by the end of 2025?",
+      "question_type": "binary",
+      "domain": "finance",
+      "context": [
+        "The petrodollar system, which established the US dollar as the primary currency for oil trades, has been a cornerstone of the global economy for decades. However, with the changing geopolitical landscape and the rise of alternative currencies, there is speculation about the future of this agreement. Saudi Arabia is a key player in this system, and its withdrawal would have significant financial implications."
+      ],
+      "outcome_space": [
+        "No",
+        "Yes"
+      ],
+      "positive_label": "Yes",
+      "resolution_rule": "The question will be resolved as 'Yes' if the government of Saudi Arabia makes an official public announcement of its withdrawal from the petrodollar agreement by December 31, 2025. Otherwise, it will be resolved as 'No'.",
+      "forecast_cutoff": "2024-06-12T00:00:00Z"
+    }
+  ]
+}

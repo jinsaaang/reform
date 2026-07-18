@@ -1,0 +1,97 @@
+# Article Sources Configuration
+# Defines RSS feeds and web sources for article collection
+
+sources:
+  # Technology
+  - name: "TechCrunch"
+    url: "https://techcrunch.com/feed/"
+    scraper_type: "rss"
+    domain: "tech"
+
+  - name: "Ars Technica"
+    url: "https://feeds.arstechnica.com/arstechnica/index"
+    scraper_type: "rss"
+    domain: "tech"
+
+  # Finance
+  - name: "MarketWatch"
+    url: "https://feeds.content.dowjones.io/public/rss/mw_topstories"
+    scraper_type: "rss"
+    domain: "finance"
+
+  # Politics
+  - name: "The Hill"
+    url: "https://thehill.com/feed/"
+    scraper_type: "rss"
+    domain: "politics"
+
+  # Health
+  - name: "STAT News"
+    url: "https://www.statnews.com/feed/"
+    scraper_type: "rss"
+    domain: "health"
+
+  # Climate / Environment
+  - name: "Climate Home News"
+    url: "https://www.climatechangenews.com/feed/"
+    scraper_type: "rss"
+    domain: "climate"
+
+  # Science
+  - name: "Science Daily"
+    url: "https://www.sciencedaily.com/rss/all.xml"
+    scraper_type: "rss"
+    domain: "science"
+
+  # Business
+  - name: "Forbes Business"
+    url: "https://www.forbes.com/business/feed/"
+    scraper_type: "rss"
+    domain: "business"
+
+  # Sports
+  - name: "CBS Sports"
+    url: "https://www.cbssports.com/rss/headlines/"
+    scraper_type: "rss"
+    domain: "sports"
+
+  # Culture (arts & entertainment)
+  - name: "The Hollywood Reporter"
+    url: "https://www.hollywoodreporter.com/feed/"
+    scraper_type: "rss"
+    domain: "culture"
+
+  # General
+  - name: "BBC News"
+    url: "http://feeds.bbci.co.uk/news/rss.xml"
+    scraper_type: "rss"
+    domain: "general"
+
+  # - name: "Associated Press"
+  #   url: "https://apnews.com/apf-topnews"
+  #   scraper_type: "web"
+  #   domain: "general"
+
+  # Additional science (web scraping fallback)
+  # - name: "Science Magazine"
+  #   url: "https://www.science.org/news"
+  #   scraper_type: "web"
+  #   domain: "science"
+
+# Collection settings
+collection:
+  # Number of days to look back for articles
+  days_back: 7
+  
+  # Maximum articles per source
+  max_articles_per_source: 10
+  
+  # Domain filters (empty = all domains)
+  domains: []
+  
+  # Rate limiting
+  global_rate_limit_per_second: 2.0
+  
+  # Retry settings
+  max_retries: 3
+  retry_delay_seconds: 2

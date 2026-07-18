@@ -1,0 +1,1149 @@
+{
+  "absent_schema_features": [],
+  "canonical_selection": {
+    "canonical_sql": "SELECT id, question_type, resolution_date, ground_truth FROM questions WHERE lower(domain)='finance' AND graph_built=1 ORDER BY id",
+    "missing_field_counts": {
+      "causal_explanation": 0,
+      "context": 14,
+      "domain": 0,
+      "estimated_start_time": 4,
+      "graph_built_not_one": 0,
+      "ground_truth": 0,
+      "ground_truth_hash": 37,
+      "outcome_event_ids_empty_or_null": 1,
+      "question_text": 0,
+      "question_type": 0,
+      "related_article_ids_empty_or_null": 37,
+      "related_event_ids_empty_or_null": 36,
+      "resolution_date": 0,
+      "target_event_id": 33
+    },
+    "ordered_ids": [
+      "polymarket_0x13c8546e1600edd62efa2c0530d99214cbbb3e9eb27c3e72fd09e50e874f17b3",
+      "polymarket_0x50ee3dc6eb95a801236fa1efddc2d643d2fc5eda6effa401a4e97593e4e80b3f",
+      "polymarket_0x92ad9cce642cd896dc1743ec4f17817d1ff53614acf0c23b39d044213e9375a5",
+      "polymarket_0x9fb9b793fcfa0eab5667a4308d97796ab062acad3d0f5837931cbf5fbe563a16",
+      "polymarket_0xb643afacc478a059b67089ac1bca30cda972a006784ed51bae2241ce87d884d0",
+      "polymarket_0xc3c8a84db9fb4e3f2c67fe688e8b5b67e9c7f45cd8de844c26833658199761c3",
+      "polymarket_0xf723d076576a434c0b92914608ab73ba9c56b2197f5bd9476ccd48a2c6dee12b",
+      "polymarket_0xfa48a99317daef1654d5b03e30557c4222f276657275628d9475e141c64b545d",
+      "polymarket_event_179820",
+      "q_finance_20231013_002_14a60e35",
+      "q_finance_20240630_003_4e79c1f2",
+      "q_finance_20251115_001_adcd1e59",
+      "q_finance_20251217_003_ef198424",
+      "q_finance_20251219_006_720cb440",
+      "q_finance_20251231_002_12e5ef42",
+      "q_finance_20251231_005_e677dcf5",
+      "q_finance_20251231_006_02162c5a",
+      "q_finance_20251231_007_ea7430e9",
+      "q_finance_20251231_009_0a3869bb",
+      "q_finance_20251231_009_8589e353",
+      "q_finance_20251231_015_8dcf1b5a",
+      "q_finance_20251231_016_df6977ca",
+      "q_finance_20251231_036_746c6bd9",
+      "q_finance_20251231_061_4c377f94",
+      "q_finance_20251231_062_207eddcf",
+      "q_finance_20251231_063_e15a7b66",
+      "q_finance_20251231_064_6726026d",
+      "q_finance_20260108_001_18a819d3",
+      "q_finance_20260108_004_4a052b8a",
+      "q_finance_20260128_002_a7440b7c",
+      "q_finance_20260131_038_c3505a3f",
+      "q_finance_20260131_039_fa45c8c5",
+      "q_finance_20260131_040_4a5b566f",
+      "q_finance_20260131_065_75efd641",
+      "q_finance_20260221_007_ffbeb456",
+      "q_finance_20260222_008_58ef6fbb",
+      "q_finance_20260301_003_83222b15"
+    ],
+    "total_rows": 37,
+    "type_counts": {
+      "binary": 23,
+      "mcq": 1,
+      "quantity": 8,
+      "timeframe": 5
+    },
+    "unique_ids": 37
+  },
+  "graph_linkage": {
+    "canonical_questions": 37,
+    "causal_hypotheses_by_discovered_by_question_ids": {
+      "distinct_ids": 884,
+      "distinct_questions": 37,
+      "rows": 884
+    },
+    "event_outcome_impacts_by_question_id": {
+      "distinct_ids": 888,
+      "distinct_questions": 37,
+      "rows": 888
+    },
+    "events_by_extracted_for_question_id": {
+      "distinct_ids": 950,
+      "distinct_questions": 37,
+      "rows": 950
+    },
+    "forecasts": {
+      "distinct_ids": 1147,
+      "distinct_questions": 20,
+      "rows": 1147
+    },
+    "graph_rows_readable": true,
+    "referenced_article_ids": {
+      "references_distinct": 0,
+      "references_total": 0,
+      "resolvable": 0,
+      "unresolved": 0
+    },
+    "referenced_event_ids": {
+      "outcome_event_ids": {
+        "references_distinct": 68,
+        "references_total": 68,
+        "resolvable": 68,
+        "unresolved": 0
+      },
+      "related_event_ids": {
+        "references_distinct": 1,
+        "references_total": 1,
+        "resolvable": 0,
+        "unresolved": 1
+      },
+      "target_event_id": {
+        "references_distinct": 4,
+        "references_total": 4,
+        "resolvable": 2,
+        "unresolved": 2
+      }
+    }
+  },
+  "limitations": [
+    "Article bodies are absent from the public release; articles are metadata-only and the public search index cannot be rebuilt.",
+    "resolution_available_at is absent; resolution_date is a BOOTSTRAP PROXY only and must not be treated as actual availability time.",
+    "same/shared/derived/near-duplicate relation flags are absent; absence is unknown/unavailable, not false."
+  ],
+  "schema_inventory": {
+    "indexes_views_triggers": [
+      {
+        "name": "sqlite_autoindex_causal_hypotheses_1",
+        "sql": null,
+        "tbl_name": "causal_hypotheses",
+        "type": "index"
+      },
+      {
+        "name": "sqlite_autoindex_event_outcome_impacts_1",
+        "sql": null,
+        "tbl_name": "event_outcome_impacts",
+        "type": "index"
+      },
+      {
+        "name": "sqlite_autoindex_events_1",
+        "sql": null,
+        "tbl_name": "events",
+        "type": "index"
+      },
+      {
+        "name": "sqlite_autoindex_questions_1",
+        "sql": null,
+        "tbl_name": "questions",
+        "type": "index"
+      }
+    ],
+    "schema_version": 8,
+    "tables": [
+      {
+        "columns": [
+          {
+            "default": null,
+            "name": "id",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "title",
+            "not_null": true,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "url",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "source",
+            "not_null": true,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "author",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "published_date",
+            "not_null": true,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "domain",
+            "not_null": true,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "tags",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "is_synthetic",
+            "not_null": false,
+            "primary_key": false,
+            "type": "INTEGER"
+          },
+          {
+            "default": null,
+            "name": "word_count",
+            "not_null": false,
+            "primary_key": false,
+            "type": "INTEGER"
+          },
+          {
+            "default": null,
+            "name": "reading_time_minutes",
+            "not_null": false,
+            "primary_key": false,
+            "type": "INTEGER"
+          },
+          {
+            "default": null,
+            "name": "event_ids",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "collected_for_question_id",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "created_at",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "updated_at",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          }
+        ],
+        "name": "articles",
+        "row_count": 14364
+      },
+      {
+        "columns": [
+          {
+            "default": null,
+            "name": "id",
+            "not_null": false,
+            "primary_key": true,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "source_event_id",
+            "not_null": true,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "target_event_id",
+            "not_null": true,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "relation_type",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "strength",
+            "not_null": true,
+            "primary_key": false,
+            "type": "REAL"
+          },
+          {
+            "default": null,
+            "name": "confidence",
+            "not_null": true,
+            "primary_key": false,
+            "type": "REAL"
+          },
+          {
+            "default": null,
+            "name": "time_lag_hours",
+            "not_null": false,
+            "primary_key": false,
+            "type": "REAL"
+          },
+          {
+            "default": null,
+            "name": "reasoning",
+            "not_null": true,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "evidence_article_ids",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "discovered_by_question_ids",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "identified_by",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "first_identified_at",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "last_confirmed_at",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": "CURRENT_TIMESTAMP",
+            "name": "created_at",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": "CURRENT_TIMESTAMP",
+            "name": "updated_at",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          }
+        ],
+        "name": "causal_hypotheses",
+        "row_count": 9858
+      },
+      {
+        "columns": [
+          {
+            "default": null,
+            "name": "id",
+            "not_null": false,
+            "primary_key": true,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "event_id",
+            "not_null": true,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "outcome_event_id",
+            "not_null": true,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "question_id",
+            "not_null": true,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "impact_direction",
+            "not_null": true,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "impact_magnitude",
+            "not_null": true,
+            "primary_key": false,
+            "type": "REAL"
+          },
+          {
+            "default": null,
+            "name": "confidence",
+            "not_null": true,
+            "primary_key": false,
+            "type": "REAL"
+          },
+          {
+            "default": null,
+            "name": "reasoning",
+            "not_null": true,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": "'[]'",
+            "name": "evidence_article_ids",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": "'[]'",
+            "name": "causal_chain_hypothesis_ids",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": "'[]'",
+            "name": "discovered_by_question_ids",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": "'evidence_pipeline'",
+            "name": "identified_by",
+            "not_null": true,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "first_identified_at",
+            "not_null": true,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "last_confirmed_at",
+            "not_null": true,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": "CURRENT_TIMESTAMP",
+            "name": "updated_at",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          }
+        ],
+        "name": "event_outcome_impacts",
+        "row_count": 9828
+      },
+      {
+        "columns": [
+          {
+            "default": null,
+            "name": "id",
+            "not_null": false,
+            "primary_key": true,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "title",
+            "not_null": true,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "description",
+            "not_null": true,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "event_type",
+            "not_null": true,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "domain",
+            "not_null": true,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "tags",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "occurred_date",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "predicted_date",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "resolution_date",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "status",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "article_ids",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "extracted_for_question_id",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "source_article_id",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "is_synthetic",
+            "not_null": false,
+            "primary_key": false,
+            "type": "INTEGER"
+          },
+          {
+            "default": null,
+            "name": "metadata",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "created_at",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "updated_at",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": "0",
+            "name": "is_outcome",
+            "not_null": false,
+            "primary_key": false,
+            "type": "INTEGER"
+          },
+          {
+            "default": null,
+            "name": "outcome_scenario",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "outcome_option_index",
+            "not_null": false,
+            "primary_key": false,
+            "type": "INTEGER"
+          },
+          {
+            "default": null,
+            "name": "is_actual_outcome",
+            "not_null": false,
+            "primary_key": false,
+            "type": "INTEGER"
+          },
+          {
+            "default": "'pending'",
+            "name": "review_status",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "review_note",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          }
+        ],
+        "name": "events",
+        "row_count": 9149
+      },
+      {
+        "columns": [
+          {
+            "default": null,
+            "name": "id",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "forecast_id",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "title",
+            "not_null": true,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "description",
+            "not_null": true,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "domain",
+            "not_null": true,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "occurred_date",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "event_type",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "status",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "identified_by",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "created_at",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          }
+        ],
+        "name": "forecast_events",
+        "row_count": 41131
+      },
+      {
+        "columns": [
+          {
+            "default": null,
+            "name": "id",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "forecast_id",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "source_event_id",
+            "not_null": true,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "target_event_id",
+            "not_null": true,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "relation_type",
+            "not_null": true,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "strength",
+            "not_null": true,
+            "primary_key": false,
+            "type": "REAL"
+          },
+          {
+            "default": null,
+            "name": "confidence",
+            "not_null": true,
+            "primary_key": false,
+            "type": "REAL"
+          },
+          {
+            "default": null,
+            "name": "identified_by",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "created_at",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          }
+        ],
+        "name": "forecast_hypotheses",
+        "row_count": 28141
+      },
+      {
+        "columns": [
+          {
+            "default": null,
+            "name": "id",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "question_id",
+            "not_null": true,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "model_name",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "model_version",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "mode",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "simulated_date",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "prediction",
+            "not_null": true,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "confidence",
+            "not_null": true,
+            "primary_key": false,
+            "type": "REAL"
+          },
+          {
+            "default": null,
+            "name": "is_correct",
+            "not_null": false,
+            "primary_key": false,
+            "type": "INTEGER"
+          },
+          {
+            "default": null,
+            "name": "brier_score",
+            "not_null": false,
+            "primary_key": false,
+            "type": "REAL"
+          },
+          {
+            "default": null,
+            "name": "log_score",
+            "not_null": false,
+            "primary_key": false,
+            "type": "REAL"
+          },
+          {
+            "default": null,
+            "name": "evaluation_metadata",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "enabled_tools",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": "CURRENT_TIMESTAMP",
+            "name": "created_at",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": "CURRENT_TIMESTAMP",
+            "name": "updated_at",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          }
+        ],
+        "name": "forecasts",
+        "row_count": 11566
+      },
+      {
+        "columns": [
+          {
+            "default": null,
+            "name": "id",
+            "not_null": false,
+            "primary_key": true,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "question_text",
+            "not_null": true,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "question_type",
+            "not_null": true,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "domain",
+            "not_null": true,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "source",
+            "not_null": true,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "difficulty",
+            "not_null": true,
+            "primary_key": false,
+            "type": "INTEGER"
+          },
+          {
+            "default": null,
+            "name": "resolution_date",
+            "not_null": true,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "ground_truth",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "ground_truth_hash",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "target_event_id",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "related_event_ids",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "context",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "resolution_criteria",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "resolution_reasoning",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "options",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "quantity_unit",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "quantity_bounds",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "is_synthetic",
+            "not_null": false,
+            "primary_key": false,
+            "type": "INTEGER"
+          },
+          {
+            "default": null,
+            "name": "quality_score",
+            "not_null": false,
+            "primary_key": false,
+            "type": "REAL"
+          },
+          {
+            "default": null,
+            "name": "quality_dimensions",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "skip_evidence",
+            "not_null": false,
+            "primary_key": false,
+            "type": "INTEGER"
+          },
+          {
+            "default": null,
+            "name": "skip_reason",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "quality_warning",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "created_at",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "updated_at",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "metadata",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "estimated_start_time",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "related_article_ids",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": "'[]'",
+            "name": "outcome_event_ids",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "causal_explanation",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          },
+          {
+            "default": "0",
+            "name": "graph_built",
+            "not_null": false,
+            "primary_key": false,
+            "type": "INTEGER"
+          },
+          {
+            "default": null,
+            "name": "graph_build_error",
+            "not_null": false,
+            "primary_key": false,
+            "type": "TEXT"
+          }
+        ],
+        "name": "questions",
+        "row_count": 345
+      }
+    ]
+  },
+  "source": {
+    "asset": "worldreasoner_public.db",
+    "release": "v1.0.0",
+    "sha256": "94ffd8cca51906edec0b05f7e94e78de80d26f268f082521bded80d0aed06fab",
+    "size_bytes": 55554048,
+    "tag": "v1.0.0",
+    "url": "https://github.com/cyzus/worldreasoner/releases/download/v1.0.0/worldreasoner_public.db"
+  }
+}
