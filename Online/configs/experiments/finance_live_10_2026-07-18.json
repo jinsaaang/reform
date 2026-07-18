@@ -1,0 +1,185 @@
+{
+  "schema_version": "finance-experiment-manifest/v1",
+  "manifest_id": "finance-live-10-2026-07-18",
+  "cutoff": "2026-07-18T00:00:00Z",
+  "run_mode": "current_unresolved",
+  "temporal_policy_version": "live_publication_filtered/v1",
+  "repetitions": 1,
+  "root_seed": 20260718,
+  "arm_order_policy": "fixed",
+  "arm_order": ["direct", "search_only", "search_dag"],
+  "search": {
+    "source_policy": "live_search",
+    "backend": "BING_NEWS_RSS_V1",
+    "result_limit": 5,
+    "body_fetch_timeout_seconds": 20.0,
+    "provider_retry_budget": 0
+  },
+  "retrieval": {
+    "evidence_admission_version": "evidence-admission/v1",
+    "eligibility_version": "public-db-bootstrap/v1",
+    "retriever_version": "lexical-retriever/v1",
+    "eligibility_policy": "public_db_bootstrap",
+    "top_k": 3
+  },
+  "forecast": {
+    "model": "openrouter/openai/gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "temperature": 0.2,
+    "max_output_tokens": 12000,
+    "timeout_seconds": 180.0,
+    "requested_seed": null,
+    "provider_retry_budget": 0,
+    "schema_retry_budget": 0
+  },
+  "judges": [
+    {
+      "member_id": "judge-1",
+      "settings": {
+        "model": "openrouter/openai/gpt-5.6-sol",
+        "reasoning_effort": "high",
+        "temperature": 0.2,
+        "max_output_tokens": 6000,
+        "timeout_seconds": 180.0,
+        "requested_seed": null,
+        "provider_retry_budget": 0,
+        "schema_retry_budget": 0
+      }
+    },
+    {
+      "member_id": "judge-2",
+      "settings": {
+        "model": "openrouter/openai/gpt-5.6-sol",
+        "reasoning_effort": "high",
+        "temperature": 0.2,
+        "max_output_tokens": 6000,
+        "timeout_seconds": 180.0,
+        "requested_seed": null,
+        "provider_retry_budget": 0,
+        "schema_retry_budget": 0
+      }
+    },
+    {
+      "member_id": "judge-3",
+      "settings": {
+        "model": "openrouter/openai/gpt-5.6-sol",
+        "reasoning_effort": "high",
+        "temperature": 0.2,
+        "max_output_tokens": 6000,
+        "timeout_seconds": 180.0,
+        "requested_seed": null,
+        "provider_retry_budget": 0,
+        "schema_retry_budget": 0
+      }
+    }
+  ],
+  "protocol_versions": {
+    "forecast_prompt": "forecast-prompt/v1",
+    "judge_prompt": "judge-prompt/v1",
+    "forecast_result": "forecast-result/v1",
+    "judge_result": "judge-result/v1",
+    "suite_output": "finance-experiment-suite/v1"
+  },
+  "questions": [
+    {
+      "question_id": "fin-fed-cut-2026",
+      "question_text": "Will the U.S. Federal Reserve lower its target federal funds range at least once between July 18 and December 31, 2026?",
+      "question_type": "binary",
+      "domain": "finance",
+      "context": ["Track the Federal Reserve target range after the cutoff through 2026-12-31."],
+      "outcome_space": ["No", "Yes"],
+      "positive_label": "Yes",
+      "resolution_rule": "Yes iff either bound of the federal-funds target range becomes lower than at cutoff on an effective FOMC date after cutoff; Federal Reserve FOMC statements/rate history."
+    },
+    {
+      "question_id": "fin-spx-7000-2026",
+      "question_text": "Will the S&P 500 index close at or above 7,000 on December 31, 2026?",
+      "question_type": "binary",
+      "domain": "finance",
+      "context": ["Use the official S&P 500 close on the final regular trading session of 2026."],
+      "outcome_space": ["No", "Yes"],
+      "positive_label": "Yes",
+      "resolution_rule": "Yes iff the S&P Dow Jones Indices official index close on the final regular trading session of 2026 is at least 7,000."
+    },
+    {
+      "question_id": "fin-btc-150k-2026",
+      "question_text": "Will Bitcoin close at or above 150,000 U.S. dollars on December 31, 2026?",
+      "question_type": "binary",
+      "domain": "finance",
+      "context": ["Use the Coinbase BTC-USD daily candle for 2026-12-31 UTC."],
+      "outcome_space": ["No", "Yes"],
+      "positive_label": "Yes",
+      "resolution_rule": "Yes iff the Coinbase Exchange BTC-USD daily candle close for 2026-12-31 UTC is at least USD 150,000."
+    },
+    {
+      "question_id": "fin-gold-4000-2026",
+      "question_text": "Will spot gold close at or above 4,000 U.S. dollars per troy ounce on December 31, 2026?",
+      "question_type": "binary",
+      "domain": "finance",
+      "context": ["Use the final LBMA Gold Price PM spot benchmark published in 2026."],
+      "outcome_space": ["No", "Yes"],
+      "positive_label": "Yes",
+      "resolution_rule": "Yes iff the final LBMA Gold Price PM benchmark published on or before 2026-12-31 is at least USD 4,000 per troy ounce."
+    },
+    {
+      "question_id": "fin-brent-100-2026",
+      "question_text": "Will Brent crude oil close at or above 100 U.S. dollars per barrel on December 31, 2026?",
+      "question_type": "binary",
+      "domain": "finance",
+      "context": ["Use ICE's official Brent front-month settlement on the final applicable 2026 trading day."],
+      "outcome_space": ["No", "Yes"],
+      "positive_label": "Yes",
+      "resolution_rule": "Yes iff ICE's official Brent front-month settlement on the final applicable 2026 trading day is at least USD 100 per barrel."
+    },
+    {
+      "question_id": "fin-nvda-5t-2026",
+      "question_text": "Will NVIDIA market cap exceed 5.0 trillion dollars at the end of 2026?",
+      "question_type": "binary",
+      "domain": "finance",
+      "context": ["Use final-2026 Nasdaq NVDA close and the latest SEC-filed cover-page common-share count available by 2026-12-31."],
+      "outcome_space": ["No", "Yes"],
+      "positive_label": "Yes",
+      "resolution_rule": "Yes iff final-2026 Nasdaq official NVDA close multiplied by common shares outstanding on the cover page of the latest NVIDIA Form 10-Q or 10-K filed with the SEC on or before 2026-12-31 exceeds USD 5T; retain filing accession and cover-page as-of date."
+    },
+    {
+      "question_id": "fin-us-cpi-below-3-2026",
+      "question_text": "Will U.S. CPI be below 3.0 percent in December 2026?",
+      "question_type": "binary",
+      "domain": "finance",
+      "context": ["Use the BLS December 2026 CPI-U all-items unadjusted 12-month change."],
+      "outcome_space": ["No", "Yes"],
+      "positive_label": "Yes",
+      "resolution_rule": "Yes iff BLS CPI-U all-items, U.S. city average, not seasonally adjusted, December 2026 12-month percent change is below 3.0%."
+    },
+    {
+      "question_id": "fin-boe-cut-2026",
+      "question_text": "Will the Bank of England cut Bank Rate before the end of 2026?",
+      "question_type": "binary",
+      "domain": "finance",
+      "context": ["Track official Bank Rate effective dates after the cutoff through 2026-12-31."],
+      "outcome_space": ["No", "Yes"],
+      "positive_label": "Yes",
+      "resolution_rule": "Yes iff the official Bank of England Bank Rate is reduced below its cutoff level on an effective date after cutoff through 2026-12-31."
+    },
+    {
+      "question_id": "fin-ecb-cut-2026",
+      "question_text": "Will the European Central Bank lower its deposit facility rate at least once between July 18 and December 31, 2026?",
+      "question_type": "binary",
+      "domain": "finance",
+      "context": ["Track official ECB deposit-facility rate effective dates after the cutoff through 2026-12-31."],
+      "outcome_space": ["No", "Yes"],
+      "positive_label": "Yes",
+      "resolution_rule": "Yes iff the ECB official deposit-facility rate is reduced below its cutoff level on an effective date after cutoff through 2026-12-31."
+    },
+    {
+      "question_id": "fin-eth-10k-2026",
+      "question_text": "Will Ethereum close above 10,000 U.S. dollars on December 31, 2026?",
+      "question_type": "binary",
+      "domain": "finance",
+      "context": ["Use the Coinbase ETH-USD daily candle for 2026-12-31 UTC."],
+      "outcome_space": ["No", "Yes"],
+      "positive_label": "Yes",
+      "resolution_rule": "Yes iff the Coinbase Exchange ETH-USD daily candle close for 2026-12-31 UTC is strictly above USD 10,000."
+    }
+  ]
+}
