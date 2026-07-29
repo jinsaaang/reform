@@ -4,11 +4,54 @@ import json
 import sys
 from pathlib import Path
 
+from hgf import manifest as artifact_manifest
 from hgf.baselines import METHODS
 from hgf.runner import _parse_args, _load_source_cases
 
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def test_artifact_manifest_prunes_local_runtime_directories(
+    tmp_path,
+    monkeypatch,
+) -> None:
+    (tmp_path / "src").mkdir()
+    (tmp_path / "src" / "keep.py").write_text("kept", encoding="utf-8")
+    for excluded in ("runs", ".venv", "__pycache__"):
+        directory = tmp_path / excluded
+        directory.mkdir()
+        (directory / "ignored.txt").write_text("ignored", encoding="utf-8")
+    (tmp_path / "data.sqlite-wal").write_text("transient", encoding="utf-8")
+    (tmp_path / "data.sqlite-shm").write_text("transient", encoding="utf-8")
+    monkeypatch.setattr(artifact_manifest, "PACKAGE_ROOT", tmp_path)
+    included = {
+        path.relative_to(tmp_path).as_posix()
+        for path in artifact_manifest._included_files()
+    }
+    assert included == {"src/keep.py"}
+
+
+def test_artifact_manifest_normalizes_text_line_endings(tmp_path) -> None:
+    text_path = tmp_path / "payload.json"
+    text_path.write_bytes(b"{\r\n  \"value\": 1\r\n}\r\n")
+    windows_record = artifact_manifest._file_record(text_path)
+    text_path.write_bytes(b"{\n  \"value\": 1\n}\n")
+    assert artifact_manifest._file_record(text_path) == windows_record
+
+    database_path = tmp_path / "payload.sqlite"
+    database_path.write_bytes(b"binary\r\n")
+    binary_windows_record = artifact_manifest._file_record(database_path)
+    database_path.write_bytes(b"binary\n")
+    assert artifact_manifest._file_record(database_path) != binary_windows_record
+
+
+def test_extension_verifier_uses_manifest_record() -> None:
+    source = (
+        ROOT / "experiments" / "verify_experiment_extensions.py"
+    ).read_text(encoding="utf-8")
+    assert "actual = _file_record(path)" in source
+    assert "path.stat().st_size" not in source
 
 
 def test_fixed_exemplars_cover_all_100_questions() -> None:

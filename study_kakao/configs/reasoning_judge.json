@@ -1,7 +1,19 @@
 {
-  "schema": "hgf_reasoning_judge_v2",
+  "schema": "hgf_reasoning_judge_v3",
   "model": "google/gemini-3.1-flash-lite",
+  "workers": 30,
+  "generation": {
+    "reasoning_effort": "medium",
+    "max_output_tokens": 8000
+  },
   "blind_fields": ["method", "model", "ground_truth"],
+  "conditions": {
+    "ablation": ["raw_dag", "full_hgf"],
+    "main_table": {
+      "direct_dag": "raw_dag",
+      "hgf": "full_hgf"
+    }
+  },
   "measures": [
     "evidence_coverage",
     "invalid_reasoning",

@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 from pathlib import Path
 
 from .package import PACKAGE_ROOT
@@ -22,35 +23,51 @@ EXCLUDED_FILES = {
     ".env",
     "artifact_manifest.json",
 }
+EXCLUDED_FILE_SUFFIXES = (
+    ".sqlite-journal",
+    ".sqlite-shm",
+    ".sqlite-wal",
+)
+BINARY_SUFFIXES = {".sqlite"}
 
 
 def _included_files() -> list[Path]:
+    included: list[Path] = []
+    for root, directories, files in os.walk(PACKAGE_ROOT):
+        directories[:] = [
+            name
+            for name in directories
+            if name not in EXCLUDED_PARTS
+            and not name.endswith(".egg-info")
+        ]
+        root_path = Path(root)
+        included.extend(
+            root_path / name
+            for name in files
+            if name not in EXCLUDED_FILES
+            and not name.endswith(EXCLUDED_FILE_SUFFIXES)
+        )
     return sorted(
-        (
-            path
-            for path in PACKAGE_ROOT.rglob("*")
-            if path.is_file()
-            and path.name not in EXCLUDED_FILES
-            and not any(
-                part.endswith(".egg-info")
-                for part in path.relative_to(PACKAGE_ROOT).parts
-            )
-            and not EXCLUDED_PARTS.intersection(
-                path.relative_to(PACKAGE_ROOT).parts
-            )
-        ),
+        included,
         key=lambda path: path.relative_to(PACKAGE_ROOT).as_posix(),
     )
+
+
+def _file_record(path: Path) -> dict[str, int | str]:
+    content = path.read_bytes()
+    if path.suffix not in BINARY_SUFFIXES:
+        content = content.replace(b"\r\n", b"\n")
+    return {
+        "bytes": len(content),
+        "sha256": hashlib.sha256(content).hexdigest(),
+    }
 
 
 def build_manifest() -> dict:
     files = {}
     for path in _included_files():
         relative = path.relative_to(PACKAGE_ROOT).as_posix()
-        files[relative] = {
-            "bytes": path.stat().st_size,
-            "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
-        }
+        files[relative] = _file_record(path)
     return {
         "schema": "hgf_artifact_manifest",
         "file_count": len(files),

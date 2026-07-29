@@ -10,6 +10,8 @@ forecasting code under `src/hgf`.
 - `run_component_ablation.py`: Raw DAG, Full HGF, and three component removals.
 - `run_topk_sensitivity.py`: fixed-rule `k = 1, 3, 5, 7` sensitivity.
 - `run_reasoning_judge.py`: blinded Raw-DAG versus Full-HGF reasoning judge.
+  It accepts either component-ablation outputs (`raw_dag`, `full_hgf`) or
+  completed main-table outputs (`direct_dag`, `hgf`).
 - `run_all_paper_experiments.py`: sequential master orchestrator.
 
 Every live runner requires `OPENROUTER_API_KEY`. The reasoning judge defaults
@@ -19,6 +21,25 @@ rates.
 
 Use `--dry-run` with the main-table or master runner to inspect commands without
 calling a model.
+
+To judge three completed main-table repetitions with the paper metrics:
+
+```bash
+python experiments/run_reasoning_judge.py \
+  --forecast-results runs/repeated_main_table/gemini_2_5_flash_lite/repeat_1/results.json \
+  --forecast-results runs/repeated_main_table/gemini_2_5_flash_lite/repeat_2/results.json \
+  --forecast-results runs/repeated_main_table/gemini_2_5_flash_lite/repeat_3/results.json \
+  --workers 30 \
+  --reasoning-effort medium \
+  --max-tokens 8000 \
+  --dry-run \
+  --output-dir runs/reasoning_quality/gemini_2_5_flash_lite
+```
+
+Remove `--dry-run` after the input summary confirms 300 paired questions.
+The judge receives each forecast's own cutoff-safe evidence, while method,
+forecaster model, and ground truth remain blinded. Ground truth is joined only
+after the invalid-reasoning decision to calculate invalid among correct.
 
 ## Offline analysis
 

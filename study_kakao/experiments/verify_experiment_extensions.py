@@ -20,8 +20,8 @@ if str(SRC) not in sys.path:
 from hgf.experiment_common import (  # noqa: E402
     _live_extension_digest,
     read_json,
-    sha256_file,
 )
+from hgf.manifest import _file_record  # noqa: E402
 from hgf.preflight import run_preflight  # noqa: E402
 
 
@@ -33,10 +33,7 @@ def _frozen_manifest_errors() -> list[str]:
         if not path.is_file():
             errors.append(f"missing frozen file: {relative}")
             continue
-        actual = {
-            "bytes": path.stat().st_size,
-            "sha256": sha256_file(path),
-        }
+        actual = _file_record(path)
         if actual != expected:
             errors.append(f"frozen hash or size mismatch: {relative}")
     return errors
@@ -75,4 +72,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

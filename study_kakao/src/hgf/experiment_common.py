@@ -15,6 +15,7 @@ from pathlib import Path
 from typing import Any, Iterable
 
 from hgf.forecast_core import _atomic_write
+from hgf.manifest import _file_record
 from hgf.package import PACKAGE_ROOT
 
 
@@ -160,10 +161,7 @@ def _live_runtime_code_digest(root: Path) -> dict[str, Any]:
     paths = set((root / "src" / "hgf").glob("*.py"))
     paths.update((root / "experiments").glob("*.py"))
     files = {
-        path.relative_to(root).as_posix(): {
-            "bytes": path.stat().st_size,
-            "sha256": sha256_file(path),
-        }
+        path.relative_to(root).as_posix(): _file_record(path)
         for path in sorted(paths)
         if path.is_file()
     }
@@ -187,10 +185,7 @@ def _live_extension_digest(root: Path) -> dict[str, Any]:
     paths.add(root / "configs" / "experiments_v27.json")
     paths.add(root / "tests" / "test_experiment_extensions.py")
     files = {
-        path.relative_to(root).as_posix(): {
-            "bytes": path.stat().st_size,
-            "sha256": sha256_file(path),
-        }
+        path.relative_to(root).as_posix(): _file_record(path)
         for path in sorted(paths)
         if path.is_file()
     }

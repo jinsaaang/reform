@@ -1,7 +1,9 @@
 from __future__ import annotations
 
 import copy
+import json
 import math
+import sys
 
 from hgf.experiment_ablation import (
     _condition_schema,
@@ -11,6 +13,8 @@ from hgf.experiment_common import TOPK_VALUES, validate_condition_matrix
 from hgf.experiment_judge import (
     _blind_forecast,
     _judgment_validator,
+    _paired_rows,
+    _parse_args as _parse_judge_args,
     _summary,
 )
 from hgf.experiment_stats import (
@@ -178,6 +182,97 @@ def test_judge_validator_enforces_paper_reasoning_contract() -> None:
     ) == ({}, [])
     payload["forecast_a"]["invalid_reasoning"] = True
     assert _judgment_validator(payload)[1]
+
+
+def test_judge_validator_keeps_each_forecast_evidence_blinded() -> None:
+    judgment = {
+        "evidence_items": [
+            {
+                "requirement": "Supported claim",
+                "cited_evidence_ids": ["e1"],
+                "supported_at_forecast_time": True,
+                "rationale": "The cited record supports the claim.",
+            }
+        ],
+        "invalid_reasoning": False,
+        "invalid_reasons": {
+            "unsupported_decisive_claim": False,
+            "forecast_time_violation": False,
+            "selected_outcome_not_justified": False,
+        },
+        "invalid_reasoning_rationale": "The decisive claim is supported.",
+    }
+    payload = {
+        "forecast_a": copy.deepcopy(judgment),
+        "forecast_b": copy.deepcopy(judgment),
+    }
+    payload["forecast_b"]["evidence_items"][0]["cited_evidence_ids"] = ["e2"]
+    assert _judgment_validator(
+        payload,
+        allowed_evidence_ids={
+            "forecast_a": {"e1"},
+            "forecast_b": {"e2"},
+        },
+    ) == ({}, [])
+    assert _judgment_validator(
+        payload,
+        allowed_evidence_ids={
+            "forecast_a": {"e1"},
+            "forecast_b": {"e1"},
+        },
+    )[1]
+
+
+def test_judge_accepts_completed_main_table_runs(
+    tmp_path,
+    monkeypatch,
+) -> None:
+    rows = []
+    for index in range(100):
+        question_id = f"q{index:03d}"
+        for method, evidence_id in (
+            ("direct_dag", f"e0-{index}"),
+            ("hgf", f"e1-{index}"),
+        ):
+            rows.append(
+                {
+                    "status": "success",
+                    "method": method,
+                    "question_id": question_id,
+                    "cutoff": "2025-01-01T00:00:00+00:00",
+                    "evidence_ids": [evidence_id],
+                    "probabilities": {"yes": 0.6, "no": 0.4},
+                }
+            )
+    path = tmp_path / "results.json"
+    path.write_text(
+        json.dumps({"model": "forecaster", "results": rows}),
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(
+        "hgf.experiment_judge._read_evidence",
+        lambda row: [{"id": row["evidence_ids"][0]}],
+    )
+    pairs = _paired_rows([path])
+    assert len(pairs) == 100
+    assert pairs[0]["rows"]["raw_dag"]["method"] == "direct_dag"
+    assert pairs[0]["rows"]["full_hgf"]["method"] == "hgf"
+    assert pairs[0]["evidence"]["raw_dag"] != pairs[0]["evidence"]["full_hgf"]
+
+
+def test_reasoning_judge_defaults_to_requested_parallelism(
+    monkeypatch,
+) -> None:
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        ["hgf-reasoning-judge", "--forecast-results", "results.json"],
+    )
+    args = _parse_judge_args()
+    assert args.workers == 30
+    assert args.reasoning_effort == "medium"
+    assert args.max_tokens == 8000
+    assert args.dry_run is False
 
 
 def test_judge_summary_reports_paper_rates() -> None:

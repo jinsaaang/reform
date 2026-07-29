@@ -36,12 +36,16 @@ MEASURES = (
     "invalid_among_correct",
 )
 CONDITIONS = ("raw_dag", "full_hgf")
+METHOD_CONDITIONS = {
+    "direct_dag": "raw_dag",
+    "hgf": "full_hgf",
+}
 INVALID_REASON_KEYS = (
     "unsupported_decisive_claim",
     "forecast_time_violation",
     "selected_outcome_not_justified",
 )
-PROMPT_VERSION = "hgf_reasoning_judge_paper_v2"
+PROMPT_VERSION = "hgf_reasoning_judge_paper_v3"
 SYSTEM_PROMPT = (
     "You are a blinded forecasting-reasoning evaluator. Never infer or use "
     "the realized answer. Return only schema-conforming JSON."
@@ -64,17 +68,30 @@ def _parse_args() -> argparse.Namespace:
         type=Path,
         action="append",
         required=True,
-        help="A completed ablation results.json; repeat for multiple runs.",
+        help=(
+            "A completed ablation or main-table results.json; "
+            "repeat for multiple runs."
+        ),
     )
     parser.add_argument("--judge-model", default=DEFAULT_JUDGE_MODEL)
     parser.add_argument("--passes", type=int, default=1)
-    parser.add_argument("--workers", type=int, default=4)
-    parser.add_argument("--max-tokens", type=int, default=1800)
+    parser.add_argument("--workers", type=int, default=30)
+    parser.add_argument("--max-tokens", type=int, default=8000)
+    parser.add_argument(
+        "--reasoning-effort",
+        choices=("minimal", "low", "medium", "high", "xhigh", "max"),
+        default="medium",
+    )
     parser.add_argument("--run-seed", type=int, default=27)
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Validate and summarize paired inputs without calling the judge.",
+    )
     parser.add_argument(
         "--output-dir",
         type=Path,
-        default=Path("runs/paper_reasoning_judge_v27"),
+        default=Path("runs/reasoning_judge"),
     )
     return parser.parse_args()
 
@@ -145,7 +162,9 @@ def _judgment_schema() -> dict[str, Any]:
 def _judgment_validator(
     payload: dict[str, Any],
     *,
-    allowed_evidence_ids: set[str] | None = None,
+    allowed_evidence_ids: (
+        set[str] | dict[str, set[str]] | None
+    ) = None,
 ) -> tuple[dict[str, float], list[str]]:
     errors: list[str] = []
     for label in ("forecast_a", "forecast_b"):
@@ -180,7 +199,12 @@ def _judgment_validator(
                     f"{prefix} is supported but cites no evidence ID"
                 )
             if allowed_evidence_ids is not None:
-                unknown_ids = sorted(set(cited_ids) - allowed_evidence_ids)
+                allowed_ids = (
+                    allowed_evidence_ids[label]
+                    if isinstance(allowed_evidence_ids, dict)
+                    else allowed_evidence_ids
+                )
+                unknown_ids = sorted(set(cited_ids) - allowed_ids)
                 if unknown_ids:
                     errors.append(
                         f"{prefix} cites unknown evidence IDs: {unknown_ids}"
@@ -266,7 +290,6 @@ def _judge_prompt(
     *,
     question: Any,
     cutoff: str,
-    evidence: list[dict[str, Any]],
     forecast_a: dict[str, Any],
     forecast_b: dict[str, Any],
 ) -> str:
@@ -280,7 +303,6 @@ def _judge_prompt(
         f"{PROMPT_PREAMBLE}\n\n"
         f"{_rubric()}\n\n"
         f"QUESTION:\n{json.dumps(public_question, ensure_ascii=False)}\n\n"
-        f"EVIDENCE:\n{json.dumps(evidence, ensure_ascii=False)}\n\n"
         f"FORECAST A:\n{json.dumps(forecast_a, ensure_ascii=False)}\n\n"
         f"FORECAST B:\n{json.dumps(forecast_b, ensure_ascii=False)}"
     )
@@ -289,7 +311,20 @@ def _judge_prompt(
 def _read_evidence(row: dict[str, Any]) -> list[dict[str, Any]]:
     if isinstance(row.get("evidence"), list):
         return row["evidence"]
-    db_path = Path(str(row["evidence_db"])).resolve()
+    question_id = str(row.get("question_id") or "")
+    evidence_bank = str(row.get("evidence_bank") or "").lower()
+    canonical_path = (
+        PACKAGE_ROOT
+        / "data"
+        / "evidence"
+        / evidence_bank
+        / f"{question_id}.sqlite"
+    )
+    db_path = (
+        canonical_path
+        if canonical_path.is_file()
+        else Path(str(row["evidence_db"])).resolve()
+    )
     ids = [str(value) for value in row.get("evidence_ids", [])]
     if not ids:
         return []
@@ -338,18 +373,25 @@ def _blind_forecast(row: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def _condition_for_row(row: dict[str, Any]) -> str | None:
+    condition = str(row.get("condition") or "")
+    if condition in CONDITIONS:
+        return condition
+    return METHOD_CONDITIONS.get(str(row.get("method") or ""))
+
+
 def _paired_rows(
     forecast_paths: list[Path],
 ) -> list[dict[str, Any]]:
     output = []
     for run_index, path in enumerate(forecast_paths, start=1):
         payload = read_json(path)
-        by_key = {
-            (str(row.get("question_id")), str(row.get("condition"))): row
-            for row in payload.get("results", [])
-            if row.get("status") == "success"
-            and row.get("condition") in CONDITIONS
-        }
+        by_key = {}
+        for row in payload.get("results", []):
+            condition = _condition_for_row(row)
+            if row.get("status") != "success" or condition is None:
+                continue
+            by_key[(str(row.get("question_id")), condition)] = row
         question_ids = sorted(
             question_id
             for question_id, condition in by_key
@@ -364,10 +406,6 @@ def _paired_rows(
         for question_id in question_ids:
             raw = by_key[(question_id, "raw_dag")]
             full = by_key[(question_id, "full_hgf")]
-            if raw.get("evidence_ids") != full.get("evidence_ids"):
-                raise ValueError(
-                    f"{path}:{question_id} Raw DAG/HGF evidence differs"
-                )
             output.append(
                 {
                     "run_index": run_index,
@@ -375,7 +413,10 @@ def _paired_rows(
                     "forecaster_model": str(payload.get("model") or ""),
                     "question_id": question_id,
                     "cutoff": str(full.get("cutoff") or raw.get("cutoff")),
-                    "evidence": _read_evidence(full),
+                    "evidence": {
+                        "raw_dag": _read_evidence(raw),
+                        "full_hgf": _read_evidence(full),
+                    },
                     "rows": {"raw_dag": raw, "full_hgf": full},
                 }
             )
@@ -414,6 +455,13 @@ def _call_judge(
         f"{random_seed}:{pair['run_index']}:{question_id}:{judge_pass}"
     ).shuffle(order)
     rows = pair["rows"]
+    blinded = {
+        condition: {
+            **_blind_forecast(rows[condition]),
+            "evidence": pair["evidence"][condition],
+        }
+        for condition in CONDITIONS
+    }
     scored, _, usage, seconds, repaired = _call_with_repair(
         client,
         model=judge_model,
@@ -421,9 +469,8 @@ def _call_judge(
         prompt=_judge_prompt(
             question=question,
             cutoff=pair["cutoff"],
-            evidence=pair["evidence"],
-            forecast_a=_blind_forecast(rows[order[0]]),
-            forecast_b=_blind_forecast(rows[order[1]]),
+            forecast_a=blinded[order[0]],
+            forecast_b=blinded[order[1]],
         ),
         schema=_judgment_schema(),
         seed=_seed(
@@ -434,9 +481,16 @@ def _call_judge(
         validator=lambda payload: _judgment_validator(
             payload,
             allowed_evidence_ids={
-                str(item["id"])
-                for item in pair["evidence"]
-                if item.get("id") is not None
+                "forecast_a": {
+                    str(item["id"])
+                    for item in pair["evidence"][order[0]]
+                    if item.get("id") is not None
+                },
+                "forecast_b": {
+                    str(item["id"])
+                    for item in pair["evidence"][order[1]]
+                    if item.get("id") is not None
+                },
             },
         ),
     )
@@ -465,7 +519,7 @@ def _call_judge(
             "correct_after_unblinding": correct,
         }
     result = {
-        "schema_version": "hgf_reasoning_judge_case_v2",
+        "schema_version": "hgf_reasoning_judge_case_v3",
         "status": "success",
         "question_id": question_id,
         "run_index": pair["run_index"],
@@ -527,11 +581,15 @@ def _summary(rows: list[dict[str, Any]]) -> dict[str, Any]:
 
 def main() -> None:
     args = _parse_args()
-    if args.workers != 4:
-        raise ValueError("experiments.md fixes workers at 4")
+    if args.workers < 1:
+        raise ValueError("workers must be positive")
     if args.passes < 1:
         raise ValueError("passes must be positive")
-    configure_generation(run_seed=args.run_seed)
+    configure_generation(
+        reasoning_effort=args.reasoning_effort,
+        max_output_tokens=args.max_tokens,
+        run_seed=args.run_seed,
+    )
     pairs = _paired_rows([path.resolve() for path in args.forecast_results])
     if not pairs:
         raise ValueError("no paired Raw DAG and Full HGF rows")
@@ -542,6 +600,31 @@ def main() -> None:
         raise ValueError(
             "judge model must differ from every forecast-generating model"
         )
+    if args.dry_run:
+        print(
+            json.dumps(
+                {
+                    "forecast_results": [
+                        str(path.resolve()) for path in args.forecast_results
+                    ],
+                    "runs": len(args.forecast_results),
+                    "paired_questions": len(pairs),
+                    "raw_dag_with_evidence": sum(
+                        bool(pair["evidence"]["raw_dag"]) for pair in pairs
+                    ),
+                    "full_hgf_with_evidence": sum(
+                        bool(pair["evidence"]["full_hgf"]) for pair in pairs
+                    ),
+                    "judge_model": args.judge_model,
+                    "workers": args.workers,
+                    "reasoning_effort": args.reasoning_effort,
+                    "max_tokens": args.max_tokens,
+                },
+                ensure_ascii=False,
+                indent=2,
+            )
+        )
+        return
     questions = {
         str(question.id): question
         for question in read_questions(
@@ -552,11 +635,13 @@ def main() -> None:
     write_json(
         output_dir / "protocol.json",
         {
-            "schema_version": "hgf_reasoning_judge_protocol_v2",
+            "schema_version": "hgf_reasoning_judge_protocol_v3",
             "judge_model": args.judge_model,
             "forecaster_models": forecaster_models,
             "passes": args.passes,
             "workers": args.workers,
+            "reasoning_effort": args.reasoning_effort,
+            "max_tokens": args.max_tokens,
             "prompt_version": PROMPT_VERSION,
             "system_prompt": SYSTEM_PROMPT,
             "user_prompt_preamble": PROMPT_PREAMBLE,
@@ -569,7 +654,7 @@ def main() -> None:
                 root=PACKAGE_ROOT,
                 requested_model=args.judge_model,
                 run_seed=args.run_seed,
-                config_paths=(Path("configs/experiments_v27.json"),),
+                config_paths=(Path("configs/reasoning_judge.json"),),
                 extra={"experiment": "reasoning_judge"},
             ),
         },
@@ -611,7 +696,7 @@ def main() -> None:
                 row = future.result()
             except Exception as exc:
                 row = {
-                    "schema_version": "hgf_reasoning_judge_case_v2",
+                    "schema_version": "hgf_reasoning_judge_case_v3",
                     "status": "failed",
                     "question_id": pair["question_id"],
                     "run_index": pair["run_index"],
@@ -638,7 +723,7 @@ def main() -> None:
     summary["expected_judgments"] = len(tasks)
     summary["failed_judgments"] = len(tasks) - len(successful)
     result = {
-        "schema_version": "hgf_reasoning_judge_experiment_v2",
+        "schema_version": "hgf_reasoning_judge_experiment_v3",
         "judge_model": args.judge_model,
         "forecaster_models": forecaster_models,
         "passes": args.passes,
