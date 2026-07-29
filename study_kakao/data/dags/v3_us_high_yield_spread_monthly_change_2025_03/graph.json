@@ -1,0 +1,153 @@
+{
+  "schema_version": "1.0",
+  "actual_outcome_event_id": "node_6",
+  "graph": {
+    "nodes": [
+      {
+        "id": "node_1",
+        "label": "Economic concerns increased during March",
+        "event_type": "indicator",
+        "occurred_date": "2025-03-01",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "art_finance_20250311_003_310adb19",
+          "art_finance_20250303_004_21369f74"
+        ]
+      },
+      {
+        "id": "node_5",
+        "label": "Earnings-season evidence showed increased market dispersion",
+        "event_type": "indicator",
+        "occurred_date": "2025-03-03",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "art_finance_20250303_004_21369f74"
+        ]
+      },
+      {
+        "id": "node_2",
+        "label": "U.S. airlines cut earnings forecasts",
+        "event_type": "indicator",
+        "occurred_date": "2025-03-11",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "art_finance_20250311_003_310adb19"
+        ]
+      },
+      {
+        "id": "node_3",
+        "label": "Economic and corporate signals may have raised perceived high-yield risk",
+        "event_type": "indicator",
+        "occurred_date": "2025-03-20",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "art_finance_20250320_002_4d29770a",
+          "art_finance_20241211_002_b79ca9d0"
+        ]
+      },
+      {
+        "id": "node_4",
+        "label": "March high-yield market reporting discussed fallen angels",
+        "event_type": "indicator",
+        "occurred_date": "2025-03-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "art_finance_20250331_003_4afa93ed"
+        ]
+      },
+      {
+        "id": "node_6",
+        "label": "Resolution: March high-yield OAS change was 0.68 points, at least 0.02 points",
+        "event_type": "outcome",
+        "occurred_date": "2025-03-31",
+        "is_outcome": true,
+        "is_actual_outcome": true,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_34a5baa426af29a9"
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_1a",
+        "source": "node_1",
+        "target": "node_2",
+        "relationship": "contextualizes",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "art_finance_20250311_003_310adb19"
+        ],
+        "rationale": "The airline forecast cuts were reported as economic concerns were growing; this is context, not a causal claim."
+      },
+      {
+        "id": "edge_1",
+        "source": "node_1",
+        "target": "node_3",
+        "relationship": "contributes_to",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "art_finance_20250320_002_4d29770a",
+          "art_finance_20241211_002_b79ca9d0"
+        ],
+        "rationale": "Economic concern can raise perceived credit risk, but the supplied evidence does not measure the March high-yield repricing channel."
+      },
+      {
+        "id": "edge_2",
+        "source": "node_2",
+        "target": "node_3",
+        "relationship": "amplifies",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "art_finance_20250311_003_310adb19",
+          "art_finance_20250320_002_4d29770a"
+        ],
+        "rationale": "Sector earnings deterioration may add to perceived credit risk, but its effect on the aggregate OAS is not established."
+      },
+      {
+        "id": "edge_6",
+        "source": "node_5",
+        "target": "node_3",
+        "relationship": "contributes_to",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "art_finance_20250303_004_21369f74"
+        ],
+        "rationale": "Greater dispersion can increase uncertainty, but the evidence does not link it directly to the March high-yield spread."
+      },
+      {
+        "id": "edge_3",
+        "source": "node_3",
+        "target": "node_6",
+        "relationship": "contributes_to",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_34a5baa426af29a9"
+        ],
+        "rationale": "Higher perceived credit risk could widen spreads, while the official OAS series alone establishes the 0.68-point result."
+      },
+      {
+        "id": "edge_5",
+        "source": "node_4",
+        "target": "node_6",
+        "relationship": "contributes_to",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "art_finance_20250331_003_4afa93ed",
+          "ev_34a5baa426af29a9"
+        ],
+        "rationale": "Fallen-angel supply could affect high-yield composition, but no causal contribution to the monthly OAS change is quantified."
+      }
+    ]
+  }
+}

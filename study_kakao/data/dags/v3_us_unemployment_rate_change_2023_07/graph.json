@@ -1,0 +1,149 @@
+{
+  "schema_version": "1.0",
+  "actual_outcome_event_id": "node_resolved_outcome",
+  "graph": {
+    "nodes": [
+      {
+        "id": "node_unemployment_rate_june_2023",
+        "label": "June 2023 U.S. unemployment rate",
+        "event_type": "indicator",
+        "occurred_date": "2023-07-07",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_3acdd7d0cdfe7495",
+          "ev_25e9b34016eb4bb2",
+          "ev_10e0b9b3d6a5f611"
+        ]
+      },
+      {
+        "id": "node_moderate_job_growth",
+        "label": "July job growth was moderate",
+        "event_type": "indicator",
+        "occurred_date": "2023-08-04",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_d54eae28c20fedc4",
+          "ev_53ef39e4e0c7c8e9"
+        ]
+      },
+      {
+        "id": "node_unemployment_rate_july_2023",
+        "label": "July 2023 U.S. unemployment rate",
+        "event_type": "indicator",
+        "occurred_date": "2023-08-04",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_95e9dea5788b5db4",
+          "ev_076b4605f8b00436",
+          "ev_6734bf8e596b2dc3",
+          "ev_10e0b9b3d6a5f611"
+        ]
+      },
+      {
+        "id": "node_monthly_change_calculation",
+        "label": "June and July rates were compared to calculate the monthly change",
+        "event_type": "milestone",
+        "occurred_date": "2023-08-04",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_95e9dea5788b5db4",
+          "ev_10e0b9b3d6a5f611"
+        ]
+      },
+      {
+        "id": "node_july_unemployment_rate_change",
+        "label": "July unemployment-rate change was -0.1 percentage points",
+        "event_type": "indicator",
+        "occurred_date": "2023-08-21",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_1b8143a1030aaf64",
+          "ev_95e9dea5788b5db4"
+        ]
+      },
+      {
+        "id": "node_resolved_outcome",
+        "label": "Resolved outcome: within recent range",
+        "event_type": "outcome",
+        "occurred_date": "2023-08-21T23:59:59Z",
+        "is_outcome": true,
+        "is_actual_outcome": true,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_1b8143a1030aaf64"
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_moderate_growth_to_july_rate",
+        "source": "node_moderate_job_growth",
+        "target": "node_unemployment_rate_july_2023",
+        "relationship": "supports",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_d54eae28c20fedc4",
+          "ev_53ef39e4e0c7c8e9"
+        ],
+        "rationale": "Moderate job growth provides labor-market context but does not mechanically determine the unemployment rate."
+      },
+      {
+        "id": "edge_june_to_calc",
+        "source": "node_unemployment_rate_june_2023",
+        "target": "node_monthly_change_calculation",
+        "relationship": "input_to",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_3acdd7d0cdfe7495",
+          "ev_10e0b9b3d6a5f611"
+        ],
+        "rationale": "The June rate is one direct input to the monthly change calculation."
+      },
+      {
+        "id": "edge_july_to_calc",
+        "source": "node_unemployment_rate_july_2023",
+        "target": "node_monthly_change_calculation",
+        "relationship": "input_to",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_95e9dea5788b5db4",
+          "ev_10e0b9b3d6a5f611"
+        ],
+        "rationale": "The July rate is the other direct input to the monthly change calculation."
+      },
+      {
+        "id": "edge_calc_to_change",
+        "source": "node_monthly_change_calculation",
+        "target": "node_july_unemployment_rate_change",
+        "relationship": "measured_as",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_1b8143a1030aaf64",
+          "ev_95e9dea5788b5db4"
+        ],
+        "rationale": "Comparing the two monthly rates yields the observed -0.1-point change."
+      },
+      {
+        "id": "edge_change_to_outcome",
+        "source": "node_july_unemployment_rate_change",
+        "target": "node_resolved_outcome",
+        "relationship": "maps_to",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_1b8143a1030aaf64"
+        ],
+        "rationale": "The -0.1-point change maps directly to within recent range under the registered boundaries."
+      }
+    ]
+  }
+}

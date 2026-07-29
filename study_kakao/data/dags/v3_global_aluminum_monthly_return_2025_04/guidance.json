@@ -1,0 +1,140 @@
+{
+  "schema_version": "hgf_blueprint_v1",
+  "question_id": "v3_global_aluminum_monthly_return_2025_04",
+  "target_definition": {
+    "metric": "global aluminum monthly price return",
+    "unit_or_option_space": "monthly directional classification",
+    "forecast_horizon": "target month"
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Trade-policy uncertainty, broad commodity sentiment, and alumina costs offer reusable but indirect aluminum mechanisms.",
+    "weaknesses": [
+      "The tariff event occurred after the case cutoff; future use must verify policy timing and scope.",
+      "The commodity-to-aluminum and cost-to-global-price bridges are indirect.",
+      "The cost evidence was reported after the target month and cannot confirm a future move."
+    ]
+  },
+  "search_factors": [
+    {
+      "factor": "Trade-policy developments",
+      "why_search": "Policy changes can alter industrial demand expectations and trade costs.",
+      "preferred_source_types": ["official policy releases", "trade analysis"],
+      "source_event_ids": ["evt_politics_20250402_001_fe79ae5f"]
+    },
+    {
+      "factor": "Broad industrial-commodity sentiment",
+      "why_search": "Cross-metal reactions can indicate changing growth and risk expectations.",
+      "preferred_source_types": ["market data", "macro commentary"],
+      "source_event_ids": ["evt_finance_20250404_002_30d93628"]
+    },
+    {
+      "factor": "Alumina cost conditions",
+      "why_search": "Alumina availability and costs can change smelter economics.",
+      "preferred_source_types": ["alumina market data", "producer cost reports"],
+      "source_event_ids": ["evt_finance_20250426_003_5a92a56b", "evt_finance_20250430_004_033b6352"]
+    },
+    {
+      "factor": "Regional aluminum-premium hedging",
+      "why_search": "Premium hedging may reveal volatility or regional-basis concerns.",
+      "preferred_source_types": ["exchange data", "physical-market reports"],
+      "source_event_ids": ["evt_finance_20250425_005_dbf5d753"]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "policy_shock",
+      "role": "driver",
+      "factor": "Trade-policy developments",
+      "mechanism": "A credible trade-policy shock can weaken industrial-demand expectations and disrupt supply chains.",
+      "expected_direction": "down",
+      "evidence_requirement": "Verify the policy announcement date, scope, implementation, and affected metal flows.",
+      "contradiction_signal": "Exemptions, delayed implementation, or supportive demand data limit the shock.",
+      "historical_support": "medium",
+      "source_event_ids": ["evt_politics_20250402_001_fe79ae5f"],
+      "source_edge_ids": ["hyp_v3_global_aluminum_monthly_return_2025_04_20260725_061436_001_d37b8c72"]
+    },
+    {
+      "id": "commodity_sentiment",
+      "role": "mediator",
+      "factor": "Broad industrial-commodity sentiment",
+      "mechanism": "Risk-off moves across industrial commodities can signal softer expected materials demand.",
+      "expected_direction": "down",
+      "evidence_requirement": "Compare aluminum with other industrial metals and current growth indicators.",
+      "contradiction_signal": "Aluminum outperforms peers alongside improving physical demand.",
+      "historical_support": "weak",
+      "source_event_ids": ["evt_finance_20250404_002_30d93628"],
+      "source_edge_ids": ["hyp_v3_global_aluminum_monthly_return_2025_04_20260725_061436_005_734872e7"]
+    },
+    {
+      "id": "alumina_costs",
+      "role": "counterevidence",
+      "factor": "Alumina cost conditions",
+      "mechanism": "Cheaper alumina can reduce smelter cost pressure, while tighter inputs can support prices.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Verify current alumina prices, refinery availability, and producer margins.",
+      "contradiction_signal": "Input costs and aluminum prices move independently amid supply disruptions.",
+      "historical_support": "medium",
+      "source_event_ids": ["evt_finance_20250426_003_5a92a56b", "evt_finance_20250430_004_033b6352"],
+      "source_edge_ids": ["hyp_v3_global_aluminum_monthly_return_2025_04_20260725_061436_004_c4b3f22a", "hyp_v3_global_aluminum_monthly_return_2025_04_20260725_061436_006_7a88bc2e"]
+    },
+    {
+      "id": "premium_volatility",
+      "role": "alternative",
+      "factor": "Regional aluminum-premium hedging",
+      "mechanism": "Hedging activity can reflect volatility management but does not establish base-metal direction.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Check exchange positioning with physical premiums, inventories, and regional flows.",
+      "contradiction_signal": "Hedging changes without corroborating physical-market stress.",
+      "historical_support": "weak",
+      "source_event_ids": ["evt_finance_20250425_005_dbf5d753"],
+      "source_edge_ids": ["hyp_v3_global_aluminum_monthly_return_2025_04_20260725_061436_003_15e40e09"]
+    },
+    {
+      "id": "target_bridge",
+      "role": "target_bridge",
+      "factor": "Net aluminum-market repricing",
+      "mechanism": "Monthly aluminum returns reflect the balance of demand expectations, input costs, and physical availability.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Use current aluminum prices, inventories, alumina conditions, and demand indicators together.",
+      "contradiction_signal": "The price path diverges from both physical indicators and cross-metal sentiment.",
+      "historical_support": "weak",
+      "source_event_ids": ["evt_finance_20250404_002_30d93628", "evt_finance_20250430_004_033b6352"],
+      "source_edge_ids": ["hyp_v3_global_aluminum_monthly_return_2025_04_20260725_061436_005_734872e7", "hyp_v3_global_aluminum_monthly_return_2025_04_20260725_061436_006_7a88bc2e"]
+    }
+  ],
+  "causal_paths": [
+    {
+      "checkpoint_ids": ["policy_shock", "commodity_sentiment", "target_bridge"],
+      "generalized_mechanism": "A verified trade shock can weaken industrial sentiment and pressure aluminum when physical demand also softens.",
+      "expected_direction": "down",
+      "applicability_conditions": ["The policy is newly credible.", "Cross-metal and demand signals weaken together."],
+      "failure_conditions": ["Implementation is delayed.", "Aluminum supply tightens or demand improves."]
+    },
+    {
+      "checkpoint_ids": ["alumina_costs", "target_bridge"],
+      "generalized_mechanism": "Input-cost changes can influence aluminum pricing only when physical supply and demand do not offset them.",
+      "expected_direction": "mixed",
+      "applicability_conditions": ["Alumina changes are current and broad.", "Smelter margins transmit the cost signal."],
+      "failure_conditions": ["Outages, inventories, or demand changes dominate pricing."]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "Trade news changes volatility without producing a sustained aluminum demand shock.",
+      "discriminating_evidence": "Compare policy scope with physical orders, inventories, and aluminum performance versus peers.",
+      "source_event_ids": ["evt_politics_20250402_001_fe79ae5f", "evt_finance_20250404_002_30d93628"]
+    },
+    {
+      "hypothesis": "Regional-premium hedging reflects basis risk rather than a global base-price signal.",
+      "discriminating_evidence": "Compare premium positioning with global inventories and benchmark aluminum prices.",
+      "source_event_ids": ["evt_finance_20250425_005_dbf5d753"]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Did the relevant trade policy occur before the forecast cutoff and affect aluminum flows?",
+    "Do aluminum prices, inventories, and industrial-demand indicators corroborate cross-metal sentiment?",
+    "Are alumina costs transmitting through margins rather than being offset by supply disruptions?",
+    "Does premium hedging show physical stress or only regional basis volatility?"
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "schema_version": "hgf_blueprint_v1",
+  "question_id": "v3_wmt_revenue_growth_acceleration_2023_07_31",
+  "target_definition": {
+    "metric": "large retailer quarterly revenue-growth change",
+    "unit_or_option_space": "quarterly directional classification",
+    "forecast_horizon": "target fiscal quarter"
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Consumer mix, inflation, inventory discipline, and digital competition provide a conditional retail-demand framework.",
+    "weaknesses": [
+      "The graph lacks a direct inventory event; inventory is a required current check, not a historical claim.",
+      "Digital-promotion and competition anchors were published after the case cutoff and require fresh verification.",
+      "The graph lacks a direct reusable bridge from category signals to retailer revenue growth."
+    ]
+  },
+  "search_factors": [
+    {
+      "factor": "Consumer spending mix",
+      "why_search": "A services-versus-goods shift can redistribute retail demand across categories.",
+      "preferred_source_types": ["consumer-spending data", "retail surveys"],
+      "source_event_ids": ["evt_finance_20230529_003_928e2c48", "evt_finance_20230529_004_90537eb6"]
+    },
+    {
+      "factor": "Inflation and purchasing power",
+      "why_search": "Disinflation can affect real household purchasing power and category budgets.",
+      "preferred_source_types": ["official inflation releases", "consumer data"],
+      "source_event_ids": ["evt_finance_20230531_005_64efa136"]
+    },
+    {
+      "factor": "Retail inventory discipline",
+      "why_search": "Inventory and promotion intensity determine whether demand converts into sales or discounting.",
+      "preferred_source_types": ["retailer filings", "inventory data"],
+      "source_event_ids": ["evt_finance_20230529_003_928e2c48"]
+    },
+    {
+      "factor": "E-commerce and promotion performance",
+      "why_search": "Digital traffic and promotional conversion can shift sales between channels.",
+      "preferred_source_types": ["digital-sales data", "web-traffic data"],
+      "source_event_ids": ["evt_finance_20230713_006_78b6a126", "evt_finance_20230815_002_04560b08"]
+    },
+    {
+      "factor": "Retail competitive pressure",
+      "why_search": "Competitor promotions can affect traffic, pricing, and discretionary spending.",
+      "preferred_source_types": ["competitor disclosures", "retail market data"],
+      "source_event_ids": ["evt_finance_20230815_002_04560b08", "evt_finance_20230823_001_6995ec19"]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "consumer_mix",
+      "role": "baseline",
+      "factor": "Consumer spending mix",
+      "mechanism": "Spending shifting toward services can reduce goods demand while supporting selected everyday categories.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Check current services, goods, grocery, and discretionary spending indicators.",
+      "contradiction_signal": "Consumer outlays improve broadly across goods and services.",
+      "historical_support": "medium",
+      "source_event_ids": ["evt_finance_20230529_003_928e2c48", "evt_finance_20230529_004_90537eb6"],
+      "source_edge_ids": ["hyp_v3_wmt_revenue_growth_acceleration_2023_07_31_20260725_062223_004_38bc8271"]
+    },
+    {
+      "id": "inflation_power",
+      "role": "driver",
+      "factor": "Inflation and purchasing power",
+      "mechanism": "Lower inflation can support real purchasing power, but category effects remain uneven.",
+      "expected_direction": "up",
+      "evidence_requirement": "Verify inflation breadth, wage growth, and real retail-spending trends.",
+      "contradiction_signal": "Services inflation or household budget pressure remains elevated.",
+      "historical_support": "weak",
+      "source_event_ids": ["evt_finance_20230531_005_64efa136"],
+      "source_edge_ids": ["hyp_v3_wmt_revenue_growth_acceleration_2023_07_31_20260725_062223_005_bdd0efcb"]
+    },
+    {
+      "id": "inventory_discipline",
+      "role": "counterevidence",
+      "factor": "Retail inventory discipline",
+      "mechanism": "Excess goods inventory can require promotion, weakening sales quality despite consumer demand.",
+      "expected_direction": "down",
+      "evidence_requirement": "Check inventory growth, markdowns, replenishment, and category sell-through.",
+      "contradiction_signal": "Inventories are lean and full-price demand is broad.",
+      "historical_support": "weak",
+      "source_event_ids": ["evt_finance_20230529_003_928e2c48"],
+      "source_edge_ids": ["hyp_v3_wmt_revenue_growth_acceleration_2023_07_31_20260725_062223_001_4fc9bca6"]
+    },
+    {
+      "id": "digital_competition",
+      "role": "alternative",
+      "factor": "E-commerce and retail competition",
+      "mechanism": "Promotions and competing digital events can redistribute channel traffic without proving durable demand.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Compare current conversion, traffic, competitor promotions, and repeat demand.",
+      "contradiction_signal": "Digital gains persist without unusual promotional intensity.",
+      "historical_support": "weak",
+      "source_event_ids": ["evt_finance_20230713_006_78b6a126", "evt_finance_20230815_002_04560b08"],
+      "source_edge_ids": ["hyp_v3_wmt_revenue_growth_acceleration_2023_07_31_20260725_062223_006_83d3568e"]
+    },
+    {
+      "id": "target_bridge",
+      "role": "target_bridge",
+      "factor": "Net retail demand conversion",
+      "mechanism": "Retail growth depends on whether consumer demand, inventory, and channel competition convert into current sales.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Reconcile category demand, inventory, traffic, promotions, and retailer disclosures.",
+      "contradiction_signal": "Reported sales diverge from all demand, inventory, and channel indicators.",
+      "historical_support": "weak",
+      "source_event_ids": ["evt_finance_20230529_003_928e2c48", "evt_finance_20230531_005_64efa136", "evt_finance_20230713_006_78b6a126"],
+      "source_edge_ids": ["hyp_v3_wmt_revenue_growth_acceleration_2023_07_31_20260725_052529_003_4f05635d", "hyp_v3_wmt_revenue_growth_acceleration_2023_07_31_20260725_052529_004_0929d48b"]
+    }
+  ],
+  "causal_paths": [
+    {
+      "checkpoint_ids": ["inflation_power", "consumer_mix", "target_bridge"],
+      "generalized_mechanism": "Improving purchasing power can support retail demand when household spending remains available for relevant categories.",
+      "expected_direction": "up",
+      "applicability_conditions": ["Real income improves.", "Category demand does not shift away from goods."],
+      "failure_conditions": ["Services absorb incremental spending.", "Budget pressure persists in core categories."]
+    },
+    {
+      "checkpoint_ids": ["consumer_mix", "inventory_discipline", "target_bridge"],
+      "generalized_mechanism": "A goods-demand slowdown can worsen retail conversion when inventory requires heavier promotion.",
+      "expected_direction": "down",
+      "applicability_conditions": ["Goods demand softens.", "Inventory or markdown pressure rises."],
+      "failure_conditions": ["Inventories are lean.", "Essential categories offset discretionary weakness."]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "Digital promotions change traffic temporarily without shifting underlying retail demand.",
+      "discriminating_evidence": "Compare repeat purchases and full-price conversion with promotional-period traffic.",
+      "source_event_ids": ["evt_finance_20230713_006_78b6a126", "evt_finance_20230815_002_04560b08"]
+    },
+    {
+      "hypothesis": "Consumer caution is concentrated in discretionary retail rather than everyday categories.",
+      "discriminating_evidence": "Compare grocery, discretionary, and services spending with inventory trends.",
+      "source_event_ids": ["evt_finance_20230529_003_928e2c48", "evt_finance_20230823_001_6995ec19"]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Are consumer, inflation, inventory, and digital indicators available before the forecast cutoff?",
+    "Is spending moving between goods and services or improving broadly?",
+    "Do inventory and markdown data support healthy sales conversion?",
+    "Are e-commerce gains durable after adjusting for promotions and competitor campaigns?"
+  ]
+}

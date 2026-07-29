@@ -1,0 +1,43 @@
+{
+  "schema_version": "fixed_exemplar_case",
+  "status": "success",
+  "question_id": "v3_us_housing_starts_monthly_growth_2025_11",
+  "retrieved_memory_question_id": "v3_us_housing_starts_monthly_growth_2024_09",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "macro / housing",
+      "target_operation": "monthly housing-starts growth",
+      "option_geometry": "buckets"
+    },
+    "historical_question": "As of 2024-09-30, which range will the monthly housing-starts growth for United States housing starts in 2024-09 fall into?",
+    "historical_cutoff": "2024-09-30T00:00:00+00:00",
+    "target_semantics": "The monthly growth rate of United States housing starts for September 2024, categorized as below -4.883%, between -4.883% and 7.204%, or at or above 7.204%.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20231219_003_1f35f9c2",
+        "takeaway": "A forecast for 2024 anticipated mortgage rates around 4.25%.",
+        "why_predictive": "Mortgage rates are a key driver of housing demand and construction activity."
+      },
+      {
+        "article_id": "art_finance_20240927_003_0d650497",
+        "takeaway": "Discussions in late September 2024 considered the impact of U.S. interest rate cuts on the future of building.",
+        "why_predictive": "Interest rate adjustments directly influence borrowing costs for builders and buyers, affecting housing starts."
+      },
+      {
+        "article_id": "art_finance_20220919_004_08151b58",
+        "takeaway": "U.S. home builder sentiment had been falling for nine consecutive months as of September 2022.",
+        "why_predictive": "Builder sentiment is a leading indicator of future construction activity, reflecting confidence and expected demand."
+      }
+    ],
+    "expert_reasoning": [
+      "The forecast for 2024 mortgage rates around 4.25% (art_finance_20231219_003_1f35f9c2) suggests a potentially supportive environment for housing demand, which could lead to increased housing starts.",
+      "Discussions in late September 2024 about the effects of U.S. interest rate cuts on building (art_finance_20240927_003_0d650497) indicate that monetary policy shifts are a current consideration, potentially influencing construction activity.",
+      "The historical context of falling home builder sentiment for nine months ending September 2022 (art_finance_20220919_004_08151b58) highlights that builder caution can be a factor that restrains housing starts, even if broader economic conditions might otherwise be favorable."
+    ],
+    "counterevidence": "No direct forecast-time evidence was found that explicitly contradicted the potential impact of interest rate changes or mortgage rate forecasts on housing starts for September 2024. However, the historical data on builder sentiment (art_finance_20220919_004_08151b58) suggests that negative sentiment can persist and impact construction.",
+    "prospective_target_estimate": "Given the mixed signals, with potential support from interest rate considerations and a forecast for lower mortgage rates, but also the historical precedent of subdued builder sentiment, the monthly housing-starts growth for September 2024 is uncertain. The interplay between these factors would determine whether growth falls below recent ranges, within them, or above them.",
+    "option_mapping": "The target metric is monthly housing-starts growth in percent. The options are 'below recent range' (less than -4.883%), 'within recent range' (-4.883% to 7.204% exclusive), and 'above recent range' (7.204% or more).",
+    "uncertainty": "The exact impact of anticipated interest rate cuts and the persistence of builder sentiment on September 2024 housing starts remains unclear. The forecast-time evidence provides directional indicators but lacks specific quantitative data for the target period.",
+    "dag_derived_lesson": "Anticipated changes in borrowing costs and prevailing sentiment among market participants are key drivers that can influence construction activity. The historical persistence of negative sentiment can act as a constraint, even when other economic factors appear supportive."
+  }
+}

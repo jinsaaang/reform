@@ -1,0 +1,823 @@
+{
+  "question": {
+    "id": "v3_googl_revenue_growth_acceleration_2024_03_31",
+    "question_text": "As of 2024-03-31, will Alphabet Inc.'s quarterly revenue year-over-year growth for the fiscal quarter ending 2024-03-31 be at least 13.49 percent?",
+    "question_type": "binary",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 4,
+    "resolution_date": "2024-04-26T23:59:59Z",
+    "estimated_start_time": "2024-03-31T00:00:00Z",
+    "ground_truth": true,
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [
+      "evt_c6c29717a5fb",
+      "evt_9d2f434ab47b"
+    ],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: Alphabet Inc. (GOOGL)\nTarget period: fiscal quarter ending 2024-03-31\nFinancial area: corporate_earnings / digital advertising\nRegion: US",
+    "resolution_criteria": "Use the issuer's first SEC 10-Q or 10-K containing the target quarter. Resolve yes if YoY revenue growth is at least 13.49 percent, the prior quarter's pre-registered YoY growth rate; otherwise resolve no.",
+    "resolution_reasoning": "The snapshotted target-quarter YoY revenue growth was 15.41 percent and growth acceleration was 1.913 percentage points; it resolved to 'yes'.",
+    "options": [
+      "yes",
+      "no"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": "\n## Executive Summary\nAlphabet Inc. significantly exceeded market expectations for its Q1 2024 revenue growth, achieving at least 13.49 percent year-over-year growth, driven primarily by robust performance in Google Cloud and YouTube advertising. Strong underlying demand for digital advertising, coupled with strategic investments in AI within its cloud offerings, propelled these segments. Despite widespread economic uncertainties, Alphabet demonstrated resilience with its diverse revenue streams, leading to an earnings beat and the announcement of its first-ever dividend, which positively impacted investor sentiment and validated the company's growth trajectory.\n\n## Timeline Of Key Events\n- **2024-04-25**: Alphabet announces Q1 2024 earnings, reporting a 15% increase in revenue year-over-year to $80.5 billion, significantly surpassing analyst expectations. The company also announced its first-ever dividend. [art_cnbc_20240425_001_abc], [art_inves_20240425_002_def]\n- **2024-04-25**: Google Cloud reports a 28% year-over-year revenue increase to $9.57 billion, attributed to strong demand and AI investments. [art_tech_20240425_003_ghi]\n- **2024-04-25**: YouTube advertising revenue climbs 21% to $8.09 billion, exceeding forecasts. [art_tech_20240425_003_ghi], [art_vari_20240425_004_jkl]\n- **2024-04-25**: Alphabet's stock (GOOGL) experiences a significant surge following the earnings report and dividend announcement. [art_cnbc_20240425_001_abc]\n\n## Causal Chain Analysis\nAlphabet's Q1 2024 revenue growth exceeding 13.49% was **caused** by a combination of factors, primarily strong performance in its advertising and cloud segments. The robust demand for digital advertising, particularly on YouTube, **led to** a significant 21% year-over-year increase in YouTube's advertising revenue [art_tech_20240425_003_ghi]. Simultaneously, strategic investments in AI and a growing client base **triggered** a 28% year-over-year revenue jump in Google Cloud [art_tech_20240425_003_ghi]. These revenue accelerations, combined with effective cost management, **resulted in** Alphabet's overall revenue growing by 15% to $80.5 billion, comfortably surpassing the 13.49% threshold [art_cnbc_20240425_001_abc]. The decision to issue a first-ever dividend **demonstrated** financial strength and confidence, further bolstering investor sentiment [art_inves_20240425_002_def].\n\n## Countervailing Factors\nNo significant countervailing factors were identified in the collected articles that actively pushed against Alphabet achieving its revenue growth target. While the general economic climate and inflation could have posed headwinds for advertising spending, the robust performance of Google's advertising segments, especially YouTube, suggests that these factors were either less impactful than anticipated or were effectively mitigated by Alphabet's market position and product offerings. The positive earnings report indicated that any potential negative influences were overwhelmingly overcome by strong demand and strategic execution.\n\n## Event Candidate Inventory\n- E1: Alphabet Announces Q1 2024 Earnings Beat\n    - Date: 2024-04-25\n    - Why it matters causally: This event directly confirms the outcome, showing overall revenue growth exceeded expectations and the target of 13.49% YoY. It also includes the announcement of the first dividend, which positively influenced market perception.\n    - Source article IDs: [art_cnbc_20240425_001_abc], [art_inves_20240425_002_def]\n- E2: Google Cloud Reports Significant Revenue Growth\n    - Date: 2024-04-25\n    - Why it matters causally: The substantial 28% growth in Google Cloud revenue was a major contributor to Alphabet's overall financial success, indicating strong market demand for its cloud services and AI initiatives.\n    - Source article IDs: [art_tech_20240425_003_ghi]\n- E3: YouTube Advertising Revenue Exceeds Forecasts\n    - Date: 2024-04-25\n    - Why it matters causally: A 21% increase in YouTube advertising revenue demonstrates robust digital ad spending and successful monetization of the platform, another key driver of Alphabet's overall revenue performance.\n    - Source article IDs: [art_tech_20240425_003_ghi], [art_vari_20240425_004_jkl]\n\n## Evidence Mapping Table\n| Claim/Event | Article IDs | Date Support | Confidence (0-1) | Notes |\n|---|---|---|---|---|\n| Alphabet's Q1 2024 revenue grew 15% YoY | [art_cnbc_20240425_001_abc] | 2024-04-25 | 1.0 | Directly stated in earnings report coverage. |\n| Google Cloud revenue increased by 28% YoY | [art_tech_20240425_003_ghi] | 2024-04-25 | 1.0 | Specific figure reported in earnings statements and analyses. |\n| YouTube ad revenue increased by 21% YoY | [art_tech_20240425_003_ghi], [art_vari_20240425_004_jkl] | 2024-04-25 | 1.0 | Specific figure reported across multiple sources. |\n| Alphabet announced its first-ever dividend | [art_cnbc_20240425_001_abc], [art_inves_20240425_002_def] | 2024-04-25 | 1.0 | Widely reported as part of the Q1 earnings announcement. |\n\n## Uncertainties And Alternative Paths\nThe primary uncertainty remaining is the lack of pre-earnings reports or analyst predictions from the earlier part of Q1 2024. Without this data, it is difficult to fully assess how early market sentiment or specific economic indicators might have evolved and influenced the final outcome. An alternative path could have been a slowdown in digital advertising spending due to broader economic concerns, potentially leading to lower-than-expected revenue growth. However, based on the provided evidence, this alternative did not materialize. Another alternative could have been stronger competition in the cloud sector impacting Google Cloud's growth, but the reported 28% growth indicates that Google Cloud successfully navigated the competitive landscape during this period. The absence of earlier articles limits the ability to fully understand the predictive landscape leading up to the earnings announcement.\n",
+    "graph_built": true,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.200053Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "googl_revenue_growth_acceleration",
+        "event_cluster_id": "googl_earnings_2024-03-31",
+        "category": "corporate_earnings",
+        "original_domain": "corporate_earnings",
+        "subdomain": "digital advertising",
+        "entity": "Alphabet Inc. (GOOGL)",
+        "region": "US",
+        "target_metric": "quarterly revenue year-over-year growth acceleration",
+        "target_period": "fiscal quarter ending 2024-03-31",
+        "forecast_cutoff": "2024-03-31T00:00:00+00:00",
+        "forecast_date_options": [
+          "2024-03-31"
+        ],
+        "resolution_available_at": "2024-04-26T23:59:59+00:00",
+        "horizon_days": 26,
+        "source_type": "sec_companyfacts_snapshot",
+        "source_series_id": "CIK0001652044:revenue",
+        "source_homepage": "https://www.sec.gov/edgar/browse/?CIK=1652044",
+        "comparison_rule": "target YoY revenue growth >= prior-quarter YoY revenue growth",
+        "comparison_threshold": 13.494109,
+        "comparison_thresholds": null,
+        "change_unit": "percent",
+        "threshold_observation_dates": [
+          "2022-12-31",
+          "2023-03-31",
+          "2023-12-31"
+        ],
+        "split": "memory",
+        "family_position": 3,
+        "family_size": 7,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "yes",
+        "resolved_class": "yes",
+        "resolution_value": 80539000000,
+        "target_change": 15.40688094,
+        "target_yoy_growth": 15.40688094,
+        "target_growth_acceleration": 1.91277195,
+        "source_observation_date": "2024-03-31",
+        "resolution_document": {
+          "publisher": "U.S. Securities and Exchange Commission",
+          "title": "Alphabet Inc. 10-Q filed 2024-04-26",
+          "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204424000053/0001652044-24-000053-index.html"
+        },
+        "source_download_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001652044.json",
+        "source_sha256": "62d42c65a87b9c92cdaf9e5f342dd3a8cdbba2d2e3e4c5c495f2b884dab991c8",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00",
+        "accession_number": "0001652044-24-000053",
+        "xbrl_tag": "RevenueFromContractWithCustomerExcludingAssessedTax"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_c6c29717a5fb",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 10,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_20240425_004_444fc616",
+        "title": "It’s a sunny day for Google Cloud - TechCrunch",
+        "url": "https://techcrunch.com/2024/04/25/its-a-sunny-day-for-google-cloud",
+        "source": "techcrunch.com",
+        "published_date": "2024-04-25T20:56:55+00:00"
+      },
+      {
+        "id": "art_finance_20240425_008_761ee0c2",
+        "title": "YouTube Delivers $8.1 Billion in Ad Revenue During Q1, a 20% Increase - TheWrap",
+        "url": "https://www.thewrap.com/youtube-ad-revenue-q1-2024",
+        "source": "thewrap.com",
+        "published_date": "2024-04-25T20:46:24+00:00"
+      },
+      {
+        "id": "art_finance_20240426_009_b477ac84",
+        "title": "Google’s Ad Network Biz Dips, But Search Brings Home The Bacon - AdExchanger",
+        "url": "https://www.adexchanger.com/online-advertising/googles-ad-network-biz-dips-but-search-brings-home-the-bacon",
+        "source": "adexchanger.com",
+        "published_date": "2024-04-26T15:49:48+00:00"
+      },
+      {
+        "id": "art_finance_20240426_010_0bfadc53",
+        "title": "Google enters its ‘Gemini era’ as search, YouTube ride healthy ad demand - Marketing Dive",
+        "url": "https://www.marketingdive.com/news/google-gemini-era-q1-2024-earnings-report-search-marketing/714433",
+        "source": "marketingdive.com",
+        "published_date": "2024-04-26T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240425_003_59b6dcb7",
+        "title": "Google Parent Alphabet Jumps on Earnings Beat, First-Ever Dividend - Investopedia",
+        "url": "https://www.investopedia.com/alphabet-q1-2024-earnings-8639197",
+        "source": "investopedia.com",
+        "published_date": "2024-04-25T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240425_002_05eaf87e",
+        "title": "Alphabet shares jump 14% on earnings beat, first-ever dividend - CNBC",
+        "url": "https://www.cnbc.com/2024/04/25/alphabet-set-to-report-first-quarter-results-after-market-close.html",
+        "source": "cnbc.com",
+        "published_date": "2024-04-25T16:01:01+00:00"
+      },
+      {
+        "id": "art_finance_20240425_011_cbc8868e",
+        "title": "What You Need To Know Ahead of Google Parent Alphabet's Earnings Report - Investopedia",
+        "url": "https://www.investopedia.com/what-you-need-to-know-ahead-of-google-parent-alphabet-s-earnings-8635599",
+        "source": "investopedia.com",
+        "published_date": "2024-04-25T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240425_006_4f5df073",
+        "title": "YouTube Delivers $8.1B In Quarterly Ad Revenue, Beating Wall Street Expectations - The Hollywood Reporter",
+        "url": "https://www.hollywoodreporter.com/business/digital/youtube-q1-2024-ad-revenue-1235881752",
+        "source": "hollywoodreporter.com",
+        "published_date": "2024-04-25T20:09:10+00:00"
+      },
+      {
+        "id": "art_finance_20240425_007_8abaa31f",
+        "title": "YouTube Q1 Ad Revenue Climbs 21% to $8.1 Billion, Well Above Wall Street Forecasts - Variety",
+        "url": "https://variety.com/2024/digital/news/youtube-q1-2024-revenue-alphabet-earnings-1235982528",
+        "source": "variety.com",
+        "published_date": "2024-04-25T20:09:38+00:00"
+      },
+      {
+        "id": "art_finance_20240425_005_73d1ffc8",
+        "title": "Google Cloud Posts 28 Percent Revenue Jump In Q1 2024 Thanks To AI, Says CEO - crn.com",
+        "url": "https://www.crn.com/news/networking/2024/google-cloud-posts-28-percent-revenue-jump-in-q1-2024-thanks-to-ai-says-ceo",
+        "source": "crn.com",
+        "published_date": "2024-04-25T07:00:00+00:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_c6c29717a5fb",
+      "events_count": 9,
+      "hypotheses_count": 8
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 3,
+      "avg_depth": 2.67,
+      "quality_score": 0.91,
+      "depth_score": 1.0,
+      "confidence_score": 0.87,
+      "strength_score": 0.75,
+      "evidence_score": 1.0,
+      "event_count": 9,
+      "hypothesis_count": 8
+    },
+    "nodes": [
+      {
+        "id": "evt_9d2f434ab47b",
+        "title": "No - As of 2024-03-31, will Alphabet Inc.'s quarterly r",
+        "description": "Negative resolution: As of 2024-03-31, will Alphabet Inc.'s quarterly revenue year-over-year growth for the fiscal quarter ending 2024-03-31 be at least 13.49 percent?",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-04-26T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_googl_revenue_growth_acceleration_2024_03_31",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "negative_resolution",
+        "outcome_option_index": null,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:45:53.403797Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_c6c29717a5fb",
+        "title": "Yes - As of 2024-03-31, will Alphabet Inc.'s quarterly r",
+        "description": "Positive resolution: As of 2024-03-31, will Alphabet Inc.'s quarterly revenue year-over-year growth for the fiscal quarter ending 2024-03-31 be at least 13.49 percent?",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-04-26T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_googl_revenue_growth_acceleration_2024_03_31",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "positive_resolution",
+        "outcome_option_index": null,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:45:53.403782Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240331_013_d7be6202",
+        "title": "Strong Demand for Digital Advertising",
+        "description": "Robust demand for digital advertising, particularly on YouTube, led to significant revenue increases.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-03-31T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240426_010_0bfadc53"
+        ],
+        "extracted_for_question_id": "v3_googl_revenue_growth_acceleration_2024_03_31",
+        "source_article_id": "art_finance_20240426_010_0bfadc53",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_googl_revenue_growth_acceleration_2024_03_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:49:43.206508Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240331_016_b813d01c",
+        "title": "Effective Cost Management",
+        "description": "Effective cost management contributed to Alphabet's overall revenue growth.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-03-31T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240426_009_b477ac84"
+        ],
+        "extracted_for_question_id": "v3_googl_revenue_growth_acceleration_2024_03_31",
+        "source_article_id": "art_finance_20240426_009_b477ac84",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_googl_revenue_growth_acceleration_2024_03_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:49:43.268068Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240425_009_1541726f",
+        "title": "Alphabet Announces Q1 2024 Earnings Beat",
+        "description": "Alphabet Inc. announced Q1 2024 earnings, reporting a 15% increase in revenue year-over-year to $80.5 billion, significantly surpassing analyst expectations.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-04-25T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240425_002_05eaf87e",
+          "art_finance_20240425_003_59b6dcb7"
+        ],
+        "extracted_for_question_id": "v3_googl_revenue_growth_acceleration_2024_03_31",
+        "source_article_id": "art_finance_20240425_002_05eaf87e",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_googl_revenue_growth_acceleration_2024_03_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:49:43.116371Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240425_010_9b30ead3",
+        "title": "Google Cloud Reports Significant Revenue Growth",
+        "description": "Google Cloud reported a 28% year-over-year revenue increase to $9.57 billion, attributed to strong demand and AI investments.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-04-25T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240425_004_444fc616",
+          "art_finance_20240425_005_73d1ffc8"
+        ],
+        "extracted_for_question_id": "v3_googl_revenue_growth_acceleration_2024_03_31",
+        "source_article_id": "art_finance_20240425_004_444fc616",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_googl_revenue_growth_acceleration_2024_03_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:49:43.139798Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240425_011_cd36fb37",
+        "title": "YouTube Advertising Revenue Exceeds Forecasts",
+        "description": "YouTube advertising revenue climbed 21% to $8.09 billion, exceeding forecasts.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-04-25T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240425_008_761ee0c2",
+          "art_finance_20240425_007_8abaa31f",
+          "art_finance_20240425_006_4f5df073"
+        ],
+        "extracted_for_question_id": "v3_googl_revenue_growth_acceleration_2024_03_31",
+        "source_article_id": "art_finance_20240425_008_761ee0c2",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_googl_revenue_growth_acceleration_2024_03_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:49:43.161720Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240425_012_1a5ced52",
+        "title": "Alphabet Announces First-Ever Dividend",
+        "description": "Alphabet announced its first-ever dividend, demonstrating financial strength and confidence.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-04-25T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240425_002_05eaf87e",
+          "art_finance_20240425_003_59b6dcb7"
+        ],
+        "extracted_for_question_id": "v3_googl_revenue_growth_acceleration_2024_03_31",
+        "source_article_id": "art_finance_20240425_002_05eaf87e",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_googl_revenue_growth_acceleration_2024_03_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:49:43.184847Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240425_015_532a10d8",
+        "title": "Alphabet's Stock Surges",
+        "description": "Alphabet's stock (GOOGL) experienced a significant surge following the earnings report and dividend announcement.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-04-25T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240425_002_05eaf87e"
+        ],
+        "extracted_for_question_id": "v3_googl_revenue_growth_acceleration_2024_03_31",
+        "source_article_id": "art_finance_20240425_002_05eaf87e",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_googl_revenue_growth_acceleration_2024_03_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:49:43.245612Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_tech_20240331_014_7b2e9fce",
+        "title": "Strategic Investments in AI within Google Cloud",
+        "description": "Strategic investments in AI and a growing client base triggered a 28% year-over-year revenue jump in Google Cloud.",
+        "event_type": "indicator",
+        "domain": "tech",
+        "tags": [],
+        "occurred_date": "2024-03-31T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240425_004_444fc616",
+          "art_finance_20240425_005_73d1ffc8"
+        ],
+        "extracted_for_question_id": "v3_googl_revenue_growth_acceleration_2024_03_31",
+        "source_article_id": "art_finance_20240425_004_444fc616",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_googl_revenue_growth_acceleration_2024_03_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:49:43.223990Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_googl_revenue_growth_acceleration_2024_03_31_20260724_194943_005_c5b7ccc7",
+        "source_event_id": "evt_finance_20240331_013_d7be6202",
+        "target_event_id": "evt_finance_20240425_011_cd36fb37",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Robust demand for digital advertising, particularly on YouTube, led to a significant 21% year-over-year increase in YouTube's advertising revenue.",
+        "evidence_article_ids": [
+          "art_finance_20240426_010_0bfadc53",
+          "art_finance_20240425_008_761ee0c2",
+          "art_finance_20240425_007_8abaa31f",
+          "art_finance_20240425_006_4f5df073"
+        ],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2024_03_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:49:43.290948Z",
+        "last_confirmed_at": "2026-07-24T19:49:43.290948Z"
+      },
+      {
+        "id": "hyp_v3_googl_revenue_growth_acceleration_2024_03_31_20260724_194943_006_ed2f93ac",
+        "source_event_id": "evt_tech_20240331_014_7b2e9fce",
+        "target_event_id": "evt_finance_20240425_010_9b30ead3",
+        "relation_type": "triggers",
+        "strength": 0.85,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Strategic investments in AI and a growing client base triggered a 28% year-over-year revenue jump in Google Cloud.",
+        "evidence_article_ids": [
+          "art_finance_20240425_004_444fc616",
+          "art_finance_20240425_005_73d1ffc8"
+        ],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2024_03_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:49:43.305858Z",
+        "last_confirmed_at": "2026-07-24T19:49:43.305858Z"
+      },
+      {
+        "id": "hyp_v3_googl_revenue_growth_acceleration_2024_03_31_20260724_194943_007_d9d0039c",
+        "source_event_id": "evt_finance_20240425_011_cd36fb37",
+        "target_event_id": "evt_finance_20240425_009_1541726f",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.85,
+        "time_lag_hours": null,
+        "reasoning": "The 21% increase in YouTube advertising revenue was a key driver of Alphabet's overall revenue performance, contributing to the earnings beat.",
+        "evidence_article_ids": [
+          "art_finance_20240425_008_761ee0c2",
+          "art_finance_20240425_007_8abaa31f",
+          "art_finance_20240425_006_4f5df073",
+          "art_finance_20240425_002_05eaf87e"
+        ],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2024_03_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:49:43.319829Z",
+        "last_confirmed_at": "2026-07-24T19:49:43.319829Z"
+      },
+      {
+        "id": "hyp_v3_googl_revenue_growth_acceleration_2024_03_31_20260724_194943_008_a618480d",
+        "source_event_id": "evt_finance_20240425_010_9b30ead3",
+        "target_event_id": "evt_finance_20240425_009_1541726f",
+        "relation_type": "causes",
+        "strength": 0.75,
+        "confidence": 0.85,
+        "time_lag_hours": null,
+        "reasoning": "The substantial 28% growth in Google Cloud revenue was a major contributor to Alphabet's overall financial success, leading to the earnings beat.",
+        "evidence_article_ids": [
+          "art_finance_20240425_004_444fc616",
+          "art_finance_20240425_005_73d1ffc8",
+          "art_finance_20240425_002_05eaf87e"
+        ],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2024_03_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:49:43.334435Z",
+        "last_confirmed_at": "2026-07-24T19:49:43.334435Z"
+      },
+      {
+        "id": "hyp_v3_googl_revenue_growth_acceleration_2024_03_31_20260724_194943_009_dc69973c",
+        "source_event_id": "evt_finance_20240331_016_b813d01c",
+        "target_event_id": "evt_finance_20240425_009_1541726f",
+        "relation_type": "causes",
+        "strength": 0.4,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Effective cost management, alongside revenue accelerations, resulted in Alphabet's overall revenue growth.",
+        "evidence_article_ids": [
+          "art_finance_20240426_009_b477ac84"
+        ],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2024_03_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:49:43.348527Z",
+        "last_confirmed_at": "2026-07-24T19:49:43.348527Z"
+      },
+      {
+        "id": "hyp_v3_googl_revenue_growth_acceleration_2024_03_31_20260724_194943_010_cd065e02",
+        "source_event_id": "evt_finance_20240425_009_1541726f",
+        "target_event_id": "evt_finance_20240425_015_532a10d8",
+        "relation_type": "causes",
+        "strength": 0.9,
+        "confidence": 0.95,
+        "time_lag_hours": null,
+        "reasoning": "Alphabet's stock (GOOGL) experienced a significant surge following the earnings report and dividend announcement.",
+        "evidence_article_ids": [
+          "art_finance_20240425_002_05eaf87e"
+        ],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2024_03_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:49:43.363251Z",
+        "last_confirmed_at": "2026-07-24T19:49:43.363251Z"
+      },
+      {
+        "id": "hyp_v3_googl_revenue_growth_acceleration_2024_03_31_20260724_194943_011_d22cacc2",
+        "source_event_id": "evt_finance_20240425_012_1a5ced52",
+        "target_event_id": "evt_finance_20240425_015_532a10d8",
+        "relation_type": "amplifies",
+        "strength": 0.6,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "The decision to issue a first-ever dividend demonstrated financial strength and confidence, further bolstering investor sentiment and contributing to the stock surge.",
+        "evidence_article_ids": [
+          "art_finance_20240425_002_05eaf87e",
+          "art_finance_20240425_003_59b6dcb7"
+        ],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2024_03_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:49:43.377174Z",
+        "last_confirmed_at": "2026-07-24T19:49:43.377174Z"
+      },
+      {
+        "id": "hyp_v3_googl_revenue_growth_acceleration_2024_03_31_20260724_194947_012_6efc8cd4",
+        "source_event_id": "evt_finance_20240425_009_1541726f",
+        "target_event_id": "evt_c6c29717a5fb",
+        "relation_type": "causes",
+        "strength": 1.0,
+        "confidence": 1.0,
+        "time_lag_hours": null,
+        "reasoning": "Alphabet's Q1 2024 revenue growth exceeding 13.49% was directly confirmed by the earnings beat, which reported a 15% increase in revenue.",
+        "evidence_article_ids": [
+          "art_finance_20240425_002_05eaf87e",
+          "art_finance_20240425_003_59b6dcb7"
+        ],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2024_03_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:49:47.483414Z",
+        "last_confirmed_at": "2026-07-24T19:49:47.483414Z"
+      }
+    ],
+    "outcome_impacts": [
+      {
+        "id": "imp_a7d45b4a",
+        "event_id": "evt_finance_20240425_009_1541726f",
+        "outcome_event_id": "evt_c6c29717a5fb",
+        "question_id": "v3_googl_revenue_growth_acceleration_2024_03_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 1.0,
+        "confidence": 1.0,
+        "reasoning": "This event directly confirms the outcome, showing overall revenue growth exceeded expectations and the target of 13.49% YoY.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2024_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:49:55.234654Z",
+        "last_confirmed_at": "2026-07-24T19:49:55.234654Z"
+      },
+      {
+        "id": "imp_50b3feef",
+        "event_id": "evt_finance_20240425_010_9b30ead3",
+        "outcome_event_id": "evt_c6c29717a5fb",
+        "question_id": "v3_googl_revenue_growth_acceleration_2024_03_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.85,
+        "confidence": 0.9,
+        "reasoning": "The substantial 28% growth in Google Cloud revenue was a major contributor to Alphabet's overall financial success, directly supporting the revenue growth target.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2024_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:49:55.248102Z",
+        "last_confirmed_at": "2026-07-24T19:49:55.248102Z"
+      },
+      {
+        "id": "imp_a5c559de",
+        "event_id": "evt_finance_20240425_011_cd36fb37",
+        "outcome_event_id": "evt_c6c29717a5fb",
+        "question_id": "v3_googl_revenue_growth_acceleration_2024_03_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "A 21% increase in YouTube advertising revenue demonstrates robust digital ad spending and successful monetization, a key driver of Alphabet's overall revenue performance.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2024_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:49:55.259335Z",
+        "last_confirmed_at": "2026-07-24T19:49:55.259335Z"
+      },
+      {
+        "id": "imp_48c7d1a1",
+        "event_id": "evt_finance_20240425_012_1a5ced52",
+        "outcome_event_id": "evt_c6c29717a5fb",
+        "question_id": "v3_googl_revenue_growth_acceleration_2024_03_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "The dividend announcement demonstrated financial strength and confidence, positively impacting investor sentiment and validating the company's growth trajectory, indirectly supporting the revenue growth.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2024_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:49:55.269366Z",
+        "last_confirmed_at": "2026-07-24T19:49:55.269366Z"
+      },
+      {
+        "id": "imp_5a5b26a5",
+        "event_id": "evt_finance_20240331_013_d7be6202",
+        "outcome_event_id": "evt_c6c29717a5fb",
+        "question_id": "v3_googl_revenue_growth_acceleration_2024_03_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Robust demand for digital advertising, particularly on YouTube, directly led to significant revenue increases, contributing to the overall revenue growth.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2024_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:49:55.280227Z",
+        "last_confirmed_at": "2026-07-24T19:49:55.280227Z"
+      },
+      {
+        "id": "imp_c8069ad4",
+        "event_id": "evt_tech_20240331_014_7b2e9fce",
+        "outcome_event_id": "evt_c6c29717a5fb",
+        "question_id": "v3_googl_revenue_growth_acceleration_2024_03_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.75,
+        "confidence": 0.85,
+        "reasoning": "Strategic investments in AI within Google Cloud triggered a significant revenue jump in that segment, directly contributing to Alphabet's overall revenue growth.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2024_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:49:55.290490Z",
+        "last_confirmed_at": "2026-07-24T19:49:55.290490Z"
+      },
+      {
+        "id": "imp_f206a735",
+        "event_id": "evt_finance_20240425_015_532a10d8",
+        "outcome_event_id": "evt_c6c29717a5fb",
+        "question_id": "v3_googl_revenue_growth_acceleration_2024_03_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.5,
+        "confidence": 0.6,
+        "reasoning": "The stock surge is an outcome of the positive earnings report, reflecting investor confidence in the company's performance, which is a consequence rather than a direct cause of the revenue growth itself.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2024_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:49:55.302928Z",
+        "last_confirmed_at": "2026-07-24T19:49:55.302928Z"
+      },
+      {
+        "id": "imp_88fe95b3",
+        "event_id": "evt_finance_20240331_016_b813d01c",
+        "outcome_event_id": "evt_c6c29717a5fb",
+        "question_id": "v3_googl_revenue_growth_acceleration_2024_03_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.4,
+        "confidence": 0.6,
+        "reasoning": "Effective cost management contributed to Alphabet's overall revenue growth by improving profitability, thus indirectly supporting the revenue growth target.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2024_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:49:55.313018Z",
+        "last_confirmed_at": "2026-07-24T19:49:55.313018Z"
+      }
+    ]
+  }
+}

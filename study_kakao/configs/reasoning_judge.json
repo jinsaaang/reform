@@ -1,0 +1,15 @@
+{
+  "schema": "hgf_reasoning_judge_v2",
+  "model": "google/gemini-3.1-flash-lite",
+  "blind_fields": ["method", "model", "ground_truth"],
+  "measures": [
+    "evidence_coverage",
+    "invalid_reasoning",
+    "invalid_among_correct"
+  ],
+  "aggregation": {
+    "evidence_coverage": "supported_required_evidence_items/all_required_evidence_items",
+    "invalid_reasoning": "invalid_forecasts/all_forecasts",
+    "invalid_among_correct": "invalid_correct_forecasts/all_correct_forecasts"
+  }
+}

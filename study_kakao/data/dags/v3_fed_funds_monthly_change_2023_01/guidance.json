@@ -1,0 +1,144 @@
+{
+  "schema_version": "hgf_blueprint_v1",
+  "question_id": "v3_fed_funds_monthly_change_2023_01",
+  "target_definition": {
+    "metric": "Monthly effective federal-funds-rate change",
+    "unit_or_option_space": "Monthly percentage-point change classification",
+    "forecast_horizon": "January 2023"
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Inflation trends, policy communication, and meeting timing form a policy-rate monitoring framework.",
+    "weaknesses": [
+      "The graph infers policy decisions from news coverage.",
+      "Several observations occur after the target month."
+    ]
+  },
+  "search_factors": [
+    {
+      "factor": "Underlying inflation trend",
+      "why_search": "Inflation persistence or easing shapes the pace of policy adjustment.",
+      "preferred_source_types": ["official inflation release", "central-bank research"],
+      "source_event_ids": ["evt_finance_20230101_013_df2ddf3d", "evt_finance_20230101_019_f5eeedd2"]
+    },
+    {
+      "factor": "Pace-of-hikes communication",
+      "why_search": "Communication identifies whether policymakers favor smaller adjustments.",
+      "preferred_source_types": ["central-bank communication", "policy reporting"],
+      "source_event_ids": ["evt_finance_20230105_003_7f72ea51"]
+    },
+    {
+      "factor": "Rate-market expectations",
+      "why_search": "Market pricing tests whether the communicated policy path is credible.",
+      "preferred_source_types": ["rate futures", "market commentary"],
+      "source_event_ids": ["evt_finance_20230105_015_36083d6f"]
+    },
+    {
+      "factor": "FOMC decision timing",
+      "why_search": "Decision and implementation dates determine which monthly observation contains an adjustment.",
+      "preferred_source_types": ["FOMC calendar", "FOMC statement"],
+      "source_event_ids": ["evt_finance_20230131_009_272817a8", "evt_finance_20230201_016_6f587bbf"]
+    },
+    {
+      "factor": "Inflation-control resolve",
+      "why_search": "Continued concern can preserve pressure for further policy tightening.",
+      "preferred_source_types": ["policymaker speech", "central-bank communication"],
+      "source_event_ids": ["evt_finance_20230207_012_2fbf5720"]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "inflation_easing",
+      "role": "baseline",
+      "factor": "Underlying inflation trend",
+      "mechanism": "Easing inflation can support a slower pace of policy adjustment.",
+      "expected_direction": "down",
+      "evidence_requirement": "Verify breadth and momentum with official inflation releases, rather than commentary alone.",
+      "contradiction_signal": "Official inflation releases show broad reacceleration.",
+      "historical_support": "weak",
+      "source_event_ids": ["evt_finance_20230101_019_f5eeedd2"],
+      "source_edge_ids": ["hyp_v3_fed_funds_monthly_change_2023_01_20260724_190720_017_e73ab1a2"]
+    },
+    {
+      "id": "policy_pace",
+      "role": "driver",
+      "factor": "Pace-of-hikes communication",
+      "mechanism": "Slower-hike communication can reduce expected near-term rate movement.",
+      "expected_direction": "down",
+      "evidence_requirement": "Confirm the communication in official policymaker statements and FOMC materials.",
+      "contradiction_signal": "Official communications signal larger or faster adjustments.",
+      "historical_support": "weak",
+      "source_event_ids": ["evt_finance_20230105_003_7f72ea51"],
+      "source_edge_ids": ["hyp_v3_fed_funds_monthly_change_2023_01_20260724_190602_004_5194e7b8"]
+    },
+    {
+      "id": "market_pricing",
+      "role": "mediator",
+      "factor": "Rate-market expectations",
+      "mechanism": "Rate-market pricing transmits policy communication into expected adjustment size.",
+      "expected_direction": "down",
+      "evidence_requirement": "Check dated futures-implied meeting outcomes against an independent market-data source.",
+      "contradiction_signal": "Independent futures data price a larger near-term move.",
+      "historical_support": "weak",
+      "source_event_ids": ["evt_finance_20230105_015_36083d6f"],
+      "source_edge_ids": ["hyp_v3_fed_funds_monthly_change_2023_01_20260724_190602_005_254c23df"]
+    },
+    {
+      "id": "inflation_pressure",
+      "role": "counterevidence",
+      "factor": "Inflation-control resolve",
+      "mechanism": "Persistent inflation can maintain pressure for continued tightening.",
+      "expected_direction": "up",
+      "evidence_requirement": "Check official inflation releases and contemporaneous policymaker statements for persistent tightening pressure.",
+      "contradiction_signal": "Official releases show broad moderation and policymakers acknowledge reduced pressure.",
+      "historical_support": "weak",
+      "source_event_ids": ["evt_finance_20230101_013_df2ddf3d"],
+      "source_edge_ids": ["hyp_v3_fed_funds_monthly_change_2023_01_20260724_190602_009_f97f13e5"]
+    },
+    {
+      "id": "target_bridge",
+      "role": "target_bridge",
+      "factor": "Decision implementation timing",
+      "mechanism": "Meeting decisions and implementation dates determine the monthly effective-rate change.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Map the official FOMC statement, implementation date, and published effective-rate observation to the month.",
+      "contradiction_signal": "The published effective rate changes before the scheduled implementation date.",
+      "historical_support": "medium",
+      "source_event_ids": ["evt_finance_20230131_009_272817a8", "evt_finance_20230201_010_69454dac", "evt_finance_20230201_016_6f587bbf"],
+      "source_edge_ids": ["hyp_v3_fed_funds_monthly_change_2023_01_20260724_190602_012_79a8e801"]
+    }
+  ],
+  "causal_paths": [
+    {
+      "checkpoint_ids": ["inflation_easing", "policy_pace", "market_pricing", "target_bridge"],
+      "generalized_mechanism": "Disinflation can support slower policy communication and smaller expected rate adjustments.",
+      "expected_direction": "down",
+      "applicability_conditions": ["Inflation moderation is credible.", "Policy communication is clear."],
+      "failure_conditions": ["Inflation reaccelerates.", "Officials prioritize faster tightening."]
+    },
+    {
+      "checkpoint_ids": ["inflation_pressure", "target_bridge"],
+      "generalized_mechanism": "Persistent inflation can increase pressure for a larger implemented policy adjustment.",
+      "expected_direction": "up",
+      "applicability_conditions": ["Inflation remains policy-relevant."],
+      "failure_conditions": ["Decision timing defers implementation beyond the observation month."]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "Meeting timing, rather than the expected adjustment size, dominates the monthly observation.",
+      "discriminating_evidence": "Compare the implementation date with the monthly rate-observation convention.",
+      "source_event_ids": ["evt_finance_20230131_009_272817a8", "evt_finance_20230201_010_69454dac"]
+    },
+    {
+      "hypothesis": "Persistent inflation overrides the case for a slower pace.",
+      "discriminating_evidence": "Compare current inflation data with policymaker tightening language.",
+      "source_event_ids": ["evt_finance_20230101_013_df2ddf3d"]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Is inflation moderation broad enough to affect policy pace?",
+    "Do futures agree with policymakers' stated adjustment pace?",
+    "Which effective dates fall inside the target monthly observation?"
+  ]
+}

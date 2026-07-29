@@ -1,0 +1,172 @@
+{
+  "schema_version": "1.0",
+  "actual_outcome_event_id": "node_6",
+  "graph": {
+    "nodes": [
+      {
+        "id": "node_3",
+        "label": "Competitive wheat supplies from Russia and Ukraine",
+        "event_type": "external_shock",
+        "occurred_date": "2023-01-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_e65ba487f6fa544b",
+          "ev_6781518cb4e0d9fa"
+        ]
+      },
+      {
+        "id": "node_2",
+        "label": "IGC wheat index declined 2.6% month over month",
+        "event_type": "indicator",
+        "occurred_date": "2023-01-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_e65ba487f6fa544b"
+        ]
+      },
+      {
+        "id": "node_4",
+        "label": "US hard-wheat futures declined during January",
+        "event_type": "indicator",
+        "occurred_date": "2023-01-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_dd12fd3c12538d10",
+          "ev_992933015f2dac77",
+          "ev_c348825480a677a0"
+        ]
+      },
+      {
+        "id": "node_5",
+        "label": "US soft-red-winter wheat futures rose slightly during January",
+        "event_type": "indicator",
+        "occurred_date": "2023-01-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_dd12fd3c12538d10",
+          "ev_992933015f2dac77",
+          "ev_c348825480a677a0"
+        ]
+      },
+      {
+        "id": "node_7",
+        "label": "January global wheat-market evidence was net downward",
+        "event_type": "milestone",
+        "occurred_date": "2023-01-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_e65ba487f6fa544b",
+          "ev_dd12fd3c12538d10"
+        ]
+      },
+      {
+        "id": "node_1",
+        "label": "Observed January global wheat monthly return was -1.099%",
+        "event_type": "indicator",
+        "occurred_date": "2023-01-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_711b8a9ff8a415bb"
+        ]
+      },
+      {
+        "id": "node_6",
+        "label": "Resolved outcome: No, return was below -0.259%",
+        "event_type": "outcome",
+        "occurred_date": "2023-02-15",
+        "is_outcome": true,
+        "is_actual_outcome": true,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_711b8a9ff8a415bb"
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_1",
+        "source": "node_3",
+        "target": "node_2",
+        "relationship": "contributes_to",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_e65ba487f6fa544b"
+        ],
+        "rationale": "The market report identifies competitive Russian and Ukrainian supplies as a factor in the January wheat-index decline."
+      },
+      {
+        "id": "edge_2",
+        "source": "node_2",
+        "target": "node_7",
+        "relationship": "evidence_for",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_e65ba487f6fa544b"
+        ],
+        "rationale": "The 2.6% IGC wheat-index decline is direct evidence of net downward market pressure."
+      },
+      {
+        "id": "edge_3",
+        "source": "node_4",
+        "target": "node_7",
+        "relationship": "evidence_for",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_dd12fd3c12538d10",
+          "ev_992933015f2dac77",
+          "ev_c348825480a677a0"
+        ],
+        "rationale": "Declining hard-wheat futures add a separate downward signal."
+      },
+      {
+        "id": "edge_4",
+        "source": "node_5",
+        "target": "node_7",
+        "relationship": "counterbalances",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_dd12fd3c12538d10",
+          "ev_992933015f2dac77",
+          "ev_c348825480a677a0"
+        ],
+        "rationale": "The slight soft-red-winter increase is retained as countervailing evidence within the otherwise downward month."
+      },
+      {
+        "id": "edge_5",
+        "source": "node_7",
+        "target": "node_1",
+        "relationship": "consistent_with",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_e65ba487f6fa544b",
+          "ev_dd12fd3c12538d10",
+          "ev_711b8a9ff8a415bb"
+        ],
+        "rationale": "The independently documented downward signals are consistent with the separately observed negative monthly return."
+      },
+      {
+        "id": "edge_6",
+        "source": "node_1",
+        "target": "node_6",
+        "relationship": "classified_as",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_711b8a9ff8a415bb"
+        ],
+        "rationale": "The observed -1.099% return is lower than the -0.259% yes threshold, so the question resolves no."
+      }
+    ]
+  }
+}

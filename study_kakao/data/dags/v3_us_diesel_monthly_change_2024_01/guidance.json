@@ -1,0 +1,139 @@
+{
+  "schema_version": "hgf_blueprint_v1",
+  "question_id": "v3_us_diesel_monthly_change_2024_01",
+  "target_definition": {
+    "metric": "U.S. retail diesel monthly price change",
+    "unit_or_option_space": "percent change; yes if at least -4.237 percent",
+    "forecast_horizon": "January 2024 monthly observation"
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "The strict graph contains crude-cost, macro-demand, inventory, supply, forecast, and geopolitical branches that can guide diesel monitoring.",
+    "weaknesses": [
+      "The graph duplicates several hypotheses and many edges have no attached evidence IDs.",
+      "The final mid-month-observation-to-positive-outcome edge is explicitly weak and directionally ambiguous.",
+      "Crude, gasoline, and broad fuel forecasts are imperfect proxies for the retail diesel target."
+    ]
+  },
+  "search_factors": [
+    {
+      "factor": "Current crude-cost direction",
+      "why_search": "Crude is a major diesel input cost.",
+      "preferred_source_types": ["spot crude data", "EIA petroleum status report"],
+      "source_event_ids": ["evt_finance_20240101_009_4d1fae36", "evt_finance_20240102_001_94cafa2e"]
+    },
+    {
+      "factor": "Distillate inventory and demand",
+      "why_search": "Product balances determine retail diesel pass-through.",
+      "preferred_source_types": ["EIA distillate inventories", "product supplied", "refinery utilization"],
+      "source_event_ids": ["evt_finance_20240109_006_53d066c6", "evt_finance_20240109_010_e74a4a65", "evt_finance_20240109_003_affa7fb7"]
+    },
+    {
+      "factor": "Macro and geopolitical offsets",
+      "why_search": "Demand weakness and supply risk can pull crude and diesel in opposite directions.",
+      "preferred_source_types": ["activity data", "producer output", "shipping disruptions"],
+      "source_event_ids": ["evt_finance_20240101_005_81efe1ba", "evt_politics_20240101_004_68de1f56"]
+    },
+    {
+      "factor": "Official diesel forecast and observation",
+      "why_search": "Direct diesel data are needed to bridge broad crude signals to the target.",
+      "preferred_source_types": ["EIA STEO", "FRED GASDESW", "weekly retail diesel release"],
+      "source_event_ids": ["evt_finance_20240119_002_52dd318e", "evt_finance_20240119_011_9bab3cb1"]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "crude_cost",
+      "role": "driver",
+      "factor": "Current crude-cost direction",
+      "mechanism": "A sustained crude decline can reduce diesel input-cost pressure.",
+      "expected_direction": "down",
+      "evidence_requirement": "Verify dated crude benchmarks and whether the move persists through the month.",
+      "contradiction_signal": "Crude rebounds or product cracks widen.",
+      "historical_support": "medium",
+      "source_event_ids": ["evt_finance_20240101_009_4d1fae36", "evt_finance_20240102_001_94cafa2e"],
+      "source_edge_ids": ["hyp_v3_us_diesel_monthly_change_2024_01_20260725_070322_021_620e11cc"]
+    },
+    {
+      "id": "product_balance",
+      "role": "mediator",
+      "factor": "Distillate inventory and demand",
+      "mechanism": "Healthy inventories and subdued demand can permit lower input costs to pass through.",
+      "expected_direction": "down",
+      "evidence_requirement": "Check weekly distillate stocks, refinery runs, product supplied, and regional spreads.",
+      "contradiction_signal": "Inventories fall or product demand accelerates.",
+      "historical_support": "weak",
+      "source_event_ids": ["evt_finance_20240109_006_53d066c6", "evt_finance_20240109_010_e74a4a65", "evt_finance_20240109_003_affa7fb7"],
+      "source_edge_ids": ["hyp_v3_us_diesel_monthly_change_2024_01_20260725_070107_009_d8d70a1f", "hyp_v3_us_diesel_monthly_change_2024_01_20260725_070107_010_fbef3a14"]
+    },
+    {
+      "id": "macro_geo_offset",
+      "role": "counterevidence",
+      "factor": "Macro and geopolitical offsets",
+      "mechanism": "Demand weakness supports lower prices, while supply disruption risk can reverse that direction.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Separate observed demand data from geopolitical narratives and verify actual supply disruption.",
+      "contradiction_signal": "Demand strengthens or physical supply is disrupted.",
+      "historical_support": "weak",
+      "source_event_ids": ["evt_finance_20240101_005_81efe1ba", "evt_politics_20240101_004_68de1f56"],
+      "source_edge_ids": ["hyp_v3_us_diesel_monthly_change_2024_01_20260725_070107_002_2d7d2218", "hyp_v3_us_diesel_monthly_change_2024_01_20260725_070107_003_0bfdd8d4"]
+    },
+    {
+      "id": "forecast_signal",
+      "role": "alternative",
+      "factor": "Official diesel forecast",
+      "mechanism": "An EIA forecast supplies directional context but is not a realized target-month observation.",
+      "expected_direction": "down",
+      "evidence_requirement": "Compare forecast assumptions with current weekly diesel, crude, and inventory data.",
+      "contradiction_signal": "Realized weekly diesel prices rise despite the annual forecast.",
+      "historical_support": "weak",
+      "source_event_ids": ["evt_finance_20240119_002_52dd318e", "evt_finance_20240119_007_2c869639"],
+      "source_edge_ids": ["hyp_v3_us_diesel_monthly_change_2024_01_20260725_070107_005_79c1c91c"]
+    },
+    {
+      "id": "diesel_bridge",
+      "role": "target_bridge",
+      "factor": "Direct diesel observation",
+      "mechanism": "Map crude and product-balance evidence to the monthly retail diesel change using direct weekly observations.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Compute the target from cutoff-compliant GASDESW observations and corroborate with weekly EIA releases.",
+      "contradiction_signal": "The direct diesel series disagrees with crude or forecast proxies.",
+      "historical_support": "weak",
+      "source_event_ids": ["evt_finance_20240102_001_94cafa2e", "evt_finance_20240119_011_9bab3cb1"],
+      "source_edge_ids": ["hyp_v3_us_diesel_monthly_change_2024_01_20260725_070322_022_cbde19e7", "hyp_v3_us_diesel_monthly_change_2024_01_20260725_070323_023_f8413f0d"]
+    }
+  ],
+  "causal_paths": [
+    {
+      "checkpoint_ids": ["crude_cost", "diesel_bridge"],
+      "generalized_mechanism": "Lower crude costs can reduce retail diesel prices when direct diesel data confirm pass-through.",
+      "expected_direction": "down",
+      "applicability_conditions": ["Crude weakness persists.", "Refinery and inventory conditions are not tight."],
+      "failure_conditions": ["Product-market tightness offsets lower crude."]
+    },
+    {
+      "checkpoint_ids": ["product_balance", "diesel_bridge"],
+      "generalized_mechanism": "Healthy inventories and subdued demand can reinforce downward diesel pressure.",
+      "expected_direction": "down",
+      "applicability_conditions": ["Inventory and demand data are contemporaneous."],
+      "failure_conditions": ["Stocks draw or demand accelerates."]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "Geopolitical supply risk offsets demand weakness and lower crude.",
+      "discriminating_evidence": "Verify physical production, shipping, and inventory disruptions.",
+      "source_event_ids": ["evt_politics_20240101_004_68de1f56", "evt_finance_20240101_005_81efe1ba"]
+    },
+    {
+      "hypothesis": "The annual EIA forecast fails to describe January's realized diesel path.",
+      "discriminating_evidence": "Compare forecast assumptions with weekly GASDESW and distillate data.",
+      "source_event_ids": ["evt_finance_20240119_002_52dd318e", "evt_finance_20240119_011_9bab3cb1"]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Are duplicate strict edges being double-counted as independent support?",
+    "Do direct diesel and distillate data corroborate crude-price direction?",
+    "Is a forecast being mistaken for a realized monthly observation?"
+  ]
+}

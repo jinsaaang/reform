@@ -1,0 +1,36 @@
+{
+  "schema_version": "hgf_blueprint_v1",
+  "question_id": "v3_amzn_revenue_growth_acceleration_2023_03_31",
+  "target_definition": {
+    "metric": "Amazon quarterly year-over-year revenue-growth acceleration",
+    "unit_or_option_space": "percentage-point acceleration classification",
+    "forecast_horizon": "fiscal quarter ending 2023-03-31"
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Segment evidence links cloud, retail, and services performance to consolidated revenue.",
+    "weaknesses": ["Most evidence was reported after the forecast cutoff.", "The graph uses analyst expectations as an indirect target proxy."]
+  },
+  "search_factors": [
+    {"factor": "Cloud customer spending behavior", "why_search": "It can constrain cloud growth and margins.", "preferred_source_types": ["issuer commentary", "earnings release"], "source_event_ids": ["evt_finance_20230331_009_58d5bc8b"]},
+    {"factor": "Cloud revenue momentum", "why_search": "Cloud performance can materially support consolidated revenue.", "preferred_source_types": ["segment results", "earnings release"], "source_event_ids": ["evt_finance_20230427_011_92bde5e7"]},
+    {"factor": "Online retail demand", "why_search": "Retail scale can drag consolidated growth when demand is flat.", "preferred_source_types": ["segment results", "company filing"], "source_event_ids": ["evt_finance_20230331_012_d2adfacf"]},
+    {"factor": "Advertising and seller-service momentum", "why_search": "Service growth can offset retail weakness.", "preferred_source_types": ["segment results", "company filing"], "source_event_ids": ["evt_finance_20230331_013_e2549cfa"]}
+  ],
+  "checkpoints": [
+    {"id": "cloud_caution", "role": "driver", "factor": "Cloud customer optimization", "mechanism": "Customer caution can slow cloud usage growth and compress margins.", "expected_direction": "down", "evidence_requirement": "Management commentary on customer spending and cloud margins.", "contradiction_signal": "Usage and margins accelerate despite optimization.", "historical_support": "strong", "source_event_ids": ["evt_finance_20230331_009_58d5bc8b", "evt_finance_20230427_015_3dd330f7"], "source_edge_ids": ["hyp_v3_amzn_revenue_growth_acceleration_2023_03_31_20260724_183326_009_5371c9aa"]},
+    {"id": "cloud_response", "role": "mediator", "factor": "Cloud cost-management support", "mechanism": "Cost-management support can retain workloads during customer optimization.", "expected_direction": "up", "evidence_requirement": "Evidence of customer-support actions and retained demand.", "contradiction_signal": "Support actions coincide with falling workloads.", "historical_support": "medium", "source_event_ids": ["evt_business_20230418_010_0993f6c4", "evt_finance_20230427_011_92bde5e7"], "source_edge_ids": ["hyp_v3_amzn_revenue_growth_acceleration_2023_03_31_20260724_183326_010_e85459c8"]},
+    {"id": "retail_demand", "role": "counterevidence", "factor": "Online retail sales", "mechanism": "Flat retail sales limit the contribution of the largest commerce segment.", "expected_direction": "down", "evidence_requirement": "Reported or leading retail sales growth.", "contradiction_signal": "Retail demand broadens and growth improves.", "historical_support": "strong", "source_event_ids": ["evt_finance_20230331_012_d2adfacf"], "source_edge_ids": ["hyp_v3_amzn_revenue_growth_acceleration_2023_03_31_20260724_183326_012_43c83041"]},
+    {"id": "services_mix", "role": "driver", "factor": "Advertising and seller services", "mechanism": "Faster service revenue can offset weak retail performance.", "expected_direction": "up", "evidence_requirement": "Segment growth across advertising and seller services.", "contradiction_signal": "Services decelerate alongside retail.", "historical_support": "strong", "source_event_ids": ["evt_finance_20230331_013_e2549cfa"], "source_edge_ids": ["hyp_v3_amzn_revenue_growth_acceleration_2023_03_31_20260724_183326_013_a38f86cf"]},
+    {"id": "consolidated_bridge", "role": "target_bridge", "factor": "Segment mix into consolidated revenue", "mechanism": "Cloud and services gains must outweigh retail drag to shift consolidated growth momentum.", "expected_direction": "mixed", "evidence_requirement": "Consolidated revenue with segment growth decomposition.", "contradiction_signal": "Large segments weaken together or offsets are immaterial.", "historical_support": "strong", "source_event_ids": ["evt_finance_20230427_014_e1c8bd4b", "evt_finance_20230427_011_92bde5e7", "evt_finance_20230331_013_e2549cfa"], "source_edge_ids": ["hyp_v3_amzn_revenue_growth_acceleration_2023_03_31_20260724_183326_011_001b13b0", "hyp_v3_amzn_revenue_growth_acceleration_2023_03_31_20260724_183326_013_a38f86cf"]}
+  ],
+  "causal_paths": [
+    {"checkpoint_ids": ["cloud_caution", "cloud_response", "consolidated_bridge"], "generalized_mechanism": "Optimization pressure can be mitigated when retained cloud demand supports consolidated revenue.", "expected_direction": "mixed", "applicability_conditions": ["Cloud is material to revenue.", "Customer optimization is observable."], "failure_conditions": ["Workloads decline sharply.", "Cloud contribution is too small."]},
+    {"checkpoint_ids": ["retail_demand", "services_mix", "consolidated_bridge"], "generalized_mechanism": "Service growth can offset retail weakness when their combined contribution is material.", "expected_direction": "mixed", "applicability_conditions": ["Service segments are expanding.", "Retail growth is weak."], "failure_conditions": ["Service growth decelerates.", "Retail drag dominates mix."]}
+  ],
+  "alternative_hypotheses": [
+    {"hypothesis": "Retail demand recovery becomes the principal driver of consolidated momentum.", "discriminating_evidence": "Retail growth improves while services remain stable.", "source_event_ids": ["evt_finance_20230331_012_d2adfacf"]},
+    {"hypothesis": "Cloud optimization causes broader cloud weakness despite support actions.", "discriminating_evidence": "Cloud growth and margins deteriorate together.", "source_event_ids": ["evt_finance_20230331_009_58d5bc8b", "evt_finance_20230427_015_3dd330f7"]}
+  ],
+  "forecast_audit_questions": ["Are segment results available before the forecast cutoff?", "Do cloud and services gains exceed the retail drag?", "Is the consolidated comparison based on sequential growth momentum?"] 
+}

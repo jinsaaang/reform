@@ -1,0 +1,146 @@
+{
+  "schema_version": "hgf_blueprint_v1",
+  "question_id": "v3_us_pce_price_monthly_change_2024_09",
+  "target_definition": {
+    "metric": "United States monthly PCE price change",
+    "unit_or_option_space": "percent monthly change",
+    "forecast_horizon": "target month"
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Labor conditions, income-supported demand, and services-versus-goods price pressure form a reusable framework for monthly PCE inflation.",
+    "weaknesses": [
+      "The direct PCE release and its downstream resolution link are excluded.",
+      "The available evidence is concentrated in a single retrospective release."
+    ]
+  },
+  "search_factors": [
+    {
+      "factor": "Labor-market conditions",
+      "why_search": "Labor conditions can support confidence, income, and consumption.",
+      "preferred_source_types": ["labor-market release"],
+      "source_event_ids": ["evt_finance_20240930_005_87937a66"]
+    },
+    {
+      "factor": "Income and consumer spending",
+      "why_search": "Income-supported spending is a demand channel for price pressure.",
+      "preferred_source_types": ["BEA income-and-outlays release"],
+      "source_event_ids": ["evt_finance_20240930_004_30cca10c"]
+    },
+    {
+      "factor": "Services price pressure",
+      "why_search": "Services can provide persistent upward pressure in the aggregate price index.",
+      "preferred_source_types": ["PCE component release"],
+      "source_event_ids": ["evt_finance_20240930_002_26b43022"]
+    },
+    {
+      "factor": "Goods and energy disinflation",
+      "why_search": "Goods and energy moves can offset services-led pressure.",
+      "preferred_source_types": ["PCE component release", "energy-price data"],
+      "source_event_ids": ["evt_finance_20240930_003_48498bd4", "evt_finance_20240930_006_4d74a67f"]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "labor",
+      "role": "baseline",
+      "factor": "Labor-market conditions",
+      "mechanism": "A resilient labor market can support household confidence and spending.",
+      "expected_direction": "up",
+      "evidence_requirement": "Labor indicators and household-demand data point in the same direction.",
+      "contradiction_signal": "Labor conditions weaken while spending slows.",
+      "historical_support": "medium",
+      "source_event_ids": ["evt_finance_20240930_005_87937a66", "evt_finance_20240930_007_cef1a61d"],
+      "source_edge_ids": ["hyp_v3_us_pce_price_monthly_change_2024_09_20260725_014638_004_59436981"]
+    },
+    {
+      "id": "demand",
+      "role": "driver",
+      "factor": "Income and consumer spending",
+      "mechanism": "Income-supported spending can increase demand-side price pressure.",
+      "expected_direction": "up",
+      "evidence_requirement": "Income and outlays remain mutually reinforcing.",
+      "contradiction_signal": "Income gains are saved rather than spent.",
+      "historical_support": "medium",
+      "source_event_ids": ["evt_finance_20240930_007_cef1a61d", "evt_finance_20240930_004_30cca10c"],
+      "source_edge_ids": ["hyp_v3_us_pce_price_monthly_change_2024_09_20260725_014638_005_1838b0ba"]
+    },
+    {
+      "id": "demand_pressure",
+      "role": "mediator",
+      "factor": "Demand-led inflation pressure",
+      "mechanism": "Persistent demand can amplify broad inflation pressure.",
+      "expected_direction": "up",
+      "evidence_requirement": "Spending strength aligns with broad price-pressure indicators.",
+      "contradiction_signal": "Demand remains firm but price pressure eases broadly.",
+      "historical_support": "medium",
+      "source_event_ids": ["evt_finance_20240930_004_30cca10c", "evt_finance_20240930_008_4262c352"],
+      "source_edge_ids": ["hyp_v3_us_pce_price_monthly_change_2024_09_20260725_014638_003_dd43a18e"]
+    },
+    {
+      "id": "services",
+      "role": "driver",
+      "factor": "Services price pressure",
+      "mechanism": "Services price pressure can sustain broader inflation when demand is resilient.",
+      "expected_direction": "up",
+      "evidence_requirement": "Services measures remain firmer than offsetting components.",
+      "contradiction_signal": "Services disinflation broadens.",
+      "historical_support": "strong",
+      "source_event_ids": ["evt_finance_20240930_002_26b43022", "evt_finance_20240930_008_4262c352"],
+      "source_edge_ids": ["hyp_v3_us_pce_price_monthly_change_2024_09_20260725_014638_007_e79376f2"]
+    },
+    {
+      "id": "goods_energy",
+      "role": "counterevidence",
+      "factor": "Goods and energy disinflation",
+      "mechanism": "Goods and energy declines can offset services-led aggregate price pressure.",
+      "expected_direction": "down",
+      "evidence_requirement": "Offsetting components are broad enough to matter for the aggregate.",
+      "contradiction_signal": "Goods and energy pressure reaccelerates.",
+      "historical_support": "medium",
+      "source_event_ids": ["evt_finance_20240930_003_48498bd4", "evt_finance_20240930_006_4d74a67f"],
+      "source_edge_ids": []
+    },
+    {
+      "id": "pce_bridge",
+      "role": "target_bridge",
+      "factor": "PCE component aggregation",
+      "mechanism": "Demand-sensitive services pressure and offsetting goods and energy moves combine in the monthly PCE price change.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Reconcile services, goods, energy, income, and outlays in the component data.",
+      "contradiction_signal": "Component movements do not reconcile with the aggregate index.",
+      "historical_support": "strong",
+      "source_event_ids": ["evt_finance_20240930_004_30cca10c", "evt_finance_20240930_002_26b43022", "evt_finance_20240930_003_48498bd4", "evt_finance_20240930_006_4d74a67f"],
+      "source_edge_ids": ["hyp_v3_us_pce_price_monthly_change_2024_09_20260725_014638_003_dd43a18e", "hyp_v3_us_pce_price_monthly_change_2024_09_20260725_014638_007_e79376f2"]
+    }
+  ],
+  "causal_paths": [
+    {
+      "checkpoint_ids": ["labor", "demand", "demand_pressure", "pce_bridge"],
+      "generalized_mechanism": "Resilient labor conditions can support income and spending, adding to aggregate price pressure.",
+      "expected_direction": "up",
+      "applicability_conditions": ["Household demand remains responsive to income."],
+      "failure_conditions": ["Households retrench or savings absorb income gains."]
+    },
+    {
+      "checkpoint_ids": ["services", "goods_energy", "pce_bridge"],
+      "generalized_mechanism": "Services pressure can be offset by disinflation in goods and energy when components are aggregated.",
+      "expected_direction": "mixed",
+      "applicability_conditions": ["Offsetting components have material index weights."],
+      "failure_conditions": ["Services and offsetting components move in the same direction."]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "Goods and energy disinflation outweighs resilient services demand.",
+      "discriminating_evidence": "Compare weighted component contributions with income and outlays growth.",
+      "source_event_ids": ["evt_finance_20240930_003_48498bd4", "evt_finance_20240930_006_4d74a67f"]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Do labor conditions, income, and outlays point to sustained demand?",
+    "Is services pressure broad enough to dominate the aggregate?",
+    "Are goods and energy declines large enough to offset services pressure?",
+    "Do component contributions reconcile with the monthly index?"
+  ]
+}

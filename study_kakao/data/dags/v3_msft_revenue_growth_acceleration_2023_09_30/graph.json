@@ -1,0 +1,195 @@
+{
+  "schema_version": "1.0",
+  "actual_outcome_event_id": "node_6",
+  "graph": {
+    "nodes": [
+      {
+        "id": "node_1",
+        "label": "Microsoft Intelligent Cloud, especially Azure, grew strongly",
+        "event_type": "indicator",
+        "occurred_date": "2023-09-30",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_8652c77e9e30de35",
+          "ev_07562e6a22dbee45"
+        ]
+      },
+      {
+        "id": "node_2",
+        "label": "AI integration was identified as a possible cloud-growth accelerator",
+        "event_type": "indicator",
+        "occurred_date": "2023-07-25",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_f8968ec31b8a5b0b",
+          "ev_2ff7604e5b33452d"
+        ]
+      },
+      {
+        "id": "node_3",
+        "label": "Microsoft Devices revenue declined",
+        "event_type": "indicator",
+        "occurred_date": "2023-09-30",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_8b2f0ac29c855dc1",
+          "ev_52b3d01786f26dd1"
+        ]
+      },
+      {
+        "id": "node_4",
+        "label": "Prior-quarter Microsoft YoY revenue growth was approximately 8.338%",
+        "event_type": "indicator",
+        "occurred_date": "2023-06-30",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_9e902f7d5b8d3463"
+        ]
+      },
+      {
+        "id": "node_7",
+        "label": "Cloud-led growth outweighed the Devices drag",
+        "event_type": "milestone",
+        "occurred_date": "2023-09-30",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_8652c77e9e30de35",
+          "ev_07562e6a22dbee45",
+          "ev_8b2f0ac29c855dc1",
+          "ev_52b3d01786f26dd1"
+        ]
+      },
+      {
+        "id": "node_5",
+        "label": "Target-quarter Microsoft YoY revenue growth was 12.760%",
+        "event_type": "indicator",
+        "occurred_date": "2023-09-30",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_9e902f7d5b8d3463",
+          "ev_8652c77e9e30de35"
+        ]
+      },
+      {
+        "id": "node_8",
+        "label": "Target-minus-prior YoY growth yielded 4.422-point acceleration",
+        "event_type": "milestone",
+        "occurred_date": "2023-09-30",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_9e902f7d5b8d3463"
+        ]
+      },
+      {
+        "id": "node_6",
+        "label": "Resolved outcome: Microsoft acceleration was above recent range",
+        "event_type": "outcome",
+        "occurred_date": "2023-10-24",
+        "is_outcome": true,
+        "is_actual_outcome": true,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_9e902f7d5b8d3463"
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_1",
+        "source": "node_2",
+        "target": "node_1",
+        "relationship": "possible_contributor_to",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_f8968ec31b8a5b0b",
+          "ev_2ff7604e5b33452d"
+        ],
+        "rationale": "The previews identify AI as a possible accelerator, but they do not isolate its causal contribution to the later quarter."
+      },
+      {
+        "id": "edge_2",
+        "source": "node_1",
+        "target": "node_7",
+        "relationship": "contributes_to",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_8652c77e9e30de35",
+          "ev_07562e6a22dbee45"
+        ],
+        "rationale": "The earnings coverage identifies Intelligent Cloud as a major positive component of the revenue mix."
+      },
+      {
+        "id": "edge_3",
+        "source": "node_3",
+        "target": "node_7",
+        "relationship": "counterbalances",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_8b2f0ac29c855dc1",
+          "ev_52b3d01786f26dd1"
+        ],
+        "rationale": "The Devices decline is a documented offset to the cloud-led strength."
+      },
+      {
+        "id": "edge_4",
+        "source": "node_7",
+        "target": "node_5",
+        "relationship": "contributes_to",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_8652c77e9e30de35",
+          "ev_07562e6a22dbee45",
+          "ev_9e902f7d5b8d3463"
+        ],
+        "rationale": "The cloud-led net segment mix is retained as an upstream explanation for the separately observed overall growth rate."
+      },
+      {
+        "id": "edge_5",
+        "source": "node_4",
+        "target": "node_8",
+        "relationship": "input_to",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_9e902f7d5b8d3463"
+        ],
+        "rationale": "The prior-quarter YoY rate is the comparison input to growth acceleration."
+      },
+      {
+        "id": "edge_6",
+        "source": "node_5",
+        "target": "node_8",
+        "relationship": "input_to",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_9e902f7d5b8d3463"
+        ],
+        "rationale": "The target-quarter YoY rate is the other input to the reported acceleration."
+      },
+      {
+        "id": "edge_7",
+        "source": "node_8",
+        "target": "node_6",
+        "relationship": "classified_as",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_9e902f7d5b8d3463"
+        ],
+        "rationale": "The reported 4.422-point acceleration is above the pre-registered 2.218-point upper boundary."
+      }
+    ]
+  }
+}

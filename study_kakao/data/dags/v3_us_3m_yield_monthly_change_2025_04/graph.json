@@ -1,0 +1,172 @@
+{
+  "schema_version": "1.0",
+  "actual_outcome_event_id": "node_7",
+  "graph": {
+    "nodes": [
+      {
+        "id": "node_1",
+        "label": "Markets awaited the U.S. tariff-policy rollout",
+        "event_type": "external_shock",
+        "occurred_date": "2025-04-01",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_e72285ddd98c1912",
+          "ev_14f798a39661360b"
+        ]
+      },
+      {
+        "id": "node_2",
+        "label": "Tariff policy raised trade-war and recession concerns",
+        "event_type": "indicator",
+        "occurred_date": "2025-04-03",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_e72285ddd98c1912",
+          "ev_f178e6e50f03c59a",
+          "ev_e6874b1133c307fc",
+          "ev_be14bb6613324283"
+        ]
+      },
+      {
+        "id": "node_3",
+        "label": "Recession concerns may have encouraged demand for government bonds",
+        "event_type": "indicator",
+        "occurred_date": "2025-04-04",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_e72285ddd98c1912",
+          "ev_e6874b1133c307fc"
+        ]
+      },
+      {
+        "id": "node_4",
+        "label": "Treasury yields faced candidate downward pressure during April",
+        "event_type": "indicator",
+        "occurred_date": "2025-04-15",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_e72285ddd98c1912",
+          "ev_d7facac87d3e8d40",
+          "ev_c290bcd73b7d1827"
+        ]
+      },
+      {
+        "id": "node_5",
+        "label": "Early-April economic data coincided with lower U.S. yields",
+        "event_type": "indicator",
+        "occurred_date": "2025-04-02",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_d7facac87d3e8d40"
+        ]
+      },
+      {
+        "id": "node_6",
+        "label": "April three-month Treasury yield change was -0.01 percentage points",
+        "event_type": "indicator",
+        "occurred_date": "2025-05-15",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_0d914024b8507a04"
+        ]
+      },
+      {
+        "id": "node_7",
+        "label": "Resolved outcome: yes, the change was at least -0.03 percentage points",
+        "event_type": "outcome",
+        "occurred_date": "2025-05-15",
+        "is_outcome": true,
+        "is_actual_outcome": true,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_0d914024b8507a04"
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_1",
+        "source": "node_1",
+        "target": "node_2",
+        "relationship": "contributes_to",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_e72285ddd98c1912",
+          "ev_14f798a39661360b",
+          "ev_f178e6e50f03c59a"
+        ],
+        "rationale": "The tariff rollout was one source of the documented trade-war and recession concerns."
+      },
+      {
+        "id": "edge_2",
+        "source": "node_2",
+        "target": "node_3",
+        "relationship": "supports",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_e72285ddd98c1912",
+          "ev_e6874b1133c307fc"
+        ],
+        "rationale": "A flight-to-safety response is plausible, but government-bond flows are not directly observed in the supplied evidence."
+      },
+      {
+        "id": "edge_3",
+        "source": "node_3",
+        "target": "node_4",
+        "relationship": "contributes_to",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_e72285ddd98c1912"
+        ],
+        "rationale": "Higher bond demand can lower yields, but this transmission is not directly identified for the three-month series."
+      },
+      {
+        "id": "edge_4",
+        "source": "node_5",
+        "target": "node_4",
+        "relationship": "supports",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_d7facac87d3e8d40",
+          "ev_c290bcd73b7d1827"
+        ],
+        "rationale": "The early-April decline provides observed directional evidence for downward yield pressure."
+      },
+      {
+        "id": "edge_5",
+        "source": "node_4",
+        "target": "node_6",
+        "relationship": "contributes_to",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_e72285ddd98c1912",
+          "ev_0d914024b8507a04"
+        ],
+        "rationale": "Broad Treasury pressure is a candidate explanation, but the three-month yield moved only -0.01 points and its drivers are not isolated."
+      },
+      {
+        "id": "edge_6",
+        "source": "node_6",
+        "target": "node_7",
+        "relationship": "maps_to",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_0d914024b8507a04"
+        ],
+        "rationale": "The -0.01-point change is at least the registered -0.03-point threshold and maps directly to yes."
+      }
+    ]
+  }
+}

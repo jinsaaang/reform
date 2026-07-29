@@ -1,0 +1,170 @@
+{
+  "schema_version": "1.0",
+  "actual_outcome_event_id": "node_2",
+  "graph": {
+    "nodes": [
+      {
+        "id": "node_4",
+        "label": "Corporate profitability and soft-landing expectations supported credit markets",
+        "event_type": "indicator",
+        "occurred_date": "2024-12-10",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_d5837654f35abb9f"
+        ]
+      },
+      {
+        "id": "node_3",
+        "label": "Investment-grade and broader corporate spreads were reported as tight in 2024",
+        "event_type": "indicator",
+        "occurred_date": "2024-12-10",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_750bcefefc1e54ee",
+          "ev_d5837654f35abb9f"
+        ]
+      },
+      {
+        "id": "node_5",
+        "label": "August market fears had previously widened corporate spreads",
+        "event_type": "indicator",
+        "occurred_date": "2024-08-05",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_dc91a6f73da25d37"
+        ]
+      },
+      {
+        "id": "node_6",
+        "label": "The 10-year Treasury yield trended higher from September into November",
+        "event_type": "indicator",
+        "occurred_date": "2024-11-01",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_4a2f98ad25062efd"
+        ]
+      },
+      {
+        "id": "node_7",
+        "label": "Treasury and corporate yield components jointly determine the Baa spread",
+        "event_type": "indicator",
+        "occurred_date": "2024-12-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_4a2f98ad25062efd",
+          "ev_0e61237ad71bce3d",
+          "ev_7a7b17ed0db79b26"
+        ]
+      },
+      {
+        "id": "node_1",
+        "label": "December Baa-minus-10-year-Treasury spread change was -0.02 percentage points",
+        "event_type": "indicator",
+        "occurred_date": "2024-12-31T23:59:59Z",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_1a1d2b06802ae8f9"
+        ]
+      },
+      {
+        "id": "node_2",
+        "label": "Resolved outcome: yes, the change was at least -0.04 percentage points",
+        "event_type": "outcome",
+        "occurred_date": "2024-12-31T23:59:59Z",
+        "is_outcome": true,
+        "is_actual_outcome": true,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_1a1d2b06802ae8f9"
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_1",
+        "source": "node_4",
+        "target": "node_3",
+        "relationship": "supports",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_d5837654f35abb9f",
+          "ev_750bcefefc1e54ee"
+        ],
+        "rationale": "The cited reporting connects profitability and a soft landing with strong credit performance and tight spreads."
+      },
+      {
+        "id": "edge_2",
+        "source": "node_3",
+        "target": "node_1",
+        "relationship": "contributes_to",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_750bcefefc1e54ee",
+          "ev_d5837654f35abb9f",
+          "ev_1a1d2b06802ae8f9"
+        ],
+        "rationale": "Broad investment-grade tightening is consistent with the small Baa spread narrowing, but the Baa-specific contribution is not isolated."
+      },
+      {
+        "id": "edge_3",
+        "source": "node_5",
+        "target": "node_1",
+        "relationship": "counteracts",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_dc91a6f73da25d37",
+          "ev_1a1d2b06802ae8f9"
+        ],
+        "rationale": "August widening is stale counterevidence and is not claimed to have persisted causally into December."
+      },
+      {
+        "id": "edge_4",
+        "source": "node_6",
+        "target": "node_7",
+        "relationship": "provides_input_to",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_4a2f98ad25062efd",
+          "ev_0e61237ad71bce3d"
+        ],
+        "rationale": "The Treasury yield is one arithmetic component of the spread, although the cited move predates December."
+      },
+      {
+        "id": "edge_5",
+        "source": "node_7",
+        "target": "node_1",
+        "relationship": "provides_measurement_framework_for",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_0e61237ad71bce3d",
+          "ev_7a7b17ed0db79b26",
+          "ev_1a1d2b06802ae8f9"
+        ],
+        "rationale": "The component framework explains the metric but cannot infer December direction without the corporate-yield component."
+      },
+      {
+        "id": "edge_6",
+        "source": "node_1",
+        "target": "node_2",
+        "relationship": "maps_to",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_1a1d2b06802ae8f9"
+        ],
+        "rationale": "The -0.02-point change is at least the registered -0.04-point threshold and maps directly to yes."
+      }
+    ]
+  }
+}

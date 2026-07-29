@@ -1,0 +1,1260 @@
+{
+  "question": {
+    "id": "v3_us_diesel_monthly_change_2023_07",
+    "question_text": "As of 2023-07-01, will the monthly retail diesel-price change for United States diesel price in 2023-07 be at least -2.633 percent?",
+    "question_type": "binary",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 3,
+    "resolution_date": "2023-07-31T23:59:59Z",
+    "estimated_start_time": "2023-07-01T00:00:00Z",
+    "ground_truth": true,
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [
+      "evt_899b0545bc9d",
+      "evt_165c71b7ec43"
+    ],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: United States diesel price\nTarget period: 2023-07\nFinancial area: energy_commodities / refined products\nRegion: US",
+    "resolution_criteria": "Use FRED series GASDESW. Compute the change from the previous monthly observation using mode 'pct'. Resolve yes if the change is at least -2.633 percent, otherwise no.",
+    "resolution_reasoning": "The snapshotted target change was 8.577 percent; it resolved to 'yes'.",
+    "options": [
+      "yes",
+      "no"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": "\n## Executive Summary\nThe monthly retail diesel price in the United States for July 2023 experienced a significant change, exceeding the -2.633 percent threshold, ultimately resulting in a positive outcome for the question. This was primarily driven by increasing crude oil prices due to production cuts by OPEC+ and strong global demand, particularly from China, which tightened global supply. Despite some indications of softening demand in certain sectors and concerns about economic slowdowns, the overall market sentiment, coupled with tight supply, pushed prices upwards. U.S. refinery utilization remained relatively high, but not enough to counteract the upward pressure from crude oil prices.\n\n## Timeline Of Key Events\n- **June 6, 2023:** OPEC+ announces plans to deepen output cuts from July, signaling tighter supply [art_finance_20230606_019_30fa2a99].\n- **July 5, 2023:** US crude oil gains on supply cuts, with focus shifting to holiday demand [art_finance_20230705_020_a3d29954].\n- **July 6, 2023:** Oil prices remain near flat as tighter supplies offset U.S. rate hike risk [art_finance_20230706_016_f9b31022].\n- **July 10, 2023:** Rystad Energy upgrades global oil demand forecast for 2023, signaling stronger-than-expected consumption [art_general_20230710_003_4505d15d].\n- **July 11, 2023:** OPEC releases its Monthly Oil Market Report for July 2023, likely confirming supply-side dynamics [art_finance_20230711_013_d90f6380].\n- **July 13, 2023:** IEA publishes its Oil Market Report for July 2023, providing further insights into global supply and demand [art_general_20230713_011_33ab8608].\n- **July 18, 2023:** US diesel markets face a summer demand crunch, indicating robust domestic consumption [art_finance_20230718_006_518d3477].\n- **July 25, 2023:** Department of Transportation releases its July Fuel Price Report [art_politics_20230725_005_d59b14d9]. GIS Reports online indicates weak demand defines oil market's behavior [art_finance_20230725_010_e8d9530c].\n- **July 26, 2023:** Federal Reserve issues FOMC statement, impacting general economic outlook and potentially fuel demand [art_finance_20230726_015_7ddca5bb].\n- **July 28, 2023:** EIA reports U.S. average retail price for diesel increased in July 2023 [art_general_20230728_009_90e6d0a9].\n\n## Causal Chain Analysis\nThe underlying cause of the diesel price change being at least -2.633 percent (i.e., a smaller decrease or an increase) was primarily the **tightening of global crude oil supply** combined with a **stronger-than-expected global demand for oil**. Early signals from **OPEC+ production cuts** in June, effective from July [art_finance_20230606_019_30fa2a99], immediately set a bullish tone for crude prices. This factor was further amplified by **robust US crude oil gains** due to supply cuts [art_finance_20230705_020_a3d29954]. Concurrently, **Rystad Energy upgraded its global oil demand forecast for 2023** [art_general_20230710_003_4505d15d], indicating that demand was outstripping previous expectations. This combination resulted in higher crude oil benchmarks, which directly translates to higher refined product costs, including diesel. The **US diesel markets facing a summer demand crunch** further contributed to domestic price pressure [art_finance_20230718_006_518d3477]. Ultimately, the **U.S. average retail price for diesel increased in July 2023** [art_general_20230728_009_90e6d0a9], which was a change greater than -2.633 percent, validating the 'True' outcome.\n\n## Countervailing Factors\nSome factors pushed against an increase in diesel prices. Concerns about **U.S. rate hike risk** tempered oil price gains initially [art_finance_20230706_016_f9b31022]. Additionally, some analysis pointed to **weak demand defining the oil market's behavior** [art_finance_20230725_010_e8d9530c], suggesting a slowdown, and the **Federal Reserve's FOMC statement** also implied potential economic cool-downs [art_finance_20230726_015_7ddca5bb]. However, these concerns were ultimately outweighed by the more dominant forces of concerted supply cuts from OPEC+ and a robust global demand outlook as evidenced by the upgraded forecasts and actual market behavior.\n\n## Event Candidate Inventory\n- E1: **OPEC+ Deepens Output Cuts:** OPEC+ announced in June its plan to deepen oil production cuts starting July. This directly reduced global crude supply. Date: 2023-06-06 (effective July). Why it matters: directly impacted supply, leading to higher crude prices. Source article IDs: [art_finance_20230606_019_30fa2a99].\n- E2: **Upgraded Global Oil Demand Forecast:** Rystad Energy revised its 2023 global oil demand forecast upwards. Date: 2023-07-10. Why it matters: Indicated stronger-than-expected demand, putting upward pressure on prices. Source article IDs: [art_general_20230710_003_4505d15d].\n- E3: **US Diesel Market Demand Crunch:** Reports indicated that US diesel markets faced a summer demand crunch. Date: 2023-07-18. Why it matters: Signified strong domestic demand for diesel, contributing to local price increases. Source article IDs: [art_finance_20230718_006_518d3477].\n- E4: **EIA Reports Diesel Price Increase:** The U.S. Energy Information Administration confirmed an increase in average retail diesel prices for July. Date: 2023-07-28. Why it matters: Direct confirmation of the outcome. Source article IDs: [art_general_20230728_009_90e6d0a9].\n- E5: **Federal Reserve FOMC Statement:** The Federal Reserve issued its FOMC statement, influencing economic expectations. Date: 2023-07-26. Why it matters: Could have signaled economic slowdown, potentially dampening demand, but ultimately outweighed by supply/demand fundamentals. Source article IDs: [art_finance_20230726_015_7ddca5bb].\n\n## Evidence Mapping Table\n| Claim/Event | Article IDs | Date Support | Confidence (0-1) | Notes |\n|---|---|---|---|---|\n| OPEC+ Deepens Output Cuts | [art_finance_20230606_019_30fa2a99] | June 6, 2023 | 0.9 | Policy decision with direct market impact from July. |\n| US Crude Oil Gains | [art_finance_20230705_020_a3d29954] | July 5, 2023 | 0.8 | Indicates immediate market reaction to supply news. |\n| Global Oil Demand Forecast Upgraded | [art_general_20230710_003_4505d15d] | July 10, 2023 | 0.9 | Strong indicator of increasing consumption. |\n| US Diesel Market Demand Crunch | [art_finance_20230718_006_518d3477] | July 18, 2023 | 0.8 | Shows domestic demand pressure. |\n| EIA Reports Diesel Price Increase | [art_general_20230728_009_90e6d0a9] | July 28, 2023 | 1.0 | Direct evidence of the outcome. |\n| Oil near flat on rate hike risk | [art_finance_20230706_016_f9b31022] | July 6, 2023 | 0.7 | Countervailing factor that ultimately did not prevent increase. |\n| Weak demand defines oil behavior | [art_finance_20230725_010_e8d9530c] | July 25, 2023 | 0.6 | Countervailing factor, but global demand stronger. |\n| Federal Reserve FOMC Statement | [art_finance_20230726_015_7ddca5bb] | July 26, 2023 | 0.7 | Indirect influence through broader economic sentiment. |\n\n## Uncertainties And Alternative Paths\nOne uncertainty lies in the precise quantitative impact of each factor on the -2.633% threshold. While the qualitative impact of supply cuts and demand increases is clear, the exact degree to which each contributed to the final percentage change is not fully detailed in the articles. An alternative causal path could have been a sharper economic downturn than anticipated, or a significant, unexpected increase in refinery output, which could have driven prices down, potentially leading to a monthly change below -2.633 percent. However, the available evidence suggests these did not materialize strongly enough to avert the observed outcome. Another alternative could have been a geopolitical event that disrupted supply even further, causing a much steeper price increase; conversely, a rapid resolution of geopolitical tensions could have softened prices.\n",
+    "graph_built": true,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.201653Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "us_diesel_monthly_change",
+        "event_cluster_id": "refined_fuels_2023-07",
+        "category": "energy_commodities",
+        "original_domain": "energy_commodities",
+        "subdomain": "refined products",
+        "entity": "United States diesel price",
+        "region": "US",
+        "target_metric": "monthly retail diesel-price change",
+        "target_period": "2023-07",
+        "forecast_cutoff": "2023-07-01T00:00:00+00:00",
+        "forecast_date_options": [
+          "2023-07-01"
+        ],
+        "resolution_available_at": "2023-07-31T23:59:59+00:00",
+        "horizon_days": 30,
+        "source_type": "fred_series_snapshot",
+        "source_series_id": "GASDESW",
+        "source_homepage": "https://fred.stlouisfed.org/series/GASDESW",
+        "comparison_rule": "target change >= median of 4 prior observed changes",
+        "comparison_threshold": -2.633319,
+        "comparison_thresholds": null,
+        "change_unit": "percent",
+        "threshold_observation_dates": [
+          "2023-02-27",
+          "2023-03-27",
+          "2023-04-24",
+          "2023-05-29",
+          "2023-06-26"
+        ],
+        "split": "memory",
+        "family_position": 2,
+        "family_size": 8,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "yes",
+        "resolved_class": "yes",
+        "resolution_value": 4.127,
+        "target_change": 8.57669034,
+        "source_observation_date": "2023-07-31",
+        "resolution_document": {
+          "publisher": "Federal Reserve Bank of St. Louis (FRED)",
+          "title": "US Diesel Sales Price",
+          "url": "https://fred.stlouisfed.org/series/GASDESW"
+        },
+        "source_download_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=GASDESW&cosd=2019-01-01&coed=2026-06-30",
+        "source_sha256": "92e0448d6bf8b5229df7f620bbcb35c72b66dd3ad125dd811ba1a7871384d2e2",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_899b0545bc9d",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 35,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_20220419_002_1341f121",
+        "title": "Gasoline and Diesel Fuel Highest Retail Prices Since 2014 - Includes Latest National Prices - The Auto Channel",
+        "url": "https://www.theautochannel.com/news/2022/04/19/1132133-gasoline-and-diesel-fuel-prices-expected-to-be-highest-since.html",
+        "source": "theautochannel.com",
+        "published_date": "2022-04-19T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20200428_005_bdeb4ae2",
+        "title": "EIA Gasoline and Diesel Retail Prices Update, April 28, 2020 - Fuels Market News",
+        "url": "https://fuelsmarketnews.com/eia-gasoline-and-diesel-retail-prices-update-april-28-2020",
+        "source": "fuelsmarketnews.com",
+        "published_date": "2020-04-28T22:12:25-05:00"
+      },
+      {
+        "id": "art_finance_20190709_007_1ce0ea9d",
+        "title": "EIA Gasoline and Diesel Retail Prices Update, July 9, 2019 - Fuels Market News",
+        "url": "https://fuelsmarketnews.com/eia-gasoline-and-diesel-retail-prices-update-july-9-2019",
+        "source": "fuelsmarketnews.com",
+        "published_date": "2019-07-09T21:49:44-05:00"
+      },
+      {
+        "id": "art_finance_20230417_008_388229b9",
+        "title": "Diesel Prices Mostly 'Stable' in Mid April 2023 - Work Truck Online",
+        "url": "https://www.worktruckonline.com/thursday-enews/10197080/work-truck-04-20-2023",
+        "source": "worktruckonline.com",
+        "published_date": "2023-04-17T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20220418_009_5a1937d5",
+        "title": "EIA: Summer US gasoline, diesel prices to be highest since 2014 - Biomass Magazine",
+        "url": "https://biodieselmagazine.com/articles/eia-summer-us-gasoline-diesel-prices-to-be-highest-since-2014-2518092",
+        "source": "biodieselmagazine.com",
+        "published_date": "2022-04-18T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20200825_003_d1c58066",
+        "title": "EIA Gasoline and Diesel Retail Prices Update, Aug. 25, 2020 - Fuels Market News",
+        "url": "https://fuelsmarketnews.com/eia-gasoline-and-diesel-retail-prices-update-aug-25-2020",
+        "source": "fuelsmarketnews.com",
+        "published_date": "2020-08-25T22:24:21-05:00"
+      },
+      {
+        "id": "art_finance_20230223_004_8f9a77d3",
+        "title": "State tax rates for retail gasoline and diesel increased in 13 states in 2023 - U.S. Energy Information Administration (EIA) (.gov)",
+        "url": "https://www.eia.gov/todayinenergy/detail.php?id=55619",
+        "source": "eia.gov",
+        "published_date": "2023-02-23T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_19930430_006_fcf30594",
+        "title": "US Retail Gas Price (Monthly) - United States - Historical … - YCharts",
+        "url": "https://ycharts.com/indicators/us_retail_price_of_gasoline_monthly",
+        "source": "ycharts.com",
+        "published_date": "1993-04-30T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230725_010_e8d9530c",
+        "title": "Weak demand defines oil market’s behavior - GIS Reports",
+        "url": "https://www.gisreportsonline.com/r/oil-market",
+        "source": "gisreportsonline.com",
+        "published_date": "2023-07-25T08:00:00+02:00"
+      },
+      {
+        "id": "art_finance_20221201_012_7bd66843",
+        "title": "Governor Newsom Convenes Special Session to Hold Oil Industry Accountable for Price Gouging, Keep Money in Californians’ Pockets | Governor of California - California State Portal | CA.gov",
+        "url": "https://www.gov.ca.gov/2022/11/30/governor-newsom-convenes-special-session-to-hold-oil-industry-accountable-for-price-gouging-keep-money-in-californians-pockets",
+        "source": "gov.ca.gov",
+        "published_date": "2022-12-01T01:15:10+00:00"
+      },
+      {
+        "id": "art_finance_20230721_013_48600ac5",
+        "title": "Oil rallies for fourth straight week on tightening supply - Reuters",
+        "url": "https://www.bna.bh/en/Oilralliesforfourthstraightweekontighteningsupply.aspx?cms=q8FmFJgiscL2fwIzON1+DpdtfF2W%2Fl3qyLWe32BGIuw%3D",
+        "source": "bna.bh",
+        "published_date": "2023-07-21T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230502_014_a94a3785",
+        "title": "Platts Dated Brent Now Reflects WTI Midland Crude Oil, Completes Inclusion in Brent Complex - S&P Global",
+        "url": "https://press.spglobal.com/2023-05-02-Platts-Dated-Brent-Now-Reflects-WTI-Midland-Crude-Oil,-Completes-Inclusion-in-Brent-Complex",
+        "source": "press.spglobal.com",
+        "published_date": "2023-05-02T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20220615_011_382fc321",
+        "title": "Oil Market Report - June 2022 – Analysis - IEA – International Energy Agency",
+        "url": "https://www.iea.org/reports/oil-market-report-june-2022",
+        "source": "iea.org",
+        "published_date": "2022-06-15T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20200424_015_092baf65",
+        "title": "Historic Oil Price Burns Hole in State Budgets - Tax Foundation",
+        "url": "https://taxfoundation.org/blog/historic-oil-price-burns-hole-in-state-budgets",
+        "source": "taxfoundation.org",
+        "published_date": "2020-04-24T18:43:07+00:00"
+      },
+      {
+        "id": "art_finance_20230706_016_f9b31022",
+        "title": "Oil near flat as tighter supplies offset U.S. rate hike risk - Reuters",
+        "url": "https://ca.finance.yahoo.com/news/oil-prices-steady-china-demand-013653735.html",
+        "source": "ca.finance.yahoo.com",
+        "published_date": "2023-07-06T01:36:53+00:00"
+      },
+      {
+        "id": "art_finance_20220713_017_bda06fc8",
+        "title": "Oil Market Report - July 2022 – Analysis - IEA – International Energy Agency",
+        "url": "https://www.iea.org/reports/oil-market-report-july-2022",
+        "source": "iea.org",
+        "published_date": "2022-07-13T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230727_018_9214739c",
+        "title": "Oil & Gas Q2 2023 Insights: A Shifting Landscape - Sia Partners",
+        "url": "https://www.sia-partners.com/en/insights/publications/oil-gas-q2-2023-insights-a-shifting-landscape",
+        "source": "sia-partners.com",
+        "published_date": "2023-07-27T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230606_019_30fa2a99",
+        "title": "Oil rises on Saudi plan to deepen output cuts from July - Al Jazeera",
+        "url": "https://www.oilmonster.com/article/oil-rises-on-saudi-plan-to-deepen-output-cuts-from-july/4585",
+        "source": "oilmonster.com",
+        "published_date": "2023-06-06T00:24:08+00:00"
+      },
+      {
+        "id": "art_finance_20230705_020_a3d29954",
+        "title": "US crude oil gains on supply cuts, focus shifts to holiday demand - Reuters",
+        "url": "https://www.investing.com/news/commodities-news/oil-prices-ease-as-worries-over-global-economic-slowdown-weigh-3119406",
+        "source": "investing.com",
+        "published_date": "2023-07-05T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230420_021_0e2e7b66",
+        "title": "State of Fuel Industry: Gasoline & Diesel - Work Truck Online",
+        "url": "https://www.worktruckonline.com/articles/state-of-fuel-industry-gasoline-diesel",
+        "source": "worktruckonline.com",
+        "published_date": "2023-04-20T11:21:46+00:00"
+      },
+      {
+        "id": "art_finance_20230611_022_2f1d6830",
+        "title": "World Natural Gas: The Convenient, Timely Fossil Fuel - Egypt Oil & Gas",
+        "url": "https://egyptoil-gas.com/features/world-natural-gas-the-convenient-timely-fossil-fuel",
+        "source": "egyptoil-gas.com",
+        "published_date": "2023-06-11T12:31:57+03:00"
+      },
+      {
+        "id": "art_general_20230726_002_9c89d625",
+        "title": "Weekly Petroleum Status Report: July 2023",
+        "url": "https://www.eia.gov/petroleum/supply/weekly/pdf/wpsr.pdf",
+        "source": "U.S. Energy Information Administration (EIA)",
+        "published_date": "2023-07-26T00:00:00+00:00"
+      },
+      {
+        "id": "art_general_20230710_003_4505d15d",
+        "title": "Global Oil Demand Forecast Upgraded for 2023",
+        "url": "https://www.rystadenergy.com/newsevents/news/press-releases/global-oil-demand-forecast-upgraded-for-2023",
+        "source": "Rystad Energy",
+        "published_date": "2023-07-10T00:00:00+00:00"
+      },
+      {
+        "id": "art_general_20230731_004_2b339413",
+        "title": "U.S. No 2 Diesel Retail Price by Month",
+        "url": "https://www.eia.gov/dnav/pet/hist/LeafHandler.ashx?n=PET&s=EMD_EPPMR_PTA_NUS_DPG&f=M",
+        "source": "U.S. Energy Information Administration (EIA)",
+        "published_date": "2023-07-31T00:00:00+00:00"
+      },
+      {
+        "id": "art_politics_20230725_005_d59b14d9",
+        "title": "DOT Releases July Fuel Price Report",
+        "url": "https://www.transportation.gov/news/press-releases/2023/07/25/dot-releases-july-fuel-price-report",
+        "source": "U.S. Department of Transportation (DOT)",
+        "published_date": "2023-07-25T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230718_006_518d3477",
+        "title": "US diesel markets face summer demand crunch",
+        "url": "https://www.icis.com/explore/resources/news/2023/07/18/10915993/us-diesel-markets-face-summer-demand-crunch",
+        "source": "ICIS",
+        "published_date": "2023-07-18T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230712_007_24daf53a",
+        "title": "Argus US diesel outlook: Strong demand, tight supply",
+        "url": "https://www.argusmedia.com/en/newsroom/press-releases/2023/july/12/argus-us-diesel-outlook-strong-demand-tight-supply",
+        "source": "Argus Media",
+        "published_date": "2023-07-12T00:00:00+00:00"
+      },
+      {
+        "id": "art_general_20230727_008_7f89e086",
+        "title": "Global Coal Demand Hits New High in 2022 but Set to Fall in 2023 - IEA",
+        "url": "https://www.mining.com/web/global-coal-demand-hits-new-high-in-2022-but-set-to-fall-iea",
+        "source": "Mining.com",
+        "published_date": "2023-07-27T00:00:00+00:00"
+      },
+      {
+        "id": "art_general_20230728_009_90e6d0a9",
+        "title": "U.S. average retail price for diesel increased in July 2023",
+        "url": "https://www.eia.gov/todayinenergy/detail.php?id=56930",
+        "source": "U.S. Energy Information Administration (EIA)",
+        "published_date": "2023-07-28T00:00:00+00:00"
+      },
+      {
+        "id": "art_general_20230721_010_3828eec5",
+        "title": "API Statement on July Oil Market Trends",
+        "url": "https://www.api.org/news-and-media/news/2023/07/21/api-statement-on-july-oil-market-trends",
+        "source": "American Petroleum Institute (API)",
+        "published_date": "2023-07-21T00:00:00+00:00"
+      },
+      {
+        "id": "art_general_20230713_011_33ab8608",
+        "title": "Oil Market Report - July 2023",
+        "url": "https://www.iea.org/reports/oil-market-report-july-2023",
+        "source": "International Energy Agency (IEA)",
+        "published_date": "2023-07-13T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20180405_012_427b5f61",
+        "title": "Oil prices rise as Russia, Saudi Arabia cut output",
+        "url": "https://www.cnbc.com/2023/07/19/oil-prices-rise-as-russia-saudi-arabia-cut-output.html",
+        "source": "CNBC",
+        "published_date": "2018-04-05T15:43:23+00:00"
+      },
+      {
+        "id": "art_finance_20230711_013_d90f6380",
+        "title": "OPEC Monthly Oil Market Report - July 2023",
+        "url": "https://www.opec.org/opec_web/en/publications/338.htm",
+        "source": "OPEC",
+        "published_date": "2023-07-11T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230731_014_3c115bdf",
+        "title": "Average retail price for diesel in the U.S. in July 2023",
+        "url": "https://www.statista.com/statistics/204859/diesel-prices-in-the-us",
+        "source": "Statista",
+        "published_date": "2023-07-31T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230726_015_7ddca5bb",
+        "title": "Federal Reserve issues FOMC statement",
+        "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20230726a.htm",
+        "source": "Federal Reserve",
+        "published_date": "2023-07-26T00:00:00+00:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_899b0545bc9d",
+      "events_count": 13,
+      "hypotheses_count": 12
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 6,
+      "avg_depth": 3.0,
+      "quality_score": 0.88,
+      "depth_score": 1.0,
+      "confidence_score": 0.81,
+      "strength_score": 0.67,
+      "evidence_score": 1.0,
+      "event_count": 13,
+      "hypothesis_count": 12
+    },
+    "nodes": [
+      {
+        "id": "evt_165c71b7ec43",
+        "title": "No - As of 2023-07-01, will the monthly retail diesel-p",
+        "description": "Negative resolution: As of 2023-07-01, will the monthly retail diesel-price change for United States diesel price in 2023-07 be at least -2.633 percent?",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-07-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_us_diesel_monthly_change_2023_07",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "negative_resolution",
+        "outcome_option_index": null,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:36:10.783091Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_899b0545bc9d",
+        "title": "Yes - As of 2023-07-01, will the monthly retail diesel-p",
+        "description": "Positive resolution: As of 2023-07-01, will the monthly retail diesel-price change for United States diesel price in 2023-07 be at least -2.633 percent?",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-07-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_us_diesel_monthly_change_2023_07",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "positive_resolution",
+        "outcome_option_index": null,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:36:10.783075Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230606_001_c45c5476",
+        "title": "OPEC+ Announces Deeper Output Cuts",
+        "description": "OPEC+ announced plans to deepen oil production cuts starting July, signaling tighter supply.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-06-06T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230606_019_30fa2a99"
+        ],
+        "extracted_for_question_id": "v3_us_diesel_monthly_change_2023_07",
+        "source_article_id": "art_finance_20230606_019_30fa2a99",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_diesel_monthly_change_2023_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:55:26.054456Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230705_002_5c2a9be3",
+        "title": "US Crude Oil Gains on Supply Cuts",
+        "description": "US crude oil gained due to supply cuts, with focus shifting to holiday demand.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-07-05T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230705_020_a3d29954"
+        ],
+        "extracted_for_question_id": "v3_us_diesel_monthly_change_2023_07",
+        "source_article_id": "art_finance_20230705_020_a3d29954",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_diesel_monthly_change_2023_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:55:26.091903Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230705_009_9dc0115b",
+        "title": "Global Crude Oil Supply Tightens",
+        "description": "Global crude oil supply tightens due to OPEC+ production cuts, as observed in market gains.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-07-05T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230705_020_a3d29954"
+        ],
+        "extracted_for_question_id": "v3_us_diesel_monthly_change_2023_07",
+        "source_article_id": "art_finance_20230705_020_a3d29954",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_diesel_monthly_change_2023_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:55:26.326891Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230705_010_22384517",
+        "title": "Strong Global Demand for Oil Observed",
+        "description": "Strong global demand for oil is observed, contributing to market dynamics.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-07-05T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230705_020_a3d29954"
+        ],
+        "extracted_for_question_id": "v3_us_diesel_monthly_change_2023_07",
+        "source_article_id": "art_finance_20230705_020_a3d29954",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_diesel_monthly_change_2023_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:55:26.363157Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230705_011_b07ccb45",
+        "title": "Higher Crude Oil Benchmarks Set",
+        "description": "Increased crude oil prices set higher benchmarks, directly impacting refined product costs.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-07-05T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230705_020_a3d29954"
+        ],
+        "extracted_for_question_id": "v3_us_diesel_monthly_change_2023_07",
+        "source_article_id": "art_finance_20230705_020_a3d29954",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_diesel_monthly_change_2023_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:55:26.399197Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230705_012_e6ef8104",
+        "title": "Increased Refined Product Costs",
+        "description": "Higher crude oil benchmarks led to increased costs for refined products, including diesel.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-07-05T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230705_020_a3d29954",
+          "art_general_20230728_009_90e6d0a9"
+        ],
+        "extracted_for_question_id": "v3_us_diesel_monthly_change_2023_07",
+        "source_article_id": "art_finance_20230705_020_a3d29954",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_diesel_monthly_change_2023_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:55:26.435686Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230706_007_c2a10e51",
+        "title": "Oil Prices Near Flat on US Rate Hike Risk",
+        "description": "Oil prices remained near flat as tighter supplies offset U.S. rate hike risk.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-07-06T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230706_016_f9b31022"
+        ],
+        "extracted_for_question_id": "v3_us_diesel_monthly_change_2023_07",
+        "source_article_id": "art_finance_20230706_016_f9b31022",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_diesel_monthly_change_2023_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:55:26.253816Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230718_004_2b5ea801",
+        "title": "US Diesel Markets Face Summer Demand Crunch",
+        "description": "Reports indicated that US diesel markets faced a summer demand crunch, indicating robust domestic consumption.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-07-18T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230718_006_518d3477"
+        ],
+        "extracted_for_question_id": "v3_us_diesel_monthly_change_2023_07",
+        "source_article_id": "art_finance_20230718_006_518d3477",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_diesel_monthly_change_2023_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:55:26.153793Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230725_008_8ee17918",
+        "title": "GIS Reports Indicate Weak Demand in Oil Market",
+        "description": "GIS Reports online indicated weak demand defines oil market's behavior.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-07-25T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230725_010_e8d9530c"
+        ],
+        "extracted_for_question_id": "v3_us_diesel_monthly_change_2023_07",
+        "source_article_id": "art_finance_20230725_010_e8d9530c",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_diesel_monthly_change_2023_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:55:26.290249Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230726_006_22e1c6d4",
+        "title": "Federal Reserve Issues FOMC Statement",
+        "description": "The Federal Reserve issued its FOMC statement, influencing economic expectations and potentially fuel demand.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-07-26T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230726_015_7ddca5bb"
+        ],
+        "extracted_for_question_id": "v3_us_diesel_monthly_change_2023_07",
+        "source_article_id": "art_finance_20230726_015_7ddca5bb",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_diesel_monthly_change_2023_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:55:26.215557Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_general_20230710_003_c32e7c3b",
+        "title": "Rystad Energy Upgrades Global Oil Demand Forecast",
+        "description": "Rystad Energy upgraded its global oil demand forecast for 2023, signaling stronger-than-expected consumption.",
+        "event_type": "indicator",
+        "domain": "general",
+        "tags": [],
+        "occurred_date": "2023-07-10T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_general_20230710_003_4505d15d"
+        ],
+        "extracted_for_question_id": "v3_us_diesel_monthly_change_2023_07",
+        "source_article_id": "art_general_20230710_003_4505d15d",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_diesel_monthly_change_2023_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:55:26.118263Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_general_20230728_005_b64b59f6",
+        "title": "EIA Reports US Average Retail Diesel Price Increase in July",
+        "description": "The U.S. Energy Information Administration confirmed an increase in average retail diesel prices for July 2023.",
+        "event_type": "indicator",
+        "domain": "general",
+        "tags": [],
+        "occurred_date": "2023-07-28T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_general_20230728_009_90e6d0a9"
+        ],
+        "extracted_for_question_id": "v3_us_diesel_monthly_change_2023_07",
+        "source_article_id": "art_general_20230728_009_90e6d0a9",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_diesel_monthly_change_2023_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:55:26.178896Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_001_3eb96d4c",
+        "source_event_id": "evt_finance_20230606_001_c45c5476",
+        "target_event_id": "evt_finance_20230705_009_9dc0115b",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "OPEC+ production cuts announced in June directly led to a tightening of global crude supply observed in July.",
+        "evidence_article_ids": [
+          "art_finance_20230606_019_30fa2a99",
+          "art_finance_20230705_020_a3d29954"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2023_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:55:26.470590Z",
+        "last_confirmed_at": "2026-07-25T06:55:26.470590Z"
+      },
+      {
+        "id": "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_002_c45cf4ca",
+        "source_event_id": "evt_finance_20230705_009_9dc0115b",
+        "target_event_id": "evt_finance_20230705_002_5c2a9be3",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Tight global supply directly contributes to gains in US crude oil prices.",
+        "evidence_article_ids": [
+          "art_finance_20230705_020_a3d29954"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2023_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:55:26.488764Z",
+        "last_confirmed_at": "2026-07-25T06:55:26.488764Z"
+      },
+      {
+        "id": "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_003_b8a5d9d8",
+        "source_event_id": "evt_finance_20230705_010_22384517",
+        "target_event_id": "evt_finance_20230705_002_5c2a9be3",
+        "relation_type": "causes",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Observed strong global demand, including holiday demand, contributes to gains in US crude oil prices.",
+        "evidence_article_ids": [
+          "art_finance_20230705_020_a3d29954"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2023_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:55:26.506079Z",
+        "last_confirmed_at": "2026-07-25T06:55:26.506079Z"
+      },
+      {
+        "id": "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_004_0310efbb",
+        "source_event_id": "evt_finance_20230705_002_5c2a9be3",
+        "target_event_id": "evt_finance_20230705_011_b07ccb45",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Gains in US crude oil directly lead to higher crude oil benchmarks.",
+        "evidence_article_ids": [
+          "art_finance_20230705_020_a3d29954"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2023_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:55:26.524859Z",
+        "last_confirmed_at": "2026-07-25T06:55:26.524859Z"
+      },
+      {
+        "id": "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_005_202b56fa",
+        "source_event_id": "evt_finance_20230705_011_b07ccb45",
+        "target_event_id": "evt_finance_20230705_012_e6ef8104",
+        "relation_type": "causes",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Higher crude oil benchmarks directly translate to increased costs for refined products.",
+        "evidence_article_ids": [
+          "art_finance_20230705_020_a3d29954",
+          "art_general_20230728_009_90e6d0a9"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2023_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:55:26.543453Z",
+        "last_confirmed_at": "2026-07-25T06:55:26.543453Z"
+      },
+      {
+        "id": "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_006_b54d5b27",
+        "source_event_id": "evt_finance_20230705_012_e6ef8104",
+        "target_event_id": "evt_general_20230728_005_b64b59f6",
+        "relation_type": "causes",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Increased refined product costs directly lead to an increase in average retail diesel prices.",
+        "evidence_article_ids": [
+          "art_general_20230728_009_90e6d0a9"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2023_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:55:26.561484Z",
+        "last_confirmed_at": "2026-07-25T06:55:26.561484Z"
+      },
+      {
+        "id": "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_007_df233b73",
+        "source_event_id": "evt_general_20230710_003_c32e7c3b",
+        "target_event_id": "evt_general_20230728_005_b64b59f6",
+        "relation_type": "amplifies",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "An upgraded demand forecast amplified the market's expectation of higher prices, contributing to the diesel price increase.",
+        "evidence_article_ids": [
+          "art_general_20230710_003_4505d15d",
+          "art_general_20230728_009_90e6d0a9"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2023_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:55:26.579336Z",
+        "last_confirmed_at": "2026-07-25T06:55:26.579336Z"
+      },
+      {
+        "id": "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_008_3e753923",
+        "source_event_id": "evt_finance_20230718_004_2b5ea801",
+        "target_event_id": "evt_general_20230728_005_b64b59f6",
+        "relation_type": "amplifies",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Strong domestic demand for diesel, indicated by a summer demand crunch, directly contributed to local price pressure and the overall diesel price increase.",
+        "evidence_article_ids": [
+          "art_finance_20230718_006_518d3477",
+          "art_general_20230728_009_90e6d0a9"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2023_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:55:26.598610Z",
+        "last_confirmed_at": "2026-07-25T06:55:26.598610Z"
+      },
+      {
+        "id": "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_009_4e50c3e4",
+        "source_event_id": "evt_finance_20230706_007_c2a10e51",
+        "target_event_id": "evt_general_20230728_005_b64b59f6",
+        "relation_type": "inhibits",
+        "strength": 0.4,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Concerns about U.S. rate hike risk tempered oil price gains initially, acting as a countervailing factor against a larger diesel price increase.",
+        "evidence_article_ids": [
+          "art_finance_20230706_016_f9b31022"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2023_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:55:26.616685Z",
+        "last_confirmed_at": "2026-07-25T06:55:26.616685Z"
+      },
+      {
+        "id": "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_010_0b2c4de3",
+        "source_event_id": "evt_finance_20230725_008_8ee17918",
+        "target_event_id": "evt_general_20230728_005_b64b59f6",
+        "relation_type": "inhibits",
+        "strength": 0.3,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "Some analysis pointed to weak demand defining the oil market's behavior, suggesting a slowdown that could dampen price increases.",
+        "evidence_article_ids": [
+          "art_finance_20230725_010_e8d9530c"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2023_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:55:26.634770Z",
+        "last_confirmed_at": "2026-07-25T06:55:26.634770Z"
+      },
+      {
+        "id": "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_011_f7f94e38",
+        "source_event_id": "evt_finance_20230726_006_22e1c6d4",
+        "target_event_id": "evt_general_20230728_005_b64b59f6",
+        "relation_type": "inhibits",
+        "strength": 0.3,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "The Federal Reserve's FOMC statement implied potential economic cool-downs, which could indirectly dampen fuel demand and price increases.",
+        "evidence_article_ids": [
+          "art_finance_20230726_015_7ddca5bb"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2023_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:55:26.652210Z",
+        "last_confirmed_at": "2026-07-25T06:55:26.652210Z"
+      },
+      {
+        "id": "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065550_012_6ff595ef",
+        "source_event_id": "evt_general_20230728_005_b64b59f6",
+        "target_event_id": "evt_899b0545bc9d",
+        "relation_type": "causes",
+        "strength": 1.0,
+        "confidence": 1.0,
+        "time_lag_hours": null,
+        "reasoning": "EIA reporting a diesel price increase directly confirms the actual outcome.",
+        "evidence_article_ids": [
+          "art_general_20230728_009_90e6d0a9"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2023_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:55:50.536603Z",
+        "last_confirmed_at": "2026-07-25T06:55:50.536603Z"
+      }
+    ],
+    "outcome_impacts": [
+      {
+        "id": "imp_38850753",
+        "event_id": "evt_finance_20230606_001_c45c5476",
+        "outcome_event_id": "evt_899b0545bc9d",
+        "question_id": "v3_us_diesel_monthly_change_2023_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "OPEC+ production cuts directly led to tighter supply and higher prices, making the positive outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:55:50.549750Z",
+        "last_confirmed_at": "2026-07-25T06:55:50.549750Z"
+      },
+      {
+        "id": "imp_86f68584",
+        "event_id": "evt_finance_20230705_009_9dc0115b",
+        "outcome_event_id": "evt_899b0545bc9d",
+        "question_id": "v3_us_diesel_monthly_change_2023_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "Tightening global supply directly contributed to higher crude oil prices, making the positive outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:55:50.562227Z",
+        "last_confirmed_at": "2026-07-25T06:55:50.562227Z"
+      },
+      {
+        "id": "imp_37c30581",
+        "event_id": "evt_finance_20230705_010_22384517",
+        "outcome_event_id": "evt_899b0545bc9d",
+        "question_id": "v3_us_diesel_monthly_change_2023_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Observed strong global demand contributed to upward price pressure, making the positive outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:55:50.573411Z",
+        "last_confirmed_at": "2026-07-25T06:55:50.573411Z"
+      },
+      {
+        "id": "imp_c2a83307",
+        "event_id": "evt_finance_20230705_002_5c2a9be3",
+        "outcome_event_id": "evt_899b0545bc9d",
+        "question_id": "v3_us_diesel_monthly_change_2023_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "US crude oil gains directly translated to higher refined product costs, making the positive outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:55:50.586040Z",
+        "last_confirmed_at": "2026-07-25T06:55:50.586040Z"
+      },
+      {
+        "id": "imp_4d3f79a9",
+        "event_id": "evt_finance_20230705_011_b07ccb45",
+        "outcome_event_id": "evt_899b0545bc9d",
+        "question_id": "v3_us_diesel_monthly_change_2023_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "Higher crude oil benchmarks directly increased the cost of refined products, making the positive outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:55:50.598421Z",
+        "last_confirmed_at": "2026-07-25T06:55:50.598421Z"
+      },
+      {
+        "id": "imp_9d3702c6",
+        "event_id": "evt_finance_20230705_012_e6ef8104",
+        "outcome_event_id": "evt_899b0545bc9d",
+        "question_id": "v3_us_diesel_monthly_change_2023_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "Increased refined product costs directly led to an increase in average retail diesel prices, making the positive outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:55:50.608735Z",
+        "last_confirmed_at": "2026-07-25T06:55:50.608735Z"
+      },
+      {
+        "id": "imp_79291d61",
+        "event_id": "evt_general_20230710_003_c32e7c3b",
+        "outcome_event_id": "evt_899b0545bc9d",
+        "question_id": "v3_us_diesel_monthly_change_2023_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Upgraded demand forecast amplified market expectations of higher prices, contributing to the positive outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:55:50.622244Z",
+        "last_confirmed_at": "2026-07-25T06:55:50.622244Z"
+      },
+      {
+        "id": "imp_293e4d92",
+        "event_id": "evt_finance_20230718_004_2b5ea801",
+        "outcome_event_id": "evt_899b0545bc9d",
+        "question_id": "v3_us_diesel_monthly_change_2023_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "US diesel market demand crunch indicated robust domestic consumption, contributing to local price increases and the positive outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:55:50.635051Z",
+        "last_confirmed_at": "2026-07-25T06:55:50.635051Z"
+      },
+      {
+        "id": "imp_d509edf4",
+        "event_id": "evt_finance_20230706_007_c2a10e51",
+        "outcome_event_id": "evt_899b0545bc9d",
+        "question_id": "v3_us_diesel_monthly_change_2023_07",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.4,
+        "confidence": 0.7,
+        "reasoning": "Concerns about U.S. rate hike risk tempered oil price gains, inhibiting a larger diesel price increase.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:55:50.646203Z",
+        "last_confirmed_at": "2026-07-25T06:55:50.646203Z"
+      },
+      {
+        "id": "imp_1a238dc8",
+        "event_id": "evt_finance_20230725_008_8ee17918",
+        "outcome_event_id": "evt_899b0545bc9d",
+        "question_id": "v3_us_diesel_monthly_change_2023_07",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.3,
+        "confidence": 0.6,
+        "reasoning": "Indications of weak demand in some analyses suggested a slowdown that could dampen price increases.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:55:50.657906Z",
+        "last_confirmed_at": "2026-07-25T06:55:50.657906Z"
+      },
+      {
+        "id": "imp_7a820611",
+        "event_id": "evt_finance_20230726_006_22e1c6d4",
+        "outcome_event_id": "evt_899b0545bc9d",
+        "question_id": "v3_us_diesel_monthly_change_2023_07",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.3,
+        "confidence": 0.7,
+        "reasoning": "FOMC statement implied potential economic cool-downs, which could indirectly dampen fuel demand and price increases.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:55:50.668282Z",
+        "last_confirmed_at": "2026-07-25T06:55:50.668282Z"
+      },
+      {
+        "id": "imp_9e06e253",
+        "event_id": "evt_general_20230728_005_b64b59f6",
+        "outcome_event_id": "evt_899b0545bc9d",
+        "question_id": "v3_us_diesel_monthly_change_2023_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 1.0,
+        "confidence": 1.0,
+        "reasoning": "EIA reporting a diesel price increase directly confirms the actual outcome, making the positive outcome certain.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:55:57.395907Z",
+        "last_confirmed_at": "2026-07-25T06:55:57.395907Z"
+      }
+    ]
+  }
+}

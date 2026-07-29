@@ -1,0 +1,40 @@
+{
+  "schema_version": "fixed_exemplar_case",
+  "status": "success",
+  "question_id": "v3_wti_monthly_return_2026_06",
+  "retrieved_memory_question_id": "v3_wti_monthly_return_2024_12",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_forecasting",
+      "target_operation": "predict_range",
+      "option_geometry": "discrete_ordered_options"
+    },
+    "historical_question": "As of 2024-12-01, which range will the monthly WTI price return for West Texas Intermediate crude oil in 2024-12 fall into?",
+    "historical_cutoff": "2024-12-01T00:00:00+00:00",
+    "target_semantics": "The monthly price return for West Texas Intermediate crude oil in December 2024.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20241106_004_e91f7076",
+        "takeaway": "OPEC+ members have extended oil output cuts until the end of December 2024.",
+        "why_predictive": "This action directly impacts global oil supply, which is a primary driver of crude oil prices."
+      },
+      {
+        "article_id": "art_finance_20241114_003_38e79aae",
+        "takeaway": "The International Energy Agency (IEA) report from November 2024 analyzes the oil market, indicating factors influencing supply and demand.",
+        "why_predictive": "IEA reports provide comprehensive analysis of market fundamentals, including demand forecasts and supply outlooks, which are crucial for price prediction."
+      }
+    ],
+    "expert_reasoning": [
+      "The OPEC+ decision to extend output cuts until the end of December 2024 (art_finance_20241106_004_e91f7076) suggests a deliberate effort to restrain supply.",
+      "This supply restraint mechanism, if effective, would typically exert upward pressure on crude oil prices.",
+      "The IEA's November 2024 Oil Market Report (art_finance_20241114_003_38e79aae) provides a broader market context, including demand trends and overall supply dynamics.",
+      "While OPEC+ cuts aim to support prices, the overall market balance, including non-OPEC supply growth and demand fluctuations, will determine the final price direction.",
+      "The recent range boundaries for WTI price returns are -6.227% (lower) and -0.118% (upper)."
+    ],
+    "counterevidence": "The DAG indicates that US and global supply growth could counter price support from OPEC+ cuts (art_finance_20241114_003_38e79aae). Additionally, weak historical support for demand and Middle East risk factors suggests these may not provide strong upward price drivers.",
+    "prospective_target_estimate": "The extended OPEC+ cuts suggest a floor on price declines, while potential supply growth and uncertain demand present counteracting forces. Given the recent range, the price return is likely to be influenced by the balance of these factors.",
+    "option_mapping": "The extended OPEC+ cuts suggest a potential for prices to move away from significant declines. However, the counteracting supply growth and uncertain demand make a strong upward move less certain. Therefore, the 'within recent range' or 'above recent range' options are plausible, with 'within recent range' being a more conservative estimate given the competing factors.",
+    "uncertainty": "The historical support for demand and Middle East risk is weak, and the overall supply-demand-risk balance is described as having weak historical support. This indicates significant uncertainty in predicting the precise impact of these factors on WTI price returns.",
+    "dag_derived_lesson": "Supply-side interventions aimed at price support can be counteracted by concurrent supply growth and demand uncertainties. The net effect on price depends on the relative strength and interaction of these competing factors, with weaker evidence for demand and geopolitical risk amplifying uncertainty."
+  }
+}

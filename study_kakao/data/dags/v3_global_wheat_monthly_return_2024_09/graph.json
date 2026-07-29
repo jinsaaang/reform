@@ -1,0 +1,166 @@
+{
+  "schema_version": "1.0",
+  "actual_outcome_event_id": "node_7",
+  "graph": {
+    "nodes": [
+      {
+        "id": "node_1",
+        "label": "Polish wheat prices rose in August 2024",
+        "event_type": "indicator",
+        "occurred_date": "2024-08-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_d795d7458f97e027",
+          "ev_10539b30b9c7cded"
+        ]
+      },
+      {
+        "id": "node_2",
+        "label": "Polish and EU consumption-wheat prices were higher in early September",
+        "event_type": "indicator",
+        "occurred_date": "2024-09-01",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_29e47690a8933470"
+        ]
+      },
+      {
+        "id": "node_3",
+        "label": "U.S. wheat export prices increased in early September",
+        "event_type": "indicator",
+        "occurred_date": "2024-09-01",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_29e47690a8933470"
+        ]
+      },
+      {
+        "id": "node_4",
+        "label": "La Niña was forecast as a possible risk to wheat harvests and prices",
+        "event_type": "external_shock",
+        "occurred_date": "2024-08-01",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_b86266795d9f76b1"
+        ]
+      },
+      {
+        "id": "node_5",
+        "label": "Regional price indicators and supply risk pointed toward positive wheat-price momentum",
+        "event_type": "indicator",
+        "occurred_date": "2024-09-23",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_29e47690a8933470",
+          "ev_d795d7458f97e027",
+          "ev_10539b30b9c7cded",
+          "ev_b86266795d9f76b1"
+        ]
+      },
+      {
+        "id": "node_6",
+        "label": "September global wheat monthly return was 7.404 percent",
+        "event_type": "indicator",
+        "occurred_date": "2024-10-15",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_711b8a9ff8a415bb"
+        ]
+      },
+      {
+        "id": "node_7",
+        "label": "Resolved outcome: yes, the return was at least -6.987 percent",
+        "event_type": "outcome",
+        "occurred_date": "2024-10-15",
+        "is_outcome": true,
+        "is_actual_outcome": true,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_711b8a9ff8a415bb"
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_1",
+        "source": "node_1",
+        "target": "node_5",
+        "relationship": "supports",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_d795d7458f97e027",
+          "ev_10539b30b9c7cded"
+        ],
+        "rationale": "The Polish increases provide regional evidence of momentum but do not establish the global monthly return."
+      },
+      {
+        "id": "edge_2",
+        "source": "node_2",
+        "target": "node_5",
+        "relationship": "supports",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_29e47690a8933470"
+        ],
+        "rationale": "Early-September Polish and EU price gains support, rather than cause, the synthesized global-momentum signal."
+      },
+      {
+        "id": "edge_3",
+        "source": "node_3",
+        "target": "node_5",
+        "relationship": "supports",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_29e47690a8933470"
+        ],
+        "rationale": "The U.S. export-price increase is another regional indicator consistent with positive momentum."
+      },
+      {
+        "id": "edge_4",
+        "source": "node_4",
+        "target": "node_5",
+        "relationship": "supports",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_b86266795d9f76b1"
+        ],
+        "rationale": "The La Niña article describes a prospective supply risk; its realized effect in September is not established."
+      },
+      {
+        "id": "edge_5",
+        "source": "node_5",
+        "target": "node_6",
+        "relationship": "contributes_to",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_29e47690a8933470",
+          "ev_711b8a9ff8a415bb"
+        ],
+        "rationale": "The regional indicators are retained as non-exclusive evidence consistent with the observed positive global return."
+      },
+      {
+        "id": "edge_6",
+        "source": "node_6",
+        "target": "node_7",
+        "relationship": "maps_to",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_711b8a9ff8a415bb"
+        ],
+        "rationale": "The 7.404 percent return is above the registered -6.987 percent threshold and maps directly to yes."
+      }
+    ]
+  }
+}

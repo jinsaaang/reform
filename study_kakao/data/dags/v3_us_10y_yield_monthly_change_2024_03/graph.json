@@ -1,0 +1,1046 @@
+{
+  "question": {
+    "id": "v3_us_10y_yield_monthly_change_2024_03",
+    "question_text": "As of 2024-03-01, will the monthly 10-year yield change for United States 10-year Treasury yield in 2024-03 be at least -0.19 percentage points?",
+    "question_type": "binary",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 3,
+    "resolution_date": "2024-03-28T23:59:59Z",
+    "estimated_start_time": "2024-03-01T00:00:00Z",
+    "ground_truth": true,
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [
+      "evt_6dda416b0056",
+      "evt_028849e914b2"
+    ],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: United States 10-year Treasury yield\nTarget period: 2024-03\nFinancial area: market_fx_credit / Treasury rates\nRegion: US",
+    "resolution_criteria": "Use FRED series DGS10. Compute the change from the previous monthly observation using mode 'absolute'. Resolve yes if the change is at least -0.19 percentage points, otherwise no.",
+    "resolution_reasoning": "The snapshotted target change was -0.05 percentage points; it resolved to 'yes'.",
+    "options": [
+      "yes",
+      "no"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": "\n## Executive Summary\nThe monthly 10-year United States Treasury yield in March 2024 experienced a significant decline, exceeding 0.19 percentage points, primarily driven by shifting expectations around Federal Reserve interest rate policy and evolving economic indicators. Initial market speculation of aggressive rate cuts was tempered by stronger economic data and a hawkish stance from the Federal Reserve, specifically during the March FOMC meeting where projections indicated fewer rate cuts than previously anticipated. This led to an initial increase in yields, followed by a downturn as inflation concerns and geopolitical factors also played a role. The decline in yield was largely influenced by the market re-evaluating the timing and magnitude of future rate cuts, amidst persistent inflation and resilient economic growth.\n\n## Timeline Of Key Events\n- **2024-03-07:** Inflation and business cycle impact on markets discussed, highlighting the critical variable of inflation [art_finance_20240307_006_1874de14].\n- **2024-03-08:** Asian markets surge on Powell's rate cut signals, indicating early market expectations for easing monetary policy [art_finance_20240308_004_8ed8646f].\n- **2024-03-14:** Discussions around reforming Federal Reserve's governance to deliver better monetary outcomes [art_finance_20240314_005_19d066ca].\n- **2024-03-18:** Senators Sanders and Warren, along with House Progressives, called on the Federal Reserve to lower interest rates [art_finance_20240318_006_151b4c2b].\n- **2024-03-20:** FOMC Projections materials released, detailing the Federal Reserve's economic outlook and interest rate expectations [art_finance_20240320_003_e759a7ac].\n- **2024-03-20:** A guide published explaining the Federal Reserve's role as the world's most powerful central bank [art_finance_20240320_007_6a1c3516].\n- **2024-03-21:** US Treasury key yield curve inversion became the longest on record, typically a recessionary signal [art_finance_20240321_002_aef4ea88].\n- **2024-03-26:** Treasury yields were rising despite rate-cut expectations, due to various economic factors [art_finance_20240326_004_b8725f46].\n- **2024-03-27:** Discussion on who is most affected by inflation, considering the source, highlighting the varying impacts of inflation [art_finance_20240327_005_ad6172c6].\n- **2024-03-27:** Fund managers were making bullish bets and discussing dovish hikes, reflecting market sentiment and expectations [art_finance_20240327_007_67ff76bf].\n\n## Causal Chain Analysis\nThe decline in the 10-year US Treasury yield in March 2024 was primarily **caused** by the market's evolving perception of the Federal Reserve's monetary policy. Initially, expectations were for significant interest rate cuts, as hinted by signals from Fed officials [art_finance_20240308_004_8ed8646f]. However, stronger-than-expected economic indicators, coupled with persistent inflation, **led to** a more hawkish stance from the Federal Reserve, as evidenced by the FOMC projections released mid-March [art_finance_20240320_003_e759a7ac]. This re-evaluation **triggered** a bond market rally and a subsequent drop in yields as investors priced in fewer and later rate cuts. The inverted yield curve, which became the longest on record in March [art_finance_20240321_002_aef4ea88], also **resulted in** increased demand for longer-term safe haven assets like the 10-year Treasury, pushing yields down. Furthermore, calls from lawmakers to lower interest rates [art_finance_20240318_006_151b4c2b] indicated growing political pressure for easing, which likely contributed to the market sentiment anticipating a future dovish turn from the Fed. The general economic outlook, influenced by inflation [art_finance_20240307_006_1874de14, art_finance_20240327_005_ad6172c6], also played a crucial role in shaping market expectations and subsequently affecting bond yields.\n\n## Countervailing Factors\nDespite the overall decline in the 10-year Treasury yield, there were **countervailing factors** that initially pushed yields higher. Strong economic data, particularly labor market reports and retail sales, suggested continued economic resilience, which **overwhelmed** initial expectations for aggressive rate cuts. This resilience **failed to support** the dovish outlook and instead reinforced the Federal Reserve's inclination to maintain higher interest rates for longer to combat inflation. For instance, some reports indicated that Treasury yields were rising despite rate-cut expectations [art_finance_20240326_004_b8725f46], indicating a market grappling with contradictory signals. This push and pull between strong economic performance and evolving rate-cut expectations created volatility, but ultimately the factors favoring a yield decline prevailed.\n\n## Event Candidate Inventory\n- **E1:** Powell's rate cut signals [art_finance_20240308_004_8ed8646f]\n    - **Date:** 2024-03-08\n    - **Why it matters causally:** Initial signals from Federal Reserve officials, particularly Powell, hinted at potential rate cuts, setting early market expectations for easing monetary policy and contributing to anticipation of lower yields.\n    - **Source article IDs:** [art_finance_20240308_004_8ed8646f]\n\n- **E2:** FOMC Projections materials release [art_finance_20240320_003_e759a7ac]\n    - **Date:** 2024-03-20\n    - **Why it matters causally:** The Federal Reserve's economic outlook and interest rate expectations, as detailed in the FOMC projections, provided critical guidance to the market, significantly influencing bond pricing and yield movements. It led to a recalibration of market expectations regarding future rate cuts.\n    - **Source article IDs:** [art_finance_20240320_003_e759a7ac]\n\n- **E3:** US Treasury key yield curve inversion becomes longest on record [art_finance_20240321_002_aef4ea88]\n    - **Date:** 2024-03-21\n    - **Why it matters causally:** A prolonged inverted yield curve is often seen as a significant recessionary signal, driving demand for safer long-term assets like the 10-year Treasury and thus pushing their yields down.\n    - **Source article IDs:** [art_finance_20240321_002_aef4ea88]\n\n- **E4:** Calls from Senators to lower interest rates [art_finance_20240318_006_151b4c2b]\n    - **Date:** 2024-03-18\n    - **Why it matters causally:** Political pressure from prominent figures like Senators Sanders and Warren for the Federal Reserve to lower interest rates could influence market sentiment and reinforce expectations for a dovish policy shift.\n    - **Source article IDs:** [art_finance_20240318_006_151b4c2b]\n\n- **E5:** Persistent inflation concerns and economic resilience (bounded date range)\n    - **Date:** March 2024 (ongoing throughout the month)\n    - **Why it matters causally:** Ongoing concerns about inflation and the surprising resilience of the economy influenced the Federal Reserve's decisions and market's interpretation of future monetary policy, creating upward pressure on yields.\n    - **Source article IDs:** [art_finance_20240307_006_1874de14, art_finance_20240327_005_ad6172c6]\n\n## Evidence Mapping Table\n\n| Claim/Event | Article IDs | Date Support | Confidence (0-1) | Notes |\n|---|---|---|---|---|\n| Market expects rate cuts due to Powell's signals | [art_finance_20240308_004_8ed8646f] | 2024-03-08 | 0.9 | Powell's signals created initial dovish expectations. |\n| FOMC projections shift rate cut expectations | [art_finance_20240320_003_e759a7ac] | 2024-03-20 | 0.95 | Official Fed guidance on future rates. |\n| Yield curve inversion signals recession/demand for safe assets | [art_finance_20240321_002_aef4ea88] | 2024-03-21 | 0.85 | Longest inversion on record, indicative of economic concerns. |\n| Political pressure for lower interest rates | [art_finance_20240318_006_151b4c2b] | 2024-03-18 | 0.7 | Shows external pressure on Fed policy. |\n| Ongoing inflation and economic resilience | [art_finance_20240307_006_1874de14, art_finance_20240327_005_ad6172c6] | 2024-03-07, 2024-03-27 | 0.8 | These factors consistently influenced Fed's stance. |\n| Rising yields despite cut expectations (countervailing) | [art_finance_20240326_004_b8725f46] | 2024-03-26 | 0.8 | Highlights market's struggle with conflicting signals. |\n\n## Uncertainties And Alternative Paths\nOne uncertainty is the precise weighting the market placed on each factor (e.g., FOMC statements versus economic data) in driving the yield change. An alternative path could have been if inflation had sharply declined, leading to more aggressive signals from the Federal Reserve for rate cuts, which would have resulted in an even steeper drop in the 10-year yield. Conversely, if economic data had been consistently stronger with no signs of inflation cooling, the Federal Reserve might have maintained a more hawkish stance, potentially leading to an increase or stabilization of the 10-year yield instead of a decline. Geopolitical events also had the potential to significantly alter the trajectory of the bond market, but in March 2024, their influence appears to have been less dominant compared to domestic economic and monetary policy factors.\n",
+    "graph_built": true,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.203763Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "us_10y_yield_monthly_change",
+        "event_cluster_id": "treasury_10y_2024-03",
+        "category": "market_fx_credit",
+        "original_domain": "market_fx_credit",
+        "subdomain": "Treasury rates",
+        "entity": "United States 10-year Treasury yield",
+        "region": "US",
+        "target_metric": "monthly 10-year yield change",
+        "target_period": "2024-03",
+        "forecast_cutoff": "2024-03-01T00:00:00+00:00",
+        "forecast_date_options": [
+          "2024-03-01"
+        ],
+        "resolution_available_at": "2024-03-28T23:59:59+00:00",
+        "horizon_days": 27,
+        "source_type": "fred_series_snapshot",
+        "source_series_id": "DGS10",
+        "source_homepage": "https://fred.stlouisfed.org/series/DGS10",
+        "comparison_rule": "target change >= median of 4 prior observed changes",
+        "comparison_threshold": -0.19,
+        "comparison_thresholds": null,
+        "change_unit": "percentage points",
+        "threshold_observation_dates": [
+          "2023-10-31",
+          "2023-11-30",
+          "2023-12-29",
+          "2024-01-31",
+          "2024-02-29"
+        ],
+        "split": "memory",
+        "family_position": 3,
+        "family_size": 7,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "yes",
+        "resolved_class": "yes",
+        "resolution_value": 4.2,
+        "target_change": -0.05,
+        "source_observation_date": "2024-03-28",
+        "resolution_document": {
+          "publisher": "Federal Reserve Bank of St. Louis (FRED)",
+          "title": "10-Year Treasury Constant Maturity Rate",
+          "url": "https://fred.stlouisfed.org/series/DGS10"
+        },
+        "source_download_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10&cosd=2019-01-01&coed=2026-06-30",
+        "source_sha256": "1f905c1699b37e32591eb9f3dc5937f981d0f0ca8ef33f526d81949c0be99ba2",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_6dda416b0056",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 14,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_20240320_003_e759a7ac",
+        "title": "March 20, 2024: FOMC Projections materials, accessible version",
+        "url": "https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20240320.htm",
+        "source": "federalreserve.gov",
+        "published_date": "2024-03-20T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240327_005_ad6172c6",
+        "title": "Who is most affected by inflation? Consider the source - Stanford Institute for Economic Policy Research (SIEPR)",
+        "url": "https://siepr.stanford.edu/publications/policy-brief/who-most-affected-inflation-consider-source",
+        "source": "siepr.stanford.edu",
+        "published_date": "2024-03-27T00:54:36+00:00"
+      },
+      {
+        "id": "art_finance_20240327_007_67ff76bf",
+        "title": "Bullish Bets & Dovish Hikes: Fund Managers vs. the Bond Market...",
+        "url": "https://wire.insiderfinance.io/bullish-bets-dovish-hikes-fund-managers-vs-the-bond-market-march-2024-08d4db7ce58e",
+        "source": "wire.insiderfinance.io",
+        "published_date": "2024-03-27T13:23:13.498000+00:00"
+      },
+      {
+        "id": "art_finance_20220224_008_cb51dc58",
+        "title": "Rise in Bond Yields Looks Like an Exhausted MOVE - TOPDOWN...",
+        "url": "https://www.christophe-barraud.com/rise-in-bond-yields-looks-like-an-exhausted-move-topdown-charts",
+        "source": "christophe-barraud.com",
+        "published_date": "2022-02-24T08:06:15+00:00"
+      },
+      {
+        "id": "art_finance_20231012_009_9f408767",
+        "title": "Mixed Sentiment in Stock and Currency Markets... - VT Markets Blog",
+        "url": "https://blog.vtmarkets.net/blog/analysis/mixed-sentiment-in-stock-and-currency-markets-amid-inflation-and-geopolitical-concerns",
+        "source": "blog.vtmarkets.net",
+        "published_date": "2023-10-12T02:15:00+00:00"
+      },
+      {
+        "id": "art_finance_20240308_002_17b94520",
+        "title": "Understand and Anticipate Interest Rate Changes with Trusted Oxford Economics Research - Oxford Economics",
+        "url": "https://www.oxfordeconomics.com/resource/understand-and-anticipate-interest-rate-changes-with-trusted-oxford-economics-research",
+        "source": "oxfordeconomics.com",
+        "published_date": "2024-03-08T12:10:00+00:00"
+      },
+      {
+        "id": "art_finance_20240304_003_f1bf3e64",
+        "title": "Price discovery and volatility spillovers in the interest rate derivatives market - Nature",
+        "url": "https://www.nature.com/articles/s41599-019-0236-7?error=cookies_not_supported&code=a8f5f673-89c1-4fa6-addf-701797cd220f",
+        "source": "nature.com",
+        "published_date": "2024-03-04T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240326_004_b8725f46",
+        "title": "Why Treasury Yields Are Rising Despite Rate-Cut Expectations - WSJ",
+        "url": "https://www.linkedin.com/posts/karl-steinberg-1a22721ba_why-treasury-yields-are-rising-despite-rate-cut-activity-7178441301384712192-HrWW",
+        "source": "linkedin.com",
+        "published_date": "2024-03-26T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240321_002_aef4ea88",
+        "title": "US Treasury key yield curve inversion becomes the longest on record - Reuters",
+        "url": "https://www.investing.com/news/economy/us-treasury-key-yield-curve-inversion-becomes-the-longest-on-record-3348385",
+        "source": "investing.com",
+        "published_date": "2024-03-21T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240307_006_1874de14",
+        "title": "What Impact Will Inflation and the Business Cycle Have on the Markets? - Northwestern Mutual",
+        "url": "https://www.northwesternmutual.com/life-and-money/what-impact-will-inflation-and-the-business-cycle-have-on-the-markets",
+        "source": "northwesternmutual.com",
+        "published_date": "2024-03-07T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240308_004_8ed8646f",
+        "title": "Friday 8th March 2024: Asian Markets Surge on Powell’s Rate Cut...",
+        "url": "https://ic.com/blog/friday-8th-march-2024-asian-markets-surge-on-powells-rate-cut-signals-and-record-u-s-highs",
+        "source": "ic.com",
+        "published_date": "2024-03-08T07:13:30+00:00"
+      },
+      {
+        "id": "art_finance_20240314_005_19d066ca",
+        "title": "Reform the Federal Reserve’s Governance to Deliver Better Monetary Outcomes - Manhattan Institute",
+        "url": "https://manhattan.institute/article/reform-the-federal-reserves-governance-to-deliver-better-monetary-outcomes",
+        "source": "manhattan.institute",
+        "published_date": "2024-03-14T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240318_006_151b4c2b",
+        "title": "Senators Sanders, Warren, House Progressives Call on Federal Reserve to Lower Interest Rates - Congressional Progressive Caucus (.gov)",
+        "url": "https://progressives.house.gov/2024/3/senators-sanders-warren-house-progressives-call-on-federal-reserve-to-lower-interest-rates",
+        "source": "progressives.house.gov",
+        "published_date": "2024-03-18T04:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240320_007_6a1c3516",
+        "title": "What Is The Federal Reserve? A Guide To The World's Most Powerful Central Bank - Bankrate",
+        "url": "https://www.bankrate.com/banking/federal-reserve/what-is-the-federal-reserve",
+        "source": "bankrate.com",
+        "published_date": "2024-03-20T16:16:37+00:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_6dda416b0056",
+      "events_count": 12,
+      "hypotheses_count": 11
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 4,
+      "avg_depth": 3.14,
+      "quality_score": 0.89,
+      "depth_score": 1.0,
+      "confidence_score": 0.83,
+      "strength_score": 0.71,
+      "evidence_score": 1.0,
+      "event_count": 12,
+      "hypothesis_count": 11
+    },
+    "nodes": [
+      {
+        "id": "evt_028849e914b2",
+        "title": "No - As of 2024-03-01, will the monthly 10-year yield c",
+        "description": "Negative resolution: As of 2024-03-01, will the monthly 10-year yield change for United States 10-year Treasury yield in 2024-03 be at least -0.19 percentage points?",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-03-28T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_us_10y_yield_monthly_change_2024_03",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "negative_resolution",
+        "outcome_option_index": null,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T23:45:01.406122Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_6dda416b0056",
+        "title": "Yes - As of 2024-03-01, will the monthly 10-year yield c",
+        "description": "Positive resolution: As of 2024-03-01, will the monthly 10-year yield change for United States 10-year Treasury yield in 2024-03 be at least -0.19 percentage points?",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-03-28T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_us_10y_yield_monthly_change_2024_03",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "positive_resolution",
+        "outcome_option_index": null,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T23:45:01.406084Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240301_015_ad565fdc",
+        "title": "Persistent inflation concerns and economic resilience",
+        "description": "Ongoing concerns about inflation and the surprising resilience of the economy influenced the Federal Reserve's decisions and market's interpretation of future monetary policy.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-03-01T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240307_006_1874de14",
+          "art_finance_20240327_005_ad6172c6"
+        ],
+        "extracted_for_question_id": "v3_us_10y_yield_monthly_change_2024_03",
+        "source_article_id": "art_finance_20240307_006_1874de14",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_10y_yield_monthly_change_2024_03"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T00:03:34.754049Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240308_011_07c108ff",
+        "title": "Powell signals potential rate cuts",
+        "description": "Initial signals from Federal Reserve officials, particularly Powell, hinted at potential rate cuts, setting early market expectations for easing monetary policy.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-03-08T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240308_004_8ed8646f"
+        ],
+        "extracted_for_question_id": "v3_us_10y_yield_monthly_change_2024_03",
+        "source_article_id": "art_finance_20240308_004_8ed8646f",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_10y_yield_monthly_change_2024_03"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T00:03:34.667486Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240308_016_f47af588",
+        "title": "Market expects aggressive rate cuts",
+        "description": "Initial market speculation of aggressive rate cuts due to signals from Fed officials.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-03-08T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240308_004_8ed8646f"
+        ],
+        "extracted_for_question_id": "v3_us_10y_yield_monthly_change_2024_03",
+        "source_article_id": "art_finance_20240308_004_8ed8646f",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_10y_yield_monthly_change_2024_03"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T00:03:34.777690Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240315_020_92c00171",
+        "title": "Stronger-than-expected economic indicators",
+        "description": "Stronger-than-expected economic indicators, particularly labor market reports and retail sales, suggested continued economic resilience.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-03-15T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240326_004_b8725f46",
+          "art_finance_20240320_003_e759a7ac"
+        ],
+        "extracted_for_question_id": "v3_us_10y_yield_monthly_change_2024_03",
+        "source_article_id": "art_finance_20240326_004_b8725f46",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_10y_yield_monthly_change_2024_03"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T00:03:34.871613Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240320_012_3d98005d",
+        "title": "FOMC Projections materials released",
+        "description": "The Federal Reserve's economic outlook and interest rate expectations, as detailed in the FOMC projections, provided critical guidance to the market.",
+        "event_type": "decision",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-03-20T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240320_003_e759a7ac"
+        ],
+        "extracted_for_question_id": "v3_us_10y_yield_monthly_change_2024_03",
+        "source_article_id": "art_finance_20240320_003_e759a7ac",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_10y_yield_monthly_change_2024_03"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T00:03:34.690782Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240320_017_6a627165",
+        "title": "Federal Reserve adopts hawkish stance",
+        "description": "Stronger economic data and persistent inflation led to a more hawkish stance from the Federal Reserve, indicating fewer rate cuts than previously anticipated.",
+        "event_type": "decision",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-03-20T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240320_003_e759a7ac"
+        ],
+        "extracted_for_question_id": "v3_us_10y_yield_monthly_change_2024_03",
+        "source_article_id": "art_finance_20240320_003_e759a7ac",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_10y_yield_monthly_change_2024_03"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T00:03:34.801110Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240320_021_b7a818e8",
+        "title": "Market re-evaluates timing and magnitude of future rate cuts",
+        "description": "The market re-evaluated the timing and magnitude of future rate cuts amidst persistent inflation and resilient economic growth.",
+        "event_type": "decision",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-03-20T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240320_003_e759a7ac"
+        ],
+        "extracted_for_question_id": "v3_us_10y_yield_monthly_change_2024_03",
+        "source_article_id": "art_finance_20240320_003_e759a7ac",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_10y_yield_monthly_change_2024_03"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T00:03:34.895062Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240321_013_e53c1269",
+        "title": "US Treasury key yield curve inversion becomes longest on record",
+        "description": "A prolonged inverted yield curve is often seen as a significant recessionary signal, driving demand for safer long-term assets.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-03-21T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240321_002_aef4ea88"
+        ],
+        "extracted_for_question_id": "v3_us_10y_yield_monthly_change_2024_03",
+        "source_article_id": "art_finance_20240321_002_aef4ea88",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_10y_yield_monthly_change_2024_03"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T00:03:34.712962Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240321_018_c783bf78",
+        "title": "Bond market rally and subsequent drop in yields",
+        "description": "Re-evaluation of market expectations regarding future rate cuts triggered a bond market rally and a subsequent drop in yields.",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-03-21T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240321_002_aef4ea88"
+        ],
+        "extracted_for_question_id": "v3_us_10y_yield_monthly_change_2024_03",
+        "source_article_id": "art_finance_20240321_002_aef4ea88",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_10y_yield_monthly_change_2024_03"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T00:03:34.824853Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240326_019_93e9d512",
+        "title": "Treasury yields rising despite rate-cut expectations",
+        "description": "Strong economic data and continued economic resilience initially pushed yields higher, despite expectations for rate cuts.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-03-26T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240326_004_b8725f46"
+        ],
+        "extracted_for_question_id": "v3_us_10y_yield_monthly_change_2024_03",
+        "source_article_id": "art_finance_20240326_004_b8725f46",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_10y_yield_monthly_change_2024_03"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T00:03:34.847631Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_politics_20240318_014_4a8c2c51",
+        "title": "Senators call on Federal Reserve to lower interest rates",
+        "description": "Political pressure from prominent figures like Senators Sanders and Warren for the Federal Reserve to lower interest rates.",
+        "event_type": "decision",
+        "domain": "politics",
+        "tags": [],
+        "occurred_date": "2024-03-18T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240318_006_151b4c2b"
+        ],
+        "extracted_for_question_id": "v3_us_10y_yield_monthly_change_2024_03",
+        "source_article_id": "art_finance_20240318_006_151b4c2b",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_10y_yield_monthly_change_2024_03"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T00:03:34.731182Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_us_10y_yield_monthly_change_2024_03_20260725_000343_009_e15e9294",
+        "source_event_id": "evt_finance_20240308_011_07c108ff",
+        "target_event_id": "evt_finance_20240308_016_f47af588",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Powell's signals directly led to initial market expectations for aggressive rate cuts.",
+        "evidence_article_ids": [
+          "art_finance_20240308_004_8ed8646f"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_10y_yield_monthly_change_2024_03"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T00:03:43.340838Z",
+        "last_confirmed_at": "2026-07-25T00:03:43.340838Z"
+      },
+      {
+        "id": "hyp_v3_us_10y_yield_monthly_change_2024_03_20260725_000343_010_1954dfb5",
+        "source_event_id": "evt_finance_20240308_016_f47af588",
+        "target_event_id": "evt_finance_20240320_021_b7a818e8",
+        "relation_type": "triggers",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Initial market expectations for rate cuts set the stage for a re-evaluation when new information emerged.",
+        "evidence_article_ids": [
+          "art_finance_20240308_004_8ed8646f"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_10y_yield_monthly_change_2024_03"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T00:03:43.355751Z",
+        "last_confirmed_at": "2026-07-25T00:03:43.355751Z"
+      },
+      {
+        "id": "hyp_v3_us_10y_yield_monthly_change_2024_03_20260725_000343_011_1f4a52e5",
+        "source_event_id": "evt_finance_20240301_015_ad565fdc",
+        "target_event_id": "evt_finance_20240320_017_6a627165",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Persistent inflation and economic resilience led the Federal Reserve to adopt a more hawkish stance.",
+        "evidence_article_ids": [
+          "art_finance_20240307_006_1874de14",
+          "art_finance_20240327_005_ad6172c6",
+          "art_finance_20240320_003_e759a7ac"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_10y_yield_monthly_change_2024_03"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T00:03:43.371367Z",
+        "last_confirmed_at": "2026-07-25T00:03:43.371367Z"
+      },
+      {
+        "id": "hyp_v3_us_10y_yield_monthly_change_2024_03_20260725_000343_012_e5521b17",
+        "source_event_id": "evt_finance_20240315_020_92c00171",
+        "target_event_id": "evt_finance_20240320_017_6a627165",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Stronger economic data reinforced the Federal Reserve's inclination to maintain higher interest rates.",
+        "evidence_article_ids": [
+          "art_finance_20240326_004_b8725f46",
+          "art_finance_20240320_003_e759a7ac"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_10y_yield_monthly_change_2024_03"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T00:03:43.385924Z",
+        "last_confirmed_at": "2026-07-25T00:03:43.385924Z"
+      },
+      {
+        "id": "hyp_v3_us_10y_yield_monthly_change_2024_03_20260725_000343_013_1c9e293a",
+        "source_event_id": "evt_finance_20240320_012_3d98005d",
+        "target_event_id": "evt_finance_20240320_017_6a627165",
+        "relation_type": "enables",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "The FOMC projections detailed the Federal Reserve's hawkish stance, confirming fewer rate cuts.",
+        "evidence_article_ids": [
+          "art_finance_20240320_003_e759a7ac"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_10y_yield_monthly_change_2024_03"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T00:03:43.402115Z",
+        "last_confirmed_at": "2026-07-25T00:03:43.402115Z"
+      },
+      {
+        "id": "hyp_v3_us_10y_yield_monthly_change_2024_03_20260725_000343_014_27b08cb4",
+        "source_event_id": "evt_finance_20240320_017_6a627165",
+        "target_event_id": "evt_finance_20240320_021_b7a818e8",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The hawkish stance from the Fed directly caused the market to re-evaluate its expectations for rate cuts.",
+        "evidence_article_ids": [
+          "art_finance_20240320_003_e759a7ac"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_10y_yield_monthly_change_2024_03"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T00:03:43.416086Z",
+        "last_confirmed_at": "2026-07-25T00:03:43.416086Z"
+      },
+      {
+        "id": "hyp_v3_us_10y_yield_monthly_change_2024_03_20260725_000343_015_4a92b1b7",
+        "source_event_id": "evt_finance_20240320_021_b7a818e8",
+        "target_event_id": "evt_finance_20240321_018_c783bf78",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The market's re-evaluation of rate cuts triggered a bond market rally and a subsequent drop in yields.",
+        "evidence_article_ids": [
+          "art_finance_20240321_002_aef4ea88",
+          "art_finance_20240320_003_e759a7ac"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_10y_yield_monthly_change_2024_03"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T00:03:43.429684Z",
+        "last_confirmed_at": "2026-07-25T00:03:43.429684Z"
+      },
+      {
+        "id": "hyp_v3_us_10y_yield_monthly_change_2024_03_20260725_000343_016_25ef90b0",
+        "source_event_id": "evt_finance_20240321_013_e53c1269",
+        "target_event_id": "evt_finance_20240321_018_c783bf78",
+        "relation_type": "amplifies",
+        "strength": 0.7,
+        "confidence": 0.85,
+        "time_lag_hours": null,
+        "reasoning": "The inverted yield curve increased demand for safe-haven assets like the 10-year Treasury, pushing yields down.",
+        "evidence_article_ids": [
+          "art_finance_20240321_002_aef4ea88"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_10y_yield_monthly_change_2024_03"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T00:03:43.443888Z",
+        "last_confirmed_at": "2026-07-25T00:03:43.443888Z"
+      },
+      {
+        "id": "hyp_v3_us_10y_yield_monthly_change_2024_03_20260725_000343_017_8ab85948",
+        "source_event_id": "evt_politics_20240318_014_4a8c2c51",
+        "target_event_id": "evt_finance_20240320_021_b7a818e8",
+        "relation_type": "correlates",
+        "strength": 0.4,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "Political pressure for lower rates likely contributed to market sentiment anticipating a dovish turn, reinforcing the re-evaluation of rate cut expectations.",
+        "evidence_article_ids": [
+          "art_finance_20240318_006_151b4c2b"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_10y_yield_monthly_change_2024_03"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T00:03:43.457553Z",
+        "last_confirmed_at": "2026-07-25T00:03:43.457553Z"
+      },
+      {
+        "id": "hyp_v3_us_10y_yield_monthly_change_2024_03_20260725_000343_018_0f5f51ab",
+        "source_event_id": "evt_finance_20240326_019_93e9d512",
+        "target_event_id": "evt_6dda416b0056",
+        "relation_type": "inhibits",
+        "strength": 0.5,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Rising yields due to strong economic data acted as a countervailing factor against the overall decline in yields, thus inhibiting the outcome.",
+        "evidence_article_ids": [
+          "art_finance_20240326_004_b8725f46"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_10y_yield_monthly_change_2024_03"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T00:03:43.472822Z",
+        "last_confirmed_at": "2026-07-25T00:03:43.472822Z"
+      },
+      {
+        "id": "hyp_v3_us_10y_yield_monthly_change_2024_03_20260725_000343_019_3b90d369",
+        "source_event_id": "evt_finance_20240321_018_c783bf78",
+        "target_event_id": "evt_6dda416b0056",
+        "relation_type": "causes",
+        "strength": 0.9,
+        "confidence": 0.95,
+        "time_lag_hours": null,
+        "reasoning": "The bond market rally and subsequent drop in yields directly caused the monthly 10-year yield change to be at least -0.19 percentage points.",
+        "evidence_article_ids": [
+          "art_finance_20240321_002_aef4ea88",
+          "art_finance_20240320_003_e759a7ac"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_10y_yield_monthly_change_2024_03"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T00:03:43.486641Z",
+        "last_confirmed_at": "2026-07-25T00:03:43.486641Z"
+      }
+    ],
+    "outcome_impacts": [
+      {
+        "id": "imp_54294ee4",
+        "event_id": "evt_finance_20240308_011_07c108ff",
+        "outcome_event_id": "evt_6dda416b0056",
+        "question_id": "v3_us_10y_yield_monthly_change_2024_03",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Powell's signals created initial dovish expectations, contributing to the eventual yield decline.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_10y_yield_monthly_change_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T00:03:51.925049Z",
+        "last_confirmed_at": "2026-07-25T00:03:51.925049Z"
+      },
+      {
+        "id": "imp_44d12c04",
+        "event_id": "evt_finance_20240320_012_3d98005d",
+        "outcome_event_id": "evt_6dda416b0056",
+        "question_id": "v3_us_10y_yield_monthly_change_2024_03",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "The FOMC projections indicated fewer rate cuts, tempering expectations and pushing against a steeper yield decline.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_10y_yield_monthly_change_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T00:03:51.935925Z",
+        "last_confirmed_at": "2026-07-25T00:03:51.935925Z"
+      },
+      {
+        "id": "imp_6b355d42",
+        "event_id": "evt_finance_20240321_013_e53c1269",
+        "outcome_event_id": "evt_6dda416b0056",
+        "question_id": "v3_us_10y_yield_monthly_change_2024_03",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "The inverted yield curve increased demand for safe-haven assets, directly contributing to lower yields.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_10y_yield_monthly_change_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T00:03:51.947489Z",
+        "last_confirmed_at": "2026-07-25T00:03:51.947489Z"
+      },
+      {
+        "id": "imp_c89857a8",
+        "event_id": "evt_politics_20240318_014_4a8c2c51",
+        "outcome_event_id": "evt_6dda416b0056",
+        "question_id": "v3_us_10y_yield_monthly_change_2024_03",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.4,
+        "confidence": 0.6,
+        "reasoning": "Political pressure for lower rates reinforced market sentiment for a dovish turn, contributing to yield decline.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_10y_yield_monthly_change_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T00:03:51.958470Z",
+        "last_confirmed_at": "2026-07-25T00:03:51.958470Z"
+      },
+      {
+        "id": "imp_2f27271e",
+        "event_id": "evt_finance_20240301_015_ad565fdc",
+        "outcome_event_id": "evt_6dda416b0056",
+        "question_id": "v3_us_10y_yield_monthly_change_2024_03",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Persistent inflation and economic resilience led to a more hawkish Fed stance, counteracting yield decline.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_10y_yield_monthly_change_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T00:03:51.971030Z",
+        "last_confirmed_at": "2026-07-25T00:03:51.971030Z"
+      },
+      {
+        "id": "imp_e05b2b0c",
+        "event_id": "evt_finance_20240308_016_f47af588",
+        "outcome_event_id": "evt_6dda416b0056",
+        "question_id": "v3_us_10y_yield_monthly_change_2024_03",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Initial market expectations for aggressive rate cuts contributed to the downward pressure on yields.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_10y_yield_monthly_change_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T00:03:51.986612Z",
+        "last_confirmed_at": "2026-07-25T00:03:51.986612Z"
+      },
+      {
+        "id": "imp_34400549",
+        "event_id": "evt_finance_20240320_017_6a627165",
+        "outcome_event_id": "evt_6dda416b0056",
+        "question_id": "v3_us_10y_yield_monthly_change_2024_03",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "The hawkish stance from the Fed directly counteracted expectations for aggressive rate cuts, limiting the yield decline.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_10y_yield_monthly_change_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T00:03:51.997397Z",
+        "last_confirmed_at": "2026-07-25T00:03:51.997397Z"
+      },
+      {
+        "id": "imp_d20beefe",
+        "event_id": "evt_finance_20240321_018_c783bf78",
+        "outcome_event_id": "evt_6dda416b0056",
+        "question_id": "v3_us_10y_yield_monthly_change_2024_03",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.95,
+        "reasoning": "The bond market rally and subsequent drop in yields is the direct cause of the outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_10y_yield_monthly_change_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T00:03:52.010222Z",
+        "last_confirmed_at": "2026-07-25T00:03:52.010222Z"
+      },
+      {
+        "id": "imp_3f32e007",
+        "event_id": "evt_finance_20240326_019_93e9d512",
+        "outcome_event_id": "evt_6dda416b0056",
+        "question_id": "v3_us_10y_yield_monthly_change_2024_03",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.5,
+        "confidence": 0.7,
+        "reasoning": "Rising yields due to strong economic data acted as a countervailing factor against the overall decline in yields.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_10y_yield_monthly_change_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T00:03:52.021807Z",
+        "last_confirmed_at": "2026-07-25T00:03:52.021807Z"
+      },
+      {
+        "id": "imp_434e36e2",
+        "event_id": "evt_finance_20240315_020_92c00171",
+        "outcome_event_id": "evt_6dda416b0056",
+        "question_id": "v3_us_10y_yield_monthly_change_2024_03",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Stronger economic data reinforced the Fed's hawkish stance, pushing against yield decline.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_10y_yield_monthly_change_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T00:03:52.033535Z",
+        "last_confirmed_at": "2026-07-25T00:03:52.033535Z"
+      },
+      {
+        "id": "imp_c6d06b35",
+        "event_id": "evt_finance_20240320_021_b7a818e8",
+        "outcome_event_id": "evt_6dda416b0056",
+        "question_id": "v3_us_10y_yield_monthly_change_2024_03",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "The market's re-evaluation of rate cuts, leading to fewer anticipated cuts, ultimately contributed to the bond market rally and yield drop.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_10y_yield_monthly_change_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T00:03:52.044050Z",
+        "last_confirmed_at": "2026-07-25T00:03:52.044050Z"
+      }
+    ]
+  }
+}

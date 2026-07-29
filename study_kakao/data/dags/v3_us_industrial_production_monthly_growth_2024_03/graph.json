@@ -1,0 +1,143 @@
+{
+  "schema_version": "1.0",
+  "actual_outcome_event_id": "node_6",
+  "graph": {
+    "nodes": [
+      {
+        "id": "node_1",
+        "label": "February US industrial-production reference observation",
+        "event_type": "indicator",
+        "occurred_date": "2024-02-29",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_fcc9dfa66d712738",
+          "ev_recovery_fed_g17_20240416"
+        ]
+      },
+      {
+        "id": "node_2",
+        "label": "March US industrial-production target observation",
+        "event_type": "indicator",
+        "occurred_date": "2024-03-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_fcc9dfa66d712738",
+          "ev_recovery_fed_g17_20240416",
+          "ev_recovery_ap_ism_20240401"
+        ]
+      },
+      {
+        "id": "node_3",
+        "label": "March-over-February industrial-production growth calculation",
+        "event_type": "milestone",
+        "occurred_date": "2024-03-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_fcc9dfa66d712738"
+        ]
+      },
+      {
+        "id": "node_4",
+        "label": "Snapshotted March industrial-production growth was 0.172%",
+        "event_type": "indicator",
+        "occurred_date": "2024-03-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_fcc9dfa66d712738"
+        ]
+      },
+      {
+        "id": "node_5",
+        "label": "Applicable pre-registered within-range classification interval",
+        "event_type": "milestone",
+        "occurred_date": "2024-03-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_fcc9dfa66d712738"
+        ]
+      },
+      {
+        "id": "node_6",
+        "label": "Resolved outcome: March industrial-production growth was within recent range",
+        "event_type": "outcome",
+        "occurred_date": "2024-04-21",
+        "is_outcome": true,
+        "is_actual_outcome": true,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_fcc9dfa66d712738"
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_1",
+        "source": "node_1",
+        "target": "node_3",
+        "relationship": "input_to",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_fcc9dfa66d712738",
+          "ev_recovery_fed_g17_20240416"
+        ],
+        "rationale": "The February index observation is the reference input to the monthly percentage-growth calculation."
+      },
+      {
+        "id": "edge_2",
+        "source": "node_2",
+        "target": "node_3",
+        "relationship": "input_to",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_fcc9dfa66d712738",
+          "ev_recovery_fed_g17_20240416",
+          "ev_recovery_ap_ism_20240401"
+        ],
+        "rationale": "The March index observation is the target input, with contemporaneous official and independent corroboration of improved industrial activity."
+      },
+      {
+        "id": "edge_3",
+        "source": "node_3",
+        "target": "node_4",
+        "relationship": "yields",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_fcc9dfa66d712738"
+        ],
+        "rationale": "Applying the benchmark's percentage-change method yields the snapshotted 0.172% growth."
+      },
+      {
+        "id": "edge_4",
+        "source": "node_4",
+        "target": "node_6",
+        "relationship": "classified_as",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_fcc9dfa66d712738"
+        ],
+        "rationale": "The snapshotted 0.172% growth was classified within the benchmark's recent range."
+      },
+      {
+        "id": "edge_5",
+        "source": "node_5",
+        "target": "node_6",
+        "relationship": "classification_rule_for",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_fcc9dfa66d712738"
+        ],
+        "rationale": "The pre-registered interval defines the within-range answer category."
+      }
+    ]
+  }
+}

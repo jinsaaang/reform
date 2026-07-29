@@ -1,0 +1,40 @@
+{
+  "schema_version": "fixed_exemplar_case",
+  "status": "success",
+  "question_id": "v3_us_5y_breakeven_monthly_change_2025_06",
+  "retrieved_memory_question_id": "v3_us_5y_breakeven_monthly_change_2024_01",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_markets",
+      "target_operation": "predict_change",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2024-01-01, which range will the monthly 5-year breakeven change for United States 5-year breakeven inflation rate in 2024-01 fall into?",
+    "historical_cutoff": "2024-01-01T00:00:00+00:00",
+    "target_semantics": "The monthly change in the United States 5-year breakeven inflation rate for January 2024.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20080723_008_27840342",
+        "takeaway": "Inflation rates in the US have historically shown fluctuations, with periods of both increase and decrease.",
+        "why_predictive": "Historical inflation data provides context for current inflation expectations and potential future movements."
+      },
+      {
+        "article_id": "art_finance_20180903_002_b6c8cb88",
+        "takeaway": "Product sales data can be an indicator of economic activity.",
+        "why_predictive": "Economic activity influences monetary policy expectations, which in turn can affect inflation expectations."
+      }
+    ],
+    "expert_reasoning": [
+      "The baseline factor is economic growth. Stronger economic activity can lead to expectations of delayed monetary policy easing, which in turn can support inflation compensation. This suggests an upward pressure on breakeven rates.",
+      "Policy expectations are a key driver. If monetary policy is expected to remain tighter for longer due to growth, this can further support inflation compensation, also pushing breakeven rates higher.",
+      "Inflation persistence is a mediator. If inflation is perceived as persistent, this can amplify market-based inflation expectations, contributing to higher breakeven rates.",
+      "However, cooling inflation acts as counterevidence. Broad and sustained cooling of inflation can temper inflation expectations, potentially leading to a downward pressure on breakeven rates.",
+      "The target, inflation compensation (represented by breakevens), is determined by the interplay of growth, policy repricing, persistent inflation, and disinflation evidence. A comparison of breakevens with inflation data and policy expectations is necessary."
+    ],
+    "counterevidence": "The potential for broad and sustained cooling in inflation could temper inflation expectations, exerting downward pressure on breakeven rates.",
+    "prospective_target_estimate": "The interplay of factors suggests a mixed outlook, but the evidence for growth and policy repricing, if sustained, could lead to an increase in breakeven rates.",
+    "option_mapping": "The monthly change in the 5-year breakeven inflation rate is expected to be influenced by economic growth, policy expectations, and inflation persistence, potentially leading to a change that falls above the recent range if these factors outweigh cooling inflation.",
+    "uncertainty": "The direct link from inflation expectations to the resolved option is excluded, and the relative strength of cooling inflation versus growth-driven repricing remains a key uncertainty.",
+    "dag_derived_lesson": "Economic growth can influence policy expectations, which in turn can affect inflation compensation. However, cooling inflation can counteract these effects. The relative strength of these opposing forces determines the outcome."
+  }
+}

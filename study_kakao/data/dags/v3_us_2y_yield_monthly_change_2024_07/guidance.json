@@ -1,0 +1,40 @@
+{
+  "schema_version": "hgf_blueprint_v1",
+  "question_id": "v3_us_2y_yield_monthly_change_2024_07",
+  "target_definition": {
+    "metric": "U.S. two-year Treasury yield monthly change",
+    "unit_or_option_space": "monthly change classification",
+    "forecast_horizon": "target month"
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "The graph supports an inflation and labor data to Fed-policy repricing mechanism, with activity sentiment as a countervailing channel.",
+    "weaknesses": [
+      "All substantive source events occur after the forecast cutoff, so they are provenance for reusable mechanisms only and must not be used as forecast-time evidence.",
+      "The direct shorter-term yield-pressure node is a realized target proxy and is excluded."
+    ]
+  },
+  "search_factors": [
+    {"factor":"Inflation progress","why_search":"Inflation surprises can change the expected policy path.","preferred_source_types":["official price releases","central-bank communications","inflation swaps"],"source_event_ids":["evt_finance_20240705_011_db82362b","evt_finance_20240718_014_fd05c653"]},
+    {"factor":"Fed policy repricing","why_search":"Short-maturity yields respond to changes in the expected policy path.","preferred_source_types":["rate futures","OIS curves","Federal Reserve communications"],"source_event_ids":["evt_finance_20240718_015_9ad9c69e"]},
+    {"factor":"Labor-market cooling","why_search":"Labor conditions can validate or challenge an easing-policy repricing.","preferred_source_types":["official employment data","wage data","labor-market surveys"],"source_event_ids":["evt_finance_20240718_016_9eeb7ddd"]},
+    {"factor":"Activity resilience","why_search":"Resilient demand or sentiment can limit expectations of policy easing.","preferred_source_types":["consumer surveys","activity data","retail and employment data"],"source_event_ids":["evt_finance_20240712_017_c49b99bb","evt_finance_20240718_013_d9bd1f30"]}
+  ],
+  "checkpoints": [
+    {"id":"inflation","role":"driver","factor":"Inflation progress","mechanism":"Softer inflation information can lower expected future policy rates.","expected_direction":"down","evidence_requirement":"Use only releases and market pricing available by the forecast cutoff; verify inflation breadth, revisions, and policy reaction.","contradiction_signal":"Underlying inflation firms or policy guidance remains restrictive.","historical_support":"medium","source_event_ids":["evt_finance_20240705_011_db82362b","evt_finance_20240718_014_fd05c653"],"source_edge_ids":["hyp_v3_us_2y_yield_monthly_change_2024_07_20260725_061955_009_341ac34f","hyp_v3_us_2y_yield_monthly_change_2024_07_20260725_061955_010_0c608718"]},
+    {"id":"fed_repricing","role":"mediator","factor":"Fed policy repricing","mechanism":"A lower expected policy-rate path can reduce expected returns at short Treasury maturities.","expected_direction":"down","evidence_requirement":"Verify cutoff-available futures, OIS, policy statements, and the distinction between policy expectations and term premium.","contradiction_signal":"Short-rate markets price fewer cuts or a higher terminal policy rate.","historical_support":"medium","source_event_ids":["evt_finance_20240718_015_9ad9c69e"],"source_edge_ids":["hyp_v3_us_2y_yield_monthly_change_2024_07_20260725_061955_011_35e7ea9e"]},
+    {"id":"labor","role":"baseline","factor":"Labor-market cooling","mechanism":"Cooling labor conditions can support a less restrictive expected policy path.","expected_direction":"down","evidence_requirement":"Verify payrolls, unemployment, wages, vacancies, and revisions available at cutoff.","contradiction_signal":"Labor demand or wages reaccelerate.","historical_support":"weak","source_event_ids":["evt_finance_20240718_016_9eeb7ddd"],"source_edge_ids":["hyp_v3_us_2y_yield_monthly_change_2024_07_20260725_061955_012_c0da386d"]},
+    {"id":"activity_offset","role":"counterevidence","factor":"Activity resilience","mechanism":"Resilient consumer activity can limit expected easing and offset downward policy-rate pressure.","expected_direction":"up","evidence_requirement":"Verify cutoff-available consumption, sentiment, labor, and growth indicators.","contradiction_signal":"Activity measures deteriorate broadly.","historical_support":"weak","source_event_ids":["evt_finance_20240712_017_c49b99bb","evt_finance_20240718_013_d9bd1f30"],"source_edge_ids":["hyp_v3_us_2y_yield_monthly_change_2024_07_20260725_061955_013_38594530","hyp_v3_us_2y_yield_monthly_change_2024_07_20260725_061955_014_177a5e33"]},
+    {"id":"two_year_bridge","role":"target_bridge","factor":"Verified short-rate and term-premium balance","mechanism":"Infer two-year yield direction only after reconciling cutoff-available inflation, labor, Fed pricing, issuance, risk sentiment, and term-premium evidence.","expected_direction":"mixed","evidence_requirement":"Use a cutoff-compliant policy curve, inflation and labor data, Treasury supply information, risk conditions, and term-premium measures; do not use a realized yield change.","contradiction_signal":"Term premium, supply, or risk-off demand dominates the expected policy-rate effect.","historical_support":"weak","source_event_ids":["evt_finance_20240705_011_db82362b","evt_finance_20240718_015_9ad9c69e","evt_finance_20240718_016_9eeb7ddd"],"source_edge_ids":["hyp_v3_us_2y_yield_monthly_change_2024_07_20260725_061955_009_341ac34f","hyp_v3_us_2y_yield_monthly_change_2024_07_20260725_061955_011_35e7ea9e","hyp_v3_us_2y_yield_monthly_change_2024_07_20260725_061955_012_c0da386d"]}
+  ],
+  "causal_paths": [
+    {"checkpoint_ids":["inflation","fed_repricing","two_year_bridge"],"generalized_mechanism":"Softer inflation can reprice expected Fed policy and reduce short-maturity yield pressure.","expected_direction":"down","applicability_conditions":["The repricing is visible in cutoff-available rate markets.","Policy communication validates the inflation interpretation."],"failure_conditions":["Inflation persistence or policy guidance reverses the repricing.","Term premium dominates the policy channel."]},
+    {"checkpoint_ids":["labor","fed_repricing","two_year_bridge"],"generalized_mechanism":"Labor cooling can reinforce an easing-policy repricing at short maturities.","expected_direction":"down","applicability_conditions":["Cutoff-available labor data corroborate the slowdown."],"failure_conditions":["Wages or labor demand reaccelerate."]},
+    {"checkpoint_ids":["activity_offset","two_year_bridge"],"generalized_mechanism":"Resilient activity can restrain expected easing and offset a downward yield mechanism.","expected_direction":"up","applicability_conditions":["Activity data are broad and timely enough to change policy expectations."],"failure_conditions":["Activity weakens despite favorable sentiment."]}
+  ],
+  "alternative_hypotheses": [
+    {"hypothesis":"Treasury supply, term premium, or risk conditions dominate changes in policy expectations.","discriminating_evidence":"Compare policy-curve moves with auctions, term-premium measures, volatility, and safe-haven flows.","source_event_ids":["evt_finance_20240718_015_9ad9c69e","evt_finance_20240718_016_9eeb7ddd"]},
+    {"hypothesis":"Inflation easing is too narrow to produce a durable policy repricing.","discriminating_evidence":"Compare core inflation breadth, wage data, and Fed communications with market-implied policy rates.","source_event_ids":["evt_finance_20240705_011_db82362b","evt_finance_20240718_014_fd05c653"]}
+  ],
+  "forecast_audit_questions": ["Are all forecast inputs available by the stated cutoff?","Do cutoff-available inflation and labor data change Fed pricing?","Does the short-rate curve move consistently with policy repricing?","Do supply, term premium, or risk conditions offset the policy mechanism?"]
+}

@@ -1,0 +1,1416 @@
+{
+  "question": {
+    "id": "v3_us_5y_breakeven_monthly_change_2024_01",
+    "question_text": "As of 2024-01-01, which range will the monthly 5-year breakeven change for United States 5-year breakeven inflation rate in 2024-01 fall into?",
+    "question_type": "mcq",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 3,
+    "resolution_date": "2024-02-15T23:59:59Z",
+    "estimated_start_time": "2024-01-01T00:00:00Z",
+    "ground_truth": "above recent range",
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [
+      "evt_056e8af72529",
+      "evt_1e8e4bb0a9ad",
+      "evt_afda87ec5eda"
+    ],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: United States 5-year breakeven inflation rate\nTarget period: 2024-01\nFinancial area: monetary_policy / inflation expectations\nRegion: US\nPre-registered recent-range boundaries: lower -0.123, upper 0.095 percentage points.",
+    "resolution_criteria": "Use FRED series T5YIE. Compute the change from the previous monthly observation using mode 'absolute'. Resolve 'below recent range' below -0.123, 'within recent range' from -0.123 inclusive to 0.095 exclusive, and 'above recent range' at or above 0.095 percentage points.",
+    "resolution_reasoning": "The snapshotted target change was 0.12 percentage points; it resolved to 'above recent range'.",
+    "options": [
+      "below recent range",
+      "within recent range",
+      "above recent range"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": "\n## Executive Summary\nIn January 2024, the United States 5-year breakeven inflation rate moved above its recent range, primarily driven by strong economic data, persistent inflation concerns, and a cautious stance from the Federal Reserve regarding interest rate cuts. Better-than-expected GDP growth and robust job gains fostered market expectations of a delayed easing cycle, providing upward pressure on inflation expectations. Despite some cooling of headline inflation, core inflation measures and the Federal Reserve's communications indicated that the battle against inflation was not yet decisively won, contributing to the upward trend in breakeven rates.\n\n## Timeline Of Key Events\n- **January 6, 2024**: Federal Reserve President Lorie Logan's remarks indicate that while inflation has improved, the job of restoring price stability is not yet complete, and the economy is settling down rather than collapsing [art_finance_20240106_008_64543afb].\n- **January 19, 2024**: Moody's expects the Fed to cut rates in May, with inflation returning to central bank targets by 2025, but notes a bumpy path with geopolitical risks [art_finance_20240119_007_710c3e7a].\n- **January 25, 2024**: The US economy grew at a blistering 3.3% pace in Q4 2023, far exceeding expectations, while core PCE inflation rose 2% for the period [art_finance_20240125_003_fb795425]. This strong economic data led to a repricing of Fed rate cut expectations [art_finance_20240125_005_82371dcc].\n- **January 31, 2024**: The Federal Reserve issues FOMC statement, holding interest rates steady for the fourth consecutive time. The committee states it will not reduce the target range until it has gained greater confidence that inflation is moving sustainably toward 2% [art_finance_20240131_002_c3c3cc52, art_finance_20240131_003_c185d0fd]. Fed Chair Jerome Powell emphasizes that inflation is still high and the path forward is uncertain, pushing back against early rate cut expectations.\n- **February 10, 2024**: Expectations build for slower US inflation to fuel Fed cut optimism, with core CPI expected to increase 3.7% year-over-year in January [art_finance_20240210_004_62113aad].\n- **February 13, 2024**: Anticipation of the US CPI report for January 2024 [art_finance_20240213_006_7e8034b1].\n\n## Causal Chain Analysis\n**Root Cause: Strong Economic Performance**: The US economy demonstrated robust growth in Q4 2023, expanding at an annualized rate of 3.3%, significantly higher than expected. This strength was driven by strong consumer spending and government expenditures [art_finance_20240125_003_fb795425].\n\n**Intermediate Mechanism: Delayed Fed Rate Cut Expectations**: The robust economic data, coupled with persistent, albeit cooling, inflation, led markets to anticipate a delay in Federal Reserve interest rate cuts. Initial aggressive bets on early rate cuts were reined in, as indicated by the dollar gaining strength [art_finance_20240125_005_82371dcc]. The Fed's FOMC statement on January 31, explicitly stating they would not cut rates until inflation is sustainably at 2%, further solidified these expectations [art_finance_20240131_002_c3c3cc52, art_finance_20240131_003_c185d0fd].\n\n**Proximate Trigger: Upward Pressure on Inflation Expectations**: The combination of strong economic activity and the Federal Reserve's cautious stance on rate cuts signaled that inflationary pressures might persist longer than previously anticipated. This perception caused an increase in market-based inflation expectations, as reflected in the breakeven inflation rate. Federal Reserve statements continuously highlighted that inflation, while easing, remained elevated, underlining the ongoing challenge of restoring price stability [art_finance_20240106_008_64543afb, art_finance_20240131_003_c185d0fd].\n\n**Final Outcome: 5-year Breakeven Inflation Rate Above Recent Range**: The collective impact of these factors, especially the stronger-than-expected economic growth and the Fed's resistance to premature rate cuts, pushed the 5-year breakeven inflation rate above its recent range in January 2024. This outcome directly resulted from market adjustments to the revised outlook for monetary policy and sustained economic vigor.\n\n## Countervailing Factors\n- **Cooling Inflation Data**: Despite strong economic growth, some inflation measures showed signs of cooling. Core PCE inflation rose 2% in Q4, and expectations for January's core CPI suggested a 3.7% year-over-year increase, down from previous highs [art_finance_20240125_003_fb795425, art_finance_20240210_004_62113aad]. This factor pushed towards lower inflation expectations and potentially earlier rate cuts, but was ultimately outweighed by the overall economic strength and the Fed's consistent messaging.\n- **Optimism for Future Fed Cuts**: Moody's expected the Fed to begin cutting rates in May, with inflation returning to target by 2025 [art_finance_20240119_007_710c3e7a]. This optimistic view on future rate cuts could have tempered breakeven inflation rates, but the immediate impact of the Fed's firm stance in January overshadowed these longer-term forecasts.\n\n## Event Candidate Inventory\n- **E1: Strong Q4 2023 US GDP Growth**: \n    - **title**: The U.S. economy grew at blistering 3.3% pace in Q4 while inflation pulled back\n    - **date**: 2024-01-25\n    - **why it matters causally**: Signaled unexpected economic strength, leading to repriced Fed rate cut expectations and higher inflation outlook.\n    - **source article IDs**: [art_finance_20240125_003_fb795425]\n\n- **E2: Federal Reserve FOMC Statement (January 31, 2024)**:\n    - **title**: Federal Reserve issues FOMC statement\n    - **date**: 2024-01-31\n    - **why it matters causally**: Official confirmation of steady interest rates and a clear signal of continued caution on inflation, directly impacting market expectations for future policy and inflation.\n    - **source article IDs**: [art_finance_20240131_002_c3c3cc52, art_finance_20240131_003_c185d0fd]\n\n- **E3: Federal Reserve Officials' Hawkish Remarks (January 2024)**:\n    - **title**: Opening remarks at panel on Market Monitoring and the Implementation of Monetary Policy - Federal Reserve Bank of Dallas\n    - **date**: 2024-01-06\n    - **why it matters causally**: Early indications from Fed officials reinforcing the need for sustained efforts to combat inflation, contributing to the shift in market sentiment regarding rate cuts.\n    - **source article IDs**: [art_finance_20240106_008_64543afb]\n\n## Evidence Mapping Table\n| Claim/Event | Article IDs | Date Support | Confidence (0-1) | Notes |\n|---|---|---|---|---|\n| Strong Q4 2023 US GDP drives inflation expectations | art_finance_20240125_003_fb795425 | 2024-01-25 | 0.9 | Direct evidence of stronger-than-expected economic growth. |\n| Fed maintains cautious stance on rate cuts | art_finance_20240131_002_c3c3cc52, art_finance_20240131_003_c185d0fd | 2024-01-31 | 0.95 | Official FOMC statement and analysis confirm cautious Fed policy. |\n| Market reprices early rate cut expectations | art_finance_20240125_005_82371dcc | 2024-01-25 | 0.85 | Reports on dollar strength and market adjustments to Fed policy view. |\n| Persistent, albeit cooling, inflation concerns | art_finance_20240106_008_64543afb, art_finance_20240210_004_62113aad | 2024-01-06, 2024-02-10 | 0.8 | Fed officials' remarks and expectations for core CPI.\n\n## Uncertainties And Alternative Paths\n- **Faster-than-expected inflation decline**: If forthcoming inflation data in early 2024 had shown a more rapid and sustained decline, the Federal Reserve might have signaled earlier rate cuts, leading the 5-year breakeven inflation rate to remain within or drop below its recent range.\n- **Economic slowdown**: An unexpected significant slowdown in economic activity or a recessionary signal could have prompted the Fed to consider earlier rate cuts, thereby reducing inflation expectations and the breakeven rate.\n- **Immediate geopolitical shock**: A severe, unexpected geopolitical event that significantly disrupted global supply chains or energy markets could have dramatically altered inflation expectations, potentially pushing the breakeven rate much higher or creating immense uncertainty, depending on the nature of the shock.\n",
+    "graph_built": true,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.205254Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "us_5y_breakeven_monthly_change",
+        "event_cluster_id": "inflation_expectations_2024-01",
+        "category": "monetary_policy",
+        "original_domain": "monetary_policy",
+        "subdomain": "inflation expectations",
+        "entity": "United States 5-year breakeven inflation rate",
+        "region": "US",
+        "target_metric": "monthly 5-year breakeven change",
+        "target_period": "2024-01",
+        "forecast_cutoff": "2024-01-01T00:00:00+00:00",
+        "forecast_date_options": [
+          "2024-01-01"
+        ],
+        "resolution_available_at": "2024-02-15T23:59:59+00:00",
+        "horizon_days": 45,
+        "source_type": "fred_series_snapshot",
+        "source_series_id": "T5YIE",
+        "source_homepage": "https://fred.stlouisfed.org/series/T5YIE",
+        "comparison_rule": "target change bucketed by the lower and upper quartiles of the 8 prior observed changes",
+        "comparison_threshold": 0.02,
+        "comparison_thresholds": {
+          "lower": -0.1225,
+          "upper": 0.095
+        },
+        "change_unit": "percentage points",
+        "threshold_observation_dates": [
+          "2023-04-28",
+          "2023-05-31",
+          "2023-06-30",
+          "2023-07-31",
+          "2023-08-31",
+          "2023-09-29",
+          "2023-10-31",
+          "2023-11-30",
+          "2023-12-29"
+        ],
+        "split": "memory",
+        "family_position": 3,
+        "family_size": 8,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "above recent range",
+        "resolved_class": "above recent range",
+        "resolution_value": 2.24,
+        "target_change": 0.12,
+        "source_observation_date": "2024-01-31",
+        "resolution_document": {
+          "publisher": "Federal Reserve Bank of St. Louis (FRED)",
+          "title": "5-Year Breakeven Inflation Rate",
+          "url": "https://fred.stlouisfed.org/series/T5YIE"
+        },
+        "source_download_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=T5YIE&cosd=2019-01-01&coed=2026-06-30",
+        "source_sha256": "a2e77c093f557d5be79b3174c6dbd74f065ac59ed61792acd842e75486657170",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_afda87ec5eda",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 10,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_20180903_002_b6c8cb88",
+        "title": "Product sales data - 2024 | FCA",
+        "url": "https://www.fca.org.uk/data/product-sales-data",
+        "source": "fca.org.uk",
+        "published_date": "2018-09-03T16:59:55+01:00"
+      },
+      {
+        "id": "art_finance_20240131_003_c185d0fd",
+        "title": "Federal Reserve holds its interest rate steady. Here's what that means. - CBS News",
+        "url": "https://www.cbsnews.com/news/federal-reserve-interest-rate-decision-2024",
+        "source": "cbsnews.com",
+        "published_date": "2024-01-31T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240131_002_c3c3cc52",
+        "title": "Federal Reserve issues FOMC statement",
+        "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20240131a.htm",
+        "source": "federalreserve.gov",
+        "published_date": "2024-01-31T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240125_003_fb795425",
+        "title": "The U.S. economy grew at blistering 3.3% pace in Q4 while inflation pulled back - CNBC",
+        "url": "https://www.cnbc.com/2024/01/25/gdp-q4-2023-the-us-economy-grew-at-a-3point3percent-pace-in-the-fourth-quarter.html",
+        "source": "cnbc.com",
+        "published_date": "2024-01-25T13:30:58+00:00"
+      },
+      {
+        "id": "art_finance_20240210_004_62113aad",
+        "title": "World Economy Latest: Slower US Inflation Is Set to Fuel Fed Cut Optimism - Bloomberg.com",
+        "url": "https://www.bloomberg.com/news/articles/2024-02-10/world-economy-latest-slower-us-inflation-is-set-to-fuel-fed-cut-optimism",
+        "source": "bloomberg.com",
+        "published_date": "2024-02-10T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240125_005_82371dcc",
+        "title": "US dollar falls ahead of GDP, inflation data; Fed in focus - Zee Business",
+        "url": "https://www.zeebiz.com/markets/currency/news-us-dollar-falls-ahead-of-gdp-inflation-data-fed-in-focus-273469",
+        "source": "zeebiz.com",
+        "published_date": "2024-01-25T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240213_006_7e8034b1",
+        "title": "US CPI Report January 2024: Live News on Inflation, Consumer ...",
+        "url": "https://www.bloomberg.com/news/live-blog/2024-02-13/us-cpi-report-for-january",
+        "source": "bloomberg.com",
+        "published_date": "2024-02-13T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240119_007_710c3e7a",
+        "title": "Moody's expects Fed to cut rates in May as inflation slows - Daijiworld",
+        "url": "https://www.daijiworld.com/news/newsDisplay?newsID=1159973",
+        "source": "daijiworld.com",
+        "published_date": "2024-01-19T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20080723_008_27840342",
+        "title": "Current US Inflation Rates: 2000-2025",
+        "url": "https://www.usinflationcalculator.com/inflation/current-inflation-rates",
+        "source": "usinflationcalculator.com",
+        "published_date": "2008-07-23T03:07:58+00:00"
+      },
+      {
+        "id": "art_finance_20240106_008_64543afb",
+        "title": "Opening remarks at panel on Market Monitoring and the Implementation of Monetary Policy - Federal Reserve Bank of Dallas",
+        "url": "https://www.dallasfed.org/news/speeches/logan/2024/lkl240106",
+        "source": "dallasfed.org",
+        "published_date": "2024-01-06T08:00:00+00:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_afda87ec5eda",
+      "events_count": 9,
+      "hypotheses_count": 22
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 3,
+      "avg_depth": 2.82,
+      "quality_score": 0.88,
+      "depth_score": 1.0,
+      "confidence_score": 0.8,
+      "strength_score": 0.67,
+      "evidence_score": 1.0,
+      "event_count": 9,
+      "hypothesis_count": 22
+    },
+    "nodes": [
+      {
+        "id": "evt_056e8af72529",
+        "title": "Option 1: below recent range",
+        "description": "Question resolves to: below recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-02-15T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2024_01",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 0,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:59:37.139248Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_1e8e4bb0a9ad",
+        "title": "Option 2: within recent range",
+        "description": "Question resolves to: within recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-02-15T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2024_01",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 1,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:59:37.139260Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_afda87ec5eda",
+        "title": "Option 3: above recent range",
+        "description": "Question resolves to: above recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-02-15T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2024_01",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 2,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:59:37.139267Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240106_008_cf6e6667",
+        "title": "Federal Reserve Officials' Hawkish Remarks",
+        "description": "Federal Reserve President Lorie Logan's remarks indicate that while inflation has improved, the job of restoring price stability is not yet complete, and the economy is settling down rather than collapsing.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-06T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240106_008_64543afb"
+        ],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2024_01",
+        "source_article_id": "art_finance_20240106_008_64543afb",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_5y_breakeven_monthly_change_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T03:06:25.950314Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240119_014_47988042",
+        "title": "Optimism for Future Fed Cuts",
+        "description": "Moody's expected the Fed to begin cutting rates in May, with inflation returning to target by 2025.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-19T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240119_007_710c3e7a"
+        ],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2024_01",
+        "source_article_id": "art_finance_20240119_007_710c3e7a",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_5y_breakeven_monthly_change_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T03:06:26.164357Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240125_007_d471e070",
+        "title": "Strong Q4 2023 US GDP Growth",
+        "description": "The US economy grew at a blistering 3.3% pace in Q4 2023, far exceeding expectations, driven by strong consumer spending and government expenditures.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-25T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240125_003_fb795425"
+        ],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2024_01",
+        "source_article_id": "art_finance_20240125_003_fb795425",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_5y_breakeven_monthly_change_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T03:06:25.916593Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240125_010_3270301f",
+        "title": "Market Reprices Fed Rate Cut Expectations",
+        "description": "The strong economic data led to a repricing of Fed rate cut expectations, with initial aggressive bets on early rate cuts being reined in, and the dollar gaining strength.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-25T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240125_005_82371dcc",
+          "art_finance_20240125_003_fb795425"
+        ],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2024_01",
+        "source_article_id": "art_finance_20240125_005_82371dcc",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_5y_breakeven_monthly_change_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T03:06:26.021326Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240125_013_bd565434",
+        "title": "Cooling Inflation Data",
+        "description": "Some inflation measures showed signs of cooling, with Core PCE inflation rising 2% in Q4 and expectations for January's core CPI suggested a 3.7% year-over-year increase.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-25T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240125_003_fb795425"
+        ],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2024_01",
+        "source_article_id": "art_finance_20240125_003_fb795425",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_5y_breakeven_monthly_change_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T03:06:26.123303Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240131_009_3123d883",
+        "title": "Federal Reserve FOMC Statement",
+        "description": "The Federal Reserve issues FOMC statement, holding interest rates steady for the fourth consecutive time. The committee states it will not reduce the target range until it has gained greater confidence that inflation is moving sustainably toward 2%.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-31T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240131_003_c185d0fd",
+          "art_finance_20240131_002_c3c3cc52"
+        ],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2024_01",
+        "source_article_id": "art_finance_20240131_003_c185d0fd",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_5y_breakeven_monthly_change_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T03:06:25.986771Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240131_011_cf18db05",
+        "title": "Persistent Inflation Concerns",
+        "description": "Despite some cooling of headline inflation, core inflation measures and the Federal Reserve's communications indicated that the battle against inflation was not yet decisively won.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-31T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240131_003_c185d0fd",
+          "art_finance_20240131_002_c3c3cc52"
+        ],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2024_01",
+        "source_article_id": "art_finance_20240131_003_c185d0fd",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_5y_breakeven_monthly_change_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T03:06:26.055108Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240131_012_abd82bf1",
+        "title": "Upward Pressure on Inflation Expectations",
+        "description": "The combination of strong economic activity and the Federal Reserve's cautious stance on rate cuts signaled that inflationary pressures might persist longer than previously anticipated, causing an increase in market-based inflation expectations.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-31T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240131_003_c185d0fd",
+          "art_finance_20240131_002_c3c3cc52"
+        ],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2024_01",
+        "source_article_id": "art_finance_20240131_003_c185d0fd",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_5y_breakeven_monthly_change_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T03:06:26.089160Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2024_01_20260725_030626_002_c3bfc375",
+        "source_event_id": "evt_finance_20240125_007_d471e070",
+        "target_event_id": "evt_finance_20240125_010_3270301f",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Stronger-than-expected GDP growth directly led to a repricing of Fed rate cut expectations.",
+        "evidence_article_ids": [
+          "art_finance_20240125_003_fb795425",
+          "art_finance_20240125_005_82371dcc"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T03:06:26.234618Z",
+        "last_confirmed_at": "2026-07-25T03:06:26.234618Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2024_01_20260725_030626_003_178a40f2",
+        "source_event_id": "evt_finance_20240106_008_cf6e6667",
+        "target_event_id": "evt_finance_20240131_011_cf18db05",
+        "relation_type": "amplifies",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Fed officials' hawkish remarks reinforced concerns about persistent inflation.",
+        "evidence_article_ids": [
+          "art_finance_20240106_008_64543afb"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T03:06:26.251431Z",
+        "last_confirmed_at": "2026-07-25T03:06:26.251431Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2024_01_20260725_030626_004_53feaf67",
+        "source_event_id": "evt_finance_20240131_009_3123d883",
+        "target_event_id": "evt_finance_20240131_011_cf18db05",
+        "relation_type": "amplifies",
+        "strength": 0.9,
+        "confidence": 0.95,
+        "time_lag_hours": null,
+        "reasoning": "The FOMC statement explicitly holding rates steady and emphasizing inflation concerns solidified market expectations of delayed rate cuts and persistent inflation.",
+        "evidence_article_ids": [
+          "art_finance_20240131_003_c185d0fd",
+          "art_finance_20240131_002_c3c3cc52"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T03:06:26.268369Z",
+        "last_confirmed_at": "2026-07-25T03:06:26.268369Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2024_01_20260725_030626_005_a84ef41a",
+        "source_event_id": "evt_finance_20240125_010_3270301f",
+        "target_event_id": "evt_finance_20240131_012_abd82bf1",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.85,
+        "time_lag_hours": null,
+        "reasoning": "Delayed rate cut expectations, stemming from strong economic data and Fed's stance, directly contributed to upward pressure on inflation expectations.",
+        "evidence_article_ids": [
+          "art_finance_20240125_005_82371dcc",
+          "art_finance_20240125_003_fb795425"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T03:06:26.284548Z",
+        "last_confirmed_at": "2026-07-25T03:06:26.284548Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2024_01_20260725_030626_006_e331382c",
+        "source_event_id": "evt_finance_20240131_011_cf18db05",
+        "target_event_id": "evt_finance_20240131_012_abd82bf1",
+        "relation_type": "amplifies",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Ongoing concerns about inflation, despite some cooling, contributed to the upward trend in breakeven rates.",
+        "evidence_article_ids": [
+          "art_finance_20240131_003_c185d0fd",
+          "art_finance_20240131_002_c3c3cc52",
+          "art_finance_20240106_008_64543afb"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T03:06:26.300773Z",
+        "last_confirmed_at": "2026-07-25T03:06:26.300773Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2024_01_20260725_030626_008_738b33b1",
+        "source_event_id": "evt_finance_20240125_013_bd565434",
+        "target_event_id": "evt_finance_20240131_012_abd82bf1",
+        "relation_type": "inhibits",
+        "strength": 0.4,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Cooling inflation data could have tempered inflation expectations, but was outweighed by other factors.",
+        "evidence_article_ids": [
+          "art_finance_20240210_004_62113aad",
+          "art_finance_20240125_003_fb795425"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T03:06:26.335194Z",
+        "last_confirmed_at": "2026-07-25T03:06:26.335194Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2024_01_20260725_030626_009_60e7a709",
+        "source_event_id": "evt_finance_20240119_014_47988042",
+        "target_event_id": "evt_finance_20240131_012_abd82bf1",
+        "relation_type": "inhibits",
+        "strength": 0.3,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "Optimism for future Fed cuts could have tempered breakeven inflation rates, but the immediate impact of the Fed's firm stance overshadowed these longer-term forecasts.",
+        "evidence_article_ids": [
+          "art_finance_20240119_007_710c3e7a"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T03:06:26.351802Z",
+        "last_confirmed_at": "2026-07-25T03:06:26.351802Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2024_01_20260725_030653_010_935ff92c",
+        "source_event_id": "evt_finance_20240125_007_d471e070",
+        "target_event_id": "evt_finance_20240125_010_3270301f",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Stronger-than-expected GDP growth directly led to a repricing of Fed rate cut expectations.",
+        "evidence_article_ids": [
+          "art_finance_20240125_003_fb795425",
+          "art_finance_20240125_005_82371dcc"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T03:06:53.338025Z",
+        "last_confirmed_at": "2026-07-25T03:06:53.338025Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2024_01_20260725_030653_011_dec9cc8a",
+        "source_event_id": "evt_finance_20240106_008_cf6e6667",
+        "target_event_id": "evt_finance_20240131_011_cf18db05",
+        "relation_type": "amplifies",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Fed officials' hawkish remarks reinforced concerns about persistent inflation.",
+        "evidence_article_ids": [
+          "art_finance_20240106_008_64543afb"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T03:06:53.356717Z",
+        "last_confirmed_at": "2026-07-25T03:06:53.356717Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2024_01_20260725_030653_012_7f4dbf32",
+        "source_event_id": "evt_finance_20240131_009_3123d883",
+        "target_event_id": "evt_finance_20240131_011_cf18db05",
+        "relation_type": "amplifies",
+        "strength": 0.9,
+        "confidence": 0.95,
+        "time_lag_hours": null,
+        "reasoning": "The FOMC statement explicitly holding rates steady and emphasizing inflation concerns solidified market expectations of delayed rate cuts and persistent inflation.",
+        "evidence_article_ids": [
+          "art_finance_20240131_003_c185d0fd",
+          "art_finance_20240131_002_c3c3cc52"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T03:06:53.374888Z",
+        "last_confirmed_at": "2026-07-25T03:06:53.374888Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2024_01_20260725_030653_013_a2563745",
+        "source_event_id": "evt_finance_20240125_010_3270301f",
+        "target_event_id": "evt_finance_20240131_012_abd82bf1",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.85,
+        "time_lag_hours": null,
+        "reasoning": "Delayed rate cut expectations, stemming from strong economic data and Fed's stance, directly contributed to upward pressure on inflation expectations.",
+        "evidence_article_ids": [
+          "art_finance_20240125_005_82371dcc",
+          "art_finance_20240125_003_fb795425"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T03:06:53.392806Z",
+        "last_confirmed_at": "2026-07-25T03:06:53.392806Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2024_01_20260725_030653_014_8f2725b6",
+        "source_event_id": "evt_finance_20240131_011_cf18db05",
+        "target_event_id": "evt_finance_20240131_012_abd82bf1",
+        "relation_type": "amplifies",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Ongoing concerns about inflation, despite some cooling, contributed to the upward trend in breakeven rates.",
+        "evidence_article_ids": [
+          "art_finance_20240131_003_c185d0fd",
+          "art_finance_20240131_002_c3c3cc52",
+          "art_finance_20240106_008_64543afb"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T03:06:53.411347Z",
+        "last_confirmed_at": "2026-07-25T03:06:53.411347Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2024_01_20260725_030653_016_bf76d6be",
+        "source_event_id": "evt_finance_20240125_013_bd565434",
+        "target_event_id": "evt_finance_20240131_012_abd82bf1",
+        "relation_type": "inhibits",
+        "strength": 0.4,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Cooling inflation data could have tempered inflation expectations, but was outweighed by other factors.",
+        "evidence_article_ids": [
+          "art_finance_20240210_004_62113aad",
+          "art_finance_20240125_003_fb795425"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T03:06:53.452494Z",
+        "last_confirmed_at": "2026-07-25T03:06:53.452494Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2024_01_20260725_030653_017_5e1e9608",
+        "source_event_id": "evt_finance_20240119_014_47988042",
+        "target_event_id": "evt_finance_20240131_012_abd82bf1",
+        "relation_type": "inhibits",
+        "strength": 0.3,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "Optimism for future Fed cuts could have tempered breakeven inflation rates, but the immediate impact of the Fed's firm stance overshadowed these longer-term forecasts.",
+        "evidence_article_ids": [
+          "art_finance_20240119_007_710c3e7a"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T03:06:53.469776Z",
+        "last_confirmed_at": "2026-07-25T03:06:53.469776Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2024_01_20260725_030710_018_4fa779ec",
+        "source_event_id": "evt_finance_20240125_007_d471e070",
+        "target_event_id": "evt_finance_20240125_010_3270301f",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Stronger-than-expected GDP growth directly led to a repricing of Fed rate cut expectations.",
+        "evidence_article_ids": [
+          "art_finance_20240125_003_fb795425",
+          "art_finance_20240125_005_82371dcc"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T03:07:10.365007Z",
+        "last_confirmed_at": "2026-07-25T03:07:10.365007Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2024_01_20260725_030710_019_137472d2",
+        "source_event_id": "evt_finance_20240106_008_cf6e6667",
+        "target_event_id": "evt_finance_20240131_011_cf18db05",
+        "relation_type": "amplifies",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Fed officials' hawkish remarks reinforced concerns about persistent inflation.",
+        "evidence_article_ids": [
+          "art_finance_20240106_008_64543afb"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T03:07:10.382564Z",
+        "last_confirmed_at": "2026-07-25T03:07:10.382564Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2024_01_20260725_030710_020_f2a33aa9",
+        "source_event_id": "evt_finance_20240131_009_3123d883",
+        "target_event_id": "evt_finance_20240131_011_cf18db05",
+        "relation_type": "amplifies",
+        "strength": 0.9,
+        "confidence": 0.95,
+        "time_lag_hours": null,
+        "reasoning": "The FOMC statement explicitly holding rates steady and emphasizing inflation concerns solidified market expectations of delayed rate cuts and persistent inflation.",
+        "evidence_article_ids": [
+          "art_finance_20240131_003_c185d0fd",
+          "art_finance_20240131_002_c3c3cc52"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T03:07:10.403221Z",
+        "last_confirmed_at": "2026-07-25T03:07:10.403221Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2024_01_20260725_030710_021_5196f508",
+        "source_event_id": "evt_finance_20240125_010_3270301f",
+        "target_event_id": "evt_finance_20240131_012_abd82bf1",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.85,
+        "time_lag_hours": null,
+        "reasoning": "Delayed rate cut expectations, stemming from strong economic data and Fed's stance, directly contributed to upward pressure on inflation expectations.",
+        "evidence_article_ids": [
+          "art_finance_20240125_005_82371dcc",
+          "art_finance_20240125_003_fb795425"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T03:07:10.421379Z",
+        "last_confirmed_at": "2026-07-25T03:07:10.421379Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2024_01_20260725_030710_022_aa580e85",
+        "source_event_id": "evt_finance_20240131_011_cf18db05",
+        "target_event_id": "evt_finance_20240131_012_abd82bf1",
+        "relation_type": "amplifies",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Ongoing concerns about inflation, despite some cooling, contributed to the upward trend in breakeven rates.",
+        "evidence_article_ids": [
+          "art_finance_20240131_003_c185d0fd",
+          "art_finance_20240131_002_c3c3cc52",
+          "art_finance_20240106_008_64543afb"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T03:07:10.441103Z",
+        "last_confirmed_at": "2026-07-25T03:07:10.441103Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2024_01_20260725_030710_023_f91e1411",
+        "source_event_id": "evt_finance_20240125_013_bd565434",
+        "target_event_id": "evt_finance_20240131_012_abd82bf1",
+        "relation_type": "inhibits",
+        "strength": 0.4,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Cooling inflation data could have tempered inflation expectations, but was outweighed by other factors.",
+        "evidence_article_ids": [
+          "art_finance_20240210_004_62113aad",
+          "art_finance_20240125_003_fb795425"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T03:07:10.460902Z",
+        "last_confirmed_at": "2026-07-25T03:07:10.460902Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2024_01_20260725_030710_024_19cd0d83",
+        "source_event_id": "evt_finance_20240119_014_47988042",
+        "target_event_id": "evt_finance_20240131_012_abd82bf1",
+        "relation_type": "inhibits",
+        "strength": 0.3,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "Optimism for future Fed cuts could have tempered breakeven inflation rates, but the immediate impact of the Fed's firm stance overshadowed these longer-term forecasts.",
+        "evidence_article_ids": [
+          "art_finance_20240119_007_710c3e7a"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T03:07:10.479347Z",
+        "last_confirmed_at": "2026-07-25T03:07:10.479347Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2024_01_20260725_030710_025_5946f738",
+        "source_event_id": "evt_finance_20240131_012_abd82bf1",
+        "target_event_id": "evt_afda87ec5eda",
+        "relation_type": "causes",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Increased market-based inflation expectations, driven by economic strength and Fed's caution, directly led to the 5-year breakeven inflation rate moving above its recent range.",
+        "evidence_article_ids": [
+          "art_finance_20240131_003_c185d0fd",
+          "art_finance_20240131_002_c3c3cc52",
+          "art_finance_20240125_003_fb795425"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T03:07:10.498817Z",
+        "last_confirmed_at": "2026-07-25T03:07:10.498817Z"
+      }
+    ],
+    "outcome_impacts": [
+      {
+        "id": "imp_db0dc023",
+        "event_id": "evt_finance_20240125_007_d471e070",
+        "outcome_event_id": "evt_afda87ec5eda",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "Strong GDP growth indicates a robust economy, which typically leads to higher inflation expectations and thus a higher breakeven rate.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T03:06:52.820493Z",
+        "last_confirmed_at": "2026-07-25T03:06:52.820493Z"
+      },
+      {
+        "id": "imp_11af21c3",
+        "event_id": "evt_finance_20240106_008_cf6e6667",
+        "outcome_event_id": "evt_afda87ec5eda",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Hawkish remarks from Fed officials signal a continued fight against inflation, which supports higher inflation expectations.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T03:06:52.833306Z",
+        "last_confirmed_at": "2026-07-25T03:06:52.833306Z"
+      },
+      {
+        "id": "imp_ad71b1c1",
+        "event_id": "evt_finance_20240131_009_3123d883",
+        "outcome_event_id": "evt_afda87ec5eda",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.95,
+        "reasoning": "The FOMC statement holding rates steady and emphasizing inflation concerns solidified market expectations of persistent inflation, pushing breakeven rates higher.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T03:06:52.844369Z",
+        "last_confirmed_at": "2026-07-25T03:06:52.844369Z"
+      },
+      {
+        "id": "imp_14b54ba2",
+        "event_id": "evt_finance_20240125_010_3270301f",
+        "outcome_event_id": "evt_afda87ec5eda",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.85,
+        "reasoning": "Repricing of rate cut expectations to later dates means inflation is expected to persist longer, leading to higher breakeven rates.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T03:06:52.854397Z",
+        "last_confirmed_at": "2026-07-25T03:06:52.854397Z"
+      },
+      {
+        "id": "imp_8797f66e",
+        "event_id": "evt_finance_20240131_011_cf18db05",
+        "outcome_event_id": "evt_afda87ec5eda",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Ongoing concerns about inflation directly contribute to higher inflation expectations and thus higher breakeven rates.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T03:06:52.868669Z",
+        "last_confirmed_at": "2026-07-25T03:06:52.868669Z"
+      },
+      {
+        "id": "imp_bd7b4ec8",
+        "event_id": "evt_finance_20240131_012_abd82bf1",
+        "outcome_event_id": "evt_afda87ec5eda",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "Direct upward pressure on inflation expectations is the most immediate cause for the breakeven rate moving above its range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T03:06:52.879195Z",
+        "last_confirmed_at": "2026-07-25T03:06:52.879195Z"
+      },
+      {
+        "id": "imp_e6f605cb",
+        "event_id": "evt_finance_20240125_013_bd565434",
+        "outcome_event_id": "evt_afda87ec5eda",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2024_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.4,
+        "confidence": 0.7,
+        "reasoning": "Cooling inflation data would typically lead to lower inflation expectations, thus putting downward pressure on breakeven rates. This was a countervailing factor.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T03:06:52.889616Z",
+        "last_confirmed_at": "2026-07-25T03:06:52.889616Z"
+      },
+      {
+        "id": "imp_987911aa",
+        "event_id": "evt_finance_20240119_014_47988042",
+        "outcome_event_id": "evt_afda87ec5eda",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2024_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.3,
+        "confidence": 0.6,
+        "reasoning": "Expectations of future rate cuts would generally lower inflation expectations, thus putting downward pressure on breakeven rates. This was a countervailing factor.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T03:06:52.900167Z",
+        "last_confirmed_at": "2026-07-25T03:06:52.900167Z"
+      },
+      {
+        "id": "imp_94de2204",
+        "event_id": "evt_finance_20240125_007_d471e070",
+        "outcome_event_id": "evt_afda87ec5eda",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "Strong GDP growth indicates a robust economy, which typically leads to higher inflation expectations and thus a higher breakeven rate.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T03:06:53.481422Z",
+        "last_confirmed_at": "2026-07-25T03:06:53.481422Z"
+      },
+      {
+        "id": "imp_b91a9ffc",
+        "event_id": "evt_finance_20240106_008_cf6e6667",
+        "outcome_event_id": "evt_afda87ec5eda",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Hawkish remarks from Fed officials signal a continued fight against inflation, which supports higher inflation expectations.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T03:06:53.494810Z",
+        "last_confirmed_at": "2026-07-25T03:06:53.494810Z"
+      },
+      {
+        "id": "imp_337b92ad",
+        "event_id": "evt_finance_20240131_009_3123d883",
+        "outcome_event_id": "evt_afda87ec5eda",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.95,
+        "reasoning": "The FOMC statement holding rates steady and emphasizing inflation concerns solidified market expectations of persistent inflation, pushing breakeven rates higher.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T03:06:53.506123Z",
+        "last_confirmed_at": "2026-07-25T03:06:53.506123Z"
+      },
+      {
+        "id": "imp_839c8bec",
+        "event_id": "evt_finance_20240125_010_3270301f",
+        "outcome_event_id": "evt_afda87ec5eda",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.85,
+        "reasoning": "Repricing of rate cut expectations to later dates means inflation is expected to persist longer, leading to higher breakeven rates.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T03:06:53.517816Z",
+        "last_confirmed_at": "2026-07-25T03:06:53.517816Z"
+      },
+      {
+        "id": "imp_305445cb",
+        "event_id": "evt_finance_20240131_011_cf18db05",
+        "outcome_event_id": "evt_afda87ec5eda",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Ongoing concerns about inflation directly contribute to higher inflation expectations and thus higher breakeven rates.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T03:06:53.530000Z",
+        "last_confirmed_at": "2026-07-25T03:06:53.530000Z"
+      },
+      {
+        "id": "imp_fc420d66",
+        "event_id": "evt_finance_20240131_012_abd82bf1",
+        "outcome_event_id": "evt_afda87ec5eda",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "Direct upward pressure on inflation expectations is the most immediate cause for the breakeven rate moving above its range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T03:06:53.541631Z",
+        "last_confirmed_at": "2026-07-25T03:06:53.541631Z"
+      },
+      {
+        "id": "imp_fe2f67ce",
+        "event_id": "evt_finance_20240125_013_bd565434",
+        "outcome_event_id": "evt_afda87ec5eda",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2024_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.4,
+        "confidence": 0.7,
+        "reasoning": "Cooling inflation data would typically lead to lower inflation expectations, thus putting downward pressure on breakeven rates. This was a countervailing factor.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T03:06:53.553596Z",
+        "last_confirmed_at": "2026-07-25T03:06:53.553596Z"
+      },
+      {
+        "id": "imp_a1782ada",
+        "event_id": "evt_finance_20240119_014_47988042",
+        "outcome_event_id": "evt_afda87ec5eda",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2024_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.3,
+        "confidence": 0.6,
+        "reasoning": "Expectations of future rate cuts would generally lower inflation expectations, thus putting downward pressure on breakeven rates. This was a countervailing factor.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T03:06:53.566648Z",
+        "last_confirmed_at": "2026-07-25T03:06:53.566648Z"
+      },
+      {
+        "id": "imp_9d859126",
+        "event_id": "evt_finance_20240125_007_d471e070",
+        "outcome_event_id": "evt_afda87ec5eda",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "Strong GDP growth indicates a robust economy, which typically leads to higher inflation expectations and thus a higher breakeven rate.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T03:07:10.510509Z",
+        "last_confirmed_at": "2026-07-25T03:07:10.510509Z"
+      },
+      {
+        "id": "imp_2f898743",
+        "event_id": "evt_finance_20240106_008_cf6e6667",
+        "outcome_event_id": "evt_afda87ec5eda",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Hawkish remarks from Fed officials signal a continued fight against inflation, which supports higher inflation expectations.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T03:07:10.524246Z",
+        "last_confirmed_at": "2026-07-25T03:07:10.524246Z"
+      },
+      {
+        "id": "imp_9ae71fbf",
+        "event_id": "evt_finance_20240131_009_3123d883",
+        "outcome_event_id": "evt_afda87ec5eda",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.95,
+        "reasoning": "The FOMC statement holding rates steady and emphasizing inflation concerns solidified market expectations of persistent inflation, pushing breakeven rates higher.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T03:07:10.536755Z",
+        "last_confirmed_at": "2026-07-25T03:07:10.536755Z"
+      },
+      {
+        "id": "imp_8d873c00",
+        "event_id": "evt_finance_20240125_010_3270301f",
+        "outcome_event_id": "evt_afda87ec5eda",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.85,
+        "reasoning": "Repricing of rate cut expectations to later dates means inflation is expected to persist longer, leading to higher breakeven rates.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T03:07:10.548266Z",
+        "last_confirmed_at": "2026-07-25T03:07:10.548266Z"
+      },
+      {
+        "id": "imp_67f82e1b",
+        "event_id": "evt_finance_20240131_011_cf18db05",
+        "outcome_event_id": "evt_afda87ec5eda",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Ongoing concerns about inflation directly contribute to higher inflation expectations and thus higher breakeven rates.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T03:07:10.562153Z",
+        "last_confirmed_at": "2026-07-25T03:07:10.562153Z"
+      },
+      {
+        "id": "imp_fdcf5e5c",
+        "event_id": "evt_finance_20240131_012_abd82bf1",
+        "outcome_event_id": "evt_afda87ec5eda",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "Direct upward pressure on inflation expectations is the most immediate cause for the breakeven rate moving above its range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T03:07:10.574486Z",
+        "last_confirmed_at": "2026-07-25T03:07:10.574486Z"
+      },
+      {
+        "id": "imp_0570e9a1",
+        "event_id": "evt_finance_20240125_013_bd565434",
+        "outcome_event_id": "evt_afda87ec5eda",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2024_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.4,
+        "confidence": 0.7,
+        "reasoning": "Cooling inflation data would typically lead to lower inflation expectations, thus putting downward pressure on breakeven rates. This was a countervailing factor.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T03:07:10.585910Z",
+        "last_confirmed_at": "2026-07-25T03:07:10.585910Z"
+      },
+      {
+        "id": "imp_0d59215e",
+        "event_id": "evt_finance_20240119_014_47988042",
+        "outcome_event_id": "evt_afda87ec5eda",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2024_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.3,
+        "confidence": 0.6,
+        "reasoning": "Expectations of future rate cuts would generally lower inflation expectations, thus putting downward pressure on breakeven rates. This was a countervailing factor.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T03:07:10.598077Z",
+        "last_confirmed_at": "2026-07-25T03:07:10.598077Z"
+      }
+    ]
+  }
+}

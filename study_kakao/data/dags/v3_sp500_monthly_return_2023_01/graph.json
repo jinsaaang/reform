@@ -1,0 +1,925 @@
+{
+  "question": {
+    "id": "v3_sp500_monthly_return_2023_01",
+    "question_text": "As of 2023-01-01, which range will the monthly S&P 500 return for S&P 500 index in 2023-01 fall into?",
+    "question_type": "mcq",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 3,
+    "resolution_date": "2023-01-31T23:59:59Z",
+    "estimated_start_time": "2023-01-01T00:00:00Z",
+    "ground_truth": "above recent range",
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [
+      "evt_e18d9cc878a9",
+      "evt_6f25b3f31983",
+      "evt_e1fe56e5b165"
+    ],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: S&P 500 index\nTarget period: 2023-01\nFinancial area: market_fx_credit / equity market\nRegion: US\nPre-registered recent-range boundaries: lower -6.521, upper 6.028 percent.",
+    "resolution_criteria": "Use FRED series SP500. Compute the change from the previous monthly observation using mode 'pct'. Resolve 'below recent range' below -6.521, 'within recent range' from -6.521 inclusive to 6.028 exclusive, and 'above recent range' at or above 6.028 percent.",
+    "resolution_reasoning": "The snapshotted target change was 6.175 percent; it resolved to 'above recent range'.",
+    "options": [
+      "below recent range",
+      "within recent range",
+      "above recent range"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": "\n## Executive Summary\nIn January 2023, the S&P 500 experienced a return above its recent range, primarily driven by evolving market expectations regarding inflation and the Federal Reserve's monetary policy. While inflation remained a significant concern, market participants began to anticipate a tempering of the Fed's aggressive interest rate hikes. News of strong corporate earnings from some major banks, though not universally positive, contributed to a more optimistic outlook. The perception of peaking inflation and a potential deceleration in rate increases, despite ongoing supply chain issues and high energy prices, created a favorable environment for equities, leading to the positive S&P 500 performance.\n\n## Timeline Of Key Events\n- **2022-07-25:** Fed funds futures indicate U.S. interest rates to peak by January 2023, suggesting a potential slowdown in rate hikes [art_finance_20220725_008_53ade934].\n- **2023-01-03:** Eurasia Group identifies \"Inflation shockwaves\" as a top risk for 2023, driven by various factors including the pandemic, China's zero-Covid policy, and the Russia-Ukraine war, anticipating continued restrictive monetary policy [art_finance_20230103_007_3fce32bc].\n- **2023-01-10:** Dallas Fed article highlights that high inflation disproportionately hurts low-income households, noting consumer prices were 7.1 percent higher in November 2022 than a year earlier, and the Fed is intent on tackling inflation [art_finance_20230110_006_5e075ae1].\n- **2023-01-12:** Kansas City Fed research suggests corporate profits contributed substantially to inflation in 2021, with firms raising markups in anticipation of future cost increases [art_finance_20230112_005_78a00071].\n- **2023-01-17:** Morgan Stanley shares jump nearly 6% as the bank's earnings top estimates on record wealth management revenue, indicating pockets of strength in corporate performance [art_finance_20230117_009_fda2b35b].\n- **2023-01-18:** St. Louis Fed discusses how complex supply chains and bottlenecks contributed to inflation [art_finance_20230118_004_7f286e2f].\n- **2023-01-24:** KFF explains prescription drug provisions in the Inflation Reduction Act to lower drug costs, an action taken to curb inflation [art_finance_20230124_003_dd5f172b].\n- **2023-01-30:** Gallup poll shows inflation remains the second most-cited problem in the U.S., while economic confidence remains low, but 64% say it is a good time to find a quality job, suggesting some underlying economic resilience [art_finance_20230130_002_ee686d1c].\n\n## Causal Chain Analysis\nThe S&P 500's better-than-expected January 2023 performance (above recent range) was primarily caused by a shifting outlook on monetary policy and resilient corporate earnings. Early indications from Fed funds futures in July 2022 suggested that the *peak* in U.S. interest rates was seen by January 2023 [art_finance_20220725_008_53ade934]. This expectation led to a more optimistic H1-2023 outlook for investors, as it signaled a potential end to aggressive rate hikes. Despite persistent inflation concerns, evidenced by reports from the Dallas Fed on its impact on low-income households [art_finance_20230110_006_5e075ae1] and the St. Louis Fed on supply chain disruptions [art_finance_20230118_004_7f286e2f], the market began to price in a less hawkish Federal Reserve.\n\nFurthermore, positive corporate earnings reports, such as Morgan Stanley's strong performance driven by wealth management revenue [art_finance_20230117_009_fda2b35b], provided a proximate trigger for market confidence. This individual company strength, alongside broader hopes for an economic soft landing, contributed to a sentiment shift. The cumulative effect of these factors — anticipation of decelerating rate hikes and some robust corporate results — resulted in the S&P 500 returning above its recent range in January 2023.\n\n## Countervailing Factors\nSeveral factors pushed against the positive S&P 500 performance but were ultimately overwhelmed. High inflation remained a significant concern throughout January 2023, as highlighted by multiple articles [art_finance_20230130_002_ee686d1c, art_finance_20230110_006_5e075ae1]. The Dallas Fed explicitly stated the Fed's intent to tackle inflation head-on [art_finance_20230110_006_5e075ae1], and the Eurasia Group warned of \"inflation shockwaves\" and continued restrictive policy [art_finance_20230103_007_3fce32bc]. Additionally, the St. Louis Fed pointed to complex supply chains as a contributor to inflation [art_finance_20230118_004_7f286e2f], indicating ongoing economic headwinds. However, the market's forward-looking nature, focusing on the *expectation* of future Fed actions and inflation peaking, overshadowed these current negative indicators. The positive surprise from some corporate earnings reports, like Morgan Stanley's, also helped to mitigate broader economic concerns, leading investors to look past the immediate inflation challenges.\n\n## Event Candidate Inventory\n- **E1: Anticipation of Fed Rate Hike Deceleration**\n    - Date: 2022-07-25 (initial indication), continuing into January 2023\n    - Why it matters causally: Reduced investor anxiety about aggressive monetary tightening, encouraging investment in equities.\n    - Source article IDs: [art_finance_20220725_008_53ade934]\n- **E2: Persistent High Inflation Concerns**\n    - Date: Throughout January 2023, with data points from November 2022\n    - Why it matters causally: Created a bearish undertone, but ultimately outweighed by other factors.\n    - Source article IDs: [art_finance_20230103_007_3fce32bc, art_finance_20230110_006_5e075ae1, art_finance_20230112_005_78a00071, art_finance_20230118_004_7f286e2f, art_finance_20230124_003_dd5f172b, art_finance_20230130_002_ee686d1c]\n- **E3: Strong Corporate Earnings Reports (Selective)**\n    - Date: 2023-01-17\n    - Why it matters causally: Boosted market confidence and suggested resilience in the corporate sector, despite broader economic concerns.\n    - Source article IDs: [art_finance_20230117_009_fda2b35b]\n\n## Evidence Mapping Table\n| Claim/Event | Article IDs | Date Support | Confidence (0-1) | Notes |\n|---|---|---|---|---|\n| Fed rate hike peak by Jan 2023 | [art_finance_20220725_008_53ade934] | 2022-07-25 | 0.9 | Futures indicated peak, influencing market sentiment |\n| Inflation remains a key concern | [art_finance_20230130_002_ee686d1c], [art_finance_20230110_006_5e075ae1], [art_finance_20230103_007_3fce32bc] | 2023-01-03, 2023-01-10, 2023-01-30 | 0.9 | Consistent reporting across multiple sources |\n| Supply chains contributing to inflation | [art_finance_20230118_004_7f286e2f] | 2023-01-18 | 0.8 | Discussion from Federal Reserve Bank of St. Louis |\n| Corporate profits contributed to inflation | [art_finance_20230112_005_78a00071] | 2023-01-12 | 0.8 | Research from Federal Reserve Bank of Kansas City |\n| Morgan Stanley strong earnings | [art_finance_20230117_009_fda2b35b] | 2023-01-17 | 0.9 | Specific example of strong corporate performance |\n| Inflation Reduction Act addressing drug costs | [art_finance_20230124_003_dd5f172b] | 2023-01-24 | 0.7 | Indirectly related to inflation, shows efforts to curb it |\n| Historical January market turbulence | [art_finance_20160122_002_6a9e4389] | 2016-01-22 | 0.6 | Provides context but not direct causal link to Jan 2023 |\n\n## Uncertainties And Alternative Paths\nOne uncertainty is the precise weighting given by the market to the various inflation drivers vs. the anticipated Fed pivot. An alternative path could have been a more sustained bearish sentiment if inflation data had continued to accelerate unexpectedly, or if corporate earnings had been broadly weaker, leading to a 'within recent range' or 'below recent range' outcome. Furthermore, the role of specific external geopolitical events, beyond those contributing to inflation, is not fully elucidated in the collected articles and could have altered market trajectories. The exact impact of the Fed's ultimate actions after January 2023, and how much of that was priced in, remains an area of ongoing speculation.",
+    "graph_built": true,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.203386Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "sp500_monthly_return",
+        "event_cluster_id": "equity_market_2023-01",
+        "category": "market_fx_credit",
+        "original_domain": "market_fx_credit",
+        "subdomain": "equity market",
+        "entity": "S&P 500 index",
+        "region": "US",
+        "target_metric": "monthly S&P 500 return",
+        "target_period": "2023-01",
+        "forecast_cutoff": "2023-01-01T00:00:00+00:00",
+        "forecast_date_options": [
+          "2023-01-01"
+        ],
+        "resolution_available_at": "2023-01-31T23:59:59+00:00",
+        "horizon_days": 30,
+        "source_type": "fred_series_snapshot",
+        "source_series_id": "SP500",
+        "source_homepage": "https://fred.stlouisfed.org/series/SP500",
+        "comparison_rule": "target change bucketed by the lower and upper quartiles of the 8 prior observed changes",
+        "comparison_threshold": -2.119344,
+        "comparison_thresholds": {
+          "lower": -6.520859,
+          "upper": 6.028051
+        },
+        "change_unit": "percent",
+        "threshold_observation_dates": [
+          "2022-04-29",
+          "2022-05-31",
+          "2022-06-30",
+          "2022-07-29",
+          "2022-08-31",
+          "2022-09-30",
+          "2022-10-31",
+          "2022-11-30",
+          "2022-12-30"
+        ],
+        "split": "memory",
+        "family_position": 1,
+        "family_size": 8,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "above recent range",
+        "resolved_class": "above recent range",
+        "resolution_value": 4076.6,
+        "target_change": 6.17528324,
+        "source_observation_date": "2023-01-31",
+        "resolution_document": {
+          "publisher": "Federal Reserve Bank of St. Louis (FRED)",
+          "title": "S&P 500",
+          "url": "https://fred.stlouisfed.org/series/SP500"
+        },
+        "source_download_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=SP500&cosd=2019-01-01&coed=2026-06-30",
+        "source_sha256": "d2c9c6f1ead626e34b16e4c51e8755e17abb9e6fd7dc94755aff2113ec32a126",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_e1fe56e5b165",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 10,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_20160122_002_6a9e4389",
+        "title": "January Market Turbulence: A Historical Perspective - The Daily Economy",
+        "url": "https://thedailyeconomy.org/article/january-market-turbulence-a-historical-perspective",
+        "source": "thedailyeconomy.org",
+        "published_date": "2016-01-22T10:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230130_002_ee686d1c",
+        "title": "More Cite Gov't as Top U.S. Problem; Inflation Ranks Second - Gallup News",
+        "url": "https://news.gallup.com/poll/468983/cite-gov-top-problem-inflation-ranks-second.aspx",
+        "source": "news.gallup.com",
+        "published_date": "2023-01-30T10:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230124_003_dd5f172b",
+        "title": "Explaining the Prescription Drug Provisions in the Inflation Reduction Act - KFF",
+        "url": "https://www.kff.org/medicare/explaining-the-prescription-drug-provisions-in-the-inflation-reduction-act",
+        "source": "kff.org",
+        "published_date": "2023-01-24T14:25:00+00:00"
+      },
+      {
+        "id": "art_finance_20230118_004_7f286e2f",
+        "title": "From Complex Supply Chains to Bottlenecks to Inflation - Federal Reserve Bank of St. Louis",
+        "url": "https://www.stlouisfed.org/open-vault/2023/january/complex-supply-chains-bottlenecks-and-inflation",
+        "source": "stlouisfed.org",
+        "published_date": "2023-01-18T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230112_005_78a00071",
+        "title": "How Much Have Record Corporate Profits Contributed to Recent Inflation? - Federal Reserve Bank of Kansas City",
+        "url": "https://www.kansascityfed.org/research/economic-review/how-much-have-record-corporate-profits-contributed-to-recent-inflation",
+        "source": "kansascityfed.org",
+        "published_date": "2023-01-12T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230110_006_5e075ae1",
+        "title": "High inflation disproportionately hurts low-income households - Federal Reserve Bank of Dallas",
+        "url": "https://www.dallasfed.org/research/economics/2023/0110",
+        "source": "dallasfed.org",
+        "published_date": "2023-01-10T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230103_007_3fce32bc",
+        "title": "Risk 4: Inflation shockwaves - Eurasia Group",
+        "url": "https://www.eurasiagroup.net/live-post/top-risks-2023-4-Inflation-Shockwaves",
+        "source": "eurasiagroup.net",
+        "published_date": "2023-01-03T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20220725_008_53ade934",
+        "title": "U.S. interest rates peak seen by January 2023 -fed funds futures - Reuters",
+        "url": "https://finance.yahoo.com/news/u-interest-rates-peak-seen-073149352.html",
+        "source": "finance.yahoo.com",
+        "published_date": "2022-07-25T07:31:49+00:00"
+      },
+      {
+        "id": "art_finance_20230117_009_fda2b35b",
+        "title": "Morgan Stanley shares jump nearly 6% as bank's earnings top estimates on record wealth management revenue - CNBC",
+        "url": "https://www.nbcdfw.com/news/business/money-report/morgan-stanley-is-set-to-report-fourth-quarter-earnings-heres-what-the-street-expects-2/3171668",
+        "source": "nbcdfw.com",
+        "published_date": "2023-01-17T06:13:46-06:00"
+      },
+      {
+        "id": "art_finance_20210225_002_28145989",
+        "title": "January 2022 Review and Outlook - Nasdaq",
+        "url": "https://www.nasdaq.com/articles/td-bank-beats-profit-expectations-on-lower-loan-loss-provisions-2021-02-25",
+        "source": "nasdaq.com",
+        "published_date": "2021-02-25T00:00:00+00:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_e1fe56e5b165",
+      "events_count": 10,
+      "hypotheses_count": 9
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 3,
+      "avg_depth": 1.29,
+      "quality_score": 0.85,
+      "depth_score": 1.0,
+      "confidence_score": 0.76,
+      "strength_score": 0.63,
+      "evidence_score": 1.0,
+      "event_count": 10,
+      "hypothesis_count": 9
+    },
+    "nodes": [
+      {
+        "id": "evt_6f25b3f31983",
+        "title": "Option 2: within recent range",
+        "description": "Question resolves to: within recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_sp500_monthly_return_2023_01",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 1,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T05:03:45.007400Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_e18d9cc878a9",
+        "title": "Option 1: below recent range",
+        "description": "Question resolves to: below recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_sp500_monthly_return_2023_01",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 0,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T05:03:45.007389Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_e1fe56e5b165",
+        "title": "Option 3: above recent range",
+        "description": "Question resolves to: above recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_sp500_monthly_return_2023_01",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 2,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T05:03:45.007407Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20220630_009_3ee04d6a",
+        "title": "U.S. annual inflation rate hits 40-year peak in June",
+        "description": "The annual U.S. inflation rate reached a more than 40-year peak in June, influencing market expectations for interest rate hikes.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2022-06-30T12:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20220725_008_53ade934"
+        ],
+        "extracted_for_question_id": "v3_sp500_monthly_return_2023_01",
+        "source_article_id": "art_finance_20220725_008_53ade934",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_sp500_monthly_return_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T05:19:19.151139Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20220724_011_3403d03b",
+        "title": "Investors expect Fed to raise interest rates by 75 basis points",
+        "description": "Following high inflation data, investors widely anticipate the Federal Reserve to raise interest rates by 75 basis points.",
+        "event_type": "decision",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2022-07-24T12:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20220725_008_53ade934"
+        ],
+        "extracted_for_question_id": "v3_sp500_monthly_return_2023_01",
+        "source_article_id": "art_finance_20220725_008_53ade934",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_sp500_monthly_return_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T05:19:27.330905Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20220725_001_d248abc8",
+        "title": "Fed funds futures indicate U.S. interest rates to peak by January 2023",
+        "description": "Fed funds futures indicated that U.S. interest rates were expected to peak by January 2023, suggesting a potential slowdown in rate hikes and leading to a more optimistic H1-2023 outlook for investors.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2022-07-25T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20220725_008_53ade934"
+        ],
+        "extracted_for_question_id": "v3_sp500_monthly_return_2023_01",
+        "source_article_id": "art_finance_20220725_008_53ade934",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_sp500_monthly_return_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T05:15:56.758860Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230103_002_8bd9c80e",
+        "title": "Eurasia Group identifies 'Inflation shockwaves' as a top risk for 2023",
+        "description": "Eurasia Group identified 'Inflation shockwaves' as a top risk for 2023, driven by factors including the pandemic, China's zero-Covid policy, and the Russia-Ukraine war, anticipating continued restrictive monetary policy.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-03T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230103_007_3fce32bc"
+        ],
+        "extracted_for_question_id": "v3_sp500_monthly_return_2023_01",
+        "source_article_id": "art_finance_20230103_007_3fce32bc",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_sp500_monthly_return_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T05:15:56.783181Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230110_003_68abbd2e",
+        "title": "Dallas Fed highlights high inflation disproportionately hurts low-income households",
+        "description": "A Dallas Fed article highlighted that high inflation disproportionately hurts low-income households, noting consumer prices were 7.1 percent higher in November 2022 than a year earlier, and the Fed is intent on tackling inflation.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-10T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230110_006_5e075ae1"
+        ],
+        "extracted_for_question_id": "v3_sp500_monthly_return_2023_01",
+        "source_article_id": "art_finance_20230110_006_5e075ae1",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_sp500_monthly_return_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T05:15:56.807470Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230112_004_af9dc04f",
+        "title": "Kansas City Fed research suggests corporate profits contributed substantially to inflation in 2021",
+        "description": "Kansas City Fed research suggested corporate profits contributed substantially to inflation in 2021, with firms raising markups in anticipation of future cost increases.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-12T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230112_005_78a00071"
+        ],
+        "extracted_for_question_id": "v3_sp500_monthly_return_2023_01",
+        "source_article_id": "art_finance_20230112_005_78a00071",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_sp500_monthly_return_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T05:15:56.833635Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230117_005_6745a857",
+        "title": "Morgan Stanley shares jump nearly 6% as earnings top estimates",
+        "description": "Morgan Stanley shares jumped nearly 6% as the bank's earnings topped estimates on record wealth management revenue, indicating pockets of strength in corporate performance.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-17T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230117_009_fda2b35b"
+        ],
+        "extracted_for_question_id": "v3_sp500_monthly_return_2023_01",
+        "source_article_id": "art_finance_20230117_009_fda2b35b",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_sp500_monthly_return_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T05:15:56.857623Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230118_006_a0680a74",
+        "title": "St. Louis Fed discusses complex supply chains contributing to inflation",
+        "description": "The St. Louis Fed discussed how complex supply chains and bottlenecks contributed to inflation.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-18T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230118_004_7f286e2f"
+        ],
+        "extracted_for_question_id": "v3_sp500_monthly_return_2023_01",
+        "source_article_id": "art_finance_20230118_004_7f286e2f",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_sp500_monthly_return_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T05:15:56.880535Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230130_008_98b1b44f",
+        "title": "Gallup poll shows inflation remains the second most-cited problem in the U.S.",
+        "description": "A Gallup poll showed inflation remained the second most-cited problem in the U.S., while economic confidence remained low, but 64% said it was a good time to find a quality job, suggesting some underlying economic resilience.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-30T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230130_002_ee686d1c"
+        ],
+        "extracted_for_question_id": "v3_sp500_monthly_return_2023_01",
+        "source_article_id": "art_finance_20230130_002_ee686d1c",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_sp500_monthly_return_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T05:15:56.922543Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_sp500_monthly_return_2023_01_20260725_051556_001_87cbe5c7",
+        "source_event_id": "evt_finance_20220725_001_d248abc8",
+        "target_event_id": "evt_e1fe56e5b165",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.85,
+        "time_lag_hours": null,
+        "reasoning": "Anticipation of a peak in interest rates by January 2023, as indicated by Fed funds futures, led to a more optimistic market outlook and contributed significantly to the S&P 500's positive performance.",
+        "evidence_article_ids": [
+          "art_finance_20220725_008_53ade934"
+        ],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T05:15:56.944333Z",
+        "last_confirmed_at": "2026-07-25T05:15:56.944333Z"
+      },
+      {
+        "id": "hyp_v3_sp500_monthly_return_2023_01_20260725_051556_002_2a52d20b",
+        "source_event_id": "evt_finance_20230117_005_6745a857",
+        "target_event_id": "evt_e1fe56e5b165",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Strong corporate earnings reports, such as Morgan Stanley's, provided a proximate trigger for market confidence and contributed to the S&P 500's positive performance.",
+        "evidence_article_ids": [
+          "art_finance_20230117_009_fda2b35b"
+        ],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T05:15:56.962009Z",
+        "last_confirmed_at": "2026-07-25T05:15:56.962009Z"
+      },
+      {
+        "id": "hyp_v3_sp500_monthly_return_2023_01_20260725_051556_003_04eb7904",
+        "source_event_id": "evt_finance_20230103_002_8bd9c80e",
+        "target_event_id": "evt_e1fe56e5b165",
+        "relation_type": "inhibits",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "The identification of inflation shockwaves as a top risk for 2023 and the anticipation of continued restrictive monetary policy created a bearish undertone, inhibiting a stronger positive S&P 500 performance.",
+        "evidence_article_ids": [
+          "art_finance_20230103_007_3fce32bc"
+        ],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T05:15:56.977657Z",
+        "last_confirmed_at": "2026-07-25T05:15:56.977657Z"
+      },
+      {
+        "id": "hyp_v3_sp500_monthly_return_2023_01_20260725_051556_004_06478e8e",
+        "source_event_id": "evt_finance_20230110_003_68abbd2e",
+        "target_event_id": "evt_e1fe56e5b165",
+        "relation_type": "inhibits",
+        "strength": 0.5,
+        "confidence": 0.65,
+        "time_lag_hours": null,
+        "reasoning": "Persistent high inflation, disproportionately hurting low-income households and the Fed's intent to tackle it, contributed to ongoing economic concerns that could have inhibited the S&P 500's positive performance.",
+        "evidence_article_ids": [
+          "art_finance_20230110_006_5e075ae1"
+        ],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T05:15:56.991918Z",
+        "last_confirmed_at": "2026-07-25T05:15:56.991918Z"
+      },
+      {
+        "id": "hyp_v3_sp500_monthly_return_2023_01_20260725_051557_005_d93e5b8c",
+        "source_event_id": "evt_finance_20230112_004_af9dc04f",
+        "target_event_id": "evt_e1fe56e5b165",
+        "relation_type": "inhibits",
+        "strength": 0.4,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "Research suggesting corporate profits contributed to inflation in 2021 indicated underlying inflationary pressures that could have negatively impacted market sentiment.",
+        "evidence_article_ids": [
+          "art_finance_20230112_005_78a00071"
+        ],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T05:15:57.006777Z",
+        "last_confirmed_at": "2026-07-25T05:15:57.006777Z"
+      },
+      {
+        "id": "hyp_v3_sp500_monthly_return_2023_01_20260725_051557_006_2b852f63",
+        "source_event_id": "evt_finance_20230118_006_a0680a74",
+        "target_event_id": "evt_e1fe56e5b165",
+        "relation_type": "inhibits",
+        "strength": 0.5,
+        "confidence": 0.65,
+        "time_lag_hours": null,
+        "reasoning": "Complex supply chains and bottlenecks contributing to inflation represented ongoing economic headwinds that could have hindered the S&P 500's performance.",
+        "evidence_article_ids": [
+          "art_finance_20230118_004_7f286e2f"
+        ],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T05:15:57.021698Z",
+        "last_confirmed_at": "2026-07-25T05:15:57.021698Z"
+      },
+      {
+        "id": "hyp_v3_sp500_monthly_return_2023_01_20260725_051557_007_e7e7d233",
+        "source_event_id": "evt_finance_20230130_008_98b1b44f",
+        "target_event_id": "evt_e1fe56e5b165",
+        "relation_type": "inhibits",
+        "strength": 0.6,
+        "confidence": 0.75,
+        "time_lag_hours": null,
+        "reasoning": "The Gallup poll showing inflation as a top concern and low economic confidence indicated persistent negative sentiment that could have inhibited the S&P 500's positive performance, despite some underlying economic resilience.",
+        "evidence_article_ids": [
+          "art_finance_20230130_002_ee686d1c"
+        ],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T05:15:57.037020Z",
+        "last_confirmed_at": "2026-07-25T05:15:57.037020Z"
+      },
+      {
+        "id": "hyp_v3_sp500_monthly_return_2023_01_20260725_051929_009_4d97789a",
+        "source_event_id": "evt_finance_20220630_009_3ee04d6a",
+        "target_event_id": "evt_finance_20220724_011_3403d03b",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "High inflation in June prompted investors to expect aggressive rate hikes from the Fed.",
+        "evidence_article_ids": [
+          "art_finance_20220725_008_53ade934"
+        ],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T05:19:29.992504Z",
+        "last_confirmed_at": "2026-07-25T05:19:29.992504Z"
+      },
+      {
+        "id": "hyp_v3_sp500_monthly_return_2023_01_20260725_051930_010_175b31b0",
+        "source_event_id": "evt_finance_20220724_011_3403d03b",
+        "target_event_id": "evt_finance_20220725_001_d248abc8",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Investors' expectations of Fed rate hikes directly influenced fed funds futures to indicate a peak in interest rates.",
+        "evidence_article_ids": [
+          "art_finance_20220725_008_53ade934"
+        ],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T05:19:30.007222Z",
+        "last_confirmed_at": "2026-07-25T05:19:30.007222Z"
+      }
+    ],
+    "outcome_impacts": [
+      {
+        "id": "imp_bff885ec",
+        "event_id": "evt_finance_20220630_009_3ee04d6a",
+        "outcome_event_id": "evt_e1fe56e5b165",
+        "question_id": "v3_sp500_monthly_return_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "This event contributes to the overall market sentiment and economic conditions that lead to the S&P 500 being above the recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T05:19:33.446350Z",
+        "last_confirmed_at": "2026-07-25T05:19:33.446350Z"
+      },
+      {
+        "id": "imp_b93c84ed",
+        "event_id": "evt_finance_20220724_011_3403d03b",
+        "outcome_event_id": "evt_e1fe56e5b165",
+        "question_id": "v3_sp500_monthly_return_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "This event contributes to the overall market sentiment and economic conditions that lead to the S&P 500 being above the recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T05:19:33.457548Z",
+        "last_confirmed_at": "2026-07-25T05:19:33.457548Z"
+      },
+      {
+        "id": "imp_909009a2",
+        "event_id": "evt_finance_20220725_001_d248abc8",
+        "outcome_event_id": "evt_e1fe56e5b165",
+        "question_id": "v3_sp500_monthly_return_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "This event contributes to the overall market sentiment and economic conditions that lead to the S&P 500 being above the recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T05:19:33.469004Z",
+        "last_confirmed_at": "2026-07-25T05:19:33.469004Z"
+      },
+      {
+        "id": "imp_1393b6f3",
+        "event_id": "evt_finance_20230103_002_8bd9c80e",
+        "outcome_event_id": "evt_e1fe56e5b165",
+        "question_id": "v3_sp500_monthly_return_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "This event contributes to the overall market sentiment and economic conditions that lead to the S&P 500 being above the recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T05:19:33.480167Z",
+        "last_confirmed_at": "2026-07-25T05:19:33.480167Z"
+      },
+      {
+        "id": "imp_db3cabba",
+        "event_id": "evt_finance_20230110_003_68abbd2e",
+        "outcome_event_id": "evt_e1fe56e5b165",
+        "question_id": "v3_sp500_monthly_return_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "This event contributes to the overall market sentiment and economic conditions that lead to the S&P 500 being above the recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T05:19:33.492103Z",
+        "last_confirmed_at": "2026-07-25T05:19:33.492103Z"
+      },
+      {
+        "id": "imp_4250a2ca",
+        "event_id": "evt_finance_20230112_004_af9dc04f",
+        "outcome_event_id": "evt_e1fe56e5b165",
+        "question_id": "v3_sp500_monthly_return_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "This event contributes to the overall market sentiment and economic conditions that lead to the S&P 500 being above the recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T05:19:33.502047Z",
+        "last_confirmed_at": "2026-07-25T05:19:33.502047Z"
+      },
+      {
+        "id": "imp_81b0860f",
+        "event_id": "evt_finance_20230117_005_6745a857",
+        "outcome_event_id": "evt_e1fe56e5b165",
+        "question_id": "v3_sp500_monthly_return_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "This event contributes to the overall market sentiment and economic conditions that lead to the S&P 500 being above the recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T05:19:33.512405Z",
+        "last_confirmed_at": "2026-07-25T05:19:33.512405Z"
+      },
+      {
+        "id": "imp_a5027967",
+        "event_id": "evt_finance_20230118_006_a0680a74",
+        "outcome_event_id": "evt_e1fe56e5b165",
+        "question_id": "v3_sp500_monthly_return_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "This event contributes to the overall market sentiment and economic conditions that lead to the S&P 500 being above the recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T05:19:33.522281Z",
+        "last_confirmed_at": "2026-07-25T05:19:33.522281Z"
+      },
+      {
+        "id": "imp_ecef01d5",
+        "event_id": "evt_finance_20230130_008_98b1b44f",
+        "outcome_event_id": "evt_e1fe56e5b165",
+        "question_id": "v3_sp500_monthly_return_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "This event contributes to the overall market sentiment and economic conditions that lead to the S&P 500 being above the recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T05:19:33.533060Z",
+        "last_confirmed_at": "2026-07-25T05:19:33.533060Z"
+      },
+      {
+        "id": "imp_39b4eca3",
+        "event_id": "evt_health_20230124_007_d7567a6f",
+        "outcome_event_id": "evt_e1fe56e5b165",
+        "question_id": "v3_sp500_monthly_return_2023_01",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.1,
+        "confidence": 0.5,
+        "reasoning": "This event is related to healthcare policy and its direct impact on the S&P 500 monthly return is likely neutral or very minor, but it is part of the overall economic landscape.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T05:19:35.604917Z",
+        "last_confirmed_at": "2026-07-25T05:19:35.604917Z"
+      }
+    ]
+  }
+}

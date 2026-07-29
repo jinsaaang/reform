@@ -1,0 +1,53 @@
+{
+  "schema_version": "fixed_exemplar_case",
+  "status": "success",
+  "question_id": "v3_meta_revenue_growth_acceleration_2025_12_31",
+  "retrieved_memory_question_id": "v3_meta_revenue_growth_acceleration_2023_03_31",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial",
+      "target_operation": "year_over_year_growth_rate",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2023-03-31, will Meta Platforms, Inc.'s quarterly revenue year-over-year growth for the fiscal quarter ending 2023-03-31 be at least -4.473 percent?",
+    "historical_cutoff": "2023-03-31T00:00:00+00:00",
+    "target_semantics": "Meta Platforms, Inc. quarterly revenue year-over-year growth for the fiscal quarter ending 2023-03-31.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20221026_005_4b3bd0b4",
+        "takeaway": "Meta's revenue decline accelerated in Q4 2022.",
+        "why_predictive": "Indicates a negative trend in revenue growth leading into the target quarter."
+      },
+      {
+        "article_id": "art_finance_20220727_007_f6e692ba",
+        "takeaway": "Meta's growth had come to a halt, with projections of its first revenue drop.",
+        "why_predictive": "Shows a prior period of decelerating growth and anticipated future decline."
+      },
+      {
+        "article_id": "art_finance_20230201_004_0ba71086",
+        "takeaway": "Meta's Q4 2022 revenue beat expectations, leading to a significant share price increase.",
+        "why_predictive": "Suggests a potential stabilization or improvement in revenue performance compared to prior negative trends, though the beat was for the prior quarter."
+      },
+      {
+        "article_id": "art_finance_20230131_006_42942905",
+        "takeaway": "A major contraction was likely for Meta Platforms' earnings in Q4 2022.",
+        "why_predictive": "Reinforces the expectation of negative revenue performance in the period immediately preceding the target quarter."
+      },
+      {
+        "article_id": "art_finance_20230301_009_cfc7d08d",
+        "takeaway": "Social media trends for 2023 include challenges and evolving marketing strategies.",
+        "why_predictive": "Provides general context on the advertising environment, which directly impacts Meta's revenue."
+      }
+    ],
+    "expert_reasoning": [
+      "The baseline condition is the advertising market. Evidence suggests Meta's revenue decline accelerated in late 2022 (art_finance_20221026_005_4b3bd0b4) and that growth had previously halted with projections of a revenue drop (art_finance_20220727_007_f6e692ba). While Q4 2022 revenue beat expectations (art_finance_20230201_004_0ba71086), this followed a period where a major contraction was anticipated (art_finance_20230131_006_42942905).",
+      "The mechanism connecting advertising demand to revenue growth is direct. Despite a Q4 2022 revenue beat, the preceding trend of accelerating decline and anticipated contraction suggests continued weakness in advertising demand for the quarter ending March 31, 2023. General social media trends for 2023 indicate ongoing challenges in the advertising landscape (art_finance_20230301_009_cfc7d08d).",
+      "Management's focus on efficiency (checkpoint 'cost_discipline', 'efficiency') is a driver, but its impact on revenue growth is secondary to advertising demand. Efficiency actions alone do not guarantee revenue growth if underlying demand is weak. The evidence does not strongly support a significant improvement in advertising demand that would overcome prior negative trends."
+    ],
+    "counterevidence": "While Meta's Q4 2022 revenue beat expectations (art_finance_20230201_004_0ba71086), this followed a period of accelerating revenue decline (art_finance_20221026_005_4b3bd0b4) and projected revenue drops (art_finance_20220727_007_f6e692ba). The general outlook for social media advertising in 2023 suggests ongoing challenges (art_finance_20230301_009_cfc7d08d), which could counteract any positive momentum from the prior quarter's beat.",
+    "prospective_target_estimate": "The prior trend of revenue decline and anticipated contraction, despite a recent beat in the immediately preceding quarter, suggests that year-over-year revenue growth for the quarter ending March 31, 2023, is likely to remain negative and potentially below -4.473 percent.",
+    "option_mapping": "The evidence points towards continued negative year-over-year revenue growth, making the 'no' option more likely.",
+    "uncertainty": "The Q4 2022 revenue beat introduces uncertainty, as it could signal a turning point. However, the broader context of accelerating declines and general market challenges for social media advertising suggests that this positive momentum may not be sustained enough to achieve positive year-over-year growth or growth above the specified threshold.",
+    "dag_derived_lesson": "Revenue growth is primarily driven by external market demand, which can be influenced by broader economic conditions and industry trends. Internal efficiency measures can support execution but are unlikely to overcome significant shifts in demand. Positive performance in one period, especially following a downturn, requires corroboration from independent demand indicators to predict sustained improvement."
+  }
+}

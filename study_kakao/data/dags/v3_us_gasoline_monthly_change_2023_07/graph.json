@@ -1,0 +1,212 @@
+{
+  "schema_version": "1.0",
+  "actual_outcome_event_id": "node_09",
+  "graph": {
+    "nodes": [
+      {
+        "id": "node_01",
+        "label": "EIA forecast lower summer gasoline prices with a slight later-summer increase",
+        "event_type": "indicator",
+        "occurred_date": "2023-04-01",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_621352812002b15f"
+        ]
+      },
+      {
+        "id": "node_02",
+        "label": "Gasoline prices rose 10 percent from December 2022 through May 2023",
+        "event_type": "indicator",
+        "occurred_date": "2023-06-26",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_8cab8a45ea757770"
+        ]
+      },
+      {
+        "id": "node_03",
+        "label": "Saudi Arabia and Russia announced oil-production restraint",
+        "event_type": "decision",
+        "occurred_date": "2023-07-13",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_f09dbee814e5ec0c"
+        ]
+      },
+      {
+        "id": "node_04",
+        "label": "July reporting raised the gasoline-price outlook and noted unpassed crude-oil pressure",
+        "event_type": "indicator",
+        "occurred_date": "2023-07-11",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_7564eed00a2fc52d"
+        ]
+      },
+      {
+        "id": "node_05",
+        "label": "Domestic refinery issues constrained gasoline supply",
+        "event_type": "external_shock",
+        "occurred_date": "2023-07-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_4a1d6978acedd8d3"
+        ]
+      },
+      {
+        "id": "node_06",
+        "label": "Higher crude-oil costs pushed gasoline prices upward",
+        "event_type": "indicator",
+        "occurred_date": "2023-07-17",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_e60e50fa0276269b"
+        ]
+      },
+      {
+        "id": "node_07",
+        "label": "Retail gasoline prices spiked to about $3.76 per gallon by July 31",
+        "event_type": "indicator",
+        "occurred_date": "2023-07-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_4a1d6978acedd8d3"
+        ]
+      },
+      {
+        "id": "node_08",
+        "label": "July retail gasoline monthly change was 5.209 percent",
+        "event_type": "indicator",
+        "occurred_date": "2023-07-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_bee42c181cce8eac"
+        ]
+      },
+      {
+        "id": "node_09",
+        "label": "Resolved outcome: above recent range",
+        "event_type": "outcome",
+        "occurred_date": "2023-07-31",
+        "is_outcome": true,
+        "is_actual_outcome": true,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_bee42c181cce8eac"
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_01",
+        "source": "node_01",
+        "target": "node_04",
+        "relationship": "updated_by",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_621352812002b15f",
+          "ev_7564eed00a2fc52d"
+        ],
+        "rationale": "The July report updates the earlier summer outlook; this is a forecast sequence rather than a causal price mechanism."
+      },
+      {
+        "id": "edge_02",
+        "source": "node_02",
+        "target": "node_04",
+        "relationship": "provides_context_for",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_8cab8a45ea757770",
+          "ev_7564eed00a2fc52d"
+        ],
+        "rationale": "The pre-July gasoline uptrend provides context for the revised outlook without being treated as its cause."
+      },
+      {
+        "id": "edge_03",
+        "source": "node_03",
+        "target": "node_06",
+        "relationship": "contributes_to",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_f09dbee814e5ec0c",
+          "ev_e60e50fa0276269b"
+        ],
+        "rationale": "Production restraint was explicitly linked to upward oil and gasoline price pressure, though the isolated magnitude is not measured."
+      },
+      {
+        "id": "edge_04",
+        "source": "node_04",
+        "target": "node_07",
+        "relationship": "anticipates",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_7564eed00a2fc52d",
+          "ev_4a1d6978acedd8d3"
+        ],
+        "rationale": "The July outlook anticipated pressure that was later observed in retail prices; the forecast did not cause the spike."
+      },
+      {
+        "id": "edge_05",
+        "source": "node_06",
+        "target": "node_07",
+        "relationship": "contributes_to",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_e60e50fa0276269b",
+          "ev_4a1d6978acedd8d3"
+        ],
+        "rationale": "AAA and end-of-month reporting directly connect higher oil costs with higher retail gasoline prices."
+      },
+      {
+        "id": "edge_06",
+        "source": "node_05",
+        "target": "node_07",
+        "relationship": "contributes_to",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_4a1d6978acedd8d3"
+        ],
+        "rationale": "End-of-month reporting explicitly attributes part of the retail spike to refinery issues."
+      },
+      {
+        "id": "edge_07",
+        "source": "node_07",
+        "target": "node_08",
+        "relationship": "measured_as",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_4a1d6978acedd8d3",
+          "ev_bee42c181cce8eac"
+        ],
+        "rationale": "The reported retail-price spike is consistent with the official 5.209 percent monthly observation."
+      },
+      {
+        "id": "edge_08",
+        "source": "node_08",
+        "target": "node_09",
+        "relationship": "maps_to",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_bee42c181cce8eac"
+        ],
+        "rationale": "The registered upper boundary maps the 5.209 percent monthly change to above recent range."
+      }
+    ]
+  }
+}

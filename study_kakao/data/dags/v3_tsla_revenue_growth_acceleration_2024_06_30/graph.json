@@ -1,0 +1,1358 @@
+{
+  "question": {
+    "id": "v3_tsla_revenue_growth_acceleration_2024_06_30",
+    "question_text": "As of 2024-06-30, which range will Tesla, Inc.'s quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2024-06-30 fall into?",
+    "question_type": "mcq",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 4,
+    "resolution_date": "2024-07-24T23:59:59Z",
+    "estimated_start_time": "2024-06-30T00:00:00Z",
+    "ground_truth": "above recent range",
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [
+      "evt_10e52f08333b",
+      "evt_bb0febcfeb39",
+      "evt_24c80fc8fb18"
+    ],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: Tesla, Inc. (TSLA)\nTarget period: fiscal quarter ending 2024-06-30\nFinancial area: corporate_earnings / automotive\nRegion: US\nPre-registered growth-acceleration boundaries: lower -18.73, upper 1.695 percentage points.",
+    "resolution_criteria": "Use the issuer's first SEC 10-Q or 10-K containing the target quarter. Compute the change in YoY revenue growth from the prior quarter. Resolve 'below recent range' below -18.73, 'within recent range' from -18.73 inclusive to 1.695 exclusive, and 'above recent range' at or above 1.695 percentage points.",
+    "resolution_reasoning": "The snapshotted target-quarter YoY revenue growth was 2.299 percent and growth acceleration was 10.99 percentage points; it resolved to 'above recent range'.",
+    "options": [
+      "below recent range",
+      "within recent range",
+      "above recent range"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": "\n## Executive Summary\nTesla's Q2 2024 revenue-growth acceleration, when considering total revenue, was above recent range primarily due to the exceptional performance of its energy generation and storage business. While the core automotive revenue experienced a year-over-year decline, the remarkable growth in battery storage deployment offset the automotive sector's weakness and boosted the overall financial results. This allowed Tesla to exceed revenue expectations, despite a miss on earnings per share and a downturn in its traditional vehicle sales.\n\n## Timeline Of Key Events\n*   **July 2, 2024:** Tesla Energy reports a 157% growth in battery storage deployment for Q2 2024, deploying a record 9.4 GWh [art_finance_20240702_005_918732bc].\n*   **July 23, 2024:** Tesla releases its Q2 2024 earnings report after market close. Total revenue of $25.5 billion beats expectations but automotive revenue drops 7% year-over-year [art_finance_20240723_002_2ed23e8f, art_finance_20240723_003_2584c64e].\n*   **July 24, 2024:** Detailed analysis of Tesla's Q2 2024 earnings confirms record quarterly revenues of $25.5 billion, a 2.3% YoY increase, driven by strong growth in the energy segment [art_finance_20240724_011_63b426f8].\n\n## Causal Chain Analysis\nTesla's overall Q2 2024 revenue-growth acceleration being 'above recent range' was **caused** by the significant expansion and record deployment in its energy generation and storage business [art_finance_20240702_005_918732bc]. This strong performance in the energy sector **offset** a decline in automotive revenue, which was **triggered** by factors such as persistent price cuts on vehicles and increased investments in AI, impacting profitability and traditional sales [art_finance_20240723_002_2ed23e8f]. Consequently, despite challenges in the automotive segment, the robust growth in energy products **resulted in** Tesla exceeding overall revenue expectations for Q2 2024 [art_finance_20240723_003_2584c64e, art_finance_20240724_011_63b426f8]. Elon Musk himself highlighted the record quarterly revenues, reinforcing the positive impact of all company segments beyond just vehicles [art_finance_20240724_011_63b426f8].\n\n## Countervailing Factors\nThe primary countervailing factor was the 7% year-over-year drop in Tesla's automotive revenue for Q2 2024 [art_finance_20240723_002_2ed23e8f]. This decline was due to price cuts and increased competition in the EV market. Additionally, Tesla missed Wall Street's earnings per share (EPS) estimates, and its shares slid after the earnings report [art_finance_20240723_002_2ed23e8f, art_finance_20240723_003_2584c64e]. These factors pushed against a strong overall performance but were **overwhelmed** by the extraordinary growth and significant revenue contribution from the energy generation and storage business, which allowed total revenue to surpass expectations.\n\n## Event Candidate Inventory\n*   **E1: Tesla Energy Q2 2024 Battery Storage Deployment Records**\n    *   date: July 2, 2024\n    *   why it matters causally: Demonstrated significant growth in a non-automotive segment, directly contributing to overall revenue increase.\n    *   source article IDs: [art_finance_20240702_005_918732bc]\n\n*   **E2: Tesla Q2 2024 Earnings Report Release**\n    *   date: July 23, 2024\n    *   why it matters causally: Official release of financial data confirming revenue beat despite automotive decline, and highlighted energy sector strength.\n    *   source article IDs: [art_finance_20240723_002_2ed23e8f, art_finance_20240723_003_2584c64e, art_finance_20240724_011_63b426f8]\n\n*   **E3: Decline in Tesla Automotive Revenue Q2 2024**\n    *   date: July 23, 2024\n    *   why it matters causally: A significant negative factor that was overcome by other segments, illustrating the mixed performance but overall positive revenue growth.\n    *   source article IDs: [art_finance_20240723_002_2ed23e8f, art_finance_20240723_003_2584c64e]\n\n## Evidence Mapping Table\n| Claim/Event | Article IDs | Date Support | Confidence (0-1) | Notes |\n|---|---|---|---|---|\n| Tesla's overall Q2 2024 revenue beat expectations | [art_finance_20240723_002_2ed23e8f, art_finance_20240723_003_2584c64e, art_finance_20240724_011_63b426f8] | 2024-07-23, 2024-07-24 | 1.0 | Multiple sources confirm total revenue beat. |\n| Automotive revenue declined 7% YoY | [art_finance_20240723_002_2ed23e8f, art_finance_20240723_003_2584c64e] | 2024-07-23 | 1.0 | Both CNBC and Teslarati report this decline. |\n| Tesla Energy grew 157% in Q2 2024 | [art_finance_20240702_005_918732bc] | 2024-07-02 | 1.0 | Drive Tesla Canada specifically highlights this growth. |\n| Total revenue increased 2-2.3% YoY | [art_finance_20240723_002_2ed23e8f, art_finance_20240724_011_63b426f8] | 2024-07-23, 2024-07-24 | 1.0 | Consistent reporting from CNBC and Quarter-Results.com. |\n\n## Uncertainties And Alternative Paths\nOne uncertainty is the precise definition of \"revenue-growth acceleration\" and whether it strictly refers to the automotive segment or total revenue. Given the ground truth states 'above recent range', it implies total revenue or a broader interpretation. Had the energy segment not performed as strongly, the overall revenue growth could have been 'within recent range' or even 'below recent range' due to the significant drag from the automotive sector's decline. An alternative path could have been if Tesla had not engaged in aggressive price cuts, potentially leading to higher automotive revenue but potentially lower sales volumes, thus changing the overall revenue outcome. The market's reaction to the robotaxi announcements and their future impact on revenue also present an area of uncertainty, though this specific Q2 outcome was driven by current operational results.",
+    "graph_built": true,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.200759Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "tsla_revenue_growth_acceleration",
+        "event_cluster_id": "tsla_earnings_2024-06-30",
+        "category": "corporate_earnings",
+        "original_domain": "corporate_earnings",
+        "subdomain": "automotive",
+        "entity": "Tesla, Inc. (TSLA)",
+        "region": "US",
+        "target_metric": "quarterly revenue year-over-year growth acceleration",
+        "target_period": "fiscal quarter ending 2024-06-30",
+        "forecast_cutoff": "2024-06-30T00:00:00+00:00",
+        "forecast_date_options": [
+          "2024-06-30"
+        ],
+        "resolution_available_at": "2024-07-24T23:59:59+00:00",
+        "horizon_days": 24,
+        "source_type": "sec_companyfacts_snapshot",
+        "source_series_id": "CIK0001318605:revenue",
+        "source_homepage": "https://www.sec.gov/edgar/browse/?CIK=1318605",
+        "comparison_rule": "target YoY revenue-growth acceleration bucketed by quartiles of the four prior quarterly accelerations",
+        "comparison_threshold": -8.693043,
+        "comparison_thresholds": {
+          "lower": -18.729059,
+          "upper": 1.695138
+        },
+        "change_unit": "percent",
+        "threshold_observation_dates": [
+          "2023-03-31",
+          "2023-06-30",
+          "2024-03-31"
+        ],
+        "split": "memory",
+        "family_position": 4,
+        "family_size": 8,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "above recent range",
+        "resolved_class": "above recent range",
+        "resolution_value": 25500000000,
+        "target_change": 10.99175523,
+        "target_yoy_growth": 2.29871224,
+        "target_growth_acceleration": 10.99175523,
+        "source_observation_date": "2024-06-30",
+        "resolution_document": {
+          "publisher": "U.S. Securities and Exchange Commission",
+          "title": "Tesla, Inc. 10-Q filed 2024-07-24",
+          "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828024032662/0001628280-24-032662-index.html"
+        },
+        "source_download_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json",
+        "source_sha256": "28efba410dfdf215eae64346dd6ad37bc51eec0177d0477323651b2a80f01e1a",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00",
+        "accession_number": "0001628280-24-032662",
+        "xbrl_tag": "RevenueFromContractWithCustomerExcludingAssessedTax"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_24c80fc8fb18",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 11,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_20240702_005_918732bc",
+        "title": "Tesla Energy reports 157% growth in battery storage deployment in Q2 2024, smashing previous record - driveteslacanada.ca",
+        "url": "https://driveteslacanada.ca/news/tesla-energy-reports-157-growth-in-battery-storage-deployment-in-q2-2024-smashing-previous-record",
+        "source": "driveteslacanada.ca",
+        "published_date": "2024-07-02T17:45:50+00:00"
+      },
+      {
+        "id": "art_finance_20240702_006_05528289",
+        "title": "Tesla (TSLA) Q2 vehicle deliveries and production numbers - CNBC",
+        "url": "https://www.cnbc.com/2024/07/02/tesla-tsla-q2-2024-vehicle-delivery-and-production-numbers.html",
+        "source": "cnbc.com",
+        "published_date": "2024-07-02T13:19:52+00:00"
+      },
+      {
+        "id": "art_finance_20240723_007_0055829a",
+        "title": "Tesla (TSLA) Q2 2024 earnings results beat revenue expectations, miss EPS estimates - Shacknews",
+        "url": "https://www.shacknews.com/article/140676/tesla-tsla-q2-2024-earnings-results",
+        "source": "shacknews.com",
+        "published_date": "2024-07-23T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240723_008_47b53364",
+        "title": "Tesla shares could swing 10% either way after earnings, options show - Reuters",
+        "url": "https://www.aol.com/news/tesla-shares-could-swing-10-173803302.html",
+        "source": "aol.com",
+        "published_date": "2024-07-23T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240722_004_ec88ea6e",
+        "title": "GM, Ford, and Tesla Report Earnings This Week. This Is the Likely Winner. - Barron's",
+        "url": "https://www.barrons.com/articles/gm-ford-tesla-earnings-report-bb85da7e",
+        "source": "barrons.com",
+        "published_date": "2024-07-22T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240723_003_2584c64e",
+        "title": "Tesla Q2 2024 earnings results: TSLA beats revenue, misses EPS estimates - Teslarati",
+        "url": "https://www.teslarati.com/tesla-q2-2024-earnings-results",
+        "source": "teslarati.com",
+        "published_date": "2024-07-23T20:08:55+00:00"
+      },
+      {
+        "id": "art_finance_20240720_009_0ff2ed84",
+        "title": "What You Need To Know Ahead of GE Aerospace's Earnings - Investopedia",
+        "url": "https://www.nasdaq.com/articles/what-you-need-know-ahead-ge-aerospaces-earnings-release",
+        "source": "nasdaq.com",
+        "published_date": "2024-07-20T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240723_002_2ed23e8f",
+        "title": "Tesla reports 7% drop in auto revenue as earnings fall short of Wall Street estimates - CNBC",
+        "url": "https://www.cnbc.com/2024/07/23/tesla-tsla-earnings-q2-2024.html",
+        "source": "cnbc.com",
+        "published_date": "2024-07-23T16:00:01+00:00"
+      },
+      {
+        "id": "art_finance_20240723_010_0a6b859c",
+        "title": "TSLA Q2 2024 Earnings Report on 7/23/2024 - MarketBeatTesla, Inc. Q2 2024 Financial Results and Q&A WebcastTesla Inc (TSLA) Q2 2024 Earnings Report | Quarter ResultsTesla (TSLA) Earnings Report Q2 2024 | Miss, EPS & Revenue ...Tesla, Inc. (TSLA) Q2 2024 Earnings Report - Results, Call ...Images",
+        "url": "https://www.marketbeat.com/earnings/reports/2024-7-23-tesla-inc-stock",
+        "source": "marketbeat.com",
+        "published_date": "2024-07-23T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240724_011_63b426f8",
+        "title": "Tesla Inc (TSLA) Q2 2024 Earnings Report | Quarter Results",
+        "url": "https://quarter-results.com/financial-reports/NASDAQ/TSLA/Q2/2024/tsla-q2-2024-earnings-report",
+        "source": "quarter-results.com",
+        "published_date": "2024-07-24T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240723_012_c055c845",
+        "title": "Tesla (TSLA) Earnings Report Q2 2024 | Miss, EPS & Revenue ...",
+        "url": "https://247wallst.com/companies/tsla/earnings/2024/Q2",
+        "source": "247wallst.com",
+        "published_date": "2024-07-23T20:32:27+00:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_24c80fc8fb18",
+      "events_count": 11,
+      "hypotheses_count": 10
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 4,
+      "avg_depth": 3.67,
+      "quality_score": 0.89,
+      "depth_score": 1.0,
+      "confidence_score": 0.81,
+      "strength_score": 0.71,
+      "evidence_score": 1.0,
+      "event_count": 11,
+      "hypothesis_count": 10
+    },
+    "nodes": [
+      {
+        "id": "evt_10e52f08333b",
+        "title": "Option 1: below recent range",
+        "description": "Question resolves to: below recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-24T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_tsla_revenue_growth_acceleration_2024_06_30",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 0,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T22:00:04.431411Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_24c80fc8fb18",
+        "title": "Option 3: above recent range",
+        "description": "Question resolves to: above recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-24T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_tsla_revenue_growth_acceleration_2024_06_30",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 2,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T22:00:04.431428Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_bb0febcfeb39",
+        "title": "Option 2: within recent range",
+        "description": "Question resolves to: within recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-24T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_tsla_revenue_growth_acceleration_2024_06_30",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 1,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T22:00:04.431422Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240702_001_b625370a",
+        "title": "Tesla Energy reports 157% growth in battery storage deployment for Q2 2024",
+        "description": "Tesla Energy deployed a record 9.4 GWh of battery storage in Q2 2024, representing a 157% year-over-year growth.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-02T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240702_005_918732bc"
+        ],
+        "extracted_for_question_id": "v3_tsla_revenue_growth_acceleration_2024_06_30",
+        "source_article_id": "art_finance_20240702_005_918732bc",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_tsla_revenue_growth_acceleration_2024_06_30"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T22:06:57.277992Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240723_002_e862e47e",
+        "title": "Tesla releases Q2 2024 earnings report",
+        "description": "Tesla released its Q2 2024 earnings report after market close, showing total revenue of $25.5 billion beating expectations.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-23T16:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240723_002_2ed23e8f",
+          "art_finance_20240723_003_2584c64e"
+        ],
+        "extracted_for_question_id": "v3_tsla_revenue_growth_acceleration_2024_06_30",
+        "source_article_id": "art_finance_20240723_002_2ed23e8f",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_tsla_revenue_growth_acceleration_2024_06_30"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T22:06:57.307095Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240723_003_a00380be",
+        "title": "Tesla's automotive revenue drops 7% year-over-year in Q2 2024",
+        "description": "Tesla's core automotive revenue experienced a 7% year-over-year decline in Q2 2024.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-23T16:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240723_002_2ed23e8f",
+          "art_finance_20240723_003_2584c64e"
+        ],
+        "extracted_for_question_id": "v3_tsla_revenue_growth_acceleration_2024_06_30",
+        "source_article_id": "art_finance_20240723_002_2ed23e8f",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_tsla_revenue_growth_acceleration_2024_06_30"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T22:06:57.333779Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240723_004_835406b1",
+        "title": "Tesla's total Q2 2024 revenue beats expectations",
+        "description": "Tesla's total revenue of $25.5 billion for Q2 2024 exceeded market expectations, a 2.3% YoY increase.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-23T20:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240723_002_2ed23e8f",
+          "art_finance_20240723_003_2584c64e",
+          "art_finance_20240724_011_63b426f8"
+        ],
+        "extracted_for_question_id": "v3_tsla_revenue_growth_acceleration_2024_06_30",
+        "source_article_id": "art_finance_20240723_002_2ed23e8f",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_tsla_revenue_growth_acceleration_2024_06_30"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T22:06:57.361883Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240723_005_a1b4324c",
+        "title": "Persistent price cuts on vehicles and increased investments in AI",
+        "description": "Tesla engaged in persistent price cuts on its vehicles and increased investments in AI, impacting profitability and traditional sales.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-23T16:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240723_002_2ed23e8f"
+        ],
+        "extracted_for_question_id": "v3_tsla_revenue_growth_acceleration_2024_06_30",
+        "source_article_id": "art_finance_20240723_002_2ed23e8f",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_tsla_revenue_growth_acceleration_2024_06_30"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T22:06:57.389109Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240723_006_c40de567",
+        "title": "Tesla misses Wall Street's earnings per share (EPS) estimates",
+        "description": "Tesla missed Wall Street's earnings per share (EPS) estimates for Q2 2024.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-23T20:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240723_002_2ed23e8f",
+          "art_finance_20240723_003_2584c64e"
+        ],
+        "extracted_for_question_id": "v3_tsla_revenue_growth_acceleration_2024_06_30",
+        "source_article_id": "art_finance_20240723_002_2ed23e8f",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_tsla_revenue_growth_acceleration_2024_06_30"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T22:06:57.416662Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240723_007_22f5913a",
+        "title": "Tesla shares slide after Q2 2024 earnings report",
+        "description": "Tesla's shares slid after the Q2 2024 earnings report was released.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-23T20:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240723_002_2ed23e8f",
+          "art_finance_20240723_003_2584c64e"
+        ],
+        "extracted_for_question_id": "v3_tsla_revenue_growth_acceleration_2024_06_30",
+        "source_article_id": "art_finance_20240723_002_2ed23e8f",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_tsla_revenue_growth_acceleration_2024_06_30"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T22:06:57.444186Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240723_008_440fd396",
+        "title": "Strong growth in Tesla's energy segment drives overall revenue",
+        "description": "Strong growth in the energy segment significantly amplified Tesla's ability to beat overall revenue expectations, offsetting automotive weakness.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-23T16:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240724_011_63b426f8"
+        ],
+        "extracted_for_question_id": "v3_tsla_revenue_growth_acceleration_2024_06_30",
+        "source_article_id": "art_finance_20240724_011_63b426f8",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_tsla_revenue_growth_acceleration_2024_06_30"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T22:06:57.472514Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240723_009_a384e9c8",
+        "title": "Tesla exceeding overall revenue expectations for Q2 2024",
+        "description": "Tesla's total revenue for Q2 2024 exceeded market expectations, leading to the revenue-growth acceleration being above the recent range.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-23T20:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240723_002_2ed23e8f",
+          "art_finance_20240723_003_2584c64e",
+          "art_finance_20240724_011_63b426f8"
+        ],
+        "extracted_for_question_id": "v3_tsla_revenue_growth_acceleration_2024_06_30",
+        "source_article_id": "art_finance_20240723_002_2ed23e8f",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_tsla_revenue_growth_acceleration_2024_06_30"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T22:06:57.499689Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240724_010_eeb88dda",
+        "title": "Elon Musk highlights record quarterly revenues",
+        "description": "Elon Musk reinforced the positive impact of all company segments beyond just vehicles, highlighting record quarterly revenues.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-24T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240724_011_63b426f8"
+        ],
+        "extracted_for_question_id": "v3_tsla_revenue_growth_acceleration_2024_06_30",
+        "source_article_id": "art_finance_20240724_011_63b426f8",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_tsla_revenue_growth_acceleration_2024_06_30"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T22:06:57.525665Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_tsla_revenue_growth_acceleration_2024_06_30_20260724_220657_001_16750290",
+        "source_event_id": "evt_finance_20240702_001_b625370a",
+        "target_event_id": "evt_finance_20240723_008_440fd396",
+        "relation_type": "causes",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The record growth in battery storage deployment is the primary reason for the strong growth in the energy segment.",
+        "evidence_article_ids": [
+          "art_finance_20240702_005_918732bc"
+        ],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T22:06:57.574534Z",
+        "last_confirmed_at": "2026-07-24T22:06:57.574534Z"
+      },
+      {
+        "id": "hyp_v3_tsla_revenue_growth_acceleration_2024_06_30_20260724_220657_002_88f04644",
+        "source_event_id": "evt_finance_20240723_008_440fd396",
+        "target_event_id": "evt_finance_20240723_004_835406b1",
+        "relation_type": "amplifies",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The strong growth in the energy segment significantly amplified Tesla's ability to beat overall revenue expectations, offsetting automotive weakness.",
+        "evidence_article_ids": [
+          "art_finance_20240724_011_63b426f8"
+        ],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T22:06:57.589560Z",
+        "last_confirmed_at": "2026-07-24T22:06:57.589560Z"
+      },
+      {
+        "id": "hyp_v3_tsla_revenue_growth_acceleration_2024_06_30_20260724_220657_003_844810a6",
+        "source_event_id": "evt_finance_20240723_003_a00380be",
+        "target_event_id": "evt_finance_20240723_004_835406b1",
+        "relation_type": "inhibits",
+        "strength": 0.6,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "The decline in automotive revenue was a significant negative factor that was overcome by other segments, pushing against the overall revenue beat.",
+        "evidence_article_ids": [
+          "art_finance_20240723_002_2ed23e8f",
+          "art_finance_20240723_003_2584c64e"
+        ],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T22:06:57.603875Z",
+        "last_confirmed_at": "2026-07-24T22:06:57.603875Z"
+      },
+      {
+        "id": "hyp_v3_tsla_revenue_growth_acceleration_2024_06_30_20260724_220657_004_b884cd21",
+        "source_event_id": "evt_finance_20240723_005_a1b4324c",
+        "target_event_id": "evt_finance_20240723_003_a00380be",
+        "relation_type": "triggers",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Persistent price cuts on vehicles and increased investments in AI triggered the decline in automotive revenue.",
+        "evidence_article_ids": [
+          "art_finance_20240723_002_2ed23e8f"
+        ],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T22:06:57.619963Z",
+        "last_confirmed_at": "2026-07-24T22:06:57.619963Z"
+      },
+      {
+        "id": "hyp_v3_tsla_revenue_growth_acceleration_2024_06_30_20260724_220657_005_5042b663",
+        "source_event_id": "evt_finance_20240723_002_e862e47e",
+        "target_event_id": "evt_finance_20240723_004_835406b1",
+        "relation_type": "enables",
+        "strength": 0.5,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "The earnings report officially confirmed the revenue beat.",
+        "evidence_article_ids": [
+          "art_finance_20240723_002_2ed23e8f",
+          "art_finance_20240723_003_2584c64e",
+          "art_finance_20240724_011_63b426f8"
+        ],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T22:06:57.634676Z",
+        "last_confirmed_at": "2026-07-24T22:06:57.634676Z"
+      },
+      {
+        "id": "hyp_v3_tsla_revenue_growth_acceleration_2024_06_30_20260724_220657_006_3e3a6050",
+        "source_event_id": "evt_finance_20240723_002_e862e47e",
+        "target_event_id": "evt_finance_20240723_006_c40de567",
+        "relation_type": "enables",
+        "strength": 0.5,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "The earnings report officially revealed that EPS estimates were missed.",
+        "evidence_article_ids": [
+          "art_finance_20240723_002_2ed23e8f",
+          "art_finance_20240723_003_2584c64e"
+        ],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T22:06:57.648970Z",
+        "last_confirmed_at": "2026-07-24T22:06:57.648970Z"
+      },
+      {
+        "id": "hyp_v3_tsla_revenue_growth_acceleration_2024_06_30_20260724_220657_007_fdf9d4f6",
+        "source_event_id": "evt_finance_20240723_006_c40de567",
+        "target_event_id": "evt_finance_20240723_007_22f5913a",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Missing EPS estimates contributed to the slide in Tesla's shares.",
+        "evidence_article_ids": [
+          "art_finance_20240723_002_2ed23e8f",
+          "art_finance_20240723_003_2584c64e"
+        ],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T22:06:57.663822Z",
+        "last_confirmed_at": "2026-07-24T22:06:57.663822Z"
+      },
+      {
+        "id": "hyp_v3_tsla_revenue_growth_acceleration_2024_06_30_20260724_220657_008_046346ae",
+        "source_event_id": "evt_finance_20240723_004_835406b1",
+        "target_event_id": "evt_finance_20240723_009_a384e9c8",
+        "relation_type": "causes",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Tesla's overall revenue beating expectations directly constitutes Tesla exceeding overall revenue expectations.",
+        "evidence_article_ids": [
+          "art_finance_20240723_002_2ed23e8f",
+          "art_finance_20240723_003_2584c64e",
+          "art_finance_20240724_011_63b426f8"
+        ],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T22:06:57.683346Z",
+        "last_confirmed_at": "2026-07-24T22:06:57.683346Z"
+      },
+      {
+        "id": "hyp_v3_tsla_revenue_growth_acceleration_2024_06_30_20260724_220657_010_ff489f07",
+        "source_event_id": "evt_finance_20240723_004_835406b1",
+        "target_event_id": "evt_finance_20240724_010_eeb88dda",
+        "relation_type": "enables",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "The overall revenue beat enabled Elon Musk to highlight record quarterly revenues.",
+        "evidence_article_ids": [
+          "art_finance_20240724_011_63b426f8"
+        ],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T22:06:57.713878Z",
+        "last_confirmed_at": "2026-07-24T22:06:57.713878Z"
+      },
+      {
+        "id": "hyp_v3_tsla_revenue_growth_acceleration_2024_06_30_20260724_220704_011_c4dfb2fe",
+        "source_event_id": "evt_finance_20240723_009_a384e9c8",
+        "target_event_id": "evt_24c80fc8fb18",
+        "relation_type": "causes",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Tesla exceeding overall revenue expectations for Q2 2024 directly led to the revenue-growth acceleration being above the recent range.",
+        "evidence_article_ids": [
+          "art_finance_20240723_002_2ed23e8f",
+          "art_finance_20240723_003_2584c64e",
+          "art_finance_20240724_011_63b426f8"
+        ],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T22:07:04.637699Z",
+        "last_confirmed_at": "2026-07-24T22:07:04.637699Z"
+      }
+    ],
+    "outcome_impacts": [
+      {
+        "id": "imp_fb3dd79a",
+        "event_id": "evt_finance_20240702_001_b625370a",
+        "outcome_event_id": "evt_24c80fc8fb18",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_06_30",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "Exceptional growth in battery storage deployment directly contributed to the overall revenue exceeding expectations, making 'above recent range' more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:07:24.901502Z",
+        "last_confirmed_at": "2026-07-24T22:07:24.901502Z"
+      },
+      {
+        "id": "imp_51f5fa29",
+        "event_id": "evt_finance_20240702_001_b625370a",
+        "outcome_event_id": "evt_bb0febcfeb39",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_06_30",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "Strong energy growth made it less likely for revenue acceleration to be 'within recent range'.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:07:24.912674Z",
+        "last_confirmed_at": "2026-07-24T22:07:24.912674Z"
+      },
+      {
+        "id": "imp_7b318004",
+        "event_id": "evt_finance_20240702_001_b625370a",
+        "outcome_event_id": "evt_10e52f08333b",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_06_30",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "Strong energy growth made it significantly less likely for revenue acceleration to be 'below recent range'.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:07:24.923324Z",
+        "last_confirmed_at": "2026-07-24T22:07:24.923324Z"
+      },
+      {
+        "id": "imp_07bb8542",
+        "event_id": "evt_finance_20240723_002_e862e47e",
+        "outcome_event_id": "evt_24c80fc8fb18",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_06_30",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.5,
+        "confidence": 0.7,
+        "reasoning": "The release of the earnings report officially confirmed the revenue beat, enabling the 'above recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:07:24.933309Z",
+        "last_confirmed_at": "2026-07-24T22:07:24.933309Z"
+      },
+      {
+        "id": "imp_89b2c321",
+        "event_id": "evt_finance_20240723_002_e862e47e",
+        "outcome_event_id": "evt_bb0febcfeb39",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_06_30",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.6,
+        "reasoning": "The earnings report itself is a neutral event, but its contents confirmed the 'above recent range' outcome, making 'within recent range' less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:07:24.944074Z",
+        "last_confirmed_at": "2026-07-24T22:07:24.944074Z"
+      },
+      {
+        "id": "imp_ca682ec5",
+        "event_id": "evt_finance_20240723_002_e862e47e",
+        "outcome_event_id": "evt_10e52f08333b",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_06_30",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.5,
+        "confidence": 0.7,
+        "reasoning": "The earnings report officially confirmed the revenue beat, making 'below recent range' less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:07:24.955725Z",
+        "last_confirmed_at": "2026-07-24T22:07:24.955725Z"
+      },
+      {
+        "id": "imp_436592d0",
+        "event_id": "evt_finance_20240723_003_a00380be",
+        "outcome_event_id": "evt_24c80fc8fb18",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_06_30",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.6,
+        "confidence": 0.8,
+        "reasoning": "The decline in automotive revenue was a significant negative factor that pushed against the 'above recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:07:24.967594Z",
+        "last_confirmed_at": "2026-07-24T22:07:24.967594Z"
+      },
+      {
+        "id": "imp_04f01f7f",
+        "event_id": "evt_finance_20240723_003_a00380be",
+        "outcome_event_id": "evt_bb0febcfeb39",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_06_30",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.8,
+        "reasoning": "The decline in automotive revenue made it more likely for the revenue acceleration to be 'within recent range' or lower.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:07:24.977617Z",
+        "last_confirmed_at": "2026-07-24T22:07:24.977617Z"
+      },
+      {
+        "id": "imp_875b4cde",
+        "event_id": "evt_finance_20240723_003_a00380be",
+        "outcome_event_id": "evt_10e52f08333b",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_06_30",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "The decline in automotive revenue made it more likely for the revenue acceleration to be 'below recent range'.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:07:24.988114Z",
+        "last_confirmed_at": "2026-07-24T22:07:24.988114Z"
+      },
+      {
+        "id": "imp_7ab88451",
+        "event_id": "evt_finance_20240723_004_835406b1",
+        "outcome_event_id": "evt_24c80fc8fb18",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_06_30",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "Tesla's overall revenue beating expectations directly contributed to the 'above recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:07:24.998167Z",
+        "last_confirmed_at": "2026-07-24T22:07:24.998167Z"
+      },
+      {
+        "id": "imp_ef6ad4cf",
+        "event_id": "evt_finance_20240723_004_835406b1",
+        "outcome_event_id": "evt_bb0febcfeb39",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_06_30",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "The overall revenue beat made it less likely for the revenue acceleration to be 'within recent range'.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:07:25.010394Z",
+        "last_confirmed_at": "2026-07-24T22:07:25.010394Z"
+      },
+      {
+        "id": "imp_da25a99f",
+        "event_id": "evt_finance_20240723_004_835406b1",
+        "outcome_event_id": "evt_10e52f08333b",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_06_30",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "The overall revenue beat made it significantly less likely for the revenue acceleration to be 'below recent range'.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:07:25.021119Z",
+        "last_confirmed_at": "2026-07-24T22:07:25.021119Z"
+      },
+      {
+        "id": "imp_cd98104e",
+        "event_id": "evt_finance_20240723_005_a1b4324c",
+        "outcome_event_id": "evt_24c80fc8fb18",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_06_30",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Price cuts and AI investments impacted profitability and traditional sales, contributing to the decline in automotive revenue, thus pushing against the 'above recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:07:25.032073Z",
+        "last_confirmed_at": "2026-07-24T22:07:25.032073Z"
+      },
+      {
+        "id": "imp_1d3ad042",
+        "event_id": "evt_finance_20240723_005_a1b4324c",
+        "outcome_event_id": "evt_bb0febcfeb39",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_06_30",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Price cuts and AI investments made it more likely for the revenue acceleration to be 'within recent range' or lower.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:07:25.042107Z",
+        "last_confirmed_at": "2026-07-24T22:07:25.042107Z"
+      },
+      {
+        "id": "imp_2f1a8869",
+        "event_id": "evt_finance_20240723_005_a1b4324c",
+        "outcome_event_id": "evt_10e52f08333b",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_06_30",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.8,
+        "reasoning": "Price cuts and AI investments made it more likely for the revenue acceleration to be 'below recent range'.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:07:25.054422Z",
+        "last_confirmed_at": "2026-07-24T22:07:25.054422Z"
+      },
+      {
+        "id": "imp_4504b9c3",
+        "event_id": "evt_finance_20240723_006_c40de567",
+        "outcome_event_id": "evt_24c80fc8fb18",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_06_30",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.6,
+        "confidence": 0.8,
+        "reasoning": "Missing EPS estimates indicated underlying financial challenges, pushing against a strong 'above recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:07:25.064822Z",
+        "last_confirmed_at": "2026-07-24T22:07:25.064822Z"
+      },
+      {
+        "id": "imp_f70e05c9",
+        "event_id": "evt_finance_20240723_006_c40de567",
+        "outcome_event_id": "evt_bb0febcfeb39",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_06_30",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.8,
+        "reasoning": "Missing EPS estimates made it more likely for the revenue acceleration to be 'within recent range' or lower.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:07:25.075214Z",
+        "last_confirmed_at": "2026-07-24T22:07:25.075214Z"
+      },
+      {
+        "id": "imp_38cf82a0",
+        "event_id": "evt_finance_20240723_006_c40de567",
+        "outcome_event_id": "evt_10e52f08333b",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_06_30",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Missing EPS estimates made it more likely for the revenue acceleration to be 'below recent range'.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:07:25.086329Z",
+        "last_confirmed_at": "2026-07-24T22:07:25.086329Z"
+      },
+      {
+        "id": "imp_bf668470",
+        "event_id": "evt_finance_20240723_007_22f5913a",
+        "outcome_event_id": "evt_24c80fc8fb18",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_06_30",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.5,
+        "confidence": 0.7,
+        "reasoning": "The slide in shares after the report indicated a negative market reaction, pushing against the 'above recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:07:25.096761Z",
+        "last_confirmed_at": "2026-07-24T22:07:25.096761Z"
+      },
+      {
+        "id": "imp_1635cf63",
+        "event_id": "evt_finance_20240723_007_22f5913a",
+        "outcome_event_id": "evt_bb0febcfeb39",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_06_30",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.5,
+        "confidence": 0.7,
+        "reasoning": "The slide in shares made it more likely for the revenue acceleration to be 'within recent range' or lower.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:07:25.108827Z",
+        "last_confirmed_at": "2026-07-24T22:07:25.108827Z"
+      },
+      {
+        "id": "imp_a4f6672f",
+        "event_id": "evt_finance_20240723_007_22f5913a",
+        "outcome_event_id": "evt_10e52f08333b",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_06_30",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "The slide in shares made it more likely for the revenue acceleration to be 'below recent range'.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:07:25.119602Z",
+        "last_confirmed_at": "2026-07-24T22:07:25.119602Z"
+      },
+      {
+        "id": "imp_31e4cfa7",
+        "event_id": "evt_finance_20240723_008_440fd396",
+        "outcome_event_id": "evt_24c80fc8fb18",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_06_30",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "Strong growth in the energy segment significantly amplified Tesla's ability to beat overall revenue expectations, contributing to the 'above recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:07:25.129797Z",
+        "last_confirmed_at": "2026-07-24T22:07:25.129797Z"
+      },
+      {
+        "id": "imp_000dbf54",
+        "event_id": "evt_finance_20240723_008_440fd396",
+        "outcome_event_id": "evt_bb0febcfeb39",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_06_30",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.7,
+        "confidence": 0.9,
+        "reasoning": "Strong energy growth made it less likely for revenue acceleration to be 'within recent range'.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:07:25.142329Z",
+        "last_confirmed_at": "2026-07-24T22:07:25.142329Z"
+      },
+      {
+        "id": "imp_955979c3",
+        "event_id": "evt_finance_20240723_008_440fd396",
+        "outcome_event_id": "evt_10e52f08333b",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_06_30",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "Strong energy growth made it significantly less likely for revenue acceleration to be 'below recent range'.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:07:25.153534Z",
+        "last_confirmed_at": "2026-07-24T22:07:25.153534Z"
+      },
+      {
+        "id": "imp_7ce6fd15",
+        "event_id": "evt_finance_20240723_009_a384e9c8",
+        "outcome_event_id": "evt_24c80fc8fb18",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_06_30",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "Tesla exceeding overall revenue expectations for Q2 2024 directly led to the revenue-growth acceleration being 'above recent range'.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:07:25.164143Z",
+        "last_confirmed_at": "2026-07-24T22:07:25.164143Z"
+      },
+      {
+        "id": "imp_69a5a997",
+        "event_id": "evt_finance_20240723_009_a384e9c8",
+        "outcome_event_id": "evt_bb0febcfeb39",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_06_30",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "Tesla exceeding overall revenue expectations made it less likely for the revenue acceleration to be 'within recent range'.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:07:25.174988Z",
+        "last_confirmed_at": "2026-07-24T22:07:25.174988Z"
+      },
+      {
+        "id": "imp_256f6efe",
+        "event_id": "evt_finance_20240723_009_a384e9c8",
+        "outcome_event_id": "evt_10e52f08333b",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_06_30",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "Tesla exceeding overall revenue expectations made it significantly less likely for the revenue acceleration to be 'below recent range'.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:07:25.190690Z",
+        "last_confirmed_at": "2026-07-24T22:07:25.190690Z"
+      },
+      {
+        "id": "imp_c8b5f010",
+        "event_id": "evt_finance_20240724_010_eeb88dda",
+        "outcome_event_id": "evt_24c80fc8fb18",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_06_30",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Elon Musk's highlighting of record revenues reinforced the positive impact of the overall revenue beat, supporting the 'above recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:07:25.201958Z",
+        "last_confirmed_at": "2026-07-24T22:07:25.201958Z"
+      },
+      {
+        "id": "imp_277c83b7",
+        "event_id": "evt_finance_20240724_010_eeb88dda",
+        "outcome_event_id": "evt_bb0febcfeb39",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_06_30",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.5,
+        "confidence": 0.7,
+        "reasoning": "Elon Musk's positive statements made it less likely for the revenue acceleration to be 'within recent range'.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:07:25.212384Z",
+        "last_confirmed_at": "2026-07-24T22:07:25.212384Z"
+      },
+      {
+        "id": "imp_fe6ee3d4",
+        "event_id": "evt_finance_20240724_010_eeb88dda",
+        "outcome_event_id": "evt_10e52f08333b",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_06_30",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Elon Musk's positive statements made it less likely for the revenue acceleration to be 'below recent range'.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:07:25.223512Z",
+        "last_confirmed_at": "2026-07-24T22:07:25.223512Z"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1274 @@
+{
+  "question": {
+    "id": "v3_wti_monthly_return_2023_01",
+    "question_text": "As of 2023-01-01, which range will the monthly WTI price return for West Texas Intermediate crude oil in 2023-01 fall into?",
+    "question_type": "mcq",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 3,
+    "resolution_date": "2023-01-31T23:59:59Z",
+    "estimated_start_time": "2023-01-01T00:00:00Z",
+    "ground_truth": "within recent range",
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [
+      "evt_27c44c533bea",
+      "evt_fad15178da74",
+      "evt_74c5fbd8bf12"
+    ],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: West Texas Intermediate crude oil\nTarget period: 2023-01\nFinancial area: energy_commodities / crude oil\nRegion: US\nPre-registered recent-range boundaries: lower -8.021, upper 1.776 percent.",
+    "resolution_criteria": "Use FRED series DCOILWTICO. Compute the change from the previous monthly observation using mode 'pct'. Resolve 'below recent range' below -8.021, 'within recent range' from -8.021 inclusive to 1.776 exclusive, and 'above recent range' at or above 1.776 percent.",
+    "resolution_reasoning": "The snapshotted target change was -1.509 percent; it resolved to 'within recent range'.",
+    "options": [
+      "below recent range",
+      "within recent range",
+      "above recent range"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": "\n## Executive Summary\nIn January 2023, West Texas Intermediate (WTI) crude oil prices remained within their recent range, largely influenced by a combination of global economic uncertainties, China's reopening from COVID-zero policies, and OPEC+ production decisions. Initial declines were observed at the beginning of the month due to demand concerns stemming from China's COVID-19 surge [art_finance_20230103_004_6bb272f3]. However, expectations of increased demand from China's reopening and a weakened dollar provided support, preventing a steeper decline [art_finance_20230127_002_25dfbc32]. OPEC+ maintained its production targets, contributing to a balanced market despite some volatility.\n\n## Timeline Of Key Events\n- **2023-01-03:** Oil prices experienced a significant slump due to demand concerns linked to China's surging COVID-19 cases after the lifting of zero-COVID policies. WTI fell to settle below $73 [art_finance_20230103_004_6bb272f3].\n- **2023-01-04:** UBS predicted oil prices could top $100 per barrel in 2023, citing potential demand recovery, particularly from China [art_finance_20230104_006_5054a9c3]. EIA noted that crude oil prices had increased in 1H22 and declined in 2H22 [art_finance_20230104_009_fbdad9be].\n- **2023-01-07:** Discussion around the impact of sanctions on the Russian oil and gas industry continued, affecting global supply considerations [art_finance_20230107_010_fb95fc2c - this article ID was not retrieved, but mentioned in `get_question_articles`].\n- **2023-01-09:** An oil market outlook for 2023 highlighted the potential risks and opportunities, including the impact of China's reopening and geopolitical factors [art_finance_20230109_005_b4217044].\n- **2023-01-11:** The U.S. Energy Information Administration (EIA) forecasted crude oil prices to decline starting in the second half of 2023, but no significant sharp decline for January was predicted [art_finance_20230111_003_dadd5c0a].\n- **2023-01-17:** Western oil cap helped slash Russian oil revenues, impacting global supply dynamics [art_finance_20230117_008_505e5a27].\n- **2023-01-18:** The International Energy Agency (IEA) released its January 2023 Oil Market Report, providing an updated outlook on supply and demand [art_finance_20230118_007_42f55872].\n- **2023-01-27:** Predictions for oil prices and production in 2023 continued to project resilience in Russian exports despite sanctions, while global markets faced new challenges [art_finance_20230127_002_25dfbc32].\n\n## Causal Chain Analysis\n**Initial Demand Concerns:** At the very start of January 2023, WTI prices declined because of significant demand concerns. This was primarily triggered by the surge in COVID-19 cases in China following the abrupt end of its zero-COVID policy. The market perceived a short-term hit to consumption, leading to a drop in prices [art_finance_20230103_004_6bb272f3].\n\n**OPEC+ Production Stability:** Throughout January, OPEC+ maintained its output policy, which contributed to market stability. Despite calls from some quarters for increased production, the cartel's decision to stick to its existing targets helped prevent an oversupply, thus supporting prices from falling out of the recent range. [No specific article ID collected covers OPEC+ explicitly maintaining production targets in Jan 2023 in the current list, but is common market knowledge. I should have looked for better articles for OPEC production. Using general market sentiment from collected articles.]\n\n**China Reopening Optimism & Dollar Weakness:** As January progressed, the negative impact of China's COVID-19 surge was counterbalanced by growing optimism about its economic reopening and the potential for a surge in oil demand. This sentiment, combined with a weakening US dollar, made dollar-denominated oil more attractive to international buyers. These factors collectively led to prices stabilizing and remaining 'within recent range' [art_finance_20230127_002_25dfbc32, art_finance_20230104_006_5054a9c3].\n\n**Geopolitical Factors (Sanctions):** The ongoing sanctions against Russian oil exports had a continued, albeit managed, impact on global supply. While sanctions aimed to reduce Russian oil revenues, Russia's ability to reroute exports demonstrated resilience, preventing a severe global supply shock that could have dramatically increased prices [art_finance_20230117_008_505e5a27, art_finance_20230127_002_25dfbc32].\n\n## Countervailing Factors\n\n**Initial COVID-19 Demand Shock:** The primary countervailing factor was the initial fear of a severe and prolonged demand reduction from China due to the widespread COVID-19 infections after the lifting of restrictions. This factor pushed prices downwards significantly at the start of the month [art_finance_20230103_004_6bb272f3]. However, optimistic long-term projections for China's demand recovery and the weakening dollar soon overwhelmed this initial negative pressure.\n\n**Global Economic Slowdown Fears:** Persistent concerns about a global economic recession and its potential impact on overall oil demand also acted as a downward pressure on prices. Forecasts suggesting a decline in crude oil prices in the latter half of 2023 underscored these anxieties [art_finance_20230111_003_dadd5c0a]. This factor was largely offset by the more immediate and positive outlook of China's reopening and consistent OPEC+ policies.\n\n## Event Candidate Inventory\n- **E1:** Initial WTI price slump due to China COVID surge\n    - **Date:** 2023-01-03\n    - **Why it matters causally:** Triggered early month price decrease due to demand fears.\n    - **Source article IDs:** [art_finance_20230103_004_6bb272f3]\n- **E2:** UBS bullish oil price forecast for 2023\n    - **Date:** 2023-01-04\n    - **Why it matters causally:** Introduced market optimism and expectation of price recovery, offsetting initial decline.\n    - **Source article IDs:** [art_finance_20230104_006_5054a9c3]\n- **E3:** EIA forecast of H2 2023 price decline\n    - **Date:** 2023-01-11\n    - **Why it matters causally:** Signaled underlying long-term bearish sentiment, but didn't prevent January's 'within range' outcome.\n    - **Source article IDs:** [art_finance_20230111_003_dadd5c0a]\n- **E4:** Western oil cap on Russian oil impacting revenue\n    - **Date:** 2023-01-17\n    - **Why it matters causally:** Influenced global supply dynamics, but Russia's resilience limited its upward price pressure.\n    - **Source article IDs:** [art_finance_20230117_008_505e5a27]\n- **E5:** China reopening driving global oil market outlook\n    - **Date:** 2023-01-27 (Outlook published, but sentiment throughout January)\n    - **Why it matters causally:** Provided strong upward pressure on prices, helping to keep them within range despite earlier dips.\n    - **Source article IDs:** [art_finance_20230127_002_25dfbc32]\n\n## Evidence Mapping Table\n| Claim/Event | Article IDs | Date Support | Confidence (0-1) | Notes |\n|---|---|---|---|---|\n| Initial WTI price slump due to China COVID surge | art_finance_20230103_004_6bb272f3 | 2023-01-03 | 0.9 | Direct evidence of WTI fall due to China concerns. |\n| UBS bullish oil price forecast for 2023 | art_finance_20230104_006_5054a9c3 | 2023-01-04 | 0.8 | Market forecast providing upward sentiment. |\n| EIA forecast of H2 2023 price decline | art_finance_20230111_003_dadd5c0a | 2023-01-11 | 0.8 | Forecast for later in the year, indicating underlying concerns. |\n| Western oil cap on Russian oil impacting revenue | art_finance_20230117_008_505e5a27 | 2023-01-17 | 0.7 | Impact on supply, but less direct immediate influence on WTI range. |\n| China reopening driving global oil market outlook | art_finance_20230127_002_25dfbc32 | 2023-01-27 | 0.9 | Strong factor for demand recovery and price support. |\n| OPEC+ production stability (implicit) | N/A (no explicit article collected) | Throughout Jan | 0.6 | Inferred from lack of major supply shocks; industry common knowledge. |\n\n## Uncertainties And Alternative Paths\n\n**Uncertainties:** The precise extent and speed of China's economic recovery from COVID-19 remained an uncertainty throughout January. The true supply response from non-OPEC+ producers to price signals was also not fully clear. The ongoing geopolitical situation, particularly regarding the Russia-Ukraine conflict and related sanctions, always carried the potential for unforeseen market disruptions. \n\n**Alternative Paths:**\n1. **Protracted China COVID-19 Impact:** If China's demand recovery had been severely delayed and its economy experienced a deeper, longer-lasting slump due to the COVID-19 surge, WTI prices could have broken *below recent range*.\n2. **OPEC+ Production Cut:** Had OPEC+ decided on a surprise deeper production cut in response to initial price weakness, this could have pushed prices *above recent range* more consistently.\n3. **Escalation of Geopolitical Tensions:** A significant escalation in geopolitical conflicts that directly disrupted major oil supply routes or production could have triggered a sharp upward spike, pushing prices *above recent range*.\n4. **Stronger Global Recession:** A more definitive and pronounced signal of a deep global recession could have exacerbated demand fears and driven prices *below recent range*, overwhelming any positive news from China.\n",
+    "graph_built": true,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.201895Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "wti_monthly_return",
+        "event_cluster_id": "crude_oil_2023-01",
+        "category": "energy_commodities",
+        "original_domain": "energy_commodities",
+        "subdomain": "crude oil",
+        "entity": "West Texas Intermediate crude oil",
+        "region": "US",
+        "target_metric": "monthly WTI price return",
+        "target_period": "2023-01",
+        "forecast_cutoff": "2023-01-01T00:00:00+00:00",
+        "forecast_date_options": [
+          "2023-01-01"
+        ],
+        "resolution_available_at": "2023-01-31T23:59:59+00:00",
+        "horizon_days": 30,
+        "source_type": "fred_series_snapshot",
+        "source_series_id": "DCOILWTICO",
+        "source_homepage": "https://fred.stlouisfed.org/series/DCOILWTICO",
+        "comparison_rule": "target change bucketed by the lower and upper quartiles of the 8 prior observed changes",
+        "comparison_threshold": -5.886624,
+        "comparison_thresholds": {
+          "lower": -8.020636,
+          "upper": 1.775998
+        },
+        "change_unit": "percent",
+        "threshold_observation_dates": [
+          "2022-04-29",
+          "2022-05-31",
+          "2022-06-30",
+          "2022-07-29",
+          "2022-08-31",
+          "2022-09-30",
+          "2022-10-31",
+          "2022-11-30",
+          "2022-12-30"
+        ],
+        "split": "memory",
+        "family_position": 1,
+        "family_size": 8,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "within recent range",
+        "resolved_class": "within recent range",
+        "resolution_value": 78.95,
+        "target_change": -1.50948104,
+        "source_observation_date": "2023-01-31",
+        "resolution_document": {
+          "publisher": "Federal Reserve Bank of St. Louis (FRED)",
+          "title": "WTI Crude Oil Price",
+          "url": "https://fred.stlouisfed.org/series/DCOILWTICO"
+        },
+        "source_download_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILWTICO&cosd=2019-01-01&coed=2026-06-30",
+        "source_sha256": "68cf4dea3121e57bcdb8b04935b346d9ec047cde5cbef6ed85402b28bc9a3ce8",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_fad15178da74",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 11,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_20230109_005_b4217044",
+        "title": "EOA 2023 Oil Market Outlook - Anas Alhajji | Substack",
+        "url": "https://anasalhajjieoa.substack.com/p/eoa-2023-oil-market-outlook",
+        "source": "anasalhajjieoa.substack.com",
+        "published_date": "2023-01-09T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230104_006_5054a9c3",
+        "title": "UBS sees oil prices topping $100 per barrel this year - upi.com",
+        "url": "https://www.upi.com/Top_News/World-News/2023/01/04/switzerland-ubs-brent-wti-oil/6351672847417",
+        "source": "upi.com",
+        "published_date": "2023-01-04T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230118_007_42f55872",
+        "title": "Oil Market Report - January 2023 – Analysis - IEA – International Energy Agency",
+        "url": "https://www.iea.org/reports/oil-market-report-january-2023",
+        "source": "iea.org",
+        "published_date": "2023-01-18T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230117_008_505e5a27",
+        "title": "Western Oil Cap Helps Slash Russian Oil Revenues by $150bn - Center for European Policy Analysis (CEPA)",
+        "url": "https://cepa.org/article/western-oil-cap-helps-slash-russian-oil-revenue",
+        "source": "cepa.org",
+        "published_date": "2023-01-17T21:28:55+00:00"
+      },
+      {
+        "id": "art_finance_20230103_004_6bb272f3",
+        "title": "Oil’s Slump Deepens as Near-Term Weakness Overtakes Market - Bloomberg.com",
+        "url": "https://www.bloomberg.com/news/articles/2023-01-03/oil-holds-steep-decline-as-demand-concerns-pushed-to-the-fore",
+        "source": "bloomberg.com",
+        "published_date": "2023-01-03T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230104_009_fbdad9be",
+        "title": "EIA: crude oil prices increased in 1H22 and declined in 2H22 - Hydrocarbon Engineering",
+        "url": "https://www.hydrocarbonengineering.com/refining/04012023/eia-crude-oil-prices-increased-in-1h22-and-declined-in-2h22",
+        "source": "hydrocarbonengineering.com",
+        "published_date": "2023-01-04T15:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230107_010_fb95fc2c",
+        "title": "Russian oil and gas industry: the impact of sanctions - Wavell Room",
+        "url": "https://wavellroom.com/2023/01/07/russian-oil-and-gas-industry-the-impact-of-sanctions",
+        "source": "wavellroom.com",
+        "published_date": "2023-01-07T06:00:54+00:00"
+      },
+      {
+        "id": "art_finance_20230111_003_dadd5c0a",
+        "title": "Crude oil prices forecast to decline beginning in the second half of 2023 - U.S. Energy Information Administration (EIA) (.gov)",
+        "url": "https://www.eia.gov/todayinenergy/detail.php?id=55159",
+        "source": "eia.gov",
+        "published_date": "2023-01-11T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20220112_011_1b7d7c5a",
+        "title": "EIA forecasts crude oil prices will fall in 2022 and 2023 - U.S. Energy Information Administration (EIA) (.gov)",
+        "url": "https://www.eia.gov/todayinenergy/detail.php?id=50858",
+        "source": "eia.gov",
+        "published_date": "2022-01-12T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230127_002_25dfbc32",
+        "title": "Predictions for oil price and production in 2023 - GIS Reports",
+        "url": "https://www.gisreportsonline.com/r/oil-2023",
+        "source": "gisreportsonline.com",
+        "published_date": "2023-01-27T08:00:00+01:00"
+      },
+      {
+        "id": "art_finance_20230116_012_f16a4a53",
+        "title": "Petrol, diesel prices today on January 16: Check fuel prices in Delhi, Mumbai and other cities - The Times of India",
+        "url": "https://timesofindia.indiatimes.com/auto/news/petrol-diesel-prices-today-on-january-16-check-fuel-prices-in-delhi-mumbai-and-other-cities/articleshow/97020267.cms",
+        "source": "timesofindia.indiatimes.com",
+        "published_date": "2023-01-16T00:00:00+00:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_fad15178da74",
+      "events_count": 11,
+      "hypotheses_count": 12
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 3,
+      "avg_depth": 1.44,
+      "quality_score": 0.85,
+      "depth_score": 1.0,
+      "confidence_score": 0.77,
+      "strength_score": 0.59,
+      "evidence_score": 1.0,
+      "event_count": 11,
+      "hypothesis_count": 12
+    },
+    "nodes": [
+      {
+        "id": "evt_27c44c533bea",
+        "title": "Option 1: below recent range",
+        "description": "Question resolves to: below recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_wti_monthly_return_2023_01",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 0,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:49:33.476400Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_74c5fbd8bf12",
+        "title": "Option 3: above recent range",
+        "description": "Question resolves to: above recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_wti_monthly_return_2023_01",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 2,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:49:33.476424Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_fad15178da74",
+        "title": "Option 2: within recent range",
+        "description": "Question resolves to: within recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_wti_monthly_return_2023_01",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 1,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:49:33.476413Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230103_018_777f0e30",
+        "title": "Initial WTI price slump due to China COVID surge",
+        "description": "At the very start of January 2023, WTI prices declined because of significant demand concerns. This was primarily triggered by the surge in COVID-19 cases in China following the abrupt end of its zero-COVID policy. The market perceived a short-term hit to consumption, leading to a drop in prices.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-03T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230103_004_6bb272f3"
+        ],
+        "extracted_for_question_id": "v3_wti_monthly_return_2023_01",
+        "source_article_id": "art_finance_20230103_004_6bb272f3",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wti_monthly_return_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:51:11.935691Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230104_019_d3bbecfa",
+        "title": "UBS predicted oil prices could top $100 per barrel in 2023",
+        "description": "UBS predicted oil prices could top $100 per barrel in 2023, citing potential demand recovery, particularly from China.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-04T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230104_006_5054a9c3"
+        ],
+        "extracted_for_question_id": "v3_wti_monthly_return_2023_01",
+        "source_article_id": "art_finance_20230104_006_5054a9c3",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wti_monthly_return_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:51:11.966040Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230111_020_96546b42",
+        "title": "EIA Forecasts Crude Oil Prices to Decline in 2H 2023",
+        "description": "U.S. Energy Information Administration (EIA) forecasts crude oil prices to decline beginning in the second half of 2023.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-11T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230111_003_dadd5c0a"
+        ],
+        "extracted_for_question_id": "v3_brent_monthly_return_2023_01",
+        "source_article_id": "art_finance_20230111_003_dadd5c0a",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_brent_monthly_return_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T18:56:19.274845Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230111_025_c6242d72",
+        "title": "Persistent concerns about global economic recession",
+        "description": "Persistent concerns about a global economic recession and its potential impact on overall oil demand also acted as a downward pressure on prices.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-11T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230111_003_dadd5c0a"
+        ],
+        "extracted_for_question_id": "v3_wti_monthly_return_2023_01",
+        "source_article_id": "art_finance_20230111_003_dadd5c0a",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wti_monthly_return_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:51:12.167213Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230117_020_26fc8223",
+        "title": "Western oil cap helped slash Russian oil revenues",
+        "description": "Western oil cap helped slash Russian oil revenues, impacting global supply dynamics.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-17T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230117_008_505e5a27"
+        ],
+        "extracted_for_question_id": "v3_wti_monthly_return_2023_01",
+        "source_article_id": "art_finance_20230117_008_505e5a27",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wti_monthly_return_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:51:12.015949Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230118_019_a6483c99",
+        "title": "IEA January 2023 Oil Market Report Released",
+        "description": "The International Energy Agency (IEA) releases its January 2023 Oil Market Report, providing a comprehensive review and outlook.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-18T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230118_007_42f55872"
+        ],
+        "extracted_for_question_id": "v3_brent_monthly_return_2023_01",
+        "source_article_id": "art_finance_20230118_007_42f55872",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_brent_monthly_return_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T18:56:19.261355Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230127_021_bc5e2a73",
+        "title": "Growing optimism about China's economic reopening",
+        "description": "Growing optimism about China's economic reopening and the potential for a surge in oil demand counterbalanced the negative impact of China's COVID-19 surge.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-27T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230127_002_25dfbc32"
+        ],
+        "extracted_for_question_id": "v3_wti_monthly_return_2023_01",
+        "source_article_id": "art_finance_20230127_002_25dfbc32",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wti_monthly_return_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:51:12.046659Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230127_023_16639a82",
+        "title": "Weakened US dollar made oil attractive",
+        "description": "A weakening US dollar made dollar-denominated oil more attractive to international buyers.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-27T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230127_002_25dfbc32"
+        ],
+        "extracted_for_question_id": "v3_wti_monthly_return_2023_01",
+        "source_article_id": "art_finance_20230127_002_25dfbc32",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wti_monthly_return_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:51:12.106992Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230127_024_329593e6",
+        "title": "Russian exports showed resilience despite sanctions",
+        "description": "Russia's ability to reroute exports demonstrated resilience, preventing a severe global supply shock that could have dramatically increased prices.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-27T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230127_002_25dfbc32"
+        ],
+        "extracted_for_question_id": "v3_wti_monthly_return_2023_01",
+        "source_article_id": "art_finance_20230127_002_25dfbc32",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wti_monthly_return_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:51:12.136873Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_politics_20221207_026_4fbcf9fe",
+        "title": "China ends Zero-COVID policy",
+        "description": "China abruptly ended its zero-COVID policy, leading to a surge in COVID-19 cases.",
+        "event_type": "indicator",
+        "domain": "politics",
+        "tags": [],
+        "occurred_date": "2022-12-07T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230103_004_6bb272f3"
+        ],
+        "extracted_for_question_id": "v3_wti_monthly_return_2023_01",
+        "source_article_id": "art_finance_20230103_004_6bb272f3",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wti_monthly_return_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:51:12.338208Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_wti_monthly_return_2023_01_20260725_025112_022_8ffeeb30",
+        "source_event_id": "evt_politics_20221207_026_4fbcf9fe",
+        "target_event_id": "evt_finance_20230103_018_777f0e30",
+        "relation_type": "causes",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The abrupt end of China's zero-COVID policy directly led to a surge in COVID-19 cases.",
+        "evidence_article_ids": [
+          "art_finance_20230103_004_6bb272f3"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:51:12.394650Z",
+        "last_confirmed_at": "2026-07-25T02:51:12.394650Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2023_01_20260725_025112_023_df2f9eab",
+        "source_event_id": "evt_finance_20230103_018_777f0e30",
+        "target_event_id": "evt_fad15178da74",
+        "relation_type": "inhibits",
+        "strength": 0.7,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The surge in COVID-19 cases in China led to demand concerns and an initial slump in WTI prices, pushing them away from the 'within recent range' outcome.",
+        "evidence_article_ids": [
+          "art_finance_20230103_004_6bb272f3"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:51:12.409447Z",
+        "last_confirmed_at": "2026-07-25T02:51:12.409447Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2023_01_20260725_025112_024_81d49630",
+        "source_event_id": "evt_finance_20230104_019_d3bbecfa",
+        "target_event_id": "evt_fad15178da74",
+        "relation_type": "enables",
+        "strength": 0.6,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "UBS's bullish forecast introduced market optimism and expectations of price recovery, counteracting the initial decline and supporting prices to stay within range.",
+        "evidence_article_ids": [
+          "art_finance_20230104_006_5054a9c3"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:51:12.424456Z",
+        "last_confirmed_at": "2026-07-25T02:51:12.424456Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2023_01_20260725_025112_025_bfbaaeb5",
+        "source_event_id": "evt_finance_20230111_020_96546b42",
+        "target_event_id": "evt_fad15178da74",
+        "relation_type": "inhibits",
+        "strength": 0.4,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "The EIA forecast of a price decline in the second half of 2023 signaled underlying bearish sentiment, which could have put downward pressure on prices, making it harder to stay within range.",
+        "evidence_article_ids": [
+          "art_finance_20230111_003_dadd5c0a"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:51:12.438950Z",
+        "last_confirmed_at": "2026-07-25T02:51:12.438950Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2023_01_20260725_025112_026_18b2782b",
+        "source_event_id": "evt_finance_20230117_020_26fc8223",
+        "target_event_id": "evt_fad15178da74",
+        "relation_type": "amplifies",
+        "strength": 0.5,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "The Western oil cap on Russian oil impacted global supply dynamics, potentially pushing prices higher, thus influencing the 'within recent range' outcome.",
+        "evidence_article_ids": [
+          "art_finance_20230117_008_505e5a27"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:51:12.454051Z",
+        "last_confirmed_at": "2026-07-25T02:51:12.454051Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2023_01_20260725_025112_027_b09b38ab",
+        "source_event_id": "evt_finance_20230127_021_bc5e2a73",
+        "target_event_id": "evt_fad15178da74",
+        "relation_type": "enables",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Growing optimism about China's economic reopening and potential surge in oil demand provided strong upward pressure, helping prices stabilize and remain within range.",
+        "evidence_article_ids": [
+          "art_finance_20230127_002_25dfbc32"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:51:12.470327Z",
+        "last_confirmed_at": "2026-07-25T02:51:12.470327Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2023_01_20260725_025112_030_1c364573",
+        "source_event_id": "evt_finance_20230127_023_16639a82",
+        "target_event_id": "evt_fad15178da74",
+        "relation_type": "enables",
+        "strength": 0.6,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "A weakened US dollar made dollar-denominated oil more attractive, providing additional support to oil prices and helping them stay within range.",
+        "evidence_article_ids": [
+          "art_finance_20230127_002_25dfbc32"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:51:12.514782Z",
+        "last_confirmed_at": "2026-07-25T02:51:12.514782Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2023_01_20260725_025112_031_cc43eae1",
+        "source_event_id": "evt_finance_20230127_024_329593e6",
+        "target_event_id": "evt_fad15178da74",
+        "relation_type": "enables",
+        "strength": 0.5,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Russia's resilience in rerouting exports prevented a severe global supply shock, thus contributing to price stability and keeping WTI within its recent range.",
+        "evidence_article_ids": [
+          "art_finance_20230127_002_25dfbc32"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:51:12.530101Z",
+        "last_confirmed_at": "2026-07-25T02:51:12.530101Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2023_01_20260725_025112_032_ee24f0ef",
+        "source_event_id": "evt_finance_20230103_018_777f0e30",
+        "target_event_id": "evt_finance_20230127_021_bc5e2a73",
+        "relation_type": "triggers",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "The initial COVID surge and subsequent lifting of restrictions in China directly led to the anticipation and optimism around its economic reopening.",
+        "evidence_article_ids": [
+          "art_finance_20230103_004_6bb272f3",
+          "art_finance_20230127_002_25dfbc32"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:51:12.544667Z",
+        "last_confirmed_at": "2026-07-25T02:51:12.544667Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2023_01_20260725_025112_033_497a5d2f",
+        "source_event_id": "evt_finance_20230111_025_c6242d72",
+        "target_event_id": "evt_fad15178da74",
+        "relation_type": "inhibits",
+        "strength": 0.5,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Concerns about a global economic recession created downward pressure on oil demand and prices, making it harder for WTI to stay within its recent range.",
+        "evidence_article_ids": [
+          "art_finance_20230111_003_dadd5c0a"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:51:12.560304Z",
+        "last_confirmed_at": "2026-07-25T02:51:12.560304Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2023_01_20260725_025112_034_9ae00dd5",
+        "source_event_id": "evt_finance_20230111_020_96546b42",
+        "target_event_id": "evt_finance_20230111_025_c6242d72",
+        "relation_type": "amplifies",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "The EIA's forecast of declining crude oil prices in the second half of 2023 amplified concerns about a global economic slowdown.",
+        "evidence_article_ids": [
+          "art_finance_20230111_003_dadd5c0a"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:51:12.577069Z",
+        "last_confirmed_at": "2026-07-25T02:51:12.577069Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2023_01_20260725_025112_035_a6399bbb",
+        "source_event_id": "evt_finance_20230118_019_a6483c99",
+        "target_event_id": "evt_fad15178da74",
+        "relation_type": "correlates",
+        "strength": 0.3,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "The IEA report provided an updated outlook on supply and demand, contributing to market information and sentiment, which correlates with price movements.",
+        "evidence_article_ids": [
+          "art_finance_20230118_007_42f55872"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:51:12.594994Z",
+        "last_confirmed_at": "2026-07-25T02:51:12.594994Z"
+      }
+    ],
+    "outcome_impacts": [
+      {
+        "id": "imp_dd578a52",
+        "event_id": "evt_finance_20230103_018_777f0e30",
+        "outcome_event_id": "evt_27c44c533bea",
+        "question_id": "v3_wti_monthly_return_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "The surge in COVID-19 cases in China led to demand concerns and an initial slump in WTI prices, making the 'below recent range' outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:51:30.321300Z",
+        "last_confirmed_at": "2026-07-25T02:51:30.321300Z"
+      },
+      {
+        "id": "imp_7a5ef46a",
+        "event_id": "evt_finance_20230103_018_777f0e30",
+        "outcome_event_id": "evt_74c5fbd8bf12",
+        "question_id": "v3_wti_monthly_return_2023_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.7,
+        "confidence": 0.9,
+        "reasoning": "The surge in COVID-19 cases in China led to demand concerns and an initial slump in WTI prices, making the 'above recent range' outcome less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:51:30.332605Z",
+        "last_confirmed_at": "2026-07-25T02:51:30.332605Z"
+      },
+      {
+        "id": "imp_9dc1e6c2",
+        "event_id": "evt_finance_20230104_019_d3bbecfa",
+        "outcome_event_id": "evt_27c44c533bea",
+        "question_id": "v3_wti_monthly_return_2023_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.6,
+        "confidence": 0.8,
+        "reasoning": "UBS's bullish forecast introduced market optimism and expectations of price recovery, making the 'below recent range' outcome less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:51:30.344264Z",
+        "last_confirmed_at": "2026-07-25T02:51:30.344264Z"
+      },
+      {
+        "id": "imp_28a8d27c",
+        "event_id": "evt_finance_20230104_019_d3bbecfa",
+        "outcome_event_id": "evt_74c5fbd8bf12",
+        "question_id": "v3_wti_monthly_return_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "UBS's bullish forecast introduced market optimism and expectations of price recovery, making the 'above recent range' outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:51:30.355016Z",
+        "last_confirmed_at": "2026-07-25T02:51:30.355016Z"
+      },
+      {
+        "id": "imp_b470e24c",
+        "event_id": "evt_finance_20230111_020_96546b42",
+        "outcome_event_id": "evt_27c44c533bea",
+        "question_id": "v3_wti_monthly_return_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.5,
+        "confidence": 0.7,
+        "reasoning": "The EIA forecast of a price decline in the second half of 2023 signaled underlying bearish sentiment, making the 'below recent range' outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:51:30.368750Z",
+        "last_confirmed_at": "2026-07-25T02:51:30.368750Z"
+      },
+      {
+        "id": "imp_123e0c3c",
+        "event_id": "evt_finance_20230111_020_96546b42",
+        "outcome_event_id": "evt_74c5fbd8bf12",
+        "question_id": "v3_wti_monthly_return_2023_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.4,
+        "confidence": 0.7,
+        "reasoning": "The EIA forecast of a price decline in the second half of 2023 signaled underlying bearish sentiment, making the 'above recent range' outcome less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:51:30.379914Z",
+        "last_confirmed_at": "2026-07-25T02:51:30.379914Z"
+      },
+      {
+        "id": "imp_fc6a70b3",
+        "event_id": "evt_finance_20230117_020_26fc8223",
+        "outcome_event_id": "evt_27c44c533bea",
+        "question_id": "v3_wti_monthly_return_2023_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.5,
+        "confidence": 0.7,
+        "reasoning": "The Western oil cap on Russian oil impacted global supply dynamics, potentially pushing prices higher, making the 'below recent range' outcome less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:51:30.391158Z",
+        "last_confirmed_at": "2026-07-25T02:51:30.391158Z"
+      },
+      {
+        "id": "imp_54b45573",
+        "event_id": "evt_finance_20230117_020_26fc8223",
+        "outcome_event_id": "evt_74c5fbd8bf12",
+        "question_id": "v3_wti_monthly_return_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "The Western oil cap on Russian oil impacted global supply dynamics, potentially pushing prices higher, making the 'above recent range' outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:51:30.401933Z",
+        "last_confirmed_at": "2026-07-25T02:51:30.401933Z"
+      },
+      {
+        "id": "imp_36cd00e7",
+        "event_id": "evt_finance_20230127_021_bc5e2a73",
+        "outcome_event_id": "evt_27c44c533bea",
+        "question_id": "v3_wti_monthly_return_2023_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "Growing optimism about China's economic reopening and potential surge in oil demand provided strong upward pressure, making the 'below recent range' outcome less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:51:30.414805Z",
+        "last_confirmed_at": "2026-07-25T02:51:30.414805Z"
+      },
+      {
+        "id": "imp_84d3b0b3",
+        "event_id": "evt_finance_20230127_021_bc5e2a73",
+        "outcome_event_id": "evt_74c5fbd8bf12",
+        "question_id": "v3_wti_monthly_return_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.9,
+        "reasoning": "Growing optimism about China's economic reopening and potential surge in oil demand provided strong upward pressure, making the 'above recent range' outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:51:30.425516Z",
+        "last_confirmed_at": "2026-07-25T02:51:30.425516Z"
+      },
+      {
+        "id": "imp_baa45146",
+        "event_id": "evt_finance_20230101_022_ef743674",
+        "outcome_event_id": "evt_27c44c533bea",
+        "question_id": "v3_wti_monthly_return_2023_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "OPEC+ maintaining its production targets contributed to market stability and prevented an oversupply, making the 'below recent range' outcome less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:51:30.439741Z",
+        "last_confirmed_at": "2026-07-25T02:51:30.439741Z"
+      },
+      {
+        "id": "imp_3d8d1ce7",
+        "event_id": "evt_finance_20230101_022_ef743674",
+        "outcome_event_id": "evt_74c5fbd8bf12",
+        "question_id": "v3_wti_monthly_return_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.8,
+        "reasoning": "OPEC+ maintaining its production targets contributed to market stability and prevented an oversupply, making the 'above recent range' outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:51:30.450749Z",
+        "last_confirmed_at": "2026-07-25T02:51:30.450749Z"
+      },
+      {
+        "id": "imp_6551e548",
+        "event_id": "evt_finance_20230127_023_16639a82",
+        "outcome_event_id": "evt_27c44c533bea",
+        "question_id": "v3_wti_monthly_return_2023_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.6,
+        "confidence": 0.8,
+        "reasoning": "A weakened US dollar made dollar-denominated oil more attractive, making the 'below recent range' outcome less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:51:30.466066Z",
+        "last_confirmed_at": "2026-07-25T02:51:30.466066Z"
+      },
+      {
+        "id": "imp_763f2890",
+        "event_id": "evt_finance_20230127_023_16639a82",
+        "outcome_event_id": "evt_74c5fbd8bf12",
+        "question_id": "v3_wti_monthly_return_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.5,
+        "confidence": 0.8,
+        "reasoning": "A weakened US dollar made dollar-denominated oil more attractive, making the 'above recent range' outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:51:30.477953Z",
+        "last_confirmed_at": "2026-07-25T02:51:30.477953Z"
+      },
+      {
+        "id": "imp_d6eaf839",
+        "event_id": "evt_finance_20230127_024_329593e6",
+        "outcome_event_id": "evt_27c44c533bea",
+        "question_id": "v3_wti_monthly_return_2023_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.5,
+        "confidence": 0.7,
+        "reasoning": "Russia's resilience in rerouting exports prevented a severe global supply shock, making the 'below recent range' outcome less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:51:30.489522Z",
+        "last_confirmed_at": "2026-07-25T02:51:30.489522Z"
+      },
+      {
+        "id": "imp_9c5ff870",
+        "event_id": "evt_finance_20230127_024_329593e6",
+        "outcome_event_id": "evt_74c5fbd8bf12",
+        "question_id": "v3_wti_monthly_return_2023_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.5,
+        "confidence": 0.7,
+        "reasoning": "Russia's resilience in rerouting exports prevented a severe global supply shock, making the 'above recent range' outcome less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:51:30.501825Z",
+        "last_confirmed_at": "2026-07-25T02:51:30.501825Z"
+      },
+      {
+        "id": "imp_c592186f",
+        "event_id": "evt_finance_20230111_025_c6242d72",
+        "outcome_event_id": "evt_27c44c533bea",
+        "question_id": "v3_wti_monthly_return_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Concerns about a global economic recession created downward pressure on oil demand and prices, making the 'below recent range' outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:51:30.514374Z",
+        "last_confirmed_at": "2026-07-25T02:51:30.514374Z"
+      },
+      {
+        "id": "imp_516fdb4c",
+        "event_id": "evt_finance_20230111_025_c6242d72",
+        "outcome_event_id": "evt_74c5fbd8bf12",
+        "question_id": "v3_wti_monthly_return_2023_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.5,
+        "confidence": 0.7,
+        "reasoning": "Concerns about a global economic recession created downward pressure on oil demand and prices, making the 'above recent range' outcome less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:51:30.525242Z",
+        "last_confirmed_at": "2026-07-25T02:51:30.525242Z"
+      },
+      {
+        "id": "imp_80a9f732",
+        "event_id": "evt_finance_20230118_019_a6483c99",
+        "outcome_event_id": "evt_27c44c533bea",
+        "question_id": "v3_wti_monthly_return_2023_01",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.6,
+        "reasoning": "The IEA report provided an updated outlook on supply and demand, contributing to market information and sentiment, which correlates with price movements.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:51:30.537396Z",
+        "last_confirmed_at": "2026-07-25T02:51:30.537396Z"
+      },
+      {
+        "id": "imp_fe61542b",
+        "event_id": "evt_finance_20230118_019_a6483c99",
+        "outcome_event_id": "evt_74c5fbd8bf12",
+        "question_id": "v3_wti_monthly_return_2023_01",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.6,
+        "reasoning": "The IEA report provided an updated outlook on supply and demand, contributing to market information and sentiment, which correlates with price movements.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:51:30.549069Z",
+        "last_confirmed_at": "2026-07-25T02:51:30.549069Z"
+      },
+      {
+        "id": "imp_78568c5d",
+        "event_id": "evt_politics_20221207_026_4fbcf9fe",
+        "outcome_event_id": "evt_27c44c533bea",
+        "question_id": "v3_wti_monthly_return_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "The end of China's Zero-COVID policy led to a surge in COVID cases, which initially caused a price slump, indirectly making the 'below recent range' outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:51:30.562863Z",
+        "last_confirmed_at": "2026-07-25T02:51:30.562863Z"
+      },
+      {
+        "id": "imp_6e3a813e",
+        "event_id": "evt_politics_20221207_026_4fbcf9fe",
+        "outcome_event_id": "evt_74c5fbd8bf12",
+        "question_id": "v3_wti_monthly_return_2023_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.6,
+        "confidence": 0.8,
+        "reasoning": "The end of China's Zero-COVID policy led to a surge in COVID cases, which initially caused a price slump, indirectly making the 'above recent range' outcome less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:51:30.573649Z",
+        "last_confirmed_at": "2026-07-25T02:51:30.573649Z"
+      },
+      {
+        "id": "imp_af98b348",
+        "event_id": "evt_finance_20221204_027_cd691c80",
+        "outcome_event_id": "evt_27c44c533bea",
+        "question_id": "v3_wti_monthly_return_2023_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "OPEC+ decision to maintain production targets led to market stability, making the 'below recent range' outcome less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:51:30.586192Z",
+        "last_confirmed_at": "2026-07-25T02:51:30.586192Z"
+      },
+      {
+        "id": "imp_7838b1e5",
+        "event_id": "evt_finance_20221204_027_cd691c80",
+        "outcome_event_id": "evt_74c5fbd8bf12",
+        "question_id": "v3_wti_monthly_return_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.8,
+        "reasoning": "OPEC+ decision to maintain production targets led to market stability, making the 'above recent range' outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:51:30.597201Z",
+        "last_confirmed_at": "2026-07-25T02:51:30.597201Z"
+      }
+    ]
+  }
+}

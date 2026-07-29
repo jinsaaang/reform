@@ -1,0 +1,127 @@
+{
+  "schema_version": "hgf_blueprint_v1",
+  "question_id": "v3_global_aluminum_monthly_return_2023_08",
+  "target_definition": {
+    "metric": "global aluminum monthly price return",
+    "unit_or_option_space": "monthly return classification",
+    "forecast_horizon": "target month"
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "The reusable evidence concerns inventory composition, concerns about excess stocks, and their possible effect on market sentiment; the graph's direct price observations are excluded as target proxies.",
+    "weaknesses": [
+      "The graph does not establish a complete physical supply-demand balance or independent macro demand drivers.",
+      "Inventory and sentiment evidence has an indirect and potentially ambiguous link to a global benchmark price."
+    ]
+  },
+  "search_factors": [
+    {
+      "factor": "Exchange inventory composition",
+      "why_search": "Warehouse inventory composition can indicate whether nominal stocks are readily available to the market.",
+      "preferred_source_types": ["exchange warehouse data", "physical-market reports", "trade-flow data"],
+      "source_event_ids": ["evt_finance_20230718_004_0788d94c"]
+    },
+    {
+      "factor": "Excess-stock risk",
+      "why_search": "Expectations of surplus stocks can weaken the perceived near-term aluminum balance.",
+      "preferred_source_types": ["exchange inventory data", "supply-demand balances", "producer and consumer surveys"],
+      "source_event_ids": ["evt_finance_20230810_005_0ff8151c", "evt_finance_20230810_005_4b925632"]
+    },
+    {
+      "factor": "Market sentiment",
+      "why_search": "Sentiment may transmit physical-balance concerns into investor behavior but needs independent confirmation.",
+      "preferred_source_types": ["physical-premium data", "futures positioning", "market surveys"],
+      "source_event_ids": ["evt_finance_20230810_002_65c01506"]
+    },
+    {
+      "factor": "Industrial demand and supply response",
+      "why_search": "The price effect of stock concerns depends on fabrication demand, production, and warehouse availability.",
+      "preferred_source_types": ["industrial-production data", "aluminum consumption data", "smelter-output data"],
+      "source_event_ids": ["evt_finance_20230810_005_0ff8151c", "evt_finance_20230718_004_0788d94c"]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "inventory_composition",
+      "role": "baseline",
+      "factor": "Exchange inventory composition",
+      "mechanism": "The composition and deliverability of exchange inventories can alter the significance of reported metal stocks.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Verify warehouse warrants, regional availability, trade flows, and the share of stocks that are readily deliverable.",
+      "contradiction_signal": "Inventory composition does not affect physical availability or premiums.",
+      "historical_support": "weak",
+      "source_event_ids": ["evt_finance_20230718_004_0788d94c"],
+      "source_edge_ids": ["hyp_v3_global_aluminum_monthly_return_2023_08_20260725_060838_001_9334880f"]
+    },
+    {
+      "id": "surplus_risk",
+      "role": "driver",
+      "factor": "Excess-stock risk",
+      "mechanism": "Concern about excess stocks can loosen expected near-term supply-demand conditions and weigh on aluminum demand from investors.",
+      "expected_direction": "down",
+      "evidence_requirement": "Verify current inventories, production, consumption forecasts, and physical premiums.",
+      "contradiction_signal": "Stocks fall, supply is disrupted, or consumption improves enough to tighten the balance.",
+      "historical_support": "medium",
+      "source_event_ids": ["evt_finance_20230810_005_0ff8151c", "evt_finance_20230810_005_4b925632"],
+      "source_edge_ids": ["hyp_v3_global_aluminum_monthly_return_2023_08_20260725_060727_031_08b355a3", "hyp_v3_global_aluminum_monthly_return_2023_08_20260725_060838_002_c2213162"]
+    },
+    {
+      "id": "sentiment_transmission",
+      "role": "mediator",
+      "factor": "Market sentiment",
+      "mechanism": "Supply concerns can affect sentiment, but commentary alone does not establish the scale or direction of benchmark-price demand.",
+      "expected_direction": "down",
+      "evidence_requirement": "Verify futures positioning, physical premiums, liquidity, and contemporaneous demand indicators.",
+      "contradiction_signal": "Positioning and physical indicators improve despite stock concerns.",
+      "historical_support": "weak",
+      "source_event_ids": ["evt_finance_20230810_002_65c01506", "evt_finance_20230810_005_4b925632"],
+      "source_edge_ids": ["hyp_v3_global_aluminum_monthly_return_2023_08_20260725_060838_002_c2213162"]
+    },
+    {
+      "id": "aluminum_bridge",
+      "role": "target_bridge",
+      "factor": "Verified near-term aluminum balance",
+      "mechanism": "Infer aluminum direction only after reconciling deliverable inventories, output, industrial demand, physical premiums, and positioning; the retained graph is insufficient on its own.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Verify current exchange inventories, regional premiums, production, consumption, currency conditions, and positioning without relying on a realized price move.",
+      "contradiction_signal": "Physical-balance and market-positioning data conflict with the inferred supply-pressure channel.",
+      "historical_support": "weak",
+      "source_event_ids": ["evt_finance_20230718_004_0788d94c", "evt_finance_20230810_005_0ff8151c", "evt_finance_20230810_002_65c01506"],
+      "source_edge_ids": ["hyp_v3_global_aluminum_monthly_return_2023_08_20260725_060838_002_c2213162"]
+    }
+  ],
+  "causal_paths": [
+    {
+      "checkpoint_ids": ["surplus_risk", "sentiment_transmission", "aluminum_bridge"],
+      "generalized_mechanism": "Verified excess-stock risk can weaken the expected aluminum balance and sentiment, creating downward price pressure.",
+      "expected_direction": "down",
+      "applicability_conditions": ["Inventory, production, and consumption evidence all indicate a looser balance.", "Physical-premium and positioning data corroborate weaker demand."],
+      "failure_conditions": ["Deliverable stocks are scarce.", "Supply disruption or stronger industrial consumption tightens the balance."]
+    },
+    {
+      "checkpoint_ids": ["inventory_composition", "aluminum_bridge"],
+      "generalized_mechanism": "Inventory composition can make aggregate stock data ambiguous, requiring physical-availability verification before assigning a price direction.",
+      "expected_direction": "mixed",
+      "applicability_conditions": ["Warehouse and regional market data establish whether reported stocks are available to consumers."],
+      "failure_conditions": ["Aggregate stock changes reliably measure physical availability."]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "Reported stocks are poorly deliverable, so apparent surplus risk does not loosen the physical aluminum market.",
+      "discriminating_evidence": "Compare warrant status, regional premiums, delivery queues, and trade flows with aggregate inventory data.",
+      "source_event_ids": ["evt_finance_20230718_004_0788d94c", "evt_finance_20230810_005_0ff8151c"]
+    },
+    {
+      "hypothesis": "Industrial consumption remains resilient enough to offset stock concerns.",
+      "discriminating_evidence": "Compare fabrication demand, industrial production, and physical premiums with production and inventory changes.",
+      "source_event_ids": ["evt_finance_20230810_005_4b925632", "evt_finance_20230810_002_65c01506"]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Are reported exchange stocks deliverable and relevant to regional physical availability?",
+    "Do current production and consumption data confirm excess-stock risk?",
+    "Do regional premiums, positioning, and liquidity corroborate the proposed sentiment channel?",
+    "Do currency and industrial-demand conditions offset the inferred aluminum-balance direction?"
+  ]
+}

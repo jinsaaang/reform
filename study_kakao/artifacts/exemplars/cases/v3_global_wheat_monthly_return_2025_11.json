@@ -1,0 +1,49 @@
+{
+  "schema_version": "fixed_exemplar_case",
+  "status": "success",
+  "question_id": "v3_global_wheat_monthly_return_2025_11",
+  "retrieved_memory_question_id": "v3_global_wheat_monthly_return_2024_09",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial",
+      "target_operation": "return",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2024-09-01, will the monthly wheat-price return for Global wheat price in 2024-09 be at least -6.987 percent?",
+    "historical_cutoff": "2024-09-01T00:00:00+00:00",
+    "target_semantics": "The monthly percentage return for Global wheat price in September 2024.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "ev_10539b30b9c7cded",
+        "takeaway": "Consumption wheat prices in Poland were 5% higher than a month earlier in August 2024.",
+        "why_predictive": "Indicates upward price momentum leading into September."
+      },
+      {
+        "article_id": "ev_b86266795d9f76b1",
+        "takeaway": "La Niña was identified as a potential risk for decreased wheat harvests and increased global wheat prices in the coming months, including September, despite prices being at a four-year low on July 30, 2024.",
+        "why_predictive": "Suggests strong upward pressure on prices due to supply concerns."
+      },
+      {
+        "article_id": "ev_bb837e623f719788",
+        "takeaway": "A cash bid chart for wheat in August 2024 showed a trend.",
+        "why_predictive": "The trend in August provides context for momentum into September; rising August prices would suggest a higher likelihood of a positive September return."
+      },
+      {
+        "article_id": "ev_09e1595a0d3a7608",
+        "takeaway": "Commodity markets update as of August 14, 2024, provided information on wheat price trends.",
+        "why_predictive": "Mid-August trends are crucial for understanding momentum into September; rising or stable prices would support a positive September return."
+      }
+    ],
+    "expert_reasoning": [
+      "The Polish wheat market showed a 5% price increase in August 2024 compared to the previous month (ev_10539b30b9c7cded), suggesting positive price momentum.",
+      "The potential impact of La Niña was highlighted as a risk factor that could lead to decreased harvests and increased global wheat prices in September 2024 (ev_b86266795d9f76b1).",
+      "While wheat prices were at a four-year low on July 30, 2024, the forward-looking analysis of La Niña's impact indicated strong upward pressure for the coming months (ev_b86266795d9f76b1).",
+      "Trends in August 2024, as indicated by cash bid charts and commodity market updates, would provide context for the momentum leading into September (ev_bb837e623f719788, ev_09e1595a0d3a7608). If these trends were rising, they would support a higher likelihood of a positive September return."
+    ],
+    "counterevidence": "The provided articles do not contain explicit counterevidence to the upward price pressures. However, the article on La Niña notes that wheat prices were at a four-year low on July 30, 2024, which could imply underlying bearish sentiment that might counteract upward pressures.",
+    "prospective_target_estimate": "The evidence suggests a potential for positive price momentum into September 2024, driven by regional price increases and potential supply shocks from La Niña. This would likely result in a monthly wheat-price return of at least -6.987 percent.",
+    "option_mapping": "The analysis points towards a 'yes' outcome, as the identified drivers suggest a price return that is likely to be greater than or equal to the -6.987 percent threshold.",
+    "uncertainty": "The evidence regarding the global impact of La Niña is prospective and does not guarantee a realized supply shock. Furthermore, the regional price indicators may not perfectly translate to the global wheat price series. The specific trend in August 2024 for the global wheat price is not explicitly detailed, only implied by regional data and potential risks.",
+    "dag_derived_lesson": "Prospective risks and regional price momentum can indicate a potential shift in commodity prices, but the strength of this indication depends on the directness of the evidence to the global series and the realization of the risk."
+  }
+}

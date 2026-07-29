@@ -1,0 +1,982 @@
+{
+  "question": {
+    "id": "v3_meta_revenue_growth_acceleration_2023_03_31",
+    "question_text": "As of 2023-03-31, will Meta Platforms, Inc.'s quarterly revenue year-over-year growth for the fiscal quarter ending 2023-03-31 be at least -4.473 percent?",
+    "question_type": "binary",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 4,
+    "resolution_date": "2023-04-27T23:59:59Z",
+    "estimated_start_time": "2023-03-31T00:00:00Z",
+    "ground_truth": true,
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [
+      "evt_e548925b9fde",
+      "evt_dd2487989dca"
+    ],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: Meta Platforms, Inc. (META)\nTarget period: fiscal quarter ending 2023-03-31\nFinancial area: corporate_earnings / social media and advertising\nRegion: US",
+    "resolution_criteria": "Use the issuer's first SEC 10-Q or 10-K containing the target quarter. Resolve yes if YoY revenue growth is at least -4.473 percent, the prior quarter's pre-registered YoY growth rate; otherwise resolve no.",
+    "resolution_reasoning": "The snapshotted target-quarter YoY revenue growth was 2.641 percent and growth acceleration was 7.114 percentage points; it resolved to 'yes'.",
+    "options": [
+      "yes",
+      "no"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": "\n## Executive Summary\nMeta Platforms Inc. experienced better-than-expected fourth-quarter revenue in 2022, leading to a positive outlook for Q1 2023. Despite analyst predictions of a major contraction and a challenging advertising market, Meta's cost-cutting measures, including significant layoffs, and growth in daily active users contributed to a potential year-over-year revenue increase. This suggests that the company was on track to meet or exceed the -4.473% revenue growth threshold for Q1 2023.\n\n## Timeline Of Key Events\n- **2023-01-31:** Investopedia reports anticipating a major contraction for Meta Platforms' Q4 2022 earnings, with a projected 43% drop in net income and a 6% revenue fall, citing shrinking advertising revenue and higher costs. [art_finance_20230131_006_42942905]\n- **2023-02-01:** CNBC reports that Meta shares soared almost 20% after the company exceeded revenue estimates for Q4 2022. The company also provided a Q1 2023 forecast suggesting revenue could rise year-over-year if results reach the top end of their guidance, potentially ending a streak of declining sales. [art_finance_20230201_004_0ba71086]\n- **2023-02-01:** Meta announces a $40 billion stock buyback and CEO Mark Zuckerberg declares 2023 as the 'Year of Efficiency', focusing on becoming a stronger and more nimble organization. [art_finance_20230201_004_0ba71086]\n\n## Causal Chain Analysis\nDespite pessimistic analyst predictions regarding Meta's profitability due to shrinking advertising revenue and increased costs [art_finance_20230131_006_42942905], Meta's strategic cost-cutting measures, notably the layoff of 11,000 workers announced in November 2022, and increased efficiency efforts, resulted in better-than-expected Q4 2022 revenue. This strong Q4 performance, coupled with a positive Q1 2023 revenue forecast from Meta suggesting potential year-over-year growth [art_finance_20230201_004_0ba71086], directly caused a positive market reaction and set the stage for Meta to likely achieve at least -4.473 percent revenue growth for the fiscal quarter ending 2023-03-31.\n\n## Countervailing Factors\nAnalyst expectations of a significant contraction for Meta's Q4 2022 earnings, driven by observed trends in shrinking advertising revenue and higher operational costs, presented a major countervailing force [art_finance_20230131_006_42942905]. These factors suggested a continued year-over-year revenue decline. However, these negative predictions were overwhelmed by Meta's aggressive strategic adjustments, particularly the successful implementation of substantial cost-cutting measures and a renewed focus on efficiency, which enabled the company to outperform revenue expectations and issue optimistic guidance for Q1 2023 [art_finance_20230201_004_0ba71086].\n\n## Event Candidate Inventory\n- **E1:** Meta Platforms Q4 2022 revenue beats estimates.\n    - **Date:** 2023-02-01\n    - **Why it matters causally:** Exceeded expectations, signaling a potential turnaround and improved financial health, which directly influenced future growth prospects.\n    - **Source article IDs:** [art_finance_20230201_004_0ba71086]\n- **E2:** Meta Platforms provides positive Q1 2023 revenue guidance.\n    - **Date:** 2023-02-01\n    - **Why it matters causally:** Indicated a potential end to consecutive quarters of revenue decline, giving investors confidence in future performance.\n    - **Source article IDs:** [art_finance_20230201_004_0ba71086]\n- **E3:** Meta Platforms implements aggressive cost-cutting measures and declares 'Year of Efficiency'.\n    - **Date:** 2023-02-01 (following earlier layoff announcements)\n    - **Why it matters causally:** Directly contributed to improved financial performance and efficiency, supporting the better-than-expected revenue.\n    - **Source article IDs:** [art_finance_20230201_004_0ba71086], [art_finance_20230131_006_42942905]\n\n## Evidence Mapping Table\n\n| Claim/Event                                              | Article IDs                         | Date Support | Confidence (0-1) | Notes                                                                                             |\n|----------------------------------------------------------|-------------------------------------|--------------|------------------|---------------------------------------------------------------------------------------------------|\n| Meta's Q4 2022 revenue exceeded estimates.               | [art_finance_20230201_004_0ba71086]  | 2023-02-01   | 0.9              | Directly stated in CNBC article.                                                                  |\n| Meta forecasted potential Q1 2023 revenue growth.        | [art_finance_20230201_004_0ba71086]  | 2023-02-01   | 0.8              | CNBC article highlights Meta's guidance indicating potential year-over-year rise.                 |\n| Analysts predicted major contraction for Meta's Q4 2022. | [art_finance_20230131_006_42942905]  | 2023-01-31   | 0.9              | Investopedia article details analyst expectations of revenue and EPS decline.                     |\n| Cost-cutting measures influenced financial performance.  | [art_finance_20230201_004_0ba71086], [art_finance_20230131_006_42942905] | 2023-01-31/2023-02-01 | 0.9              | Articles discuss layoffs and efficiency efforts as factors impacting results.                     |\n\n## Uncertainties And Alternative Paths\nGiven the limited number of directly relevant articles, uncertainties remain regarding the exact magnitude and specific drivers of Meta’s Q1 2023 revenue growth. Alternative paths could have included a continued deceleration in advertising spending overwhelming cost-cutting benefits, leading to a more significant revenue decline closer to analyst initial outlooks. However, the reported Q4 beat and positive Q1 guidance mitigated this risk significantly.\n",
+    "graph_built": true,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.200149Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "meta_revenue_growth_acceleration",
+        "event_cluster_id": "meta_earnings_2023-03-31",
+        "category": "corporate_earnings",
+        "original_domain": "corporate_earnings",
+        "subdomain": "social media and advertising",
+        "entity": "Meta Platforms, Inc. (META)",
+        "region": "US",
+        "target_metric": "quarterly revenue year-over-year growth acceleration",
+        "target_period": "fiscal quarter ending 2023-03-31",
+        "forecast_cutoff": "2023-03-31T00:00:00+00:00",
+        "forecast_date_options": [
+          "2023-03-31"
+        ],
+        "resolution_available_at": "2023-04-27T23:59:59+00:00",
+        "horizon_days": 27,
+        "source_type": "sec_companyfacts_snapshot",
+        "source_series_id": "CIK0001326801:revenue",
+        "source_homepage": "https://www.sec.gov/edgar/browse/?CIK=1326801",
+        "comparison_rule": "target YoY revenue growth >= prior-quarter YoY revenue growth",
+        "comparison_threshold": -4.472692,
+        "comparison_thresholds": null,
+        "change_unit": "percent",
+        "threshold_observation_dates": [
+          "2021-12-31",
+          "2022-03-31",
+          "2022-12-31"
+        ],
+        "split": "memory",
+        "family_position": 1,
+        "family_size": 8,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "yes",
+        "resolved_class": "yes",
+        "resolution_value": 28645000000,
+        "target_change": 2.64081984,
+        "target_yoy_growth": 2.64081984,
+        "target_growth_acceleration": 7.11351147,
+        "source_observation_date": "2023-03-31",
+        "resolution_document": {
+          "publisher": "U.S. Securities and Exchange Commission",
+          "title": "Meta Platforms, Inc. 10-Q filed 2023-04-27",
+          "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000067/0001326801-23-000067-index.html"
+        },
+        "source_download_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
+        "source_sha256": "ded9a9be1ed9c81cf94a4c1828a076438df6d43045a84f40ef392140ff638ccd",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00",
+        "accession_number": "0001326801-23-000067",
+        "xbrl_tag": "RevenueFromContractWithCustomerExcludingAssessedTax"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_e548925b9fde",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 18,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_20221102_003_38afc14f",
+        "title": "SYY Infographic: Sysco Q1 2023 earnings increase on strong sales growth - AlphaStreet",
+        "url": "https://news.alphastreet.com/syy-infographic-sysco-q1-2023-earnings-increase-on-strong-sales-growth",
+        "source": "news.alphastreet.com",
+        "published_date": "2022-11-02T13:06:02+00:00"
+      },
+      {
+        "id": "art_finance_20230201_004_0ba71086",
+        "title": "Meta shares soar almost 20% on fourth-quarter revenue beat - CNBC",
+        "url": "https://www.cnbc.com/2023/02/01/facebook-parent-meta-earnings-q4-2022.html",
+        "source": "cnbc.com",
+        "published_date": "2023-02-01T17:00:01+00:00"
+      },
+      {
+        "id": "art_finance_20221026_005_4b3bd0b4",
+        "title": "As Meta’s revenue decline accelerates, shares sink 14 percent - Al Jazeera",
+        "url": "https://www.aljazeera.com/economy/2022/10/26/as-metas-revenue-decline-accelerates-shares-sink-14-percent",
+        "source": "aljazeera.com",
+        "published_date": "2022-10-26T22:01:51+00:00"
+      },
+      {
+        "id": "art_finance_20230131_006_42942905",
+        "title": "Major Contraction Likely for Meta Platforms' Earnings - Investopedia",
+        "url": "https://www.investopedia.com/meta-q4-fy22-earnings-preview-7100985",
+        "source": "investopedia.com",
+        "published_date": "2023-01-31T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20220727_007_f6e692ba",
+        "title": "Meta’s growth comes to screeching halt as company projects first revenue drop - The Guardian",
+        "url": "https://www.theguardian.com/technology/2022/jul/27/meta-growth-halt-falling-revenue",
+        "source": "theguardian.com",
+        "published_date": "2022-07-27T22:09:07+00:00"
+      },
+      {
+        "id": "art_finance_20160824_008_9084c7e5",
+        "title": "How Important Is Ad Revenue to Facebook Inc.? - The Motley Fool",
+        "url": "https://www.fool.com/investing/2016/08/24/how-important-is-ad-revenue-to-facebook.aspx",
+        "source": "fool.com",
+        "published_date": "2016-08-24T20:03:00+00:00"
+      },
+      {
+        "id": "art_finance_20220609_002_14137069",
+        "title": "Meta Platforms (META) Earnings Date and Reports 2026 - MarketBeat",
+        "url": "https://www.marketbeat.com/stocks/NASDAQ/META/earnings",
+        "source": "marketbeat.com",
+        "published_date": "2022-06-09T13:36:56+00:00"
+      },
+      {
+        "id": "art_finance_20230301_009_cfc7d08d",
+        "title": "Social Media Trends and Challenges for 2023 - CMSWire",
+        "url": "https://www.cmswire.com/digital-marketing/what-social-media-trends-to-expect-for-2023",
+        "source": "cmswire.com",
+        "published_date": "2023-03-01T13:04:56+00:00"
+      },
+      {
+        "id": "art_finance_20230102_010_121317d9",
+        "title": "Social Media Marketing Trends for 2023: Predictions From the Pros - Social Media Examiner",
+        "url": "https://www.socialmediaexaminer.com/social-media-marketing-trends-2023",
+        "source": "socialmediaexaminer.com",
+        "published_date": "2023-01-02T11:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230119_011_9a9b86f4",
+        "title": "5 New Social Media Tactics to Try in 2023 - U.S. Chamber of Commerce",
+        "url": "https://www.uschamber.com/co/grow/marketing/new-social-media-tactics-for-small-businesses",
+        "source": "uschamber.com",
+        "published_date": "2023-01-19T09:16:00-05:00"
+      },
+      {
+        "id": "art_finance_20230102_012_feea3fff",
+        "title": "Expert Social Media Marketing Predictions For 2023 - Search Engine Journal",
+        "url": "https://www.searchenginejournal.com/social-media-marketing-predictions-for-2023/473874",
+        "source": "searchenginejournal.com",
+        "published_date": "2023-01-02T09:15:42+00:00"
+      },
+      {
+        "id": "art_finance_20230413_013_03901cea",
+        "title": "2023 Digital media trends: Immersed and connected - Deloitte",
+        "url": "https://www.deloitte.com/us/en/insights/industry/technology/media-industry-trends-2023.html",
+        "source": "deloitte.com",
+        "published_date": "2023-04-13T18:30:00+00:00"
+      },
+      {
+        "id": "art_finance_20230215_014_26c90045",
+        "title": "How social media marketing for Super Bowl LVII performed against traditional ads - Marketing Dive",
+        "url": "https://www.marketingdive.com/news/social-media-tv-marketing-Super-Bowl/642842",
+        "source": "marketingdive.com",
+        "published_date": "2023-02-15T11:01:33+00:00"
+      },
+      {
+        "id": "art_finance_20190412_016_230dda3e",
+        "title": "US earnings season - Q2 2026 - Interactive Investor",
+        "url": "https://www.ii.co.uk/investing-with-ii/international-investing/us-earnings-season",
+        "source": "ii.co.uk",
+        "published_date": "2019-04-12T09:38:32+00:00"
+      },
+      {
+        "id": "art_finance_20220609_018_84cc774d",
+        "title": "Down 43%, Should Investors Buy the Dip in Meta Platforms? - The Motley Fool",
+        "url": "https://www.fool.com/investing/2022/06/09/down-43-should-investors-buy-the-dip-in-meta-platf",
+        "source": "fool.com",
+        "published_date": "2022-06-09T13:10:00+00:00"
+      },
+      {
+        "id": "art_finance_20230425_015_ac0fe454",
+        "title": "Alphabet reports revenue and earnings beat for first quarter - CNBC",
+        "url": "https://www.cnbc.com/2023/04/25/alphabet-googl-q1-earnings-report-2023.html",
+        "source": "cnbc.com",
+        "published_date": "2023-04-25T13:00:01+00:00"
+      },
+      {
+        "id": "art_finance_20220416_017_749d6c72",
+        "title": "2 Charts That Show Why It's Time to Buy the Dip in Meta Platforms' Stock - The Motley Fool",
+        "url": "https://www.fool.com/investing/2022/04/16/why-its-time-to-buy-the-dip-meta-platforms",
+        "source": "fool.com",
+        "published_date": "2022-04-16T11:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20220503_019_e5e5961d",
+        "title": "Incredible! Meta Platforms Adds 50 Million Users to its Massive Total - The Motley Fool",
+        "url": "https://www.fool.com/investing/2022/05/03/incredible-meta-platforms-adds-50-million-users-to",
+        "source": "fool.com",
+        "published_date": "2022-05-03T14:15:00+00:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_e548925b9fde",
+      "events_count": 11,
+      "hypotheses_count": 9
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 5,
+      "avg_depth": 3.25,
+      "quality_score": 0.89,
+      "depth_score": 1.0,
+      "confidence_score": 0.81,
+      "strength_score": 0.72,
+      "evidence_score": 1.0,
+      "event_count": 11,
+      "hypothesis_count": 9
+    },
+    "nodes": [
+      {
+        "id": "evt_business_20221001_010_2252213f",
+        "title": "Meta begins initial cost-cutting efforts",
+        "description": "Meta began initial cost-cutting efforts following its Q3 earnings in October 2022, including plans to shrink headcount.",
+        "event_type": "indicator",
+        "domain": "business",
+        "tags": [],
+        "occurred_date": "2022-10-01T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230131_006_42942905"
+        ],
+        "extracted_for_question_id": "v3_meta_revenue_growth_acceleration_2023_03_31",
+        "source_article_id": "art_finance_20230131_006_42942905",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_meta_revenue_growth_acceleration_2023_03_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:46:04.146508Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_business_20221109_006_00d67b4e",
+        "title": "Meta announces layoff of 11,000 workers",
+        "description": "Meta announces the layoff of 11,000 workers in November 2022.",
+        "event_type": "indicator",
+        "domain": "business",
+        "tags": [],
+        "occurred_date": "2022-11-09T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230201_004_0ba71086",
+          "art_finance_20230131_006_42942905"
+        ],
+        "extracted_for_question_id": "v3_meta_revenue_growth_acceleration_2023_03_31",
+        "source_article_id": "art_finance_20230201_004_0ba71086",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_meta_revenue_growth_acceleration_2023_03_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:46:04.069635Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_business_20230201_005_ccd1f870",
+        "title": "Mark Zuckerberg declares 2023 as the 'Year of Efficiency'",
+        "description": "CEO Mark Zuckerberg declares 2023 as the 'Year of Efficiency', focusing on becoming a stronger and more nimble organization.",
+        "event_type": "indicator",
+        "domain": "business",
+        "tags": [],
+        "occurred_date": "2023-02-01T17:00:01Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230201_004_0ba71086"
+        ],
+        "extracted_for_question_id": "v3_meta_revenue_growth_acceleration_2023_03_31",
+        "source_article_id": "art_finance_20230201_004_0ba71086",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_meta_revenue_growth_acceleration_2023_03_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:46:04.051464Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_business_20230201_007_6775def3",
+        "title": "Meta implements aggressive cost-cutting measures",
+        "description": "Meta implements aggressive cost-cutting measures, following the layoff announcement and declaration of 'Year of Efficiency'.",
+        "event_type": "indicator",
+        "domain": "business",
+        "tags": [],
+        "occurred_date": "2023-02-01T17:00:01Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230201_004_0ba71086"
+        ],
+        "extracted_for_question_id": "v3_meta_revenue_growth_acceleration_2023_03_31",
+        "source_article_id": "art_finance_20230201_004_0ba71086",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_meta_revenue_growth_acceleration_2023_03_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:46:04.086901Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_dd2487989dca",
+        "title": "No - As of 2023-03-31, will Meta Platforms, Inc.'s quar",
+        "description": "Negative resolution: As of 2023-03-31, will Meta Platforms, Inc.'s quarterly revenue year-over-year growth for the fiscal quarter ending 2023-03-31 be at least -4.473 percent?",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-04-27T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_meta_revenue_growth_acceleration_2023_03_31",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "negative_resolution",
+        "outcome_option_index": null,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:42:03.823572Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_e548925b9fde",
+        "title": "Yes - As of 2023-03-31, will Meta Platforms, Inc.'s quar",
+        "description": "Positive resolution: As of 2023-03-31, will Meta Platforms, Inc.'s quarterly revenue year-over-year growth for the fiscal quarter ending 2023-03-31 be at least -4.473 percent?",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-04-27T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_meta_revenue_growth_acceleration_2023_03_31",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "positive_resolution",
+        "outcome_option_index": null,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:42:03.823558Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230131_001_79cbf628",
+        "title": "Investopedia predicts major contraction for Meta Platforms' Q4 2022 earnings",
+        "description": "Investopedia reports anticipating a major contraction for Meta Platforms' Q4 2022 earnings, with a projected 43% drop in net income and a 6% revenue fall, citing shrinking advertising revenue and higher costs.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-31T08:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230131_006_42942905"
+        ],
+        "extracted_for_question_id": "v3_meta_revenue_growth_acceleration_2023_03_31",
+        "source_article_id": "art_finance_20230131_006_42942905",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_meta_revenue_growth_acceleration_2023_03_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:46:03.974337Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230131_008_087b1d78",
+        "title": "Shrinking advertising revenue and higher costs for Meta",
+        "description": "Shrinking advertising revenue and higher costs contributed to pessimistic analyst predictions for Meta's Q4 2022 earnings.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-31T08:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230131_006_42942905"
+        ],
+        "extracted_for_question_id": "v3_meta_revenue_growth_acceleration_2023_03_31",
+        "source_article_id": "art_finance_20230131_006_42942905",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_meta_revenue_growth_acceleration_2023_03_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:46:04.108141Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230201_002_4597f9e2",
+        "title": "Meta Platforms Q4 2022 revenue beats estimates",
+        "description": "Meta shares soared almost 20% after the company exceeded revenue estimates for Q4 2022.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-02-01T17:00:01Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230201_004_0ba71086"
+        ],
+        "extracted_for_question_id": "v3_meta_revenue_growth_acceleration_2023_03_31",
+        "source_article_id": "art_finance_20230201_004_0ba71086",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_meta_revenue_growth_acceleration_2023_03_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:46:03.993373Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230201_003_e680097f",
+        "title": "Meta Platforms provides positive Q1 2023 revenue guidance",
+        "description": "Meta provided a Q1 2023 forecast suggesting revenue could rise year-over-year if results reach the top end of their guidance, potentially ending a streak of declining sales.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-02-01T17:00:01Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230201_004_0ba71086"
+        ],
+        "extracted_for_question_id": "v3_meta_revenue_growth_acceleration_2023_03_31",
+        "source_article_id": "art_finance_20230201_004_0ba71086",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_meta_revenue_growth_acceleration_2023_03_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:46:04.013210Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230201_004_71b1eecb",
+        "title": "Meta announces $40 billion stock buyback",
+        "description": "Meta announces a $40 billion stock buyback.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-02-01T17:00:01Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230201_004_0ba71086"
+        ],
+        "extracted_for_question_id": "v3_meta_revenue_growth_acceleration_2023_03_31",
+        "source_article_id": "art_finance_20230201_004_0ba71086",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_meta_revenue_growth_acceleration_2023_03_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:46:04.035234Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230201_009_ad05e76b",
+        "title": "Positive market reaction to Meta's Q4 earnings and Q1 guidance",
+        "description": "Meta's strong Q4 performance, coupled with a positive Q1 2023 revenue forecast, directly caused a positive market reaction.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-02-01T17:00:01Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230201_004_0ba71086"
+        ],
+        "extracted_for_question_id": "v3_meta_revenue_growth_acceleration_2023_03_31",
+        "source_article_id": "art_finance_20230201_004_0ba71086",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_meta_revenue_growth_acceleration_2023_03_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:46:04.129845Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_meta_revenue_growth_acceleration_2023_03_31_20260725_044604_001_969a5f5c",
+        "source_event_id": "evt_finance_20230131_008_087b1d78",
+        "target_event_id": "evt_finance_20230131_001_79cbf628",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Shrinking advertising revenue and higher costs were cited by Investopedia as reasons for their pessimistic Q4 2022 earnings prediction.",
+        "evidence_article_ids": [
+          "art_finance_20230131_006_42942905"
+        ],
+        "discovered_by_question_ids": [
+          "v3_meta_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T04:46:04.167919Z",
+        "last_confirmed_at": "2026-07-25T04:46:04.167919Z"
+      },
+      {
+        "id": "hyp_v3_meta_revenue_growth_acceleration_2023_03_31_20260725_044604_002_04b14024",
+        "source_event_id": "evt_business_20221001_010_2252213f",
+        "target_event_id": "evt_business_20221109_006_00d67b4e",
+        "relation_type": "enables",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Meta's earlier plans to shrink headcount enabled the subsequent layoff announcement.",
+        "evidence_article_ids": [
+          "art_finance_20230131_006_42942905"
+        ],
+        "discovered_by_question_ids": [
+          "v3_meta_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T04:46:04.182147Z",
+        "last_confirmed_at": "2026-07-25T04:46:04.182147Z"
+      },
+      {
+        "id": "hyp_v3_meta_revenue_growth_acceleration_2023_03_31_20260725_044604_003_2ddaedf5",
+        "source_event_id": "evt_business_20221109_006_00d67b4e",
+        "target_event_id": "evt_business_20230201_007_6775def3",
+        "relation_type": "enables",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The layoff announcement is a key component of Meta's aggressive cost-cutting measures that were implemented.",
+        "evidence_article_ids": [
+          "art_finance_20230201_004_0ba71086"
+        ],
+        "discovered_by_question_ids": [
+          "v3_meta_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T04:46:04.197687Z",
+        "last_confirmed_at": "2026-07-25T04:46:04.197687Z"
+      },
+      {
+        "id": "hyp_v3_meta_revenue_growth_acceleration_2023_03_31_20260725_044604_004_aafa0503",
+        "source_event_id": "evt_business_20230201_005_ccd1f870",
+        "target_event_id": "evt_business_20230201_007_6775def3",
+        "relation_type": "amplifies",
+        "strength": 0.6,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Zuckerberg's declaration of the 'Year of Efficiency' reinforced and amplified the ongoing cost-cutting measures.",
+        "evidence_article_ids": [
+          "art_finance_20230201_004_0ba71086"
+        ],
+        "discovered_by_question_ids": [
+          "v3_meta_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T04:46:04.213084Z",
+        "last_confirmed_at": "2026-07-25T04:46:04.213084Z"
+      },
+      {
+        "id": "hyp_v3_meta_revenue_growth_acceleration_2023_03_31_20260725_044604_005_6f1697ed",
+        "source_event_id": "evt_business_20230201_007_6775def3",
+        "target_event_id": "evt_finance_20230201_002_4597f9e2",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Aggressive cost-cutting measures and increased efficiency efforts contributed to better-than-expected Q4 2022 revenue.",
+        "evidence_article_ids": [
+          "art_finance_20230201_004_0ba71086"
+        ],
+        "discovered_by_question_ids": [
+          "v3_meta_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T04:46:04.226767Z",
+        "last_confirmed_at": "2026-07-25T04:46:04.226767Z"
+      },
+      {
+        "id": "hyp_v3_meta_revenue_growth_acceleration_2023_03_31_20260725_044604_006_ea2c8d6a",
+        "source_event_id": "evt_finance_20230201_004_71b1eecb",
+        "target_event_id": "evt_finance_20230201_009_ad05e76b",
+        "relation_type": "triggers",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "The announcement of a significant stock buyback contributed to the positive market reaction.",
+        "evidence_article_ids": [
+          "art_finance_20230201_004_0ba71086"
+        ],
+        "discovered_by_question_ids": [
+          "v3_meta_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T04:46:04.240382Z",
+        "last_confirmed_at": "2026-07-25T04:46:04.240382Z"
+      },
+      {
+        "id": "hyp_v3_meta_revenue_growth_acceleration_2023_03_31_20260725_044604_007_77c0e042",
+        "source_event_id": "evt_finance_20230201_002_4597f9e2",
+        "target_event_id": "evt_finance_20230201_009_ad05e76b",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Exceeding revenue estimates for Q4 2022 directly led to a positive market reaction, with shares soaring.",
+        "evidence_article_ids": [
+          "art_finance_20230201_004_0ba71086"
+        ],
+        "discovered_by_question_ids": [
+          "v3_meta_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T04:46:04.254699Z",
+        "last_confirmed_at": "2026-07-25T04:46:04.254699Z"
+      },
+      {
+        "id": "hyp_v3_meta_revenue_growth_acceleration_2023_03_31_20260725_044604_008_462a679f",
+        "source_event_id": "evt_finance_20230201_003_e680097f",
+        "target_event_id": "evt_finance_20230201_009_ad05e76b",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "The positive Q1 2023 revenue forecast contributed to investor confidence and the positive market reaction.",
+        "evidence_article_ids": [
+          "art_finance_20230201_004_0ba71086"
+        ],
+        "discovered_by_question_ids": [
+          "v3_meta_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T04:46:04.268903Z",
+        "last_confirmed_at": "2026-07-25T04:46:04.268903Z"
+      },
+      {
+        "id": "hyp_v3_meta_revenue_growth_acceleration_2023_03_31_20260725_044604_009_4abc317f",
+        "source_event_id": "evt_finance_20230201_009_ad05e76b",
+        "target_event_id": "evt_e548925b9fde",
+        "relation_type": "correlates",
+        "strength": 0.7,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "A positive market reaction and optimistic outlook for Q1 2023 correlate with the actual outcome of Meta meeting or exceeding the revenue growth threshold.",
+        "evidence_article_ids": [
+          "art_finance_20230201_004_0ba71086"
+        ],
+        "discovered_by_question_ids": [
+          "v3_meta_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T04:46:04.283337Z",
+        "last_confirmed_at": "2026-07-25T04:46:04.283337Z"
+      }
+    ],
+    "outcome_impacts": [
+      {
+        "id": "imp_2e3ff71d",
+        "event_id": "evt_finance_20230131_001_79cbf628",
+        "outcome_event_id": "evt_e548925b9fde",
+        "question_id": "v3_meta_revenue_growth_acceleration_2023_03_31",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Analyst predictions of a major contraction created a negative sentiment, making the positive outcome less likely, though it was ultimately overcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_meta_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:46:13.494524Z",
+        "last_confirmed_at": "2026-07-25T04:46:13.494524Z"
+      },
+      {
+        "id": "imp_6289b14f",
+        "event_id": "evt_finance_20230201_002_4597f9e2",
+        "outcome_event_id": "evt_e548925b9fde",
+        "question_id": "v3_meta_revenue_growth_acceleration_2023_03_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "Better-than-expected Q4 revenue signaled improved financial health and directly contributed to a positive outlook for Q1, making the outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_meta_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:46:13.507843Z",
+        "last_confirmed_at": "2026-07-25T04:46:13.507843Z"
+      },
+      {
+        "id": "imp_ec84da51",
+        "event_id": "evt_finance_20230201_003_e680097f",
+        "outcome_event_id": "evt_e548925b9fde",
+        "question_id": "v3_meta_revenue_growth_acceleration_2023_03_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "Positive Q1 revenue guidance directly indicated a potential year-over-year rise in revenue, making the outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_meta_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:46:13.518585Z",
+        "last_confirmed_at": "2026-07-25T04:46:13.518585Z"
+      },
+      {
+        "id": "imp_57b5df95",
+        "event_id": "evt_finance_20230201_004_71b1eecb",
+        "outcome_event_id": "evt_e548925b9fde",
+        "question_id": "v3_meta_revenue_growth_acceleration_2023_03_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "The stock buyback announcement boosted investor confidence and contributed to a positive market reaction, indirectly supporting the revenue growth outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_meta_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:46:13.528695Z",
+        "last_confirmed_at": "2026-07-25T04:46:13.528695Z"
+      },
+      {
+        "id": "imp_572428bd",
+        "event_id": "evt_business_20230201_005_ccd1f870",
+        "outcome_event_id": "evt_e548925b9fde",
+        "question_id": "v3_meta_revenue_growth_acceleration_2023_03_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "The 'Year of Efficiency' declaration signaled a commitment to cost-cutting and improved financial performance, making the revenue growth outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_meta_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:46:13.541441Z",
+        "last_confirmed_at": "2026-07-25T04:46:13.541441Z"
+      },
+      {
+        "id": "imp_c26c8683",
+        "event_id": "evt_business_20221109_006_00d67b4e",
+        "outcome_event_id": "evt_e548925b9fde",
+        "question_id": "v3_meta_revenue_growth_acceleration_2023_03_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "Significant layoffs are a direct cost-cutting measure that would improve financial efficiency and contribute to better revenue performance, making the outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_meta_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:46:13.551839Z",
+        "last_confirmed_at": "2026-07-25T04:46:13.551839Z"
+      },
+      {
+        "id": "imp_b494a839",
+        "event_id": "evt_business_20230201_007_6775def3",
+        "outcome_event_id": "evt_e548925b9fde",
+        "question_id": "v3_meta_revenue_growth_acceleration_2023_03_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "The implementation of aggressive cost-cutting measures directly improved Meta's financial performance, making the revenue growth outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_meta_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:46:13.562599Z",
+        "last_confirmed_at": "2026-07-25T04:46:13.562599Z"
+      },
+      {
+        "id": "imp_0f43e038",
+        "event_id": "evt_finance_20230131_008_087b1d78",
+        "outcome_event_id": "evt_e548925b9fde",
+        "question_id": "v3_meta_revenue_growth_acceleration_2023_03_31",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "Shrinking advertising revenue and higher costs were significant headwinds that made achieving positive revenue growth more challenging, thus making the outcome less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_meta_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:46:13.573153Z",
+        "last_confirmed_at": "2026-07-25T04:46:13.573153Z"
+      },
+      {
+        "id": "imp_79ab7ebd",
+        "event_id": "evt_finance_20230201_009_ad05e76b",
+        "outcome_event_id": "evt_e548925b9fde",
+        "question_id": "v3_meta_revenue_growth_acceleration_2023_03_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "A positive market reaction reflects investor confidence in Meta's future performance, which correlates with the actual revenue growth outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_meta_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:46:13.585723Z",
+        "last_confirmed_at": "2026-07-25T04:46:13.585723Z"
+      },
+      {
+        "id": "imp_307c1974",
+        "event_id": "evt_business_20221001_010_2252213f",
+        "outcome_event_id": "evt_e548925b9fde",
+        "question_id": "v3_meta_revenue_growth_acceleration_2023_03_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Initial cost-cutting efforts laid the groundwork for later, more aggressive measures, contributing to overall improved financial health and making the outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_meta_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:46:13.595723Z",
+        "last_confirmed_at": "2026-07-25T04:46:13.595723Z"
+      }
+    ]
+  }
+}

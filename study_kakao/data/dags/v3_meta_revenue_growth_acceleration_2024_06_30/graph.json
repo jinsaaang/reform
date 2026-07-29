@@ -1,0 +1,1025 @@
+{
+  "question": {
+    "id": "v3_meta_revenue_growth_acceleration_2024_06_30",
+    "question_text": "As of 2024-06-30, will Meta Platforms, Inc.'s quarterly revenue year-over-year growth for the fiscal quarter ending 2024-06-30 be at least 27.26 percent?",
+    "question_type": "binary",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 4,
+    "resolution_date": "2024-08-01T23:59:59Z",
+    "estimated_start_time": "2024-06-30T00:00:00Z",
+    "ground_truth": false,
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [
+      "evt_8760c625a05d",
+      "evt_8e208a99983b"
+    ],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: Meta Platforms, Inc. (META)\nTarget period: fiscal quarter ending 2024-06-30\nFinancial area: corporate_earnings / social media and advertising\nRegion: US",
+    "resolution_criteria": "Use the issuer's first SEC 10-Q or 10-K containing the target quarter. Resolve yes if YoY revenue growth is at least 27.26 percent, the prior quarter's pre-registered YoY growth rate; otherwise resolve no.",
+    "resolution_reasoning": "The snapshotted target-quarter YoY revenue growth was 22.1 percent and growth acceleration was -5.164 percentage points; it resolved to 'no'.",
+    "options": [
+      "yes",
+      "no"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": "\n## Executive Summary\nMeta Platforms, Inc.'s quarterly revenue year-over-year growth for the fiscal quarter ending June 30, 2024, did not reach at least 27.26 percent. The company reported a strong \"beat\" on Wall Street estimates for revenue and profit, resulting in shares jumping in extended trading. However, the reported year-over-year revenue growth was 22% [art_finance_20240731_002_9c2c95f1], a figure that unequivocally falls short of the 27.26% threshold. This directly caused the \"False\" ground truth for the question.\n\n## Timeline Of Key Events\n- **2024-07-31 (16:00:01 UTC):** Meta Platforms, Inc. releases its Q2 2024 earnings report, announcing $39.07 billion in revenue, which beat analyst estimates of $38.31 billion. The report detailed a 22% year-over-year revenue growth. [art_finance_20240731_002_9c2c95f1]\n- **2024-07-31 (07:00:00 UTC):** Investopedia publishes an article noting Meta's Q2 2024 earnings beat, highlighting the 22% year-over-year revenue growth and increased AI investments. [art_finance_20240731_003_72bf547b]\n- **2024-07-31 (07:00:00 UTC):** Saxo publishes an article mentioning Meta's earnings, indicating market volatility that was triggered by the announcement. [art_finance_20240731_004_070416b8]\n\n## Causal Chain Analysis\nThe primary factor causing Meta Platforms, Inc.'s Q2 2024 year-over-year revenue growth to not reach 27.26% was the actual reported financial performance for the quarter. Meta announced revenues of $39.07 billion for Q2 2024, which generated a 22% year-over-year increase from $32 billion in the same period last year [art_finance_20240731_002_9c2c95f1]. This 22% growth rate, while surpassing analyst expectations and reflecting continued strength in the digital advertising market, is quantitatively below the 27.26% threshold established in the question [art_finance_20240731_003_72bf547b]. Despite the positive market reaction that led to stock gains and favorable forecasts for the subsequent quarter, the specific numerical growth did not achieve the higher benchmark. This directly resulted in the 'False' outcome for the question.\n\n## Countervailing Factors\nA significant countervailing factor was Meta's overall strong financial performance in Q2 2024, which could have potentially led to exceeding the threshold. The company not only significantly beat Wall Street estimates for both revenue and profit but also issued a better-than-expected forecast for the subsequent period [art_finance_20240731_002_9c2c95f1]. Net income surged by 73%, and advertising revenue increased by 22% year-over-year. These strong results were driven by continued share gains in the digital ad market and effective cost-cutting initiatives that started in late 2022 [art_finance_20240731_002_9c2c95f1]. Additionally, Meta's heightened focus on AI initiatives also contributed to investor confidence. However, these positive drivers were ultimately overwhelmed by the precise arithmetic fact that the actual reported 22% revenue growth was simply below the specific 27.26% threshold, irrespective of the market's positive perception of the earnings beat against internal or analyst forecasts.\n\n## Event Candidate Inventory\n- **E1:** Meta Platforms, Inc. reports Q2 2024 revenue of $39.07 billion.\n    - **date:** 2024-07-31\n    - **why it matters causally:** This is the direct reported financial figure from which the year-over-year growth is calculated, and it underpins the final outcome.\n    - **source article IDs:** [art_finance_20240731_002_9c2c95f1], [art_finance_20240731_003_72bf547b]\n- **E2:** Meta Platforms, Inc. announces 22% year-over-year revenue growth for Q2 2024.\n    - **date:** 2024-07-31\n    - **why it matters causally:** This specific growth percentage is what definitively caused the false outcome, as it is lower than the 27.26% threshold.\n    - **source article IDs:** [art_finance_20240731_002_9c2c95f1], [art_finance_20240731_003_72bf547b]\n- **E3:** Meta Platforms, Inc. stock jumps in extended trading due to Q2 2024 earnings beat.\n    - **date:** 2024-07-31\n    - **why it matters causally:** This event highlights the market's overall positive reception to the earnings. It represents a countervailing force that did not ultimately lead to the required growth rate, but rather demonstrated the strengths of the business that pushed against the 'False' outcome.\n    - **source article IDs:** [art_finance_20240731_002_9c2c95f1], [art_finance_20240731_003_72bf547b], [art_finance_20240731_004_070416b8]\n\n## Evidence Mapping Table\n\n| Claim/Event                                                 | Article IDs                             | Date Support | Confidence (0-1) | Notes                                                                             |\n|-------------------------------------------------------------|-----------------------------------------|--------------|------------------|-----------------------------------------------------------------------------------|\n| Meta Q2 2024 revenue of $39.07 billion                      | [art_finance_20240731_002_9c2c95f1], [art_finance_20240731_003_72bf547b] | 2024-07-31   | 1.0              | Directly reported by major financial news outlets.                                |\n| Meta Q2 2024 year-over-year revenue growth of 22%           | [art_finance_20240731_002_9c2c95f1], [art_finance_20240731_003_72bf547b] | 2024-07-31   | 1.0              | Explicitly stated as the growth percentage, which led to the outcome.             |\n| Meta stock jumped after earnings beat                       | [art_finance_20240731_002_9c2c95f1], [art_finance_20240731_003_72bf547b], [art_finance_20240731_004_070416b8] | 2024-07-31   | 1.0              | Widely reported market reaction, which could have pushed towards a 'True' outcome.|\n| Revenue growth did not reach 27.26%                         | [art_finance_20240731_002_9c2c95f1], [art_finance_20240731_003_72bf547b] | 2024-07-31   | 1.0              | Derived directly from the reported 22% growth being less than 27.26%, thus causing the 'False' outcome.|\n\n## Uncertainties And Alternative Paths\nThere is no significant uncertainty regarding the reported revenue growth figure that directly influenced the outcome. The earnings report and subsequent financial news coverage clearly state the 22% year-over-year growth. An alternative path for the outcome would have manifested had Meta reported a revenue growth of 27.26% or higher. While Meta exceeded analyst expectations, these expectations were apparently below the 27.26% threshold for year-over-year growth. Had the company's performance, potentially driven by stronger-than-anticipated advertising revenue or more aggressive user growth, pushed the growth rate past 27.26%, the outcome would have resulted in 'True'. However, based on the concrete financial figures reported, this particular causal path was not realized.\n",
+    "graph_built": true,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.200199Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "meta_revenue_growth_acceleration",
+        "event_cluster_id": "meta_earnings_2024-06-30",
+        "category": "corporate_earnings",
+        "original_domain": "corporate_earnings",
+        "subdomain": "social media and advertising",
+        "entity": "Meta Platforms, Inc. (META)",
+        "region": "US",
+        "target_metric": "quarterly revenue year-over-year growth acceleration",
+        "target_period": "fiscal quarter ending 2024-06-30",
+        "forecast_cutoff": "2024-06-30T00:00:00+00:00",
+        "forecast_date_options": [
+          "2024-06-30"
+        ],
+        "resolution_available_at": "2024-08-01T23:59:59+00:00",
+        "horizon_days": 32,
+        "source_type": "sec_companyfacts_snapshot",
+        "source_series_id": "CIK0001326801:revenue",
+        "source_homepage": "https://www.sec.gov/edgar/browse/?CIK=1326801",
+        "comparison_rule": "target YoY revenue growth >= prior-quarter YoY revenue growth",
+        "comparison_threshold": 27.264793,
+        "comparison_thresholds": null,
+        "change_unit": "percent",
+        "threshold_observation_dates": [
+          "2023-03-31",
+          "2023-06-30",
+          "2024-03-31"
+        ],
+        "split": "memory",
+        "family_position": 4,
+        "family_size": 8,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "no",
+        "resolved_class": "no",
+        "resolution_value": 39071000000,
+        "target_change": 22.10069065,
+        "target_yoy_growth": 22.10069065,
+        "target_growth_acceleration": -5.16410251,
+        "source_observation_date": "2024-06-30",
+        "resolution_document": {
+          "publisher": "U.S. Securities and Exchange Commission",
+          "title": "Meta Platforms, Inc. 10-Q filed 2024-08-01",
+          "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000069/0001326801-24-000069-index.html"
+        },
+        "source_download_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
+        "source_sha256": "ded9a9be1ed9c81cf94a4c1828a076438df6d43045a84f40ef392140ff638ccd",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00",
+        "accession_number": "0001326801-24-000069",
+        "xbrl_tag": "RevenueFromContractWithCustomerExcludingAssessedTax"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_8e208a99983b",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 10,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_20240424_005_c4dfa51f",
+        "title": "4 Key Takeaways From Mark Zuckerberg's Comments During Meta's Q1 Earnings Call - Investopedia",
+        "url": "https://www.investopedia.com/4-key-takeaways-from-meta-q1-2024-earnings-call-8638632",
+        "source": "investopedia.com",
+        "published_date": "2024-04-24T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20220727_006_52a432a6",
+        "title": "Mark Zuckerberg: “Many Teams Are Going to Shrink” at Meta Amid Revenue Decline - The Hollywood Reporter",
+        "url": "https://www.hollywoodreporter.com/business/digital/meta-q2-2022-earnings-1235187468",
+        "source": "hollywoodreporter.com",
+        "published_date": "2022-07-27T20:24:42+00:00"
+      },
+      {
+        "id": "art_finance_20231002_007_6cb073f7",
+        "title": "Meta Platforms (META): Is It Priced Right? An In-Depth Analysis of Its Valuation - Yahoo Finance",
+        "url": "https://finance.yahoo.com/news/meta-platforms-meta-priced-depth-233210702.html",
+        "source": "finance.yahoo.com",
+        "published_date": "2023-10-02T23:32:10+00:00"
+      },
+      {
+        "id": "art_finance_20220610_008_ae325cb3",
+        "title": "Meta's $10 billion problem: Slowing ad revenue - Fortune",
+        "url": "https://fortune.com/2022/06/10/meta-platforms-metaverse-ad-revenue-facebook-instagram-reels",
+        "source": "fortune.com",
+        "published_date": "2022-06-10T11:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20231220_009_64a2002a",
+        "title": "New Meta Platforms (META), Amazon (AMZN) 'Strong Buy' Ratings Top Wall Street's Wednesday Upgrades and Downgrades - 24/7 Wall St.",
+        "url": "https://247wallst.com/investing/2023/12/20/new-meta-platforms-meta-amazon-amzn-strong-buy-ratings-top-wall-streets-wednesday-upgrades-and-downgrades",
+        "source": "247wallst.com",
+        "published_date": "2023-12-20T13:40:31+00:00"
+      },
+      {
+        "id": "art_finance_20240731_002_9c2c95f1",
+        "title": "Meta shares pop on revenue and earnings beat, better-than-expected forecast - CNBC",
+        "url": "https://www.cnbc.com/2024/07/31/meta-earnings-q2-2024.html",
+        "source": "cnbc.com",
+        "published_date": "2024-07-31T16:00:01+00:00"
+      },
+      {
+        "id": "art_finance_20240731_003_72bf547b",
+        "title": "Meta's Earnings Beat Sends Its Stock Higher as Zuckerberg Highlights AI Initiatives - Investopedia",
+        "url": "https://www.investopedia.com/meta-q2-fy-2024-earnings-8687033",
+        "source": "investopedia.com",
+        "published_date": "2024-07-31T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240731_004_070416b8",
+        "title": "Market on edge: Volatility in action: VIX, Microsoft and Meta earnings - Saxo",
+        "url": "https://www.home.saxo/content/articles/equities/market-on-edge---volatility-in-action---vix---microsoft---meta-31072024",
+        "source": "home.saxo",
+        "published_date": "2024-07-31T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230802_010_1afe340e",
+        "title": "After Earnings, Is Meta Stock a Buy, a Sell, or Fairly Valued? - Morningstar",
+        "url": "https://www.morningstar.com/stocks/after-earnings-is-meta-stock-buy-sell-or-fairly-valued",
+        "source": "morningstar.com",
+        "published_date": "2023-08-02T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20220609_002_14137069",
+        "title": "Meta Platforms (META) Earnings Date and Reports 2026 - MarketBeat",
+        "url": "https://www.marketbeat.com/stocks/NASDAQ/META/earnings",
+        "source": "marketbeat.com",
+        "published_date": "2022-06-09T13:36:56+00:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_8e208a99983b",
+      "events_count": 12,
+      "hypotheses_count": 11
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 4,
+      "avg_depth": 4.0,
+      "quality_score": 0.93,
+      "depth_score": 1.0,
+      "confidence_score": 0.89,
+      "strength_score": 0.79,
+      "evidence_score": 1.0,
+      "event_count": 12,
+      "hypothesis_count": 11
+    },
+    "nodes": [
+      {
+        "id": "evt_8760c625a05d",
+        "title": "Yes - As of 2024-06-30, will Meta Platforms, Inc.'s quar",
+        "description": "Positive resolution: As of 2024-06-30, will Meta Platforms, Inc.'s quarterly revenue year-over-year growth for the fiscal quarter ending 2024-06-30 be at least 27.26 percent?",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-08-01T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_meta_revenue_growth_acceleration_2024_06_30",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "positive_resolution",
+        "outcome_option_index": null,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:55:42.944342Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_8e208a99983b",
+        "title": "No - As of 2024-06-30, will Meta Platforms, Inc.'s quar",
+        "description": "Negative resolution: As of 2024-06-30, will Meta Platforms, Inc.'s quarterly revenue year-over-year growth for the fiscal quarter ending 2024-06-30 be at least 27.26 percent?",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-08-01T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_meta_revenue_growth_acceleration_2024_06_30",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "negative_resolution",
+        "outcome_option_index": null,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:55:42.944354Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20221231_022_72e348f1",
+        "title": "Meta implements cost-cutting initiatives",
+        "description": "Effective cost-cutting initiatives that started in late 2022 contributed to Meta's strong financial performance.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2022-12-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240731_002_9c2c95f1"
+        ],
+        "extracted_for_question_id": "v3_meta_revenue_growth_acceleration_2024_06_30",
+        "source_article_id": "art_finance_20240731_002_9c2c95f1",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_meta_revenue_growth_acceleration_2024_06_30"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:58:42.659561Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240731_012_9e095d94",
+        "title": "Meta Platforms, Inc. reports Q2 2024 revenue of $39.07 billion",
+        "description": "Meta Platforms, Inc. announced revenues of $39.07 billion for Q2 2024, beating analyst estimates of $38.31 billion.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-31T16:00:01Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240731_002_9c2c95f1",
+          "art_finance_20240731_003_72bf547b"
+        ],
+        "extracted_for_question_id": "v3_meta_revenue_growth_acceleration_2024_06_30",
+        "source_article_id": "art_finance_20240731_002_9c2c95f1",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_meta_revenue_growth_acceleration_2024_06_30"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:58:42.429853Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240731_013_812612c4",
+        "title": "Meta Platforms, Inc. announces 22% year-over-year revenue growth for Q2 2024",
+        "description": "Meta Platforms, Inc. reported a 22% year-over-year revenue growth for Q2 2024, which is below the 27.26% threshold.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-31T16:00:01Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240731_002_9c2c95f1",
+          "art_finance_20240731_003_72bf547b"
+        ],
+        "extracted_for_question_id": "v3_meta_revenue_growth_acceleration_2024_06_30",
+        "source_article_id": "art_finance_20240731_002_9c2c95f1",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_meta_revenue_growth_acceleration_2024_06_30"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:58:42.452419Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240731_014_b429d578",
+        "title": "Meta Platforms, Inc. stock jumps in extended trading due to Q2 2024 earnings beat",
+        "description": "Meta's stock jumped in extended trading after the company beat Wall Street estimates for revenue and profit and issued a better-than-expected forecast.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-31T16:00:01Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240731_002_9c2c95f1",
+          "art_finance_20240731_003_72bf547b",
+          "art_finance_20240731_004_070416b8"
+        ],
+        "extracted_for_question_id": "v3_meta_revenue_growth_acceleration_2024_06_30",
+        "source_article_id": "art_finance_20240731_002_9c2c95f1",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_meta_revenue_growth_acceleration_2024_06_30"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:58:42.475418Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240731_015_21d606d5",
+        "title": "Meta's Q2 2024 revenue growth falls below 27.26% threshold",
+        "description": "The reported 22% year-over-year revenue growth for Q2 2024 is quantitatively below the 27.26% threshold established in the question.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-31T16:00:01Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240731_002_9c2c95f1",
+          "art_finance_20240731_003_72bf547b"
+        ],
+        "extracted_for_question_id": "v3_meta_revenue_growth_acceleration_2024_06_30",
+        "source_article_id": "art_finance_20240731_002_9c2c95f1",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_meta_revenue_growth_acceleration_2024_06_30"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:58:42.497569Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240731_016_c88616aa",
+        "title": "Meta Platforms, Inc. beats analyst estimates for Q2 2024 revenue and profit",
+        "description": "Meta Platforms, Inc. significantly beat Wall Street estimates for both revenue and profit for Q2 2024.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-31T16:00:01Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240731_002_9c2c95f1"
+        ],
+        "extracted_for_question_id": "v3_meta_revenue_growth_acceleration_2024_06_30",
+        "source_article_id": "art_finance_20240731_002_9c2c95f1",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_meta_revenue_growth_acceleration_2024_06_30"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:58:42.519126Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240731_017_7cc23bb1",
+        "title": "Meta Platforms, Inc. demonstrates strong overall financial performance in Q2 2024",
+        "description": "Meta's overall strong financial performance in Q2 2024, including a 73% surge in net income and 22% increase in advertising revenue, was driven by share gains in the digital ad market and cost-cutting initiatives.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-31T16:00:01Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240731_002_9c2c95f1"
+        ],
+        "extracted_for_question_id": "v3_meta_revenue_growth_acceleration_2024_06_30",
+        "source_article_id": "art_finance_20240731_002_9c2c95f1",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_meta_revenue_growth_acceleration_2024_06_30"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:58:42.540632Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240731_019_eb7f32e7",
+        "title": "Market volatility triggered by Meta's Q2 2024 earnings announcement",
+        "description": "Saxo publishes an article mentioning Meta's earnings, indicating market volatility that was triggered by the announcement.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-31T07:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240731_004_070416b8"
+        ],
+        "extracted_for_question_id": "v3_meta_revenue_growth_acceleration_2024_06_30",
+        "source_article_id": "art_finance_20240731_004_070416b8",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_meta_revenue_growth_acceleration_2024_06_30"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:58:42.582124Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240731_020_ee68a027",
+        "title": "Meta Platforms, Inc. Q2 2024 earnings announcement",
+        "description": "Meta Platforms, Inc. released its Q2 2024 earnings report.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-31T07:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240731_002_9c2c95f1",
+          "art_finance_20240731_003_72bf547b",
+          "art_finance_20240731_004_070416b8"
+        ],
+        "extracted_for_question_id": "v3_meta_revenue_growth_acceleration_2024_06_30",
+        "source_article_id": "art_finance_20240731_002_9c2c95f1",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_meta_revenue_growth_acceleration_2024_06_30"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:58:42.609413Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240731_021_2e96a468",
+        "title": "Meta gains share in the digital ad market",
+        "description": "Meta's strong results were driven by continued share gains in the digital ad market.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-31T16:00:01Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240731_002_9c2c95f1"
+        ],
+        "extracted_for_question_id": "v3_meta_revenue_growth_acceleration_2024_06_30",
+        "source_article_id": "art_finance_20240731_002_9c2c95f1",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_meta_revenue_growth_acceleration_2024_06_30"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:58:42.633219Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_tech_20240731_018_ca59470f",
+        "title": "Meta Platforms, Inc. increases AI investments",
+        "description": "Meta's heightened focus on AI initiatives contributed to investor confidence.",
+        "event_type": "indicator",
+        "domain": "tech",
+        "tags": [],
+        "occurred_date": "2024-07-31T07:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240731_003_72bf547b"
+        ],
+        "extracted_for_question_id": "v3_meta_revenue_growth_acceleration_2024_06_30",
+        "source_article_id": "art_finance_20240731_003_72bf547b",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_meta_revenue_growth_acceleration_2024_06_30"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:58:42.558246Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_meta_revenue_growth_acceleration_2024_06_30_20260725_045842_010_040d1a8d",
+        "source_event_id": "evt_finance_20240731_012_9e095d94",
+        "target_event_id": "evt_finance_20240731_013_812612c4",
+        "relation_type": "causes",
+        "strength": 0.9,
+        "confidence": 1.0,
+        "time_lag_hours": null,
+        "reasoning": "The reported revenue figure directly leads to the calculation of the year-over-year growth percentage.",
+        "evidence_article_ids": [
+          "art_finance_20240731_002_9c2c95f1",
+          "art_finance_20240731_003_72bf547b"
+        ],
+        "discovered_by_question_ids": [
+          "v3_meta_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T04:58:42.679502Z",
+        "last_confirmed_at": "2026-07-25T04:58:42.679502Z"
+      },
+      {
+        "id": "hyp_v3_meta_revenue_growth_acceleration_2024_06_30_20260725_045842_011_fbe3f5e5",
+        "source_event_id": "evt_finance_20240731_013_812612c4",
+        "target_event_id": "evt_finance_20240731_015_21d606d5",
+        "relation_type": "causes",
+        "strength": 1.0,
+        "confidence": 1.0,
+        "time_lag_hours": null,
+        "reasoning": "The 22% growth rate is definitively below the 27.26% threshold, directly causing this outcome.",
+        "evidence_article_ids": [
+          "art_finance_20240731_002_9c2c95f1",
+          "art_finance_20240731_003_72bf547b"
+        ],
+        "discovered_by_question_ids": [
+          "v3_meta_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T04:58:42.694833Z",
+        "last_confirmed_at": "2026-07-25T04:58:42.694833Z"
+      },
+      {
+        "id": "hyp_v3_meta_revenue_growth_acceleration_2024_06_30_20260725_045842_012_5b966fdf",
+        "source_event_id": "evt_finance_20240731_015_21d606d5",
+        "target_event_id": "evt_8e208a99983b",
+        "relation_type": "causes",
+        "strength": 1.0,
+        "confidence": 1.0,
+        "time_lag_hours": null,
+        "reasoning": "The fact that the revenue growth did not meet the threshold directly caused the 'False' outcome for the question.",
+        "evidence_article_ids": [
+          "art_finance_20240731_002_9c2c95f1",
+          "art_finance_20240731_003_72bf547b"
+        ],
+        "discovered_by_question_ids": [
+          "v3_meta_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T04:58:42.712946Z",
+        "last_confirmed_at": "2026-07-25T04:58:42.712946Z"
+      },
+      {
+        "id": "hyp_v3_meta_revenue_growth_acceleration_2024_06_30_20260725_045842_013_66c64043",
+        "source_event_id": "evt_finance_20240731_016_c88616aa",
+        "target_event_id": "evt_finance_20240731_014_b429d578",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Beating analyst estimates for revenue and profit is a direct cause for the stock to jump.",
+        "evidence_article_ids": [
+          "art_finance_20240731_002_9c2c95f1",
+          "art_finance_20240731_003_72bf547b"
+        ],
+        "discovered_by_question_ids": [
+          "v3_meta_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T04:58:42.731394Z",
+        "last_confirmed_at": "2026-07-25T04:58:42.731394Z"
+      },
+      {
+        "id": "hyp_v3_meta_revenue_growth_acceleration_2024_06_30_20260725_045842_014_8426facc",
+        "source_event_id": "evt_finance_20240731_017_7cc23bb1",
+        "target_event_id": "evt_finance_20240731_016_c88616aa",
+        "relation_type": "enables",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Strong financial performance, including increased net income and advertising revenue, enabled Meta to beat analyst estimates.",
+        "evidence_article_ids": [
+          "art_finance_20240731_002_9c2c95f1"
+        ],
+        "discovered_by_question_ids": [
+          "v3_meta_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T04:58:42.749847Z",
+        "last_confirmed_at": "2026-07-25T04:58:42.749847Z"
+      },
+      {
+        "id": "hyp_v3_meta_revenue_growth_acceleration_2024_06_30_20260725_045842_015_e6012fc9",
+        "source_event_id": "evt_tech_20240731_018_ca59470f",
+        "target_event_id": "evt_finance_20240731_014_b429d578",
+        "relation_type": "amplifies",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Heightened focus on AI initiatives contributed to investor confidence, amplifying the positive stock reaction.",
+        "evidence_article_ids": [
+          "art_finance_20240731_003_72bf547b"
+        ],
+        "discovered_by_question_ids": [
+          "v3_meta_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T04:58:42.764118Z",
+        "last_confirmed_at": "2026-07-25T04:58:42.764118Z"
+      },
+      {
+        "id": "hyp_v3_meta_revenue_growth_acceleration_2024_06_30_20260725_045842_016_c668b880",
+        "source_event_id": "evt_finance_20240731_012_9e095d94",
+        "target_event_id": "evt_finance_20240731_016_c88616aa",
+        "relation_type": "causes",
+        "strength": 0.9,
+        "confidence": 1.0,
+        "time_lag_hours": null,
+        "reasoning": "The reported revenue figure is a direct component of beating analyst estimates.",
+        "evidence_article_ids": [
+          "art_finance_20240731_002_9c2c95f1",
+          "art_finance_20240731_003_72bf547b"
+        ],
+        "discovered_by_question_ids": [
+          "v3_meta_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T04:58:42.781766Z",
+        "last_confirmed_at": "2026-07-25T04:58:42.781766Z"
+      },
+      {
+        "id": "hyp_v3_meta_revenue_growth_acceleration_2024_06_30_20260725_045842_017_e18f46a3",
+        "source_event_id": "evt_finance_20240731_020_ee68a027",
+        "target_event_id": "evt_finance_20240731_019_eb7f32e7",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "The earnings announcement triggered market volatility.",
+        "evidence_article_ids": [
+          "art_finance_20240731_004_070416b8"
+        ],
+        "discovered_by_question_ids": [
+          "v3_meta_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T04:58:42.796472Z",
+        "last_confirmed_at": "2026-07-25T04:58:42.796472Z"
+      },
+      {
+        "id": "hyp_v3_meta_revenue_growth_acceleration_2024_06_30_20260725_045842_018_4cf81669",
+        "source_event_id": "evt_finance_20240731_020_ee68a027",
+        "target_event_id": "evt_finance_20240731_012_9e095d94",
+        "relation_type": "causes",
+        "strength": 0.9,
+        "confidence": 1.0,
+        "time_lag_hours": null,
+        "reasoning": "The earnings announcement is the event where Meta reports its Q2 revenue.",
+        "evidence_article_ids": [
+          "art_finance_20240731_002_9c2c95f1"
+        ],
+        "discovered_by_question_ids": [
+          "v3_meta_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T04:58:42.810451Z",
+        "last_confirmed_at": "2026-07-25T04:58:42.810451Z"
+      },
+      {
+        "id": "hyp_v3_meta_revenue_growth_acceleration_2024_06_30_20260725_045842_019_66ab95dd",
+        "source_event_id": "evt_finance_20240731_021_2e96a468",
+        "target_event_id": "evt_finance_20240731_017_7cc23bb1",
+        "relation_type": "enables",
+        "strength": 0.6,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Share gains in the digital ad market enabled Meta's strong financial performance.",
+        "evidence_article_ids": [
+          "art_finance_20240731_002_9c2c95f1"
+        ],
+        "discovered_by_question_ids": [
+          "v3_meta_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T04:58:42.829233Z",
+        "last_confirmed_at": "2026-07-25T04:58:42.829233Z"
+      },
+      {
+        "id": "hyp_v3_meta_revenue_growth_acceleration_2024_06_30_20260725_045842_020_8b0f8134",
+        "source_event_id": "evt_finance_20221231_022_72e348f1",
+        "target_event_id": "evt_finance_20240731_017_7cc23bb1",
+        "relation_type": "enables",
+        "strength": 0.6,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Effective cost-cutting initiatives enabled Meta's strong financial performance.",
+        "evidence_article_ids": [
+          "art_finance_20240731_002_9c2c95f1"
+        ],
+        "discovered_by_question_ids": [
+          "v3_meta_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T04:58:42.851268Z",
+        "last_confirmed_at": "2026-07-25T04:58:42.851268Z"
+      }
+    ],
+    "outcome_impacts": [
+      {
+        "id": "imp_6c8233a5",
+        "event_id": "evt_finance_20240731_012_9e095d94",
+        "outcome_event_id": "evt_8e208a99983b",
+        "question_id": "v3_meta_revenue_growth_acceleration_2024_06_30",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "The reported revenue figure, while beating estimates, directly led to the calculation of a growth rate below the threshold, thus contributing to the 'False' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_meta_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:58:51.495867Z",
+        "last_confirmed_at": "2026-07-25T04:58:51.495867Z"
+      },
+      {
+        "id": "imp_f488d7a3",
+        "event_id": "evt_finance_20240731_013_812612c4",
+        "outcome_event_id": "evt_8e208a99983b",
+        "question_id": "v3_meta_revenue_growth_acceleration_2024_06_30",
+        "impact_direction": "negative",
+        "impact_magnitude": 1.0,
+        "confidence": 1.0,
+        "reasoning": "The announced 22% year-over-year revenue growth is definitively below the 27.26% threshold, directly causing the 'False' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_meta_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:58:51.508845Z",
+        "last_confirmed_at": "2026-07-25T04:58:51.508845Z"
+      },
+      {
+        "id": "imp_224aa6a5",
+        "event_id": "evt_finance_20240731_014_b429d578",
+        "outcome_event_id": "evt_8e208a99983b",
+        "question_id": "v3_meta_revenue_growth_acceleration_2024_06_30",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "The stock jump indicates a positive market reaction to the earnings, which could have pushed towards a 'True' outcome if the growth rate had been higher. It represents a countervailing factor.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_meta_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:58:51.519012Z",
+        "last_confirmed_at": "2026-07-25T04:58:51.519012Z"
+      },
+      {
+        "id": "imp_8aa2d5e8",
+        "event_id": "evt_finance_20240731_015_21d606d5",
+        "outcome_event_id": "evt_8e208a99983b",
+        "question_id": "v3_meta_revenue_growth_acceleration_2024_06_30",
+        "impact_direction": "negative",
+        "impact_magnitude": 1.0,
+        "confidence": 1.0,
+        "reasoning": "This event directly states that the revenue growth did not reach the threshold, which is the immediate cause of the 'False' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_meta_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:58:51.528605Z",
+        "last_confirmed_at": "2026-07-25T04:58:51.528605Z"
+      },
+      {
+        "id": "imp_2f8b6a5a",
+        "event_id": "evt_finance_20240731_016_c88616aa",
+        "outcome_event_id": "evt_8e208a99983b",
+        "question_id": "v3_meta_revenue_growth_acceleration_2024_06_30",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Beating analyst estimates is a strong positive indicator that could have led to a 'True' outcome if the threshold was met. It's a countervailing factor.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_meta_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:58:51.539367Z",
+        "last_confirmed_at": "2026-07-25T04:58:51.539367Z"
+      },
+      {
+        "id": "imp_3b10e05f",
+        "event_id": "evt_finance_20240731_017_7cc23bb1",
+        "outcome_event_id": "evt_8e208a99983b",
+        "question_id": "v3_meta_revenue_growth_acceleration_2024_06_30",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Strong overall financial performance, including increased net income and advertising revenue, represents a significant positive factor that could have led to a 'True' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_meta_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:58:51.549067Z",
+        "last_confirmed_at": "2026-07-25T04:58:51.549067Z"
+      },
+      {
+        "id": "imp_32edb3d5",
+        "event_id": "evt_tech_20240731_018_ca59470f",
+        "outcome_event_id": "evt_8e208a99983b",
+        "question_id": "v3_meta_revenue_growth_acceleration_2024_06_30",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.5,
+        "confidence": 0.6,
+        "reasoning": "Increased AI investments contributed to investor confidence, which is a positive factor that could have supported a 'True' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_meta_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:58:51.559380Z",
+        "last_confirmed_at": "2026-07-25T04:58:51.559380Z"
+      },
+      {
+        "id": "imp_d4e4b6c5",
+        "event_id": "evt_finance_20240731_019_eb7f32e7",
+        "outcome_event_id": "evt_8e208a99983b",
+        "question_id": "v3_meta_revenue_growth_acceleration_2024_06_30",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.2,
+        "confidence": 0.5,
+        "reasoning": "Market volatility is a general reaction to earnings announcements and doesn't directly indicate a positive or negative impact on meeting the specific revenue growth threshold.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_meta_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:58:51.569070Z",
+        "last_confirmed_at": "2026-07-25T04:58:51.569070Z"
+      },
+      {
+        "id": "imp_5f2ed931",
+        "event_id": "evt_finance_20240731_020_ee68a027",
+        "outcome_event_id": "evt_8e208a99983b",
+        "question_id": "v3_meta_revenue_growth_acceleration_2024_06_30",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.9,
+        "confidence": 1.0,
+        "reasoning": "The earnings announcement is the source of the reported revenue growth, which ultimately fell short of the threshold, leading to the 'False' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_meta_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:58:51.579260Z",
+        "last_confirmed_at": "2026-07-25T04:58:51.579260Z"
+      },
+      {
+        "id": "imp_9a2a0c15",
+        "event_id": "evt_finance_20240731_021_2e96a468",
+        "outcome_event_id": "evt_8e208a99983b",
+        "question_id": "v3_meta_revenue_growth_acceleration_2024_06_30",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Gains in digital ad market share contributed to strong financial performance, which is a positive factor that could have supported a 'True' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_meta_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:58:51.590578Z",
+        "last_confirmed_at": "2026-07-25T04:58:51.590578Z"
+      },
+      {
+        "id": "imp_7bba782f",
+        "event_id": "evt_finance_20221231_022_72e348f1",
+        "outcome_event_id": "evt_8e208a99983b",
+        "question_id": "v3_meta_revenue_growth_acceleration_2024_06_30",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.5,
+        "confidence": 0.6,
+        "reasoning": "Cost-cutting initiatives contributed to strong financial performance, a positive factor that could have supported a 'True' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_meta_revenue_growth_acceleration_2024_06_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:58:51.604042Z",
+        "last_confirmed_at": "2026-07-25T04:58:51.604042Z"
+      }
+    ]
+  }
+}

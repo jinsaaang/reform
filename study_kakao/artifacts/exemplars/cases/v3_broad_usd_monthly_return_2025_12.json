@@ -1,0 +1,55 @@
+{
+  "schema_version": "fixed_exemplar_case",
+  "status": "success",
+  "question_id": "v3_broad_usd_monthly_return_2025_12",
+  "retrieved_memory_question_id": "v3_broad_usd_monthly_return_2024_07",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "market_fx_credit",
+      "target_operation": "classify",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2024-07-01, which range will the monthly broad-dollar return for Nominal broad U.S. dollar index in 2024-07 fall into?",
+    "historical_cutoff": "2024-07-01T00:00:00+00:00",
+    "target_semantics": "The monthly broad-dollar return for the Nominal broad U.S. dollar index in July 2024.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20240612_015_165f4e3d",
+        "takeaway": "The Federal Reserve held interest rates steady in June 2024, signaling a potential pause in rate hikes and a shift towards data dependency.",
+        "why_predictive": "This suggests a less restrictive future monetary policy path for the US, which could reduce the dollar's yield advantage."
+      },
+      {
+        "article_id": "art_finance_20231212_013_df0d7f89",
+        "takeaway": "The Federal Reserve kept interest rates steady in December 2023, with indications that inflation was cooling.",
+        "why_predictive": "This reinforces the narrative of a potential pivot or pause in US monetary policy, impacting future rate expectations."
+      },
+      {
+        "article_id": "art_finance_20230726_017_3f58ee3a",
+        "takeaway": "The Federal Reserve resumed interest rate hikes in July 2023, indicating a continued fight against inflation.",
+        "why_predictive": "This shows a historical context of policy tightening, which would have supported a stronger dollar, but the trend may be reversing."
+      },
+      {
+        "article_id": "art_finance_20220713_008_aee24660",
+        "takeaway": "US inflation reached a record high of 9.1% in July 2022.",
+        "why_predictive": "High inflation typically prompts tighter monetary policy, which historically supports a stronger dollar, but also signals potential economic strain."
+      },
+      {
+        "article_id": "art_finance_20230821_004_f0e3b8f1",
+        "takeaway": "Global economic intelligence in July 2023 indicated a mixed outlook, with some regions showing resilience while others faced headwinds.",
+        "why_predictive": "This suggests that relative economic performance and policy divergence between the US and other major economies could influence the dollar's strength."
+      }
+    ],
+    "expert_reasoning": [
+      "The Federal Reserve's recent decisions (June 2024 and December 2023) indicate a pause or potential end to interest rate hikes, suggesting a less restrictive monetary policy path ahead for the US (art_finance_20240612_015_165f4e3d, art_finance_20231212_013_df0d7f89).",
+      "A less restrictive US policy path, if not matched by similar easing abroad, could reduce expected relative US dollar yields.",
+      "Historically, high inflation (July 2022) prompted tightening (July 2023), which would have supported the dollar, but the current trend appears to be towards easing (art_finance_20220713_008_aee24660, art_finance_20230726_017_3f58ee3a).",
+      "The global economic outlook is mixed, implying that relative economic conditions and policy divergence between the US and other major economies will be crucial drivers of the dollar's movement (art_finance_20230821_004_f0e3b8f1).",
+      "The recent policy signals from the Fed suggest a potential downward pressure on the dollar due to reduced yield support, assuming foreign policy does not ease more aggressively."
+    ],
+    "counterevidence": "While US inflation has shown signs of cooling, leading to a pause in rate hikes, persistent inflation components or resilient economic activity could still necessitate a more restrictive policy stance than currently anticipated, or limit the extent of expected easing. Furthermore, if major foreign central banks ease policy more rapidly than the Federal Reserve, this could still support relative dollar yields and demand.",
+    "prospective_target_estimate": "within recent range",
+    "option_mapping": "The recent range for the Nominal broad U.S. dollar index's monthly return is between -0.92% and 1.643%. Given the Fed's pivot towards a less restrictive policy, the dollar's yield advantage is likely to diminish, suggesting a return towards its recent historical average. This points towards the 'within recent range' option, as extreme movements are less likely without strong inflation or policy divergence signals.",
+    "uncertainty": "The primary uncertainty lies in the pace and extent of monetary policy divergence between the US and other major economies. If foreign central banks maintain tighter policies or if US economic activity remains exceptionally strong, the dollar could find support. Conversely, any signs of renewed US inflation or a significant global economic slowdown could lead to greater dollar weakness.",
+    "dag_derived_lesson": "A shift in monetary policy expectations, driven by inflation data, can alter currency valuations by changing relative yield differentials. However, this effect is contingent on the policy paths of other major economies and the underlying strength of economic activity, which can act as countervailing forces."
+  }
+}

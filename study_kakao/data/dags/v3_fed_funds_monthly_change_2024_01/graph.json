@@ -1,0 +1,1046 @@
+{
+  "question": {
+    "id": "v3_fed_funds_monthly_change_2024_01",
+    "question_text": "As of 2024-01-01, which range will the monthly federal-funds-rate change for Federal Reserve effective federal funds rate in 2024-01 fall into?",
+    "question_type": "mcq",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 3,
+    "resolution_date": "2024-02-15T23:59:59Z",
+    "estimated_start_time": "2024-01-01T00:00:00Z",
+    "ground_truth": "within recent range",
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [
+      "evt_07b69764fd92",
+      "evt_aea871acba7a",
+      "evt_a454069f03d3"
+    ],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: Federal Reserve effective federal funds rate\nTarget period: 2024-01\nFinancial area: monetary_policy / policy rate\nRegion: US\nPre-registered recent-range boundaries: lower 0, upper 0.083 percentage points.",
+    "resolution_criteria": "Use FRED series FEDFUNDS. Compute the change from the previous monthly observation using mode 'absolute'. Resolve 'below recent range' below 0, 'within recent range' from 0 inclusive to 0.083 exclusive, and 'above recent range' at or above 0.083 percentage points.",
+    "resolution_reasoning": "The snapshotted target change was 0 percentage points; it resolved to 'within recent range'.",
+    "options": [
+      "below recent range",
+      "within recent range",
+      "above recent range"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": "\n## Executive Summary\nAmidst market anticipation for rate cuts, the Federal Reserve maintained its federal funds rate within the recent range of 5.25%-5.5% as of January 2024. This decision was primarily driven by a data-dependent approach, emphasizing the need for sustained evidence of disinflation towards the 2% target, robust economic data, and cautious management of market expectations. The Fed aimed to avoid a premature easing of monetary policy that could risk a resurgence in inflation, signaling a \"higher for longer\" stance despite market pressure for earlier rate reductions.\n\n## Timeline Of Key Events\n- **2024-01-03:** Federal Reserve minutes suggest rates may have peaked, but uncertainty remains, and the outlook for cuts is mixed [art_finance_20240103_001_c34a2e].\n- **2024-01-09:** RSM US LLP publishes an analysis suggesting a Fed policy pause and then rate cuts in 2024, forecasting at least 75 basis points of cuts starting around June due to a soft landing scenario [art_finance_20240109_012_d21cb7f0].\n- **2024-01-10:** Federal Reserve Bank of Richmond publishes an economic brief comparing the current rate cycle to historical ones, discussing soft, hard, and aborted landings, suggesting the real interest rate is now at or exceeding the neutral rate [art_finance_20240110_009_efc714bc].\n- **2024-01-12:** William Blair discusses if the Fed will end its Quantitative Tightening (QT) in 2024, an action closely related to monetary policy stance [art_finance_20240112_004_180e0600].\n- **2024-01-16:** Federal Reserve Bank of Dallas research indicates that the predominance of U.S. 30-year mortgages does not seem to delay the impact of Fed rate hikes [art_finance_20240116_008_63cd1867].\n- **2024-01-17:** Brookings explores how the Federal Reserve will decide when to end \"quantitative tightening\" [art_finance_20240117_007_a7f84c3f].\n- **2024-01-26:** Morningstar article questions why market participants are often wrong about the Fed's actions, highlighting the divergence between market expectations and Fed signaling [art_finance_20240126_005_34e1c278].\n- **2024-01-30:** Marketplace discusses market anticipation ahead of the FOMC meeting, with traders focusing on whether and when rate cuts will occur, and analysts predicting no cut in January but possible cuts in March, May, or June [art_finance_20240130_011_70702d95].\n- **2024-01-31:** CNBC reports that the Fed holds rates steady, indicating it is not ready to start cutting, which was the critical outcome of the FOMC meeting [art_finance_20240131_003_123b456d].\n- **2024-01-31:** CBS News reports on the Fed's decision to keep benchmark interest rates unchanged at 5.25%-5.5%, marking the fourth consecutive pause [art_finance_20240131_004_68afc49a].\n- **2024-01-31:** Bankrate confirms the Fed meeting outcome: interest rates left alone, and Powell states they are not ready to start cutting [art_finance_20240131_010_9fc4a614].\n- **2024-02-15:** CNBC report states that the dollar pauses as traders digest Fed comments and solid U.S. economic data, which was unlikely to stop the Federal Reserve from cutting interest rates by June. [art_finance_20240215_006_f5be3170].\n\n## Causal Chain Analysis\nThe primary cause for the federal funds rate remaining \"within recent range\" was the Federal Reserve's commitment to a data-dependent monetary policy and its cautious approach to ensure sustained disinflation. This stance was explicitly communicated by Fed officials, particularly Chair Jerome Powell [art_finance_20240131_004_68afc49a], [art_finance_20240131_010_9fc4a614].\n\n**Root Cause:** Elevated inflation that, while cooling, had not yet conclusively reached the Fed’s 2% target [art_finance_20240131_004_68afc49a]. The prolonged period of inflation after March 2022 led the FOMC to raise rates to a 22-year high of 5.25-5.5 percent [art_finance_20240102_005_919f8d37].\n\n**Intermediate Mechanism:** The Fed's strategy to wait for more robust evidence of sustained inflation reduction. This patience was driven by a desire to avoid a premature easing of policy that could risk a reacceleration of inflation [art_finance_20240131_004_68afc49a]. The Fed maintained the target range between 5.25% and 5.50% based on current conditions [art_finance_20240109_012_d21cb7f0].\n\n**Proximate Triggers:** \n1. **Strong U.S. Economic Data:** Robust economic indicators, including a tight labor market and resilient consumer spending, demonstrated the economy's ability to withstand higher rates. This reduced the urgency for immediate rate cuts [art_finance_20240215_006_f5be3170].\n2. **Official Fed Communications:** Statements from the FOMC and Chair Powell on January 31, 2024, explicitly stated that the committee was not ready to cut rates and needed greater confidence in inflation sustainably moving towards 2% [art_finance_20240131_003_123b456d], [art_finance_20240131_004_68afc49a]. These communications directly influenced market expectations, countering earlier predictions of rapid cuts [art_finance_20240126_005_34e1c278], [art_finance_20240130_011_70702d95].\n\n**Final Outcome:** The effective federal funds rate remained within the recent range (5.25%-5.5%) throughout January 2024, confirming the Fed's \"higher for longer\" policy until clear and sustained evidence of disinflation became apparent [art_finance_20240131_003_123b456d].\n\n## Countervailing Factors\n- **Market Expectations for Early Rate Cuts:** Financial markets, particularly through instruments like the CME Group's FedWatch tool, were pricing in multiple rate cuts (up to six quarter-point cuts) for 2024, with some economists predicting a cut as early as March [art_finance_20240102_005_919f8d37], [art_finance_20240130_011_70702d95]. These expectations pushed against the Fed's cautious stance.\n- **Failure of Market Expectations:** Despite the market's strong anticipation, the Federal Reserve actively pushed back against these dovish predictions through their formal statements and Chair Powell's press conference, indicating that cuts were not imminent [art_finance_20240131_004_68afc49a]. The market's aggressive forward pricing of rate cuts was ultimately unwound as actual Fed decisions became clear [art_finance_20240215_006_f5be3170].\n\n## Event Candidate Inventory\n- **E1: FOMC Meeting Minutes Release (2024-01-03)**\n    - **title:** Rates Have Peaked, Fed Minutes Suggest, but Outlook Remains Uncertain\n    - **date:** 2024-01-03\n    - **why it matters causally:** Provided initial signals about the Fed's internal discussions and hints at a potential pause in rate hikes, setting the stage for market expectations.\n    - **source article IDs:** [art_finance_20240103_001_c34a2e]\n- **E2: RSM US LLP Forecast (2024-01-09)**\n    - **title:** The logic of a Fed policy pause and then rate cuts in 2024\n    - **date:** 2024-01-09\n    - **why it matters causally:** Influenced market sentiment and economist projections by laying out a plausible path for rate cuts later in the year, assuming a soft landing.\n    - **source article IDs:** [art_finance_20240109_012_d21cb7f0]\n- **E3: FOMC Meeting and Decision to Hold Rates (2024-01-31)**\n    - **title:** Fed holds rates steady, indicates it is not ready to start cutting\n    - **date:** 2024-01-31\n    - **why it matters causally:** This was the direct action by the Fed that led to the federal funds rate remaining within the recent range, explicitly confirming their cautious stance against premature cuts.\n    - **source article IDs:** [art_finance_20240131_003_123b456d], [art_finance_20240131_004_68afc49a], [art_finance_20240131_010_9fc4a614]\n- **E4: Chair Powell's Remarks (2024-01-31)**\n    - **title:** Powell Says Not Ready To Start Cutting\n    - **date:** 2024-01-31\n    - **why it matters causally:** Directly communicated the Fed's policy priorities and conditionality for future rate adjustments, managing market expectations and reinforcing the decision to hold rates steady.\n    - **source article IDs:** [art_finance_20240131_010_9fc4a614]\n\n## Evidence Mapping Table\n\n| Claim/Event | Article IDs | Date Support | Confidence (0-1) | Notes |\n|---|---|---|---|---|\n| Fed remained cautious on rate cuts | [art_finance_20240131_003_123b456d], [art_finance_20240131_004_68afc49a], [art_finance_20240131_010_9fc4a614] | 2024-01-31 | 1.0 | Direct statements from FOMC and Chair Powell. |\n| Market expected early rate cuts | [art_finance_20240102_005_919f8d37], [art_finance_20240130_011_70702d95] | Early Jan 2024 - 2024-01-30 | 0.9 | Journalists and analysts reporting market sentiment. |\n| Fed emphasized data dependence | [art_finance_20240131_004_68afc49a] | 2024-01-31 | 1.0 | Explicit statement that rate cuts depend on inflation moving sustainably to 2%. |\n| Robust economic data supported Fed's pause | [art_finance_20240215_006_f5be3170] | 2024-02-15 | 0.8 | Post-FOMC reports confirm solid economic data, preventing immediate rate cuts. |\n| Discussions around Quantitative Tightening | [art_finance_20240112_004_180e0600], [art_finance_20240117_007_a7f84c3f] | 2024-01-12, 2024-01-17 | 0.7 | While related, QT is a secondary factor to the direct fed funds rate decision. |\n\n## Uncertainties And Alternative Paths\n- **Inflation Re-acceleration:** If inflation had shown signs of re-acceleration instead of continued disinflation, the Fed might have considered further tightening, moving the rate above the recent range. However, this was not the primary concern during the period.\n- **Significant Economic Downturn:** A sudden and severe economic downturn, indicated by weak labor market data or sharp declines in consumer spending, could have forced the Fed to consider earlier rate cuts to stimulate the economy, potentially moving rates below the recent range. However, economic data remained resilient [art_finance_20240215_006_f5be3170].\n- **Stronger Market Pressure:** If market expectations for rapid rate cuts had been more intense and sustained, leading to significant financial market instability, the Fed might have faced increased pressure to adjust its communications or policy stance more rapidly, although their stated data-dependent approach remained firm.\n",
+    "graph_built": true,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.204461Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "fed_funds_monthly_change",
+        "event_cluster_id": "fed_funds_2024-01",
+        "category": "monetary_policy",
+        "original_domain": "monetary_policy",
+        "subdomain": "policy rate",
+        "entity": "Federal Reserve effective federal funds rate",
+        "region": "US",
+        "target_metric": "monthly federal-funds-rate change",
+        "target_period": "2024-01",
+        "forecast_cutoff": "2024-01-01T00:00:00+00:00",
+        "forecast_date_options": [
+          "2024-01-01"
+        ],
+        "resolution_available_at": "2024-02-15T23:59:59+00:00",
+        "horizon_days": 45,
+        "source_type": "fred_series_snapshot",
+        "source_series_id": "FEDFUNDS",
+        "source_homepage": "https://fred.stlouisfed.org/series/FEDFUNDS",
+        "comparison_rule": "target change bucketed by the lower and upper quartiles of the 8 prior observed changes",
+        "comparison_threshold": 0.01,
+        "comparison_thresholds": {
+          "lower": 0.0,
+          "upper": 0.0825
+        },
+        "change_unit": "percentage points",
+        "threshold_observation_dates": [
+          "2023-04-01",
+          "2023-05-01",
+          "2023-06-01",
+          "2023-07-01",
+          "2023-08-01",
+          "2023-09-01",
+          "2023-10-01",
+          "2023-11-01",
+          "2023-12-01"
+        ],
+        "split": "memory",
+        "family_position": 3,
+        "family_size": 8,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "within recent range",
+        "resolved_class": "within recent range",
+        "resolution_value": 5.33,
+        "target_change": 0.0,
+        "source_observation_date": "2024-01-01",
+        "resolution_document": {
+          "publisher": "Federal Reserve Bank of St. Louis (FRED)",
+          "title": "Effective Federal Funds Rate",
+          "url": "https://fred.stlouisfed.org/series/FEDFUNDS"
+        },
+        "source_download_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=FEDFUNDS&cosd=2019-01-01&coed=2026-06-30",
+        "source_sha256": "83348b2d7b426a0d845351a25c684a126a3f525894512fd4dc3e75f53b0d5c81",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_aea871acba7a",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 11,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_20240206_003_a84e0323",
+        "title": "Home Ownership and Equity Protection Act of 1994 - Federal Reserve History",
+        "url": "https://www.federalreservehistory.org/essays/hoepa",
+        "source": "federalreservehistory.org",
+        "published_date": "2024-02-06T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240102_005_919f8d37",
+        "title": "Bankrate’s Interest Rate Forecast for 2024: Mortgages, credit cards and more will stay pricey, even if the Fed cut rates - Bankrate",
+        "url": "https://www.bankrate.com/personal-finance/interest-rates-forecast-2024",
+        "source": "bankrate.com",
+        "published_date": "2024-01-02T05:01:00+00:00"
+      },
+      {
+        "id": "art_finance_20240215_006_f5be3170",
+        "title": "U.S. dollar retreats as slew of data keeps rate cut expectations in June intact - CNBC",
+        "url": "https://www.cnbc.com/2024/02/15/dollar-pauses-as-traders-digest-fed-comments-yen-steady-despite-gdp-surprise.html",
+        "source": "cnbc.com",
+        "published_date": "2024-02-15T02:56:36+00:00"
+      },
+      {
+        "id": "art_finance_20240117_007_a7f84c3f",
+        "title": "How will the Federal Reserve decide when to end “quantitative tightening”? - Brookings",
+        "url": "https://www.brookings.edu/articles/how-will-the-federal-reserve-decide-when-to-end-quantitative-tightening",
+        "source": "brookings.edu",
+        "published_date": "2024-01-17T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240116_008_63cd1867",
+        "title": "U.S. 30-year mortgage predominance doesn’t seem to delay impact of Fed rate hikes - Federal Reserve Bank of Dallas",
+        "url": "https://www.dallasfed.org/research/economics/2024/0116",
+        "source": "dallasfed.org",
+        "published_date": "2024-01-16T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240110_009_efc714bc",
+        "title": "Of Soft, Hard and Aborted Landings - Federal Reserve Bank of Richmond",
+        "url": "https://www.richmondfed.org/publications/research/economic_brief/2024/eb_24-02",
+        "source": "richmondfed.org",
+        "published_date": "2024-01-10T11:02:14+00:00"
+      },
+      {
+        "id": "art_finance_20240131_010_9fc4a614",
+        "title": "The Fed - January 30-31, 2024 FOMC Meeting - Federal Reserve (.gov)",
+        "url": "https://www.federalreserve.gov/monetarypolicy/fomcpresconf20240131.htm",
+        "source": "federalreserve.gov",
+        "published_date": "2024-01-31T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240131_004_68afc49a",
+        "title": "Federal Reserve holds its interest rate steady. Here's what that means. - CBS News",
+        "url": "https://www.cbsnews.com/news/federal-reserve-interest-rate-decision-2024",
+        "source": "cbsnews.com",
+        "published_date": "2024-01-31T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240130_011_70702d95",
+        "title": "Why traders will be hanging on the Federal Reserve’s every word Wednesday - marketplace.org",
+        "url": "https://www.marketplace.org/story/2024/01/30/why-traders-will-be-hanging-on-the-federal-reserves-every-word-wednesday",
+        "source": "marketplace.org",
+        "published_date": "2024-01-30T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240207_002_2f424639",
+        "title": "How the Federal Reserve Got So Huge, and Why and How It Can Shrink - Bank Policy Institute",
+        "url": "https://bpi.com/how-the-federal-reserve-got-so-huge-and-why-and-how-it-can-shrink",
+        "source": "bpi.com",
+        "published_date": "2024-02-07T17:51:18+00:00"
+      },
+      {
+        "id": "art_finance_20240109_012_d21cb7f0",
+        "title": "The logic of a Fed policy pause and then rate cuts in 2024 - RSM US LLP",
+        "url": "https://rsmus.com/insights/economics/the-logic-of-a-fed-policy-pause-and-then-rate-cuts-in-2024.html",
+        "source": "rsmus.com",
+        "published_date": "2024-01-09T08:00:00+00:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_aea871acba7a",
+      "events_count": 8,
+      "hypotheses_count": 14
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 3,
+      "avg_depth": 3.0,
+      "quality_score": 0.92,
+      "depth_score": 1.0,
+      "confidence_score": 0.86,
+      "strength_score": 0.81,
+      "evidence_score": 1.0,
+      "event_count": 8,
+      "hypothesis_count": 14
+    },
+    "nodes": [
+      {
+        "id": "evt_07b69764fd92",
+        "title": "Option 1: below recent range",
+        "description": "Question resolves to: below recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-02-15T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_fed_funds_monthly_change_2024_01",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 0,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:11:04.002974Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_a454069f03d3",
+        "title": "Option 3: above recent range",
+        "description": "Question resolves to: above recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-02-15T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_fed_funds_monthly_change_2024_01",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 2,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:11:04.002995Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_aea871acba7a",
+        "title": "Option 2: within recent range",
+        "description": "Question resolves to: within recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-02-15T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_fed_funds_monthly_change_2024_01",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 1,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:11:04.002985Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240102_038_413ecfa8",
+        "title": "Financial Markets Expected Early Rate Cuts in 2024",
+        "description": "Financial markets, particularly through instruments like the CME Group's FedWatch tool, were pricing in multiple rate cuts (up to six quarter-point cuts) for 2024, with some economists predicting a cut as early as March.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-02T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240102_005_919f8d37"
+        ],
+        "extracted_for_question_id": "v3_fed_funds_monthly_change_2024_01",
+        "source_article_id": "art_finance_20240102_005_919f8d37",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_fed_funds_monthly_change_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:20:41.429637Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240131_033_ae703a88",
+        "title": "Fed Holds Rates Steady, Not Ready to Cut",
+        "description": "CNBC reports that the Fed holds rates steady, indicating it is not ready to start cutting, which was the critical outcome of the FOMC meeting.",
+        "event_type": "decision",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-31T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240131_004_68afc49a",
+          "art_finance_20240131_010_9fc4a614"
+        ],
+        "extracted_for_question_id": "v3_fed_funds_monthly_change_2024_01",
+        "source_article_id": "art_finance_20240131_004_68afc49a",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_fed_funds_monthly_change_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:20:41.334091Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240131_034_9691cbae",
+        "title": "Chair Powell States Fed Not Ready To Start Cutting",
+        "description": "Chair Powell's remarks directly communicated the Fed's policy priorities and conditionality for future rate adjustments, managing market expectations and reinforcing the decision to hold rates steady.",
+        "event_type": "decision",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-31T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240131_010_9fc4a614"
+        ],
+        "extracted_for_question_id": "v3_fed_funds_monthly_change_2024_01",
+        "source_article_id": "art_finance_20240131_010_9fc4a614",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_fed_funds_monthly_change_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:20:41.352445Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240131_037_71de9ab5",
+        "title": "Official Fed Communications Reinforce No Immediate Rate Cuts",
+        "description": "Statements from the FOMC and Chair Powell on January 31, 2024, explicitly stated that the committee was not ready to cut rates and needed greater confidence in inflation sustainably moving towards 2%.",
+        "event_type": "decision",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-31T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240131_004_68afc49a"
+        ],
+        "extracted_for_question_id": "v3_fed_funds_monthly_change_2024_01",
+        "source_article_id": "art_finance_20240131_004_68afc49a",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_fed_funds_monthly_change_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:20:41.410054Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240131_039_d3a81702",
+        "title": "Federal Reserve Pushes Back Against Market Expectations for Rate Cuts",
+        "description": "Despite the market's strong anticipation, the Federal Reserve actively pushed back against these dovish predictions through their formal statements and Chair Powell's press conference, indicating that cuts were not imminent.",
+        "event_type": "decision",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-31T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240131_004_68afc49a"
+        ],
+        "extracted_for_question_id": "v3_fed_funds_monthly_change_2024_01",
+        "source_article_id": "art_finance_20240131_004_68afc49a",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_fed_funds_monthly_change_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:20:41.448443Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240131_040_b63e9d6e",
+        "title": "Elevated Inflation Not Reaching Fed's 2% Target",
+        "description": "Elevated inflation that, while cooling, had not yet conclusively reached the Fed’s 2% target. The prolonged period of inflation after March 2022 led the FOMC to raise rates to a 22-year high of 5.25-5.5 percent.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-31T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240131_004_68afc49a"
+        ],
+        "extracted_for_question_id": "v3_fed_funds_monthly_change_2024_01",
+        "source_article_id": "art_finance_20240131_004_68afc49a",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_fed_funds_monthly_change_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:21:23.290781Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240131_041_fdc4a09e",
+        "title": "Fed Strategy to Wait for More Robust Evidence of Sustained Inflation Reduction",
+        "description": "The Fed's strategy to wait for more robust evidence of sustained inflation reduction. This patience was driven by a desire to avoid a premature easing of policy that could risk a reacceleration of inflation.",
+        "event_type": "decision",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-31T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240131_004_68afc49a"
+        ],
+        "extracted_for_question_id": "v3_fed_funds_monthly_change_2024_01",
+        "source_article_id": "art_finance_20240131_004_68afc49a",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_fed_funds_monthly_change_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:21:23.315330Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_fed_funds_monthly_change_2024_01_20260724_192143_013_c2992c37",
+        "source_event_id": "evt_finance_20240131_040_b63e9d6e",
+        "target_event_id": "evt_finance_20240131_041_fdc4a09e",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Elevated inflation directly caused the Fed to adopt a cautious, data-dependent strategy to avoid re-accelerating inflation.",
+        "evidence_article_ids": [
+          "art_finance_20240131_004_68afc49a",
+          "art_finance_20240102_005_919f8d37"
+        ],
+        "discovered_by_question_ids": [
+          "v3_fed_funds_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:21:43.799321Z",
+        "last_confirmed_at": "2026-07-24T19:21:43.799321Z"
+      },
+      {
+        "id": "hyp_v3_fed_funds_monthly_change_2024_01_20260724_192143_014_29cfaedf",
+        "source_event_id": "evt_finance_20240131_041_fdc4a09e",
+        "target_event_id": "evt_finance_20240131_033_ae703a88",
+        "relation_type": "causes",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The Fed's strategy of waiting for more evidence of disinflation directly led to the decision to hold rates steady.",
+        "evidence_article_ids": [
+          "art_finance_20240131_004_68afc49a",
+          "art_finance_20240109_012_d21cb7f0"
+        ],
+        "discovered_by_question_ids": [
+          "v3_fed_funds_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:21:43.813309Z",
+        "last_confirmed_at": "2026-07-24T19:21:43.813309Z"
+      },
+      {
+        "id": "hyp_v3_fed_funds_monthly_change_2024_01_20260724_192143_015_2fc1ce36",
+        "source_event_id": "evt_finance_20240131_037_71de9ab5",
+        "target_event_id": "evt_finance_20240131_033_ae703a88",
+        "relation_type": "amplifies",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Official Fed communications amplified the decision to hold rates steady by clearly stating the rationale and managing expectations.",
+        "evidence_article_ids": [
+          "art_finance_20240131_004_68afc49a"
+        ],
+        "discovered_by_question_ids": [
+          "v3_fed_funds_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:21:43.827339Z",
+        "last_confirmed_at": "2026-07-24T19:21:43.827339Z"
+      },
+      {
+        "id": "hyp_v3_fed_funds_monthly_change_2024_01_20260724_192143_016_ca539cc9",
+        "source_event_id": "evt_finance_20240131_033_ae703a88",
+        "target_event_id": "evt_aea871acba7a",
+        "relation_type": "causes",
+        "strength": 1.0,
+        "confidence": 1.0,
+        "time_lag_hours": null,
+        "reasoning": "The Fed's decision to hold rates steady directly caused the federal funds rate to remain within the recent range.",
+        "evidence_article_ids": [
+          "art_finance_20240131_004_68afc49a",
+          "art_finance_20240131_010_9fc4a614"
+        ],
+        "discovered_by_question_ids": [
+          "v3_fed_funds_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:21:43.840642Z",
+        "last_confirmed_at": "2026-07-24T19:21:43.840642Z"
+      },
+      {
+        "id": "hyp_v3_fed_funds_monthly_change_2024_01_20260724_192143_017_fb7ef7d8",
+        "source_event_id": "evt_finance_20240102_038_413ecfa8",
+        "target_event_id": "evt_finance_20240131_039_d3a81702",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "The strong market expectations for early rate cuts created a divergence that the Fed actively pushed back against, leading to the failure of these expectations.",
+        "evidence_article_ids": [
+          "art_finance_20240102_005_919f8d37",
+          "art_finance_20240131_004_68afc49a"
+        ],
+        "discovered_by_question_ids": [
+          "v3_fed_funds_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:21:43.854793Z",
+        "last_confirmed_at": "2026-07-24T19:21:43.854793Z"
+      },
+      {
+        "id": "hyp_v3_fed_funds_monthly_change_2024_01_20260724_192143_018_a3e4bbce",
+        "source_event_id": "evt_finance_20240131_039_d3a81702",
+        "target_event_id": "evt_finance_20240131_033_ae703a88",
+        "relation_type": "enables",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "The Fed's successful pushback against market expectations enabled them to hold rates steady without succumbing to pressure for premature cuts.",
+        "evidence_article_ids": [
+          "art_finance_20240131_004_68afc49a",
+          "art_finance_20240215_006_f5be3170"
+        ],
+        "discovered_by_question_ids": [
+          "v3_fed_funds_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:21:43.868396Z",
+        "last_confirmed_at": "2026-07-24T19:21:43.868396Z"
+      },
+      {
+        "id": "hyp_v3_fed_funds_monthly_change_2024_01_20260724_192143_019_e241bdd8",
+        "source_event_id": "evt_finance_20240131_034_9691cbae",
+        "target_event_id": "evt_finance_20240131_037_71de9ab5",
+        "relation_type": "amplifies",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Chair Powell's explicit remarks amplified the official Fed communications regarding not being ready to cut rates.",
+        "evidence_article_ids": [
+          "art_finance_20240131_010_9fc4a614"
+        ],
+        "discovered_by_question_ids": [
+          "v3_fed_funds_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:21:43.882140Z",
+        "last_confirmed_at": "2026-07-24T19:21:43.882140Z"
+      },
+      {
+        "id": "hyp_v3_fed_funds_monthly_change_2024_01_20260724_192203_020_1ac13066",
+        "source_event_id": "evt_finance_20240131_040_b63e9d6e",
+        "target_event_id": "evt_finance_20240131_041_fdc4a09e",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Elevated inflation directly caused the Fed to adopt a cautious, data-dependent strategy to avoid re-accelerating inflation.",
+        "evidence_article_ids": [
+          "art_finance_20240131_004_68afc49a",
+          "art_finance_20240102_005_919f8d37"
+        ],
+        "discovered_by_question_ids": [
+          "v3_fed_funds_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:22:03.353516Z",
+        "last_confirmed_at": "2026-07-24T19:22:03.353516Z"
+      },
+      {
+        "id": "hyp_v3_fed_funds_monthly_change_2024_01_20260724_192203_021_4a561335",
+        "source_event_id": "evt_finance_20240131_041_fdc4a09e",
+        "target_event_id": "evt_finance_20240131_033_ae703a88",
+        "relation_type": "causes",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The Fed's strategy of waiting for more evidence of disinflation directly led to the decision to hold rates steady.",
+        "evidence_article_ids": [
+          "art_finance_20240131_004_68afc49a",
+          "art_finance_20240109_012_d21cb7f0"
+        ],
+        "discovered_by_question_ids": [
+          "v3_fed_funds_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:22:03.376102Z",
+        "last_confirmed_at": "2026-07-24T19:22:03.376102Z"
+      },
+      {
+        "id": "hyp_v3_fed_funds_monthly_change_2024_01_20260724_192203_022_90c33ff7",
+        "source_event_id": "evt_finance_20240131_037_71de9ab5",
+        "target_event_id": "evt_finance_20240131_033_ae703a88",
+        "relation_type": "amplifies",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Official Fed communications amplified the decision to hold rates steady by clearly stating the rationale and managing expectations.",
+        "evidence_article_ids": [
+          "art_finance_20240131_004_68afc49a"
+        ],
+        "discovered_by_question_ids": [
+          "v3_fed_funds_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:22:03.394038Z",
+        "last_confirmed_at": "2026-07-24T19:22:03.394038Z"
+      },
+      {
+        "id": "hyp_v3_fed_funds_monthly_change_2024_01_20260724_192203_023_3e8294e8",
+        "source_event_id": "evt_finance_20240131_033_ae703a88",
+        "target_event_id": "evt_aea871acba7a",
+        "relation_type": "causes",
+        "strength": 1.0,
+        "confidence": 1.0,
+        "time_lag_hours": null,
+        "reasoning": "The Fed's decision to hold rates steady directly caused the federal funds rate to remain within the recent range.",
+        "evidence_article_ids": [
+          "art_finance_20240131_004_68afc49a",
+          "art_finance_20240131_010_9fc4a614"
+        ],
+        "discovered_by_question_ids": [
+          "v3_fed_funds_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:22:03.410377Z",
+        "last_confirmed_at": "2026-07-24T19:22:03.410377Z"
+      },
+      {
+        "id": "hyp_v3_fed_funds_monthly_change_2024_01_20260724_192203_024_359e23cb",
+        "source_event_id": "evt_finance_20240102_038_413ecfa8",
+        "target_event_id": "evt_finance_20240131_039_d3a81702",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "The strong market expectations for early rate cuts created a divergence that the Fed actively pushed back against, leading to the failure of these expectations.",
+        "evidence_article_ids": [
+          "art_finance_20240102_005_919f8d37",
+          "art_finance_20240131_004_68afc49a"
+        ],
+        "discovered_by_question_ids": [
+          "v3_fed_funds_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:22:03.424722Z",
+        "last_confirmed_at": "2026-07-24T19:22:03.424722Z"
+      },
+      {
+        "id": "hyp_v3_fed_funds_monthly_change_2024_01_20260724_192203_025_244a82d2",
+        "source_event_id": "evt_finance_20240131_039_d3a81702",
+        "target_event_id": "evt_finance_20240131_033_ae703a88",
+        "relation_type": "enables",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "The Fed's successful pushback against market expectations enabled them to hold rates steady without succumbing to pressure for premature cuts.",
+        "evidence_article_ids": [
+          "art_finance_20240131_004_68afc49a",
+          "art_finance_20240215_006_f5be3170"
+        ],
+        "discovered_by_question_ids": [
+          "v3_fed_funds_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:22:03.439567Z",
+        "last_confirmed_at": "2026-07-24T19:22:03.439567Z"
+      },
+      {
+        "id": "hyp_v3_fed_funds_monthly_change_2024_01_20260724_192203_026_e6bc34a4",
+        "source_event_id": "evt_finance_20240131_034_9691cbae",
+        "target_event_id": "evt_finance_20240131_037_71de9ab5",
+        "relation_type": "amplifies",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Chair Powell's explicit remarks amplified the official Fed communications regarding not being ready to cut rates.",
+        "evidence_article_ids": [
+          "art_finance_20240131_010_9fc4a614"
+        ],
+        "discovered_by_question_ids": [
+          "v3_fed_funds_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:22:03.453622Z",
+        "last_confirmed_at": "2026-07-24T19:22:03.453622Z"
+      }
+    ],
+    "outcome_impacts": [
+      {
+        "id": "imp_1deba2ce",
+        "event_id": "evt_finance_20240109_028_68bde34f",
+        "outcome_event_id": "evt_aea871acba7a",
+        "question_id": "v3_fed_funds_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "RSM US LLP's forecast of a Fed policy pause aligns with the 'within recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_fed_funds_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:22:47.158948Z",
+        "last_confirmed_at": "2026-07-24T19:22:47.158948Z"
+      },
+      {
+        "id": "imp_c58f212f",
+        "event_id": "evt_finance_20240110_029_3f7a5d1d",
+        "outcome_event_id": "evt_aea871acba7a",
+        "question_id": "v3_fed_funds_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Comparison of current conditions to 2006 suggests a stable rate environment, supporting the 'within recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_fed_funds_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:22:47.174402Z",
+        "last_confirmed_at": "2026-07-24T19:22:47.174402Z"
+      },
+      {
+        "id": "imp_e094ef15",
+        "event_id": "evt_finance_20240116_030_fc9c200b",
+        "outcome_event_id": "evt_aea871acba7a",
+        "question_id": "v3_fed_funds_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Research on 30-year mortgages and rates implies stability, contributing to the 'within recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_fed_funds_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:22:47.188835Z",
+        "last_confirmed_at": "2026-07-24T19:22:47.188835Z"
+      },
+      {
+        "id": "imp_1844759a",
+        "event_id": "evt_finance_20240117_031_7a556a40",
+        "outcome_event_id": "evt_aea871acba7a",
+        "question_id": "v3_fed_funds_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Discussion on ending quantitative tightening suggests a controlled monetary policy, supporting the 'within recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_fed_funds_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:22:47.204175Z",
+        "last_confirmed_at": "2026-07-24T19:22:47.204175Z"
+      },
+      {
+        "id": "imp_a4a6a2ec",
+        "event_id": "evt_finance_20240130_032_4fbc0a66",
+        "outcome_event_id": "evt_aea871acba7a",
+        "question_id": "v3_fed_funds_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "Market anticipation of the FOMC meeting likely factored in a steady rate decision, aligning with the 'within recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_fed_funds_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:22:47.218690Z",
+        "last_confirmed_at": "2026-07-24T19:22:47.218690Z"
+      },
+      {
+        "id": "imp_387ee70b",
+        "event_id": "evt_finance_20240131_033_ae703a88",
+        "outcome_event_id": "evt_aea871acba7a",
+        "question_id": "v3_fed_funds_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "The Fed holding rates steady directly supports the 'within recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_fed_funds_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:22:47.237485Z",
+        "last_confirmed_at": "2026-07-24T19:22:47.237485Z"
+      },
+      {
+        "id": "imp_cdab9597",
+        "event_id": "evt_finance_20240131_034_9691cbae",
+        "outcome_event_id": "evt_aea871acba7a",
+        "question_id": "v3_fed_funds_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "Chair Powell's statement about not being ready to cut rates reinforces the 'within recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_fed_funds_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:22:47.252743Z",
+        "last_confirmed_at": "2026-07-24T19:22:47.252743Z"
+      },
+      {
+        "id": "imp_30f1398a",
+        "event_id": "evt_finance_20240215_035_522316ee",
+        "outcome_event_id": "evt_aea871acba7a",
+        "question_id": "v3_fed_funds_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "The dollar pausing as traders digest Fed news suggests stability, supporting the 'within recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_fed_funds_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:22:47.264997Z",
+        "last_confirmed_at": "2026-07-24T19:22:47.264997Z"
+      },
+      {
+        "id": "imp_66db0e5e",
+        "event_id": "evt_finance_20240215_036_06dc6639",
+        "outcome_event_id": "evt_aea871acba7a",
+        "question_id": "v3_fed_funds_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "Robust economic data reducing urgency for rate cuts directly supports the 'within recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_fed_funds_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:22:47.280606Z",
+        "last_confirmed_at": "2026-07-24T19:22:47.280606Z"
+      },
+      {
+        "id": "imp_be768884",
+        "event_id": "evt_finance_20240131_037_71de9ab5",
+        "outcome_event_id": "evt_aea871acba7a",
+        "question_id": "v3_fed_funds_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "Official Fed communications reinforcing no immediate cuts directly support the 'within recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_fed_funds_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:22:47.296280Z",
+        "last_confirmed_at": "2026-07-24T19:22:47.296280Z"
+      },
+      {
+        "id": "imp_371b26c4",
+        "event_id": "evt_finance_20240102_038_413ecfa8",
+        "outcome_event_id": "evt_aea871acba7a",
+        "question_id": "v3_fed_funds_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Market expectations of early rate cuts, while not met, contributed to the overall sentiment of a stable rate environment, supporting the 'within recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_fed_funds_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:22:52.862356Z",
+        "last_confirmed_at": "2026-07-24T19:22:52.862356Z"
+      },
+      {
+        "id": "imp_4dcbf260",
+        "event_id": "evt_finance_20240131_039_d3a81702",
+        "outcome_event_id": "evt_aea871acba7a",
+        "question_id": "v3_fed_funds_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "The Federal Reserve pushing back against market expectations for cuts reinforces the decision to hold rates steady, supporting the 'within recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_fed_funds_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:22:52.875430Z",
+        "last_confirmed_at": "2026-07-24T19:22:52.875430Z"
+      },
+      {
+        "id": "imp_383ebe25",
+        "event_id": "evt_finance_20240131_040_b63e9d6e",
+        "outcome_event_id": "evt_aea871acba7a",
+        "question_id": "v3_fed_funds_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Elevated inflation not reaching the Fed's 2% target provides a reason for the Fed to maintain current rates, supporting the 'within recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_fed_funds_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:22:52.886742Z",
+        "last_confirmed_at": "2026-07-24T19:22:52.886742Z"
+      },
+      {
+        "id": "imp_2b491957",
+        "event_id": "evt_finance_20240131_041_fdc4a09e",
+        "outcome_event_id": "evt_aea871acba7a",
+        "question_id": "v3_fed_funds_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "The Fed's strategy to wait for more robust evidence before cutting rates directly supports the 'within recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_fed_funds_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:22:52.897909Z",
+        "last_confirmed_at": "2026-07-24T19:22:52.897909Z"
+      }
+    ]
+  }
+}

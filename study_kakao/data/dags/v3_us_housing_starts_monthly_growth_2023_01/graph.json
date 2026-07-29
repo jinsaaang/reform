@@ -1,0 +1,154 @@
+{
+  "schema_version": "1.0",
+  "actual_outcome_event_id": "node_05",
+  "graph": {
+    "nodes": [
+      {
+        "id": "node_01",
+        "label": "Elevated-rate and uncertainty headwinds entering 2023",
+        "event_type": "indicator",
+        "occurred_date": "2022-12-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "art_finance_20210924_002_c3f751e1",
+          "art_finance_20220415_002_b6f392e9"
+        ]
+      },
+      {
+        "id": "node_02",
+        "label": "Housing starts entered January from a weaker late-2022 baseline",
+        "event_type": "indicator",
+        "occurred_date": "2022-12-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_cf36205f6a84c4f8"
+        ]
+      },
+      {
+        "id": "node_06",
+        "label": "Temporary mortgage-rate relief may have supported housing activity",
+        "event_type": "indicator",
+        "occurred_date": "2023-01-15",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "background_hypothesis",
+        "article_ids": []
+      },
+      {
+        "id": "node_07",
+        "label": "Builders may have responded to perceived demand",
+        "event_type": "decision",
+        "occurred_date": "2023-01-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "background_hypothesis",
+        "article_ids": []
+      },
+      {
+        "id": "node_03",
+        "label": "Total housing starts rebounded in January 2023",
+        "event_type": "indicator",
+        "occurred_date": "2023-01-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_cf36205f6a84c4f8"
+        ]
+      },
+      {
+        "id": "node_04",
+        "label": "January housing-starts monthly growth measured 4.784%",
+        "event_type": "measurement",
+        "occurred_date": "2023-01-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_cf36205f6a84c4f8"
+        ]
+      },
+      {
+        "id": "node_05",
+        "label": "Resolution: housing-starts growth was above the recent range",
+        "event_type": "outcome",
+        "occurred_date": "2023-02-21",
+        "is_outcome": true,
+        "is_actual_outcome": true,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_cf36205f6a84c4f8"
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_01",
+        "source": "node_01",
+        "target": "node_02",
+        "relationship": "inhibits",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "art_finance_20210924_002_c3f751e1",
+          "art_finance_20220415_002_b6f392e9"
+        ],
+        "rationale": "The cited background is consistent with rate and uncertainty headwinds, but it does not establish that those forces caused the specific late-2022 baseline."
+      },
+      {
+        "id": "edge_02",
+        "source": "node_02",
+        "target": "node_03",
+        "relationship": "precedes",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_cf36205f6a84c4f8"
+        ],
+        "rationale": "The series supplies the prior-month baseline and the January rebound; the edge records temporal comparison rather than unsupported causation."
+      },
+      {
+        "id": "edge_05",
+        "source": "node_06",
+        "target": "node_07",
+        "relationship": "enables",
+        "support_level": "background_hypothesis",
+        "article_ids": [],
+        "rationale": "Mortgage-rate relief could influence builder decisions, but the supplied evidence does not document this mechanism for January."
+      },
+      {
+        "id": "edge_06",
+        "source": "node_07",
+        "target": "node_03",
+        "relationship": "contributes_to",
+        "support_level": "background_hypothesis",
+        "article_ids": [],
+        "rationale": "A builder response is a plausible contributor to starts, but it is not demonstrated by the evidence pack."
+      },
+      {
+        "id": "edge_03",
+        "source": "node_03",
+        "target": "node_04",
+        "relationship": "quantified_as",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_cf36205f6a84c4f8"
+        ],
+        "rationale": "The official series quantifies the January rebound as a 4.784% month-over-month increase."
+      },
+      {
+        "id": "edge_04",
+        "source": "node_04",
+        "target": "node_05",
+        "relationship": "classifies_as",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_cf36205f6a84c4f8"
+        ],
+        "rationale": "A 4.784% change is at or above the preregistered -0.461% upper boundary and therefore resolves above the recent range."
+      }
+    ]
+  }
+}

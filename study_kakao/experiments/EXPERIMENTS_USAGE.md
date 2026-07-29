@@ -1,0 +1,48 @@
+# Paper experiment extensions
+
+These entry points implement `../experiments.md` without modifying the frozen
+forecasting code under `src/hgf`.
+
+## Live-model runners
+
+- `run_paper_main_table.py`: three models, seven methods, three sequential
+  repetitions, four workers.
+- `run_component_ablation.py`: Raw DAG, Full HGF, and three component removals.
+- `run_topk_sensitivity.py`: fixed-rule `k = 1, 3, 5, 7` sensitivity.
+- `run_reasoning_judge.py`: blinded Raw-DAG versus Full-HGF reasoning judge.
+- `run_all_paper_experiments.py`: sequential master orchestrator.
+
+Every live runner requires `OPENROUTER_API_KEY`. The reasoning judge defaults
+to Gemini 3.1 Flash Lite (`google/gemini-3.1-flash-lite`) and reports the
+paper-defined evidence coverage, invalid reasoning, and invalid-among-correct
+rates.
+
+Use `--dry-run` with the main-table or master runner to inspect commands without
+calling a model.
+
+## Offline analysis
+
+- `analyze_main_table.py`
+- `analyze_ablation.py`
+- `analyze_topk.py`
+- `analyze_reasoning_judge.py`
+- `build_case_studies.py`
+- `verify_experiment_extensions.py`
+
+The analysis scripts do not call an external model.
+
+`verify_experiment_extensions.py` checks every file listed by the original
+frozen artifact manifest, permits the additive experiment files, and reports a
+separate digest for the extension layer.
+
+## Frozen-artifact boundary
+
+The public bundle contains 100 test-case exemplar artifacts representing 43
+unique retrieved memory questions. Top-k sensitivity requires a fixed v22
+worked exemplar and frozen semantic lesson for every top-seven candidate.
+Supply additional fixed artifacts with `--additional-exemplar-dir`. The top-k
+runner writes `preflight.json` and stops before any model call if coverage is
+incomplete or if the computed rank-1 item differs from the frozen k=1 mapping.
+
+All runners preserve the canonical stage-specific token limits unless an
+explicit override is supplied.

@@ -1,0 +1,1040 @@
+{
+  "question": {
+    "id": "v3_amzn_revenue_growth_acceleration_2023_12_31",
+    "question_text": "As of 2023-12-31, which range will Amazon.com, Inc.'s quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2023-12-31 fall into?",
+    "question_type": "mcq",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 4,
+    "resolution_date": "2024-02-02T23:59:59Z",
+    "estimated_start_time": "2023-12-31T00:00:00Z",
+    "ground_truth": "within recent range",
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [
+      "evt_15efed79860d",
+      "evt_5a3ee5ea9882",
+      "evt_18f4db0f3906"
+    ],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: Amazon.com, Inc. (AMZN)\nTarget period: fiscal quarter ending 2023-12-31\nFinancial area: corporate_earnings / e-commerce and cloud\nRegion: US\nPre-registered growth-acceleration boundaries: lower -0.936, upper 1.537 percentage points.",
+    "resolution_criteria": "Use the issuer's first SEC 10-Q or 10-K containing the target quarter. Compute the change in YoY revenue growth from the prior quarter. Resolve 'below recent range' below -0.936, 'within recent range' from -0.936 inclusive to 1.537 exclusive, and 'above recent range' at or above 1.537 percentage points.",
+    "resolution_reasoning": "The snapshotted target-quarter YoY revenue growth was 13.91 percent and growth acceleration was 1.338 percentage points; it resolved to 'within recent range'.",
+    "options": [
+      "below recent range",
+      "within recent range",
+      "above recent range"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": "\n## Executive Summary\nAmazon.com Inc. reported Q4 2023 results that significantly exceeded analyst expectations, leading to its year-over-year revenue-growth acceleration falling \"within recent range.\" This strong performance was primarily driven by robust holiday season sales in its e-commerce segment, coupled with accelerated growth in Amazon Web Services (AWS) buoyed by generative AI adoption, and a substantial increase in advertising revenue. The company’s efficient cost management and optimistic Q1 2024 guidance further reinforced investor confidence, showcasing broad-based strength across its diverse business segments.\n\n## Timeline Of Key Events\n*   **2023-12-31:** End of Amazon's fiscal fourth quarter, setting the stage for earnings calculations.\n*   **2024-01-19:** Amazon taps operations SVP for AWS CFO amidst earlier concerns about cloud growth slowing [art_finance_20240119_009_880213a8] (Though the concerns were later alleviated by strong Q4 results).\n*   **2024-01-29:** Amazon Prime Video ads debut, signaling a new revenue stream and potential for significant advertising growth in the future [art_finance_20240129_004_de54d6bf].\n*   **2024-02-01:** Amazon announces Q4 2023 earnings, beating Wall Street estimates across revenue, profit, and segment-specific metrics. Shares jump in extended trading [art_finance_20240201_005_c38dbc57, art_finance_20240201_002_140dcc8f, art_finance_20240201_007_f54c9e73, art_finance_20240201_002_5dcec872, art_finance_20240201_004_38264ced].\n    *   AWS revenue growth accelerates to 13% YoY [art_finance_20240201_007_f54c9e73, art_finance_20240201_004_38264ced].\n    *   Advertising sales climb significantly by 27% [art_finance_20240201_002_5dcec872].\n\n## Causal Chain Analysis\nThe primary cause for Amazon's Q4 2023 revenue-growth acceleration falling \"within recent range\" was a strong holiday shopping season combined with robust performance in its key growth engines. The holiday season drove strong growth in Amazon’s e-commerce segment, as consumers continued to rely on the platform for their purchases [art_finance_20240201_002_140dcc8f]. Simultaneously, the Amazon Web Services (AWS) segment experienced accelerated revenue growth of 13% year-over-year, which was significantly influenced by increasing customer adoption of generative AI services within enterprises [art_finance_20240201_007_f54c9e73, art_finance_20240201_004_38264ced]. This resurgence in cloud spending, particularly for AI, directly contributed to the overall revenue acceleration. Furthermore, Amazon's advertising business demonstrated remarkable strength, with sales climbing 27% year-over-year [art_finance_20240201_002_5dcec872]. This growth was partially fueled by the introduction of ads on Prime Video [art_finance_20240129_004_de54d6bf], which expanded Amazon's advertising inventory and appeal. The combination of these factors – strong e-commerce, re-accelerating AWS, and booming advertising – collectively led to Amazon's overall revenue growth accelerating and comfortably landing within the \"recent range\" as analysts had expected or exceeded [art_finance_20240201_005_c38dbc57, art_finance_20240202_006_be24b9f1].\n\n## Countervailing Factors\nPrior to the Q4 2023 earnings report, a potential countervailing factor was the overall slowdown in cloud spending observed earlier in 2023, which had led to some concerns about AWS's growth trajectory [art_finance_20240119_009_880213a8]. Investors and analysts were cautiously watching AWS, which is a major profit driver for Amazon, to see if its growth would remain subdued. However, these concerns were ultimately overcome by the actual Q4 results, which showed a significant re-acceleration in AWS growth due to factors like increased enterprise adoption of generative AI [art_finance_20240201_007_f54c9e73]. The strong holiday shopping season and explosive growth in advertising revenue also helped to offset any lingering anxieties about cloud slowdown, showcasing Amazon's diversified revenue streams’ resilience.\n\n## Event Candidate Inventory\n*   **E1 - Amazon Q4 2023 Earnings Release and Beat:**\n    *   Date: 2024-02-01\n    *   Why it matters causally: This event directly announced the financial performance, which included the revenue-growth acceleration, and significantly surpassed analyst expectations, reinforcing the \"within recent range\" outcome.\n    *   Source article IDs: art_finance_20240201_005_c38dbc57, art_finance_20240201_002_140dcc8f, art_finance_20240201_007_f54c9e73, art_finance_20240201_002_5dcec872, art_finance_20240201_004_38264ced, art_finance_20240202_006_be24b9f1\n*   **E2 - Accelerated AWS Growth Driven by AI:**\n    *   Date: Q4 2023 (unveiled on 2024-02-01)\n    *   Why it matters causally: The re-acceleration of AWS revenue growth, particularly due to enterprise AI adoption, was a critical component of Amazon's overall strong performance and exceeded prior expectations.\n    *   Source article IDs: art_finance_20240201_007_f54c9e73, art_finance_20240201_004_38264ced\n*   **E3 - Strong Holiday E-commerce Sales:**\n    *   Date: Q4 2023 (unveiled on 2024-02-01)\n    *   Why it matters causally: Robust consumer spending during the holiday season boosted Amazon's core e-commerce segment, contributing significantly to the overall revenue increase.\n    *   Source article IDs: art_finance_20240201_002_140dcc8f, art_finance_20240202_006_be24b9f1\n*   **E4 - Significant Increase in Advertising Revenue:**\n    *   Date: Q4 2023 (unveiled on 2024-02-01)\n    *   Why it matters causally: The substantial 27% growth in advertising revenue provided a powerful boost to Amazon's top line, diversifying its profit sources and exceeding expectations.\n    *   Source article IDs: art_finance_20240201_002_5dcec872, art_finance_20240129_004_de54d6bf\n\n## Evidence Mapping Table\n\n| Claim/Event | Article IDs | Date Support | Confidence (0-1) | Notes |\n|---|---|---|---|---|\n| Amazon Q4 2023 Revenue Exceeded Expectations | art_finance_20240201_005_c38dbc57, art_finance_20240201_002_140dcc8f, art_finance_20240202_006_be24b9f1 |\n| 2024-02-01, 2024-02-02 | 1.0 | Multiple sources confirm the beat. |\n| AWS Revenue Growth Accelerated (13%) | art_finance_20240201_007_f54c9e73, art_finance_20240201_004_38264ced | 2024-02-01 | 1.0 | Specific growth rate cited by multiple financial news outlets. |\n| Strong Holiday E-commerce Performance | art_finance_20240201_002_140dcc8f, art_finance_20240202_006_be24b9f1 | 2024-02-01, 2024-02-02 | 0.9 | Mentioned as a key driver for overall revenue. |\n| Advertising Revenue Grew Significantly (27%) | art_finance_20240201_002_5dcec872 | 2024-02-01 | 1.0 | Specific growth rate confirmed. |\n| Generative AI Adoption Boosted AWS | art_finance_20240201_007_f54c9e73 | 2024-02-01 | 0.8 | Cited as a factor in AWS re-acceleration. |\n| Prime Video Ads as a Future Revenue Driver | art_finance_20240129_004_de54d6bf | 2024-01-29 | 0.7 | Introduces a new advertising revenue stream. |\n| Prior Concerns about AWS Slowdown Overcome | art_finance_20240119_009_880213a8, art_finance_20240201_007_f54c9e73 | 2024-01-19, 2024-02-01 | 0.9 | Initial concerns were clearly dispelled by earnings. |\n\n## Uncertainties And Alternative Paths\nOne uncertainty was the extent to which the prior slowdown in cloud spending would impact AWS's performance; however, this was mitigated by stronger-than-expected enterprise uptake of generative AI. An alternative path could have been a continued deceleration of AWS growth and weaker holiday sales, potentially pushing Amazon's revenue growth acceleration into the \"below recent range.\" However, strong consumer spending and the rapid adoption of AI services prevented this outcome. Another factor that could have led to a different outcome was if the advertising segment had not performed as robustly, but new initiatives like Prime Video ads and overall market demand for digital advertising ensured strong results. The actual outcome was a result of broad-based strength rather than reliance on a single segment.",
+    "graph_built": true,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.199865Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "amzn_revenue_growth_acceleration",
+        "event_cluster_id": "amzn_earnings_2023-12-31",
+        "category": "corporate_earnings",
+        "original_domain": "corporate_earnings",
+        "subdomain": "e-commerce and cloud",
+        "entity": "Amazon.com, Inc. (AMZN)",
+        "region": "US",
+        "target_metric": "quarterly revenue year-over-year growth acceleration",
+        "target_period": "fiscal quarter ending 2023-12-31",
+        "forecast_cutoff": "2023-12-31T00:00:00+00:00",
+        "forecast_date_options": [
+          "2023-12-31"
+        ],
+        "resolution_available_at": "2024-02-02T23:59:59+00:00",
+        "horizon_days": 33,
+        "source_type": "sec_companyfacts_snapshot",
+        "source_series_id": "CIK0001018724:revenue",
+        "source_homepage": "https://www.sec.gov/edgar/browse/?CIK=1018724",
+        "comparison_rule": "target YoY revenue-growth acceleration bucketed by quartiles of the four prior quarterly accelerations",
+        "comparison_threshold": 12.574252,
+        "comparison_thresholds": {
+          "lower": -0.936105,
+          "upper": 1.536987
+        },
+        "change_unit": "percent",
+        "threshold_observation_dates": [
+          "2022-09-30",
+          "2022-12-31",
+          "2023-09-30"
+        ],
+        "split": "memory",
+        "family_position": 3,
+        "family_size": 8,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "within recent range",
+        "resolved_class": "within recent range",
+        "resolution_value": 169961000000,
+        "target_change": 1.33757345,
+        "target_yoy_growth": 13.91182542,
+        "target_growth_acceleration": 1.33757345,
+        "source_observation_date": "2023-12-31",
+        "resolution_document": {
+          "publisher": "U.S. Securities and Exchange Commission",
+          "title": "Amazon.com, Inc. 10-K filed 2024-02-02",
+          "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000008/0001018724-24-000008-index.html"
+        },
+        "source_download_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001018724.json",
+        "source_sha256": "c991e221b9e1956e53c1e7c05f6a6683f926e43b23e2c800f626e997a268cc93",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00",
+        "accession_number": "0001018724-24-000008",
+        "xbrl_tag": "RevenueFromContractWithCustomerExcludingAssessedTax"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_5a3ee5ea9882",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 14,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_20240202_003_075ea763",
+        "title": "Big Tech Earnings Recap: The Numbers and What CEOs Are Saying About 2024 - observer.com",
+        "url": "https://observer.com/2024/02/earnings-recap-2023-google-microsoft-amazon-meta-apple",
+        "source": "observer.com",
+        "published_date": "2024-02-02T19:04:39+00:00"
+      },
+      {
+        "id": "art_finance_20240202_006_be24b9f1",
+        "title": "Amazon Beats Revenue and Profit Expectations for Q4 - Transport Topics",
+        "url": "https://www.ttnews.com/articles/amazon-earnings-q4-2023",
+        "source": "ttnews.com",
+        "published_date": "2024-02-02T09:43:09-05:00"
+      },
+      {
+        "id": "art_finance_20240201_007_f54c9e73",
+        "title": "Amazon cloud unit speeds up revenue growth as clients adopt AI services - CNBC",
+        "url": "https://www.cnbc.com/2024/02/01/aws-q4-earnings-report-2023.html",
+        "source": "cnbc.com",
+        "published_date": "2024-02-01T21:36:19+00:00"
+      },
+      {
+        "id": "art_finance_20240201_002_5dcec872",
+        "title": "Amazon Beats Wall Street Q4 Estimates as Ad Sales Climb 27% - Variety",
+        "url": "https://variety.com/2024/digital/news/amazon-earnings-q4-1235894477",
+        "source": "variety.com",
+        "published_date": "2024-02-01T21:17:16+00:00"
+      },
+      {
+        "id": "art_finance_20240201_003_5118086e",
+        "title": "Amazon (AMZN) Share Price Gains After Robust Sales, Strong Profit Outlook - Bloomberg.com",
+        "url": "https://www.bloomberg.com/news/articles/2024-02-01/amazon-projectsprofit-topping-estimates-on-further-cost-cutting",
+        "source": "bloomberg.com",
+        "published_date": "2024-02-01T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240129_004_de54d6bf",
+        "title": "Amazon Prime Video ads debut, could net $2B in ad revenue in 2025 - StreamTV Insider",
+        "url": "https://www.streamtvinsider.com/advertising/amazon-prime-video-ads-debut-could-net-2b-ad-revenue-2025",
+        "source": "streamtvinsider.com",
+        "published_date": "2024-01-29T15:16:45-05:00"
+      },
+      {
+        "id": "art_finance_20240201_004_38264ced",
+        "title": "AWS Q4 revenue growth 13% as Amazon's results shine - Constellation Research",
+        "url": "https://www.constellationr.com/insights/news/aws-q4-revenue-growth-13-amazons-results-shine",
+        "source": "constellationr.com",
+        "published_date": "2024-02-01T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240201_005_6ae18c51",
+        "title": "Amazon.com Inc (AMZN) Q4 2023 Earnings Call Transcript Highlights: Surging Profits and AWS Growth",
+        "url": "https://finance.yahoo.com/news/amazon-com-inc-amzn-q4-213310377.html",
+        "source": "finance.yahoo.com",
+        "published_date": "2024-02-01T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240201_002_140dcc8f",
+        "title": "Amazon Q4 Earnings Top Expectations on Holiday Sales, AWS Growth; Stock Jumps - Investopedia",
+        "url": "https://www.investopedia.com/amazon-q4-2023-earnings-8557253",
+        "source": "investopedia.com",
+        "published_date": "2024-02-01T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240201_007_02875f0f",
+        "title": "AMZN Q4 2023 Earnings Report on 2/1/2024 - MarketBeatAmazon (AMZN) Q4 earnings report 2023 - CNBCAmazon.com Inc (AMZN) Q4 2023 Earnings Call Transcript ...Amazon earnings: Q4 2023 results will be shared February 1, 2024Amazon.com, Inc. - Quarterly resultsAmazon.com (AMZN) Stock Trends and Sentiment 2026",
+        "url": "https://www.marketbeat.com/earnings/reports/2024-2-1-amazoncom-inc-stock",
+        "source": "marketbeat.com",
+        "published_date": "2024-02-01T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240201_005_c38dbc57",
+        "title": "Amazon reports better-than-expected results as revenue jumps 14% - CNBC",
+        "url": "https://www.cnbc.com/2024/02/01/amazon-amzn-q4-earnings-report-2023.html",
+        "source": "cnbc.com",
+        "published_date": "2024-02-01T17:00:01+00:00"
+      },
+      {
+        "id": "art_finance_20240201_008_0bd61bf0",
+        "title": "Amazon.com Inc (AMZN) Q4 2023 Earnings Call Transcript ...",
+        "url": "https://finance.yahoo.com/news/amazon-com-inc-amzn-q4-213310377.html?fr=sycsrp_catchall",
+        "source": "finance.yahoo.com",
+        "published_date": "2024-02-01T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240119_009_880213a8",
+        "title": "Amazon taps operations SVP for AWS CFO amid rocky cloud growth - CFO Dive",
+        "url": "https://www.cfodive.com/news/amazon-taps-operations-svp-aws-cfo-rocky-cloud-growth/705066",
+        "source": "cfodive.com",
+        "published_date": "2024-01-19T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20210920_006_4378453b",
+        "title": "Amazon Usage and Growth Statistics – Revenue, Users, and More - Influencer Marketing Hub",
+        "url": "https://influencermarketinghub.com/amazon-stats",
+        "source": "influencermarketinghub.com",
+        "published_date": "2021-09-20T10:28:27+00:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_5a3ee5ea9882",
+      "events_count": 11,
+      "hypotheses_count": 11
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 4,
+      "avg_depth": 2.83,
+      "quality_score": 0.91,
+      "depth_score": 1.0,
+      "confidence_score": 0.85,
+      "strength_score": 0.75,
+      "evidence_score": 1.0,
+      "event_count": 11,
+      "hypothesis_count": 11
+    },
+    "nodes": [
+      {
+        "id": "evt_15efed79860d",
+        "title": "Option 1: below recent range",
+        "description": "Question resolves to: below recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-02-02T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_amzn_revenue_growth_acceleration_2023_12_31",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 0,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T18:42:29.510790Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_18f4db0f3906",
+        "title": "Option 3: above recent range",
+        "description": "Question resolves to: above recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-02-02T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_amzn_revenue_growth_acceleration_2023_12_31",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 2,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T18:42:29.510809Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_5a3ee5ea9882",
+        "title": "Option 2: within recent range",
+        "description": "Question resolves to: within recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-02-02T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_amzn_revenue_growth_acceleration_2023_12_31",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 1,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T18:42:29.510800Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_business_20231231_003_703c1cfa",
+        "title": "Strong Holiday E-commerce Sales",
+        "description": "Robust consumer spending during the holiday season boosted Amazon's core e-commerce segment, contributing significantly to the overall revenue increase.",
+        "event_type": "indicator",
+        "domain": "business",
+        "tags": [],
+        "occurred_date": "2023-12-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240201_002_140dcc8f",
+          "art_finance_20240202_006_be24b9f1"
+        ],
+        "extracted_for_question_id": "v3_amzn_revenue_growth_acceleration_2023_12_31",
+        "source_article_id": "art_finance_20240201_002_140dcc8f",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_amzn_revenue_growth_acceleration_2023_12_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T18:48:19.402827Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_business_20231231_009_9336ec18",
+        "title": "Robust Consumer Spending During Holiday Season",
+        "description": "Consumers continued to rely on Amazon's platform for purchases during the holiday season, driving strong e-commerce growth.",
+        "event_type": "indicator",
+        "domain": "business",
+        "tags": [],
+        "occurred_date": "2023-12-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240201_002_140dcc8f"
+        ],
+        "extracted_for_question_id": "v3_amzn_revenue_growth_acceleration_2023_12_31",
+        "source_article_id": "art_finance_20240201_002_140dcc8f",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_amzn_revenue_growth_acceleration_2023_12_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T18:48:19.479517Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_business_20240129_005_7a299ed9",
+        "title": "Amazon Prime Video Ads Debut",
+        "description": "Amazon Prime Video ads debuted, signaling a new revenue stream and potential for significant advertising growth.",
+        "event_type": "indicator",
+        "domain": "business",
+        "tags": [],
+        "occurred_date": "2024-01-29T15:16:45Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240129_004_de54d6bf"
+        ],
+        "extracted_for_question_id": "v3_amzn_revenue_growth_acceleration_2023_12_31",
+        "source_article_id": "art_finance_20240129_004_de54d6bf",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_amzn_revenue_growth_acceleration_2023_12_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T18:48:19.427149Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_business_20240201_004_f2b834b3",
+        "title": "Significant Increase in Advertising Revenue",
+        "description": "Amazon's advertising business demonstrated remarkable strength, with sales climbing 27% year-over-year.",
+        "event_type": "indicator",
+        "domain": "business",
+        "tags": [],
+        "occurred_date": "2024-02-01T17:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240201_002_5dcec872"
+        ],
+        "extracted_for_question_id": "v3_amzn_revenue_growth_acceleration_2023_12_31",
+        "source_article_id": "art_finance_20240201_002_5dcec872",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_amzn_revenue_growth_acceleration_2023_12_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T18:48:19.415238Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_business_20240201_010_c9ef96f5",
+        "title": "Amazon's Diversified Revenue Streams Show Resilience",
+        "description": "The strong holiday shopping season and explosive growth in advertising revenue helped to offset any lingering anxieties about cloud slowdown, showcasing Amazon's diversified revenue streams’ resilience.",
+        "event_type": "indicator",
+        "domain": "business",
+        "tags": [],
+        "occurred_date": "2024-02-01T17:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240202_006_be24b9f1"
+        ],
+        "extracted_for_question_id": "v3_amzn_revenue_growth_acceleration_2023_12_31",
+        "source_article_id": "art_finance_20240202_006_be24b9f1",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_amzn_revenue_growth_acceleration_2023_12_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T18:48:19.491719Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20231231_008_23d31698",
+        "title": "End of Amazon's Fiscal Fourth Quarter 2023",
+        "description": "The end of Amazon's fiscal fourth quarter, setting the stage for earnings calculations.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-12-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240202_006_be24b9f1"
+        ],
+        "extracted_for_question_id": "v3_amzn_revenue_growth_acceleration_2023_12_31",
+        "source_article_id": "art_finance_20240202_006_be24b9f1",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_amzn_revenue_growth_acceleration_2023_12_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T18:48:19.467008Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240119_006_14d0fb10",
+        "title": "Prior Concerns about AWS Cloud Growth Slowdown",
+        "description": "Earlier in 2023, there were concerns about a potential slowdown in cloud spending impacting AWS's growth trajectory.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-19T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240119_009_880213a8"
+        ],
+        "extracted_for_question_id": "v3_amzn_revenue_growth_acceleration_2023_12_31",
+        "source_article_id": "art_finance_20240119_009_880213a8",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_amzn_revenue_growth_acceleration_2023_12_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T18:48:19.440355Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240201_001_65be947a",
+        "title": "Amazon Q4 2023 Earnings Release and Beat",
+        "description": "Amazon announced Q4 2023 earnings, beating Wall Street estimates across revenue, profit, and segment-specific metrics. Shares jumped in extended trading.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-02-01T17:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240201_005_c38dbc57",
+          "art_finance_20240201_002_140dcc8f",
+          "art_finance_20240201_002_5dcec872",
+          "art_finance_20240201_007_f54c9e73",
+          "art_finance_20240201_004_38264ced",
+          "art_finance_20240202_006_be24b9f1"
+        ],
+        "extracted_for_question_id": "v3_amzn_revenue_growth_acceleration_2023_12_31",
+        "source_article_id": "art_finance_20240201_005_c38dbc57",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_amzn_revenue_growth_acceleration_2023_12_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T18:48:19.377798Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_tech_20231231_007_23ab57a0",
+        "title": "Increased Enterprise Adoption of Generative AI",
+        "description": "Stronger-than-expected enterprise uptake of generative AI mitigated the prior slowdown in cloud spending and boosted AWS performance.",
+        "event_type": "indicator",
+        "domain": "tech",
+        "tags": [],
+        "occurred_date": "2023-12-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240201_007_f54c9e73"
+        ],
+        "extracted_for_question_id": "v3_amzn_revenue_growth_acceleration_2023_12_31",
+        "source_article_id": "art_finance_20240201_007_f54c9e73",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_amzn_revenue_growth_acceleration_2023_12_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T18:48:19.454445Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_tech_20240201_002_b4145237",
+        "title": "Accelerated AWS Growth Driven by AI Adoption",
+        "description": "Amazon Web Services (AWS) revenue growth accelerated to 13% year-over-year, significantly influenced by increasing customer adoption of generative AI services within enterprises.",
+        "event_type": "indicator",
+        "domain": "tech",
+        "tags": [],
+        "occurred_date": "2024-02-01T17:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240201_007_f54c9e73",
+          "art_finance_20240201_004_38264ced"
+        ],
+        "extracted_for_question_id": "v3_amzn_revenue_growth_acceleration_2023_12_31",
+        "source_article_id": "art_finance_20240201_007_f54c9e73",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_amzn_revenue_growth_acceleration_2023_12_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T18:48:19.390652Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_amzn_revenue_growth_acceleration_2023_12_31_20260724_184819_001_b39d9e82",
+        "source_event_id": "evt_finance_20231231_008_23d31698",
+        "target_event_id": "evt_finance_20240201_001_65be947a",
+        "relation_type": "enables",
+        "strength": 0.8,
+        "confidence": 1.0,
+        "time_lag_hours": null,
+        "reasoning": "The end of the fiscal quarter is a prerequisite for the earnings report.",
+        "evidence_article_ids": [
+          "art_finance_20240202_006_be24b9f1"
+        ],
+        "discovered_by_question_ids": [
+          "v3_amzn_revenue_growth_acceleration_2023_12_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T18:48:19.508305Z",
+        "last_confirmed_at": "2026-07-24T18:48:19.508305Z"
+      },
+      {
+        "id": "hyp_v3_amzn_revenue_growth_acceleration_2023_12_31_20260724_184819_002_67a60200",
+        "source_event_id": "evt_tech_20240201_002_b4145237",
+        "target_event_id": "evt_finance_20240201_001_65be947a",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Accelerated AWS growth was a critical component of Amazon's overall strong performance and contributed to beating expectations.",
+        "evidence_article_ids": [
+          "art_finance_20240201_007_f54c9e73",
+          "art_finance_20240201_004_38264ced",
+          "art_finance_20240201_005_c38dbc57"
+        ],
+        "discovered_by_question_ids": [
+          "v3_amzn_revenue_growth_acceleration_2023_12_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T18:48:19.520213Z",
+        "last_confirmed_at": "2026-07-24T18:48:19.520213Z"
+      },
+      {
+        "id": "hyp_v3_amzn_revenue_growth_acceleration_2023_12_31_20260724_184819_003_6288005d",
+        "source_event_id": "evt_business_20231231_003_703c1cfa",
+        "target_event_id": "evt_finance_20240201_001_65be947a",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Robust holiday sales significantly boosted Amazon's e-commerce segment, contributing to the overall revenue increase and beating expectations.",
+        "evidence_article_ids": [
+          "art_finance_20240201_002_140dcc8f",
+          "art_finance_20240202_006_be24b9f1",
+          "art_finance_20240201_005_c38dbc57"
+        ],
+        "discovered_by_question_ids": [
+          "v3_amzn_revenue_growth_acceleration_2023_12_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T18:48:19.534035Z",
+        "last_confirmed_at": "2026-07-24T18:48:19.534035Z"
+      },
+      {
+        "id": "hyp_v3_amzn_revenue_growth_acceleration_2023_12_31_20260724_184819_004_f1210c76",
+        "source_event_id": "evt_business_20240201_004_f2b834b3",
+        "target_event_id": "evt_finance_20240201_001_65be947a",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The substantial growth in advertising revenue provided a powerful boost to Amazon's top line, contributing to beating expectations.",
+        "evidence_article_ids": [
+          "art_finance_20240201_002_5dcec872",
+          "art_finance_20240201_005_c38dbc57"
+        ],
+        "discovered_by_question_ids": [
+          "v3_amzn_revenue_growth_acceleration_2023_12_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T18:48:19.546066Z",
+        "last_confirmed_at": "2026-07-24T18:48:19.546066Z"
+      },
+      {
+        "id": "hyp_v3_amzn_revenue_growth_acceleration_2023_12_31_20260724_184819_005_34c51ec1",
+        "source_event_id": "evt_business_20240129_005_7a299ed9",
+        "target_event_id": "evt_business_20240201_004_f2b834b3",
+        "relation_type": "enables",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "The introduction of ads on Prime Video expanded Amazon's advertising inventory and appeal, partially fueling the growth in advertising revenue.",
+        "evidence_article_ids": [
+          "art_finance_20240129_004_de54d6bf",
+          "art_finance_20240201_002_5dcec872"
+        ],
+        "discovered_by_question_ids": [
+          "v3_amzn_revenue_growth_acceleration_2023_12_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T18:48:19.558090Z",
+        "last_confirmed_at": "2026-07-24T18:48:19.558090Z"
+      },
+      {
+        "id": "hyp_v3_amzn_revenue_growth_acceleration_2023_12_31_20260724_184819_006_bfbc8da3",
+        "source_event_id": "evt_tech_20231231_007_23ab57a0",
+        "target_event_id": "evt_tech_20240201_002_b4145237",
+        "relation_type": "causes",
+        "strength": 0.9,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Increased enterprise adoption of generative AI was a critical factor in the re-acceleration of AWS revenue growth.",
+        "evidence_article_ids": [
+          "art_finance_20240201_007_f54c9e73"
+        ],
+        "discovered_by_question_ids": [
+          "v3_amzn_revenue_growth_acceleration_2023_12_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T18:48:19.572237Z",
+        "last_confirmed_at": "2026-07-24T18:48:19.572237Z"
+      },
+      {
+        "id": "hyp_v3_amzn_revenue_growth_acceleration_2023_12_31_20260724_184819_007_960874b4",
+        "source_event_id": "evt_finance_20240119_006_14d0fb10",
+        "target_event_id": "evt_tech_20240201_002_b4145237",
+        "relation_type": "inhibits",
+        "strength": 0.5,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Prior concerns about cloud spending slowdown were a potential inhibitor to AWS growth, but were overcome by other factors.",
+        "evidence_article_ids": [
+          "art_finance_20240119_009_880213a8",
+          "art_finance_20240201_007_f54c9e73"
+        ],
+        "discovered_by_question_ids": [
+          "v3_amzn_revenue_growth_acceleration_2023_12_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T18:48:19.584694Z",
+        "last_confirmed_at": "2026-07-24T18:48:19.584694Z"
+      },
+      {
+        "id": "hyp_v3_amzn_revenue_growth_acceleration_2023_12_31_20260724_184819_008_b4b8364b",
+        "source_event_id": "evt_business_20231231_009_9336ec18",
+        "target_event_id": "evt_business_20231231_003_703c1cfa",
+        "relation_type": "causes",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Robust consumer spending directly led to strong holiday e-commerce sales for Amazon.",
+        "evidence_article_ids": [
+          "art_finance_20240201_002_140dcc8f"
+        ],
+        "discovered_by_question_ids": [
+          "v3_amzn_revenue_growth_acceleration_2023_12_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T18:48:19.596691Z",
+        "last_confirmed_at": "2026-07-24T18:48:19.596691Z"
+      },
+      {
+        "id": "hyp_v3_amzn_revenue_growth_acceleration_2023_12_31_20260724_184819_009_5b2ade21",
+        "source_event_id": "evt_business_20240201_010_c9ef96f5",
+        "target_event_id": "evt_finance_20240201_001_65be947a",
+        "relation_type": "enables",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "The resilience of Amazon's diversified revenue streams, including strong holiday sales and advertising growth, helped overcome cloud slowdown anxieties and contributed to the overall beat.",
+        "evidence_article_ids": [
+          "art_finance_20240202_006_be24b9f1"
+        ],
+        "discovered_by_question_ids": [
+          "v3_amzn_revenue_growth_acceleration_2023_12_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T18:48:19.609279Z",
+        "last_confirmed_at": "2026-07-24T18:48:19.609279Z"
+      },
+      {
+        "id": "hyp_v3_amzn_revenue_growth_acceleration_2023_12_31_20260724_184819_010_eab88e84",
+        "source_event_id": "evt_tech_20231231_007_23ab57a0",
+        "target_event_id": "evt_finance_20240119_006_14d0fb10",
+        "relation_type": "prevents",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Stronger-than-expected enterprise uptake of generative AI directly mitigated and prevented the full impact of prior concerns about AWS cloud slowdown.",
+        "evidence_article_ids": [
+          "art_finance_20240201_007_f54c9e73"
+        ],
+        "discovered_by_question_ids": [
+          "v3_amzn_revenue_growth_acceleration_2023_12_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T18:48:19.623700Z",
+        "last_confirmed_at": "2026-07-24T18:48:19.623700Z"
+      },
+      {
+        "id": "hyp_v3_amzn_revenue_growth_acceleration_2023_12_31_20260724_184829_011_2de15ad6",
+        "source_event_id": "evt_finance_20240201_001_65be947a",
+        "target_event_id": "evt_5a3ee5ea9882",
+        "relation_type": "causes",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Amazon's Q4 2023 earnings beat directly led to the revenue-growth acceleration falling within the recent range.",
+        "evidence_article_ids": [
+          "art_finance_20240201_005_c38dbc57",
+          "art_finance_20240201_002_140dcc8f",
+          "art_finance_20240201_002_5dcec872",
+          "art_finance_20240201_007_f54c9e73",
+          "art_finance_20240201_004_38264ced",
+          "art_finance_20240202_006_be24b9f1"
+        ],
+        "discovered_by_question_ids": [
+          "v3_amzn_revenue_growth_acceleration_2023_12_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T18:48:29.146015Z",
+        "last_confirmed_at": "2026-07-24T18:48:29.146015Z"
+      }
+    ],
+    "outcome_impacts": [
+      {
+        "id": "imp_90a5fc28",
+        "event_id": "evt_finance_20240201_001_65be947a",
+        "outcome_event_id": "evt_5a3ee5ea9882",
+        "question_id": "v3_amzn_revenue_growth_acceleration_2023_12_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "Amazon's Q4 2023 earnings beat directly resulted in the revenue-growth acceleration falling within the recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_amzn_revenue_growth_acceleration_2023_12_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T18:48:29.159045Z",
+        "last_confirmed_at": "2026-07-24T18:48:29.159045Z"
+      },
+      {
+        "id": "imp_46ddb18c",
+        "event_id": "evt_tech_20240201_002_b4145237",
+        "outcome_event_id": "evt_5a3ee5ea9882",
+        "question_id": "v3_amzn_revenue_growth_acceleration_2023_12_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "Accelerated AWS growth significantly contributed to the overall strong performance and the revenue-growth acceleration.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_amzn_revenue_growth_acceleration_2023_12_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T18:48:29.169337Z",
+        "last_confirmed_at": "2026-07-24T18:48:29.169337Z"
+      },
+      {
+        "id": "imp_7418e7c3",
+        "event_id": "evt_business_20231231_003_703c1cfa",
+        "outcome_event_id": "evt_5a3ee5ea9882",
+        "question_id": "v3_amzn_revenue_growth_acceleration_2023_12_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "Strong holiday e-commerce sales boosted Amazon's core business, contributing to the revenue-growth acceleration.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_amzn_revenue_growth_acceleration_2023_12_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T18:48:29.179063Z",
+        "last_confirmed_at": "2026-07-24T18:48:29.179063Z"
+      },
+      {
+        "id": "imp_1b9406f4",
+        "event_id": "evt_business_20240201_004_f2b834b3",
+        "outcome_event_id": "evt_5a3ee5ea9882",
+        "question_id": "v3_amzn_revenue_growth_acceleration_2023_12_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.9,
+        "reasoning": "Significant increase in advertising revenue provided a powerful boost to Amazon's top line, contributing to the revenue-growth acceleration.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_amzn_revenue_growth_acceleration_2023_12_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T18:48:29.189349Z",
+        "last_confirmed_at": "2026-07-24T18:48:29.189349Z"
+      },
+      {
+        "id": "imp_e94ee186",
+        "event_id": "evt_business_20240129_005_7a299ed9",
+        "outcome_event_id": "evt_5a3ee5ea9882",
+        "question_id": "v3_amzn_revenue_growth_acceleration_2023_12_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Prime Video ads debut contributed to the growth in advertising revenue, which in turn supported the overall revenue-growth acceleration.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_amzn_revenue_growth_acceleration_2023_12_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T18:48:29.199015Z",
+        "last_confirmed_at": "2026-07-24T18:48:29.199015Z"
+      },
+      {
+        "id": "imp_0eb62bc1",
+        "event_id": "evt_finance_20240119_006_14d0fb10",
+        "outcome_event_id": "evt_5a3ee5ea9882",
+        "question_id": "v3_amzn_revenue_growth_acceleration_2023_12_31",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.5,
+        "confidence": 0.8,
+        "reasoning": "Prior concerns about AWS cloud growth slowdown were a potential inhibitor to the revenue-growth acceleration, but were ultimately overcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_amzn_revenue_growth_acceleration_2023_12_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T18:48:29.209221Z",
+        "last_confirmed_at": "2026-07-24T18:48:29.209221Z"
+      },
+      {
+        "id": "imp_510bfa98",
+        "event_id": "evt_tech_20231231_007_23ab57a0",
+        "outcome_event_id": "evt_5a3ee5ea9882",
+        "question_id": "v3_amzn_revenue_growth_acceleration_2023_12_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.8,
+        "reasoning": "Increased enterprise adoption of generative AI directly mitigated concerns about AWS slowdown and boosted its performance, contributing to the revenue-growth acceleration.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_amzn_revenue_growth_acceleration_2023_12_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T18:48:29.218926Z",
+        "last_confirmed_at": "2026-07-24T18:48:29.218926Z"
+      },
+      {
+        "id": "imp_0e89a9c6",
+        "event_id": "evt_finance_20231231_008_23d31698",
+        "outcome_event_id": "evt_5a3ee5ea9882",
+        "question_id": "v3_amzn_revenue_growth_acceleration_2023_12_31",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.1,
+        "confidence": 1.0,
+        "reasoning": "The end of the fiscal quarter is a procedural event that enables the earnings report, but does not directly influence the acceleration itself.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_amzn_revenue_growth_acceleration_2023_12_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T18:48:29.230551Z",
+        "last_confirmed_at": "2026-07-24T18:48:29.230551Z"
+      },
+      {
+        "id": "imp_df968d4e",
+        "event_id": "evt_business_20231231_009_9336ec18",
+        "outcome_event_id": "evt_5a3ee5ea9882",
+        "question_id": "v3_amzn_revenue_growth_acceleration_2023_12_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "Robust consumer spending during the holiday season directly led to strong e-commerce sales, which was a major contributor to the revenue-growth acceleration.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_amzn_revenue_growth_acceleration_2023_12_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T18:48:29.240450Z",
+        "last_confirmed_at": "2026-07-24T18:48:29.240450Z"
+      },
+      {
+        "id": "imp_7e4ef20e",
+        "event_id": "evt_business_20240201_010_c9ef96f5",
+        "outcome_event_id": "evt_5a3ee5ea9882",
+        "question_id": "v3_amzn_revenue_growth_acceleration_2023_12_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "The resilience of Amazon's diversified revenue streams helped overcome anxieties and contributed to the overall revenue-growth acceleration.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_amzn_revenue_growth_acceleration_2023_12_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T18:48:29.249993Z",
+        "last_confirmed_at": "2026-07-24T18:48:29.249993Z"
+      }
+    ]
+  }
+}

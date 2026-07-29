@@ -1,0 +1,210 @@
+{
+  "schema_version": "1.0",
+  "actual_outcome_event_id": "node_7",
+  "graph": {
+    "nodes": [
+      {
+        "id": "node_5",
+        "label": "Credit-market structure changes were associated with greater liquidity",
+        "event_type": "indicator",
+        "occurred_date": "2023-12-05",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "art_finance_20231205_005_584aefac"
+        ]
+      },
+      {
+        "id": "node_2",
+        "label": "Inflation data showed further cooling",
+        "event_type": "indicator",
+        "occurred_date": "2023-12-12",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "art_finance_20231213_002_d5e9e15a",
+          "art_finance_20231212_007_41bf809c"
+        ]
+      },
+      {
+        "id": "node_1",
+        "label": "Federal Reserve held interest rates steady",
+        "event_type": "decision",
+        "occurred_date": "2023-12-13",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "art_finance_20231213_002_d5e9e15a",
+          "art_finance_20231213_003_5d6b5af9"
+        ]
+      },
+      {
+        "id": "node_3",
+        "label": "The inflation and policy backdrop may have reduced perceived credit risk",
+        "event_type": "indicator",
+        "occurred_date": "2023-12-14",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "art_finance_20231213_002_d5e9e15a",
+          "art_finance_20231212_007_41bf809c"
+        ]
+      },
+      {
+        "id": "node_8",
+        "label": "Fed officials tempered expectations of imminent rate cuts",
+        "event_type": "decision",
+        "occurred_date": "2023-12-15",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "art_finance_20231215_004_c2a31ceb"
+        ]
+      },
+      {
+        "id": "node_4",
+        "label": "December conditions may have supported demand for high-yield credit",
+        "event_type": "indicator",
+        "occurred_date": "2023-12-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "art_finance_20231205_005_584aefac",
+          "art_finance_20231213_002_d5e9e15a",
+          "art_finance_20231215_004_c2a31ceb"
+        ]
+      },
+      {
+        "id": "node_6",
+        "label": "December high-yield OAS monthly change measured -0.45 percentage points",
+        "event_type": "measurement",
+        "occurred_date": "2023-12-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_34a5baa426af29a9"
+        ]
+      },
+      {
+        "id": "node_7",
+        "label": "Resolution: the -0.45-point change was not at least 0.12 points",
+        "event_type": "outcome",
+        "occurred_date": "2023-12-31",
+        "is_outcome": true,
+        "is_actual_outcome": true,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_34a5baa426af29a9"
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_2a",
+        "source": "node_2",
+        "target": "node_1",
+        "relationship": "supports",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "art_finance_20231213_002_d5e9e15a",
+          "art_finance_20231212_007_41bf809c"
+        ],
+        "rationale": "Contemporaneous reporting linked cooling inflation with the Fed's decision to hold rates steady."
+      },
+      {
+        "id": "edge_1",
+        "source": "node_1",
+        "target": "node_3",
+        "relationship": "contributes_to",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "art_finance_20231213_002_d5e9e15a"
+        ],
+        "rationale": "A steady policy rate may reduce uncertainty, but the evidence does not measure its effect on perceived high-yield credit risk."
+      },
+      {
+        "id": "edge_2",
+        "source": "node_2",
+        "target": "node_3",
+        "relationship": "contributes_to",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "art_finance_20231212_007_41bf809c"
+        ],
+        "rationale": "Cooling inflation could improve the credit backdrop, but no supplied source establishes a direct December credit-risk effect."
+      },
+      {
+        "id": "edge_7",
+        "source": "node_1",
+        "target": "node_8",
+        "relationship": "followed_by",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "art_finance_20231213_002_d5e9e15a",
+          "art_finance_20231215_004_c2a31ceb"
+        ],
+        "rationale": "The hold decision was followed chronologically by officials pushing back on immediate-cut expectations."
+      },
+      {
+        "id": "edge_3",
+        "source": "node_3",
+        "target": "node_4",
+        "relationship": "enables",
+        "support_level": "background_hypothesis",
+        "article_ids": [],
+        "rationale": "Lower perceived credit risk could support demand for high-yield bonds, but this mechanism is not directly evidenced."
+      },
+      {
+        "id": "edge_8",
+        "source": "node_8",
+        "target": "node_4",
+        "relationship": "inhibits",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "art_finance_20231215_004_c2a31ceb"
+        ],
+        "rationale": "Pushback on imminent cuts could have limited risk appetite, but the effect on high-yield demand is unmeasured."
+      },
+      {
+        "id": "edge_5",
+        "source": "node_5",
+        "target": "node_4",
+        "relationship": "enables",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "art_finance_20231205_005_584aefac"
+        ],
+        "rationale": "Greater credit liquidity could support demand, but the article does not establish a causal effect on December OAS."
+      },
+      {
+        "id": "edge_4",
+        "source": "node_4",
+        "target": "node_6",
+        "relationship": "is_consistent_with",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_34a5baa426af29a9"
+        ],
+        "rationale": "The hypothesized demand backdrop is consistent with spread tightening, while the official series alone establishes the -0.45-point change."
+      },
+      {
+        "id": "edge_6",
+        "source": "node_6",
+        "target": "node_7",
+        "relationship": "classifies_as",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_34a5baa426af29a9"
+        ],
+        "rationale": "A -0.45-point change is less than the positive 0.12-point threshold and therefore resolves no."
+      }
+    ]
+  }
+}

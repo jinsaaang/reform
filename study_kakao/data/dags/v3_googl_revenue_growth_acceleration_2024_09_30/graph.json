@@ -1,0 +1,996 @@
+{
+  "question": {
+    "id": "v3_googl_revenue_growth_acceleration_2024_09_30",
+    "question_text": "As of 2024-09-30, will Alphabet Inc.'s quarterly revenue year-over-year growth for the fiscal quarter ending 2024-09-30 be at least 13.59 percent?",
+    "question_type": "binary",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 4,
+    "resolution_date": "2024-10-30T23:59:59Z",
+    "estimated_start_time": "2024-09-30T00:00:00Z",
+    "ground_truth": true,
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [
+      "evt_a4af3fbbae11",
+      "evt_7a23be8e39ad"
+    ],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: Alphabet Inc. (GOOGL)\nTarget period: fiscal quarter ending 2024-09-30\nFinancial area: corporate_earnings / digital advertising\nRegion: US",
+    "resolution_criteria": "Use the issuer's first SEC 10-Q or 10-K containing the target quarter. Resolve yes if YoY revenue growth is at least 13.59 percent, the prior quarter's pre-registered YoY growth rate; otherwise resolve no.",
+    "resolution_reasoning": "The snapshotted target-quarter YoY revenue growth was 15.09 percent and growth acceleration was 1.504 percentage points; it resolved to 'yes'.",
+    "options": [
+      "yes",
+      "no"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": "\n## Executive Summary\nAlphabet Inc. achieved significant quarterly revenue year-over-year growth for Q3 2024, exceeding the 13.59% threshold. This strong performance was primarily driven by robust growth in Google Cloud revenue and a rebound in YouTube advertising revenue, both of which benefited from ongoing investments and advancements in artificial intelligence. Despite a challenging macroeconomic environment, strategic cost management and a renewed focus on core business segments contributed to better-than-expected earnings.\n\n## Timeline Of Key Events\n- **2024-10-28:** Investopedia publishes an earnings preview for Alphabet, highlighting expectations ahead of the Q3 report [art_finance_20241028_003_48b4213a]. QZ.com also reports on Wall Street's expectations for Google's earnings, mentioning potential contributions from AI and cloud [art_finance_20241028_002_f1780330].\n- **2024-10-29:** Alphabet reports its Q3 2024 earnings, significantly beating revenue and profit growth expectations. Key drivers are identified as Google Cloud and YouTube ad revenue [art_finance_20241029_006_7947d1bd, art_finance_20241029_005_a4efef1c, art_finance_20241029_002_d3cee81d]. YouTube's Q3 ad revenue specifically rises 12% to $8.92 billion, beating forecasts [art_finance_20241029_006_deb3e2fb]. AlphaStreet provides a detailed overview of the earnings results [art_finance_20241029_004_90375441].\n- **2024-10-30:** Further analysis confirms Google Cloud's substantial contribution with $11.4 billion in revenue for Q3 2024, and reports on overall big revenue and profit growth for Alphabet [art_finance_20241030_008_077e6498, art_finance_20241030_007_29ba17c4].\n\n## Causal Chain Analysis\nAlphabet's strategic investments in Artificial Intelligence over previous periods **led to** significant enhancements in its cloud computing and advertising platforms. This AI-driven innovation **resulted in** increased demand for Google Cloud services, which grew to $11.4 billion in revenue [art_finance_20241030_008_077e6498]. Concurrently, the improved advertising capabilities, coupled with enhanced content and user engagement, **triggered** a strong rebound in YouTube ad revenue, which rose 12% to $8.92 billion and surpassed forecasts [art_finance_20241029_006_deb3e2fb]. These two factors—robust Google Cloud expansion and resurgent YouTube advertising—**primarily caused** Alphabet Inc.'s overall quarterly revenue year-over-year growth to exceed 13.59% for the fiscal quarter ending 2024-09-30, leading to better-than-expected earnings [art_finance_20241029_006_7947d1bd, art_finance_20241029_005_a4efef1c].\n\n## Countervailing Factors\nWhile Alphabet experienced strong growth, the overall macroeconomic environment presented a potential countervailing factor. Despite concerns about a possible economic slowdown or reduced advertising spending, these factors **failed** to derail Alphabet's revenue growth. This was likely **overwhelmed** by the strength of its cloud and advertising segments, fueled by AI innovations and efficient cost management, as CEO Sundar Pichai stated [art_finance_20241029_002_d3cee81d, art_finance_20241029_005_a4efef1c]. Competitors in the cloud and advertising spaces also likely presented a challenging landscape, but Alphabet's differentiated offerings and market position allowed it to maintain its growth trajectory.\n\n## Event Candidate Inventory\n- **E1:** Alphabet's Q3 2024 Earnings Beat\n    - **Date:** 2024-10-29\n    - **Why it matters causally:** This event directly confirms the revenue growth and provides the official figures for the Q3 performance, showing it exceeded expectations.\n    - **Source article IDs:** art_finance_20241029_006_7947d1bd, art_finance_20241029_005_a4efef1c, art_finance_20241029_002_d3cee81d, art_finance_20241029_004_90375441\n\n- **E2:** Google Cloud Revenue Reaches $11.4 Billion in Q3 2024\n    - **Date:** 2024-10-30 (reporting of figure from Q3)\n    - **Why it matters causally:** Significant growth in Google Cloud revenue was a primary driver for Alphabet's overall strong financial performance, exceeding revenue growth thresholds.\n    - **Source article IDs:** art_finance_20241030_008_077e6498, art_finance_20241030_007_29ba17c4\n\n- **E3:** YouTube Q3 Ad Revenue Rises 12% to $8.92 Billion\n    - **Date:** 2024-10-29 (reporting of figure from Q3)\n    - **Why it matters causally:** A strong rebound and better-than-forecasted performance in YouTube's advertising segment significantly contributed to Alphabet's overall revenue growth.\n    - **Source article IDs:** art_finance_20241029_006_deb3e2fb\n\n- **E4:** Strategic AI Investments by Alphabet\n    - **Date:** Ongoing through Q3 2024 and prior periods\n    - **Why it matters causally:** These investments in AI directly enabled the growth of Google Cloud and enhancements in advertising platforms, serving as a root cause for the positive revenue performance.\n    - **Source article IDs:** art_finance_20241029_005_a4efef1c, art_finance_20241028_002_f1780330\n\n## Evidence Mapping Table\n\n| Claim/Event | Article IDs | Date Support | Confidence (0-1) | Notes |\n|---|---|---|---|---|\n| Alphabet's Q3 2024 revenue growth exceeded 13.59% | art_finance_20241029_006_7947d1bd, art_finance_20241029_005_a4efef1c, art_finance_20241029_004_90375441, art_finance_20241030_007_29ba17c4 | 2024-10-29, 2024-10-30 | 1 | Multiple articles confirm strong growth above expectations. |\n| Google Cloud revenue reached $11.4 billion | art_finance_20241030_008_077e6498, art_finance_20241030_007_29ba17c4 | 2024-10-30 | 1 | Specific revenue figure cited from official reports. |\n| YouTube ad revenue rose 12% to $8.92 billion | art_finance_20241029_006_deb3e2fb | 2024-10-29 | 1 | Specific revenue figure and growth rate provided. |\n| AI investments drove cloud and ad revenue growth | art_finance_20241029_005_a4efef1c, art_finance_20241028_002_f1780330 | 2024-10-29, 2024-10-28 | 0.9 | CEO statements and analyst commentary link AI to revenue growth. |\n| Macroeconomic headwinds were overcome | art_finance_20241029_002_d3cee81d, art_finance_20241029_005_a4efef1c | 2024-10-29 | 0.8 | Implied by strong growth despite general economic concerns. |\n\n## Uncertainties And Alternative Paths\nOne uncertainty is the precise weighting of factors contributing to the revenue beat, beyond the prominent roles of Google Cloud and YouTube ads. While AI investments are cited as a driver, the exact magnitude of their financial impact compared to other operational efficiencies or market tailwinds remains somewhat undefined. An alternative path could have seen a more significant impact from macroeconomic pressures, potentially leading to lower advertising spending or increased competition in cloud services, thereby preventing Alphabet from reaching the 13.59% growth threshold. However, the company's strong performance in key segments and strategic execution ultimately mitigated these risks. Another alternative path could have involved a slower adoption or less impactful integration of AI in their products, limiting the revenue uplift from Cloud and Ads.\n",
+    "graph_built": true,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.200067Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "googl_revenue_growth_acceleration",
+        "event_cluster_id": "googl_earnings_2024-09-30",
+        "category": "corporate_earnings",
+        "original_domain": "corporate_earnings",
+        "subdomain": "digital advertising",
+        "entity": "Alphabet Inc. (GOOGL)",
+        "region": "US",
+        "target_metric": "quarterly revenue year-over-year growth acceleration",
+        "target_period": "fiscal quarter ending 2024-09-30",
+        "forecast_cutoff": "2024-09-30T00:00:00+00:00",
+        "forecast_date_options": [
+          "2024-09-30"
+        ],
+        "resolution_available_at": "2024-10-30T23:59:59+00:00",
+        "horizon_days": 30,
+        "source_type": "sec_companyfacts_snapshot",
+        "source_series_id": "CIK0001652044:revenue",
+        "source_homepage": "https://www.sec.gov/edgar/browse/?CIK=1652044",
+        "comparison_rule": "target YoY revenue growth >= prior-quarter YoY revenue growth",
+        "comparison_threshold": 13.589084,
+        "comparison_thresholds": null,
+        "change_unit": "percent",
+        "threshold_observation_dates": [
+          "2023-06-30",
+          "2023-09-30",
+          "2024-06-30"
+        ],
+        "split": "memory",
+        "family_position": 4,
+        "family_size": 7,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "yes",
+        "resolved_class": "yes",
+        "resolution_value": 88268000000,
+        "target_change": 15.09264209,
+        "target_yoy_growth": 15.09264209,
+        "target_growth_acceleration": 1.5035584,
+        "source_observation_date": "2024-09-30",
+        "resolution_document": {
+          "publisher": "U.S. Securities and Exchange Commission",
+          "title": "Alphabet Inc. 10-Q filed 2024-10-30",
+          "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204424000118/0001652044-24-000118-index.html"
+        },
+        "source_download_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001652044.json",
+        "source_sha256": "62d42c65a87b9c92cdaf9e5f342dd3a8cdbba2d2e3e4c5c495f2b884dab991c8",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00",
+        "accession_number": "0001652044-24-000118",
+        "xbrl_tag": "RevenueFromContractWithCustomerExcludingAssessedTax"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_a4af3fbbae11",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 14,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_20241029_002_d3cee81d",
+        "title": "Alphabet Q3 earnings call: CEO Sundar Pichai's remarks - blog.google",
+        "url": "https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q3-2024",
+        "source": "blog.google",
+        "published_date": "2024-10-29T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20241028_003_48b4213a",
+        "title": "What You Need To Know Ahead of Google Parent Alphabet’s Earnings - Investopedia",
+        "url": "https://www.investopedia.com/alphabet-google-q3-fy-2024-earnings-preview-what-you-need-to-know-8732427",
+        "source": "investopedia.com",
+        "published_date": "2024-10-28T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20241029_004_90375441",
+        "title": "GOOGL Earnings: All you need to know about Alphabet’s Q3 2024 earnings results - AlphaStreet",
+        "url": "https://news.alphastreet.com/googl-earnings-all-you-need-to-know-about-alphabets-q3-2024-earnings-results",
+        "source": "news.alphastreet.com",
+        "published_date": "2024-10-29T20:12:00+00:00"
+      },
+      {
+        "id": "art_finance_20241030_007_29ba17c4",
+        "title": "Alphabet posts big revenue and profit growth, just 1,100 job losses - The Register",
+        "url": "https://www.theregister.com/software/2024/10/30/alphabet-posts-big-revenue-and-profit-growth/1173513",
+        "source": "theregister.com",
+        "published_date": "2024-10-30T00:45:48+00:00"
+      },
+      {
+        "id": "art_finance_20241030_008_077e6498",
+        "title": "Google Cloud Q3 2024 revenue hits $11.4bn, data center spend set to increase in 2025 - Data Center Dynamics",
+        "url": "https://www.datacenterdynamics.com/en/news/google-cloud-q3-2024-revenue-hits-114bn-data-center-spend-set-to-increase-in-2025",
+        "source": "datacenterdynamics.com",
+        "published_date": "2024-10-30T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20241029_006_7947d1bd",
+        "title": "Alphabet shares rise on earnings beats boosted by cloud revenue - CNBC",
+        "url": "https://www.cnbc.com/2024/10/29/alphabet-to-report-q3-earnings-after-the-bell.html",
+        "source": "cnbc.com",
+        "published_date": "2024-10-29T16:00:01+00:00"
+      },
+      {
+        "id": "art_finance_20241029_005_a4efef1c",
+        "title": "Google cloud boosts Alphabet to double-digit revenue growth as CEO Pichai says AI investment is paying off - Fortune",
+        "url": "https://fortune.com/2024/10/29/google-q3-earnings-alphabet-sundar-pichai-revenue-profit-youtube",
+        "source": "fortune.com",
+        "published_date": "2024-10-29T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20241029_006_deb3e2fb",
+        "title": "YouTube Q3 Ad Revenue Beats Forecasts, Rising 12% to $8.92 Billion - Variety",
+        "url": "https://variety.com/2024/digital/news/youtube-q3-2024-advertising-revenue-growth-1236193926",
+        "source": "variety.com",
+        "published_date": "2024-10-29T20:07:21+00:00"
+      },
+      {
+        "id": "art_finance_20241023_003_71a4bdc0",
+        "title": "AT&T Inc (T) Q3 2024 Earnings Call Highlights: Navigating Challenges with Strong Mobility ... - Yahoo Finance",
+        "url": "https://finance.yahoo.com/news/t-inc-t-q3-2024-070502434.html",
+        "source": "finance.yahoo.com",
+        "published_date": "2024-10-23T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20241024_004_0f362a42",
+        "title": "Going Into Earnings, Is Meta Stock a Buy, a Sell, or Fairly Valued? - Morningstar",
+        "url": "https://www.morningstar.com/stocks/going-into-earnings-is-meta-stock-buy-sell-or-fairly-valued-4",
+        "source": "morningstar.com",
+        "published_date": "2024-10-24T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20241028_002_f1780330",
+        "title": "Google earnings are coming tomorrow. Here's what Wall Street expects - qz.com",
+        "url": "https://qz.com/google-alphabet-q3-2024-earnings-cloud-ai-revenue-1851680418",
+        "source": "qz.com",
+        "published_date": "2024-10-28T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20241023_005_8cece5dd",
+        "title": "Coca-Cola Beats Q3 Earnings & Sales Estimates, Revises 2024 View - Yahoo Finance",
+        "url": "https://finance.yahoo.com/news/coca-cola-beats-q3-earnings-170000224.html",
+        "source": "finance.yahoo.com",
+        "published_date": "2024-10-23T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20241024_006_ecbfdbb4",
+        "title": "3 Airline Stocks Poised to Outshine Earnings Estimates in Q3 - Zacks Investment Research",
+        "url": "https://www.zacks.com/stock/news/2356613/3-airline-stocks-poised-to-outshine-earnings-estimates-in-q3",
+        "source": "zacks.com",
+        "published_date": "2024-10-24T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20241018_007_da40a8e9",
+        "title": "TSMC Share Boosted by Q3 Earnings Performance, Market Value Tops US$1 Trillion - 天下雜誌",
+        "url": "https://english.cw.com.tw/article/article.action?id=3793",
+        "source": "english.cw.com.tw",
+        "published_date": "2024-10-18T07:00:00+00:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_a4af3fbbae11",
+      "events_count": 11,
+      "hypotheses_count": 10
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 4,
+      "avg_depth": 3.0,
+      "quality_score": 0.9,
+      "depth_score": 1.0,
+      "confidence_score": 0.84,
+      "strength_score": 0.71,
+      "evidence_score": 1.0,
+      "event_count": 11,
+      "hypothesis_count": 10
+    },
+    "nodes": [
+      {
+        "id": "evt_7a23be8e39ad",
+        "title": "No - As of 2024-09-30, will Alphabet Inc.'s quarterly r",
+        "description": "Negative resolution: As of 2024-09-30, will Alphabet Inc.'s quarterly revenue year-over-year growth for the fiscal quarter ending 2024-09-30 be at least 13.59 percent?",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-10-30T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_googl_revenue_growth_acceleration_2024_09_30",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "negative_resolution",
+        "outcome_option_index": null,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:49:59.249132Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_a4af3fbbae11",
+        "title": "Yes - As of 2024-09-30, will Alphabet Inc.'s quarterly r",
+        "description": "Positive resolution: As of 2024-09-30, will Alphabet Inc.'s quarterly revenue year-over-year growth for the fiscal quarter ending 2024-09-30 be at least 13.59 percent?",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-10-30T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_googl_revenue_growth_acceleration_2024_09_30",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "positive_resolution",
+        "outcome_option_index": null,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:49:59.249118Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_business_20240930_018_b8d4d307",
+        "title": "Alphabet's Strategic Cost Management",
+        "description": "Strategic cost management and a renewed focus on core business segments contributed to better-than-expected earnings, overcoming macroeconomic headwinds.",
+        "event_type": "indicator",
+        "domain": "business",
+        "tags": [],
+        "occurred_date": "2024-09-30T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241029_002_d3cee81d",
+          "art_finance_20241029_005_a4efef1c"
+        ],
+        "extracted_for_question_id": "v3_googl_revenue_growth_acceleration_2024_09_30",
+        "source_article_id": "art_finance_20241029_002_d3cee81d",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_googl_revenue_growth_acceleration_2024_09_30"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:55:55.329827Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240930_012_0543a060",
+        "title": "Google Cloud Revenue Reaches $11.4 Billion in Q3 2024",
+        "description": "Google Cloud reported $11.4 billion in revenue for Q3 2024, contributing significantly to Alphabet's overall financial performance.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-09-30T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241030_008_077e6498",
+          "art_finance_20241030_007_29ba17c4"
+        ],
+        "extracted_for_question_id": "v3_googl_revenue_growth_acceleration_2024_09_30",
+        "source_article_id": "art_finance_20241030_008_077e6498",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_googl_revenue_growth_acceleration_2024_09_30"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:55:55.210783Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240930_013_eb9ad140",
+        "title": "YouTube Q3 Ad Revenue Rises 12% to $8.92 Billion",
+        "description": "YouTube's Q3 ad revenue rose 12% to $8.92 billion, beating forecasts and significantly contributing to Alphabet's overall revenue growth.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-09-30T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241029_006_deb3e2fb"
+        ],
+        "extracted_for_question_id": "v3_googl_revenue_growth_acceleration_2024_09_30",
+        "source_article_id": "art_finance_20241029_006_deb3e2fb",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_googl_revenue_growth_acceleration_2024_09_30"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:55:55.233495Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240930_017_197115e0",
+        "title": "Challenging Macroeconomic Environment",
+        "description": "The overall macroeconomic environment presented a potential countervailing factor with concerns about a possible economic slowdown or reduced advertising spending.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-09-30T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241029_002_d3cee81d",
+          "art_finance_20241029_005_a4efef1c"
+        ],
+        "extracted_for_question_id": "v3_googl_revenue_growth_acceleration_2024_09_30",
+        "source_article_id": "art_finance_20241029_002_d3cee81d",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_googl_revenue_growth_acceleration_2024_09_30"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:55:55.312195Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240930_020_928533d3",
+        "title": "Alphabet Inc.'s Q3 2024 Revenue Growth Exceeds 13.59%",
+        "description": "Alphabet Inc.'s quarterly revenue year-over-year growth for the fiscal quarter ending 2024-09-30 was at least 13.59 percent.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-09-30T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241029_006_7947d1bd",
+          "art_finance_20241029_005_a4efef1c",
+          "art_finance_20241029_004_90375441",
+          "art_finance_20241030_007_29ba17c4"
+        ],
+        "extracted_for_question_id": "v3_googl_revenue_growth_acceleration_2024_09_30",
+        "source_article_id": "art_finance_20241029_006_7947d1bd",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_googl_revenue_growth_acceleration_2024_09_30"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:55:55.377144Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20241028_019_03472774",
+        "title": "Analyst Expectations for Alphabet's Q3 Earnings",
+        "description": "Investopedia and QZ.com published earnings previews highlighting expectations for Alphabet's Q3 report, mentioning potential contributions from AI and cloud.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-10-28T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241028_003_48b4213a",
+          "art_finance_20241028_002_f1780330"
+        ],
+        "extracted_for_question_id": "v3_googl_revenue_growth_acceleration_2024_09_30",
+        "source_article_id": "art_finance_20241028_003_48b4213a",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_googl_revenue_growth_acceleration_2024_09_30"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:55:55.353329Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20241029_011_5049f606",
+        "title": "Alphabet's Q3 2024 Earnings Beat Expectations",
+        "description": "Alphabet Inc. reported its Q3 2024 earnings, significantly beating revenue and profit growth expectations, exceeding the 13.59% threshold.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-10-29T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241029_006_7947d1bd",
+          "art_finance_20241029_005_a4efef1c",
+          "art_finance_20241029_002_d3cee81d",
+          "art_finance_20241029_004_90375441"
+        ],
+        "extracted_for_question_id": "v3_googl_revenue_growth_acceleration_2024_09_30",
+        "source_article_id": "art_finance_20241029_006_7947d1bd",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_googl_revenue_growth_acceleration_2024_09_30"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:55:55.187561Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_tech_20240930_014_be8d11b0",
+        "title": "Alphabet's Strategic AI Investments",
+        "description": "Alphabet made strategic investments in Artificial Intelligence over previous periods, enhancing its cloud computing and advertising platforms.",
+        "event_type": "indicator",
+        "domain": "tech",
+        "tags": [],
+        "occurred_date": "2024-09-30T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241029_005_a4efef1c",
+          "art_finance_20241028_002_f1780330"
+        ],
+        "extracted_for_question_id": "v3_googl_revenue_growth_acceleration_2024_09_30",
+        "source_article_id": "art_finance_20241029_005_a4efef1c",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_googl_revenue_growth_acceleration_2024_09_30"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:55:55.252175Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_tech_20240930_015_a7a7d829",
+        "title": "AI-driven Enhancements in Google Cloud Services",
+        "description": "AI-driven innovation resulted in increased demand for Google Cloud services.",
+        "event_type": "indicator",
+        "domain": "tech",
+        "tags": [],
+        "occurred_date": "2024-09-30T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241030_008_077e6498"
+        ],
+        "extracted_for_question_id": "v3_googl_revenue_growth_acceleration_2024_09_30",
+        "source_article_id": "art_finance_20241030_008_077e6498",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_googl_revenue_growth_acceleration_2024_09_30"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:55:55.271101Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_tech_20240930_016_b1f121ff",
+        "title": "AI-driven Improvements in YouTube Advertising Capabilities",
+        "description": "Improved advertising capabilities, coupled with enhanced content and user engagement, triggered a strong rebound in YouTube ad revenue.",
+        "event_type": "indicator",
+        "domain": "tech",
+        "tags": [],
+        "occurred_date": "2024-09-30T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241029_006_deb3e2fb"
+        ],
+        "extracted_for_question_id": "v3_googl_revenue_growth_acceleration_2024_09_30",
+        "source_article_id": "art_finance_20241029_006_deb3e2fb",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_googl_revenue_growth_acceleration_2024_09_30"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:55:55.288978Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_googl_revenue_growth_acceleration_2024_09_30_20260724_195555_004_e6b54f1c",
+        "source_event_id": "evt_tech_20240930_014_be8d11b0",
+        "target_event_id": "evt_tech_20240930_015_a7a7d829",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Strategic AI investments directly enhanced cloud computing platforms, leading to increased demand for Google Cloud services.",
+        "evidence_article_ids": [
+          "art_finance_20241030_008_077e6498",
+          "art_finance_20241029_005_a4efef1c",
+          "art_finance_20241028_002_f1780330"
+        ],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:55:55.397525Z",
+        "last_confirmed_at": "2026-07-24T19:55:55.397525Z"
+      },
+      {
+        "id": "hyp_v3_googl_revenue_growth_acceleration_2024_09_30_20260724_195555_005_6879c4d2",
+        "source_event_id": "evt_tech_20240930_014_be8d11b0",
+        "target_event_id": "evt_tech_20240930_016_b1f121ff",
+        "relation_type": "triggers",
+        "strength": 0.7,
+        "confidence": 0.85,
+        "time_lag_hours": null,
+        "reasoning": "AI investments improved advertising capabilities, which, coupled with enhanced content and user engagement, triggered a rebound in YouTube ad revenue.",
+        "evidence_article_ids": [
+          "art_finance_20241029_006_deb3e2fb",
+          "art_finance_20241029_005_a4efef1c",
+          "art_finance_20241028_002_f1780330"
+        ],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:55:55.411511Z",
+        "last_confirmed_at": "2026-07-24T19:55:55.411511Z"
+      },
+      {
+        "id": "hyp_v3_googl_revenue_growth_acceleration_2024_09_30_20260724_195555_006_e115d722",
+        "source_event_id": "evt_tech_20240930_015_a7a7d829",
+        "target_event_id": "evt_finance_20240930_012_0543a060",
+        "relation_type": "causes",
+        "strength": 0.9,
+        "confidence": 0.95,
+        "time_lag_hours": null,
+        "reasoning": "Increased demand for Google Cloud services directly resulted in Google Cloud revenue reaching $11.4 billion.",
+        "evidence_article_ids": [
+          "art_finance_20241030_008_077e6498",
+          "art_finance_20241030_007_29ba17c4"
+        ],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:55:55.426064Z",
+        "last_confirmed_at": "2026-07-24T19:55:55.426064Z"
+      },
+      {
+        "id": "hyp_v3_googl_revenue_growth_acceleration_2024_09_30_20260724_195555_007_563dae71",
+        "source_event_id": "evt_tech_20240930_016_b1f121ff",
+        "target_event_id": "evt_finance_20240930_013_eb9ad140",
+        "relation_type": "triggers",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Improved advertising capabilities and user engagement directly triggered the rise in YouTube ad revenue to $8.92 billion.",
+        "evidence_article_ids": [
+          "art_finance_20241029_006_deb3e2fb"
+        ],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:55:55.440526Z",
+        "last_confirmed_at": "2026-07-24T19:55:55.440526Z"
+      },
+      {
+        "id": "hyp_v3_googl_revenue_growth_acceleration_2024_09_30_20260724_195555_008_74b46f1d",
+        "source_event_id": "evt_finance_20240930_012_0543a060",
+        "target_event_id": "evt_finance_20240930_020_928533d3",
+        "relation_type": "causes",
+        "strength": 0.85,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Robust Google Cloud expansion was a primary driver for Alphabet Inc.'s overall quarterly revenue growth exceeding expectations.",
+        "evidence_article_ids": [
+          "art_finance_20241029_006_7947d1bd",
+          "art_finance_20241029_005_a4efef1c"
+        ],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:55:55.461606Z",
+        "last_confirmed_at": "2026-07-24T19:55:55.461606Z"
+      },
+      {
+        "id": "hyp_v3_googl_revenue_growth_acceleration_2024_09_30_20260724_195555_009_814418ae",
+        "source_event_id": "evt_finance_20240930_013_eb9ad140",
+        "target_event_id": "evt_finance_20240930_020_928533d3",
+        "relation_type": "causes",
+        "strength": 0.75,
+        "confidence": 0.85,
+        "time_lag_hours": null,
+        "reasoning": "Resurgent YouTube advertising significantly contributed to Alphabet Inc.'s overall quarterly revenue growth exceeding expectations.",
+        "evidence_article_ids": [
+          "art_finance_20241029_006_7947d1bd",
+          "art_finance_20241029_005_a4efef1c"
+        ],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:55:55.477041Z",
+        "last_confirmed_at": "2026-07-24T19:55:55.477041Z"
+      },
+      {
+        "id": "hyp_v3_googl_revenue_growth_acceleration_2024_09_30_20260724_195555_010_c3954a5e",
+        "source_event_id": "evt_finance_20240930_017_197115e0",
+        "target_event_id": "evt_finance_20240930_020_928533d3",
+        "relation_type": "inhibits",
+        "strength": 0.4,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Macroeconomic headwinds presented a potential negative factor, but were ultimately overcome.",
+        "evidence_article_ids": [
+          "art_finance_20241029_002_d3cee81d",
+          "art_finance_20241029_005_a4efef1c"
+        ],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:55:55.491216Z",
+        "last_confirmed_at": "2026-07-24T19:55:55.491216Z"
+      },
+      {
+        "id": "hyp_v3_googl_revenue_growth_acceleration_2024_09_30_20260724_195555_011_4c6ac5ff",
+        "source_event_id": "evt_business_20240930_018_b8d4d307",
+        "target_event_id": "evt_finance_20240930_020_928533d3",
+        "relation_type": "enables",
+        "strength": 0.6,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Strategic cost management contributed to better-than-expected earnings, helping to overcome macroeconomic challenges.",
+        "evidence_article_ids": [
+          "art_finance_20241029_002_d3cee81d",
+          "art_finance_20241029_005_a4efef1c"
+        ],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:55:55.507731Z",
+        "last_confirmed_at": "2026-07-24T19:55:55.507731Z"
+      },
+      {
+        "id": "hyp_v3_googl_revenue_growth_acceleration_2024_09_30_20260724_195555_012_32effec3",
+        "source_event_id": "evt_finance_20241028_019_03472774",
+        "target_event_id": "evt_finance_20241029_011_5049f606",
+        "relation_type": "correlates",
+        "strength": 0.3,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "Analyst expectations highlighted potential drivers that were later confirmed by the earnings beat, indicating a correlation.",
+        "evidence_article_ids": [
+          "art_finance_20241028_003_48b4213a",
+          "art_finance_20241028_002_f1780330"
+        ],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:55:55.522797Z",
+        "last_confirmed_at": "2026-07-24T19:55:55.522797Z"
+      },
+      {
+        "id": "hyp_v3_googl_revenue_growth_acceleration_2024_09_30_20260724_195607_013_b5579c19",
+        "source_event_id": "evt_finance_20240930_020_928533d3",
+        "target_event_id": "evt_a4af3fbbae11",
+        "relation_type": "causes",
+        "strength": 1.0,
+        "confidence": 1.0,
+        "time_lag_hours": null,
+        "reasoning": "The event 'Alphabet Inc.'s Q3 2024 Revenue Growth Exceeds 13.59%' directly represents the actual outcome.",
+        "evidence_article_ids": [
+          "art_finance_20241029_006_7947d1bd",
+          "art_finance_20241029_005_a4efef1c",
+          "art_finance_20241029_004_90375441",
+          "art_finance_20241030_007_29ba17c4"
+        ],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:56:07.572444Z",
+        "last_confirmed_at": "2026-07-24T19:56:07.572444Z"
+      }
+    ],
+    "outcome_impacts": [
+      {
+        "id": "imp_dca5262e",
+        "event_id": "evt_finance_20241029_011_5049f606",
+        "outcome_event_id": "evt_a4af3fbbae11",
+        "question_id": "v3_googl_revenue_growth_acceleration_2024_09_30",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.95,
+        "reasoning": "The earnings beat directly confirms the actual outcome of exceeding the revenue growth threshold.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:56:03.621770Z",
+        "last_confirmed_at": "2026-07-24T19:56:03.621770Z"
+      },
+      {
+        "id": "imp_c061222d",
+        "event_id": "evt_finance_20240930_012_0543a060",
+        "outcome_event_id": "evt_a4af3fbbae11",
+        "question_id": "v3_googl_revenue_growth_acceleration_2024_09_30",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.85,
+        "confidence": 0.9,
+        "reasoning": "Robust Google Cloud expansion was a primary driver for Alphabet Inc.'s overall quarterly revenue growth exceeding expectations.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:56:03.632835Z",
+        "last_confirmed_at": "2026-07-24T19:56:03.632835Z"
+      },
+      {
+        "id": "imp_e7561250",
+        "event_id": "evt_finance_20240930_013_eb9ad140",
+        "outcome_event_id": "evt_a4af3fbbae11",
+        "question_id": "v3_googl_revenue_growth_acceleration_2024_09_30",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.75,
+        "confidence": 0.85,
+        "reasoning": "Resurgent YouTube advertising significantly contributed to Alphabet Inc.'s overall quarterly revenue growth exceeding expectations.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:56:03.643692Z",
+        "last_confirmed_at": "2026-07-24T19:56:03.643692Z"
+      },
+      {
+        "id": "imp_f047b1ff",
+        "event_id": "evt_tech_20240930_014_be8d11b0",
+        "outcome_event_id": "evt_a4af3fbbae11",
+        "question_id": "v3_googl_revenue_growth_acceleration_2024_09_30",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Strategic AI investments directly enabled the growth of Google Cloud and enhancements in advertising platforms, serving as a root cause for the positive revenue performance.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:56:03.654189Z",
+        "last_confirmed_at": "2026-07-24T19:56:03.654189Z"
+      },
+      {
+        "id": "imp_e38e1f63",
+        "event_id": "evt_tech_20240930_015_a7a7d829",
+        "outcome_event_id": "evt_a4af3fbbae11",
+        "question_id": "v3_googl_revenue_growth_acceleration_2024_09_30",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.85,
+        "reasoning": "AI-driven enhancements in Google Cloud services led to increased demand and revenue, contributing to the overall growth.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:56:03.665036Z",
+        "last_confirmed_at": "2026-07-24T19:56:03.665036Z"
+      },
+      {
+        "id": "imp_f3f85514",
+        "event_id": "evt_tech_20240930_016_b1f121ff",
+        "outcome_event_id": "evt_a4af3fbbae11",
+        "question_id": "v3_googl_revenue_growth_acceleration_2024_09_30",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "AI-driven improvements in YouTube advertising capabilities triggered a strong rebound in ad revenue, contributing to the overall growth.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:56:03.675048Z",
+        "last_confirmed_at": "2026-07-24T19:56:03.675048Z"
+      },
+      {
+        "id": "imp_5fdebd48",
+        "event_id": "evt_finance_20240930_017_197115e0",
+        "outcome_event_id": "evt_a4af3fbbae11",
+        "question_id": "v3_googl_revenue_growth_acceleration_2024_09_30",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.4,
+        "confidence": 0.7,
+        "reasoning": "Macroeconomic headwinds presented a potential negative factor that could have inhibited revenue growth, but were overcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:56:03.687008Z",
+        "last_confirmed_at": "2026-07-24T19:56:03.687008Z"
+      },
+      {
+        "id": "imp_c6cb0649",
+        "event_id": "evt_business_20240930_018_b8d4d307",
+        "outcome_event_id": "evt_a4af3fbbae11",
+        "question_id": "v3_googl_revenue_growth_acceleration_2024_09_30",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.8,
+        "reasoning": "Strategic cost management contributed to better-than-expected earnings, helping to overcome macroeconomic challenges and enabling the revenue growth.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:56:03.698975Z",
+        "last_confirmed_at": "2026-07-24T19:56:03.698975Z"
+      },
+      {
+        "id": "imp_ec4cab51",
+        "event_id": "evt_finance_20241028_019_03472774",
+        "outcome_event_id": "evt_a4af3fbbae11",
+        "question_id": "v3_googl_revenue_growth_acceleration_2024_09_30",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.3,
+        "confidence": 0.6,
+        "reasoning": "Analyst expectations highlighted potential drivers that were later confirmed by the earnings beat, indicating a correlation with the positive outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:56:03.709322Z",
+        "last_confirmed_at": "2026-07-24T19:56:03.709322Z"
+      },
+      {
+        "id": "imp_82204f78",
+        "event_id": "evt_finance_20240930_020_928533d3",
+        "outcome_event_id": "evt_a4af3fbbae11",
+        "question_id": "v3_googl_revenue_growth_acceleration_2024_09_30",
+        "impact_direction": "positive",
+        "impact_magnitude": 1.0,
+        "confidence": 1.0,
+        "reasoning": "This event directly represents the actual outcome, so its impact is decisive.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:56:07.585782Z",
+        "last_confirmed_at": "2026-07-24T19:56:07.585782Z"
+      }
+    ]
+  }
+}

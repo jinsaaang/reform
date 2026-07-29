@@ -1,0 +1,188 @@
+{
+  "schema_version": "1.0",
+  "actual_outcome_event_id": "node_8",
+  "graph": {
+    "nodes": [
+      {
+        "id": "node_1",
+        "label": "Chinese economic weakness elevated investor concern",
+        "event_type": "external_shock",
+        "occurred_date": "2023-08-01",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_74e5ae2be80eac83"
+        ]
+      },
+      {
+        "id": "node_2",
+        "label": "Treasury markets experienced pronounced August volatility",
+        "event_type": "indicator",
+        "occurred_date": "2023-08-09",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_9df67f10b7ae6a6f"
+        ]
+      },
+      {
+        "id": "node_3",
+        "label": "Easing inflation data offered potential stress relief",
+        "event_type": "indicator",
+        "occurred_date": "2023-08-10",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_0bd8287dbac4880a"
+        ]
+      },
+      {
+        "id": "node_4",
+        "label": "Bond-market tumult persisted under a hawkish Fed shadow",
+        "event_type": "indicator",
+        "occurred_date": "2023-08-13",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_1637744736c309c7"
+        ]
+      },
+      {
+        "id": "node_5",
+        "label": "Economists expected rates to remain elevated",
+        "event_type": "indicator",
+        "occurred_date": "2023-08-18",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_89e3da8509040deb"
+        ]
+      },
+      {
+        "id": "node_6",
+        "label": "August market conditions may have raised U.S. financial stress",
+        "event_type": "indicator",
+        "occurred_date": "2023-08-24",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_74e5ae2be80eac83",
+          "ev_9df67f10b7ae6a6f",
+          "ev_1637744736c309c7",
+          "ev_89e3da8509040deb"
+        ]
+      },
+      {
+        "id": "node_7",
+        "label": "August STLFSI monthly change measured 0.081 index points",
+        "event_type": "measurement",
+        "occurred_date": "2023-08-25",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_0738b14f331645b3"
+        ]
+      },
+      {
+        "id": "node_8",
+        "label": "Resolution: STLFSI change was above the recent range",
+        "event_type": "outcome",
+        "occurred_date": "2023-08-25",
+        "is_outcome": true,
+        "is_actual_outcome": true,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_0738b14f331645b3"
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_1",
+        "source": "node_1",
+        "target": "node_6",
+        "relationship": "contributes_to",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_74e5ae2be80eac83"
+        ],
+        "rationale": "External growth concern could increase risk aversion, but its effect on the U.S. stress index is not demonstrated."
+      },
+      {
+        "id": "edge_2",
+        "source": "node_2",
+        "target": "node_4",
+        "relationship": "continues_as",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_9df67f10b7ae6a6f",
+          "ev_1637744736c309c7"
+        ],
+        "rationale": "Two contemporaneous reports document continuing Treasury and bond-market volatility."
+      },
+      {
+        "id": "edge_3",
+        "source": "node_4",
+        "target": "node_5",
+        "relationship": "contextualizes",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_1637744736c309c7",
+          "ev_89e3da8509040deb"
+        ],
+        "rationale": "The hawkish bond-market backdrop contextualizes later expectations that rates would remain elevated."
+      },
+      {
+        "id": "edge_4",
+        "source": "node_5",
+        "target": "node_6",
+        "relationship": "contributes_to",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_89e3da8509040deb"
+        ],
+        "rationale": "Higher-for-longer expectations may raise stress, but no direct STLFSI contribution is quantified."
+      },
+      {
+        "id": "edge_5",
+        "source": "node_3",
+        "target": "node_6",
+        "relationship": "inhibits",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_0bd8287dbac4880a"
+        ],
+        "rationale": "Easing inflation could reduce rate pressure and offset stress, but its realized index effect is unobserved."
+      },
+      {
+        "id": "edge_6",
+        "source": "node_6",
+        "target": "node_7",
+        "relationship": "is_consistent_with",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_0738b14f331645b3"
+        ],
+        "rationale": "The hypothesized stress backdrop is consistent with an increase, while the official series alone establishes 0.081 points."
+      },
+      {
+        "id": "edge_7",
+        "source": "node_7",
+        "target": "node_8",
+        "relationship": "classifies_as",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_0738b14f331645b3"
+        ],
+        "rationale": "A 0.081-point change exceeds the 0.034-point upper boundary and therefore resolves above the recent range."
+      }
+    ]
+  }
+}

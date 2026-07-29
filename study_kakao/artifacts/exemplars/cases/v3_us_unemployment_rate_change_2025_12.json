@@ -1,0 +1,65 @@
+{
+  "schema_version": "fixed_exemplar_case",
+  "status": "success",
+  "question_id": "v3_us_unemployment_rate_change_2025_12",
+  "retrieved_memory_question_id": "v3_us_unemployment_rate_change_2024_12",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "macro / labour",
+      "target_operation": "monthly unemployment-rate change",
+      "option_geometry": "below recent range, within recent range, above recent range"
+    },
+    "historical_question": "As of 2024-12-31, which range will the monthly unemployment-rate change for United States unemployment rate in 2024-12 fall into?",
+    "historical_cutoff": "2024-12-31T00:00:00+00:00",
+    "target_semantics": "The monthly change in the United States unemployment rate for December 2024.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "ev_a147015ea8be777e",
+        "takeaway": "The unemployment rate for October 2024 was 4.1%.",
+        "why_predictive": "Provides a baseline unemployment rate prior to the target month."
+      },
+      {
+        "article_id": "ev_345f59d7907ce8cc",
+        "takeaway": "The unemployment rate for November 2024 was 4.2%.",
+        "why_predictive": "Provides the most recent unemployment rate before the target month, enabling calculation of the monthly change."
+      },
+      {
+        "article_id": "ev_16e16b22d9bfed3d",
+        "takeaway": "The November 2024 unemployment rate was 4.2%, in line with forecasts.",
+        "why_predictive": "Confirms the November rate and provides context that it met expectations."
+      },
+      {
+        "article_id": "ev_247b3eda8b0cf55c",
+        "takeaway": "Job gains rebounded in November 2024.",
+        "why_predictive": "Indicates a positive trend in employment which could influence the unemployment rate."
+      },
+      {
+        "article_id": "ev_85097850fca242fa",
+        "takeaway": "The central bank decreased interest rates in December 2024.",
+        "why_predictive": "Lower interest rates can stimulate economic activity, potentially impacting unemployment."
+      },
+      {
+        "article_id": "ev_645bbf36d65b9efd",
+        "takeaway": "FRED provides unemployment rates for October, November, and December 2024.",
+        "why_predictive": "Direct source for the data needed to calculate the target metric."
+      },
+      {
+        "article_id": "ev_9c2ef15c7ec563c9",
+        "takeaway": "Expectations for the end of 2024 included the November jobs report.",
+        "why_predictive": "Sets the context for understanding the economic situation leading into December."
+      }
+    ],
+    "expert_reasoning": [
+      "The unemployment rate was 4.1% in October 2024 (ev_a147015ea8be777e).",
+      "The unemployment rate rose to 4.2% in November 2024 (ev_345f59d7907ce8cc, ev_16e16b22d9bfed3d).",
+      "This represents a monthly change of +0.1 percentage points from October to November.",
+      "Job gains rebounded in November (ev_247b3eda8b0cf55c), suggesting continued economic activity.",
+      "The central bank decreased interest rates in December 2024 (ev_85097850fca242fa), which could further stimulate the economy and employment."
+    ],
+    "counterevidence": "The provided articles do not offer direct data for the December 2024 unemployment rate or its change from November. The impact of the late December rate cut on same-month employment is not specified. Payroll employment and unemployment are measured by different surveys, which can introduce discrepancies (DAG weakness).",
+    "prospective_target_estimate": "The monthly unemployment-rate change for December 2024 is estimated to be within the recent range.",
+    "option_mapping": "The estimate of a monthly change of +0.1 percentage points from October to November, combined with a rebounding job market and a December rate cut, suggests the December change will likely be close to zero or slightly positive, falling within the 'within recent range' of 0.0 to 0.1 percentage points.",
+    "uncertainty": "The exact December 2024 unemployment rate is not provided in the forecast-time evidence. The impact of the December rate cut on same-month employment is unclear, and the relationship between payroll job gains and the unemployment rate can be complex.",
+    "dag_derived_lesson": "A policy change late in a period may have an uncertain impact on same-period economic metrics. When direct data for the target period is absent, consider the trend from prior periods and the potential effects of known policy actions, while acknowledging the limitations of indirect evidence and survey methodologies."
+  }
+}

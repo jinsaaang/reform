@@ -1,0 +1,187 @@
+{
+  "schema_version": "1.0",
+  "actual_outcome_event_id": "node_6",
+  "graph": {
+    "nodes": [
+      {
+        "id": "node_1",
+        "label": "Azure and cloud performance remained strong",
+        "event_type": "indicator",
+        "occurred_date": "2023-10-25",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_07562e6a22dbee45"
+        ]
+      },
+      {
+        "id": "node_2",
+        "label": "Activision Blizzard contributed to the target-quarter results",
+        "event_type": "indicator",
+        "occurred_date": "2024-01-26",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_40a72300afac3574"
+        ]
+      },
+      {
+        "id": "node_3",
+        "label": "Microsoft reported accelerated revenue growth",
+        "event_type": "indicator",
+        "occurred_date": "2024-01-30",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_062e8d57d474329d"
+        ]
+      },
+      {
+        "id": "node_4",
+        "label": "Target-quarter year-over-year revenue growth was 17.58 percent",
+        "event_type": "indicator",
+        "occurred_date": "2024-01-30",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_da19641628c5a0ae"
+        ]
+      },
+      {
+        "id": "node_5",
+        "label": "Target-quarter revenue-growth acceleration was 4.821 percentage points",
+        "event_type": "indicator",
+        "occurred_date": "2024-01-30",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_da19641628c5a0ae"
+        ]
+      },
+      {
+        "id": "node_6",
+        "label": "Resolved outcome: above recent range",
+        "event_type": "outcome",
+        "occurred_date": "2024-01-30",
+        "is_outcome": true,
+        "is_actual_outcome": true,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_da19641628c5a0ae"
+        ]
+      },
+      {
+        "id": "node_7",
+        "label": "AI-related activity was reported as supporting a strong quarter",
+        "event_type": "indicator",
+        "occurred_date": "2023-07-26",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_4222dfb326e54a5b"
+        ]
+      },
+      {
+        "id": "node_8",
+        "label": "Surface-business weakness was a countervailing concern",
+        "event_type": "indicator",
+        "occurred_date": "2023-07-26",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_8b2f0ac29c855dc1"
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_1",
+        "source": "node_1",
+        "target": "node_3",
+        "relationship": "contributes_to",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_07562e6a22dbee45",
+          "ev_062e8d57d474329d"
+        ],
+        "rationale": "The supplied reporting supports cloud strength and company growth acceleration, but does not isolate Azure's causal contribution."
+      },
+      {
+        "id": "edge_2",
+        "source": "node_2",
+        "target": "node_3",
+        "relationship": "contributes_to",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_40a72300afac3574",
+          "ev_062e8d57d474329d"
+        ],
+        "rationale": "The acquisition was reported as a contributor to the quarter; the exact share of acceleration is not identified."
+      },
+      {
+        "id": "edge_3",
+        "source": "node_7",
+        "target": "node_3",
+        "relationship": "contributes_to",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_4222dfb326e54a5b",
+          "ev_062e8d57d474329d"
+        ],
+        "rationale": "AI activity is a plausible contributor, but the supplied evidence does not quantify or directly identify its effect on target-quarter revenue growth."
+      },
+      {
+        "id": "edge_4",
+        "source": "node_8",
+        "target": "node_3",
+        "relationship": "counteracts",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_8b2f0ac29c855dc1"
+        ],
+        "rationale": "Surface weakness is retained as a countervailing business condition without claiming a measured effect on consolidated growth."
+      },
+      {
+        "id": "edge_5",
+        "source": "node_3",
+        "target": "node_4",
+        "relationship": "supports",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_062e8d57d474329d",
+          "ev_da19641628c5a0ae"
+        ],
+        "rationale": "Independent reporting of acceleration is consistent with the official target-quarter growth measurement."
+      },
+      {
+        "id": "edge_6",
+        "source": "node_4",
+        "target": "node_5",
+        "relationship": "input_to",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_da19641628c5a0ae"
+        ],
+        "rationale": "The target-quarter year-over-year growth rate is an input to the registered acceleration calculation."
+      },
+      {
+        "id": "edge_7",
+        "source": "node_5",
+        "target": "node_6",
+        "relationship": "maps_to",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_da19641628c5a0ae"
+        ],
+        "rationale": "The measured 4.821-point acceleration maps deterministically to the above-recent-range bucket."
+      }
+    ]
+  }
+}

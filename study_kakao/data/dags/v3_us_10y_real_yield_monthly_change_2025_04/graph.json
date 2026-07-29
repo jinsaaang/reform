@@ -1,0 +1,217 @@
+{
+  "schema_version": "1.0",
+  "actual_outcome_event_id": "node_07",
+  "graph": {
+    "nodes": [
+      {
+        "id": "node_01",
+        "label": "Markets anticipated a broad Trump tariff rollout",
+        "event_type": "external_shock",
+        "occurred_date": "2025-04-01",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_d7facac87d3e8d40",
+          "ev_e72285ddd98c1912"
+        ]
+      },
+      {
+        "id": "node_02",
+        "label": "Tariff anticipation intensified trade-war fears",
+        "event_type": "indicator",
+        "occurred_date": "2025-04-01",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_8a57e8691dedb5a5",
+          "ev_0900191638df12f2"
+        ]
+      },
+      {
+        "id": "node_04",
+        "label": "Tariff concerns raised recession-risk fears",
+        "event_type": "indicator",
+        "occurred_date": "2025-04-01",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_e72285ddd98c1912",
+          "ev_be14bb6613324283"
+        ]
+      },
+      {
+        "id": "node_03",
+        "label": "Investors moved toward safe-haven Treasuries",
+        "event_type": "indicator",
+        "occurred_date": "2025-04-01",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_8a57e8691dedb5a5",
+          "ev_0900191638df12f2"
+        ]
+      },
+      {
+        "id": "node_05",
+        "label": "Nominal Treasury yields fell amid the rally",
+        "event_type": "indicator",
+        "occurred_date": "2025-04-01",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_d7facac87d3e8d40",
+          "ev_8a57e8691dedb5a5"
+        ]
+      },
+      {
+        "id": "node_06",
+        "label": "Tariff risk shifted market inflation expectations",
+        "event_type": "indicator",
+        "occurred_date": "2025-04-01",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_be14bb6613324283"
+        ]
+      },
+      {
+        "id": "node_08",
+        "label": "Solid jobs data provided counterpressure to the Treasury rally",
+        "event_type": "indicator",
+        "occurred_date": "2025-04-01",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_0900191638df12f2"
+        ]
+      },
+      {
+        "id": "node_07",
+        "label": "Resolution: April 10-year real-yield change was 0.09 points, above the recent range",
+        "event_type": "outcome",
+        "occurred_date": "2025-05-15",
+        "is_outcome": true,
+        "is_actual_outcome": true,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_a7c576014bb28ec2"
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_01",
+        "source": "node_01",
+        "target": "node_02",
+        "relationship": "supports",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_d7facac87d3e8d40",
+          "ev_e72285ddd98c1912",
+          "ev_8a57e8691dedb5a5"
+        ],
+        "rationale": "Contemporaneous reporting linked the anticipated tariff rollout with escalating trade-war concern."
+      },
+      {
+        "id": "edge_03",
+        "source": "node_01",
+        "target": "node_04",
+        "relationship": "supports",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_e72285ddd98c1912",
+          "ev_be14bb6613324283"
+        ],
+        "rationale": "The supplied reports explicitly connected tariff risk with recession concern."
+      },
+      {
+        "id": "edge_06",
+        "source": "node_01",
+        "target": "node_06",
+        "relationship": "contributes_to",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_be14bb6613324283"
+        ],
+        "rationale": "Inflation-swap reporting documented a tariff-related shift in short-term inflation pricing."
+      },
+      {
+        "id": "edge_02",
+        "source": "node_02",
+        "target": "node_03",
+        "relationship": "triggers",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_8a57e8691dedb5a5",
+          "ev_0900191638df12f2"
+        ],
+        "rationale": "The cited market reports directly describe a safe-haven Treasury rally amid trade-war fears."
+      },
+      {
+        "id": "edge_04",
+        "source": "node_04",
+        "target": "node_03",
+        "relationship": "amplifies",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_e72285ddd98c1912"
+        ],
+        "rationale": "Recession concern can strengthen safe-haven demand, but its incremental effect is not isolated by the evidence."
+      },
+      {
+        "id": "edge_05",
+        "source": "node_03",
+        "target": "node_05",
+        "relationship": "contributes_to",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_d7facac87d3e8d40",
+          "ev_8a57e8691dedb5a5"
+        ],
+        "rationale": "The documented Treasury rally coincided with and mechanically supports lower nominal yields."
+      },
+      {
+        "id": "edge_09",
+        "source": "node_08",
+        "target": "node_05",
+        "relationship": "inhibits",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_0900191638df12f2"
+        ],
+        "rationale": "Solid jobs data could have limited the nominal-yield decline, but the magnitude of that counterpressure is not established."
+      },
+      {
+        "id": "edge_07",
+        "source": "node_05",
+        "target": "node_07",
+        "relationship": "contributes_to",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_d7facac87d3e8d40",
+          "ev_a7c576014bb28ec2"
+        ],
+        "rationale": "A nominal-yield decline alone does not demonstrate a real-yield increase; the link depends on the concurrent change in inflation compensation."
+      },
+      {
+        "id": "edge_08",
+        "source": "node_06",
+        "target": "node_07",
+        "relationship": "contributes_to",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_be14bb6613324283",
+          "ev_a7c576014bb28ec2"
+        ],
+        "rationale": "Inflation-expectation changes can affect real yields, but the supplied evidence does not quantify the April decomposition."
+      }
+    ]
+  }
+}

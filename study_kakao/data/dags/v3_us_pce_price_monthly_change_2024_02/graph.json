@@ -1,0 +1,1208 @@
+{
+  "question": {
+    "id": "v3_us_pce_price_monthly_change_2024_02",
+    "question_text": "As of 2024-02-29, will the monthly PCE-price change for United States PCE price index in 2024-02 be at least 0.095 percent?",
+    "question_type": "binary",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 3,
+    "resolution_date": "2024-04-04T23:59:59Z",
+    "estimated_start_time": "2024-02-29T00:00:00Z",
+    "ground_truth": true,
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [
+      "evt_af16d87d0263",
+      "evt_378beb8d363c"
+    ],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: United States PCE price index\nTarget period: 2024-02\nFinancial area: macro / consumer prices\nRegion: US",
+    "resolution_criteria": "Use FRED series PCEPI. Compute the change from the previous monthly observation using mode 'pct'. Resolve yes if the change is at least 0.095 percent, otherwise no.",
+    "resolution_reasoning": "The snapshotted target change was 0.301 percent; it resolved to 'yes'.",
+    "options": [
+      "yes",
+      "no"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": "\n## Executive Summary\n\nThe monthly PCE price change for the United States in February 2024 was indeed at least 0.095 percent, driven primarily by persistent inflation in services and certain goods sectors. After a period of moderating inflation towards the end of 2023, data released in late March 2024 confirmed an uptick. This increase was broadly in line with market expectations influenced by earlier Consumer Price Index (CPI) reports and was acknowledged by Federal Reserve officials, who indicated a cautious approach to interest rate adjustments. Despite calls for rate cuts, the consistent inflation data reinforced the Fed's stance.\n\n## Timeline Of Key Events\n\n*   **February 2, 2024:** Discussion around U.S. inflation trends and outlook for 2024 highlights ongoing inflationary pressures. [art_finance_20240202_007_fb4bd2f3]\n*   **February 29, 2024:** Key Fed inflation measure (presumably January PCE) reportedly rose 0.4% in January, up 2.8% year-over-year, largely as expected. [art_finance_20240229_002_84968db8] Also, the Federal Reserve Bank of St. Louis publishes analysis on core inflation forecast accuracy. [art_finance_20240229_004_735f3db8]\n*   **March 12, 2024:** Gas and housing prices are noted as driving inflation higher in February, with the increase being expected and unlikely to alter Federal Reserve thinking on interest rates. [art_finance_20240312_003_bbe08cd8]\n*   **March 19, 2024:** The Progressive Caucus calls for the Federal Reserve to lower interest rates, reflecting political pressure despite ongoing inflation concerns. [art_finance_20240319_006_486d0e9f]\n*   **March 29, 2024:** The PCE inflation report for February 2024 shows the key Fed inflation gauge rose 2.8% annually as expected. [art_finance_20240329_002_2c157d54] Federal Reserve Chair Jerome Powell makes remarks at the Macroeconomics and Monetary Policy Conference, likely addressing inflation and monetary policy. [art_finance_20240329_005_10657718]\n*   **March 30, 2024:** Powell states that the February inflation report (PCE) was good, but more data is needed, acknowledging the results were in line with expectations. [art_finance_20240330_008_cfc18e49]\n*   **April 1, 2024:** Gold prices hit a record high after mild U.S. inflation data, indicating market reaction to the released figures. [art_finance_20240401_002_74584519]\n\n## Causal Chain Analysis\n\nThe ultimate outcome of a monthly PCE price change of at least 0.095 percent in February 2024 was primarily *caused* by persistent inflationary pressures in key sectors, notably housing and energy. These pressures were *triggered* by robust consumer demand and supply-side constraints, as well as broader economic conditions at the beginning of 2024 [art_finance_20240202_007_fb4bd2f3]. The upward trend in inflation was *reflected* in the February CPI report, which *led to* market expectations of a higher PCE reading [art_finance_20240312_003_bbe08cd8]. The official release of the February PCE data in late March, showing an annual increase of 2.8% and confirming the monthly rise, *resulted in* the question's affirmative resolution. Federal Reserve officials, including Jerome Powell, had *anticipated* this increase, reinforcing their cautious stance on interest rate cuts and thus *contributing* to the sustained inflationary environment [art_finance_20240329_002_2c157d54, art_finance_20240330_008_cfc18e49].\n\n## Countervailing Factors\n\nOne significant countervailing factor was the political pressure on the Federal Reserve to lower interest rates, as exemplified by the Progressive Caucus's call in mid-March [art_finance_20240319_006_486d0e9f]. This pressure *aimed to* ease monetary policy, which theoretically could have dampened inflationary pressures if acted upon. However, these calls *failed* to alter the Fed's prevailing data-dependent strategy. The Fed's assessment of consistent inflation data, particularly the February PCE report, *overwhelmed* any inclination to loosen policy prematurely [art_finance_20240330_008_cfc18e49]. Additionally, some analysis of core inflation forecast accuracy indicated that predicting inflation can be challenging [art_finance_20240229_004_735f3db8], creating potential for misjudgment, but in this instance, forecasts aligned with the actual outcome.\n\n## Event Candidate Inventory\n\n*   **E1: Persistent Inflationary Pressures:**\n    *   **Title:** U.S. Inflation Trends And Outlook In 2024\n    *   **Date:** February 2, 2024\n    *   **Why it matters causally:** Established the underlying economic conditions and expectations for continued inflation early in the year, setting the stage for the February PCE increase.\n    *   **Source article IDs:** [art_finance_20240202_007_fb4bd2f3]\n\n*   **E2: January PCE Data Release:**\n    *   **Title:** Key Fed inflation measure rose 0.4% in January as expected, up 2.8% from a year ago\n    *   **Date:** February 29, 2024\n    *   **Why it matters causally:** Provided early indication of ongoing inflation, aligning with expectations and influencing predictions for the February data.\n    *   **Source article IDs:** [art_finance_20240229_002_84968db8]\n\n*   **E3: February Inflation Drivers Noted:**\n    *   **Title:** Gas and Housing Prices Drive Inflation Higher in February\n    *   **Date:** March 12, 2024\n    *   **Why it matters causally:** Identified the specific sectors (energy, housing) contributing significantly to the February inflation, directly correlating with the PCE increase.\n    *   **Source article IDs:** [art_finance_20240312_003_bbe08cd8]\n\n*   **E4: February PCE Data Release and Fed Reaction:**\n    *   **Title:** PCE inflation report February 2024: Key Fed inflation gauge ...\n    *   **Date:** March 29, 2024\n    *   **Why it matters causally:** The official confirmation of the February PCE data, which directly addresses the question's premise. The Fed's acknowledgement validated the outcome.\n    *   **Source article IDs:** [art_finance_20240329_002_2c157d54, art_finance_20240329_005_10657718, art_finance_20240330_008_cfc18e49]\n\n## Evidence Mapping Table\n\n| Claim/Event | Article IDs | Date Support | Confidence (0-1) | Notes |\n|:------------|:------------|:-------------|:-----------------|:------|\n| Underlying inflation in early 2024 | [art_finance_20240202_007_fb4bd2f3] | 2024-02-02 | 0.9 | Sets general inflationary context. |\n| January PCE data set expectations | [art_finance_20240229_002_84968db8] | 2024-02-29 | 0.9 | Precursor to February data, showed continued inflation. |\n| Drivers of February inflation (gas, housing) | [art_finance_20240312_003_bbe08cd8] | 2024-03-12 | 0.9 | Directly connects specific sectors to inflation. |\n| February PCE data confirmation | [art_finance_20240329_002_2c157d54] | 2024-03-29 | 1.0 | Official release directly confirming the outcome. |\n| Fed's cautious stance on rates | [art_finance_20240329_005_10657718], [art_finance_20240330_008_cfc18e49] | 2024-03-29, 2024-03-30 | 0.9 | Reaffirmed by latest data, showing no immediate rate cuts. |\n| Political pressure for rate cuts | [art_finance_20240319_006_486d0e9f] | 2024-03-19 | 0.8 | Countervailing factor that did not alter Fed policy. |\n\n## Uncertainties And Alternative Paths\n\nWhile the outcome was confirmed, several uncertainties and alternative paths existed. One uncertainty was the exact magnitude of the PCE increase, as forecasts, while generally accurate, are not perfect. A slightly lower-than-expected figure, even if still positive, could have influenced market sentiment differently. An alternative path could have involved a more aggressive stance from the Federal Reserve in response to political pressure or a sharper deceleration of inflation, which might have led to earlier rate cuts. However, the data-driven approach of the Fed, combined with persistent inflation, ultimately negated these alternative scenarios.",
+    "graph_built": true,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.202773Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "us_pce_price_monthly_change",
+        "event_cluster_id": "us_pce_prices_2024-02",
+        "category": "macro",
+        "original_domain": "macro",
+        "subdomain": "consumer prices",
+        "entity": "United States PCE price index",
+        "region": "US",
+        "target_metric": "monthly PCE-price change",
+        "target_period": "2024-02",
+        "forecast_cutoff": "2024-02-29T00:00:00+00:00",
+        "forecast_date_options": [
+          "2024-02-29"
+        ],
+        "resolution_available_at": "2024-04-04T23:59:59+00:00",
+        "horizon_days": 35,
+        "source_type": "fred_series_snapshot",
+        "source_series_id": "PCEPI",
+        "source_homepage": "https://fred.stlouisfed.org/series/PCEPI",
+        "comparison_rule": "target change >= median of 4 prior observed changes",
+        "comparison_threshold": 0.095495,
+        "comparison_thresholds": null,
+        "change_unit": "percent",
+        "threshold_observation_dates": [
+          "2023-09-01",
+          "2023-10-01",
+          "2023-11-01",
+          "2023-12-01",
+          "2024-01-01"
+        ],
+        "split": "memory",
+        "family_position": 3,
+        "family_size": 7,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "yes",
+        "resolved_class": "yes",
+        "resolution_value": 122.598,
+        "target_change": 0.30107175,
+        "source_observation_date": "2024-02-01",
+        "resolution_document": {
+          "publisher": "Federal Reserve Bank of St. Louis (FRED)",
+          "title": "Personal Consumption Expenditures: Chain-type Price Index",
+          "url": "https://fred.stlouisfed.org/series/PCEPI"
+        },
+        "source_download_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PCEPI&cosd=2019-01-01&coed=2026-06-30",
+        "source_sha256": "e2324358874ed7b15b98265e420878f48272635cc4ae0b0220144142083500fc",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_af16d87d0263",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 11,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_20240329_003_9c2ca3fc",
+        "title": "Key Fed Inflation Data Keeps June Rate Cut In Play; Powell Is OK With Dissent - Investor's Business Daily",
+        "url": "https://overpassesforamerica.com/key-fed-inflation-data-keeps-june-rate-cut-in-play-powell-is-ok-with-dissent",
+        "source": "overpassesforamerica.com",
+        "published_date": "2024-03-29T16:00:02+00:00"
+      },
+      {
+        "id": "art_finance_20240229_004_735f3db8",
+        "title": "Core Inflation Revisited: Forecast Accuracy across Horizons - Federal Reserve Bank of St. Louis",
+        "url": "https://www.stlouisfed.org/on-the-economy/2024/feb/core-inflation-revisited-forecast-accuracy-horizons",
+        "source": "stlouisfed.org",
+        "published_date": "2024-02-29T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240229_002_84968db8",
+        "title": "Key Fed inflation measure rose 0.4% in January as expected, up 2.8% from a year ago - CNBC",
+        "url": "https://medium.com/newsbusinesses/key-fed-inflation-measure-rose-0-4-in-january-as-expected-up-2-8-from-a-year-ago-49104f4636dc",
+        "source": "medium.com",
+        "published_date": "2024-02-29T17:28:05.747000+00:00"
+      },
+      {
+        "id": "art_finance_20240329_002_2c157d54",
+        "title": "PCE inflation report February 2024: Key Fed inflation gauge ...",
+        "url": "https://www.cnbc.com/2024/03/29/pce-inflation-report-february-2024-key-fed-inflation-gauge-rose-2point8percent-annually-as-expected.html",
+        "source": "cnbc.com",
+        "published_date": "2024-03-29T12:32:04+00:00"
+      },
+      {
+        "id": "art_finance_20240401_002_74584519",
+        "title": "Gold price hits record high after mild U.S. inflation data - KITCO",
+        "url": "https://www.kitco.com/news/article/2024-04-01/gold-price-hits-record-high-after-mild-us-inflation-data",
+        "source": "kitco.com",
+        "published_date": "2024-04-01T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240312_003_bbe08cd8",
+        "title": "Gas and Housing Prices Drive Inflation Higher in February | Economy | U.S. News - U.S. News & World Report",
+        "url": "https://www.usnews.com/news/economy/articles/2024-03-12/gas-and-housing-prices-drive-inflation-higher-in-february",
+        "source": "usnews.com",
+        "published_date": "2024-03-12T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240314_004_371eec40",
+        "title": "Reform the Federal Reserve’s Governance to Deliver Better Monetary Outcomes - Manhattan Institute",
+        "url": "https://manhattan.institute/article/reform-the-federal-reserves-governance-to-deliver-better-monetary-outcomes",
+        "source": "manhattan.institute",
+        "published_date": "2024-03-14T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240329_005_10657718",
+        "title": "Remarks from Chair Jerome H. Powell at the Macroeconomics and Monetary Policy Conference - Federal Reserve Bank of San Francisco",
+        "url": "https://www.frbsf.org/news-and-media/events/2024/03/jerome-powell-remarks-with-kai-ryssdal-2024",
+        "source": "frbsf.org",
+        "published_date": "2024-03-29T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240319_006_486d0e9f",
+        "title": "Pressley, Progressive Caucus Call for Federal Reserve to Lower Interest Rates - House.gov",
+        "url": "https://pressley.house.gov/2024/03/19/pressley-progressive-caucus-call-for-federal-reserve-to-lower-interest-rates",
+        "source": "pressley.house.gov",
+        "published_date": "2024-03-19T17:35:32+00:00"
+      },
+      {
+        "id": "art_finance_20240202_007_fb4bd2f3",
+        "title": "Inflation Trends And Outlook In The United States, 2024 - Forbes",
+        "url": "https://www.forbes.com/sites/forrester/2024/02/02/us-inflation-trends-and-outlook-in-2024",
+        "source": "forbes.com",
+        "published_date": "2024-02-02T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240330_008_cfc18e49",
+        "title": "Powell Says February Inflation Report Was Good. But More Data Is...",
+        "url": "https://www.barrons.com/livecoverage/fed-jerome-powell-speech-live-today/card/powell-says-pce-inflation-was-in-line-with-expectations--C3XqMJlEEqpoVSfCg6rP",
+        "source": "barrons.com",
+        "published_date": "2024-03-30T00:00:00+00:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_af16d87d0263",
+      "events_count": 11,
+      "hypotheses_count": 12
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 3,
+      "avg_depth": 2.4,
+      "quality_score": 0.88,
+      "depth_score": 1.0,
+      "confidence_score": 0.81,
+      "strength_score": 0.69,
+      "evidence_score": 1.0,
+      "event_count": 11,
+      "hypothesis_count": 12
+    },
+    "nodes": [
+      {
+        "id": "evt_378beb8d363c",
+        "title": "No - As of 2024-02-29, will the monthly PCE-price chang",
+        "description": "Negative resolution: As of 2024-02-29, will the monthly PCE-price change for United States PCE price index in 2024-02 be at least 0.095 percent?",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-04-04T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_us_pce_price_monthly_change_2024_02",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "negative_resolution",
+        "outcome_option_index": null,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T01:26:01.183567Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_af16d87d0263",
+        "title": "Yes - As of 2024-02-29, will the monthly PCE-price chang",
+        "description": "Positive resolution: As of 2024-02-29, will the monthly PCE-price change for United States PCE price index in 2024-02 be at least 0.095 percent?",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-04-04T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_us_pce_price_monthly_change_2024_02",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "positive_resolution",
+        "outcome_option_index": null,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T01:26:01.183553Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240202_012_915d5f9f",
+        "title": "U.S. Inflation Trends And Outlook In 2024",
+        "description": "Discussion around U.S. inflation trends and outlook for 2024 highlights ongoing inflationary pressures.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-02-02T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240202_007_fb4bd2f3"
+        ],
+        "extracted_for_question_id": "v3_us_pce_price_monthly_change_2024_02",
+        "source_article_id": "art_finance_20240202_007_fb4bd2f3",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_pce_price_monthly_change_2024_02"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T01:35:20.921423Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240229_013_f67d0f09",
+        "title": "Key Fed inflation measure rose 0.4% in January as expected, up 2.8% from a year ago",
+        "description": "Key Fed inflation measure (presumably January PCE) reportedly rose 0.4% in January, up 2.8% year-over-year, largely as expected.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-02-29T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240229_002_84968db8"
+        ],
+        "extracted_for_question_id": "v3_us_pce_price_monthly_change_2024_02",
+        "source_article_id": "art_finance_20240229_002_84968db8",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_pce_price_monthly_change_2024_02"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T01:35:20.958681Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240229_014_bf2db14e",
+        "title": "Federal Reserve Bank of St. Louis publishes analysis on core inflation forecast accuracy.",
+        "description": "The Federal Reserve Bank of St. Louis publishes analysis on core inflation forecast accuracy.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-02-29T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240229_004_735f3db8"
+        ],
+        "extracted_for_question_id": "v3_us_pce_price_monthly_change_2024_02",
+        "source_article_id": "art_finance_20240229_004_735f3db8",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_pce_price_monthly_change_2024_02"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T01:35:20.990590Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240229_015_b863c44f",
+        "title": "Gas and Housing Prices Drive Inflation Higher in February",
+        "description": "Gas and housing prices are noted as driving inflation higher in February, with the increase being expected and unlikely to alter Federal Reserve thinking on interest rates.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-02-29T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240312_003_bbe08cd8"
+        ],
+        "extracted_for_question_id": "v3_us_pce_price_monthly_change_2024_02",
+        "source_article_id": "art_finance_20240312_003_bbe08cd8",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_pce_price_monthly_change_2024_02"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T01:35:21.023776Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240229_021_dbf21b09",
+        "title": "Monthly PCE-price change for United States PCE price index in 2024-02 was at least 0.095 percent",
+        "description": "The monthly PCE price change for the United States in February 2024 was indeed at least 0.095 percent.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-02-29T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240329_002_2c157d54"
+        ],
+        "extracted_for_question_id": "v3_us_pce_price_monthly_change_2024_02",
+        "source_article_id": "art_finance_20240329_002_2c157d54",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_pce_price_monthly_change_2024_02"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T01:35:21.211396Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240329_017_2b756051",
+        "title": "PCE inflation report for February 2024 shows the key Fed inflation gauge rose 2.8% annually as expected.",
+        "description": "The PCE inflation report for February 2024 shows the key Fed inflation gauge rose 2.8% annually as expected.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-03-29T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240329_002_2c157d54"
+        ],
+        "extracted_for_question_id": "v3_us_pce_price_monthly_change_2024_02",
+        "source_article_id": "art_finance_20240329_002_2c157d54",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_pce_price_monthly_change_2024_02"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T01:35:21.081465Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240329_018_bfb258b4",
+        "title": "Federal Reserve Chair Jerome Powell makes remarks at the Macroeconomics and Monetary Policy Conference",
+        "description": "Federal Reserve Chair Jerome Powell makes remarks at the Macroeconomics and Monetary Policy Conference, likely addressing inflation and monetary policy.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-03-29T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240329_005_10657718"
+        ],
+        "extracted_for_question_id": "v3_us_pce_price_monthly_change_2024_02",
+        "source_article_id": "art_finance_20240329_005_10657718",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_pce_price_monthly_change_2024_02"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T01:35:21.114290Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240330_019_daf70042",
+        "title": "Powell states that the February inflation report (PCE) was good, but more data is needed",
+        "description": "Powell states that the February inflation report (PCE) was good, but more data is needed, acknowledging the results were in line with expectations.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-03-30T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240330_008_cfc18e49"
+        ],
+        "extracted_for_question_id": "v3_us_pce_price_monthly_change_2024_02",
+        "source_article_id": "art_finance_20240330_008_cfc18e49",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_pce_price_monthly_change_2024_02"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T01:35:21.146301Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240401_020_73a925c9",
+        "title": "Gold prices hit a record high after mild U.S. inflation data",
+        "description": "Gold prices hit a record high after mild U.S. inflation data, indicating market reaction to the released figures.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-04-01T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240401_002_74584519"
+        ],
+        "extracted_for_question_id": "v3_us_pce_price_monthly_change_2024_02",
+        "source_article_id": "art_finance_20240401_002_74584519",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_pce_price_monthly_change_2024_02"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T01:35:21.178109Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_politics_20240319_016_f10d0191",
+        "title": "Progressive Caucus Calls for Federal Reserve to Lower Interest Rates",
+        "description": "The Progressive Caucus calls for the Federal Reserve to lower interest rates, reflecting political pressure despite ongoing inflation concerns.",
+        "event_type": "indicator",
+        "domain": "politics",
+        "tags": [],
+        "occurred_date": "2024-03-19T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240319_006_486d0e9f"
+        ],
+        "extracted_for_question_id": "v3_us_pce_price_monthly_change_2024_02",
+        "source_article_id": "art_finance_20240319_006_486d0e9f",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_pce_price_monthly_change_2024_02"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T01:35:21.046850Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_us_pce_price_monthly_change_2024_02_20260725_013521_010_f20408a2",
+        "source_event_id": "evt_finance_20240202_012_915d5f9f",
+        "target_event_id": "evt_finance_20240229_021_dbf21b09",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Persistent inflationary pressures in key sectors, notably housing and energy, caused the monthly PCE price change to be at least 0.095 percent.",
+        "evidence_article_ids": [
+          "art_finance_20240202_007_fb4bd2f3"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2024_02"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T01:35:21.272738Z",
+        "last_confirmed_at": "2026-07-25T01:35:21.272738Z"
+      },
+      {
+        "id": "hyp_v3_us_pce_price_monthly_change_2024_02_20260725_013521_011_f6364ffe",
+        "source_event_id": "evt_finance_20240229_013_f67d0f09",
+        "target_event_id": "evt_finance_20240229_021_dbf21b09",
+        "relation_type": "correlates",
+        "strength": 0.6,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "The January PCE data provided an early indication of ongoing inflation, influencing expectations for the February data and correlating with the eventual outcome.",
+        "evidence_article_ids": [
+          "art_finance_20240229_002_84968db8"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2024_02"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T01:35:21.291061Z",
+        "last_confirmed_at": "2026-07-25T01:35:21.291061Z"
+      },
+      {
+        "id": "hyp_v3_us_pce_price_monthly_change_2024_02_20260725_013521_012_bde4f112",
+        "source_event_id": "evt_finance_20240229_015_b863c44f",
+        "target_event_id": "evt_finance_20240229_021_dbf21b09",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Specific sectors like gas and housing driving inflation higher in February directly contributed to the PCE increase.",
+        "evidence_article_ids": [
+          "art_finance_20240312_003_bbe08cd8"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2024_02"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T01:35:21.307756Z",
+        "last_confirmed_at": "2026-07-25T01:35:21.307756Z"
+      },
+      {
+        "id": "hyp_v3_us_pce_price_monthly_change_2024_02_20260725_013521_013_da2dfdfb",
+        "source_event_id": "evt_finance_20240229_014_bf2db14e",
+        "target_event_id": "evt_finance_20240229_021_dbf21b09",
+        "relation_type": "correlates",
+        "strength": 0.2,
+        "confidence": 0.5,
+        "time_lag_hours": null,
+        "reasoning": "Analysis of core inflation forecast accuracy highlights the challenge of predicting inflation, but in this instance, forecasts aligned with the actual outcome, thus correlating with the outcome.",
+        "evidence_article_ids": [
+          "art_finance_20240229_004_735f3db8"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2024_02"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T01:35:21.323805Z",
+        "last_confirmed_at": "2026-07-25T01:35:21.323805Z"
+      },
+      {
+        "id": "hyp_v3_us_pce_price_monthly_change_2024_02_20260725_013521_014_7453891a",
+        "source_event_id": "evt_finance_20240202_012_915d5f9f",
+        "target_event_id": "evt_finance_20240229_015_b863c44f",
+        "relation_type": "enables",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Ongoing inflationary pressures enabled specific sectors like gas and housing to drive inflation higher in February.",
+        "evidence_article_ids": [
+          "art_finance_20240202_007_fb4bd2f3",
+          "art_finance_20240312_003_bbe08cd8"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2024_02"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T01:35:21.343598Z",
+        "last_confirmed_at": "2026-07-25T01:35:21.343598Z"
+      },
+      {
+        "id": "hyp_v3_us_pce_price_monthly_change_2024_02_20260725_013521_015_5bdfea7c",
+        "source_event_id": "evt_finance_20240229_013_f67d0f09",
+        "target_event_id": "evt_finance_20240229_015_b863c44f",
+        "relation_type": "enables",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "The rise in January PCE provided an early indication of ongoing inflation, enabling the expectation that February inflation drivers would also be high.",
+        "evidence_article_ids": [
+          "art_finance_20240229_002_84968db8",
+          "art_finance_20240312_003_bbe08cd8"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2024_02"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T01:35:21.359778Z",
+        "last_confirmed_at": "2026-07-25T01:35:21.359778Z"
+      },
+      {
+        "id": "hyp_v3_us_pce_price_monthly_change_2024_02_20260725_013521_016_4aefd2f5",
+        "source_event_id": "evt_finance_20240229_021_dbf21b09",
+        "target_event_id": "evt_finance_20240329_017_2b756051",
+        "relation_type": "triggers",
+        "strength": 1.0,
+        "confidence": 1.0,
+        "time_lag_hours": null,
+        "reasoning": "The February PCE change being at least 0.095 percent triggered its official reporting.",
+        "evidence_article_ids": [
+          "art_finance_20240329_002_2c157d54"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2024_02"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T01:35:21.376356Z",
+        "last_confirmed_at": "2026-07-25T01:35:21.376356Z"
+      },
+      {
+        "id": "hyp_v3_us_pce_price_monthly_change_2024_02_20260725_013521_017_f251880c",
+        "source_event_id": "evt_finance_20240229_021_dbf21b09",
+        "target_event_id": "evt_finance_20240330_019_daf70042",
+        "relation_type": "triggers",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The February PCE change being at least 0.095 percent triggered Powell's acknowledgment of its results.",
+        "evidence_article_ids": [
+          "art_finance_20240330_008_cfc18e49"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2024_02"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T01:35:21.394424Z",
+        "last_confirmed_at": "2026-07-25T01:35:21.394424Z"
+      },
+      {
+        "id": "hyp_v3_us_pce_price_monthly_change_2024_02_20260725_013521_018_c1fb624b",
+        "source_event_id": "evt_finance_20240229_021_dbf21b09",
+        "target_event_id": "evt_finance_20240401_020_73a925c9",
+        "relation_type": "triggers",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The mild U.S. inflation data, as confirmed by the February PCE, triggered a market reaction leading to gold prices hitting a record high.",
+        "evidence_article_ids": [
+          "art_finance_20240329_002_2c157d54",
+          "art_finance_20240401_002_74584519"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2024_02"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T01:35:21.410541Z",
+        "last_confirmed_at": "2026-07-25T01:35:21.410541Z"
+      },
+      {
+        "id": "hyp_v3_us_pce_price_monthly_change_2024_02_20260725_013521_019_47b77e11",
+        "source_event_id": "evt_finance_20240329_017_2b756051",
+        "target_event_id": "evt_finance_20240329_018_bfb258b4",
+        "relation_type": "correlates",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Powell's remarks on inflation and monetary policy are correlated with the release of the PCE report, as he would likely address the latest data.",
+        "evidence_article_ids": [
+          "art_finance_20240329_002_2c157d54",
+          "art_finance_20240329_005_10657718"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2024_02"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T01:35:21.427342Z",
+        "last_confirmed_at": "2026-07-25T01:35:21.427342Z"
+      },
+      {
+        "id": "hyp_v3_us_pce_price_monthly_change_2024_02_20260725_013521_020_5d6d41f9",
+        "source_event_id": "evt_politics_20240319_016_f10d0191",
+        "target_event_id": "evt_finance_20240329_018_bfb258b4",
+        "relation_type": "inhibits",
+        "strength": 0.4,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "The Progressive Caucus's calls for rate cuts could have influenced the Fed's stance, but the consistent inflation data, as reflected in Powell's remarks, overwhelmed this pressure.",
+        "evidence_article_ids": [
+          "art_finance_20240319_006_486d0e9f",
+          "art_finance_20240329_005_10657718"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2024_02"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T01:35:21.443333Z",
+        "last_confirmed_at": "2026-07-25T01:35:21.443333Z"
+      },
+      {
+        "id": "hyp_v3_us_pce_price_monthly_change_2024_02_20260725_013537_021_7d8d8b67",
+        "source_event_id": "evt_finance_20240229_021_dbf21b09",
+        "target_event_id": "evt_af16d87d0263",
+        "relation_type": "triggers",
+        "strength": 1.0,
+        "confidence": 1.0,
+        "time_lag_hours": null,
+        "reasoning": "The monthly PCE price change being at least 0.095 percent directly triggers the actual outcome.",
+        "evidence_article_ids": [
+          "art_finance_20240329_002_2c157d54"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2024_02"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T01:35:37.721947Z",
+        "last_confirmed_at": "2026-07-25T01:35:37.721947Z"
+      }
+    ],
+    "outcome_impacts": [
+      {
+        "id": "imp_bb30f8ad",
+        "event_id": "evt_finance_20240202_012_915d5f9f",
+        "outcome_event_id": "evt_af16d87d0263",
+        "question_id": "v3_us_pce_price_monthly_change_2024_02",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.9,
+        "reasoning": "Persistent inflationary pressures contributed to the PCE increase.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2024_02"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T01:35:37.734598Z",
+        "last_confirmed_at": "2026-07-25T01:35:37.734598Z"
+      },
+      {
+        "id": "imp_17747403",
+        "event_id": "evt_finance_20240202_012_915d5f9f",
+        "outcome_event_id": "evt_finance_20240229_022_9ef60079",
+        "question_id": "v3_us_pce_price_monthly_change_2024_02",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.7,
+        "confidence": 0.9,
+        "reasoning": "Persistent inflationary pressures made it less likely for PCE to be below 0.095%.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2024_02"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T01:35:37.745377Z",
+        "last_confirmed_at": "2026-07-25T01:35:37.745377Z"
+      },
+      {
+        "id": "imp_560e341a",
+        "event_id": "evt_finance_20240229_013_f67d0f09",
+        "outcome_event_id": "evt_af16d87d0263",
+        "question_id": "v3_us_pce_price_monthly_change_2024_02",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.8,
+        "reasoning": "January PCE rise correlated with and set expectations for continued inflation.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2024_02"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T01:35:37.755637Z",
+        "last_confirmed_at": "2026-07-25T01:35:37.755637Z"
+      },
+      {
+        "id": "imp_8a9e769f",
+        "event_id": "evt_finance_20240229_013_f67d0f09",
+        "outcome_event_id": "evt_finance_20240229_022_9ef60079",
+        "question_id": "v3_us_pce_price_monthly_change_2024_02",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.6,
+        "confidence": 0.8,
+        "reasoning": "January PCE rise made it less likely for PCE to be below 0.095%.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2024_02"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T01:35:37.767750Z",
+        "last_confirmed_at": "2026-07-25T01:35:37.767750Z"
+      },
+      {
+        "id": "imp_f40990f7",
+        "event_id": "evt_finance_20240229_014_bf2db14e",
+        "outcome_event_id": "evt_af16d87d0263",
+        "question_id": "v3_us_pce_price_monthly_change_2024_02",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.2,
+        "confidence": 0.5,
+        "reasoning": "Forecast accuracy analysis is a background factor, not directly influencing the PCE outcome, but providing context.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2024_02"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T01:35:37.778841Z",
+        "last_confirmed_at": "2026-07-25T01:35:37.778841Z"
+      },
+      {
+        "id": "imp_f281e2f1",
+        "event_id": "evt_finance_20240229_014_bf2db14e",
+        "outcome_event_id": "evt_finance_20240229_022_9ef60079",
+        "question_id": "v3_us_pce_price_monthly_change_2024_02",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.2,
+        "confidence": 0.5,
+        "reasoning": "Forecast accuracy analysis is a background factor, not directly influencing the PCE outcome, but providing context.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2024_02"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T01:35:37.789164Z",
+        "last_confirmed_at": "2026-07-25T01:35:37.789164Z"
+      },
+      {
+        "id": "imp_f90f41ab",
+        "event_id": "evt_finance_20240229_015_b863c44f",
+        "outcome_event_id": "evt_af16d87d0263",
+        "question_id": "v3_us_pce_price_monthly_change_2024_02",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "Gas and housing prices directly drove inflation higher in February.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2024_02"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T01:35:37.799964Z",
+        "last_confirmed_at": "2026-07-25T01:35:37.799964Z"
+      },
+      {
+        "id": "imp_b90d976b",
+        "event_id": "evt_finance_20240229_015_b863c44f",
+        "outcome_event_id": "evt_finance_20240229_022_9ef60079",
+        "question_id": "v3_us_pce_price_monthly_change_2024_02",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "Gas and housing prices driving inflation higher made it less likely for PCE to be below 0.095%.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2024_02"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T01:35:37.810090Z",
+        "last_confirmed_at": "2026-07-25T01:35:37.810090Z"
+      },
+      {
+        "id": "imp_1f6f4baa",
+        "event_id": "evt_politics_20240319_016_f10d0191",
+        "outcome_event_id": "evt_af16d87d0263",
+        "question_id": "v3_us_pce_price_monthly_change_2024_02",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.3,
+        "confidence": 0.6,
+        "reasoning": "Political pressure to lower interest rates aimed to dampen inflationary pressures, but failed to alter Fed's policy.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2024_02"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T01:35:37.821221Z",
+        "last_confirmed_at": "2026-07-25T01:35:37.821221Z"
+      },
+      {
+        "id": "imp_2e8e1506",
+        "event_id": "evt_politics_20240319_016_f10d0191",
+        "outcome_event_id": "evt_finance_20240229_022_9ef60079",
+        "question_id": "v3_us_pce_price_monthly_change_2024_02",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.3,
+        "confidence": 0.6,
+        "reasoning": "Political pressure to lower interest rates would have made it more likely for PCE to be below 0.095% if successful.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2024_02"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T01:35:37.831344Z",
+        "last_confirmed_at": "2026-07-25T01:35:37.831344Z"
+      },
+      {
+        "id": "imp_e75bd3b5",
+        "event_id": "evt_finance_20240329_017_2b756051",
+        "outcome_event_id": "evt_af16d87d0263",
+        "question_id": "v3_us_pce_price_monthly_change_2024_02",
+        "impact_direction": "positive",
+        "impact_magnitude": 1.0,
+        "confidence": 1.0,
+        "reasoning": "The official report confirmed the PCE increase.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2024_02"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T01:35:37.842203Z",
+        "last_confirmed_at": "2026-07-25T01:35:37.842203Z"
+      },
+      {
+        "id": "imp_21a94e5b",
+        "event_id": "evt_finance_20240329_017_2b756051",
+        "outcome_event_id": "evt_finance_20240229_022_9ef60079",
+        "question_id": "v3_us_pce_price_monthly_change_2024_02",
+        "impact_direction": "negative",
+        "impact_magnitude": 1.0,
+        "confidence": 1.0,
+        "reasoning": "The official report confirmed the PCE increase, making the counterfactual impossible.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2024_02"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T01:35:37.852247Z",
+        "last_confirmed_at": "2026-07-25T01:35:37.852247Z"
+      },
+      {
+        "id": "imp_2a9b26a0",
+        "event_id": "evt_finance_20240329_018_bfb258b4",
+        "outcome_event_id": "evt_af16d87d0263",
+        "question_id": "v3_us_pce_price_monthly_change_2024_02",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.5,
+        "confidence": 0.7,
+        "reasoning": "Powell's remarks reflected the Fed's awareness and stance on the inflationary environment, indirectly supporting the outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2024_02"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T01:35:37.864824Z",
+        "last_confirmed_at": "2026-07-25T01:35:37.864824Z"
+      },
+      {
+        "id": "imp_894aa914",
+        "event_id": "evt_finance_20240329_018_bfb258b4",
+        "outcome_event_id": "evt_finance_20240229_022_9ef60079",
+        "question_id": "v3_us_pce_price_monthly_change_2024_02",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.5,
+        "confidence": 0.7,
+        "reasoning": "Powell's remarks reflected the Fed's awareness and stance on the inflationary environment, making the counterfactual less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2024_02"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T01:35:37.875512Z",
+        "last_confirmed_at": "2026-07-25T01:35:37.875512Z"
+      },
+      {
+        "id": "imp_be91b199",
+        "event_id": "evt_finance_20240330_019_daf70042",
+        "outcome_event_id": "evt_af16d87d0263",
+        "question_id": "v3_us_pce_price_monthly_change_2024_02",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.8,
+        "reasoning": "Powell's acknowledgement that the February inflation report was in line with expectations further supports the outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2024_02"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T01:35:37.885272Z",
+        "last_confirmed_at": "2026-07-25T01:35:37.885272Z"
+      },
+      {
+        "id": "imp_347e4339",
+        "event_id": "evt_finance_20240330_019_daf70042",
+        "outcome_event_id": "evt_finance_20240229_022_9ef60079",
+        "question_id": "v3_us_pce_price_monthly_change_2024_02",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.6,
+        "confidence": 0.8,
+        "reasoning": "Powell's acknowledgement that the February inflation report was in line with expectations made the counterfactual less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2024_02"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T01:35:37.895728Z",
+        "last_confirmed_at": "2026-07-25T01:35:37.895728Z"
+      },
+      {
+        "id": "imp_4ad329c3",
+        "event_id": "evt_finance_20240401_020_73a925c9",
+        "outcome_event_id": "evt_af16d87d0263",
+        "question_id": "v3_us_pce_price_monthly_change_2024_02",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.4,
+        "confidence": 0.6,
+        "reasoning": "Gold prices hitting a record high after mild U.S. inflation data indicates market reaction to the released figures, which aligns with the outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2024_02"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T01:35:37.905432Z",
+        "last_confirmed_at": "2026-07-25T01:35:37.905432Z"
+      },
+      {
+        "id": "imp_01cc5a56",
+        "event_id": "evt_finance_20240401_020_73a925c9",
+        "outcome_event_id": "evt_finance_20240229_022_9ef60079",
+        "question_id": "v3_us_pce_price_monthly_change_2024_02",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.4,
+        "confidence": 0.6,
+        "reasoning": "Gold prices hitting a record high after mild U.S. inflation data indicates market reaction to the released figures, making the counterfactual less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2024_02"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T01:35:37.915941Z",
+        "last_confirmed_at": "2026-07-25T01:35:37.915941Z"
+      },
+      {
+        "id": "imp_87d9c904",
+        "event_id": "evt_finance_20240229_021_dbf21b09",
+        "outcome_event_id": "evt_af16d87d0263",
+        "question_id": "v3_us_pce_price_monthly_change_2024_02",
+        "impact_direction": "positive",
+        "impact_magnitude": 1.0,
+        "confidence": 1.0,
+        "reasoning": "This event directly states the outcome of the question.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2024_02"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T01:35:37.926219Z",
+        "last_confirmed_at": "2026-07-25T01:35:37.926219Z"
+      },
+      {
+        "id": "imp_bf05f35d",
+        "event_id": "evt_finance_20240229_021_dbf21b09",
+        "outcome_event_id": "evt_finance_20240229_022_9ef60079",
+        "question_id": "v3_us_pce_price_monthly_change_2024_02",
+        "impact_direction": "negative",
+        "impact_magnitude": 1.0,
+        "confidence": 1.0,
+        "reasoning": "This event directly contradicts the counterfactual outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2024_02"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T01:35:37.936880Z",
+        "last_confirmed_at": "2026-07-25T01:35:37.936880Z"
+      },
+      {
+        "id": "imp_f459b220",
+        "event_id": "evt_finance_20240229_022_9ef60079",
+        "outcome_event_id": "evt_af16d87d0263",
+        "question_id": "v3_us_pce_price_monthly_change_2024_02",
+        "impact_direction": "negative",
+        "impact_magnitude": 1.0,
+        "confidence": 1.0,
+        "reasoning": "This event directly contradicts the actual outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2024_02"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T01:35:41.101925Z",
+        "last_confirmed_at": "2026-07-25T01:35:41.101925Z"
+      },
+      {
+        "id": "imp_e46d25f2",
+        "event_id": "evt_finance_20240229_022_9ef60079",
+        "outcome_event_id": "evt_finance_20240229_022_9ef60079",
+        "question_id": "v3_us_pce_price_monthly_change_2024_02",
+        "impact_direction": "positive",
+        "impact_magnitude": 1.0,
+        "confidence": 1.0,
+        "reasoning": "This event directly states the counterfactual outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2024_02"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T01:35:41.114664Z",
+        "last_confirmed_at": "2026-07-25T01:35:41.114664Z"
+      }
+    ]
+  }
+}

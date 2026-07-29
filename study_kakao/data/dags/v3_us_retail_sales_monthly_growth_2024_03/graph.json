@@ -1,0 +1,188 @@
+{
+  "schema_version": "1.0",
+  "actual_outcome_event_id": "node_8",
+  "graph": {
+    "nodes": [
+      {
+        "id": "node_3",
+        "label": "General-merchandise store sales rebounded in March",
+        "event_type": "indicator",
+        "occurred_date": "2024-04-15",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "art_finance_20240415_002_97a1db3f"
+        ]
+      },
+      {
+        "id": "node_5",
+        "label": "U.S. vehicle buyers remained resilient despite high interest rates",
+        "event_type": "indicator",
+        "occurred_date": "2024-04-03",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "art_finance_20240403_003_ad8fffd5"
+        ]
+      },
+      {
+        "id": "node_6",
+        "label": "Electric-vehicle sales growth slowed",
+        "event_type": "indicator",
+        "occurred_date": "2024-04-03",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "art_finance_20240403_003_ad8fffd5",
+          "art_finance_20240403_002_1d7d3c71"
+        ]
+      },
+      {
+        "id": "node_4",
+        "label": "U.S. new-vehicle sales increased",
+        "event_type": "indicator",
+        "occurred_date": "2024-04-03",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "art_finance_20240403_003_ad8fffd5"
+        ]
+      },
+      {
+        "id": "node_7",
+        "label": "A retailer launched a U.S. marketing campaign",
+        "event_type": "decision",
+        "occurred_date": "2024-04-10",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "art_finance_20240410_002_5fcdaa83"
+        ]
+      },
+      {
+        "id": "node_2",
+        "label": "Contemporaneous reports said U.S. retail sales rose in March",
+        "event_type": "indicator",
+        "occurred_date": "2024-04-15",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "art_finance_20240415_003_8362f429",
+          "art_finance_20240415_002_97a1db3f"
+        ]
+      },
+      {
+        "id": "node_1",
+        "label": "March retail-sales monthly growth was 0.345 percent",
+        "event_type": "indicator",
+        "occurred_date": "2024-04-21",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_5864034feeac806a"
+        ]
+      },
+      {
+        "id": "node_8",
+        "label": "Resolved outcome: yes, growth was at least 0.009 percent",
+        "event_type": "outcome",
+        "occurred_date": "2024-04-21",
+        "is_outcome": true,
+        "is_actual_outcome": true,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_5864034feeac806a"
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_1",
+        "source": "node_3",
+        "target": "node_2",
+        "relationship": "contributes_to",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "art_finance_20240415_002_97a1db3f"
+        ],
+        "rationale": "The category rebound was reported as one component of the overall March increase."
+      },
+      {
+        "id": "edge_2",
+        "source": "node_5",
+        "target": "node_4",
+        "relationship": "supports",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "art_finance_20240403_003_ad8fffd5"
+        ],
+        "rationale": "Buyer resilience is a description of the vehicle-sales result rather than an independently measured cause."
+      },
+      {
+        "id": "edge_3",
+        "source": "node_6",
+        "target": "node_4",
+        "relationship": "counteracts",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "art_finance_20240403_003_ad8fffd5",
+          "art_finance_20240403_002_1d7d3c71"
+        ],
+        "rationale": "Slower EV growth qualified the broader vehicle-sales increase."
+      },
+      {
+        "id": "edge_4",
+        "source": "node_4",
+        "target": "node_2",
+        "relationship": "supports",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "art_finance_20240403_003_ad8fffd5",
+          "art_finance_20240415_003_8362f429"
+        ],
+        "rationale": "Vehicle sales can contribute to retail sales, but the cited annual vehicle figure does not identify the March monthly contribution."
+      },
+      {
+        "id": "edge_5",
+        "source": "node_7",
+        "target": "node_2",
+        "relationship": "supports",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "art_finance_20240410_002_5fcdaa83"
+        ],
+        "rationale": "A single retailer's campaign is insufficient to establish a material effect on nationwide March sales."
+      },
+      {
+        "id": "edge_6",
+        "source": "node_2",
+        "target": "node_1",
+        "relationship": "supports",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "art_finance_20240415_003_8362f429",
+          "ev_5864034feeac806a"
+        ],
+        "rationale": "The reports are consistent with the official positive monthly-growth observation."
+      },
+      {
+        "id": "edge_7",
+        "source": "node_1",
+        "target": "node_8",
+        "relationship": "maps_to",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_5864034feeac806a"
+        ],
+        "rationale": "The 0.345 percent change exceeds the 0.009 percent threshold and maps directly to yes."
+      }
+    ]
+  }
+}

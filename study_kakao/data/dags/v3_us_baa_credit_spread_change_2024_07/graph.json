@@ -1,0 +1,169 @@
+{
+  "schema_version": "1.0",
+  "actual_outcome_event_id": "node_6",
+  "graph": {
+    "nodes": [
+      {
+        "id": "node_1",
+        "label": "The Baa-minus-10-year-Treasury series was identified as a yield-difference metric",
+        "event_type": "indicator",
+        "occurred_date": "2024-07-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_0e61237ad71bce3d",
+          "ev_7a7b17ed0db79b26",
+          "ev_49dc6062f5b88156"
+        ]
+      },
+      {
+        "id": "node_2",
+        "label": "Historical Moody's material documented Baa spread ranges",
+        "event_type": "indicator",
+        "occurred_date": "2022-10-13",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_7b8082ea33970ce6",
+          "ev_15ffee4b35c7fd91"
+        ]
+      },
+      {
+        "id": "node_3",
+        "label": "Investment-grade spreads tightened in July 2023",
+        "event_type": "indicator",
+        "occurred_date": "2023-08-01",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_6ff094afa72f94e5"
+        ]
+      },
+      {
+        "id": "node_4",
+        "label": "The 10-year Treasury yield rose in July 2023",
+        "event_type": "indicator",
+        "occurred_date": "2023-08-01",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_4847c152f7ee10f9"
+        ]
+      },
+      {
+        "id": "node_7",
+        "label": "Corporate and Treasury yield components jointly define the spread",
+        "event_type": "indicator",
+        "occurred_date": "2024-07-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_0e61237ad71bce3d",
+          "ev_7a7b17ed0db79b26",
+          "ev_49dc6062f5b88156"
+        ]
+      },
+      {
+        "id": "node_5",
+        "label": "July 2024 Baa-minus-10-year-Treasury spread change was 0.13 percentage points",
+        "event_type": "indicator",
+        "occurred_date": "2024-07-31T23:59:59Z",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_1a1d2b06802ae8f9"
+        ]
+      },
+      {
+        "id": "node_6",
+        "label": "Resolved outcome: yes, the change was at least -0.015 percentage points",
+        "event_type": "outcome",
+        "occurred_date": "2024-07-31T23:59:59Z",
+        "is_outcome": true,
+        "is_actual_outcome": true,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_1a1d2b06802ae8f9"
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_1",
+        "source": "node_1",
+        "target": "node_7",
+        "relationship": "defines",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_0e61237ad71bce3d",
+          "ev_7a7b17ed0db79b26",
+          "ev_49dc6062f5b88156"
+        ],
+        "rationale": "The cited series descriptions define the spread as the difference between Baa and 10-year Treasury yields."
+      },
+      {
+        "id": "edge_2",
+        "source": "node_2",
+        "target": "node_7",
+        "relationship": "provides_context_for",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_7b8082ea33970ce6",
+          "ev_15ffee4b35c7fd91"
+        ],
+        "rationale": "Historical Baa ranges contextualize the metric without explaining July 2024."
+      },
+      {
+        "id": "edge_3",
+        "source": "node_3",
+        "target": "node_7",
+        "relationship": "historical_example_of",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_6ff094afa72f94e5"
+        ],
+        "rationale": "The July 2023 observation is retained only as a historical example, not a driver of July 2024."
+      },
+      {
+        "id": "edge_4",
+        "source": "node_4",
+        "target": "node_7",
+        "relationship": "historical_example_of",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_4847c152f7ee10f9"
+        ],
+        "rationale": "The July 2023 Treasury move illustrates a component change but cannot explain July 2024."
+      },
+      {
+        "id": "edge_5",
+        "source": "node_7",
+        "target": "node_5",
+        "relationship": "provides_measurement_framework_for",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_49dc6062f5b88156",
+          "ev_1a1d2b06802ae8f9"
+        ],
+        "rationale": "The component-difference framework explains how the official spread change is measured, not why it moved."
+      },
+      {
+        "id": "edge_6",
+        "source": "node_5",
+        "target": "node_6",
+        "relationship": "maps_to",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_1a1d2b06802ae8f9"
+        ],
+        "rationale": "The 0.13-point change exceeds the registered -0.015-point threshold and maps directly to yes."
+      }
+    ]
+  }
+}

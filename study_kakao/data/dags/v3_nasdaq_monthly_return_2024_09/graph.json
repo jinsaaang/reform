@@ -1,0 +1,955 @@
+{
+  "question": {
+    "id": "v3_nasdaq_monthly_return_2024_09",
+    "question_text": "As of 2024-09-01, which range will the monthly NASDAQ Composite return for NASDAQ Composite index in 2024-09 fall into?",
+    "question_type": "mcq",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 3,
+    "resolution_date": "2024-09-30T23:59:59Z",
+    "estimated_start_time": "2024-09-01T00:00:00Z",
+    "ground_truth": "within recent range",
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [
+      "evt_162396d95376",
+      "evt_b8f9ee21ecc6",
+      "evt_647d22652e5e"
+    ],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: NASDAQ Composite index\nTarget period: 2024-09\nFinancial area: market_fx_credit / technology equities\nRegion: US\nPre-registered recent-range boundaries: lower 0.299, upper 6.001 percent.",
+    "resolution_criteria": "Use FRED series NASDAQCOM. Compute the change from the previous monthly observation using mode 'pct'. Resolve 'below recent range' below 0.299, 'within recent range' from 0.299 inclusive to 6.001 exclusive, and 'above recent range' at or above 6.001 percent.",
+    "resolution_reasoning": "The snapshotted target change was 2.685 percent; it resolved to 'within recent range'.",
+    "options": [
+      "below recent range",
+      "within recent range",
+      "above recent range"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": "\n## Executive Summary\nSeptember 2024 saw the NASDAQ Composite return fall 'within recent range,' largely driven by stabilizing inflation, cautious sentiment around the Federal Reserve's rate decisions, and mixed economic indicators. While some consumer confidence metrics declined due to labor market jitters, overall market trends suggested a sideways movement rather than a sharp deviation. Tech stocks, a significant component of the NASDAQ, experienced some buying interest amid market correction alerts but no significant rallies or crashes. This confluence of factors led to a balanced market performance, preventing extreme upward or downward movements.\n\n## Timeline Of Key Events\n- **2024-09-02**: Initial market sentiment characterized by navigating a 'bear market' with strong market sentiment in some niche areas like cryptocurrency (art_finance_20240902_003_85100d69).\n- **2024-09-03**: Market correction alerts and calls to buy certain tech stocks in September, indicating a degree of underlying bullish sentiment despite broader concerns (art_finance_20240903_005_a235e177).\n- **2024-09-05**: US scrap trends outlook for September 2024 highlighting market confidence (art_finance_20240905_002_3726e3bf).\n- **2024-09-09**: Publication of Austin Economic Indicators for September 2024, contributing to the overall economic outlook (art_finance_20240909_006_4be43227).\n- **2024-09-11**: Inflation falls to its lowest level in over three years in the US, indicating a potential easing of monetary policy concerns (art_finance_20240911_008_9958e540).\n- **2024-09-11**: US inflation trending lower, though some stickiness remains (art_finance_20240911_009_9f36765f).\n- **2024-09-12**: US consumer prices rose by 0.2% in August, with the annual inflation rate hitting its lowest since early 2021 (art_finance_20240912_007_e9b808c7).\n- **2024-09-12**: Oil Market Report for September 2024, influencing overall economic stability and energy costs (art_finance_20240912_004_187009d1).\n- **2024-09-18**: FBM KLCI (Malaysian stock market index) sustained uptrend amid glove stock surge and foreign buying, providing a regional market context of growth (art_finance_20240918_002_17b3684e).\n- **2024-09-23**: Global food security improves in 2024 with higher incomes and lower inflation (art_finance_20240923_010_70df288c).\n- **2024-09-24**: US consumer confidence sours on labor market jitters, potentially dampening consumer spending and corporate earnings (art_finance_20240924_003_08188f3b).\n- **2024-09-25**: Discussion on 'The Low Consumer Sentiment/Confidence Puzzle Resolved?', indicating a mixed outlook on consumer behavior and its impact on the economy (art_finance_20240925_004_83cf77c7).\n- **2024-09-26**: Sector trends in Asset/Wealth Management for September 2024, reflecting industry perspectives on market performance (art_finance_20240926_003_95677c8a).\n\n## Causal Chain Analysis\nStabilizing inflation (E1) was a root cause, as evidenced by reports of inflation falling to its lowest levels in over three years by mid-September (art_finance_20240911_008_9958e540, art_finance_20240912_007_e9b808c7). This led to reduced pressure on the Federal Reserve to implement aggressive interest rate hikes, which in turn mitigated fears of a significant economic slowdown. Consequently, investor concerns about tightening monetary policy eased (E2). This easing of monetary policy fears, combined with selective buying interests in tech stocks (art_finance_20240903_005_a235e177), acted as an intermediate mechanism, preventing a steep market decline. While consumer confidence showed some weakening due to labor market jitters (art_finance_20240924_003_08188f3b), broader positive economic indicators like improving global food security (art_finance_20240923_010_70df288c) and sustained uptrends in some regional markets (art_finance_20240918_002_17b3684e) created offset. These conflicting signals resulted in cautious but not overtly pessimistic investor sentiment (E3), which proximately led to the NASDAQ Composite moving 'within recent range' as investors balanced risk and reward, avoiding large speculative moves (art_finance_20240925_004_83cf77c7).\n\n## Countervailing Factors\nConsumer confidence soured due to labor market jitters towards the end of September (art_finance_20240924_003_08188f3b). This factor, if dominant, could have pushed the NASDAQ Composite 'below recent range' by signaling weaker consumer spending and corporate earnings. However, this factor was overwhelmed by the positive news on inflation stabilization (art_finance_20240911_008_9958e540, art_finance_20240912_007_e9b808c7), which was a more significant driver for market sentiment at the time, particularly regarding interest rate expectations.\n\n## Event Candidate Inventory\n- **E1**: Stabilizing inflation signals\n    - Date: Mid-September 2024 (around 2024-09-11 to 2024-09-12)\n    - Why it matters causally: Reduced likelihood of aggressive Federal Reserve rate hikes, easing market fears.\n    - Source article IDs: art_finance_20240911_008_9958e540, art_finance_20240912_007_e9b808c7\n- **E2**: Easing monetary policy concerns\n    - Date: Throughout September 2024, particularly after inflation reports\n    - Why it matters causally: Encouraged investors to maintain positions or make selective investments, preventing significant sell-offs.\n    - Source article IDs: art_finance_20240911_008_9958e540, art_finance_20240912_007_e9b808c7, art_finance_20240903_005_a235e177 (indirectly related to tech stock buying)\n- **E3**: Cautious but balanced investor sentiment\n    - Date: Throughout September 2024\n    - Why it matters causally: Led to a 'within recent range' outcome by avoiding extreme reactions to mixed economic news.\n    - Source article IDs: art_finance_20240902_003_85100d69, art_finance_20240903_005_a235e177, art_finance_20240924_003_08188f3b, art_finance_20240925_004_83cf77c7\n\n## Evidence Mapping Table\n| Claim/Event | Article IDs | Date Support | Confidence (0-1) | Notes |\n|---|---|---|---|---|\n| Stabilizing inflation signals | art_finance_20240911_008_9958e540, art_finance_20240912_007_e9b808c7 | 2024-09-11, 2024-09-12 | 0.9 | Direct reports of inflation falling to multi-year lows. |\n| Easing monetary policy concerns | art_finance_20240911_008_9958e540, art_finance_20240912_007_e9b808c7 | 2024-09-11, 2024-09-12 | 0.8 | Inferred from inflation data, contributing to investor outlook. |\n| Cautious but balanced investor sentiment | art_finance_20240902_003_85100d69, art_finance_20240903_005_a235e177, art_finance_20240924_003_08188f3b, art_finance_20240925_004_83cf77c7 | 2024-09-02, 2024-09-03, 2024-09-24, 2024-09-25 | 0.7 | Mixed signals on confidence, tech stock recommendations, and general market navigation. |\n| Consumer confidence sours on labor market jitters | art_finance_20240924_003_08188f3b | 2024-09-24 | 0.8 | Direct report of declining consumer confidence. |\n\n## Uncertainties And Alternative Paths\nOne uncertainty was the degree to which labor market jitters (art_finance_20240924_003_08188f3b) would translate into a broader economic slowdown, potentially pushing the NASDAQ to 'below recent range'. An alternative path could have been a more aggressive stance from the Federal Reserve despite stabilizing inflation if other economic indicators had shown stronger growth, potentially leading to the NASDAQ Composite moving 'above recent range' due to increased corporate earnings expectations. However, the balance of factors, particularly the inflation data, kept the market within the observed range.\n",
+    "graph_built": true,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.203314Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "nasdaq_monthly_return",
+        "event_cluster_id": "nasdaq_market_2024-09",
+        "category": "market_fx_credit",
+        "original_domain": "market_fx_credit",
+        "subdomain": "technology equities",
+        "entity": "NASDAQ Composite index",
+        "region": "US",
+        "target_metric": "monthly NASDAQ Composite return",
+        "target_period": "2024-09",
+        "forecast_cutoff": "2024-09-01T00:00:00+00:00",
+        "forecast_date_options": [
+          "2024-09-01"
+        ],
+        "resolution_available_at": "2024-09-30T23:59:59+00:00",
+        "horizon_days": 29,
+        "source_type": "fred_series_snapshot",
+        "source_series_id": "NASDAQCOM",
+        "source_homepage": "https://fred.stlouisfed.org/series/NASDAQCOM",
+        "comparison_rule": "target change bucketed by the lower and upper quartiles of the 8 prior observed changes",
+        "comparison_threshold": 1.401912,
+        "comparison_thresholds": {
+          "lower": 0.29896,
+          "upper": 6.000564
+        },
+        "change_unit": "percent",
+        "threshold_observation_dates": [
+          "2023-12-29",
+          "2024-01-31",
+          "2024-02-29",
+          "2024-03-28",
+          "2024-04-30",
+          "2024-05-31",
+          "2024-06-28",
+          "2024-07-31",
+          "2024-08-30"
+        ],
+        "split": "memory",
+        "family_position": 4,
+        "family_size": 7,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "within recent range",
+        "resolved_class": "within recent range",
+        "resolution_value": 18189.17,
+        "target_change": 2.68465734,
+        "source_observation_date": "2024-09-30",
+        "resolution_document": {
+          "publisher": "Federal Reserve Bank of St. Louis (FRED)",
+          "title": "NASDAQ Composite Index",
+          "url": "https://fred.stlouisfed.org/series/NASDAQCOM"
+        },
+        "source_download_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=NASDAQCOM&cosd=2019-01-01&coed=2026-06-30",
+        "source_sha256": "747793ed789504ec0910b133423bfc54531c5ee2a3ad4f9048c5e76af73dbc96",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_b8f9ee21ecc6",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 21,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_20240924_003_08188f3b",
+        "title": "US consumer confidence sours on labor market jitters - Reuters",
+        "url": "https://www.ksl.com/article/51137775/us-consumer-confidence-sours-on-labor-market-jitters",
+        "source": "ksl.com",
+        "published_date": "2024-09-24T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240925_004_83cf77c7",
+        "title": "The Low Consumer Sentiment/Confidence Puzzle Resolved? - Econbrowser",
+        "url": "https://econbrowser.com/archives/2024/09/the-low-consumer-sentiment-confidence-puzzle-resolved",
+        "source": "econbrowser.com",
+        "published_date": "2024-09-25T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240903_005_a235e177",
+        "title": "Market Correction Alert: Buy These 3 Tech Stocks In September - 24/7 Wall St.",
+        "url": "https://247wallst.com/investing/2024/09/03/market-correction-alert-buy-these-3-tech-stocks-in-september",
+        "source": "247wallst.com",
+        "published_date": "2024-09-03T17:15:55+00:00"
+      },
+      {
+        "id": "art_finance_20240902_003_85100d69",
+        "title": "Unlocking the Potential of Gas Limit: Navigating a Bear Market with...",
+        "url": "https://telegra.ph/Unlocking-the-Potential-of-Gas-Limit-Navigating-a-Bear-Market-with-Strong-Market-Sentiment-09-02",
+        "source": "telegra.ph",
+        "published_date": "2024-09-02T13:52:23+00:00"
+      },
+      {
+        "id": "art_finance_20240517_002_fb949451",
+        "title": "AroniSmartIntelligence™ and AroniSmartInvest™ Stock Market...",
+        "url": "https://afroamerica.net/index.php/blog/1821-aronismartintelligence-tm-and-aronismartinvest-tm-stock-market-sentiment-and-nlp-analysis-market-sentiment-and-highlighted-stocks-in-mid-q2-2024",
+        "source": "afroamerica.net",
+        "published_date": "2024-05-17T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240918_002_17b3684e",
+        "title": "FBM KLCI Sustained Uptrend Amid Glove Stock... - Business News",
+        "url": "https://businessnews.com.my/fbm-klci-sustained-uptrend-glove-stock-surge-foreign",
+        "source": "businessnews.com.my",
+        "published_date": "2024-09-18T08:46:11+08:00"
+      },
+      {
+        "id": "art_finance_20200814_003_cd04d4ac",
+        "title": "Financial Crisis Breakdown Part Two: The Collapse of the... | StreetFins",
+        "url": "https://streetfins.com/financial-crisis-breakdown-part-two-the-collapse-of-the-market",
+        "source": "streetfins.com",
+        "published_date": "2020-08-14T11:23:53-07:00"
+      },
+      {
+        "id": "art_finance_20210731_006_4f9e51d6",
+        "title": "Big Tech Earnings Sparkled. There’s Reason to Worry About What...",
+        "url": "https://www.wallstreetreporter.com/2021/07/31/big-tech-earnings-sparkled-theres-reason-to-worry-about-what-comes-next",
+        "source": "wallstreetreporter.com",
+        "published_date": "2021-07-31T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20080723_002_1fbeb069",
+        "title": "Current US Inflation Rates: 2000-2025",
+        "url": "https://www.usinflationcalculator.com/inflation/current-inflation-rates",
+        "source": "usinflationcalculator.com",
+        "published_date": "2008-07-23T03:07:58+00:00"
+      },
+      {
+        "id": "art_finance_20240905_002_3726e3bf",
+        "title": "US scrap trends outlook: September 2024 - Fastmarkets",
+        "url": "https://www.fastmarkets.com/insights/us-scrap-trends-outlook-september-2024",
+        "source": "fastmarkets.com",
+        "published_date": "2024-09-05T09:20:06+00:00"
+      },
+      {
+        "id": "art_finance_20240926_003_95677c8a",
+        "title": "Sector trends - September 2024: Asset/Wealth Management - White & Case LLP",
+        "url": "https://www.whitecase.com/insight-our-thinking/financial-ma-september-2024-asset-wealth-management",
+        "source": "whitecase.com",
+        "published_date": "2024-09-26T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240912_004_187009d1",
+        "title": "Oil Market Report - September 2024 – Analysis - IEA – International Energy Agency",
+        "url": "https://www.iea.org/reports/oil-market-report-september-2024",
+        "source": "iea.org",
+        "published_date": "2024-09-12T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_19691231_005_8b5b75be",
+        "title": "Navigating the Storm: An Analysis of the Global Financial Market Risk Outlook - FactSet Insight",
+        "url": "https://insight.factset.com/author/miao-weimin-phd",
+        "source": "insight.factset.com",
+        "published_date": "1969-12-31T19:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240909_006_4be43227",
+        "title": "Austin Economic Indicators, September 2024 - Federal Reserve Bank of Dallas",
+        "url": "https://www.dallasfed.org/recentadditions?page=41",
+        "source": "dallasfed.org",
+        "published_date": "2024-09-09T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240912_007_e9b808c7",
+        "title": "Consumer prices rose 0.2% in August as annual inflation rate hits lowest since early 2021 - CNBC",
+        "url": "https://www.cnbcafrica.com/2024/u-s-consumer-prices-rose-0-2-in-august-as-annual-inflation-rate-hits-lowest-since-early-2021",
+        "source": "cnbcafrica.com",
+        "published_date": "2024-09-12T09:36:31+00:00"
+      },
+      {
+        "id": "art_finance_20240911_008_9958e540",
+        "title": "Inflation falls to its lowest level in more than 3 years. Here’s what that means - NPR",
+        "url": "https://www.wvtf.org/2024-09-11/inflation-falls-to-its-lowest-level-in-more-than-3-years-heres-what-that-means",
+        "source": "wvtf.org",
+        "published_date": "2024-09-11T12:39:16+00:00"
+      },
+      {
+        "id": "art_finance_20240911_009_9f36765f",
+        "title": "US inflation trending lower, but some stickiness remains - Reuters",
+        "url": "https://www.aol.com/news/us-consumer-prices-rise-moderately-123510574.html",
+        "source": "aol.com",
+        "published_date": "2024-09-11T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240923_010_70df288c",
+        "title": "Global Food Security Improves in 2024 With Higher Incomes and Lower Inflation - USDA Economic Research Service (.gov)",
+        "url": "https://www.ers.usda.gov/amber-waves/2024/september/global-food-security-improves-in-2024-with-higher-incomes-and-lower-inflation",
+        "source": "ers.usda.gov",
+        "published_date": "2024-09-23T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20200602_002_beb71b59",
+        "title": "Analyzing Nasdaq-100 Performance During Covid-19 - Nasdaq",
+        "url": "https://www.nasdaq.com/articles/analyzing-nasdaq-100-performance-during-covid-19-2020-06-02",
+        "source": "nasdaq.com",
+        "published_date": "2020-06-02T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230726_003_5a4aad44",
+        "title": "When Performance Matters: Nasdaq-100 vs. S&P 500 Q2, 2023 - Nasdaq",
+        "url": "https://www.nasdaq.com/articles/when-performance-matters-nasdaq-100-vs-sp-500-q2-2023",
+        "source": "nasdaq.com",
+        "published_date": "2023-07-26T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20221102_011_22996251",
+        "title": "When Performance Matters: Nasdaq-100 vs. S&P 500, Third Quarter '22 - Nasdaq",
+        "url": "https://www.nasdaq.com/articles/when-performance-matters:-nasdaq-100-vs.-sp-500-third-quarter-22",
+        "source": "nasdaq.com",
+        "published_date": "2022-11-02T07:00:00+00:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_b8f9ee21ecc6",
+      "events_count": 9,
+      "hypotheses_count": 9
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 3,
+      "avg_depth": 1.5,
+      "quality_score": 0.84,
+      "depth_score": 1.0,
+      "confidence_score": 0.71,
+      "strength_score": 0.61,
+      "evidence_score": 1.0,
+      "event_count": 9,
+      "hypothesis_count": 9
+    },
+    "nodes": [
+      {
+        "id": "evt_162396d95376",
+        "title": "Option 1: below recent range",
+        "description": "Question resolves to: below recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-09-30T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_nasdaq_monthly_return_2024_09",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 0,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T20:55:24.185197Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_647d22652e5e",
+        "title": "Option 3: above recent range",
+        "description": "Question resolves to: above recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-09-30T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_nasdaq_monthly_return_2024_09",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 2,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T20:55:24.185219Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_b8f9ee21ecc6",
+        "title": "Option 2: within recent range",
+        "description": "Question resolves to: within recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-09-30T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_nasdaq_monthly_return_2024_09",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 1,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T20:55:24.185209Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240903_004_628d6b54",
+        "title": "Market Correction Alert for Tech Stocks",
+        "description": "An alert was issued in September 2024 suggesting a market correction and recommending buying certain tech stocks.",
+        "event_type": "decision",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-09-03T17:15:55Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240903_005_a235e177"
+        ],
+        "extracted_for_question_id": "v3_nasdaq_monthly_return_2024_09",
+        "source_article_id": "art_finance_20240903_005_a235e177",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_nasdaq_monthly_return_2024_09"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:57:08.512120Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240911_003_4931a03e",
+        "title": "Inflation Falls to Lowest in 3+ Years",
+        "description": "Inflation in the US fell to its lowest level in over three years in September 2024.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-09-11T12:39:16Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240911_008_9958e540"
+        ],
+        "extracted_for_question_id": "v3_nasdaq_monthly_return_2024_09",
+        "source_article_id": "art_finance_20240911_008_9958e540",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_nasdaq_monthly_return_2024_09"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:57:08.471561Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240911_009_faf324aa",
+        "title": "US Inflation Trending Lower",
+        "description": "US inflation is trending lower, but some stickiness remains, indicating a gradual decline in inflationary pressures.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-09-11T07:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240911_009_9f36765f"
+        ],
+        "extracted_for_question_id": "v3_nasdaq_monthly_return_2024_09",
+        "source_article_id": "art_finance_20240911_009_9f36765f",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_nasdaq_monthly_return_2024_09"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:57:31.308164Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240912_002_24cf25d2",
+        "title": "US Consumer Prices Rose Moderately in August",
+        "description": "US consumer prices rose 0.2% in August, with the annual inflation rate hitting its lowest since early 2021.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-09-12T09:36:31Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240912_007_e9b808c7"
+        ],
+        "extracted_for_question_id": "v3_nasdaq_monthly_return_2024_09",
+        "source_article_id": "art_finance_20240912_007_e9b808c7",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_nasdaq_monthly_return_2024_09"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:57:08.430830Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240912_006_495b9ebc",
+        "title": "September 2024 Oil Market Report",
+        "description": "The IEA released its Oil Market Report for September 2024, providing analysis on global oil supply and demand.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-09-12T07:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240912_004_187009d1"
+        ],
+        "extracted_for_question_id": "v3_nasdaq_monthly_return_2024_09",
+        "source_article_id": "art_finance_20240912_004_187009d1",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_nasdaq_monthly_return_2024_09"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:57:08.599642Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240923_005_3c5d362d",
+        "title": "Global Food Security Improves",
+        "description": "Global food security improved in 2024 due to higher incomes and lower inflation.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-09-23T07:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240923_010_70df288c"
+        ],
+        "extracted_for_question_id": "v3_nasdaq_monthly_return_2024_09",
+        "source_article_id": "art_finance_20240923_010_70df288c",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_nasdaq_monthly_return_2024_09"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:57:08.556496Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240924_001_71b90a1e",
+        "title": "US Consumer Confidence Sours",
+        "description": "US consumer confidence dropped significantly in September 2024 due to labor market jitters.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-09-24T07:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240924_003_08188f3b"
+        ],
+        "extracted_for_question_id": "v3_nasdaq_monthly_return_2024_09",
+        "source_article_id": "art_finance_20240924_003_08188f3b",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_nasdaq_monthly_return_2024_09"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:57:08.387652Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240926_007_a7b320a4",
+        "title": "September 2024 Financial M&A Sector Trends",
+        "description": "White & Case LLP reported on key UK & European M&A trends in the financial institutions sector for September 2024.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-09-26T07:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240926_003_95677c8a"
+        ],
+        "extracted_for_question_id": "v3_nasdaq_monthly_return_2024_09",
+        "source_article_id": "art_finance_20240926_003_95677c8a",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_nasdaq_monthly_return_2024_09"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:57:08.640064Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_nasdaq_monthly_return_2024_09_20260725_065718_001_179028da",
+        "source_event_id": "evt_finance_20240924_001_71b90a1e",
+        "target_event_id": "evt_b8f9ee21ecc6",
+        "relation_type": "correlates",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Souring consumer confidence can negatively impact market sentiment and thus Nasdaq returns.",
+        "evidence_article_ids": [
+          "art_finance_20240924_003_08188f3b"
+        ],
+        "discovered_by_question_ids": [
+          "v3_nasdaq_monthly_return_2024_09"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:57:18.190751Z",
+        "last_confirmed_at": "2026-07-25T06:57:18.190751Z"
+      },
+      {
+        "id": "hyp_v3_nasdaq_monthly_return_2024_09_20260725_065718_002_6d0569a6",
+        "source_event_id": "evt_finance_20240912_002_24cf25d2",
+        "target_event_id": "evt_b8f9ee21ecc6",
+        "relation_type": "correlates",
+        "strength": 0.5,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "Moderate consumer price increases and lower inflation can positively influence market stability and investor confidence.",
+        "evidence_article_ids": [
+          "art_finance_20240912_007_e9b808c7"
+        ],
+        "discovered_by_question_ids": [
+          "v3_nasdaq_monthly_return_2024_09"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:57:18.211216Z",
+        "last_confirmed_at": "2026-07-25T06:57:18.211216Z"
+      },
+      {
+        "id": "hyp_v3_nasdaq_monthly_return_2024_09_20260725_065718_003_9b46dc3d",
+        "source_event_id": "evt_finance_20240911_003_4931a03e",
+        "target_event_id": "evt_finance_20240912_002_24cf25d2",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Falling inflation directly leads to moderate consumer price increases.",
+        "evidence_article_ids": [
+          "art_finance_20240911_008_9958e540",
+          "art_finance_20240912_007_e9b808c7"
+        ],
+        "discovered_by_question_ids": [
+          "v3_nasdaq_monthly_return_2024_09"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:57:18.234752Z",
+        "last_confirmed_at": "2026-07-25T06:57:18.234752Z"
+      },
+      {
+        "id": "hyp_v3_nasdaq_monthly_return_2024_09_20260725_065718_004_cf03cc50",
+        "source_event_id": "evt_finance_20240911_003_4931a03e",
+        "target_event_id": "evt_b8f9ee21ecc6",
+        "relation_type": "enables",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Lower inflation generally creates a more favorable economic environment for stock market growth.",
+        "evidence_article_ids": [
+          "art_finance_20240911_008_9958e540"
+        ],
+        "discovered_by_question_ids": [
+          "v3_nasdaq_monthly_return_2024_09"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:57:18.256361Z",
+        "last_confirmed_at": "2026-07-25T06:57:18.256361Z"
+      },
+      {
+        "id": "hyp_v3_nasdaq_monthly_return_2024_09_20260725_065718_005_9495ded9",
+        "source_event_id": "evt_finance_20240903_004_628d6b54",
+        "target_event_id": "evt_b8f9ee21ecc6",
+        "relation_type": "correlates",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Market correction alerts can influence investor behavior and impact Nasdaq returns, especially for tech stocks.",
+        "evidence_article_ids": [
+          "art_finance_20240903_005_a235e177"
+        ],
+        "discovered_by_question_ids": [
+          "v3_nasdaq_monthly_return_2024_09"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:57:18.278518Z",
+        "last_confirmed_at": "2026-07-25T06:57:18.278518Z"
+      },
+      {
+        "id": "hyp_v3_nasdaq_monthly_return_2024_09_20260725_065725_006_618c1355",
+        "source_event_id": "evt_finance_20240911_003_4931a03e",
+        "target_event_id": "evt_finance_20240923_005_3c5d362d",
+        "relation_type": "enables",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Lower inflation contributes to improved global food security by making food more affordable.",
+        "evidence_article_ids": [
+          "art_finance_20240911_008_9958e540",
+          "art_finance_20240923_010_70df288c"
+        ],
+        "discovered_by_question_ids": [
+          "v3_nasdaq_monthly_return_2024_09"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:57:25.491333Z",
+        "last_confirmed_at": "2026-07-25T06:57:25.491333Z"
+      },
+      {
+        "id": "hyp_v3_nasdaq_monthly_return_2024_09_20260725_065725_007_e5494606",
+        "source_event_id": "evt_finance_20240912_006_495b9ebc",
+        "target_event_id": "evt_b8f9ee21ecc6",
+        "relation_type": "correlates",
+        "strength": 0.5,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "Oil market reports can influence investor sentiment and overall market performance.",
+        "evidence_article_ids": [
+          "art_finance_20240912_004_187009d1"
+        ],
+        "discovered_by_question_ids": [
+          "v3_nasdaq_monthly_return_2024_09"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:57:25.516333Z",
+        "last_confirmed_at": "2026-07-25T06:57:25.516333Z"
+      },
+      {
+        "id": "hyp_v3_nasdaq_monthly_return_2024_09_20260725_065725_008_dab91fbc",
+        "source_event_id": "evt_finance_20240926_007_a7b320a4",
+        "target_event_id": "evt_b8f9ee21ecc6",
+        "relation_type": "correlates",
+        "strength": 0.4,
+        "confidence": 0.5,
+        "time_lag_hours": null,
+        "reasoning": "M&A trends in the financial sector can indicate broader economic health and investor activity, correlating with market returns.",
+        "evidence_article_ids": [
+          "art_finance_20240926_003_95677c8a"
+        ],
+        "discovered_by_question_ids": [
+          "v3_nasdaq_monthly_return_2024_09"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:57:25.538289Z",
+        "last_confirmed_at": "2026-07-25T06:57:25.538289Z"
+      },
+      {
+        "id": "hyp_v3_nasdaq_monthly_return_2024_09_20260725_065731_009_0d4ea786",
+        "source_event_id": "evt_finance_20240911_009_faf324aa",
+        "target_event_id": "evt_finance_20240911_003_4931a03e",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The general trend of lower US inflation directly causes the observed fall in inflation to its lowest level in over 3 years.",
+        "evidence_article_ids": [
+          "art_finance_20240911_009_9f36765f",
+          "art_finance_20240911_008_9958e540"
+        ],
+        "discovered_by_question_ids": [
+          "v3_nasdaq_monthly_return_2024_09"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:57:31.348201Z",
+        "last_confirmed_at": "2026-07-25T06:57:31.348201Z"
+      }
+    ],
+    "outcome_impacts": [
+      {
+        "id": "imp_fcf75522",
+        "event_id": "evt_finance_20240924_001_71b90a1e",
+        "outcome_event_id": "evt_b8f9ee21ecc6",
+        "question_id": "v3_nasdaq_monthly_return_2024_09",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Souring consumer confidence typically leads to decreased spending and investment, negatively impacting market returns.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_nasdaq_monthly_return_2024_09"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:57:18.292545Z",
+        "last_confirmed_at": "2026-07-25T06:57:18.292545Z"
+      },
+      {
+        "id": "imp_7425d868",
+        "event_id": "evt_finance_20240912_002_24cf25d2",
+        "outcome_event_id": "evt_b8f9ee21ecc6",
+        "question_id": "v3_nasdaq_monthly_return_2024_09",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.5,
+        "confidence": 0.6,
+        "reasoning": "Moderate consumer price increases and lower inflation can signal economic stability, which is generally positive for market returns.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_nasdaq_monthly_return_2024_09"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:57:18.305196Z",
+        "last_confirmed_at": "2026-07-25T06:57:18.305196Z"
+      },
+      {
+        "id": "imp_5d9d94a3",
+        "event_id": "evt_finance_20240911_003_4931a03e",
+        "outcome_event_id": "evt_b8f9ee21ecc6",
+        "question_id": "v3_nasdaq_monthly_return_2024_09",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Falling inflation reduces the likelihood of interest rate hikes and improves purchasing power, both positive for stock markets.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_nasdaq_monthly_return_2024_09"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:57:18.319792Z",
+        "last_confirmed_at": "2026-07-25T06:57:18.319792Z"
+      },
+      {
+        "id": "imp_2837162e",
+        "event_id": "evt_finance_20240903_004_628d6b54",
+        "outcome_event_id": "evt_b8f9ee21ecc6",
+        "question_id": "v3_nasdaq_monthly_return_2024_09",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "A market correction alert, even if it suggests buying opportunities, indicates underlying volatility and potential for negative returns in the short term.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_nasdaq_monthly_return_2024_09"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:57:18.335651Z",
+        "last_confirmed_at": "2026-07-25T06:57:18.335651Z"
+      },
+      {
+        "id": "imp_9351564f",
+        "event_id": "evt_finance_20240925_008_70f8e34b",
+        "outcome_event_id": "evt_b8f9ee21ecc6",
+        "question_id": "v3_nasdaq_monthly_return_2024_09",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Low consumer sentiment often translates to reduced consumer spending, which can negatively affect corporate earnings and stock market performance.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_nasdaq_monthly_return_2024_09"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:57:18.345962Z",
+        "last_confirmed_at": "2026-07-25T06:57:18.345962Z"
+      },
+      {
+        "id": "imp_53e5ba21",
+        "event_id": "evt_finance_20240912_006_495b9ebc",
+        "outcome_event_id": "evt_b8f9ee21ecc6",
+        "question_id": "v3_nasdaq_monthly_return_2024_09",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.6,
+        "reasoning": "The oil market report provides information that can influence market sentiment, but its direct impact on Nasdaq returns can vary and is not always clearly positive or negative.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_nasdaq_monthly_return_2024_09"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:57:25.549736Z",
+        "last_confirmed_at": "2026-07-25T06:57:25.549736Z"
+      },
+      {
+        "id": "imp_4feea0cc",
+        "event_id": "evt_finance_20240926_007_a7b320a4",
+        "outcome_event_id": "evt_b8f9ee21ecc6",
+        "question_id": "v3_nasdaq_monthly_return_2024_09",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.5,
+        "reasoning": "Financial M&A trends can reflect economic activity, but their direct impact on the Nasdaq monthly return is often indirect and can be complex, hence a neutral direction with moderate magnitude.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_nasdaq_monthly_return_2024_09"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:57:25.559812Z",
+        "last_confirmed_at": "2026-07-25T06:57:25.559812Z"
+      },
+      {
+        "id": "imp_16dd6c3b",
+        "event_id": "evt_finance_20240923_005_3c5d362d",
+        "outcome_event_id": "evt_b8f9ee21ecc6",
+        "question_id": "v3_nasdaq_monthly_return_2024_09",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.4,
+        "confidence": 0.5,
+        "reasoning": "Improved global food security, driven by lower inflation, can contribute to overall economic stability, which is generally positive for markets.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_nasdaq_monthly_return_2024_09"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:57:31.280467Z",
+        "last_confirmed_at": "2026-07-25T06:57:31.280467Z"
+      },
+      {
+        "id": "imp_20cedc07",
+        "event_id": "evt_finance_20240911_009_faf324aa",
+        "outcome_event_id": "evt_b8f9ee21ecc6",
+        "question_id": "v3_nasdaq_monthly_return_2024_09",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "A trend of lower US inflation is generally positive for the stock market as it reduces the pressure for interest rate hikes and improves economic outlook.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_nasdaq_monthly_return_2024_09"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:57:36.472862Z",
+        "last_confirmed_at": "2026-07-25T06:57:36.472862Z"
+      }
+    ]
+  }
+}

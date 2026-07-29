@@ -1,0 +1,193 @@
+{
+  "schema_version": "1.0",
+  "actual_outcome_event_id": "node_6",
+  "graph": {
+    "nodes": [
+      {
+        "id": "node_2",
+        "label": "Winter seasonality was expected to restrain gasoline demand",
+        "event_type": "external_shock",
+        "occurred_date": "2024-12-01",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_101c334bfb34b82f",
+          "ev_6ed716d64896de31"
+        ]
+      },
+      {
+        "id": "node_1",
+        "label": "National gasoline prices fell below $3 early in December",
+        "event_type": "indicator",
+        "occurred_date": "2024-12-09",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_101c334bfb34b82f",
+          "ev_2495f05b44529f81",
+          "ev_6ed716d64896de31",
+          "ev_02a26548f3663f3f"
+        ]
+      },
+      {
+        "id": "node_7",
+        "label": "Average 2024 gasoline prices remained below 2023 levels",
+        "event_type": "indicator",
+        "occurred_date": "2024-12-19",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_af02e9684117b96a"
+        ]
+      },
+      {
+        "id": "node_3",
+        "label": "Gasoline prices showed a broad downward trend through December 19",
+        "event_type": "indicator",
+        "occurred_date": "2024-12-19",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_af02e9684117b96a",
+          "ev_02a26548f3663f3f"
+        ]
+      },
+      {
+        "id": "node_4",
+        "label": "National average gasoline price rose briefly on December 23",
+        "event_type": "indicator",
+        "occurred_date": "2024-12-23",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_eb1d710f52fc0309"
+        ]
+      },
+      {
+        "id": "node_8",
+        "label": "Gasoline prices returned to decline by December 30",
+        "event_type": "indicator",
+        "occurred_date": "2024-12-30",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_9b806aa4dd3b84fc"
+        ]
+      },
+      {
+        "id": "node_5",
+        "label": "December regular-gasoline monthly change measured -1.248%",
+        "event_type": "measurement",
+        "occurred_date": "2024-12-30",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_bee42c181cce8eac"
+        ]
+      },
+      {
+        "id": "node_6",
+        "label": "Resolution: gasoline-price change was within the recent range",
+        "event_type": "outcome",
+        "occurred_date": "2024-12-30",
+        "is_outcome": true,
+        "is_actual_outcome": true,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_bee42c181cce8eac"
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_2",
+        "source": "node_2",
+        "target": "node_3",
+        "relationship": "contributes_to",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_101c334bfb34b82f",
+          "ev_6ed716d64896de31"
+        ],
+        "rationale": "The cited reports identify seasonal forces as supporting further price declines during the holiday period."
+      },
+      {
+        "id": "edge_1",
+        "source": "node_1",
+        "target": "node_3",
+        "relationship": "supports",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_101c334bfb34b82f",
+          "ev_6ed716d64896de31",
+          "ev_02a26548f3663f3f"
+        ],
+        "rationale": "The early-month observations directly support the synthesized downward December trend."
+      },
+      {
+        "id": "edge_6",
+        "source": "node_7",
+        "target": "node_3",
+        "relationship": "contextualizes",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_af02e9684117b96a"
+        ],
+        "rationale": "The lower annual price environment supplies context but is not treated as a cause of the December movement."
+      },
+      {
+        "id": "edge_7",
+        "source": "node_3",
+        "target": "node_8",
+        "relationship": "continues_as",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_9b806aa4dd3b84fc"
+        ],
+        "rationale": "The December 30 report documents that the decline resumed after the temporary interruption."
+      },
+      {
+        "id": "edge_4",
+        "source": "node_4",
+        "target": "node_8",
+        "relationship": "precedes",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_eb1d710f52fc0309",
+          "ev_9b806aa4dd3b84fc"
+        ],
+        "rationale": "The brief December 23 rise preceded and contrasts with the documented return to decline."
+      },
+      {
+        "id": "edge_3",
+        "source": "node_8",
+        "target": "node_5",
+        "relationship": "is_consistent_with",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_9b806aa4dd3b84fc",
+          "ev_bee42c181cce8eac"
+        ],
+        "rationale": "The resumed decline is consistent with a negative monthly change, while the official series establishes the exact -1.248% value."
+      },
+      {
+        "id": "edge_5",
+        "source": "node_5",
+        "target": "node_6",
+        "relationship": "classifies_as",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_bee42c181cce8eac"
+        ],
+        "rationale": "A -1.248% change lies between -3.926% inclusive and -0.949% exclusive, so it resolves within the recent range."
+      }
+    ]
+  }
+}

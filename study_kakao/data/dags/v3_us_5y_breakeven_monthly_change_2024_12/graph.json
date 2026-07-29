@@ -1,0 +1,700 @@
+{
+  "question": {
+    "id": "v3_us_5y_breakeven_monthly_change_2024_12",
+    "question_text": "As of 2024-12-01, which range will the monthly 5-year breakeven change for United States 5-year breakeven inflation rate in 2024-12 fall into?",
+    "question_type": "mcq",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 3,
+    "resolution_date": "2025-01-15T23:59:59Z",
+    "estimated_start_time": "2024-12-01T00:00:00Z",
+    "ground_truth": "within recent range",
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [
+      "evt_1de57ccaede2",
+      "evt_d8c21fa4af11",
+      "evt_e19fe9336c5e"
+    ],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: United States 5-year breakeven inflation rate\nTarget period: 2024-12\nFinancial area: monetary_policy / inflation expectations\nRegion: US\nPre-registered recent-range boundaries: lower -0.102, upper 0.053 percentage points.",
+    "resolution_criteria": "Use FRED series T5YIE. Compute the change from the previous monthly observation using mode 'absolute'. Resolve 'below recent range' below -0.102, 'within recent range' from -0.102 inclusive to 0.053 exclusive, and 'above recent range' at or above 0.053 percentage points.",
+    "resolution_reasoning": "The snapshotted target change was 0.05 percentage points; it resolved to 'within recent range'.",
+    "options": [
+      "below recent range",
+      "within recent range",
+      "above recent range"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": "\n## Executive Summary\nThe monthly 5-year breakeven change for the United States 5-year breakeven inflation rate in December 2024 fell within its recent range. This outcome was primarily driven by mixed signals regarding inflation, Federal Reserve communications that maintained a cautious but data-dependent stance, and broader economic forecasts. While some data points indicated a slight uptick in inflation (art_finance_20241211_011_34ef5a1c), the overall picture suggested that inflation was moving towards the Fed's target, albeit with potential upsides and protracted timeline (art_finance_20250109_004_974da5c8). Energy sector activity in the Tenth District showed a steady decline, while expectations showed a rebound, which likely did not exert significant upward pressure on broader inflation expectations (art_finance_20250110_007_585eebaf). The lack of extreme surprises in key economic indicators prevented the breakeven rate from moving 'below' or 'above' its recent range.\n\n## Timeline Of Key Events\n- **December 2, 2024:** Fed Governor Waller stated he was 'leaning toward' a December rate cut but expressed worries about inflation. (art_finance_20241202_003_2798053a - *Note: This article's content was not relevant; actual content was clickbait.*)\n- **December 3, 2024:** Federal Reserve Bank of Richmond published an analysis on health insurance costs and their contribution to inflation, highlighting complexities in CPI and PCE measures. (art_finance_20241203_005_011fb80c)\n- **December 11, 2024:** ABC News reported that inflation increased in November, complicating the Fed's next rate decision. Consumer prices rose 2.7% in November year-over-year, with core inflation at 3.3%. (art_finance_20241211_011_34ef5a1c)\n- **December 31, 2024:** PBS published an analysis discussing the outlook for inflation, interest rates, and the U.S. consumer in 2025 (art_finance_20241231_009_e1634eb5).\n- **January 9, 2025:** Anadolu Ajansı reported that global markets were mixed after Fed minutes revealed upside risks to the US inflation outlook, though officials still expect a downward trend towards 2%. (art_finance_20250109_004_974da5c8)\n- **January 10, 2025:** Federal Reserve Bank of Kansas City reported that Tenth District energy activity fell at a steady pace in Q4 2024, with firms anticipating a rebound in activity over the next six months. (art_finance_20250110_007_585eebaf)\n\n## Causal Chain Analysis\nThe 'within recent range' outcome for the 5-year breakeven inflation rate in December 2024 was primarily **caused** by a confluence of factors.\n\nFirstly, **mixed inflation signals** played a significant role. The report of increased inflation in November (art_finance_20241211_011_34ef5a1c) provided some upward pressure on inflation expectations, suggesting that the path to the Fed's 2% target might be longer than anticipated. This was echoed in the January 9th Fed minutes, which revealed 'upside risks' to the inflation outlook (art_finance_20250109_004_974da5c8). These reports **triggered** market participants to anticipate that inflation would persist at a level that keeps the 5-year breakeven rate from significantly declining. \n\nSecondly, **Federal Reserve communications** provided a tempering influence. Despite concerns, the overall tone of Fed officials, even when discussing potential rate cuts, was tempered by a data-dependent and cautious approach (art_finance_20241202_003_2798053a - *Note: Based on the title, as content was unavailable*). The Fed's continued expectation for inflation to move downward to 2% (art_finance_20250109_004_974da5c8) **resulted in** a stabilization of longer-term inflation expectations, preventing a sharp increase in the breakeven rate. The analysis from the Federal Reserve Bank of Richmond on health insurance costs (art_finance_20241203_005_011fb80c) also emphasized the nuances and complexities in measuring inflation, which may have contributed to a measured market response rather than an overreaction to headline numbers.\n\nFinally, **broader economic outlooks and sectoral data** provided a balanced perspective. Analyses on the 2025 outlook for inflation and consumer behavior (art_finance_20241231_009_e1634eb5) likely reinforced the view of a continued but moderate inflationary environment. Furthermore, localized economic activity, such as the steady decline in energy activity in the Tenth District (art_finance_20250110_007_585eebaf), suggested that not all sectors were experiencing robust growth that would lead to accelerating inflation. This overall environment **led to** the 5-year breakeven inflation rate remaining within its recent range, as there were no overwhelming forces to push it significantly higher or lower.\n\n## Countervailing Factors\nThe primary countervailing factor against the breakeven rate remaining 'within recent range' was the **November inflation increase** (art_finance_20241211_011_34ef5a1c) and the subsequent acknowledgement of 'upside risks' in Fed minutes (art_finance_20250109_004_974da5c8). These developments might have pushed the breakeven rate into an 'above recent range' scenario. However, these forces were overwhelmed by several factors: the Federal Reserve's consistent long-term inflation target, the nuance in economic data interpretation (art_finance_20241203_005_011fb80c), and the absence of any severe economic shocks or unexpectedly strong growth indicators that would typically fuel a sustained surge in inflation expectations.\n\n## Event Candidate Inventory\n- **E1:** **November 2024 Inflation Data Release:**\n    - **Date:** December 11, 2024\n    - **Why it matters causally:** Showed an increase in consumer prices (2.7% Y-o-Y) and core inflation (3.3% Y-o-Y), complicating the Fed's stance and providing some upward pressure on short-to-medium term inflation expectations.\n    - **Source article IDs:** [art_finance_20241211_011_34ef5a1c]\n\n- **E2:** **Federal Reserve's January 2025 FOMC Minutes on Upside Inflation Risks:**\n    - **Date:** January 9, 2025\n    - **Why it matters causally:** Revealed Fed officials acknowledged 'upside risks' to the inflation outlook, suggesting a longer path to the 2% target, which contributed to stabilizing market inflation expectations rather than allowing them to fall significantly.\n    - **Source article IDs:** [art_finance_20250109_004_974da5c8]\n\n- **E3:** **Federal Reserve Bank of Richmond Analysis on Health Insurance Costs:**\n    - **Date:** December 3, 2024\n    - **Why it matters causally:** Highlighted the complexities and differences in how CPI and PCE measure health insurance costs, which could lead to a more nuanced market interpretation of inflation data and prevent overreactions.\n    - **Source article IDs:** [art_finance_20241203_005_011fb80c]\n\n- **E4:** **Tenth District Energy Activity Report (Q4 2024):**\n    - **Date:** January 10, 2025\n    - **Why it matters causally:** Indicated a steady decline in regional energy activity, offsetting some potential inflationary pressures from the energy sector, contributing to the 'within recent range' outcome.\n    - **Source article IDs:** [art_finance_20250110_007_585eebaf]\n\n## Evidence Mapping Table\n| Claim/Event | Article IDs | Date Support | Confidence (0-1) | Notes |\n|---|---|---|---|---|\n| November inflation increased to 2.7%Y-o-Y | art_finance_20241211_011_34ef5a1c | 2024-12-11 | 0.9 | Direct reporting of inflation data before Fed decision. |\n| Fed minutes reveal upside risks to inflation outlook | art_finance_20250109_004_974da5c8 | 2025-01-09 | 0.9 | Reporting on official Fed communications post-meeting. |\n| Analysis of health insurance costs and inflation metrics | art_finance_20241203_005_011fb80c | 2024-12-03 | 0.8 | Insights into inflation measurement complexities from a Fed regional bank. |\n| Tenth District energy activity declined in Q4 2024 | art_finance_20250110_007_585eebaf | 2025-01-10 | 0.8 | Regional economic data indicating some disinflationary pressure. |\n| Outlook for inflation, interest rates, and consumer in 2025 | art_finance_20241231_009_e1634eb5 | 2024-12-31 | 0.7 | General economic analysis offering context, though not specific breakeven data. |\n| Fed Gov. Waller leaning towards rate cut (title only) | art_finance_20241202_003_2798053a | 2024-12-02 | 0.1 | Article link was broken/irrelevant; information derived only from title. Very low confidence. |\n\n## Uncertainties And Alternative Paths\nOne significant uncertainty is the precise impact of Fed Governor Waller's comments on a potential December rate cut, as the actual content of the 'NBC News' article (art_finance_20241202_003_2798053a) was unavailable. Had these comments been more definitive or supported by further strong dovish signals, an alternative path could have seen the 5-year breakeven rate decline towards a 'below recent range'. Conversely, if the November inflation data (art_finance_20241211_011_34ef5a1c) had shown an even sharper increase, or if the Fed minutes (art_finance_20250109_004_974da5c8) had indicated more aggressive rhetoric regarding inflation control, the breakeven rate could have pushed into an 'above recent range'. The limited number of highly relevant, within-window articles means that other contributing factors might have been missed, and the causal connections are inferred from a restricted dataset.\n",
+    "graph_built": true,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.205292Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "us_5y_breakeven_monthly_change",
+        "event_cluster_id": "inflation_expectations_2024-12",
+        "category": "monetary_policy",
+        "original_domain": "monetary_policy",
+        "subdomain": "inflation expectations",
+        "entity": "United States 5-year breakeven inflation rate",
+        "region": "US",
+        "target_metric": "monthly 5-year breakeven change",
+        "target_period": "2024-12",
+        "forecast_cutoff": "2024-12-01T00:00:00+00:00",
+        "forecast_date_options": [
+          "2024-12-01"
+        ],
+        "resolution_available_at": "2025-01-15T23:59:59+00:00",
+        "horizon_days": 45,
+        "source_type": "fred_series_snapshot",
+        "source_series_id": "T5YIE",
+        "source_homepage": "https://fred.stlouisfed.org/series/T5YIE",
+        "comparison_rule": "target change bucketed by the lower and upper quartiles of the 8 prior observed changes",
+        "comparison_threshold": -0.07,
+        "comparison_thresholds": {
+          "lower": -0.1025,
+          "upper": 0.0525
+        },
+        "change_unit": "percentage points",
+        "threshold_observation_dates": [
+          "2024-03-28",
+          "2024-04-30",
+          "2024-05-31",
+          "2024-06-28",
+          "2024-07-31",
+          "2024-08-30",
+          "2024-09-30",
+          "2024-10-31",
+          "2024-11-29"
+        ],
+        "split": "memory",
+        "family_position": 5,
+        "family_size": 8,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "within recent range",
+        "resolved_class": "within recent range",
+        "resolution_value": 2.38,
+        "target_change": 0.05,
+        "source_observation_date": "2024-12-31",
+        "resolution_document": {
+          "publisher": "Federal Reserve Bank of St. Louis (FRED)",
+          "title": "5-Year Breakeven Inflation Rate",
+          "url": "https://fred.stlouisfed.org/series/T5YIE"
+        },
+        "source_download_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=T5YIE&cosd=2019-01-01&coed=2026-06-30",
+        "source_sha256": "a2e77c093f557d5be79b3174c6dbd74f065ac59ed61792acd842e75486657170",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_d8c21fa4af11",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 10,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_20240712_003_dc577c1b",
+        "title": "Services PPI Inflation Dishes Up Another Nasty Surprise... | Wolf Street",
+        "url": "https://wolfstreet.com/2024/07/12/services-ppi-inflation-dishes-up-another-nasty-surprise-6th-month-in-a-row-bottom-of-u-turn-was-in-december",
+        "source": "wolfstreet.com",
+        "published_date": "2024-07-12T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20080723_008_27840342",
+        "title": "Current US Inflation Rates: 2000-2025",
+        "url": "https://www.usinflationcalculator.com/inflation/current-inflation-rates",
+        "source": "usinflationcalculator.com",
+        "published_date": "2008-07-23T03:07:58+00:00"
+      },
+      {
+        "id": "art_finance_20240125_002_2a47e205",
+        "title": "US Inflation Trends And Outlook, 2024 - Forrester",
+        "url": "https://www.forrester.com/blogs/us-inflation-trends-and-outlook-2024",
+        "source": "forrester.com",
+        "published_date": "2024-01-25T01:21:55+00:00"
+      },
+      {
+        "id": "art_finance_20241211_011_34ef5a1c",
+        "title": "Inflation increased in November, complicating Fed's next rate decision - ABC News - Breaking News, Latest News and Videos",
+        "url": "https://abcnews.com/Business/fresh-inflation-data-set-arrive-fed-weighs-rate/story?id=116632105",
+        "source": "abcnews.com",
+        "published_date": "2024-12-11T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20241231_009_e1634eb5",
+        "title": "Analysis: How will inflation, interest rates and the U.S. consumer fare in 2025? - PBS",
+        "url": "https://biztoc.com/x/e8bb0bfc54edaaa9",
+        "source": "biztoc.com",
+        "published_date": "2024-12-31T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20241202_003_2798053a",
+        "title": "Fed Governor Waller says he is 'leaning toward' a December rate cut but worries about inflation - NBC News",
+        "url": "https://www.aol.com/fed-governor-waller-says-leaning-205718700.html",
+        "source": "aol.com",
+        "published_date": "2024-12-02T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20250109_004_974da5c8",
+        "title": "Global markets mixed after Fed minutes reveal upside risks to US inflation outlook - Anadolu Ajansı",
+        "url": "https://www.aa.com.tr/en/economy/global-markets-mixed-after-fed-minutes-reveal-upside-risks-to-us-inflation-outlook/3445546",
+        "source": "aa.com.tr",
+        "published_date": "2025-01-09T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20241203_005_011fb80c",
+        "title": "Eyeing Health Insurance Costs and Inflation - Federal Reserve Bank of Richmond",
+        "url": "https://www.richmondfed.org/research/national_economy/macro_minute/2024/health_insurance_costs_inflation_20241203",
+        "source": "richmondfed.org",
+        "published_date": "2024-12-03T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230103_006_79eae530",
+        "title": "Adjusting for Inflation - Federal Reserve Bank of St. Louis",
+        "url": "https://www.theepochtimes.com/bright/adjusting-for-inflation-here-are-10-steps-4515814",
+        "source": "theepochtimes.com",
+        "published_date": "2023-01-03T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20250110_007_585eebaf",
+        "title": "Tenth District Energy Activity Fell at a Steady Pace - Federal Reserve Bank of Kansas City",
+        "url": "https://www.kansascityfed.org/surveys/energy-survey/tenth-district-energy-activity-fell-at-a-steady-pace",
+        "source": "kansascityfed.org",
+        "published_date": "2025-01-10T08:00:00+00:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_d8c21fa4af11",
+      "events_count": 9,
+      "hypotheses_count": 8
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 4,
+      "avg_depth": 3.0,
+      "quality_score": 0.84,
+      "depth_score": 1.0,
+      "confidence_score": 0.71,
+      "strength_score": 0.64,
+      "evidence_score": 1.0,
+      "event_count": 9,
+      "hypothesis_count": 8
+    },
+    "nodes": [
+      {
+        "id": "evt_1de57ccaede2",
+        "title": "Option 1: below recent range",
+        "description": "Question resolves to: below recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-01-15T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2024_12",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 0,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T03:14:30.647519Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_d8c21fa4af11",
+        "title": "Option 2: within recent range",
+        "description": "Question resolves to: within recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-01-15T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2024_12",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 1,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T03:14:30.647538Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_e19fe9336c5e",
+        "title": "Option 3: above recent range",
+        "description": "Question resolves to: above recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-01-15T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2024_12",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 2,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T03:14:30.647552Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240125_006_a0583488",
+        "title": "US Inflation Trends and Outlook 2024",
+        "description": "Analysis of US inflation trends and outlook for 2024, discussing the trajectory of inflation.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-25T01:21:55Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240125_002_2a47e205"
+        ],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2024_12",
+        "source_article_id": "art_finance_20240125_002_2a47e205",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_5y_breakeven_monthly_change_2024_12"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T03:25:50.190880Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240712_005_2547baba",
+        "title": "Services PPI Inflation Continues",
+        "description": "Services Producer Price Index (PPI) inflation continued for the sixth consecutive month, indicating persistent inflationary pressures.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-12T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240712_003_dc577c1b"
+        ],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2024_12",
+        "source_article_id": "art_finance_20240712_003_dc577c1b",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_5y_breakeven_monthly_change_2024_12"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T03:25:50.156549Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20241202_002_31ed8656",
+        "title": "Fed Governor Waller considers December rate cut",
+        "description": "Fed Governor Waller stated he was 'leaning toward' a December rate cut but expressed worries about inflation.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-12-02T08:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241202_003_2798053a"
+        ],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2024_12",
+        "source_article_id": "art_finance_20241202_003_2798053a",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_5y_breakeven_monthly_change_2024_12"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T03:25:50.052453Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20241203_007_dcdd8552",
+        "title": "Health Insurance Costs and Inflation Eyed",
+        "description": "The Federal Reserve Bank of Richmond is eyeing health insurance costs and their impact on inflation.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-12-03T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241203_005_011fb80c"
+        ],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2024_12",
+        "source_article_id": "art_finance_20241203_005_011fb80c",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_5y_breakeven_monthly_change_2024_12"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T03:25:50.224774Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20241211_001_9768eb0f",
+        "title": "Inflation increased in November 2024",
+        "description": "Consumer prices rose 2.7% in November 2024 compared to a year ago, ticking upward from the previous month and complicating the Fed's next rate decision.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-12-11T08:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241211_011_34ef5a1c"
+        ],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2024_12",
+        "source_article_id": "art_finance_20241211_011_34ef5a1c",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_5y_breakeven_monthly_change_2024_12"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T03:25:50.017700Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20241231_008_9ad5fca0",
+        "title": "Analysis of Inflation, Interest Rates, and US Consumer in 2025",
+        "description": "An analysis predicting how inflation, interest rates, and the U.S. consumer will fare in 2025.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-12-31T08:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241231_009_e1634eb5"
+        ],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2024_12",
+        "source_article_id": "art_finance_20241231_009_e1634eb5",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_5y_breakeven_monthly_change_2024_12"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T03:25:50.260939Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20250109_003_1fc0c76f",
+        "title": "Global markets mixed after Fed minutes reveal inflation risks",
+        "description": "Global markets showed mixed reactions after Federal Reserve minutes revealed upside risks to the US inflation outlook.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-01-09T08:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250109_004_974da5c8"
+        ],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2024_12",
+        "source_article_id": "art_finance_20250109_004_974da5c8",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_5y_breakeven_monthly_change_2024_12"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T03:25:50.087172Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20250110_004_55eecc15",
+        "title": "Tenth District Energy Activity Fell",
+        "description": "Fourth quarter energy survey results revealed that Tenth District energy activity fell at a steady pace while expectations rose.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-01-10T08:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250110_007_585eebaf"
+        ],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2024_12",
+        "source_article_id": "art_finance_20250110_007_585eebaf",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_5y_breakeven_monthly_change_2024_12"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T03:25:50.121401Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2024_12_20260725_032550_001_0d54fde7",
+        "source_event_id": "evt_finance_20240125_006_a0583488",
+        "target_event_id": "evt_finance_20240712_005_2547baba",
+        "relation_type": "correlates",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "General inflation trends and outlook for 2024 correlate with the continued services PPI inflation.",
+        "evidence_article_ids": [
+          "art_finance_20240125_002_2a47e205",
+          "art_finance_20240712_003_dc577c1b"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_12"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T03:25:50.289709Z",
+        "last_confirmed_at": "2026-07-25T03:25:50.289709Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2024_12_20260725_032550_002_98251516",
+        "source_event_id": "evt_finance_20240712_005_2547baba",
+        "target_event_id": "evt_finance_20241211_001_9768eb0f",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Persistent services PPI inflation likely contributed to the overall increase in consumer prices in November 2024.",
+        "evidence_article_ids": [
+          "art_finance_20240712_003_dc577c1b",
+          "art_finance_20241211_011_34ef5a1c"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_12"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T03:25:50.305843Z",
+        "last_confirmed_at": "2026-07-25T03:25:50.305843Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2024_12_20260725_032550_003_84a81621",
+        "source_event_id": "evt_finance_20241202_002_31ed8656",
+        "target_event_id": "evt_finance_20241211_001_9768eb0f",
+        "relation_type": "correlates",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Fed Governor Waller's consideration of a rate cut and worries about inflation are correlated with the actual inflation increase in November.",
+        "evidence_article_ids": [
+          "art_finance_20241211_011_34ef5a1c",
+          "art_finance_20241202_003_2798053a"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_12"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T03:25:50.326843Z",
+        "last_confirmed_at": "2026-07-25T03:25:50.326843Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2024_12_20260725_032550_004_dab1109f",
+        "source_event_id": "evt_finance_20241211_001_9768eb0f",
+        "target_event_id": "evt_finance_20250109_003_1fc0c76f",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "The increase in inflation in November and the Fed's outlook on inflation directly impact global market reactions.",
+        "evidence_article_ids": [
+          "art_finance_20241211_011_34ef5a1c",
+          "art_finance_20250109_004_974da5c8"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_12"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T03:25:50.345129Z",
+        "last_confirmed_at": "2026-07-25T03:25:50.345129Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2024_12_20260725_032550_005_06fe015e",
+        "source_event_id": "evt_finance_20241203_007_dcdd8552",
+        "target_event_id": "evt_finance_20241211_001_9768eb0f",
+        "relation_type": "correlates",
+        "strength": 0.5,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "Health insurance costs are a component of overall inflation, so monitoring them correlates with general inflation trends.",
+        "evidence_article_ids": [
+          "art_finance_20241203_005_011fb80c",
+          "art_finance_20241211_011_34ef5a1c"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_12"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T03:25:50.362683Z",
+        "last_confirmed_at": "2026-07-25T03:25:50.362683Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2024_12_20260725_032550_006_2dca7296",
+        "source_event_id": "evt_finance_20250109_003_1fc0c76f",
+        "target_event_id": "evt_finance_20250110_004_55eecc15",
+        "relation_type": "correlates",
+        "strength": 0.4,
+        "confidence": 0.5,
+        "time_lag_hours": null,
+        "reasoning": "Global market reactions and economic indicators like energy activity can be correlated, even if not directly causal in this specific instance.",
+        "evidence_article_ids": [
+          "art_finance_20250110_007_585eebaf",
+          "art_finance_20250109_004_974da5c8"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_12"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T03:25:50.380882Z",
+        "last_confirmed_at": "2026-07-25T03:25:50.380882Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2024_12_20260725_032550_007_567bfece",
+        "source_event_id": "evt_finance_20241231_008_9ad5fca0",
+        "target_event_id": "evt_finance_20250109_003_1fc0c76f",
+        "relation_type": "correlates",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Analysis and predictions about future inflation and interest rates can influence current market sentiment and reactions.",
+        "evidence_article_ids": [
+          "art_finance_20241231_009_e1634eb5",
+          "art_finance_20250109_004_974da5c8"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_12"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T03:25:50.398609Z",
+        "last_confirmed_at": "2026-07-25T03:25:50.398609Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2024_12_20260725_032550_008_f82d9331",
+        "source_event_id": "evt_finance_20250109_003_1fc0c76f",
+        "target_event_id": "evt_d8c21fa4af11",
+        "relation_type": "correlates",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Global market reactions to inflation outlook are a strong indicator and correlate with changes in the 5-year breakeven rate.",
+        "evidence_article_ids": [
+          "art_finance_20250109_004_974da5c8"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_12"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T03:25:50.416243Z",
+        "last_confirmed_at": "2026-07-25T03:25:50.416243Z"
+      }
+    ],
+    "outcome_impacts": []
+  }
+}

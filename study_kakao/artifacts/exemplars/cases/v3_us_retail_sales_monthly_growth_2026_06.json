@@ -1,0 +1,47 @@
+{
+  "schema_version": "fixed_exemplar_case",
+  "status": "success",
+  "question_id": "v3_us_retail_sales_monthly_growth_2026_06",
+  "retrieved_memory_question_id": "v3_us_retail_sales_monthly_growth_2024_09",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "macro / consumption",
+      "target_operation": "monthly retail-sales growth",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2024-09-30, will the monthly retail-sales growth for United States retail sales in 2024-09 be at least 0.353 percent?",
+    "historical_cutoff": "2024-09-30T00:00:00+00:00",
+    "target_semantics": "United States monthly retail-sales growth in 2024-09.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20240415_005_292080cc",
+        "takeaway": "US retail sales increased more than expected in March 2024, contributing to a brighter outlook for Q1.",
+        "why_predictive": "Suggests a positive momentum in retail sales heading into the second quarter, potentially carrying forward."
+      },
+      {
+        "article_id": "art_finance_20190718_005_cf68e150",
+        "takeaway": "Provides historical data on US Retail Sales (Monthly).",
+        "why_predictive": "Establishes the baseline for understanding typical retail sales fluctuations and growth rates."
+      },
+      {
+        "article_id": "art_finance_20211026_004_0378c5f7",
+        "takeaway": "US September retail sales in 2021 hit a 7-month low.",
+        "why_predictive": "Illustrates that September retail sales can experience significant downturns, serving as a cautionary historical data point."
+      }
+    ],
+    "expert_reasoning": [
+      "The baseline assessment focuses on labor and inflation conditions to gauge household purchasing power. Stable labor markets and manageable inflation are expected to preserve purchasing power, supporting consumer demand.",
+      "Consumer demand is then assessed based on purchasing power and spending patterns. If purchasing power is maintained, sustained consumer spending is anticipated.",
+      "The employment outlook acts as a mediator, reinforcing consumer spending if the economic outlook and job market remain stable.",
+      "Category mix is considered as potential counterevidence. Strength in specific retail categories does not automatically translate to broad retail demand.",
+      "The retail bridge integrates household demand (purchasing power, consumer demand) and the breadth of category spending to determine the aggregate monthly retail sales direction.",
+      "The causal path suggests that stable purchasing power can support household demand and retail sales, provided outlays remain responsive and households do not retrench.",
+      "An alternative path considers that a stable employment backdrop can support retail demand, but narrow category strength might not signal broad growth, especially if employment weakens or category gains are concentrated."
+    ],
+    "counterevidence": "The historical data includes an instance where US September retail sales experienced a significant low (art_finance_20211026_004_0378c5f7), indicating that September can be a weak month for retail sales.",
+    "prospective_target_estimate": "The forecast is for United States monthly retail-sales growth in 2024-09 to be at least 0.353 percent.",
+    "option_mapping": "The 'yes' option corresponds to monthly retail-sales growth of at least 0.353 percent, and the 'no' option corresponds to growth less than 0.353 percent.",
+    "uncertainty": "While March 2024 retail sales showed a stronger-than-expected increase (art_finance_20240415_005_292080cc), historical data indicates that September can be a period of significant retail sales decline (art_finance_20211026_004_0378c5f7). The sustainability of consumer demand and the breadth of retail category performance are key uncertainties.",
+    "dag_derived_lesson": "Sustained aggregate growth requires broad-based consumer demand, which is influenced by purchasing power and employment. However, sector-specific strength may not always translate to overall economic performance, and historical seasonal weakness in a target month warrants caution."
+  }
+}

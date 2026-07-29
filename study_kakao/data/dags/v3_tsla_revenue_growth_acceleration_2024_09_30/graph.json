@@ -1,0 +1,1390 @@
+{
+  "question": {
+    "id": "v3_tsla_revenue_growth_acceleration_2024_09_30",
+    "question_text": "As of 2024-09-30, which range will Tesla, Inc.'s quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2024-09-30 fall into?",
+    "question_type": "mcq",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 4,
+    "resolution_date": "2024-10-24T23:59:59Z",
+    "estimated_start_time": "2024-09-30T00:00:00Z",
+    "ground_truth": "above recent range",
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [
+      "evt_d139d2f2fb05",
+      "evt_79f686419090",
+      "evt_61ff7f08e39c"
+    ],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: Tesla, Inc. (TSLA)\nTarget period: fiscal quarter ending 2024-09-30\nFinancial area: corporate_earnings / automotive\nRegion: US\nPre-registered growth-acceleration boundaries: lower -18.73, upper -1.262 percentage points.",
+    "resolution_criteria": "Use the issuer's first SEC 10-Q or 10-K containing the target quarter. Compute the change in YoY revenue growth from the prior quarter. Resolve 'below recent range' below -18.73, 'within recent range' from -18.73 inclusive to -1.262 exclusive, and 'above recent range' at or above -1.262 percentage points.",
+    "resolution_reasoning": "The snapshotted target-quarter YoY revenue growth was 7.846 percent and growth acceleration was 5.547 percentage points; it resolved to 'above recent range'.",
+    "options": [
+      "below recent range",
+      "within recent range",
+      "above recent range"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": "\n## Executive Summary\nTesla, Inc.'s Q3 2024 results, reported on October 23, 2024, showed a stronger-than-expected performance, primarily driven by a significant profit beat and an optimistic outlook from Elon Musk regarding future vehicle growth [art_finance_20241024_005_938d6603]. While revenue itself slightly missed analyst consensus estimates, the company managed to reverse a previous sales slump, indicating a modest but positive growth trajectory [art_finance_20241002_004_e8ea5572]. The positive market reaction to the earnings, particularly the strong profitability and future guidance, suggests that the revenue growth acceleration, though not explicitly stated as 'above recent range' in direct terms by news outlets, was perceived favorably by the market, potentially positioning it effectively in that category due to overall business strength and future projections. The lack of specific phrasing in articles directly confirming 'above recent range' revenue acceleration is a noted limitation in the public reporting.\n\n## Timeline Of Key Events\n- **October 2, 2024:** Tesla reverses sales slump, seeing modest growth in Q3. This earlier report indicates a positive shift in sales performance preceding the full earnings release [art_finance_20241002_004_e8ea5572].\n- **October 23, 2024:** Tesla releases its Third Quarter 2024 Financial Results [art_finance_20241023_011_57a9f01b]. The results confirmed a revenue slightly below consensus estimates ($25.18 billion vs. $25.47 billion) but a significant beat in non-GAAP EPS ($0.72 vs. $0.60) [art_finance_20241023_007_0f81f69c].\n- **October 23, 2024:** Tesla hosted a Q3 2024 Financial Results and Q&A Webcast [art_finance_20241023_010_ee209c15].\n- **October 23, 2024:** Tesla shares jump significantly due to a profit beat and Elon Musk's prediction of at least 20% vehicle growth for the next year [art_finance_20241023_003_5c74ac63].\n- **October 24, 2024:** Tesla stock continues to soar (22% for its best day in over a decade), reinforced by Musk's optimistic 2025 growth projection [art_finance_20241024_005_938d6603].\n\n## Causal Chain Analysis\nThe 'above recent range' outcome for Tesla's Q3 2024 revenue-growth acceleration was primarily *caused* by a combination of a turnaround in sales performance, strong profitability, and positive future guidance. Tesla's efforts to reverse a prior sales slump *resulted in* 'modest growth' in Q3 deliveries, providing a foundational increase in revenue [art_finance_20241002_004_e8ea5572]. This revenue, despite slightly missing analyst *estimates*, was accompanied by significantly higher-than-expected *profitability* (EPS), which *triggered* a very positive response from investors [art_finance_20241023_007_0f81f69c]. Furthermore, Elon Musk's prediction of 'at least 20% vehicle growth' in the coming year *led to* heightened investor confidence and a significant surge in Tesla's stock price, signaling market perception of strong underlying business momentum and future revenue potential [art_finance_20241024_005_938d6603]. This combination of sales recovery, profit outperformance, and optimistic future projections *collectively contributed to* the revenue growth acceleration being perceived as 'above recent range' by the market, even if the absolute revenue figure slightly underperformed initial expectations.\n\n## Countervailing Factors\nThe primary countervailing factor was that Tesla's Q3 2024 revenue figure of $25.18 billion actually *missed* the consensus analyst estimate of $25.47 billion [art_finance_20241023_007_0f81f69c]. This could typically lead to a negative market reaction or a less enthusiastic view of revenue growth. However, this factor *failed* to deter the positive outcome because it was overwhelmingly counteracted by Tesla's strong *profitability* beat (non-GAAP EPS of $0.72 versus $0.60 expected) and very optimistic *future production and sales guidance* from Elon Musk [art_finance_20241023_003_5c74ac63]. The market heavily weighed the profit performance and future outlook as more indicative of the company's underlying health and growth trajectory than the slight revenue miss, effectively diminishing the negative impact of the latter.\n\n## Event Candidate Inventory\n-   **E1: Tesla Q3 Sales Slump Reversal**\n    -   Date: Early October 2024 (reported October 2, 2024)\n    -   Why it matters causally: Indicates a foundational improvement in sales volume, directly impacting revenue.\n    -   Source article IDs: [art_finance_20241002_004_e8ea5572]\n\n-   **E2: Tesla Q3 2024 Earnings Release**\n    -   Date: October 23, 2024\n    -   Why it matters causally: Official disclosure of financial performance, including revenue and EPS figures, triggering market reactions.\n    -   Source article IDs: [art_finance_20241023_011_57a9f01b, art_finance_20241023_007_0f81f69c]\n\n-   **E3: Tesla Q3 2024 Profit Beat (EPS)**\n    -   Date: October 23, 2024\n    -   Why it matters causally: A stronger-than-expected profit performance significantly boosted investor confidence, overshadowing a slight revenue miss and driving positive sentiment.\n    -   Source article IDs: [art_finance_20241023_007_0f81f69c, art_finance_20241023_003_5c74ac63]\n\n-   **E4: Elon Musk's 2025 Vehicle Growth Projection**\n    -   Date: October 23, 2024\n    -   Why it matters causally: Provided strong forward-looking guidance that fueled investor optimism about future revenue and accelerated market enthusiasm.\n    -   Source article IDs: [art_finance_20241024_005_938d6603, art_finance_20241023_003_5c74ac63]\n\n## Evidence Mapping Table\n| Claim/Event                                  | Article IDs                                                 | Date Support      | Confidence (0-1) | Notes                                                                   |\n|:---------------------------------------------|:------------------------------------------------------------|:------------------|:-----------------|:------------------------------------------------------------------------|\n| Tesla Q3 revenue was $25.18 billion          | [art_finance_20241023_007_0f81f69c]                        | October 23, 2024  | 1.0              | Direct quote from MarketBeat.                                           |\n| Tesla Q3 revenue slightly missed estimates   | [art_finance_20241023_007_0f81f69c]                        | October 23, 2024  | 1.0              | MarketBeat explicitly states this.                                      |\n| Tesla Q3 non-GAAP EPS was $0.72 vs $0.60 exp | [art_finance_20241023_007_0f81f69c]                        | October 23, 2024  | 1.0              | Direct quote from MarketBeat.                                           |\n| Shares jumped on profit beat                 | [art_finance_20241023_003_5c74ac63]                        | October 23, 2024  | 0.9              | CNBC Headline and content.                                              |\n| Musk's 20% vehicle growth projection         | [art_finance_20241024_005_938d6603, art_finance_20241023_003_5c74ac63] | October 23-24, 2024 | 0.9              | Reported by multiple sources, driving stock surge.                      |\n| Reversal of sales slump, modest Q3 growth    | [art_finance_20241002_004_e8ea5572]                        | October 2, 2024   | 0.8              | Ars Technica report on early Q3 performance.                            |\n| Overall strong Q3 results                    | [art_finance_20241023_010_ee209c15, art_finance_20241023_011_57a9f01b, art_finance_20241023_008_139d016b, art_finance_20241024_006_75715ef4] | October 23-24, 2024 | 0.8              | General sentiment from various press releases and summary reports.      |\n\n## Uncertainties And Alternative Paths\nOne key uncertainty is the precise definition and quantitative measurement of \"recent range\" for revenue-growth acceleration, as this specific phrasing was not directly addressed in the collected articles. While the market reaction and overall financial performance suggest an \"above recent range\" outcome, a direct comparison to historical growth acceleration trends from publicly available articles to explicitly confirm this specific phrasing is challenging. An alternative path could have been if the slight revenue miss had not been overshadowed by the profit beat and Musk's optimistic guidance, or if the market had reacted more negatively to any ambiguities in the forward-looking statements. In such a scenario, the outcome might have fallen \"within recent range\" or even \"below recent range\" if investor sentiment had turned sour due to concerns about softening demand or increased competition not offset by profitability.\"\n",
+    "graph_built": true,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.200777Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "tsla_revenue_growth_acceleration",
+        "event_cluster_id": "tsla_earnings_2024-09-30",
+        "category": "corporate_earnings",
+        "original_domain": "corporate_earnings",
+        "subdomain": "automotive",
+        "entity": "Tesla, Inc. (TSLA)",
+        "region": "US",
+        "target_metric": "quarterly revenue year-over-year growth acceleration",
+        "target_period": "fiscal quarter ending 2024-09-30",
+        "forecast_cutoff": "2024-09-30T00:00:00+00:00",
+        "forecast_date_options": [
+          "2024-09-30"
+        ],
+        "resolution_available_at": "2024-10-24T23:59:59+00:00",
+        "horizon_days": 24,
+        "source_type": "sec_companyfacts_snapshot",
+        "source_series_id": "CIK0001318605:revenue",
+        "source_homepage": "https://www.sec.gov/edgar/browse/?CIK=1318605",
+        "comparison_rule": "target YoY revenue-growth acceleration bucketed by quartiles of the four prior quarterly accelerations",
+        "comparison_threshold": 2.298712,
+        "comparison_thresholds": {
+          "lower": -18.729059,
+          "upper": -1.261765
+        },
+        "change_unit": "percent",
+        "threshold_observation_dates": [
+          "2023-06-30",
+          "2023-09-30",
+          "2024-06-30"
+        ],
+        "split": "memory",
+        "family_position": 5,
+        "family_size": 8,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "above recent range",
+        "resolved_class": "above recent range",
+        "resolution_value": 25182000000,
+        "target_change": 5.54711217,
+        "target_yoy_growth": 7.84582441,
+        "target_growth_acceleration": 5.54711217,
+        "source_observation_date": "2024-09-30",
+        "resolution_document": {
+          "publisher": "U.S. Securities and Exchange Commission",
+          "title": "Tesla, Inc. 10-Q filed 2024-10-24",
+          "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828024043486/0001628280-24-043486-index.html"
+        },
+        "source_download_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json",
+        "source_sha256": "28efba410dfdf215eae64346dd6ad37bc51eec0177d0477323651b2a80f01e1a",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00",
+        "accession_number": "0001628280-24-043486",
+        "xbrl_tag": "RevenueFromContractWithCustomerExcludingAssessedTax"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_61ff7f08e39c",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 10,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_20240423_002_9dc219d9",
+        "title": "And four more things we learned from Tesla’s Q1 earnings call.",
+        "url": "https://heatmap.news/electric-vehicles/tesla-q1-2024-earnings?rebelltitem=6",
+        "source": "heatmap.news",
+        "published_date": "2024-04-23T23:36:13+00:00"
+      },
+      {
+        "id": "art_finance_20241023_003_5c74ac63",
+        "title": "Tesla shares jump on profit beat, Musk's prediction of at least 20% 'vehicle growth' next year - CNBC",
+        "url": "https://www.nbcchicago.com/news/business/money-report/tesla-set-to-report-third-quarter-earnings-after-the-bell-2/3581916?os=vbKn42TQHonRIPebn6",
+        "source": "nbcchicago.com",
+        "published_date": "2024-10-23T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20241002_004_e8ea5572",
+        "title": "Tesla reverses sales slump, sees modest growth in Q3 - Ars Technica",
+        "url": "https://arstechnica.com/cars/2024/10/tesla-reverses-sales-slump-sees-modest-growth-in-q3",
+        "source": "arstechnica.com",
+        "published_date": "2024-10-02T14:06:54+00:00"
+      },
+      {
+        "id": "art_finance_20241024_005_938d6603",
+        "title": "Tesla stock soars 22% for best day in over a decade on Musk's 2025 growth projection - CNBC",
+        "url": "https://www.nbcphiladelphia.com/news/business/money-report/tesla-shares-surge-19-and-head-for-best-day-in-more-than-3-years-on-musks-2025-growth-projection/4008667?os=shmmfp.",
+        "source": "nbcphiladelphia.com",
+        "published_date": "2024-10-24T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20241023_008_139d016b",
+        "title": "Tesla delivers strong Q3 2024 financial results - Drive Tesla",
+        "url": "https://driveteslacanada.ca/news/tesla-delivers-strong-q3-2024-financial-results",
+        "source": "driveteslacanada.ca",
+        "published_date": "2024-10-23T20:30:09+00:00"
+      },
+      {
+        "id": "art_finance_20181025_009_4246b11f",
+        "title": "Mind Blown: Analysts Hugely Wrong On Tesla In... - CleanTechnica",
+        "url": "https://cleantechnica.com/2018/10/25/mind-blown-analysts-hugely-wrong-on-tesla-in-q3-wrong-on-tesla-for-years-still-bearish-on-tesla",
+        "source": "cleantechnica.com",
+        "published_date": "2018-10-25T16:31:05+00:00"
+      },
+      {
+        "id": "art_finance_20241023_010_ee209c15",
+        "title": "Tesla, Inc. Q3 2024 Financial Results and Q&A Webcast",
+        "url": "https://ir.tesla.com/webcast-2024-10-23",
+        "source": "ir.tesla.com",
+        "published_date": "2024-10-23T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20241024_006_75715ef4",
+        "title": "Tesla Inc (TSLA) Q3 2024 Earnings Report - Quarter Results",
+        "url": "https://quarter-results.com/financial-reports/NASDAQ/TSLA/Q3/2024/tsla-q3-2024-earnings-report",
+        "source": "quarter-results.com",
+        "published_date": "2024-10-24T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20241023_007_0f81f69c",
+        "title": "TSLA Q3 2024 Earnings Report on 10/23/2024 - MarketBeatTesla profit falls short despite record sales, hit by higher ...Tesla delivers strong Q3 2024 financial results - Drive Tesla",
+        "url": "https://www.marketbeat.com/earnings/reports/2024-10-23-tesla-inc-stock",
+        "source": "marketbeat.com",
+        "published_date": "2024-10-23T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20241023_011_57a9f01b",
+        "title": "Tesla Releases Third Quarter 2024 Financial Results - Nasdaq",
+        "url": "https://www.nasdaq.com/press-release/tesla-releases-third-quarter-2024-financial-results-2024-10-23",
+        "source": "nasdaq.com",
+        "published_date": "2024-10-23T00:00:00+00:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_61ff7f08e39c",
+      "events_count": 9,
+      "hypotheses_count": 21
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 4,
+      "avg_depth": 3.6,
+      "quality_score": 0.89,
+      "depth_score": 1.0,
+      "confidence_score": 0.82,
+      "strength_score": 0.73,
+      "evidence_score": 1.0,
+      "event_count": 9,
+      "hypothesis_count": 21
+    },
+    "nodes": [
+      {
+        "id": "evt_61ff7f08e39c",
+        "title": "Option 3: above recent range",
+        "description": "Question resolves to: above recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-10-24T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_tsla_revenue_growth_acceleration_2024_09_30",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 2,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T22:07:28.836902Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_79f686419090",
+        "title": "Option 2: within recent range",
+        "description": "Question resolves to: within recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-10-24T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_tsla_revenue_growth_acceleration_2024_09_30",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 1,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T22:07:28.836896Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_d139d2f2fb05",
+        "title": "Option 1: below recent range",
+        "description": "Question resolves to: below recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-10-24T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_tsla_revenue_growth_acceleration_2024_09_30",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 0,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T22:07:28.836886Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20241002_008_d704f632",
+        "title": "Tesla reverses sales slump, sees modest growth in Q3",
+        "description": "Tesla, Inc. reversed a previous sales slump, indicating a modest but positive growth trajectory in Q3.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-10-02T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241002_004_e8ea5572"
+        ],
+        "extracted_for_question_id": "v3_tsla_revenue_growth_acceleration_2024_09_30",
+        "source_article_id": "art_finance_20241002_004_e8ea5572",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_tsla_revenue_growth_acceleration_2024_09_30"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T22:14:25.240795Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20241023_009_de52599c",
+        "title": "Tesla Releases Third Quarter 2024 Financial Results",
+        "description": "Tesla officially disclosed its financial performance for Q3 2024, including revenue and EPS figures.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-10-23T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241023_011_57a9f01b",
+          "art_finance_20241023_007_0f81f69c"
+        ],
+        "extracted_for_question_id": "v3_tsla_revenue_growth_acceleration_2024_09_30",
+        "source_article_id": "art_finance_20241023_011_57a9f01b",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_tsla_revenue_growth_acceleration_2024_09_30"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T22:14:25.271339Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20241023_010_e8496eec",
+        "title": "Tesla Q3 2024 Profit Beat (EPS)",
+        "description": "Tesla reported a stronger-than-expected profit performance (non-GAAP EPS of $0.72 vs. $0.60 expected) for Q3 2024.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-10-23T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241023_007_0f81f69c",
+          "art_finance_20241023_003_5c74ac63"
+        ],
+        "extracted_for_question_id": "v3_tsla_revenue_growth_acceleration_2024_09_30",
+        "source_article_id": "art_finance_20241023_007_0f81f69c",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_tsla_revenue_growth_acceleration_2024_09_30"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T22:14:25.299623Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20241023_011_6d2bdc1c",
+        "title": "Elon Musk's 2025 Vehicle Growth Projection",
+        "description": "Elon Musk predicted at least 20% vehicle growth for the next year, providing strong forward-looking guidance.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-10-23T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241024_005_938d6603",
+          "art_finance_20241023_003_5c74ac63"
+        ],
+        "extracted_for_question_id": "v3_tsla_revenue_growth_acceleration_2024_09_30",
+        "source_article_id": "art_finance_20241024_005_938d6603",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_tsla_revenue_growth_acceleration_2024_09_30"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T22:14:25.327827Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20241023_012_e02b629f",
+        "title": "Tesla shares jump significantly",
+        "description": "Tesla shares jumped significantly due to a profit beat and Elon Musk's prediction of at least 20% vehicle growth for the next year.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-10-23T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241023_003_5c74ac63"
+        ],
+        "extracted_for_question_id": "v3_tsla_revenue_growth_acceleration_2024_09_30",
+        "source_article_id": "art_finance_20241023_003_5c74ac63",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_tsla_revenue_growth_acceleration_2024_09_30"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T22:14:25.355762Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20241023_014_3804386b",
+        "title": "Tesla Q3 2024 Revenue Misses Estimates",
+        "description": "Tesla's Q3 2024 revenue figure of $25.18 billion missed the consensus analyst estimate of $25.47 billion.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-10-23T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241023_007_0f81f69c"
+        ],
+        "extracted_for_question_id": "v3_tsla_revenue_growth_acceleration_2024_09_30",
+        "source_article_id": "art_finance_20241023_007_0f81f69c",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_tsla_revenue_growth_acceleration_2024_09_30"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T22:14:25.411867Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20241023_015_a8001b4e",
+        "title": "Market Perception of Revenue Growth Acceleration as 'Above Recent Range'",
+        "description": "The market perceived Tesla's revenue growth acceleration as 'above recent range' due to overall business strength and future projections, despite a slight revenue miss.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-10-23T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241024_005_938d6603",
+          "art_finance_20241023_003_5c74ac63"
+        ],
+        "extracted_for_question_id": "v3_tsla_revenue_growth_acceleration_2024_09_30",
+        "source_article_id": "art_finance_20241024_005_938d6603",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_tsla_revenue_growth_acceleration_2024_09_30"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T22:14:25.440313Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20241024_013_a58dbd42",
+        "title": "Tesla stock continues to soar",
+        "description": "Tesla stock continued to soar (22% for its best day in over a decade), reinforced by Musk's optimistic 2025 growth projection.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-10-24T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241024_005_938d6603"
+        ],
+        "extracted_for_question_id": "v3_tsla_revenue_growth_acceleration_2024_09_30",
+        "source_article_id": "art_finance_20241024_005_938d6603",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_tsla_revenue_growth_acceleration_2024_09_30"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T22:14:25.384091Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_tsla_revenue_growth_acceleration_2024_09_30_20260724_221425_007_cbe474f0",
+        "source_event_id": "evt_finance_20241002_008_d704f632",
+        "target_event_id": "evt_finance_20241023_009_de52599c",
+        "relation_type": "enables",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "The reversal of the sales slump provided a foundational increase in revenue, which was then reported in the Q3 earnings release.",
+        "evidence_article_ids": [
+          "art_finance_20241002_004_e8ea5572"
+        ],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T22:14:25.467386Z",
+        "last_confirmed_at": "2026-07-24T22:14:25.467386Z"
+      },
+      {
+        "id": "hyp_v3_tsla_revenue_growth_acceleration_2024_09_30_20260724_221425_008_eb45b7fe",
+        "source_event_id": "evt_finance_20241023_009_de52599c",
+        "target_event_id": "evt_finance_20241023_010_e8496eec",
+        "relation_type": "triggers",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The official earnings release disclosed the profit beat, making it public.",
+        "evidence_article_ids": [
+          "art_finance_20241023_007_0f81f69c",
+          "art_finance_20241023_011_57a9f01b"
+        ],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T22:14:25.483973Z",
+        "last_confirmed_at": "2026-07-24T22:14:25.483973Z"
+      },
+      {
+        "id": "hyp_v3_tsla_revenue_growth_acceleration_2024_09_30_20260724_221425_009_9e900dce",
+        "source_event_id": "evt_finance_20241023_009_de52599c",
+        "target_event_id": "evt_finance_20241023_014_3804386b",
+        "relation_type": "triggers",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The official earnings release disclosed the revenue miss, making it public.",
+        "evidence_article_ids": [
+          "art_finance_20241023_007_0f81f69c",
+          "art_finance_20241023_011_57a9f01b"
+        ],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T22:14:25.499398Z",
+        "last_confirmed_at": "2026-07-24T22:14:25.499398Z"
+      },
+      {
+        "id": "hyp_v3_tsla_revenue_growth_acceleration_2024_09_30_20260724_221425_010_e5c5bdb3",
+        "source_event_id": "evt_finance_20241023_010_e8496eec",
+        "target_event_id": "evt_finance_20241023_012_e02b629f",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The stronger-than-expected profit performance significantly boosted investor confidence, leading to a jump in shares.",
+        "evidence_article_ids": [
+          "art_finance_20241023_007_0f81f69c",
+          "art_finance_20241023_003_5c74ac63"
+        ],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T22:14:25.517168Z",
+        "last_confirmed_at": "2026-07-24T22:14:25.517168Z"
+      },
+      {
+        "id": "hyp_v3_tsla_revenue_growth_acceleration_2024_09_30_20260724_221425_011_1b4d1ec5",
+        "source_event_id": "evt_finance_20241023_011_6d2bdc1c",
+        "target_event_id": "evt_finance_20241023_012_e02b629f",
+        "relation_type": "amplifies",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Musk's optimistic growth projection fueled investor optimism and contributed to the share jump.",
+        "evidence_article_ids": [
+          "art_finance_20241024_005_938d6603",
+          "art_finance_20241023_003_5c74ac63"
+        ],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T22:14:25.534453Z",
+        "last_confirmed_at": "2026-07-24T22:14:25.534453Z"
+      },
+      {
+        "id": "hyp_v3_tsla_revenue_growth_acceleration_2024_09_30_20260724_221425_012_a1d852ab",
+        "source_event_id": "evt_finance_20241023_012_e02b629f",
+        "target_event_id": "evt_finance_20241024_013_a58dbd42",
+        "relation_type": "triggers",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The initial jump in shares on Oct 23rd directly led to the continued soaring of the stock on Oct 24th.",
+        "evidence_article_ids": [
+          "art_finance_20241024_005_938d6603",
+          "art_finance_20241023_003_5c74ac63"
+        ],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T22:14:25.550953Z",
+        "last_confirmed_at": "2026-07-24T22:14:25.550953Z"
+      },
+      {
+        "id": "hyp_v3_tsla_revenue_growth_acceleration_2024_09_30_20260724_221425_013_8088e858",
+        "source_event_id": "evt_finance_20241023_010_e8496eec",
+        "target_event_id": "evt_finance_20241023_015_a8001b4e",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "The significant profit beat overshadowed the revenue miss and contributed to the market perceiving the growth acceleration as above recent range.",
+        "evidence_article_ids": [
+          "art_finance_20241023_007_0f81f69c",
+          "art_finance_20241023_003_5c74ac63"
+        ],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T22:14:25.565992Z",
+        "last_confirmed_at": "2026-07-24T22:14:25.565992Z"
+      },
+      {
+        "id": "hyp_v3_tsla_revenue_growth_acceleration_2024_09_30_20260724_221425_014_cf0bfd10",
+        "source_event_id": "evt_finance_20241023_011_6d2bdc1c",
+        "target_event_id": "evt_finance_20241023_015_a8001b4e",
+        "relation_type": "amplifies",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Musk's optimistic future guidance led to heightened investor confidence and a perception of strong underlying business momentum, contributing to the 'above recent range' outcome.",
+        "evidence_article_ids": [
+          "art_finance_20241024_005_938d6603",
+          "art_finance_20241023_003_5c74ac63"
+        ],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T22:14:25.580711Z",
+        "last_confirmed_at": "2026-07-24T22:14:25.580711Z"
+      },
+      {
+        "id": "hyp_v3_tsla_revenue_growth_acceleration_2024_09_30_20260724_221425_015_e1b4ba76",
+        "source_event_id": "evt_finance_20241023_014_3804386b",
+        "target_event_id": "evt_finance_20241023_015_a8001b4e",
+        "relation_type": "inhibits",
+        "strength": 0.4,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "The revenue miss could have led to a negative market reaction, but it was counteracted by other positive factors, thus inhibiting a stronger positive perception.",
+        "evidence_article_ids": [
+          "art_finance_20241023_007_0f81f69c"
+        ],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T22:14:25.595817Z",
+        "last_confirmed_at": "2026-07-24T22:14:25.595817Z"
+      },
+      {
+        "id": "hyp_v3_tsla_revenue_growth_acceleration_2024_09_30_20260724_221425_016_4efcb0b3",
+        "source_event_id": "evt_finance_20241002_008_d704f632",
+        "target_event_id": "evt_finance_20241023_015_a8001b4e",
+        "relation_type": "enables",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "The reversal of the sales slump provided a foundational positive shift in sales performance, contributing to the overall positive market perception.",
+        "evidence_article_ids": [
+          "art_finance_20241002_004_e8ea5572"
+        ],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T22:14:25.610350Z",
+        "last_confirmed_at": "2026-07-24T22:14:25.610350Z"
+      },
+      {
+        "id": "hyp_v3_tsla_revenue_growth_acceleration_2024_09_30_20260724_221441_017_16d2d9fa",
+        "source_event_id": "evt_finance_20241002_008_d704f632",
+        "target_event_id": "evt_finance_20241023_009_de52599c",
+        "relation_type": "enables",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "The reversal of the sales slump provided a foundational increase in revenue, which was then reported in the Q3 earnings release.",
+        "evidence_article_ids": [
+          "art_finance_20241002_004_e8ea5572"
+        ],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T22:14:41.149408Z",
+        "last_confirmed_at": "2026-07-24T22:14:41.149408Z"
+      },
+      {
+        "id": "hyp_v3_tsla_revenue_growth_acceleration_2024_09_30_20260724_221441_018_281e5b7b",
+        "source_event_id": "evt_finance_20241023_009_de52599c",
+        "target_event_id": "evt_finance_20241023_010_e8496eec",
+        "relation_type": "triggers",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The official earnings release disclosed the profit beat, making it public.",
+        "evidence_article_ids": [
+          "art_finance_20241023_007_0f81f69c",
+          "art_finance_20241023_011_57a9f01b"
+        ],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T22:14:41.164903Z",
+        "last_confirmed_at": "2026-07-24T22:14:41.164903Z"
+      },
+      {
+        "id": "hyp_v3_tsla_revenue_growth_acceleration_2024_09_30_20260724_221441_019_068adde5",
+        "source_event_id": "evt_finance_20241023_009_de52599c",
+        "target_event_id": "evt_finance_20241023_014_3804386b",
+        "relation_type": "triggers",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The official earnings release disclosed the revenue miss, making it public.",
+        "evidence_article_ids": [
+          "art_finance_20241023_007_0f81f69c",
+          "art_finance_20241023_011_57a9f01b"
+        ],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T22:14:41.182078Z",
+        "last_confirmed_at": "2026-07-24T22:14:41.182078Z"
+      },
+      {
+        "id": "hyp_v3_tsla_revenue_growth_acceleration_2024_09_30_20260724_221441_020_b12be48e",
+        "source_event_id": "evt_finance_20241023_010_e8496eec",
+        "target_event_id": "evt_finance_20241023_012_e02b629f",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The stronger-than-expected profit performance significantly boosted investor confidence, leading to a jump in shares.",
+        "evidence_article_ids": [
+          "art_finance_20241023_007_0f81f69c",
+          "art_finance_20241023_003_5c74ac63"
+        ],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T22:14:41.204244Z",
+        "last_confirmed_at": "2026-07-24T22:14:41.204244Z"
+      },
+      {
+        "id": "hyp_v3_tsla_revenue_growth_acceleration_2024_09_30_20260724_221441_021_27662adc",
+        "source_event_id": "evt_finance_20241023_011_6d2bdc1c",
+        "target_event_id": "evt_finance_20241023_012_e02b629f",
+        "relation_type": "amplifies",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Musk's optimistic growth projection fueled investor optimism and contributed to the share jump.",
+        "evidence_article_ids": [
+          "art_finance_20241024_005_938d6603",
+          "art_finance_20241023_003_5c74ac63"
+        ],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T22:14:41.221992Z",
+        "last_confirmed_at": "2026-07-24T22:14:41.221992Z"
+      },
+      {
+        "id": "hyp_v3_tsla_revenue_growth_acceleration_2024_09_30_20260724_221441_022_11abd441",
+        "source_event_id": "evt_finance_20241023_012_e02b629f",
+        "target_event_id": "evt_finance_20241024_013_a58dbd42",
+        "relation_type": "triggers",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The initial jump in shares on Oct 23rd directly led to the continued soaring of the stock on Oct 24th.",
+        "evidence_article_ids": [
+          "art_finance_20241024_005_938d6603",
+          "art_finance_20241023_003_5c74ac63"
+        ],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T22:14:41.237792Z",
+        "last_confirmed_at": "2026-07-24T22:14:41.237792Z"
+      },
+      {
+        "id": "hyp_v3_tsla_revenue_growth_acceleration_2024_09_30_20260724_221441_023_f7ee72eb",
+        "source_event_id": "evt_finance_20241023_010_e8496eec",
+        "target_event_id": "evt_finance_20241023_015_a8001b4e",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "The significant profit beat overshadowed the revenue miss and contributed to the market perceiving the growth acceleration as above recent range.",
+        "evidence_article_ids": [
+          "art_finance_20241023_007_0f81f69c",
+          "art_finance_20241023_003_5c74ac63"
+        ],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T22:14:41.253361Z",
+        "last_confirmed_at": "2026-07-24T22:14:41.253361Z"
+      },
+      {
+        "id": "hyp_v3_tsla_revenue_growth_acceleration_2024_09_30_20260724_221441_024_d8958d37",
+        "source_event_id": "evt_finance_20241023_011_6d2bdc1c",
+        "target_event_id": "evt_finance_20241023_015_a8001b4e",
+        "relation_type": "amplifies",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Musk's optimistic future guidance led to heightened investor confidence and a perception of strong underlying business momentum, contributing to the 'above recent range' outcome.",
+        "evidence_article_ids": [
+          "art_finance_20241024_005_938d6603",
+          "art_finance_20241023_003_5c74ac63"
+        ],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T22:14:41.268076Z",
+        "last_confirmed_at": "2026-07-24T22:14:41.268076Z"
+      },
+      {
+        "id": "hyp_v3_tsla_revenue_growth_acceleration_2024_09_30_20260724_221441_025_31d5a494",
+        "source_event_id": "evt_finance_20241023_014_3804386b",
+        "target_event_id": "evt_finance_20241023_015_a8001b4e",
+        "relation_type": "inhibits",
+        "strength": 0.4,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "The revenue miss could have led to a negative market reaction, but it was counteracted by other positive factors, thus inhibiting a stronger positive perception.",
+        "evidence_article_ids": [
+          "art_finance_20241023_007_0f81f69c"
+        ],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T22:14:41.283668Z",
+        "last_confirmed_at": "2026-07-24T22:14:41.283668Z"
+      },
+      {
+        "id": "hyp_v3_tsla_revenue_growth_acceleration_2024_09_30_20260724_221441_026_39cbce60",
+        "source_event_id": "evt_finance_20241002_008_d704f632",
+        "target_event_id": "evt_finance_20241023_015_a8001b4e",
+        "relation_type": "enables",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "The reversal of the sales slump provided a foundational positive shift in sales performance, contributing to the overall positive market perception.",
+        "evidence_article_ids": [
+          "art_finance_20241002_004_e8ea5572"
+        ],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T22:14:41.300816Z",
+        "last_confirmed_at": "2026-07-24T22:14:41.300816Z"
+      },
+      {
+        "id": "hyp_v3_tsla_revenue_growth_acceleration_2024_09_30_20260724_221441_027_60ee201f",
+        "source_event_id": "evt_finance_20241023_015_a8001b4e",
+        "target_event_id": "evt_61ff7f08e39c",
+        "relation_type": "causes",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The market's perception of revenue growth acceleration as 'above recent range' directly caused the actual outcome.",
+        "evidence_article_ids": [
+          "art_finance_20241024_005_938d6603",
+          "art_finance_20241023_003_5c74ac63"
+        ],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T22:14:41.316392Z",
+        "last_confirmed_at": "2026-07-24T22:14:41.316392Z"
+      }
+    ],
+    "outcome_impacts": [
+      {
+        "id": "imp_19814f42",
+        "event_id": "evt_finance_20241002_008_d704f632",
+        "outcome_event_id": "evt_61ff7f08e39c",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_09_30",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "The reversal of the sales slump provided a foundational positive shift in sales performance, contributing to the overall positive market perception and the 'above recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:14:49.761222Z",
+        "last_confirmed_at": "2026-07-24T22:14:49.761222Z"
+      },
+      {
+        "id": "imp_b82e1221",
+        "event_id": "evt_finance_20241002_008_d704f632",
+        "outcome_event_id": "evt_d139d2f2fb05",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_09_30",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Opposite impact for 'below recent range': The reversal of the sales slump provided a foundational positive shift in sales performance, contributing to the overall positive market perception and the 'above recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:14:49.774245Z",
+        "last_confirmed_at": "2026-07-24T22:14:49.774245Z"
+      },
+      {
+        "id": "imp_086eb349",
+        "event_id": "evt_finance_20241002_008_d704f632",
+        "outcome_event_id": "evt_79f686419090",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_09_30",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.42,
+        "confidence": 0.48999999999999994,
+        "reasoning": "Strong positive drivers for 'above recent range' make 'within recent range' less likely: The reversal of the sales slump provided a foundational positive shift in sales performance, contributing to the overall positive market perception and the 'above recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:14:49.784755Z",
+        "last_confirmed_at": "2026-07-24T22:14:49.784755Z"
+      },
+      {
+        "id": "imp_20f36245",
+        "event_id": "evt_finance_20241023_009_de52599c",
+        "outcome_event_id": "evt_61ff7f08e39c",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_09_30",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.5,
+        "confidence": 0.6,
+        "reasoning": "The official earnings release made the positive and negative financial results public, enabling the market reaction that led to the 'above recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:14:49.794894Z",
+        "last_confirmed_at": "2026-07-24T22:14:49.794894Z"
+      },
+      {
+        "id": "imp_6c163748",
+        "event_id": "evt_finance_20241023_009_de52599c",
+        "outcome_event_id": "evt_d139d2f2fb05",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_09_30",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.5,
+        "confidence": 0.6,
+        "reasoning": "Opposite impact for 'below recent range': The official earnings release made the positive and negative financial results public, enabling the market reaction that led to the 'above recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:14:49.805424Z",
+        "last_confirmed_at": "2026-07-24T22:14:49.805424Z"
+      },
+      {
+        "id": "imp_cfcd6899",
+        "event_id": "evt_finance_20241023_009_de52599c",
+        "outcome_event_id": "evt_79f686419090",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_09_30",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.2,
+        "confidence": 0.5,
+        "reasoning": "Neutral or mixed impact on 'within recent range': The official earnings release made the positive and negative financial results public, enabling the market reaction that led to the 'above recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:14:49.815323Z",
+        "last_confirmed_at": "2026-07-24T22:14:49.815323Z"
+      },
+      {
+        "id": "imp_7c31a009",
+        "event_id": "evt_finance_20241023_010_e8496eec",
+        "outcome_event_id": "evt_61ff7f08e39c",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_09_30",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "The stronger-than-expected profit performance significantly boosted investor confidence, overshadowing the revenue miss and driving the 'above recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:14:49.825763Z",
+        "last_confirmed_at": "2026-07-24T22:14:49.825763Z"
+      },
+      {
+        "id": "imp_139db8ba",
+        "event_id": "evt_finance_20241023_010_e8496eec",
+        "outcome_event_id": "evt_d139d2f2fb05",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_09_30",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "Opposite impact for 'below recent range': The stronger-than-expected profit performance significantly boosted investor confidence, overshadowing the revenue miss and driving the 'above recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:14:49.837801Z",
+        "last_confirmed_at": "2026-07-24T22:14:49.837801Z"
+      },
+      {
+        "id": "imp_36a80b07",
+        "event_id": "evt_finance_20241023_010_e8496eec",
+        "outcome_event_id": "evt_79f686419090",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_09_30",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.5599999999999999,
+        "confidence": 0.63,
+        "reasoning": "Strong positive drivers for 'above recent range' make 'within recent range' less likely: The stronger-than-expected profit performance significantly boosted investor confidence, overshadowing the revenue miss and driving the 'above recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:14:49.847547Z",
+        "last_confirmed_at": "2026-07-24T22:14:49.847547Z"
+      },
+      {
+        "id": "imp_af9a784b",
+        "event_id": "evt_finance_20241023_011_6d2bdc1c",
+        "outcome_event_id": "evt_61ff7f08e39c",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_09_30",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Musk's optimistic future guidance led to heightened investor confidence and a perception of strong underlying business momentum, contributing to the 'above recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:14:49.859240Z",
+        "last_confirmed_at": "2026-07-24T22:14:49.859240Z"
+      },
+      {
+        "id": "imp_0c3c3384",
+        "event_id": "evt_finance_20241023_011_6d2bdc1c",
+        "outcome_event_id": "evt_d139d2f2fb05",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_09_30",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Opposite impact for 'below recent range': Musk's optimistic future guidance led to heightened investor confidence and a perception of strong underlying business momentum, contributing to the 'above recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:14:49.869281Z",
+        "last_confirmed_at": "2026-07-24T22:14:49.869281Z"
+      },
+      {
+        "id": "imp_7d3da985",
+        "event_id": "evt_finance_20241023_011_6d2bdc1c",
+        "outcome_event_id": "evt_79f686419090",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_09_30",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.48999999999999994,
+        "confidence": 0.5599999999999999,
+        "reasoning": "Strong positive drivers for 'above recent range' make 'within recent range' less likely: Musk's optimistic future guidance led to heightened investor confidence and a perception of strong underlying business momentum, contributing to the 'above recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:14:49.879666Z",
+        "last_confirmed_at": "2026-07-24T22:14:49.879666Z"
+      },
+      {
+        "id": "imp_44016b6c",
+        "event_id": "evt_finance_20241023_012_e02b629f",
+        "outcome_event_id": "evt_61ff7f08e39c",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_09_30",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "The significant jump in Tesla shares reflected strong market confidence, directly contributing to the perception of 'above recent range' revenue growth acceleration.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:14:49.889637Z",
+        "last_confirmed_at": "2026-07-24T22:14:49.889637Z"
+      },
+      {
+        "id": "imp_7b25a5fa",
+        "event_id": "evt_finance_20241023_012_e02b629f",
+        "outcome_event_id": "evt_d139d2f2fb05",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_09_30",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "Opposite impact for 'below recent range': The significant jump in Tesla shares reflected strong market confidence, directly contributing to the perception of 'above recent range' revenue growth acceleration.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:14:49.900078Z",
+        "last_confirmed_at": "2026-07-24T22:14:49.900078Z"
+      },
+      {
+        "id": "imp_08f9035d",
+        "event_id": "evt_finance_20241023_012_e02b629f",
+        "outcome_event_id": "evt_79f686419090",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_09_30",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.5599999999999999,
+        "confidence": 0.63,
+        "reasoning": "Strong positive drivers for 'above recent range' make 'within recent range' less likely: The significant jump in Tesla shares reflected strong market confidence, directly contributing to the perception of 'above recent range' revenue growth acceleration.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:14:49.912534Z",
+        "last_confirmed_at": "2026-07-24T22:14:49.912534Z"
+      },
+      {
+        "id": "imp_a76ea445",
+        "event_id": "evt_finance_20241024_013_a58dbd42",
+        "outcome_event_id": "evt_61ff7f08e39c",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_09_30",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "The continued soaring of Tesla stock reinforced the positive market sentiment, solidifying the 'above recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:14:49.922730Z",
+        "last_confirmed_at": "2026-07-24T22:14:49.922730Z"
+      },
+      {
+        "id": "imp_97918676",
+        "event_id": "evt_finance_20241024_013_a58dbd42",
+        "outcome_event_id": "evt_d139d2f2fb05",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_09_30",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "Opposite impact for 'below recent range': The continued soaring of Tesla stock reinforced the positive market sentiment, solidifying the 'above recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:14:49.933253Z",
+        "last_confirmed_at": "2026-07-24T22:14:49.933253Z"
+      },
+      {
+        "id": "imp_c2c54308",
+        "event_id": "evt_finance_20241024_013_a58dbd42",
+        "outcome_event_id": "evt_79f686419090",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_09_30",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.63,
+        "confidence": 0.63,
+        "reasoning": "Strong positive drivers for 'above recent range' make 'within recent range' less likely: The continued soaring of Tesla stock reinforced the positive market sentiment, solidifying the 'above recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:14:49.943364Z",
+        "last_confirmed_at": "2026-07-24T22:14:49.943364Z"
+      },
+      {
+        "id": "imp_e1439698",
+        "event_id": "evt_finance_20241023_014_3804386b",
+        "outcome_event_id": "evt_61ff7f08e39c",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_09_30",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.4,
+        "confidence": 0.7,
+        "reasoning": "The revenue miss could have led to a negative market reaction, but it was overwhelmingly counteracted by other positive factors, thus inhibiting a stronger positive perception for the 'above recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:14:49.953696Z",
+        "last_confirmed_at": "2026-07-24T22:14:49.953696Z"
+      },
+      {
+        "id": "imp_2bf8c014",
+        "event_id": "evt_finance_20241023_014_3804386b",
+        "outcome_event_id": "evt_d139d2f2fb05",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_09_30",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.4,
+        "confidence": 0.7,
+        "reasoning": "Opposite impact for 'below recent range': The revenue miss could have led to a negative market reaction, but it was overwhelmingly counteracted by other positive factors, thus inhibiting a stronger positive perception for the 'above recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:14:49.963697Z",
+        "last_confirmed_at": "2026-07-24T22:14:49.963697Z"
+      },
+      {
+        "id": "imp_615925c3",
+        "event_id": "evt_finance_20241023_014_3804386b",
+        "outcome_event_id": "evt_79f686419090",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_09_30",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.2,
+        "confidence": 0.5,
+        "reasoning": "Neutral or mixed impact on 'within recent range': The revenue miss could have led to a negative market reaction, but it was overwhelmingly counteracted by other positive factors, thus inhibiting a stronger positive perception for the 'above recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:14:49.974224Z",
+        "last_confirmed_at": "2026-07-24T22:14:49.974224Z"
+      },
+      {
+        "id": "imp_7c02738b",
+        "event_id": "evt_finance_20241023_015_a8001b4e",
+        "outcome_event_id": "evt_61ff7f08e39c",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_09_30",
+        "impact_direction": "positive",
+        "impact_magnitude": 1.0,
+        "confidence": 1.0,
+        "reasoning": "This event directly represents the market's perception of the 'above recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:14:49.986126Z",
+        "last_confirmed_at": "2026-07-24T22:14:49.986126Z"
+      },
+      {
+        "id": "imp_8b87b381",
+        "event_id": "evt_finance_20241023_015_a8001b4e",
+        "outcome_event_id": "evt_d139d2f2fb05",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_09_30",
+        "impact_direction": "negative",
+        "impact_magnitude": 1.0,
+        "confidence": 1.0,
+        "reasoning": "Opposite impact for 'below recent range': This event directly represents the market's perception of the 'above recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:14:49.995925Z",
+        "last_confirmed_at": "2026-07-24T22:14:49.995925Z"
+      },
+      {
+        "id": "imp_a61be475",
+        "event_id": "evt_finance_20241023_015_a8001b4e",
+        "outcome_event_id": "evt_79f686419090",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2024_09_30",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.7,
+        "confidence": 0.7,
+        "reasoning": "Strong positive drivers for 'above recent range' make 'within recent range' less likely: This event directly represents the market's perception of the 'above recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2024_09_30"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:14:50.006353Z",
+        "last_confirmed_at": "2026-07-24T22:14:50.006353Z"
+      }
+    ]
+  }
+}

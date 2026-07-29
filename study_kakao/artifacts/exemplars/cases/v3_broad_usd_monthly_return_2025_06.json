@@ -1,0 +1,55 @@
+{
+  "schema_version": "fixed_exemplar_case",
+  "status": "success",
+  "question_id": "v3_broad_usd_monthly_return_2025_06",
+  "retrieved_memory_question_id": "v3_broad_usd_monthly_return_2024_12",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "market_fx_credit",
+      "target_operation": "monthly broad-dollar return",
+      "option_geometry": "bucketed by recent range"
+    },
+    "historical_question": "As of 2024-12-01, which range will the monthly broad-dollar return for Nominal broad U.S. dollar index in 2024-12 fall into?",
+    "historical_cutoff": "2024-12-01T00:00:00+00:00",
+    "target_semantics": "The monthly broad-dollar return for the Nominal broad U.S. dollar index in December 2024.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20240111_008_43f376f8",
+        "takeaway": "US consumer prices rose more than expected in December 2023.",
+        "why_predictive": "Higher-than-expected inflation can signal a more hawkish stance from the Federal Reserve, potentially supporting the dollar."
+      },
+      {
+        "article_id": "art_finance_20240722_012_6b65e11e",
+        "takeaway": "The Federal Reserve's July 2024 report indicated a focus on economic developments and monetary policy.",
+        "why_predictive": "Federal Reserve communications and policy outlook are key drivers of interest rate differentials and dollar strength."
+      },
+      {
+        "article_id": "art_finance_20241129_011_5ba9d0dc",
+        "takeaway": "The US Dollar Index outlook for 2025 suggests fundamental and technical factors will influence its movement.",
+        "why_predictive": "This article directly addresses the target index and its future outlook, implying a consideration of drivers like interest rates and economic conditions."
+      },
+      {
+        "article_id": "art_finance_20241125_013_2988c787",
+        "takeaway": "Monetary policy decisions are made under conditions of uncertainty.",
+        "why_predictive": "This highlights the inherent uncertainty in forecasting policy impacts on currency markets, suggesting a need for cautious interpretation of economic data."
+      },
+      {
+        "article_id": "art_finance_20240626_010_097251ad",
+        "takeaway": "Geopolitical risks were identified as significant for 2024.",
+        "why_predictive": "Geopolitical events can drive safe-haven flows into the US dollar, impacting its broad return independently of interest rate differentials."
+      }
+    ],
+    "expert_reasoning": [
+      "The baseline is inflation. Higher-than-expected inflation, as seen in December 2023 (art_finance_20240111_008_43f376f8), suggests a potential for a less accommodative monetary policy stance by the Federal Reserve.",
+      "This outlook for monetary policy is a key driver. If the Federal Reserve maintains a 'higher-for-longer' interest rate path due to persistent inflation, this would support relative dollar rates.",
+      "The resulting rate differentials, where US rates are higher or expected to remain higher than those in other major economies, can attract capital and increase demand for dollar-denominated assets. This mechanism supports the dollar's broad return (art_finance_20241129_011_5ba9d0dc).",
+      "Geopolitical risks, identified as significant for 2024 (art_finance_20240626_010_097251ad), can act as an independent driver, reinforcing demand for the dollar as a safe-haven asset, even if rate differentials are not the primary catalyst.",
+      "The combination of a potentially hawkish Fed policy driven by inflation, favorable rate differentials, and persistent geopolitical risks suggests upward pressure on the Nominal broad U.S. dollar index."
+    ],
+    "counterevidence": "While geopolitical risks can support the dollar (art_finance_20240626_010_097251ad), a broad easing of global risk appetite or a significant shift in other central banks' policies to become more hawkish than the Fed could counteract these upward pressures.",
+    "prospective_target_estimate": "Given the confluence of factors suggesting dollar strength, the monthly broad-dollar return for the Nominal broad U.S. dollar index in December 2024 is likely to be above the recent range.",
+    "option_mapping": "The analysis points towards a positive return for the dollar index, driven by inflation, monetary policy expectations, and geopolitical risks. This aligns with the 'above recent range' option.",
+    "uncertainty": "Monetary policy operates under significant uncertainty (art_finance_20241125_013_2988c787). Unexpected shifts in inflation data, Federal Reserve communication, or global economic conditions could alter the trajectory of interest rate differentials and dollar demand.",
+    "dag_derived_lesson": "Economic indicators, central bank policy expectations, and geopolitical events interact to influence currency strength. A baseline of inflation can inform policy outlook, which in turn affects rate differentials and asset demand. Geopolitical risks can provide an independent boost to safe-haven currencies. The interplay of these factors determines the direction of currency returns, but policy uncertainty requires careful consideration."
+  }
+}

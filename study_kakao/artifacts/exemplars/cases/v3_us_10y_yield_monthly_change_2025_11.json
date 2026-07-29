@@ -1,0 +1,39 @@
+{
+  "schema_version": "fixed_exemplar_case",
+  "status": "success",
+  "question_id": "v3_us_10y_yield_monthly_change_2025_11",
+  "retrieved_memory_question_id": "v3_us_10y_yield_monthly_change_2024_09",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_market",
+      "target_operation": "change_in_value",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2024-09-01, will the monthly 10-year yield change for United States 10-year Treasury yield in 2024-09 be at least -0.18 percentage points?",
+    "historical_cutoff": "2024-09-01T00:00:00+00:00",
+    "target_semantics": "The United States 10-year Treasury yield will change by at least -0.18 percentage points in September 2024.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20230921_009_227039f8",
+        "takeaway": "The September 2023 FOMC meeting signaled a 'higher for longer' interest rate stance.",
+        "why_predictive": "This indicates a baseline expectation of sustained or elevated interest rates, which would generally pressure yields upward or keep them from falling significantly."
+      },
+      {
+        "article_id": "art_finance_20240821_010_ed6ef2c0",
+        "takeaway": "FOMC minutes from August 2024 indicated a 'vast majority' saw a September rate cut as appropriate.",
+        "why_predictive": "This suggests a shift in Fed policy expectations towards easing, which would typically lead to lower Treasury yields."
+      }
+    ],
+    "expert_reasoning": [
+      "The baseline expectation for interest rates, as suggested by the September 2023 FOMC meeting (art_finance_20230921_009_227039f8), was for a 'higher for longer' policy. This implies a resistance to significant yield declines.",
+      "However, more recent commentary from the August 2024 FOMC minutes (art_finance_20240821_010_ed6ef2c0) indicates a strong consensus for a September rate cut. This policy easing expectation is a significant driver for lower yields.",
+      "The target requires a yield change of at least -0.18 percentage points. The shift towards expected policy easing (art_finance_20240821_010_ed6ef2c0) provides a mechanism for yields to fall, potentially meeting the threshold.",
+      "The 'higher for longer' narrative (art_finance_20230921_009_227039f8) acts as a counteracting force, suggesting that any easing might be tempered or that underlying inflation pressures could prevent substantial yield drops."
+    ],
+    "counterevidence": "The 'higher for longer' message from September 2023 (art_finance_20230921_009_227039f8) suggests that the Federal Reserve might be hesitant to cut rates, or that underlying economic conditions could keep yields elevated, counteracting the easing signaled in August 2024 (art_finance_20240821_010_ed6ef2c0).",
+    "prospective_target_estimate": "The evidence is mixed, with a recent strong signal for easing (art_finance_20240821_010_ed6ef2c0) potentially overriding older 'higher for longer' sentiment (art_finance_20230921_009_227039f8). The target of -0.18 percentage points is a specific threshold that may or may not be met by the expected easing.",
+    "option_mapping": "The evidence points towards potential yield decreases due to expected Fed easing. If this easing is substantial enough to overcome any lingering 'higher for longer' pressures, the target of a -0.18 percentage point change or more ('yes') is plausible. However, if the 'higher for longer' stance or other factors prevent significant yield drops, the 'no' option would be favored.",
+    "uncertainty": "The primary uncertainty lies in the magnitude and impact of the expected September rate cut versus the persistent 'higher for longer' narrative. Additionally, other market factors not detailed in the provided articles could influence the term premium and bond demand, affecting the final yield movement.",
+    "dag_derived_lesson": "Policy easing expectations are a key driver for bond yields. However, prior policy signals and underlying economic conditions can create counteracting pressures, necessitating a careful balance of evidence to forecast yield movements."
+  }
+}

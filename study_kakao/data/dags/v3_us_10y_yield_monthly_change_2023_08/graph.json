@@ -1,0 +1,164 @@
+{
+  "schema_version": "1.0",
+  "actual_outcome_event_id": "node_6",
+  "graph": {
+    "nodes": [
+      {
+        "id": "node_1",
+        "label": "July CPI rose less than expected",
+        "event_type": "indicator",
+        "occurred_date": "2023-08-10",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "art_finance_20230810_003_58c3ce80"
+        ]
+      },
+      {
+        "id": "node_8",
+        "label": "The CPI surprise may have reduced inflation expectations",
+        "event_type": "indicator",
+        "occurred_date": "2023-08-10",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "art_finance_20230810_003_58c3ce80"
+        ]
+      },
+      {
+        "id": "node_2",
+        "label": "U.S. real yields climbed to a 14-year high",
+        "event_type": "indicator",
+        "occurred_date": "2023-08-14",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "art_finance_20230814_004_17a02c5e"
+        ]
+      },
+      {
+        "id": "node_7",
+        "label": "Nominal 10-year Treasury yields showed an upward August trend",
+        "event_type": "indicator",
+        "occurred_date": "2023-08-24",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "art_finance_20230824_002_5a2eff2b",
+          "art_finance_20230814_004_17a02c5e"
+        ]
+      },
+      {
+        "id": "node_4",
+        "label": "Competing August forces plausibly limited the net yield rise",
+        "event_type": "indicator",
+        "occurred_date": "2023-08-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "art_finance_20230810_003_58c3ce80",
+          "art_finance_20230814_004_17a02c5e",
+          "art_finance_20230824_002_5a2eff2b"
+        ]
+      },
+      {
+        "id": "node_5",
+        "label": "August 10-year Treasury yield monthly change measured 0.12 percentage points",
+        "event_type": "measurement",
+        "occurred_date": "2023-08-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_77204a59da1f9108"
+        ]
+      },
+      {
+        "id": "node_6",
+        "label": "Resolution: the 0.12-point change was below the 0.165-point threshold",
+        "event_type": "outcome",
+        "occurred_date": "2023-08-31",
+        "is_outcome": true,
+        "is_actual_outcome": true,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_77204a59da1f9108"
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_1",
+        "source": "node_1",
+        "target": "node_8",
+        "relationship": "contributes_to",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "art_finance_20230810_003_58c3ce80"
+        ],
+        "rationale": "A downside CPI surprise can reduce inflation expectations, but the cited article does not directly measure that expectations response."
+      },
+      {
+        "id": "edge_2",
+        "source": "node_8",
+        "target": "node_4",
+        "relationship": "inhibits",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "art_finance_20230810_003_58c3ce80"
+        ],
+        "rationale": "Lower inflation expectations could restrain nominal yields, but the effect on the August monthly change is not isolated."
+      },
+      {
+        "id": "edge_3",
+        "source": "node_2",
+        "target": "node_7",
+        "relationship": "supports",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "art_finance_20230814_004_17a02c5e",
+          "art_finance_20230824_002_5a2eff2b"
+        ],
+        "rationale": "The high real-yield observation and later reporting on spiking Treasury rates support the synthesized upward nominal-yield trend."
+      },
+      {
+        "id": "edge_7",
+        "source": "node_7",
+        "target": "node_4",
+        "relationship": "contributes_to",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "art_finance_20230824_002_5a2eff2b"
+        ],
+        "rationale": "The upward trend contributed to a positive change, but the evidence does not explain why the net increase stopped at 0.12 points."
+      },
+      {
+        "id": "edge_5",
+        "source": "node_4",
+        "target": "node_5",
+        "relationship": "is_consistent_with",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_77204a59da1f9108"
+        ],
+        "rationale": "The competing-forces interpretation is consistent with a moderate rise, while the official series alone establishes the 0.12-point measurement."
+      },
+      {
+        "id": "edge_6",
+        "source": "node_5",
+        "target": "node_6",
+        "relationship": "classifies_as",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_77204a59da1f9108"
+        ],
+        "rationale": "A 0.12-point monthly change is less than 0.165 points and therefore resolves no."
+      }
+    ]
+  }
+}

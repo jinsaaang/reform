@@ -1,0 +1,165 @@
+{
+  "schema_version": "1.0",
+  "actual_outcome_event_id": "node_vix_change_within_range",
+  "graph": {
+    "nodes": [
+      {
+        "id": "node_investor_distractions",
+        "label": "Fed and inflation catalysts created early-January uncertainty",
+        "event_type": "indicator",
+        "occurred_date": "2023-01-04",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_a181e2d0a6e0a5f3"
+        ]
+      },
+      {
+        "id": "node_vix_sinking_mid_teens",
+        "label": "VIX sank into the mid-teens by January 13",
+        "event_type": "indicator",
+        "occurred_date": "2023-01-13",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_376d42d51458f875"
+        ]
+      },
+      {
+        "id": "node_rising_stock_market",
+        "label": "Major U.S. stock indexes rose during January",
+        "event_type": "indicator",
+        "occurred_date": "2023-01-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_7d675207df17f1c0"
+        ]
+      },
+      {
+        "id": "node_warnings_market_reversal",
+        "label": "Strategists warned that low VIX could precede a reversal",
+        "event_type": "indicator",
+        "occurred_date": "2023-01-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_2ba81b9cd2832013"
+        ]
+      },
+      {
+        "id": "node_general_vix_decline",
+        "label": "VIX showed a general declining trend during January",
+        "event_type": "indicator",
+        "occurred_date": "2023-01-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_376d42d51458f875",
+          "ev_431752c326ba1fe8",
+          "ev_2ba81b9cd2832013"
+        ]
+      },
+      {
+        "id": "node_low_volatility_environment",
+        "label": "January ended in a comparatively low-volatility environment",
+        "event_type": "indicator",
+        "occurred_date": "2023-01-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_60e97c3a5f5e8d6b",
+          "ev_376d42d51458f875"
+        ]
+      },
+      {
+        "id": "node_vix_change_within_range",
+        "label": "Resolution: VIX monthly change was -10.48%, within the recent range",
+        "event_type": "outcome",
+        "occurred_date": "2023-01-31",
+        "is_outcome": true,
+        "is_actual_outcome": true,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_c10e96f99bd3b69d"
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_distractions_to_decline",
+        "source": "node_investor_distractions",
+        "target": "node_general_vix_decline",
+        "relationship": "inhibits",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_a181e2d0a6e0a5f3"
+        ],
+        "rationale": "Upcoming catalysts could have limited the decline, but the source does not establish their realized effect on the monthly VIX path."
+      },
+      {
+        "id": "edge_vix_sinking_to_general_decline",
+        "source": "node_vix_sinking_mid_teens",
+        "target": "node_general_vix_decline",
+        "relationship": "supports",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_376d42d51458f875"
+        ],
+        "rationale": "The mid-month observation is direct evidence supporting the synthesized January decline trend."
+      },
+      {
+        "id": "edge_rising_market_correlates_vix_decline",
+        "source": "node_rising_stock_market",
+        "target": "node_general_vix_decline",
+        "relationship": "correlates_with",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_7d675207df17f1c0"
+        ],
+        "rationale": "Stocks rose during the month, but the supplied source does not demonstrate that this caused or statistically explains the VIX decline."
+      },
+      {
+        "id": "edge_warnings_challenge_decline",
+        "source": "node_warnings_market_reversal",
+        "target": "node_general_vix_decline",
+        "relationship": "challenges",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_2ba81b9cd2832013"
+        ],
+        "rationale": "The reported reversal warning is counterevidence to treating the observed decline as a stable directional regime."
+      },
+      {
+        "id": "edge_general_decline_to_low_volatility",
+        "source": "node_general_vix_decline",
+        "target": "node_low_volatility_environment",
+        "relationship": "indicates",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_376d42d51458f875",
+          "ev_60e97c3a5f5e8d6b"
+        ],
+        "rationale": "The declining VIX and mid-teens observation support the interpretation of a comparatively low-volatility environment."
+      },
+      {
+        "id": "edge_low_volatility_to_within_range",
+        "source": "node_low_volatility_environment",
+        "target": "node_vix_change_within_range",
+        "relationship": "is_consistent_with",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_60e97c3a5f5e8d6b",
+          "ev_c10e96f99bd3b69d"
+        ],
+        "rationale": "The low-volatility interpretation is consistent with the non-extreme monthly result; the official VIX series independently establishes -10.48% and its range classification."
+      }
+    ]
+  }
+}

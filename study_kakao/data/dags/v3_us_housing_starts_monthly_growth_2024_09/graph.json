@@ -1,0 +1,161 @@
+{
+  "schema_version": "1.0",
+  "actual_outcome_event_id": "node_5",
+  "graph": {
+    "nodes": [
+      {
+        "id": "node_2",
+        "label": "Earlier evidence showed subdued builder sentiment",
+        "event_type": "indicator",
+        "occurred_date": "2022-09-19",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "art_finance_20220919_004_08151b58"
+        ]
+      },
+      {
+        "id": "node_1",
+        "label": "A late-2023 forecast anticipated elevated mortgage-rate effects",
+        "event_type": "indicator",
+        "occurred_date": "2023-12-19",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "art_finance_20231219_003_1f35f9c2"
+        ]
+      },
+      {
+        "id": "node_6",
+        "label": "September discussion considered the effects of interest-rate cuts on building",
+        "event_type": "indicator",
+        "occurred_date": "2024-09-27",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "art_finance_20240927_003_0d650497"
+        ]
+      },
+      {
+        "id": "node_3",
+        "label": "Mortgage-rate conditions may have restrained September housing demand",
+        "event_type": "indicator",
+        "occurred_date": "2024-09-30",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "art_finance_20231219_003_1f35f9c2",
+          "art_finance_20240927_003_0d650497"
+        ]
+      },
+      {
+        "id": "node_7",
+        "label": "Subdued sentiment may have encouraged builder caution",
+        "event_type": "decision",
+        "occurred_date": "2024-09-30",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "art_finance_20220919_004_08151b58"
+        ]
+      },
+      {
+        "id": "node_4",
+        "label": "September housing-starts monthly growth measured -2.654%",
+        "event_type": "measurement",
+        "occurred_date": "2024-10-21",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_cf36205f6a84c4f8"
+        ]
+      },
+      {
+        "id": "node_5",
+        "label": "Resolution: housing-starts growth was within the recent range",
+        "event_type": "outcome",
+        "occurred_date": "2024-10-21",
+        "is_outcome": true,
+        "is_actual_outcome": true,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_cf36205f6a84c4f8"
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_1",
+        "source": "node_1",
+        "target": "node_3",
+        "relationship": "contributes_to",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "art_finance_20231219_003_1f35f9c2"
+        ],
+        "rationale": "Mortgage rates can restrain demand, but the supplied forecast does not establish September 2024 conditions or their effect."
+      },
+      {
+        "id": "edge_6",
+        "source": "node_6",
+        "target": "node_3",
+        "relationship": "inhibits",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "art_finance_20240927_003_0d650497"
+        ],
+        "rationale": "Rate-cut expectations could offset demand restraint, but their immediate September effect is not documented."
+      },
+      {
+        "id": "edge_2",
+        "source": "node_3",
+        "target": "node_4",
+        "relationship": "contributes_to",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_cf36205f6a84c4f8"
+        ],
+        "rationale": "Demand restraint could weigh on starts, while the official series alone establishes the -2.654% result."
+      },
+      {
+        "id": "edge_3",
+        "source": "node_2",
+        "target": "node_7",
+        "relationship": "enables",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "art_finance_20220919_004_08151b58"
+        ],
+        "rationale": "Older sentiment evidence suggests a possible caution mechanism but does not establish September 2024 builder behavior."
+      },
+      {
+        "id": "edge_4",
+        "source": "node_7",
+        "target": "node_4",
+        "relationship": "contributes_to",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_cf36205f6a84c4f8"
+        ],
+        "rationale": "Builder caution could restrain starts, but its contribution to the September measurement is not evidenced."
+      },
+      {
+        "id": "edge_5",
+        "source": "node_4",
+        "target": "node_5",
+        "relationship": "classifies_as",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_cf36205f6a84c4f8"
+        ],
+        "rationale": "A -2.654% change lies between -4.883% inclusive and 7.204% exclusive, so it resolves within the recent range."
+      }
+    ]
+  }
+}

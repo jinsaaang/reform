@@ -1,0 +1,1357 @@
+{
+  "question": {
+    "id": "v3_henry_hub_monthly_return_2023_01",
+    "question_text": "As of 2023-01-01, which range will the monthly Henry Hub price return for Henry Hub natural gas in 2023-01 fall into?",
+    "question_type": "mcq",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 3,
+    "resolution_date": "2023-01-31T23:59:59Z",
+    "estimated_start_time": "2023-01-01T00:00:00Z",
+    "ground_truth": "below recent range",
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [
+      "evt_d0d7c2650019",
+      "evt_37189e778730",
+      "evt_4930cc33cba4"
+    ],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: Henry Hub natural gas\nTarget period: 2023-01\nFinancial area: energy_commodities / natural gas\nRegion: US\nPre-registered recent-range boundaries: lower -24.1, upper 24.61 percent.",
+    "resolution_criteria": "Use FRED series DHHNGSP. Compute the change from the previous monthly observation using mode 'pct'. Resolve 'below recent range' below -24.1, 'within recent range' from -24.1 inclusive to 24.61 exclusive, and 'above recent range' at or above 24.61 percent.",
+    "resolution_reasoning": "The snapshotted target change was -24.72 percent; it resolved to 'below recent range'.",
+    "options": [
+      "below recent range",
+      "within recent range",
+      "above recent range"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": "\n## Executive Summary\nThe Henry Hub natural gas price return for January 2023 fell below the recent range primarily due to an unseasonably mild winter across significant parts of the US and Europe, which drastically reduced heating demand. This demand reduction led to a build-up in natural gas storage. Concurrently, increased production and continued high LNG imports further contributed to an oversupply in the market. These factors combined to drive down spot prices for natural gas, despite some regional price spikes due to localized infrastructure issues and contract pricing.\n\n## Timeline Of Key Events\n- **2023-01-03:** US natural gas futures fall to a 10-month low of $4.04 per million British thermal units (MMBtu), down more than 9% over two trading days, due to milder January weather forecasts easing demand. European prices (Dutch TTF) also trade lower. [art_finance_20230103_002_555424aa]\n- **2023-01-09:** While national natural gas prices were dropping, San Diego experienced soaring prices due to localized issues. [art_finance_20230109_007_fe13a554]\n- **2023-01-11:** Vox.com reports that despite national price drops, some households could face higher bills due to rising gas exports and cold weather in certain regions, affecting low-income communities the most. [art_finance_20230111_009_a4c5ae72]\n- **2023-01-20:** By this date, the price of natural gas at Henry Hub was half of what it was at the start of December. [art_finance_20230131_002_4b24ccca]\n- **2023-01-31:** A Milwaukee Journal Sentinel article confirms that a mild winter led to falling natural gas prices, offering relief for some households, despite utilities locking in higher prices through long-term contracts. [art_finance_20230131_002_4b24ccca]\n\n## Causal Chain Analysis\nThe primary cause of Henry Hub natural gas prices falling below the recent range in January 2023 was a **mild winter across key demand regions** [art_finance_20230103_002_555424aa]. This unseasonably warm weather significantly **reduced heating demand** for natural gas across both the US and Europe [art_finance_20230103_002_555424aa, art_finance_20230131_002_4b24ccca]. The decreased demand directly **led to an oversupply in the spot market**, causing futures prices to tumble to a 10-month low by early January [art_finance_20230103_002_555424aa]. By mid-January, prices at Henry Hub were approximately half of what they were in early December [art_finance_20230131_002_4b24ccca]. Additionally, **record LNG imports in Europe and healthy stockpiles** also helped to ease demand concerns, further contributing to the overall price decline [art_finance_20230103_002_555424aa]. This combination of reduced demand and ample supply collectively **resulted in Henry Hub natural gas prices falling below the recent range**.\n\n## Countervailing Factors\nSeveral factors pushed against the downward trend of natural gas prices but were ultimately overwhelmed. **Localized cold spells and increased demand in specific regions** could temporarily drive up prices, as seen in San Diego where consumers faced soaring bills [art_finance_20230109_007_fe13a554, art_finance_20230111_009_a4c5ae72]. Similarly, **utilities having locked in higher prices through long-term contracts** meant that consumers did not immediately see the full benefit of dropping spot prices, creating an impression of stable or even rising costs for end-users [art_finance_20230131_002_4b24ccca, art_finance_20230111_009_a4c5ae72]. Furthermore, **rising natural gas exports** also exerted upward pressure on prices [art_finance_20230111_009_a4c5ae72]. However, the overwhelming force of the mild winter and resulting reduced overall demand, combined with robust supply, rendered these regional and contractual price increases insufficient to prevent the Henry Hub benchmark from falling below its recent range.\n\n## Event Candidate Inventory\n- E1: **Unseasonably mild winter weather in US and Europe**\n    - Date: Early January 2023 (continuing throughout January)\n    - Why it matters causally: Directly reduced natural gas heating demand, leading to market oversupply and price drops.\n    - Source article IDs: art_finance_20230103_002_555424aa, art_finance_20230131_002_4b24ccca\n- E2: **Increased natural gas supply/storage**\n    - Date: January 2023\n    - Why it matters causally: Contributed to market oversupply, reinforcing downward price pressure.\n    - Source article IDs: art_finance_20230103_002_555424aa, art_finance_20230131_003_f307e857\n- E3: **Henry Hub futures prices fall to 10-month low**\n    - Date: 2023-01-03\n    - Why it matters causally: Direct indicator of the natural gas price decline at the benchmark.\n    - Source article IDs: art_finance_20230103_002_555424aa\n- E4: **Henry Hub prices halve compared to early December**\n    - Date: By 2023-01-20\n    - Why it matters causally: Significant drop in benchmark price, confirming the 'below recent range' outcome.\n    - Source article IDs: art_finance_20230131_002_4b24ccca\n- E5: **Localized price spikes (e.g., San Diego)**\n    - Date: Early January 2023\n    - Why it matters causally: Represents a countervailing factor, highlighting regional variations that did not alter the overall Henry Hub trend.\n    - Source article IDs: art_finance_20230109_007_fe13a554, art_finance_20230111_009_a4c5ae72\n\n## Evidence Mapping Table\n| Claim/Event | Article IDs | Date Support | Confidence (0-1) | Notes |\n|---|---|---|---|---|\n| Mild winter reduces demand | art_finance_20230103_002_555424aa, art_finance_20230131_002_4b24ccca | 2023-01-03, 2023-01-31 | 1.0 | Directly stated in multiple articles. |\n| Henry Hub futures fall | art_finance_20230103_002_555424aa | 2023-01-03 | 1.0 | Specific price movement reported. |\n| Henry Hub prices halve by Jan 20 | art_finance_20230131_002_4b24ccca | 2023-01-31 (reporting on prior event) | 0.9 | Reported with a clear timeframe. |\n| Localized price jumps | art_finance_20230109_007_fe13a554, art_finance_20230111_009_a4c5ae72 | 2023-01-09, 2023-01-11 | 0.9 | Reported as regional anomalies, not national trend. |\n| Utilities lock in higher prices | art_finance_20230131_002_4b24ccca, art_finance_20230111_009_a4c5ae72 | 2023-01-31, 2023-01-11 | 0.9 | Explained as a reason for consumer bill disparity. |\n| Record LNG imports/stockpiles | art_finance_20230103_002_555424aa | 2023-01-03 | 0.9 | Contributed to easing demand concerns. |\n\n## Uncertainties And Alternative Paths\nOne uncertainty is the precise weighting of the various factors contributing to the price drop; while mild weather was dominant, the exact contribution of increased production or existing storage levels is less quantified. An alternative path, if a severe cold snap had occurred across a wider region for a sustained period in January, could have led to a significant increase in demand, potentially pushing Henry Hub prices within or even above the recent range, despite the initial downward trend from mild weather. This is supported by the *Vox* article highlighting that even modest cold weather increases can impact prices [art_finance_20230111_009_a4c5ae72].",
+    "graph_built": true,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.201466Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "henry_hub_monthly_return",
+        "event_cluster_id": "natural_gas_2023-01",
+        "category": "energy_commodities",
+        "original_domain": "energy_commodities",
+        "subdomain": "natural gas",
+        "entity": "Henry Hub natural gas",
+        "region": "US",
+        "target_metric": "monthly Henry Hub price return",
+        "target_period": "2023-01",
+        "forecast_cutoff": "2023-01-01T00:00:00+00:00",
+        "forecast_date_options": [
+          "2023-01-01"
+        ],
+        "resolution_available_at": "2023-01-31T23:59:59+00:00",
+        "horizon_days": 30,
+        "source_type": "fred_series_snapshot",
+        "source_series_id": "DHHNGSP",
+        "source_homepage": "https://fred.stlouisfed.org/series/DHHNGSP",
+        "comparison_rule": "target change bucketed by the lower and upper quartiles of the 8 prior observed changes",
+        "comparison_threshold": -7.179809,
+        "comparison_thresholds": {
+          "lower": -24.104143,
+          "upper": 24.605666
+        },
+        "change_unit": "percent",
+        "threshold_observation_dates": [
+          "2022-04-29",
+          "2022-05-31",
+          "2022-06-30",
+          "2022-07-29",
+          "2022-08-31",
+          "2022-09-30",
+          "2022-10-31",
+          "2022-11-30",
+          "2022-12-30"
+        ],
+        "split": "memory",
+        "family_position": 1,
+        "family_size": 7,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "below recent range",
+        "resolved_class": "below recent range",
+        "resolution_value": 2.65,
+        "target_change": -24.71590909,
+        "source_observation_date": "2023-01-31",
+        "resolution_document": {
+          "publisher": "Federal Reserve Bank of St. Louis (FRED)",
+          "title": "Henry Hub Natural Gas Spot Price",
+          "url": "https://fred.stlouisfed.org/series/DHHNGSP"
+        },
+        "source_download_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DHHNGSP&cosd=2019-01-01&coed=2026-06-30",
+        "source_sha256": "2d9474daac856d552789516cba71143c8c2718de0a092d8518d81b4ab2f1bc25",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_d0d7c2650019",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 13,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_20230113_002_3419c3c4",
+        "title": "New reports highlight 3rd quarter impact of gas supply cuts - energy.ec.europa.eu",
+        "url": "https://energy.ec.europa.eu/news/new-reports-highlight-3rd-quarter-impact-gas-supply-cuts-2023-01-13_en",
+        "source": "energy.ec.europa.eu",
+        "published_date": "2023-01-13T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230119_003_14b41b45",
+        "title": "The Climate Case for Expanding U.S. Natural Gas Exports - Progressive Policy Institute",
+        "url": "https://www.progressivepolicy.org/the-climate-case-for-expanding-us-natural-gas-exports",
+        "source": "progressivepolicy.org",
+        "published_date": "2023-01-19T05:01:29+00:00"
+      },
+      {
+        "id": "art_finance_20230117_004_749ba99b",
+        "title": "ICYMI: E&C Republicans Turn Up the Heat and Demand Biden Stop Efforts to Ban Gas Stoves - House Committee on Energy and Commerce (.gov)",
+        "url": "https://republicans-energycommerce.house.gov/posts/icymi-e-and-c-republicans-turn-up-the-heat-and-demand-biden-stop-efforts-to-ban-gas-stoves",
+        "source": "republicans-energycommerce.house.gov",
+        "published_date": "2023-01-17T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230120_005_2f2b8f77",
+        "title": "The Tale of the German Gas Price Brake: Why We Need Economic Disaster Preparedness in Times of Overlapping Emergencies - Intereconomics | Review of European Economic Policy",
+        "url": "https://www.intereconomics.eu/contents/year/2023/number/1/article/the-tale-of-the-german-gas-price-brake-why-we-need-economic-disaster-preparedness-in-times-of-overlapping-emergencies.html",
+        "source": "intereconomics.eu",
+        "published_date": "2023-01-20T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230131_006_57a06037",
+        "title": "Three scenarios for gas prices in Europe - Economist Intelligence Unit",
+        "url": "https://www.eiu.com/n/three-scenarios-for-gas-prices-in-europe",
+        "source": "eiu.com",
+        "published_date": "2023-01-31T10:45:05+00:00"
+      },
+      {
+        "id": "art_finance_20230109_007_fe13a554",
+        "title": "For subscribers: If natural gas prices across the country are dropping, why are they soaring in San Diego? - Los Angeles Times",
+        "url": "https://www.riverdavesplace.com/forums/threads/natural-gas-prices.262798",
+        "source": "riverdavesplace.com",
+        "published_date": "2023-01-09T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230110_008_86d65f3e",
+        "title": "Natural Gas Pass - Santa Fe Reporter",
+        "url": "https://en.wikipedia.org/wiki/Natural_gas_in_Papua_New_Guinea",
+        "source": "en.wikipedia.org",
+        "published_date": "2023-01-10T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230111_009_a4c5ae72",
+        "title": "Why your gas bill might be way higher this winter - vox.com",
+        "url": "https://www.vox.com/science-and-health/2023/1/11/23537727/gas-energy-bills-electricity-expensive-winter",
+        "source": "vox.com",
+        "published_date": "2023-01-11T11:30:00+00:00"
+      },
+      {
+        "id": "art_finance_20230103_002_555424aa",
+        "title": "Natural gas prices tumble as demand fears ease on milder winter...",
+        "url": "https://www.premierenergymanagement.com/post/natural-gas-prices-tumble-as-demand-fears-ease-on-milder-winter-weather",
+        "source": "premierenergymanagement.com",
+        "published_date": "2023-01-03T20:05:52.854000+00:00"
+      },
+      {
+        "id": "art_finance_20230131_002_4b24ccca",
+        "title": "How a mild winter, falling natural gas prices could spell relief for households reeling from higher energy costs - Milwaukee Journal Sentinel",
+        "url": "https://www.jsonline.com/story/money/business/energy/2023/01/31/what-to-expect-from-your-wisconsin-heating-bill-this-winter-natural-gas/69854198007",
+        "source": "jsonline.com",
+        "published_date": "2023-01-31T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230131_003_f307e857",
+        "title": "America’s crude oil & natural gas proven reserves on the rise after 2020 lows - Offshore Energy",
+        "url": "https://www.offshore-energy.biz/americas-crude-oil-natural-gas-proven-reserves-on-the-rise-after-2020-lows",
+        "source": "offshore-energy.biz",
+        "published_date": "2023-01-31T08:10:20+00:00"
+      },
+      {
+        "id": "art_finance_20230131_004_2336915d",
+        "title": "Here's what Wisconsin natural gas customers can expect on their bills this winter - Milwaukee Journal Sentinel",
+        "url": "https://finance.yahoo.com/news/heres-wisconsin-natural-gas-customers-120154552.html",
+        "source": "finance.yahoo.com",
+        "published_date": "2023-01-31T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20221213_005_1a73c97f",
+        "title": "Natural Gas Prices Surge 10% On Cold Temperatures",
+        "url": "https://www.premierenergymanagement.com/post/natural-gas-prices-surge-10-on-cold-temperatures",
+        "source": "premierenergymanagement.com",
+        "published_date": "2022-12-13T13:34:50.763000+00:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_d0d7c2650019",
+      "events_count": 10,
+      "hypotheses_count": 14
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 5,
+      "avg_depth": 4.26,
+      "quality_score": 0.88,
+      "depth_score": 1.0,
+      "confidence_score": 0.8,
+      "strength_score": 0.69,
+      "evidence_score": 1.0,
+      "event_count": 10,
+      "hypothesis_count": 14
+    },
+    "nodes": [
+      {
+        "id": "evt_37189e778730",
+        "title": "Option 2: within recent range",
+        "description": "Question resolves to: within recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2023_01",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 1,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T20:13:06.043495Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_4930cc33cba4",
+        "title": "Option 3: above recent range",
+        "description": "Question resolves to: above recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2023_01",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 2,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T20:13:06.043502Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_business_20230101_017_c07fce77",
+        "title": "Utilities locked in higher prices through long-term contracts",
+        "description": "Utilities having locked in higher prices through long-term contracts meant that consumers did not immediately see the full benefit of dropping spot prices.",
+        "event_type": "indicator",
+        "domain": "business",
+        "tags": [],
+        "occurred_date": "2023-01-01T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230131_002_4b24ccca",
+          "art_finance_20230111_009_a4c5ae72"
+        ],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2023_01",
+        "source_article_id": "art_finance_20230131_002_4b24ccca",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_henry_hub_monthly_return_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T20:31:49.647984Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_business_20230103_011_354e33c7",
+        "title": "Reduced heating demand for natural gas",
+        "description": "The unseasonably warm weather significantly reduced heating demand for natural gas across both the US and Europe.",
+        "event_type": "indicator",
+        "domain": "business",
+        "tags": [],
+        "occurred_date": "2023-01-03T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230103_002_555424aa",
+          "art_finance_20230131_002_4b24ccca"
+        ],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2023_01",
+        "source_article_id": "art_finance_20230103_002_555424aa",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_henry_hub_monthly_return_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T20:31:49.546363Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_business_20230103_015_63c2cd6e",
+        "title": "Record LNG imports in Europe and healthy stockpiles",
+        "description": "Record LNG imports in Europe and healthy stockpiles also helped to ease demand concerns, further contributing to the overall price decline.",
+        "event_type": "indicator",
+        "domain": "business",
+        "tags": [],
+        "occurred_date": "2023-01-03T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230103_002_555424aa"
+        ],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2023_01",
+        "source_article_id": "art_finance_20230103_002_555424aa",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_henry_hub_monthly_return_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T20:31:49.616349Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_business_20230111_018_bb89b50e",
+        "title": "Rising natural gas exports",
+        "description": "Rising natural gas exports also exerted upward pressure on prices.",
+        "event_type": "indicator",
+        "domain": "business",
+        "tags": [],
+        "occurred_date": "2023-01-11T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230111_009_a4c5ae72"
+        ],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2023_01",
+        "source_article_id": "art_finance_20230111_009_a4c5ae72",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_henry_hub_monthly_return_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T20:31:49.663113Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_climate_20230101_010_2652750c",
+        "title": "Unseasonably mild winter weather in US and Europe",
+        "description": "Unseasonably mild winter across significant parts of the US and Europe, which drastically reduced heating demand.",
+        "event_type": "indicator",
+        "domain": "climate",
+        "tags": [],
+        "occurred_date": "2023-01-01T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230103_002_555424aa",
+          "art_finance_20230131_002_4b24ccca"
+        ],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2023_01",
+        "source_article_id": "art_finance_20230103_002_555424aa",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_henry_hub_monthly_return_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T20:31:49.526628Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_d0d7c2650019",
+        "title": "Option 1: below recent range",
+        "description": "Question resolves to: below recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2023_01",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 0,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T20:13:06.043477Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230103_012_850258fb",
+        "title": "Oversupply in the natural gas spot market",
+        "description": "The decreased demand directly led to an oversupply in the spot market.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-03T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230103_002_555424aa"
+        ],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2023_01",
+        "source_article_id": "art_finance_20230103_002_555424aa",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_henry_hub_monthly_return_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T20:31:49.569890Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230103_013_8dff1cf7",
+        "title": "Henry Hub futures prices fall to 10-month low",
+        "description": "Henry Hub futures prices tumbled to a 10-month low by early January.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-03T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230103_002_555424aa"
+        ],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2023_01",
+        "source_article_id": "art_finance_20230103_002_555424aa",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_henry_hub_monthly_return_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T20:31:49.586145Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230109_016_11748336",
+        "title": "Localized natural gas price spikes (e.g., San Diego)",
+        "description": "While national natural gas prices were dropping, San Diego experienced soaring prices due to localized issues.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-09T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230109_007_fe13a554",
+          "art_finance_20230111_009_a4c5ae72"
+        ],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2023_01",
+        "source_article_id": "art_finance_20230109_007_fe13a554",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_henry_hub_monthly_return_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T20:31:49.633146Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230120_014_b9f23040",
+        "title": "Henry Hub prices halve compared to early December",
+        "description": "By mid-January, prices at Henry Hub were approximately half of what they were in early December.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-20T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230131_002_4b24ccca"
+        ],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2023_01",
+        "source_article_id": "art_finance_20230131_002_4b24ccca",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_henry_hub_monthly_return_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T20:31:49.602348Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_henry_hub_monthly_return_2023_01_20260724_203149_009_279283ee",
+        "source_event_id": "evt_climate_20230101_010_2652750c",
+        "target_event_id": "evt_business_20230103_011_354e33c7",
+        "relation_type": "causes",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Mild winter directly causes reduced heating demand.",
+        "evidence_article_ids": [
+          "art_finance_20230103_002_555424aa",
+          "art_finance_20230131_002_4b24ccca"
+        ],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T20:31:49.701914Z",
+        "last_confirmed_at": "2026-07-24T20:31:49.701914Z"
+      },
+      {
+        "id": "hyp_v3_henry_hub_monthly_return_2023_01_20260724_203149_010_c380b07e",
+        "source_event_id": "evt_business_20230103_011_354e33c7",
+        "target_event_id": "evt_finance_20230103_012_850258fb",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Reduced demand leads to oversupply in the market.",
+        "evidence_article_ids": [
+          "art_finance_20230103_002_555424aa"
+        ],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T20:31:49.722337Z",
+        "last_confirmed_at": "2026-07-24T20:31:49.722337Z"
+      },
+      {
+        "id": "hyp_v3_henry_hub_monthly_return_2023_01_20260724_203149_011_804d99a3",
+        "source_event_id": "evt_finance_20230103_012_850258fb",
+        "target_event_id": "evt_finance_20230103_013_8dff1cf7",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Oversupply in the spot market causes futures prices to fall.",
+        "evidence_article_ids": [
+          "art_finance_20230103_002_555424aa"
+        ],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T20:31:49.738770Z",
+        "last_confirmed_at": "2026-07-24T20:31:49.738770Z"
+      },
+      {
+        "id": "hyp_v3_henry_hub_monthly_return_2023_01_20260724_203149_012_39fcdb96",
+        "source_event_id": "evt_finance_20230103_013_8dff1cf7",
+        "target_event_id": "evt_finance_20230120_014_b9f23040",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Initial price drops lead to further significant price reductions over the month.",
+        "evidence_article_ids": [
+          "art_finance_20230103_002_555424aa",
+          "art_finance_20230131_002_4b24ccca"
+        ],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T20:31:49.756307Z",
+        "last_confirmed_at": "2026-07-24T20:31:49.756307Z"
+      },
+      {
+        "id": "hyp_v3_henry_hub_monthly_return_2023_01_20260724_203149_013_e665bc4a",
+        "source_event_id": "evt_business_20230103_015_63c2cd6e",
+        "target_event_id": "evt_finance_20230103_012_850258fb",
+        "relation_type": "amplifies",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Record LNG imports and healthy stockpiles contribute to oversupply.",
+        "evidence_article_ids": [
+          "art_finance_20230103_002_555424aa"
+        ],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T20:31:49.768725Z",
+        "last_confirmed_at": "2026-07-24T20:31:49.768725Z"
+      },
+      {
+        "id": "hyp_v3_henry_hub_monthly_return_2023_01_20260724_203225_018_ff353bd0",
+        "source_event_id": "evt_climate_20230101_010_2652750c",
+        "target_event_id": "evt_business_20230103_011_354e33c7",
+        "relation_type": "causes",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Mild winter directly causes reduced heating demand.",
+        "evidence_article_ids": [
+          "art_finance_20230103_002_555424aa",
+          "art_finance_20230131_002_4b24ccca"
+        ],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T20:32:25.444144Z",
+        "last_confirmed_at": "2026-07-24T20:32:25.444144Z"
+      },
+      {
+        "id": "hyp_v3_henry_hub_monthly_return_2023_01_20260724_203225_019_b050937d",
+        "source_event_id": "evt_business_20230103_011_354e33c7",
+        "target_event_id": "evt_finance_20230103_012_850258fb",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Reduced demand leads to oversupply in the market.",
+        "evidence_article_ids": [
+          "art_finance_20230103_002_555424aa"
+        ],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T20:32:25.456456Z",
+        "last_confirmed_at": "2026-07-24T20:32:25.456456Z"
+      },
+      {
+        "id": "hyp_v3_henry_hub_monthly_return_2023_01_20260724_203225_020_742b3c18",
+        "source_event_id": "evt_finance_20230103_012_850258fb",
+        "target_event_id": "evt_finance_20230103_013_8dff1cf7",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Oversupply in the spot market causes futures prices to fall.",
+        "evidence_article_ids": [
+          "art_finance_20230103_002_555424aa"
+        ],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T20:32:25.470891Z",
+        "last_confirmed_at": "2026-07-24T20:32:25.470891Z"
+      },
+      {
+        "id": "hyp_v3_henry_hub_monthly_return_2023_01_20260724_203225_021_666d4e51",
+        "source_event_id": "evt_finance_20230103_013_8dff1cf7",
+        "target_event_id": "evt_finance_20230120_014_b9f23040",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Initial price drops lead to further significant price reductions over the month.",
+        "evidence_article_ids": [
+          "art_finance_20230103_002_555424aa",
+          "art_finance_20230131_002_4b24ccca"
+        ],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T20:32:25.483533Z",
+        "last_confirmed_at": "2026-07-24T20:32:25.483533Z"
+      },
+      {
+        "id": "hyp_v3_henry_hub_monthly_return_2023_01_20260724_203225_022_6600a705",
+        "source_event_id": "evt_business_20230103_015_63c2cd6e",
+        "target_event_id": "evt_finance_20230103_012_850258fb",
+        "relation_type": "amplifies",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Record LNG imports and healthy stockpiles contribute to oversupply.",
+        "evidence_article_ids": [
+          "art_finance_20230103_002_555424aa"
+        ],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T20:32:25.495671Z",
+        "last_confirmed_at": "2026-07-24T20:32:25.495671Z"
+      },
+      {
+        "id": "hyp_v3_henry_hub_monthly_return_2023_01_20260724_203225_027_9497bcec",
+        "source_event_id": "evt_finance_20230120_014_b9f23040",
+        "target_event_id": "evt_d0d7c2650019",
+        "relation_type": "causes",
+        "strength": 1.0,
+        "confidence": 1.0,
+        "time_lag_hours": null,
+        "reasoning": "Henry Hub prices halving directly means they fell below the recent range.",
+        "evidence_article_ids": [
+          "art_finance_20230131_002_4b24ccca"
+        ],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T20:32:25.647033Z",
+        "last_confirmed_at": "2026-07-24T20:32:25.647033Z"
+      },
+      {
+        "id": "hyp_v3_henry_hub_monthly_return_2023_01_20260724_203225_028_10c3b507",
+        "source_event_id": "evt_finance_20230109_016_11748336",
+        "target_event_id": "evt_d0d7c2650019",
+        "relation_type": "inhibits",
+        "strength": 0.3,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Localized price spikes pushed against the overall downward trend, but were overwhelmed.",
+        "evidence_article_ids": [
+          "art_finance_20230109_007_fe13a554",
+          "art_finance_20230111_009_a4c5ae72"
+        ],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T20:32:25.659845Z",
+        "last_confirmed_at": "2026-07-24T20:32:25.659845Z"
+      },
+      {
+        "id": "hyp_v3_henry_hub_monthly_return_2023_01_20260724_203225_029_69d7a77b",
+        "source_event_id": "evt_business_20230101_017_c07fce77",
+        "target_event_id": "evt_d0d7c2650019",
+        "relation_type": "inhibits",
+        "strength": 0.4,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Utilities locking in higher prices meant consumers didn't see the full benefit of dropping spot prices, acting as a countervailing factor.",
+        "evidence_article_ids": [
+          "art_finance_20230131_002_4b24ccca",
+          "art_finance_20230111_009_a4c5ae72"
+        ],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T20:32:25.671812Z",
+        "last_confirmed_at": "2026-07-24T20:32:25.671812Z"
+      },
+      {
+        "id": "hyp_v3_henry_hub_monthly_return_2023_01_20260724_203225_030_23b31ed1",
+        "source_event_id": "evt_business_20230111_018_bb89b50e",
+        "target_event_id": "evt_d0d7c2650019",
+        "relation_type": "inhibits",
+        "strength": 0.3,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "Rising natural gas exports exerted upward pressure on prices, counteracting the downward trend.",
+        "evidence_article_ids": [
+          "art_finance_20230111_009_a4c5ae72"
+        ],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T20:32:25.684528Z",
+        "last_confirmed_at": "2026-07-24T20:32:25.684528Z"
+      }
+    ],
+    "outcome_impacts": [
+      {
+        "id": "imp_02743113",
+        "event_id": "evt_climate_20230101_010_2652750c",
+        "outcome_event_id": "evt_d0d7c2650019",
+        "question_id": "v3_henry_hub_monthly_return_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "Mild winter directly reduced heating demand, leading to lower prices.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T20:32:44.511577Z",
+        "last_confirmed_at": "2026-07-24T20:32:44.511577Z"
+      },
+      {
+        "id": "imp_3b5a4cf0",
+        "event_id": "evt_climate_20230101_010_2652750c",
+        "outcome_event_id": "evt_4930cc33cba4",
+        "question_id": "v3_henry_hub_monthly_return_2023_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "Opposite impact for 'above recent range': Mild winter directly reduced heating demand, leading to lower prices.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T20:32:44.522792Z",
+        "last_confirmed_at": "2026-07-24T20:32:44.522792Z"
+      },
+      {
+        "id": "imp_9a2c0baa",
+        "event_id": "evt_climate_20230101_010_2652750c",
+        "outcome_event_id": "evt_37189e778730",
+        "question_id": "v3_henry_hub_monthly_return_2023_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.45,
+        "confidence": 0.63,
+        "reasoning": "Adjusted impact for 'within recent range': Mild winter directly reduced heating demand, leading to lower prices.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T20:32:44.533415Z",
+        "last_confirmed_at": "2026-07-24T20:32:44.533415Z"
+      },
+      {
+        "id": "imp_68648112",
+        "event_id": "evt_business_20230103_011_354e33c7",
+        "outcome_event_id": "evt_d0d7c2650019",
+        "question_id": "v3_henry_hub_monthly_return_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.8,
+        "reasoning": "Reduced demand directly contributed to oversupply and lower prices.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T20:32:44.543623Z",
+        "last_confirmed_at": "2026-07-24T20:32:44.543623Z"
+      },
+      {
+        "id": "imp_01c4f86a",
+        "event_id": "evt_business_20230103_011_354e33c7",
+        "outcome_event_id": "evt_4930cc33cba4",
+        "question_id": "v3_henry_hub_monthly_return_2023_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.8,
+        "confidence": 0.8,
+        "reasoning": "Opposite impact for 'above recent range': Reduced demand directly contributed to oversupply and lower prices.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T20:32:44.554177Z",
+        "last_confirmed_at": "2026-07-24T20:32:44.554177Z"
+      },
+      {
+        "id": "imp_8bc3e9b8",
+        "event_id": "evt_business_20230103_011_354e33c7",
+        "outcome_event_id": "evt_37189e778730",
+        "question_id": "v3_henry_hub_monthly_return_2023_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.4,
+        "confidence": 0.5599999999999999,
+        "reasoning": "Adjusted impact for 'within recent range': Reduced demand directly contributed to oversupply and lower prices.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T20:32:44.564053Z",
+        "last_confirmed_at": "2026-07-24T20:32:44.564053Z"
+      },
+      {
+        "id": "imp_5d902d47",
+        "event_id": "evt_finance_20230103_012_850258fb",
+        "outcome_event_id": "evt_d0d7c2650019",
+        "question_id": "v3_henry_hub_monthly_return_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "Oversupply in the spot market directly caused prices to fall.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T20:32:44.574972Z",
+        "last_confirmed_at": "2026-07-24T20:32:44.574972Z"
+      },
+      {
+        "id": "imp_a3113b65",
+        "event_id": "evt_finance_20230103_012_850258fb",
+        "outcome_event_id": "evt_4930cc33cba4",
+        "question_id": "v3_henry_hub_monthly_return_2023_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "Opposite impact for 'above recent range': Oversupply in the spot market directly caused prices to fall.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T20:32:44.586256Z",
+        "last_confirmed_at": "2026-07-24T20:32:44.586256Z"
+      },
+      {
+        "id": "imp_f7713e32",
+        "event_id": "evt_finance_20230103_012_850258fb",
+        "outcome_event_id": "evt_37189e778730",
+        "question_id": "v3_henry_hub_monthly_return_2023_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.4,
+        "confidence": 0.63,
+        "reasoning": "Adjusted impact for 'within recent range': Oversupply in the spot market directly caused prices to fall.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T20:32:44.596794Z",
+        "last_confirmed_at": "2026-07-24T20:32:44.596794Z"
+      },
+      {
+        "id": "imp_264b8b63",
+        "event_id": "evt_finance_20230103_013_8dff1cf7",
+        "outcome_event_id": "evt_d0d7c2650019",
+        "question_id": "v3_henry_hub_monthly_return_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "A 10-month low in futures prices is a strong indicator of falling prices.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T20:32:44.607952Z",
+        "last_confirmed_at": "2026-07-24T20:32:44.607952Z"
+      },
+      {
+        "id": "imp_c55e87ad",
+        "event_id": "evt_finance_20230103_013_8dff1cf7",
+        "outcome_event_id": "evt_4930cc33cba4",
+        "question_id": "v3_henry_hub_monthly_return_2023_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "Opposite impact for 'above recent range': A 10-month low in futures prices is a strong indicator of falling prices.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T20:32:44.617995Z",
+        "last_confirmed_at": "2026-07-24T20:32:44.617995Z"
+      },
+      {
+        "id": "imp_9a064a7d",
+        "event_id": "evt_finance_20230103_013_8dff1cf7",
+        "outcome_event_id": "evt_37189e778730",
+        "question_id": "v3_henry_hub_monthly_return_2023_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.45,
+        "confidence": 0.63,
+        "reasoning": "Adjusted impact for 'within recent range': A 10-month low in futures prices is a strong indicator of falling prices.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T20:32:44.628732Z",
+        "last_confirmed_at": "2026-07-24T20:32:44.628732Z"
+      },
+      {
+        "id": "imp_e65ff47f",
+        "event_id": "evt_finance_20230120_014_b9f23040",
+        "outcome_event_id": "evt_d0d7c2650019",
+        "question_id": "v3_henry_hub_monthly_return_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 1.0,
+        "confidence": 1.0,
+        "reasoning": "Prices halving is a direct confirmation of falling below the recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T20:32:44.638731Z",
+        "last_confirmed_at": "2026-07-24T20:32:44.638731Z"
+      },
+      {
+        "id": "imp_de6e7a2a",
+        "event_id": "evt_finance_20230120_014_b9f23040",
+        "outcome_event_id": "evt_4930cc33cba4",
+        "question_id": "v3_henry_hub_monthly_return_2023_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 1.0,
+        "confidence": 1.0,
+        "reasoning": "Opposite impact for 'above recent range': Prices halving is a direct confirmation of falling below the recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T20:32:44.649517Z",
+        "last_confirmed_at": "2026-07-24T20:32:44.649517Z"
+      },
+      {
+        "id": "imp_e8705826",
+        "event_id": "evt_finance_20230120_014_b9f23040",
+        "outcome_event_id": "evt_37189e778730",
+        "question_id": "v3_henry_hub_monthly_return_2023_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.5,
+        "confidence": 0.7,
+        "reasoning": "Adjusted impact for 'within recent range': Prices halving is a direct confirmation of falling below the recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T20:32:44.660123Z",
+        "last_confirmed_at": "2026-07-24T20:32:44.660123Z"
+      },
+      {
+        "id": "imp_d727ce75",
+        "event_id": "evt_business_20230103_015_63c2cd6e",
+        "outcome_event_id": "evt_d0d7c2650019",
+        "question_id": "v3_henry_hub_monthly_return_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Record LNG imports eased demand concerns and contributed to oversupply, pushing prices down.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T20:32:44.672650Z",
+        "last_confirmed_at": "2026-07-24T20:32:44.672650Z"
+      },
+      {
+        "id": "imp_16c1f9c7",
+        "event_id": "evt_business_20230103_015_63c2cd6e",
+        "outcome_event_id": "evt_4930cc33cba4",
+        "question_id": "v3_henry_hub_monthly_return_2023_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Opposite impact for 'above recent range': Record LNG imports eased demand concerns and contributed to oversupply, pushing prices down.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T20:32:44.683185Z",
+        "last_confirmed_at": "2026-07-24T20:32:44.683185Z"
+      },
+      {
+        "id": "imp_036d8c75",
+        "event_id": "evt_business_20230103_015_63c2cd6e",
+        "outcome_event_id": "evt_37189e778730",
+        "question_id": "v3_henry_hub_monthly_return_2023_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.3,
+        "confidence": 0.48999999999999994,
+        "reasoning": "Adjusted impact for 'within recent range': Record LNG imports eased demand concerns and contributed to oversupply, pushing prices down.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T20:32:44.693298Z",
+        "last_confirmed_at": "2026-07-24T20:32:44.693298Z"
+      },
+      {
+        "id": "imp_684c67f8",
+        "event_id": "evt_finance_20230109_016_11748336",
+        "outcome_event_id": "evt_d0d7c2650019",
+        "question_id": "v3_henry_hub_monthly_return_2023_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.3,
+        "confidence": 0.7,
+        "reasoning": "Localized price spikes pushed against the overall downward trend, but were overwhelmed.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T20:32:44.703809Z",
+        "last_confirmed_at": "2026-07-24T20:32:44.703809Z"
+      },
+      {
+        "id": "imp_c86a271b",
+        "event_id": "evt_finance_20230109_016_11748336",
+        "outcome_event_id": "evt_4930cc33cba4",
+        "question_id": "v3_henry_hub_monthly_return_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.3,
+        "confidence": 0.7,
+        "reasoning": "Opposite impact for 'above recent range': Localized price spikes pushed against the overall downward trend, but were overwhelmed.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T20:32:44.713939Z",
+        "last_confirmed_at": "2026-07-24T20:32:44.713939Z"
+      },
+      {
+        "id": "imp_40dd788e",
+        "event_id": "evt_finance_20230109_016_11748336",
+        "outcome_event_id": "evt_37189e778730",
+        "question_id": "v3_henry_hub_monthly_return_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.15,
+        "confidence": 0.48999999999999994,
+        "reasoning": "Adjusted impact for 'within recent range': Localized price spikes pushed against the overall downward trend, but were overwhelmed.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T20:32:44.724475Z",
+        "last_confirmed_at": "2026-07-24T20:32:44.724475Z"
+      },
+      {
+        "id": "imp_2db0ed20",
+        "event_id": "evt_business_20230101_017_c07fce77",
+        "outcome_event_id": "evt_d0d7c2650019",
+        "question_id": "v3_henry_hub_monthly_return_2023_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.4,
+        "confidence": 0.7,
+        "reasoning": "Utilities locking in higher prices meant consumers didn't see the full benefit of dropping spot prices, acting as a countervailing factor.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T20:32:44.734591Z",
+        "last_confirmed_at": "2026-07-24T20:32:44.734591Z"
+      },
+      {
+        "id": "imp_c6d7dde0",
+        "event_id": "evt_business_20230101_017_c07fce77",
+        "outcome_event_id": "evt_4930cc33cba4",
+        "question_id": "v3_henry_hub_monthly_return_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.4,
+        "confidence": 0.7,
+        "reasoning": "Opposite impact for 'above recent range': Utilities locking in higher prices meant consumers didn't see the full benefit of dropping spot prices, acting as a countervailing factor.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T20:32:44.745292Z",
+        "last_confirmed_at": "2026-07-24T20:32:44.745292Z"
+      },
+      {
+        "id": "imp_e542b3a8",
+        "event_id": "evt_business_20230101_017_c07fce77",
+        "outcome_event_id": "evt_37189e778730",
+        "question_id": "v3_henry_hub_monthly_return_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.2,
+        "confidence": 0.48999999999999994,
+        "reasoning": "Adjusted impact for 'within recent range': Utilities locking in higher prices meant consumers didn't see the full benefit of dropping spot prices, acting as a countervailing factor.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T20:32:44.757348Z",
+        "last_confirmed_at": "2026-07-24T20:32:44.757348Z"
+      },
+      {
+        "id": "imp_652a440e",
+        "event_id": "evt_business_20230111_018_bb89b50e",
+        "outcome_event_id": "evt_d0d7c2650019",
+        "question_id": "v3_henry_hub_monthly_return_2023_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.3,
+        "confidence": 0.6,
+        "reasoning": "Rising natural gas exports exerted upward pressure on prices, counteracting the downward trend.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T20:32:44.769267Z",
+        "last_confirmed_at": "2026-07-24T20:32:44.769267Z"
+      },
+      {
+        "id": "imp_3576a0e0",
+        "event_id": "evt_business_20230111_018_bb89b50e",
+        "outcome_event_id": "evt_4930cc33cba4",
+        "question_id": "v3_henry_hub_monthly_return_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.3,
+        "confidence": 0.6,
+        "reasoning": "Opposite impact for 'above recent range': Rising natural gas exports exerted upward pressure on prices, counteracting the downward trend.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T20:32:44.779314Z",
+        "last_confirmed_at": "2026-07-24T20:32:44.779314Z"
+      },
+      {
+        "id": "imp_017611f5",
+        "event_id": "evt_business_20230111_018_bb89b50e",
+        "outcome_event_id": "evt_37189e778730",
+        "question_id": "v3_henry_hub_monthly_return_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.15,
+        "confidence": 0.42,
+        "reasoning": "Adjusted impact for 'within recent range': Rising natural gas exports exerted upward pressure on prices, counteracting the downward trend.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T20:32:44.790245Z",
+        "last_confirmed_at": "2026-07-24T20:32:44.790245Z"
+      }
+    ]
+  }
+}

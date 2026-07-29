@@ -1,0 +1,794 @@
+{
+  "question": {
+    "id": "v3_fed_funds_monthly_change_2024_12",
+    "question_text": "As of 2024-12-01, which range will the monthly federal-funds-rate change for Federal Reserve effective federal funds rate in 2024-12 fall into?",
+    "question_type": "mcq",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 3,
+    "resolution_date": "2025-01-15T23:59:59Z",
+    "estimated_start_time": "2024-12-01T00:00:00Z",
+    "ground_truth": "within recent range",
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [
+      "evt_192a762278e7",
+      "evt_ff98f472e08f",
+      "evt_705fbb2fe86d"
+    ],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: Federal Reserve effective federal funds rate\nTarget period: 2024-12\nFinancial area: monetary_policy / policy rate\nRegion: US\nPre-registered recent-range boundaries: lower -0.193, upper 0 percentage points.",
+    "resolution_criteria": "Use FRED series FEDFUNDS. Compute the change from the previous monthly observation using mode 'absolute'. Resolve 'below recent range' below -0.193, 'within recent range' from -0.193 inclusive to 0 exclusive, and 'above recent range' at or above 0 percentage points.",
+    "resolution_reasoning": "The snapshotted target change was -0.16 percentage points; it resolved to 'within recent range'.",
+    "options": [
+      "below recent range",
+      "within recent range",
+      "above recent range"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": "\n## Executive Summary\nThe Federal Reserve's effective federal funds rate in December 2024 fell 'within recent range' as it executed its third consecutive interest rate cut of 0.25 percentage points, setting the target range at 4.25% to 4.5%. This decision was primarily driven by cooling inflation tempered by continued cautiousness regarding its persistence. Despite the rate cut, the Fed signaled a more conservative outlook for 2025, projecting fewer future reductions due to lingering concerns about elevated inflation.\n\n## Timeline Of Key Events\n- **2024-12-02:** A top Federal Reserve official warns that progress on taming US inflation 'may be stalling'. [art_finance_20241202_011_b7861f37]\n- **2024-12-18:** The Federal Reserve announces its decision to cut the benchmark federal funds rate by 0.25 percentage points, reducing the target to between 4.25% and 4.5%. [art_finance_20241218_007_934cf465], [art_finance_20241218_006_f3983238], [art_finance_20241218_008_f34eb0b0], [art_finance_20241218_004_7128b434]\n- **2024-12-18:** Alongside the rate cut, the Fed projects only two rate cuts for 2025, a reduction from earlier forecasts, indicating a cautious stance on future monetary policy due to concerns over persistent inflation. [art_finance_20241218_007_934cf465], [art_finance_20241218_006_f3983238], [art_finance_20241218_008_f34eb0b0]\n\n## Causal Chain Analysis\nThe 'within recent range' outcome for the federal funds rate in December 2024 was primarily **caused** by the Federal Reserve's monetary policy decisions aimed at balancing inflation control with economic stability. Early December concerns about stalling inflation progress [art_finance_20241202_011_b7861f37] **led to** a cautious approach by the Federal Reserve. Nevertheless, amid signs of persistent but cooling inflation, the Fed determined that a modest rate reduction was appropriate to stabilize the economy, resulting in the third consecutive 0.25 percentage point cut, which **triggered** the federal funds rate to fall into the 4.25%-4.5% range [art_finance_20241218_007_934cf465]. This decision **resulted in** the rate remaining within the recent range rather than significantly moving above or below it. The forward guidance of fewer cuts in 2025 also **indicated** the Fed's ongoing commitment to its inflation targets, thus anchoring expectations for the rate to stay within a manageable band.\n\n## Countervailing Factors\nEconomists had broadly expected more aggressive rate cuts in 2025, with some forecasting four reductions [art_finance_20241218_007_934cf465]. These expectations represented a significant force pushing for quicker and deeper rate reductions. However, these factors **failed** to drive the rate 'below recent range' because the Federal Reserve emphasized that inflation remained 'somewhat elevated' and was not expected to reach its 2% target until 2026 [art_finance_20241218_007_934cf465]. This persistent inflation concern **overwhelmed** the impetus for more substantial cuts, leading the Fed to project only two cuts for 2025 instead of the anticipated four, thereby maintaining the rate within the established recent range.\n\n## Event Candidate Inventory\n- **E1:** Federal Reserve official warns on stalling inflation progress\n    - **date:** 2024-12-02\n    - **why it matters causally:** This event highlights the initial cautious sentiment within the Fed regarding inflation, influencing their subsequent rate decision.\n    - **source article IDs:** [art_finance_20241202_011_b7861f37]\n- **E2:** Federal Reserve cuts interest rate by 0.25 percentage points\n    - **date:** 2024-12-18\n    - **why it matters causally:** This is the direct action that set the federal funds rate within the 'recent range'.\n    - **source article IDs:** [art_finance_20241218_007_934cf465], [art_finance_20241218_006_f3983238], [art_finance_20241218_008_f34eb0b0], [art_finance_20241218_004_7128b434]\n- **E3:** Federal Reserve projects fewer rate cuts for 2025\n    - **date:** 2024-12-18\n    - **why it matters causally:** This forward guidance influenced market expectations and reinforced the idea that the federal funds rate would remain within a controlled band, preventing a more significant downward shift.\n    - **source article IDs:** [art_finance_20241218_007_934cf465], [art_finance_20241218_006_f3983238], [art_finance_20241218_008_f34eb0b0]\n\n## Evidence Mapping Table\n\n| Claim/Event | Article IDs | Date Support | Confidence (0-1) | Notes |\n|---|---|---|---|---|\n| Federal Reserve cuts interest rate by 0.25 percentage points | [art_finance_20241218_007_934cf465], [art_finance_20241218_006_f3983238], [art_finance_20241218_008_f34eb0b0], [art_finance_20241218_004_7128b434] | 2024-12-18 | 1.0 | Multiple sources confirm the rate cut and new target range. |\n| Federal Reserve projects fewer rate cuts for 2025 | [art_finance_20241218_007_934cf465], [art_finance_20241218_006_f3983238], [art_finance_20241218_008_f34eb0b0] | 2024-12-18 | 1.0 | Multiple sources confirm revised projections for 2025. |\n| Warning on stalling inflation progress | [art_finance_20241202_011_b7861f37] | 2024-12-02 | 0.9 | One direct source for this early December sentiment. |\n| Inflation remains 'somewhat elevated' | [art_finance_20241218_007_934cf465] | 2024-12-18 | 1.0 | Stated by Fed Chair in post-meeting announcement. |\n\n## Uncertainties And Alternative Paths\nOne uncertainty is the precise weighting the Fed placed on various economic data points (e.g., jobs, GDP growth) versus inflation figures when making their December decision. An alternative path could have been a more aggressive rate cut if inflation data had unexpectedly shown a sharper decline, or conversely, no cut at all if inflation had clearly re-accelerated in early December. The market's reaction to the December 2024 decision and subsequent economic reports could have also created pressure for a different path if the Fed's communication was not clear or economic indicators diverged from expectations significantly.",
+    "graph_built": true,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.204488Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "fed_funds_monthly_change",
+        "event_cluster_id": "fed_funds_2024-12",
+        "category": "monetary_policy",
+        "original_domain": "monetary_policy",
+        "subdomain": "policy rate",
+        "entity": "Federal Reserve effective federal funds rate",
+        "region": "US",
+        "target_metric": "monthly federal-funds-rate change",
+        "target_period": "2024-12",
+        "forecast_cutoff": "2024-12-01T00:00:00+00:00",
+        "forecast_date_options": [
+          "2024-12-01"
+        ],
+        "resolution_available_at": "2025-01-15T23:59:59+00:00",
+        "horizon_days": 45,
+        "source_type": "fred_series_snapshot",
+        "source_series_id": "FEDFUNDS",
+        "source_homepage": "https://fred.stlouisfed.org/series/FEDFUNDS",
+        "comparison_rule": "target change bucketed by the lower and upper quartiles of the 8 prior observed changes",
+        "comparison_threshold": 0.0,
+        "comparison_thresholds": {
+          "lower": -0.1925,
+          "upper": 0.0
+        },
+        "change_unit": "percentage points",
+        "threshold_observation_dates": [
+          "2024-03-01",
+          "2024-04-01",
+          "2024-05-01",
+          "2024-06-01",
+          "2024-07-01",
+          "2024-08-01",
+          "2024-09-01",
+          "2024-10-01",
+          "2024-11-01"
+        ],
+        "split": "memory",
+        "family_position": 5,
+        "family_size": 8,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "within recent range",
+        "resolved_class": "within recent range",
+        "resolution_value": 4.48,
+        "target_change": -0.16,
+        "source_observation_date": "2024-12-01",
+        "resolution_document": {
+          "publisher": "Federal Reserve Bank of St. Louis (FRED)",
+          "title": "Effective Federal Funds Rate",
+          "url": "https://fred.stlouisfed.org/series/FEDFUNDS"
+        },
+        "source_download_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=FEDFUNDS&cosd=2019-01-01&coed=2026-06-30",
+        "source_sha256": "83348b2d7b426a0d845351a25c684a126a3f525894512fd4dc3e75f53b0d5c81",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_ff98f472e08f",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 12,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_20240722_002_0bd276b7",
+        "title": "Part 2: Monetary Policy - Federal Reserve (.gov)",
+        "url": "https://www.federalreserve.gov/monetarypolicy/2024-07-mpr-part2.htm",
+        "source": "federalreserve.gov",
+        "published_date": "2024-07-22T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20220110_002_fbb70570",
+        "title": "How the Federal Reserve’s Monetary Policy Implementation Framework Has Evolved - Liberty Street Economics",
+        "url": "https://libertystreeteconomics.newyorkfed.org/2022/01/how-the-federal-reserves-monetary-policy-implementation-framework-has-evolved",
+        "source": "libertystreeteconomics.newyorkfed.org",
+        "published_date": "2022-01-10T12:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20220112_003_d921eab0",
+        "title": "How the Fed Adjusts the Fed Funds Rate within Its Target Range - Liberty Street Economics",
+        "url": "https://libertystreeteconomics.newyorkfed.org/2022/01/how-the-fed-adjusts-the-fed-funds-rate-within-its-target-range",
+        "source": "libertystreeteconomics.newyorkfed.org",
+        "published_date": "2022-01-12T12:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240131_004_68afc49a",
+        "title": "Federal Reserve holds its interest rate steady. Here's what that means. - CBS News",
+        "url": "https://www.cbsnews.com/news/federal-reserve-interest-rate-decision-2024",
+        "source": "cbsnews.com",
+        "published_date": "2024-01-31T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240201_005_025a895b",
+        "title": "Regulators Discuss Liquidity Risk Management, Operational Readiness, and the Federal Reserve’s Discount Window - Arnold & Porter",
+        "url": "https://www.arnoldporter.com/en/perspectives/advisories/2024/02/regulators-discuss-liquidity-risk-management",
+        "source": "arnoldporter.com",
+        "published_date": "2024-02-01T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20241218_006_f3983238",
+        "title": "Federal Reserve cuts interest rates by 0.25 percentage points, but projects fewer reductions in 2025 - CBS News",
+        "url": "https://www.cbsnews.com/news/federal-reserve-fed-meeting-interest-rate-cut-decision-december-2024",
+        "source": "cbsnews.com",
+        "published_date": "2024-12-18T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20241218_007_934cf465",
+        "title": "Fed cuts key interest rate but signals elevated inflation is likely to persist - NBC News",
+        "url": "https://www.nbcnews.com/business/economy/federal-reserve-interest-rate-cut-december-2024-much-economy-rcna184586",
+        "source": "nbcnews.com",
+        "published_date": "2024-12-18T20:16:27.807000+00:00"
+      },
+      {
+        "id": "art_finance_20241218_008_f34eb0b0",
+        "title": "The Federal Reserve lowers interest rates again — but hints at fewer cuts next year - NPR",
+        "url": "https://www.npr.org/2024/12/18/nx-s1-5230508/federal-reserve-interest-rates-economy-inflation",
+        "source": "npr.org",
+        "published_date": "2024-12-18T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20241218_004_7128b434",
+        "title": "The Fed - December 17-18, 2024 FOMC Meeting - Federal Reserve (.gov)",
+        "url": "https://www.federalreserve.gov/monetarypolicy/fomcpresconf20241218.htm",
+        "source": "federalreserve.gov",
+        "published_date": "2024-12-18T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20241224_009_51a8ec5b",
+        "title": "Banks and Business Groups File Legal Challenge Against Federal Reserve Over Flawed Stress Testing Framework - Bank Policy Institute",
+        "url": "https://bpi.com/banks-and-business-groups-file-legal-challenge-against-federal-reserve-over-flawed-stress-testing-framework",
+        "source": "bpi.com",
+        "published_date": "2024-12-24T13:37:21+00:00"
+      },
+      {
+        "id": "art_finance_20250113_010_db3d3bec",
+        "title": "Ben Bernanke: Solving a Crisis, Changing the Fed - Federal Reserve Bank of San Francisco",
+        "url": "https://www.frbsf.org/research-and-insights/publications/economic-letter/2025/01/ben-bernanke-solving-crisis-changing-fed",
+        "source": "frbsf.org",
+        "published_date": "2025-01-13T10:00:00-08:00"
+      },
+      {
+        "id": "art_finance_20241202_011_b7861f37",
+        "title": "Top Federal Reserve official warns progress on taming US inflation ‘may be stalling’ - Financial Times",
+        "url": "https://www.ft.com/content/0dd27673-ceb2-48f8-8bbb-e7c28d0f02e4?syn-25a6b1a6=1",
+        "source": "ft.com",
+        "published_date": "2024-12-02T08:00:00+00:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_ff98f472e08f",
+      "events_count": 8,
+      "hypotheses_count": 7
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 3,
+      "avg_depth": 2.25,
+      "quality_score": 0.9,
+      "depth_score": 1.0,
+      "confidence_score": 0.81,
+      "strength_score": 0.77,
+      "evidence_score": 1.0,
+      "event_count": 8,
+      "hypothesis_count": 7
+    },
+    "nodes": [
+      {
+        "id": "evt_192a762278e7",
+        "title": "Option 1: below recent range",
+        "description": "Question resolves to: below recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-01-15T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_fed_funds_monthly_change_2024_12",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 0,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:28:15.991703Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_705fbb2fe86d",
+        "title": "Option 3: above recent range",
+        "description": "Question resolves to: above recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-01-15T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_fed_funds_monthly_change_2024_12",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 2,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:28:15.991724Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_ff98f472e08f",
+        "title": "Option 2: within recent range",
+        "description": "Question resolves to: within recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-01-15T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_fed_funds_monthly_change_2024_12",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 1,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:28:15.991715Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20241202_006_1f80478f",
+        "title": "Federal Reserve official warns on stalling inflation progress",
+        "description": "A top Federal Reserve official warns that progress on taming US inflation 'may be stalling'. This event highlights the initial cautious sentiment within the Fed regarding inflation, influencing their subsequent rate decision.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-12-02T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241202_011_b7861f37"
+        ],
+        "extracted_for_question_id": "v3_fed_funds_monthly_change_2024_12",
+        "source_article_id": "art_finance_20241202_011_b7861f37",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_fed_funds_monthly_change_2024_12"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:32:13.120704Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20241202_012_fc711dbc",
+        "title": "Cautious approach by Federal Reserve",
+        "description": "Early December concerns about stalling inflation progress led to a cautious approach by the Federal Reserve.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-12-02T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241202_011_b7861f37"
+        ],
+        "extracted_for_question_id": "v3_fed_funds_monthly_change_2024_12",
+        "source_article_id": "art_finance_20241202_011_b7861f37",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_fed_funds_monthly_change_2024_12"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:32:13.241033Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20241218_007_f74be3c4",
+        "title": "Federal Reserve cuts interest rate by 0.25 percentage points",
+        "description": "The Federal Reserve announces its decision to cut the benchmark federal funds rate by 0.25 percentage points, reducing the target to between 4.25% and 4.5%. This is the direct action that set the federal funds rate within the 'recent range'.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-12-18T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241218_007_934cf465",
+          "art_finance_20241218_006_f3983238",
+          "art_finance_20241218_008_f34eb0b0",
+          "art_finance_20241218_004_7128b434"
+        ],
+        "extracted_for_question_id": "v3_fed_funds_monthly_change_2024_12",
+        "source_article_id": "art_finance_20241218_007_934cf465",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_fed_funds_monthly_change_2024_12"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:32:13.141578Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20241218_008_3e44b16b",
+        "title": "Federal Reserve projects fewer rate cuts for 2025",
+        "description": "Alongside the rate cut, the Fed projects only two rate cuts for 2025, a reduction from earlier forecasts, indicating a cautious stance on future monetary policy due to concerns over persistent inflation. This forward guidance influenced market expectations and reinforced the idea that the federal funds rate would remain within a controlled band, preventing a more significant downward shift.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-12-18T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241218_007_934cf465",
+          "art_finance_20241218_006_f3983238",
+          "art_finance_20241218_008_f34eb0b0"
+        ],
+        "extracted_for_question_id": "v3_fed_funds_monthly_change_2024_12",
+        "source_article_id": "art_finance_20241218_007_934cf465",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_fed_funds_monthly_change_2024_12"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:32:13.163281Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20241218_009_22b5da74",
+        "title": "Economists expected more aggressive rate cuts in 2025",
+        "description": "Economists had broadly expected more aggressive rate cuts in 2025, with some forecasting four reductions. These expectations represented a significant force pushing for quicker and deeper rate reductions.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-12-18T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241218_007_934cf465"
+        ],
+        "extracted_for_question_id": "v3_fed_funds_monthly_change_2024_12",
+        "source_article_id": "art_finance_20241218_007_934cf465",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_fed_funds_monthly_change_2024_12"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:32:13.182474Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20241218_010_1b69ede7",
+        "title": "Inflation remains 'somewhat elevated' and not expected to reach 2% target until 2026",
+        "description": "The Federal Reserve emphasized that inflation remained 'somewhat elevated' and was not expected to reach its 2% target until 2026. This persistent inflation concern overwhelmed the impetus for more substantial cuts.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-12-18T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241218_007_934cf465"
+        ],
+        "extracted_for_question_id": "v3_fed_funds_monthly_change_2024_12",
+        "source_article_id": "art_finance_20241218_007_934cf465",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_fed_funds_monthly_change_2024_12"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:32:13.202344Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20241218_011_deafcd26",
+        "title": "Cooling inflation tempered by continued cautiousness",
+        "description": "The decision to cut rates was primarily driven by cooling inflation tempered by continued cautiousness regarding its persistence.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-12-18T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241218_007_934cf465"
+        ],
+        "extracted_for_question_id": "v3_fed_funds_monthly_change_2024_12",
+        "source_article_id": "art_finance_20241218_007_934cf465",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_fed_funds_monthly_change_2024_12"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:32:13.221523Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_fed_funds_monthly_change_2024_12_20260724_193213_001_b7af3ff1",
+        "source_event_id": "evt_finance_20241202_006_1f80478f",
+        "target_event_id": "evt_finance_20241202_012_fc711dbc",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Early December concerns about stalling inflation progress caused a cautious approach by the Federal Reserve.",
+        "evidence_article_ids": [
+          "art_finance_20241202_011_b7861f37"
+        ],
+        "discovered_by_question_ids": [
+          "v3_fed_funds_monthly_change_2024_12"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:32:13.258788Z",
+        "last_confirmed_at": "2026-07-24T19:32:13.258788Z"
+      },
+      {
+        "id": "hyp_v3_fed_funds_monthly_change_2024_12_20260724_193213_002_bab4e297",
+        "source_event_id": "evt_finance_20241202_012_fc711dbc",
+        "target_event_id": "evt_finance_20241218_007_f74be3c4",
+        "relation_type": "enables",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "The cautious approach by the Federal Reserve enabled their decision to cut rates while balancing inflation control.",
+        "evidence_article_ids": [
+          "art_finance_20241202_011_b7861f37",
+          "art_finance_20241218_007_934cf465"
+        ],
+        "discovered_by_question_ids": [
+          "v3_fed_funds_monthly_change_2024_12"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:32:13.273839Z",
+        "last_confirmed_at": "2026-07-24T19:32:13.273839Z"
+      },
+      {
+        "id": "hyp_v3_fed_funds_monthly_change_2024_12_20260724_193213_003_aa8036f1",
+        "source_event_id": "evt_finance_20241218_011_deafcd26",
+        "target_event_id": "evt_finance_20241218_007_f74be3c4",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Cooling inflation, tempered by cautiousness, was the primary driver for the Federal Reserve's decision to cut interest rates.",
+        "evidence_article_ids": [
+          "art_finance_20241218_007_934cf465"
+        ],
+        "discovered_by_question_ids": [
+          "v3_fed_funds_monthly_change_2024_12"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:32:13.287618Z",
+        "last_confirmed_at": "2026-07-24T19:32:13.287618Z"
+      },
+      {
+        "id": "hyp_v3_fed_funds_monthly_change_2024_12_20260724_193213_004_a19ca6eb",
+        "source_event_id": "evt_finance_20241218_007_f74be3c4",
+        "target_event_id": "evt_ff98f472e08f",
+        "relation_type": "triggers",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The Federal Reserve's decision to cut the benchmark federal funds rate by 0.25 percentage points directly resulted in the rate falling into the 4.25%-4.5% range, which is 'within recent range'.",
+        "evidence_article_ids": [
+          "art_finance_20241218_007_934cf465",
+          "art_finance_20241218_006_f3983238",
+          "art_finance_20241218_008_f34eb0b0",
+          "art_finance_20241218_004_7128b434"
+        ],
+        "discovered_by_question_ids": [
+          "v3_fed_funds_monthly_change_2024_12"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:32:13.300460Z",
+        "last_confirmed_at": "2026-07-24T19:32:13.300460Z"
+      },
+      {
+        "id": "hyp_v3_fed_funds_monthly_change_2024_12_20260724_193213_005_aa1cc75a",
+        "source_event_id": "evt_finance_20241218_008_3e44b16b",
+        "target_event_id": "evt_ff98f472e08f",
+        "relation_type": "correlates",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "The forward guidance of fewer cuts in 2025 correlated with the Fed's ongoing commitment to its inflation targets, thus anchoring expectations for the rate to stay within a manageable band and contributing to the 'within recent range' outcome.",
+        "evidence_article_ids": [
+          "art_finance_20241218_007_934cf465",
+          "art_finance_20241218_006_f3983238",
+          "art_finance_20241218_008_f34eb0b0"
+        ],
+        "discovered_by_question_ids": [
+          "v3_fed_funds_monthly_change_2024_12"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:32:13.315689Z",
+        "last_confirmed_at": "2026-07-24T19:32:13.315689Z"
+      },
+      {
+        "id": "hyp_v3_fed_funds_monthly_change_2024_12_20260724_193213_006_81cff92d",
+        "source_event_id": "evt_finance_20241218_009_22b5da74",
+        "target_event_id": "evt_finance_20241218_008_3e44b16b",
+        "relation_type": "prevents",
+        "strength": 0.8,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Economists' expectations for more aggressive rate cuts in 2025 were prevented by the Fed's cautious stance on persistent inflation, leading to fewer projected cuts.",
+        "evidence_article_ids": [
+          "art_finance_20241218_007_934cf465"
+        ],
+        "discovered_by_question_ids": [
+          "v3_fed_funds_monthly_change_2024_12"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:32:13.329296Z",
+        "last_confirmed_at": "2026-07-24T19:32:13.329296Z"
+      },
+      {
+        "id": "hyp_v3_fed_funds_monthly_change_2024_12_20260724_193213_007_6357fac0",
+        "source_event_id": "evt_finance_20241218_010_1b69ede7",
+        "target_event_id": "evt_finance_20241218_008_3e44b16b",
+        "relation_type": "amplifies",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The concern that inflation remained 'somewhat elevated' and would not reach its 2% target until 2026 amplified the Fed's decision to project only two cuts for 2025 instead of the anticipated four.",
+        "evidence_article_ids": [
+          "art_finance_20241218_007_934cf465"
+        ],
+        "discovered_by_question_ids": [
+          "v3_fed_funds_monthly_change_2024_12"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:32:13.342337Z",
+        "last_confirmed_at": "2026-07-24T19:32:13.342337Z"
+      }
+    ],
+    "outcome_impacts": [
+      {
+        "id": "imp_c597ef22",
+        "event_id": "evt_finance_20241202_006_1f80478f",
+        "outcome_event_id": "evt_ff98f472e08f",
+        "question_id": "v3_fed_funds_monthly_change_2024_12",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.8,
+        "reasoning": "This warning contributed to the cautious approach by the Fed, which ultimately led to a measured rate cut, keeping the rate within the recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_fed_funds_monthly_change_2024_12"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:32:20.656443Z",
+        "last_confirmed_at": "2026-07-24T19:32:20.656443Z"
+      },
+      {
+        "id": "imp_b5591c0f",
+        "event_id": "evt_finance_20241218_007_f74be3c4",
+        "outcome_event_id": "evt_ff98f472e08f",
+        "question_id": "v3_fed_funds_monthly_change_2024_12",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "This direct action set the federal funds rate within the 'recent range'.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_fed_funds_monthly_change_2024_12"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:32:20.667569Z",
+        "last_confirmed_at": "2026-07-24T19:32:20.667569Z"
+      },
+      {
+        "id": "imp_a456c934",
+        "event_id": "evt_finance_20241218_008_3e44b16b",
+        "outcome_event_id": "evt_ff98f472e08f",
+        "question_id": "v3_fed_funds_monthly_change_2024_12",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "This forward guidance anchored expectations, reinforcing the idea that the federal funds rate would remain within a controlled band, preventing a more significant downward shift.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_fed_funds_monthly_change_2024_12"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:32:20.677653Z",
+        "last_confirmed_at": "2026-07-24T19:32:20.677653Z"
+      },
+      {
+        "id": "imp_86562106",
+        "event_id": "evt_finance_20241218_009_22b5da74",
+        "outcome_event_id": "evt_ff98f472e08f",
+        "question_id": "v3_fed_funds_monthly_change_2024_12",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.5,
+        "confidence": 0.7,
+        "reasoning": "These expectations pushed for quicker and deeper rate reductions, which would have moved the rate below the recent range. However, this was counteracted by other factors.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_fed_funds_monthly_change_2024_12"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:32:20.688391Z",
+        "last_confirmed_at": "2026-07-24T19:32:20.688391Z"
+      },
+      {
+        "id": "imp_8a0d401d",
+        "event_id": "evt_finance_20241218_010_1b69ede7",
+        "outcome_event_id": "evt_ff98f472e08f",
+        "question_id": "v3_fed_funds_monthly_change_2024_12",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "This persistent inflation concern overwhelmed the impetus for more substantial cuts, thus keeping the rate within the recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_fed_funds_monthly_change_2024_12"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:32:20.700457Z",
+        "last_confirmed_at": "2026-07-24T19:32:20.700457Z"
+      },
+      {
+        "id": "imp_7430815d",
+        "event_id": "evt_finance_20241218_011_deafcd26",
+        "outcome_event_id": "evt_ff98f472e08f",
+        "question_id": "v3_fed_funds_monthly_change_2024_12",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "This factor directly contributed to the decision to cut rates in a measured way, leading to the 'within recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_fed_funds_monthly_change_2024_12"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:32:20.710555Z",
+        "last_confirmed_at": "2026-07-24T19:32:20.710555Z"
+      },
+      {
+        "id": "imp_18713e2a",
+        "event_id": "evt_finance_20241202_012_fc711dbc",
+        "outcome_event_id": "evt_ff98f472e08f",
+        "question_id": "v3_fed_funds_monthly_change_2024_12",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.8,
+        "reasoning": "The cautious approach by the Federal Reserve enabled a measured rate cut, contributing to the rate staying within the recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_fed_funds_monthly_change_2024_12"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:32:20.722815Z",
+        "last_confirmed_at": "2026-07-24T19:32:20.722815Z"
+      }
+    ]
+  }
+}

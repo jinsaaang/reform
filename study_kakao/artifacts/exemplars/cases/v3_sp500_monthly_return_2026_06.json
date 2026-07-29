@@ -1,0 +1,40 @@
+{
+  "schema_version": "fixed_exemplar_case",
+  "status": "success",
+  "question_id": "v3_sp500_monthly_return_2026_06",
+  "retrieved_memory_question_id": "v3_sp500_monthly_return_2023_07",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "market_fx_credit / equity market",
+      "target_operation": "monthly return",
+      "option_geometry": "bucketed range"
+    },
+    "historical_question": "As of 2023-07-01, which range will the monthly S&P 500 return for S&P 500 index in 2023-07 fall into?",
+    "historical_cutoff": "2023-07-01T00:00:00+00:00",
+    "target_semantics": "The monthly return of the S&P 500 index for July 2023, expressed in percent.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20221129_003_a94722a8",
+        "takeaway": "The Federal Reserve has been engaged in monetary policy aimed at controlling inflation, which implies a restrictive stance.",
+        "why_predictive": "Federal Reserve policy directly influences interest rates and the cost of capital, which in turn affects equity valuations and market returns."
+      },
+      {
+        "article_id": "art_finance_20230614_004_ddebf37e",
+        "takeaway": "The Federal Reserve held its key interest rate steady in June 2023, indicating a pause in rate hikes as it evaluates economic conditions, particularly following a lower inflation reading.",
+        "why_predictive": "A pause in rate hikes, especially when accompanied by signs of cooling inflation, can signal a potential shift in monetary policy that may reduce pressure on equity discount rates."
+      }
+    ],
+    "expert_reasoning": [
+      "The Federal Reserve's policy has been restrictive (art_finance_20221129_003_a94722a8), which typically pressures equity markets by increasing discount rates.",
+      "However, the Fed paused rate hikes in June 2023 (art_finance_20230614_004_ddebf37e) following a lower inflation reading. This suggests disinflationary progress, which could ease future rate hike expectations and reduce discount rate pressure.",
+      "The interplay between ongoing restrictive policy and emerging disinflation creates mixed signals for equity returns.",
+      "Improved inflation readings and a pause in rate hikes could support market risk appetite, potentially leading to positive returns.",
+      "Conversely, if restrictive policy remains dominant or inflation proves sticky, it could continue to weigh on equities."
+    ],
+    "counterevidence": "The DAG indicates that market risk appetite can reverse if inflation or policy uncertainty rises, and that restrictive policy could outweigh disinflationary trends. Evidence for sustained disinflation and easing policy expectations is weak.",
+    "prospective_target_estimate": "The S&P 500 monthly return for July 2023 is likely to be within the recent range, given the mixed signals of ongoing restrictive policy and tentative signs of disinflation.",
+    "option_mapping": "The forecast suggests the return will fall within the 'within recent range' [-0.467, 5.575) based on the balance of policy restraint and disinflationary signals.",
+    "uncertainty": "The evidence for sustained disinflation and the market's reaction to the Fed's pause are not yet fully clear. The strength of restrictive policy's impact versus the potential relief from disinflation remains a key uncertainty.",
+    "dag_derived_lesson": "The impact of monetary policy on market returns is contingent on the interplay between policy stance and inflation trends. Disinflationary progress can mitigate the effects of restrictive policy, but the persistence of inflation and the market's interpretation of policy signals introduce significant uncertainty."
+  }
+}

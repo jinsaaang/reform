@@ -1,0 +1,127 @@
+{
+  "schema_version": "hgf_blueprint_v1",
+  "question_id": "v3_broad_usd_monthly_return_2023_01",
+  "target_definition": {
+    "metric": "broad trade-weighted U.S. dollar monthly return",
+    "unit_or_option_space": "monthly return classification",
+    "forecast_horizon": "target month"
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "The graph supports a reusable policy-expectations and inflation-transmission framework, but several asserted links to the dollar are indirect and need contemporaneous market evidence.",
+    "weaknesses": [
+      "Most inflation and macro indicators are correlated context rather than direct foreign-exchange drivers.",
+      "The graph does not independently establish the relevant cross-currency yield differential or positioning response."
+    ]
+  },
+  "search_factors": [
+    {
+      "factor": "Federal Reserve policy expectations",
+      "why_search": "Expected changes in the policy path can alter relative expected returns on dollar assets.",
+      "preferred_source_types": ["central-bank communications", "rate futures", "FX market reports"],
+      "source_event_ids": ["evt_finance_20221214_002_94afec95", "evt_finance_20230105_006_0cf661d7"]
+    },
+    {
+      "factor": "Inflation persistence and disinflation signals",
+      "why_search": "Inflation news can change the expected policy path, with an ambiguous effect unless rate expectations are confirmed.",
+      "preferred_source_types": ["official inflation releases", "central-bank analysis", "market-implied rates"],
+      "source_event_ids": ["evt_finance_20230103_008_8eaa063a", "evt_finance_20230118_004_64a6664c"]
+    },
+    {
+      "factor": "Relative monetary-policy stance",
+      "why_search": "The broad dollar responds to relative, not solely domestic, expected policy paths.",
+      "preferred_source_types": ["major-central-bank communications", "yield-curve data", "FX strategy reports"],
+      "source_event_ids": ["evt_finance_20230105_006_0cf661d7"]
+    },
+    {
+      "factor": "Risk and positioning conditions",
+      "why_search": "Safe-haven demand and existing dollar positioning can amplify or reverse the rate-expectations channel.",
+      "preferred_source_types": ["cross-asset market data", "positioning data", "FX market reports"],
+      "source_event_ids": ["evt_finance_20230103_008_8eaa063a"]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "policy_path",
+      "role": "driver",
+      "factor": "Federal Reserve policy expectations",
+      "mechanism": "A perceived moderation in future tightening can reduce the expected yield support for dollar assets.",
+      "expected_direction": "down",
+      "evidence_requirement": "Verify policy communication, the rate-futures repricing, and the timing of the FX response.",
+      "contradiction_signal": "Markets price a more restrictive policy path or the dollar strengthens despite lower expected rates.",
+      "historical_support": "medium",
+      "source_event_ids": ["evt_finance_20221214_002_94afec95", "evt_finance_20230105_006_0cf661d7"],
+      "source_edge_ids": ["hyp_v3_broad_usd_monthly_return_2023_01_20260725_050501_002_2527bb18", "hyp_v3_broad_usd_monthly_return_2023_01_20260725_050501_003_01223b0e"]
+    },
+    {
+      "id": "inflation_signal",
+      "role": "mediator",
+      "factor": "Inflation persistence and disinflation signals",
+      "mechanism": "Inflation developments affect policy expectations, but their implication for the currency depends on the relative policy response.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Verify current inflation surprises, policy reaction functions, and relative rate expectations.",
+      "contradiction_signal": "Inflation news and rate expectations move in opposite directions.",
+      "historical_support": "weak",
+      "source_event_ids": ["evt_finance_20230103_008_8eaa063a", "evt_finance_20230118_004_64a6664c"],
+      "source_edge_ids": ["hyp_v3_broad_usd_monthly_return_2023_01_20260725_050501_005_0ccabb70", "hyp_v3_broad_usd_monthly_return_2023_01_20260725_050502_007_d45b7439"]
+    },
+    {
+      "id": "risk_offset",
+      "role": "counterevidence",
+      "factor": "Risk and positioning conditions",
+      "mechanism": "Inflation-related uncertainty can generate safe-haven flows or unwind crowded currency positions, offsetting the policy-rate channel.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Verify risk sentiment, cross-asset volatility, and dollar positioning rather than infer them from inflation commentary.",
+      "contradiction_signal": "Risk assets, volatility, and dollar demand do not co-move as the safe-haven account predicts.",
+      "historical_support": "weak",
+      "source_event_ids": ["evt_finance_20230103_008_8eaa063a", "evt_finance_20230110_003_cd920a88"],
+      "source_edge_ids": ["hyp_v3_broad_usd_monthly_return_2023_01_20260725_050502_008_f55e6817", "hyp_v3_broad_usd_monthly_return_2023_01_20260725_050517_016_3de4af3a"]
+    },
+    {
+      "id": "usd_bridge",
+      "role": "target_bridge",
+      "factor": "Relative yields and FX demand",
+      "mechanism": "Infer the broad-dollar direction only after comparing verified U.S. and foreign policy expectations with risk and positioning conditions.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Verify relative yield changes, major-currency moves, risk conditions, and the broad-index composition over the forecast window.",
+      "contradiction_signal": "The component currencies or safe-haven flows dominate the expected relative-yield effect.",
+      "historical_support": "weak",
+      "source_event_ids": ["evt_finance_20230105_006_0cf661d7", "evt_finance_20230103_008_8eaa063a"],
+      "source_edge_ids": ["hyp_v3_broad_usd_monthly_return_2023_01_20260725_050501_003_01223b0e", "hyp_v3_broad_usd_monthly_return_2023_01_20260725_050502_007_d45b7439"]
+    }
+  ],
+  "causal_paths": [
+    {
+      "checkpoint_ids": ["inflation_signal", "policy_path", "usd_bridge"],
+      "generalized_mechanism": "Inflation information changes the expected policy path; a relative reduction in expected dollar yields can weigh on the currency.",
+      "expected_direction": "down",
+      "applicability_conditions": ["Rate markets confirm a relative easing of expected U.S. policy.", "Major foreign policy expectations do not ease by more."],
+      "failure_conditions": ["Inflation persistence restores expected U.S. tightening.", "Risk aversion creates stronger dollar demand."]
+    },
+    {
+      "checkpoint_ids": ["risk_offset", "usd_bridge"],
+      "generalized_mechanism": "Risk sentiment and positioning can offset or amplify the policy-expectations effect on broad dollar demand.",
+      "expected_direction": "mixed",
+      "applicability_conditions": ["Cross-asset risk data and positioning corroborate the proposed flow channel."],
+      "failure_conditions": ["Currency moves are instead explained by relative yields or idiosyncratic major-currency developments."]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "Inflation uncertainty raises safe-haven demand enough to support the dollar despite moderated policy expectations.",
+      "discriminating_evidence": "Compare risk volatility, safe-haven flows, relative yields, and major-currency performance.",
+      "source_event_ids": ["evt_finance_20230103_008_8eaa063a", "evt_finance_20230105_006_0cf661d7"]
+    },
+    {
+      "hypothesis": "Relative foreign central-bank repricing, rather than domestic policy expectations, is the main driver of the broad-dollar move.",
+      "discriminating_evidence": "Compare policy-surprise and yield changes across the index's major component currencies.",
+      "source_event_ids": ["evt_finance_20230105_006_0cf661d7"]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Did current rate futures show a relative change in expected U.S. policy?",
+    "Did major foreign policy expectations move differently from U.S. expectations?",
+    "Do risk, volatility, and positioning data support or offset the relative-yield mechanism?",
+    "Are moves across the index's major component currencies consistent with the proposed explanation?"
+  ]
+}

@@ -1,0 +1,1131 @@
+{
+  "question": {
+    "id": "v3_brent_monthly_return_2023_07",
+    "question_text": "As of 2023-07-01, which range will the monthly Brent price return for Brent crude oil in 2023-07 fall into?",
+    "question_type": "mcq",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 3,
+    "resolution_date": "2023-07-31T23:59:59Z",
+    "estimated_start_time": "2023-07-01T00:00:00Z",
+    "ground_truth": "above recent range",
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [
+      "evt_4e12f37fde95",
+      "evt_eb4c3da2497c",
+      "evt_b95658a1f4ca"
+    ],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: Brent crude oil\nTarget period: 2023-07\nFinancial area: energy_commodities / crude oil\nRegion: US\nPre-registered recent-range boundaries: lower -5.684, upper 1.216 percent.",
+    "resolution_criteria": "Use FRED series DCOILBRENTEU. Compute the change from the previous monthly observation using mode 'pct'. Resolve 'below recent range' below -5.684, 'within recent range' from -5.684 inclusive to 1.216 exclusive, and 'above recent range' at or above 1.216 percent.",
+    "resolution_reasoning": "The snapshotted target change was 14.37 percent; it resolved to 'above recent range'.",
+    "options": [
+      "below recent range",
+      "within recent range",
+      "above recent range"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": "\n## Executive Summary\nBrent crude oil prices in July 2023 significantly exceeded their recent range, driven primarily by substantial supply cuts from OPEC+ nations, particularly Saudi Arabia and Russia. This intentional reduction in output coincided with a stronger-than-anticipated global oil demand recovery, notably from China. The combination of tightened supply and robust demand outlook created upward price pressure, pushing Brent crude to multi-month highs and moving its monthly return into the 'above recent range' category.\n\n## Timeline Of Key Events\n*   **July 3, 2023:** Saudi Arabia announces an extension of its voluntary 1 million barrels per day (bpd) oil production cut into August. [art_finance_20230728_008_d1060699]\n*   **July 11, 2023:** The EIA cuts its forecast for US crude oil production for the year, signaling tighter non-OPEC supply. [art_finance_20230711_005_34ba9a4a]\n*   **July 13, 2023:** The IEA releases its July Oil Market Report, projecting healthy global oil demand growth driven by strong recovery in China. [art_finance_20230713_002_2a5411c8]\n*   **July 14, 2023:** Brent crude oil prices hover above $81, attributed to supply disruptions. [art_finance_20230714_003_d19c00af]\n*   **July 21, 2023:** The U.S. Oil Rig Count continues to drop, indicating potential deceleration in US output. [art_finance_20230721_010_d223ab5f]\n*   **July 28, 2023:** Saudi Arabia indicates a potential extension of its voluntary production cuts into September, reinforcing supply discipline. [art_finance_20230728_008_d1060699]\n*   **July 31, 2023:** Brent crude hits multi-month highs on tightening supply, concluding the month in the 'above recent range' category. [art_finance_20230731_001_8047913e]\n\n## Causal Chain Analysis\nThe 'above recent range' outcome for Brent crude oil prices in July 2023 was primarily **caused** by coordinated supply reductions by major oil producers. Specifically, Saudi Arabia's extension of its voluntary 1 million bpd production cut into August and possibly September [art_finance_20230728_008_d1060699] **triggered** market sentiment towards a significantly tighter supply. This was further **reinforced** by Russia's commitment to reducing oil exports [art_finance_20230731_012_97112c13]. Concurrently, a robust global oil demand outlook, particularly driven by a stronger-than-expected economic recovery in China, as forecasted by the IEA [art_finance_20230713_002_2a5411c8], **resulted in** increased demand-side pressure. The combination of these deliberate supply constraints and resilient demand **led to** a tightening of the oil market balance, which **consequently pushed** Brent crude prices to multi-month highs [art_finance_20230731_001_8047913e], fulfilling the 'above recent range' scenario.\n\n## Countervailing Factors\nInitially in July 2023, there were concerns about \"weak demand\" defining the oil market's behavior [art_finance_20230725_003_1a94d210]. Some analyses, like one from Harvard Gazette, also posited that the global thirst for oil might be topping out [art_finance_20230711_006_c34a85ab]. These factors initially exerted downward pressure or limited upward potential on oil prices. However, these concerns were ultimately **overwhelmed** by the more concrete and impactful supply cuts announced by OPEC+ members and the stronger-than-expected actual demand recovery, particularly from China. The proactive measures by producers to cut supply directly counteracted the perceived weak demand, and the improving economic forecasts for key consumption regions negated the narrative of peaking long-term demand in the short-term July window.\n\n## Event Candidate Inventory\n*   **E1 - Saudi Arabia extends production cut:**\n    -   **title:** Saudi Arabia extends 1 million bpd oil production cut into August.\n    -   **date:** 2023-07-03\n    -   **why it matters causally:** Directly reduced global oil supply, creating upward price pressure.\n    -   **source article IDs:** [art_finance_20230728_008_d1060699]\n*   **E2 - EIA cuts US crude production forecast:**\n    -   **title:** EIA cuts US crude oil production forecast for the year.\n    -   **date:** 2023-07-11\n    -   **why it matters causally:** Signaled tighter non-OPEC supply, reinforcing the narrative of a constrained global market.\n    -   **source article IDs:** [art_finance_20230711_005_34ba9a4a]\n*   **E3 - IEA reports strong global demand growth:**\n    -   **title:** IEA projects healthy global oil demand growth, particularly from China.\n    -   **date:** 2023-07-13\n    -   **why it matters causally:** Indicated robust demand, offsetting earlier concerns about economic slowdowns and boosting market confidence.\n    -   **source article IDs:** [art_finance_20230713_002_2a5411c8]\n*   **E4 - Brent crude surpasses $81:**\n    -   **title:** Brent crude oil prices hover above $81 after supply disruptions.\n    -   **date:** 2023-07-14\n    -   **why it matters causally:** A key price threshold was crossed, demonstrating the immediate market reaction to tightening supply conditions.\n    -   **source article IDs:** [art_finance_20230714_003_d19c00af]\n*   **E5 - Saudi Arabia signals further cuts:**\n    -   **title:** Saudi Arabia hints at potential extension of production cuts into September.\n    -   **date:** 2023-07-28\n    -   **why it matters causally:** Provided forward guidance of continued supply discipline, sustaining bullish market sentiment toward the end of the month.\n    -   **source article IDs:** [art_finance_20230728_008_d1060699]\n*   **E6 - Brent crude hits multi-month highs:**\n    -   **title:** Brent crude hits multi-month highs on tightening supply.\n    -   **date:** 2023-07-31\n    -   **why it matters causally:** Direct manifestation of the 'above recent range' outcome, driven by cumulative supply and demand factors.\n    -   **source article IDs:** [art_finance_20230731_001_8047913e]\n\n## Evidence Mapping Table\n| Claim/Event | Article IDs | Date Support | Confidence (0-1) | Notes |\n|---|---|---|---|---|\n| Saudi production cut extension into August | [art_finance_20230728_008_d1060699] | 2023-07-03 | 1.0 | Directly reported by Reuters and Al Arabiya. |\n| EIA cuts US crude production forecast | [art_finance_20230711_005_34ba9a4a] | 2023-07-11 | 0.9 | Reported by Reuters, influential forecast. |\n| IEA reports strong global demand (China) | [art_finance_20230713_002_2a5411c8] | 2023-07-13 | 1.0 | Official IEA report. |\n| Brent crude above $81 | [art_finance_20230714_003_d19c00af] | 2023-07-14 | 0.9 | Reported by Arab News. |\n| US Oil Rig Count Drop | [art_finance_20230721_010_d223ab5f] | 2023-07-21 | 0.9 | Reported by OilPrice.com. |\n| Saudi hints at Sept. cuts | [art_finance_20230728_008_d1060699] | 2023-07-28 | 1.0 | Directly reported by Reuters and Al Arabiya. |\n| Brent hits multi-month highs | [art_finance_20230731_001_8047913e] | 2023-07-31 | 1.0 | Directly reported by Reuters. |\n| Weak demand concerns | [art_finance_20230725_003_1a94d210] | 2023-07-25 | 0.8 | Reported by GIS Reports. Present but ultimately outweighed. |\n| Global thirst for oil topping out | [art_finance_20230711_006_c34a85ab] | 2023-07-11 | 0.7 | Harvard Gazette, long-term perspective, less immediate impact. |\n\n## Uncertainties And Alternative Paths\nOne uncertainty was the sustainability of China's economic recovery; if it had faltered, demand might not have materialized as strongly. Another was the extent to which other OPEC+ members would adhere to cuts, especially Russia, which showed record drilling despite pledges [art_finance_20230731_012_97112c13]. An alternative path could have seen prices remain within the recent range if the demand recovery had been weaker, or if OPEC+ production cuts had not been as stringent or extended, leading to a more balanced market or even oversupply.\n",
+    "graph_built": true,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.201011Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "brent_monthly_return",
+        "event_cluster_id": "crude_oil_2023-07",
+        "category": "energy_commodities",
+        "original_domain": "energy_commodities",
+        "subdomain": "crude oil",
+        "entity": "Brent crude oil",
+        "region": "US",
+        "target_metric": "monthly Brent price return",
+        "target_period": "2023-07",
+        "forecast_cutoff": "2023-07-01T00:00:00+00:00",
+        "forecast_date_options": [
+          "2023-07-01"
+        ],
+        "resolution_available_at": "2023-07-31T23:59:59+00:00",
+        "horizon_days": 30,
+        "source_type": "fred_series_snapshot",
+        "source_series_id": "DCOILBRENTEU",
+        "source_homepage": "https://fred.stlouisfed.org/series/DCOILBRENTEU",
+        "comparison_rule": "target change bucketed by the lower and upper quartiles of the 8 prior observed changes",
+        "comparison_threshold": -1.755352,
+        "comparison_thresholds": {
+          "lower": -5.68392,
+          "upper": 1.21578
+        },
+        "change_unit": "percent",
+        "threshold_observation_dates": [
+          "2022-10-31",
+          "2022-11-30",
+          "2022-12-30",
+          "2023-01-31",
+          "2023-02-28",
+          "2023-03-31",
+          "2023-04-28",
+          "2023-05-31",
+          "2023-06-30"
+        ],
+        "split": "memory",
+        "family_position": 2,
+        "family_size": 8,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "above recent range",
+        "resolved_class": "above recent range",
+        "resolution_value": 85.22,
+        "target_change": 14.37390954,
+        "source_observation_date": "2023-07-31",
+        "resolution_document": {
+          "publisher": "Federal Reserve Bank of St. Louis (FRED)",
+          "title": "Brent Crude Oil Price",
+          "url": "https://fred.stlouisfed.org/series/DCOILBRENTEU"
+        },
+        "source_download_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILBRENTEU&cosd=2019-01-01&coed=2026-06-30",
+        "source_sha256": "7f2ac7b05845237ea944de5480b7ef13013acde61312ff0f9a64db260fc4a500",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_b95658a1f4ca",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 11,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_20230713_002_2a5411c8",
+        "title": "Oil Market Report - July 2023 – Analysis - IEA – International Energy Agency",
+        "url": "https://www.iea.org/reports/oil-market-report-july-2023",
+        "source": "iea.org",
+        "published_date": "2023-07-13T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230720_005_d7b46982",
+        "title": "US$500 billion (2023 terms) investment in global oil and gas asset development enough to meet peak demand in 2030s - Wood Mackenzie",
+        "url": "https://www.woodmac.com/press-releases/us$500-billion-investment-in-global-oil-and-gas-enough-to-meet-peak-demand-in-2030s",
+        "source": "woodmac.com",
+        "published_date": "2023-07-20T07:19:11+00:00"
+      },
+      {
+        "id": "art_finance_20230711_006_c34a85ab",
+        "title": "Energy agency says global thirst for oil finally may be topping out - Harvard Gazette",
+        "url": "https://news.harvard.edu/gazette/story/2023/07/energy-agency-says-global-thirst-for-oil-finally-may-be-topping-out",
+        "source": "news.harvard.edu",
+        "published_date": "2023-07-11T15:15:12+00:00"
+      },
+      {
+        "id": "art_finance_20230727_004_d3cba832",
+        "title": "Oil & Gas Q2 2023 Insights: A Shifting Landscape - Sia Partners",
+        "url": "https://www.sia-partners.com/en/insights/publications/oil-gas-q2-2023-insights-a-shifting-landscape",
+        "source": "sia-partners.com",
+        "published_date": "2023-07-27T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230725_003_1a94d210",
+        "title": "Weak demand defines oil market’s behavior - GIS Reports",
+        "url": "https://www.gisreportsonline.com/r/oil-market",
+        "source": "gisreportsonline.com",
+        "published_date": "2023-07-25T08:00:00+02:00"
+      },
+      {
+        "id": "art_finance_20230723_007_af64ee72",
+        "title": "How might Saudi Arabia's oil confrontation with the Biden Administration play out? - Rystad Energy",
+        "url": "https://www.rystadenergy.com/insights/saudi-arabia-oil-confrontation-with-biden-administration",
+        "source": "rystadenergy.com",
+        "published_date": "2023-07-23T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230708_008_c4544bb1",
+        "title": "Emerging Threats to Petrodollar: A shift in Geopolitics of Oil - mepei.com",
+        "url": "https://mepei.com/emerging-threats-to-petrodollar-a-shift-in-geopolitics-of-oil",
+        "source": "mepei.com",
+        "published_date": "2023-07-08T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230717_009_b81538f1",
+        "title": "Kuwait Looks To Become A Top OPEC Producer With Massive Output Expansion - Crude Oil Prices Today | OilPrice.com",
+        "url": "https://oilprice.com/Energy/Crude-Oil/Kuwait-Looks-To-Become-A-Top-OPEC-Producer-With-3-Million-Bpd-Output-Expansion.html",
+        "source": "oilprice.com",
+        "published_date": "2023-07-17T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230721_010_d223ab5f",
+        "title": "U.S. Oil Rig Count Continues To Drop - Crude Oil Prices Today | OilPrice.com",
+        "url": "https://oilprice.com/Energy/Energy-General/US-Oil-Rig-Count-Continues-To-Drop.html",
+        "source": "oilprice.com",
+        "published_date": "2023-07-21T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230711_011_033bc672",
+        "title": "Iraq Takes First Step Towards Becoming The World’s Biggest Oil Producer - Crude Oil Prices Today | OilPrice.com",
+        "url": "https://oilprice.com/Energy/Crude-Oil/Iraq-Takes-First-Step-Towards-Becoming-The-Worlds-Biggest-Oil-Producer.html",
+        "source": "oilprice.com",
+        "published_date": "2023-07-11T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230731_012_97112c13",
+        "title": "Russia Sets Record Pace for Oil-Drilling This Year Despite Production Cuts - Bloomberg.com",
+        "url": "https://www.bloomberg.com/news/articles/2023-07-31/russia-sets-record-pace-for-oil-drilling-this-year-despite-production-cuts",
+        "source": "bloomberg.com",
+        "published_date": "2023-07-31T00:00:00+00:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_b95658a1f4ca",
+      "events_count": 10,
+      "hypotheses_count": 10
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 3,
+      "avg_depth": 2.12,
+      "quality_score": 0.87,
+      "depth_score": 1.0,
+      "confidence_score": 0.76,
+      "strength_score": 0.71,
+      "evidence_score": 1.0,
+      "event_count": 10,
+      "hypothesis_count": 10
+    },
+    "nodes": [
+      {
+        "id": "evt_4e12f37fde95",
+        "title": "Option 1: below recent range",
+        "description": "Question resolves to: below recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-07-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_brent_monthly_return_2023_07",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 0,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T18:56:58.698272Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_b95658a1f4ca",
+        "title": "Option 3: above recent range",
+        "description": "Question resolves to: above recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-07-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_brent_monthly_return_2023_07",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 2,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T18:56:58.698291Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_eb4c3da2497c",
+        "title": "Option 2: within recent range",
+        "description": "Question resolves to: within recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-07-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_brent_monthly_return_2023_07",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 1,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T18:56:58.698285Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230703_003_28646de9",
+        "title": "Saudi Arabia announces an extension of its voluntary oil production cut",
+        "description": "Saudi Arabia extended its voluntary oil production cut of 1 million barrels per day.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-07-03T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230723_007_af64ee72"
+        ],
+        "extracted_for_question_id": "v3_brent_monthly_return_2023_07",
+        "source_article_id": "art_finance_20230723_007_af64ee72",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_brent_monthly_return_2023_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:15:21.084969Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230705_008_0e52fdd0",
+        "title": "Initially in July 2023, there were concerns about 'weak demand' defining the oil market's behavior",
+        "description": "Early in July 2023, the oil market was characterized by concerns over weak demand.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-07-05T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230725_003_1a94d210"
+        ],
+        "extracted_for_question_id": "v3_brent_monthly_return_2023_07",
+        "source_article_id": "art_finance_20230725_003_1a94d210",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_brent_monthly_return_2023_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:15:21.272399Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230711_004_32562c15",
+        "title": "The EIA cuts its forecast for US crude oil production",
+        "description": "The Energy Information Administration (EIA) reduced its forecast for US crude oil production.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-07-11T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230727_004_d3cba832"
+        ],
+        "extracted_for_question_id": "v3_brent_monthly_return_2023_07",
+        "source_article_id": "art_finance_20230727_004_d3cba832",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_brent_monthly_return_2023_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:15:21.122384Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230711_009_ca914f7d",
+        "title": "Some analyses, like one from Harvard Gazette, argued that global oil demand might be topping out",
+        "description": "Analyses, including one from Harvard Gazette, suggested that global oil demand could be reaching its peak.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-07-11T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230711_006_c34a85ab"
+        ],
+        "extracted_for_question_id": "v3_brent_monthly_return_2023_07",
+        "source_article_id": "art_finance_20230711_006_c34a85ab",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_brent_monthly_return_2023_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:15:21.309665Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230713_005_21d70f8f",
+        "title": "The IEA releases its July Oil Market Report, projecting strong demand",
+        "description": "The International Energy Agency (IEA) released its July Oil Market Report, forecasting robust oil demand.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-07-13T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230713_002_2a5411c8"
+        ],
+        "extracted_for_question_id": "v3_brent_monthly_return_2023_07",
+        "source_article_id": "art_finance_20230713_002_2a5411c8",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_brent_monthly_return_2023_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:15:21.159634Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230721_006_04e52214",
+        "title": "The U.S. Oil Rig Count continues to drop, indicating lower future supply",
+        "description": "The number of active oil rigs in the U.S. continued to decline, suggesting a reduction in future oil supply.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-07-21T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230721_010_d223ab5f"
+        ],
+        "extracted_for_question_id": "v3_brent_monthly_return_2023_07",
+        "source_article_id": "art_finance_20230721_010_d223ab5f",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_brent_monthly_return_2023_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:15:21.197794Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230723_010_654d1a9f",
+        "title": "Oil market reacts to Saudi Arabia's extended production cuts",
+        "description": "The oil market responded to Saudi Arabia's announcement of extending its voluntary oil production cuts, leading to tighter supply expectations.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-07-23T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230723_007_af64ee72"
+        ],
+        "extracted_for_question_id": "v3_brent_monthly_return_2023_07",
+        "source_article_id": "art_finance_20230723_007_af64ee72",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_brent_monthly_return_2023_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:15:39.039794Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230731_002_e7802ae0",
+        "title": "Brent crude hits multi-month highs on tightening supply",
+        "description": "Brent crude oil prices reached multi-month highs due to tightening supply.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-07-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230731_012_97112c13"
+        ],
+        "extracted_for_question_id": "v3_brent_monthly_return_2023_07",
+        "source_article_id": "art_finance_20230731_012_97112c13",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_brent_monthly_return_2023_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:15:21.046204Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230731_007_edfdf5c9",
+        "title": "Russia's commitment to reducing oil exports further tightens global supply",
+        "description": "Russia's adherence to oil export reductions contributed to a tighter global oil supply.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-07-31T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230731_012_97112c13"
+        ],
+        "extracted_for_question_id": "v3_brent_monthly_return_2023_07",
+        "source_article_id": "art_finance_20230731_012_97112c13",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_brent_monthly_return_2023_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:15:21.235394Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_brent_monthly_return_2023_07_20260725_061521_002_56715308",
+        "source_event_id": "evt_finance_20230703_003_28646de9",
+        "target_event_id": "evt_finance_20230731_002_e7802ae0",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Saudi Arabia's production cut extension contributes to tightening supply, leading to higher Brent prices.",
+        "evidence_article_ids": [
+          "art_finance_20230723_007_af64ee72"
+        ],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2023_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:15:21.359103Z",
+        "last_confirmed_at": "2026-07-25T06:15:21.359103Z"
+      },
+      {
+        "id": "hyp_v3_brent_monthly_return_2023_07_20260725_061521_003_1b0fd00f",
+        "source_event_id": "evt_finance_20230711_004_32562c15",
+        "target_event_id": "evt_finance_20230731_002_e7802ae0",
+        "relation_type": "causes",
+        "strength": 0.6,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "A cut in US crude oil production forecast suggests tighter supply, pushing Brent prices higher.",
+        "evidence_article_ids": [
+          "art_finance_20230727_004_d3cba832"
+        ],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2023_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:15:21.376440Z",
+        "last_confirmed_at": "2026-07-25T06:15:21.376440Z"
+      },
+      {
+        "id": "hyp_v3_brent_monthly_return_2023_07_20260725_061521_004_291583ac",
+        "source_event_id": "evt_finance_20230713_005_21d70f8f",
+        "target_event_id": "evt_finance_20230731_002_e7802ae0",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "IEA's report projecting strong demand contributes to higher Brent prices.",
+        "evidence_article_ids": [
+          "art_finance_20230713_002_2a5411c8"
+        ],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2023_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:15:21.393417Z",
+        "last_confirmed_at": "2026-07-25T06:15:21.393417Z"
+      },
+      {
+        "id": "hyp_v3_brent_monthly_return_2023_07_20260725_061521_005_ecefc5de",
+        "source_event_id": "evt_finance_20230721_006_04e52214",
+        "target_event_id": "evt_finance_20230731_002_e7802ae0",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "A drop in US oil rig count indicates lower future supply, which can drive Brent prices up.",
+        "evidence_article_ids": [
+          "art_finance_20230721_010_d223ab5f"
+        ],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2023_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:15:21.410486Z",
+        "last_confirmed_at": "2026-07-25T06:15:21.410486Z"
+      },
+      {
+        "id": "hyp_v3_brent_monthly_return_2023_07_20260725_061521_006_4f3d5177",
+        "source_event_id": "evt_finance_20230731_007_edfdf5c9",
+        "target_event_id": "evt_finance_20230731_002_e7802ae0",
+        "relation_type": "causes",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Russia's commitment to reducing oil exports further tightens global supply, supporting higher Brent prices.",
+        "evidence_article_ids": [
+          "art_finance_20230731_012_97112c13"
+        ],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2023_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:15:21.427307Z",
+        "last_confirmed_at": "2026-07-25T06:15:21.427307Z"
+      },
+      {
+        "id": "hyp_v3_brent_monthly_return_2023_07_20260725_061521_007_4529236a",
+        "source_event_id": "evt_finance_20230705_008_0e52fdd0",
+        "target_event_id": "evt_finance_20230731_002_e7802ae0",
+        "relation_type": "inhibits",
+        "strength": 0.5,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "Concerns about weak demand would typically put downward pressure on oil prices, inhibiting price increases.",
+        "evidence_article_ids": [
+          "art_finance_20230725_003_1a94d210"
+        ],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2023_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:15:21.444433Z",
+        "last_confirmed_at": "2026-07-25T06:15:21.444433Z"
+      },
+      {
+        "id": "hyp_v3_brent_monthly_return_2023_07_20260725_061521_008_f0016802",
+        "source_event_id": "evt_finance_20230711_009_ca914f7d",
+        "target_event_id": "evt_finance_20230731_002_e7802ae0",
+        "relation_type": "inhibits",
+        "strength": 0.5,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "Analysis suggesting global oil demand topping out would inhibit price increases.",
+        "evidence_article_ids": [
+          "art_finance_20230711_006_c34a85ab"
+        ],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2023_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:15:21.463929Z",
+        "last_confirmed_at": "2026-07-25T06:15:21.463929Z"
+      },
+      {
+        "id": "hyp_v3_brent_monthly_return_2023_07_20260725_061531_009_509973de",
+        "source_event_id": "evt_finance_20230731_002_e7802ae0",
+        "target_event_id": "evt_b95658a1f4ca",
+        "relation_type": "causes",
+        "strength": 1.0,
+        "confidence": 1.0,
+        "time_lag_hours": null,
+        "reasoning": "Brent crude hitting multi-month highs directly indicates the monthly return is above the recent range.",
+        "evidence_article_ids": [
+          "art_finance_20230731_012_97112c13"
+        ],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2023_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:15:31.192674Z",
+        "last_confirmed_at": "2026-07-25T06:15:31.192674Z"
+      },
+      {
+        "id": "hyp_v3_brent_monthly_return_2023_07_20260725_061539_010_7979ace3",
+        "source_event_id": "evt_finance_20230703_003_28646de9",
+        "target_event_id": "evt_finance_20230723_010_654d1a9f",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Saudi Arabia's decision to extend oil production cuts directly caused the market to react with tighter supply expectations.",
+        "evidence_article_ids": [
+          "art_finance_20230723_007_af64ee72"
+        ],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2023_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:15:39.070498Z",
+        "last_confirmed_at": "2026-07-25T06:15:39.070498Z"
+      },
+      {
+        "id": "hyp_v3_brent_monthly_return_2023_07_20260725_061539_011_910782ff",
+        "source_event_id": "evt_finance_20230723_010_654d1a9f",
+        "target_event_id": "evt_finance_20230731_002_e7802ae0",
+        "relation_type": "causes",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The market's reaction to tighter supply expectations, driven by Saudi cuts, led to Brent crude hitting multi-month highs.",
+        "evidence_article_ids": [
+          "art_finance_20230723_007_af64ee72"
+        ],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2023_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:15:39.087776Z",
+        "last_confirmed_at": "2026-07-25T06:15:39.087776Z"
+      }
+    ],
+    "outcome_impacts": [
+      {
+        "id": "imp_97af9f1e",
+        "event_id": "evt_finance_20230703_001_cfb2b1d4",
+        "outcome_event_id": "evt_b95658a1f4ca",
+        "question_id": "v3_brent_monthly_return_2023_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "Saudi Arabia's production cut directly reduced global oil supply, making the 'above recent range' outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:00:04.568353Z",
+        "last_confirmed_at": "2026-07-25T06:00:04.568353Z"
+      },
+      {
+        "id": "imp_8350a89e",
+        "event_id": "evt_finance_20230711_002_46503890",
+        "outcome_event_id": "evt_b95658a1f4ca",
+        "question_id": "v3_brent_monthly_return_2023_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.8,
+        "reasoning": "The EIA's forecast cut for US crude oil production signaled tighter non-OPEC supply, reinforcing the narrative of a constrained global market and contributing to higher prices, thus making the 'above recent range' outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:00:04.578243Z",
+        "last_confirmed_at": "2026-07-25T06:00:04.578243Z"
+      },
+      {
+        "id": "imp_d3e7ff81",
+        "event_id": "evt_finance_20230713_003_486ae734",
+        "outcome_event_id": "evt_b95658a1f4ca",
+        "question_id": "v3_brent_monthly_return_2023_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.9,
+        "reasoning": "IEA's projection of healthy global oil demand growth, especially from China, indicated robust demand, offsetting earlier concerns and boosting market confidence, thus amplifying price increases and making the 'above recent range' outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:00:04.588685Z",
+        "last_confirmed_at": "2026-07-25T06:00:04.588685Z"
+      },
+      {
+        "id": "imp_15682895",
+        "event_id": "evt_finance_20230714_004_22bef45b",
+        "outcome_event_id": "evt_b95658a1f4ca",
+        "question_id": "v3_brent_monthly_return_2023_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Brent crude surpassing $81 was an early indicator and a stepping stone towards reaching multi-month highs, making the 'above recent range' outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:00:04.598778Z",
+        "last_confirmed_at": "2026-07-25T06:00:04.598778Z"
+      },
+      {
+        "id": "imp_5fa2c93a",
+        "event_id": "evt_finance_20230721_005_46d18e18",
+        "outcome_event_id": "evt_b95658a1f4ca",
+        "question_id": "v3_brent_monthly_return_2023_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.5,
+        "confidence": 0.7,
+        "reasoning": "The continued drop in the U.S. Oil Rig Count indicated potential deceleration in US output, contributing to the overall tightening supply narrative and supporting higher prices, thus making the 'above recent range' outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:00:04.608846Z",
+        "last_confirmed_at": "2026-07-25T06:00:04.608846Z"
+      },
+      {
+        "id": "imp_eb9785ac",
+        "event_id": "evt_finance_20230728_006_2db634f0",
+        "outcome_event_id": "evt_b95658a1f4ca",
+        "question_id": "v3_brent_monthly_return_2023_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "Saudi Arabia's signal of potential further cuts into September provided forward guidance of continued supply discipline, sustaining bullish market sentiment and directly contributing to Brent crude hitting multi-month highs, making the 'above recent range' outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:00:04.618425Z",
+        "last_confirmed_at": "2026-07-25T06:00:04.618425Z"
+      },
+      {
+        "id": "imp_97d428a7",
+        "event_id": "evt_finance_20230731_008_578d6465",
+        "outcome_event_id": "evt_b95658a1f4ca",
+        "question_id": "v3_brent_monthly_return_2023_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Russia's commitment to reducing oil exports further reinforced the tightening supply, amplifying the upward pressure on Brent crude prices, thus making the 'above recent range' outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:00:04.629985Z",
+        "last_confirmed_at": "2026-07-25T06:00:04.629985Z"
+      },
+      {
+        "id": "imp_a8ea1146",
+        "event_id": "evt_finance_20230725_009_64bbfec4",
+        "outcome_event_id": "evt_b95658a1f4ca",
+        "question_id": "v3_brent_monthly_return_2023_07",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Concerns about weak demand initially exerted downward pressure or limited upward potential on oil prices, inhibiting the rise to multi-month highs, thus making the 'above recent range' outcome less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:00:04.640163Z",
+        "last_confirmed_at": "2026-07-25T06:00:04.640163Z"
+      },
+      {
+        "id": "imp_f5a1fca2",
+        "event_id": "evt_finance_20230711_010_8ad4fef1",
+        "outcome_event_id": "evt_b95658a1f4ca",
+        "question_id": "v3_brent_monthly_return_2023_07",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.5,
+        "confidence": 0.6,
+        "reasoning": "Analyses suggesting the global thirst for oil might be topping out created a long-term bearish sentiment that could have inhibited price increases, thus making the 'above recent range' outcome less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:00:04.650034Z",
+        "last_confirmed_at": "2026-07-25T06:00:04.650034Z"
+      },
+      {
+        "id": "imp_fb052356",
+        "event_id": "evt_finance_20230731_007_8ccfc8a4",
+        "outcome_event_id": "evt_b95658a1f4ca",
+        "question_id": "v3_brent_monthly_return_2023_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 1.0,
+        "confidence": 1.0,
+        "reasoning": "This event is the direct manifestation of the actual outcome, confirming the 'above recent range' scenario.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:00:08.389485Z",
+        "last_confirmed_at": "2026-07-25T06:00:08.389485Z"
+      },
+      {
+        "id": "imp_c0d93f95",
+        "event_id": "evt_finance_20230731_002_e7802ae0",
+        "outcome_event_id": "evt_b95658a1f4ca",
+        "question_id": "v3_brent_monthly_return_2023_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 1.0,
+        "confidence": 1.0,
+        "reasoning": "Brent crude hitting multi-month highs directly indicates the monthly return is above the recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:15:31.205602Z",
+        "last_confirmed_at": "2026-07-25T06:15:31.205602Z"
+      },
+      {
+        "id": "imp_36536d9f",
+        "event_id": "evt_finance_20230703_003_28646de9",
+        "outcome_event_id": "evt_b95658a1f4ca",
+        "question_id": "v3_brent_monthly_return_2023_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "Saudi Arabia extended its voluntary oil production cut, contributing to tightening supply and higher Brent prices.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:15:31.216016Z",
+        "last_confirmed_at": "2026-07-25T06:15:31.216016Z"
+      },
+      {
+        "id": "imp_357b53f4",
+        "event_id": "evt_finance_20230711_004_32562c15",
+        "outcome_event_id": "evt_b95658a1f4ca",
+        "question_id": "v3_brent_monthly_return_2023_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.6,
+        "reasoning": "A cut in US crude oil production forecast suggests tighter supply, pushing Brent prices higher.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:15:31.226149Z",
+        "last_confirmed_at": "2026-07-25T06:15:31.226149Z"
+      },
+      {
+        "id": "imp_56048f60",
+        "event_id": "evt_finance_20230713_005_21d70f8f",
+        "outcome_event_id": "evt_b95658a1f4ca",
+        "question_id": "v3_brent_monthly_return_2023_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.9,
+        "reasoning": "IEA's report projecting strong demand contributes to higher Brent prices.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:15:31.236469Z",
+        "last_confirmed_at": "2026-07-25T06:15:31.236469Z"
+      },
+      {
+        "id": "imp_b263c46c",
+        "event_id": "evt_finance_20230721_006_04e52214",
+        "outcome_event_id": "evt_b95658a1f4ca",
+        "question_id": "v3_brent_monthly_return_2023_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.6,
+        "reasoning": "A drop in US oil rig count indicates lower future supply, which can drive Brent prices up.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:15:31.248162Z",
+        "last_confirmed_at": "2026-07-25T06:15:31.248162Z"
+      },
+      {
+        "id": "imp_53a3b85a",
+        "event_id": "evt_finance_20230731_007_edfdf5c9",
+        "outcome_event_id": "evt_b95658a1f4ca",
+        "question_id": "v3_brent_monthly_return_2023_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Russia's commitment to reducing oil exports further tightens global supply, supporting higher Brent prices.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:15:31.260034Z",
+        "last_confirmed_at": "2026-07-25T06:15:31.260034Z"
+      },
+      {
+        "id": "imp_522d8ddc",
+        "event_id": "evt_finance_20230705_008_0e52fdd0",
+        "outcome_event_id": "evt_b95658a1f4ca",
+        "question_id": "v3_brent_monthly_return_2023_07",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Concerns about weak demand would typically put downward pressure on oil prices, inhibiting price increases.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:15:31.270311Z",
+        "last_confirmed_at": "2026-07-25T06:15:31.270311Z"
+      },
+      {
+        "id": "imp_80415dc7",
+        "event_id": "evt_finance_20230711_009_ca914f7d",
+        "outcome_event_id": "evt_b95658a1f4ca",
+        "question_id": "v3_brent_monthly_return_2023_07",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.5,
+        "confidence": 0.6,
+        "reasoning": "Analysis suggesting global oil demand topping out would inhibit price increases.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:15:31.281101Z",
+        "last_confirmed_at": "2026-07-25T06:15:31.281101Z"
+      },
+      {
+        "id": "imp_dad015ff",
+        "event_id": "evt_finance_20230731_001_638b8cd0",
+        "outcome_event_id": "evt_b95658a1f4ca",
+        "question_id": "v3_brent_monthly_return_2023_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 1.0,
+        "confidence": 1.0,
+        "reasoning": "This event represents the resolution of the question, which is that the Brent price return is above the recent range, directly aligning with the actual outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:15:34.250902Z",
+        "last_confirmed_at": "2026-07-25T06:15:34.250902Z"
+      },
+      {
+        "id": "imp_7df06751",
+        "event_id": "evt_finance_20230723_010_654d1a9f",
+        "outcome_event_id": "evt_b95658a1f4ca",
+        "question_id": "v3_brent_monthly_return_2023_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "The oil market's positive reaction to Saudi Arabia's extended production cuts directly contributed to Brent crude oil prices reaching multi-month highs, thus increasing the likelihood of the 'above recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:15:50.803716Z",
+        "last_confirmed_at": "2026-07-25T06:15:50.803716Z"
+      }
+    ]
+  }
+}

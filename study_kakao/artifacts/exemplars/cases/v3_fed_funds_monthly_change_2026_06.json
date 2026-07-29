@@ -1,0 +1,48 @@
+{
+  "schema_version": "fixed_exemplar_case",
+  "status": "success",
+  "question_id": "v3_fed_funds_monthly_change_2026_06",
+  "retrieved_memory_question_id": "v3_fed_funds_monthly_change_2024_12",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "monetary_policy",
+      "target_operation": "federal-funds-rate-change",
+      "option_geometry": "range-classification"
+    },
+    "historical_question": "As of 2024-12-01, which range will the monthly federal-funds-rate change for Federal Reserve effective federal funds rate in 2024-12 fall into?",
+    "historical_cutoff": "2024-12-01T00:00:00+00:00",
+    "target_semantics": "The monthly change in the Federal Reserve's effective federal funds rate for December 2024.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20240722_002_0bd276b7",
+        "takeaway": "The Federal Reserve's Monetary Policy Report in July 2024 indicated a focus on bringing inflation back to the 2 percent target, suggesting a cautious approach to policy adjustments.",
+        "why_predictive": "This report signals the Fed's ongoing assessment of inflation and its potential impact on future policy decisions, including interest rate adjustments."
+      },
+      {
+        "article_id": "art_finance_20240131_004_68afc49a",
+        "takeaway": "In January 2024, the Federal Reserve held its interest rate steady, signaling a pause in rate hikes and a wait-and-see approach to economic data.",
+        "why_predictive": "This indicates a recent policy stance of maintaining current rates, which could influence subsequent monthly changes if conditions do not drastically shift."
+      },
+      {
+        "article_id": "art_finance_20220110_002_fbb70570",
+        "takeaway": "The Federal Reserve's monetary policy implementation framework has evolved, with a focus on managing the federal funds rate within a target range through various tools.",
+        "why_predictive": "Understanding the framework helps in interpreting how policy decisions translate into effective rate changes."
+      },
+      {
+        "article_id": "art_finance_20220112_003_d921eab0",
+        "takeaway": "The Federal Reserve adjusts the fed funds rate within its target range by influencing the supply of reserves in the banking system.",
+        "why_predictive": "This explains the transmission mechanism from policy decisions to the effective rate, which is the target of the forecast."
+      }
+    ],
+    "expert_reasoning": [
+      "The Federal Reserve's recent actions (art_finance_20240131_004_68afc49a) indicate a pause in rate hikes, suggesting a stable or potentially decreasing rate environment.",
+      "The July 2024 Monetary Policy Report (art_finance_20240722_002_0bd276b7) highlights the ongoing commitment to the 2 percent inflation target, implying that policy adjustments will be data-dependent and potentially cautious.",
+      "The historical framework for adjusting the fed funds rate (art_finance_20220110_002_fbb70570, art_finance_20220112_003_d921eab0) shows that decisions are made to keep the effective rate within a target range, and monthly changes are a result of these decisions and market operations."
+    ],
+    "counterevidence": "While the Fed has paused rate hikes, persistent inflation concerns could lead to a continued holding pattern or even a slight increase if economic data surprises negatively, contradicting expectations of a rate decrease.",
+    "prospective_target_estimate": "within recent range",
+    "option_mapping": "The forecast estimates that the monthly federal-funds-rate change for December 2024 will fall within the recent range of -0.193 to 0 percentage points.",
+    "uncertainty": "The precise monthly change depends on incoming economic data (inflation, employment) and the Federal Reserve's interpretation of that data, as well as any shifts in forward guidance, making the exact magnitude of any change uncertain.",
+    "dag_derived_lesson": "Policy rate adjustments are influenced by inflation trends and cautious policy stances, with forward guidance and market mechanisms mediating the transmission to effective rates. Unexpected data shifts can alter the expected path."
+  }
+}

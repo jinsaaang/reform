@@ -1,0 +1,48 @@
+{
+  "schema_version": "fixed_exemplar_case",
+  "status": "success",
+  "question_id": "v3_fed_balance_sheet_monthly_growth_2026_06",
+  "retrieved_memory_question_id": "v3_fed_balance_sheet_monthly_growth_2024_12",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "monetary_policy",
+      "target_operation": "balance_sheet_growth_rate",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2024-12-01, will the monthly Federal Reserve asset growth for Federal Reserve total assets in 2024-12 be at least -0.854 percent?",
+    "historical_cutoff": "2024-12-01T00:00:00+00:00",
+    "target_semantics": "Federal Reserve total assets monthly growth rate in December 2024.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "ev_0b2311dd3694d7dc",
+        "takeaway": "The Fed's balance sheet reduction (QT) was intended to conclude by the end of September 2019.",
+        "why_predictive": "Establishes historical precedent for ending balance sheet reduction, relevant to the 'QT ended' statement for December 2024."
+      },
+      {
+        "article_id": "ev_9158503ee89839c7",
+        "takeaway": "The Fed reduced its balance sheet by allowing assets to 'roll off' without replacement.",
+        "why_predictive": "Explains the mechanics of QT, crucial for understanding the impact of its cessation in December 2024."
+      },
+      {
+        "article_id": "ev_905039d4565ecc64",
+        "takeaway": "The Fed's balance sheet can shrink incrementally, sometimes without explicit announcements.",
+        "why_predictive": "Provides historical context for how balance sheet adjustments can occur, relevant to interpreting the end of QT."
+      },
+      {
+        "article_id": "ev_860b5cf99efb3326",
+        "takeaway": "In December 2014, the Fed reinvested principal payments to maintain accommodative conditions.",
+        "why_predictive": "Illustrates a past policy stance of balance sheet expansion, contrasting with the situation where QT was ending."
+      }
+    ],
+    "expert_reasoning": [
+      "The Federal Reserve's quantitative tightening (QT) program, which involved shrinking its balance sheet by allowing assets to mature without replacement (ev_9158503ee89839c7), was reported to have ended on December 1. Historically, the Fed has concluded balance sheet reduction efforts (ev_0b2311dd3694d7dc).",
+      "The cessation of QT suggests a potential slowing or reversal of balance sheet contraction. While balance sheet changes can be incremental (ev_905039d4565ecc64), the explicit end of a reduction program implies a shift.",
+      "A prior policy involved reinvesting assets to maintain accommodative conditions (ev_860b5cf99efb3326), contrasting with the current scenario of QT ending."
+    ],
+    "counterevidence": "The provided evidence focuses on the historical context and mechanics of QT ending but does not offer direct data on the actual asset growth rate for December 2024. The evidence also does not detail the specific impact of the Fed cutting its policy rate on the balance sheet's monthly growth.",
+    "prospective_target_estimate": "The ending of quantitative tightening suggests that the pace of asset reduction would slow or cease, making a significant negative growth rate (i.e., a large contraction) less likely. However, without direct data on December's asset levels or the precise impact of other policy actions, the exact growth rate remains uncertain.",
+    "option_mapping": "The ending of QT implies a reduced likelihood of a contraction of at least -0.854 percent, leaning towards 'yes'. However, the lack of direct December data and the influence of other factors introduce uncertainty.",
+    "uncertainty": "The primary uncertainty stems from the lack of direct, cutoff-safe data for December 2024's Federal Reserve total assets. While the end of QT is a strong signal, its precise impact on the monthly growth rate, especially in conjunction with other potential policy shifts like interest rate changes, is not fully detailed in the provided forecast-time evidence.",
+    "dag_derived_lesson": "The cessation of a policy aimed at balance sheet reduction is a significant driver for asset growth. However, the precise magnitude of the resulting asset change depends on the specific mechanics of the policy's end and the interplay with other monetary policy tools, necessitating direct observation for definitive forecasting."
+  }
+}

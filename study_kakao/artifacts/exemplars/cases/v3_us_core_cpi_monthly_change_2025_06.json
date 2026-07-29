@@ -1,0 +1,49 @@
+{
+  "schema_version": "fixed_exemplar_case",
+  "status": "success",
+  "question_id": "v3_us_core_cpi_monthly_change_2025_06",
+  "retrieved_memory_question_id": "v3_us_core_cpi_monthly_change_2024_12",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "macro / inflation",
+      "target_operation": "monthly core CPI change",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2024-12-31, will the monthly core CPI change for United States core CPI in 2024-12 be at least 0.297 percent?",
+    "historical_cutoff": "2024-12-31T00:00:00+00:00",
+    "target_semantics": "The monthly percentage change in the US core CPI for December 2024.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20240712_004_ea55932e",
+        "takeaway": "Services PPI inflation has shown a persistent upward trend for six consecutive months, with the bottom of this upturn occurring in December.",
+        "why_predictive": "Services PPI is a leading indicator for core CPI services, a major component of core CPI. Persistent increases suggest upward pressure on core inflation."
+      },
+      {
+        "article_id": "art_finance_20240125_005_9e8d7abb",
+        "takeaway": "The outlook for US inflation in 2024 suggests a continued moderation, but with potential for sticky components.",
+        "why_predictive": "This provides a general outlook on inflation trends, indicating that while overall inflation might be easing, specific components could remain elevated."
+      },
+      {
+        "article_id": "art_finance_20230510_009_8b2d3285",
+        "takeaway": "Supply chain disruptions have had a significant impact on inflation, and their resolution is a key factor in moderating price pressures.",
+        "why_predictive": "The easing of supply chain issues is expected to reduce input costs, which should eventually translate to lower core inflation."
+      },
+      {
+        "article_id": "art_finance_20241220_014_3b4f2531",
+        "takeaway": "Average energy prices in Los Angeles-Long Beach-Anaheim for November 2024 showed a decrease.",
+        "why_predictive": "While energy is not in core CPI, significant changes in energy prices can influence broader inflation expectations and transportation costs, indirectly affecting core components."
+      }
+    ],
+    "expert_reasoning": [
+      "Shelter inflation, a significant driver of core CPI, has been moderating. This suggests a downward pressure on the overall core CPI. (art_finance_20240125_005_9e8d7abb, art_finance_20230510_009_8b2d3285)",
+      "However, services inflation, as indicated by Services PPI, has been persistently rising for several months, with the recent upturn bottoming in December. This indicates ongoing upward pressure from the services sector. (art_finance_20240712_004_ea55932e)",
+      "The resolution of supply chain disruptions is expected to ease cost pressures, which should contribute to lower inflation. (art_finance_20230510_009_8b2d3285)",
+      "While energy prices have shown some recent decreases, their indirect impact on core CPI is less immediate and potentially offset by other factors. (art_finance_20241220_014_3b4f2531)"
+    ],
+    "counterevidence": "Persistent increases in services inflation, as evidenced by the Services PPI, could counteract the disinflationary effects from moderating shelter costs and easing supply chain pressures, potentially keeping core CPI elevated. (art_finance_20240712_004_ea55932e)",
+    "prospective_target_estimate": "The moderating trend in shelter inflation and the expected pass-through from eased supply chain pressures suggest a potential for core CPI to remain below the 0.297% threshold. However, the persistent rise in services inflation presents a significant risk of upward pressure, making the outcome uncertain.",
+    "option_mapping": "The evidence suggests a balance between disinflationary forces (shelter, supply chains) and inflationary pressures (services). Given the conflicting signals, the monthly core CPI change is likely to be close to recent historical averages, making it difficult to definitively predict if it will meet or exceed the 0.297% threshold.",
+    "uncertainty": "The persistence of services inflation versus the expected moderation in shelter and goods prices creates significant uncertainty. The exact magnitude and timing of these opposing forces on the final core CPI figure are difficult to ascertain.",
+    "dag_derived_lesson": "When assessing core inflation, the interplay between moderating shelter costs and persistent services inflation is critical. Easing supply chain pressures can provide a disinflationary tailwind, but the strength of services price momentum can offset these gains, leading to uncertainty in the final core inflation reading."
+  }
+}

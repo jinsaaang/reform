@@ -1,0 +1,146 @@
+{
+  "schema_version": "hgf_blueprint_v1",
+  "question_id": "v3_brent_monthly_return_2023_07",
+  "target_definition": {
+    "metric": "Brent crude monthly return",
+    "unit_or_option_space": "monthly return classification",
+    "forecast_horizon": "target month"
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Producer supply restraint, non-OPEC supply expectations, and demand outlooks form reusable oil-balance mechanisms, while weak-demand narratives provide a countervailing path.",
+    "weaknesses": [
+      "The graph lacks verified inventories, refinery demand, freight flows, and currency conditions needed to quantify the global balance.",
+      "The direct Brent-price observation is a realized target proxy and is excluded."
+    ]
+  },
+  "search_factors": [
+    {
+      "factor": "Producer supply restraint",
+      "why_search": "Voluntary output or export restraint can tighten expected seaborne crude availability.",
+      "preferred_source_types": ["official producer communications", "export-loading data", "tanker tracking"],
+      "source_event_ids": ["evt_finance_20230703_003_28646de9", "evt_finance_20230731_007_edfdf5c9"]
+    },
+    {
+      "factor": "Non-OPEC supply outlook",
+      "why_search": "Production forecasts and rig activity can alter expectations for future supply growth.",
+      "preferred_source_types": ["official energy outlooks", "production data", "rig-count data"],
+      "source_event_ids": ["evt_finance_20230711_004_32562c15", "evt_finance_20230721_006_04e52214"]
+    },
+    {
+      "factor": "Oil demand outlook",
+      "why_search": "Demand forecasts determine whether supply restraint tightens the expected oil balance.",
+      "preferred_source_types": ["IEA demand outlook", "mobility data", "refinery-throughput data"],
+      "source_event_ids": ["evt_finance_20230713_005_21d70f8f"]
+    },
+    {
+      "factor": "Demand-downside risk",
+      "why_search": "Growth concerns can limit the effect of supply restraint on crude demand and risk appetite.",
+      "preferred_source_types": ["macroeconomic data", "industrial-activity data", "oil-consumption forecasts"],
+      "source_event_ids": ["evt_finance_20230705_008_0e52fdd0", "evt_finance_20230711_009_ca914f7d"]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "producer_restraint",
+      "role": "driver",
+      "factor": "Producer supply restraint",
+      "mechanism": "Verified output or export restraint can tighten expected crude availability and support the oil balance.",
+      "expected_direction": "up",
+      "evidence_requirement": "Verify announced volumes against export loadings, compliance, spare capacity, and offsets from other producers.",
+      "contradiction_signal": "Exports do not decline, production elsewhere offsets restraint, or inventories build.",
+      "historical_support": "medium",
+      "source_event_ids": ["evt_finance_20230703_003_28646de9", "evt_finance_20230731_007_edfdf5c9"],
+      "source_edge_ids": ["hyp_v3_brent_monthly_return_2023_07_20260725_061539_010_7979ace3", "hyp_v3_brent_monthly_return_2023_07_20260725_061521_006_4f3d5177"]
+    },
+    {
+      "id": "non_opec_supply",
+      "role": "mediator",
+      "factor": "Non-OPEC supply outlook",
+      "mechanism": "Lower expected production growth or reduced drilling activity can reinforce a tighter future oil balance.",
+      "expected_direction": "up",
+      "evidence_requirement": "Verify production forecasts, actual output, drilling productivity, and the time lag from rig activity to supply.",
+      "contradiction_signal": "Output growth exceeds forecasts or productivity offsets lower drilling activity.",
+      "historical_support": "weak",
+      "source_event_ids": ["evt_finance_20230711_004_32562c15", "evt_finance_20230721_006_04e52214"],
+      "source_edge_ids": ["hyp_v3_brent_monthly_return_2023_07_20260725_061521_003_1b0fd00f", "hyp_v3_brent_monthly_return_2023_07_20260725_061521_005_ecefc5de"]
+    },
+    {
+      "id": "demand_outlook",
+      "role": "baseline",
+      "factor": "Oil demand outlook",
+      "mechanism": "A credible improvement in expected oil consumption can amplify the effect of supply restraint on the market balance.",
+      "expected_direction": "up",
+      "evidence_requirement": "Verify demand forecasts with mobility, refinery runs, and regional consumption data.",
+      "contradiction_signal": "Observed consumption or refinery demand weakens relative to the outlook.",
+      "historical_support": "medium",
+      "source_event_ids": ["evt_finance_20230713_005_21d70f8f"],
+      "source_edge_ids": ["hyp_v3_brent_monthly_return_2023_07_20260725_061521_004_291583ac"]
+    },
+    {
+      "id": "demand_downside",
+      "role": "counterevidence",
+      "factor": "Demand-downside risk",
+      "mechanism": "Weak growth or demand expectations can loosen the expected oil balance and cap supply-driven upside.",
+      "expected_direction": "down",
+      "evidence_requirement": "Verify industrial activity, transportation fuel use, and revisions to regional demand forecasts.",
+      "contradiction_signal": "Consumption indicators improve despite cautious growth narratives.",
+      "historical_support": "weak",
+      "source_event_ids": ["evt_finance_20230705_008_0e52fdd0", "evt_finance_20230711_009_ca914f7d"],
+      "source_edge_ids": ["hyp_v3_brent_monthly_return_2023_07_20260725_061521_007_4529236a", "hyp_v3_brent_monthly_return_2023_07_20260725_061521_008_f0016802"]
+    },
+    {
+      "id": "brent_bridge",
+      "role": "target_bridge",
+      "factor": "Verified global crude balance",
+      "mechanism": "Infer Brent direction only after reconciling verified producer supply, non-OPEC output, inventories, demand, refinery activity, and currency conditions.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Verify export and production data, commercial inventories, refinery demand, freight flows, forward curves, and currency conditions without using a realized Brent move.",
+      "contradiction_signal": "Inventories, physical differentials, or demand data conflict with the inferred balance.",
+      "historical_support": "weak",
+      "source_event_ids": ["evt_finance_20230703_003_28646de9", "evt_finance_20230713_005_21d70f8f", "evt_finance_20230705_008_0e52fdd0"],
+      "source_edge_ids": ["hyp_v3_brent_monthly_return_2023_07_20260725_061539_010_7979ace3", "hyp_v3_brent_monthly_return_2023_07_20260725_061521_004_291583ac", "hyp_v3_brent_monthly_return_2023_07_20260725_061521_007_4529236a"]
+    }
+  ],
+  "causal_paths": [
+    {
+      "checkpoint_ids": ["producer_restraint", "demand_outlook", "brent_bridge"],
+      "generalized_mechanism": "Verified producer restraint combined with resilient demand can tighten the expected crude balance.",
+      "expected_direction": "up",
+      "applicability_conditions": ["Export reductions are implemented and not offset elsewhere.", "Consumption and refinery data support the demand outlook."],
+      "failure_conditions": ["Inventories build.", "Demand revisions weaken or alternative supply increases."]
+    },
+    {
+      "checkpoint_ids": ["non_opec_supply", "brent_bridge"],
+      "generalized_mechanism": "A weaker non-OPEC supply outlook can reinforce a tightening balance, subject to actual output and inventory confirmation.",
+      "expected_direction": "up",
+      "applicability_conditions": ["Forecast revisions are reflected in actual production and physical supply."],
+      "failure_conditions": ["Productivity or other production growth offsets the lower outlook."]
+    },
+    {
+      "checkpoint_ids": ["demand_downside", "brent_bridge"],
+      "generalized_mechanism": "Weak-demand expectations can offset supply-restraint support by loosening the expected crude balance.",
+      "expected_direction": "down",
+      "applicability_conditions": ["Industrial, mobility, and refinery indicators corroborate weaker consumption."],
+      "failure_conditions": ["Observed consumption remains resilient."]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "Supply restraint is offset by higher output or exports from other producers.",
+      "discriminating_evidence": "Compare producer compliance and export loadings with non-OPEC production and commercial inventory changes.",
+      "source_event_ids": ["evt_finance_20230703_003_28646de9", "evt_finance_20230711_004_32562c15"]
+    },
+    {
+      "hypothesis": "Demand-side deterioration dominates the effect of supply restraint.",
+      "discriminating_evidence": "Compare refinery runs, mobility, industrial activity, and demand-forecast revisions with supply data.",
+      "source_event_ids": ["evt_finance_20230705_008_0e52fdd0", "evt_finance_20230711_009_ca914f7d", "evt_finance_20230713_005_21d70f8f"]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Are announced supply restraints reflected in actual export and production data?",
+    "Do inventories and physical differentials confirm a tightening or loosening crude balance?",
+    "Do refinery demand, mobility, and industrial indicators support the demand outlook?",
+    "Are currency, freight, and non-OPEC supply conditions offsetting the inferred Brent mechanism?"
+  ]
+}

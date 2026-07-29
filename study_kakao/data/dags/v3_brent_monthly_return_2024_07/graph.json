@@ -1,0 +1,910 @@
+{
+  "question": {
+    "id": "v3_brent_monthly_return_2024_07",
+    "question_text": "As of 2024-07-01, which range will the monthly Brent price return for Brent crude oil in 2024-07 fall into?",
+    "question_type": "mcq",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 3,
+    "resolution_date": "2024-07-31T23:59:59Z",
+    "estimated_start_time": "2024-07-01T00:00:00Z",
+    "ground_truth": "below recent range",
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [
+      "evt_6edd2ef7d798",
+      "evt_a3ac644a363b",
+      "evt_767aa9e0d861"
+    ],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: Brent crude oil\nTarget period: 2024-07\nFinancial area: energy_commodities / crude oil\nRegion: US\nPre-registered recent-range boundaries: lower -5.167, upper 3.495 percent.",
+    "resolution_criteria": "Use FRED series DCOILBRENTEU. Compute the change from the previous monthly observation using mode 'pct'. Resolve 'below recent range' below -5.167, 'within recent range' from -5.167 inclusive to 3.495 exclusive, and 'above recent range' at or above 3.495 percent.",
+    "resolution_reasoning": "The snapshotted target change was -6.727 percent; it resolved to 'below recent range'.",
+    "options": [
+      "below recent range",
+      "within recent range",
+      "above recent range"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": "\n## Executive Summary\nIn July 2024, Brent crude oil prices experienced a monthly return categorized as 'below recent range'. This outcome was primarily driven by a confluence of factors, including persistent concerns about global oil demand, particularly from China, despite earlier signs of strong U.S. demand. Geopolitical tensions, while present, did not escalate sufficiently to offset bearish market sentiment. Increased oil and gasoline inventories in the U.S. at various points further contributed to the downward pressure, leading to a period of price volatility and ultimately, an overall decline.\n\n## Timeline Of Key Events\n- **2024-07-03:** Oil prices initially rose more than 1% due to a significant drop in U.S. crude and gasoline stocks, signaling an uptick in demand ahead of the Fourth of July holiday. [art_finance_20240703_002_6b5da465]\n- **2024-07-09:** U.S. Gasoline & Crude Oil Prices Move Higher While Natural Gas Prices Decline in Latest Week.  [art_finance_20240709_004_649656fb]\n- **2024-07-09:** IEA releases its Oil Market Report for July 2024, providing insights into demand and supply forecasts. [art_finance_20240709_007_bd9da042]\n- **2024-07-12:** Research on the extent and persistence of major crisis events in the crude oil market and economy over the past 30 years is published, highlighting market sensitivities. [art_finance_20240712_005_d3cd7014]\n- **2024-07-15:** Discussions around oil and gasoline market fundamentals. [art_finance_20240715_008_4b42ab52]\n- **2024-07-16:** Oil falls due to lingering demand concerns in China. [art_finance_20240716_010_dc7761ac]\n- **2024-07-16:** Crude inventories fall again as fuel stocks build, indicating mixed signals in the market regarding supply and demand. [art_finance_20240716_009_59d1d7ac]\n- **2024-07-16:** Investopedia publishes an article explaining why oil prices have been falling. [art_finance_20240716_006_eb5c9215]\n- **2024-07-28:** Oil prices head into a 'warning triangle' highlighting technical analysis suggesting impending volatility or trend continuation. [art_finance_20240728_003_2a1ae40b]\n\n## Causal Chain Analysis\nThe 'below recent range' outcome for Brent crude oil in July 2024 was primarily **caused** by a weakening global demand outlook, particularly from China, which **triggered** a bearish sentiment in the market. Early in the month, strong U.S. demand, evidenced by declining crude and gasoline stocks [art_finance_20240703_002_6b5da465], **prevented** an immediate sharp decline. However, this was **overwhelmed** by persistent concerns over Chinese economic growth and its impact on oil consumption [art_finance_20240716_010_dc7761ac]. The July 2024 IEA Oil Market Report likely **contributed** to shaping these demand expectations [art_finance_20240709_007_bd9da042]. Furthermore, reports of crude inventories falling while fuel stocks built [art_finance_20240716_009_59d1d7ac] **indicated** an underlying weakness in refinery demand or product oversupply, ultimately **leading to** the overall downward pressure on prices as detailed in analyses of falling oil prices [art_finance_20240716_006_eb5c9215]. The technical indicators observed late in the month also **suggested** continued price weakness [art_finance_20240728_003_2a1ae40b].\n\n## Countervailing Factors\nInitially, strong U.S. demand, particularly for gasoline ahead of the Fourth of July holiday, acted as a countervailing factor, causing oil prices to rise [art_finance_20240703_002_6b5da465]. This uptick was also supported by a drop in U.S. crude and gasoline inventories. However, this factor was **overwhelmed** because the strong U.S. demand was not sustained throughout the month, and global demand concerns, especially from China, dominated market sentiment [art_finance_20240716_010_dc7761ac]. Geopolitical tensions also tend to supportive of higher oil prices, but they **failed** to provide significant upward momentum, as their impact was either limited or perceived to be short-lived, as suggested by the lack of specific articles highlighting escalating conflicts directly impacting supply in a sustained manner.\n\n## Event Candidate Inventory\n- **E1:** Title: U.S. Crude and Gasoline Stock Drop. Date: 2024-07-03. Why it matters: Initially buoyed oil prices due to strong demand signals. Source article IDs: [art_finance_20240703_002_6b5da465]\n- **E2:** Title: Lingering Demand Concerns in China. Date: 2024-07-16. Why it matters: Principal driver for oil price depreciation, overwhelming positive U.S. demand signals. Source article IDs: [art_finance_20240716_010_dc7761ac]\n- **E3:** Title: IEA Oil Market Report Release. Date: 2024-07-09. Why it matters: Provided significant market analysis and outlook that influenced trader sentiment and long-term price expectations. Source article IDs: [art_finance_20240709_007_bd9da042]\n- **E4:** Title: Crude Inventories Fall, Fuel Stocks Build. Date: 2024-07-16. Why it matters: Indicated mixed signals in the market, possibly reflecting weak refinery demand or product oversupply, contributing to bearish sentiment. Source article IDs: [art_finance_20240716_009_59d1d7ac]\n- **E5:** Title: Oil Prices Head into \"Warning Triangle\". Date: 2024-07-28. Why it matters: Signaled impending volatility and potential for further downward trend based on technical analysis, reflecting the culmination of bearish sentiment. Source article IDs: [art_finance_20240728_003_2a1ae40b]\n\n## Evidence Mapping Table\n| Claim/Event | Article IDs | Date Support | Confidence (0-1) | Notes |\n| :---------- | :---------- | :---------- | :--------------- | :---- |\n| U.S. demand leads to price rise | [art_finance_20240703_002_6b5da465] | 2024-07-03 | 0.9 | Direct evidence of price increase due to inventory draw. |\n| Global demand concerns from China | [art_finance_20240716_010_dc7761ac] | 2024-07-16 | 0.9 | Explicitly states oil falls due to Chinese demand worries. |\n| IEA Report's influence | [art_finance_20240709_007_bd9da042] | 2024-07-09 | 0.8 | Report typically drives market sentiment. |\n| Mixed inventory signals | [art_finance_20240716_009_59d1d7ac] | 2024-07-16 | 0.8 | Data showing crude fall but fuel build suggests underlying market weakness. |\n| Technical indicators of weakness | [art_finance_20240728_003_2a1ae40b] | 2024-07-28 | 0.7 | Technical analysis indicating potential for continued declines. |\n\n## Uncertainties And Alternative Paths\nOne uncertainty is the precise weighting of factors influencing trader psychology; while fundamentals suggest a decline, the degree to which different news pieces amplified or moderated price movements is hard to quantify. An alternative path could have been a sustained recovery in Chinese demand or a significant escalation of geopolitical tensions. If China's economy had shown robust signs of recovery, even moderate U.S. demand could have led to prices remaining 'within recent range' or even 'above recent range'. Similarly, if major supply disruptions from geopolitical events had materialized, prices would have likely surged despite demand fears. The market also largely shrugged off some early bullish signals from US inventory draws, indicating that the prevailing bearish sentiment was quite strong.\n",
+    "graph_built": true,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.201046Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "brent_monthly_return",
+        "event_cluster_id": "crude_oil_2024-07",
+        "category": "energy_commodities",
+        "original_domain": "energy_commodities",
+        "subdomain": "crude oil",
+        "entity": "Brent crude oil",
+        "region": "US",
+        "target_metric": "monthly Brent price return",
+        "target_period": "2024-07",
+        "forecast_cutoff": "2024-07-01T00:00:00+00:00",
+        "forecast_date_options": [
+          "2024-07-01"
+        ],
+        "resolution_available_at": "2024-07-31T23:59:59+00:00",
+        "horizon_days": 30,
+        "source_type": "fred_series_snapshot",
+        "source_series_id": "DCOILBRENTEU",
+        "source_homepage": "https://fred.stlouisfed.org/series/DCOILBRENTEU",
+        "comparison_rule": "target change bucketed by the lower and upper quartiles of the 8 prior observed changes",
+        "comparison_threshold": 1.904024,
+        "comparison_thresholds": {
+          "lower": -5.167161,
+          "upper": 3.495246
+        },
+        "change_unit": "percent",
+        "threshold_observation_dates": [
+          "2023-10-31",
+          "2023-11-30",
+          "2023-12-29",
+          "2024-01-31",
+          "2024-02-29",
+          "2024-03-28",
+          "2024-04-30",
+          "2024-05-31",
+          "2024-06-28"
+        ],
+        "split": "memory",
+        "family_position": 4,
+        "family_size": 8,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "below recent range",
+        "resolved_class": "below recent range",
+        "resolution_value": 81.39,
+        "target_change": -6.72702269,
+        "source_observation_date": "2024-07-31",
+        "resolution_document": {
+          "publisher": "Federal Reserve Bank of St. Louis (FRED)",
+          "title": "Brent Crude Oil Price",
+          "url": "https://fred.stlouisfed.org/series/DCOILBRENTEU"
+        },
+        "source_download_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILBRENTEU&cosd=2019-01-01&coed=2026-06-30",
+        "source_sha256": "7f2ac7b05845237ea944de5480b7ef13013acde61312ff0f9a64db260fc4a500",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_6edd2ef7d798",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 10,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_20240728_003_2a1ae40b",
+        "title": "Oil prices head into a warning triangle again – Chemicals and the Economy - ICIS",
+        "url": "https://www.icis.com/chemicals-and-the-economy/2024/07/oil-prices-head-into-a-warning-triangle-again",
+        "source": "icis.com",
+        "published_date": "2024-07-28T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240709_004_649656fb",
+        "title": "U.S. Gasoline & Crude Oil Prices Move Higher While Natural Gas Prices Decline in Latest Week - Haver Analytics",
+        "url": "https://www.haver.com/articles/u-s-gasoline-and-crude-oil-prices-move-higher-while-natural-gas-prices-decline-in-latest-week",
+        "source": "haver.com",
+        "published_date": "2024-07-09T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240709_007_bd9da042",
+        "title": "Oil Market Report - July 2024 – Analysis - IEA – International Energy Agency",
+        "url": "https://www.iea.org/reports/oil-market-report-july-2024",
+        "source": "iea.org",
+        "published_date": "2024-07-09T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240703_002_6b5da465",
+        "title": "Oil prices rise more than 1% as big drop in U.S. crude, gasoline stocks signals uptick in demand - CNBC",
+        "url": "https://www.cnbc.com/2024/07/03/crude-oil-prices-today.html",
+        "source": "cnbc.com",
+        "published_date": "2024-07-03T12:48:19+00:00"
+      },
+      {
+        "id": "art_finance_20240716_006_eb5c9215",
+        "title": "Why Oil Prices Have Been Falling - Investopedia",
+        "url": "https://www.investopedia.com/why-oil-prices-falling-8678586",
+        "source": "investopedia.com",
+        "published_date": "2024-07-16T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240716_009_59d1d7ac",
+        "title": "Crude Inventories Fall Again as Fuel Stocks Build - Crude Oil Prices Today | OilPrice.com",
+        "url": "https://oilprice.com/Latest-Energy-News/World-News/Crude-Inventories-Fall-Again-as-Fuel-Stocks-Build.html",
+        "source": "oilprice.com",
+        "published_date": "2024-07-16T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240712_005_d3cd7014",
+        "title": "Assessing the extent and persistence of major crisis events in the crude oil market and economy: evidence from the past 30 years - Nature",
+        "url": "https://www.nature.com/articles/s41599-024-03364-z",
+        "source": "nature.com",
+        "published_date": "2024-07-12T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240715_008_4b42ab52",
+        "title": "Oil and Gasoline 101 - Energy Institute Blog",
+        "url": "https://energyathaas.wordpress.com/2024/07/15/oil-and-gasoline-101",
+        "source": "energyathaas.wordpress.com",
+        "published_date": "2024-07-15T13:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240716_010_dc7761ac",
+        "title": "Oil falls on lingering demand concerns in China - CNBC",
+        "url": "https://www.cnbc.com/2024/07/16/oil-prices-tick-down-on-worries-about-chinese-demand.html",
+        "source": "cnbc.com",
+        "published_date": "2024-07-16T02:09:25+00:00"
+      },
+      {
+        "id": "art_finance_20240704_011_a259bcfa",
+        "title": "Oil & Gas Q1 2024 Insights - Sia Partners",
+        "url": "https://www.sia-partners.com/en/insights/publications/oil-gas-q1-2024-insights",
+        "source": "sia-partners.com",
+        "published_date": "2024-07-04T07:00:00+00:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_6edd2ef7d798",
+      "events_count": 10,
+      "hypotheses_count": 9
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 4,
+      "avg_depth": 2.8,
+      "quality_score": 0.88,
+      "depth_score": 1.0,
+      "confidence_score": 0.8,
+      "strength_score": 0.68,
+      "evidence_score": 1.0,
+      "event_count": 10,
+      "hypothesis_count": 9
+    },
+    "nodes": [
+      {
+        "id": "evt_6edd2ef7d798",
+        "title": "Option 1: below recent range",
+        "description": "Question resolves to: below recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_brent_monthly_return_2024_07",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 0,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:13:24.531544Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_767aa9e0d861",
+        "title": "Option 3: above recent range",
+        "description": "Question resolves to: above recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_brent_monthly_return_2024_07",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 2,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:13:24.531565Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_a3ac644a363b",
+        "title": "Option 2: within recent range",
+        "description": "Question resolves to: within recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_brent_monthly_return_2024_07",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 1,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:13:24.531558Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240703_011_9a7f44e4",
+        "title": "U.S. Crude and Gasoline Stock Drop",
+        "description": "Oil prices initially rose more than 1% due to a significant drop in U.S. crude and gasoline stocks, signaling an uptick in demand ahead of the Fourth of July holiday.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-03T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240703_002_6b5da465"
+        ],
+        "extracted_for_question_id": "v3_brent_monthly_return_2024_07",
+        "source_article_id": "art_finance_20240703_002_6b5da465",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_brent_monthly_return_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:16:47.598134Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240703_019_99b87186",
+        "title": "Strong U.S. Demand",
+        "description": "Strong U.S. demand, particularly for gasoline ahead of the Fourth of July holiday, acted as a countervailing factor, causing oil prices to rise.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-03T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240703_002_6b5da465"
+        ],
+        "extracted_for_question_id": "v3_brent_monthly_return_2024_07",
+        "source_article_id": "art_finance_20240703_002_6b5da465",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_brent_monthly_return_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:16:47.711896Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240709_013_67f99113",
+        "title": "IEA Oil Market Report Release",
+        "description": "IEA releases its Oil Market Report for July 2024, providing insights into demand and supply forecasts, which likely contributed to shaping demand expectations.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-09T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240709_007_bd9da042"
+        ],
+        "extracted_for_question_id": "v3_brent_monthly_return_2024_07",
+        "source_article_id": "art_finance_20240709_007_bd9da042",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_brent_monthly_return_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:16:47.626781Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240716_012_f49dceb4",
+        "title": "Lingering Demand Concerns in China",
+        "description": "Oil falls due to lingering demand concerns in China, which was a principal driver for oil price depreciation, overwhelming positive U.S. demand signals.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-16T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240716_010_dc7761ac"
+        ],
+        "extracted_for_question_id": "v3_brent_monthly_return_2024_07",
+        "source_article_id": "art_finance_20240716_010_dc7761ac",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_brent_monthly_return_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:16:47.611914Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240716_014_c51b5ba8",
+        "title": "Crude Inventories Fall, Fuel Stocks Build",
+        "description": "Crude inventories fall again as fuel stocks build, indicating mixed signals in the market regarding supply and demand, possibly reflecting weak refinery demand or product oversupply, contributing to bearish sentiment.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-16T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240716_009_59d1d7ac"
+        ],
+        "extracted_for_question_id": "v3_brent_monthly_return_2024_07",
+        "source_article_id": "art_finance_20240716_009_59d1d7ac",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_brent_monthly_return_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:16:47.640367Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240716_016_2f2da7d5",
+        "title": "Bearish Market Sentiment",
+        "description": "A general bearish sentiment in the market triggered by weakening global demand outlook, particularly from China.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-16T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240716_010_dc7761ac"
+        ],
+        "extracted_for_question_id": "v3_brent_monthly_return_2024_07",
+        "source_article_id": "art_finance_20240716_010_dc7761ac",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_brent_monthly_return_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:16:47.667812Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240716_017_92b64f6c",
+        "title": "Weakening Global Demand Outlook",
+        "description": "A weakening global demand outlook, particularly from China, was the primary cause for the 'below recent range' outcome for Brent crude oil.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-16T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240716_010_dc7761ac"
+        ],
+        "extracted_for_question_id": "v3_brent_monthly_return_2024_07",
+        "source_article_id": "art_finance_20240716_010_dc7761ac",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_brent_monthly_return_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:16:47.682807Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240716_018_e912b995",
+        "title": "Overall Downward Pressure on Prices",
+        "description": "The combination of demand concerns and mixed inventory signals led to an overall downward pressure on oil prices.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-16T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240716_006_eb5c9215",
+          "art_finance_20240716_009_59d1d7ac"
+        ],
+        "extracted_for_question_id": "v3_brent_monthly_return_2024_07",
+        "source_article_id": "art_finance_20240716_006_eb5c9215",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_brent_monthly_return_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:16:47.697472Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240728_015_c784a05b",
+        "title": "Oil Prices Head into \"Warning Triangle\"",
+        "description": "Oil prices head into a 'warning triangle' highlighting technical analysis suggesting impending volatility or trend continuation, reflecting the culmination of bearish sentiment.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-28T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240728_003_2a1ae40b"
+        ],
+        "extracted_for_question_id": "v3_brent_monthly_return_2024_07",
+        "source_article_id": "art_finance_20240728_003_2a1ae40b",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_brent_monthly_return_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:16:47.654390Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_brent_monthly_return_2024_07_20260724_191647_007_7ed94e4c",
+        "source_event_id": "evt_finance_20240716_017_92b64f6c",
+        "target_event_id": "evt_finance_20240716_016_2f2da7d5",
+        "relation_type": "triggers",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The weakening global demand outlook, especially from China, directly triggered a bearish sentiment in the market.",
+        "evidence_article_ids": [
+          "art_finance_20240716_010_dc7761ac"
+        ],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:16:47.741050Z",
+        "last_confirmed_at": "2026-07-24T19:16:47.741050Z"
+      },
+      {
+        "id": "hyp_v3_brent_monthly_return_2024_07_20260724_191647_008_665c07ac",
+        "source_event_id": "evt_finance_20240716_016_2f2da7d5",
+        "target_event_id": "evt_finance_20240716_018_e912b995",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Bearish market sentiment directly contributed to the overall downward pressure on prices.",
+        "evidence_article_ids": [
+          "art_finance_20240716_006_eb5c9215"
+        ],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:16:47.753821Z",
+        "last_confirmed_at": "2026-07-24T19:16:47.753821Z"
+      },
+      {
+        "id": "hyp_v3_brent_monthly_return_2024_07_20260724_191647_009_d06c85f1",
+        "source_event_id": "evt_finance_20240703_011_9a7f44e4",
+        "target_event_id": "evt_finance_20240703_019_99b87186",
+        "relation_type": "enables",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "The drop in US crude and gasoline stocks enabled the perception of strong US demand.",
+        "evidence_article_ids": [
+          "art_finance_20240703_002_6b5da465"
+        ],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:16:47.766263Z",
+        "last_confirmed_at": "2026-07-24T19:16:47.766263Z"
+      },
+      {
+        "id": "hyp_v3_brent_monthly_return_2024_07_20260724_191647_010_b62a16fb",
+        "source_event_id": "evt_finance_20240703_019_99b87186",
+        "target_event_id": "evt_finance_20240716_018_e912b995",
+        "relation_type": "prevents",
+        "strength": 0.4,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "Initially, strong U.S. demand prevented an immediate sharp decline in prices, acting as a countervailing factor.",
+        "evidence_article_ids": [
+          "art_finance_20240703_002_6b5da465"
+        ],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:16:47.778306Z",
+        "last_confirmed_at": "2026-07-24T19:16:47.778306Z"
+      },
+      {
+        "id": "hyp_v3_brent_monthly_return_2024_07_20260724_191647_011_b21b2517",
+        "source_event_id": "evt_finance_20240716_012_f49dceb4",
+        "target_event_id": "evt_finance_20240716_017_92b64f6c",
+        "relation_type": "amplifies",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Lingering demand concerns in China significantly amplified the weakening global demand outlook.",
+        "evidence_article_ids": [
+          "art_finance_20240716_010_dc7761ac"
+        ],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:16:47.790939Z",
+        "last_confirmed_at": "2026-07-24T19:16:47.790939Z"
+      },
+      {
+        "id": "hyp_v3_brent_monthly_return_2024_07_20260724_191647_012_d3a1df37",
+        "source_event_id": "evt_finance_20240709_013_67f99113",
+        "target_event_id": "evt_finance_20240716_017_92b64f6c",
+        "relation_type": "amplifies",
+        "strength": 0.6,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "The IEA Oil Market Report likely amplified these demand expectations and thus the weakening global demand outlook.",
+        "evidence_article_ids": [
+          "art_finance_20240709_007_bd9da042"
+        ],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:16:47.802973Z",
+        "last_confirmed_at": "2026-07-24T19:16:47.802973Z"
+      },
+      {
+        "id": "hyp_v3_brent_monthly_return_2024_07_20260724_191647_013_8af4ba16",
+        "source_event_id": "evt_finance_20240716_014_c51b5ba8",
+        "target_event_id": "evt_finance_20240716_018_e912b995",
+        "relation_type": "amplifies",
+        "strength": 0.6,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Mixed inventory signals, reflecting weak refinery demand or product oversupply, amplified the overall downward pressure on prices.",
+        "evidence_article_ids": [
+          "art_finance_20240716_009_59d1d7ac"
+        ],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:16:47.816494Z",
+        "last_confirmed_at": "2026-07-24T19:16:47.816494Z"
+      },
+      {
+        "id": "hyp_v3_brent_monthly_return_2024_07_20260724_191656_016_0d860039",
+        "source_event_id": "evt_finance_20240716_018_e912b995",
+        "target_event_id": "evt_6edd2ef7d798",
+        "relation_type": "causes",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The overall downward pressure on prices directly caused the monthly Brent price return to fall into the 'below recent range'.",
+        "evidence_article_ids": [
+          "art_finance_20240716_006_eb5c9215",
+          "art_finance_20240716_009_59d1d7ac",
+          "art_finance_20240716_010_dc7761ac"
+        ],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:16:56.896701Z",
+        "last_confirmed_at": "2026-07-24T19:16:56.896701Z"
+      },
+      {
+        "id": "hyp_v3_brent_monthly_return_2024_07_20260724_191656_017_f8d38cf8",
+        "source_event_id": "evt_finance_20240728_015_c784a05b",
+        "target_event_id": "evt_6edd2ef7d798",
+        "relation_type": "correlates",
+        "strength": 0.5,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Technical indicators suggesting impending volatility or trend continuation correlated with the overall downward pressure on prices, leading to the 'below recent range' outcome.",
+        "evidence_article_ids": [
+          "art_finance_20240728_003_2a1ae40b"
+        ],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:16:56.909117Z",
+        "last_confirmed_at": "2026-07-24T19:16:56.909117Z"
+      }
+    ],
+    "outcome_impacts": [
+      {
+        "id": "imp_9117ddb1",
+        "event_id": "evt_finance_20240703_011_9a7f44e4",
+        "outcome_event_id": "evt_6edd2ef7d798",
+        "question_id": "v3_brent_monthly_return_2024_07",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.4,
+        "confidence": 0.7,
+        "reasoning": "The drop in U.S. crude and gasoline stocks signaled an uptick in demand, which initially prevented a sharp decline in prices, thus making the 'below recent range' outcome less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:17:06.855370Z",
+        "last_confirmed_at": "2026-07-24T19:17:06.855370Z"
+      },
+      {
+        "id": "imp_92d138c5",
+        "event_id": "evt_finance_20240716_012_f49dceb4",
+        "outcome_event_id": "evt_6edd2ef7d798",
+        "question_id": "v3_brent_monthly_return_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "Lingering demand concerns in China were a principal driver for oil price depreciation, making the 'below recent range' outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:17:06.868285Z",
+        "last_confirmed_at": "2026-07-24T19:17:06.868285Z"
+      },
+      {
+        "id": "imp_004bfadd",
+        "event_id": "evt_finance_20240709_013_67f99113",
+        "outcome_event_id": "evt_6edd2ef7d798",
+        "question_id": "v3_brent_monthly_return_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.8,
+        "reasoning": "The IEA Oil Market Report provided insights that contributed to shaping demand expectations, amplifying the weakening global demand outlook and making the 'below recent range' outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:17:06.879279Z",
+        "last_confirmed_at": "2026-07-24T19:17:06.879279Z"
+      },
+      {
+        "id": "imp_f908b1b7",
+        "event_id": "evt_finance_20240716_014_c51b5ba8",
+        "outcome_event_id": "evt_6edd2ef7d798",
+        "question_id": "v3_brent_monthly_return_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.8,
+        "reasoning": "Mixed inventory signals, reflecting weak refinery demand or product oversupply, contributed to bearish sentiment and amplified downward pressure, making the 'below recent range' outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:17:06.889111Z",
+        "last_confirmed_at": "2026-07-24T19:17:06.889111Z"
+      },
+      {
+        "id": "imp_3532f712",
+        "event_id": "evt_finance_20240728_015_c784a05b",
+        "outcome_event_id": "evt_6edd2ef7d798",
+        "question_id": "v3_brent_monthly_return_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.5,
+        "confidence": 0.7,
+        "reasoning": "Technical indicators suggesting impending volatility or trend continuation correlated with the overall downward pressure on prices, reinforcing the likelihood of the 'below recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:17:06.899534Z",
+        "last_confirmed_at": "2026-07-24T19:17:06.899534Z"
+      },
+      {
+        "id": "imp_263c59ba",
+        "event_id": "evt_finance_20240716_016_2f2da7d5",
+        "outcome_event_id": "evt_6edd2ef7d798",
+        "question_id": "v3_brent_monthly_return_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "A general bearish sentiment in the market directly contributed to the overall downward pressure on prices, making the 'below recent range' outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:17:06.909855Z",
+        "last_confirmed_at": "2026-07-24T19:17:06.909855Z"
+      },
+      {
+        "id": "imp_7fdee0ed",
+        "event_id": "evt_finance_20240716_017_92b64f6c",
+        "outcome_event_id": "evt_6edd2ef7d798",
+        "question_id": "v3_brent_monthly_return_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "A weakening global demand outlook, particularly from China, was the primary cause for the 'below recent range' outcome for Brent crude oil.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:17:06.922240Z",
+        "last_confirmed_at": "2026-07-24T19:17:06.922240Z"
+      },
+      {
+        "id": "imp_8d146932",
+        "event_id": "evt_finance_20240716_018_e912b995",
+        "outcome_event_id": "evt_6edd2ef7d798",
+        "question_id": "v3_brent_monthly_return_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "The combination of demand concerns and mixed inventory signals led to an overall downward pressure on oil prices, directly causing the 'below recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:17:06.934781Z",
+        "last_confirmed_at": "2026-07-24T19:17:06.934781Z"
+      },
+      {
+        "id": "imp_655109c1",
+        "event_id": "evt_finance_20240703_019_99b87186",
+        "outcome_event_id": "evt_6edd2ef7d798",
+        "question_id": "v3_brent_monthly_return_2024_07",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.4,
+        "confidence": 0.6,
+        "reasoning": "Strong U.S. demand, particularly for gasoline ahead of the Fourth of July holiday, acted as a countervailing factor, preventing an immediate sharp decline and thus making the 'below recent range' outcome less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:17:06.950990Z",
+        "last_confirmed_at": "2026-07-24T19:17:06.950990Z"
+      }
+    ]
+  }
+}

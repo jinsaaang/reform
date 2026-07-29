@@ -1,0 +1,905 @@
+{
+  "question": {
+    "id": "v3_us_pce_price_monthly_change_2025_04",
+    "question_text": "As of 2025-04-30, will the monthly PCE-price change for United States PCE price index in 2025-04 be at least 0.312 percent?",
+    "question_type": "binary",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 3,
+    "resolution_date": "2025-06-04T23:59:59Z",
+    "estimated_start_time": "2025-04-30T00:00:00Z",
+    "ground_truth": false,
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [
+      "evt_117ba5d6915e",
+      "evt_8a01bc20fc4a"
+    ],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: United States PCE price index\nTarget period: 2025-04\nFinancial area: macro / consumer prices\nRegion: US",
+    "resolution_criteria": "Use FRED series PCEPI. Compute the change from the previous monthly observation using mode 'pct'. Resolve yes if the change is at least 0.312 percent, otherwise no.",
+    "resolution_reasoning": "The snapshotted target change was 0.166 percent; it resolved to 'no'.",
+    "options": [
+      "yes",
+      "no"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": "\n## Executive Summary\nThe monthly PCE price index change for April 2025 did not reach at least 0.312 percent, primarily due to cooling inflation trends driven by various factors. These included the easing of inflation in previous months, ongoing monetary policy tightening by the Federal Reserve, and a deceleration in consumer spending influenced by concerns over tariffs and high energy prices. While certain factors like supply chain disruptions had previously contributed to inflation, their impact was lessening by April 2025. The overall economic environment indicated a slower pace of price increases, leading to the actual monthly PCE change falling below the 0.312% threshold.\n\n## Timeline Of Key Events\n- **2023-05-10:** Federal Reserve Bank of Cleveland discusses the impacts of supply chain disruptions on inflation, highlighting their role in previous inflationary pressures [art_finance_20230510_009_8b2d3285].\n- **2024-09-19:** Research suggests the Inflation Reduction Act's impact on inflation, with some debate on its effectiveness [art_finance_20240919_007_217322b4].\n- **2025-02-03:** Federal Reserve Bank of San Francisco analyzes whether monetary policy tightening effectively reduces inflation [art_finance_20250203_004_d8354ac7].\n- **2025-02-12:** PBS reports U.S. inflation increases to 3 percent, with rising grocery and gasoline prices [art_finance_20250212_005_fc7f1ff2].\n- **2025-02-25:** Federal Reserve Bank of St. Louis discusses the journey towards 2% inflation, indicating ongoing efforts to control price increases [art_finance_20250225_006_3c4d6813].\n- **2025-03-12:** Forbes reports easing inflation in February 2025, supporting potential Fed interest rate cuts, which signals a downward trend in inflation [art_finance_20250312_002_7a970dc7].\n- **2025-04-17:** Federal Reserve Bank of Richmond discusses the direction of inflation, suggesting uncertainty but an overall trend towards cooling [art_finance_20250417_003_db74781d].\n- **2025-04-30:** U.S. Chamber of Commerce identifies five consumer trends shaping spending patterns in 2025, indicating potential shifts that could slow demand [art_finance_20250430_004_39246170].\n- **2025-04-30:** NCHStats projects US inflation rates, noting energy, rent, and food putting pressure on households, but implicitly acknowledging overall rates that may not exceed aggressive thresholds [art_finance_20250430_005_07ca1659].\n- **2025-05-19:** Federal Reserve Bank of San Francisco publishes on the effects of tariffs on inflation and production costs, suggesting potential inflationary pressures, though the overall trend appears to be cooling [art_finance_20250519_002_4db0bd67].\n- **2025-05-30:** Cheddar Flow reports that the April 2025 PCE reading shows cooling inflation, implying the figure was below expected higher thresholds [art_finance_20250530_003_2ebb7272].\n\n## Causal Chain Analysis\nThe failure of the monthly PCE-price change for April 2025 to reach at least 0.312 percent was primarily caused by a sustained period of monetary policy tightening by the Federal Reserve, which resulted in a cooling of broader inflationary pressures. This trend was evident in reports of easing inflation in February 2025 [art_finance_20250312_002_7a970dc7], which triggered expectations of potential interest rate cuts and further reinforced the disinflationary environment. Concurrently, shifts in consumer spending patterns [art_finance_20250430_004_39246170] and ongoing discussions about the impact of tariffs on production costs [art_finance_20250519_002_4db0bd67] contributed to a broader economic slowdown, leading to the actual April 2025 PCE reading showing cooler inflation than the 0.312% threshold [art_finance_20250530_003_2ebb7272].\n\n## Countervailing Factors\nSeveral factors pushed against the outcome of lower-than-expected PCE. The persistent pressure from energy, rent, and food costs continued to impact households [art_finance_20250430_005_07ca1659], suggesting that inflation was not entirely subdued in certain sectors. Additionally, some reports indicated slight increases in overall inflation earlier in the year [art_finance_20250212_005_fc7f1ff2], and ongoing discussions about the inflationary effects of tariffs [art_finance_20250519_002_4db0bd67] presented potential upward pressures. However, these factors were overwhelmed by the Federal Reserve's consistent monetary tightening policies [art_finance_20250203_004_d8354ac7] and a broader deceleration in aggregate demand and economic growth that ultimately constrained overall price increases.\n\n## Event Candidate Inventory\n- **E1:** Title: Easing Inflation In February 2025 Supports Fed Interest Rate Cuts; Date: 2025-03-12; Why it matters causally: Signaled a trend of cooling inflation, influencing expectations for future price changes and monetary policy. Source: [art_finance_20250312_002_7a970dc7]\n- **E2:** Title: 5 Consumer Trends Shaping Spending Patterns in 2025; Date: 2025-04-30; Why it matters causally: Indicates a potential slowdown in consumer demand, a key driver of inflation. Source: [art_finance_20250430_004_39246170]\n- **E3:** Title: April 2025 PCE Reading Shows Cooling Inflation as... - Cheddar Flow; Date: 2025-05-30; Why it matters causally: Directly confirms the lower-than-expected PCE reading for April 2025. Source: [art_finance_20250530_003_2ebb7272]\n- **E4:** Title: The Effects of Tariffs on Inflation and Production Costs; Date: 2025-05-19; Why it matters causally: Explores a factor influencing price levels, which, though potentially inflationary, did not drive the PCE above the threshold. Source: [art_finance_20250519_002_4db0bd67]\n- **E5:** Title: Does Monetary Policy Tightening Reduce Inflation?; Date: 2025-02-03; Why it matters causally: Highlights the Federal Reserve's active role in curbing inflation, which set the overarching economic context. Source: [art_finance_20250203_004_d8354ac7]\n\n## Evidence Mapping Table\n| Claim/Event | Article IDs | Date Support | Confidence (0-1) | Notes |\n|---|---|---|---|---|\n| PCE did not reach 0.312% in April 2025 | art_finance_20250530_003_2ebb7272 | 2025-05-30 | 1.0 | Directly reported in the article. |\n| Easing inflation in early 2025 | art_finance_20250312_002_7a970dc7 | 2025-03-12 | 0.9 | News report indicating a downward trend. |\n| Impact of Federal Reserve's monetary policy | art_finance_20250203_004_d8354ac7, art_finance_20250225_006_3c4d6813 | 2025-02-03, 2025-02-25 | 0.9 | Analysis and discussion of policy effectiveness. |\n| Consumer spending trends in 2025 | art_finance_20250430_004_39246170 | 2025-04-30 | 0.8 | Discussion of trends, implies potential demand shifts. |\n| Tariffs' effect on inflation | art_finance_20250519_002_4db0bd67 | 2025-05-19 | 0.7 | Discussion of a potentially inflationary factor. |\n| Persistent high costs for energy, food, rent | art_finance_20250430_005_07ca1659 | 2025-04-30 | 0.8 | Indicates localized inflationary pressures, but not overall PCE exceeding threshold. |\n\n## Uncertainties And Alternative Paths\nOne uncertainty remains regarding the precise month-over-month PCE growth in April 2025 and the exact factors that contributed to it being below 0.312%. The available articles confirm a cooling trend but do not provide a detailed breakdown of the components that prevented the specific threshold from being met. An alternative path could have seen a stronger rebound in consumer spending or a sudden spike in energy prices (beyond what was observed) that could have pushed the PCE higher. Additionally, if the Federal Reserve had signaled an earlier pivot to interest rate cuts or softened its hawkish stance more significantly, inflationary expectations might have risen, leading to a different outcome. However, given the evidence, it appears the cumulative effects of disinflationary policies and moderating demand prevailed.",
+    "graph_built": true,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.202805Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "us_pce_price_monthly_change",
+        "event_cluster_id": "us_pce_prices_2025-04",
+        "category": "macro",
+        "original_domain": "macro",
+        "subdomain": "consumer prices",
+        "entity": "United States PCE price index",
+        "region": "US",
+        "target_metric": "monthly PCE-price change",
+        "target_period": "2025-04",
+        "forecast_cutoff": "2025-04-30T00:00:00+00:00",
+        "forecast_date_options": [
+          "2025-04-30"
+        ],
+        "resolution_available_at": "2025-06-04T23:59:59+00:00",
+        "horizon_days": 35,
+        "source_type": "fred_series_snapshot",
+        "source_series_id": "PCEPI",
+        "source_homepage": "https://fred.stlouisfed.org/series/PCEPI",
+        "comparison_rule": "target change >= median of 4 prior observed changes",
+        "comparison_threshold": 0.312428,
+        "comparison_thresholds": null,
+        "change_unit": "percent",
+        "threshold_observation_dates": [
+          "2024-11-01",
+          "2024-12-01",
+          "2025-01-01",
+          "2025-02-01",
+          "2025-03-01"
+        ],
+        "split": "memory",
+        "family_position": 5,
+        "family_size": 7,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "no",
+        "resolved_class": "no",
+        "resolution_value": 126.15,
+        "target_change": 0.16595072,
+        "source_observation_date": "2025-04-01",
+        "resolution_document": {
+          "publisher": "Federal Reserve Bank of St. Louis (FRED)",
+          "title": "Personal Consumption Expenditures: Chain-type Price Index",
+          "url": "https://fred.stlouisfed.org/series/PCEPI"
+        },
+        "source_download_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PCEPI&cosd=2019-01-01&coed=2026-06-30",
+        "source_sha256": "e2324358874ed7b15b98265e420878f48272635cc4ae0b0220144142083500fc",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_8a01bc20fc4a",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 12,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_20230510_009_8b2d3285",
+        "title": "The Impacts of Supply Chain Disruptions on Inflation - Federal Reserve Bank of Cleveland",
+        "url": "https://www.clevelandfed.org/publications/economic-commentary/2023/ec-202308-impacts-supply-chain-disruptions-on-inflation",
+        "source": "clevelandfed.org",
+        "published_date": "2023-05-10T15:56:56+00:00"
+      },
+      {
+        "id": "art_finance_20250519_002_4db0bd67",
+        "title": "The Effects of Tariffs on Inflation and Production Costs - Federal Reserve Bank of San Francisco",
+        "url": "https://www.frbsf.org/research-and-insights/publications/economic-letter/2025/05/effects-of-tariffs-on-inflation-and-production-costs",
+        "source": "frbsf.org",
+        "published_date": "2025-05-19T10:00:00-07:00"
+      },
+      {
+        "id": "art_finance_20250417_003_db74781d",
+        "title": "Which Way for the Inflation Winds? | Tom Barkin - Federal Reserve Bank of Richmond",
+        "url": "https://www.richmondfed.org/publications/research/econ_focus/2025/q1-q2_presidents_message",
+        "source": "richmondfed.org",
+        "published_date": "2025-04-17T00:55:22+00:00"
+      },
+      {
+        "id": "art_finance_20250203_004_d8354ac7",
+        "title": "Does Monetary Policy Tightening Reduce Inflation? - Federal Reserve Bank of San Francisco",
+        "url": "https://www.frbsf.org/research-and-insights/publications/economic-letter/2025/02/does-monetary-policy-tightening-reduce-inflation",
+        "source": "frbsf.org",
+        "published_date": "2025-02-03T10:00:00-08:00"
+      },
+      {
+        "id": "art_finance_20250430_005_07ca1659",
+        "title": "US Inflation Rate In 2026 - Energy, Rent And Food Keep Pressure On Households - North American Community Hub - NCHStats",
+        "url": "https://nchstats.com/us-inflation",
+        "source": "nchstats.com",
+        "published_date": "2025-04-30T11:07:09+00:00"
+      },
+      {
+        "id": "art_finance_20080723_002_1fbeb069",
+        "title": "Current US Inflation Rates: 2000-2025",
+        "url": "https://www.usinflationcalculator.com/inflation/current-inflation-rates",
+        "source": "usinflationcalculator.com",
+        "published_date": "2008-07-23T03:07:58+00:00"
+      },
+      {
+        "id": "art_finance_20250312_002_7a970dc7",
+        "title": "Easing Inflation In February 2025 Supports Fed Interest Rate Cuts",
+        "url": "https://www.forbes.com/sites/jasonschenker/2025/03/12/easing-inflation-in-february-2025-supports-fed-interest-rate-cuts",
+        "source": "forbes.com",
+        "published_date": "2025-03-12T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20250530_003_2ebb7272",
+        "title": "April 2025 PCE Reading Shows Cooling Inflation as... - Cheddar Flow",
+        "url": "https://www.cheddarflow.com/hi/blog/april-2025-pce-reading-shows-cooling-inflation-as-fed-eyes-tariff-impact",
+        "source": "cheddarflow.com",
+        "published_date": "2025-05-30T13:17:15+00:00"
+      },
+      {
+        "id": "art_finance_20250430_004_39246170",
+        "title": "5 Consumer Trends Shaping Spending Patterns in 2025 - U.S. Chamber of Commerce",
+        "url": "https://www.uschamber.com/co/good-company/the-leap/trends-shaping-consumer-spending",
+        "source": "uschamber.com",
+        "published_date": "2025-04-30T11:48:00-04:00"
+      },
+      {
+        "id": "art_finance_20250212_005_fc7f1ff2",
+        "title": "U.S. inflation increases to 3 percent, groceries and gasoline prices heading higher - PBS",
+        "url": "https://www.fanverse.org/threads/u-s-inflation-increases-to-3-percent-groceries-and-gasoline-prices-heading-higher.1340825",
+        "source": "fanverse.org",
+        "published_date": "2025-02-12T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20250225_006_3c4d6813",
+        "title": "The Road to 2% Inflation: Are We There Yet? - Federal Reserve Bank of St. Louis",
+        "url": "https://www.forexfactory.com/news/1329460-us-the-road-to-2-inflation-are-we",
+        "source": "forexfactory.com",
+        "published_date": "2025-02-25T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240919_007_217322b4",
+        "title": "The Inflation Reduction Act Lives Up to Its Name - Center for American Progress",
+        "url": "https://unravelingeconomics.substack.com/p/the-inflation-reduction-act-lives",
+        "source": "unravelingeconomics.substack.com",
+        "published_date": "2024-09-19T07:00:00+00:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_8a01bc20fc4a",
+      "events_count": 10,
+      "hypotheses_count": 11
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 3,
+      "avg_depth": 2.5,
+      "quality_score": 0.75,
+      "depth_score": 1.0,
+      "confidence_score": 0.72,
+      "strength_score": 0.63,
+      "evidence_score": 0.09,
+      "event_count": 10,
+      "hypothesis_count": 11
+    },
+    "nodes": [
+      {
+        "id": "evt_117ba5d6915e",
+        "title": "Yes - As of 2025-04-30, will the monthly PCE-price chang",
+        "description": "Positive resolution: As of 2025-04-30, will the monthly PCE-price change for United States PCE price index in 2025-04 be at least 0.312 percent?",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-06-04T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_us_pce_price_monthly_change_2025_04",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "positive_resolution",
+        "outcome_option_index": null,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T01:46:58.437338Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_8a01bc20fc4a",
+        "title": "No - As of 2025-04-30, will the monthly PCE-price chang",
+        "description": "Negative resolution: As of 2025-04-30, will the monthly PCE-price change for United States PCE price index in 2025-04 be at least 0.312 percent?",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-06-04T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_us_pce_price_monthly_change_2025_04",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "negative_resolution",
+        "outcome_option_index": null,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T01:46:58.437349Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20250203_005_5bd92987",
+        "title": "Does Monetary Policy Tightening Reduce Inflation?",
+        "description": "Highlights the Federal Reserve's active role in curbing inflation, which set the overarching economic context.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-02-03T10:00:00-08:00",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250203_004_d8354ac7"
+        ],
+        "extracted_for_question_id": "v3_us_pce_price_monthly_change_2025_04",
+        "source_article_id": "art_finance_20250203_004_d8354ac7",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_pce_price_monthly_change_2025_04"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T01:58:31.273415Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20250212_007_08fe8e96",
+        "title": "U.S. inflation increases to 3 percent, groceries and gasoline prices heading higher",
+        "description": "Reports an increase in U.S. inflation to 3 percent, with rising grocery and gasoline prices.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-02-12T08:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250212_005_fc7f1ff2"
+        ],
+        "extracted_for_question_id": "v3_us_pce_price_monthly_change_2025_04",
+        "source_article_id": "art_finance_20250212_005_fc7f1ff2",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_pce_price_monthly_change_2025_04"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T01:58:31.345341Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20250225_008_0e1781a3",
+        "title": "The Road to 2% Inflation: Are We There Yet?",
+        "description": "Discussion by the Federal Reserve Bank of St. Louis on the journey towards 2% inflation, indicating ongoing efforts to control price increases.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-02-25T08:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250225_006_3c4d6813"
+        ],
+        "extracted_for_question_id": "v3_us_pce_price_monthly_change_2025_04",
+        "source_article_id": "art_finance_20250225_006_3c4d6813",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_pce_price_monthly_change_2025_04"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T01:58:31.380511Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20250312_001_bf3ed04d",
+        "title": "Easing Inflation In February 2025 Supports Fed Interest Rate Cuts",
+        "description": "News report indicating a downward trend in inflation, influencing expectations for future price changes and monetary policy.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-03-12T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250312_002_7a970dc7"
+        ],
+        "extracted_for_question_id": "v3_us_pce_price_monthly_change_2025_04",
+        "source_article_id": "art_finance_20250312_002_7a970dc7",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_pce_price_monthly_change_2025_04"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T01:58:31.129813Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20250417_009_9c12fe39",
+        "title": "Which Way for the Inflation Winds?",
+        "description": "Federal Reserve Bank of Richmond discusses the direction of inflation, suggesting uncertainty but an overall trend towards cooling.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-04-17T00:55:22Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250417_003_db74781d"
+        ],
+        "extracted_for_question_id": "v3_us_pce_price_monthly_change_2025_04",
+        "source_article_id": "art_finance_20250417_003_db74781d",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_pce_price_monthly_change_2025_04"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T01:58:31.419937Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20250430_002_86556311",
+        "title": "5 Consumer Trends Shaping Spending Patterns in 2025",
+        "description": "Discussion of trends, implies potential slowdown in consumer demand, a key driver of inflation.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-04-30T11:48:00-04:00",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250430_004_39246170"
+        ],
+        "extracted_for_question_id": "v3_us_pce_price_monthly_change_2025_04",
+        "source_article_id": "art_finance_20250430_004_39246170",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_pce_price_monthly_change_2025_04"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T01:58:31.164810Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20250430_006_0466674f",
+        "title": "US Inflation Rate In 2026 – Energy, Rent And Food Keep Pressure On Households",
+        "description": "Indicates localized inflationary pressures, but not overall PCE exceeding threshold.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-04-30T11:07:09Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250430_005_07ca1659"
+        ],
+        "extracted_for_question_id": "v3_us_pce_price_monthly_change_2025_04",
+        "source_article_id": "art_finance_20250430_005_07ca1659",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_pce_price_monthly_change_2025_04"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T01:58:31.308760Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20250519_004_35b07260",
+        "title": "The Effects of Tariffs on Inflation and Production Costs",
+        "description": "Explores a factor influencing price levels, which, though potentially inflationary, did not drive the PCE above the threshold.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-05-19T10:00:00-07:00",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250519_002_4db0bd67"
+        ],
+        "extracted_for_question_id": "v3_us_pce_price_monthly_change_2025_04",
+        "source_article_id": "art_finance_20250519_002_4db0bd67",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_pce_price_monthly_change_2025_04"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T01:58:31.237559Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20250530_003_477354da",
+        "title": "April 2025 PCE Reading Shows Cooling Inflation",
+        "description": "Directly confirms the lower-than-expected PCE reading for April 2025.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-05-30T13:17:15Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250530_003_2ebb7272"
+        ],
+        "extracted_for_question_id": "v3_us_pce_price_monthly_change_2025_04",
+        "source_article_id": "art_finance_20250530_003_2ebb7272",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_pce_price_monthly_change_2025_04"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T01:58:31.199112Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_001_51825686",
+        "source_event_id": "evt_finance_20250203_005_5bd92987",
+        "target_event_id": "evt_finance_20250312_001_bf3ed04d",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Monetary policy tightening by the Federal Reserve (E5) is a primary cause of easing inflation (E1).",
+        "evidence_article_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2025_04"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T01:58:31.451296Z",
+        "last_confirmed_at": "2026-07-25T01:58:31.451296Z"
+      },
+      {
+        "id": "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_002_c5bac482",
+        "source_event_id": "evt_finance_20250312_001_bf3ed04d",
+        "target_event_id": "evt_finance_20250530_003_477354da",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Easing inflation in February (E1) directly contributed to the cooling PCE reading in April (E3).",
+        "evidence_article_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2025_04"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T01:58:31.470968Z",
+        "last_confirmed_at": "2026-07-25T01:58:31.470968Z"
+      },
+      {
+        "id": "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_003_2da29ba0",
+        "source_event_id": "evt_finance_20250430_002_86556311",
+        "target_event_id": "evt_finance_20250530_003_477354da",
+        "relation_type": "causes",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Shifts in consumer spending patterns (E2) can lead to a slowdown in demand, contributing to cooling inflation (E3).",
+        "evidence_article_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2025_04"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T01:58:31.490441Z",
+        "last_confirmed_at": "2026-07-25T01:58:31.490441Z"
+      },
+      {
+        "id": "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_004_846e60b6",
+        "source_event_id": "evt_finance_20250203_005_5bd92987",
+        "target_event_id": "evt_finance_20250417_009_9c12fe39",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "The Federal Reserve's monetary policy tightening (E5) influences the overall direction of inflation (E9), leading to a cooling trend.",
+        "evidence_article_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2025_04"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T01:58:31.509821Z",
+        "last_confirmed_at": "2026-07-25T01:58:31.509821Z"
+      },
+      {
+        "id": "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_005_99f55de0",
+        "source_event_id": "evt_finance_20250417_009_9c12fe39",
+        "target_event_id": "evt_finance_20250530_003_477354da",
+        "relation_type": "causes",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "An overall trend towards cooling inflation (E9) contributes to a lower-than-expected PCE reading (E3).",
+        "evidence_article_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2025_04"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T01:58:31.534511Z",
+        "last_confirmed_at": "2026-07-25T01:58:31.534511Z"
+      },
+      {
+        "id": "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_006_a44b8e3a",
+        "source_event_id": "evt_finance_20250430_006_0466674f",
+        "target_event_id": "evt_finance_20250530_003_477354da",
+        "relation_type": "inhibits",
+        "strength": 0.5,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "Persistent high costs for energy, rent, and food (E6) could have inhibited the cooling of PCE (E3), but were ultimately overwhelmed by other factors.",
+        "evidence_article_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2025_04"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T01:58:31.558226Z",
+        "last_confirmed_at": "2026-07-25T01:58:31.558226Z"
+      },
+      {
+        "id": "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_007_5d386e68",
+        "source_event_id": "evt_finance_20250519_004_35b07260",
+        "target_event_id": "evt_finance_20250530_003_477354da",
+        "relation_type": "inhibits",
+        "strength": 0.4,
+        "confidence": 0.5,
+        "time_lag_hours": null,
+        "reasoning": "The potential inflationary pressures from tariffs (E4) could have inhibited the cooling of PCE (E3), but did not drive it above the threshold.",
+        "evidence_article_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2025_04"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T01:58:31.581146Z",
+        "last_confirmed_at": "2026-07-25T01:58:31.581146Z"
+      },
+      {
+        "id": "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_008_6d417127",
+        "source_event_id": "evt_finance_20250212_007_08fe8e96",
+        "target_event_id": "evt_finance_20250312_001_bf3ed04d",
+        "relation_type": "inhibits",
+        "strength": 0.5,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "An increase in inflation earlier in the year (E7) could have inhibited the easing inflation trend (E1), but the trend still prevailed.",
+        "evidence_article_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2025_04"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T01:58:31.601370Z",
+        "last_confirmed_at": "2026-07-25T01:58:31.601370Z"
+      },
+      {
+        "id": "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_009_662685d5",
+        "source_event_id": "evt_finance_20250225_008_0e1781a3",
+        "target_event_id": "evt_finance_20250312_001_bf3ed04d",
+        "relation_type": "enables",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Ongoing efforts to control price increases and the journey towards 2% inflation (E8) enabled the easing inflation trend (E1).",
+        "evidence_article_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2025_04"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T01:58:31.621902Z",
+        "last_confirmed_at": "2026-07-25T01:58:31.621902Z"
+      },
+      {
+        "id": "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_010_815ac2af",
+        "source_event_id": "evt_finance_20250225_008_0e1781a3",
+        "target_event_id": "evt_finance_20250530_003_477354da",
+        "relation_type": "causes",
+        "strength": 0.5,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "The Federal Reserve's efforts to control price increases (E8) contributed to the cooling PCE reading (E3).",
+        "evidence_article_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2025_04"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T01:58:31.663939Z",
+        "last_confirmed_at": "2026-07-25T01:58:31.663939Z"
+      },
+      {
+        "id": "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015841_011_544b8220",
+        "source_event_id": "evt_finance_20250530_003_477354da",
+        "target_event_id": "evt_8a01bc20fc4a",
+        "relation_type": "causes",
+        "strength": 1.0,
+        "confidence": 1.0,
+        "time_lag_hours": null,
+        "reasoning": "The April 2025 PCE reading showing cooling inflation (E3) directly caused the actual outcome of the monthly PCE-price change not reaching at least 0.312 percent.",
+        "evidence_article_ids": [
+          "art_finance_20250530_003_2ebb7272"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2025_04"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T01:58:41.406562Z",
+        "last_confirmed_at": "2026-07-25T01:58:41.406562Z"
+      }
+    ],
+    "outcome_impacts": [
+      {
+        "id": "imp_984a1a83",
+        "event_id": "evt_finance_20250312_001_bf3ed04d",
+        "outcome_event_id": "evt_8a01bc20fc4a",
+        "question_id": "v3_us_pce_price_monthly_change_2025_04",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "Easing inflation in February (E1) directly contributed to the cooling PCE reading in April, making the outcome (PCE not reaching 0.312%) more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2025_04"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T01:58:38.886246Z",
+        "last_confirmed_at": "2026-07-25T01:58:38.886246Z"
+      },
+      {
+        "id": "imp_2cbc7d3e",
+        "event_id": "evt_finance_20250430_002_86556311",
+        "outcome_event_id": "evt_8a01bc20fc4a",
+        "question_id": "v3_us_pce_price_monthly_change_2025_04",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Shifts in consumer spending patterns (E2) can lead to a slowdown in demand, contributing to cooling inflation, making the outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2025_04"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T01:58:38.897171Z",
+        "last_confirmed_at": "2026-07-25T01:58:38.897171Z"
+      },
+      {
+        "id": "imp_9d870ba0",
+        "event_id": "evt_finance_20250530_003_477354da",
+        "outcome_event_id": "evt_8a01bc20fc4a",
+        "question_id": "v3_us_pce_price_monthly_change_2025_04",
+        "impact_direction": "positive",
+        "impact_magnitude": 1.0,
+        "confidence": 1.0,
+        "reasoning": "This event directly states that the April 2025 PCE reading showed cooling inflation, which means it did not reach at least 0.312 percent, thus confirming the actual outcome (False).",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2025_04"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T01:58:38.908162Z",
+        "last_confirmed_at": "2026-07-25T01:58:38.908162Z"
+      },
+      {
+        "id": "imp_df42f009",
+        "event_id": "evt_finance_20250519_004_35b07260",
+        "outcome_event_id": "evt_8a01bc20fc4a",
+        "question_id": "v3_us_pce_price_monthly_change_2025_04",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.4,
+        "confidence": 0.5,
+        "reasoning": "The potential inflationary pressures from tariffs (E4) could have pushed the PCE higher, thus making the outcome (PCE not reaching 0.312%) less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2025_04"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T01:58:38.918319Z",
+        "last_confirmed_at": "2026-07-25T01:58:38.918319Z"
+      },
+      {
+        "id": "imp_946d76a9",
+        "event_id": "evt_finance_20250203_005_5bd92987",
+        "outcome_event_id": "evt_8a01bc20fc4a",
+        "question_id": "v3_us_pce_price_monthly_change_2025_04",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "Monetary policy tightening by the Federal Reserve (E5) is a primary cause of easing inflation, making the outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2025_04"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T01:58:38.928774Z",
+        "last_confirmed_at": "2026-07-25T01:58:38.928774Z"
+      },
+      {
+        "id": "imp_d508498e",
+        "event_id": "evt_finance_20250430_006_0466674f",
+        "outcome_event_id": "evt_8a01bc20fc4a",
+        "question_id": "v3_us_pce_price_monthly_change_2025_04",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.5,
+        "confidence": 0.6,
+        "reasoning": "Persistent high costs for energy, rent, and food (E6) could have inhibited the cooling of PCE, making the outcome less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2025_04"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T01:58:38.938736Z",
+        "last_confirmed_at": "2026-07-25T01:58:38.938736Z"
+      },
+      {
+        "id": "imp_fd97c779",
+        "event_id": "evt_finance_20250212_007_08fe8e96",
+        "outcome_event_id": "evt_8a01bc20fc4a",
+        "question_id": "v3_us_pce_price_monthly_change_2025_04",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.5,
+        "confidence": 0.6,
+        "reasoning": "An increase in inflation earlier in the year (E7) could have pushed the PCE higher, making the outcome less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2025_04"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T01:58:38.949281Z",
+        "last_confirmed_at": "2026-07-25T01:58:38.949281Z"
+      },
+      {
+        "id": "imp_c14e4a98",
+        "event_id": "evt_finance_20250225_008_0e1781a3",
+        "outcome_event_id": "evt_8a01bc20fc4a",
+        "question_id": "v3_us_pce_price_monthly_change_2025_04",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Ongoing efforts to control price increases and the journey towards 2% inflation (E8) enabled the easing inflation trend, making the outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2025_04"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T01:58:38.959030Z",
+        "last_confirmed_at": "2026-07-25T01:58:38.959030Z"
+      },
+      {
+        "id": "imp_a2cd8a01",
+        "event_id": "evt_finance_20250417_009_9c12fe39",
+        "outcome_event_id": "evt_8a01bc20fc4a",
+        "question_id": "v3_us_pce_price_monthly_change_2025_04",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "An overall trend towards cooling inflation (E9) contributes to a lower-than-expected PCE reading, making the outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2025_04"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T01:58:38.971051Z",
+        "last_confirmed_at": "2026-07-25T01:58:38.971051Z"
+      }
+    ]
+  }
+}

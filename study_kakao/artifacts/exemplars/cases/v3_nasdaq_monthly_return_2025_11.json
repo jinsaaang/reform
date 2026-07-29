@@ -1,0 +1,60 @@
+{
+  "schema_version": "fixed_exemplar_case",
+  "status": "success",
+  "question_id": "v3_nasdaq_monthly_return_2025_11",
+  "retrieved_memory_question_id": "v3_nasdaq_monthly_return_2024_09",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "market_fx_credit",
+      "target_operation": "predict_range",
+      "option_geometry": "bucketed_range"
+    },
+    "historical_question": "As of 2024-09-01, which range will the monthly NASDAQ Composite return for NASDAQ Composite index in 2024-09 fall into?",
+    "historical_cutoff": "2024-09-01T00:00:00+00:00",
+    "target_semantics": "The monthly return of the NASDAQ Composite index for September 2024.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20240517_002_fb949451",
+        "takeaway": "Market sentiment analysis in mid-Q2 2024 indicated a focus on technology stocks and their performance.",
+        "why_predictive": "Suggests ongoing attention to the technology sector, which heavily influences the NASDAQ Composite."
+      },
+      {
+        "article_id": "art_finance_20210731_006_4f9e51d6",
+        "takeaway": "Big Tech earnings in Q2 2021 were strong, but there were underlying concerns about future performance.",
+        "why_predictive": "Highlights that even strong earnings can be accompanied by future worries, a potential driver of volatility."
+      },
+      {
+        "article_id": "art_finance_20200602_002_beb71b59",
+        "takeaway": "The Nasdaq-100 showed resilience and performance during the initial phase of the COVID-19 pandemic.",
+        "why_predictive": "Provides historical context for the Nasdaq's behavior during periods of economic disruption."
+      },
+      {
+        "article_id": "art_finance_20230726_003_5a4aad44",
+        "takeaway": "In Q2 2023, the Nasdaq-100 outperformed the S&P 500.",
+        "why_predictive": "Indicates a period of strength for technology-heavy indices relative to broader markets."
+      },
+      {
+        "article_id": "art_finance_20221102_011_22996251",
+        "takeaway": "In Q3 2022, the Nasdaq-100's performance was analyzed against the S&P 500.",
+        "why_predictive": "Shows continued focus on the relative performance of the Nasdaq-100, a key component of the NASDAQ Composite."
+      },
+      {
+        "article_id": "art_finance_20080723_002_1fbeb069",
+        "takeaway": "Historical inflation rates from 2000-2025 are available, with a focus on current rates.",
+        "why_predictive": "Inflation is a key macroeconomic factor influencing interest rates and equity valuations, particularly for growth stocks like those in the NASDAQ."
+      }
+    ],
+    "expert_reasoning": [
+      "The NASDAQ Composite is heavily weighted towards technology stocks, making it sensitive to factors affecting the tech sector and broader market sentiment.",
+      "Recent performance data (Q2 2023, Q3 2022) suggests the Nasdaq-100 has shown strength relative to the S&P 500, indicating potential for positive returns.",
+      "However, historical analysis of tech earnings (2021) shows that strong performance can be accompanied by underlying concerns, suggesting potential for volatility.",
+      "Inflationary pressures (as indicated by historical data) are a key driver of interest rates, which in turn impact the valuation of growth stocks.",
+      "Market sentiment analysis (mid-Q2 2024) points to continued focus on technology, but the nature of this sentiment (positive or negative) requires further assessment."
+    ],
+    "counterevidence": "While there's evidence of Nasdaq's relative strength and focus on tech, the historical context of tech earnings (art_finance_20210731_006_4f9e51d6) suggests that strong performance can mask future worries, and the impact of inflation on growth stock valuations (art_finance_20080723_002_1fbeb069) remains a significant risk factor.",
+    "prospective_target_estimate": "Given the mixed signals of recent strength versus potential underlying risks and the influence of inflation, the target return is likely to be within the recent range, but with a notable degree of uncertainty.",
+    "option_mapping": "The forecast suggests the monthly NASDAQ Composite return for September 2024 will fall 'within recent range'.",
+    "uncertainty": "The forecast is subject to uncertainty due to the conflicting signals between recent positive performance of tech stocks and the potential for future concerns highlighted in earnings reports, as well as the ongoing impact of inflation on growth stock valuations.",
+    "dag_derived_lesson": "Macroeconomic factors like inflation and sector-specific sentiment, while providing context, can present conflicting signals. Historical performance trends require careful consideration of underlying risks and potential future headwinds, rather than solely relying on past positive outcomes."
+  }
+}

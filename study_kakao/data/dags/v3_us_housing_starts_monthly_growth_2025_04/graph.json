@@ -1,0 +1,162 @@
+{
+  "schema_version": "1.0",
+  "actual_outcome_event_id": "node_2",
+  "graph": {
+    "nodes": [
+      {
+        "id": "node_5",
+        "label": "A 2023 analyst prediction called for a housing-market correction",
+        "event_type": "indicator",
+        "occurred_date": "2023-07-03",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "art_finance_20230703_004_9b39470c"
+        ]
+      },
+      {
+        "id": "node_6",
+        "label": "Household cost pressures could have restrained housing demand",
+        "event_type": "indicator",
+        "occurred_date": "2025-04-30",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "art_finance_20250430_002_549ed878"
+        ]
+      },
+      {
+        "id": "node_7",
+        "label": "Mortgage-rate and Treasury-yield forecasts shaped borrowing-cost expectations",
+        "event_type": "indicator",
+        "occurred_date": "2025-05-13",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "art_finance_20250513_003_65738c15"
+        ]
+      },
+      {
+        "id": "node_4",
+        "label": "April building permits weakened",
+        "event_type": "indicator",
+        "occurred_date": "2025-05-16",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "art_finance_20250516_002_4d2af545"
+        ]
+      },
+      {
+        "id": "node_3",
+        "label": "Reported U.S. housing starts rose in April",
+        "event_type": "indicator",
+        "occurred_date": "2025-05-16",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "art_finance_20250516_002_4d2af545"
+        ]
+      },
+      {
+        "id": "node_1",
+        "label": "April housing-starts monthly growth measured 4.012%",
+        "event_type": "measurement",
+        "occurred_date": "2025-05-21",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_cf36205f6a84c4f8"
+        ]
+      },
+      {
+        "id": "node_2",
+        "label": "Resolution: housing-starts growth was within the recent range",
+        "event_type": "outcome",
+        "occurred_date": "2025-05-21",
+        "is_outcome": true,
+        "is_actual_outcome": true,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_cf36205f6a84c4f8"
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_4",
+        "source": "node_5",
+        "target": "node_3",
+        "relationship": "contrasts_with",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "art_finance_20230703_004_9b39470c",
+          "art_finance_20250516_002_4d2af545"
+        ],
+        "rationale": "The older crash prediction contrasts with the subsequently reported April rise and is not treated as a driver."
+      },
+      {
+        "id": "edge_5",
+        "source": "node_6",
+        "target": "node_3",
+        "relationship": "inhibits",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "art_finance_20250430_002_549ed878"
+        ],
+        "rationale": "Household cost pressure could restrain housing demand, but no effect on April starts is established."
+      },
+      {
+        "id": "edge_6",
+        "source": "node_7",
+        "target": "node_3",
+        "relationship": "contributes_to",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "art_finance_20250513_003_65738c15"
+        ],
+        "rationale": "Borrowing-cost expectations can influence starts, but the forecast does not explain the observed April rise."
+      },
+      {
+        "id": "edge_3",
+        "source": "node_4",
+        "target": "node_3",
+        "relationship": "contrasts_with",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "art_finance_20250516_002_4d2af545"
+        ],
+        "rationale": "The same report documents weakening permits alongside rising starts, making permits contemporaneous counterevidence rather than a cause."
+      },
+      {
+        "id": "edge_1",
+        "source": "node_3",
+        "target": "node_1",
+        "relationship": "quantified_as",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "art_finance_20250516_002_4d2af545",
+          "ev_cf36205f6a84c4f8"
+        ],
+        "rationale": "The reported rise is quantified by the official series as a 4.012% monthly increase."
+      },
+      {
+        "id": "edge_2",
+        "source": "node_1",
+        "target": "node_2",
+        "relationship": "classifies_as",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_cf36205f6a84c4f8"
+        ],
+        "rationale": "A 4.012% change lies between -6.192% inclusive and 9.938% exclusive, so it resolves within the recent range."
+      }
+    ]
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "schema_version": "1.0",
+  "actual_outcome_event_id": "node_5",
+  "graph": {
+    "nodes": [
+      {
+        "id": "node_6",
+        "label": "Professional and business services contributed strongly to January job gains",
+        "event_type": "indicator",
+        "occurred_date": "2024-02-02",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_2d0401913fd1ae36"
+        ]
+      },
+      {
+        "id": "node_4",
+        "label": "January payroll gains exceeded economists' forecasts",
+        "event_type": "indicator",
+        "occurred_date": "2024-02-02",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_95a022c2fdbcbdc1",
+          "ev_8dfdcd895d9c3fb6",
+          "ev_0c2a9250800a9f54"
+        ]
+      },
+      {
+        "id": "node_1",
+        "label": "Official reports recorded a 353,000 January nonfarm-payroll gain",
+        "event_type": "indicator",
+        "occurred_date": "2024-02-02",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_a0482780857e5c57",
+          "ev_2d0401913fd1ae36",
+          "ev_0864e6b3228cd62a"
+        ]
+      },
+      {
+        "id": "node_7",
+        "label": "The strong jobs report reduced near-term rate-cut enthusiasm",
+        "event_type": "indicator",
+        "occurred_date": "2024-02-02",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_e56ea6bb15e0dc5c"
+        ]
+      },
+      {
+        "id": "node_2",
+        "label": "January monthly payroll growth was 0.112 percent",
+        "event_type": "indicator",
+        "occurred_date": "2024-02-21",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_d37a716ae75fd6db"
+        ]
+      },
+      {
+        "id": "node_5",
+        "label": "Resolved outcome: within recent range",
+        "event_type": "outcome",
+        "occurred_date": "2024-02-21",
+        "is_outcome": true,
+        "is_actual_outcome": true,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_d37a716ae75fd6db"
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_1",
+        "source": "node_6",
+        "target": "node_1",
+        "relationship": "contributes_to",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_2d0401913fd1ae36"
+        ],
+        "rationale": "The BLS sector detail directly identifies professional and business services as part of the total gain."
+      },
+      {
+        "id": "edge_2",
+        "source": "node_4",
+        "target": "node_1",
+        "relationship": "provides_context_for",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_95a022c2fdbcbdc1",
+          "ev_8dfdcd895d9c3fb6",
+          "ev_a0482780857e5c57"
+        ],
+        "rationale": "Forecast comparisons contextualize the reported gain but do not cause it."
+      },
+      {
+        "id": "edge_3",
+        "source": "node_1",
+        "target": "node_2",
+        "relationship": "input_to",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_a0482780857e5c57",
+          "ev_d37a716ae75fd6db"
+        ],
+        "rationale": "The official payroll level change is an input to the monthly percentage-growth calculation."
+      },
+      {
+        "id": "edge_4",
+        "source": "node_1",
+        "target": "node_7",
+        "relationship": "triggers",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_e56ea6bb15e0dc5c"
+        ],
+        "rationale": "The cited commentary attributes the rate-cut reassessment to the strong report."
+      },
+      {
+        "id": "edge_5",
+        "source": "node_2",
+        "target": "node_5",
+        "relationship": "maps_to",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_d37a716ae75fd6db"
+        ],
+        "rationale": "The 0.112 percent measurement maps directly to within recent range under the registered boundaries."
+      }
+    ]
+  }
+}

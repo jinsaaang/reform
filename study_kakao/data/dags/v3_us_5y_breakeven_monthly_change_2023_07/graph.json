@@ -1,0 +1,1334 @@
+{
+  "question": {
+    "id": "v3_us_5y_breakeven_monthly_change_2023_07",
+    "question_text": "As of 2023-07-01, which range will the monthly 5-year breakeven change for United States 5-year breakeven inflation rate in 2023-07 fall into?",
+    "question_type": "mcq",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 3,
+    "resolution_date": "2023-08-15T23:59:59Z",
+    "estimated_start_time": "2023-07-01T00:00:00Z",
+    "ground_truth": "above recent range",
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: United States 5-year breakeven inflation rate\nTarget period: 2023-07\nFinancial area: monetary_policy / inflation expectations\nRegion: US\nPre-registered recent-range boundaries: lower -0.185, upper -0.017 percentage points.",
+    "resolution_criteria": "Use FRED series T5YIE. Compute the change from the previous monthly observation using mode 'absolute'. Resolve 'below recent range' below -0.185, 'within recent range' from -0.185 inclusive to -0.017 exclusive, and 'above recent range' at or above -0.017 percentage points.",
+    "resolution_reasoning": "The snapshotted target change was 0.09 percentage points; it resolved to 'above recent range'.",
+    "options": [
+      "below recent range",
+      "within recent range",
+      "above recent range"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": null,
+    "graph_built": false,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.205242Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "us_5y_breakeven_monthly_change",
+        "event_cluster_id": "inflation_expectations_2023-07",
+        "category": "monetary_policy",
+        "original_domain": "monetary_policy",
+        "subdomain": "inflation expectations",
+        "entity": "United States 5-year breakeven inflation rate",
+        "region": "US",
+        "target_metric": "monthly 5-year breakeven change",
+        "target_period": "2023-07",
+        "forecast_cutoff": "2023-07-01T00:00:00+00:00",
+        "forecast_date_options": [
+          "2023-07-01"
+        ],
+        "resolution_available_at": "2023-08-15T23:59:59+00:00",
+        "horizon_days": 45,
+        "source_type": "fred_series_snapshot",
+        "source_series_id": "T5YIE",
+        "source_homepage": "https://fred.stlouisfed.org/series/T5YIE",
+        "comparison_rule": "target change bucketed by the lower and upper quartiles of the 8 prior observed changes",
+        "comparison_threshold": -0.105,
+        "comparison_thresholds": {
+          "lower": -0.185,
+          "upper": -0.0175
+        },
+        "change_unit": "percentage points",
+        "threshold_observation_dates": [
+          "2022-10-31",
+          "2022-11-30",
+          "2022-12-30",
+          "2023-01-31",
+          "2023-02-28",
+          "2023-03-31",
+          "2023-04-28",
+          "2023-05-31",
+          "2023-06-30"
+        ],
+        "split": "memory",
+        "family_position": 2,
+        "family_size": 8,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "above recent range",
+        "resolved_class": "above recent range",
+        "resolution_value": 2.27,
+        "target_change": 0.09,
+        "source_observation_date": "2023-07-31",
+        "resolution_document": {
+          "publisher": "Federal Reserve Bank of St. Louis (FRED)",
+          "title": "5-Year Breakeven Inflation Rate",
+          "url": "https://fred.stlouisfed.org/series/T5YIE"
+        },
+        "source_download_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=T5YIE&cosd=2019-01-01&coed=2026-06-30",
+        "source_sha256": "a2e77c093f557d5be79b3174c6dbd74f065ac59ed61792acd842e75486657170",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_f7f85d72ad5f",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 16,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_20211005_002_5b2b1c16",
+        "title": "Real Interest Rates, VIX Update, Powell - DataTrek Research",
+        "url": "https://datatrekresearch.com/real-interest-rates-vix-update-powell?v=eb65bcceaa5f",
+        "source": "datatrekresearch.com",
+        "published_date": "2021-10-05T12:48:25+00:00"
+      },
+      {
+        "id": "art_finance_20230110_002_0044d463",
+        "title": "Global Economic Prospects: Sharp, Long-lasting Slowdown to Hit...",
+        "url": "https://www.worldbank.org/en/news/press-release/2023/01/10/global-economic-prospects",
+        "source": "worldbank.org",
+        "published_date": "2023-01-10T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230729_003_6d7c4829",
+        "title": "Global Economic Slowdown Triggers 4-Month Export Decline in India",
+        "url": "https://www.thecore.in/podcasts/indias-exports-decline-for-4th-month-in-a-row-as-a-global-economy-slowdown-takes-grip",
+        "source": "thecore.in",
+        "published_date": "2023-07-29T17:30:00+05:30"
+      },
+      {
+        "id": "art_finance_20230106_003_69ef7510",
+        "title": "Are You Prepared for a Hard Landing? | Economic Prism",
+        "url": "https://economicprism.com/are-you-prepared-for-a-hard-landing",
+        "source": "economicprism.com",
+        "published_date": "2023-01-06T09:05:59+00:00"
+      },
+      {
+        "id": "art_finance_20120925_002_1019f8ed",
+        "title": "cnbc.com/markets/us-treasurys",
+        "url": "https://www.cnbc.com/markets/us-treasurys",
+        "source": "cnbc.com",
+        "published_date": "2012-09-25T15:49:17+00:00"
+      },
+      {
+        "id": "art_finance_20180507_002_f60edf91",
+        "title": "35 Best Bond Market Blogs to Follow in 2026",
+        "url": "https://bloggers.feedspot.com/bond_market_blogs",
+        "source": "bloggers.feedspot.com",
+        "published_date": "2018-05-07T09:44:59-07:00"
+      },
+      {
+        "id": "art_finance_20160314_002_b4549432",
+        "title": "cnbc.com/federal-reserve",
+        "url": "https://www.cnbc.com/federal-reserve",
+        "source": "cnbc.com",
+        "published_date": "2016-03-14T14:53:33+00:00"
+      },
+      {
+        "id": "art_finance_20140822_002_b5f24283",
+        "title": "Janet Yellen says no 'simple recipe' for Fed on interest rate hikes",
+        "url": "https://www.latimes.com/business/la-fi-janet-yellen-federal-reserve-interest-rate-unemployment-20140822-story.html",
+        "source": "latimes.com",
+        "published_date": "2014-08-22T16:16:00+00:00"
+      },
+      {
+        "id": "art_finance_20200104_003_6fd927ae",
+        "title": "Fed: \"We don't have a really good understanding of why it's been ...",
+        "url": "https://theconservativetreehouse.com/blog/2020/01/04/fed-we-dont-have-a-really-good-understanding-of-why-its-been-so-difficult-to-get-inflation-back-up",
+        "source": "theconservativetreehouse.com",
+        "published_date": "2020-01-04T19:44:12+00:00"
+      },
+      {
+        "id": "art_finance_20080723_002_b1baaead",
+        "title": "Current U.S. Inflation Rates (2000-2026)",
+        "url": "https://www.usinflationcalculator.com/inflation/current-inflation-rates",
+        "source": "usinflationcalculator.com",
+        "published_date": "2008-07-23T03:07:58+00:00"
+      },
+      {
+        "id": "art_finance_20220222_004_9b40e74a",
+        "title": "thebalancemoney.com/why-do-bond-prices-and-yields-move-in...",
+        "url": "https://www.thebalancemoney.com/why-do-bond-prices-and-yields-move-in-opposite-directions-417082",
+        "source": "thebalancemoney.com",
+        "published_date": "2022-02-22T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230801_002_1f6c00f6",
+        "title": "US Treasury Bill Rates",
+        "url": "https://www.treasury.gov/resource-center/data-chart-center/interest-rates/Pages/TextView.aspx?data=billrates",
+        "source": "US Department of the Treasury",
+        "published_date": "2023-08-01T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230728_003_058d01e0",
+        "title": "Personal Consumption Expenditures (PCE) Price Index",
+        "url": "https://www.bea.gov/data/personal-consumption-expenditures-price-index",
+        "source": "Bureau of Economic Analysis",
+        "published_date": "2023-07-28T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230726_004_4a6d5229",
+        "title": "Federal Reserve issues FOMC statement",
+        "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20230726a.htm",
+        "source": "Federal Reserve Board",
+        "published_date": "2023-07-26T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230706_005_1c0e24b7",
+        "title": "Fed Minutes Show Officials Still United on Inflation Fight",
+        "url": "https://www.bloomberg.com/news/articles/2023-07-06/fed-minutes-show-officials-still-united-on-inflation-fight",
+        "source": "Bloomberg",
+        "published_date": "2023-07-06T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20180405_006_02ac1877",
+        "title": "Wall Street divided on whether Fed is done raising rates after July",
+        "url": "https://www.cnbc.com/2023/07/19/wall-street-is-divided-on-whether-fed-is-done-raising-rates-after-july.html",
+        "source": "CNBC",
+        "published_date": "2018-04-05T15:43:23+00:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_f7f85d72ad5f",
+      "events_count": 13,
+      "hypotheses_count": 16
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 3,
+      "avg_depth": 2.8,
+      "quality_score": 0.88,
+      "depth_score": 1.0,
+      "confidence_score": 0.78,
+      "strength_score": 0.7,
+      "evidence_score": 1.0,
+      "event_count": 13,
+      "hypothesis_count": 16
+    },
+    "nodes": [
+      {
+        "id": "evt_3dcf14c8899b",
+        "title": "Option 1: below recent range",
+        "description": "Question resolves to: below recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-08-15T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2023_07",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 0,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-23T01:36:07.900482Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_affce0ac61a4",
+        "title": "Option 2: within recent range",
+        "description": "Question resolves to: within recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-08-15T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2023_07",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 1,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-23T01:36:07.900495Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_f7f85d72ad5f",
+        "title": "Option 3: above recent range",
+        "description": "Question resolves to: above recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-08-15T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2023_07",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 2,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-23T01:36:07.900502Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20211005_018_a58a56df",
+        "title": "Real Interest Rates Update",
+        "description": "An update on real interest rates, VIX, and comments from Powell, indicating market sentiment and monetary policy outlook.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2021-10-05T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20211005_002_5b2b1c16"
+        ],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2023_07",
+        "source_article_id": "art_finance_20211005_002_5b2b1c16",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_5y_breakeven_monthly_change_2023_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-23T01:39:23.893096Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20220222_017_16fa0ee6",
+        "title": "Bond Prices and Yields Dynamics",
+        "description": "Explanation of why bond prices and yields move in opposite directions, a fundamental concept in financial markets.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2022-02-22T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20220222_004_9b40e74a"
+        ],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2023_07",
+        "source_article_id": "art_finance_20220222_004_9b40e74a",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_5y_breakeven_monthly_change_2023_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-23T01:39:23.870783Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230106_020_59e8f02e",
+        "title": "Economic Hard Landing Concerns",
+        "description": "Discussions and concerns about a potential economic hard landing, indicating market anxieties.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-06T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230106_003_69ef7510"
+        ],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2023_07",
+        "source_article_id": "art_finance_20230106_003_69ef7510",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_5y_breakeven_monthly_change_2023_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-23T01:39:27.730642Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230110_014_7d6da2f6",
+        "title": "Global Economic Slowdown",
+        "description": "Global economic slowdown impacting various economies, as indicated by export declines.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-10T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230110_002_0044d463"
+        ],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2023_07",
+        "source_article_id": "art_finance_20230110_002_0044d463",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_5y_breakeven_monthly_change_2023_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-23T01:39:19.680943Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230701_006_630d961f",
+        "title": "Underlying Persistent Inflationary Pressures",
+        "description": "General persistent inflationary pressures in the economy, which were later evidenced by PCE data.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-07-01T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230728_003_058d01e0"
+        ],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2023_07",
+        "source_article_id": "art_finance_20230728_003_058d01e0",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_5y_breakeven_monthly_change_2023_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-23T01:38:25.059860Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230706_015_9b2b8e9b",
+        "title": "Fed United on Inflation Fight",
+        "description": "Federal Reserve officials remain united on the fight against inflation, as per Fed Minutes.",
+        "event_type": "decision",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-07-06T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230706_005_1c0e24b7"
+        ],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2023_07",
+        "source_article_id": "art_finance_20230706_005_1c0e24b7",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_5y_breakeven_monthly_change_2023_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-23T01:39:19.703254Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230726_007_6e695c4b",
+        "title": "Federal Reserve Maintains Hawkish Monetary Policy Stance",
+        "description": "The Federal Reserve maintained a hawkish monetary policy stance, signaling its commitment to control inflation.",
+        "event_type": "decision",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-07-26T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230726_004_4a6d5229"
+        ],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2023_07",
+        "source_article_id": "art_finance_20230726_004_4a6d5229",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_5y_breakeven_monthly_change_2023_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-23T01:38:25.079692Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230726_008_0cf132c8",
+        "title": "Federal Reserve issues FOMC statement",
+        "description": "The Federal Reserve's Federal Open Market Committee (FOMC) issued a statement noting that inflation remained elevated and reiterating its commitment to achieving its 2 percent inflation objective.",
+        "event_type": "decision",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-07-26T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230726_004_4a6d5229"
+        ],
+        "extracted_for_question_id": "v3_us_3m_yield_monthly_change_2023_07",
+        "source_article_id": "art_finance_20230726_004_4a6d5229",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_3m_yield_monthly_change_2023_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-23T01:32:39.903138Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230726_008_8f88f567",
+        "title": "Market Reacts to Federal Reserve's Hawkish Stance",
+        "description": "The market reacted to the Federal Reserve's hawkish stance, adjusting its expectations for future interest rates and inflation.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-07-26T12:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230726_004_4a6d5229"
+        ],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2023_07",
+        "source_article_id": "art_finance_20230726_004_4a6d5229",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_5y_breakeven_monthly_change_2023_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-23T01:38:25.110068Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230726_019_24d7d7cb",
+        "title": "Federal Reserve Monetary Policy Stance",
+        "description": "The Federal Reserve communicates its monetary policy stance and future outlook through official statements.",
+        "event_type": "decision",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-07-26T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230726_004_4a6d5229"
+        ],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2023_07",
+        "source_article_id": "art_finance_20230726_004_4a6d5229",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_5y_breakeven_monthly_change_2023_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-23T01:39:27.707596Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230728_013_528d0bb8",
+        "title": "Personal Consumption Expenditures (PCE) Price Index Release",
+        "description": "The Bureau of Economic Analysis released the Personal Consumption Expenditures (PCE) Price Index data.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-07-28T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230728_003_058d01e0"
+        ],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2023_07",
+        "source_article_id": "art_finance_20230728_003_058d01e0",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_5y_breakeven_monthly_change_2023_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-23T01:39:06.652888Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230801_016_4c415c15",
+        "title": "US Treasury Bill Rates Update",
+        "description": "Update on US Treasury Bill Rates from the US Department of the Treasury.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-08-01T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230801_002_1f6c00f6"
+        ],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2023_07",
+        "source_article_id": "art_finance_20230801_002_1f6c00f6",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_5y_breakeven_monthly_change_2023_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-23T01:39:19.723590Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2023_07_20260723_013849_004_966aa4f2",
+        "source_event_id": "evt_finance_20230701_006_630d961f",
+        "target_event_id": "evt_finance_20230726_007_6e695c4b",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Persistent inflationary pressures served as a root cause for the Federal Reserve maintaining a hawkish monetary policy stance.",
+        "evidence_article_ids": [
+          "art_finance_20230728_003_058d01e0",
+          "art_finance_20230726_004_4a6d5229"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2023_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-23T01:38:49.216369Z",
+        "last_confirmed_at": "2026-07-23T01:38:49.216369Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2023_07_20260723_013849_005_30988902",
+        "source_event_id": "evt_finance_20230726_007_6e695c4b",
+        "target_event_id": "evt_finance_20230726_008_0cf132c8",
+        "relation_type": "enables",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The FOMC statement is the vehicle through which the Fed's hawkish stance and commitment to fight inflation is communicated.",
+        "evidence_article_ids": [
+          "art_finance_20230726_004_4a6d5229"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2023_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-23T01:38:49.231456Z",
+        "last_confirmed_at": "2026-07-23T01:38:49.231456Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2023_07_20260723_013849_006_b15ca738",
+        "source_event_id": "evt_finance_20230726_008_0cf132c8",
+        "target_event_id": "evt_finance_20230726_008_8f88f567",
+        "relation_type": "triggers",
+        "strength": 0.85,
+        "confidence": 0.85,
+        "time_lag_hours": null,
+        "reasoning": "The FOMC statement triggered a reaction in the market regarding future interest rates and inflation.",
+        "evidence_article_ids": [
+          "art_finance_20230726_004_4a6d5229"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2023_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-23T01:38:49.246479Z",
+        "last_confirmed_at": "2026-07-23T01:38:49.246479Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2023_07_20260723_013937_013_15eac6b3",
+        "source_event_id": "evt_finance_20230110_014_7d6da2f6",
+        "target_event_id": "evt_finance_20230728_013_528d0bb8",
+        "relation_type": "enables",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "A global economic slowdown can influence domestic economic indicators like PCE, as it affects demand and supply chains.",
+        "evidence_article_ids": [
+          "art_finance_20230110_002_0044d463",
+          "art_finance_20230728_003_058d01e0"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2023_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-23T01:39:37.960304Z",
+        "last_confirmed_at": "2026-07-23T01:39:37.960304Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2023_07_20260723_013937_014_0bf58469",
+        "source_event_id": "evt_finance_20230706_015_9b2b8e9b",
+        "target_event_id": "evt_finance_20230726_019_24d7d7cb",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The Fed's united stance on fighting inflation, as revealed in minutes, directly leads to official FOMC statements on policy.",
+        "evidence_article_ids": [
+          "art_finance_20230706_005_1c0e24b7",
+          "art_finance_20230726_004_4a6d5229"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2023_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-23T01:39:37.974380Z",
+        "last_confirmed_at": "2026-07-23T01:39:37.974380Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2023_07_20260723_013937_015_9051704f",
+        "source_event_id": "evt_finance_20211005_018_a58a56df",
+        "target_event_id": "evt_finance_20230706_015_9b2b8e9b",
+        "relation_type": "enables",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Past trends and updates on real interest rates and Fed commentary (Powell) set the stage for future Fed decisions on inflation.",
+        "evidence_article_ids": [
+          "art_finance_20211005_002_5b2b1c16",
+          "art_finance_20230706_005_1c0e24b7"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2023_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-23T01:39:37.987624Z",
+        "last_confirmed_at": "2026-07-23T01:39:37.987624Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2023_07_20260723_013938_016_26621c1d",
+        "source_event_id": "evt_finance_20220222_017_16fa0ee6",
+        "target_event_id": "evt_finance_20230801_016_4c415c15",
+        "relation_type": "correlates",
+        "strength": 0.5,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "Understanding bond price and yield dynamics is fundamental to interpreting treasury bill rates and their implications for inflation expectations.",
+        "evidence_article_ids": [
+          "art_finance_20220222_004_9b40e74a",
+          "art_finance_20230801_002_1f6c00f6"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2023_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-23T01:39:38.001387Z",
+        "last_confirmed_at": "2026-07-23T01:39:38.001387Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2023_07_20260723_013938_017_18936750",
+        "source_event_id": "evt_finance_20230106_020_59e8f02e",
+        "target_event_id": "evt_finance_20230110_014_7d6da2f6",
+        "relation_type": "amplifies",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Concerns about a hard landing can amplify the perceived impact of a global economic slowdown, influencing policy responses.",
+        "evidence_article_ids": [
+          "art_finance_20230106_003_69ef7510",
+          "art_finance_20230110_002_0044d463"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2023_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-23T01:39:38.016863Z",
+        "last_confirmed_at": "2026-07-23T01:39:38.016863Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2023_07_20260723_013945_018_359cc47e",
+        "source_event_id": "evt_finance_20230728_013_528d0bb8",
+        "target_event_id": "evt_f7f85d72ad5f",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "PCE data, as a key inflation indicator, directly influences the 5-year breakeven inflation rate.",
+        "evidence_article_ids": [
+          "art_finance_20230728_003_058d01e0"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2023_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-23T01:39:45.952879Z",
+        "last_confirmed_at": "2026-07-23T01:39:45.952879Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2023_07_20260723_013945_019_cbbf94aa",
+        "source_event_id": "evt_finance_20230726_019_24d7d7cb",
+        "target_event_id": "evt_f7f85d72ad5f",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The Federal Reserve's monetary policy decisions, announced in FOMC statements, directly impact inflation expectations and breakeven rates.",
+        "evidence_article_ids": [
+          "art_finance_20230726_004_4a6d5229"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2023_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-23T01:39:45.970820Z",
+        "last_confirmed_at": "2026-07-23T01:39:45.970820Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2023_07_20260723_013945_020_db1c341d",
+        "source_event_id": "evt_finance_20230801_016_4c415c15",
+        "target_event_id": "evt_f7f85d72ad5f",
+        "relation_type": "correlates",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "US Treasury Bill Rates are components of the yield curve, which is used to derive breakeven inflation rates.",
+        "evidence_article_ids": [
+          "art_finance_20230801_002_1f6c00f6"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2023_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-23T01:39:45.984377Z",
+        "last_confirmed_at": "2026-07-23T01:39:45.984377Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2023_07_20260723_013945_021_2b1239e1",
+        "source_event_id": "evt_finance_20230110_014_7d6da2f6",
+        "target_event_id": "evt_finance_20230728_013_528d0bb8",
+        "relation_type": "enables",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "A global economic slowdown can influence domestic economic indicators like PCE, as it affects demand and supply chains.",
+        "evidence_article_ids": [
+          "art_finance_20230110_002_0044d463",
+          "art_finance_20230728_003_058d01e0"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2023_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-23T01:39:45.998389Z",
+        "last_confirmed_at": "2026-07-23T01:39:45.998389Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2023_07_20260723_013946_022_0a704c0e",
+        "source_event_id": "evt_finance_20230706_015_9b2b8e9b",
+        "target_event_id": "evt_finance_20230726_019_24d7d7cb",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The Fed's united stance on fighting inflation, as revealed in minutes, directly leads to official FOMC statements on policy.",
+        "evidence_article_ids": [
+          "art_finance_20230706_005_1c0e24b7",
+          "art_finance_20230726_004_4a6d5229"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2023_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-23T01:39:46.011827Z",
+        "last_confirmed_at": "2026-07-23T01:39:46.011827Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2023_07_20260723_013946_023_ee32330b",
+        "source_event_id": "evt_finance_20211005_018_a58a56df",
+        "target_event_id": "evt_finance_20230706_015_9b2b8e9b",
+        "relation_type": "enables",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Past trends and updates on real interest rates and Fed commentary (Powell) set the stage for future Fed decisions on inflation.",
+        "evidence_article_ids": [
+          "art_finance_20211005_002_5b2b1c16",
+          "art_finance_20230706_005_1c0e24b7"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2023_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-23T01:39:46.026087Z",
+        "last_confirmed_at": "2026-07-23T01:39:46.026087Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2023_07_20260723_013946_024_a7282210",
+        "source_event_id": "evt_finance_20220222_017_16fa0ee6",
+        "target_event_id": "evt_finance_20230801_016_4c415c15",
+        "relation_type": "correlates",
+        "strength": 0.5,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "Understanding bond price and yield dynamics is fundamental to interpreting treasury bill rates and their implications for inflation expectations.",
+        "evidence_article_ids": [
+          "art_finance_20220222_004_9b40e74a",
+          "art_finance_20230801_002_1f6c00f6"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2023_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-23T01:39:46.046628Z",
+        "last_confirmed_at": "2026-07-23T01:39:46.046628Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2023_07_20260723_013946_025_30f86531",
+        "source_event_id": "evt_finance_20230106_020_59e8f02e",
+        "target_event_id": "evt_finance_20230110_014_7d6da2f6",
+        "relation_type": "amplifies",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Concerns about a hard landing can amplify the perceived impact of a global economic slowdown, influencing policy responses.",
+        "evidence_article_ids": [
+          "art_finance_20230106_003_69ef7510",
+          "art_finance_20230110_002_0044d463"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2023_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-23T01:39:46.070491Z",
+        "last_confirmed_at": "2026-07-23T01:39:46.070491Z"
+      }
+    ],
+    "outcome_impacts": [
+      {
+        "id": "imp_285f520a",
+        "event_id": "evt_finance_20230701_006_630d961f",
+        "outcome_event_id": "evt_f7f85d72ad5f",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2023_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.8,
+        "reasoning": "Persistent inflationary pressures served as a root cause, making the 'above recent range' outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-23T01:38:56.333173Z",
+        "last_confirmed_at": "2026-07-23T01:38:56.333173Z"
+      },
+      {
+        "id": "imp_d751816b",
+        "event_id": "evt_finance_20230726_007_6e695c4b",
+        "outcome_event_id": "evt_f7f85d72ad5f",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2023_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.85,
+        "reasoning": "The Fed's hawkish stance signaled higher-for-longer interest rates, influencing inflation expectations upwards and making the 'above recent range' outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-23T01:38:56.345733Z",
+        "last_confirmed_at": "2026-07-23T01:38:56.345733Z"
+      },
+      {
+        "id": "imp_55a22ad2",
+        "event_id": "evt_finance_20230726_008_0cf132c8",
+        "outcome_event_id": "evt_f7f85d72ad5f",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2023_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.85,
+        "confidence": 0.85,
+        "reasoning": "The FOMC statement communicated the Fed's hawkish stance, directly contributing to increased inflation expectations and making the 'above recent range' outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-23T01:38:56.355872Z",
+        "last_confirmed_at": "2026-07-23T01:38:56.355872Z"
+      },
+      {
+        "id": "imp_b740d1f4",
+        "event_id": "evt_finance_20230726_008_8f88f567",
+        "outcome_event_id": "evt_f7f85d72ad5f",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2023_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.85,
+        "reasoning": "Market reaction to the Fed's hawkish stance led to adjustments in inflation expectations, making the 'above recent range' outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-23T01:38:56.365831Z",
+        "last_confirmed_at": "2026-07-23T01:38:56.365831Z"
+      },
+      {
+        "id": "imp_a00f09b1",
+        "event_id": "evt_finance_20230728_010_4518a224",
+        "outcome_event_id": "evt_f7f85d72ad5f",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2023_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "PCE data indicating persistent inflationary pressures amplified market expectations of higher inflation, making the 'above recent range' outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-23T01:38:56.377196Z",
+        "last_confirmed_at": "2026-07-23T01:38:56.377196Z"
+      },
+      {
+        "id": "imp_3d5e74b7",
+        "event_id": "evt_finance_20230728_011_ddb27d30",
+        "outcome_event_id": "evt_f7f85d72ad5f",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2023_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.95,
+        "confidence": 0.9,
+        "reasoning": "Increased market inflation expectations directly triggered the rise in the 5-year breakeven inflation rate, making the 'above recent range' outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-23T01:38:56.387379Z",
+        "last_confirmed_at": "2026-07-23T01:38:56.387379Z"
+      },
+      {
+        "id": "imp_c76630f5",
+        "event_id": "evt_finance_20230729_009_70e650a8",
+        "outcome_event_id": "evt_f7f85d72ad5f",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2023_07",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.4,
+        "confidence": 0.6,
+        "reasoning": "A global economic slowdown typically reduces demand and inflationary pressures, thus inhibiting an increase in the breakeven inflation rate. However, its impact was likely overwhelmed by domestic factors.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-23T01:38:56.397839Z",
+        "last_confirmed_at": "2026-07-23T01:38:56.397839Z"
+      },
+      {
+        "id": "imp_ee11ced3",
+        "event_id": "evt_finance_20230801_010_df904525",
+        "outcome_event_id": "evt_f7f85d72ad5f",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2023_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.7,
+        "reasoning": "Treasury Bill rates reflected higher rate expectations, which are tied to the overall inflation outlook and thus the breakeven inflation rate, indicating the 'above recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-23T01:38:56.407851Z",
+        "last_confirmed_at": "2026-07-23T01:38:56.407851Z"
+      },
+      {
+        "id": "imp_09a5f17b",
+        "event_id": "evt_finance_20230731_012_96f17b4d",
+        "outcome_event_id": "evt_f7f85d72ad5f",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2023_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 1.0,
+        "confidence": 1.0,
+        "reasoning": "This event is the direct outcome described in the prompt, confirming the 'above recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-23T01:38:56.419928Z",
+        "last_confirmed_at": "2026-07-23T01:38:56.419928Z"
+      },
+      {
+        "id": "imp_c120e617",
+        "event_id": "evt_finance_20230728_013_528d0bb8",
+        "outcome_event_id": "evt_f7f85d72ad5f",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2023_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "PCE data is a key inflation indicator, directly influencing breakeven inflation expectations.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-23T01:39:37.926402Z",
+        "last_confirmed_at": "2026-07-23T01:39:37.926402Z"
+      },
+      {
+        "id": "imp_95c085a6",
+        "event_id": "evt_finance_20230726_019_24d7d7cb",
+        "outcome_event_id": "evt_f7f85d72ad5f",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2023_07",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "The Fed's monetary policy stance, especially on rate hikes, directly impacts inflation expectations and thus breakeven rates.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-23T01:39:37.937010Z",
+        "last_confirmed_at": "2026-07-23T01:39:37.937010Z"
+      },
+      {
+        "id": "imp_a46846c3",
+        "event_id": "evt_finance_20230801_016_4c415c15",
+        "outcome_event_id": "evt_f7f85d72ad5f",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2023_07",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.7,
+        "reasoning": "Treasury bill rates are a component of the yield curve, which influences breakeven inflation, but the direct impact can be complex.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-23T01:39:37.947294Z",
+        "last_confirmed_at": "2026-07-23T01:39:37.947294Z"
+      },
+      {
+        "id": "imp_f0eb5f75",
+        "event_id": "evt_finance_20230110_014_7d6da2f6",
+        "outcome_event_id": "evt_f7f85d72ad5f",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2023_07",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "A global economic slowdown typically reduces inflationary pressures, making the outcome less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-23T01:39:38.027212Z",
+        "last_confirmed_at": "2026-07-23T01:39:38.027212Z"
+      },
+      {
+        "id": "imp_15a6d625",
+        "event_id": "evt_finance_20230706_015_9b2b8e9b",
+        "outcome_event_id": "evt_f7f85d72ad5f",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2023_07",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "The Fed's commitment to fighting inflation aims to reduce future inflation expectations, impacting breakeven rates negatively.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-23T01:39:38.037810Z",
+        "last_confirmed_at": "2026-07-23T01:39:38.037810Z"
+      },
+      {
+        "id": "imp_49b84025",
+        "event_id": "evt_finance_20220222_017_16fa0ee6",
+        "outcome_event_id": "evt_f7f85d72ad5f",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2023_07",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.6,
+        "reasoning": "Understanding bond market dynamics is foundational to breakeven inflation, but its direct impact on the monthly change is indirect.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-23T01:39:38.050432Z",
+        "last_confirmed_at": "2026-07-23T01:39:38.050432Z"
+      },
+      {
+        "id": "imp_3b41b001",
+        "event_id": "evt_finance_20211005_018_a58a56df",
+        "outcome_event_id": "evt_f7f85d72ad5f",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2023_07",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.7,
+        "reasoning": "Real interest rates and VIX are indicators of market sentiment and inflation expectations, influencing breakeven rates.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-23T01:39:38.060530Z",
+        "last_confirmed_at": "2026-07-23T01:39:38.060530Z"
+      },
+      {
+        "id": "imp_52b6267b",
+        "event_id": "evt_finance_20230106_020_59e8f02e",
+        "outcome_event_id": "evt_f7f85d72ad5f",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2023_07",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Concerns about a hard landing suggest a weaker economic outlook, which could lead to lower inflation expectations.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2023_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-23T01:39:38.072536Z",
+        "last_confirmed_at": "2026-07-23T01:39:38.072536Z"
+      }
+    ]
+  },
+  "bank_provenance": {
+    "mode": "reused_strict_export",
+    "source": "/home/kong/code/study_kakao/research/forecaster/experiments/finance_500_v3_monetary_policy/all_dags/graphs/v3_us_5y_breakeven_monthly_change_2023_07.json",
+    "seeded_at": "2026-07-24T18:25:39.064797+00:00"
+  }
+}

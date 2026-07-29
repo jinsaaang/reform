@@ -1,0 +1,1113 @@
+{
+  "question": {
+    "id": "v3_wti_monthly_return_2024_12",
+    "question_text": "As of 2024-12-01, which range will the monthly WTI price return for West Texas Intermediate crude oil in 2024-12 fall into?",
+    "question_type": "mcq",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 3,
+    "resolution_date": "2024-12-31T23:59:59Z",
+    "estimated_start_time": "2024-12-01T00:00:00Z",
+    "ground_truth": "above recent range",
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [
+      "evt_fdd12fc049b4",
+      "evt_5a26c5aa16c6",
+      "evt_999be5c104fa"
+    ],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: West Texas Intermediate crude oil\nTarget period: 2024-12\nFinancial area: energy_commodities / crude oil\nRegion: US\nPre-registered recent-range boundaries: lower -6.227, upper -0.118 percent.",
+    "resolution_criteria": "Use FRED series DCOILWTICO. Compute the change from the previous monthly observation using mode 'pct'. Resolve 'below recent range' below -6.227, 'within recent range' from -6.227 inclusive to -0.118 exclusive, and 'above recent range' at or above -0.118 percent.",
+    "resolution_reasoning": "The snapshotted target change was 6.124 percent; it resolved to 'above recent range'.",
+    "options": [
+      "below recent range",
+      "within recent range",
+      "above recent range"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": "\n## Executive Summary\nWTI crude oil prices in December 2024 finished above the recent range due to a combination of sustained OPEC+ production cuts, unexpected demand growth in India, and geopolitical tensions in the Middle East. Despite a slight increase in global oil supply from non-OPEC+ sources, the extended cuts by OPEC+ significantly tightened the market. Demand from India, surpassing China's growth, provided a strong bullish signal. Geopolitical risks, though not directly increasing prices, added a layer of uncertainty that prevented significant price declines. The overall market sentiment was bullish, leading to higher WTI prices.\n\n## Timeline Of Key Events\n- **November 6, 2024:** OPEC+ members extend oil output cuts until the end of December 2024 [art_finance_20241106_004_e91f7076]. This decision signifies a commitment to market stability and higher prices by limiting supply.\n- **December 4, 2024:** Crude rebounds in Asia as markets react to a Brent spike [art_finance_20241204_011_979b94e5]. This indicates early December upward price movement.\n- **December 5, 2024:** OPEC+ members postpone unwinding production increases until April, signaling continued supply restraint [art_finance_20241205_002_80886d1e].\n- **December 6, 2024:** OPEC+ extends production cuts until the end of 2026 [art_finance_20241206_003_a9b9e956]. This long-term commitment further solidifies market tightnes expectations.\n- **December 9, 2024:** US oil production is noted as threatening OPEC's market share [art_finance_20241209_004_d5d7c02b]. This represents a countervailing factor, but one that was ultimately overcome.\n- **December 10, 2024:** New geopolitics of energy inform the current oil price-risk relationship in the Middle East. Traditional correlation between conflict and accelerating oil prices is broken due to well-supplied non-OPEC production and weak Asian demand, but risk remains a factor for price support [art_finance_20241210_007_b3258d61].\n- **December 12, 2024:** IEA releases its December Oil Market Report, detailing market conditions [art_finance_20241212_006_766c00d8].\n- **December 19, 2024:** EIA reports India is set to surpass China as the top source of global oil consumption growth in 2024 and 2025 [art_finance_20241219_005_26d3b1c0]. This strong demand signal from a major economy pushes prices up.\n- **December 26, 2024:** IEA reports global oil supply increased by 20,000 bpd in December 2024, reaching 103.53 million bpd, up 390,000 bpd from the previous year, with OPEC crude production up 220,000 bpd month-on-month [art_finance_20241226_002_965dc487].\n\n## Causal Chain Analysis\nThe primary cause for WTI price return finishing above the recent range was the **sustained and extended production cuts by OPEC+**, which reduced global oil supply and thus supported higher prices [art_finance_20241206_003_a9b9e956]. This proactive supply management by OPEC+ directly led to a tighter market and reduced available inventory. Concurrently, **strong oil demand growth, particularly from India**, which is projected to become the leading source of global oil consumption growth, significantly contributed to the upward price pressure [art_finance_20241219_005_26d3b1c0]. This increased demand, coupled with constrained supply, created a fundamental imbalance that resulted in WTI prices moving higher. Although geopolitical risks in the Middle East did not directly cause accelerating prices due to well-supplied non-OPEC production, they nonetheless **added a layer of risk premium** that prevented any significant downward momentum, thereby supporting the higher price range [art_finance_20241210_007_b3258d61]. This combination of supply constraints, robust demand from emerging economies, and persistent geopolitical uncertainty ultimately triggered higher WTI prices, pushing them above the recent range.\n\n## Countervailing Factors\nThe main countervailing factor was the **increasing US oil production**, which was seen as threatening OPEC's hold on the oil market [art_finance_20241209_004_d5d7c02b]. Additionally, the IEA reported an increase in global oil supply in December, with a slight rise in OPEC crude production [art_finance_20241226_002_965dc487]. However, these factors were overwhelmed by the **extended and long-term production cuts by OPEC+** [art_finance_20241206_003_a9b9e956] and the **strong demand growth from India** [art_finance_20241219_005_26d3b1c0]. The collective action of OPEC+ to manage supply, coupled with escalating demand, proved more influential than the increases in non-OPEC+ supply, preventing prices from falling back into or below the recent range.\n\n## Event Candidate Inventory\n- **E1: OPEC+ Extends Production Cuts until End of 2026**\n    - **Date:** December 6, 2024\n    - **Why it matters causally:** This decision locked in significant supply restrictions for an extended period, creating a bullish supply-side outlook for oil prices.\n    - **Source article IDs:** [art_finance_20241206_003_a9b9e956]\n- **E2: India Projected as Top Source of Global Oil Consumption Growth**\n    - **Date:** December 19, 2024\n    - **Why it matters causally:** This indicates a robust and growing demand for oil from a major emerging economy, providing strong bullish pressure on prices.\n    - **Source article IDs:** [art_finance_20241219_005_26d3b1c0]\n- **E3: OPEC+ Delays Production Increase Unwinding**\n    - **Date:** December 5, 2024\n    - **Why it matters causally:** This signified continued short-term supply restraint, reinforcing the market sentiment of limited supply.\n    - **Source article IDs:** [art_finance_20241205_002_80886d1e]\n- **E4: Geopolitical Risks and Oil Price-Risk Relationship in Middle East**\n    - **Date:** December 10, 2024\n    - **Why it matters causally:** While not directly driving prices up, the ongoing geopolitical tensions prevented significant price declines, acting as a supportive floor for prices.\n    - **Source article IDs:** [art_finance_20241210_007_b3258d61]\n- **E5: Global Oil Supply Increase (Countervailing)**\n    - **Date:** December 26, 2024\n    - **Why it matters causally:** This represents a factor that could have pushed prices down but was ultimately overcome by stronger bullish forces.\n    - **Source article IDs:** [art_finance_20241226_002_965dc487]\n\n## Evidence Mapping Table\n\n| Claim/Event | Article IDs | Date Support | Confidence (0-1) | Notes |\n|---|---|---|---|---|\n| OPEC+ production cuts drive prices up | [art_finance_20241206_003_a9b9e956], [art_finance_20241205_002_80886d1e] | Dec 5-6, 2024 | 1.0 | Direct policy action impacting supply.\n| India's rising demand supports prices | [art_finance_20241219_005_26d3b1c0] | Dec 19, 2024 | 0.9 | EIA forecast strong demand growth.\n| Geopolitical risks provide price floor | [art_finance_20241210_007_b3258d61] | Dec 10, 2024 | 0.8 | Geopolitical uncertainty contributes to risk premium.\n| US production increase (countervailing) | [art_finance_20241209_004_d5d7c02b] | Dec 9, 2024 | 0.7 | US production growth could limit price increases.\n| Global supply increase (countervailing) | [art_finance_20241226_002_965dc487] | Dec 26, 2024 | 0.7 | IEA report highlights minor supply increase.\n\n## Uncertainties And Alternative Paths\nOne uncertainty is the precise impact of geopolitical risks on short-term price movements, as the traditional correlation may have weakened. An alternative path could have seen WTI prices within or below the recent range if OPEC+ had unexpectedly rolled back their production cuts or if global economic slowdowns, particularly in major consuming nations other than India, had led to a significant and unexpectedly sharp drop in overall demand. Additionally, a more rapid increase in non-OPEC+ supply, particularly from the US, could have dampened the price impact of OPEC+ actions more effectively.\n",
+    "graph_built": true,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.201959Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "wti_monthly_return",
+        "event_cluster_id": "crude_oil_2024-12",
+        "category": "energy_commodities",
+        "original_domain": "energy_commodities",
+        "subdomain": "crude oil",
+        "entity": "West Texas Intermediate crude oil",
+        "region": "US",
+        "target_metric": "monthly WTI price return",
+        "target_period": "2024-12",
+        "forecast_cutoff": "2024-12-01T00:00:00+00:00",
+        "forecast_date_options": [
+          "2024-12-01"
+        ],
+        "resolution_available_at": "2024-12-31T23:59:59+00:00",
+        "horizon_days": 30,
+        "source_type": "fred_series_snapshot",
+        "source_series_id": "DCOILWTICO",
+        "source_homepage": "https://fred.stlouisfed.org/series/DCOILWTICO",
+        "comparison_rule": "target change bucketed by the lower and upper quartiles of the 8 prior observed changes",
+        "comparison_threshold": -3.0432,
+        "comparison_thresholds": {
+          "lower": -6.226985,
+          "upper": -0.118025
+        },
+        "change_unit": "percent",
+        "threshold_observation_dates": [
+          "2024-03-28",
+          "2024-04-30",
+          "2024-05-31",
+          "2024-06-28",
+          "2024-07-31",
+          "2024-08-30",
+          "2024-09-30",
+          "2024-10-31",
+          "2024-11-29"
+        ],
+        "split": "memory",
+        "family_position": 5,
+        "family_size": 8,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "above recent range",
+        "resolved_class": "above recent range",
+        "resolution_value": 72.44,
+        "target_change": 6.12364489,
+        "source_observation_date": "2024-12-31",
+        "resolution_document": {
+          "publisher": "Federal Reserve Bank of St. Louis (FRED)",
+          "title": "WTI Crude Oil Price",
+          "url": "https://fred.stlouisfed.org/series/DCOILWTICO"
+        },
+        "source_download_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILWTICO&cosd=2019-01-01&coed=2026-06-30",
+        "source_sha256": "68cf4dea3121e57bcdb8b04935b346d9ec047cde5cbef6ed85402b28bc9a3ce8",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_999be5c104fa",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 15,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_20241106_004_e91f7076",
+        "title": "OPEC+ members extend oil output cuts until the end of December 2024 - Enerdata",
+        "url": "https://www.enerdata.net/publications/daily-energy-news/global-oil-output-cuts-december-2024.html",
+        "source": "enerdata.net",
+        "published_date": "2024-11-06T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20241226_002_965dc487",
+        "title": "IEA: Global oil output up by 20,000 barrels per day in December 2024 - Anadolu Ajansı",
+        "url": "https://www.aa.com.tr/en/energy/oil/iea-global-oil-output-up-by-20-000-barrels-per-day-in-december-2024/46856",
+        "source": "aa.com.tr",
+        "published_date": "2024-12-26T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20241114_003_38e79aae",
+        "title": "Oil Market Report - November 2024 – Analysis - IEA – International Energy Agency",
+        "url": "https://www.iea.org/reports/oil-market-report-november-2024",
+        "source": "iea.org",
+        "published_date": "2024-11-14T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20241205_002_80886d1e",
+        "title": "OPEC+ members to delay oil production increases - CNBC",
+        "url": "https://www.cnbc.com/2024/12/05/opec-members-to-delay-oil-production-increase-until-april.html",
+        "source": "cnbc.com",
+        "published_date": "2024-12-05T12:34:40+00:00"
+      },
+      {
+        "id": "art_finance_20241206_003_a9b9e956",
+        "title": "OPEC+ Extends Production Cuts Until End of 2026 - The Astana Times",
+        "url": "https://astanatimes.com/2024/12/opec-extends-production-cuts-until-end-of-2026",
+        "source": "astanatimes.com",
+        "published_date": "2024-12-06T14:40:39+05:00"
+      },
+      {
+        "id": "art_finance_20241209_004_d5d7c02b",
+        "title": "US production is threatening OPEC’s hold on the oil market - Texas Standard",
+        "url": "https://texasstandard.org/stories/us-oil-production-opec-market-saudia-arabia-russia-gas-prices",
+        "source": "texasstandard.org",
+        "published_date": "2024-12-09T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20241219_005_26d3b1c0",
+        "title": "India to surpass China as the top source of global oil consumption growth in 2024 and 2025 - U.S. Energy Information Administration (EIA) (.gov)",
+        "url": "https://www.eia.gov/todayinenergy/detail.php?id=64084",
+        "source": "eia.gov",
+        "published_date": "2024-12-19T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20241219_006_6c3a5118",
+        "title": "China’s oil demand could peak in 2025 - Dialogue Earth",
+        "url": "https://dialogue.earth/en/digest/chinas-oil-demand-could-peak-in-2025",
+        "source": "dialogue.earth",
+        "published_date": "2024-12-19T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20241212_006_766c00d8",
+        "title": "Oil Market Report - December 2024 – Analysis - IEA – International Energy Agency",
+        "url": "https://www.iea.org/reports/oil-market-report-december-2024",
+        "source": "iea.org",
+        "published_date": "2024-12-12T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20241210_007_b3258d61",
+        "title": "How the New Geopolitics of Energy Informs the Current Oil Price-Risk Relationship in the Middle East - Georgetown Journal of International Affairs",
+        "url": "https://gjia.georgetown.edu/conflict-security/how-the-new-geopolitics-of-energy-informs-the-current-oil-price-risk-relationship-in-the-middle-east",
+        "source": "gjia.georgetown.edu",
+        "published_date": "2024-12-10T01:47:27+00:00"
+      },
+      {
+        "id": "art_finance_20241230_008_18003a07",
+        "title": "Impact of global crisis events on the dependence and risk spillover between gold and crude oil: a regime-switching copula approach - Nature",
+        "url": "https://www.nature.com/articles/s41599-024-04329-y",
+        "source": "nature.com",
+        "published_date": "2024-12-30T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20241220_009_95b7a1db",
+        "title": "What Would Be The Point Of A 'Strategic Bitcoin Reserve'? - Investopedia",
+        "url": "https://www.investopedia.com/what-would-be-the-point-of-a-strategic-bitcoin-reserve-8763067",
+        "source": "investopedia.com",
+        "published_date": "2024-12-20T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20241204_010_f0a58fdc",
+        "title": "Here's why Trump's tariffs may not result in price gains — and how inflation could actually decline - Business Insider",
+        "url": "https://www.businessinsider.com/trump-tariffs-impact-on-inflation-tax-cut-policy-oil-prices-2024-12",
+        "source": "businessinsider.com",
+        "published_date": "2024-12-04T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20241219_005_727f2b3e",
+        "title": "Oil Consumption Growth Trends in China, India, & USA — Is 2025 Forecast Accurate? - CleanTechnica",
+        "url": "https://cleantechnica.com/2024/12/19/oil-consumption-growth-trends-in-china-india-usa-is-2025-forecast-accurate",
+        "source": "cleantechnica.com",
+        "published_date": "2024-12-19T18:06:31+00:00"
+      },
+      {
+        "id": "art_finance_20241204_011_979b94e5",
+        "title": "Asia oil/products: Crude rebounds, diesel EFS narrows - Quantum Commodity Intelligence",
+        "url": "https://www.qcintel.com/article/asia-oil-products-crude-rebounds-diesel-efs-narrows-32949.html",
+        "source": "qcintel.com",
+        "published_date": "2024-12-04T08:00:00+00:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_999be5c104fa",
+      "events_count": 9,
+      "hypotheses_count": 11
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 3,
+      "avg_depth": 1.44,
+      "quality_score": 0.86,
+      "depth_score": 1.0,
+      "confidence_score": 0.8,
+      "strength_score": 0.58,
+      "evidence_score": 1.0,
+      "event_count": 9,
+      "hypothesis_count": 11
+    },
+    "nodes": [
+      {
+        "id": "evt_5a26c5aa16c6",
+        "title": "Option 2: within recent range",
+        "description": "Question resolves to: within recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-12-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_wti_monthly_return_2024_12",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 1,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:58:35.218578Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_999be5c104fa",
+        "title": "Option 3: above recent range",
+        "description": "Question resolves to: above recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-12-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_wti_monthly_return_2024_12",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 2,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:58:35.218585Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_fdd12fc049b4",
+        "title": "Option 1: below recent range",
+        "description": "Question resolves to: below recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-12-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_wti_monthly_return_2024_12",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 0,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:58:35.218564Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20241106_001_0bd3de1e",
+        "title": "OPEC+ members extend oil output cuts until the end of December 2024",
+        "description": "OPEC+ members extend oil output cuts until the end of December 2024, signifying a commitment to market stability and higher prices by limiting supply.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-11-06T08:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241106_004_e91f7076"
+        ],
+        "extracted_for_question_id": "v3_wti_monthly_return_2024_12",
+        "source_article_id": "art_finance_20241106_004_e91f7076",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wti_monthly_return_2024_12"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:59:17.292769Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20241204_002_3711d8e3",
+        "title": "Crude rebounds in Asia as markets react to Brent spike",
+        "description": "Crude rebounds in Asia as markets react to a Brent spike, indicating early December upward price movement.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-12-04T08:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241204_011_979b94e5"
+        ],
+        "extracted_for_question_id": "v3_wti_monthly_return_2024_12",
+        "source_article_id": "art_finance_20241204_011_979b94e5",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wti_monthly_return_2024_12"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:59:17.327674Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20241205_003_6fcbddc6",
+        "title": "OPEC+ members postpone unwinding production increases until April",
+        "description": "OPEC+ members postpone unwinding production increases until April, signaling continued supply restraint.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-12-05T12:34:40Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241205_002_80886d1e"
+        ],
+        "extracted_for_question_id": "v3_wti_monthly_return_2024_12",
+        "source_article_id": "art_finance_20241205_002_80886d1e",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wti_monthly_return_2024_12"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:59:17.360268Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20241206_004_efe8119c",
+        "title": "OPEC+ extends production cuts until the end of 2026",
+        "description": "OPEC+ extends production cuts until the end of 2026, further solidifying market tightness expectations.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-12-06T14:40:39Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241206_003_a9b9e956"
+        ],
+        "extracted_for_question_id": "v3_wti_monthly_return_2024_12",
+        "source_article_id": "art_finance_20241206_003_a9b9e956",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wti_monthly_return_2024_12"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:59:17.392752Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20241209_005_c21e8e70",
+        "title": "US oil production is noted as threatening OPEC's market share",
+        "description": "US oil production is noted as threatening OPEC's market share, representing a countervailing factor.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-12-09T08:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241209_004_d5d7c02b"
+        ],
+        "extracted_for_question_id": "v3_wti_monthly_return_2024_12",
+        "source_article_id": "art_finance_20241209_004_d5d7c02b",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wti_monthly_return_2024_12"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:59:17.425325Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20241219_007_e2db8396",
+        "title": "India is set to surpass China as the top source of global oil consumption growth",
+        "description": "EIA reports India is set to surpass China as the top source of global oil consumption growth in 2024 and 2025. This strong demand signal from a major economy pushes prices up.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-12-19T08:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241219_005_26d3b1c0"
+        ],
+        "extracted_for_question_id": "v3_wti_monthly_return_2024_12",
+        "source_article_id": "art_finance_20241219_005_26d3b1c0",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wti_monthly_return_2024_12"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:59:17.506385Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20241226_008_84bf9714",
+        "title": "Global oil supply increased by 20,000 bpd in December 2024",
+        "description": "IEA reports global oil supply increased by 20,000 bpd in December 2024, reaching 103.53 million bpd, up 390,000 bpd from the previous year, with OPEC crude production up 220,000 bpd month-on-month.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-12-26T08:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241226_002_965dc487"
+        ],
+        "extracted_for_question_id": "v3_wti_monthly_return_2024_12",
+        "source_article_id": "art_finance_20241226_002_965dc487",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wti_monthly_return_2024_12"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:59:17.538545Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_politics_20241210_006_6accdf58",
+        "title": "New geopolitics of energy inform current oil price-risk relationship in Middle East",
+        "description": "New geopolitics of energy inform the current oil price-risk relationship in the Middle East. Risk remains a factor for price support.",
+        "event_type": "indicator",
+        "domain": "politics",
+        "tags": [],
+        "occurred_date": "2024-12-10T01:47:27Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241210_007_b3258d61"
+        ],
+        "extracted_for_question_id": "v3_wti_monthly_return_2024_12",
+        "source_article_id": "art_finance_20241210_007_b3258d61",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wti_monthly_return_2024_12"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:59:17.449762Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_wti_monthly_return_2024_12_20260725_025917_001_d91736ee",
+        "source_event_id": "evt_finance_20241106_001_0bd3de1e",
+        "target_event_id": "evt_finance_20241206_004_efe8119c",
+        "relation_type": "enables",
+        "strength": 0.7,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The initial extension of cuts sets a precedent and enables the longer-term extension, showing OPEC+'s commitment to market control.",
+        "evidence_article_ids": [
+          "art_finance_20241106_004_e91f7076",
+          "art_finance_20241206_003_a9b9e956"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_12"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:59:17.566426Z",
+        "last_confirmed_at": "2026-07-25T02:59:17.566426Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2024_12_20260725_025917_002_fd78c060",
+        "source_event_id": "evt_finance_20241106_001_0bd3de1e",
+        "target_event_id": "evt_999be5c104fa",
+        "relation_type": "causes",
+        "strength": 0.6,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "The extension of oil output cuts directly limits supply, contributing to higher prices.",
+        "evidence_article_ids": [
+          "art_finance_20241106_004_e91f7076"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_12"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:59:17.584627Z",
+        "last_confirmed_at": "2026-07-25T02:59:17.584627Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2024_12_20260725_025917_003_37e100ba",
+        "source_event_id": "evt_finance_20241205_003_6fcbddc6",
+        "target_event_id": "evt_finance_20241206_004_efe8119c",
+        "relation_type": "enables",
+        "strength": 0.7,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Postponing the unwinding of production increases reinforces the commitment to supply restraint, making the longer-term extension more likely.",
+        "evidence_article_ids": [
+          "art_finance_20241205_002_80886d1e",
+          "art_finance_20241206_003_a9b9e956"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_12"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:59:17.600764Z",
+        "last_confirmed_at": "2026-07-25T02:59:17.600764Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2024_12_20260725_025917_004_25a07807",
+        "source_event_id": "evt_finance_20241206_004_efe8119c",
+        "target_event_id": "evt_999be5c104fa",
+        "relation_type": "causes",
+        "strength": 0.9,
+        "confidence": 0.95,
+        "time_lag_hours": null,
+        "reasoning": "The long-term commitment to production cuts significantly tightens the market, acting as a major driver for higher WTI prices.",
+        "evidence_article_ids": [
+          "art_finance_20241206_003_a9b9e956"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_12"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:59:17.616995Z",
+        "last_confirmed_at": "2026-07-25T02:59:17.616995Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2024_12_20260725_025917_005_01ab914d",
+        "source_event_id": "evt_finance_20241219_007_e2db8396",
+        "target_event_id": "evt_999be5c104fa",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Strong demand growth from India, surpassing China, creates significant upward price pressure due to increased consumption.",
+        "evidence_article_ids": [
+          "art_finance_20241219_005_26d3b1c0"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_12"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:59:17.632845Z",
+        "last_confirmed_at": "2026-07-25T02:59:17.632845Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2024_12_20260725_025917_006_c3a94797",
+        "source_event_id": "evt_politics_20241210_006_6accdf58",
+        "target_event_id": "evt_999be5c104fa",
+        "relation_type": "amplifies",
+        "strength": 0.5,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Geopolitical risks, while not directly causing price increases, add a risk premium that prevents significant downward momentum, thereby supporting higher prices.",
+        "evidence_article_ids": [
+          "art_finance_20241210_007_b3258d61"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_12"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:59:17.649549Z",
+        "last_confirmed_at": "2026-07-25T02:59:17.649549Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2024_12_20260725_025917_007_0553a575",
+        "source_event_id": "evt_finance_20241209_005_c21e8e70",
+        "target_event_id": "evt_999be5c104fa",
+        "relation_type": "inhibits",
+        "strength": 0.4,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Increased US oil production acts as a countervailing factor, potentially limiting price increases by adding to global supply.",
+        "evidence_article_ids": [
+          "art_finance_20241209_004_d5d7c02b"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_12"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:59:17.665492Z",
+        "last_confirmed_at": "2026-07-25T02:59:17.665492Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2024_12_20260725_025917_008_d9585ef0",
+        "source_event_id": "evt_finance_20241226_008_84bf9714",
+        "target_event_id": "evt_999be5c104fa",
+        "relation_type": "inhibits",
+        "strength": 0.3,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "A slight increase in global oil supply, including from OPEC, could put downward pressure on prices, but was ultimately overcome by other factors.",
+        "evidence_article_ids": [
+          "art_finance_20241226_002_965dc487"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_12"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:59:17.681908Z",
+        "last_confirmed_at": "2026-07-25T02:59:17.681908Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2024_12_20260725_025917_009_36ab82e7",
+        "source_event_id": "evt_finance_20241106_001_0bd3de1e",
+        "target_event_id": "evt_finance_20241205_003_6fcbddc6",
+        "relation_type": "enables",
+        "strength": 0.6,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "The initial extension of cuts in November likely influenced the decision to delay unwinding production increases in early December, as it set a precedent for continued supply management.",
+        "evidence_article_ids": [
+          "art_finance_20241106_004_e91f7076",
+          "art_finance_20241205_002_80886d1e"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_12"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:59:17.698046Z",
+        "last_confirmed_at": "2026-07-25T02:59:17.698046Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2024_12_20260725_025917_010_934c2a4e",
+        "source_event_id": "evt_finance_20241205_003_6fcbddc6",
+        "target_event_id": "evt_999be5c104fa",
+        "relation_type": "causes",
+        "strength": 0.5,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Delaying the unwinding of production increases contributes to continued supply restraint, supporting higher prices.",
+        "evidence_article_ids": [
+          "art_finance_20241205_002_80886d1e"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_12"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:59:17.715797Z",
+        "last_confirmed_at": "2026-07-25T02:59:17.715797Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2024_12_20260725_025917_011_74a337f9",
+        "source_event_id": "evt_finance_20241204_002_3711d8e3",
+        "target_event_id": "evt_999be5c104fa",
+        "relation_type": "correlates",
+        "strength": 0.4,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "The early December rebound in crude prices in Asia is an indicator of the upward price movement that ultimately led to WTI finishing above the recent range.",
+        "evidence_article_ids": [
+          "art_finance_20241204_011_979b94e5"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_12"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:59:17.732045Z",
+        "last_confirmed_at": "2026-07-25T02:59:17.732045Z"
+      }
+    ],
+    "outcome_impacts": [
+      {
+        "id": "imp_68d1c3e6",
+        "event_id": "evt_finance_20241106_001_0bd3de1e",
+        "outcome_event_id": "evt_999be5c104fa",
+        "question_id": "v3_wti_monthly_return_2024_12",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.8,
+        "reasoning": "The extension of oil output cuts directly limits supply, contributing to higher prices, thus making the actual outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_12"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:59:28.449376Z",
+        "last_confirmed_at": "2026-07-25T02:59:28.449376Z"
+      },
+      {
+        "id": "imp_2e84f882",
+        "event_id": "evt_finance_20241204_002_3711d8e3",
+        "outcome_event_id": "evt_999be5c104fa",
+        "question_id": "v3_wti_monthly_return_2024_12",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.4,
+        "confidence": 0.7,
+        "reasoning": "The early December rebound in crude prices in Asia is an indicator of the upward price movement that ultimately led to WTI finishing above the recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_12"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:59:28.462025Z",
+        "last_confirmed_at": "2026-07-25T02:59:28.462025Z"
+      },
+      {
+        "id": "imp_950d6c7a",
+        "event_id": "evt_finance_20241205_003_6fcbddc6",
+        "outcome_event_id": "evt_999be5c104fa",
+        "question_id": "v3_wti_monthly_return_2024_12",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.5,
+        "confidence": 0.7,
+        "reasoning": "Delaying the unwinding of production increases contributes to continued supply restraint, supporting higher prices, thus making the actual outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_12"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:59:28.473837Z",
+        "last_confirmed_at": "2026-07-25T02:59:28.473837Z"
+      },
+      {
+        "id": "imp_885fcabd",
+        "event_id": "evt_finance_20241206_004_efe8119c",
+        "outcome_event_id": "evt_999be5c104fa",
+        "question_id": "v3_wti_monthly_return_2024_12",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.95,
+        "reasoning": "The long-term commitment to production cuts significantly tightens the market, acting as a major driver for higher WTI prices, thus making the actual outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_12"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:59:28.487274Z",
+        "last_confirmed_at": "2026-07-25T02:59:28.487274Z"
+      },
+      {
+        "id": "imp_d86da625",
+        "event_id": "evt_finance_20241209_005_c21e8e70",
+        "outcome_event_id": "evt_999be5c104fa",
+        "question_id": "v3_wti_monthly_return_2024_12",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.4,
+        "confidence": 0.7,
+        "reasoning": "Increased US oil production acts as a countervailing factor, potentially limiting price increases by adding to global supply, thus making the actual outcome less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_12"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:59:28.499277Z",
+        "last_confirmed_at": "2026-07-25T02:59:28.499277Z"
+      },
+      {
+        "id": "imp_a0742170",
+        "event_id": "evt_politics_20241210_006_6accdf58",
+        "outcome_event_id": "evt_999be5c104fa",
+        "question_id": "v3_wti_monthly_return_2024_12",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.5,
+        "confidence": 0.8,
+        "reasoning": "Geopolitical risks, while not directly causing price increases, add a risk premium that prevents significant downward momentum, thereby supporting higher prices, thus making the actual outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_12"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:59:28.511182Z",
+        "last_confirmed_at": "2026-07-25T02:59:28.511182Z"
+      },
+      {
+        "id": "imp_dbb78c71",
+        "event_id": "evt_finance_20241212_015_e335cbf1",
+        "outcome_event_id": "evt_999be5c104fa",
+        "question_id": "v3_wti_monthly_return_2024_12",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.1,
+        "confidence": 0.6,
+        "reasoning": "The IEA report details market conditions but does not directly cause or hinder the outcome, acting as an informational event.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_12"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:59:28.523857Z",
+        "last_confirmed_at": "2026-07-25T02:59:28.523857Z"
+      },
+      {
+        "id": "imp_d5562d94",
+        "event_id": "evt_finance_20241219_007_e2db8396",
+        "outcome_event_id": "evt_999be5c104fa",
+        "question_id": "v3_wti_monthly_return_2024_12",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "Strong demand growth from India, surpassing China, creates significant upward price pressure due to increased consumption, thus making the actual outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_12"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:59:28.535827Z",
+        "last_confirmed_at": "2026-07-25T02:59:28.535827Z"
+      },
+      {
+        "id": "imp_77506898",
+        "event_id": "evt_finance_20241226_008_84bf9714",
+        "outcome_event_id": "evt_999be5c104fa",
+        "question_id": "v3_wti_monthly_return_2024_12",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.3,
+        "confidence": 0.6,
+        "reasoning": "A slight increase in global oil supply, including from OPEC, could put downward pressure on prices, thus making the actual outcome less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_12"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:59:28.547893Z",
+        "last_confirmed_at": "2026-07-25T02:59:28.547893Z"
+      },
+      {
+        "id": "imp_050fcb88",
+        "event_id": "evt_finance_20241106_001_0bd3de1e",
+        "outcome_event_id": "evt_999be5c104fa",
+        "question_id": "v3_wti_monthly_return_2024_12",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.8,
+        "reasoning": "The extension of oil output cuts directly limits supply, contributing to higher prices, thus making the actual outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_12"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:59:33.962488Z",
+        "last_confirmed_at": "2026-07-25T02:59:33.962488Z"
+      },
+      {
+        "id": "imp_33ec9394",
+        "event_id": "evt_finance_20241204_002_3711d8e3",
+        "outcome_event_id": "evt_999be5c104fa",
+        "question_id": "v3_wti_monthly_return_2024_12",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.4,
+        "confidence": 0.7,
+        "reasoning": "The early December rebound in crude prices in Asia is an indicator of the upward price movement that ultimately led to WTI finishing above the recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_12"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:59:33.973368Z",
+        "last_confirmed_at": "2026-07-25T02:59:33.973368Z"
+      },
+      {
+        "id": "imp_e657715a",
+        "event_id": "evt_finance_20241205_003_6fcbddc6",
+        "outcome_event_id": "evt_999be5c104fa",
+        "question_id": "v3_wti_monthly_return_2024_12",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.5,
+        "confidence": 0.7,
+        "reasoning": "Delaying the unwinding of production increases contributes to continued supply restraint, supporting higher prices, thus making the actual outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_12"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:59:33.985306Z",
+        "last_confirmed_at": "2026-07-25T02:59:33.985306Z"
+      },
+      {
+        "id": "imp_4b7edfb1",
+        "event_id": "evt_finance_20241206_004_efe8119c",
+        "outcome_event_id": "evt_999be5c104fa",
+        "question_id": "v3_wti_monthly_return_2024_12",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.95,
+        "reasoning": "The long-term commitment to production cuts significantly tightens the market, acting as a major driver for higher WTI prices, thus making the actual outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_12"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:59:33.995627Z",
+        "last_confirmed_at": "2026-07-25T02:59:33.995627Z"
+      },
+      {
+        "id": "imp_de109146",
+        "event_id": "evt_finance_20241209_005_c21e8e70",
+        "outcome_event_id": "evt_999be5c104fa",
+        "question_id": "v3_wti_monthly_return_2024_12",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.4,
+        "confidence": 0.7,
+        "reasoning": "Increased US oil production acts as a countervailing factor, potentially limiting price increases by adding to global supply, thus making the actual outcome less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_12"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:59:34.008368Z",
+        "last_confirmed_at": "2026-07-25T02:59:34.008368Z"
+      },
+      {
+        "id": "imp_0262c926",
+        "event_id": "evt_politics_20241210_006_6accdf58",
+        "outcome_event_id": "evt_999be5c104fa",
+        "question_id": "v3_wti_monthly_return_2024_12",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.5,
+        "confidence": 0.8,
+        "reasoning": "Geopolitical risks, while not directly causing price increases, add a risk premium that prevents significant downward momentum, thereby supporting higher prices, thus making the actual outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_12"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:59:34.022525Z",
+        "last_confirmed_at": "2026-07-25T02:59:34.022525Z"
+      },
+      {
+        "id": "imp_61890aa8",
+        "event_id": "evt_finance_20241212_015_e335cbf1",
+        "outcome_event_id": "evt_999be5c104fa",
+        "question_id": "v3_wti_monthly_return_2024_12",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.1,
+        "confidence": 0.6,
+        "reasoning": "The IEA report details market conditions but does not directly cause or hinder the outcome, acting as an informational event.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_12"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:59:34.033284Z",
+        "last_confirmed_at": "2026-07-25T02:59:34.033284Z"
+      },
+      {
+        "id": "imp_2538f1f0",
+        "event_id": "evt_finance_20241219_007_e2db8396",
+        "outcome_event_id": "evt_999be5c104fa",
+        "question_id": "v3_wti_monthly_return_2024_12",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "Strong demand growth from India, surpassing China, creates significant upward price pressure due to increased consumption, thus making the actual outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_12"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:59:34.043218Z",
+        "last_confirmed_at": "2026-07-25T02:59:34.043218Z"
+      },
+      {
+        "id": "imp_d89d5609",
+        "event_id": "evt_finance_20241226_008_84bf9714",
+        "outcome_event_id": "evt_999be5c104fa",
+        "question_id": "v3_wti_monthly_return_2024_12",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.3,
+        "confidence": 0.6,
+        "reasoning": "A slight increase in global oil supply, including from OPEC, could put downward pressure on prices, thus making the actual outcome less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_12"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:59:34.053462Z",
+        "last_confirmed_at": "2026-07-25T02:59:34.053462Z"
+      }
+    ]
+  }
+}
