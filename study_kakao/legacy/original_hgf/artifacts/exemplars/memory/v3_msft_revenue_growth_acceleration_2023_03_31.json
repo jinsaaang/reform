@@ -1,0 +1,32 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_msft_revenue_growth_acceleration_2023_03_31",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial",
+      "target_operation": "growth_acceleration",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2023-03-31, which range will Microsoft Corporation's quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2023-03-31 fall into?",
+    "historical_cutoff": "2023-03-31T00:00:00+00:00",
+    "target_semantics": "Microsoft Corporation's quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2023-03-31.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The historical analysis suggests that strength in Cloud services historically outweighed weaker product segments as a driver for Microsoft's revenue growth acceleration.",
+      "This implies that if Cloud performance remains robust, it could positively influence the target metric.",
+      "The target metric is quarterly revenue year-over-year growth acceleration, which is the change in YoY revenue growth from the prior quarter."
+    ],
+    "counterevidence": "No specific counterevidence was identified in the provided DAG structure. The DAG notes that the prior-quarter YoY rate is arithmetically reconstructed, indicating a potential weakness in directly measuring historical drivers.",
+    "prospective_target_estimate": "The DAG indicates a 'mixed' expected direction for the target, suggesting that without specific forecast-time evidence, a precise estimate is not possible. The historical support for the 'Cloud strength' factor is 'weak'.",
+    "option_mapping": "The target metric is 'quarterly revenue year-over-year growth acceleration'. The options are 'below recent range' (less than -6.639 percentage points), 'within recent range' (-6.639 to -1.765 percentage points), and 'above recent range' (at or above -1.765 percentage points).",
+    "uncertainty": "Significant uncertainty exists due to the lack of forecast-time evidence and the 'weak' historical support for the identified driver. The DAG also highlights that the prior-quarter YoY rate is reconstructed, adding to the uncertainty.",
+    "dag_derived_lesson": "A historical driver's impact on a financial metric can be assessed by its historical strength and its prospective activation in the current period, mediated by a clear mechanism. The absence of direct evidence for intermediate steps or the presence of counteracting forces increases uncertainty."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

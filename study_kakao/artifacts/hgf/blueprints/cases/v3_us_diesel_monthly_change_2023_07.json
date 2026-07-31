@@ -1,0 +1,840 @@
+{
+  "schema_version": "hgf_blueprint_topology_v2",
+  "question_id": "v3_us_diesel_monthly_change_2023_07",
+  "target_definition": {
+    "metric": "monthly retail diesel-price change",
+    "unit_or_option_space": [
+      "yes",
+      "no"
+    ],
+    "forecast_horizon": "Remap the historical target family to the current question's exact target period."
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Outcome-redacted topology preserves 12 checkpoints, 12 source edges, and 7 root-to-target paths.",
+    "weaknesses": []
+  },
+  "search_factors": [
+    {
+      "factor": "OPEC+ Announces Deeper Output Cuts",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230606_001_c45c5476"
+      ]
+    },
+    {
+      "factor": "Global Crude Oil Supply Tightens",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230705_009_9dc0115b"
+      ]
+    },
+    {
+      "factor": "Strong Global Demand for Oil Observed",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230705_010_22384517"
+      ]
+    },
+    {
+      "factor": "US Crude Oil Gains on Supply Cuts",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230705_002_5c2a9be3"
+      ]
+    },
+    {
+      "factor": "Higher Crude Oil Benchmarks Set",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230705_011_b07ccb45"
+      ]
+    },
+    {
+      "factor": "Increased Refined Product Costs",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230705_012_e6ef8104"
+      ]
+    },
+    {
+      "factor": "Oil Prices Near Flat on US Rate Hike Risk",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230706_007_c2a10e51"
+      ]
+    },
+    {
+      "factor": "US Diesel Markets Face Summer Demand Crunch",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230718_004_2b5ea801"
+      ]
+    },
+    {
+      "factor": "GIS Reports Indicate Weak Demand in Oil Market",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230725_008_8ee17918"
+      ]
+    },
+    {
+      "factor": "Federal Reserve Issues FOMC Statement",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230726_006_22e1c6d4"
+      ]
+    },
+    {
+      "factor": "Rystad Energy Upgrades Global Oil Demand Forecast",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_general_20230710_003_c32e7c3b"
+      ]
+    },
+    {
+      "factor": "EIA Reports US Average Retail Diesel Price Increase in [CURRENT_PERIOD_REQUIRED]",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_general_20230728_005_b64b59f6"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "checkpoint_1",
+      "role": "driver",
+      "factor": "OPEC+ Announces Deeper Output Cuts",
+      "mechanism": "OPEC+ production cuts announced in [CURRENT_PERIOD_REQUIRED] directly led to a tightening of global crude supply observed in [CURRENT_PERIOD_REQUIRED].",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230606_001_c45c5476"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_001_3eb96d4c"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_2",
+      "role": "mediator",
+      "factor": "Global Crude Oil Supply Tightens",
+      "mechanism": "Tight global supply directly contributes to gains in US crude oil prices.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230705_009_9dc0115b"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_002_c45cf4ca"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_3",
+      "role": "driver",
+      "factor": "Strong Global Demand for Oil Observed",
+      "mechanism": "Observed strong global demand, including holiday demand, contributes to gains in US crude oil prices.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230705_010_22384517"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_003_b8a5d9d8"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_4",
+      "role": "mediator",
+      "factor": "US Crude Oil Gains on Supply Cuts",
+      "mechanism": "Gains in US crude oil directly lead to higher crude oil benchmarks.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230705_002_5c2a9be3"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_004_0310efbb"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_5",
+      "role": "mediator",
+      "factor": "Higher Crude Oil Benchmarks Set",
+      "mechanism": "Higher crude oil benchmarks directly translate to increased costs for refined products.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230705_011_b07ccb45"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_005_202b56fa"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_6",
+      "role": "mediator",
+      "factor": "Increased Refined Product Costs",
+      "mechanism": "Increased refined product costs directly lead to an increase in average retail diesel prices.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230705_012_e6ef8104"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_006_b54d5b27"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_7",
+      "role": "counterevidence",
+      "factor": "Oil Prices Near Flat on US Rate Hike Risk",
+      "mechanism": "Concerns about U.S. rate hike risk tempered oil price gains initially, acting as a countervailing factor against a larger diesel price increase.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230706_007_c2a10e51"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_009_4e50c3e4"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_8",
+      "role": "driver",
+      "factor": "US Diesel Markets Face Summer Demand Crunch",
+      "mechanism": "Strong domestic demand for diesel, indicated by a summer demand crunch, directly contributed to local price pressure and the overall diesel price increase.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230718_004_2b5ea801"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_008_3e753923"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_9",
+      "role": "counterevidence",
+      "factor": "GIS Reports Indicate Weak Demand in Oil Market",
+      "mechanism": "Some analysis pointed to weak demand defining the oil market's behavior, suggesting a slowdown that could dampen price increases.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230725_008_8ee17918"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_010_0b2c4de3"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_10",
+      "role": "counterevidence",
+      "factor": "Federal Reserve Issues FOMC Statement",
+      "mechanism": "The Federal Reserve's FOMC statement implied potential economic cool-downs, which could indirectly dampen fuel demand and price increases.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230726_006_22e1c6d4"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_011_f7f94e38"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_11",
+      "role": "driver",
+      "factor": "Rystad Energy Upgrades Global Oil Demand Forecast",
+      "mechanism": "An upgraded demand forecast amplified the market's expectation of higher prices, contributing to the diesel price increase.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_general_20230710_003_c32e7c3b"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_007_df233b73"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_12",
+      "role": "mediator",
+      "factor": "EIA Reports US Average Retail Diesel Price Increase in [CURRENT_PERIOD_REQUIRED]",
+      "mechanism": "Re-test whether this factor has a currently supported link to the exact target metric; do not transfer the historical outcome or magnitude.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_general_20230728_005_b64b59f6"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065550_012_6ff595ef"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "target_bridge",
+      "role": "target_bridge",
+      "factor": "monthly retail diesel-price change",
+      "mechanism": "Map only currently supported paths into the exact target operator. Directional support alone is not magnitude or threshold-crossing support.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "A current target baseline and evidence supporting every edge used in the bridge.",
+      "contradiction_signal": "The current target baseline, magnitude evidence, or option boundary contradicts the proposed path.",
+      "historical_support": "medium",
+      "source_event_ids": [],
+      "source_edge_ids": [
+        "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065550_012_6ff595ef"
+      ],
+      "source_event_type": "target_bridge"
+    }
+  ],
+  "topology": {
+    "checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_5",
+      "checkpoint_6",
+      "checkpoint_7",
+      "checkpoint_8",
+      "checkpoint_9",
+      "checkpoint_10",
+      "checkpoint_11",
+      "checkpoint_12",
+      "target_bridge"
+    ],
+    "root_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_3",
+      "checkpoint_7",
+      "checkpoint_8",
+      "checkpoint_9",
+      "checkpoint_10",
+      "checkpoint_11"
+    ],
+    "target_bridge_id": "target_bridge",
+    "edges": [
+      {
+        "source_checkpoint_id": "checkpoint_1",
+        "target_checkpoint_id": "checkpoint_2",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "OPEC+ production cuts announced in [CURRENT_PERIOD_REQUIRED] directly led to a tightening of global crude supply observed in [CURRENT_PERIOD_REQUIRED].",
+        "source_edge_ids": [
+          "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_001_3eb96d4c"
+        ],
+        "source_article_ids": [
+          "art_finance_20230606_019_30fa2a99",
+          "art_finance_20230705_020_a3d29954"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_2",
+        "target_checkpoint_id": "checkpoint_4",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Tight global supply directly contributes to gains in US crude oil prices.",
+        "source_edge_ids": [
+          "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_002_c45cf4ca"
+        ],
+        "source_article_ids": [
+          "art_finance_20230705_020_a3d29954"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_3",
+        "target_checkpoint_id": "checkpoint_4",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Observed strong global demand, including holiday demand, contributes to gains in US crude oil prices.",
+        "source_edge_ids": [
+          "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_003_b8a5d9d8"
+        ],
+        "source_article_ids": [
+          "art_finance_20230705_020_a3d29954"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_4",
+        "target_checkpoint_id": "checkpoint_5",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Gains in US crude oil directly lead to higher crude oil benchmarks.",
+        "source_edge_ids": [
+          "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_004_0310efbb"
+        ],
+        "source_article_ids": [
+          "art_finance_20230705_020_a3d29954"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_5",
+        "target_checkpoint_id": "checkpoint_6",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Higher crude oil benchmarks directly translate to increased costs for refined products.",
+        "source_edge_ids": [
+          "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_005_202b56fa"
+        ],
+        "source_article_ids": [
+          "art_finance_20230705_020_a3d29954",
+          "art_general_20230728_009_90e6d0a9"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_6",
+        "target_checkpoint_id": "checkpoint_12",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Increased refined product costs directly lead to an increase in average retail diesel prices.",
+        "source_edge_ids": [
+          "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_006_b54d5b27"
+        ],
+        "source_article_ids": [
+          "art_general_20230728_009_90e6d0a9"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_11",
+        "target_checkpoint_id": "checkpoint_12",
+        "relationship": "amplifies",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "An upgraded demand forecast amplified the market's expectation of higher prices, contributing to the diesel price increase.",
+        "source_edge_ids": [
+          "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_007_df233b73"
+        ],
+        "source_article_ids": [
+          "art_general_20230710_003_4505d15d",
+          "art_general_20230728_009_90e6d0a9"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_8",
+        "target_checkpoint_id": "checkpoint_12",
+        "relationship": "amplifies",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Strong domestic demand for diesel, indicated by a summer demand crunch, directly contributed to local price pressure and the overall diesel price increase.",
+        "source_edge_ids": [
+          "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_008_3e753923"
+        ],
+        "source_article_ids": [
+          "art_finance_20230718_006_518d3477",
+          "art_general_20230728_009_90e6d0a9"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_7",
+        "target_checkpoint_id": "checkpoint_12",
+        "relationship": "inhibits",
+        "directionality": "counteracting",
+        "support_level": "",
+        "rationale": "Concerns about U.S. rate hike risk tempered oil price gains initially, acting as a countervailing factor against a larger diesel price increase.",
+        "source_edge_ids": [
+          "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_009_4e50c3e4"
+        ],
+        "source_article_ids": [
+          "art_finance_20230706_016_f9b31022"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_9",
+        "target_checkpoint_id": "checkpoint_12",
+        "relationship": "inhibits",
+        "directionality": "counteracting",
+        "support_level": "",
+        "rationale": "Some analysis pointed to weak demand defining the oil market's behavior, suggesting a slowdown that could dampen price increases.",
+        "source_edge_ids": [
+          "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_010_0b2c4de3"
+        ],
+        "source_article_ids": [
+          "art_finance_20230725_010_e8d9530c"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_10",
+        "target_checkpoint_id": "checkpoint_12",
+        "relationship": "inhibits",
+        "directionality": "counteracting",
+        "support_level": "",
+        "rationale": "The Federal Reserve's FOMC statement implied potential economic cool-downs, which could indirectly dampen fuel demand and price increases.",
+        "source_edge_ids": [
+          "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_011_f7f94e38"
+        ],
+        "source_article_ids": [
+          "art_finance_20230726_015_7ddca5bb"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_12",
+        "target_checkpoint_id": "target_bridge",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Historical DAG connected this factor to the redacted target measurement; the realized value and outcome mapping are omitted.",
+        "source_edge_ids": [
+          "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065550_012_6ff595ef"
+        ],
+        "source_article_ids": [
+          "art_general_20230728_009_90e6d0a9"
+        ],
+        "terminal_to_target_bridge": true
+      }
+    ],
+    "paths_truncated": false
+  },
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "checkpoint_1",
+        "checkpoint_2",
+        "checkpoint_4",
+        "checkpoint_5",
+        "checkpoint_6",
+        "checkpoint_12",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_001_3eb96d4c",
+        "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_002_c45cf4ca",
+        "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_004_0310efbb",
+        "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_005_202b56fa",
+        "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_006_b54d5b27",
+        "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065550_012_6ff595ef"
+      ],
+      "relationships": [
+        "causes",
+        "causes",
+        "causes",
+        "causes",
+        "causes",
+        "causes"
+      ],
+      "path_role": "main_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from OPEC+ Announces Deeper Output Cuts to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_3",
+        "checkpoint_4",
+        "checkpoint_5",
+        "checkpoint_6",
+        "checkpoint_12",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_003_b8a5d9d8",
+        "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_004_0310efbb",
+        "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_005_202b56fa",
+        "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_006_b54d5b27",
+        "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065550_012_6ff595ef"
+      ],
+      "relationships": [
+        "causes",
+        "causes",
+        "causes",
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Strong Global Demand for Oil Observed to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_7",
+        "checkpoint_12",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_009_4e50c3e4",
+        "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065550_012_6ff595ef"
+      ],
+      "relationships": [
+        "inhibits",
+        "causes"
+      ],
+      "path_role": "counter_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Oil Prices Near Flat on US Rate Hike Risk to the current target; every edge requires current support.",
+      "expected_direction": "mixed",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_8",
+        "checkpoint_12",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_008_3e753923",
+        "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065550_012_6ff595ef"
+      ],
+      "relationships": [
+        "amplifies",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from US Diesel Markets Face Summer Demand Crunch to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_9",
+        "checkpoint_12",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_010_0b2c4de3",
+        "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065550_012_6ff595ef"
+      ],
+      "relationships": [
+        "inhibits",
+        "causes"
+      ],
+      "path_role": "counter_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from GIS Reports Indicate Weak Demand in Oil Market to the current target; every edge requires current support.",
+      "expected_direction": "mixed",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_10",
+        "checkpoint_12",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_011_f7f94e38",
+        "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065550_012_6ff595ef"
+      ],
+      "relationships": [
+        "inhibits",
+        "causes"
+      ],
+      "path_role": "counter_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Federal Reserve Issues FOMC Statement to the current target; every edge requires current support.",
+      "expected_direction": "mixed",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_11",
+        "checkpoint_12",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065526_007_df233b73",
+        "hyp_v3_us_diesel_monthly_change_2023_07_20260725_065550_012_6ff595ef"
+      ],
+      "relationships": [
+        "amplifies",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Rystad Energy Upgrades Global Oil Demand Forecast to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "Oil Prices Near Flat on US Rate Hike Risk dominates or reverses the leading current path.",
+      "discriminating_evidence": "Compare current evidence for this counter-path with every edge on the leading supported path.",
+      "source_event_ids": [
+        "evt_finance_20230706_007_c2a10e51"
+      ]
+    },
+    {
+      "hypothesis": "GIS Reports Indicate Weak Demand in Oil Market dominates or reverses the leading current path.",
+      "discriminating_evidence": "Compare current evidence for this counter-path with every edge on the leading supported path.",
+      "source_event_ids": [
+        "evt_finance_20230725_008_8ee17918"
+      ]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Does every used checkpoint transition correspond to a preserved edge?",
+    "Which preserved edges are supported, contradicted, or unknown now?",
+    "Does a counter-path dominate the leading supported path?",
+    "Is there evidence for magnitude and boundary crossing, not direction alone?"
+  ],
+  "refinement_metadata": {
+    "model": "deterministic_topology_compiler_v2",
+    "source_graph": "data\\dags\\v3_us_diesel_monthly_change_2023_07\\graph.json",
+    "source_audit_status": "pass",
+    "outcome_nodes_redacted": 2,
+    "target_value_anchors_redacted": 0,
+    "historical_specifics_sanitized": true,
+    "sanitizer": "minimal_value_period_placeholders_v1",
+    "value_replacement_count": 0,
+    "period_replacement_count": 6
+  },
+  "topology_validation": {
+    "status": "pass",
+    "errors": [],
+    "metrics": {
+      "retained_checkpoint_count": 12,
+      "source_edge_count": 12,
+      "emitted_edge_count": 12,
+      "edge_coverage": 1.0,
+      "path_precision": 1.0,
+      "causal_path_count": 7,
+      "outcome_event_leak_count": 0,
+      "outcome_text_leak_count": 0,
+      "realized_value_count": 0,
+      "absolute_period_count": 0
+    }
+  }
+}

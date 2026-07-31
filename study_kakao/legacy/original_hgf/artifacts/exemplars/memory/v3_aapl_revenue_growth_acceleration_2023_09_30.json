@@ -1,0 +1,62 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_aapl_revenue_growth_acceleration_2023_09_30",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_growth",
+      "target_operation": "acceleration",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2023-09-30, which range will Apple Inc.'s quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2023-09-30 fall into?",
+    "historical_cutoff": "2023-09-30T00:00:00+00:00",
+    "target_semantics": "Apple Inc.'s quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2023-09-30.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "ev_288ca77e836873e2",
+        "takeaway": "Apple's Q3 2023 revenue was $81.8 billion, up 2% year-over-year, with iPhone revenue up 2% and services revenue up 8%. Gross margin was 44.3%.",
+        "why_predictive": "Provides specific revenue growth figures for a recent quarter, directly relevant to calculating acceleration."
+      },
+      {
+        "article_id": "ev_665aa68c94004727",
+        "takeaway": "Apple's stock is considered a buy or hold, with analysts expecting continued strong performance driven by product cycles and services.",
+        "why_predictive": "Indicates positive sentiment and expectations for future performance, which can influence revenue trends."
+      },
+      {
+        "article_id": "ev_9f4e723813243161",
+        "takeaway": "Analysts are positive on Apple's prospects heading into the end of September, citing product launches and ecosystem strength.",
+        "why_predictive": "Suggests a favorable environment for Apple's revenue in the target quarter."
+      },
+      {
+        "article_id": "ev_cddb90e16a7217da",
+        "takeaway": "Apple faces a significant challenge with its services revenue growth potentially slowing, despite overall revenue growth.",
+        "why_predictive": "Highlights a potential headwind that could impact revenue growth acceleration."
+      },
+      {
+        "article_id": "ev_e9efed9b2b79f336",
+        "takeaway": "Apple's stock performance is generally strong, but questions remain about future growth drivers.",
+        "why_predictive": "Provides general market sentiment and a hint of underlying uncertainty about sustained growth."
+      }
+    ],
+    "expert_reasoning": [
+      "The target metric is the acceleration of year-over-year revenue growth for Apple's fiscal quarter ending 2023-09-30.",
+      "Evidence from ev_288ca77e836873e2 indicates that for Q3 2023 (ending June 2023), Apple's revenue grew 2% year-over-year, and iPhone revenue grew 2%.",
+      "To calculate acceleration, we need the prior quarter's growth rate. Assuming the prior quarter (Q2 2023) had a lower YoY growth rate than Q3 2023's 2%, the acceleration would be positive.",
+      "However, the exact YoY growth rate for the prior quarter is not explicitly stated in the provided evidence, making a precise calculation of acceleration difficult.",
+      "Positive analyst sentiment (ev_665aa68c94004727, ev_9f4e723813243161) suggests continued revenue strength, potentially supporting positive acceleration.",
+      "A potential counterpoint is the concern about slowing services revenue growth (ev_cddb90e16a7217da), which could dampen acceleration.",
+      "Given the available information, the growth rate for the target quarter is likely to be positive, but the acceleration is uncertain due to the lack of a precise baseline growth rate from the prior quarter."
+    ],
+    "counterevidence": "The specific year-over-year revenue growth rate for the quarter preceding the target quarter is not explicitly provided in the forecast-time evidence, making it difficult to definitively calculate the acceleration.",
+    "prospective_target_estimate": "within recent range",
+    "option_mapping": "The evidence suggests positive revenue growth, but the acceleration is uncertain. Given the ambiguity and the potential for both positive drivers and headwinds, 'within recent range' is the most plausible option, acknowledging the lack of precise data for a 'below' or 'above' determination.",
+    "uncertainty": "Significant uncertainty exists due to the absence of the prior quarter's year-over-year revenue growth rate in the provided forecast-time articles, which is crucial for calculating the acceleration. Analyst sentiment is generally positive but includes a note of caution regarding future growth drivers and services revenue.",
+    "dag_derived_lesson": "When assessing growth acceleration, the precise historical baseline growth rate is critical. If this baseline is not directly available, the calculation of acceleration becomes speculative, even with directional evidence for the current period and general market sentiment. This necessitates a cautious approach to forecasting, acknowledging the impact of missing data points on the certainty of the prediction."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

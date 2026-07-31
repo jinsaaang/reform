@@ -1,0 +1,204 @@
+{
+  "schema_version": "hgf_blueprint_v1",
+  "question_id": "v3_us_cpi_monthly_change_2024_06",
+  "target_definition": {
+    "metric": "United States monthly all-items CPI change",
+    "unit_or_option_space": "Pre-registered monthly percentage-change threshold classification",
+    "forecast_horizon": "June 2024"
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Broad cooling in inflationary pressure can restrain consumer demand and business price increases, while housing and inflation-expectation pressure provide meaningful upside counterevidence.",
+    "weaknesses": [
+      "The graph's direct measurement and downstream market-reaction nodes describe the realized release and are excluded from reusable reasoning.",
+      "Housing evidence concerns lagged shelter inflation and may not align precisely with a single monthly observation."
+    ]
+  },
+  "search_factors": [
+    {
+      "factor": "Broad inflation pressure",
+      "why_search": "Broad easing or reacceleration in component prices establishes the macro backdrop for the monthly index.",
+      "preferred_source_types": [
+        "BLS component-price release",
+        "producer-price data",
+        "commodity data"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240630_006_0b16be35"
+      ]
+    },
+    {
+      "factor": "Consumer demand and business pricing",
+      "why_search": "Demand moderation and restrained price-setting are the proposed transmission channel from cooling pressures to consumer prices.",
+      "preferred_source_types": [
+        "retail-sales data",
+        "business surveys",
+        "BLS component-price release"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240630_007_7ed680dd"
+      ]
+    },
+    {
+      "factor": "Shelter inflation lag",
+      "why_search": "Shelter can sustain all-items CPI pressure even when new-lease prices and other sectors cool.",
+      "preferred_source_types": [
+        "BLS CPI release",
+        "rental-market data",
+        "Federal Reserve research"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240716_003_09be0411"
+      ]
+    },
+    {
+      "factor": "Inflation-expectation tail risk",
+      "why_search": "An upside shift in household or market inflation expectations can support firmer price-setting despite otherwise cooling data.",
+      "preferred_source_types": [
+        "inflation-expectation survey",
+        "market-implied inflation data"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240702_008_d27a4dd6"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "broad_cooling",
+      "role": "baseline",
+      "factor": "Broad inflation pressure",
+      "mechanism": "Cooling price pressure across sectors reduces the broad impetus for increases in consumer prices.",
+      "expected_direction": "down",
+      "evidence_requirement": "Check whether major CPI components and upstream cost measures are easing together.",
+      "contradiction_signal": "Multiple major components accelerate at the same time.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_finance_20240630_006_0b16be35"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_cpi_monthly_change_2024_06_20260725_011425_001_3d35e238"
+      ]
+    },
+    {
+      "id": "price_setting",
+      "role": "driver",
+      "factor": "Consumer demand and business pricing",
+      "mechanism": "Softer demand or more restrained business price-setting transmits broad cooling into consumer-facing prices.",
+      "expected_direction": "down",
+      "evidence_requirement": "Compare demand indicators and component prices with reports of business pricing behavior.",
+      "contradiction_signal": "Demand remains firm and businesses continue broad price increases.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_finance_20240630_007_7ed680dd"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_cpi_monthly_change_2024_06_20260725_011425_001_3d35e238"
+      ]
+    },
+    {
+      "id": "shelter_lag",
+      "role": "counterevidence",
+      "factor": "Shelter inflation lag",
+      "mechanism": "Lagged shelter inflation can keep a heavily weighted component elevated after new-lease conditions cool.",
+      "expected_direction": "up",
+      "evidence_requirement": "Track monthly shelter CPI alongside new-lease and rent measures.",
+      "contradiction_signal": "Shelter inflation decelerates broadly in the published components.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_finance_20240716_003_09be0411"
+      ],
+      "source_edge_ids": []
+    },
+    {
+      "id": "expectations_risk",
+      "role": "alternative",
+      "factor": "Inflation-expectation tail risk",
+      "mechanism": "Upside inflation-expectation risk can encourage precautionary pricing or signal persistence in price pressure.",
+      "expected_direction": "up",
+      "evidence_requirement": "Review distributions, not only averages, in expectation surveys and market measures.",
+      "contradiction_signal": "Expectation distributions and pricing indicators both ease.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240702_008_d27a4dd6"
+      ],
+      "source_edge_ids": []
+    },
+    {
+      "id": "target_bridge",
+      "role": "target_bridge",
+      "factor": "All-items CPI aggregation",
+      "mechanism": "Component-level price changes aggregate into the published monthly all-items CPI index.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Use the published index level and component contributions to calculate and reconcile the monthly change.",
+      "contradiction_signal": "The component narrative does not reconcile to the published index movement.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_finance_20240630_006_0b16be35",
+        "evt_finance_20240630_007_7ed680dd",
+        "evt_finance_20240716_003_09be0411"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_cpi_monthly_change_2024_06_20260725_011425_001_3d35e238"
+      ]
+    }
+  ],
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "broad_cooling",
+        "price_setting",
+        "target_bridge"
+      ],
+      "generalized_mechanism": "Broadly lower inflation pressure can pass through demand and business pricing into softer monthly consumer-price growth.",
+      "expected_direction": "down",
+      "applicability_conditions": [
+        "Easing is present in sufficiently weighted components.",
+        "Businesses pass lower cost or demand pressure through to consumer prices."
+      ],
+      "failure_conditions": [
+        "Shelter or other large components accelerate.",
+        "Price-setting remains disconnected from weaker demand."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "shelter_lag",
+        "target_bridge"
+      ],
+      "generalized_mechanism": "A lagged shelter component can offset easing in other prices when the all-items index is aggregated.",
+      "expected_direction": "up",
+      "applicability_conditions": [
+        "Shelter remains elevated relative to other components."
+      ],
+      "failure_conditions": [
+        "New-lease cooling reaches the measured shelter component quickly."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "Lagged shelter inflation offsets broader disinflation.",
+      "discriminating_evidence": "Compare shelter's monthly contribution with the combined contribution from other major components.",
+      "source_event_ids": [
+        "evt_finance_20240716_003_09be0411",
+        "evt_finance_20240630_006_0b16be35"
+      ]
+    },
+    {
+      "hypothesis": "Upside expectation risk sustains price-setting despite current cooling.",
+      "discriminating_evidence": "Compare the upper tail of expectation surveys with realized services and goods price changes.",
+      "source_event_ids": [
+        "evt_finance_20240702_008_d27a4dd6",
+        "evt_finance_20240630_007_7ed680dd"
+      ]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Are major CPI components cooling together or is easing narrowly concentrated?",
+    "Do demand indicators and business pricing reports support pass-through of lower pressure?",
+    "Is lagged shelter inflation offsetting easing elsewhere?",
+    "Have upside inflation expectations changed price-setting behavior?",
+    "Do published component contributions reconcile to the monthly all-items index?"
+  ]
+}

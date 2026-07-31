@@ -1,0 +1,56 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_us_3m_yield_monthly_change_2023_01",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_yield_change",
+      "target_operation": "threshold_classification",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2023-01-01, will the monthly 3-month yield change for United States 3-month Treasury yield in 2023-01 be at least 0.26 percentage points?",
+    "historical_cutoff": "2023-01-01T00:00:00+00:00",
+    "target_semantics": "The question asks whether the US 3-month Treasury yield will increase by at least 0.26 percentage points in January 2023.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20220823_003_63a78def",
+        "takeaway": "US inflation rates have been persistently high.",
+        "why_predictive": "High inflation typically leads central banks to adopt tighter monetary policies, which can increase short-term interest rates."
+      },
+      {
+        "article_id": "art_finance_20220616_002_093ebaaa",
+        "takeaway": "Mortgage rates have spiked significantly.",
+        "why_predictive": "Rising mortgage rates are often a signal of increasing interest rates across the yield curve, including short-term rates, driven by monetary policy."
+      },
+      {
+        "article_id": "art_finance_20211219_005_44743575",
+        "takeaway": "A significant portion of US dollars were printed in the recent past (Jan 2020 - Oct 2021).",
+        "why_predictive": "Rapid money supply expansion can contribute to inflationary pressures, which in turn influences monetary policy and interest rates."
+      },
+      {
+        "article_id": "art_finance_20181129_002_e1b7b35a",
+        "takeaway": "Investors were turning to 3-month Treasury bills.",
+        "why_predictive": "This indicates a market environment where short-term rates are a focus, potentially in response to policy shifts or economic uncertainty."
+      }
+    ],
+    "expert_reasoning": [
+      "Persistent high inflation (art_finance_20220823_003_63a78def) suggests the Federal Reserve would maintain or increase its restrictive policy stance.",
+      "A restrictive policy stance typically involves raising the target for the federal funds rate, which directly influences short-term Treasury yields.",
+      "Evidence of rising mortgage rates (art_finance_20220616_002_093ebaaa) supports the idea that interest rates are generally moving upward.",
+      "The large increase in the money supply (art_finance_20211219_005_44743575) could be a contributing factor to inflation, reinforcing the need for tighter policy.",
+      "Market focus on 3-month Treasury bills (art_finance_20181129_002_e1b7b35a) implies that short-term rates are sensitive to policy expectations.",
+      "Therefore, the expectation is that the 3-month Treasury yield would likely increase, potentially exceeding the 0.26 percentage point threshold."
+    ],
+    "counterevidence": "No direct counterevidence was found in the provided articles suggesting an imminent easing of monetary policy or a significant drop in inflation expectations that would counteract the upward pressure on short-term yields.",
+    "prospective_target_estimate": "Yes",
+    "option_mapping": "The reasoning supports a 'yes' outcome, indicating the 3-month yield change is expected to be at least 0.26 percentage points.",
+    "uncertainty": "The forecast relies on the assumption that the Federal Reserve will continue its restrictive policy in response to inflation and that market pricing will reflect these expectations. Unexpected shifts in economic conditions or policy communication could alter this trajectory.",
+    "dag_derived_lesson": "Persistent inflationary pressures tend to drive central bank policy towards restriction, which in turn influences short-term market rates. Market participants' focus on short-dated instruments suggests sensitivity to these policy shifts, making short-term yields responsive to expected policy paths."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

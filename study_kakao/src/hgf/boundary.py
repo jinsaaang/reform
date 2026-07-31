@@ -243,6 +243,7 @@ def _validate_boundary_forecast(
     evidence_ids: set[str],
     reasoning_policy: str,
     validation_policy: str,
+    prospective_anchor_support: str | None = None,
 ) -> tuple[dict[str, float], list[str]]:
     if validation_policy == "recovery":
         estimate = payload.get("latent_target_estimate", {})
@@ -257,27 +258,6 @@ def _validate_boundary_forecast(
         if expected:
             payload["mapped_option"] = expected
             payload["prediction"] = expected
-            rows = payload.get("option_probabilities", [])
-            by_option = {
-                str(row.get("option")): row
-                for row in rows
-                if str(row.get("option")) in options
-            }
-            if set(by_option) == set(options):
-                current_modal = max(
-                    options,
-                    key=lambda option: float(
-                        by_option[option].get("probability", -1)
-                    ),
-                )
-                if current_modal != expected:
-                    expected_probability = by_option[expected]["probability"]
-                    by_option[expected]["probability"] = by_option[
-                        current_modal
-                    ]["probability"]
-                    by_option[current_modal][
-                        "probability"
-                    ] = expected_probability
 
     probabilities, errors = _probabilities(payload, options)
     estimate = payload.get("latent_target_estimate", {})
@@ -343,6 +323,27 @@ def _validate_boundary_forecast(
 
     kind, _, _ = _numeric_boundaries(contract)
     support = str(magnitude.get("support") or "")
+    if prospective_anchor_support is not None:
+        allowed_support = {
+            "quantitative_forecast": {
+                "direct",
+                "derived",
+                "direction_only",
+                "insufficient",
+            },
+            "quantitative_proxy": {
+                "derived",
+                "direction_only",
+                "insufficient",
+            },
+            "directional": {"direction_only", "insufficient"},
+            "none": {"direction_only", "insufficient"},
+        }.get(prospective_anchor_support, {"insufficient"})
+        if support not in allowed_support:
+            errors.append(
+                f"magnitude support {support!r} exceeds prospective target "
+                f"anchor {prospective_anchor_support!r}"
+            )
     if (
         validation_policy == "strict"
         and
@@ -388,6 +389,105 @@ def _source_reasoning_view(source_forecast: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def _neutral_boundary_payload(
+    *,
+    options: list[str],
+    contract: dict[str, Any],
+) -> dict[str, Any]:
+    """Return a contract-consistent abstention when boundary JSON cannot recover."""
+    kind, lower_or_threshold, upper = _numeric_boundaries(contract)
+    if kind == "three_way_range":
+        assert upper is not None
+        central = (lower_or_threshold + upper) / 2.0
+        span = max(abs(upper - lower_or_threshold), 1e-6)
+        low = lower_or_threshold - span
+        high = upper + span
+    else:
+        central = lower_or_threshold
+        span = max(abs(lower_or_threshold) * 0.25, 1.0)
+        low = central - span
+        high = central + span
+    mapped = _option_for_estimate(central, contract, options)
+    base = 1.0 / len(options)
+    bump = min(0.01, base / max(2, len(options)))
+    probabilities = {
+        option: (
+            base + bump * (len(options) - 1)
+            if option == mapped
+            else base - bump
+        )
+        for option in options
+    }
+    intervals = contract.get("intervals")
+    predicate = contract.get("predicate")
+
+    def interval_for(option: str) -> str:
+        if isinstance(intervals, dict):
+            return str(intervals.get(option) or "public interval")
+        threshold = (
+            predicate.get("threshold")
+            if isinstance(predicate, dict)
+            else lower_or_threshold
+        )
+        return (
+            f"[{threshold}, +infinity)"
+            if option.strip().lower() == "yes"
+            else f"(-infinity, {threshold})"
+        )
+
+    return {
+        "target_operation_check": (
+            f"{contract.get('target_metric')} for "
+            f"{contract.get('target_period')} in "
+            f"{contract.get('change_unit')}."
+        ),
+        "directional_signal": "uncertain",
+        "magnitude_assessment": {
+            "support": "insufficient",
+            "evidence_ids": [],
+            "rationale": (
+                "Boundary output could not be validated; retain a broad "
+                "contract-centered estimate without an evidence magnitude claim."
+            ),
+        },
+        "latent_target_estimate": {
+            "low": low,
+            "central": central,
+            "high": high,
+            "unit": str(contract.get("change_unit") or "target unit"),
+            "basis": (
+                "Deterministic abstention centered on the public boundary "
+                "contract after structured-output failure."
+            ),
+        },
+        "boundary_checks": [
+            {
+                "option": option,
+                "interval": interval_for(option),
+                "compatibility": (
+                    "most_supported" if option == mapped else "plausible"
+                ),
+                "rationale": (
+                    "No evidence-supported magnitude distinguishes this option; "
+                    "the contract-centered abstention is intentionally broad."
+                ),
+            }
+            for option in options
+        ],
+        "mapped_option": mapped,
+        "prediction": mapped,
+        "option_probabilities": [
+            {"option": option, "probability": probabilities[option]}
+            for option in options
+        ],
+        "uncertainty": (
+            "High; explicit boundary abstention after structured-output "
+            "validation failure."
+        ),
+        "generation_fallback": "neutral_boundary_after_validation_failure",
+    }
+
+
 def _call_boundary_mapping(
     *,
     client: OpenAI,
@@ -401,6 +501,9 @@ def _call_boundary_mapping(
     reasoning: dict[str, Any],
     seed_role: str,
     max_tokens: int,
+    allow_neutral_fallback: bool = False,
+    allow_prospective_anchors: bool = False,
+    prospective_anchor: dict[str, Any] | None = None,
 ) -> tuple[
     dict[str, Any],
     dict[str, float],
@@ -410,6 +513,29 @@ def _call_boundary_mapping(
 ]:
     """Map a reasoning trace to probabilities with the frozen boundary audit."""
     reasoning_view = _source_reasoning_view(reasoning)
+    magnitude_policy = (
+        "Label magnitude support direct when cutoff-safe evidence contains a "
+        "dated consensus, company guidance, official nowcast, market-implied "
+        "expectation, or other explicit quantitative forecast for the target "
+        "period. Label it derived when current quantities support an explicit "
+        "proxy or arithmetic estimate in the target unit. These are prospective "
+        "anchors, not realized future outcomes. Use direction_only when only a "
+        "sign is supported and insufficient when even the direction lacks an "
+        "auditable basis."
+        if allow_prospective_anchors
+        else (
+            "Label magnitude support direct only when current evidence provides "
+            "the exact target-period and comparator quantities; label it derived "
+            "only when both are supported and the arithmetic is explicit. "
+            "Otherwise use direction_only or insufficient."
+        )
+    )
+    anchor_view = (
+        f"\n\nPROSPECTIVE TARGET-ANCHOR AUDIT:\n"
+        f"{json.dumps(prospective_anchor, ensure_ascii=False)}"
+        if prospective_anchor is not None
+        else ""
+    )
     prompt = (
         "Complete the final boundary-aware decision stage. The previous "
         "prediction, probabilities, target estimate, and option mapping are "
@@ -421,11 +547,16 @@ def _call_boundary_mapping(
         "below range. Pay special attention to negative boundaries. Mark the "
         "arithmetically mapped central option as modal and allocate probabilities "
         "from estimate-range overlap and uncertainty. Use only current evidence "
-        "IDs.\n\n"
+        "IDs. Do not invent a latent number merely to complete the mapping. For "
+        "change, return, growth, or acceleration targets, identify both quantities "
+        "required by the public operation and perform the operation in one common "
+        f"unit. {magnitude_policy} Keep the estimate broad around the "
+        "neutral/base-rate region, and avoid a concentrated probability.\n\n"
         f"CURRENT CASE:\n{json.dumps(public_case, ensure_ascii=False)}\n\n"
         "CURRENT-CASE REASONING TRACE (NO OLD ANSWER):\n"
         f"{json.dumps(reasoning_view, ensure_ascii=False)}\n\n"
         f"CURRENT EVIDENCE:\n{json.dumps(evidence, ensure_ascii=False)}"
+        f"{anchor_view}"
     )
     validator = lambda payload: _validate_boundary_forecast(
         payload,
@@ -433,7 +564,14 @@ def _call_boundary_mapping(
         contract=contract,
         evidence_ids=evidence_ids,
         reasoning_policy="boundary_only",
-        validation_policy="recovery",
+        validation_policy=(
+            "strict" if allow_prospective_anchors else "recovery"
+        ),
+        prospective_anchor_support=(
+            str(prospective_anchor.get("support") or "")
+            if prospective_anchor is not None
+            else None
+        ),
     )
     return _call_with_repair(
         client,
@@ -447,4 +585,12 @@ def _call_boundary_mapping(
         seed=_seed(question_id, seed_role),
         max_tokens=max_tokens,
         validator=validator,
+        fallback_factory=(
+            lambda _current, _errors: _neutral_boundary_payload(
+                options=options,
+                contract=contract,
+            )
+        )
+        if allow_neutral_fallback
+        else None,
     )

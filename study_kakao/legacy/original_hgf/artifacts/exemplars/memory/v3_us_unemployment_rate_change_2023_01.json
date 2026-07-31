@@ -1,0 +1,34 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_us_unemployment_rate_change_2023_01",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "macro / labour",
+      "target_operation": "monthly unemployment-rate change",
+      "option_geometry": "ordered_scalar_discrete"
+    },
+    "historical_question": "As of 2023-01-31, which range will the monthly unemployment-rate change for United States unemployment rate in 2023-01 fall into?",
+    "historical_cutoff": "2023-01-31T00:00:00+00:00",
+    "target_semantics": "The monthly change in the United States unemployment rate for January 2023, measured in percentage points.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The target metric is the monthly change in the US unemployment rate for January 2023.",
+      "The recent range boundaries are -0.1 and 0.025 percentage points.",
+      "The available evidence does not provide specific drivers or counterevidence for the January 2023 unemployment rate change.",
+      "The DAG indicates a 'target_bridge' checkpoint with medium historical support, aiming to aggregate supported drivers and counterevidence into the target metric.",
+      "However, the DAG notes that the graph contains only outcome calculation/classification structure and no reusable upstream causal branch, and that the underlying benchmark rate levels are not quoted in the official evidence summary."
+    ],
+    "counterevidence": "No specific counterevidence is provided in the forecast-time articles.",
+    "prospective_target_estimate": "Given the lack of specific forecast-time evidence and the DAG's note about missing upstream causal branches and benchmark rate levels, a precise estimate cannot be formed. The DAG's structure suggests a 'mixed' expected direction for the target bridge, implying potential for movement in either direction.",
+    "option_mapping": "The target metric is to be mapped to one of three options: 'below recent range' (change < -0.1), 'within recent range' (-0.1 <= change < 0.025), or 'above recent range' (change >= 0.025).",
+    "uncertainty": "High uncertainty exists due to the complete absence of forecast-time evidence and the DAG's identification of a lack of upstream causal structure and missing benchmark details. The 'medium' historical support for the target bridge checkpoint is insufficient to overcome this lack of specific information.",
+    "dag_derived_lesson": "When forecast-time evidence is absent and the causal graph lacks upstream structure, rely on the defined target bridge mechanism but acknowledge significant uncertainty. The absence of specific data points for drivers and counterevidence necessitates a cautious approach, prioritizing the identification of potential contradictions or alternative hypotheses over a definitive prediction."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

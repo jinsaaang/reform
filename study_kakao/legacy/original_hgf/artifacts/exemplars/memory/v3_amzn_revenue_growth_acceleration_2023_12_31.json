@@ -1,0 +1,38 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_amzn_revenue_growth_acceleration_2023_12_31",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial",
+      "target_operation": "growth_acceleration",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2023-12-31, which range will Amazon.com, Inc.'s quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2023-12-31 fall into?",
+    "historical_cutoff": "2023-12-31T00:00:00+00:00",
+    "target_semantics": "Amazon's quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2023-12-31.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20210920_006_4378453b",
+        "takeaway": "Amazon's business model is diversified across e-commerce, cloud computing (AWS), and advertising.",
+        "why_predictive": "Diversification suggests that performance in one segment may offset weakness in another, impacting overall revenue growth acceleration."
+      }
+    ],
+    "expert_reasoning": [
+      "The baseline driver is holiday consumer spending, which historically supports marketplace and retail demand. Strong holiday e-commerce sales are expected to lift consolidated revenue.",
+      "Concurrently, AWS demand, potentially boosted by enterprise AI adoption, is a key growth driver. Advertising growth also acts as a separate revenue engine. The interplay of these factors determines the consolidated revenue growth rate change.",
+      "However, cloud-spending risks, where enterprise cost controls could slow AWS growth, present a potential headwind. The overall revenue growth acceleration will depend on whether the strength in commerce and advertising can overcome any cloud optimization trends."
+    ],
+    "counterevidence": "Cloud-spending risk, where enterprise cost controls could slow AWS growth, is a significant counter-risk. Customer optimization trends in cloud services could potentially offset strength in other areas.",
+    "prospective_target_estimate": "The consolidated revenue growth acceleration is expected to be influenced by the combined effects of holiday commerce, AWS demand, and advertising growth, balanced against potential cloud optimization. Given the diversified nature, a moderate acceleration is plausible, but the specific range is uncertain without more granular, contemporaneous data on each segment's performance.",
+    "option_mapping": "The target metric is the change in year-over-year revenue growth. The options are 'below recent range' (-0.936 percentage points), 'within recent range' (-0.936 to 1.537 percentage points), and 'above recent range' (1.537 percentage points). The analysis suggests a mixed outlook due to competing drivers and risks.",
+    "uncertainty": "The forecast is subject to uncertainty due to the potential for cloud optimization to counteract strength in e-commerce and advertising. The provided evidence is from 2021 and does not offer specific growth figures for the target quarter, making precise quantification difficult.",
+    "dag_derived_lesson": "A diversified business model's overall performance acceleration is a function of the interplay between its constituent segments. Growth drivers in one area can be counteracted by headwinds or optimization trends in another, necessitating a balanced assessment of all contributing factors and risks to forecast the net change in growth momentum."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

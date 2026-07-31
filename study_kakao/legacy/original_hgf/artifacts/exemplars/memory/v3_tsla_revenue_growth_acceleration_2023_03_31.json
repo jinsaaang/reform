@@ -1,0 +1,38 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_tsla_revenue_growth_acceleration_2023_03_31",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial",
+      "target_operation": "growth_acceleration",
+      "option_geometry": "classification"
+    },
+    "historical_question": "As of 2023-03-31, which range will Tesla, Inc.'s quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2023-03-31 fall into?",
+    "historical_cutoff": "2023-03-31T00:00:00+00:00",
+    "target_semantics": "Tesla's year-over-year revenue growth acceleration for the fiscal quarter ending 2023-03-31.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20230219_002_0a70dba6",
+        "takeaway": "Tesla implemented significant price cuts across its vehicle lineup in late 2022 and early 2023.",
+        "why_predictive": "Price cuts are a direct driver of demand and can influence vehicle deliveries, a key component of revenue."
+      }
+    ],
+    "expert_reasoning": [
+      "Tesla's aggressive price cuts in late 2022 and early 2023 (art_finance_20230219_002_0a70dba6) are expected to stimulate demand and increase vehicle deliveries.",
+      "Increased vehicle deliveries are a primary driver of revenue growth.",
+      "The causal path suggests that price cuts can lift deliveries and revenue momentum."
+    ],
+    "counterevidence": "The DAG notes that margin pressure is a potential counterevidence, as price cuts reduce margins, and competition can limit sales velocity.",
+    "prospective_target_estimate": "The evidence points towards an acceleration in revenue growth due to stimulated demand from price cuts, suggesting the target may fall 'above recent range'.",
+    "option_mapping": "The 'above recent range' option corresponds to a revenue growth acceleration of 14.66 percentage points or higher.",
+    "uncertainty": "The extent to which price cuts translate into sustained demand, the impact of increasing competition, and the effect on margins remain uncertain factors that could influence the final outcome.",
+    "dag_derived_lesson": "Demand-stimulating actions can positively influence revenue momentum, but this effect can be moderated by competitive pressures and margin erosion."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

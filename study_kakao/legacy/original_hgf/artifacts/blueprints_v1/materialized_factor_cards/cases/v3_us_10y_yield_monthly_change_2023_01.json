@@ -1,0 +1,217 @@
+{
+  "schema_version": "hgf_blueprint",
+  "question_id": "v3_us_10y_yield_monthly_change_2023_01",
+  "target_definition": {
+    "metric": "monthly 10-year yield change",
+    "unit_or_option_space": [
+      "yes",
+      "no"
+    ],
+    "forecast_horizon": "the current question's exact target period; historical fiscal quarter labels must not be copied"
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Validated historical graph compiled into reusable prospective checkpoints.",
+    "weaknesses": [
+      "The supplied articles support policy commentary and the resolved yield observation but do not decompose the causes of the monthly move.",
+      "Investor reallocation is a plausible mechanism rather than an observed flow in the evidence pack."
+    ]
+  },
+  "search_factors": [
+    {
+      "factor": "U.S. bonds entered 2023 after a historically poor 2022",
+      "why_search": "This factor appeared on a validated historical causal path; verify its current-case state rather than copying its outcome.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "node_0"
+      ]
+    },
+    {
+      "factor": "Investors may have reallocated toward bonds in early 2023",
+      "why_search": "This factor appeared on a validated historical causal path; verify its current-case state rather than copying its outcome.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "node_1"
+      ]
+    },
+    {
+      "factor": "Federal Reserve officials supported a slower rate-hike pace",
+      "why_search": "This factor appeared on a validated historical causal path; verify its current-case state rather than copying its outcome.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "node_2"
+      ]
+    },
+    {
+      "factor": "Markets anticipated a slower Federal Reserve hiking path",
+      "why_search": "This factor appeared on a validated historical causal path; verify its current-case state rather than copying its outcome.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "node_3"
+      ]
+    },
+    {
+      "factor": "The U.S. 10-year Treasury yield declined during January",
+      "why_search": "This factor appeared on a validated historical causal path; verify its current-case state rather than copying its outcome.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "node_4"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "checkpoint_1",
+      "role": "driver",
+      "factor": "U.S. bonds entered 2023 after a historically poor 2022",
+      "mechanism": "Test whether this historically relevant factor is active in the current case and connects to the target metric.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe official data or dated independent reporting directly covering this factor.",
+      "contradiction_signal": "Current evidence shows the factor is absent, reversed, or dominated by a competing mechanism.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "node_0"
+      ],
+      "source_edge_ids": []
+    },
+    {
+      "id": "checkpoint_2",
+      "role": "mediator",
+      "factor": "Investors may have reallocated toward bonds in early 2023",
+      "mechanism": "Test whether this historically relevant factor is active in the current case and connects to the target metric.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe official data or dated independent reporting directly covering this factor.",
+      "contradiction_signal": "Current evidence shows the factor is absent, reversed, or dominated by a competing mechanism.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "node_1"
+      ],
+      "source_edge_ids": []
+    },
+    {
+      "id": "checkpoint_3",
+      "role": "driver",
+      "factor": "Federal Reserve officials supported a slower rate-hike pace",
+      "mechanism": "Test whether this historically relevant factor is active in the current case and connects to the target metric.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe official data or dated independent reporting directly covering this factor.",
+      "contradiction_signal": "Current evidence shows the factor is absent, reversed, or dominated by a competing mechanism.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "node_2"
+      ],
+      "source_edge_ids": []
+    },
+    {
+      "id": "checkpoint_4",
+      "role": "mediator",
+      "factor": "Markets anticipated a slower Federal Reserve hiking path",
+      "mechanism": "Test whether this historically relevant factor is active in the current case and connects to the target metric.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe official data or dated independent reporting directly covering this factor.",
+      "contradiction_signal": "Current evidence shows the factor is absent, reversed, or dominated by a competing mechanism.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "node_3"
+      ],
+      "source_edge_ids": []
+    },
+    {
+      "id": "checkpoint_5",
+      "role": "mediator",
+      "factor": "The U.S. 10-year Treasury yield declined during January",
+      "mechanism": "Test whether this historically relevant factor is active in the current case and connects to the target metric.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe official data or dated independent reporting directly covering this factor.",
+      "contradiction_signal": "Current evidence shows the factor is absent, reversed, or dominated by a competing mechanism.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "node_4"
+      ],
+      "source_edge_ids": []
+    },
+    {
+      "id": "target_bridge",
+      "role": "target_bridge",
+      "factor": "monthly 10-year yield change",
+      "mechanism": "Aggregate supported drivers and counterevidence into the exact target metric and option space.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "A recent target baseline plus evidence connecting each active driver to the target.",
+      "contradiction_signal": "The target baseline or current observations diverge from the proposed driver path.",
+      "historical_support": "medium",
+      "source_event_ids": [],
+      "source_edge_ids": []
+    }
+  ],
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "checkpoint_1",
+        "checkpoint_2",
+        "target_bridge"
+      ],
+      "generalized_mechanism": "Current evidence must activate the historical factors and demonstrate a prospective bridge to the target.",
+      "expected_direction": "mixed",
+      "applicability_conditions": [
+        "The same economic mechanism is active.",
+        "Current cutoff-safe evidence supports the intermediate link."
+      ],
+      "failure_conditions": [
+        "A historical factor is absent in the current case.",
+        "Counterevidence dominates the proposed transmission."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_3",
+        "checkpoint_4",
+        "checkpoint_5",
+        "target_bridge"
+      ],
+      "generalized_mechanism": "Current evidence must activate the historical factors and demonstrate a prospective bridge to the target.",
+      "expected_direction": "mixed",
+      "applicability_conditions": [
+        "The same economic mechanism is active.",
+        "Current cutoff-safe evidence supports the intermediate link."
+      ],
+      "failure_conditions": [
+        "A historical factor is absent in the current case.",
+        "Counterevidence dominates the proposed transmission."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "A current-case factor outside the retrieved historical path dominates the target.",
+      "discriminating_evidence": "Search for recent official surprises and contradictory target observations.",
+      "source_event_ids": []
+    }
+  ],
+  "forecast_audit_questions": [
+    "Which checkpoints are supported, contradicted, or unknown now?",
+    "Does each retained path have a current evidence-to-target bridge?",
+    "What counterevidence or alternative mechanism could dominate?",
+    "Would the conclusion change if the weakest link were removed?"
+  ],
+  "refinement_metadata": {
+    "model": "deterministic_compiler_from_codex_refined_dag",
+    "source_graph": "C:\\Users\\God_YJ\\Desktop\\코드\\KakaoBank_UNIST\\study_kakao\\data\\dags\\v3_us_10y_yield_monthly_change_2023_01\\graph.json",
+    "validation_status": "pass",
+    "source_audit_status": "pass_with_caveat"
+  }
+}

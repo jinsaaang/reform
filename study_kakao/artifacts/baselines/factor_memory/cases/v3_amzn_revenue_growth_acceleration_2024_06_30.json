@@ -1,0 +1,208 @@
+{
+  "schema_version": "hgf_blueprint_v1",
+  "question_id": "v3_amzn_revenue_growth_acceleration_2024_06_30",
+  "target_definition": {
+    "metric": "Amazon quarterly year-over-year revenue-growth acceleration",
+    "unit_or_option_space": "percentage-point acceleration classification",
+    "forecast_horizon": "fiscal quarter ending 2024-06-30"
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "The graph decomposes consolidated revenue into retail, advertising, and cloud contributors.",
+    "weaknesses": [
+      "The main observations were released after the cutoff.",
+      "Guidance and market reaction are indirect evidence."
+    ]
+  },
+  "search_factors": [
+    {
+      "factor": "Consumer purchasing mix",
+      "why_search": "Trading down can reduce online-store revenue momentum.",
+      "preferred_source_types": [
+        "issuer commentary",
+        "retail indicators"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240630_020_3b5cb405"
+      ]
+    },
+    {
+      "factor": "Online-store sales growth",
+      "why_search": "The segment is a large consolidated revenue driver.",
+      "preferred_source_types": [
+        "segment results",
+        "company filing"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240630_023_f61ecb2d"
+      ]
+    },
+    {
+      "factor": "Advertising revenue execution",
+      "why_search": "Advertising performance can change the service contribution.",
+      "preferred_source_types": [
+        "segment results",
+        "earnings release"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240630_021_670d28ca"
+      ]
+    },
+    {
+      "factor": "Cloud demand and AI investment",
+      "why_search": "Cloud strength can counteract commerce weakness.",
+      "preferred_source_types": [
+        "segment results",
+        "industry research"
+      ],
+      "source_event_ids": [
+        "evt_tech_20240630_022_32caca89"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "consumer_mix",
+      "role": "driver",
+      "factor": "Consumer trading down",
+      "mechanism": "Cautious consumers can lower selling prices and slow online-store growth.",
+      "expected_direction": "down",
+      "evidence_requirement": "Management commentary and retail sales mix.",
+      "contradiction_signal": "Higher-priced demand or faster store growth.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_finance_20240630_020_3b5cb405",
+        "evt_finance_20240630_023_f61ecb2d"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_amzn_revenue_growth_acceleration_2024_06_30_20260724_185304_013_5b4eaf2e"
+      ]
+    },
+    {
+      "id": "advertising_execution",
+      "role": "counterevidence",
+      "factor": "Advertising performance",
+      "mechanism": "Advertising underperformance removes a potential offset to retail weakness.",
+      "expected_direction": "down",
+      "evidence_requirement": "Advertising sales against internal or market expectations.",
+      "contradiction_signal": "Advertising accelerates materially.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_finance_20240630_021_670d28ca"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_amzn_revenue_growth_acceleration_2024_06_30_20260724_185304_015_bffdf56f"
+      ]
+    },
+    {
+      "id": "aws_offset",
+      "role": "alternative",
+      "factor": "AWS demand",
+      "mechanism": "Strong cloud demand can partially offset commerce and advertising softness.",
+      "expected_direction": "up",
+      "evidence_requirement": "AWS growth and demand drivers.",
+      "contradiction_signal": "AWS growth decelerates with commerce.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_tech_20240630_022_32caca89"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_amzn_revenue_growth_acceleration_2024_06_30_20260724_185304_020_51129a87"
+      ]
+    },
+    {
+      "id": "revenue_aggregation",
+      "role": "mediator",
+      "factor": "Combined segment performance",
+      "mechanism": "Retail and advertising weakness can combine into weaker consolidated revenue.",
+      "expected_direction": "down",
+      "evidence_requirement": "Segment decomposition of total revenue.",
+      "contradiction_signal": "Cloud or other services dominate the contribution.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_finance_20240801_024_c7d9eccf",
+        "evt_finance_20240630_023_f61ecb2d",
+        "evt_finance_20240630_021_670d28ca"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_amzn_revenue_growth_acceleration_2024_06_30_20260724_185304_014_957d038f",
+        "hyp_v3_amzn_revenue_growth_acceleration_2024_06_30_20260724_185304_015_bffdf56f"
+      ]
+    },
+    {
+      "id": "consolidated_bridge",
+      "role": "target_bridge",
+      "factor": "Consolidated revenue momentum",
+      "mechanism": "Weighted segment growth determines the change in consolidated year-over-year revenue growth.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Current and prior-quarter consolidated growth with segment weights.",
+      "contradiction_signal": "Reported segment mix conflicts with consolidated momentum.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_finance_20240801_024_c7d9eccf",
+        "evt_tech_20240630_022_32caca89"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_amzn_revenue_growth_acceleration_2024_06_30_20260724_185304_020_51129a87"
+      ]
+    }
+  ],
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "consumer_mix",
+        "revenue_aggregation",
+        "consolidated_bridge"
+      ],
+      "generalized_mechanism": "Trading down can slow a large retail segment, weakening consolidated revenue momentum.",
+      "expected_direction": "down",
+      "applicability_conditions": [
+        "Retail is material.",
+        "Selling-price mix shifts lower."
+      ],
+      "failure_conditions": [
+        "Unit volume offsets price pressure.",
+        "Other segments dominate revenue."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "aws_offset",
+        "revenue_aggregation",
+        "consolidated_bridge"
+      ],
+      "generalized_mechanism": "Cloud growth offsets commerce softness only when its contribution is sufficiently large.",
+      "expected_direction": "mixed",
+      "applicability_conditions": [
+        "Cloud demand is strong.",
+        "Commerce growth is weak."
+      ],
+      "failure_conditions": [
+        "Cloud decelerates.",
+        "Commerce weakness broadens."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "Cloud demand becomes large enough to dominate consolidated momentum.",
+      "discriminating_evidence": "Cloud growth materially exceeds the combined commerce drag.",
+      "source_event_ids": [
+        "evt_tech_20240630_022_32caca89"
+      ]
+    },
+    {
+      "hypothesis": "Advertising recovers and offsets online-store softness.",
+      "discriminating_evidence": "Advertising growth outpaces the retail slowdown.",
+      "source_event_ids": [
+        "evt_finance_20240630_021_670d28ca",
+        "evt_finance_20240630_023_f61ecb2d"
+      ]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Is consumer trading-down visible in company or retail data?",
+    "Are advertising and cloud growth diverging from online stores?",
+    "Do segment weights support the inferred consolidated momentum?"
+  ]
+}

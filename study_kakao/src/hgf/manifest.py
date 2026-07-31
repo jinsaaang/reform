@@ -17,6 +17,8 @@ EXCLUDED_PARTS = {
     "build",
     "dist",
     "__pycache__",
+    ".cache",
+    "legacy",
     "runs",
 }
 EXCLUDED_FILES = {

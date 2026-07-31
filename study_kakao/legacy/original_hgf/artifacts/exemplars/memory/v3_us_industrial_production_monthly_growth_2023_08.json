@@ -1,0 +1,39 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_us_industrial_production_monthly_growth_2023_08",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "macro / industrial activity",
+      "target_operation": "monthly industrial-production growth",
+      "option_geometry": "bucketed by prior observations"
+    },
+    "historical_question": "As of 2023-08-31, which range will the monthly industrial-production growth for United States industrial production in 2023-08 fall into?",
+    "historical_cutoff": "2023-08-31T00:00:00+00:00",
+    "target_semantics": "monthly industrial-production growth for United States industrial production in 2023-08",
+    "forecast_time_evidence": [
+      {
+        "article_id": "ev_08eae9a8a5edef01",
+        "takeaway": "Labor momentum is decelerating.",
+        "why_predictive": "A weakening labor market can lead to reduced consumer spending and industrial output."
+      }
+    ],
+    "expert_reasoning": [
+      "The target is monthly industrial-production growth for the US in August 2023.",
+      "The recent range for this metric is -0.441 to 0.467 percent.",
+      "Evidence suggests a deceleration in labor momentum (ev_08eae9a8a5edef01).",
+      "Decelerating labor momentum is a driver that can lead to reduced industrial output."
+    ],
+    "counterevidence": "No specific counterevidence was provided in the forecast-time articles.",
+    "prospective_target_estimate": "The deceleration in labor momentum suggests a potential slowdown in industrial production.",
+    "option_mapping": "The weakening labor market points towards industrial production growth being potentially lower than in recent periods.",
+    "uncertainty": "The provided evidence is indirect, focusing on labor momentum rather than directly on industrial production. The magnitude of the impact on industrial production is not quantified.",
+    "dag_derived_lesson": "A factor that influences labor market momentum can causally impact industrial output. When this factor shows deceleration, it suggests a potential decrease in the target metric, but the strength of this link requires specific evidence."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

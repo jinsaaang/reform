@@ -1,0 +1,952 @@
+{
+  "schema_version": "hgf_blueprint_topology_v2",
+  "question_id": "v3_henry_hub_monthly_return_2024_09",
+  "target_definition": {
+    "metric": "monthly Henry Hub price return",
+    "unit_or_option_space": [
+      "below recent range",
+      "within recent range",
+      "above recent range"
+    ],
+    "forecast_horizon": "Remap the historical target family to the current question's exact target period."
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Outcome-redacted topology preserves 11 checkpoints, 15 source edges, and 11 root-to-target paths.",
+    "weaknesses": []
+  },
+  "search_factors": [
+    {
+      "factor": "Roseland Oil & Gas indicates long-term bullish sentiment for natural gas prices",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230622_001_740bdd52"
+      ]
+    },
+    {
+      "factor": "Indian Infrastructure Magazine highlights strategic importance of LNG and domestic gas production trends",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240730_002_418ea3b0"
+      ]
+    },
+    {
+      "factor": "Rystad Energy indicates persistent demand for oil and gas",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240902_003_c4be2d33"
+      ]
+    },
+    {
+      "factor": "CSIS highlights fundamental demand drivers for natural gas from the manufacturing sector",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240910_004_f3578956"
+      ]
+    },
+    {
+      "factor": "Reuters reports US natural gas markets point to steep price rise in [CURRENT_PERIOD_REQUIRED]",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240911_005_8d5ae091"
+      ]
+    },
+    {
+      "factor": "Saxo reports record short Brent and gas oil positions add upside risks to energy",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240916_006_86581dd6"
+      ]
+    },
+    {
+      "factor": "EnergyNow.com covers Low Gas Prices, LNG Demand in Spotlight at Houston Gastech Conference",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240916_007_b19166b8"
+      ]
+    },
+    {
+      "factor": "Reuters reports Oil prices settle up on supply shocks, prospect of US interest rate cuts",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240917_008_5968ca93"
+      ]
+    },
+    {
+      "factor": "Natural Gas Futures Sink as Demand Seen Lower, but Return to Upside Expected",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240924_009_251c62ad"
+      ]
+    },
+    {
+      "factor": "Federal Reserve Bank of Dallas reports Oil and gas activity edges lower as outlooks dim, uncertainty rises",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240925_010_3af97282"
+      ]
+    },
+    {
+      "factor": "ITIF publishes 'Why Wind and Solar Need Natural Gas: A Realistic Approach to Variability'",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240930_011_00e3e8ae"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "checkpoint_1",
+      "role": "driver",
+      "factor": "Roseland Oil & Gas indicates long-term bullish sentiment for natural gas prices",
+      "mechanism": "Long-term bullish sentiment sets the stage for future price expectations.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230622_001_740bdd52"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_001_efe6744a",
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_013_03de1a31"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_2",
+      "role": "driver",
+      "factor": "Indian Infrastructure Magazine highlights strategic importance of LNG and domestic gas production trends",
+      "mechanism": "The strategic importance of LNG and domestic gas production trends enables continued strong LNG demand.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240730_002_418ea3b0"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_012_874c7956"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_3",
+      "role": "mediator",
+      "factor": "Rystad Energy indicates persistent demand for oil and gas",
+      "mechanism": "Persistent demand for oil and gas underpins expectations for future price increases.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240902_003_c4be2d33"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_002_bab881fd",
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_010_19137a40",
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_014_47e974c7"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_4",
+      "role": "driver",
+      "factor": "CSIS highlights fundamental demand drivers for natural gas from the manufacturing sector",
+      "mechanism": "Fundamental demand from manufacturing contributes to expectations of future price rises.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240910_004_f3578956"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_003_1998d18f",
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_015_c5d5a4a9"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_5",
+      "role": "mediator",
+      "factor": "Reuters reports US natural gas markets point to steep price rise in [CURRENT_PERIOD_REQUIRED]",
+      "mechanism": "Re-test whether this factor has a currently supported link to the exact target metric; do not transfer the historical outcome or magnitude.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240911_005_8d5ae091"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_004_f31b86f1"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_6",
+      "role": "driver",
+      "factor": "Saxo reports record short Brent and gas oil positions add upside risks to energy",
+      "mechanism": "Re-test whether this factor has a currently supported link to the exact target metric; do not transfer the historical outcome or magnitude.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240916_006_86581dd6"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_005_ca868410"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_7",
+      "role": "mediator",
+      "factor": "EnergyNow.com covers Low Gas Prices, LNG Demand in Spotlight at Houston Gastech Conference",
+      "mechanism": "Re-test whether this factor has a currently supported link to the exact target metric; do not transfer the historical outcome or magnitude.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240916_007_b19166b8"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_006_ee92df84"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_8",
+      "role": "driver",
+      "factor": "Reuters reports Oil prices settle up on supply shocks, prospect of US interest rate cuts",
+      "mechanism": "Re-test whether this factor has a currently supported link to the exact target metric; do not transfer the historical outcome or magnitude.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240917_008_5968ca93"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_007_b8eeff77"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_9",
+      "role": "counterevidence",
+      "factor": "Natural Gas Futures Sink as Demand Seen Lower, but Return to Upside Expected",
+      "mechanism": "Re-test whether this factor has a currently supported link to the exact target metric; do not transfer the historical outcome or magnitude.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240924_009_251c62ad"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_008_3144a5c1"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_10",
+      "role": "counterevidence",
+      "factor": "Federal Reserve Bank of Dallas reports Oil and gas activity edges lower as outlooks dim, uncertainty rises",
+      "mechanism": "Re-test whether this factor has a currently supported link to the exact target metric; do not transfer the historical outcome or magnitude.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240925_010_3af97282"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_009_f0e5706e"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_11",
+      "role": "mediator",
+      "factor": "ITIF publishes 'Why Wind and Solar Need Natural Gas: A Realistic Approach to Variability'",
+      "mechanism": "Re-test whether this factor has a currently supported link to the exact target metric; do not transfer the historical outcome or magnitude.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240930_011_00e3e8ae"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_011_f01f59d9"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "target_bridge",
+      "role": "target_bridge",
+      "factor": "monthly Henry Hub price return",
+      "mechanism": "Map only currently supported paths into the exact target operator. Directional support alone is not magnitude or threshold-crossing support.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "A current target baseline and evidence supporting every edge used in the bridge.",
+      "contradiction_signal": "The current target baseline, magnitude evidence, or option boundary contradicts the proposed path.",
+      "historical_support": "medium",
+      "source_event_ids": [],
+      "source_edge_ids": [
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_004_f31b86f1",
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_005_ca868410",
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_006_ee92df84",
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_007_b8eeff77",
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_008_3144a5c1",
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_009_f0e5706e",
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_011_f01f59d9",
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_014_47e974c7",
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_015_c5d5a4a9"
+      ],
+      "source_event_type": "target_bridge"
+    }
+  ],
+  "topology": {
+    "checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_5",
+      "checkpoint_6",
+      "checkpoint_7",
+      "checkpoint_8",
+      "checkpoint_9",
+      "checkpoint_10",
+      "checkpoint_11",
+      "target_bridge"
+    ],
+    "root_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_4",
+      "checkpoint_6",
+      "checkpoint_8",
+      "checkpoint_9",
+      "checkpoint_10"
+    ],
+    "target_bridge_id": "target_bridge",
+    "edges": [
+      {
+        "source_checkpoint_id": "checkpoint_1",
+        "target_checkpoint_id": "checkpoint_5",
+        "relationship": "enables",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Long-term bullish sentiment sets the stage for future price expectations.",
+        "source_edge_ids": [
+          "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_001_efe6744a"
+        ],
+        "source_article_ids": [
+          "art_finance_20230622_004_5565034a",
+          "art_finance_20240911_002_296e863d"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_3",
+        "target_checkpoint_id": "checkpoint_5",
+        "relationship": "enables",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Persistent demand for oil and gas underpins expectations for future price increases.",
+        "source_edge_ids": [
+          "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_002_bab881fd"
+        ],
+        "source_article_ids": [
+          "art_finance_20240902_002_99ec9b92",
+          "art_finance_20240911_002_296e863d"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_4",
+        "target_checkpoint_id": "checkpoint_5",
+        "relationship": "enables",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Fundamental demand from manufacturing contributes to expectations of future price rises.",
+        "source_edge_ids": [
+          "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_003_1998d18f"
+        ],
+        "source_article_ids": [
+          "art_finance_20240910_004_011deb5f",
+          "art_finance_20240911_002_296e863d"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_3",
+        "target_checkpoint_id": "checkpoint_11",
+        "relationship": "enables",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Persistent demand for oil and gas enables the critical role of natural gas in the energy transition, which in turn reinforces sustained demand.",
+        "source_edge_ids": [
+          "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_010_19137a40"
+        ],
+        "source_article_ids": [
+          "art_finance_20240930_005_f2c3ea81",
+          "art_finance_20240902_002_99ec9b92"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_2",
+        "target_checkpoint_id": "checkpoint_7",
+        "relationship": "enables",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "The strategic importance of LNG and domestic gas production trends enables continued strong LNG demand.",
+        "source_edge_ids": [
+          "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_012_874c7956"
+        ],
+        "source_article_ids": [
+          "art_finance_20240730_003_31d5278f",
+          "art_finance_20240916_003_0f0377be"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_1",
+        "target_checkpoint_id": "checkpoint_3",
+        "relationship": "enables",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Long-term bullish sentiment for natural gas prices contributes to and is supported by persistent demand.",
+        "source_edge_ids": [
+          "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_013_03de1a31"
+        ],
+        "source_article_ids": [
+          "art_finance_20230622_004_5565034a",
+          "art_finance_20240902_002_99ec9b92"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_5",
+        "target_checkpoint_id": "target_bridge",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Historical DAG connected this factor to the redacted target measurement; the realized value and outcome mapping are omitted.",
+        "source_edge_ids": [
+          "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_004_f31b86f1"
+        ],
+        "source_article_ids": [
+          "art_finance_20240911_002_296e863d"
+        ],
+        "terminal_to_target_bridge": true
+      },
+      {
+        "source_checkpoint_id": "checkpoint_6",
+        "target_checkpoint_id": "target_bridge",
+        "relationship": "amplifies",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Historical DAG connected this factor to the redacted target measurement; the realized value and outcome mapping are omitted.",
+        "source_edge_ids": [
+          "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_005_ca868410"
+        ],
+        "source_article_ids": [
+          "art_finance_20240916_007_340e53c7"
+        ],
+        "terminal_to_target_bridge": true
+      },
+      {
+        "source_checkpoint_id": "checkpoint_7",
+        "target_checkpoint_id": "target_bridge",
+        "relationship": "enables",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Historical DAG connected this factor to the redacted target measurement; the realized value and outcome mapping are omitted.",
+        "source_edge_ids": [
+          "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_006_ee92df84"
+        ],
+        "source_article_ids": [
+          "art_finance_20240916_003_0f0377be"
+        ],
+        "terminal_to_target_bridge": true
+      },
+      {
+        "source_checkpoint_id": "checkpoint_8",
+        "target_checkpoint_id": "target_bridge",
+        "relationship": "correlates",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Historical DAG connected this factor to the redacted target measurement; the realized value and outcome mapping are omitted.",
+        "source_edge_ids": [
+          "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_007_b8eeff77"
+        ],
+        "source_article_ids": [
+          "art_finance_20240917_006_660c5185"
+        ],
+        "terminal_to_target_bridge": true
+      },
+      {
+        "source_checkpoint_id": "checkpoint_9",
+        "target_checkpoint_id": "target_bridge",
+        "relationship": "inhibits",
+        "directionality": "counteracting",
+        "support_level": "",
+        "rationale": "Historical DAG connected this factor to the redacted target measurement; the realized value and outcome mapping are omitted.",
+        "source_edge_ids": [
+          "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_008_3144a5c1"
+        ],
+        "source_article_ids": [
+          "art_finance_20240924_002_9a96e373"
+        ],
+        "terminal_to_target_bridge": true
+      },
+      {
+        "source_checkpoint_id": "checkpoint_10",
+        "target_checkpoint_id": "target_bridge",
+        "relationship": "inhibits",
+        "directionality": "counteracting",
+        "support_level": "",
+        "rationale": "Historical DAG connected this factor to the redacted target measurement; the realized value and outcome mapping are omitted.",
+        "source_edge_ids": [
+          "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_009_f0e5706e"
+        ],
+        "source_article_ids": [
+          "art_finance_20240925_003_f38332d3"
+        ],
+        "terminal_to_target_bridge": true
+      },
+      {
+        "source_checkpoint_id": "checkpoint_11",
+        "target_checkpoint_id": "target_bridge",
+        "relationship": "amplifies",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Historical DAG connected this factor to the redacted target measurement; the realized value and outcome mapping are omitted.",
+        "source_edge_ids": [
+          "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_011_f01f59d9"
+        ],
+        "source_article_ids": [
+          "art_finance_20240930_005_f2c3ea81"
+        ],
+        "terminal_to_target_bridge": true
+      },
+      {
+        "source_checkpoint_id": "checkpoint_3",
+        "target_checkpoint_id": "target_bridge",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Historical DAG connected this factor to the redacted target measurement; the realized value and outcome mapping are omitted.",
+        "source_edge_ids": [
+          "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_014_47e974c7"
+        ],
+        "source_article_ids": [
+          "art_finance_20240902_002_99ec9b92"
+        ],
+        "terminal_to_target_bridge": true
+      },
+      {
+        "source_checkpoint_id": "checkpoint_4",
+        "target_checkpoint_id": "target_bridge",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Historical DAG connected this factor to the redacted target measurement; the realized value and outcome mapping are omitted.",
+        "source_edge_ids": [
+          "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_015_c5d5a4a9"
+        ],
+        "source_article_ids": [
+          "art_finance_20240910_004_011deb5f"
+        ],
+        "terminal_to_target_bridge": true
+      }
+    ],
+    "paths_truncated": false
+  },
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "checkpoint_1",
+        "checkpoint_5",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_001_efe6744a",
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_004_f31b86f1"
+      ],
+      "relationships": [
+        "enables",
+        "causes"
+      ],
+      "path_role": "main_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Roseland Oil & Gas indicates long-term bullish sentiment for natural gas prices to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_1",
+        "checkpoint_3",
+        "checkpoint_5",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_013_03de1a31",
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_002_bab881fd",
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_004_f31b86f1"
+      ],
+      "relationships": [
+        "enables",
+        "enables",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Roseland Oil & Gas indicates long-term bullish sentiment for natural gas prices to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_1",
+        "checkpoint_3",
+        "checkpoint_11",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_013_03de1a31",
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_010_19137a40",
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_011_f01f59d9"
+      ],
+      "relationships": [
+        "enables",
+        "enables",
+        "amplifies"
+      ],
+      "path_role": "supporting_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Roseland Oil & Gas indicates long-term bullish sentiment for natural gas prices to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_1",
+        "checkpoint_3",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_013_03de1a31",
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_014_47e974c7"
+      ],
+      "relationships": [
+        "enables",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Roseland Oil & Gas indicates long-term bullish sentiment for natural gas prices to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_2",
+        "checkpoint_7",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_012_874c7956",
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_006_ee92df84"
+      ],
+      "relationships": [
+        "enables",
+        "enables"
+      ],
+      "path_role": "supporting_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Indian Infrastructure Magazine highlights strategic importance of LNG and domestic gas production trends to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_4",
+        "checkpoint_5",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_003_1998d18f",
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_004_f31b86f1"
+      ],
+      "relationships": [
+        "enables",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from CSIS highlights fundamental demand drivers for natural gas from the manufacturing sector to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_4",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_015_c5d5a4a9"
+      ],
+      "relationships": [
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from CSIS highlights fundamental demand drivers for natural gas from the manufacturing sector to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_6",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_005_ca868410"
+      ],
+      "relationships": [
+        "amplifies"
+      ],
+      "path_role": "supporting_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Saxo reports record short Brent and gas oil positions add upside risks to energy to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_8",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_007_b8eeff77"
+      ],
+      "relationships": [
+        "correlates"
+      ],
+      "path_role": "supporting_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Reuters reports Oil prices settle up on supply shocks, prospect of US interest rate cuts to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_9",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_008_3144a5c1"
+      ],
+      "relationships": [
+        "inhibits"
+      ],
+      "path_role": "counter_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Natural Gas Futures Sink as Demand Seen Lower, but Return to Upside Expected to the current target; every edge requires current support.",
+      "expected_direction": "mixed",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_10",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_009_f0e5706e"
+      ],
+      "relationships": [
+        "inhibits"
+      ],
+      "path_role": "counter_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Federal Reserve Bank of Dallas reports Oil and gas activity edges lower as outlooks dim, uncertainty rises to the current target; every edge requires current support.",
+      "expected_direction": "mixed",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "Natural Gas Futures Sink as Demand Seen Lower, but Return to Upside Expected dominates or reverses the leading current path.",
+      "discriminating_evidence": "Compare current evidence for this counter-path with every edge on the leading supported path.",
+      "source_event_ids": [
+        "evt_finance_20240924_009_251c62ad"
+      ]
+    },
+    {
+      "hypothesis": "Federal Reserve Bank of Dallas reports Oil and gas activity edges lower as outlooks dim, uncertainty rises dominates or reverses the leading current path.",
+      "discriminating_evidence": "Compare current evidence for this counter-path with every edge on the leading supported path.",
+      "source_event_ids": [
+        "evt_finance_20240925_010_3af97282"
+      ]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Does every used checkpoint transition correspond to a preserved edge?",
+    "Which preserved edges are supported, contradicted, or unknown now?",
+    "Does a counter-path dominate the leading supported path?",
+    "Is there evidence for magnitude and boundary crossing, not direction alone?"
+  ],
+  "refinement_metadata": {
+    "model": "deterministic_topology_compiler_v2",
+    "source_graph": "data\\dags\\v3_henry_hub_monthly_return_2024_09\\graph.json",
+    "source_audit_status": "pass",
+    "outcome_nodes_redacted": 3,
+    "target_value_anchors_redacted": 0,
+    "historical_specifics_sanitized": true,
+    "sanitizer": "minimal_value_period_placeholders_v1",
+    "value_replacement_count": 0,
+    "period_replacement_count": 2
+  },
+  "topology_validation": {
+    "status": "pass",
+    "errors": [],
+    "metrics": {
+      "retained_checkpoint_count": 11,
+      "source_edge_count": 15,
+      "emitted_edge_count": 15,
+      "edge_coverage": 1.0,
+      "path_precision": 1.0,
+      "causal_path_count": 11,
+      "outcome_event_leak_count": 0,
+      "outcome_text_leak_count": 0,
+      "realized_value_count": 0,
+      "absolute_period_count": 0
+    }
+  },
+  "pilot_usage": {
+    "top1_target_count": 2,
+    "top1_target_question_ids": [
+      "v3_henry_hub_monthly_return_2025_11",
+      "v3_henry_hub_monthly_return_2026_06"
+    ]
+  }
+}

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run Hindsight-Guided Forecasting with a fixed exemplar bank.
+"""Compile and run the canonical Hindsight-Guided Forecasting method.
 
 The method compiles one usable WorldReasoner DAG into a compact Expert Memory
 containing:
@@ -16,55 +16,56 @@ historical answer and historical facts are never treated as current evidence.
 
 from __future__ import annotations
 
-import argparse
 import base64
 import copy
 import json
-import os
-import threading
-import time
-from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Any, Callable
 
-from dotenv import find_dotenv, load_dotenv
 from openai import OpenAI
 
-from hgf.question_io import (
-    family_metadata,
-    read_questions,
-    resolve_forecast_cutoff,
-)
-from hgf.memory_bank import load_final_memory_bank
 from hgf.exemplar import (
-    _add_usage,
     _call_with_repair,
     _ensure_baseline_reasoning_step,
     _forecast_schema_exemplar,
     _normalize_probability_rows,
-    _rerank_current_evidence,
     _transferable_dag_structure,
     _validate_exemplar_forecast,
 )
-from hgf.boundary import _call_boundary_mapping
-from hgf.contracts import _target_contract
-from hgf.forecast_core import (
-    _atomic_write,
-    _ground_truth_option,
-    _resolve_evidence as _resolve_raw_evidence,
-    _score,
-    _seed,
-)
+from hgf.forecast_core import _seed
+from hgf.forecast_safety import checkpoint_requirement
+from hgf.repair_resilience import neutral_reasoning_payload
 
 
-_WRITE_LOCK = threading.Lock()
-_MEMORY_LOCK = threading.Lock()
-_SEMANTIC_SCHEMA_NAME = base64.b64decode(
-    "ZGFnX3NlbWFudGljX2V4cGVydGlzZV92Mjc="
-).decode("utf-8")
 _EXPERT_MEMORY_WIRE_SCHEMA = base64.b64decode(
     "ZGFnX2V4cGVydF9tZW1vcnlfdjI3"
 ).decode("utf-8")
+
+_CANONICAL_SEMANTIC_LESSONS = {
+    "target_semantics_lesson": (
+        "Apply the exact current target operation and comparator."
+    ),
+    "evidence_selection_lesson": (
+        "Instantiate a checkpoint only when current evidence meets its stated "
+        "requirement."
+    ),
+    "causal_reasoning_lesson": (
+        "Carry only currently supported mechanisms into the exact target "
+        "bridge."
+    ),
+    "counterevidence_lesson": (
+        "Reject memory when a current competing mechanism dominates."
+    ),
+    "calibration_lesson": (
+        "Do not concentrate probability without target-operation magnitude "
+        "evidence."
+    ),
+}
+
+
+def canonical_semantic_lessons() -> dict[str, str]:
+    """Return the fixed, non-historical semantic lessons used by HGF."""
+    return copy.deepcopy(_CANONICAL_SEMANTIC_LESSONS)
 
 
 def _wire_expert_memory(expert_memory: dict[str, Any]) -> dict[str, Any]:
@@ -74,63 +75,12 @@ def _wire_expert_memory(expert_memory: dict[str, Any]) -> dict[str, Any]:
     return payload
 
 
-def _parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument(
-        "--questions-dir",
-        type=Path,
-        default=Path("data/questions"),
-    )
-    parser.add_argument(
-        "--evidence-dir",
-        type=Path,
-        default=Path("data/evidence"),
-    )
-    parser.add_argument(
-        "--memory-bank-manifest",
-        type=Path,
-        default=Path("data/memory_bank/manifest.json"),
-    )
-    parser.add_argument(
-        "--selection-file",
-        type=Path,
-        default=Path("data/questions/selection.json"),
-    )
-    parser.add_argument(
-        "--exemplar-dir",
-        type=Path,
-        default=Path("artifacts/exemplars"),
-    )
-    parser.add_argument(
-        "--output-dir",
-        type=Path,
-        default=Path("runs/hgf"),
-    )
-    parser.add_argument(
-        "--model",
-        default="google/gemini-2.5-flash-lite",
-    )
-    parser.add_argument("--limit", type=int, default=100)
-    parser.add_argument("--question-ids", nargs="*", default=None)
-    parser.add_argument("--workers", type=int, default=4)
-    parser.add_argument("--candidate-evidence-limit", type=int, default=80)
-    parser.add_argument("--evidence-limit", type=int, default=20)
-    parser.add_argument("--reasoning-max-tokens", type=int, default=2600)
-    parser.add_argument("--boundary-max-tokens", type=int, default=1800)
-    parser.add_argument("--semantic-max-tokens", type=int, default=1200)
-    parser.add_argument(
-        "--semantic-cache-dir",
-        type=Path,
-        default=Path("artifacts/semantic_lessons"),
-    )
-    return parser.parse_args()
-
-
 def compile_dag_expert_memory(
     *,
     source_question_id: str,
     blueprint: dict[str, Any],
     worked_exemplar: dict[str, Any],
+    sanitize_demonstration: bool = True,
 ) -> dict[str, Any]:
     """Compile all reusable forecasting guidance from one audited DAG."""
     diagnosis = blueprint.get("graph_diagnosis", {})
@@ -140,12 +90,20 @@ def compile_dag_expert_memory(
         )
 
     structure = _transferable_dag_structure(blueprint)
-    checkpoints = structure.get("checkpoints", [])[:7]
+    topology_preserving = (
+        blueprint.get("schema_version") == "hgf_blueprint_topology_v2"
+    )
+    checkpoints = structure.get("checkpoints", [])
+    if not topology_preserving:
+        checkpoints = checkpoints[:7]
     checkpoint_ids = {
         str(item.get("id")) for item in checkpoints if item.get("id")
     }
     paths = []
-    for path in structure.get("causal_paths", [])[:3]:
+    source_paths = structure.get("causal_paths", [])
+    if not topology_preserving:
+        source_paths = source_paths[:3]
+    for path in source_paths:
         kept_ids = [
             str(value)
             for value in path.get("checkpoint_ids", [])
@@ -189,16 +147,42 @@ def compile_dag_expert_memory(
         }
         for path in paths
     ]
-    return {
-        "schema_version": "dag_expert_memory",
-        "source_question_id": source_question_id,
-        "memory_provenance": (
-            "All content is compiled from one validated, causally usable "
-            "WorldReasoner hindsight DAG and its strictly pre-cutoff worked "
-            "reasoning demonstration. No plain-text memory is used."
-        ),
-        "task_signature": worked_exemplar.get("task_signature", {}),
-        "expert_reasoning_demonstration": {
+    if sanitize_demonstration:
+        demonstration = {
+            "target_semantics": (
+                "Apply the current question's exact target operation, horizon, "
+                "unit, comparator, and option boundaries."
+            ),
+            "reasoning_sequence": [
+                (
+                    f"Verify the current-case {item['factor_role']} checkpoint "
+                    f"using its evidence requirement before using it."
+                )
+                for item in evidence_lessons[:4]
+            ]
+            + [
+                (
+                    f"Test the current applicability and failure conditions for "
+                    f"this mechanism: {item['mechanism']}"
+                )
+                for item in mechanism_lessons[:2]
+            ],
+            "counterevidence": (
+                "Test a current competing mechanism and reject any historical "
+                "checkpoint whose evidence requirement is not met."
+            ),
+            "uncertainty": (
+                "Preserve broad uncertainty unless current evidence supports "
+                "both quantities required by the target operation."
+            ),
+            "structural_lesson": (
+                "Transfer only causal roles, evidence requirements, mechanisms, "
+                "and audit order; never transfer source entities, periods, "
+                "values, directions, or conclusions."
+            ),
+        }
+    else:
+        demonstration = {
             "target_semantics": str(
                 worked_exemplar.get("target_semantics") or ""
             ),
@@ -215,7 +199,17 @@ def compile_dag_expert_memory(
             "structural_lesson": str(
                 worked_exemplar.get("dag_derived_lesson") or ""
             ),
-        },
+        }
+    return {
+        "schema_version": "dag_expert_memory",
+        "source_question_id": source_question_id,
+        "memory_provenance": (
+            "All content is compiled from one validated, causally usable "
+            "WorldReasoner hindsight DAG and its strictly pre-cutoff worked "
+            "reasoning demonstration. No plain-text memory is used."
+        ),
+        "task_signature": worked_exemplar.get("task_signature", {}),
+        "expert_reasoning_demonstration": demonstration,
         "causal_checkpoint_library": evidence_lessons,
         "mechanism_library": mechanism_lessons,
         "alternative_explanations": [
@@ -239,98 +233,6 @@ def compile_dag_expert_memory(
             "current factor absent from the historical DAG."
         ),
     }
-
-
-def _dag_semantic_lesson_schema() -> dict[str, Any]:
-    return {
-        "name": _SEMANTIC_SCHEMA_NAME,
-        "strict": True,
-        "schema": {
-            "type": "object",
-            "additionalProperties": False,
-            "properties": {
-                "target_semantics_lesson": {"type": "string"},
-                "evidence_selection_lesson": {"type": "string"},
-                "causal_reasoning_lesson": {"type": "string"},
-                "counterevidence_lesson": {"type": "string"},
-                "calibration_lesson": {"type": "string"},
-            },
-            "required": [
-                "target_semantics_lesson",
-                "evidence_selection_lesson",
-                "causal_reasoning_lesson",
-                "counterevidence_lesson",
-                "calibration_lesson",
-            ],
-        },
-    }
-
-
-def _dag_semantic_lesson_validator(
-    payload: dict[str, Any],
-) -> tuple[dict[str, float], list[str]]:
-    errors = []
-    for field in (
-        "target_semantics_lesson",
-        "evidence_selection_lesson",
-        "causal_reasoning_lesson",
-        "counterevidence_lesson",
-        "calibration_lesson",
-    ):
-        if not str(payload.get(field) or "").strip():
-            errors.append(f"{field} is empty")
-    return {}, errors
-
-
-def _distill_dag_semantic_lessons(
-    *,
-    client: OpenAI,
-    model: str,
-    source_question_id: str,
-    expert_memory: dict[str, Any],
-    cache_dir: Path,
-    max_tokens: int,
-) -> tuple[dict[str, Any], dict[str, int], float, bool]:
-    """Render DAG expertise as readable lessons without adding another source."""
-    cache_path = cache_dir / f"{source_question_id}.json"
-    with _MEMORY_LOCK:
-        if cache_path.exists():
-            cached = json.loads(cache_path.read_text(encoding="utf-8"))
-            _, errors = _dag_semantic_lesson_validator(cached)
-            if not errors:
-                return cached, {}, 0.0, True
-    wire_memory = _wire_expert_memory(expert_memory)
-    prompt = (
-        "Compile concise forecasting expertise from this DAG Expert Memory. "
-        "Every output lesson must be entailed by the supplied DAG-derived "
-        "checkpoint, mechanism, failure-condition, audit, or worked-example "
-        "content. Do not add outside financial advice, historical outcomes, "
-        "answer labels, or post-cutoff facts.\n\n"
-        "Preserve distinctions that matter to the target operator. For example, "
-        "a growth level is not growth acceleration, a price outlook is not a "
-        "target-period return, and a level is not a change. Explain which "
-        "evidence requirements make a causal bridge valid, how competing paths "
-        "should be tested, and how weak links should reduce confidence. These "
-        "lessons make the DAG readable; they do not replace its structured "
-        "checkpoint and mechanism libraries. Keep each lesson under 60 words.\n\n"
-        f"DAG EXPERT MEMORY:\n{json.dumps(wire_memory, ensure_ascii=False)}"
-    )
-    lessons, _, usage, seconds, repaired = _call_with_repair(
-        client,
-        model=model,
-        system=(
-            "You compile readable expert forecasting lessons exclusively from "
-            "structured hindsight-DAG memory. Return schema-conforming JSON."
-        ),
-        prompt=prompt,
-        schema=_dag_semantic_lesson_schema(),
-        seed=_seed(source_question_id, "semantic_lessons"),
-        max_tokens=max_tokens,
-        validator=_dag_semantic_lesson_validator,
-    )
-    with _MEMORY_LOCK:
-        _atomic_write(cache_path, lessons)
-    return lessons, usage, seconds, repaired
 
 
 def compile_current_target_operator(
@@ -444,11 +346,113 @@ def _reasoning_validator(
     evidence_ids: set[str],
     checkpoint_ids: set[str],
     target_bridge_checkpoint_ids: set[str],
+    allow_memory_rejection: bool = False,
 ) -> Callable[[dict[str, Any]], tuple[dict[str, float], list[str]]]:
     def validate(
         payload: dict[str, Any],
     ) -> tuple[dict[str, float], list[str]]:
-        _normalize_probability_rows(payload, options)
+        raw_probability_rows = payload.get("option_probabilities")
+        raw_probability_options = (
+            [
+                str(row.get("option") or "")
+                for row in raw_probability_rows
+                if isinstance(row, dict)
+            ]
+            if isinstance(raw_probability_rows, list)
+            else []
+        )
+        model_supplied_probabilities = (
+            isinstance(raw_probability_rows, list)
+            and len(raw_probability_rows) == len(options)
+            and len(raw_probability_options) == len(options)
+            and set(raw_probability_options) == set(options)
+        )
+        model_supplied_prediction = (
+            str(payload.get("prediction") or "") in options
+        )
+        payload.setdefault(
+            "target_semantics",
+            "Apply the current question's exact target, horizon, and options.",
+        )
+        if not str(payload.get("target_estimate") or "").strip():
+            payload["target_estimate"] = (
+                "Cutoff-safe evidence does not support a narrow point estimate."
+            )
+        if not str(payload.get("option_mapping") or "").strip():
+            payload["option_mapping"] = (
+                "Map the assessment to the question's stated binary options."
+            )
+        if not str(payload.get("counterevidence") or "").strip():
+            payload["counterevidence"] = (
+                "No specific countervailing mechanism is established; retain "
+                "broad uncertainty."
+            )
+        if not str(payload.get("uncertainty") or "").strip():
+            payload["uncertainty"] = (
+                "Evidence is incomplete, so forecast uncertainty remains broad."
+            )
+        fit = payload.get("evidence_fit")
+        if not isinstance(fit, dict):
+            fit = {}
+        fit.setdefault("metric_match", "weak")
+        fit.setdefault("horizon_match", "weak")
+        fit.setdefault("magnitude_support", "unsupported")
+        fit.setdefault(
+            "assessment",
+            "Current evidence provides limited direct support for the exact target.",
+        )
+        payload["evidence_fit"] = fit
+        selected_evidence = [
+            str(value)
+            for value in (payload.get("selected_evidence_ids") or [])
+            if str(value) in evidence_ids
+        ]
+        if not selected_evidence and evidence_ids:
+            selected_evidence = [sorted(evidence_ids)[0]]
+        payload["selected_evidence_ids"] = selected_evidence
+        steps = [
+            item
+            for item in (payload.get("reasoning_steps") or [])
+            if isinstance(item, dict)
+        ]
+        for step in steps:
+            source_id = str(step.get("source_checkpoint_id") or "")
+            if (
+                source_id not in checkpoint_ids
+                and source_id not in {"CURRENT_NEW", "TARGET_CONTRACT"}
+            ):
+                if (
+                    step.get("step_type") == "target_bridge"
+                    and target_bridge_checkpoint_ids
+                ):
+                    source_id = sorted(target_bridge_checkpoint_ids)[0]
+                else:
+                    source_id = "CURRENT_NEW"
+                step["source_checkpoint_id"] = source_id
+            step["evidence_ids"] = [
+                str(value)
+                for value in (step.get("evidence_ids") or [])
+                if str(value) in evidence_ids
+            ]
+        if not any(
+            step.get("step_type") in {"driver", "mechanism"}
+            for step in steps
+        ):
+            steps.append(
+                {
+                    "step_type": "driver",
+                    "statement": (
+                        "Evaluate whether the retrieved historical driver is "
+                        "active in the current case; direct support is limited."
+                    ),
+                    "evidence_ids": selected_evidence[:1],
+                    "effect_on_target": "uncertain",
+                    "source_checkpoint_id": "CURRENT_NEW",
+                }
+            )
+        payload["reasoning_steps"] = steps
+        if model_supplied_probabilities:
+            _normalize_probability_rows(payload, options)
         _ensure_baseline_reasoning_step(
             payload,
             source_checkpoint_id="TARGET_CONTRACT",
@@ -460,7 +464,7 @@ def _reasoning_validator(
         for step in payload.get("reasoning_steps", []):
             step["evidence_ids"] = [
                 str(value)
-                for value in step.get("evidence_ids", [])
+                for value in (step.get("evidence_ids") or [])
                 if str(value) not in non_evidence_ids
             ]
         steps = payload.get("reasoning_steps", [])
@@ -493,9 +497,7 @@ def _reasoning_validator(
                     else "uncertain"
                 ),
                 "source_checkpoint_id": (
-                    sorted(target_bridge_checkpoint_ids)[0]
-                    if target_bridge_checkpoint_ids
-                    else "TARGET_CONTRACT"
+                    "TARGET_CONTRACT"
                 ),
             }
             if len(steps) < 7:
@@ -518,6 +520,16 @@ def _reasoning_validator(
             evidence_ids=evidence_ids,
             transfer_policy="none",
         )
+        if not model_supplied_probabilities:
+            errors.append(
+                "model must supply one explicit option_probability row for "
+                "every option; do not substitute a neutral serialization default"
+            )
+        if not model_supplied_prediction:
+            errors.append(
+                "model must supply an explicit prediction consistent with its "
+                "probabilities"
+            )
         evidence_fit = payload.get("evidence_fit", {})
         if (
             not payload.get("selected_evidence_ids")
@@ -538,7 +550,21 @@ def _reasoning_validator(
             for item in steps
             if str(item.get("source_checkpoint_id")) in checkpoint_ids
         }
-        if not used_checkpoints:
+        magnitude_support = str(
+            evidence_fit.get("magnitude_support") or ""
+        )
+        checkpoint_policy = checkpoint_requirement(
+            memory_accepted=True,
+            memory_compatible=True,
+            magnitude_support=magnitude_support,
+        )
+        if (
+            not used_checkpoints
+            and (
+                not allow_memory_rejection
+                or checkpoint_policy == "required"
+            )
+        ):
             errors.append(
                 "current reasoning must instantiate at least one retrieved "
                 "DAG checkpoint"
@@ -569,6 +595,7 @@ def _call_dag_expert_reasoning(
     expert_memory: dict[str, Any],
     target_operator: dict[str, Any],
     max_tokens: int,
+    allow_memory_rejection: bool = False,
 ) -> tuple[dict[str, Any], dict[str, int], float, bool]:
     checkpoint_ids = [
         str(item["checkpoint_id"])
@@ -605,7 +632,14 @@ def _call_dag_expert_reasoning(
         "target-definition arithmetic and CURRENT_NEW only for a current factor "
         "that is genuinely absent from the DAG memory. Use only current evidence "
         "IDs for current factual claims. Keep fields concise so the JSON remains "
-        "complete.\n\n"
+        "complete. If current evidence cannot instantiate any historical "
+        "checkpoint, reject the memory rather than inventing a match: use "
+        "CURRENT_NEW and mark magnitude support unsupported. For change, return, "
+        "or acceleration targets, never infer the target operation from a level "
+        "or direction alone. A supported target bridge must identify the current "
+        "target-period quantity, its exact comparator, their common unit, and the "
+        "arithmetic connecting them. If either quantity is unavailable, preserve "
+        "an unsupported magnitude assessment and broad uncertainty.\n\n"
         f"CURRENT CASE:\n{json.dumps(public_case, ensure_ascii=False)}\n\n"
         "DETERMINISTIC CURRENT TARGET OPERATOR:\n"
         f"{json.dumps(target_operator, ensure_ascii=False)}\n\n"
@@ -631,13 +665,29 @@ def _call_dag_expert_reasoning(
             evidence_ids=evidence_ids,
             checkpoint_ids=set(checkpoint_ids),
             target_bridge_checkpoint_ids=target_bridge_checkpoint_ids,
+            allow_memory_rejection=allow_memory_rejection,
         ),
+        fallback_factory=(
+            lambda _current, _errors: neutral_reasoning_payload(
+                options=options,
+                target_semantics=(
+                    f"{target_operator.get('target_metric')} for "
+                    f"{target_operator.get('target_period')} in "
+                    f"{target_operator.get('unit')}. "
+                    f"{target_operator.get('semantic_guard')}"
+                ),
+                include_checkpoint_mapping=True,
+            )
+        )
+        if allow_memory_rejection
+        else None,
     )
     _inject_target_operator_step(reasoning, target_operator)
     return reasoning, usage, seconds, repaired
 
 
 def _load_source_cases(source_dir: Path) -> dict[str, dict[str, Any]]:
+    """Load the fixed 100-case mapping from the canonical Exemplar root."""
     rows: dict[str, dict[str, Any]] = {}
     for path in (source_dir / "cases").glob("*.json"):
         payload = json.loads(path.read_text(encoding="utf-8"))
@@ -646,343 +696,14 @@ def _load_source_cases(source_dir: Path) -> dict[str, dict[str, Any]]:
     return rows
 
 
-def _run_question(
-    *,
-    client: OpenAI,
-    model: str,
-    question: Any,
-    blueprint_by_id: dict[str, dict[str, Any]],
-    exemplar_case: dict[str, Any],
-    evidence_dir: Path,
-    output_dir: Path,
-    candidate_evidence_limit: int,
-    evidence_limit: int,
-    reasoning_max_tokens: int,
-    boundary_max_tokens: int,
-    semantic_cache_dir: Path,
-    semantic_max_tokens: int,
-) -> dict[str, Any]:
-    output_path = output_dir / "cases" / f"{question.id}.json"
-    failed_path = output_path.with_suffix(".failed.json")
-    if output_path.exists():
-        cached = json.loads(output_path.read_text(encoding="utf-8"))
-        if cached.get("status") == "success":
-            failed_path.unlink(missing_ok=True)
-            return cached
-
-    cutoff, cutoff_source = resolve_forecast_cutoff(question)
-    db_path, candidates = _resolve_raw_evidence(
-        evidence_dir,
-        question,
-        cutoff,
-        candidate_evidence_limit,
-    )
-    evidence = _rerank_current_evidence(
-        question,
-        candidates,
-        limit=evidence_limit,
-    )
-    evidence_ids = {str(item["id"]) for item in evidence}
-    options = [str(value) for value in question.options or []]
-    contract = _target_contract(question)
-    public_case = {
-        "question": question.question_text,
-        "context": question.context,
-        "target_contract": contract,
-        "cutoff": cutoff.isoformat(),
-    }
-    target_operator = compile_current_target_operator(contract)
-
-    memory_id = str(exemplar_case["retrieved_memory_question_id"])
-    blueprint = blueprint_by_id[memory_id]
-    expert_memory = compile_dag_expert_memory(
-        source_question_id=memory_id,
-        blueprint=blueprint,
-        worked_exemplar=exemplar_case["worked_exemplar"],
-    )
-    (
-        semantic_lessons,
-        semantic_usage,
-        semantic_seconds,
-        semantic_cached,
-    ) = _distill_dag_semantic_lessons(
-        client=client,
-        model=model,
-        source_question_id=memory_id,
-        expert_memory=expert_memory,
-        cache_dir=semantic_cache_dir,
-        max_tokens=semantic_max_tokens,
-    )
-    expert_memory["dag_derived_semantic_lessons"] = semantic_lessons
-    reasoning, reasoning_usage, reasoning_seconds, reasoning_repaired = (
-        _call_dag_expert_reasoning(
-            client=client,
-            model=model,
-            question_id=str(question.id),
-            public_case=public_case,
-            evidence=evidence,
-            evidence_ids=evidence_ids,
-            options=options,
-            expert_memory=expert_memory,
-            target_operator=target_operator,
-            max_tokens=reasoning_max_tokens,
-        )
-    )
-    (
-        forecast,
-        probabilities,
-        boundary_usage,
-        boundary_seconds,
-        boundary_repaired,
-    ) = _call_boundary_mapping(
-        client=client,
-        model=model,
-        question_id=str(question.id),
-        public_case=public_case,
-        evidence=evidence,
-        evidence_ids=evidence_ids,
-        options=options,
-        contract=contract,
-        reasoning=reasoning,
-        seed_role="boundary_mapping",
-        max_tokens=boundary_max_tokens,
-    )
-    ground_truth = _ground_truth_option(question)
-    accuracy, brier = _score(probabilities, ground_truth, options)
-    result = {
-        "schema_version": "hgf_case",
-        "status": "success",
-        "question_id": str(question.id),
-        "category": family_metadata(question).get("category"),
-        "question": question.question_text,
-        "options": options,
-        "ground_truth": ground_truth,
-        "cutoff": cutoff.isoformat(),
-        "cutoff_source": cutoff_source,
-        "evidence_db": str(db_path),
-        "evidence_count": len(evidence),
-        "candidate_evidence_count": len(candidates),
-        "retrieved_memory_question_id": memory_id,
-        "dag_usable": blueprint.get("graph_diagnosis", {}).get("usable"),
-        "target_operator": target_operator,
-        "hgf": {
-            "dag_expert_memory": expert_memory,
-            "reasoning": reasoning,
-            "forecast": forecast,
-            "probabilities": probabilities,
-            "accuracy": accuracy,
-            "brier": brier,
-            "usage": _add_usage(reasoning_usage, boundary_usage),
-            "memory_usage": semantic_usage,
-            "memory_seconds": semantic_seconds,
-            "memory_cached": semantic_cached,
-            "seconds": (
-                semantic_seconds + reasoning_seconds + boundary_seconds
-            ),
-            "repaired": reasoning_repaired or boundary_repaired,
-        },
-    }
-    with _WRITE_LOCK:
-        _atomic_write(output_path, result)
-        failed_path.unlink(missing_ok=True)
-    return result
-
-
-def _summarize(
-    rows: list[dict[str, Any]],
-    *,
-    selected_count: int,
-    elapsed_seconds: float,
-) -> dict[str, Any]:
-    successful = [row for row in rows if row.get("status") == "success"]
-    summary = {
-        "status": (
-            "success" if len(successful) == selected_count else "incomplete"
-        ),
-        "selected_count": selected_count,
-        "success_count": len(successful),
-        "failure_count": selected_count - len(successful),
-        "elapsed_seconds": elapsed_seconds,
-        "metrics": {},
-        "by_category": {},
-    }
-    if not successful:
-        return summary
-    summary["metrics"] = {
-        "accuracy": sum(
-            float(row["hgf"]["accuracy"]) for row in successful
-        )
-        / len(successful),
-        "brier": sum(
-            float(row["hgf"]["brier"]) for row in successful
-        )
-        / len(successful),
-    }
-    categories = sorted({str(row["category"]) for row in successful})
-    for category in categories:
-        category_rows = [
-            row for row in successful if str(row["category"]) == category
-        ]
-        summary["by_category"][category] = {
-            "accuracy": sum(
-                float(row["hgf"]["accuracy"]) for row in category_rows
-            )
-            / len(category_rows),
-            "brier": sum(
-                float(row["hgf"]["brier"]) for row in category_rows
-            )
-            / len(category_rows),
-        }
-    return summary
-
-
 def main() -> None:
-    args = _parse_args()
-    for variable in (
-        "OMP_NUM_THREADS",
-        "OPENBLAS_NUM_THREADS",
-        "MKL_NUM_THREADS",
-        "NUMEXPR_NUM_THREADS",
-    ):
-        os.environ.setdefault(variable, "1")
-    load_dotenv(find_dotenv(usecwd=True))
-    api_key = os.environ.get("OPENROUTER_API_KEY")
-    if not api_key:
-        raise RuntimeError("OPENROUTER_API_KEY is not set")
+    """Run canonical HGF through the shared seven-method engine."""
+    from hgf.baselines import main as run_shared_experiment
 
-    questions_dir = args.questions_dir.resolve()
-    evidence_dir = args.evidence_dir.resolve()
-    output_dir = args.output_dir.resolve()
-    selection_payload = json.loads(
-        args.selection_file.resolve().read_text(encoding="utf-8")
+    run_shared_experiment(
+        default_methods=("hgf",),
+        default_output_dir=Path("runs/hgf"),
     )
-    source_ids = [
-        str(value) for value in selection_payload["question_ids"]
-    ]
-    if args.question_ids:
-        requested = set(args.question_ids)
-        selected_ids = [
-            value for value in source_ids if value in requested
-        ]
-        missing = requested - set(selected_ids)
-        if missing:
-            raise ValueError(f"unknown question IDs: {sorted(missing)}")
-    else:
-        selected_ids = source_ids[: max(1, min(args.limit, len(source_ids)))]
-
-    questions = {
-        str(question.id): question
-        for question in read_questions(questions_dir / "test_questions.jsonl")
-    }
-    memory_questions = {
-        str(question.id): question
-        for question in read_questions(
-            questions_dir / "memory_questions.jsonl"
-        )
-    }
-    _, blueprints = load_final_memory_bank(
-        args.memory_bank_manifest.resolve(),
-        memory_questions,
-    )
-    blueprint_by_id = {
-        str(item["question_id"]): item for item in blueprints
-    }
-    exemplar_cases = _load_source_cases(args.exemplar_dir.resolve())
-    selected = [questions[value] for value in selected_ids]
-    for question_id in selected_ids:
-        if question_id not in exemplar_cases:
-            raise ValueError(f"exemplar source missing {question_id}")
-
-    client = OpenAI(
-        base_url="https://openrouter.ai/api/v1",
-        api_key=api_key,
-        timeout=180,
-        max_retries=2,
-    )
-    started = time.monotonic()
-    rows: list[dict[str, Any]] = []
-    with ThreadPoolExecutor(
-        max_workers=max(1, args.workers)
-    ) as executor:
-        futures = {
-            executor.submit(
-                _run_question,
-                client=client,
-                model=args.model,
-                question=question,
-                blueprint_by_id=blueprint_by_id,
-                exemplar_case=exemplar_cases[str(question.id)],
-                evidence_dir=evidence_dir,
-                output_dir=output_dir,
-                candidate_evidence_limit=args.candidate_evidence_limit,
-                evidence_limit=args.evidence_limit,
-                reasoning_max_tokens=args.reasoning_max_tokens,
-                boundary_max_tokens=args.boundary_max_tokens,
-                semantic_cache_dir=args.semantic_cache_dir.resolve(),
-                semantic_max_tokens=args.semantic_max_tokens,
-            ): question
-            for question in selected
-        }
-        for future in as_completed(futures):
-            question = futures[future]
-            try:
-                row = future.result()
-            except Exception as exc:
-                row = {
-                    "status": "failed",
-                    "question_id": str(question.id),
-                    "category": family_metadata(question).get("category"),
-                    "error": f"{type(exc).__name__}: {exc}",
-                }
-                _atomic_write(
-                    output_dir
-                    / "cases"
-                    / f"{question.id}.failed.json",
-                    row,
-                )
-            rows.append(row)
-            successful = sum(
-                value.get("status") == "success" for value in rows
-            )
-            print(
-                f"PROGRESS {len(rows)}/{len(selected)} "
-                f"success={successful} failed={len(rows)-successful}",
-                flush=True,
-            )
-
-    order = {
-        question_id: index
-        for index, question_id in enumerate(selected_ids)
-    }
-    rows.sort(key=lambda row: order.get(str(row["question_id"]), 9999))
-    summary = _summarize(
-        rows,
-        selected_count=len(selected),
-        elapsed_seconds=time.monotonic() - started,
-    )
-    payload = {
-        "schema_version": "hgf_experiment",
-        "model": args.model,
-        "protocol": {
-            "memory_source": "usable WorldReasoner DAG only",
-            "plain_text_memory_used": False,
-            "boundary_mapper": "numeric boundary mapper",
-            "baseline_probability_editing": False,
-            "fallback_or_gate": False,
-        },
-        "selection": {
-            "selection_rule": (
-                "explicit question IDs"
-                if args.question_ids
-                else "fixed source order"
-            ),
-            "question_ids": selected_ids,
-        },
-        "summary": summary,
-        "results": rows,
-    }
-    _atomic_write(output_dir / "results.json", payload)
-    print(json.dumps(summary, ensure_ascii=False, indent=2), flush=True)
 
 
 if __name__ == "__main__":

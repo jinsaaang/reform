@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_aapl_revenue_growth_acceleration_2023_09_30",
+  "blueprint_sha256": "b433c3fbc68ca408f654923afbb6ff6ffcaa8c72c6cf8c105b550a9f984238d0",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "corporate_earnings",
+      "target_operation": "growth_acceleration",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2023-09-30, which range will Apple Inc.'s quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2023-09-30 fall into?",
+    "historical_cutoff": "2023-09-30T00:00:00+00:00",
+    "target_semantics": "Apple Inc.'s quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2023-09-30.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The target metric is revenue growth acceleration, calculated as the difference between the current quarter's year-over-year (YoY) revenue growth and the prior quarter's YoY revenue growth.",
+      "To estimate this acceleration, I need to determine the YoY revenue growth for the target quarter (ending 2023-09-30) and the prior quarter (ending 2023-06-30).",
+      "The provided DAG indicates that the prior-quarter YoY growth (checkpoint_2) and the target period YoY growth (checkpoint_1) are key drivers, which are then used to calculate the acceleration (checkpoint_3)."
+    ],
+    "counterevidence": "No forecast-time evidence was provided to support or contradict any of the causal links or specific values required for the calculation.",
+    "prospective_target_estimate": "The calculation of the target metric requires specific values for the target quarter's YoY revenue growth and the prior quarter's YoY revenue growth, which are not available in the provided forecast-time evidence.",
+    "option_mapping": "The target metric, revenue growth acceleration, needs to be compared against the pre-registered boundaries of -2.573 and 3.794 percentage points to determine if it falls 'below recent range', 'within recent range', or 'above recent range'.",
+    "uncertainty": "The absence of any forecast-time evidence means that the values for the target period's YoY revenue growth and the prior quarter's YoY revenue growth are unknown. Consequently, the revenue growth acceleration cannot be calculated, and the target option cannot be determined.",
+    "dag_derived_lesson": "When estimating a change metric, the values of the constituent metrics at the relevant time points must be supported by evidence. Without this, the calculation cannot be performed, and the target cannot be resolved."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

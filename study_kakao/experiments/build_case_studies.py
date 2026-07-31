@@ -28,9 +28,9 @@ def _parse_args() -> argparse.Namespace:
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--count", type=int, default=3)
     parser.add_argument(
-        "--exemplar-dir",
+        "--hgf-artifact-root",
         type=Path,
-        default=ROOT / "artifacts" / "exemplars" / "cases",
+        default=ROOT / "artifacts" / "hgf",
     )
     return parser.parse_args()
 
@@ -239,7 +239,10 @@ def main() -> None:
     candidates = _candidate_rows(payloads, baseline)
     selected = _select_diverse(candidates, args.count)
     public = [
-        _public_case(dict(row), args.exemplar_dir.resolve())
+        _public_case(
+            dict(row),
+            args.hgf_artifact_root.resolve() / "exemplars" / "cases",
+        )
         for row in selected
     ]
     output_dir = args.output_dir.resolve()

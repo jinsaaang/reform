@@ -1,0 +1,39 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_us_housing_starts_monthly_growth_2025_04",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "macro / housing",
+      "target_operation": "monthly housing-starts growth",
+      "option_geometry": "bucketed by prior observations"
+    },
+    "historical_question": "As of 2025-04-30, which range will the monthly housing-starts growth for United States housing starts in 2025-04 fall into?",
+    "historical_cutoff": "2025-04-30T00:00:00+00:00",
+    "target_semantics": "The monthly percentage change in United States housing starts for April 2025.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20230703_004_9b39470c",
+        "takeaway": "A property analyst predicted a dramatic 35% housing market crash.",
+        "why_predictive": "This prediction suggests a potential severe downturn in the housing market, which could impact housing starts."
+      }
+    ],
+    "expert_reasoning": [
+      "The forecast-time evidence indicates a prediction of a significant housing market crash (art_finance_20230703_004_9b39470c).",
+      "Such a crash would likely lead to a substantial decrease in housing starts.",
+      "The historical data shows that the recent range for monthly housing-starts growth is between -6.192% and 9.938%.",
+      "A dramatic crash prediction implies a negative growth rate significantly below the recent range."
+    ],
+    "counterevidence": "No specific counterevidence was provided in the forecast-time articles that would suggest housing starts would grow or remain stable.",
+    "prospective_target_estimate": "below recent range",
+    "option_mapping": "The prediction of a dramatic housing market crash (art_finance_20230703_004_9b39470c) suggests a sharp decline in housing starts, which would fall below the lower bound of the recent range (-6.192%).",
+    "uncertainty": "The forecast-time evidence relies on a single prediction of a crash, without corroborating data on current housing start trends or other economic indicators that might moderate or amplify this prediction. The strength of the historical support for 'Mortgage-rate and Treasury-yield forecasts' and 'Reported U.S. housing starts rose in April' is noted as strong, but no specific forecast-time evidence was provided for these in the allowed articles.",
+    "dag_derived_lesson": "A strong negative prediction about a key market sector, if not contradicted, can be a primary driver for forecasting a significant negative deviation in a related metric, even if specific supporting data for other potential drivers is absent."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

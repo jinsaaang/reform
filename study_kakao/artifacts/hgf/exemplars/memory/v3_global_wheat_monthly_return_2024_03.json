@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_global_wheat_monthly_return_2024_03",
+  "blueprint_sha256": "0ed1197a884e1b6a85c9187253e7bda0bfc5306f5fa7a0d2bf5686f746f131ad",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "price_prediction",
+      "target_operation": "threshold_crossing",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2024-03-01, will the monthly wheat-price return for Global wheat price in 2024-03 be at least -0.881 percent?",
+    "historical_cutoff": "2024-03-01T00:00:00+00:00",
+    "target_semantics": "The monthly percentage return of the global wheat price for March 2024 must be greater than or equal to -0.881%.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The core of the prediction relies on calculating the monthly wheat-price return for March 2024. This requires two key data points: the global wheat price at the end of February 2024 and the global wheat price at the end of March 2024.",
+      "The DAG indicates that the calculation of the monthly return is a direct mediator between the price observations and the target. The historical support for this calculation is medium.",
+      "The final step involves comparing the calculated return against the pre-registered threshold of -0.881%. The DAG highlights that the threshold itself is a strong checkpoint, but its link to the target requires current support."
+    ],
+    "counterevidence": "No forecast-time evidence was provided to support or contradict any of the causal links or factors identified in the DAG. Specifically, there is no information regarding the global wheat price at the end of February or March 2024, nor any direct evidence about the calculated monthly return or its comparison to the threshold.",
+    "prospective_target_estimate": "The target is 'yes' if the monthly wheat-price return for March 2024 is >= -0.881%, and 'no' otherwise.",
+    "option_mapping": "The 'yes' option corresponds to the monthly wheat-price return being greater than or equal to -0.881%. The 'no' option corresponds to the monthly wheat-price return being less than -0.881%.",
+    "uncertainty": "The complete lack of forecast-time evidence means that all causal links identified in the DAG, from the price observations to the final threshold comparison, are unsupported. The historical support for the price observation checkpoints is medium, and for the threshold checkpoint is strong, but without current evidence, these historical strengths cannot be reliably transferred.",
+    "dag_derived_lesson": "When predicting a threshold-crossing event based on a calculated metric, the accuracy hinges on the availability of precise input data for the calculation and the direct support for the comparison against the predefined boundary. A lack of current evidence for these fundamental components renders the prediction highly uncertain, even if historical relationships were strong."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

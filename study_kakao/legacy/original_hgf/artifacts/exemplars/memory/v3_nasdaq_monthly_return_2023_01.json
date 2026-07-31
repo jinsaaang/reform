@@ -1,0 +1,80 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_nasdaq_monthly_return_2023_01",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "market_fx_credit",
+      "target_operation": "monthly return classification",
+      "option_geometry": "ordered categorical"
+    },
+    "historical_question": "As of 2023-01-01, which range will the monthly NASDAQ Composite return for NASDAQ Composite index in 2023-01 fall into?",
+    "historical_cutoff": "2023-01-01T00:00:00+00:00",
+    "target_semantics": "The monthly return of the NASDAQ Composite index for January 2023.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20220615_005_4be689b0",
+        "takeaway": "Inflation in the US and globally was high and increasing as of mid-2022.",
+        "why_predictive": "Persistent high inflation can lead to expectations of tighter monetary policy, which generally pressures growth-oriented equities like those in the NASDAQ."
+      },
+      {
+        "article_id": "art_finance_20221017_008_7569224e",
+        "takeaway": "Inflation remained high and widespread in the US in October 2022.",
+        "why_predictive": "This reinforces the expectation that the Federal Reserve would continue its restrictive monetary policy, impacting equity valuations."
+      },
+      {
+        "article_id": "art_finance_20220324_006_e7bdaf8c",
+        "takeaway": "Analysis of inflation rates was ongoing, with a focus on potential biases and adjustments.",
+        "why_predictive": "While not directly stating future inflation, it indicates a focus on understanding and potentially combating inflation, suggesting policy responses."
+      },
+      {
+        "article_id": "art_finance_20220330_007_bd97c262",
+        "takeaway": "Comparisons were being made between current inflation and the high inflation of the 1970s.",
+        "why_predictive": "This historical parallel suggests concerns about prolonged inflationary pressures and the potential for aggressive policy responses, which could negatively impact equity markets."
+      },
+      {
+        "article_id": "art_finance_20220120_002_a28a7ada",
+        "takeaway": "The Federal Reserve was exploring the implications of digital transformation on money and payments.",
+        "why_predictive": "This article, while forward-looking on CBDCs, signals the Fed's engagement with evolving financial landscapes, implying a proactive stance on monetary policy which could include rate adjustments."
+      },
+      {
+        "article_id": "art_finance_20220525_003_496195a5",
+        "takeaway": "A prominent Federal Reserve official (Kansas City Fed President Esther George) was announced to retire.",
+        "why_predictive": "Leadership changes at the Fed can sometimes signal shifts in policy approach or continuity, influencing market expectations about future monetary policy."
+      },
+      {
+        "article_id": "art_finance_20220603_010_ef6e3aac",
+        "takeaway": "Consumers pay attention to corporate earnings reports.",
+        "why_predictive": "This suggests that corporate earnings are a key driver of market sentiment and potentially consumer behavior, which can influence equity performance."
+      },
+      {
+        "article_id": "art_finance_20200407_011_638a866f",
+        "takeaway": "Companies reporting earnings early can have advantages.",
+        "why_predictive": "This highlights the importance of earnings season for market movements, though it doesn't provide specific earnings outlook."
+      },
+      {
+        "article_id": "art_finance_20220217_012_b18ccf75",
+        "takeaway": "The frequency of quarterly earnings reports is a subject of analysis.",
+        "why_predictive": "This underscores the significance of earnings data in financial markets."
+      }
+    ],
+    "expert_reasoning": [
+      "The persistent and high inflation reported in mid-to-late 2022 (art_finance_20220615_005_4be689b0, art_finance_20221017_008_7569224e) suggests continued pressure on the Federal Reserve to maintain a restrictive monetary policy.",
+      "This expectation of ongoing policy restraint implies higher interest rates and discount rates, which typically negatively impacts growth-oriented technology stocks that form a significant part of the NASDAQ Composite.",
+      "While the Fed was exploring digital currency (art_finance_20220120_002_a28a7ada) and leadership changes were occurring (art_finance_20220525_003_496195a5), the dominant narrative from the available evidence points towards a focus on combating inflation.",
+      "The importance of corporate earnings (art_finance_20220603_010_ef6e3aac, art_finance_20220217_012_b18ccf75, art_finance_20200407_011_638a866f) is noted, but without specific forward-looking guidance or earnings revision data available at the cutoff, the primary driver remains the macroeconomic policy response to inflation.",
+      "The historical parallels to the 1970s inflation (art_finance_20220330_007_bd97c262) reinforce the likelihood of sustained policy tightening, which would exert downward pressure on equity valuations."
+    ],
+    "counterevidence": "There is no direct forecast-time evidence provided that suggests a significant easing of inflation or a pivot in Federal Reserve policy that would support a strong rally in the NASDAQ Composite. The focus remains on inflation and its policy implications.",
+    "prospective_target_estimate": "Given the persistent high inflation and the implied continuation of restrictive monetary policy, the NASDAQ Composite is likely to face downward pressure. This suggests a return falling below the recent range.",
+    "option_mapping": "The evidence points towards a negative outlook for the NASDAQ Composite in January 2023 due to inflation and expected monetary policy tightening. This aligns with the 'below recent range' option.",
+    "uncertainty": "The forecast relies heavily on the assumption that the Federal Reserve will continue its aggressive stance against inflation. Any unexpected shift in policy or a significant improvement in inflation data not reflected in the provided articles could alter this outlook. Furthermore, specific earnings revisions and market breadth data, which are not detailed in the provided articles, could provide a more nuanced view.",
+    "dag_derived_lesson": "Sustained inflationary pressures necessitate a forecast of restrictive monetary policy, which typically exerts downward pressure on growth-oriented assets by increasing discount rates. The absence of corroborating positive signals from earnings or market breadth, coupled with historical parallels to prolonged inflationary periods, strengthens this negative outlook. Conversely, any indication of policy easing or a significant improvement in inflation metrics would be critical counterevidence."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

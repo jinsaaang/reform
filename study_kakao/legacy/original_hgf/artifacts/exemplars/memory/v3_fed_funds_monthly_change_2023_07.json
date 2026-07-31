@@ -1,0 +1,34 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_fed_funds_monthly_change_2023_07",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "monetary_policy",
+      "target_operation": "policy rate change",
+      "option_geometry": "range classification"
+    },
+    "historical_question": "As of 2023-07-01, which range will the monthly federal-funds-rate change for Federal Reserve effective federal funds rate in 2023-07 fall into?",
+    "historical_cutoff": "2023-07-01T00:00:00+00:00",
+    "target_semantics": "The monthly change in the effective federal funds rate for July 2023.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "Persistent inflation can support a restrictive policy decision, which in turn alters the target rate corridor. This mechanism suggests an upward pressure on the effective federal funds rate.",
+      "Labor market resilience can allow for continued restrictive policy, reinforcing the expectation of an upward shift in the target rate.",
+      "The Federal Open Market Committee's (FOMC) policy decision is a key mediator, directly changing the target rate corridor. A restrictive decision would push the effective rate higher.",
+      "Forward guidance, if interpreted as signaling a pause, could potentially ease funding conditions and temper the effective rate's movement. However, this is counteracted if markets price in further near-term tightening.",
+      "Short-term funding conditions can influence the effective rate's movement within the corridor. Easing conditions might temper upward movement, while stress could push it higher."
+    ],
+    "counterevidence": "Short-term funding conditions could ease, potentially tempering the effective rate's movement within the corridor, or conversely, funding stress could push the effective rate higher.",
+    "prospective_target_estimate": "The effective federal funds rate change is expected to be within the recent range, influenced by a restrictive policy decision driven by inflation persistence and labor market resilience, with potential tempering from funding conditions.",
+    "option_mapping": "The monthly change is expected to fall within the recent range of 0.155 to 0.26 percentage points.",
+    "uncertainty": "The effective rate's transmission is inferred from market commentary, and several mechanisms are observed after the policy action. The interpretation of forward guidance and the precise impact of short-term funding conditions introduce uncertainty.",
+    "dag_derived_lesson": "A restrictive policy decision, supported by persistent inflation and a resilient labor market, is the primary driver of changes in the target rate corridor. However, market interpretations of forward guidance and the dynamics of short-term funding conditions can modify the effective rate's movement within this corridor, introducing complexity and potential divergence."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

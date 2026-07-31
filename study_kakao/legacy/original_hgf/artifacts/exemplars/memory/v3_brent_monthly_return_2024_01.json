@@ -1,0 +1,34 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_brent_monthly_return_2024_01",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial",
+      "target_operation": "predict_value_range",
+      "option_geometry": "ordered_categorical"
+    },
+    "historical_question": "As of 2024-01-01, which range will the monthly Brent price return for Brent crude oil in 2024-01 fall into?",
+    "historical_cutoff": "2024-01-01T00:00:00+00:00",
+    "target_semantics": "The monthly percentage return for Brent crude oil in January 2024.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The baseline for Brent crude oil prices is OPEC+ market management, which aims to limit downside pressure during periods of weak demand by controlling supply. This mechanism is considered to have medium historical support.",
+      "A key driver supporting prices is the Red Sea shipping avoidance. This route avoidance increases perceived supply disruption and transportation costs, with a strong historical support.",
+      "Counterevidence to price increases comes from a weak global demand outlook. Weak growth expectations can reduce expected petroleum consumption, and this factor has medium historical support.",
+      "The market narrative is influenced by a shift toward supply concerns, where visible disruption risk can dominate the price narrative, supported by medium historical evidence.",
+      "The net effect on Brent crude oil prices reflects the balance of demand expectations, supply management, and disruption risk. This mechanism has medium historical support."
+    ],
+    "counterevidence": "The primary counterevidence is the weak global demand outlook, which suggests reduced petroleum consumption. This factor has medium historical support.",
+    "prospective_target_estimate": "The Red Sea shipping risk is expected to drive prices up by increasing perceived supply disruption and transportation costs. However, this is counterbalanced by weak global demand. OPEC+ market management provides a baseline support. The net effect is uncertain, but the shipping risk is a strong upward driver.",
+    "option_mapping": "The potential for upward price pressure from shipping disruptions and supply concerns, weighed against weak demand, suggests a possibility of prices moving outside the recent range. The specific outcome depends on the relative strength of these competing factors.",
+    "uncertainty": "Uncertainty exists due to the competing influences of weak demand and supply-side risks (shipping disruptions, OPEC+ management). The actual price movement will depend on the evolving balance between these factors and the credibility of OPEC+ supply compliance versus the severity and duration of shipping disruptions.",
+    "dag_derived_lesson": "Competing drivers, such as supply-side risks and demand weakness, require careful balancing. The impact of disruptions can be amplified or mitigated by market management policies and the underlying demand environment. Evidence strength for each factor influences the confidence in the net price impact."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

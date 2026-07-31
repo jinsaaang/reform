@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_us_10y_yield_monthly_change_2023_08",
+  "blueprint_sha256": "547adf0b1b610ceadb7c73f5a6d6c3d2f9d0ac4f5d66b5be7805a7b3a328423b",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_market",
+      "target_operation": "change_prediction",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2023-08-01, will the monthly 10-year yield change for United States 10-year Treasury yield in 2023-08 be at least 0.165 percentage points?",
+    "historical_cutoff": "2023-08-01T00:00:00+00:00",
+    "target_semantics": "The United States 10-year Treasury yield's monthly change in August 2023.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The DAG indicates that a rise in U.S. real yields to a 14-year high (checkpoint_3) historically supported an upward trend in nominal yields (checkpoint_4).",
+      "This upward trend in nominal yields (checkpoint_4) was a mediator towards the target monthly yield change (target_bridge).",
+      "However, competing forces (checkpoint_5) plausibly limited the net yield rise, and the CPI surprise (checkpoint_1) potentially reduced inflation expectations (checkpoint_2), introducing mixed signals."
+    ],
+    "counterevidence": "The DAG notes that the CPI surprise may have reduced inflation expectations (checkpoint_2), which could restrain nominal yields, and that competing forces plausibly limited the net yield rise (checkpoint_5).",
+    "prospective_target_estimate": "The evidence suggests a potential upward trend in yields, but the magnitude and the impact of counteracting factors are uncertain, making it difficult to definitively estimate if the threshold of 0.165 percentage points will be met.",
+    "option_mapping": "The 'yes' option corresponds to a monthly change of at least 0.165 percentage points, while 'no' corresponds to a change less than 0.165 percentage points.",
+    "uncertainty": "The historical support for the CPI surprise's impact on inflation expectations and competing forces is weak, and the DAG highlights that current evidence must directly measure these factors and support outgoing relationships, which is not available in the forecast-time evidence.",
+    "dag_derived_lesson": "When evaluating a target metric's change, consider both established trends and potential dampening factors. The impact of macroeconomic surprises on expectations and the interplay of competing market forces require direct, current evidence to confirm their influence on the target's magnitude and direction, rather than relying solely on historical associations."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

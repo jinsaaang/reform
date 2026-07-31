@@ -1,0 +1,39 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_tsla_revenue_growth_acceleration_2023_03_31",
+  "blueprint_sha256": "ea339885aeefab4e8c16dc9111c6fa5eef5e5f5ecc3e779981819d6a7a277a82",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_forecasting",
+      "target_operation": "growth_acceleration",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2023-03-31, which range will Tesla, Inc.'s quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2023-03-31 fall into?",
+    "historical_cutoff": "2023-03-31T00:00:00+00:00",
+    "target_semantics": "Tesla's year-over-year revenue growth acceleration for the fiscal quarter ending March 31, 2023.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20230219_002_0a70dba6",
+        "takeaway": "Tesla implemented aggressive price cuts in early 2023 to stimulate demand.",
+        "why_predictive": "Price cuts are a direct action that could influence sales volume and revenue, potentially impacting growth acceleration."
+      }
+    ],
+    "expert_reasoning": [
+      "The article indicates Tesla implemented aggressive price cuts in early 2023, which is a driver for increased vehicle deliveries (checkpoint_1 -> checkpoint_3).",
+      "Increased vehicle deliveries are a direct contributor to year-over-year revenue increases (checkpoint_3 -> checkpoint_8).",
+      "The target metric is revenue growth acceleration, which is influenced by revenue increases (checkpoint_8 -> target_bridge)."
+    ],
+    "counterevidence": "Increased EV market competition could pressure Tesla's market share and sales velocity, potentially limiting revenue growth acceleration (checkpoint_2).",
+    "prospective_target_estimate": "The provided evidence is weak and does not offer sufficient detail to estimate a specific range for the revenue growth acceleration.",
+    "option_mapping": "The available evidence does not allow for mapping to 'below recent range', 'within recent range', or 'above recent range'.",
+    "uncertainty": "The historical support for key drivers like 'Tesla Implements Aggressive Price Cuts' and 'Increased EV Market Competition' is weak. Furthermore, the evidence does not provide specific magnitudes or directions for the impact of price cuts on deliveries or the overall market competition's effect on Tesla's revenue growth acceleration.",
+    "dag_derived_lesson": "When evaluating a target metric influenced by multiple drivers and counter-drivers, it is crucial to assess the current evidential support for each causal link. Weak historical support for a factor necessitates re-evaluation with current data, and the absence of specific directional or magnitude evidence prevents a confident forecast, even if a causal path is identified."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

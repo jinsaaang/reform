@@ -1,0 +1,39 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_wmt_revenue_growth_acceleration_2024_10_31",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "corporate_earnings",
+      "target_operation": "growth_acceleration",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2024-10-31, which range will Walmart Inc.'s quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2024-10-31 fall into?",
+    "historical_cutoff": "2024-10-31T00:00:00+00:00",
+    "target_semantics": "Walmart Inc.'s quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2024-10-31.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20241030_008_6c0468aa",
+        "takeaway": "Meta Platforms Inc. reported strong revenue growth in Q3 2024, driven by advertising and other revenue streams.",
+        "why_predictive": "While not directly about Walmart, this article indicates a generally positive environment for large retailers and tech-enabled commerce, suggesting consumer spending resilience and potential for digital channel strength."
+      }
+    ],
+    "expert_reasoning": [
+      "The baseline for revenue growth acceleration is supported by factors like expedited delivery, which enhances customer convenience and retention. (art_finance_20241030_008_6c0468aa)",
+      "Resilient shoppers are a key driver, expected to support traffic and sales. (art_finance_20241030_008_6c0468aa)",
+      "E-commerce execution is a mediating factor that can contribute to channel sales, with current digital growth needing verification. (art_finance_20241030_008_6c0468aa)",
+      "The overall revenue growth direction is inferred by comparing current traffic, category, and e-commerce data. (art_finance_20241030_008_6c0468aa)"
+    ],
+    "counterevidence": "No direct counterevidence regarding Walmart's specific performance or market conditions was available in the forecast-time articles. The provided article on Meta Platforms Inc. (META) does not offer specific negative signals for Walmart.",
+    "prospective_target_estimate": "The available evidence suggests a generally positive environment for retail and e-commerce, implying that factors supporting revenue growth, such as customer convenience and resilient shopper traffic, are likely to be present. This points towards an acceleration within or above the recent range, but without specific Walmart data, a precise prediction is difficult.",
+    "option_mapping": "The evidence suggests that factors supporting revenue growth are likely present, potentially leading to an acceleration 'within recent range' or 'above recent range'. However, the lack of specific Walmart data makes it difficult to definitively rule out 'below recent range'.",
+    "uncertainty": "The forecast is highly uncertain due to the lack of direct, entity-specific information for Walmart Inc. The evidence is indirect, relying on general market trends and the performance of a different company (Meta Platforms Inc.). Key drivers like delivery execution, shopper resilience, and e-commerce growth for Walmart itself were not detailed.",
+    "dag_derived_lesson": "Upstream factors like service execution and consumer resilience can support revenue growth, but their impact is mediated by channel performance. Weakness in any of these upstream or mediating factors can lead to suboptimal outcomes, and direct evidence is crucial for accurate forecasting."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

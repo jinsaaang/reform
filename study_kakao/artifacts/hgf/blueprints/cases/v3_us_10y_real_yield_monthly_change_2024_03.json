@@ -1,0 +1,446 @@
+{
+  "schema_version": "hgf_blueprint_topology_v2",
+  "question_id": "v3_us_10y_real_yield_monthly_change_2024_03",
+  "target_definition": {
+    "metric": "monthly 10-year real-yield change",
+    "unit_or_option_space": [
+      "below recent range",
+      "within recent range",
+      "above recent range"
+    ],
+    "forecast_horizon": "Remap the historical target family to the current question's exact target period."
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Outcome-redacted topology preserves 6 checkpoints, 6 source edges, and 3 root-to-target paths.",
+    "weaknesses": []
+  },
+  "search_factors": [
+    {
+      "factor": "Strong economic data pushed rate-cut expectations later",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "node_1"
+      ]
+    },
+    {
+      "factor": "Markets discussed QT tapering and yield-curve implications",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "node_2"
+      ]
+    },
+    {
+      "factor": "Market commentary debated the timing of Fed cuts",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "node_3"
+      ]
+    },
+    {
+      "factor": "Treasuries struggled amid strong data and mixed inflation readings",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "node_4"
+      ]
+    },
+    {
+      "factor": "Nominal and TIPS yields jointly encode market inflation compensation",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "node_5"
+      ]
+    },
+    {
+      "factor": "Competing rate and inflation forces may have limited [CURRENT_PERIOD_REQUIRED]'s net real-yield move",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "node_6"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "checkpoint_1",
+      "role": "driver",
+      "factor": "Strong economic data pushed rate-cut expectations later",
+      "mechanism": "Strong-economy reporting supplied context for the subsequent debate over cut timing.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "node_1"
+      ],
+      "source_edge_ids": [
+        "edge_1"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_2",
+      "role": "driver",
+      "factor": "Markets discussed QT tapering and yield-curve implications",
+      "mechanism": "QT and yield-curve expectations could affect Treasuries, but their [CURRENT_PERIOD_REQUIRED] contribution is not measured.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "node_2"
+      ],
+      "source_edge_ids": [
+        "edge_3"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_3",
+      "role": "mediator",
+      "factor": "Market commentary debated the timing of Fed cuts",
+      "mechanism": "The rate-cut debate contextualizes the reported Treasury-market struggle without asserting causation.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "node_3"
+      ],
+      "source_edge_ids": [
+        "edge_2"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_4",
+      "role": "mediator",
+      "factor": "Treasuries struggled amid strong data and mixed inflation readings",
+      "mechanism": "Nominal Treasury pressure can affect real yields, but it does not determine them without inflation compensation.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "node_4"
+      ],
+      "source_edge_ids": [
+        "edge_4"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_5",
+      "role": "driver",
+      "factor": "Nominal and TIPS yields jointly encode market inflation compensation",
+      "mechanism": "The nominal-minus-TIPS relationship provides the framework for interpreting competing yield and inflation forces.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "node_5"
+      ],
+      "source_edge_ids": [
+        "edge_5"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_6",
+      "role": "mediator",
+      "factor": "Competing rate and inflation forces may have limited [CURRENT_PERIOD_REQUIRED]'s net real-yield move",
+      "mechanism": "Re-test whether this factor has a currently supported link to the exact target metric; do not transfer the historical outcome or magnitude.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "node_6"
+      ],
+      "source_edge_ids": [
+        "edge_6"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "target_bridge",
+      "role": "target_bridge",
+      "factor": "monthly 10-year real-yield change",
+      "mechanism": "Map only currently supported paths into the exact target operator. Directional support alone is not magnitude or threshold-crossing support.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "A current target baseline and evidence supporting every edge used in the bridge.",
+      "contradiction_signal": "The current target baseline, magnitude evidence, or option boundary contradicts the proposed path.",
+      "historical_support": "medium",
+      "source_event_ids": [],
+      "source_edge_ids": [
+        "edge_6"
+      ],
+      "source_event_type": "target_bridge"
+    }
+  ],
+  "topology": {
+    "checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_5",
+      "checkpoint_6",
+      "target_bridge"
+    ],
+    "root_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_5"
+    ],
+    "target_bridge_id": "target_bridge",
+    "edges": [
+      {
+        "source_checkpoint_id": "checkpoint_1",
+        "target_checkpoint_id": "checkpoint_3",
+        "relationship": "contextualizes",
+        "directionality": "forward",
+        "support_level": "evidence_synthesized",
+        "rationale": "Strong-economy reporting supplied context for the subsequent debate over cut timing.",
+        "source_edge_ids": [
+          "edge_1"
+        ],
+        "source_article_ids": [
+          "ev_7f464e971d9eb1e0",
+          "ev_b3b083b270277f80"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_3",
+        "target_checkpoint_id": "checkpoint_4",
+        "relationship": "contextualizes",
+        "directionality": "forward",
+        "support_level": "evidence_synthesized",
+        "rationale": "The rate-cut debate contextualizes the reported Treasury-market struggle without asserting causation.",
+        "source_edge_ids": [
+          "edge_2"
+        ],
+        "source_article_ids": [
+          "ev_b3b083b270277f80",
+          "ev_6c0f48eb40230d29"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_2",
+        "target_checkpoint_id": "checkpoint_4",
+        "relationship": "contributes_to",
+        "directionality": "forward",
+        "support_level": "background_hypothesis",
+        "rationale": "QT and yield-curve expectations could affect Treasuries, but their [CURRENT_PERIOD_REQUIRED] contribution is not measured.",
+        "source_edge_ids": [
+          "edge_3"
+        ],
+        "source_article_ids": [
+          "ev_a247211d0ab2d7a7"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_4",
+        "target_checkpoint_id": "checkpoint_6",
+        "relationship": "contributes_to",
+        "directionality": "forward",
+        "support_level": "background_hypothesis",
+        "rationale": "Nominal Treasury pressure can affect real yields, but it does not determine them without inflation compensation.",
+        "source_edge_ids": [
+          "edge_4"
+        ],
+        "source_article_ids": [
+          "ev_6c0f48eb40230d29"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_5",
+        "target_checkpoint_id": "checkpoint_6",
+        "relationship": "enables_interpretation",
+        "directionality": "forward",
+        "support_level": "evidence_synthesized",
+        "rationale": "The nominal-minus-TIPS relationship provides the framework for interpreting competing yield and inflation forces.",
+        "source_edge_ids": [
+          "edge_5"
+        ],
+        "source_article_ids": [
+          "ev_fd29b5bd6361e477"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_6",
+        "target_checkpoint_id": "target_bridge",
+        "relationship": "is_consistent_with",
+        "directionality": "forward",
+        "support_level": "background_hypothesis",
+        "rationale": "Historical DAG connected this factor to the redacted target measurement; the realized value and outcome mapping are omitted.",
+        "source_edge_ids": [
+          "edge_6"
+        ],
+        "source_article_ids": [
+          "ev_a7c576014bb28ec2"
+        ],
+        "terminal_to_target_bridge": true
+      }
+    ],
+    "paths_truncated": false
+  },
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "checkpoint_1",
+        "checkpoint_3",
+        "checkpoint_4",
+        "checkpoint_6",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "edge_1",
+        "edge_2",
+        "edge_4",
+        "edge_6"
+      ],
+      "relationships": [
+        "contextualizes",
+        "contextualizes",
+        "contributes_to",
+        "is_consistent_with"
+      ],
+      "path_role": "main_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Strong economic data pushed rate-cut expectations later to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_2",
+        "checkpoint_4",
+        "checkpoint_6",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "edge_3",
+        "edge_4",
+        "edge_6"
+      ],
+      "relationships": [
+        "contributes_to",
+        "contributes_to",
+        "is_consistent_with"
+      ],
+      "path_role": "supporting_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Markets discussed QT tapering and yield-curve implications to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_5",
+        "checkpoint_6",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "edge_5",
+        "edge_6"
+      ],
+      "relationships": [
+        "enables_interpretation",
+        "is_consistent_with"
+      ],
+      "path_role": "supporting_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Nominal and TIPS yields jointly encode market inflation compensation to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "A current factor outside the preserved historical topology dominates the target.",
+      "discriminating_evidence": "Search for current shocks and target observations not explained by any retained path.",
+      "source_event_ids": []
+    }
+  ],
+  "forecast_audit_questions": [
+    "Does every used checkpoint transition correspond to a preserved edge?",
+    "Which preserved edges are supported, contradicted, or unknown now?",
+    "Does a counter-path dominate the leading supported path?",
+    "Is there evidence for magnitude and boundary crossing, not direction alone?"
+  ],
+  "refinement_metadata": {
+    "model": "deterministic_topology_compiler_v2",
+    "source_graph": "data\\dags\\v3_us_10y_real_yield_monthly_change_2024_03\\graph.json",
+    "source_audit_status": "pass",
+    "outcome_nodes_redacted": 1,
+    "target_value_anchors_redacted": 1,
+    "historical_specifics_sanitized": true,
+    "sanitizer": "minimal_value_period_placeholders_v1",
+    "value_replacement_count": 0,
+    "period_replacement_count": 4
+  },
+  "topology_validation": {
+    "status": "pass",
+    "errors": [],
+    "metrics": {
+      "retained_checkpoint_count": 6,
+      "source_edge_count": 6,
+      "emitted_edge_count": 6,
+      "edge_coverage": 1.0,
+      "path_precision": 1.0,
+      "causal_path_count": 3,
+      "outcome_event_leak_count": 0,
+      "outcome_text_leak_count": 0,
+      "realized_value_count": 0,
+      "absolute_period_count": 0
+    }
+  }
+}

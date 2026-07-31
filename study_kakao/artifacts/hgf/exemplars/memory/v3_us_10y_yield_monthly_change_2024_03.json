@@ -1,0 +1,44 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_us_10y_yield_monthly_change_2024_03",
+  "blueprint_sha256": "05d347dfdbdd90ed25bd170b23aebc71657c7e7652da9d67cb0d2b90b2d74fd8",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_market",
+      "target_operation": "threshold_crossing",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2024-03-01, will the monthly 10-year yield change for United States 10-year Treasury yield in 2024-03 be at least -0.19 percentage points?",
+    "historical_cutoff": "2024-03-01T00:00:00+00:00",
+    "target_semantics": "The question asks whether the US 10-year Treasury yield will decrease by at least 0.19 percentage points in March 2024.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20220224_008_cb51dc58",
+        "takeaway": "Bond yields may be nearing an exhausted move upwards, suggesting a potential plateau or reversal.",
+        "why_predictive": "This article suggests that the upward trend in bond yields might be losing momentum, which could imply future downward pressure on yields."
+      },
+      {
+        "article_id": "art_finance_20231012_009_9f408767",
+        "takeaway": "Markets are experiencing mixed sentiment due to inflation and geopolitical concerns, leading to uncertainty.",
+        "why_predictive": "This article highlights prevailing market uncertainty driven by significant economic factors, which can influence Treasury yield movements."
+      }
+    ],
+    "expert_reasoning": [
+      "The provided evidence suggests that bond yields might have been nearing an exhausted upward move around February 2022 (art_finance_20220224_008_cb51dc58). This implies a potential for yields to stabilize or decline.",
+      "Furthermore, market sentiment in October 2023 was characterized by mixed signals and uncertainty stemming from inflation and geopolitical issues (art_finance_20231012_009_9f408767). Such uncertainty can lead to volatility and shifts in Treasury yields.",
+      "Considering these factors, a decline in the 10-year Treasury yield, potentially meeting the -0.19 percentage point threshold, is plausible if the market sentiment shifts towards risk aversion or if inflation concerns abate, leading to a reversal of the prior upward trend."
+    ],
+    "counterevidence": "The DAG indicates that 'Treasury yields rising despite rate-cut expectations' is a potential counter-factor (checkpoint_8). If current evidence showed yields continuing to rise, it would contradict the expectation of a significant yield decrease.",
+    "prospective_target_estimate": "The evidence suggests a possibility of yields declining, but the weak historical support for the drivers and the presence of counter-evidence create significant uncertainty regarding whether the -0.19 percentage point threshold will be met.",
+    "option_mapping": "The 'yes' option corresponds to the 10-year Treasury yield change being greater than or equal to -0.19 percentage points. The 'no' option corresponds to a change less than -0.19 percentage points.",
+    "uncertainty": "The historical support for the key drivers is weak, and the forecast-time evidence is dated and general. There is a lack of specific data on recent economic indicators or Federal Reserve policy signals that would directly support or refute the specific threshold crossing.",
+    "dag_derived_lesson": "When assessing a target metric, it is crucial to evaluate the current strength of evidence supporting identified causal drivers and potential counter-drivers. The absence of strong, specific, and recent evidence for key mechanisms necessitates a cautious approach, acknowledging significant uncertainty in the forecast."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

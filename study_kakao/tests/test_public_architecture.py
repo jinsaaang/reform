@@ -16,10 +16,10 @@ def test_public_runtime_has_no_external_runner_imports() -> None:
 
 
 def test_public_runtime_uses_fixed_exemplars() -> None:
-    runner = (SOURCE / "runner.py").read_text(encoding="utf-8")
-    assert 'exemplar_case["retrieved_memory_question_id"]' in runner
-    assert 'exemplar_case["worked_exemplar"]' in runner
-    assert "_distill_exemplar(" not in runner
+    baselines = (SOURCE / "baselines.py").read_text(encoding="utf-8")
+    assert 'fixed_case["retrieved_memory_question_id"]' in baselines
+    assert 'fixed_case["worked_exemplar"]' in baselines
+    assert "_distill_exemplar(" not in baselines
 
 
 def test_main_table_hgf_uses_the_same_fixed_contract() -> None:
@@ -27,6 +27,8 @@ def test_main_table_hgf_uses_the_same_fixed_contract() -> None:
     assert 'fixed_case["retrieved_memory_question_id"]' in baselines
     assert 'fixed_case["worked_exemplar"]' in baselines
     assert "_distill_exemplar(" not in baselines
+    assert "canonical_semantic_lessons()" in baselines
+    assert "_distill_dag_semantic_lessons" not in baselines
     assert 'seed_role="boundary_mapping"' in baselines
 
 

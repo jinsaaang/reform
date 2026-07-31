@@ -1,0 +1,180 @@
+{
+  "schema_version": "hgf_blueprint_v1",
+  "question_id": "v3_us_pce_price_monthly_change_2025_04",
+  "target_definition": {
+    "metric": "United States monthly PCE price change",
+    "unit_or_option_space": "percent monthly change",
+    "forecast_horizon": "target month"
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Policy, spending, energy-rent-food, tariffs, and inflation trends offer weak generalized price-pressure hypotheses.",
+    "weaknesses": [
+      "Source evidence is sparse.",
+      "All aggregate-release confirmation and outcome edges are excluded.",
+      "Every claim requires independent pre-cutoff verification."
+    ]
+  },
+  "search_factors": [
+    {
+      "factor": "Policy and inflation trend",
+      "why_search": "Policy and inflation context shape price pressure.",
+      "preferred_source_types": [
+        "official release"
+      ],
+      "source_event_ids": [
+        "evt_finance_20250203_005_5bd92987",
+        "evt_finance_20250312_001_bf3ed04d"
+      ]
+    },
+    {
+      "factor": "Consumer spending",
+      "why_search": "Spending can affect demand pressure.",
+      "preferred_source_types": [
+        "spending release"
+      ],
+      "source_event_ids": [
+        "evt_finance_20250430_002_86556311"
+      ]
+    },
+    {
+      "factor": "Household cost pressure",
+      "why_search": "Energy rent and food affect prices.",
+      "preferred_source_types": [
+        "component data"
+      ],
+      "source_event_ids": [
+        "evt_finance_20250430_006_0466674f"
+      ]
+    },
+    {
+      "factor": "Tariff costs",
+      "why_search": "Tariffs can raise production costs.",
+      "preferred_source_types": [
+        "trade data"
+      ],
+      "source_event_ids": [
+        "evt_finance_20250519_004_35b07260"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "policy",
+      "role": "baseline",
+      "factor": "Policy and inflation trend",
+      "mechanism": "Policy tightening and easing-inflation signals can restrain price pressure.",
+      "expected_direction": "down",
+      "evidence_requirement": "Verify current pre-cutoff component releases and independent baseline.",
+      "contradiction_signal": "Inflation broadens.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20250203_005_5bd92987",
+        "evt_finance_20250312_001_bf3ed04d"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_001_51825686"
+      ]
+    },
+    {
+      "id": "spending",
+      "role": "driver",
+      "factor": "Consumer spending",
+      "mechanism": "Spending patterns can alter demand pressure.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Verify pre-cutoff spending and component weights.",
+      "contradiction_signal": "Demand evidence conflicts.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20250430_002_86556311"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_003_2da29ba0"
+      ]
+    },
+    {
+      "id": "costs",
+      "role": "counterevidence",
+      "factor": "Household cost pressure",
+      "mechanism": "Energy rent and food costs can offset disinflation.",
+      "expected_direction": "up",
+      "evidence_requirement": "Verify current component releases and weights.",
+      "contradiction_signal": "Components fall.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20250430_006_0466674f",
+        "evt_finance_20250519_004_35b07260"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_006_a44b8e3a",
+        "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_007_5d386e68"
+      ]
+    },
+    {
+      "id": "bridge",
+      "role": "target_bridge",
+      "factor": "Demand and component pressure",
+      "mechanism": "Weigh verified demand, policy, and component-cost pressure to infer aggregate PCE direction.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Use current pre-cutoff component releases, weights, and independent baseline verification.",
+      "contradiction_signal": "Inputs do not reconcile.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20250312_001_bf3ed04d",
+        "evt_finance_20250430_002_86556311",
+        "evt_finance_20250430_006_0466674f"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_002_c5bac482",
+        "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_003_2da29ba0",
+        "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_006_a44b8e3a"
+      ]
+    }
+  ],
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "policy",
+        "bridge"
+      ],
+      "generalized_mechanism": "Verified disinflation context can restrain aggregate price pressure.",
+      "expected_direction": "down",
+      "applicability_conditions": [
+        "Independent data confirm."
+      ],
+      "failure_conditions": [
+        "Components reaccelerate."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "spending",
+        "costs",
+        "bridge"
+      ],
+      "generalized_mechanism": "Demand and cost pressure can offset disinflation.",
+      "expected_direction": "mixed",
+      "applicability_conditions": [
+        "Weights are material."
+      ],
+      "failure_conditions": [
+        "Data are stale."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "Component costs dominate demand moderation.",
+      "discriminating_evidence": "Compare weighted components.",
+      "source_event_ids": [
+        "evt_finance_20250430_006_0466674f",
+        "evt_finance_20250519_004_35b07260"
+      ]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Are releases pre-cutoff?",
+    "Are weights verified?",
+    "Do components reconcile?"
+  ]
+}

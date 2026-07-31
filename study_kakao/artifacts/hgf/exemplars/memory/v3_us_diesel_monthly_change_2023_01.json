@@ -1,0 +1,54 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_us_diesel_monthly_change_2023_01",
+  "blueprint_sha256": "30f2cf46cdd5d139100a27ab771f29165b4c457d12227c2c2c0f87740b862e9e",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "energy_commodities",
+      "target_operation": "price_change_threshold",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2023-01-01, will the monthly retail diesel-price change for United States diesel price in 2023-01 be at least -3.864 percent?",
+    "historical_cutoff": "2023-01-01T00:00:00+00:00",
+    "target_semantics": "The monthly percentage change in US retail diesel prices for January 2023.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20221230_003_c4e9e218",
+        "takeaway": "Economic weakness is expected to weigh on oil prices in 2023.",
+        "why_predictive": "General economic conditions directly influence energy demand and thus prices."
+      },
+      {
+        "article_id": "art_finance_20221226_004_2d325327",
+        "takeaway": "Middle East producers are cautious about hiking oil prices at the start of 2023.",
+        "why_predictive": "Producer decisions on supply are a key factor in oil price movements."
+      },
+      {
+        "article_id": "art_finance_20220113_009_09a4128d",
+        "takeaway": "The EIA expects gasoline and diesel prices to fall in 2022 and 2023 as demand growth slows.",
+        "why_predictive": "Official energy agency forecasts for price trends are significant indicators."
+      },
+      {
+        "article_id": "art_finance_20220613_013_02f9a25c",
+        "takeaway": "Supply-demand imbalances and uncertainty are keeping oil prices in flux.",
+        "why_predictive": "Market dynamics like supply-demand imbalances are fundamental drivers of commodity prices."
+      }
+    ],
+    "expert_reasoning": [
+      "The EIA forecast from January 2022 anticipated falling diesel prices in 2023 due to slowing demand growth (art_finance_20220113_009_09a4128d).",
+      "This expectation of falling prices aligns with a broader outlook of economic weakness potentially weighing on oil prices in 2023 (art_finance_20221230_003_c4e9e218).",
+      "Furthermore, Middle East producers' caution in hiking prices at the start of 2023 suggests a lack of upward price pressure from supply-side actions (art_finance_20221226_004_2d325327)."
+    ],
+    "counterevidence": "Despite potential upward pressures from supply-demand imbalances (art_finance_20220613_013_02f9a25c), the prevailing sentiment from official forecasts and producer behavior points towards price stability or decline rather than a significant increase.",
+    "prospective_target_estimate": "The evidence suggests that the monthly retail diesel-price change in January 2023 is unlikely to be at least -3.864 percent, leaning towards a smaller negative change or even a positive one.",
+    "option_mapping": "The evidence supports the 'no' option, as the conditions point away from a price drop of -3.864% or more.",
+    "uncertainty": "The historical support for the EIA forecast (art_finance_20220113_009_09a4128d) and the general economic weakness outlook (art_finance_20221230_003_c4e9e218) is weak, and the impact of supply-demand imbalances (art_finance_20220613_013_02f9a25c) remains a significant unknown.",
+    "dag_derived_lesson": "Forecasts of declining prices due to slowing demand, coupled with cautious producer behavior, can indicate a downward pressure on commodity prices, even in the face of general market flux. The strength of these indicators should be weighed against their historical support."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

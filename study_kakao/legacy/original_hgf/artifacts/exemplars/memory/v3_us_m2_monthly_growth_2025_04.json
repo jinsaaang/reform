@@ -1,0 +1,55 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_us_m2_monthly_growth_2025_04",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "money_supply",
+      "target_operation": "monthly_growth_rate",
+      "option_geometry": "ordered_categorical_buckets"
+    },
+    "historical_question": "As of 2025-04-01, which range will the monthly M2 growth for United States M2 money stock in 2025-04 fall into?",
+    "historical_cutoff": "2025-04-01T00:00:00+00:00",
+    "target_semantics": "The monthly percentage growth rate of the US M2 money stock for April 2025.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20250104_004_c0b95045",
+        "takeaway": "US M2 money supply has recently done something last witnessed during the Great Depression, historically foreshadowing a big move in stocks.",
+        "why_predictive": "This suggests a significant deviation from normal M2 trends, potentially indicating a large upcoming change in its growth rate."
+      },
+      {
+        "article_id": "art_finance_20250309_002_7a3f097e",
+        "takeaway": "US money supply growth is accelerating, which could signal a huge change coming in the stock market.",
+        "why_predictive": "Accelerating growth in the money supply is a direct indicator of increasing liquidity, which is a primary driver of M2 growth."
+      },
+      {
+        "article_id": "art_finance_20250319_003_a2176309",
+        "takeaway": "US money supply is rapidly rising, potentially signaling an epic stock market recovery.",
+        "why_predictive": "This reinforces the signal of accelerating M2 growth and its potential impact on financial markets, implying continued upward pressure on M2."
+      },
+      {
+        "article_id": "art_finance_20250306_002_b60381de",
+        "takeaway": "The fiscal origin of the COVID-19 price surge is discussed, implying significant fiscal policy actions that could influence money supply.",
+        "why_predictive": "Large fiscal interventions can lead to increased money supply as the government injects liquidity into the economy."
+      }
+    ],
+    "expert_reasoning": [
+      "The baseline for M2 growth is influenced by prior quantitative tightening (QT) policies. Historically, aggressive QT has coincided with M2 contraction (legacy_qt).",
+      "However, the Federal Reserve's stance on QT may be moderating, which could reduce the drag on money supply growth (policy_moderation).",
+      "Fiscal and banking liquidity offsets, such as government spending or deposit creation, can support M2 growth even while QT continues (fiscal_offset).",
+      "Recent monthly M2 momentum, showing stabilization and increases, provides a positive baseline for the next observation (monthly_momentum).",
+      "The target month's M2 observation needs to be mapped using comparable monthly changes, distinct from year-over-year figures (m2_bridge)."
+    ],
+    "counterevidence": "Ongoing quantitative tightening (QT) can limit upside in M2 growth, even if the pace moderates. The cited articles discussing M2 acceleration are generally focused on year-over-year changes or broader trends, and direct links from February momentum and fiscal-inflation commentary to the April outcome may overstate support. Some evidence is also post-cutoff.",
+    "prospective_target_estimate": "The recent acceleration in US money supply growth (art_finance_20250309_002_7a3f097e, art_finance_20250319_003_a2176309), coupled with potential fiscal liquidity injections (art_finance_20250306_002_b60381de) and a possible moderation in quantitative tightening (policy_moderation), suggests an upward trend in monthly M2 growth. This momentum, if sustained month-over-month, points towards the 'within recent range' or potentially 'above recent range' given the historical parallels to significant monetary events (art_finance_20250104_004_c0b95045). However, the continued QT (ongoing_qt) acts as a counteracting force.",
+    "option_mapping": "The recent M2 growth has been around 0.293% to 0.401%. Given the accelerating money supply growth and potential fiscal support, the April 2025 monthly M2 growth is likely to be within or above this recent range.",
+    "uncertainty": "Significant uncertainty remains due to the potential for QT to continue exerting downward pressure on M2 growth, the possibility that year-over-year acceleration masks weak month-to-month changes, and the reliance on post-cutoff articles for some signals. The exact impact of fiscal flows and the precise pace of QT are not definitively quantified by the available forecast-time evidence.",
+    "dag_derived_lesson": "When assessing a target metric's future value, consider the interplay between ongoing restrictive policies and potential liquidity-boosting factors. Recent momentum can provide a baseline, but it's crucial to distinguish between different measurement frequencies (e.g., monthly vs. year-over-year) and to verify the direct causal links from broader economic commentary to the specific target period, especially when evidence is mixed or dated."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

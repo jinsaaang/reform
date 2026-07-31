@@ -1,0 +1,64 @@
+{
+  "schema_version": "fixed_exemplar_case",
+  "status": "success",
+  "question_id": "v3_us_cpi_monthly_change_2025_12",
+  "retrieved_memory_question_id": "v3_us_cpi_monthly_change_2024_12",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "macro / inflation",
+      "target_operation": "monthly CPI change",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2024-12-31, which range will the monthly CPI change for United States CPI in 2024-12 fall into?",
+    "historical_cutoff": "2024-12-31T00:00:00+00:00",
+    "target_semantics": "The monthly change in the United States Consumer Price Index (CPI) for December 2024, expressed as a percentage.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20241211_011_34ef5a1c",
+        "takeaway": "Inflation increased in November, complicating the Fed's next rate decision.",
+        "why_predictive": "Indicates that recent inflation trends are not consistently downward, potentially impacting future CPI readings."
+      },
+      {
+        "article_id": "art_finance_20241218_005_3f309ac4",
+        "takeaway": "The Federal Reserve issued an FOMC statement on December 18, 2024.",
+        "why_predictive": "FOMC statements often provide forward guidance on monetary policy, which can influence inflation expectations and actual inflation."
+      },
+      {
+        "article_id": "art_finance_20240712_003_dc577c1b",
+        "takeaway": "Services PPI inflation showed a \"nasty surprise\" for the sixth month in a row as of July 2024, with the bottom of a potential U-turn in December 2023.",
+        "why_predictive": "Suggests persistent inflationary pressures in the services sector, which could continue to affect overall CPI."
+      },
+      {
+        "article_id": "art_finance_20240213_008_eb299b91",
+        "takeaway": "The January U.S. CPI report showed inflation at a 3.1% annual rate, hotter than expected.",
+        "why_predictive": "Indicates that inflation has been running hotter than anticipated earlier in the year, setting a baseline for subsequent months."
+      },
+      {
+        "article_id": "art_finance_20241211_007_761961b7",
+        "takeaway": "Gold price moved little after an as-expected U.S. CPI report on December 11, 2024.",
+        "why_predictive": "Suggests that the CPI data released in December was in line with market expectations, implying a degree of predictability or stability in recent inflation readings."
+      },
+      {
+        "article_id": "art_finance_20240716_003_ac8727d3",
+        "takeaway": "Overall housing inflation could remain elevated into 2025, despite cooling prices for new leases.",
+        "why_predictive": "Highlights a key component of CPI (shelter) that is expected to remain a source of inflationary pressure."
+      }
+    ],
+    "expert_reasoning": [
+      "The November CPI increase complicated the Fed's decision-making (art_finance_20241211_011_34ef5a1c), suggesting that inflation is not on a clear downward path.",
+      "However, the December CPI report was 'as-expected' (art_finance_20241211_007_761961b7), implying that recent inflation might be stabilizing around current levels.",
+      "Persistent inflationary pressures in services (art_finance_20240712_003_dc577c1b) and elevated housing inflation (art_finance_20240716_003_ac8727d3) are noted as ongoing concerns.",
+      "The Fed's FOMC statement on December 18th (art_finance_20241218_005_3f309ac4) provides context for policy, but the direct impact on December's CPI is not explicitly detailed in the provided articles.",
+      "Earlier in the year, inflation was running hotter than expected (art_finance_20240213_008_eb299b91), but the 'as-expected' nature of the December report suggests a potential moderation or adherence to recent trends."
+    ],
+    "counterevidence": "The 'as-expected' nature of the December CPI report (art_finance_20241211_007_761961b7) suggests that the outcome might align with recent historical patterns, potentially falling within the recent range, rather than a significant deviation.",
+    "prospective_target_estimate": "Given that the December CPI report was 'as-expected' and recent inflation has shown some persistent pressures but also signs of stabilization, the monthly CPI change is likely to fall within the recent range.",
+    "option_mapping": "The 'as-expected' CPI report suggests that the monthly change will not be a significant outlier, making 'within recent range' the most probable outcome.",
+    "uncertainty": "While the December CPI was 'as-expected', the persistence of services inflation and elevated housing costs (art_finance_20240712_003_dc577c1b, art_finance_20240716_003_ac8727d3) introduce upward risks. Conversely, the Fed's policy stance and market expectations could exert downward pressure. The lack of specific December CPI figures in the provided articles limits precise forecasting.",
+    "dag_derived_lesson": "When assessing a target metric, evaluate the interplay between persistent underlying pressures and recent stabilizing signals. Consider whether recent data aligns with expectations or signals a deviation, and weigh the influence of policy statements against observed economic indicators. Recognize that specific component inflation can drive overall trends, but market reaction to data can also provide a clue about its relative impact."
+  },
+  "pilot_provenance": {
+    "blueprint_schema": "hgf_blueprint_topology_v2",
+    "memory_exemplar_sha256": "28dadc0122a22831af315a5192df414c372309f717d02e428187d62ef38e39a5"
+  }
+}

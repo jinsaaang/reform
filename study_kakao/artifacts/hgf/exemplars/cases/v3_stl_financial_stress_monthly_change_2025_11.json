@@ -1,0 +1,32 @@
+{
+  "schema_version": "fixed_exemplar_case",
+  "status": "success",
+  "question_id": "v3_stl_financial_stress_monthly_change_2025_11",
+  "retrieved_memory_question_id": "v3_stl_financial_stress_monthly_change_2023_01",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_stress_index",
+      "target_operation": "change",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2023-01-01, which range will the monthly financial-stress-index change for St. Louis Fed Financial Stress Index in 2023-01 fall into?",
+    "historical_cutoff": "2023-01-01T00:00:00+00:00",
+    "target_semantics": "The monthly change in the St. Louis Fed Financial Stress Index for January 2023.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The DAG indicates a potential causal path from 'Debt-ceiling conditions were reported to soften Federal Reserve quantitative tightening' to market liquidity, and then to financial stress. However, the evidence for this path is weak and indirect, with no specific cutoff-safe data supporting the link to the target index.",
+      "Another path involves '[CURRENT_PERIOD_REQUIRED] survey reported consumer sentiment, inflation expectations, and borrowing-cost perceptions' influencing financial stress. This driver is historically supported, but the DAG notes that the provided sources do not establish its causal effect on the STLFSI.",
+      "A counter-signal, 'Global tightening and credit-crunch concerns remained a counter-signal,' is historically strongly supported but its mechanism is linked to a different national index, weakening its direct applicability to the US STLFSI."
+    ],
+    "counterevidence": "Global tightening and credit-crunch concerns are identified as a counter-signal, plausibly opposing lower financial stress. However, the evidence cited pertains to a different national index, weakening its direct predictive power for the St. Louis Fed Financial Stress Index.",
+    "prospective_target_estimate": "Within recent range",
+    "option_mapping": "The target metric is the monthly change in the St. Louis Fed Financial Stress Index. The options are 'below recent range' (change < -0.154), 'within recent range' (-0.154 <= change < 0.121), and 'above recent range' (change >= 0.121).",
+    "uncertainty": "The available forecast-time evidence is insufficient to strongly support any causal path to the target metric. The DAG highlights weak and indirect support for proposed drivers, and counterevidence is linked to a different index. Therefore, significant uncertainty remains regarding the direction and magnitude of the financial stress index change.",
+    "dag_derived_lesson": "When evaluating a target metric, assess the strength and directness of evidence supporting each causal link in a proposed pathway. Recognize that historical support for a factor does not guarantee its current relevance or causal impact, especially when counterevidence is linked to different entities or contexts. Weak or indirect evidence necessitates a cautious approach and acknowledgment of uncertainty."
+  },
+  "hgf_provenance": {
+    "blueprint_schema": "hgf_blueprint_topology_v2",
+    "blueprint_sha256": "14e53f5c09771c84700aa1332bca77f492f2df3bb42d1e7acfebaccf342e60e2",
+    "memory_exemplar_sha256": "0e363e89121c3856a993ce13a4c554cae68094c5ffd3c62df7554ddcffc0218d"
+  }
+}

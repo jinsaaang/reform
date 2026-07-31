@@ -1,0 +1,43 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_amzn_revenue_growth_acceleration_2023_09_30",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial",
+      "target_operation": "growth_acceleration",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2023-09-30, which range will Amazon.com, Inc.'s quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2023-09-30 fall into?",
+    "historical_cutoff": "2023-09-30T00:00:00+00:00",
+    "target_semantics": "Amazon's quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2023-09-30.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20230803_003_f1e27f3f",
+        "takeaway": "Amazon reported Q2 2023 results with revenue growth of 11% year-over-year, driven by a 12% increase in online stores and a 14% increase in advertising services. AWS revenue grew 12% year-over-year.",
+        "why_predictive": "This provides the most recent actual performance data for Amazon's key segments (online stores, advertising, AWS) prior to the target quarter, indicating positive momentum."
+      }
+    ],
+    "expert_reasoning": [
+      "The baseline for consumer spending appears stable, supporting marketplace sales.",
+      "Strength in retail advertising is a driver of revenue growth.",
+      "Cloud segment growth is a mediator, contributing to overall revenue.",
+      "The Q2 2023 results showed year-over-year revenue growth of 11% (art_finance_20230803_003_f1e27f3f).",
+      "Online stores grew 12% and advertising services grew 14% in Q2 2023 (art_finance_20230803_003_f1e27f3f).",
+      "AWS revenue grew 12% year-over-year in Q2 2023 (art_finance_20230803_003_f1e27f3f).",
+      "These segment trends suggest continued positive momentum into the target quarter.",
+      "The revenue bridge indicates that consolidated segment contributions will determine the change in consolidated revenue growth."
+    ],
+    "counterevidence": "Fulfillment efficiency improvements could raise profits without a proportional increase in revenue, potentially masking underlying sales trends.",
+    "prospective_target_estimate": "within recent range",
+    "option_mapping": "The observed Q2 2023 growth rates (11% consolidated, 12% online stores, 14% advertising, 12% AWS) suggest that the year-over-year revenue growth acceleration for the quarter ending 2023-09-30 will likely fall within the recent range of -0.936 to 2.977 percentage points.",
+    "uncertainty": "The forecast relies on the assumption that the positive trends observed in Q2 2023 will continue into Q3 2023. Potential moderation in cloud growth or shifts in consumer spending could impact the outcome. Efficiency gains are a potential confounding factor.",
+    "dag_derived_lesson": "Positive momentum in key business segments, supported by consumer demand and advertising strength, is predictive of consolidated revenue growth acceleration. However, operational efficiencies can obscure the true sales performance, necessitating a careful distinction between revenue and profit drivers."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

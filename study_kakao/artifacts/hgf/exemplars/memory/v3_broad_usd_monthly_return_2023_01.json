@@ -1,0 +1,54 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_broad_usd_monthly_return_2023_01",
+  "blueprint_sha256": "6a4aa73656e7d582562d7c6aca27b223642c1060287cb369070c3273d7819831",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "market_fx_credit",
+      "target_operation": "monthly broad-dollar return",
+      "option_geometry": "ordered_categorical"
+    },
+    "historical_question": "As of 2023-01-01, which range will the monthly broad-dollar return for Nominal broad U.S. dollar index in 2023-01 fall into?",
+    "historical_cutoff": "2023-01-01T00:00:00+00:00",
+    "target_semantics": "The monthly percentage change of the Nominal broad U.S. dollar index.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20221214_014_0d6442af",
+        "takeaway": "The Federal Reserve hiked interest rates again in December 2022.",
+        "why_predictive": "Further interest rate hikes by the Federal Reserve are a key driver of currency strength, influencing the broad-dollar index."
+      },
+      {
+        "article_id": "art_finance_20221102_012_b054c20c",
+        "takeaway": "The Federal Reserve approved a 0.75-point hike in November 2022, bringing rates to their highest since 2008, and hinted at a policy change.",
+        "why_predictive": "Aggressive rate hikes signal a tightening monetary policy, which typically strengthens the U.S. dollar."
+      },
+      {
+        "article_id": "art_finance_20220725_011_a8f0ec9d",
+        "takeaway": "Fed funds futures indicated a peak in U.S. interest rates by January 2023.",
+        "why_predictive": "Expectations of a peak in interest rates could signal a potential pause or slowdown in future hikes, which might affect dollar strength."
+      },
+      {
+        "article_id": "art_finance_20220120_003_d14f4bbb",
+        "takeaway": "The Federal Reserve released a study on a digital dollar, indicating ongoing consideration of monetary system evolution.",
+        "why_predictive": "While not directly impacting the broad dollar index in the short term, discussions around digital currencies and monetary policy evolution can be background factors."
+      }
+    ],
+    "expert_reasoning": [
+      "The Federal Reserve has been actively raising interest rates, as evidenced by hikes in late 2022 (art_finance_20221214_014_0d6442af, art_finance_20221102_012_b054c20c).",
+      "Historically, rising interest rates tend to strengthen the U.S. dollar by making dollar-denominated assets more attractive.",
+      "However, there were also indications that interest rate hikes might be nearing a peak by early 2023 (art_finance_20220725_011_a8f0ec9d), suggesting a potential moderation in dollar strength."
+    ],
+    "counterevidence": "While rate hikes generally support a stronger dollar, the anticipation of a peak in these hikes (art_finance_20220725_011_a8f0ec9d) could temper upward momentum.",
+    "prospective_target_estimate": "within recent range",
+    "option_mapping": "The recent range boundaries are -1.316% and 1.701%. Given the conflicting signals of continued rate hikes and the potential for a peak, a moderate return within this range is plausible.",
+    "uncertainty": "The exact timing and magnitude of the impact of Fed policy changes on the dollar index are subject to market interpretation and other global economic factors. The historical support for the drivers is weak.",
+    "dag_derived_lesson": "When assessing the impact of monetary policy on currency, consider both the direction of policy changes (e.g., rate hikes) and market expectations regarding the future trajectory of those policies (e.g., peak rates)."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

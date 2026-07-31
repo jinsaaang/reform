@@ -1,0 +1,34 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_global_wheat_monthly_return_2023_08",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_prediction",
+      "target_operation": "binary_classification",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2023-08-01, will the monthly wheat-price return for Global wheat price in 2023-08 be at least -2.785 percent?",
+    "historical_cutoff": "2023-08-01T00:00:00+00:00",
+    "target_semantics": "The monthly percentage return of the Global wheat price for August 2023.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The DAG indicates a historical factor where 'Supply concerns in key wheat-exporting countries later subsided'. This factor is identified as a 'mediator' checkpoint.",
+      "The mechanism to test is whether this factor is active and connects to the target metric.",
+      "The historical support for this factor is 'strong'. However, no specific forecast-time evidence is provided to confirm its activity or direction in the current case.",
+      "The DAG also identifies a 'target_bridge' checkpoint for aggregating supported drivers and counterevidence into the target metric, with 'medium' historical support.",
+      "The causal path suggests that current evidence must activate historical factors and demonstrate a prospective bridge to the target, with 'mixed' expected direction."
+    ],
+    "counterevidence": "No specific forecast-time evidence was provided to support or contradict the identified historical factors or their impact on the target metric.",
+    "prospective_target_estimate": "Given the lack of specific forecast-time evidence to confirm the activation and direction of the identified historical factors, the prospective estimate remains uncertain.",
+    "option_mapping": "The target is 'yes' if the monthly wheat-price return is at least -2.785 percent, and 'no' otherwise.",
+    "uncertainty": "The primary uncertainty stems from the absence of forecast-time evidence. Without data confirming the status of 'Supply concerns in key wheat-exporting countries' or other relevant factors, it is impossible to determine their current impact on the global wheat price return.",
+    "dag_derived_lesson": "When historical factors are identified as potentially predictive, it is crucial to seek current evidence that confirms their activation and direction of influence to bridge to the target metric. The absence of such evidence necessitates a cautious or uncertain forecast."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

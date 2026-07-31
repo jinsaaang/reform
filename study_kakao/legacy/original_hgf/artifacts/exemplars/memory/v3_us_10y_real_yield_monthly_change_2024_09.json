@@ -1,0 +1,33 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_us_10y_real_yield_monthly_change_2024_09",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_monetary_policy",
+      "target_operation": "change_in_real_yield",
+      "option_geometry": "range_comparison"
+    },
+    "historical_question": "As of 2024-09-01, which range will the monthly 10-year real-yield change for United States 10-year real Treasury yield in 2024-09 fall into?",
+    "historical_cutoff": "2024-09-01T00:00:00+00:00",
+    "target_semantics": "The monthly change in the United States 10-year real Treasury yield for September 2024.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The August annual inflation rate was reported at 2.5% (checkpoint_1).",
+      "Market expectations for a Federal Reserve rate cut increased (checkpoint_2).",
+      "The nominal 10-year yield initially rose by four basis points following the CPI release (checkpoint_3).",
+      "September conditions are assessed as plausibly exerting net downward pressure on real yields (checkpoint_4)."
+    ],
+    "counterevidence": "No specific counterevidence was identified in the provided DAG structure, but the 'contradiction_signal' fields in the checkpoints indicate potential areas where current evidence might diverge.",
+    "prospective_target_estimate": "The available information suggests a mixed impact on real yields, with some factors pointing towards downward pressure and others being less clear or potentially counteracting. The aggregate effect on the monthly change remains uncertain.",
+    "option_mapping": "Given the mixed signals and weak evidence for some drivers, it is difficult to definitively map the prospective estimate to 'below recent range', 'within recent range', or 'above recent range' without more concrete evidence on the net effect.",
+    "uncertainty": "Significant uncertainty exists due to the lack of direct forecast-time evidence and the 'unknown' expected direction for several key drivers. The weak historical support for checkpoint_4 further amplifies this uncertainty. The overall mechanism's applicability is contingent on current cutoff-safe evidence supporting the intermediate links, which is not provided.",
+    "dag_derived_lesson": "When assessing a target metric influenced by multiple factors, it is crucial to verify the activation of historically relevant drivers in the current period and establish a clear evidence-based bridge to the target. The absence of direct forecast-time evidence or the presence of counteracting mechanisms necessitates a cautious approach, acknowledging the potential for outcomes outside the initially considered paths."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

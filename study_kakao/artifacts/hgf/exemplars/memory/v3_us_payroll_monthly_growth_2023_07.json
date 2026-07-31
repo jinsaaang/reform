@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_us_payroll_monthly_growth_2023_07",
+  "blueprint_sha256": "eda019a3d337e1a35e6ac2a43aacdd655959e2db35ada1e0ed9a5a2051305363",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "macro/labour",
+      "target_operation": "monthly payroll growth",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2023-07-31, which range will the monthly payroll growth for United States nonfarm payrolls in 2023-07 fall into?",
+    "historical_cutoff": "2023-07-31T00:00:00+00:00",
+    "target_semantics": "The monthly percentage change in United States nonfarm payrolls for July 2023, compared against predefined lower and upper boundaries.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The core calculation for the target metric relies on the previous month's payroll observation and the current month's payroll observation.",
+      "The pre-registered lower boundary of 0.125 percent is a critical threshold for determining if the growth falls 'below recent range'.",
+      "The observed payroll growth rate, if calculable and supported by evidence, directly informs the final option mapping."
+    ],
+    "counterevidence": "No forecast-time evidence was provided to support or contradict any potential drivers or the target calculation itself.",
+    "prospective_target_estimate": "The target metric is the monthly payroll growth for July 2023. Without any supporting evidence, a precise estimate cannot be made, but the calculation depends on the July payroll figure relative to the June figure and the defined range boundaries.",
+    "option_mapping": "The monthly payroll growth for July 2023 will be mapped to 'below recent range' if it is less than 0.125%, 'within recent range' if it is between 0.125% and 0.189733% (inclusive of the lower bound, exclusive of the upper), and 'above recent range' if it is 0.19% or greater.",
+    "uncertainty": "The complete lack of forecast-time evidence means that the direction, magnitude, and boundary-crossing nature of the target metric are entirely unknown. The historical DAG indicates medium support for the underlying payroll observations and calculation, but this cannot be verified without current evidence.",
+    "dag_derived_lesson": "When evaluating a target metric that is a calculated value, the integrity of the calculation's inputs and the mechanism itself must be assessed. Evidence supporting the direct observation of these inputs and the application of the calculation mechanism is crucial. Furthermore, any pre-defined thresholds or boundaries relevant to the target metric's options must also be supported by evidence to ensure accurate classification."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

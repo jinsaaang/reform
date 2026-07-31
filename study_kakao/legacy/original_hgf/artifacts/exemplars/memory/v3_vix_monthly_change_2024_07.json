@@ -1,0 +1,32 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_vix_monthly_change_2024_07",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "market_fx_credit / volatility",
+      "target_operation": "monthly VIX change",
+      "option_geometry": "ordered_categorical"
+    },
+    "historical_question": "As of 2024-07-01, which range will the monthly VIX change for CBOE VIX index in 2024-07 fall into?",
+    "historical_cutoff": "2024-07-01T00:00:00+00:00",
+    "target_semantics": "The monthly percentage change of the CBOE VIX index for July 2024.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The target is the monthly VIX change for July 2024, to be categorized as 'below recent range' (less than -9.326%), 'within recent range' (-9.326% to 1.632%), or 'above recent range' (1.632% or more).",
+      "No specific forecast-time evidence was available to support or contradict any particular range for the VIX change.",
+      "The available information only describes the target metric and its classification boundaries, without providing upstream causal drivers or recent VIX index behavior."
+    ],
+    "counterevidence": "No forecast-time evidence was provided, thus no counterevidence could be identified.",
+    "prospective_target_estimate": "Given the lack of forecast-time evidence, it is not possible to estimate whether the VIX change will fall below, within, or above the recent range.",
+    "option_mapping": "The target metric is the monthly VIX change. The options are 'below recent range' (change < -9.326%), 'within recent range' (-9.326% <= change < 1.632%), and 'above recent range' (change >= 1.632%).",
+    "uncertainty": "High uncertainty exists due to the complete absence of forecast-time evidence regarding market conditions, economic indicators, or specific VIX index drivers that could influence its monthly change.",
+    "dag_derived_lesson": "When no forecast-time evidence is available, a causal path cannot be established, leading to an indeterminate forecast. The absence of supporting or contradictory information necessitates a declaration of high uncertainty."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

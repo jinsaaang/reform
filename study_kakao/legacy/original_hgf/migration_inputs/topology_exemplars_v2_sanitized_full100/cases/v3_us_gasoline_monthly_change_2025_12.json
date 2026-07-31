@@ -1,0 +1,47 @@
+{
+  "schema_version": "fixed_exemplar_case",
+  "status": "success",
+  "question_id": "v3_us_gasoline_monthly_change_2025_12",
+  "retrieved_memory_question_id": "v3_us_gasoline_monthly_change_2023_07",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "energy_commodities / refined products",
+      "target_operation": "monthly retail gasoline-price change",
+      "option_geometry": "ordered_interval"
+    },
+    "historical_question": "As of 2023-07-01, which range will the monthly retail gasoline-price change for United States regular gasoline price in 2023-07 fall into?",
+    "historical_cutoff": "2023-07-01T00:00:00+00:00",
+    "target_semantics": "The monthly percentage change in the retail price of regular gasoline in the United States for July 2023.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "ev_621352812002b15f",
+        "takeaway": "The EIA forecasted that U.S. retail gasoline prices for summer 2023 would average around $3.50 per gallon, lower than the previous summer, with a slight increase expected later in the summer due to seasonal factors and rising crude oil prices.",
+        "why_predictive": "This forecast provides an expectation of price movements during the summer, including July, indicating potential upward pressure."
+      },
+      {
+        "article_id": "ev_8cab8a45ea757770",
+        "takeaway": "Retail gasoline prices had risen 10% from December 2022 to May 2023, despite a significant year-over-year drop from June 2022.",
+        "why_predictive": "This indicates an upward trend in the months immediately preceding July 2023, suggesting continued price increases."
+      },
+      {
+        "article_id": "ev_927518e47a05a307",
+        "takeaway": "Gasoline prices experienced a significant plunge around the Fourth of July holiday, with the national average for regular gasoline at $3.55 a gallon on June 29, 2023.",
+        "why_predictive": "This recent sharp decrease provides immediate context for the price trajectory at the beginning of July."
+      }
+    ],
+    "expert_reasoning": [
+      "The EIA forecast (ev_621352812002b15f) suggested a slight increase in gasoline prices later in the summer due to seasonal factors and rising crude oil prices, implying upward pressure for July.",
+      "However, evidence indicates that gasoline prices had risen 10% from December 2022 to May 2023 (ev_8cab8a45ea757770), suggesting a recent upward trend.",
+      "Contrarily, a sharp plunge in gasoline prices was noted around the Fourth of July holiday (ev_927518e47a05a307), with the national average at $3.55 on June 29, 2023. This recent drop suggests a downward pressure at the start of July."
+    ],
+    "counterevidence": "The significant plunge in gasoline prices around the Fourth of July holiday (ev_927518e47a05a307) directly contradicts the expectation of a slight increase suggested by the EIA forecast (ev_621352812002b15f) and the recent upward trend indicated by the DOT report (ev_8cab8a45ea757770).",
+    "prospective_target_estimate": "Given the conflicting signals of a recent sharp price drop (ev_927518e47a05a307) against a backdrop of expected seasonal increases and prior upward trends (ev_621352812002b15f, ev_8cab8a45ea757770), the price change is uncertain but the immediate downward pressure from the holiday plunge is a strong signal.",
+    "option_mapping": "The recent sharp decline suggests the monthly change could fall below the recent range, or at least within the lower end of the range, rather than above it.",
+    "uncertainty": "The evidence presents conflicting pressures: a recent sharp decline around the holiday (ev_927518e47a05a307) versus an expectation of slight increases later in the summer (ev_621352812002b15f) and a prior upward trend (ev_8cab8a45ea757770). The magnitude and duration of the holiday price drop are key uncertainties.",
+    "dag_derived_lesson": "Conflicting short-term price movements can override longer-term trends or forecasts, necessitating careful consideration of the most recent, impactful events when assessing price changes within a specific, short forecast window."
+  },
+  "pilot_provenance": {
+    "blueprint_schema": "hgf_blueprint_topology_v2",
+    "memory_exemplar_sha256": "f6541c750d979461c36f4db6e3c1435f663ad2ec9dbd1944e2d30c7cdbc84f02"
+  }
+}

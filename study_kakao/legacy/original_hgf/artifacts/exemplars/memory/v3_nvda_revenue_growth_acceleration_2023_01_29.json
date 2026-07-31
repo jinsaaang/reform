@@ -1,0 +1,41 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_nvda_revenue_growth_acceleration_2023_01_29",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial",
+      "target_operation": "year-over-year growth",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2023-01-29, will NVIDIA Corporation's quarterly revenue year-over-year growth for the fiscal quarter ending 2023-01-29 be at least -16.5 percent?",
+    "historical_cutoff": "2023-01-29T00:00:00+00:00",
+    "target_semantics": "NVIDIA's year-over-year revenue growth for the fiscal quarter ending 2023-01-29.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20220222_002_9cedceab",
+        "takeaway": "The provided article discusses National Instruments' Q4 2022 earnings call, which is not directly relevant to NVIDIA's specific financial performance or market conditions in the target quarter.",
+        "why_predictive": "This article offers no predictive insights into NVIDIA's revenue growth for the fiscal quarter ending 2023-01-29."
+      }
+    ],
+    "expert_reasoning": [
+      "The primary drivers for NVIDIA's revenue are consumer spending on gaming hardware and demand from data centers.",
+      "Weak consumer spending, indicated by retail sales and gaming market commentary, would likely reduce demand for gaming hardware, suppressing gaming revenue recognition due to channel inventory correction.",
+      "Conversely, strong data center demand could partially offset weakness in the gaming segment.",
+      "The overall semiconductor industry demand backdrop is also a factor; a broad downturn would lower the demand for consolidated sales.",
+      "The consolidated revenue growth is a function of the interplay between gaming and data center segment contributions.",
+      "The forecast requires assessing whether the potential drag from gaming, driven by consumer spending and inventory issues, is sufficiently offset by data center growth to meet the target threshold."
+    ],
+    "counterevidence": "There is no direct counterevidence provided in the allowed articles that would suggest an improvement in consumer spending or a significant acceleration in data center demand that would counteract potential weakness in the gaming segment.",
+    "prospective_target_estimate": "Given the lack of specific NVIDIA data and the general nature of the available information, it is difficult to provide a precise estimate. However, the reasoning suggests potential headwinds from consumer spending and inventory, which could lead to a decline in year-over-year revenue growth.",
+    "option_mapping": "If the year-over-year revenue growth is at least -16.5 percent, the option is 'yes'. Otherwise, it is 'no'.",
+    "uncertainty": "The primary uncertainty stems from the lack of specific, forward-looking data for NVIDIA's segments (gaming vs. data center) and the limited forecast-time evidence. The available information is insufficient to definitively determine the magnitude of the gaming revenue drag or the strength of the data center offset.",
+    "dag_derived_lesson": "When assessing a company's consolidated financial performance, it is crucial to analyze the interplay of its key revenue segments. Potential declines in one segment, driven by factors like consumer spending and inventory adjustments, must be weighed against growth in other segments, such as enterprise or data center demand. The overall industry health also provides a baseline context. The reconciliation of segment-level trends to the consolidated outcome is key, but limited or outdated information on these components introduces significant uncertainty."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

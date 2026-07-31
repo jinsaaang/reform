@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_us_retail_sales_monthly_growth_2025_04",
+  "blueprint_sha256": "4790ecb0c1179361fe25bcb544c091498fd0204fc17e21ffd9fab7a95bd6b0c9",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "economic",
+      "target_operation": "growth rate",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2025-04-30, will the monthly retail-sales growth for United States retail sales in 2025-04 be at least 0.402 percent?",
+    "historical_cutoff": "2025-04-30T00:00:00+00:00",
+    "target_semantics": "The target is the monthly percentage growth rate of United States retail sales for April 2025, specifically whether it meets or exceeds 0.402 percent.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The core calculation for the target metric is the percentage change between the retail sales observation for the prior month and the current month (April 2025).",
+      "The DAG indicates that the actual sales observations for both the current and prior periods are critical drivers for this calculation.",
+      "The comparison of the calculated growth rate against the pre-registered threshold of 0.402 percent determines the final 'yes' or 'no' outcome."
+    ],
+    "counterevidence": "No forecast-time evidence was provided to support or contradict any of the causal links or factors identified in the DAG.",
+    "prospective_target_estimate": "The provided DAG structure outlines the necessary calculations and comparisons but lacks specific data points or directional support from forecast-time evidence to form a prospective estimate.",
+    "option_mapping": "The 'yes' option corresponds to a monthly retail-sales growth rate of 0.402 percent or higher, while the 'no' option corresponds to a growth rate below 0.402 percent.",
+    "uncertainty": "The absence of any forecast-time evidence means that the strength and direction of the causal links identified in the DAG cannot be assessed, leading to high uncertainty regarding the target outcome.",
+    "dag_derived_lesson": "A target metric derived from a calculation requires direct evidence for the input variables of that calculation, as well as evidence supporting the calculation's mechanism and its comparison against a threshold. Weak evidence for input variables or intermediate steps propagates uncertainty to the final outcome."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

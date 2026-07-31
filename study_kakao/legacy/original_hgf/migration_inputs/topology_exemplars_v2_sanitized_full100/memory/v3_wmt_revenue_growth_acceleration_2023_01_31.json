@@ -1,0 +1,68 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_wmt_revenue_growth_acceleration_2023_01_31",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "corporate_earnings / retail",
+      "target_operation": "quarterly revenue year-over-year growth acceleration",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2023-01-31, which range will Walmart Inc.'s quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2023-01-31 fall into?",
+    "historical_cutoff": "2023-01-31T00:00:00+00:00",
+    "target_semantics": "Walmart Inc.'s quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2023-01-31.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20220816_005_c53451c0",
+        "takeaway": "Walmart's Q2 results showed positive performance, with shares rising.",
+        "why_predictive": "Indicates potential for continued revenue strength, though not directly growth acceleration."
+      },
+      {
+        "article_id": "art_finance_20220517_009_75bd7c85",
+        "takeaway": "Walmart faced challenges from higher costs, supply chain issues, and inventory levels impacting profits.",
+        "why_predictive": "Suggests headwinds that could slow revenue growth or its acceleration."
+      },
+      {
+        "article_id": "art_finance_20221130_005_99ebd729",
+        "takeaway": "A forecast for Walmart (WMT) stock in 2023.",
+        "why_predictive": "Provides forward-looking sentiment on the company's financial performance."
+      },
+      {
+        "article_id": "art_finance_20230127_008_30b91bf0",
+        "takeaway": "Walmart's Sam's Club is modernizing its supply chain with automated fulfillment.",
+        "why_predictive": "Indicates investments in efficiency that could positively impact future revenue growth, but is a specific initiative."
+      },
+      {
+        "article_id": "art_finance_20220826_010_6b947ea8",
+        "takeaway": "Analysis of Walmart and Amazon by the numbers in 2022.",
+        "why_predictive": "Offers data points on operational scale and potential performance trends."
+      },
+      {
+        "article_id": "art_finance_20220517_003_2492cbb0",
+        "takeaway": "Summary of Walmart's Q1 2023 earnings results.",
+        "why_predictive": "Provides historical context for recent performance and analyst expectations."
+      }
+    ],
+    "expert_reasoning": [
+      "The persistent high inflation (checkpoint_1) and accelerating inflation (checkpoint_3, checkpoint_5) likely contributed to increased consumer frugality and a shift to essentials (checkpoint_4), impacting Walmart's sales mix.",
+      "While U.S. consumer spending showed gains (checkpoint_2), this was likely tempered by inflation concerns, leading to a mixed signal.",
+      "Walmart's Q1 2023 earnings results (art_finance_20220517_003_2492cbb0) and Q2 results (art_finance_20220816_005_c53451c0) provide context, but the core issue is the *acceleration* of revenue growth.",
+      "Supply chain issues and higher costs (art_finance_20220517_009_75bd7c85) are ongoing concerns that could dampen revenue growth acceleration.",
+      "Investments in supply chain modernization (art_finance_20230127_008_30b91bf0) are positive but may not fully offset broader economic pressures on revenue growth acceleration in the immediate target quarter.",
+      "The overall economic uncertainty and inflation suggest a cautious outlook, which would translate to a lower revenue growth acceleration.",
+      "The target metric is the *acceleration* of year-over-year revenue growth, not the growth rate itself. This means we are looking at the change in the growth rate from the previous quarter.",
+      "Given the headwinds of inflation and supply chain issues, it is plausible that the revenue growth acceleration would be constrained."
+    ],
+    "counterevidence": "Walmart beating Q1 2023 earnings expectations (checkpoint_6) could suggest stronger performance, but this is counteracted by broader economic concerns and supply chain pressures.",
+    "prospective_target_estimate": "below recent range",
+    "option_mapping": "The evidence points towards headwinds from inflation and supply chain issues, suggesting that the acceleration in year-over-year revenue growth would be negative or very low, falling below the recent range.",
+    "uncertainty": "The exact magnitude of consumer spending resilience versus inflationary pressures is uncertain. While some articles indicate positive consumer spending (art_finance_20220816_005_c53451c0), others highlight significant cost and supply chain challenges (art_finance_20220517_009_75bd7c85) and general economic uncertainty (art_finance_20221130_005_99ebd729). The 'acceleration' metric is sensitive to small changes.",
+    "dag_derived_lesson": "Economic factors such as inflation and consumer spending trends can influence corporate revenue growth acceleration. While positive consumer spending data exists, persistent inflationary pressures and operational challenges can lead to a deceleration in the rate of revenue growth, necessitating a cautious outlook."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

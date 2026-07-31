@@ -1,0 +1,64 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_global_copper_monthly_return_2024_09",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial",
+      "target_operation": "monthly price return",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2024-09-01, which range will the monthly copper-price return for Global copper price in 2024-09 fall into?",
+    "historical_cutoff": "2024-09-01T00:00:00+00:00",
+    "target_semantics": "The monthly percentage return for the global copper price in September 2024.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20240815_003_340203fa",
+        "takeaway": "A strike at a BHP mine in Chile is ongoing and supporting global copper prices.",
+        "why_predictive": "Mine disruptions directly impact supply, potentially tightening the market and increasing prices."
+      },
+      {
+        "article_id": "art_finance_20240527_005_f2cacf4d",
+        "takeaway": "Record-breaking copper prices are occurring amid speculation of supply shortages.",
+        "why_predictive": "This indicates a current market tightness driven by supply concerns, which could persist."
+      },
+      {
+        "article_id": "art_finance_20240716_004_a9e93891",
+        "takeaway": "The energy transition presents long-term tailwinds for copper, meeting a cyclical opportunity.",
+        "why_predictive": "Sustained demand from the energy transition, coupled with cyclical factors, suggests upward price pressure."
+      },
+      {
+        "article_id": "art_finance_20240408_025_47e0ba55",
+        "takeaway": "AI development is projected to significantly increase copper demand by 2030.",
+        "why_predictive": "Anticipated future demand increases, even if not fully realized in the target month, can influence current market sentiment and pricing."
+      },
+      {
+        "article_id": "art_finance_20230412_029_2ebb7baf",
+        "takeaway": "China's demand and renewed supply risks are expected to support a copper market rebound.",
+        "why_predictive": "This highlights the dual influence of Chinese demand and supply-side issues on copper prices."
+      },
+      {
+        "article_id": "art_finance_20210309_026_ce911be1",
+        "takeaway": "Copper prices are rising due to the energy transition and economic recovery.",
+        "why_predictive": "This establishes a historical link between economic recovery, energy transition needs, and copper price appreciation."
+      }
+    ],
+    "expert_reasoning": [
+      "The baseline driver is China and global industrial demand. Evidence suggests strong demand, particularly from the energy transition and AI sectors, which historically supports copper prices (art_finance_20210309_026_ce911be1, art_finance_20240408_025_47e0ba55, art_finance_20240716_004_a9e93891).",
+      "Supply disruption risk is a key driver. A recent strike in Chile (art_finance_20240815_003_340203fa) and ongoing speculation of shortages (art_finance_20240527_005_f2cacf4d) indicate a tightening supply-side environment.",
+      "These factors suggest a tightening refined-copper balance, which can transmit price pressure (art_finance_20230412_029_2ebb7baf).",
+      "The mechanism is that verified industrial demand and supply disruptions, when corroborated by market tightness, can lead to price increases."
+    ],
+    "counterevidence": "There is no explicit cutoff-available evidence presented that directly contradicts the upward pressure from demand and supply risks. However, the DAG notes that dollar strength or weaker macro expectations could offset these factors (art_finance_20221202_007_de92e586, art_finance_20220715_008_cca61076).",
+    "prospective_target_estimate": "The evidence points towards upward price pressure due to strong demand drivers (energy transition, AI) and supply disruptions. This suggests the monthly return is likely to be positive.",
+    "option_mapping": "The positive price pressure indicated by demand and supply factors suggests the return will be 'above recent range'.",
+    "uncertainty": "The historical support for the supply disruption mechanism is weak, and the inventory balance mediator is also weak. Furthermore, potential macro offsets (dollar strength, weaker growth expectations) are not fully detailed with cutoff-available evidence, introducing significant uncertainty.",
+    "dag_derived_lesson": "A favorable commodity balance, driven by robust industrial demand and supply constraints, can lead to price appreciation. However, this mechanism can be counteracted by macroeconomic factors such as currency strength or shifts in economic outlook. The reliability of supply disruption impacts depends on their material effect and the market's ability to absorb them through existing inventories or alternative sources."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

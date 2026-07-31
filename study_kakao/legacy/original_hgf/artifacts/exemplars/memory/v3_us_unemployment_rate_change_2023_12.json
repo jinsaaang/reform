@@ -1,0 +1,55 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_us_unemployment_rate_change_2023_12",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "macro / labour",
+      "target_operation": "monthly unemployment-rate change",
+      "option_geometry": "bucketed by recent range"
+    },
+    "historical_question": "As of 2023-12-31, which range will the monthly unemployment-rate change for United States unemployment rate in 2023-12 fall into?",
+    "historical_cutoff": "2023-12-31T00:00:00+00:00",
+    "target_semantics": "The monthly change in the United States unemployment rate for December 2023.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "ev_a6896528ab906898",
+        "takeaway": "The US unemployment rate was 3.9% in October 2023, rising from the previous month.",
+        "why_predictive": "Establishes a recent baseline and trend for the unemployment rate leading into November and December."
+      },
+      {
+        "article_id": "ev_91358cb3b1ddd469",
+        "takeaway": "The US unemployment rate decreased in November 2023 due to solid hiring.",
+        "why_predictive": "Provides the November 2023 unemployment rate and its change, crucial for assessing the trend for December."
+      },
+      {
+        "article_id": "ev_ffec6adeaf94f3ac",
+        "takeaway": "Weekly initial unemployment claims increased to 218,000 in the week ending December 23, 2023.",
+        "why_predictive": "Indicates a potential loosening in the labor market, which could influence the monthly unemployment rate."
+      },
+      {
+        "article_id": "ev_703b52c9ac495622",
+        "takeaway": "Jobless claims rose by 12,000 in the week of December 23, 2023.",
+        "why_predictive": "Further evidence of an increase in unemployment claims late in December, suggesting a possible rise in the unemployment rate."
+      }
+    ],
+    "expert_reasoning": [
+      "The US unemployment rate was 3.9% in October 2023 (ev_a6896528ab906898).",
+      "Solid hiring led to a decrease in the unemployment rate in November 2023 (ev_91358cb3b1ddd469).",
+      "This suggests a downward trend in the unemployment rate change leading into December.",
+      "However, weekly initial unemployment claims increased in late December (ev_ffec6adeaf94f3ac, ev_703b52c9ac495622).",
+      "This increase in claims indicates a potential loosening of the labor market, which could counteract the previous downward trend and lead to an increase in the monthly unemployment rate change for December."
+    ],
+    "counterevidence": "While solid hiring lowered the unemployment rate in November (ev_91358cb3b1ddd469), a late-December increase in weekly initial unemployment claims (ev_ffec6adeaf94f3ac, ev_703b52c9ac495622) suggests a potential reversal or stabilization of this trend.",
+    "prospective_target_estimate": "The conflicting signals of solid hiring in November and rising claims in late December make it difficult to definitively predict the December unemployment rate change. The increase in claims suggests the rate might not continue to fall and could even tick up, potentially falling outside the recent range.",
+    "option_mapping": "The recent range for the monthly unemployment-rate change is from -0.1 to 0.2 percentage points. Given the increase in jobless claims late in December, the change might be at or above 0.2, falling into the 'above recent range' category.",
+    "uncertainty": "The exact magnitude of the December unemployment rate change is uncertain due to the mixed signals. While rising claims suggest an upward movement, the strength of the November hiring data (ev_91358cb3b1ddd469) could still exert downward pressure. The official monthly change is needed for definitive resolution.",
+    "dag_derived_lesson": "A recent positive driver can be counteracted by a late-period increase in leading indicators, creating uncertainty in the target metric's direction. The relative strength and timing of these opposing factors are critical for accurate forecasting."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

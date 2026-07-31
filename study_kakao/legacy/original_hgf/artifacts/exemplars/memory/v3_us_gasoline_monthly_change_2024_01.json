@@ -1,0 +1,60 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_us_gasoline_monthly_change_2024_01",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "energy_commodities / refined products",
+      "target_operation": "monthly retail gasoline-price change",
+      "option_geometry": "buckets"
+    },
+    "historical_question": "As of 2024-01-01, which range will the monthly retail gasoline-price change for United States regular gasoline price in 2024-01 fall into?",
+    "historical_cutoff": "2024-01-01T00:00:00+00:00",
+    "target_semantics": "The monthly percentage change in the retail price of regular gasoline in the United States for January 2024.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "ev_23891a5b72a896c8",
+        "takeaway": "GasBuddy predicts lower gas and diesel prices in 2024.",
+        "why_predictive": "Directly forecasts a decrease in gasoline prices for the upcoming year."
+      },
+      {
+        "article_id": "ev_3f5c3ab90b1c5fae",
+        "takeaway": "Gas prices are predicted to fall in 2024, with Americans spending less on fuel.",
+        "why_predictive": "Supports the expectation of declining gasoline prices in 2024."
+      },
+      {
+        "article_id": "ev_51124c143736971f",
+        "takeaway": "US drivers anticipate lower pump prices in 2024 as gasoline stocks increase.",
+        "why_predictive": "Links rising gasoline stocks to an expectation of lower prices, a driver for price change."
+      },
+      {
+        "article_id": "ev_f3402b6ba84ae544",
+        "takeaway": "GasBuddy's 2024 Fuel Outlook suggests a decrease in gasoline prices.",
+        "why_predictive": "Provides a specific forecast for lower gasoline prices in 2024."
+      },
+      {
+        "article_id": "ev_98a4f3e856f920bf",
+        "takeaway": "Gas prices are expected to return to normal in 2024 after a period of volatility.",
+        "why_predictive": "Suggests a stabilization and potential decrease in prices, moving away from volatility."
+      }
+    ],
+    "expert_reasoning": [
+      "Multiple sources, including GasBuddy (ev_23891a5b72a896c8, ev_3f5c3ab90b1c5fae, ev_f3402b6ba84ae544) and Reuters (ev_51124c143736971f), predict lower gasoline prices for 2024.",
+      "The increase in gasoline stocks is cited as a factor contributing to the expectation of lower prices (ev_51124c143736971f).",
+      "This collective forecast suggests a downward pressure on gasoline prices for the period, implying a negative monthly change.",
+      "The recent range boundaries for monthly price change are -4.517% (lower) and 0.845% (upper).",
+      "Given the consistent expectation of falling prices, the monthly change for January 2024 is likely to be negative."
+    ],
+    "counterevidence": "No specific counterevidence predicting an increase or significant stabilization at higher levels was found in the provided articles. The articles focus on a general trend of decreasing prices.",
+    "prospective_target_estimate": "The evidence points towards a decrease in gasoline prices for January 2024, suggesting a negative monthly change.",
+    "option_mapping": "The expectation of falling prices aligns with a negative monthly change, which would likely fall below the upper boundary of the recent range (-4.517% to 0.845%).",
+    "uncertainty": "While the trend is clearly downward, the exact magnitude of the price change is not specified. The historical data's recent range boundaries (-4.517%, 0.845%) are based on prior observations, and the current month's change could still fall within this range if the decrease is moderate, or below it if the decrease is substantial.",
+    "dag_derived_lesson": "When multiple independent sources consistently forecast a directional change in a commodity price, supported by underlying supply factors, it strengthens the expectation of that directional movement. However, the precise magnitude of the change remains uncertain without specific quantitative data, necessitating careful consideration of historical ranges and potential deviations."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

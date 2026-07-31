@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_nvda_revenue_growth_acceleration_2024_01_28",
+  "blueprint_sha256": "a96be064f2c6c973c71a33f148e6b73297ae52084a5862bda478aa905128c381",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial",
+      "target_operation": "year-over-year growth acceleration",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2024-01-28, will NVIDIA Corporation's quarterly revenue year-over-year growth for the fiscal quarter ending 2024-01-28 be at least 205.51 percent?",
+    "historical_cutoff": "2024-01-28T00:00:00+00:00",
+    "target_semantics": "NVIDIA's year-over-year revenue growth for the fiscal quarter ending January 28, 2024, compared to the prior quarter's year-over-year growth rate.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The core driver appears to be NVIDIA's strategic focus on AI accelerators, which positioned the company to benefit from immense global demand for AI chips.",
+      "This demand, particularly within the Data Center segment, is identified as a key mediator, fueling exceptional growth.",
+      "The market's anticipation of NVIDIA's earnings report, coupled with its dominant position in the AI accelerator market, likely amplified the impact of this demand on revenue."
+    ],
+    "counterevidence": "NVIDIA faced supply constraints on AI GPUs and US export restrictions impacting China data center revenue, which could have negatively affected growth.",
+    "prospective_target_estimate": "The provided DAG indicates that the target metric is 'quarterly revenue year-over-year growth acceleration', with a resolution rule for 'yes' if YoY revenue growth is at least 205.51 percent. However, without specific forecast-time evidence or outcome data, a precise estimate cannot be determined. The DAG suggests a 'mixed' expected direction for the target bridge.",
+    "option_mapping": "The question asks if NVIDIA's quarterly revenue year-over-year growth acceleration for the fiscal quarter ending 2024-01-28 will be at least 205.51 percent. The options are 'yes' or 'no'.",
+    "uncertainty": "The DAG highlights 'weak' historical support for all identified checkpoints, including drivers and counterevidence. There is a lack of forecast-time evidence to directly support or contradict the causal links. The 'target_bridge' has 'medium' historical support, but the specific magnitude and threshold crossing remain uncertain without current evidence.",
+    "dag_derived_lesson": "A company's strategic focus on a high-demand technology, coupled with market anticipation and a dominant market position, can drive significant revenue growth, even in the face of supply constraints and regional restrictions, provided overall global demand is sufficiently strong."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

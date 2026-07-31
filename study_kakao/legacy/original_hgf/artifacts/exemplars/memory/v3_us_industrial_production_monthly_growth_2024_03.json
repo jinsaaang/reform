@@ -1,0 +1,38 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_us_industrial_production_monthly_growth_2024_03",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "macro / industrial activity",
+      "target_operation": "monthly industrial-production growth",
+      "option_geometry": "bucketed by prior observations"
+    },
+    "historical_question": "As of 2024-03-31, which range will the monthly industrial-production growth for United States industrial production in 2024-03 fall into?",
+    "historical_cutoff": "2024-03-31T00:00:00+00:00",
+    "target_semantics": "The monthly percentage change in United States industrial production for March 2024, categorized as below -0.331%, between -0.331% and 0.491%, or at or above 0.491%.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "ev_ee3398543a45047b",
+        "takeaway": "US Real GDP growth in Q4 2023 was revised higher to a 3.4% annual rate.",
+        "why_predictive": "Strong GDP growth suggests a robust overall economic environment, which can positively influence industrial activity and production."
+      }
+    ],
+    "expert_reasoning": [
+      "The United States economy demonstrated strong growth in Q4 2023, with Real GDP revised up to 3.4% (ev_ee3398543a45047b).",
+      "This positive macroeconomic backdrop, characterized by robust GDP expansion, provides a supportive environment for industrial production.",
+      "Therefore, industrial production growth in March 2024 is likely to be influenced by this overall economic strength."
+    ],
+    "counterevidence": "No specific counterevidence regarding industrial production for March 2024 was available in the forecast-time articles.",
+    "prospective_target_estimate": "Given the strong Q4 2023 GDP growth suggesting a healthy economic environment, the monthly industrial-production growth for March 2024 is likely to be positive, potentially falling within or above the recent range.",
+    "option_mapping": "The strong GDP growth suggests a positive economic momentum that could translate to industrial production growth falling 'within recent range' or 'above recent range'.",
+    "uncertainty": "The provided evidence (Q4 GDP) is a lagging indicator and does not directly measure March industrial production. Specific drivers of industrial production, such as manufacturing indices or supply chain conditions for March, were not detailed, leaving room for uncertainty.",
+    "dag_derived_lesson": "A strong aggregate economic performance indicator from a prior period can support expectations of positive performance in a related sector for the current period, but direct sector-specific data is needed for higher confidence."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

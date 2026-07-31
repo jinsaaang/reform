@@ -1,0 +1,79 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_aapl_revenue_growth_acceleration_2023_12_30",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "corporate_earnings",
+      "target_operation": "growth_acceleration",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2023-12-30, which range will Apple Inc.'s quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2023-12-30 fall into?",
+    "historical_cutoff": "2023-12-30T00:00:00+00:00",
+    "target_semantics": "Apple Inc.'s quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2023-12-30.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "ev_1ce7019cf474261f",
+        "takeaway": "Analysts expect Apple to generate revenue of $89.34 billion in Q4 2023, representing a year-over-year decline of approximately 1% from $90.15 billion in the prior-year quarter. This estimate reflects continued weakness in Apple’s hardware sales.",
+        "why_predictive": "Provides a direct revenue forecast for the target quarter and indicates a year-over-year decline, suggesting negative growth."
+      },
+      {
+        "article_id": "ev_81b87dd7b2bb3457",
+        "takeaway": "Apple's Q4 2023 earnings report showed a profit record driven by good iPhone and excellent services business.",
+        "why_predictive": "Highlights strong performance in services, which could offset hardware weakness and influence overall revenue growth."
+      },
+      {
+        "article_id": "ev_67343fce187fae3c",
+        "takeaway": "Apple's Q4 2023 earnings preview suggests services revenue might counteract weakening sales.",
+        "why_predictive": "Reinforces the idea that services performance is a key factor in the quarter's overall revenue trend."
+      },
+      {
+        "article_id": "ev_ca20981bdadd239b",
+        "takeaway": "Apple is caught in a trading range, which is good for certain options strategies.",
+        "why_predictive": "Suggests a period of stability or range-bound performance, which might imply moderate revenue growth or acceleration."
+      },
+      {
+        "article_id": "ev_db0dbf512a00080b",
+        "takeaway": "Discussion on whether Apple stock is a buy, sell, or fairly valued after earnings.",
+        "why_predictive": "General market sentiment and analyst views on Apple's financial health, indirectly related to revenue performance."
+      },
+      {
+        "article_id": "ev_ebdf6e82d2d95676",
+        "takeaway": "Analysts believe Apple stock still has room to grow.",
+        "why_predictive": "Indicates positive analyst sentiment, which could be linked to expectations of solid financial performance, including revenue."
+      },
+      {
+        "article_id": "ev_85d76cf5c6fcb860",
+        "takeaway": "Analysts: Apple Stock Still Has Room To Grow.",
+        "why_predictive": "Similar to ev_ebdf6e82d2d95676, suggests positive outlook potentially tied to revenue."
+      },
+      {
+        "article_id": "ev_f4ea41c617c2b5ae",
+        "takeaway": "Report on Apple's 2023 performance (ended Sept 30, 2023) and forecasts for 2024.",
+        "why_predictive": "Provides historical context and forward-looking statements that might inform the current quarter's performance."
+      }
+    ],
+    "expert_reasoning": [
+      "The target metric is the year-over-year revenue growth acceleration for Apple's fiscal quarter ending December 30, 2023. The pre-registered boundaries for 'within recent range' are -2.894 to 1.574 percentage points.",
+      "Forecast-time evidence suggests a potential year-over-year revenue decline of approximately 1% for the quarter (ev_1ce7019cf474261f). This implies a negative year-over-year growth rate.",
+      "However, strong performance in Apple's services segment is noted as potentially counteracting hardware weakness (ev_81b87dd7b2bb3457, ev_67343fce187fae3c). This suggests that the revenue decline might be less severe than initially feared, or that services are driving positive growth.",
+      "Analysts express positive sentiment, indicating Apple stock still has room to grow (ev_ebdf6e82d2d95676, ev_85d76cf5c6fcb860), and the company is in a trading range (ev_ca20981bdadd239b). This could imply moderate, stable performance.",
+      "The evidence presents a mixed picture: a projected revenue decline (ev_1ce7019cf474261f) versus strong services performance and positive analyst outlook (ev_81b87dd7b2bb3457, ev_67343fce187fae3c, ev_ebdf6e82d2d95676, ev_85d76cf5c6fcb860).",
+      "Given the projected 1% revenue decline (ev_1ce7019cf474261f), the year-over-year growth rate would be negative. The acceleration is the change in this growth rate from the previous quarter. Without the prior quarter's growth rate, directly calculating acceleration is difficult. However, a 1% decline suggests a growth rate around -1%. If the previous quarter's growth was positive or less negative, the acceleration would be negative. If the previous quarter's growth was significantly more negative, the acceleration could be positive.",
+      "The evidence points towards a scenario where the revenue decline might be contained, possibly leading to an acceleration that is not drastically negative. The services strength could be a key driver preventing a larger decline.",
+      "Considering the analyst expectations of a ~1% decline (ev_1ce7019cf474261f) and the mitigating factor of strong services (ev_81b87dd7b2bb3457, ev_67343fce187fae3c), the acceleration is likely to be in a range that reflects this delicate balance. A significant negative acceleration would imply a sharp worsening of the revenue trend, which is not strongly supported by the positive services outlook and analyst sentiment.",
+      "The 'within recent range' interval is -2.894 to 1.574. A 1% decline in revenue suggests a growth rate around -1%. If the prior quarter's growth was, for example, -2%, the acceleration would be +1%. If the prior quarter's growth was -3%, the acceleration would be -2%. The evidence is not precise enough to pinpoint the exact acceleration, but it suggests it's not extremely negative nor strongly positive."
+    ],
+    "counterevidence": "The primary counterevidence is the potential for a more significant hardware sales weakness than anticipated, which could lead to a larger year-over-year revenue decline than the projected 1% (ev_1ce7019cf474261f). This would imply a more negative growth rate and potentially a negative acceleration.",
+    "prospective_target_estimate": "within recent range",
+    "option_mapping": "The forecast suggests that while there might be a year-over-year revenue decline, the strength in services and overall analyst sentiment indicate that the revenue growth acceleration will likely fall within the 'within recent range' of -2.894 to 1.574 percentage points.",
+    "uncertainty": "The exact year-over-year growth rate for the prior quarter is not provided, making precise calculation of the acceleration difficult. The balance between hardware weakness and services strength introduces variability. Analyst sentiment and trading range observations are indirect indicators.",
+    "dag_derived_lesson": "When forecasting growth acceleration, consider the interplay between a projected decline in one segment and strength in another. Analyst sentiment and market observations can provide context for the magnitude of the net effect on the target metric, but precise calculation requires specific historical data points for the prior period's growth rate."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

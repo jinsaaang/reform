@@ -1,0 +1,50 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_us_high_yield_spread_monthly_change_2024_10",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_market",
+      "target_operation": "change_threshold_comparison",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2024-10-01, will the monthly high-yield spread change for United States high-yield corporate option-adjusted spread in 2024-10 be at least -0.035 percentage points?",
+    "historical_cutoff": "2024-10-01T00:00:00+00:00",
+    "target_semantics": "The monthly change in the US high-yield corporate option-adjusted spread for October 2024 will be greater than or equal to -0.035 percentage points.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20240502_004_549f4c9f",
+        "takeaway": "US high-yield spreads were considered tight in May 2024, despite an increase in distress.",
+        "why_predictive": "Indicates a baseline condition of tight spreads, suggesting limited room for further tightening or potential for widening if distress increases."
+      },
+      {
+        "article_id": "art_finance_20210423_002_ae627580",
+        "takeaway": "High-yield issuance was brisk and seen as supportive.",
+        "why_predictive": "Suggests that strong primary market activity can absorb supply and potentially support credit prices, which could influence spreads."
+      },
+      {
+        "article_id": "art_finance_20210913_004_0451e79e",
+        "takeaway": "Investors were focused on corporate earnings to support equity prices.",
+        "why_predictive": "Highlights a focus on fundamental corporate performance as a driver of market sentiment and risk appetite, which can impact credit spreads."
+      }
+    ],
+    "expert_reasoning": [
+      "The baseline condition in May 2024 indicated that US high-yield spreads were already tight (art_finance_20240502_004_549f4c9f).",
+      "Historically, brisk high-yield issuance has been supportive (art_finance_20210423_002_ae627580), suggesting that strong primary market activity can help maintain or tighten spreads.",
+      "Investor focus on corporate earnings to support equity prices (art_finance_20210913_004_0451e79e) implies that positive fundamental news could bolster risk appetite, potentially leading to tighter credit spreads.",
+      "These factors suggest a potential for spreads to remain tight or tighten further, driven by supportive issuance and positive corporate fundamentals.",
+      "The target metric is the monthly change in high-yield spreads. A tight spread environment, coupled with supportive issuance and a focus on earnings, could lead to a scenario where the spread change is not significantly negative (i.e., at least -0.035 percentage points)."
+    ],
+    "counterevidence": "No direct counterevidence was provided in the forecast-time articles that would strongly suggest a widening of spreads or a significant negative change in the high-yield spread for October 2024.",
+    "prospective_target_estimate": "The evidence suggests that the monthly high-yield spread change for October 2024 is likely to be at least -0.035 percentage points, given the pre-existing tightness and supportive factors.",
+    "option_mapping": "The analysis supports the 'yes' option, as the factors suggest a continuation of tight spreads or further tightening, which would meet the condition of the change being at least -0.035 percentage points.",
+    "uncertainty": "The historical articles do not provide specific data for October 2024, nor do they detail the precise impact of monetary policy normalization or potential policy signals on credit spreads. The strength of the 'corporate and policy signals' mediator is rated as weak in the DAG.",
+    "dag_derived_lesson": "A tight baseline condition, combined with historically supportive market mechanisms like robust issuance and a focus on fundamental corporate performance, can prospectively indicate a continued trend of tight or tightening credit spreads, though the strength of intermediate policy signals introduces uncertainty."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

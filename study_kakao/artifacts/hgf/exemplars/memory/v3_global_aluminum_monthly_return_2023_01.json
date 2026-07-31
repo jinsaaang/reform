@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_global_aluminum_monthly_return_2023_01",
+  "blueprint_sha256": "754c00c0df0e457c291a634f55c525351d437347fd0b9ff3faf6f7542d8525ba",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial",
+      "target_operation": "threshold_crossing",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2023-01-01, will the monthly aluminum-price return for Global aluminum price in 2023-01 be at least 1.702 percent?",
+    "historical_cutoff": "2023-01-01T00:00:00+00:00",
+    "target_semantics": "The monthly percentage return of the Global aluminum price in January 2023 must be greater than or equal to 1.702 percent.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The core of the prediction relies on calculating the monthly return of the Global aluminum price for January 2023. This requires two key data points: the aluminum price at the end of December 2022 and the price at the end of January 2023.",
+      "The calculation involves determining the percentage change between these two price points. The target is met if this calculated percentage change is at least 1.702 percent.",
+      "The historical DAG indicates that the comparison to a pre-registered threshold is a strong driver. Therefore, the calculated return must be compared against the 1.702 percent threshold to determine the final 'yes' or 'no' outcome."
+    ],
+    "counterevidence": "No forecast-time evidence was provided to support or contradict any of the causal links or factors identified in the DAG. The DAG itself notes that evidence is synthesized for the underlying price levels, indicating a potential weakness in direct observation.",
+    "prospective_target_estimate": "The DAG structure suggests a calculation based on two price observations and a comparison to a threshold. Without specific price data or supporting evidence for the causal links, a definitive estimate cannot be made. The 'historical_support' for the relevant checkpoints ranges from 'medium' to 'strong', but this is based on the DAG's internal assessment and not on provided forecast-time evidence.",
+    "option_mapping": "The 'yes' option corresponds to the monthly aluminum-price return being greater than or equal to 1.702 percent. The 'no' option corresponds to the return being less than 1.702 percent.",
+    "uncertainty": "Significant uncertainty exists due to the complete lack of forecast-time evidence. The DAG highlights that the underlying price observations are synthesized, and the strength of the causal links is based on the DAG's internal structure rather than external validation. The 'historical_support' is medium to strong, but this is a retrospective assessment of the DAG's structure, not a forecast-time assessment of evidence quality.",
+    "dag_derived_lesson": "A target metric's outcome is determined by comparing a calculated value derived from two reference observations against a predefined threshold. The strength of this determination depends on the availability and quality of evidence supporting the observations, the calculation mechanism, and the threshold comparison."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

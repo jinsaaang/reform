@@ -1,0 +1,62 @@
+{
+  "schema_version": "fixed_exemplar_case",
+  "status": "success",
+  "question_id": "v3_meta_revenue_growth_acceleration_2025_12_31",
+  "retrieved_memory_question_id": "v3_meta_revenue_growth_acceleration_2023_03_31",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "corporate_earnings",
+      "target_operation": "year_over_year_growth_acceleration",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2023-03-31, will Meta Platforms, Inc.'s quarterly revenue year-over-year growth for the fiscal quarter ending 2023-03-31 be at least -4.473 percent?",
+    "historical_cutoff": "2023-03-31T00:00:00+00:00",
+    "target_semantics": "Meta Platforms, Inc. quarterly revenue year-over-year growth for the fiscal quarter ending 2023-03-31.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20230201_004_0ba71086",
+        "takeaway": "Meta's Q4 2022 revenue beat expectations, leading to a nearly 20% surge in its shares.",
+        "why_predictive": "A Q4 revenue beat suggests a potential positive trend or stabilization in revenue growth, which could influence the subsequent quarter's performance."
+      },
+      {
+        "article_id": "art_finance_20221026_005_4b3bd0b4",
+        "takeaway": "Meta's revenue decline accelerated in Q3 2022, causing its shares to drop 14%.",
+        "why_predictive": "This indicates a negative trend in revenue growth leading into the target period, providing a baseline for comparison."
+      },
+      {
+        "article_id": "art_finance_20220727_007_f6e692ba",
+        "takeaway": "Meta projected its first revenue drop in Q3 2022, signaling a halt in growth.",
+        "why_predictive": "This forecast from mid-2022 highlights the company's prior expectation of declining revenue, setting a context for subsequent quarters."
+      },
+      {
+        "article_id": "art_finance_20230131_006_42942905",
+        "takeaway": "A major contraction was anticipated for Meta Platforms' Q4 2022 earnings.",
+        "why_predictive": "This preview suggests continued revenue challenges leading into early 2023."
+      },
+      {
+        "article_id": "art_finance_20230301_009_cfc7d08d",
+        "takeaway": "2023 is expected to bring new trends and challenges to social media.",
+        "why_predictive": "Broader industry trends can impact Meta's advertising revenue, a key component of its top line."
+      }
+    ],
+    "expert_reasoning": [
+      "The target is Meta's year-over-year revenue growth for the quarter ending March 31, 2023, specifically whether it is at least -4.473%.",
+      "The baseline for comparison is Meta's Q4 2022 revenue growth. Evidence suggests that Meta's revenue decline was accelerating in late 2022 (art_finance_20221026_005_4b3bd0b4) and that a contraction was anticipated for Q4 2022 earnings (art_finance_20230131_006_42942905). However, Meta's Q4 2022 revenue beat expectations (art_finance_20230201_004_0ba71086), indicating a potential improvement or stabilization.",
+      "Drivers for potential revenue improvement include Meta's Q4 2022 revenue beat (art_finance_20230201_004_0ba71086), which suggests that cost-cutting measures or other efficiencies might be starting to yield positive results. The broader social media landscape in 2023 is expected to present trends and challenges (art_finance_20230301_009_cfc7d08d), which could influence advertising revenue.",
+      "The mechanism connecting these factors to the target involves Meta's ability to arrest its revenue decline and potentially achieve growth acceleration. The Q4 2022 beat (art_finance_20230201_004_0ba71086) suggests that the prior negative trend might be reversing or at least moderating, which could lead to a less negative year-over-year growth rate in Q1 2023.",
+      "The primary counterevidence is the historical trend of accelerating revenue decline reported in late 2022 (art_finance_20221026_005_4b3bd0b4) and the projection of a revenue drop in Q3 2022 (art_finance_20220727_007_f6e692ba). This indicates that the company was in a period of significant revenue contraction.",
+      "Given the Q4 2022 revenue beat (art_finance_20230201_004_0ba71086) against a backdrop of prior declines (art_finance_20221026_005_4b3bd0b4, art_finance_20220727_007_f6e692ba), the year-over-year growth for the quarter ending March 31, 2023, is likely to be less negative than prior quarters, potentially exceeding the -4.473% threshold.",
+      "The 'yes' option maps to Meta's year-over-year revenue growth being at least -4.473%. The 'no' option maps to Meta's year-over-year revenue growth being less than -4.473% (i.e., more negative).",
+      "Uncertainty remains due to the conflicting signals of accelerating decline versus a recent revenue beat. The magnitude of the Q4 beat and its sustainability into Q1 2023 are not fully detailed, and the impact of broader social media trends (art_finance_20230301_009_cfc7d08d) is unclear."
+    ],
+    "counterevidence": "Meta's revenue decline was accelerating in Q3 2022 (art_finance_20221026_005_4b3bd0b4), and the company had projected its first revenue drop in that quarter (art_finance_20220727_007_f6e692ba). A major contraction was also anticipated for Q4 2022 earnings (art_finance_20230131_006_42942905).",
+    "prospective_target_estimate": "Yes",
+    "option_mapping": "The 'yes' option corresponds to Meta's year-over-year revenue growth for the fiscal quarter ending 2023-03-31 being greater than or equal to -4.473 percent. The 'no' option corresponds to the growth being less than -4.473 percent.",
+    "uncertainty": "The evidence presents a mixed picture. While Meta's Q4 2022 revenue beat expectations (art_finance_20230201_004_0ba71086), this followed a period of accelerating revenue decline (art_finance_20221026_005_4b3bd0b4) and projections of revenue drops (art_finance_20220727_007_f6e692ba). It is uncertain whether the Q4 beat represents a sustainable turnaround or a temporary reprieve, and the precise year-over-year growth rate for Q1 2023 remains subject to significant variability.",
+    "dag_derived_lesson": "A recent positive financial result can signal a potential shift in a negative trend, but it must be weighed against prior performance and broader market conditions. The sustainability of such a shift is a key source of uncertainty."
+  },
+  "pilot_provenance": {
+    "blueprint_schema": "hgf_blueprint_topology_v2",
+    "memory_exemplar_sha256": "82cb4ac22479d738ef1fd1a3545806c3cba3faa864f465fb1aa614588db06ea2"
+  }
+}

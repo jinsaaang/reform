@@ -1,0 +1,59 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_us_diesel_monthly_change_2023_07",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "energy_commodities / refined products",
+      "target_operation": "monthly retail diesel-price change",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2023-07-01, will the monthly retail diesel-price change for United States diesel price in 2023-07 be at least -2.633 percent?",
+    "historical_cutoff": "2023-07-01T00:00:00+00:00",
+    "target_semantics": "The monthly percentage change in U.S. retail diesel prices for July 2023.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20220419_002_1341f121",
+        "takeaway": "Retail diesel prices were expected to be the highest since 2014 in the summer of 2022.",
+        "why_predictive": "Indicates a period of elevated prices and potential volatility in the diesel market."
+      },
+      {
+        "article_id": "art_finance_20220418_009_5a1937d5",
+        "takeaway": "The EIA projected that summer 2022 U.S. gasoline and diesel prices would be the highest since 2014.",
+        "why_predictive": "Reinforces the expectation of high price levels and potential for significant price movements in diesel."
+      },
+      {
+        "article_id": "art_finance_20230417_008_388229b9",
+        "takeaway": "Diesel prices were described as mostly 'stable' in mid-April 2023.",
+        "why_predictive": "Suggests a recent period of price stability, which could be a baseline for future changes."
+      },
+      {
+        "article_id": "art_finance_20230606_019_30fa2a99",
+        "takeaway": "Oil prices rose due to Saudi Arabia's plan to deepen output cuts starting in July.",
+        "why_predictive": "Directly links crude oil supply decisions to upward pressure on oil prices, a key input for diesel."
+      },
+      {
+        "article_id": "art_finance_20230223_004_8f9a77d3",
+        "takeaway": "Retail gasoline and diesel state tax rates increased in 13 states in 2023.",
+        "why_predictive": "Tax increases are a direct cost component that can contribute to higher retail prices."
+      }
+    ],
+    "expert_reasoning": [
+      "The forecast considers the potential impact of crude oil supply restraint, specifically Saudi Arabia's plan to deepen output cuts starting in July, which could increase feedstock costs for diesel (art_finance_20230606_019_30fa2a99).",
+      "Historical data indicates that diesel prices have experienced periods of significant elevation, with projections for summer 2022 suggesting the highest prices since 2014 (art_finance_20220419_002_1341f121, art_finance_20220418_009_5a1937d5).",
+      "Recent information from mid-April 2023 described diesel prices as mostly 'stable' (art_finance_20230417_008_388229b9), providing a baseline.",
+      "An increase in state tax rates for diesel in 13 states in 2023 is a known factor that could contribute to price increases (art_finance_20230223_004_8f9a77d3)."
+    ],
+    "counterevidence": "No specific forecast-time article provided direct counterevidence to the upward price pressure from crude supply cuts or tax increases. Information regarding refinery utilization, distillate inventories, or broader economic demand weakness that could offset these pressures was not available in the provided articles.",
+    "prospective_target_estimate": "The available evidence suggests upward pressure on diesel prices due to crude supply cuts and tax increases. However, without specific data on refinery operations, inventory levels, and broader demand indicators, the magnitude of the price change remains uncertain.",
+    "option_mapping": "The 'yes' option corresponds to a monthly retail diesel-price change of at least -2.633 percent. The 'no' option corresponds to a change less than -2.633 percent.",
+    "uncertainty": "The forecast is subject to significant uncertainty due to a lack of detailed, cutoff-compliant data on refinery operations, distillate inventories, and specific demand drivers for July 2023. The impact of Saudi output cuts on U.S. retail prices is inferred rather than directly quantified.",
+    "dag_derived_lesson": "Price changes in refined products are driven by a complex interplay of upstream supply constraints, midstream refinery and inventory balances, and downstream demand factors, all of which can be influenced by macroeconomic conditions and policy decisions. A comprehensive forecast requires evaluating the net effect of these competing forces, with particular attention to the availability and tightness of product inventories relative to demand."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

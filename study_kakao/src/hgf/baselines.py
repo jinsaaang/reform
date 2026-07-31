@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import argparse
 import base64
+import hashlib
 import json
 import math
 import os
@@ -29,7 +30,11 @@ from hgf.question_io import (
     read_questions,
     resolve_forecast_cutoff,
 )
-from hgf.memory_bank import load_final_memory_bank
+from hgf.memory_bank import (
+    load_factor_blueprint_bank,
+    load_graph_bank,
+    load_hgf_blueprint_bank,
+)
 from hgf.memory_retrieval import (
     compile_hgf_search_memory,
     compile_raw_dag_ablation,
@@ -54,7 +59,6 @@ from hgf.forecast_core import (
     _forecast_schema,
     _ground_truth_option,
     _normalize_single_dag_plan,
-    _score,
     _seed,
     _single_dag_plan_schema,
     _validate_forecast,
@@ -63,13 +67,20 @@ from hgf.forecast_core import (
 )
 from hgf.runner import (
     _call_dag_expert_reasoning,
-    _distill_dag_semantic_lessons,
     _load_source_cases,
+    canonical_semantic_lessons,
     compile_current_target_operator,
     compile_dag_expert_memory,
 )
 from hgf.evidence_store import _direct_evidence_pack
 from hgf.generation import configure_generation
+from hgf.forecast_safety import (
+    ForecastTarget,
+    MemoryMetadata,
+    is_memory_compatible,
+    score_forecast,
+)
+from hgf.repair_resilience import neutral_reasoning_payload
 
 
 METHODS = (
@@ -109,7 +120,11 @@ METHOD_REFERENCES = {
 _WRITE_LOCK = threading.Lock()
 
 
-def _parse_args() -> argparse.Namespace:
+def _parse_args(
+    *,
+    default_methods: tuple[str, ...] = METHODS,
+    default_output_dir: Path = Path("runs/main_table"),
+) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--questions-dir",
@@ -129,7 +144,7 @@ def _parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--output-dir",
         type=Path,
-        default=Path("runs/main_table"),
+        default=default_output_dir,
     )
     parser.add_argument(
         "--selection-file",
@@ -137,14 +152,13 @@ def _parse_args() -> argparse.Namespace:
         default=Path("data/questions/selection.json"),
     )
     parser.add_argument(
-        "--exemplar-dir",
+        "--hgf-artifact-root",
         type=Path,
-        default=Path("artifacts/exemplars"),
-    )
-    parser.add_argument(
-        "--semantic-cache-dir",
-        type=Path,
-        default=Path("artifacts/semantic_lessons"),
+        default=Path("artifacts/hgf"),
+        help=(
+            "Complete canonical HGF artifact root containing matching "
+            "blueprints/ and exemplars/ manifests."
+        ),
     )
     parser.add_argument(
         "--model",
@@ -153,14 +167,19 @@ def _parse_args() -> argparse.Namespace:
     parser.add_argument("--limit", type=int, default=100)
     parser.add_argument("--per-category", type=int, default=20)
     parser.add_argument("--workers", type=int, default=4)
-    parser.add_argument("--methods", nargs="+", choices=METHODS, default=METHODS)
+    parser.add_argument(
+        "--methods",
+        nargs="+",
+        choices=METHODS,
+        default=default_methods,
+    )
     parser.add_argument("--question-ids", nargs="*", default=None)
     parser.add_argument("--question-ids-file", type=Path)
     parser.add_argument("--candidate-evidence-limit", type=int, default=80)
     parser.add_argument("--evidence-limit", type=int, default=20)
     parser.add_argument("--reasoning-max-tokens", type=int, default=2600)
     parser.add_argument("--boundary-max-tokens", type=int, default=1800)
-    parser.add_argument("--graph-max-tokens", type=int, default=3000)
+    parser.add_argument("--graph-max-tokens", type=int, default=2600)
     parser.add_argument("--semantic-max-tokens", type=int, default=1200)
     parser.add_argument(
         "--reasoning-effort",
@@ -275,6 +294,7 @@ def _call_memory_reasoning(
     memory_type: str,
     memory: Any | None,
     max_tokens: int,
+    allow_neutral_fallback: bool = False,
 ) -> tuple[dict[str, Any], dict[str, int], float, bool]:
     evidence_ids = {str(item["id"]) for item in evidence}
     wire_memory = memory
@@ -284,6 +304,12 @@ def _call_memory_reasoning(
         "none": (
             "No historical memory is available. Reason only from the current "
             "question and evidence."
+        ),
+        "factor": (
+            "Factor search cards are supplied as query-expansion and coverage "
+            "hints. Use them to identify current drivers and counterevidence to "
+            "evaluate, but do not treat the cards, historical outcomes, entities, "
+            "dates, values, or causal edges as current evidence."
         ),
         "case": (
             "A retrieved resolved episode is supplied. Use it as an analogy, "
@@ -319,15 +345,18 @@ def _call_memory_reasoning(
     ) -> tuple[dict[str, float], list[str]]:
         _normalize_probability_rows(payload, options)
         _ensure_baseline_reasoning_step(payload)
+        raw_selected = payload.get("selected_evidence_ids") or []
+        if not isinstance(raw_selected, list):
+            raw_selected = []
         payload["selected_evidence_ids"] = [
             str(value)
-            for value in payload.get("selected_evidence_ids", [])
+            for value in raw_selected
             if str(value) in evidence_ids
         ]
         for step in payload.get("reasoning_steps", []):
             step["evidence_ids"] = [
                 str(value)
-                for value in step.get("evidence_ids", [])
+                for value in (step.get("evidence_ids") or [])
                 if str(value) in evidence_ids
             ]
         if not payload["selected_evidence_ids"]:
@@ -404,6 +433,22 @@ def _call_memory_reasoning(
         seed=_seed(question_id, f"paper-{memory_type}-reasoning"),
         max_tokens=max_tokens,
         validator=validator,
+        fallback_factory=(
+            lambda _current, _errors: neutral_reasoning_payload(
+                options=options,
+                target_semantics=(
+                    str(public_case.get("question") or "")
+                    + " "
+                    + json.dumps(
+                        public_case.get("target_contract") or {},
+                        ensure_ascii=False,
+                    )
+                ),
+                include_checkpoint_mapping=False,
+            )
+        )
+        if allow_neutral_fallback
+        else None,
     )
     return reasoning, usage, seconds, repaired
 
@@ -613,8 +658,15 @@ def _method_metrics(
     probabilities: dict[str, float],
     ground_truth: str,
     options: list[str],
+    *,
+    explicit_prediction: str | None = None,
 ) -> dict[str, float]:
-    accuracy, brier = _score(probabilities, ground_truth, options)
+    accuracy, brier = score_forecast(
+        probabilities=probabilities,
+        explicit_prediction=explicit_prediction,
+        ground_truth=ground_truth,
+        options=options,
+    )
     truth_probability = max(float(probabilities[ground_truth]), 1e-6)
     return {
         "accuracy": accuracy,
@@ -634,8 +686,8 @@ def _run_method(
     output_dir: Path,
     memory_questions: dict[str, Any],
     graphs_by_id: dict[str, dict[str, Any]],
-    blueprints: list[dict[str, Any]],
-    blueprints_by_id: dict[str, dict[str, Any]],
+    factor_blueprints: list[dict[str, Any]],
+    hgf_blueprints_by_id: dict[str, dict[str, Any]],
     exemplar_cases: dict[str, dict[str, Any]],
     args: argparse.Namespace,
 ) -> dict[str, Any]:
@@ -649,20 +701,6 @@ def _run_method(
 
     started = time.monotonic()
     cutoff, cutoff_source = resolve_forecast_cutoff(question)
-    guided = method in {"factor_memory", "hgf"}
-    db_path, candidates = _condition_evidence(
-        evidence_dir,
-        question,
-        cutoff,
-        guided=guided,
-        limit=args.candidate_evidence_limit,
-    )
-    evidence = _rerank_current_evidence(
-        question,
-        candidates,
-        limit=args.evidence_limit,
-    )
-    evidence_ids = {str(item["id"]) for item in evidence}
     options = [str(option) for option in question.options or []]
     contract = _target_contract(question)
     public_case = {
@@ -676,11 +714,32 @@ def _run_method(
     if method == "hgf":
         fixed_case = exemplar_cases[str(question.id)]
         memory_id = str(fixed_case["retrieved_memory_question_id"])
-        blueprint = blueprints_by_id[memory_id]
+        blueprint = hgf_blueprints_by_id[memory_id]
     else:
         fixed_case = None
+        blueprint = {}
+        memory_id = ""
+
+    guided = method in {"factor_memory", "hgf"}
+    evidence_bank = "E1" if guided else "E0"
+    db_path, candidates = _condition_evidence(
+        evidence_dir,
+        question,
+        cutoff,
+        guided=guided,
+        limit=args.candidate_evidence_limit,
+    )
+    evidence = _rerank_current_evidence(
+        question,
+        candidates,
+        limit=args.evidence_limit,
+    )
+    evidence_db_payload: Any = str(db_path)
+    evidence_ids = {str(item["id"]) for item in evidence}
+
+    if method != "hgf":
         blueprint = _eligible_retrieval(
-            blueprints=blueprints,
+            blueprints=factor_blueprints,
             memory_questions=memory_questions,
             target_question=question,
             cutoff=cutoff,
@@ -689,13 +748,25 @@ def _run_method(
         memory_id = str(blueprint["question_id"])
     memory_question = memory_questions[memory_id]
     memory_graph = graphs_by_id[memory_id]
+    target_metadata = family_metadata(question)
+    retrieved_metadata = family_metadata(memory_question)
+    memory_compatible = is_memory_compatible(
+        ForecastTarget(
+            family_id=str(target_metadata.get("family_id") or ""),
+            target_metric=str(target_metadata.get("target_metric") or ""),
+        ),
+        MemoryMetadata(
+            family_id=str(retrieved_metadata.get("family_id") or ""),
+            target_metric=str(retrieved_metadata.get("target_metric") or ""),
+        ),
+    )
     memory_payload: Any | None = None
     memory_type = "none"
     memory_usage: dict[str, int] = {}
     memory_seconds = 0.0
     memory_cached = True
-
     if method == "factor_memory":
+        memory_type = "factor"
         memory_payload = json.loads(
             compile_hgf_search_memory([blueprint])
         )
@@ -744,9 +815,53 @@ def _run_method(
             max_tokens=args.graph_max_tokens,
         )
         reasoning = reasoning_artifact
+    elif method == "hgf" and not memory_compatible:
+        (
+            reasoning,
+            reasoning_usage,
+            reasoning_seconds,
+            reasoning_repaired,
+        ) = _call_memory_reasoning(
+            client=client,
+            model=model,
+            question_id=str(question.id),
+            public_case=public_case,
+            evidence=evidence,
+            options=options,
+            memory_type="none",
+            memory=None,
+            max_tokens=args.reasoning_max_tokens,
+            allow_neutral_fallback=True,
+        )
+        (
+            forecast,
+            probabilities,
+            boundary_usage,
+            boundary_seconds,
+            boundary_repaired,
+        ) = _call_boundary_mapping(
+            client=client,
+            model=model,
+            question_id=str(question.id),
+            public_case=public_case,
+            evidence=evidence,
+            evidence_ids=evidence_ids,
+            options=options,
+            contract=contract,
+            reasoning=reasoning,
+            seed_role="hgf-incompatible-memory-boundary",
+            max_tokens=args.boundary_max_tokens,
+            allow_neutral_fallback=True,
+        )
+        memory_payload = {
+            "route": "no_memory",
+            "reason": "retrieved family or target metric is incompatible",
+            "rejected_memory_question_id": memory_id,
+        }
+        usage = _add_usage(reasoning_usage, boundary_usage)
+        seconds = reasoning_seconds + boundary_seconds
+        repaired = reasoning_repaired or boundary_repaired
     elif method == "hgf":
-        if fixed_case is None:
-            raise AssertionError("fixed HGF exemplar was not loaded")
         worked_exemplar = fixed_case["worked_exemplar"]
         exemplar_usage: dict[str, int] = {}
         exemplar_seconds = 0.0
@@ -755,20 +870,12 @@ def _run_method(
             source_question_id=memory_id,
             blueprint=blueprint,
             worked_exemplar=worked_exemplar,
+            sanitize_demonstration=True,
         )
-        (
-            semantic_lessons,
-            semantic_usage,
-            semantic_seconds,
-            semantic_cached,
-        ) = _distill_dag_semantic_lessons(
-            client=client,
-            model=model,
-            source_question_id=memory_id,
-            expert_memory=expert_memory,
-            cache_dir=args.semantic_cache_dir.resolve(),
-            max_tokens=args.semantic_max_tokens,
-        )
+        semantic_lessons = canonical_semantic_lessons()
+        semantic_usage = {}
+        semantic_seconds = 0.0
+        semantic_cached = True
         expert_memory["dag_derived_semantic_lessons"] = semantic_lessons
         target_operator = compile_current_target_operator(contract)
         (
@@ -787,6 +894,7 @@ def _run_method(
             expert_memory=expert_memory,
             target_operator=target_operator,
             max_tokens=args.reasoning_max_tokens,
+            allow_memory_rejection=True,
         )
         (
             forecast,
@@ -806,6 +914,7 @@ def _run_method(
             reasoning=reasoning,
             seed_role="boundary_mapping",
             max_tokens=args.boundary_max_tokens,
+            allow_neutral_fallback=True,
         )
         memory_payload = expert_memory
         usage = _add_usage(
@@ -840,6 +949,7 @@ def _run_method(
             memory_type=memory_type,
             memory=memory_payload,
             max_tokens=args.reasoning_max_tokens,
+            allow_neutral_fallback=True,
         )
         (
             forecast,
@@ -859,6 +969,7 @@ def _run_method(
             reasoning=reasoning,
             seed_role=f"paper-{method}-boundary",
             max_tokens=args.boundary_max_tokens,
+            allow_neutral_fallback=True,
         )
         usage = _add_usage(
             memory_usage,
@@ -870,7 +981,29 @@ def _run_method(
         )
         repaired = reasoning_repaired or boundary_repaired
 
-    metrics = _method_metrics(probabilities, ground_truth, options)
+    hgf_policy_payload: dict[str, Any] | None = None
+    if method == "hgf":
+        evidence_support = str(
+            forecast.get("magnitude_assessment", {}).get("support")
+            or "insufficient"
+        )
+        hgf_policy_payload = {
+            "memory_compatible": memory_compatible,
+            "route": (
+                "full_hgf" if memory_compatible else "no_memory"
+            ),
+            "evidence_support": evidence_support,
+            "probability_calibration": "none",
+            "generation_fallback": reasoning.get("generation_fallback"),
+            "boundary_fallback": forecast.get("generation_fallback"),
+        }
+
+    metrics = _method_metrics(
+        probabilities,
+        ground_truth,
+        options,
+        explicit_prediction=str(forecast.get("prediction") or ""),
+    )
     result = {
         "schema_version": "paper_method_case",
         "status": "success",
@@ -884,8 +1017,8 @@ def _run_method(
         "ground_truth": ground_truth,
         "cutoff": cutoff.isoformat(),
         "cutoff_source": cutoff_source,
-        "evidence_bank": "E1" if guided else "E0",
-        "evidence_db": str(db_path),
+        "evidence_bank": evidence_bank,
+        "evidence_db": evidence_db_payload,
         "evidence_count": len(evidence),
         "evidence_ids": sorted(evidence_ids),
         "retrieved_memory_question_id": (
@@ -895,6 +1028,7 @@ def _run_method(
         ),
         "memory": memory_payload,
         "memory_cached": memory_cached,
+        "hgf_policy": hgf_policy_payload,
         "reasoning": reasoning,
         "forecast": forecast,
         "probabilities": probabilities,
@@ -1001,8 +1135,17 @@ def _summarize(
     return summary
 
 
-def main() -> None:
-    args = _parse_args()
+def main(
+    *,
+    default_methods: tuple[str, ...] = METHODS,
+    default_output_dir: Path = Path("runs/main_table"),
+) -> None:
+    args = _parse_args(
+        default_methods=default_methods,
+        default_output_dir=default_output_dir,
+    )
+    if default_methods == ("hgf",) and tuple(args.methods) != ("hgf",):
+        raise ValueError("hgf-replay runs only the canonical hgf method")
     configure_generation(
         reasoning_effort=args.reasoning_effort,
         max_output_tokens=args.max_output_tokens,
@@ -1032,19 +1175,32 @@ def main() -> None:
     memory_questions = {
         str(question.id): question for question in memory_list
     }
-    graphs, blueprints = load_final_memory_bank(
+    graphs_by_id = load_graph_bank(
         args.memory_bank_manifest.resolve(),
         memory_questions,
     )
-    graphs_by_id = {
-        str(blueprint["question_id"]): graph
-        for graph, blueprint in zip(graphs, blueprints)
-    }
-    blueprints_by_id = {
-        str(blueprint["question_id"]): blueprint
-        for blueprint in blueprints
-    }
-    exemplar_cases = _load_source_cases(args.exemplar_dir.resolve())
+    hgf_artifact_root = args.hgf_artifact_root.resolve()
+    hgf_blueprint_root = hgf_artifact_root / "blueprints"
+    hgf_exemplar_root = hgf_artifact_root / "exemplars"
+    hgf_blueprints_by_id = load_hgf_blueprint_bank(
+        hgf_blueprint_root,
+        expected_ids=set(memory_questions),
+    )
+    factor_artifact_root = (
+        Path("artifacts/baselines/factor_memory").resolve()
+    )
+    factor_blueprints_by_id = load_factor_blueprint_bank(
+        factor_artifact_root,
+        expected_ids=set(memory_questions),
+    )
+    factor_blueprints = [
+        factor_blueprints_by_id[question_id]
+        for question_id in memory_questions
+    ]
+    exemplar_cases = _load_source_cases(hgf_exemplar_root)
+    blueprint_manifest_path = hgf_blueprint_root / "manifest.json"
+    exemplar_manifest_path = hgf_exemplar_root / "manifest.json"
+    factor_manifest_path = factor_artifact_root / "manifest.json"
     frozen_selection = json.loads(
         args.selection_file.resolve().read_text(encoding="utf-8")
     )["question_ids"]
@@ -1098,6 +1254,30 @@ def main() -> None:
                 "reasoning_effort": args.reasoning_effort,
                 "max_output_tokens": args.max_output_tokens,
                 "run_seed": args.run_seed,
+            },
+            "hgf_configuration": {
+                "artifact_root": str(hgf_artifact_root),
+                "artifact_manifest": {
+                    "blueprints": str(blueprint_manifest_path),
+                    "blueprints_sha256": hashlib.sha256(
+                        blueprint_manifest_path.read_bytes()
+                    ).hexdigest(),
+                    "exemplars": str(exemplar_manifest_path),
+                    "exemplars_sha256": hashlib.sha256(
+                        exemplar_manifest_path.read_bytes()
+                    ).hexdigest(),
+                },
+                "compatibility_policy": "exact_family_id_and_target_metric",
+                "runtime_demonstration": "sanitized",
+                "memory_rejection": "CURRENT_NEW",
+                "probability_postprocessing": "none",
+            },
+            "baseline_configuration": {
+                "factor_memory_manifest": str(factor_manifest_path),
+                "factor_memory_manifest_sha256": hashlib.sha256(
+                    factor_manifest_path.read_bytes()
+                ).hexdigest(),
+                "factor_memory_frozen": True,
             },
             "methods": list(args.methods),
             "method_labels": METHOD_LABELS,
@@ -1155,8 +1335,8 @@ def main() -> None:
                 output_dir=output_dir,
                 memory_questions=memory_questions,
                 graphs_by_id=graphs_by_id,
-                blueprints=blueprints,
-                blueprints_by_id=blueprints_by_id,
+                factor_blueprints=factor_blueprints,
+                hgf_blueprints_by_id=hgf_blueprints_by_id,
                 exemplar_cases=exemplar_cases,
                 args=args,
             ): (question, method)

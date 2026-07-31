@@ -1,0 +1,47 @@
+{
+  "schema_version": "fixed_exemplar_case",
+  "status": "success",
+  "question_id": "v3_us_housing_starts_monthly_growth_2025_11",
+  "retrieved_memory_question_id": "v3_us_housing_starts_monthly_growth_2024_09",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "macro / housing",
+      "target_operation": "monthly change",
+      "option_geometry": "bucketed range"
+    },
+    "historical_question": "As of 2024-09-30, which range will the monthly housing-starts growth for United States housing starts in 2024-09 fall into?",
+    "historical_cutoff": "2024-09-30T00:00:00+00:00",
+    "target_semantics": "The monthly growth rate for United States housing starts in September 2024.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20220919_004_08151b58",
+        "takeaway": "U.S. home builder sentiment had been falling for nine consecutive months.",
+        "why_predictive": "Sustained declines in builder sentiment can indicate a cautious approach to new construction, potentially leading to lower housing starts."
+      },
+      {
+        "article_id": "art_finance_20231219_003_1f35f9c2",
+        "takeaway": "A forecast for 2024 anticipated mortgage rates around 4.25%.",
+        "why_predictive": "Mortgage rates are a key factor influencing housing demand and affordability, which in turn affects housing starts."
+      },
+      {
+        "article_id": "art_finance_20240927_003_0d650497",
+        "takeaway": "U.S. interest rate cuts were discussed as shaping the future of building.",
+        "why_predictive": "Interest rate cuts can lower borrowing costs for builders and buyers, potentially stimulating housing construction."
+      }
+    ],
+    "expert_reasoning": [
+      "The historical evidence indicates a period of subdued home builder sentiment (art_finance_20220919_004_08151b58). This sentiment may have translated into builder caution, potentially restraining housing starts.",
+      "A forecast from late 2023 projected mortgage rates around 4.25% for 2024 (art_finance_20231219_003_1f35f9c2). Elevated mortgage rates can dampen housing demand, which could negatively impact housing starts.",
+      "Discussions around U.S. interest rate cuts in late September 2024 (art_finance_20240927_003_0d650497) suggest a potential tailwind for the housing market. These cuts could offset some of the demand restraint from mortgage rates."
+    ],
+    "counterevidence": "While subdued sentiment and mortgage rate forecasts suggest a potential drag on housing starts, the discussion of interest rate cuts (art_finance_20240927_003_0d650497) introduces a mixed signal, as these cuts could stimulate building activity.",
+    "prospective_target_estimate": "The interplay between potentially cautious builders, the lingering effects of mortgage rates, and the prospect of interest rate cuts creates uncertainty. Without direct data on September 2024 housing starts or current mortgage rate levels, it is difficult to definitively place the growth rate.",
+    "option_mapping": "Given the mixed signals, the monthly housing-starts growth for September 2024 could fall within the recent range, as the opposing forces of potential restraint and stimulus might balance out. However, the possibility of either a stronger negative or positive impact cannot be ruled out.",
+    "uncertainty": "The forecast-time evidence provides directional indicators but lacks specific quantitative data for the target period. The impact of interest rate cuts on actual housing starts in September 2024 is not directly established by the provided articles, leaving significant uncertainty regarding the magnitude and direction of the monthly growth.",
+    "dag_derived_lesson": "The impact of prior sentiment and financing conditions on a target metric requires re-evaluation with current data. Potential counteracting factors, such as monetary policy shifts, can introduce significant uncertainty and must be weighed against established drivers. Directional evidence alone is insufficient for magnitude estimation."
+  },
+  "pilot_provenance": {
+    "blueprint_schema": "hgf_blueprint_topology_v2",
+    "memory_exemplar_sha256": "1aea4fd3c329a5bec56d1b9d7a757c9cc174d149a192896378d387c3b9964021"
+  }
+}

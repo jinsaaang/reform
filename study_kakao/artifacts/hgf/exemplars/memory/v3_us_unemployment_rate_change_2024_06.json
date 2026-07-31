@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_us_unemployment_rate_change_2024_06",
+  "blueprint_sha256": "06de2bd83b72fd9e5f30f7fe10af05443c296838e534d49746068dd1926d429e",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "macro/labour",
+      "target_operation": "monthly change",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2024-06-30, which range will the monthly unemployment-rate change for United States unemployment rate in 2024-06 fall into?",
+    "historical_cutoff": "2024-06-30T00:00:00+00:00",
+    "target_semantics": "The monthly change in the US unemployment rate for June 2024, compared to the recent range of -0.025 to 0.125 percentage points.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The core calculation for the target metric is the absolute difference between the unemployment rate in June 2024 and May 2024.",
+      "The DAG indicates that the June 2024 unemployment rate observation is a direct driver for this calculation.",
+      "Similarly, the May 2024 unemployment rate observation is also a direct driver for the calculation."
+    ],
+    "counterevidence": "No forecast-time evidence was provided to support or contradict any potential drivers or the target calculation itself.",
+    "prospective_target_estimate": "Within recent range",
+    "option_mapping": "The target metric is the monthly change in the US unemployment rate. The options are 'below recent range' (less than -0.025 pp), 'within recent range' (-0.025 pp to 0.125 pp), and 'above recent range' (0.125 pp or more).",
+    "uncertainty": "Given the complete lack of forecast-time evidence, the historical DAG's 'medium' historical support for the rate observations and the calculation mechanism implies significant uncertainty. The specific values for the May and June 2024 unemployment rates are unknown, as is the direction of their change.",
+    "dag_derived_lesson": "When forecasting a change metric, the direct observations of the prior and current periods are primary drivers. The relationship between these observations and the calculated change must be re-evaluated with current evidence, as historical support alone is insufficient. The comparison of this calculated change against pre-defined boundaries is a secondary but critical step."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

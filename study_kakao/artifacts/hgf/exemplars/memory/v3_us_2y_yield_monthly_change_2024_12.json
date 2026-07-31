@@ -1,0 +1,54 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_us_2y_yield_monthly_change_2024_12",
+  "blueprint_sha256": "9e077978c0a2a5f8d487a9d8d74bb7b88a9124677371fc338cce885f92e3d04a",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_market",
+      "target_operation": "yield_change_range",
+      "option_geometry": "ordinal"
+    },
+    "historical_question": "As of 2024-12-01, which range will the monthly 2-year yield change for United States 2-year Treasury yield in 2024-12 fall into?",
+    "historical_cutoff": "2024-12-01T00:00:00+00:00",
+    "target_semantics": "The monthly change in the United States 2-year Treasury yield for December 2024.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20241115_004_923fc316",
+        "takeaway": "Fed Chair Powell indicated the central bank is not in a hurry to cut rates.",
+        "why_predictive": "Powell's hawkish stance suggests a higher-for-longer interest rate environment, which typically supports higher Treasury yields."
+      },
+      {
+        "article_id": "art_finance_20240722_012_6b65e11e",
+        "takeaway": "The Federal Reserve's Monetary Policy Report noted that inflation remained above the target.",
+        "why_predictive": "Persistent inflation concerns are a primary driver for the Federal Reserve to maintain higher interest rates, influencing yield expectations."
+      },
+      {
+        "article_id": "art_finance_20240126_009_4bfbf592",
+        "takeaway": "The Fed's preferred inflation gauge showed a 2.9% annual increase.",
+        "why_predictive": "This data point indicates that inflation, while potentially moderating, is still a concern for policymakers, reinforcing the rationale for restrictive monetary policy."
+      },
+      {
+        "article_id": "art_finance_20240201_002_0dbae6dc",
+        "takeaway": "The 10-year Treasury yield dipped following a Fed rate decision and policy guidance.",
+        "why_predictive": "This shows a sensitivity of Treasury yields to Fed policy signals, though the direction can be complex, with short-term yields reacting differently than long-term ones."
+      }
+    ],
+    "expert_reasoning": [
+      "The Federal Reserve's Monetary Policy Report (art_finance_20240722_012_6b65e11e) indicated that inflation remained above target, suggesting continued pressure for restrictive monetary policy.",
+      "Fed Chair Powell's statement that the central bank is 'not in a hurry to cut rates' (art_finance_20241115_004_923fc316) reinforces the expectation of higher-for-longer interest rates, which would tend to push yields higher.",
+      "The observed resilience of the U.S. economy, implied by the Fed's stance and the continued above-target inflation, reduces the urgency for aggressive rate cuts, further supporting elevated yield levels."
+    ],
+    "counterevidence": "While the Fed has been cutting rates (implied by Powell's comments about not cutting *further* or *faster*), the market has seen a divergence where long-term yields have risen (art_finance_20241115_004_923fc316). This suggests that factors other than Fed policy, such as inflation persistence or economic resilience, are driving yields higher, potentially counteracting the downward pressure from rate cuts.",
+    "prospective_target_estimate": "above recent range",
+    "option_mapping": "The expectation of sustained higher interest rates due to persistent inflation and a Fed unwilling to cut aggressively suggests that the 2-year Treasury yield change will likely be positive and significant, falling above the recent range.",
+    "uncertainty": "The historical evidence is weak, with multiple factors influencing yields in opposing directions. The specific magnitude of the yield change and its precise placement relative to the defined boundaries (-0.282 and 0.09 percentage points) remains uncertain due to the mixed signals and the historical weakness of the supporting evidence.",
+    "dag_derived_lesson": "When assessing financial market movements, consider the interplay between central bank policy signals, persistent inflation concerns, and underlying economic resilience. Divergences between policy rate changes and market yields can occur when other factors exert stronger influence, requiring careful evaluation of all contributing drivers."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

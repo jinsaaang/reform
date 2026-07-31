@@ -1,0 +1,200 @@
+{
+  "schema_version": "hgf_blueprint_v1",
+  "question_id": "v3_henry_hub_monthly_return_2024_09",
+  "target_definition": {
+    "metric": "Henry Hub natural-gas monthly return",
+    "unit_or_option_space": "percent monthly-return classification",
+    "forecast_horizon": "September 2024 monthly observation"
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Demand, LNG, broader energy positioning, and demand weakness offer a reusable natural-gas monitoring frame.",
+    "weaknesses": [
+      "Several links rely on broad energy proxies.",
+      "The graph lacks direct Henry Hub price observations."
+    ]
+  },
+  "search_factors": [
+    {
+      "factor": "LNG export demand",
+      "why_search": "LNG demand can support domestic natural-gas balances.",
+      "preferred_source_types": [
+        "LNG market data",
+        "industry report"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240730_002_418ea3b0",
+        "evt_finance_20240916_007_b19166b8"
+      ]
+    },
+    {
+      "factor": "Industrial gas demand",
+      "why_search": "Manufacturing activity can change physical gas demand.",
+      "preferred_source_types": [
+        "industrial data",
+        "energy analysis"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240910_004_f3578956"
+      ]
+    },
+    {
+      "factor": "Forward gas expectations",
+      "why_search": "Forward expectations can influence current market positioning.",
+      "preferred_source_types": [
+        "futures data",
+        "market reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240911_005_8d5ae091"
+      ]
+    },
+    {
+      "factor": "Near-term demand weakness",
+      "why_search": "Demand deterioration can counter bullish supply-demand expectations.",
+      "preferred_source_types": [
+        "futures commentary",
+        "weather data"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240924_009_251c62ad"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "industrial_demand",
+      "role": "baseline",
+      "factor": "Industrial gas demand",
+      "mechanism": "Manufacturing demand can support natural-gas consumption.",
+      "expected_direction": "up",
+      "evidence_requirement": "Industrial activity and gas-demand data align.",
+      "contradiction_signal": "Manufacturing demand declines.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_finance_20240910_004_f3578956"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_003_1998d18f"
+      ]
+    },
+    {
+      "id": "forward_expectations",
+      "role": "driver",
+      "factor": "Forward gas expectations",
+      "mechanism": "Higher forward expectations can support current gas positioning.",
+      "expected_direction": "up",
+      "evidence_requirement": "Futures curve and market commentary agree.",
+      "contradiction_signal": "Forward curve weakens.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_finance_20240911_005_8d5ae091"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_004_f31b86f1"
+      ]
+    },
+    {
+      "id": "lng_support",
+      "role": "mediator",
+      "factor": "LNG export demand",
+      "mechanism": "LNG demand can provide a floor for domestic gas prices.",
+      "expected_direction": "up",
+      "evidence_requirement": "Export volumes and feedgas demand remain strong.",
+      "contradiction_signal": "LNG demand or exports decline.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_finance_20240730_002_418ea3b0",
+        "evt_finance_20240916_007_b19166b8"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_012_874c7956",
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_006_ee92df84"
+      ]
+    },
+    {
+      "id": "demand_weakness",
+      "role": "counterevidence",
+      "factor": "Near-term demand weakness",
+      "mechanism": "Lower near-term demand can pressure gas futures.",
+      "expected_direction": "down",
+      "evidence_requirement": "Demand and weather data confirm the weakness.",
+      "contradiction_signal": "Demand recovers quickly.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_finance_20240924_009_251c62ad",
+        "evt_finance_20240925_010_3af97282"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_008_3144a5c1",
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_009_f0e5706e"
+      ]
+    },
+    {
+      "id": "target_bridge",
+      "role": "target_bridge",
+      "factor": "Net gas-market repricing",
+      "mechanism": "Monthly gas return reflects the balance of demand, LNG support, and forward expectations.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Compare Henry Hub prices, futures, and physical demand data.",
+      "contradiction_signal": "Prices diverge from demand and futures signals.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_finance_20240911_005_8d5ae091",
+        "evt_finance_20240916_007_b19166b8",
+        "evt_finance_20240924_009_251c62ad"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_004_f31b86f1",
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_006_ee92df84",
+        "hyp_v3_henry_hub_monthly_return_2024_09_20260724_212909_008_3144a5c1"
+      ]
+    }
+  ],
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "industrial_demand",
+        "forward_expectations",
+        "target_bridge"
+      ],
+      "generalized_mechanism": "Demand information can improve forward expectations and current gas pricing.",
+      "expected_direction": "up",
+      "applicability_conditions": [
+        "Demand is material to gas balances."
+      ],
+      "failure_conditions": [
+        "Supply growth offsets demand."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "lng_support",
+        "target_bridge"
+      ],
+      "generalized_mechanism": "LNG demand can support domestic natural-gas pricing.",
+      "expected_direction": "up",
+      "applicability_conditions": [
+        "Export capacity is available."
+      ],
+      "failure_conditions": [
+        "Export demand weakens."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "Near-term demand weakness dominates LNG support.",
+      "discriminating_evidence": "Compare weather-adjusted demand with export volumes.",
+      "source_event_ids": [
+        "evt_finance_20240924_009_251c62ad",
+        "evt_finance_20240916_007_b19166b8"
+      ]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Do physical demand data confirm futures positioning?",
+    "Are LNG export volumes supporting domestic balances?",
+    "Does near-term demand weakness persist?"
+  ]
+}

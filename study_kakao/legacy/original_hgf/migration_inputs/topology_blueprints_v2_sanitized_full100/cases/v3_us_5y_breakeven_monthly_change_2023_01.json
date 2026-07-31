@@ -1,0 +1,548 @@
+{
+  "schema_version": "hgf_blueprint_topology_v2",
+  "question_id": "v3_us_5y_breakeven_monthly_change_2023_01",
+  "target_definition": {
+    "metric": "monthly 5-year breakeven change",
+    "unit_or_option_space": [
+      "below recent range",
+      "within recent range",
+      "above recent range"
+    ],
+    "forecast_horizon": "Remap the historical target family to the current question's exact target period."
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Outcome-redacted topology preserves 8 checkpoints, 9 source edges, and 2 root-to-target paths.",
+    "weaknesses": []
+  },
+  "search_factors": [
+    {
+      "factor": "Early [CURRENT_PERIOD_REQUIRED] Economic Outlook",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230102_022_0209603a"
+      ]
+    },
+    {
+      "factor": "Market Reaction to Early Year Data",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230106_023_98e0fc61"
+      ]
+    },
+    {
+      "factor": "Inflation Concerns Rise",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230115_016_ea96bc1f"
+      ]
+    },
+    {
+      "factor": "Federal Reserve Meeting Minutes Released",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230115_017_8a07372f"
+      ]
+    },
+    {
+      "factor": "Strong Jobs Report",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230120_018_be95f838"
+      ]
+    },
+    {
+      "factor": "Consumer Confidence Index Drops",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230125_019_e27a03a8"
+      ]
+    },
+    {
+      "factor": "Interest Rate Hike Announced",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230201_020_88d8343f"
+      ]
+    },
+    {
+      "factor": "CPI Data Release",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230210_021_5d4c70c2"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "checkpoint_1",
+      "role": "driver",
+      "factor": "Early [CURRENT_PERIOD_REQUIRED] Economic Outlook",
+      "mechanism": "Early economic outlooks influence initial market reactions.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230102_022_0209603a"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_5y_breakeven_monthly_change_2023_01_20260722_233346_022_1a23e273"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_2",
+      "role": "mediator",
+      "factor": "Market Reaction to Early Year Data",
+      "mechanism": "Initial market data can shape inflation concerns.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230106_023_98e0fc61"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_5y_breakeven_monthly_change_2023_01_20260722_233346_023_55b0a23d",
+        "hyp_v3_us_5y_breakeven_monthly_change_2023_01_20260722_233346_024_696997cc"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_3",
+      "role": "mediator",
+      "factor": "Inflation Concerns Rise",
+      "mechanism": "Inflation concerns can influence economic indicators like jobs reports.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230115_016_ea96bc1f"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_5y_breakeven_monthly_change_2023_01_20260722_233346_025_c50e224f"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_4",
+      "role": "mediator",
+      "factor": "Federal Reserve Meeting Minutes Released",
+      "mechanism": "Fed's stance on rates could impact economic indicators like jobs.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230115_017_8a07372f"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_5y_breakeven_monthly_change_2023_01_20260722_233346_026_3da5c31b"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_5",
+      "role": "mediator",
+      "factor": "Strong Jobs Report",
+      "mechanism": "Strong jobs report could influence consumer confidence.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230120_018_be95f838"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_5y_breakeven_monthly_change_2023_01_20260722_233346_027_7d4e66d8"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_6",
+      "role": "mediator",
+      "factor": "Consumer Confidence Index Drops",
+      "mechanism": "Declining consumer confidence might influence Fed's rate hike decisions.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230125_019_e27a03a8"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_5y_breakeven_monthly_change_2023_01_20260722_233346_028_9ff51e5e"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_7",
+      "role": "mediator",
+      "factor": "Interest Rate Hike Announced",
+      "mechanism": "Interest rate hikes are a direct measure to combat inflation, impacting CPI.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230201_020_88d8343f"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_5y_breakeven_monthly_change_2023_01_20260722_233346_029_45ffa682"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_8",
+      "role": "mediator",
+      "factor": "CPI Data Release",
+      "mechanism": "Re-test whether this factor has a currently supported link to the exact target metric; do not transfer the historical outcome or magnitude.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230210_021_5d4c70c2"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_5y_breakeven_monthly_change_2023_01_20260722_233346_030_3d6891bd"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "target_bridge",
+      "role": "target_bridge",
+      "factor": "monthly 5-year breakeven change",
+      "mechanism": "Map only currently supported paths into the exact target operator. Directional support alone is not magnitude or threshold-crossing support.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "A current target baseline and evidence supporting every edge used in the bridge.",
+      "contradiction_signal": "The current target baseline, magnitude evidence, or option boundary contradicts the proposed path.",
+      "historical_support": "medium",
+      "source_event_ids": [],
+      "source_edge_ids": [
+        "hyp_v3_us_5y_breakeven_monthly_change_2023_01_20260722_233346_030_3d6891bd"
+      ],
+      "source_event_type": "target_bridge"
+    }
+  ],
+  "topology": {
+    "checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_5",
+      "checkpoint_6",
+      "checkpoint_7",
+      "checkpoint_8",
+      "target_bridge"
+    ],
+    "root_checkpoint_ids": [
+      "checkpoint_1"
+    ],
+    "target_bridge_id": "target_bridge",
+    "edges": [
+      {
+        "source_checkpoint_id": "checkpoint_1",
+        "target_checkpoint_id": "checkpoint_2",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Early economic outlooks influence initial market reactions.",
+        "source_edge_ids": [
+          "hyp_v3_us_5y_breakeven_monthly_change_2023_01_20260722_233346_022_1a23e273"
+        ],
+        "source_article_ids": [
+          "art_finance_20230102_004_36af1b29"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_2",
+        "target_checkpoint_id": "checkpoint_3",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Initial market data can shape inflation concerns.",
+        "source_edge_ids": [
+          "hyp_v3_us_5y_breakeven_monthly_change_2023_01_20260722_233346_023_55b0a23d"
+        ],
+        "source_article_ids": [
+          "art_finance_20230106_003_69ef7510"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_2",
+        "target_checkpoint_id": "checkpoint_4",
+        "relationship": "enables",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Early market reactions provide context for Fed meeting minutes.",
+        "source_edge_ids": [
+          "hyp_v3_us_5y_breakeven_monthly_change_2023_01_20260722_233346_024_696997cc"
+        ],
+        "source_article_ids": [
+          "art_finance_20230106_003_69ef7510"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_3",
+        "target_checkpoint_id": "checkpoint_5",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Inflation concerns can influence economic indicators like jobs reports.",
+        "source_edge_ids": [
+          "hyp_v3_us_5y_breakeven_monthly_change_2023_01_20260722_233346_025_c50e224f"
+        ],
+        "source_article_ids": [
+          "art_finance_20230116_002_d8bc1c94"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_4",
+        "target_checkpoint_id": "checkpoint_5",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Fed's stance on rates could impact economic indicators like jobs.",
+        "source_edge_ids": [
+          "hyp_v3_us_5y_breakeven_monthly_change_2023_01_20260722_233346_026_3da5c31b"
+        ],
+        "source_article_ids": [
+          "art_finance_20230116_002_d8bc1c94"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_5",
+        "target_checkpoint_id": "checkpoint_6",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Strong jobs report could influence consumer confidence.",
+        "source_edge_ids": [
+          "hyp_v3_us_5y_breakeven_monthly_change_2023_01_20260722_233346_027_7d4e66d8"
+        ],
+        "source_article_ids": [
+          "art_finance_20230122_008_aa598ea5"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_6",
+        "target_checkpoint_id": "checkpoint_7",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Declining consumer confidence might influence Fed's rate hike decisions.",
+        "source_edge_ids": [
+          "hyp_v3_us_5y_breakeven_monthly_change_2023_01_20260722_233346_028_9ff51e5e"
+        ],
+        "source_article_ids": [
+          "art_finance_20230129_006_baddafde"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_7",
+        "target_checkpoint_id": "checkpoint_8",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Interest rate hikes are a direct measure to combat inflation, impacting CPI.",
+        "source_edge_ids": [
+          "hyp_v3_us_5y_breakeven_monthly_change_2023_01_20260722_233346_029_45ffa682"
+        ],
+        "source_article_ids": [
+          "art_finance_20230203_009_afe2305e"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_8",
+        "target_checkpoint_id": "target_bridge",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Historical DAG connected this factor to the redacted target measurement; the realized value and outcome mapping are omitted.",
+        "source_edge_ids": [
+          "hyp_v3_us_5y_breakeven_monthly_change_2023_01_20260722_233346_030_3d6891bd"
+        ],
+        "source_article_ids": [
+          "art_finance_20230214_002_74c6ab6f"
+        ],
+        "terminal_to_target_bridge": true
+      }
+    ],
+    "paths_truncated": false
+  },
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "checkpoint_1",
+        "checkpoint_2",
+        "checkpoint_3",
+        "checkpoint_5",
+        "checkpoint_6",
+        "checkpoint_7",
+        "checkpoint_8",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_5y_breakeven_monthly_change_2023_01_20260722_233346_022_1a23e273",
+        "hyp_v3_us_5y_breakeven_monthly_change_2023_01_20260722_233346_023_55b0a23d",
+        "hyp_v3_us_5y_breakeven_monthly_change_2023_01_20260722_233346_025_c50e224f",
+        "hyp_v3_us_5y_breakeven_monthly_change_2023_01_20260722_233346_027_7d4e66d8",
+        "hyp_v3_us_5y_breakeven_monthly_change_2023_01_20260722_233346_028_9ff51e5e",
+        "hyp_v3_us_5y_breakeven_monthly_change_2023_01_20260722_233346_029_45ffa682",
+        "hyp_v3_us_5y_breakeven_monthly_change_2023_01_20260722_233346_030_3d6891bd"
+      ],
+      "relationships": [
+        "causes",
+        "causes",
+        "causes",
+        "causes",
+        "causes",
+        "causes",
+        "causes"
+      ],
+      "path_role": "main_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Early [CURRENT_PERIOD_REQUIRED] Economic Outlook to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_1",
+        "checkpoint_2",
+        "checkpoint_4",
+        "checkpoint_5",
+        "checkpoint_6",
+        "checkpoint_7",
+        "checkpoint_8",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_5y_breakeven_monthly_change_2023_01_20260722_233346_022_1a23e273",
+        "hyp_v3_us_5y_breakeven_monthly_change_2023_01_20260722_233346_024_696997cc",
+        "hyp_v3_us_5y_breakeven_monthly_change_2023_01_20260722_233346_026_3da5c31b",
+        "hyp_v3_us_5y_breakeven_monthly_change_2023_01_20260722_233346_027_7d4e66d8",
+        "hyp_v3_us_5y_breakeven_monthly_change_2023_01_20260722_233346_028_9ff51e5e",
+        "hyp_v3_us_5y_breakeven_monthly_change_2023_01_20260722_233346_029_45ffa682",
+        "hyp_v3_us_5y_breakeven_monthly_change_2023_01_20260722_233346_030_3d6891bd"
+      ],
+      "relationships": [
+        "causes",
+        "enables",
+        "causes",
+        "causes",
+        "causes",
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Early [CURRENT_PERIOD_REQUIRED] Economic Outlook to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "A current factor outside the preserved historical topology dominates the target.",
+      "discriminating_evidence": "Search for current shocks and target observations not explained by any retained path.",
+      "source_event_ids": []
+    }
+  ],
+  "forecast_audit_questions": [
+    "Does every used checkpoint transition correspond to a preserved edge?",
+    "Which preserved edges are supported, contradicted, or unknown now?",
+    "Does a counter-path dominate the leading supported path?",
+    "Is there evidence for magnitude and boundary crossing, not direction alone?"
+  ],
+  "refinement_metadata": {
+    "model": "deterministic_topology_compiler_v2",
+    "source_graph": "data\\dags\\v3_us_5y_breakeven_monthly_change_2023_01\\graph.json",
+    "source_audit_status": "pass",
+    "outcome_nodes_redacted": 3,
+    "target_value_anchors_redacted": 0,
+    "historical_specifics_sanitized": true,
+    "sanitizer": "minimal_value_period_placeholders_v1",
+    "value_replacement_count": 0,
+    "period_replacement_count": 4
+  },
+  "topology_validation": {
+    "status": "pass",
+    "errors": [],
+    "metrics": {
+      "retained_checkpoint_count": 8,
+      "source_edge_count": 9,
+      "emitted_edge_count": 9,
+      "edge_coverage": 1.0,
+      "path_precision": 1.0,
+      "causal_path_count": 2,
+      "outcome_event_leak_count": 0,
+      "outcome_text_leak_count": 0,
+      "realized_value_count": 0,
+      "absolute_period_count": 0
+    }
+  },
+  "pilot_usage": {
+    "top1_target_count": 2,
+    "top1_target_question_ids": [
+      "v3_us_5y_breakeven_monthly_change_2025_12",
+      "v3_us_5y_breakeven_monthly_change_2026_06"
+    ]
+  }
+}

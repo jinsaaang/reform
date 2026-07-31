@@ -1,0 +1,59 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_wmt_revenue_growth_acceleration_2023_07_31",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "corporate_earnings / retail",
+      "target_operation": "quarterly revenue year-over-year growth acceleration",
+      "option_geometry": "bounded_range"
+    },
+    "historical_question": "As of 2023-07-31, which range will Walmart Inc.'s quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2023-07-31 fall into?",
+    "historical_cutoff": "2023-07-31T00:00:00+00:00",
+    "target_semantics": "Walmart Inc.'s quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2023-07-31.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20230529_004_12313485",
+        "takeaway": "Consumer spending is shifting towards services, which may impact demand for goods.",
+        "why_predictive": "This indicates a potential headwind for retailers focused on goods, influencing revenue growth."
+      },
+      {
+        "article_id": "art_finance_20230531_006_cb8554a9",
+        "takeaway": "Inflation is trending down, but labor markets continue to pressure services prices.",
+        "why_predictive": "Decreasing inflation could support purchasing power, but persistent services inflation might still constrain overall consumer spending on goods."
+      },
+      {
+        "article_id": "art_finance_20220817_008_4cb82104",
+        "takeaway": "Retailers like Target were unloading unwanted inventory, leading to profit declines.",
+        "why_predictive": "This suggests that in the prior year, excess inventory was a significant issue, potentially impacting current inventory management and sales strategies."
+      },
+      {
+        "article_id": "art_finance_20220726_009_153be020",
+        "takeaway": "Walmart experienced reduced demand, and warehouses were filling with inventory.",
+        "why_predictive": "This historical data points to potential demand weakness and inventory overhang issues for Walmart in the recent past."
+      },
+      {
+        "article_id": "art_finance_20230222_010_421a6588",
+        "takeaway": "Walmart US E-Commerce sales growth has been a focus.",
+        "why_predictive": "E-commerce performance is a key component of overall revenue and can be influenced by digital competition and promotions."
+      }
+    ],
+    "expert_reasoning": [
+      "The consumer spending mix shows a shift towards services (art_finance_20230529_004_12313485), which could reduce demand for goods sold by Walmart.",
+      "While overall inflation is trending down (art_finance_20230531_006_cb8554a9), persistent pressure on services prices might still impact discretionary spending on goods.",
+      "Past inventory issues at retailers like Target (art_finance_20220817_008_4cb82104) and Walmart's own demand slowdown with filling warehouses (art_finance_20220726_009_153be020) suggest that inventory discipline is a critical factor. If Walmart has successfully managed inventory, it could support sales, but if excess inventory remains, it might necessitate markdowns that depress revenue growth.",
+      "E-commerce growth is a factor (art_finance_20230222_010_421a6588), but the impact of digital competition and promotions on overall revenue acceleration is unclear without more specific data on current promotional activity and consumer traffic."
+    ],
+    "counterevidence": "There is no direct evidence in the provided articles about Walmart's specific inventory levels or markdown strategies for the target quarter, nor is there clear data on the breadth of consumer spending improvements across both goods and services.",
+    "prospective_target_estimate": "The evidence suggests mixed signals. A shift to services and potential lingering inventory issues could dampen revenue growth acceleration. However, moderating inflation might offer some support. Given the uncertainty, the growth acceleration is likely to be modest.",
+    "option_mapping": "The projected modest growth acceleration suggests the outcome will likely fall 'within recent range' or potentially 'below recent range' if headwinds are stronger than anticipated.",
+    "uncertainty": "The primary uncertainties stem from the lack of specific, up-to-date information on Walmart's current inventory levels, the extent of promotional activity, and the precise balance of consumer spending between goods and services. The impact of e-commerce competition and promotions is also not fully quantified.",
+    "dag_derived_lesson": "Retail revenue growth is influenced by the interplay of consumer spending shifts, inflation's impact on purchasing power, and a retailer's ability to manage inventory effectively. Weaknesses in any of these areas, particularly when combined with competitive pressures, can lead to decelerated growth."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

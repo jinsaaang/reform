@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_fed_balance_sheet_monthly_growth_2023_07",
+  "blueprint_sha256": "b401b5780d404b04a9800ef02899bf456cb3519790851258b24f77c2636a15b7",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "economic",
+      "target_operation": "growth_rate",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2023-07-01, will the monthly Federal Reserve asset growth for Federal Reserve total assets in 2023-07 be at least -1.09 percent?",
+    "historical_cutoff": "2023-07-01T00:00:00+00:00",
+    "target_semantics": "The target is whether the Federal Reserve's total assets will decrease by at least 1.09 percent in July 2023 compared to the previous month.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The core calculation for the target metric requires two data points: the Federal Reserve's total assets at the end of the prior period and at the end of the target period.",
+      "The DAG indicates that the calculation of monthly asset growth is a direct mediator between these two observations and the target metric.",
+      "The DAG also highlights that the pre-registered threshold of -1.09 percent is a critical driver for resolving the 'yes' or 'no' outcome."
+    ],
+    "counterevidence": "No forecast-time evidence was provided to support or contradict any of the causal links or factors identified in the DAG.",
+    "prospective_target_estimate": "The DAG's structure suggests that the target outcome depends on the comparison between the calculated asset growth and the -1.09 percent threshold. Without specific asset level data or growth calculations from the forecast-time evidence, a precise estimate cannot be formed.",
+    "option_mapping": "The 'yes' option corresponds to monthly Federal Reserve asset growth being greater than or equal to -1.09 percent. The 'no' option corresponds to monthly Federal Reserve asset growth being less than -1.09 percent.",
+    "uncertainty": "The complete lack of forecast-time evidence means that the strength of the causal links identified in the DAG cannot be assessed. The historical support for the links is reported as 'medium' or 'strong', but this cannot be verified or updated with current information.",
+    "dag_derived_lesson": "A target metric's outcome is determined by comparing a calculated value derived from sequential observations against a pre-defined threshold. The reliability of this prediction hinges on the availability and quality of evidence supporting the observations and the calculation mechanism."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

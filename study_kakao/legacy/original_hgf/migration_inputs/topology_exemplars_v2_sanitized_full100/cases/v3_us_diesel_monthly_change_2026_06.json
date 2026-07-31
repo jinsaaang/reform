@@ -1,0 +1,53 @@
+{
+  "schema_version": "fixed_exemplar_case",
+  "status": "success",
+  "question_id": "v3_us_diesel_monthly_change_2026_06",
+  "retrieved_memory_question_id": "v3_us_diesel_monthly_change_2024_01",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "energy_commodities / refined products",
+      "target_operation": "change >= -4.237 percent",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2024-01-01, will the monthly retail diesel-price change for United States diesel price in 2024-01 be at least -4.237 percent?",
+    "historical_cutoff": "2024-01-01T00:00:00+00:00",
+    "target_semantics": "The monthly retail diesel price change in the US for January 2024 will be greater than or equal to -4.237 percent.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20220726_011_d7c43b42",
+        "takeaway": "Gas prices are primarily determined by supply and demand dynamics, not corporate greed.",
+        "why_predictive": "This article establishes that fundamental market forces (supply and demand) are the primary drivers of gasoline prices, which would include diesel. This suggests that changes in these fundamentals would lead to price changes."
+      },
+      {
+        "article_id": "art_finance_20220117_009_468affc1",
+        "takeaway": "New renewable diesel capacity could impact oil and fat markets in the US.",
+        "why_predictive": "This article highlights a potential shift in the energy landscape with the introduction of renewable diesel, which could influence the demand for traditional diesel and its price."
+      },
+      {
+        "article_id": "art_finance_20201029_007_d8d58acb",
+        "takeaway": "The 1973-74 oil shock demonstrated the significant impact of geopolitical events on oil prices and global economies.",
+        "why_predictive": "This historical example illustrates that major geopolitical events can cause substantial volatility in oil prices, a key input for diesel prices. While not directly about the target period, it underscores the sensitivity of oil markets to external shocks."
+      },
+      {
+        "article_id": "art_finance_19930430_006_fcf30594",
+        "takeaway": "Historical US retail gasoline prices are available monthly.",
+        "why_predictive": "This source indicates the availability of historical data for retail gasoline prices, implying that similar data for diesel prices would also be tracked and available for analysis of price changes."
+      }
+    ],
+    "expert_reasoning": [
+      "The price of US retail diesel is influenced by global crude oil prices, which are subject to supply and demand dynamics (art_finance_20220726_011_d7c43b42).",
+      "Geopolitical events can significantly impact crude oil prices (art_finance_20201029_007_d8d58acb).",
+      "The market for diesel may be affected by the increasing capacity of renewable diesel (art_finance_20220117_009_468affc1).",
+      "Historical price data for refined petroleum products is generally available (art_finance_19930430_006_fcf30594)."
+    ],
+    "counterevidence": "No specific forecast-time article directly contradicts the potential for diesel price changes or provides data indicating a specific price movement for January 2024.",
+    "prospective_target_estimate": "The available evidence suggests that diesel prices are subject to fluctuations driven by global supply/demand and geopolitical factors. However, without specific data points for January 2024 or a clear indication of the direction and magnitude of these factors, it is not possible to definitively estimate whether the price change will meet the -4.237 percent threshold.",
+    "option_mapping": "The 'yes' option corresponds to a monthly retail diesel price change of -4.237 percent or greater (i.e., less negative or positive). The 'no' option corresponds to a change less than -4.237 percent (i.e., more negative).",
+    "uncertainty": "The forecast-time evidence establishes the drivers of diesel prices but does not provide specific data or forecasts for January 2024. Therefore, the magnitude and direction of price change remain uncertain, making it difficult to confidently predict whether the threshold will be met.",
+    "dag_derived_lesson": "The impact of broad economic trends and geopolitical events on commodity prices requires re-evaluation with current data, as historical patterns do not guarantee future outcomes. Specific market shifts, such as the rise of alternative fuels, can introduce new dynamics that need to be assessed independently of past price behaviors."
+  },
+  "pilot_provenance": {
+    "blueprint_schema": "hgf_blueprint_topology_v2",
+    "memory_exemplar_sha256": "ecd35d0a50a8ff05a0b256f2ef8f715357e6c82474a0d7d1d9ddf95c7db528d1"
+  }
+}

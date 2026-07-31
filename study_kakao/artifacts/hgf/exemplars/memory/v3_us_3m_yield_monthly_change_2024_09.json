@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_us_3m_yield_monthly_change_2024_09",
+  "blueprint_sha256": "d249df7b85a06312b06c78022a6c9d64062d7e4dad3d7a5ea7d314e73edcdf21",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_yield_change",
+      "target_operation": "threshold_crossing",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2024-09-01, will the monthly 3-month yield change for United States 3-month Treasury yield in 2024-09 be at least -0.035 percentage points?",
+    "historical_cutoff": "2024-09-01T00:00:00+00:00",
+    "target_semantics": "The question asks whether the change in the US 3-month Treasury yield from August 2024 to September 2024 will be greater than or equal to -0.035 percentage points.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The DAG indicates that softening US data (checkpoint_1) and market expectations of Fed rate cuts (checkpoint_2) are potential drivers that could lead to downward pressure on short-term Treasury yields (checkpoint_5), ultimately influencing the target yield change.",
+      "Alternatively, the debate around the size of a Fed cut (checkpoint_3) and the subsequent Fed rate reduction (checkpoint_4) are also identified as potential mediators leading to downward yield pressure (checkpoint_5).",
+      "The core mechanism involves assessing if this downward pressure, stemming from either data/expectations or policy actions, is sufficient to cause a monthly yield change of at least -0.035 percentage points."
+    ],
+    "counterevidence": "No forecast-time articles were provided, so there is no direct counterevidence to the identified causal pathways or their proposed mechanisms.",
+    "prospective_target_estimate": "The DAG suggests that multiple paths could lead to downward pressure on short-term yields. However, without specific evidence on the magnitude of these effects or the actual policy decisions and market reactions, it is impossible to estimate whether the threshold of -0.035 percentage points will be met.",
+    "option_mapping": "The 'yes' option corresponds to a monthly 3-month yield change of -0.035 percentage points or greater. The 'no' option corresponds to a change less than -0.035 percentage points.",
+    "uncertainty": "The primary uncertainty stems from the lack of forecast-time evidence. The DAG highlights that while causal roles are identified, the strength, direction, and magnitude of these relationships, particularly their impact on the specific target metric and threshold, are unknown without supporting data. The overlap between rate-cut debates and market expectations also introduces ambiguity.",
+    "dag_derived_lesson": "The impact of macroeconomic data and central bank policy on short-term financial instruments is mediated through market expectations and direct policy actions. The precise magnitude of yield changes requires specific evidence on the strength of these causal links and their interaction, rather than relying solely on the existence of a relationship."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

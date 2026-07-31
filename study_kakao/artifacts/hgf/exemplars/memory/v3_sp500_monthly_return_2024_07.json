@@ -1,0 +1,59 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_sp500_monthly_return_2024_07",
+  "blueprint_sha256": "b51e87115e439c39be88b12df61e732689cc70de1b5c5569f59a4929799fe14c",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "market_fx_credit / equity market",
+      "target_operation": "monthly S&P 500 return",
+      "option_geometry": "ordered_categorical"
+    },
+    "historical_question": "As of 2024-07-01, which range will the monthly S&P 500 return for S&P 500 index in 2024-07 fall into?",
+    "historical_cutoff": "2024-07-01T00:00:00+00:00",
+    "target_semantics": "The monthly percentage return of the S&P 500 index for July 2024.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20240108_003_a2b10c91",
+        "takeaway": "The Federal Reserve signaled potential interest rate cuts for 2024.",
+        "why_predictive": "Interest rate expectations can influence market sentiment and investment decisions, potentially impacting S&P 500 returns."
+      },
+      {
+        "article_id": "art_finance_20240626_005_89626bd5",
+        "takeaway": "Economic policy uncertainty is heightened in election years.",
+        "why_predictive": "Increased policy uncertainty can lead to market volatility and affect investor confidence, influencing S&P 500 performance."
+      },
+      {
+        "article_id": "art_finance_20231211_003_07c9287d",
+        "takeaway": "Analysts projected double-digit earnings growth for the S&P 500 in CY 2024.",
+        "why_predictive": "Strong earnings growth expectations are a fundamental driver of stock market performance."
+      },
+      {
+        "article_id": "art_finance_20240501_006_d3cc418a",
+        "takeaway": "The Federal Reserve held interest rates steady.",
+        "why_predictive": "The Fed's monetary policy decisions, including rate holds, directly impact borrowing costs and economic activity, influencing equity markets."
+      },
+      {
+        "article_id": "art_finance_20240423_004_bd352305",
+        "takeaway": "Geopolitical events can impact equity markets.",
+        "why_predictive": "Global events can introduce uncertainty and affect investor sentiment, leading to market fluctuations."
+      }
+    ],
+    "expert_reasoning": [
+      "The Federal Reserve's signaling of potential interest rate cuts in early 2024 (art_finance_20240108_003_a2b10c91) suggests a potentially supportive environment for equities. However, the Fed later held rates steady (art_finance_20240501_006_d3cc418a), indicating a more cautious stance.",
+      "Analysts anticipated strong S&P 500 earnings growth for 2024 (art_finance_20231211_003_07c9287d), which is typically a positive indicator for the market.",
+      "The presence of heightened economic policy uncertainty due to the election year (art_finance_20240626_005_89626bd5) and potential geopolitical events (art_finance_20240423_004_bd352305) introduces a counteracting force of caution and potential volatility."
+    ],
+    "counterevidence": "The DAG indicates that while analysts expected double-digit earnings growth (checkpoint_1), this was later inhibited by concerns about growth concentration (checkpoint_1 mechanism). Additionally, the Federal Reserve's stance, initially signaling cuts, shifted to holding rates steady (checkpoint_2), and persistent inflation concerns were noted (checkpoint_8), all contributing to a mixed or uncertain outlook.",
+    "prospective_target_estimate": "within recent range",
+    "option_mapping": "The recent range boundaries are 2.724% and 4.895%. Given the mixed signals of strong earnings expectations tempered by policy uncertainty, geopolitical risks, and a cautious Fed stance, a return within this range appears plausible.",
+    "uncertainty": "The interplay between positive earnings expectations and significant macroeconomic and geopolitical uncertainties creates a high degree of uncertainty. The specific impact of election-year policy uncertainty and any unforeseen geopolitical events on the S&P 500's July performance remains difficult to quantify precisely.",
+    "dag_derived_lesson": "A forecast should consider the interplay between fundamental drivers like earnings expectations and macroeconomic factors such as monetary policy and policy uncertainty. When these factors present conflicting signals, the resulting market movement is likely to be less extreme than if all signals pointed in the same direction."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_us_30y_yield_monthly_change_2023_08",
+  "blueprint_sha256": "65527d993e991b89b6ee39be4013f78dd7f988644d8af7fbcf8e57ad85be8120",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial",
+      "target_operation": "change_prediction",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2023-08-01, will the monthly 30-year yield change for United States 30-year Treasury yield in 2023-08 be at least 0.085 percentage points?",
+    "historical_cutoff": "2023-08-01T00:00:00+00:00",
+    "target_semantics": "The monthly change in the US 30-year Treasury yield for August 2023 will be at least 0.085 percentage points.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The baseline for interpreting the August 2023 yield movement is the end-July 2023 30-year Treasury yield.",
+      "Evidence suggests that 30-year yields pushed higher in early August, indicating upward pressure.",
+      "Markets perceived a higher-for-longer Federal Reserve stance, which historically correlates with pressure on long-dated Treasury yields."
+    ],
+    "counterevidence": "While inflation showed signs of easing in August 2023, the direct impact of this easing on market expectations for Fed policy and its subsequent effect on 30-year yields is not clearly established by the available information.",
+    "prospective_target_estimate": "The available evidence suggests a potential for the 30-year yield to increase, but the magnitude and certainty of crossing the 0.085 percentage point threshold are not definitively supported.",
+    "option_mapping": "The 'yes' option corresponds to a monthly change of 0.085 percentage points or more, while the 'no' option corresponds to a change less than 0.085 percentage points.",
+    "uncertainty": "The evidence regarding the impact of easing inflation on Fed policy expectations and its subsequent effect on 30-year yields introduces significant uncertainty. Furthermore, while there are indications of upward pressure, the strength and duration of this pressure, and whether it will be sufficient to cross the 0.085 percentage point threshold, remain unclear.",
+    "dag_derived_lesson": "A driver's influence on a target metric requires re-evaluation at each forecast cutoff, considering both direct evidence and potential counteracting factors. The strength of evidence for intermediate causal links, not just the existence of a path, determines the reliability of the forecast."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

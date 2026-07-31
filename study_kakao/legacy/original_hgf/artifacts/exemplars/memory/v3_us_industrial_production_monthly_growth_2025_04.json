@@ -1,0 +1,50 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_us_industrial_production_monthly_growth_2025_04",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "macro / industrial activity",
+      "target_operation": "monthly industrial-production growth",
+      "option_geometry": "bucketed by prior observations"
+    },
+    "historical_question": "As of 2025-04-30, which range will the monthly industrial-production growth for United States industrial production in 2025-04 fall into?",
+    "historical_cutoff": "2025-04-30T00:00:00+00:00",
+    "target_semantics": "The monthly growth rate of US industrial production in April 2025, categorized as below, within, or above the range defined by the 8 prior observed monthly growth rates.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "ev_d61c55d28bad34da",
+        "takeaway": "US industrial production showed a strong increase in February 2025.",
+        "why_predictive": "Indicates a positive momentum in US industrial activity leading into the target period."
+      },
+      {
+        "article_id": "ev_bab5f2718a049592",
+        "takeaway": "Spain's industrial production grew by 0.9% in March 2025.",
+        "why_predictive": "Suggests a positive trend in industrial production in a major international economy, potentially reflecting global industrial trends."
+      },
+      {
+        "article_id": "ev_bdd838aafbaeebd5",
+        "takeaway": "Spain's industrial production grew by 0.7% in February 2025.",
+        "why_predictive": "Provides an international comparison point for industrial activity, indicating a positive growth rate in a comparable period."
+      }
+    ],
+    "expert_reasoning": [
+      "The recent US industrial production report for February 2025 (ev_d61c55d28bad34da) indicated a strong increase, suggesting positive momentum.",
+      "International data from Spain shows positive monthly growth in industrial production for both February (0.7%, ev_bdd838aafbaeebd5) and March 2025 (0.9%, ev_bab5f2718a049592).",
+      "This international trend, coupled with the strong US February figure, suggests a generally positive environment for industrial production.",
+      "The target period is April 2025. While February's strong performance and positive international trends are supportive, they do not directly provide the April figure.",
+      "The recent range boundaries are -0.281% and 0.6%. A strong positive trend might push the April figure towards or above the upper bound."
+    ],
+    "counterevidence": "No direct forecast-time data for US industrial production in March or April 2025 was available. The provided evidence relies on February US data and international data from Spain.",
+    "prospective_target_estimate": "Given the strong February US performance and positive international trends, the April 2025 US industrial production growth is likely to be at or above the recent range's upper bound of 0.6%.",
+    "option_mapping": "above recent range",
+    "uncertainty": "The estimate is based on lagged US data (February) and international comparisons. The absence of March and April US-specific data introduces uncertainty regarding the continuation of the positive trend.",
+    "dag_derived_lesson": "When forecasting a target metric, positive momentum indicated by recent domestic performance and international trends can support an expectation of exceeding recent historical performance boundaries. However, the absence of direct, contemporaneous data for the target period necessitates caution and acknowledges uncertainty."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

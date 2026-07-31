@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_us_gasoline_monthly_change_2023_01",
+  "blueprint_sha256": "2fd6e453226ec27441ef8e1f5f54195c09ecdd4d50251f544052465ff661891e",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "economic_forecasting",
+      "target_operation": "predict_range",
+      "option_geometry": "ordered_categorical"
+    },
+    "historical_question": "As of 2023-01-01, which range will the monthly retail gasoline-price change for United States regular gasoline price in 2023-01 fall into?",
+    "historical_cutoff": "2023-01-01T00:00:00+00:00",
+    "target_semantics": "The monthly percentage change in U.S. retail gasoline prices for January 2023.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The DAG indicates that overall U.S. consumer prices falling is a counter-signal to gasoline price increases, but the evidence for this factor is strong, suggesting it should be considered.",
+      "A crude-oil price rebound and strong gasoline demand were identified as potential drivers for gasoline prices, but the DAG notes weak mechanism evidence for these factors in the target period.",
+      "A forecast for lower future crude-oil and gasoline prices is also presented as counter-evidence, suggesting a downward pressure on prices, though its direct link to the target period's increase is not strongly supported."
+    ],
+    "counterevidence": "Overall U.S. consumer prices fell, and future crude-oil and summer gasoline prices were forecast to be lower. These factors suggest a potential decrease or at least a lack of significant increase in gasoline prices.",
+    "prospective_target_estimate": "Given the weak support for upward drivers and the presence of counter-evidence suggesting falling consumer prices and lower future commodity prices, the monthly retail gasoline-price change is likely to be within the recent range or potentially below it.",
+    "option_mapping": "The 'within recent range' option covers price changes from -11.25% to 1.967%. The 'below recent range' option covers changes below -11.25%. The 'above recent range' option covers changes at or above 1.967%.",
+    "uncertainty": "The evidence pack provides weak mechanism support for the identified drivers of gasoline prices. While a rebound in crude oil prices and strong demand were considered, their direct impact on January 2023 gasoline prices is not clearly established by the available forecast-time articles. The counter-evidence of falling consumer prices and forecasts of lower future commodity prices adds to the uncertainty.",
+    "dag_derived_lesson": "When evaluating price changes, consider both direct drivers and broader economic counter-signals. Weak evidence for drivers necessitates careful consideration of counter-evidence and the possibility of price movements contrary to initial expectations. Forecasts of future price trends, while not direct causes of current changes, can serve as important contextual counter-evidence."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

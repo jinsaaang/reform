@@ -1,157 +1,87 @@
 # Hindsight-Guided Forecasting
 
-This repository contains the public HGF forecasting pipeline, its six
-baselines, and the complete frozen input bundle for the 100-question
-evaluation.
+`study_kakao` contains the canonical HGF implementation, six comparison
+baselines, frozen questions and evidence, and reproducible memory artifacts.
+The public method name is `hgf`; tables display it as `HGF (Ours)`.
 
-The HGF path uses:
-
-- one fixed retrieved memory question per test question;
-- one fixed worked exemplar derived from its audited DAG;
-- a 200-entry DAG memory bank;
-- cutoff-safe E1 evidence;
-- cached semantic lessons;
-- current-question reasoning followed by boundary-aware probability mapping.
-
-Fixed exemplars are loaded from disk and are never regenerated during a
-forecasting run.
-
-## Repository structure
+## Canonical layout
 
 ```text
-study_kakao/
-|-- data/
-|   |-- questions/
-|   |   |-- memory_questions.jsonl
-|   |   |-- test_questions.jsonl
-|   |   `-- selection.json
-|   |-- memory_bank/
-|   |   `-- manifest.json
-|   |-- dags/
-|   |   `-- <memory_question_id>/
-|   `-- evidence/
-|       |-- e0/
-|       `-- e1/
-|-- artifacts/
-|   |-- exemplars/
-|   `-- semantic_lessons/
-|-- configs/
-|-- experiments/
-|-- src/hgf/
-`-- tests/
+src/hgf/                         canonical HGF and six baselines
+data/                            questions, evidence, and refined DAGs
+artifacts/hgf/blueprints/        200 topology-preserving Blueprints
+artifacts/hgf/exemplars/memory/  200 cutoff-safe memory Exemplars
+artifacts/hgf/exemplars/cases/   fixed mapping for 100 evaluation cases
+artifacts/baselines/factor_memory/
+                                 frozen 200-card Factor-Memory input
+runs/hgf/                        preserved canonical HGF results
+runs/baselines/                  preserved baseline-only results
+legacy/original_hgf/             executable archive of the former HGF
 ```
 
-E0 is the question-only evidence bank used by the appropriate baselines. E1 is
-the factor-guided evidence bank used by Factor Memory and HGF.
+The HGF and Factor-Memory loaders are intentionally separate. HGF accepts only
+the complete `artifacts/hgf` root; a Blueprint-only override is not supported,
+because it could silently mismatch the Blueprint and Exemplar.
 
-## Install
+## Setup and verification
 
-Python 3.11 or newer is required.
-
-```bash
+```powershell
 python -m venv .venv
-source .venv/bin/activate
-python -m pip install .
-```
+.\.venv\Scripts\Activate.ps1
+pip install -e ".[test]"
 
-On Windows PowerShell, activate with `.venv\Scripts\Activate.ps1`.
-
-Run commands from the repository root. To run them elsewhere, set `HGF_ROOT`
-to the absolute repository path.
-
-## Validate the bundle
-
-The following commands do not call an external model:
-
-```bash
-hgf-manifest
-hgf-verify
+hgf-build-memory --check
+hgf-build-exemplars --check
 hgf-preflight
 python -m pytest
+python -m compileall -q src
+hgf-verify
 ```
 
-`hgf-preflight` validates all seven registered methods, all 100 E0 databases,
-all 100 E1 databases, the 200-entry memory bank, the 100 fixed exemplars, and
-the semantic cache.
+To rebuild the deterministic Blueprint bank:
 
-## Run HGF
-
-Set `OPENROUTER_API_KEY` in the environment or a local `.env` file:
-
-```bash
-hgf-replay
+```powershell
+hgf-build-memory
 ```
 
-The default run evaluates 100 questions with four workers. Common overrides:
+To resume Exemplar generation, provide one or more validated seed banks. Valid
+existing memory files are retained and only missing entries invoke the model.
 
-```bash
-hgf-replay --model google/gemini-2.5-flash-lite --limit 10 --workers 4
+```powershell
+hgf-build-exemplars `
+  --seed-dir artifacts/hgf/exemplars `
+  --workers 10
 ```
 
-Results are written to `runs/hgf/`.
+`OPENROUTER_API_KEY` is required only when an experiment or missing Exemplar
+needs a model call.
 
-## Run the main table
+## Experiments
 
-```bash
-hgf-main-table
+Run canonical HGF alone:
+
+```powershell
+hgf-replay --workers 10 --output-dir runs/hgf_replay
 ```
 
-The main-table runner supports:
+Run HGF and all six baselines under the same protocol:
 
-1. Search-only
-2. Factor Memory
-3. Case Memory
-4. Text Memory
-5. Direct DAG
-6. Prospective DAG
-7. HGF
-
-Use `--methods` to run a subset:
-
-```bash
-hgf-main-table --methods search_only direct_dag hgf
+```powershell
+hgf-main-table --workers 10 --output-dir runs/main_table
 ```
 
-Results are written to `runs/main_table/`.
+Both commands use the same HGF execution function. The HGF route always checks
+exact `family_id + target_metric` compatibility, removes incompatible memory,
+uses a sanitized demonstration, enforces the current target operator and
+boundary contract, and records the model's boundary probability without
+temperature scaling, boosting, or other probability postprocessing.
 
-For repeated live-model experiments, use a separate output directory and
-run seed for every repetition. The optional generation controls are recorded
-in both `protocol.json` and `results.json`:
+The complete HGF artifact can be replaced only as one unit:
 
-```bash
-hgf-main-table \
-  --model openai/gpt-5-mini \
-  --workers 20 \
-  --reasoning-effort medium \
-  --max-output-tokens 8000 \
-  --run-seed 1 \
-  --output-dir runs/gpt_5_mini/repeat_1
+```powershell
+hgf-main-table --hgf-artifact-root D:\frozen_hgf_artifact
 ```
 
-Omitting these options preserves the canonical stage-specific token limits
-and seed behavior.
-
-## Evaluate a completed run
-
-```bash
-hgf-evaluate runs/hgf/results.json
-```
-
-The evaluator reports accuracy, multiclass Brier score, and natural-log NLL for
-the supplied result file.
-
-## Reproducibility boundary
-
-The public package preserves deterministic inputs, evidence selection,
-exemplar selection, prompt construction, schemas, validation, repair behavior,
-seed values, boundary mapping, and scoring logic.
-
-New model responses can differ between provider calls when a model alias does
-not identify an immutable snapshot. Bundle validation therefore checks the
-frozen inputs and deterministic pipeline stages independently of live API
-outputs.
-
-## Publication note
-
-No license has been assigned in this folder. Add the project owners' chosen
-license and citation metadata before publishing it as a standalone repository.
+See [HGF.md](HGF.md) for the method contract. The former implementation and
+its results are preserved only under
+[legacy/original_hgf](legacy/original_hgf/README.md).

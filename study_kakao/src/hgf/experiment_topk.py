@@ -48,6 +48,7 @@ from hgf.question_io import (
 from hgf.runner import (
     _call_dag_expert_reasoning,
     _load_source_cases,
+    canonical_semantic_lessons,
     compile_current_target_operator,
     compile_dag_expert_memory,
 )
@@ -71,21 +72,9 @@ def _parse_args() -> argparse.Namespace:
         default=Path("data/questions/selection.json"),
     )
     parser.add_argument(
-        "--exemplar-dir",
+        "--hgf-artifact-root",
         type=Path,
-        default=Path("artifacts/exemplars"),
-    )
-    parser.add_argument(
-        "--additional-exemplar-dir",
-        type=Path,
-        action="append",
-        default=[],
-        help="Optional per-memory fixed exemplar banks.",
-    )
-    parser.add_argument(
-        "--semantic-cache-dir",
-        type=Path,
-        default=Path("artifacts/semantic_lessons"),
+        default=Path("artifacts/hgf"),
     )
     parser.add_argument(
         "--output-dir",
@@ -302,24 +291,11 @@ def namespace_expert_memory(
     return payload, list(mapping.values())
 
 
-def _semantic_lesson(
-    cache_dir: Path,
-    memory_id: str,
-) -> dict[str, Any]:
-    path = cache_dir / f"{memory_id}.json"
-    if not path.is_file():
-        raise FileNotFoundError(
-            f"missing frozen semantic lesson for top-k candidate {memory_id}"
-        )
-    return read_json(path)
-
-
 def _build_collection(
     *,
     ranking: list[dict[str, Any]],
     k: int,
     exemplar_bank: dict[str, dict[str, Any]],
-    semantic_cache_dir: Path,
 ) -> tuple[dict[str, Any], list[str]]:
     rows = []
     checkpoint_ids = []
@@ -334,9 +310,8 @@ def _build_collection(
             blueprint=item["blueprint"],
             worked_exemplar=exemplar_bank[memory_id],
         )
-        expert["dag_derived_semantic_lessons"] = _semantic_lesson(
-            semantic_cache_dir,
-            memory_id,
+        expert["dag_derived_semantic_lessons"] = (
+            canonical_semantic_lessons()
         )
         namespaced, ids = namespace_expert_memory(
             expert,
@@ -370,7 +345,6 @@ def _single_canonical_memory(
     *,
     ranking: list[dict[str, Any]],
     exemplar_bank: dict[str, dict[str, Any]],
-    semantic_cache_dir: Path,
 ) -> dict[str, Any]:
     item = ranking[0]
     memory_id = item["memory_question_id"]
@@ -379,10 +353,7 @@ def _single_canonical_memory(
         blueprint=item["blueprint"],
         worked_exemplar=exemplar_bank[memory_id],
     )
-    expert["dag_derived_semantic_lessons"] = _semantic_lesson(
-        semantic_cache_dir,
-        memory_id,
-    )
+    expert["dag_derived_semantic_lessons"] = canonical_semantic_lessons()
     return expert
 
 
@@ -390,7 +361,6 @@ def preflight_topk_artifacts(
     *,
     plans: dict[str, list[dict[str, Any]]],
     exemplar_bank: dict[str, dict[str, Any]],
-    semantic_cache_dir: Path,
 ) -> dict[str, Any]:
     required = sorted(
         {
@@ -402,21 +372,12 @@ def preflight_topk_artifacts(
     missing_exemplars = [
         memory_id for memory_id in required if memory_id not in exemplar_bank
     ]
-    missing_semantics = [
-        memory_id
-        for memory_id in required
-        if not (semantic_cache_dir / f"{memory_id}.json").is_file()
-    ]
     return {
-        "status": (
-            "pass"
-            if not missing_exemplars and not missing_semantics
-            else "blocked"
-        ),
+        "status": "pass" if not missing_exemplars else "blocked",
         "required_memory_questions": len(required),
         "available_fixed_exemplars": len(exemplar_bank),
         "missing_fixed_exemplars": missing_exemplars,
-        "missing_semantic_lessons": missing_semantics,
+        "semantic_lessons": "canonical_fixed",
     }
 
 
@@ -428,7 +389,6 @@ def _run_case(
     k: int,
     ranking: list[dict[str, Any]],
     exemplar_bank: dict[str, dict[str, Any]],
-    semantic_cache_dir: Path,
     evidence_dir: Path,
     output_dir: Path,
     candidate_evidence_limit: int,
@@ -472,13 +432,11 @@ def _run_case(
         ranking=ranking,
         k=k,
         exemplar_bank=exemplar_bank,
-        semantic_cache_dir=semantic_cache_dir,
     )
     if k == 1:
         canonical_memory = _single_canonical_memory(
             ranking=ranking,
             exemplar_bank=exemplar_bank,
-            semantic_cache_dir=semantic_cache_dir,
         )
         reasoning_result = _call_dag_expert_reasoning(
             client=client,
@@ -491,6 +449,7 @@ def _run_case(
             expert_memory=canonical_memory,
             target_operator=target_operator,
             max_tokens=reasoning_max_tokens,
+            allow_memory_rejection=True,
         )
     else:
         reasoning_result = _call_condition_reasoning(
@@ -528,6 +487,7 @@ def _run_case(
         reasoning=reasoning,
         seed_role=("boundary_mapping" if k == 1 else f"topk:{k}:boundary"),
         max_tokens=boundary_max_tokens,
+        allow_neutral_fallback=True,
     )
     from hgf.forecast_core import _ground_truth_option
 
@@ -640,7 +600,7 @@ def main() -> None:
     questions_dir = args.questions_dir.resolve()
     evidence_dir = args.evidence_dir.resolve()
     output_dir = args.output_dir.resolve()
-    semantic_cache_dir = args.semantic_cache_dir.resolve()
+    hgf_artifact_root = args.hgf_artifact_root.resolve()
     questions = {
         str(question.id): question
         for question in read_questions(questions_dir / "test_questions.jsonl")
@@ -652,12 +612,11 @@ def main() -> None:
     _, blueprints = load_final_memory_bank(
         args.memory_bank_manifest.resolve(),
         memory_questions,
+        hgf_artifact_root=hgf_artifact_root / "blueprints",
     )
-    frozen_cases = _load_source_cases(args.exemplar_dir.resolve())
-    exemplar_paths = [args.exemplar_dir.resolve()] + [
-        path.resolve() for path in args.additional_exemplar_dir
-    ]
-    exemplar_bank = load_fixed_exemplar_bank(exemplar_paths)
+    exemplar_root = hgf_artifact_root / "exemplars"
+    frozen_cases = _load_source_cases(exemplar_root)
+    exemplar_bank = load_fixed_exemplar_bank([exemplar_root])
     frozen = read_json(args.selection_file.resolve())["question_ids"]
     requested = set(args.question_ids or frozen)
     missing_questions = sorted(requested - set(questions))
@@ -724,7 +683,6 @@ def main() -> None:
     preflight = preflight_topk_artifacts(
         plans=plans,
         exemplar_bank=exemplar_bank,
-        semantic_cache_dir=semantic_cache_dir,
     )
     write_json(output_dir / "topk_selection.json", rank_manifest)
     write_json(output_dir / "preflight.json", preflight)
@@ -780,7 +738,6 @@ def main() -> None:
                 k=k,
                 ranking=plans[str(question.id)],
                 exemplar_bank=exemplar_bank,
-                semantic_cache_dir=semantic_cache_dir,
                 evidence_dir=evidence_dir,
                 output_dir=output_dir,
                 candidate_evidence_limit=args.candidate_evidence_limit,

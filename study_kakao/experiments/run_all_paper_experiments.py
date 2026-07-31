@@ -40,10 +40,9 @@ def _parse_args() -> argparse.Namespace:
         default=Path("runs/paper_experiments_v27"),
     )
     parser.add_argument(
-        "--additional-exemplar-dir",
+        "--hgf-artifact-root",
         type=Path,
-        action="append",
-        default=[],
+        default=Path("artifacts/hgf"),
     )
     parser.add_argument("--dry-run", action="store_true")
     return parser.parse_args()
@@ -138,6 +137,8 @@ def _plan(args: argparse.Namespace) -> dict[str, list[list[str]]]:
                 "100",
                 "--run-seed",
                 str(repeat),
+                "--hgf-artifact-root",
+                str(args.hgf_artifact_root.resolve()),
                 "--output-dir",
                 str(ablation_root / f"repeat_{repeat}"),
             ]
@@ -152,11 +153,11 @@ def _plan(args: argparse.Namespace) -> dict[str, list[list[str]]]:
             "100",
             "--run-seed",
             str(repeat),
+            "--hgf-artifact-root",
+            str(args.hgf_artifact_root.resolve()),
             "--output-dir",
             str(topk_root / f"repeat_{repeat}"),
         ]
-        for path in args.additional_exemplar_dir:
-            topk_command.extend(["--additional-exemplar-dir", str(path.resolve())])
         commands["topk"].append(topk_command)
     ablation_results = [
         ablation_root / f"repeat_{repeat}" / "results.json"

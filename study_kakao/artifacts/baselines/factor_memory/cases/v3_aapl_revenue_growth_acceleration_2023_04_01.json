@@ -1,0 +1,207 @@
+{
+  "schema_version": "hgf_blueprint_v1",
+  "question_id": "v3_aapl_revenue_growth_acceleration_2023_04_01",
+  "target_definition": {
+    "metric": "Quarterly year-over-year revenue-growth acceleration",
+    "unit_or_option_space": "Percentage-point change in growth rate",
+    "forecast_horizon": "Fiscal quarter ending 2023-04-01"
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Segment demand and management guidance provide a usable earnings mechanism.",
+    "weaknesses": [
+      "Most evidence became available after the forecast cutoff.",
+      "Capital-return expectations are indirect revenue evidence."
+    ]
+  },
+  "search_factors": [
+    {
+      "factor": "Flagship-phone demand",
+      "why_search": "It was the largest cited positive product driver.",
+      "preferred_source_types": [
+        "company earnings release",
+        "channel data"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230504_014_5792ff8a"
+      ]
+    },
+    {
+      "factor": "Services momentum",
+      "why_search": "Recurring services can offset hardware weakness.",
+      "preferred_source_types": [
+        "company earnings release"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230504_012_bd33ead2"
+      ]
+    },
+    {
+      "factor": "Mac and iPad demand",
+      "why_search": "Weak secondary segments can constrain aggregate growth.",
+      "preferred_source_types": [
+        "company earnings release",
+        "industry data"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230504_015_73cafa5c",
+        "evt_finance_20230504_016_7830157c"
+      ]
+    },
+    {
+      "factor": "Smartphone market conditions",
+      "why_search": "Category demand can challenge flagship sales.",
+      "preferred_source_types": [
+        "industry shipment data"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230331_017_8a89e30c"
+      ]
+    },
+    {
+      "factor": "Company revenue guidance",
+      "why_search": "Guidance captures management's contemporaneous demand assessment.",
+      "preferred_source_types": [
+        "earnings call",
+        "company guidance"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230503_018_b14cda2e"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "phone_demand",
+      "role": "driver",
+      "factor": "Flagship-phone demand",
+      "mechanism": "Phone demand can lift consolidated revenue growth.",
+      "expected_direction": "up",
+      "evidence_requirement": "Verify channel demand or reported phone revenue.",
+      "contradiction_signal": "Shipment or sell-through weakness.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_finance_20230504_014_5792ff8a"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_aapl_revenue_growth_acceleration_2023_04_01_20260724_183341_010_25483253"
+      ]
+    },
+    {
+      "id": "services",
+      "role": "mediator",
+      "factor": "Services momentum",
+      "mechanism": "Services growth diversifies and supports consolidated revenue.",
+      "expected_direction": "up",
+      "evidence_requirement": "Verify services revenue trend.",
+      "contradiction_signal": "Flat or declining services revenue.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_finance_20230504_012_bd33ead2"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_aapl_revenue_growth_acceleration_2023_04_01_20260724_183341_011_68d2e52a"
+      ]
+    },
+    {
+      "id": "hardware_drag",
+      "role": "counterevidence",
+      "factor": "Mac and iPad demand",
+      "mechanism": "Weak secondary hardware reduces consolidated growth.",
+      "expected_direction": "down",
+      "evidence_requirement": "Check segment revenue trends.",
+      "contradiction_signal": "Broad hardware recovery.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_finance_20230504_015_73cafa5c",
+        "evt_finance_20230504_016_7830157c"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_aapl_revenue_growth_acceleration_2023_04_01_20260724_183341_012_0f50035d",
+        "hyp_v3_aapl_revenue_growth_acceleration_2023_04_01_20260724_183341_013_c531b29e"
+      ]
+    },
+    {
+      "id": "guidance",
+      "role": "baseline",
+      "factor": "Company revenue guidance",
+      "mechanism": "Management guidance establishes an aggregate demand baseline.",
+      "expected_direction": "down",
+      "evidence_requirement": "Use contemporaneous management guidance.",
+      "contradiction_signal": "Improving segment evidence exceeds guidance.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_finance_20230503_018_b14cda2e"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_aapl_revenue_growth_acceleration_2023_04_01_20260724_183341_014_afae36ea"
+      ]
+    },
+    {
+      "id": "target_bridge",
+      "role": "target_bridge",
+      "factor": "Consolidated segment mix",
+      "mechanism": "Segment growth and declines combine into the reported growth-rate change.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Calculate sequential change in year-over-year revenue growth.",
+      "contradiction_signal": "Segment mix differs from aggregate trend.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_finance_20230504_010_ef108ab6",
+        "evt_finance_20230504_014_5792ff8a",
+        "evt_finance_20230504_012_bd33ead2"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_aapl_revenue_growth_acceleration_2023_04_01_20260724_183341_010_25483253",
+        "hyp_v3_aapl_revenue_growth_acceleration_2023_04_01_20260724_183341_011_68d2e52a"
+      ]
+    }
+  ],
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "phone_demand",
+        "services",
+        "target_bridge"
+      ],
+      "generalized_mechanism": "Strong flagship and services demand can improve consolidated growth momentum.",
+      "expected_direction": "up",
+      "applicability_conditions": [
+        "Both segments are material contributors."
+      ],
+      "failure_conditions": [
+        "Hardware declines outweigh their contribution."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "guidance",
+        "hardware_drag",
+        "target_bridge"
+      ],
+      "generalized_mechanism": "Cautious guidance and weak secondary hardware can restrain growth momentum.",
+      "expected_direction": "down",
+      "applicability_conditions": [
+        "Guidance reflects current segment demand."
+      ],
+      "failure_conditions": [
+        "Flagship or services strength offsets the drag."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "Broad smartphone weakness dominates company-specific resilience.",
+      "discriminating_evidence": "Compare phone sell-through with industry shipment data.",
+      "source_event_ids": [
+        "evt_finance_20230331_017_8a89e30c",
+        "evt_finance_20230504_014_5792ff8a"
+      ]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Are phone and services signals independently corroborated?",
+    "Do secondary hardware declines outweigh leading segments?",
+    "Does guidance match current channel evidence?"
+  ]
+}

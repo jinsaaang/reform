@@ -1,0 +1,32 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_wmt_revenue_growth_acceleration_2024_04_30",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "corporate_earnings",
+      "target_operation": "growth_acceleration",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2024-04-30, which range will Walmart Inc.'s quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2024-04-30 fall into?",
+    "historical_cutoff": "2024-04-30T00:00:00+00:00",
+    "target_semantics": "Walmart Inc.'s quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2024-04-30.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "Consumer pressure, driven by inflation, is expected to increase value-seeking behavior. This supports demand through value positioning. However, broader retail challenges could offset these channel strengths. The overall revenue-growth direction is inferred by comparing current channel and category data, but this bridge is weak.",
+      "The primary causal path suggests that value-seeking behavior, if traffic responds, supports revenue direction. An alternative path indicates that persistent retail weakness offsets channel strength. The key is whether demand weakens or sector weakness persists.",
+      "The forecast relies on the interplay between consumer pressure and value proposition driving demand, versus retail challenges acting as a drag. The strength of consumer response to value positioning is a key driver, while the persistence of sector-wide retail weakness is a significant counteracting force."
+    ],
+    "counterevidence": "Sector improvements could offset channel strength, contradicting the expectation of downward pressure on revenue growth.",
+    "prospective_target_estimate": "The evidence is weak and mixed, suggesting a cautious outlook. Without specific data on consumer traffic, e-commerce growth, and sector performance, it is difficult to definitively project the revenue-growth acceleration.",
+    "option_mapping": "The target metric is Walmart's quarterly year-over-year revenue-growth acceleration. The options are 'below recent range' (-0.903 percentage points), 'within recent range' (-0.903 to 0.27 percentage points), and 'above recent range' (0.27 percentage points).",
+    "uncertainty": "The forecast is highly uncertain due to a lack of specific, predictive forecast-time evidence. The causal links are based on general economic principles and weak historical support, with no concrete data points to confirm or deny the expected drivers and counter-drivers.",
+    "dag_derived_lesson": "Upstream factors influencing consumer behavior and value proposition can support a target metric, but this effect is contingent on the response of demand. Downstream sector-specific challenges can counteract these positive influences. The net effect requires reconciling conflicting signals from different parts of the economic landscape."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

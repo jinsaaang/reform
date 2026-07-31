@@ -1,0 +1,34 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_wti_monthly_return_2024_01",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "energy_commodities",
+      "target_operation": "price_return",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2024-01-01, which range will the monthly WTI price return for West Texas Intermediate crude oil in 2024-01 fall into?",
+    "historical_cutoff": "2024-01-01T00:00:00+00:00",
+    "target_semantics": "The monthly percentage price return for West Texas Intermediate crude oil in January 2024.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "OPEC+ supply restraint provides a baseline for tighter crude markets, with medium historical support.",
+      "Red Sea geopolitical risk, escalating with attacks and military responses, can increase perceived crude shipment disruption risk, also with medium historical support.",
+      "Weak global oil-demand outlook, driven by weak economic activity, can restrain petroleum consumption, with medium historical support.",
+      "Higher United States oil output can increase global supply and counteract other pressures, with medium historical support.",
+      "The net crude-market balance reflects the interplay of supply restraint, geopolitical risk, demand, and incremental supply."
+    ],
+    "counterevidence": "Weak demand and high United States output present countervailing supply-demand pressure against upside drivers.",
+    "prospective_target_estimate": "The net crude-market balance is mixed, reflecting competing pressures from supply restraint, geopolitical risk, demand weakness, and US output.",
+    "option_mapping": "The target monthly WTI price return for January 2024 is classified as 'within recent range' based on the balance of evidence.",
+    "uncertainty": "The evidence for each factor (OPEC+ restraint, geopolitical risk, demand, US output) is assessed as medium, leading to uncertainty in the net market balance.",
+    "dag_derived_lesson": "Competing supply-side supports and demand-side pressures require careful reconciliation. Geopolitical events can introduce risk premiums, but these must be weighed against fundamental supply and demand dynamics, including the impact of major producers' output and global economic health. The absence of direct inventory or currency data necessitates a qualitative assessment of these competing forces."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

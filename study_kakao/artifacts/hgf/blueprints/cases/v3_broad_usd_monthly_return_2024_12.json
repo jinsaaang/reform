@@ -1,0 +1,496 @@
+{
+  "schema_version": "hgf_blueprint_topology_v2",
+  "question_id": "v3_broad_usd_monthly_return_2024_12",
+  "target_definition": {
+    "metric": "monthly broad-dollar return",
+    "unit_or_option_space": [
+      "below recent range",
+      "within recent range",
+      "above recent range"
+    ],
+    "forecast_horizon": "Remap the historical target family to the current question's exact target period."
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Outcome-redacted topology preserves 7 checkpoints, 7 source edges, and 3 root-to-target paths.",
+    "weaknesses": []
+  },
+  "search_factors": [
+    {
+      "factor": "Consumer price index increased [CURRENT_VALUE_REQUIRED] in [CURRENT_PERIOD_REQUIRED] from a year earlier.",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20241211_001_a15a5430"
+      ]
+    },
+    {
+      "factor": "Federal Reserve cuts interest rates by [CURRENT_VALUE_REQUIRED].",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20241218_002_4ae5d2a9"
+      ]
+    },
+    {
+      "factor": "Fed projects fewer reductions in [CURRENT_PERIOD_REQUIRED] and higher inflation in [CURRENT_PERIOD_REQUIRED].",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20241218_003_b5ab00c8"
+      ]
+    },
+    {
+      "factor": "Market adjusts expectations for less aggressive easing cycle.",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20241218_005_ff5de3f3"
+      ]
+    },
+    {
+      "factor": "US maintains relatively higher interest rates for longer.",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20241218_006_1dcb54cd"
+      ]
+    },
+    {
+      "factor": "Top 10 geopolitical risks for [CURRENT_PERIOD_REQUIRED]",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_politics_20240626_004_1b2b7956"
+      ]
+    },
+    {
+      "factor": "Increased attractiveness of dollar-denominated assets.",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20241218_007_c72af033"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "checkpoint_1",
+      "role": "driver",
+      "factor": "Consumer price index increased [CURRENT_VALUE_REQUIRED] in [CURRENT_PERIOD_REQUIRED] from a year earlier.",
+      "mechanism": "Persistent inflation in the US, evidenced by the [CURRENT_PERIOD_REQUIRED] CPI report, served as a root cause influencing the Federal Reserve's monetary policy decisions, leading to a more cautious stance on future rate reductions.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20241211_001_a15a5430"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_broad_usd_monthly_return_2024_12_20260725_041829_001_5d8549a1"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_2",
+      "role": "counterevidence",
+      "factor": "Federal Reserve cuts interest rates by [CURRENT_VALUE_REQUIRED].",
+      "mechanism": "Re-test whether this factor has a currently supported link to the exact target metric; do not transfer the historical outcome or magnitude.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20241218_002_4ae5d2a9"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_broad_usd_monthly_return_2024_12_20260725_041829_006_6ed58edb"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_3",
+      "role": "mediator",
+      "factor": "Fed projects fewer reductions in [CURRENT_PERIOD_REQUIRED] and higher inflation in [CURRENT_PERIOD_REQUIRED].",
+      "mechanism": "The Fed's projection of fewer rate cuts in [CURRENT_PERIOD_REQUIRED] and a higher inflation outlook created an intermediate mechanism where market participants adjusted their expectations for a less aggressive easing cycle.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20241218_003_b5ab00c8"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_broad_usd_monthly_return_2024_12_20260725_041829_002_3a803ad4"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_4",
+      "role": "mediator",
+      "factor": "Market adjusts expectations for less aggressive easing cycle.",
+      "mechanism": "This shift in expectations caused a perception that the US would maintain relatively higher interest rates for longer compared to other major economies.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20241218_005_ff5de3f3"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_broad_usd_monthly_return_2024_12_20260725_041829_003_947f1c9c"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_5",
+      "role": "mediator",
+      "factor": "US maintains relatively higher interest rates for longer.",
+      "mechanism": "The perception that the US would maintain relatively higher interest rates for longer increased the attractiveness of dollar-denominated assets.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20241218_006_1dcb54cd"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_broad_usd_monthly_return_2024_12_20260725_041829_004_9cc3753a"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_6",
+      "role": "driver",
+      "factor": "Top 10 geopolitical risks for [CURRENT_PERIOD_REQUIRED]",
+      "mechanism": "General geopolitical uncertainties can drive investors to safe-haven assets like the USD, contributing to the attractiveness of dollar assets.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_politics_20240626_004_1b2b7956"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_broad_usd_monthly_return_2024_12_20260725_041829_007_b17976e2"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_7",
+      "role": "mediator",
+      "factor": "Increased attractiveness of dollar-denominated assets.",
+      "mechanism": "Re-test whether this factor has a currently supported link to the exact target metric; do not transfer the historical outcome or magnitude.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20241218_007_c72af033"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_broad_usd_monthly_return_2024_12_20260725_041829_005_b7335674"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "target_bridge",
+      "role": "target_bridge",
+      "factor": "monthly broad-dollar return",
+      "mechanism": "Map only currently supported paths into the exact target operator. Directional support alone is not magnitude or threshold-crossing support.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "A current target baseline and evidence supporting every edge used in the bridge.",
+      "contradiction_signal": "The current target baseline, magnitude evidence, or option boundary contradicts the proposed path.",
+      "historical_support": "medium",
+      "source_event_ids": [],
+      "source_edge_ids": [
+        "hyp_v3_broad_usd_monthly_return_2024_12_20260725_041829_005_b7335674",
+        "hyp_v3_broad_usd_monthly_return_2024_12_20260725_041829_006_6ed58edb"
+      ],
+      "source_event_type": "target_bridge"
+    }
+  ],
+  "topology": {
+    "checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_5",
+      "checkpoint_6",
+      "checkpoint_7",
+      "target_bridge"
+    ],
+    "root_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_6"
+    ],
+    "target_bridge_id": "target_bridge",
+    "edges": [
+      {
+        "source_checkpoint_id": "checkpoint_1",
+        "target_checkpoint_id": "checkpoint_3",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Persistent inflation in the US, evidenced by the [CURRENT_PERIOD_REQUIRED] CPI report, served as a root cause influencing the Federal Reserve's monetary policy decisions, leading to a more cautious stance on future rate reductions.",
+        "source_edge_ids": [
+          "hyp_v3_broad_usd_monthly_return_2024_12_20260725_041829_001_5d8549a1"
+        ],
+        "source_article_ids": [
+          "art_finance_20241211_005_3e0c351a",
+          "art_finance_20241212_006_2b90cfeb",
+          "art_finance_20241219_009_6c4b47f9",
+          "art_finance_20241218_004_761b31b9"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_3",
+        "target_checkpoint_id": "checkpoint_4",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "The Fed's projection of fewer rate cuts in [CURRENT_PERIOD_REQUIRED] and a higher inflation outlook created an intermediate mechanism where market participants adjusted their expectations for a less aggressive easing cycle.",
+        "source_edge_ids": [
+          "hyp_v3_broad_usd_monthly_return_2024_12_20260725_041829_002_3a803ad4"
+        ],
+        "source_article_ids": [
+          "art_finance_20241218_004_761b31b9",
+          "art_finance_20241218_017_18f143ad"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_4",
+        "target_checkpoint_id": "checkpoint_5",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "This shift in expectations caused a perception that the US would maintain relatively higher interest rates for longer compared to other major economies.",
+        "source_edge_ids": [
+          "hyp_v3_broad_usd_monthly_return_2024_12_20260725_041829_003_947f1c9c"
+        ],
+        "source_article_ids": [
+          "art_finance_20241218_004_761b31b9",
+          "art_finance_20241218_017_18f143ad"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_5",
+        "target_checkpoint_id": "checkpoint_7",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "The perception that the US would maintain relatively higher interest rates for longer increased the attractiveness of dollar-denominated assets.",
+        "source_edge_ids": [
+          "hyp_v3_broad_usd_monthly_return_2024_12_20260725_041829_004_9cc3753a"
+        ],
+        "source_article_ids": [
+          "art_finance_20241218_004_761b31b9",
+          "art_finance_20241218_017_18f143ad"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_6",
+        "target_checkpoint_id": "checkpoint_7",
+        "relationship": "enables",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "General geopolitical uncertainties can drive investors to safe-haven assets like the USD, contributing to the attractiveness of dollar assets.",
+        "source_edge_ids": [
+          "hyp_v3_broad_usd_monthly_return_2024_12_20260725_041829_007_b17976e2"
+        ],
+        "source_article_ids": [
+          "art_finance_20240626_010_097251ad"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_7",
+        "target_checkpoint_id": "target_bridge",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Historical DAG connected this factor to the redacted target measurement; the realized value and outcome mapping are omitted.",
+        "source_edge_ids": [
+          "hyp_v3_broad_usd_monthly_return_2024_12_20260725_041829_005_b7335674"
+        ],
+        "source_article_ids": [
+          "art_finance_20241218_004_761b31b9",
+          "art_finance_20241218_017_18f143ad"
+        ],
+        "terminal_to_target_bridge": true
+      },
+      {
+        "source_checkpoint_id": "checkpoint_2",
+        "target_checkpoint_id": "target_bridge",
+        "relationship": "inhibits",
+        "directionality": "counteracting",
+        "support_level": "",
+        "rationale": "Historical DAG connected this factor to the redacted target measurement; the realized value and outcome mapping are omitted.",
+        "source_edge_ids": [
+          "hyp_v3_broad_usd_monthly_return_2024_12_20260725_041829_006_6ed58edb"
+        ],
+        "source_article_ids": [
+          "art_finance_20241218_004_761b31b9",
+          "art_finance_20241218_017_18f143ad"
+        ],
+        "terminal_to_target_bridge": true
+      }
+    ],
+    "paths_truncated": false
+  },
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "checkpoint_1",
+        "checkpoint_3",
+        "checkpoint_4",
+        "checkpoint_5",
+        "checkpoint_7",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_broad_usd_monthly_return_2024_12_20260725_041829_001_5d8549a1",
+        "hyp_v3_broad_usd_monthly_return_2024_12_20260725_041829_002_3a803ad4",
+        "hyp_v3_broad_usd_monthly_return_2024_12_20260725_041829_003_947f1c9c",
+        "hyp_v3_broad_usd_monthly_return_2024_12_20260725_041829_004_9cc3753a",
+        "hyp_v3_broad_usd_monthly_return_2024_12_20260725_041829_005_b7335674"
+      ],
+      "relationships": [
+        "causes",
+        "causes",
+        "causes",
+        "causes",
+        "causes"
+      ],
+      "path_role": "main_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Consumer price index increased [CURRENT_VALUE_REQUIRED] in [CURRENT_PERIOD_REQUIRED] from a year earlier. to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_2",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_broad_usd_monthly_return_2024_12_20260725_041829_006_6ed58edb"
+      ],
+      "relationships": [
+        "inhibits"
+      ],
+      "path_role": "counter_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Federal Reserve cuts interest rates by [CURRENT_VALUE_REQUIRED]. to the current target; every edge requires current support.",
+      "expected_direction": "mixed",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_6",
+        "checkpoint_7",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_broad_usd_monthly_return_2024_12_20260725_041829_007_b17976e2",
+        "hyp_v3_broad_usd_monthly_return_2024_12_20260725_041829_005_b7335674"
+      ],
+      "relationships": [
+        "enables",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Top 10 geopolitical risks for [CURRENT_PERIOD_REQUIRED] to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "Federal Reserve cuts interest rates by [CURRENT_VALUE_REQUIRED]. dominates or reverses the leading current path.",
+      "discriminating_evidence": "Compare current evidence for this counter-path with every edge on the leading supported path.",
+      "source_event_ids": [
+        "evt_finance_20241218_002_4ae5d2a9"
+      ]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Does every used checkpoint transition correspond to a preserved edge?",
+    "Which preserved edges are supported, contradicted, or unknown now?",
+    "Does a counter-path dominate the leading supported path?",
+    "Is there evidence for magnitude and boundary crossing, not direction alone?"
+  ],
+  "refinement_metadata": {
+    "model": "deterministic_topology_compiler_v2",
+    "source_graph": "data\\dags\\v3_broad_usd_monthly_return_2024_12\\graph.json",
+    "source_audit_status": "pass",
+    "outcome_nodes_redacted": 3,
+    "target_value_anchors_redacted": 0,
+    "historical_specifics_sanitized": true,
+    "sanitizer": "minimal_value_period_placeholders_v1",
+    "value_replacement_count": 7,
+    "period_replacement_count": 14
+  },
+  "topology_validation": {
+    "status": "pass",
+    "errors": [],
+    "metrics": {
+      "retained_checkpoint_count": 7,
+      "source_edge_count": 7,
+      "emitted_edge_count": 7,
+      "edge_coverage": 1.0,
+      "path_precision": 1.0,
+      "causal_path_count": 3,
+      "outcome_event_leak_count": 0,
+      "outcome_text_leak_count": 0,
+      "realized_value_count": 0,
+      "absolute_period_count": 0
+    }
+  }
+}

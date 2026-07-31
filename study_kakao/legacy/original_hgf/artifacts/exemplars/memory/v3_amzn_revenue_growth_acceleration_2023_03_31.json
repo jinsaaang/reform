@@ -1,0 +1,40 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_amzn_revenue_growth_acceleration_2023_03_31",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial",
+      "target_operation": "growth_acceleration",
+      "option_geometry": "classification"
+    },
+    "historical_question": "As of 2023-03-31, which range will Amazon.com, Inc.'s quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2023-03-31 fall into?",
+    "historical_cutoff": "2023-03-31T00:00:00+00:00",
+    "target_semantics": "Amazon's quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2023-03-31.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20220203_002_88670510",
+        "takeaway": "Amazon reported Q4 2021 earnings, with cloud services (AWS) showing strong growth, while online retail faced headwinds.",
+        "why_predictive": "This article provides early indicators of segment performance (cloud strength, retail weakness) that are crucial for forecasting consolidated revenue growth acceleration in subsequent quarters."
+      }
+    ],
+    "expert_reasoning": [
+      "The primary driver for revenue growth acceleration is the interplay between Amazon's cloud services (AWS) and its online retail segment.",
+      "AWS has demonstrated robust growth, suggesting it will continue to be a significant contributor to overall revenue.",
+      "However, online retail has shown signs of weakness, which could act as a drag on consolidated revenue growth.",
+      "Advertising and seller services are expected to offset some of the retail weakness, providing a positive contribution.",
+      "The net effect on revenue growth acceleration depends on whether the gains in cloud and services can outweigh the drag from retail."
+    ],
+    "counterevidence": "Online retail sales growth has been flat, limiting the contribution of Amazon's largest commerce segment.",
+    "prospective_target_estimate": "The acceleration is likely to fall within the recent range, as the strong performance of cloud services and seller services may offset the weakness in online retail, leading to a mixed impact on overall growth momentum.",
+    "option_mapping": "The projected revenue-growth acceleration is expected to be within the range of -3.134 to 1.802 percentage points.",
+    "uncertainty": "The exact magnitude of the offset between strong cloud/services performance and weak retail is uncertain. Furthermore, evidence from the forecast period is limited, as most relevant data would have been reported after the cutoff.",
+    "dag_derived_lesson": "When forecasting consolidated growth, assess the relative strength of key segments. Positive momentum in high-growth areas can counteract deceleration in mature or struggling segments, but the net impact is contingent on the magnitude of these opposing forces and the materiality of each segment to the whole."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

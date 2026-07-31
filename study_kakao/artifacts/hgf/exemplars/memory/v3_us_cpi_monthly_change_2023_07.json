@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_us_cpi_monthly_change_2023_07",
+  "blueprint_sha256": "94b8d9961eb491a7d05d65ac07ee4998c89dbb760a6f29e6444ecfd25b7afb92",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "macro / inflation",
+      "target_operation": "monthly CPI change",
+      "option_geometry": "ordered_options"
+    },
+    "historical_question": "As of 2023-07-31, which range will the monthly CPI change for United States CPI in 2023-07 fall into?",
+    "historical_cutoff": "2023-07-31T00:00:00+00:00",
+    "target_semantics": "The monthly percentage change in the US Consumer Price Index for July 2023, categorized relative to a recent range of observed changes.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The core calculation for the target metric is the percentage change between two consecutive monthly CPI observations. Therefore, understanding the most recent CPI reference and target observations is critical.",
+      "The target metric is defined by its position relative to a pre-registered interval. The relationship between the calculated monthly change and these boundaries is the direct determinant of the final option.",
+      "Given the lack of specific forecast-time evidence, the reasoning must rely on the structural relationships identified in the DAG, acknowledging that the actual values of the CPI observations and the resulting change are unknown."
+    ],
+    "counterevidence": "No forecast-time evidence was provided to support or contradict any potential CPI values or their resulting change, nor to assess the current relevance of the pre-registered range boundaries.",
+    "prospective_target_estimate": "The monthly CPI change for July 2023 is unknown, and therefore its classification relative to the pre-registered range (below 0.152%, within [0.152%, 0.34%), or above 0.34%) cannot be determined.",
+    "option_mapping": "The final option ('below recent range', 'within recent range', or 'above recent range') depends entirely on the calculated monthly CPI change for July 2023 and its comparison to the interval boundaries of 0.152% and 0.34%. Without knowing the calculated change, no option can be definitively mapped.",
+    "uncertainty": "Extreme uncertainty exists due to the complete absence of forecast-time evidence regarding the actual CPI levels, the calculated monthly change, and the current applicability of the historical range boundaries. The DAG's weakness regarding synthesized observation nodes further compounds this uncertainty.",
+    "dag_derived_lesson": "When forecasting a derived metric, the strength of the forecast depends on the availability of current evidence for the direct inputs to the calculation and the factors that define the target's classification. If such evidence is absent, the forecast remains indeterminate, even if the causal structure is understood."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

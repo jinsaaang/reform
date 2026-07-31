@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_us_unemployment_rate_change_2023_07",
+  "blueprint_sha256": "3c351da1071b84d7c1e6419c2c6fa6dbc2c8bb529c0fb22509627cb972e96a07",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "macro / labour",
+      "target_operation": "monthly unemployment-rate change",
+      "option_geometry": "ordered_categorical"
+    },
+    "historical_question": "As of 2023-07-31, which range will the monthly unemployment-rate change for United States unemployment rate in 2023-07 fall into?",
+    "historical_cutoff": "2023-07-31T00:00:00+00:00",
+    "target_semantics": "The monthly change in the United States unemployment rate for July 2023, categorized as below -0.1 percentage points, between -0.1 and 0.025 percentage points, or at or above 0.025 percentage points.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The target is the monthly change in the US unemployment rate. This change is directly calculated from the unemployment rate at the current period and the previous period.",
+      "The DAG indicates two primary causal paths: one directly from the current unemployment rate and another mediated by job growth.",
+      "Given the lack of forecast-time evidence, the direct calculation from the current and previous unemployment rates is the most direct mechanism to consider, assuming the rate itself is known or can be inferred."
+    ],
+    "counterevidence": "No forecast-time evidence was provided to support or contradict any causal links or the state of the drivers.",
+    "prospective_target_estimate": "The target is the monthly change in the US unemployment rate. Without specific data on the current and previous month's rates, it is impossible to estimate the change.",
+    "option_mapping": "The options 'below recent range', 'within recent range', and 'above recent range' correspond to the calculated monthly change in the unemployment rate falling below -0.1, between -0.1 (inclusive) and 0.025 (exclusive), or at or above 0.025 percentage points, respectively.",
+    "uncertainty": "The complete absence of forecast-time evidence means that the state of all drivers (current unemployment rate, job growth) and the relationships between them are unknown. Therefore, any prediction about the target metric's range is highly uncertain.",
+    "dag_derived_lesson": "When forecasting a change metric, the most direct causal path involves the values of the metric at two consecutive time points. Other factors may provide context but are secondary to the direct calculation unless they demonstrably alter the primary inputs."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

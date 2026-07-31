@@ -1,0 +1,173 @@
+{
+  "schema_version": "hgf_blueprint_v1",
+  "question_id": "v3_henry_hub_monthly_return_2023_01",
+  "target_definition": {
+    "metric": "Henry Hub natural gas monthly return",
+    "unit_or_option_space": "percent return classification",
+    "forecast_horizon": "January 2023"
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Weather-driven demand weakness and ample supply pressure gas prices.",
+    "weaknesses": [
+      "Direct price evidence is limited."
+    ]
+  },
+  "search_factors": [
+    {
+      "factor": "Winter weather",
+      "why_search": "Weather drives heating demand.",
+      "preferred_source_types": [
+        "weather data"
+      ],
+      "source_event_ids": [
+        "evt_climate_20230101_010_2652750c"
+      ]
+    },
+    {
+      "factor": "Heating demand",
+      "why_search": "Demand changes affect gas balances.",
+      "preferred_source_types": [
+        "demand data"
+      ],
+      "source_event_ids": [
+        "evt_business_20230103_011_354e33c7"
+      ]
+    },
+    {
+      "factor": "LNG and inventories",
+      "why_search": "Supply availability can amplify surplus.",
+      "preferred_source_types": [
+        "inventory data"
+      ],
+      "source_event_ids": [
+        "evt_business_20230103_015_63c2cd6e"
+      ]
+    },
+    {
+      "factor": "Gas exports",
+      "why_search": "Exports can offset domestic surplus.",
+      "preferred_source_types": [
+        "export data"
+      ],
+      "source_event_ids": [
+        "evt_business_20230111_018_bb89b50e"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "weather",
+      "role": "driver",
+      "factor": "Mild weather",
+      "mechanism": "Mild winter reduces heating demand.",
+      "expected_direction": "down",
+      "evidence_requirement": "Temperature anomalies.",
+      "contradiction_signal": "Colder weather.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_climate_20230101_010_2652750c"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_henry_hub_monthly_return_2023_01_20260724_203149_009_279283ee"
+      ]
+    },
+    {
+      "id": "demand",
+      "role": "mediator",
+      "factor": "Reduced heating demand",
+      "mechanism": "Lower consumption creates surplus.",
+      "expected_direction": "down",
+      "evidence_requirement": "Heating-demand data.",
+      "contradiction_signal": "Demand recovery.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_business_20230103_011_354e33c7",
+        "evt_finance_20230103_012_850258fb"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_henry_hub_monthly_return_2023_01_20260724_203149_010_c380b07e"
+      ]
+    },
+    {
+      "id": "supply",
+      "role": "driver",
+      "factor": "LNG stocks",
+      "mechanism": "Ample LNG and stocks amplify surplus.",
+      "expected_direction": "down",
+      "evidence_requirement": "Storage and import data.",
+      "contradiction_signal": "Storage draw.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_business_20230103_015_63c2cd6e"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_henry_hub_monthly_return_2023_01_20260724_203149_013_e665bc4a"
+      ]
+    },
+    {
+      "id": "exports",
+      "role": "counterevidence",
+      "factor": "Rising exports",
+      "mechanism": "Exports can support domestic prices.",
+      "expected_direction": "up",
+      "evidence_requirement": "Export volumes.",
+      "contradiction_signal": "Exports decline.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_business_20230111_018_bb89b50e"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_henry_hub_monthly_return_2023_01_20260724_203225_030_23b31ed1"
+      ]
+    },
+    {
+      "id": "target",
+      "role": "target_bridge",
+      "factor": "Gas balance into futures",
+      "mechanism": "Demand and supply balance transmits into Henry Hub futures returns.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Futures and balance data.",
+      "contradiction_signal": "Futures diverge from balances.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_business_20230103_011_354e33c7",
+        "evt_finance_20230103_012_850258fb"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_henry_hub_monthly_return_2023_01_20260724_203149_010_c380b07e"
+      ]
+    }
+  ],
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "weather",
+        "demand",
+        "target"
+      ],
+      "generalized_mechanism": "Mild weather reduces heating demand and weakens futures.",
+      "expected_direction": "down",
+      "applicability_conditions": [
+        "Winter demand matters."
+      ],
+      "failure_conditions": [
+        "Cold weather returns."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "Exports offset domestic surplus.",
+      "discriminating_evidence": "Export volumes rise sharply.",
+      "source_event_ids": [
+        "evt_business_20230111_018_bb89b50e"
+      ]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Are temperatures mild?",
+    "Are inventories ample?",
+    "Are exports offsetting surplus?"
+  ]
+}

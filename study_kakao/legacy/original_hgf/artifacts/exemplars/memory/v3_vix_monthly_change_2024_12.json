@@ -1,0 +1,38 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_vix_monthly_change_2024_12",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_market",
+      "target_operation": "change_prediction",
+      "option_geometry": "range_prediction"
+    },
+    "historical_question": "As of 2024-12-01, which range will the monthly VIX change for CBOE VIX index in 2024-12 fall into?",
+    "historical_cutoff": "2024-12-01T00:00:00+00:00",
+    "target_semantics": "The monthly percentage change of the CBOE VIX index in December 2024.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "ev_358265207007a620",
+        "takeaway": "The VIX experienced a significant explosion in 2024, including a 64.9% increase on August 5th, the second-largest overnight percentage change in its history. The VIX also closed above 20 for the first time since October 2023 in early August and above 15 in mid-July, breaking a period of calm.",
+        "why_predictive": "This evidence establishes a precedent for large, rapid VIX movements within 2024, suggesting that a significant change in December is plausible, potentially indicating a move outside of a recent calm range."
+      }
+    ],
+    "expert_reasoning": [
+      "The VIX has demonstrated a capacity for significant, rapid percentage changes within 2024, as evidenced by a 64.9% increase on August 5th (ev_358265207007a620).",
+      "This historical volatility within the year suggests that the VIX's movement in December could deviate significantly from recent calm periods.",
+      "The VIX closed above 20 in early August 2024, breaking a period of calm, and had previously closed above 15 in mid-July 2024 (ev_358265207007a620). This indicates that the index has moved beyond lower, calmer levels within the year."
+    ],
+    "counterevidence": "The DAG indicates that factors such as the VIX remaining near its 2024 lows in mid-December, or year-end reporting describing 2024 volatility as abnormally tame overall, could serve as counterevidence. Additionally, a specific large jump on December 18th is noted as a potential mediator, but its impact on the month-end change is uncertain.",
+    "prospective_target_estimate": "Given the established precedent for large VIX movements within 2024, and the breaking of recent calm periods, the VIX change for December 2024 is likely to be significant. This suggests a potential for the change to fall outside of a narrow recent range.",
+    "option_mapping": "The evidence points towards a significant VIX change, suggesting the outcome is more likely to be 'above recent range' or potentially 'below recent range' if a sharp reversal occurs, rather than 'within recent range'.",
+    "uncertainty": "The DAG highlights that a single day's spike does not definitively determine the month-end percentage change. Furthermore, the causal effect of options activity and VVIX is not established, and the impact of specific historical factors like a mid-December lull or an overall tame year for volatility remains uncertain and could counteract the observed volatility.",
+    "dag_derived_lesson": "A historical precedent of significant metric fluctuations within a target year, coupled with the breaking of recent stable periods, suggests that future changes may fall outside of a narrow recent range. However, the absence of established causal links for certain anticipatory signals and the potential dominance of counteracting factors introduce significant uncertainty."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

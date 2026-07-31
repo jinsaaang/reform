@@ -1,0 +1,532 @@
+{
+  "schema_version": "hgf_blueprint_topology_v2",
+  "question_id": "v3_us_gasoline_monthly_change_2023_07",
+  "target_definition": {
+    "metric": "monthly retail gasoline-price change",
+    "unit_or_option_space": [
+      "below recent range",
+      "within recent range",
+      "above recent range"
+    ],
+    "forecast_horizon": "Remap the historical target family to the current question's exact target period."
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Outcome-redacted topology preserves 7 checkpoints, 7 source edges, and 4 root-to-target paths.",
+    "weaknesses": [
+      "The evidence supports multiple upward pressures but does not quantify their separate contributions to the 5.209 percent monthly change.",
+      "Forecast chronology is included as context and is not treated as causal evidence."
+    ]
+  },
+  "search_factors": [
+    {
+      "factor": "EIA forecast lower summer gasoline prices with a slight later-summer increase",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "node_01"
+      ]
+    },
+    {
+      "factor": "Gasoline prices rose [CURRENT_VALUE_REQUIRED] from [CURRENT_PERIOD_REQUIRED] through [CURRENT_PERIOD_REQUIRED]",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "node_02"
+      ]
+    },
+    {
+      "factor": "Saudi Arabia and Russia announced oil-production restraint",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "node_03"
+      ]
+    },
+    {
+      "factor": "[CURRENT_PERIOD_REQUIRED] reporting raised the gasoline-price outlook and noted unpassed crude-oil pressure",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "node_04"
+      ]
+    },
+    {
+      "factor": "Domestic refinery issues constrained gasoline supply",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "node_05"
+      ]
+    },
+    {
+      "factor": "Higher crude-oil costs pushed gasoline prices upward",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "node_06"
+      ]
+    },
+    {
+      "factor": "Retail gasoline prices spiked to about [CURRENT_VALUE_REQUIRED] per gallon by [CURRENT_PERIOD_REQUIRED]",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "node_07"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "checkpoint_1",
+      "role": "driver",
+      "factor": "EIA forecast lower summer gasoline prices with a slight later-summer increase",
+      "mechanism": "The [CURRENT_PERIOD_REQUIRED] report updates the earlier summer outlook; this is a forecast sequence rather than a causal price mechanism.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "node_01"
+      ],
+      "source_edge_ids": [
+        "edge_01"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_2",
+      "role": "driver",
+      "factor": "Gasoline prices rose [CURRENT_VALUE_REQUIRED] from [CURRENT_PERIOD_REQUIRED] through [CURRENT_PERIOD_REQUIRED]",
+      "mechanism": "The pre-[CURRENT_PERIOD_REQUIRED] gasoline uptrend provides context for the revised outlook without being treated as its cause.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "node_02"
+      ],
+      "source_edge_ids": [
+        "edge_02"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_3",
+      "role": "driver",
+      "factor": "Saudi Arabia and Russia announced oil-production restraint",
+      "mechanism": "Production restraint was explicitly linked to upward oil and gasoline price pressure, though the isolated magnitude is not measured.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "node_03"
+      ],
+      "source_edge_ids": [
+        "edge_03"
+      ],
+      "source_event_type": "decision"
+    },
+    {
+      "id": "checkpoint_4",
+      "role": "mediator",
+      "factor": "[CURRENT_PERIOD_REQUIRED] reporting raised the gasoline-price outlook and noted unpassed crude-oil pressure",
+      "mechanism": "The [CURRENT_PERIOD_REQUIRED] outlook anticipated pressure that was later observed in retail prices; the forecast did not cause the spike.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "node_04"
+      ],
+      "source_edge_ids": [
+        "edge_04"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_5",
+      "role": "driver",
+      "factor": "Domestic refinery issues constrained gasoline supply",
+      "mechanism": "End-of-month reporting explicitly attributes part of the retail spike to refinery issues.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "node_05"
+      ],
+      "source_edge_ids": [
+        "edge_06"
+      ],
+      "source_event_type": "external_shock"
+    },
+    {
+      "id": "checkpoint_6",
+      "role": "mediator",
+      "factor": "Higher crude-oil costs pushed gasoline prices upward",
+      "mechanism": "AAA and end-of-month reporting directly connect higher oil costs with higher retail gasoline prices.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "node_06"
+      ],
+      "source_edge_ids": [
+        "edge_05"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_7",
+      "role": "mediator",
+      "factor": "Retail gasoline prices spiked to about [CURRENT_VALUE_REQUIRED] per gallon by [CURRENT_PERIOD_REQUIRED]",
+      "mechanism": "Re-test whether this factor has a currently supported link to the exact target metric; do not transfer the historical outcome or magnitude.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "node_07"
+      ],
+      "source_edge_ids": [
+        "edge_07"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "target_bridge",
+      "role": "target_bridge",
+      "factor": "monthly retail gasoline-price change",
+      "mechanism": "Map only currently supported paths into the exact target operator. Directional support alone is not magnitude or threshold-crossing support.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "A current target baseline and evidence supporting every edge used in the bridge.",
+      "contradiction_signal": "The current target baseline, magnitude evidence, or option boundary contradicts the proposed path.",
+      "historical_support": "medium",
+      "source_event_ids": [],
+      "source_edge_ids": [
+        "edge_07"
+      ],
+      "source_event_type": "target_bridge"
+    }
+  ],
+  "topology": {
+    "checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_5",
+      "checkpoint_6",
+      "checkpoint_7",
+      "target_bridge"
+    ],
+    "root_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_5"
+    ],
+    "target_bridge_id": "target_bridge",
+    "edges": [
+      {
+        "source_checkpoint_id": "checkpoint_1",
+        "target_checkpoint_id": "checkpoint_4",
+        "relationship": "updated_by",
+        "directionality": "forward",
+        "support_level": "evidence_synthesized",
+        "rationale": "The [CURRENT_PERIOD_REQUIRED] report updates the earlier summer outlook; this is a forecast sequence rather than a causal price mechanism.",
+        "source_edge_ids": [
+          "edge_01"
+        ],
+        "source_article_ids": [
+          "ev_621352812002b15f",
+          "ev_7564eed00a2fc52d"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_2",
+        "target_checkpoint_id": "checkpoint_4",
+        "relationship": "provides_context_for",
+        "directionality": "forward",
+        "support_level": "evidence_synthesized",
+        "rationale": "The pre-[CURRENT_PERIOD_REQUIRED] gasoline uptrend provides context for the revised outlook without being treated as its cause.",
+        "source_edge_ids": [
+          "edge_02"
+        ],
+        "source_article_ids": [
+          "ev_8cab8a45ea757770",
+          "ev_7564eed00a2fc52d"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_3",
+        "target_checkpoint_id": "checkpoint_6",
+        "relationship": "contributes_to",
+        "directionality": "forward",
+        "support_level": "evidence_synthesized",
+        "rationale": "Production restraint was explicitly linked to upward oil and gasoline price pressure, though the isolated magnitude is not measured.",
+        "source_edge_ids": [
+          "edge_03"
+        ],
+        "source_article_ids": [
+          "ev_f09dbee814e5ec0c",
+          "ev_e60e50fa0276269b"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_4",
+        "target_checkpoint_id": "checkpoint_7",
+        "relationship": "anticipates",
+        "directionality": "forward",
+        "support_level": "evidence_synthesized",
+        "rationale": "The [CURRENT_PERIOD_REQUIRED] outlook anticipated pressure that was later observed in retail prices; the forecast did not cause the spike.",
+        "source_edge_ids": [
+          "edge_04"
+        ],
+        "source_article_ids": [
+          "ev_7564eed00a2fc52d",
+          "ev_4a1d6978acedd8d3"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_6",
+        "target_checkpoint_id": "checkpoint_7",
+        "relationship": "contributes_to",
+        "directionality": "forward",
+        "support_level": "observed",
+        "rationale": "AAA and end-of-month reporting directly connect higher oil costs with higher retail gasoline prices.",
+        "source_edge_ids": [
+          "edge_05"
+        ],
+        "source_article_ids": [
+          "ev_e60e50fa0276269b",
+          "ev_4a1d6978acedd8d3"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_5",
+        "target_checkpoint_id": "checkpoint_7",
+        "relationship": "contributes_to",
+        "directionality": "forward",
+        "support_level": "observed",
+        "rationale": "End-of-month reporting explicitly attributes part of the retail spike to refinery issues.",
+        "source_edge_ids": [
+          "edge_06"
+        ],
+        "source_article_ids": [
+          "ev_4a1d6978acedd8d3"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_7",
+        "target_checkpoint_id": "target_bridge",
+        "relationship": "measured_as",
+        "directionality": "forward",
+        "support_level": "evidence_synthesized",
+        "rationale": "Historical DAG connected this factor to the redacted target measurement; the realized value and outcome mapping are omitted.",
+        "source_edge_ids": [
+          "edge_07"
+        ],
+        "source_article_ids": [
+          "ev_4a1d6978acedd8d3",
+          "ev_bee42c181cce8eac"
+        ],
+        "terminal_to_target_bridge": true
+      }
+    ],
+    "paths_truncated": false
+  },
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "checkpoint_1",
+        "checkpoint_4",
+        "checkpoint_7",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "edge_01",
+        "edge_04",
+        "edge_07"
+      ],
+      "relationships": [
+        "updated_by",
+        "anticipates",
+        "measured_as"
+      ],
+      "path_role": "supporting_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from EIA forecast lower summer gasoline prices with a slight later-summer increase to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_2",
+        "checkpoint_4",
+        "checkpoint_7",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "edge_02",
+        "edge_04",
+        "edge_07"
+      ],
+      "relationships": [
+        "provides_context_for",
+        "anticipates",
+        "measured_as"
+      ],
+      "path_role": "supporting_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Gasoline prices rose [CURRENT_VALUE_REQUIRED] from [CURRENT_PERIOD_REQUIRED] through [CURRENT_PERIOD_REQUIRED] to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_3",
+        "checkpoint_6",
+        "checkpoint_7",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "edge_03",
+        "edge_05",
+        "edge_07"
+      ],
+      "relationships": [
+        "contributes_to",
+        "contributes_to",
+        "measured_as"
+      ],
+      "path_role": "supporting_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Saudi Arabia and Russia announced oil-production restraint to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_5",
+        "checkpoint_7",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "edge_06",
+        "edge_07"
+      ],
+      "relationships": [
+        "contributes_to",
+        "measured_as"
+      ],
+      "path_role": "main_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Domestic refinery issues constrained gasoline supply to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "A current factor outside the preserved historical topology dominates the target.",
+      "discriminating_evidence": "Search for current shocks and target observations not explained by any retained path.",
+      "source_event_ids": []
+    }
+  ],
+  "forecast_audit_questions": [
+    "Does every used checkpoint transition correspond to a preserved edge?",
+    "Which preserved edges are supported, contradicted, or unknown now?",
+    "Does a counter-path dominate the leading supported path?",
+    "Is there evidence for magnitude and boundary crossing, not direction alone?"
+  ],
+  "refinement_metadata": {
+    "model": "deterministic_topology_compiler_v2",
+    "source_graph": "data\\dags\\v3_us_gasoline_monthly_change_2023_07\\graph.json",
+    "source_audit_status": "pass_with_caveat",
+    "outcome_nodes_redacted": 1,
+    "target_value_anchors_redacted": 1,
+    "historical_specifics_sanitized": true,
+    "sanitizer": "minimal_value_period_placeholders_v1",
+    "value_replacement_count": 5,
+    "period_replacement_count": 16
+  },
+  "topology_validation": {
+    "status": "pass",
+    "errors": [],
+    "metrics": {
+      "retained_checkpoint_count": 7,
+      "source_edge_count": 7,
+      "emitted_edge_count": 7,
+      "edge_coverage": 1.0,
+      "path_precision": 1.0,
+      "causal_path_count": 4,
+      "outcome_event_leak_count": 0,
+      "outcome_text_leak_count": 0,
+      "realized_value_count": 0,
+      "absolute_period_count": 0
+    }
+  },
+  "pilot_usage": {
+    "top1_target_count": 3,
+    "top1_target_question_ids": [
+      "v3_us_gasoline_monthly_change_2025_06",
+      "v3_us_gasoline_monthly_change_2025_12",
+      "v3_us_gasoline_monthly_change_2026_06"
+    ]
+  }
+}

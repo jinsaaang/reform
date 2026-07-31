@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_fed_funds_monthly_change_2024_07",
+  "blueprint_sha256": "ec0177f0623ec9ddffd32221fe0e79007766307029f723be5531e8a134ab96b9",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "monetary_policy",
+      "target_operation": "monthly change",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2024-07-01, which range will the monthly federal-funds-rate change for Federal Reserve effective federal funds rate in 2024-07 fall into?",
+    "historical_cutoff": "2024-07-01T00:00:00+00:00",
+    "target_semantics": "The monthly change in the Federal Reserve's effective federal funds rate for July 2024.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The Federal Reserve's dual mandate of maximum employment and price stability, alongside its historical experience with underestimating inflation, suggests a cautious approach to monetary policy.",
+      "Reports such as the Federal Reserve Monetary Policy Report and the PCE Inflation Report, indicating moderating but still elevated inflation, reinforce this cautious stance.",
+      "This cautious, data-dependent approach, culminating in the FOMC meeting and rate decision, likely led to the federal funds rate remaining within its recent range."
+    ],
+    "counterevidence": "Market expectations for a rate cut and a weakening labor market created some pressure for a rate reduction, acting as countervailing factors against maintaining the current rate.",
+    "prospective_target_estimate": "within recent range",
+    "option_mapping": "The target metric is the monthly change in the federal funds rate. The 'within recent range' option corresponds to a change between -0.01 and 0.01 percentage points (exclusive of 0.01).",
+    "uncertainty": "The historical support for all drivers and mediators is weak, and there is no specific cutoff-safe evidence provided to confirm the current state of these factors or their precise impact on the target. The relative strength of counter-evidence (weakening labor market, market expectations) compared to the drivers is unclear.",
+    "dag_derived_lesson": "A cautious monetary policy stance, driven by inflation concerns and a commitment to price stability, can lead to maintaining policy rates even amidst some labor market weakness and market expectations for easing, provided inflation remains a primary concern."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

@@ -1,0 +1,195 @@
+{
+  "schema_version": "hgf_blueprint_v1",
+  "question_id": "v3_googl_revenue_growth_acceleration_2023_03_31",
+  "target_definition": {
+    "metric": "Alphabet quarterly year-over-year revenue-growth acceleration",
+    "unit_or_option_space": "Revenue-growth acceleration threshold classification",
+    "forecast_horizon": "Fiscal quarter ending 2023-03-31"
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Search, cloud, and advertising segments provide a reusable consolidated-revenue framework.",
+    "weaknesses": [
+      "Profitability and buybacks are indirect revenue evidence.",
+      "Several observations arrive with earnings."
+    ]
+  },
+  "search_factors": [
+    {
+      "factor": "Search demand",
+      "why_search": "Search is a core consolidated-revenue driver.",
+      "preferred_source_types": [
+        "segment disclosure",
+        "advertising data"
+      ],
+      "source_event_ids": [
+        "evt_business_20230331_003_35446049",
+        "evt_business_20230331_008_6277fcee"
+      ]
+    },
+    {
+      "factor": "Cloud performance",
+      "why_search": "Cloud can diversify consolidated growth.",
+      "preferred_source_types": [
+        "segment disclosure"
+      ],
+      "source_event_ids": [
+        "evt_business_20230425_004_6a0b1334"
+      ]
+    },
+    {
+      "factor": "YouTube advertising",
+      "why_search": "Video-ad weakness can restrain advertising revenue.",
+      "preferred_source_types": [
+        "segment disclosure",
+        "ad-market data"
+      ],
+      "source_event_ids": [
+        "evt_business_20230425_006_a3ea24a6"
+      ]
+    },
+    {
+      "factor": "Advertising environment",
+      "why_search": "Macro ad conditions can affect multiple revenue segments.",
+      "preferred_source_types": [
+        "ad-market data",
+        "economic indicators"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230101_002_b05a951b"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "search",
+      "role": "driver",
+      "factor": "Search demand",
+      "mechanism": "Search performance can lift consolidated revenue growth.",
+      "expected_direction": "up",
+      "evidence_requirement": "Verify search revenue and advertiser demand.",
+      "contradiction_signal": "Search growth decelerates.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_business_20230331_003_35446049"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_googl_revenue_growth_acceleration_2023_03_31_20260724_193631_003_d2d80be9"
+      ]
+    },
+    {
+      "id": "cloud",
+      "role": "mediator",
+      "factor": "Cloud performance",
+      "mechanism": "Cloud strength can add to consolidated revenue momentum.",
+      "expected_direction": "up",
+      "evidence_requirement": "Check cloud revenue and profitability trends.",
+      "contradiction_signal": "Cloud demand weakens.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_business_20230425_004_6a0b1334"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_googl_revenue_growth_acceleration_2023_03_31_20260724_193631_004_cb365fd6"
+      ]
+    },
+    {
+      "id": "ads_drag",
+      "role": "counterevidence",
+      "factor": "YouTube advertising",
+      "mechanism": "Video-ad weakness can restrain consolidated growth.",
+      "expected_direction": "down",
+      "evidence_requirement": "Check YouTube advertising trend.",
+      "contradiction_signal": "Video ads recover.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_business_20230425_006_a3ea24a6"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_googl_revenue_growth_acceleration_2023_03_31_20260724_193631_005_09b781ed"
+      ]
+    },
+    {
+      "id": "search_drag",
+      "role": "alternative",
+      "factor": "Search demand",
+      "mechanism": "Slower core-search growth can offset other segment strength.",
+      "expected_direction": "down",
+      "evidence_requirement": "Compare search growth with cloud contribution.",
+      "contradiction_signal": "Core-search growth accelerates.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_business_20230331_008_6277fcee"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_googl_revenue_growth_acceleration_2023_03_31_20260724_193631_006_16231e70"
+      ]
+    },
+    {
+      "id": "target_bridge",
+      "role": "target_bridge",
+      "factor": "Segment mix",
+      "mechanism": "Search, cloud, and advertising trends combine into revenue-growth acceleration.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Calculate sequential change in consolidated year-over-year revenue growth.",
+      "contradiction_signal": "Segment mix does not reconcile to consolidated revenue.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_business_20230331_003_35446049",
+        "evt_business_20230425_004_6a0b1334",
+        "evt_business_20230425_006_a3ea24a6"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_googl_revenue_growth_acceleration_2023_03_31_20260724_193631_003_d2d80be9",
+        "hyp_v3_googl_revenue_growth_acceleration_2023_03_31_20260724_193631_004_cb365fd6"
+      ]
+    }
+  ],
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "search",
+        "cloud",
+        "target_bridge"
+      ],
+      "generalized_mechanism": "Search and cloud strength can improve consolidated revenue momentum.",
+      "expected_direction": "up",
+      "applicability_conditions": [
+        "Both segments contribute materially."
+      ],
+      "failure_conditions": [
+        "Advertising weakness dominates."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "ads_drag",
+        "target_bridge"
+      ],
+      "generalized_mechanism": "Video-ad weakness can restrain consolidated growth.",
+      "expected_direction": "down",
+      "applicability_conditions": [
+        "Video advertising remains material."
+      ],
+      "failure_conditions": [
+        "Other segments offset the drag."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "A weak advertising market dominates company-specific segment resilience.",
+      "discriminating_evidence": "Compare advertising indicators with search and video-ad revenue.",
+      "source_event_ids": [
+        "evt_finance_20230101_002_b05a951b",
+        "evt_business_20230331_003_35446049",
+        "evt_business_20230425_006_a3ea24a6"
+      ]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Does search demand corroborate advertising-market data?",
+    "Can cloud growth offset advertising weakness?",
+    "Do segment weights support consolidated momentum?"
+  ]
+}

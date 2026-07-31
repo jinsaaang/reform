@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_us_housing_starts_monthly_growth_2025_04",
+  "blueprint_sha256": "94904237d9a7ddb661e3a2b0284775734f1107a239e3a2a865b655d0cd548fdf",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "forecasting",
+      "target_operation": "predict",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2025-04-30, which range will the monthly housing-starts growth for United States housing starts in 2025-04 fall into?",
+    "historical_cutoff": "2025-04-30T00:00:00+00:00",
+    "target_semantics": "Monthly growth rate of United States housing starts in April 2025, categorized as below -6.192%, within [-6.192%, 9.938%), or above 9.938%.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The DAG indicates that a prior analyst prediction of a housing market correction (checkpoint_1) is not a driver for the current period's housing starts, as it contrasts with subsequent reported rises.",
+      "Forecasts for mortgage rates and Treasury yields (checkpoint_3) shaped borrowing cost expectations, but the DAG notes this forecast does not explain the observed rise in housing starts.",
+      "Weakening building permits (checkpoint_4) are identified as contemporaneous counterevidence rather than a cause for rising starts, according to the DAG's analysis."
+    ],
+    "counterevidence": "Household cost pressures could have restrained housing demand (checkpoint_2), but the DAG indicates no established effect on current housing starts.",
+    "prospective_target_estimate": "within recent range",
+    "option_mapping": "The estimate of 'within recent range' corresponds to a monthly housing-starts growth between -6.192% and 9.938% inclusive.",
+    "uncertainty": "The DAG highlights that while some factors like mortgage rate forecasts (checkpoint_3) and building permits (checkpoint_4) are strongly supported, their direct causal link to the current period's housing starts is not fully explained, and prior analyst predictions (checkpoint_1) are explicitly discounted. The historical support for household cost pressures (checkpoint_2) is weak, and the mediator 'Reported U.S. housing starts rose in [CURRENT_PERIOD_REQUIRED]' (checkpoint_5) has only medium historical support, contributing to uncertainty.",
+    "dag_derived_lesson": "A prior negative outlook is not a driver when subsequent data shows a positive trend. Contemporaneous data that moves in the opposite direction of the target metric is counterevidence, not a driver. Forecasts influencing expectations require a demonstrated link to the target metric's outcome to be considered drivers."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

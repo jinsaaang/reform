@@ -1,0 +1,46 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_us_payroll_monthly_growth_2024_07",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "macro / labour",
+      "target_operation": "monthly payroll growth",
+      "option_geometry": "bucketed by prior quartiles"
+    },
+    "historical_question": "As of 2024-07-31, which range will the monthly payroll growth for United States nonfarm payrolls in 2024-07 fall into?",
+    "historical_cutoff": "2024-07-31T00:00:00+00:00",
+    "target_semantics": "The monthly percentage change in United States nonfarm payrolls for July 2024.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "ev_6f50827a9b1c4c62",
+        "takeaway": "June 2024 nonfarm payrolls increased by 206,000.",
+        "why_predictive": "Provides the official June figure, establishing a baseline for recent labor market expansion."
+      },
+      {
+        "article_id": "ev_a783e42e5f6a354c",
+        "takeaway": "Private sector employment increased by 150,000 jobs in June 2024.",
+        "why_predictive": "Offers a pre-release indicator of private sector job growth trends leading into July."
+      }
+    ],
+    "expert_reasoning": [
+      "The target is the monthly payroll growth for US nonfarm payrolls in July 2024, to be compared against recent range boundaries (0.054% to 0.116%).",
+      "The June 2024 nonfarm payroll figure was 206,000 (ev_6f50827a9b1c4c62).",
+      "The ADP report indicated private sector employment growth of 150,000 for June (ev_a783e42e5f6a354c).",
+      "These figures suggest a continued, albeit potentially moderating, expansion in the labor market.",
+      "The official June figure (206,000) is a key data point for calculating the percentage change, but the percentage growth itself is not directly provided by the articles.",
+      "The ADP figure (150,000) serves as a supplementary indicator of labor market momentum."
+    ],
+    "counterevidence": "The provided articles offer job addition numbers for June but do not directly provide the total payroll levels needed to calculate the percentage growth for June or July. Therefore, the exact percentage growth for July cannot be directly inferred.",
+    "prospective_target_estimate": "The available evidence suggests continued job growth, but the magnitude of the percentage change for July is uncertain without more precise data or a direct forecast.",
+    "option_mapping": "Given the uncertainty in calculating the precise percentage growth, it is difficult to definitively map to 'below recent range', 'within recent range', or 'above recent range'.",
+    "uncertainty": "The forecast is highly uncertain because the articles provide raw job addition figures for June but not the total payroll numbers required to calculate the percentage growth metric for July. The relationship between June's job additions and July's percentage growth is not explicitly quantified.",
+    "dag_derived_lesson": "When forecasting a percentage change metric, direct evidence of the numerator and denominator, or a direct forecast of the percentage change itself, is crucial. Proxies like raw job additions can indicate direction but are insufficient for precise quantitative forecasting without additional data or assumptions about the baseline."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

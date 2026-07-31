@@ -1,0 +1,34 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_aapl_revenue_growth_acceleration_2023_04_01",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_growth_acceleration",
+      "target_operation": "predict_range",
+      "option_geometry": "ordered_categorical"
+    },
+    "historical_question": "As of 2023-04-01, which range will Apple Inc.'s quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2023-04-01 fall into?",
+    "historical_cutoff": "2023-04-01T00:00:00+00:00",
+    "target_semantics": "Apple Inc.'s quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2023-04-01.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The company's revenue guidance serves as a baseline for expected performance.",
+      "Flagship phone demand is a key driver of consolidated revenue growth.",
+      "Momentum in the services segment is expected to support overall revenue.",
+      "Weakness in Mac and iPad demand could act as a drag on consolidated growth.",
+      "The final consolidated growth rate is a result of the mix of segment performance."
+    ],
+    "counterevidence": "Weakness in Mac and iPad demand could reduce consolidated growth.",
+    "prospective_target_estimate": "The available evidence suggests a potential for revenue growth acceleration, driven by strong flagship phone and services momentum, which may offset weakness in other hardware segments. However, without specific pre-cutoff data, the precise acceleration is uncertain.",
+    "option_mapping": "The target metric is the change in year-over-year revenue growth. The options represent ranges for this acceleration: 'below recent range' (-8.442 pp or lower), 'within recent range' (-8.442 pp to -0.408 pp), and 'above recent range' (-0.408 pp or higher).",
+    "uncertainty": "The primary uncertainty stems from the lack of forecast-time evidence. The strength of flagship phone demand versus the weakness in secondary hardware, and how these balance against services momentum, is not clearly defined by pre-cutoff information. Management guidance, if available, would provide a more concrete baseline, but its predictive power is limited without corroborating segment data.",
+    "dag_derived_lesson": "A baseline forecast derived from management guidance can be adjusted by the strength of key product segments and the performance of secondary segments. The interplay between growth drivers and detractors determines the final outcome, with the aggregate effect being a combination of these forces."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

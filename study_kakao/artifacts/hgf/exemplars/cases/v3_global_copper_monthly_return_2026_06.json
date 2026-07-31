@@ -1,0 +1,48 @@
+{
+  "schema_version": "fixed_exemplar_case",
+  "status": "success",
+  "question_id": "v3_global_copper_monthly_return_2026_06",
+  "retrieved_memory_question_id": "v3_global_copper_monthly_return_2025_04",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_market",
+      "target_operation": "price_return_range",
+      "option_geometry": "bucketed_range"
+    },
+    "historical_question": "As of 2025-04-01, which range will the monthly copper-price return for Global copper price in 2025-04 fall into?",
+    "historical_cutoff": "2025-04-01T00:00:00+00:00",
+    "target_semantics": "The monthly copper-price return for Global copper price in April 2025.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20250120_005_b18a043d",
+        "takeaway": "AI tools and data centers are increasing copper demand.",
+        "why_predictive": "This suggests a potential upward pressure on copper prices due to rising demand from key technological sectors."
+      },
+      {
+        "article_id": "art_finance_20241011_009_77b470a9",
+        "takeaway": "Copper prices are expected to be influenced by global supply and demand dynamics in 2025.",
+        "why_predictive": "Provides a general overview of factors affecting copper prices, setting the stage for specific drivers."
+      },
+      {
+        "article_id": "art_finance_20250211_014_306333c0",
+        "takeaway": "Copper scrap prices are a key indicator of broader market trends in 2025.",
+        "why_predictive": "Weak scrap prices could signal cautious industrial demand, potentially impacting overall copper prices."
+      }
+    ],
+    "expert_reasoning": [
+      "The demand for copper is being boosted by AI tools and data centers (art_finance_20250120_005_b18a043d).",
+      "Global supply and demand dynamics are key factors for copper prices in 2025 (art_finance_20241011_009_77b470a9).",
+      "Weak copper scrap prices may indicate cautious industrial demand (art_finance_20250211_014_306333c0)."
+    ],
+    "counterevidence": "There is no direct counter-evidence provided in the forecast-time articles that contradicts the potential for increased demand or signals an immediate price drop.",
+    "prospective_target_estimate": "The evidence suggests a potential for upward price movement due to increased demand from AI and data centers, but this is tempered by the general outlook on supply/demand and the potential signal from weak scrap prices indicating cautious industrial demand. Therefore, the price return is likely to be influenced by these competing factors.",
+    "option_mapping": "Given the conflicting signals of rising demand from technology sectors versus potential caution in industrial demand, and the general outlook on supply/demand, it is difficult to definitively place the return. However, the strong driver of AI/data center demand might push it towards the upper end of expectations.",
+    "uncertainty": "The forecast is uncertain due to the interplay between strong technological demand and potential broader industrial demand weakness, as well as the general global supply/demand outlook which is not detailed in the provided articles.",
+    "dag_derived_lesson": "When assessing commodity price movements, consider both sector-specific demand drivers and broader industrial demand signals. The interplay between these factors, alongside global supply-demand balances, requires careful evaluation to determine price direction."
+  },
+  "hgf_provenance": {
+    "blueprint_schema": "hgf_blueprint_topology_v2",
+    "blueprint_sha256": "5917ac522d697256e6c2da409d01fdaca0618ec73c68ccb0f93ad55e05c2a99f",
+    "memory_exemplar_sha256": "76d2d1ae0dcb94bb968637e80cfd7865b01e583181dace2de7a4929744e48afb"
+  }
+}

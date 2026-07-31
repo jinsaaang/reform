@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_global_wheat_monthly_return_2025_04",
+  "blueprint_sha256": "7643b3653ef3a4f12a1ecda49436cab36df6277dbecf72a28df8aaa3d563544e",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "price_prediction",
+      "target_operation": "return_at_least",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2025-04-01, will the monthly wheat-price return for Global wheat price in 2025-04 be at least -0.122 percent?",
+    "historical_cutoff": "2025-04-01T00:00:00+00:00",
+    "target_semantics": "The monthly percentage return of the global wheat price in April 2025 must be greater than or equal to -0.122%.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The DAG indicates that increased wheat availability due to harvests and removal of support prices was a historical driver. However, without current evidence, its impact on the target metric remains unknown.",
+      "The announcement of U.S. reciprocal tariffs historically led to a negative commodity market reaction. The DAG suggests this path, but current evidence is needed to confirm its ongoing relevance and direction.",
+      "A bearish wheat forecast in early [CURRENT_PERIOD_REQUIRED] was directionally consistent with a futures decline. The DAG preserves this link, but its predictive power requires current supporting evidence."
+    ],
+    "counterevidence": "Experts reported that the wheat market largely shrugged off tariffs, suggesting that the impact of tariff announcements on wheat prices might be limited or offset by other factors.",
+    "prospective_target_estimate": "The target metric is a monthly wheat-price return for April 2025, compared against a threshold of -0.122 percent.",
+    "option_mapping": "The 'yes' option corresponds to a monthly wheat-price return of -0.122 percent or higher. The 'no' option corresponds to a monthly wheat-price return below -0.122 percent.",
+    "uncertainty": "The absence of forecast-time evidence means that the predictive strength and direction of historical drivers like increased wheat availability, tariff impacts, and bearish forecasts cannot be assessed. The counter-evidence regarding the market shrugging off tariffs further complicates the outlook.",
+    "dag_derived_lesson": "The impact of supply-side factors and policy announcements on commodity prices requires continuous evaluation, as market reactions can be nuanced and influenced by countervailing information."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

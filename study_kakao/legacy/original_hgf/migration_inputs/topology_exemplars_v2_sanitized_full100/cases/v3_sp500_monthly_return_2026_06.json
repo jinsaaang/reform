@@ -1,0 +1,43 @@
+{
+  "schema_version": "fixed_exemplar_case",
+  "status": "success",
+  "question_id": "v3_sp500_monthly_return_2026_06",
+  "retrieved_memory_question_id": "v3_sp500_monthly_return_2023_07",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "market_fx_credit / equity market",
+      "target_operation": "monthly S&P 500 return",
+      "option_geometry": "ordered_categorical"
+    },
+    "historical_question": "As of 2023-07-01, which range will the monthly S&P 500 return for S&P 500 index in 2023-07 fall into?",
+    "historical_cutoff": "2023-07-01T00:00:00+00:00",
+    "target_semantics": "The monthly return of the S&P 500 index for July 2023, categorized as below -0.467%, within [-0.467%, 5.575%), or above 5.575%.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20221129_003_a94722a8",
+        "takeaway": "Reflections on monetary policy in 2022 suggest a focus on controlling inflation.",
+        "why_predictive": "Past monetary policy discussions and their outcomes can inform current and future policy decisions, potentially influencing market conditions."
+      },
+      {
+        "article_id": "art_finance_20230614_004_ddebf37e",
+        "takeaway": "The Federal Reserve held its key interest rate at 5% in June 2023, evaluating the economy after a lower inflation reading.",
+        "why_predictive": "The Federal Reserve's decision to pause interest rate hikes, especially in response to falling inflation, can signal a shift in monetary policy stance, impacting equity markets."
+      }
+    ],
+    "expert_reasoning": [
+      "The Federal Reserve's decision to hold interest rates at 5% (art_finance_20230614_004_ddebf37e) suggests a pause in tightening monetary policy.",
+      "This pause, following a lower inflation reading, indicates a potential shift in the Fed's approach, as reflected in past monetary policy discussions (art_finance_20221129_003_a94722a8).",
+      "A stable or potentially easing monetary policy environment, coupled with falling inflation, could support equity market performance.",
+      "The historical range for monthly S&P 500 returns is between -0.467% and 5.575%."
+    ],
+    "counterevidence": "No direct counterevidence regarding the S&P 500's July 2023 return was present in the forecast-time articles. The articles focused on monetary policy and inflation trends.",
+    "prospective_target_estimate": "Given the Federal Reserve's pause on interest rate hikes and a lower inflation reading, the S&P 500 return for July 2023 is likely to be influenced by this more accommodative stance, potentially leading to a positive return. However, without specific forward-looking economic data or market sentiment indicators, it is difficult to precisely forecast the magnitude.",
+    "option_mapping": "The evidence suggests a potentially positive market environment due to monetary policy stabilization. This could align with returns 'within recent range' or potentially 'above recent range', depending on the strength of economic recovery and market sentiment, which are not detailed in the provided articles.",
+    "uncertainty": "The provided articles offer insights into monetary policy decisions and inflation trends but lack specific forward-looking data or market-specific indicators for July 2023. The exact impact of the Fed's pause on the S&P 500's monthly return, and whether it crosses the upper bound of 5.575%, remains uncertain.",
+    "dag_derived_lesson": "Monetary policy decisions, particularly interest rate adjustments and inflation outlooks, can influence market performance. However, the precise magnitude and direction of market returns require more granular, current economic and sentiment data beyond general policy statements."
+  },
+  "pilot_provenance": {
+    "blueprint_schema": "hgf_blueprint_topology_v2",
+    "memory_exemplar_sha256": "cac440ebdcf9c228ab5e20ea2c3b78de88a7c3b4a5736a464753c5d4e4d1293f"
+  }
+}

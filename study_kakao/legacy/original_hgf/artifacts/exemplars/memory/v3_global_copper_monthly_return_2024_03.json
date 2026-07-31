@@ -1,0 +1,85 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_global_copper_monthly_return_2024_03",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_analysis",
+      "target_operation": "predict_price_return_range",
+      "option_geometry": "categorical"
+    },
+    "historical_question": "As of 2024-03-01, which range will the monthly copper-price return for Global copper price in 2024-03 fall into?",
+    "historical_cutoff": "2024-03-01T00:00:00+00:00",
+    "target_semantics": "The monthly percentage return for the global copper price in March 2024.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20210222_003_103ca92c",
+        "takeaway": "Copper prices are rising due to the 'green revolution' and a lack of mine investment.",
+        "why_predictive": "Highlights structural supply-side issues (lack of investment) that can lead to sustained price increases."
+      },
+      {
+        "article_id": "art_finance_20230725_007_2202a990",
+        "takeaway": "The global copper market is entering an age of extremely large deficits.",
+        "why_predictive": "Directly indicates a fundamental imbalance favoring higher prices due to demand outstripping supply."
+      },
+      {
+        "article_id": "art_finance_20231201_006_5e772303",
+        "takeaway": "The global copper industry outlook for 2024 anticipates a transition from a near-term glut to long-term scarcity.",
+        "why_predictive": "Suggests that while short-term factors might exist, the underlying trend points towards tightening supply and higher prices."
+      },
+      {
+        "article_id": "art_finance_20231212_020_d6fe57ab",
+        "takeaway": "The world's copper supply is suddenly looking scarce.",
+        "why_predictive": "Reinforces the narrative of tightening supply, a key driver for price increases."
+      },
+      {
+        "article_id": "art_finance_20221213_008_77e38cbf",
+        "takeaway": "Copper prices, traditionally a barometer for the global economy, are expected to soar next year.",
+        "why_predictive": "Indicates expert expectations of significant price appreciation, linking copper to broader economic health and future price trends."
+      },
+      {
+        "article_id": "art_finance_20230110_009_c42bfe2b",
+        "takeaway": "Global copper greenfield investment falls short of demand outlook, experts say.",
+        "why_predictive": "Points to insufficient future supply to meet projected demand, a bullish signal for prices."
+      },
+      {
+        "article_id": "art_finance_20230213_013_5b96e637",
+        "takeaway": "Copper Prices Could See 'Astronomical Rise' as Supply Concerns Increase.",
+        "why_predictive": "Strongly suggests a potential for significant price increases driven by growing supply-side issues."
+      },
+      {
+        "article_id": "art_finance_20220426_002_145475b3",
+        "takeaway": "Global copper market drivers show push and pull, with supply constraints being a key factor.",
+        "why_predictive": "Acknowledges multiple factors but emphasizes supply constraints as a significant driver."
+      },
+      {
+        "article_id": "art_finance_20220601_019_185ca595",
+        "takeaway": "Global metal markets face weakening demand amid constrained supply.",
+        "why_predictive": "Highlights the tension between demand and supply, with supply constraints being a persistent issue."
+      },
+      {
+        "article_id": "art_finance_20211123_004_577c862c",
+        "takeaway": "Tightened supply is expected to support copper prices.",
+        "why_predictive": "Directly links supply tightness to price support."
+      }
+    ],
+    "expert_reasoning": [
+      "The global copper market is characterized by persistent mining constraints and a lack of sufficient greenfield investment to meet future demand (art_finance_20210222_003_103ca92c, art_finance_20230110_009_c42bfe2b).",
+      "These structural issues, coupled with increasing supply disruptions, are leading to expectations of a significantly tighter market and large deficits (art_finance_20230725_007_2202a990, art_finance_20220426_002_145475b3).",
+      "Multiple sources indicate that copper supply is becoming increasingly scarce, with forecasts pointing towards long-term scarcity and potential for 'astronomical rises' in price (art_finance_20231212_020_d6fe57ab, art_finance_20230213_013_5b96e637).",
+      "The market is seen as transitioning from any potential near-term glut to a state of scarcity in 2024 (art_finance_20231201_006_5e772303).",
+      "Copper's role as an economic barometer suggests that expected price increases are tied to underlying market dynamics rather than just speculative sentiment (art_finance_20221213_008_77e38cbf)."
+    ],
+    "counterevidence": "While some reports mention a potential near-term glut (art_finance_20231201_006_5e772303), the overwhelming consensus points to tightening supply and deficits. Planned Chinese smelter production cuts, if implemented, could further exacerbate supply concerns, but there is a risk these plans may not materialize as announced (art_finance_20221104_005_62247131, art_finance_20210618_014_42d95918). Market sentiment has also been cited as weighing on prices at times (art_finance_20230526_015_9440f30b, art_finance_20221125_018_211400e3), suggesting potential downward pressure from factors other than physical supply.",
+    "prospective_target_estimate": "Given the strong evidence for persistent supply constraints, increasing deficits, and expectations of scarcity, the monthly copper price return for March 2024 is likely to be positive, potentially exceeding the recent range.",
+    "option_mapping": "The evidence suggests a strong upward pressure on copper prices due to fundamental supply-side issues. This points towards a price return that is likely to be above the recent range.",
+    "uncertainty": "The primary uncertainties stem from the actual implementation of Chinese smelter production plans and the potential impact of broader market sentiment or global economic slowdowns on demand, which are not fully detailed in the provided articles. The historical evidence for the impact of Chinese smelter plans is weak.",
+    "dag_derived_lesson": "Persistent structural supply constraints, when combined with disruptions and insufficient investment, can create expectations of market tightness and drive prices upward. However, the realization of these price movements depends on the actual implementation of planned supply adjustments and the absence of significant demand-side shocks."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

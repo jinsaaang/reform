@@ -1,0 +1,221 @@
+{
+  "schema_version": "hgf_blueprint_v1",
+  "question_id": "v3_global_copper_monthly_return_2025_04",
+  "target_definition": {
+    "metric": "Global copper monthly price return",
+    "unit_or_option_space": "Pre-registered monthly percentage-return classification",
+    "forecast_horizon": "April 2025"
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Trade-policy uncertainty, an anticipated copper surplus, weak industrial demand, and weaker scrap-market conditions form the supported bearish framework, with long-run deficit expectations and mining M&A as countervailing signals.",
+    "weaknesses": [
+      "The graph does not provide a separate USD factor.",
+      "Direct copper-price decline and outcome nodes are excluded as realized-result proxies."
+    ]
+  },
+  "search_factors": [
+    {
+      "factor": "Global trade-policy uncertainty",
+      "why_search": "Escalating trade conflict can weaken macroeconomic confidence and industrial-metal demand expectations.",
+      "preferred_source_types": [
+        "official trade-policy announcement",
+        "global manufacturing data",
+        "market-risk analysis"
+      ],
+      "source_event_ids": [
+        "evt_politics_20250401_015_b90f5cab"
+      ]
+    },
+    {
+      "factor": "Global copper supply outlook",
+      "why_search": "A reported surplus can indicate looser supply-demand conditions.",
+      "preferred_source_types": [
+        "ICSG supply outlook",
+        "mine-production data",
+        "refined-copper balance data"
+      ],
+      "source_event_ids": [
+        "evt_finance_20250430_013_38b34eb9"
+      ]
+    },
+    {
+      "factor": "Industrial copper demand",
+      "why_search": "Cautious industrial demand can weaken the market balance for copper.",
+      "preferred_source_types": [
+        "industrial-production data",
+        "copper-demand outlook"
+      ],
+      "source_event_ids": [
+        "evt_finance_20250430_018_5f3a8267"
+      ]
+    },
+    {
+      "factor": "Scrap copper market",
+      "why_search": "Scrap-market conditions can provide a supplementary signal on copper demand and sentiment.",
+      "preferred_source_types": [
+        "scrap-market data",
+        "physical-premium data"
+      ],
+      "source_event_ids": [
+        "evt_finance_20250430_014_cb5b308d"
+      ]
+    },
+    {
+      "factor": "Long-run supply confidence",
+      "why_search": "Structural-deficit expectations and mining investment can conflict with near-term surplus signals.",
+      "preferred_source_types": [
+        "long-run copper outlook",
+        "mining investment data"
+      ],
+      "source_event_ids": [
+        "evt_finance_20250410_020_4a122719",
+        "evt_finance_20250430_019_682206cb"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "trade_uncertainty",
+      "role": "baseline",
+      "factor": "Global trade-policy uncertainty",
+      "mechanism": "Trade-policy escalation can increase macroeconomic uncertainty and weaken industrial-demand expectations.",
+      "expected_direction": "down",
+      "evidence_requirement": "Verify policy actions, manufacturing expectations, and trade-sensitive industrial indicators.",
+      "contradiction_signal": "Trade tensions ease and industrial indicators improve.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_politics_20250401_015_b90f5cab"
+      ],
+      "source_edge_ids": []
+    },
+    {
+      "id": "surplus_outlook",
+      "role": "driver",
+      "factor": "Global copper supply outlook",
+      "mechanism": "An expected global surplus can loosen the copper balance and dampen investor sentiment.",
+      "expected_direction": "down",
+      "evidence_requirement": "Confirm current production, demand forecasts, and the reported supply-demand balance.",
+      "contradiction_signal": "Supply forecasts tighten or demand revisions eliminate the projected surplus.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_finance_20250430_013_38b34eb9",
+        "evt_finance_20250430_016_20d6e61d"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_global_copper_monthly_return_2025_04_20260725_044152_013_95f29ba6"
+      ]
+    },
+    {
+      "id": "industrial_demand",
+      "role": "mediator",
+      "factor": "Industrial copper demand",
+      "mechanism": "Weak industrial demand can reinforce a loose supply-demand balance.",
+      "expected_direction": "down",
+      "evidence_requirement": "Check industrial production, fabrication demand, and regional consumption indicators.",
+      "contradiction_signal": "Industrial activity and copper consumption accelerate.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_finance_20250430_018_5f3a8267",
+        "evt_finance_20250430_014_cb5b308d"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_global_copper_monthly_return_2025_04_20260725_044152_014_60cf9eaf"
+      ]
+    },
+    {
+      "id": "structural_support",
+      "role": "counterevidence",
+      "factor": "Long-run supply confidence",
+      "mechanism": "Structural-deficit expectations or mining investment can support longer-run copper confidence despite near-term weakness.",
+      "expected_direction": "up",
+      "evidence_requirement": "Verify long-run balance assumptions and whether investment reflects current physical tightness.",
+      "contradiction_signal": "Supply additions and weak demand invalidate the deficit outlook.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20250410_020_4a122719",
+        "evt_finance_20250430_019_682206cb"
+      ],
+      "source_edge_ids": []
+    },
+    {
+      "id": "target_bridge",
+      "role": "target_bridge",
+      "factor": "Near-term copper market balance",
+      "mechanism": "Copper direction reflects the balance between verified trade-sensitive demand, industrial consumption, supply outlook, and countervailing long-run expectations.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Reconcile current trade policy, industrial demand, supply-balance data, and investment signals without using a past monthly return.",
+      "contradiction_signal": "Current physical and demand data conflict with the inferred balance.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_politics_20250401_015_b90f5cab",
+        "evt_finance_20250430_013_38b34eb9",
+        "evt_finance_20250430_018_5f3a8267",
+        "evt_finance_20250410_020_4a122719"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_global_copper_monthly_return_2025_04_20260725_044152_013_95f29ba6",
+        "hyp_v3_global_copper_monthly_return_2025_04_20260725_044152_014_60cf9eaf"
+      ]
+    }
+  ],
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "trade_uncertainty",
+        "industrial_demand",
+        "target_bridge"
+      ],
+      "generalized_mechanism": "Trade-policy uncertainty can weaken industrial demand expectations and soften a near-term copper balance.",
+      "expected_direction": "down",
+      "applicability_conditions": [
+        "Policy uncertainty affects manufacturing and trade expectations.",
+        "Industrial-demand data weaken."
+      ],
+      "failure_conditions": [
+        "Trade tensions ease.",
+        "Industrial activity remains resilient."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "surplus_outlook",
+        "target_bridge"
+      ],
+      "generalized_mechanism": "A verified surplus outlook can weigh on copper when production exceeds expected consumption.",
+      "expected_direction": "down",
+      "applicability_conditions": [
+        "Supply-balance forecasts are current and credible."
+      ],
+      "failure_conditions": [
+        "Demand improves or supply is disrupted."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "Long-run structural supply constraints dominate a near-term surplus outlook.",
+      "discriminating_evidence": "Compare current supply-balance data with long-run deficit assumptions and mining investment.",
+      "source_event_ids": [
+        "evt_finance_20250410_020_4a122719",
+        "evt_finance_20250430_013_38b34eb9",
+        "evt_finance_20250430_019_682206cb"
+      ]
+    },
+    {
+      "hypothesis": "Industrial demand is resilient despite trade-policy concern.",
+      "discriminating_evidence": "Compare manufacturing and copper-consumption data with trade-sensitive confidence measures.",
+      "source_event_ids": [
+        "evt_politics_20250401_015_b90f5cab",
+        "evt_finance_20250430_018_5f3a8267"
+      ]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Do current trade-policy developments weaken industrial activity expectations?",
+    "Does the current copper supply-demand outlook still show a surplus?",
+    "Do industrial production and scrap-market conditions confirm weak demand?",
+    "Are structural-deficit and mining-investment signals relevant to the near-term balance?",
+    "Do supply and demand data reconcile without relying on a historical copper return?"
+  ]
+}

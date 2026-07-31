@@ -1,0 +1,48 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_sp500_monthly_return_2023_01",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_market",
+      "target_operation": "predict_range",
+      "option_geometry": "ordered_categorical"
+    },
+    "historical_question": "As of 2023-01-01, which range will the monthly S&P 500 return for S&P 500 index in 2023-01 fall into?",
+    "historical_cutoff": "2023-01-01T00:00:00+00:00",
+    "target_semantics": "The monthly percentage return of the S&P 500 index for January 2023.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20220725_008_53ade934",
+        "takeaway": "As of July 2022, Fed funds futures indicated a peak in U.S. interest rates by January 2023.",
+        "why_predictive": "Anticipated peak interest rates can influence equity market valuations by affecting discount rates."
+      },
+      {
+        "article_id": "art_finance_20160122_002_6a9e4389",
+        "takeaway": "January has historically seen market turbulence.",
+        "why_predictive": "Historical patterns of January market behavior may suggest a tendency for volatility or specific directional moves."
+      },
+      {
+        "article_id": "art_finance_20210225_002_28145989",
+        "takeaway": "January 2022 saw a review and outlook, with some entities beating profit expectations.",
+        "why_predictive": "Past earnings performance and outlooks can provide context for current earnings expectations, which impact equity markets."
+      }
+    ],
+    "expert_reasoning": [
+      "The baseline expectation is influenced by inflation and expected policy rates. Elevated inflation typically leads to tighter monetary policy, which can pressure equity markets. Evidence suggests that as of July 2022, Fed funds futures anticipated a peak in interest rates by January 2023 (art_finance_20220725_008_53ade934). This expectation of peaking rates could moderate the impact of restrictive policy.",
+      "Earnings breadth is a key driver. While restrictive conditions can weigh on equities, broad earnings strength can provide support (art_finance_20210225_002_28145989). The historical context of January market turbulence (art_finance_20160122_002_6a9e4389) adds a layer of potential volatility.",
+      "The combination of expected policy rate peaks, the potential for earnings resilience, and historical January patterns suggests a mixed outlook. The mechanism linking these factors is how discount rates, earnings, and risk appetite interact to determine the S&P 500's direction."
+    ],
+    "counterevidence": "The historical tendency for January market turbulence (art_finance_20160122_002_6a9e4389) could manifest as significant downside risk, counteracting any positive effects from expected rate peaks or earnings.",
+    "prospective_target_estimate": "Within recent range",
+    "option_mapping": "The expectation of peaking interest rates by January 2023 (art_finance_20220725_008_53ade934), combined with the potential for earnings resilience (art_finance_20210225_002_28145989), suggests that extreme negative or positive returns might be less likely. This points towards the 'within recent range' option, despite historical January turbulence (art_finance_20160122_002_6a9e4389).",
+    "uncertainty": "The historical tendency for January turbulence (art_finance_20160122_002_6a9e4389) introduces significant uncertainty. Furthermore, the strength and breadth of earnings (art_finance_20210225_002_28145989) and the precise impact of anticipated peak rates (art_finance_20220725_008_53ade934) are subject to change and market interpretation.",
+    "dag_derived_lesson": "Anticipated shifts in monetary policy, when combined with earnings resilience, can moderate market expectations. However, historical seasonal patterns introduce a significant element of uncertainty that must be weighed against fundamental drivers."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

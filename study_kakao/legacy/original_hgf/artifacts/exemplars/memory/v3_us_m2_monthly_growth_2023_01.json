@@ -1,0 +1,33 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_us_m2_monthly_growth_2023_01",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "monetary_policy",
+      "target_operation": "money_supply_growth",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2023-01-01, which range will the monthly M2 growth for United States M2 money stock in 2023-01 fall into?",
+    "historical_cutoff": "2023-01-01T00:00:00+00:00",
+    "target_semantics": "The monthly growth rate of the United States M2 money stock for January 2023.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The inflation signal is a baseline factor, but its current state is not specified in the provided articles, making its influence on policy stance unclear.",
+      "Policy communication is a driver, but the articles do not detail any current guidance or its potential changes, leaving its framing of the policy context uncertain.",
+      "Policy action is considered counterevidence, but the articles do not specify any actions taken or their relationship to M2 components, thus not establishing a clear direction.",
+      "The target bridge requires verified M2 components and transmission, which are not detailed in the provided articles. Policy stance is context only, and without verified components, inferring M2 direction is not possible."
+    ],
+    "counterevidence": "Policy action is considered counterevidence, but the provided articles do not specify any actions taken or their relationship to M2 components, thus not establishing a clear direction.",
+    "prospective_target_estimate": "The provided articles offer no specific data or trends to support an estimate for the monthly M2 growth in January 2023. The causal paths suggest a 'mixed' expected direction, contingent on verified M2 components.",
+    "option_mapping": "The target metric is monthly M2 growth in percent. The options are 'below recent range' (less than -0.38%), 'within recent range' (-0.38% to -0.189%), and 'above recent range' (greater than or equal to -0.189%). Without specific component data, mapping to these ranges is not possible.",
+    "uncertainty": "There is significant uncertainty due to the lack of forecast-time evidence regarding inflation signals, policy communication, policy actions, and crucially, the verified M2 components and transmission mechanisms. The DAG indicates 'weak' historical support for all relevant checkpoints.",
+    "dag_derived_lesson": "Policy context requires verified components for inferring target direction. Divergence between policy and components indicates potential failure. Independent movement of components is an alternative hypothesis."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

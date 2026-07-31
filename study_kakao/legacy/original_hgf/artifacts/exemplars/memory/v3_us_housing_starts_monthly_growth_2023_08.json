@@ -1,0 +1,38 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_us_housing_starts_monthly_growth_2023_08",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "macro / housing",
+      "target_operation": "monthly growth rate",
+      "option_geometry": "bucketed range"
+    },
+    "historical_question": "As of 2023-08-31, which range will the monthly housing-starts growth for United States housing starts in 2023-08 fall into?",
+    "historical_cutoff": "2023-08-31T00:00:00+00:00",
+    "target_semantics": "The monthly percentage change in United States housing starts for August 2023.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20221208_002_2d8210b3",
+        "takeaway": "A homebuilding analyst forecasts that single-family housing starts will drop.",
+        "why_predictive": "This forecast indicates a negative trend in housing starts, which directly impacts the target metric."
+      }
+    ],
+    "expert_reasoning": [
+      "The forecast from a homebuilding analyst (art_finance_20221208_002_2d8210b3) suggests a decline in single-family housing starts.",
+      "A decline in housing starts implies a negative monthly growth rate.",
+      "The target is the monthly housing-starts growth for August 2023."
+    ],
+    "counterevidence": "No specific counterevidence was provided in the forecast-time articles to contradict the analyst's forecast of a drop in housing starts.",
+    "prospective_target_estimate": "The forecast suggests a negative growth rate, likely falling below the recent range.",
+    "option_mapping": "The analyst's prediction of a drop in housing starts aligns with the 'below recent range' option.",
+    "uncertainty": "The evidence is limited to a single analyst's forecast from late 2022, and lacks specific data points or confirmation for the target period of August 2023. The exact magnitude of the drop is not specified.",
+    "dag_derived_lesson": "A single expert forecast predicting a decline in a key metric can serve as a driver for a negative outcome, but its predictive power is weakened without corroborating data or a clear mechanism for the magnitude of change."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

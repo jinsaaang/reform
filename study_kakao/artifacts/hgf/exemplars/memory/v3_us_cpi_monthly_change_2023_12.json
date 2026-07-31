@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_us_cpi_monthly_change_2023_12",
+  "blueprint_sha256": "c03c67fff00fbe9bd8aa066be45b6d62ca1984596afbd92cc23c05b39b701bd0",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "macro / inflation",
+      "target_operation": "monthly CPI change",
+      "option_geometry": "ordered_categorical"
+    },
+    "historical_question": "As of 2023-12-31, which range will the monthly CPI change for United States CPI in 2023-12 fall into?",
+    "historical_cutoff": "2023-12-31T00:00:00+00:00",
+    "target_semantics": "The target is the monthly percentage change in the United States Consumer Price Index (CPI) for December 2023, categorized as 'below recent range' (< 0.158%), 'within recent range' (0.158% to 0.352%), or 'above recent range' (>= 0.352%).",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The core calculation for the target metric is the percentage change between two consecutive monthly CPI observations. Therefore, the most direct drivers are the CPI reference observation for the prior month and the CPI target observation for the current month (December 2023).",
+      "The observed monthly CPI change is then compared against pre-registered boundaries (0.158% and 0.352%) to determine which of the three outcome buckets ('below recent range', 'within recent range', 'above recent range') it falls into. This comparison is a critical step in resolving the target.",
+      "The historical DAG indicates that the observed monthly CPI change itself is a strong mediator, directly linking the calculation to the target outcome. Therefore, any evidence that directly speaks to this observed change, or its relationship to the defined buckets, is highly predictive."
+    ],
+    "counterevidence": "No forecast-time evidence was provided, so no counterevidence can be identified from the allowed articles.",
+    "prospective_target_estimate": "The target metric is the monthly CPI change for December 2023. The provided DAG structure suggests that the calculation of this change, and its subsequent comparison to the pre-registered range [0.158%, 0.352%), are the key determinants. Without specific data points for the December 2023 CPI index levels or the calculated monthly change, a precise estimate cannot be made. However, the structure implies that the outcome hinges on whether the calculated percentage change falls below 0.158%, between 0.158% and 0.352%, or at or above 0.352%.",
+    "option_mapping": "The monthly CPI change for December 2023 will be mapped to one of the following options based on its value: 'below recent range' if less than 0.158%, 'within recent range' if between 0.158% (inclusive) and 0.352% (exclusive), or 'above recent range' if 0.352% or greater.",
+    "uncertainty": "The primary source of uncertainty stems from the complete lack of forecast-time evidence. Without any data or reports available before the cutoff, it is impossible to assess the likely direction or magnitude of the CPI change. The DAG's 'medium' historical support for the core driver checkpoints further indicates that even with historical data, the predictive power was not absolute. The 'weaknesses' noted in the DAG, such as synthesized evidence and excluded benchmark calculations, also contribute to uncertainty.",
+    "dag_derived_lesson": "The direct calculation of a target metric from its constituent observations is a primary driver. The comparison of this calculated metric against predefined thresholds or ranges is a crucial step in determining the final outcome. Evidence directly supporting the observed metric or its relationship to these thresholds is highly predictive, but the strength of historical support for these links can vary, introducing uncertainty."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

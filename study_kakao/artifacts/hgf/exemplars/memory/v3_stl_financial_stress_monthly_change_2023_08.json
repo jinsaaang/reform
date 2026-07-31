@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_stl_financial_stress_monthly_change_2023_08",
+  "blueprint_sha256": "3620921c0c83843d4f92107565db89ca3c4465b868eed44c2fe6fd6ef622eefe",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_stress_index",
+      "target_operation": "change",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2023-08-01, which range will the monthly financial-stress-index change for St. Louis Fed Financial Stress Index in 2023-08 fall into?",
+    "historical_cutoff": "2023-08-01T00:00:00+00:00",
+    "target_semantics": "The monthly change in the St. Louis Fed Financial Stress Index for August 2023, relative to a predefined recent range.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The DAG indicates that Treasury market volatility (checkpoint_2) and elevated rate expectations (checkpoint_5) are potential drivers of financial stress.",
+      "These factors, mediated by persistent bond-market tumult (checkpoint_4) and general market conditions (checkpoint_6), could plausibly increase the financial stress index.",
+      "However, the DAG also highlights that easing inflation data (checkpoint_3) could act as counter-evidence, potentially reducing stress."
+    ],
+    "counterevidence": "Easing inflation data offered potential stress relief, which could counteract upward pressure on the financial stress index.",
+    "prospective_target_estimate": "The evidence is insufficient to confidently estimate the direction or magnitude of the monthly financial-stress-index change.",
+    "option_mapping": "The target metric is the monthly change in the St. Louis Fed Financial Stress Index. The options are 'below recent range' (change < -0.141), 'within recent range' (-0.141 <= change < 0.034), and 'above recent range' (change >= 0.034).",
+    "uncertainty": "The lack of specific forecast-time evidence directly linking the identified drivers and counter-evidence to the St. Louis Fed Financial Stress Index for the target period creates significant uncertainty. The DAG's mechanisms are not quantified, and the historical support for some paths is weak.",
+    "dag_derived_lesson": "When evaluating a target metric, consider multiple causal paths, including those driven by external economic factors and market volatility, as well as counteracting forces like easing inflation. The strength of evidence for each link and the potential for one factor to dominate others are critical for accurate forecasting."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

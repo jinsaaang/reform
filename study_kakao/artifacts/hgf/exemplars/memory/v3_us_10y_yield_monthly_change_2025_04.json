@@ -1,0 +1,44 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_us_10y_yield_monthly_change_2025_04",
+  "blueprint_sha256": "1ced496b7480238ad2ee679adf238966936cf80f2391cdc3dd6e1d734755cca3",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_market",
+      "target_operation": "threshold_crossing",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2025-04-01, will the monthly 10-year yield change for United States 10-year Treasury yield in 2025-04 be at least -0.005 percentage points?",
+    "historical_cutoff": "2025-04-01T00:00:00+00:00",
+    "target_semantics": "The question asks whether the US 10-year Treasury yield will decrease by at least 0.005 percentage points in April 2025, compared to its value at the end of March 2025.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20250120_005_b84a99e3",
+        "takeaway": "US 10-year Treasury yields have increased since the Federal Reserve began cutting rates.",
+        "why_predictive": "This suggests a recent upward trend in yields, which could continue or reverse depending on future Fed actions and market sentiment."
+      },
+      {
+        "article_id": "art_finance_20120925_006_b437c19c",
+        "takeaway": "General market information on US Treasurys.",
+        "why_predictive": "Provides context for Treasury market dynamics, though less specific to the target period."
+      }
+    ],
+    "expert_reasoning": [
+      "The provided evidence indicates that US 10-year Treasury yields have been increasing since the Fed started cutting rates, as per art_finance_20250120_005_b84a99e3. This suggests a baseline trend of rising yields.",
+      "The DAG identifies 'Fears of trade war lead to recession' (checkpoint_1) and 'President Trump introduces new tariffs against China' (checkpoint_3) as potential drivers. However, the evidence does not directly support these factors as active drivers for April 2025.",
+      "The DAG also highlights 'Successful U.S. Treasury bond auction eases concerns' (checkpoint_2) as counterevidence. Without specific information on upcoming auctions or their success, this remains a potential mitigating factor."
+    ],
+    "counterevidence": "The DAG identifies 'Successful U.S. Treasury bond auction eases concerns' (checkpoint_2) as a potential counterevidence factor. However, there is no specific forecast-time evidence provided to confirm or deny the success of any Treasury auctions around the cutoff date that would directly impact the yield change.",
+    "prospective_target_estimate": "Given the weak support for specific drivers and counterevidence, and the general indication of rising yields from art_finance_20250120_005_b84a99e3, it is uncertain whether the yield change will be at least -0.005 percentage points. The historical support for the relevant checkpoints is weak.",
+    "option_mapping": "The 'yes' option corresponds to a decrease in the 10-year Treasury yield of at least 0.005 percentage points in April 2025. The 'no' option corresponds to a decrease of less than 0.005 percentage points (i.e., the yield stays flat or increases).",
+    "uncertainty": "The forecast-time evidence is limited and does not provide direct support for the specific causal pathways identified in the DAG concerning trade wars or tariff impacts. The historical support for key checkpoints is weak, and the mechanism linking these factors to the target yield change requires current validation, which is not available.",
+    "dag_derived_lesson": "When evaluating a target metric, it is crucial to assess the current relevance and evidential support for historical causal drivers and counterevidence. A lack of direct, current evidence for these factors, even if historically significant, introduces substantial uncertainty. The strength of historical support for intermediate checkpoints must be re-evaluated against current information."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

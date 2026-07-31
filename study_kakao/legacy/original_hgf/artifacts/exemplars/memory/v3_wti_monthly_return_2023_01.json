@@ -1,0 +1,39 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_wti_monthly_return_2023_01",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial",
+      "target_operation": "predict_range",
+      "option_geometry": "ordered_categorical"
+    },
+    "historical_question": "As of 2023-01-01, which range will the monthly WTI price return for West Texas Intermediate crude oil in 2023-01 fall into?",
+    "historical_cutoff": "2023-01-01T00:00:00+00:00",
+    "target_semantics": "The monthly price return for West Texas Intermediate crude oil in January 2023.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20220112_011_1b7d7c5a",
+        "takeaway": "The EIA forecasts that crude oil prices will fall in 2022 and 2023.",
+        "why_predictive": "This forecast directly addresses the future price trend of crude oil, which is the target commodity."
+      }
+    ],
+    "expert_reasoning": [
+      "The EIA forecast suggests a downward trend for crude oil prices in 2023 (art_finance_20220112_011_1b7d7c5a).",
+      "This implies that factors contributing to price declines, such as recession risks or increased supply, may be dominant.",
+      "While China's demand reopening and dollar weakness could support prices, the EIA's broad forecast for falling prices suggests these may be insufficient to overcome bearish pressures.",
+      "The EIA's outlook aligns with a potential weakening of the current supply-demand balance, leaning towards a negative price return."
+    ],
+    "counterevidence": "The EIA's forecast is a general outlook and does not provide specific monthly data or account for potential short-term demand recovery drivers like China's reopening or dollar fluctuations.",
+    "prospective_target_estimate": "below recent range",
+    "option_mapping": "The forecast of falling prices suggests the monthly return will be significantly negative, likely falling below the recent range boundaries.",
+    "uncertainty": "The EIA's forecast is a broad prediction for the year and may not capture the specific dynamics of January 2023. Competing factors like China's demand recovery and dollar movements introduce uncertainty.",
+    "dag_derived_lesson": "Broad forecasts of price decline suggest a negative outcome, but specific drivers and their interactions must be weighed against potential counteracting forces and short-term volatility."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

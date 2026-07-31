@@ -1,0 +1,49 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_us_m2_monthly_growth_2023_08",
+  "blueprint_sha256": "72aa95f3009b2d2e774b23eac3909617313949d2a83e382d7a12842c5d1aacd6",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "monetary_policy",
+      "target_operation": "monthly M2 growth",
+      "option_geometry": "ordered_categorical"
+    },
+    "historical_question": "As of 2023-08-01, which range will the monthly M2 growth for United States M2 money stock in 2023-08 fall into?",
+    "historical_cutoff": "2023-08-01T00:00:00+00:00",
+    "target_semantics": "The monthly percentage change in the United States M2 money stock for August 2023.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20201121_006_669a015e",
+        "takeaway": "Historical monthly data for US M2 Money Supply is available.",
+        "why_predictive": "Provides the raw data series necessary to calculate the target metric (monthly M2 growth)."
+      },
+      {
+        "article_id": "art_finance_20200420_005_6ed56322",
+        "takeaway": "Historical year-over-year (YoY) data for US M2 Money Supply is available.",
+        "why_predictive": "Provides a related historical data series that may correlate with or influence monthly growth trends."
+      },
+      {
+        "article_id": "art_finance_20210831_002_24f239dd",
+        "takeaway": "Factors such as supply chain issues and strong demand were identified as adding to the Federal Reserve's inflation worries.",
+        "why_predictive": "Indicates potential policy responses or economic conditions that could influence monetary aggregates like M2."
+      }
+    ],
+    "expert_reasoning": [
+      "The direct calculation of monthly M2 growth requires historical monthly M2 data, which is available (art_finance_20201121_006_669a015e). This forms the baseline for assessing the target.",
+      "While YoY M2 data (art_finance_20200420_005_6ed56322) is available, its direct causal link to the specific monthly growth rate for August 2023 is not established by the provided evidence.",
+      "Inflation worries (art_finance_20210831_002_24f239dd) suggest potential policy shifts that could impact M2, but the specific mechanism and magnitude of this impact on the target month's growth are not detailed in the available articles."
+    ],
+    "counterevidence": "No forecast-time article directly provides evidence on the expected monthly M2 growth rate for August 2023 or quantifies the impact of inflation concerns on this specific metric for the target period.",
+    "prospective_target_estimate": "The recent range for monthly M2 growth is between -0.626% and -0.05%. Without specific forward-looking data or strong causal links from the provided articles, it is difficult to project whether August 2023 growth will fall above, within, or below this range.",
+    "option_mapping": "The options are 'below recent range' (<-0.626%), 'within recent range' (-0.626% to -0.05%), and 'above recent range' (>= -0.05%). The available evidence does not provide a clear basis to select one of these options.",
+    "uncertainty": "Significant uncertainty exists due to the lack of direct, forward-looking evidence linking current economic conditions or policy discussions to the specific monthly M2 growth for August 2023. The historical data series are available, but their predictive power for the target period is not established by the provided articles.",
+    "dag_derived_lesson": "The availability of direct historical data for a target metric is essential. While related data or broader economic concerns may offer indirect insights, their predictive link to the target must be explicitly supported by current evidence, especially when determining magnitude or threshold crossings rather than just directional influence."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_us_core_cpi_monthly_change_2023_01",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "macro/inflation",
+      "target_operation": "monthly core CPI change",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2023-01-31, will the monthly core CPI change for United States core CPI in 2023-01 be at least 0.375 percent?",
+    "historical_cutoff": "2023-01-31T00:00:00+00:00",
+    "target_semantics": "The monthly percentage change in the US core CPI for January 2023.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "ev_72f2715c35613c49",
+        "takeaway": "Consumer prices fell 0.1% in December.",
+        "why_predictive": "This indicates a recent downward trend in overall inflation, which could influence core CPI."
+      }
+    ],
+    "expert_reasoning": [
+      "The December all-items CPI decline (checkpoint_1) is a relevant driver, but its historical support is strong, suggesting it has a significant impact.",
+      "The energy-driven all-items disinflation context (checkpoint_2) is a mediator, with weak historical support, indicating it might be less influential.",
+      "Shelter-cost pressure in the January release (checkpoint_3) is a strong driver, implying it's a key factor to watch.",
+      "The core measure being insulated from energy-price moves (checkpoint_4) is a weak mediator, suggesting its influence on core CPI might be limited.",
+      "The target bridge (target_bridge) aggregates these drivers to forecast the monthly core CPI change."
+    ],
+    "counterevidence": "The provided articles do not offer direct counterevidence to the core CPI forecast for January 2023. The December all-items CPI decline is noted, but its direct impact on core CPI is not contradicted.",
+    "prospective_target_estimate": "Given the available information, the core CPI change for January 2023 is uncertain. The December all-items CPI decline suggests a potential for lower inflation, but the strength of shelter-cost pressures and the insulation of core CPI from energy prices are key factors that could push the core CPI in either direction.",
+    "option_mapping": "The target is 'yes' if the monthly core CPI change is at least 0.375 percent, and 'no' otherwise.",
+    "uncertainty": "The historical support for the mediators (energy-driven disinflation and core insulation from energy) is weak, and the direct impact of the December all-items CPI decline on the January core CPI is not definitively established by the provided articles. Shelter-cost pressures are a strong driver, but their precise impact on the core measure remains a key uncertainty.",
+    "dag_derived_lesson": "When forecasting a target metric, consider the interplay of direct drivers and mediating contextual factors. Assess the historical strength of each component and its relevance to the current period. Recognize that while some factors may show strong historical correlation, their precise transmission mechanism to the target in the current case may require specific evidence, and weak mediators introduce significant uncertainty."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

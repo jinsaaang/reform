@@ -1,0 +1,34 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_amzn_revenue_growth_acceleration_2024_06_30",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial",
+      "target_operation": "growth_acceleration",
+      "option_geometry": "classification"
+    },
+    "historical_question": "As of 2024-06-30, which range will Amazon.com, Inc.'s quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2024-06-30 fall into?",
+    "historical_cutoff": "2024-06-30T00:00:00+00:00",
+    "target_semantics": "Amazon's year-over-year revenue growth acceleration for the fiscal quarter ending 2024-06-30.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The consolidated revenue growth acceleration is influenced by key segments: online stores, advertising, and AWS.",
+      "Consumer behavior, such as 'trading down,' could negatively impact online store growth and pricing, potentially slowing consolidated revenue momentum.",
+      "Conversely, strong AWS demand could act as an offset to any weakness in commerce and advertising.",
+      "The overall revenue momentum is a weighted aggregation of these segments, with the causal path suggesting that retail weakness, if not offset by cloud strength, would lead to lower consolidated revenue growth acceleration.",
+      "The relative performance of these segments and their contribution weights are critical for determining the final outcome."
+    ],
+    "counterevidence": "The primary weakness is the lack of forecast-time evidence. Key observations and data needed to assess drivers like consumer trading down, advertising performance, and AWS demand were released after the cutoff. Guidance and market reactions are considered indirect evidence, limiting the ability to form a strong forecast.",
+    "prospective_target_estimate": "Given the absence of direct forecast-time evidence and the reliance on indirect signals, a definitive estimate cannot be formed. The potential for consumer trading down to impact retail, and the offsetting strength of AWS, creates significant uncertainty regarding the revenue growth acceleration.",
+    "option_mapping": "The target metric is the year-over-year revenue growth acceleration. The options are 'below recent range' (less than 0.657 percentage points), 'within recent range' (0.657 to 1.537 percentage points), and 'above recent range' (1.537 percentage points or more).",
+    "uncertainty": "The absence of direct, post-cutoff financial results and management commentary, combined with the reliance on indirect signals, introduces substantial uncertainty. The relative strength of retail versus cloud and advertising segments is unclear without more timely data.",
+    "dag_derived_lesson": "When evaluating consolidated financial performance, decomposing it into key segments is crucial. The interplay between consumer behavior impacting retail, advertising performance, and cloud services strength can lead to offsetting effects on overall revenue growth. The relative size and growth rates of these segments determine the consolidated outcome. Lack of timely segment-specific data or forward-looking guidance significantly increases forecast uncertainty."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

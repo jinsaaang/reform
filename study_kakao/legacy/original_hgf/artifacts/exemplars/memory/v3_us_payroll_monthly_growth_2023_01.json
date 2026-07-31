@@ -1,0 +1,32 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_us_payroll_monthly_growth_2023_01",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "macro / labour",
+      "target_operation": "change bucketed by historical quartiles",
+      "option_geometry": "ordered discrete"
+    },
+    "historical_question": "As of 2023-01-31, which range will the monthly payroll growth for United States nonfarm payrolls in 2023-01 fall into?",
+    "historical_cutoff": "2023-01-31T00:00:00+00:00",
+    "target_semantics": "The monthly percentage change in United States nonfarm payrolls for January 2023.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The reported January nonfarm payroll gain was 517,000.",
+      "The January unemployment rate fell to 3.4%.",
+      "January labor-market results were stronger than expected."
+    ],
+    "counterevidence": "No forecast-time evidence was provided to contradict the potential drivers.",
+    "prospective_target_estimate": "The provided DAG indicates a 'mixed' expected direction for the target bridge, suggesting that without specific forecast-time data, a definitive estimate cannot be made. The historical support for the drivers is mixed (strong, strong, weak), and the target bridge is medium, implying uncertainty.",
+    "option_mapping": "The estimate would be mapped to 'below recent range', 'within recent range', or 'above recent range' based on whether the January 2023 payroll growth was below 0.178%, between 0.178% and 0.246% (exclusive), or at or above 0.246%, respectively.",
+    "uncertainty": "The primary source of uncertainty stems from the complete lack of forecast-time evidence. The DAG identifies potential drivers (payroll gain, unemployment rate, general labor market strength) but provides no specific data from before the cutoff to confirm their activation or magnitude in the current case. The 'expected_direction' for these drivers is 'unknown', and the 'historical_support' ranges from 'strong' to 'weak', contributing to overall uncertainty.",
+    "dag_derived_lesson": "When assessing a target metric, evaluate the strength and direction of identified causal drivers and mediators. Acknowledge uncertainty when forecast-time evidence is absent or weak, and consider alternative hypotheses that might override the established causal path."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

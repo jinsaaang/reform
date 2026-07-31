@@ -1,24 +1,39 @@
-"""Load the validated 200-case final bank into HGF runtime artifacts."""
+"""Load shared DAGs and the isolated canonical HGF/baseline memory banks."""
 
 from __future__ import annotations
 
+import hashlib
 import json
-import re
 from pathlib import Path
 from typing import Any
 
-from hgf.dag import _redact_answer_labels
-from hgf.question_io import family_metadata
-from hgf.package import PACKAGE_ROOT
+from .package import PACKAGE_ROOT
+
+
+HGF_BLUEPRINT_ROOT = PACKAGE_ROOT / "artifacts" / "hgf" / "blueprints"
+FACTOR_BLUEPRINT_ROOT = (
+    PACKAGE_ROOT / "artifacts" / "baselines" / "factor_memory"
+)
 
 
 def _read(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def _resolve(repo_root: Path, value: str) -> Path:
+def _resolve(root: Path, value: str) -> Path:
     path = Path(value)
-    return path if path.is_absolute() else repo_root / path
+    return path if path.is_absolute() else root / path
+
+
+def _canonical_hash(payload: Any) -> str:
+    rendered = json.dumps(
+        payload,
+        ensure_ascii=False,
+        sort_keys=True,
+        separators=(",", ":"),
+        default=str,
+    ).encode("utf-8")
+    return hashlib.sha256(rendered).hexdigest()
 
 
 def _question_payload(question: Any) -> dict[str, Any]:
@@ -34,7 +49,7 @@ def _canonical_graph(
     evidence_pack: dict[str, Any],
     audit: dict[str, Any],
 ) -> dict[str, Any]:
-    """Adapt a Codex-refined AC graph without changing its causal content."""
+    """Adapt the second refined-DAG representation to the shared runtime view."""
     graph = raw_graph.get("graph", {})
     nodes = [
         {
@@ -106,314 +121,166 @@ def _canonical_graph(
     }
 
 
-
-
-def _compiled_blueprint(
-    *,
-    graph_payload: dict[str, Any],
-    question: Any,
-    audit: dict[str, Any],
-    source_graph: Path,
-) -> dict[str, Any]:
-    """Compile leakage-safe reusable cards from a validated refined DAG."""
-    graph = graph_payload["graph"]
-    metadata = family_metadata(question)
-    resolved = getattr(question, "ground_truth", None)
-    actual_outcome_id = graph_payload.get("actual_outcome_event_id")
-    outcome_predecessors = {
-        edge.get("source_event_id")
-        for edge in graph.get("edges", [])
-        if edge.get("target_event_id") == actual_outcome_id
-    }
-    counter_ids = {
-        edge.get("source_event_id")
-        for edge in graph.get("edges", [])
-        if edge.get("relation_type") == "counteracts"
-    }
-    incoming_ids = {
-        edge.get("target_event_id") for edge in graph.get("edges", [])
-    }
-    outgoing_ids = {
-        edge.get("source_event_id") for edge in graph.get("edges", [])
-    }
-    causal_relations = {
-        "supports",
-        "contributes_to",
-        "counteracts",
-        "drives",
-        "influences",
-        "leads_to",
-        "inhibits",
-    }
-    causal_node_ids = {
-        endpoint
-        for edge in graph.get("edges", [])
-        if edge.get("relation_type") in causal_relations
-        for endpoint in (
-            edge.get("source_event_id"),
-            edge.get("target_event_id"),
-        )
-    }
-
-    candidates = []
-    for node in graph.get("nodes", []):
-        node_id = node.get("id")
-        if (
-            node.get("is_outcome")
-            or node.get("is_actual_outcome")
-            or node_id == actual_outcome_id
-            or node_id in outcome_predecessors
-            or node_id not in causal_node_ids
-        ):
-            continue
-        label = _redact_answer_labels(node.get("title"), resolved)
-        if re.search(
-            r"target[- ]quarter|target[- ]minus[- ]prior|resolved outcome|"
-            r"actual outcome|pre-registered .*boundary|"
-            r"(?:growth|return|change|acceleration) was [-+]?\d",
-            str(label),
-            flags=re.IGNORECASE,
-        ):
-            continue
-        candidates.append((node, label))
-    candidates = candidates[:5]
-    usable = len(candidates) >= 2
-
-    checkpoints = []
-    search_factors = []
-    checkpoint_ids = []
-    for checkpoint_number, (node, label) in enumerate(candidates, start=1):
-        node_id = str(node.get("id"))
-        checkpoint_id = f"checkpoint_{checkpoint_number}"
-        checkpoint_ids.append(checkpoint_id)
-        role = (
-            "counterevidence"
-            if node_id in counter_ids
-            else "mediator"
-            if node_id in incoming_ids and node_id in outgoing_ids
-            else "driver"
-        )
-        checkpoints.append(
-            {
-                "id": checkpoint_id,
-                "role": role,
-                "factor": label,
-                "mechanism": (
-                    "Test whether this historically relevant factor is active "
-                    "in the current case and connects to the target metric."
-                ),
-                "expected_direction": (
-                    "mixed" if role == "counterevidence" else "unknown"
-                ),
-                "evidence_requirement": (
-                    "Current cutoff-safe official data or dated independent "
-                    "reporting directly covering this factor."
-                ),
-                "contradiction_signal": (
-                    "Current evidence shows the factor is absent, reversed, or "
-                    "dominated by a competing mechanism."
-                ),
-                "historical_support": (
-                    "strong"
-                    if node.get("support_level") == "observed"
-                    else "weak"
-                ),
-                "source_event_ids": [node_id],
-                "source_edge_ids": [],
-            }
-        )
-        search_factors.append(
-            {
-                "factor": label,
-                "why_search": (
-                    "This factor appeared on a validated historical causal path; "
-                    "verify its current-case state rather than copying its outcome."
-                ),
-                "preferred_source_types": [
-                    "official release",
-                    "dated independent reporting",
-                ],
-                "source_event_ids": [node_id],
-            }
-        )
-
-    target_bridge_id = "target_bridge"
-    checkpoints.append(
-        {
-            "id": target_bridge_id,
-            "role": "target_bridge",
-            "factor": str(
-                metadata.get("target_metric")
-                or "Net transmission into the forecast target"
-            ),
-            "mechanism": (
-                "Aggregate supported drivers and counterevidence into the exact "
-                "target metric and option space."
-            ),
-            "expected_direction": "mixed",
-            "evidence_requirement": (
-                "A recent target baseline plus evidence connecting each active "
-                "driver to the target."
-            ),
-            "contradiction_signal": (
-                "The target baseline or current observations diverge from the "
-                "proposed driver path."
-            ),
-            "historical_support": "medium",
-            "source_event_ids": [],
-            "source_edge_ids": [],
-        }
-    )
-    causal_paths = []
-    if checkpoint_ids:
-        midpoint = max(1, len(checkpoint_ids) // 2)
-        for path_ids in (
-            checkpoint_ids[:midpoint],
-            checkpoint_ids[midpoint:],
-        ):
-            if not path_ids:
-                continue
-            causal_paths.append(
-                {
-                    "checkpoint_ids": path_ids[:3] + [target_bridge_id],
-                    "generalized_mechanism": (
-                        "Current evidence must activate the historical factors "
-                        "and demonstrate a prospective bridge to the target."
-                    ),
-                    "expected_direction": "mixed",
-                    "applicability_conditions": [
-                        "The same economic mechanism is active.",
-                        "Current cutoff-safe evidence supports the intermediate link.",
-                    ],
-                    "failure_conditions": [
-                        "A historical factor is absent in the current case.",
-                        "Counterevidence dominates the proposed transmission.",
-                    ],
-                }
-            )
-
-    counter_labels = [
-        label
-        for node, label in candidates
-        if str(node.get("id")) in counter_ids
-    ]
-    alternatives = [
-        {
-            "hypothesis": (
-                f"{label} dominates the main path in the current case."
-            ),
-            "discriminating_evidence": (
-                "Find current observations that directly compare this mechanism "
-                "with the leading supported driver."
-            ),
-            "source_event_ids": [],
-        }
-        for label in counter_labels[:2]
-    ]
-    if not alternatives:
-        alternatives = [
-            {
-                "hypothesis": (
-                    "A current-case factor outside the retrieved historical path "
-                    "dominates the target."
-                ),
-                "discriminating_evidence": (
-                    "Search for recent official surprises and contradictory "
-                    "target observations."
-                ),
-                "source_event_ids": [],
-            }
-        ]
-
-    return {
-        "schema_version": "hgf_blueprint",
-        "question_id": getattr(question, "id"),
-        "target_definition": {
-            "metric": metadata.get("target_metric"),
-            "unit_or_option_space": list(
-                getattr(question, "options", None) or []
-            ),
-            "forecast_horizon": (
-                "the current question's exact target period; historical fiscal "
-                "quarter labels must not be copied"
-            ),
-        },
-        "graph_diagnosis": {
-            "usable": usable,
-            "summary": (
-                "Validated historical graph compiled into reusable prospective "
-                "checkpoints."
-                if usable
-                else
-                "Excluded from HGF retrieval because the graph contains only "
-                "outcome calculation/classification structure and no reusable "
-                "upstream causal branch."
-            ),
-            "weaknesses": audit.get("caveats", [])[:3],
-        },
-        "search_factors": search_factors,
-        "checkpoints": checkpoints,
-        "causal_paths": causal_paths,
-        "alternative_hypotheses": alternatives,
-        "forecast_audit_questions": [
-            "Which checkpoints are supported, contradicted, or unknown now?",
-            "Does each retained path have a current evidence-to-target bridge?",
-            "What counterevidence or alternative mechanism could dominate?",
-            "Would the conclusion change if the weakest link were removed?",
-        ],
-        "refinement_metadata": {
-            "model": "deterministic_compiler_from_codex_refined_dag",
-            "source_graph": str(source_graph),
-            "validation_status": "pass",
-            "source_audit_status": audit.get("status"),
-        },
-    }
-
-
-def load_final_memory_bank(
+def load_graph_bank(
     manifest_path: Path,
     memory_questions: dict[str, Any],
-) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
-    """Return one canonical graph and one HGF blueprint for every memory case."""
+) -> dict[str, dict[str, Any]]:
+    """Load all 200 shared DAGs without loading any forecasting Blueprint."""
     manifest_path = manifest_path.resolve()
-    repo_root = PACKAGE_ROOT
     manifest = _read(manifest_path)
     entries = {
         str(entry["question_id"]): entry
         for entry in manifest.get("entries", [])
     }
-    graphs = []
-    blueprints = []
     missing = sorted(set(memory_questions) - set(entries))
-    if missing:
-        raise FileNotFoundError(
-            "Final memory manifest is missing: " + ", ".join(missing)
+    extra = sorted(set(entries) - set(memory_questions))
+    if missing or extra:
+        raise ValueError(
+            f"memory graph manifest coverage mismatch; "
+            f"missing={missing}, extra={extra}"
         )
+
+    graphs: dict[str, dict[str, Any]] = {}
     for question_id, question in memory_questions.items():
         entry = entries[question_id]
-        graph_path = _resolve(repo_root, entry["graph_path"])
-        raw_graph = _read(graph_path)
-        guidance_path = entry.get("guidance_path")
-        if guidance_path:
-            graph_payload = raw_graph
-            blueprint = _read(_resolve(repo_root, guidance_path))
-        else:
-            evidence_path = _resolve(repo_root, entry["evidence_path"])
-            audit_path = _resolve(repo_root, entry["audit_path"])
-            evidence = _read(evidence_path)
-            audit = _read(audit_path)
-            graph_payload = _canonical_graph(
+        raw_graph = _read(
+            _resolve(PACKAGE_ROOT, str(entry["graph_path"]))
+        )
+        if entry.get("evidence_path") and entry.get("audit_path"):
+            graph = _canonical_graph(
                 raw_graph=raw_graph,
                 question=question,
-                evidence_pack=evidence,
-                audit=audit,
+                evidence_pack=_read(
+                    _resolve(PACKAGE_ROOT, str(entry["evidence_path"]))
+                ),
+                audit=_read(
+                    _resolve(PACKAGE_ROOT, str(entry["audit_path"]))
+                ),
             )
-            blueprint = _compiled_blueprint(
-                graph_payload=graph_payload,
-                question=question,
-                audit=audit,
-                source_graph=graph_path,
+        else:
+            graph = raw_graph
+        graphs[question_id] = graph
+    return graphs
+
+
+def _load_blueprint_bank(
+    artifact_root: Path,
+    *,
+    expected_ids: set[str] | None,
+    expected_manifest_schema: str,
+    expected_blueprint_schema: str | None,
+) -> dict[str, dict[str, Any]]:
+    artifact_root = artifact_root.resolve()
+    manifest_path = artifact_root / "manifest.json"
+    if not manifest_path.is_file():
+        raise FileNotFoundError(f"memory artifact manifest missing: {manifest_path}")
+    manifest = _read(manifest_path)
+    if manifest.get("schema_version") != expected_manifest_schema:
+        raise ValueError(
+            f"unexpected memory artifact schema in {manifest_path}: "
+            f"{manifest.get('schema_version')!r}"
+        )
+
+    bank: dict[str, dict[str, Any]] = {}
+    for entry in manifest.get("entries", []):
+        question_id = str(entry.get("question_id") or "")
+        relative = str(entry.get("blueprint_path") or "")
+        path = artifact_root / relative
+        if not question_id or not relative or not path.is_file():
+            raise FileNotFoundError(
+                f"invalid memory artifact entry for {question_id!r}: {path}"
             )
-        graphs.append(graph_payload)
-        blueprints.append(blueprint)
-    return graphs, blueprints
+        payload = _read(path)
+        if str(payload.get("question_id") or "") != question_id:
+            raise ValueError(
+                f"Blueprint filename/ID mismatch for {question_id}: {path}"
+            )
+        if (
+            expected_blueprint_schema is not None
+            and payload.get("schema_version") != expected_blueprint_schema
+        ):
+            raise ValueError(
+                f"non-canonical Blueprint schema for {question_id}: "
+                f"{payload.get('schema_version')!r}"
+            )
+        expected_hash = str(entry.get("blueprint_sha256") or "")
+        if expected_hash and _canonical_hash(payload) != expected_hash:
+            raise ValueError(f"Blueprint hash mismatch for {question_id}")
+        if question_id in bank:
+            raise ValueError(f"duplicate Blueprint {question_id}")
+        bank[question_id] = payload
+
+    declared_count = int(manifest.get("memory_count") or 0)
+    if len(bank) != declared_count:
+        raise ValueError(
+            f"memory artifact count mismatch: {len(bank)} != {declared_count}"
+        )
+    if expected_ids is not None and set(bank) != expected_ids:
+        raise ValueError(
+            "memory artifact coverage mismatch; "
+            f"missing={sorted(expected_ids - set(bank))}, "
+            f"extra={sorted(set(bank) - expected_ids)}"
+        )
+    return bank
+
+
+def load_hgf_blueprint_bank(
+    artifact_root: Path = HGF_BLUEPRINT_ROOT,
+    *,
+    expected_ids: set[str] | None = None,
+) -> dict[str, dict[str, Any]]:
+    """Load only the validated topology-preserving canonical HGF bank."""
+    return _load_blueprint_bank(
+        artifact_root,
+        expected_ids=expected_ids,
+        expected_manifest_schema="hgf_blueprint_manifest_v1",
+        expected_blueprint_schema="hgf_blueprint_topology_v2",
+    )
+
+
+def load_factor_blueprint_bank(
+    artifact_root: Path = FACTOR_BLUEPRINT_ROOT,
+    *,
+    expected_ids: set[str] | None = None,
+) -> dict[str, dict[str, Any]]:
+    """Load the frozen legacy cards used only by Factor-Memory baseline."""
+    bank = _load_blueprint_bank(
+        artifact_root,
+        expected_ids=expected_ids,
+        expected_manifest_schema="factor_memory_blueprint_manifest_v1",
+        expected_blueprint_schema=None,
+    )
+    from .memory_retrieval import compile_hgf_search_memory
+
+    manifest = _read(artifact_root.resolve() / "manifest.json")
+    for entry in manifest.get("entries", []):
+        question_id = str(entry["question_id"])
+        expected_hash = str(entry.get("search_card_sha256") or "")
+        compiled = compile_hgf_search_memory([bank[question_id]]).encode(
+            "utf-8"
+        )
+        if expected_hash and hashlib.sha256(compiled).hexdigest() != expected_hash:
+            raise ValueError(
+                f"frozen Factor-Memory search-card hash mismatch for "
+                f"{question_id}"
+            )
+    return bank
+
+
+def load_final_memory_bank(
+    manifest_path: Path,
+    memory_questions: dict[str, Any],
+    *,
+    hgf_artifact_root: Path = HGF_BLUEPRINT_ROOT,
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """Compatibility wrapper returning shared graphs plus canonical HGF cards."""
+    graphs = load_graph_bank(manifest_path, memory_questions)
+    blueprints = load_hgf_blueprint_bank(
+        hgf_artifact_root,
+        expected_ids=set(memory_questions),
+    )
+    ordered_ids = list(memory_questions)
+    return (
+        [graphs[question_id] for question_id in ordered_ids],
+        [blueprints[question_id] for question_id in ordered_ids],
+    )

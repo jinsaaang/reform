@@ -1,0 +1,45 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_global_aluminum_monthly_return_2024_09",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial",
+      "target_operation": "return",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2024-09-01, will the monthly aluminum-price return for Global aluminum price in 2024-09 be at least -1.268 percent?",
+    "historical_cutoff": "2024-09-01T00:00:00+00:00",
+    "target_semantics": "The monthly return of the Global aluminum price in September 2024.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20240612_002_fd225d28",
+        "takeaway": "Industrial Metals Monthly: Aluminium rally foiled - ING Think suggests more downside is likely for aluminium.",
+        "why_predictive": "This article directly addresses the outlook for aluminium prices, indicating a bearish sentiment which could lead to negative returns."
+      },
+      {
+        "article_id": "art_finance_20220826_003_7f975930",
+        "takeaway": "European aluminium smelters are being victimized by energy price surges.",
+        "why_predictive": "While dated, this highlights a significant cost factor (energy prices) that can impact aluminium production and, consequently, its price. Persistent high energy costs could exert downward pressure on prices."
+      }
+    ],
+    "expert_reasoning": [
+      "The target is the monthly aluminum-price return for September 2024, with a threshold of -1.268 percent.",
+      "Forecast-time evidence from art_finance_20240612_002_fd225d28 suggests a bearish outlook for aluminium, with 'more downside likely'.",
+      "This bearish sentiment implies a higher probability of negative price returns.",
+      "Additionally, art_finance_20220826_003_7f975930 points to energy price surges impacting European aluminium smelters, a factor that can increase production costs and potentially lead to lower prices if demand does not keep pace or if smelters reduce output.",
+      "Considering the 'more downside likely' sentiment and the potential for cost pressures impacting supply/price, the expectation is that the monthly return could fall below -1.268 percent."
+    ],
+    "counterevidence": "No direct counterevidence was found in the provided articles that would suggest an upward price movement or a rally that would foil the predicted downside.",
+    "prospective_target_estimate": "The evidence suggests a higher likelihood of a negative return, potentially below -1.268 percent.",
+    "option_mapping": "The analysis points towards the 'no' option, as the monthly return is expected to be less than -1.268 percent.",
+    "uncertainty": "The evidence is qualitative and forward-looking, with no specific quantitative price targets or recent price action provided for September 2024. The impact of energy prices is also a persistent factor that could fluctuate.",
+    "dag_derived_lesson": "When assessing a price target, consider expert sentiment on future direction and underlying cost pressures. If sentiment is bearish and cost pressures are high, anticipate negative returns. Lack of specific quantitative data or recent price action increases uncertainty."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

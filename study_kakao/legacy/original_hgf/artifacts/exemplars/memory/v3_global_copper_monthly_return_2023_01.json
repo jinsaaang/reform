@@ -1,0 +1,71 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_global_copper_monthly_return_2023_01",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_forecasting",
+      "target_operation": "predict_range",
+      "option_geometry": "ordered_categorical"
+    },
+    "historical_question": "As of 2023-01-01, which range will the monthly copper-price return for Global copper price in 2023-01 fall into?",
+    "historical_cutoff": "2023-01-01T00:00:00+00:00",
+    "target_semantics": "The monthly percentage return for the global copper price in January 2023.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20221230_002_5b9111fb",
+        "takeaway": "Copper prices experienced significant volatility in 2022, influenced by factors such as inflation, interest rate hikes, and China's COVID-19 policies.",
+        "why_predictive": "Provides context on recent price drivers and volatility, suggesting potential for continued fluctuations."
+      },
+      {
+        "article_id": "art_finance_20220906_015_2afec096",
+        "takeaway": "Global copper and nickel smelting rebounded in August 2022, indicating potential recovery in industrial activity.",
+        "why_predictive": "Suggests improving supply-side activity, which could influence price if demand keeps pace."
+      },
+      {
+        "article_id": "art_finance_20220901_011_93abc130",
+        "takeaway": "The US dollar rallied in early September 2022, putting downward pressure on gold prices.",
+        "why_predictive": "A strong dollar typically makes dollar-denominated commodities like copper more expensive for holders of other currencies, potentially dampening demand."
+      },
+      {
+        "article_id": "art_finance_20220425_008_4c7978c5",
+        "takeaway": "Copper prices were impacted by supply chain disruptions and rising inflation in Q1 2022.",
+        "why_predictive": "Highlights persistent supply-side issues and inflationary pressures that could continue to affect copper prices."
+      },
+      {
+        "article_id": "art_finance_20210305_007_3fdd986b",
+        "takeaway": "Copper's rally in early 2021 was driven by a combination of post-pandemic demand recovery, supply constraints, and a weaker US dollar.",
+        "why_predictive": "Identifies key drivers (demand recovery, supply, currency) that are likely to remain relevant for copper price movements."
+      },
+      {
+        "article_id": "art_finance_20211019_012_3ed78624",
+        "takeaway": "Low LME copper inventories were a significant factor in copper price dynamics in late 2021.",
+        "why_predictive": "Indicates that inventory levels are a critical component of copper market tightness and price."
+      },
+      {
+        "article_id": "art_finance_20220104_014_7c22dd85",
+        "takeaway": "The US Manufacturing PMI remained strong at 58.7% in December 2021, indicating robust manufacturing activity.",
+        "why_predictive": "A strong manufacturing sector is a key indicator of industrial demand for metals like copper."
+      }
+    ],
+    "expert_reasoning": [
+      "The copper market in early 2023 is influenced by a complex interplay of factors, including China's demand outlook, global industrial activity, inventory levels, and currency movements.",
+      "China's reopening policies and potential for increased industrial activity present a bullish case for copper demand (art_finance_20221230_002_5b9111fb, art_finance_20210305_007_3fdd986b).",
+      "However, persistent supply chain disruptions and inflationary pressures, alongside a strong US dollar, could act as headwinds (art_finance_20220425_008_4c7978c5, art_finance_20220901_011_93abc130).",
+      "Low copper inventories, a recurring theme, could amplify price movements if demand picks up (art_finance_20211019_012_3ed78624).",
+      "The rebound in global smelting activity suggests improving supply, but its impact depends on concurrent demand strength (art_finance_20220906_015_2afec096).",
+      "Given the recent volatility and mixed signals, the price is likely to remain sensitive to incoming economic data and policy shifts."
+    ],
+    "counterevidence": "While there are indications of improving industrial activity and potential demand recovery, the persistent strength of the US dollar and ongoing supply chain concerns present a counterbalancing force. Furthermore, the market has shown significant volatility, suggesting that price movements can be sharp and unpredictable.",
+    "prospective_target_estimate": "The monthly copper-price return for January 2023 is likely to fall within the recent range, reflecting a balance of supportive demand factors and persistent economic headwinds.",
+    "option_mapping": "The forecast suggests that the copper price return will be 'within recent range' as the positive drivers are tempered by negative ones, preventing a significant move outside the established bounds.",
+    "uncertainty": "Significant uncertainty remains due to the unpredictable nature of China's economic recovery, the trajectory of global inflation and interest rates, and potential geopolitical events that could impact supply chains and currency markets.",
+    "dag_derived_lesson": "Market price direction is determined by the interplay of demand expectations, supply availability, and macroeconomic factors. When demand signals are mixed and supply buffers are low, price movements can be amplified. Alternative hypotheses, such as currency effects dominating physical market dynamics, should be considered when evidence is ambiguous."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

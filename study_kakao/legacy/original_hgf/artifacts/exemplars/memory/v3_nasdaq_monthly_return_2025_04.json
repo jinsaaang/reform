@@ -1,0 +1,41 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_nasdaq_monthly_return_2025_04",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "market_fx_credit / technology equities",
+      "target_operation": "monthly return",
+      "option_geometry": "range classification"
+    },
+    "historical_question": "As of 2025-04-01, which range will the monthly NASDAQ Composite return for NASDAQ Composite index in 2025-04 fall into?",
+    "historical_cutoff": "2025-04-01T00:00:00+00:00",
+    "target_semantics": "The monthly return of the NASDAQ Composite index for April 2025.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20250316_012_e9208d80",
+        "takeaway": "Geopolitical events can impact investments, influencing market dynamics.",
+        "why_predictive": "Geopolitical events can create uncertainty or relief, affecting investor sentiment and thus market returns."
+      }
+    ],
+    "expert_reasoning": [
+      "The NASDAQ Composite's monthly return is influenced by broader market dynamics, including inflation surprises, tariff policy sentiment, and market rebounds.",
+      "Favorable inflation can support a relief rally, potentially driving the index upwards.",
+      "Tariff uncertainty can amplify inflation sensitivity and volatility, leading to mixed market movements.",
+      "A market rebound can offset earlier volatility, contributing to a positive monthly return.",
+      "The interplay of these factors suggests that a positive inflation surprise, coupled with a market rebound and potentially resolving tariff uncertainty, could lead to an upward monthly return for the NASDAQ Composite.",
+      "Earnings sentiment is a secondary factor that can influence market breadth and risk appetite, but its link to the Nasdaq's monthly return is considered weakly causal in this context."
+    ],
+    "counterevidence": "The article 'BT Money Hacks: How geopolitical events impact your investments' (art_finance_20250316_012_e9208d80) broadly discusses how geopolitical events impact investments, but does not provide specific data or forecasts regarding inflation surprises, tariff policy sentiment, or market rebounds relevant to the NASDAQ Composite in April 2025. The causal links between geopolitical events and specific market drivers like inflation or tariffs are not detailed.",
+    "prospective_target_estimate": "Within recent range",
+    "option_mapping": "The forecast estimates the monthly NASDAQ Composite return for April 2025 to fall within the range of -1.381% to 1.901%.",
+    "uncertainty": "The forecast is subject to uncertainty due to the weak causal links identified between broader market catalysts (inflation, tariffs, rebounds) and the specific Nasdaq return, as well as the limited specificity of the provided forecast-time evidence regarding these drivers. The potential for geopolitical events to dominate or diverge from these drivers introduces further uncertainty.",
+    "dag_derived_lesson": "Market returns are a function of macroeconomic factors and policy sentiment, with rebounds capable of moderating volatility. The strength of these drivers can vary, and their combined effect determines the directional bias of the target metric, though alternative hypotheses may emerge if specific catalysts dominate."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

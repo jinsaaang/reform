@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_msft_revenue_growth_acceleration_2024_03_31",
+  "blueprint_sha256": "fe5897bd2ccf1f3e9f7e90081c251ca1789cd8d4ebdbdb886d2a5a8ca3582196",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_analysis",
+      "target_operation": "growth_acceleration",
+      "option_geometry": "ordered_categorical"
+    },
+    "historical_question": "As of 2024-03-31, which range will Microsoft Corporation's quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2024-03-31 fall into?",
+    "historical_cutoff": "2024-03-31T00:00:00+00:00",
+    "target_semantics": "Microsoft's year-over-year revenue growth acceleration for the fiscal quarter ending March 31, 2024, compared to predefined growth acceleration boundaries.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The DAG indicates that cloud services strength was a historical driver of Microsoft's results.",
+      "Similarly, AI adoption was identified as a supporting factor for sales and quarterly performance.",
+      "These drivers historically contributed to strong overall revenue growth, which in turn influenced revenue growth acceleration."
+    ],
+    "counterevidence": "No forecast-time evidence was provided to support or contradict the historical drivers or their link to the target metric.",
+    "prospective_target_estimate": "The historical analysis suggests potential drivers for revenue growth acceleration, but without current evidence, a specific range cannot be estimated.",
+    "option_mapping": "The target metric is the year-over-year revenue growth acceleration for the fiscal quarter ending 2024-03-31. The options are 'below recent range' (less than 3.629 percentage points), 'within recent range' (3.629 to 4.895 percentage points), and 'above recent range' (4.895 percentage points or more).",
+    "uncertainty": "The absence of any forecast-time evidence means the historical causal links cannot be verified or updated, leading to high uncertainty regarding the target metric's value.",
+    "dag_derived_lesson": "When evaluating a target metric influenced by multiple drivers, it is crucial to have current evidence that quantifies the impact of each driver on the consolidated results and directly supports the causal chain to the target, rather than relying solely on directional information."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

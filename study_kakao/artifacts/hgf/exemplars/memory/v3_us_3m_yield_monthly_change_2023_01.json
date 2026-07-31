@@ -1,0 +1,54 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_us_3m_yield_monthly_change_2023_01",
+  "blueprint_sha256": "b51864a15ab05585399740d2892aa88dba3a8a63f1c73f75c557e5d124ccfbcd",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_market",
+      "target_operation": "threshold_crossing",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2023-01-01, will the monthly 3-month yield change for United States 3-month Treasury yield in 2023-01 be at least 0.26 percentage points?",
+    "historical_cutoff": "2023-01-01T00:00:00+00:00",
+    "target_semantics": "The question asks whether the change in the US 3-month Treasury yield from December 2022 to January 2023 will be at least 0.26 percentage points.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20220823_003_63a78def",
+        "takeaway": "US inflation rates have been high and are updated monthly.",
+        "why_predictive": "High inflation is a primary driver for the Federal Reserve to increase interest rates, which would impact short-term Treasury yields."
+      },
+      {
+        "article_id": "art_finance_20220616_002_093ebaaa",
+        "takeaway": "30-year fixed mortgage rates spiked to 6.18% in June 2022.",
+        "why_predictive": "Rising mortgage rates are a signal of increasing interest rates across the financial system, influenced by Federal Reserve policy."
+      },
+      {
+        "article_id": "art_finance_20211219_005_44743575",
+        "takeaway": "A significant portion of US dollars were printed between January 2020 and October 2021.",
+        "why_predictive": "Large increases in money supply can contribute to inflationary pressures, which in turn influence monetary policy and interest rates."
+      },
+      {
+        "article_id": "art_finance_20181129_002_e1b7b35a",
+        "takeaway": "Investors were turning to 3-month Treasury bills.",
+        "why_predictive": "Investor behavior towards short-term Treasuries can reflect expectations about future interest rate movements and economic conditions."
+      }
+    ],
+    "expert_reasoning": [
+      "The persistent negative 2-year/10-year Treasury spread (checkpoint_1) historically correlates with Federal Reserve policy adjustments, but current evidence on this specific spread is weak.",
+      "Inflationary pressures from late 2022 (checkpoint_2) necessitate aggressive monetary tightening by the Fed (checkpoint_3), which leads markets to price in higher short-term rates (checkpoint_4).",
+      "The Federal Reserve's aggressive monetary tightening (checkpoint_3) directly influences short-term rates, and evidence of high inflation (art_finance_20220823_003_63a78def) and increased money supply (art_finance_20211219_005_44743575) suggests this tightening would continue."
+    ],
+    "counterevidence": "Some Wall Street analysts predicted the Federal Reserve would slow its rate hikes (checkpoint_6), which could suggest a less aggressive tightening path than implied by inflation alone.",
+    "prospective_target_estimate": "The target metric is the monthly change in the 3-month US Treasury yield. The threshold is a change of at least 0.26 percentage points. The historical evidence points to ongoing monetary tightening due to inflation, which would likely increase short-term yields.",
+    "option_mapping": "The 'yes' option corresponds to a yield change of 0.26 percentage points or higher. The 'no' option corresponds to a yield change less than 0.26 percentage points.",
+    "uncertainty": "The historical support for key drivers like the Treasury spread and Fed tightening is weak. Furthermore, conflicting signals from analyst predictions about slowing rate hikes introduce uncertainty regarding the magnitude and pace of future yield changes.",
+    "dag_derived_lesson": "The relationship between macroeconomic conditions, central bank policy, and short-term interest rates is complex. While inflationary pressures may signal rate hikes, market expectations and analyst predictions can introduce counteracting forces, leading to uncertainty in forecasting specific yield changes."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

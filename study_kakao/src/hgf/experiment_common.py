@@ -136,9 +136,14 @@ def provenance_snapshot(
             "code": _section_digest(files, ("src", "experiments")),
             "memory_manifest": _section_digest(files, ("data/memory_bank",)),
             "questions": _section_digest(files, ("data/questions",)),
-            "exemplars": _section_digest(files, ("artifacts/exemplars",)),
-            "semantic_lessons": _section_digest(
-                files, ("artifacts/semantic_lessons",)
+            "hgf_blueprints": _section_digest(
+                files, ("artifacts/hgf/blueprints",)
+            ),
+            "hgf_exemplars": _section_digest(
+                files, ("artifacts/hgf/exemplars",)
+            ),
+            "factor_memory": _section_digest(
+                files, ("artifacts/baselines/factor_memory",)
             ),
             "evidence_e0": _section_digest(files, ("data/evidence/e0",)),
             "evidence_e1": _section_digest(files, ("data/evidence/e1",)),

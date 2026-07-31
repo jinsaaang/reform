@@ -1,0 +1,32 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_us_unemployment_rate_change_2024_06",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "macro / labour",
+      "target_operation": "monthly unemployment-rate change",
+      "option_geometry": "ordered_interval"
+    },
+    "historical_question": "As of 2024-06-30, which range will the monthly unemployment-rate change for United States unemployment rate in 2024-06 fall into?",
+    "historical_cutoff": "2024-06-30T00:00:00+00:00",
+    "target_semantics": "The monthly change in the United States unemployment rate for June 2024, categorized as below -0.025 percentage points, between -0.025 and 0.125 percentage points, or above 0.125 percentage points.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The target is the monthly change in the US unemployment rate for June 2024.",
+      "The recent range for this change is defined as -0.025 to 0.125 percentage points.",
+      "There is no forecast-time evidence available to support specific drivers or counterevidence."
+    ],
+    "counterevidence": "No forecast-time evidence was provided to establish counterevidence.",
+    "prospective_target_estimate": "Given the lack of forecast-time evidence, it is not possible to provide a specific estimate for the target metric's range.",
+    "option_mapping": "Without supporting evidence, the target cannot be mapped to any of the provided options: 'below recent range', 'within recent range', or 'above recent range'.",
+    "uncertainty": "The absence of any forecast-time evidence renders the prediction highly uncertain. All options remain equally plausible.",
+    "dag_derived_lesson": "When forecast-time evidence is absent, a target metric cannot be reliably predicted or mapped to predefined options, leading to high uncertainty."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

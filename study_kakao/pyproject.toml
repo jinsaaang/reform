@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "hgf-public-reproduction"
-version = "1.0.0"
+version = "2.0.0"
 description = "Public Hindsight-Guided Forecasting reproduction"
 readme = "README.md"
 requires-python = ">=3.11"
@@ -18,6 +18,8 @@ test = ["pytest>=9,<10"]
 
 [project.scripts]
 hgf-evaluate = "hgf.evaluate:main"
+hgf-build-exemplars = "hgf.build_exemplars:main"
+hgf-build-memory = "hgf.build_memory:main"
 hgf-main-table = "hgf.cli:main_table_main"
 hgf-manifest = "hgf.manifest:main"
 hgf-preflight = "hgf.preflight:main"

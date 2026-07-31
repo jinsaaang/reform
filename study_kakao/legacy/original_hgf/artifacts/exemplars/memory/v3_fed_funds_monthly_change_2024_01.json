@@ -1,0 +1,33 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_fed_funds_monthly_change_2024_01",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_policy",
+      "target_operation": "rate_change_classification",
+      "option_geometry": "discrete_ordered_options"
+    },
+    "historical_question": "As of 2024-01-01, which range will the monthly federal-funds-rate change for Federal Reserve effective federal funds rate in 2024-01 fall into?",
+    "historical_cutoff": "2024-01-01T00:00:00+00:00",
+    "target_semantics": "The monthly change in the Federal Reserve's effective federal funds rate for January 2024.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The baseline assessment hinges on inflation confidence. Incomplete disinflation suggests a 'wait and see' approach by policymakers, supporting a neutral stance on rate changes. This is reinforced by a strong historical tendency for policymakers to maintain the current policy corridor when evidence is still developing.",
+      "The FOMC decision itself is the primary driver of the policy rate corridor. However, without specific forecast-time evidence detailing the decision, its direction remains neutral in this analysis.",
+      "Market expectations for rate cuts present a potential counter-force. If markets anticipate easing, this could create pressure for a more accommodative path. However, official communication often serves to push back against premature easing expectations, acting as counterevidence to market-driven rate cut narratives.",
+      "The transmission from the FOMC decision to the effective rate is generally strong, but the exact monthly change depends on the timing of the decision and its implementation within the target corridor."
+    ],
+    "counterevidence": "No specific forecast-time articles were provided to offer direct counterevidence. However, a hypothetical counter-scenario would involve official communication validating near-term easing expectations, or new data necessitating an immediate policy adjustment, contradicting the 'wait and see' strategy.",
+    "prospective_target_estimate": "Given the lack of specific forecast-time evidence and the neutral expected direction from the baseline drivers (inflation confidence and wait strategy), the most likely outcome is that the effective federal funds rate change will remain within the recent range, reflecting a steady policy stance.",
+    "option_mapping": "The analysis suggests the monthly change will be 'within recent range' as the Federal Reserve is likely to maintain its current policy stance in the absence of clear signals for a change, and market-driven rate cut expectations are expected to be tempered by official communication.",
+    "uncertainty": "Significant uncertainty exists due to the absence of forecast-time evidence regarding the prevailing inflation outlook, specific FOMC communications, and the precise market pricing of rate cuts. The analysis relies on general principles of monetary policy decision-making.",
+    "dag_derived_lesson": "A policy rate's trajectory is influenced by the balance between incoming economic data and policymakers' communication strategies, with market expectations acting as a secondary, often counteracted, force. The effectiveness of communication in anchoring expectations is crucial for policy transmission."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

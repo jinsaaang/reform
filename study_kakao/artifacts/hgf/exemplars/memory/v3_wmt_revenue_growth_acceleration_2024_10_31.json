@@ -1,0 +1,39 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_wmt_revenue_growth_acceleration_2024_10_31",
+  "blueprint_sha256": "879429f7055a0a30290e4b549530583c2543b34a08f64c8e38b5cc957226ece6",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "corporate_earnings",
+      "target_operation": "growth_acceleration",
+      "option_geometry": "ordered_categorical"
+    },
+    "historical_question": "As of 2024-10-31, which range will Walmart Inc.'s quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2024-10-31 fall into?",
+    "historical_cutoff": "2024-10-31T00:00:00+00:00",
+    "target_semantics": "Walmart Inc.'s quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2024-10-31.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20241030_008_6c0468aa",
+        "takeaway": "Meta Platforms Inc. reported strong revenue growth in Q3 2024, indicating a robust retail environment.",
+        "why_predictive": "While not directly about Walmart, Meta's strong performance suggests a positive macroeconomic backdrop for retail, which could benefit Walmart's revenue growth."
+      }
+    ],
+    "expert_reasoning": [
+      "The available forecast-time evidence is limited and does not directly address Walmart's specific performance drivers or financial results for the target quarter.",
+      "The DAG identifies several potential drivers for Walmart's growth, including expedited deliveries, e-commerce surge, Vizio acquisition, and resilient US shoppers, but current evidence to support these is weak.",
+      "The DAG also highlights potential mediators like strong earnings reports and raised guidance, but again, current evidence is lacking to confirm their impact on the target metric."
+    ],
+    "counterevidence": "No forecast-time evidence directly supports or contradicts specific drivers or mediators for Walmart's revenue growth acceleration in the target quarter.",
+    "prospective_target_estimate": "Given the lack of specific evidence for Walmart, and only a general positive signal from a related sector (Meta's earnings), it is not possible to confidently estimate the revenue-growth acceleration range.",
+    "option_mapping": "The options are 'below recent range', 'within recent range', and 'above recent range'. Without specific data on Walmart's performance or guidance, mapping to these options is speculative.",
+    "uncertainty": "High uncertainty exists due to the absence of direct, specific forecast-time evidence pertaining to Walmart's revenue growth drivers, performance, or guidance for the fiscal quarter ending 2024-10-31. The single piece of evidence is from a different company and sector.",
+    "dag_derived_lesson": "When forecast-time evidence is sparse and indirect, causal paths identified in a hindsight DAG cannot be reliably activated without current supporting evidence for each link, leading to high uncertainty in the prospective estimate."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

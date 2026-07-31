@@ -1,0 +1,34 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_googl_revenue_growth_acceleration_2023_03_31",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial",
+      "target_operation": "growth_acceleration",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2023-03-31, will Alphabet Inc.'s quarterly revenue year-over-year growth for the fiscal quarter ending 2023-03-31 be at least 0.96 percent?",
+    "historical_cutoff": "2023-03-31T00:00:00+00:00",
+    "target_semantics": "Alphabet Inc.'s year-over-year revenue growth for the fiscal quarter ending 2023-03-31 will be at least 0.96 percentage points higher than its year-over-year revenue growth in the prior quarter.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The search segment's performance can lift consolidated revenue growth. Verify search revenue and advertiser demand.",
+      "Cloud performance can add to consolidated revenue momentum. Check cloud revenue and profitability trends.",
+      "YouTube advertising weakness can restrain consolidated growth. Check YouTube advertising trends.",
+      "Slower core-search growth can offset other segment strength. Compare search growth with cloud contribution.",
+      "The segment mix of search, cloud, and advertising trends combines into revenue-growth acceleration. Calculate the sequential change in consolidated year-over-year revenue growth."
+    ],
+    "counterevidence": "YouTube advertising weakness can restrain consolidated growth, and slower core-search growth can offset other segment strength. The segment mix may not reconcile to consolidated revenue.",
+    "prospective_target_estimate": "The consolidated revenue growth acceleration is expected to be positive, driven by search and cloud, but potentially tempered by advertising weakness.",
+    "option_mapping": "The target is 'yes' if Alphabet's year-over-year revenue growth accelerates by at least 0.96 percentage points compared to the prior quarter; otherwise, it is 'no'.",
+    "uncertainty": "Evidence regarding the strength of the advertising market and its impact on YouTube, as well as the precise contribution of cloud growth against potential search deceleration, introduces uncertainty. The relative weights of these segments in the overall revenue mix are critical.",
+    "dag_derived_lesson": "Consolidated financial performance is a function of the interplay between core growth drivers and segment-specific headwinds. The relative strength or weakness of key segments, such as advertising and cloud services, can either amplify or dampen overall revenue trends. Analyzing these components and their interactions is crucial for forecasting aggregate financial metrics, especially when segment-level data exhibits divergent trajectories."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

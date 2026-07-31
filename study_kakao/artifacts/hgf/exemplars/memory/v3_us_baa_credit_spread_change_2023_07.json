@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_us_baa_credit_spread_change_2023_07",
+  "blueprint_sha256": "e5c18283b97d36060c9e72014fdaae2468027478e56102ea3fdd9a7463567d93",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "market_fx_credit",
+      "target_operation": "change",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2023-07-01, will the monthly Baa-minus-10-year-Treasury spread change for Moody's Baa corporate yield spread in 2023-07 be at least 0.025 percentage points?",
+    "historical_cutoff": "2023-07-01T00:00:00+00:00",
+    "target_semantics": "The monthly change in the Moody's Baa corporate yield spread relative to the 10-year Treasury yield.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The DAG indicates that 'Late-[CURRENT_PERIOD_REQUIRED] corporate spreads remained narrow and stable' (checkpoint_1) and 'Corporate spreads remained relatively low in early [CURRENT_PERIOD_REQUIRED]' (checkpoint_3) are potential drivers. These factors suggest a baseline of stable or tightening credit conditions.",
+      "The DAG also highlights that 'Investment-grade spreads had been trending lower since [CURRENT_PERIOD_REQUIRED]' (checkpoint_4) and '[CURRENT_PERIOD_REQUIRED] investment-grade primary-market spreads narrowed' (checkpoint_6). These mediators suggest a continued trend of narrowing spreads.",
+      "However, 'Investment-grade CDS widened briefly on [CURRENT_PERIOD_REQUIRED]' (checkpoint_2) is identified as counterevidence, suggesting a potential disruption or widening pressure in credit markets."
+    ],
+    "counterevidence": "Investment-grade CDS widened briefly on [CURRENT_PERIOD_REQUIRED].",
+    "prospective_target_estimate": "The evidence is insufficient to confidently estimate the direction or magnitude of the spread change.",
+    "option_mapping": "The question asks if the spread change will be at least 0.025 percentage points. Without clear directional evidence or magnitude, mapping to 'yes' or 'no' is not possible.",
+    "uncertainty": "There is no forecast-time evidence provided to support or refute the identified drivers and counterevidence. The DAG indicates multiple causal paths, but their applicability and strength in the current case are unknown without specific data.",
+    "dag_derived_lesson": "When evaluating a target metric's change, consider both the stability of the baseline and trends in related market segments. Be mindful of counterevidence from different market indicators that may signal volatility or reversal, even if other indicators suggest stability or tightening."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_nvda_revenue_growth_acceleration_2023_07_30",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_growth",
+      "target_operation": "year_over_year_growth_rate",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2023-07-30, will NVIDIA Corporation's quarterly revenue year-over-year growth for the fiscal quarter ending 2023-07-30 be at least -13.22 percent?",
+    "historical_cutoff": "2023-07-30T00:00:00+00:00",
+    "target_semantics": "NVIDIA's year-over-year revenue growth for the fiscal quarter ending 2023-07-30.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20220824_002_48f39024",
+        "takeaway": "NVIDIA announced record financial results for Q2 2023, reporting strong performance.",
+        "why_predictive": "This indicates a positive trend in NVIDIA's financial performance leading up to the target quarter, suggesting continued revenue strength."
+      }
+    ],
+    "expert_reasoning": [
+      "NVIDIA's technology leadership in AI chips (checkpoint: technology_leadership) is a baseline factor supporting demand for its products.",
+      "This AI chip leadership is expected to drive significant demand for AI accelerators, boosting data center sales (checkpoint: ai_gpu_demand).",
+      "The gaming segment also contributes to overall revenue (checkpoint: gaming_contribution).",
+      "The consolidated revenue is a bridge combining AI and gaming contributions (checkpoint: consolidated_revenue_bridge).",
+      "The causal path suggests that technology leadership enables AI GPU demand, which in turn supports consolidated revenue growth (causal_path: technology_leadership -> ai_gpu_demand -> consolidated_revenue_bridge).",
+      "The historical support for technology leadership, AI GPU demand, and the consolidated revenue bridge is strong."
+    ],
+    "counterevidence": "The forecast-time evidence is limited to a single report from August 2022, which is significantly before the cutoff. This report highlights record results for Q2 2023 but lacks specific forward-looking guidance or detailed segment performance for the target quarter ending July 2023. The 'expectations_check' checkpoint has weak historical support, indicating that management outlook and market expectations might not be fully informative or aligned with realized revenue.",
+    "prospective_target_estimate": "The strong historical support for AI GPU demand and consolidated revenue growth, driven by technology leadership, suggests a positive outlook. However, the limited and dated forecast-time evidence, coupled with potential disconnects between expectations and realized revenue, introduces uncertainty.",
+    "option_mapping": "The question asks if NVIDIA's year-over-year revenue growth will be at least -13.22%. Given the strong underlying drivers identified, the 'yes' option appears more likely, assuming continued demand and execution.",
+    "uncertainty": "The primary uncertainty stems from the lack of recent, specific forecast-time data regarding management guidance, consensus expectations, and detailed segment performance for the period immediately preceding the cutoff. The reliance on older data and general trends for AI and gaming demand, without explicit confirmation of their continued strength or translation into revenue for the specific quarter, creates a degree of doubt.",
+    "dag_derived_lesson": "A strong baseline technology position can drive demand for key products, which in turn supports consolidated revenue. However, the reliability of this relationship can be tested by the accuracy of market expectations and the availability of recent, specific performance data."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

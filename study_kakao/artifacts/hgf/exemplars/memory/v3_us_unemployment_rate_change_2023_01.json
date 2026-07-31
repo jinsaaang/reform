@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_us_unemployment_rate_change_2023_01",
+  "blueprint_sha256": "171badfcf889bc265920a584bf834c8f9e24d38be2c0c736a39b1893530f7400",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "macro / labour",
+      "target_operation": "monthly unemployment-rate change",
+      "option_geometry": "ordered"
+    },
+    "historical_question": "As of 2023-01-31, which range will the monthly unemployment-rate change for United States unemployment rate in 2023-01 fall into?",
+    "historical_cutoff": "2023-01-31T00:00:00+00:00",
+    "target_semantics": "The monthly change in the US unemployment rate for January 2023, categorized relative to a recent range of -0.1 to 0.025 percentage points.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The target metric is the monthly change in the US unemployment rate for January 2023. This change is calculated by subtracting the December 2022 unemployment rate from the January 2023 rate.",
+      "The provided context defines a 'recent range' for this change as being between -0.1 and 0.025 percentage points. The resolution rule maps changes below -0.1 to 'below recent range', changes from -0.1 up to (but not including) 0.025 to 'within recent range', and changes at or above 0.025 to 'above recent range'.",
+      "The DAG indicates that the calculation of the monthly change relies on the reference observation (previous month's rate) and the target observation (current month's rate). The comparison of this calculated change against the pre-registered interval boundaries is the final step before mapping to an option."
+    ],
+    "counterevidence": "No forecast-time evidence was provided to support or contradict any specific movement in the US unemployment rate for January 2023 or the preceding month.",
+    "prospective_target_estimate": "The available information is insufficient to estimate whether the monthly unemployment-rate change will fall below, within, or above the recent range.",
+    "option_mapping": "Without specific data on the December 2022 and January 2023 unemployment rates, it is not possible to map the calculated monthly change to any of the provided options: 'below recent range', 'within recent range', or 'above recent range'.",
+    "uncertainty": "High uncertainty exists due to the complete lack of forecast-time evidence regarding the actual unemployment rates or their changes. The DAG's weaknesses highlight that benchmark rate levels were not quoted in the official evidence summary, further complicating any potential inference.",
+    "dag_derived_lesson": "When forecasting a change metric, the direct measurement of the prior and current period's values is critical. The relationship between these values and pre-defined thresholds determines the final classification. The absence of data for these key inputs renders any forecast speculative."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

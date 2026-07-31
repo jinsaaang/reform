@@ -1,0 +1,68 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_us_payroll_monthly_growth_2024_12",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "macro / labour",
+      "target_operation": "monthly payroll growth",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2024-12-31, which range will the monthly payroll growth for United States nonfarm payrolls in 2024-12 fall into?",
+    "historical_cutoff": "2024-12-31T00:00:00+00:00",
+    "target_semantics": "The monthly percentage change in United States nonfarm payrolls for December 2024.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "ev_7c01f86b7e48421f",
+        "takeaway": "US added 227,000 jobs in November, a bounce-back from an October slowdown.",
+        "why_predictive": "Indicates a recent acceleration in job growth following a prior dip, suggesting upward momentum."
+      },
+      {
+        "article_id": "ev_247b3eda8b0cf55c",
+        "takeaway": "November job gains rebounded from disruptions.",
+        "why_predictive": "Confirms a recovery in job creation after a period of disruption, implying a return to stronger growth."
+      },
+      {
+        "article_id": "ev_40d56dcaae8eba72",
+        "takeaway": "US payrolls were seen up in November as Boeing workers returned and hurricanes subsided.",
+        "why_predictive": "Identifies specific factors (Boeing return, reduced hurricane impact) that contributed to November's job gains, suggesting these positive influences may persist or have resolved underlying drag."
+      },
+      {
+        "article_id": "ev_9c717397fe810ecc",
+        "takeaway": "Nonfarm payrolls increased more than expected.",
+        "why_predictive": "Suggests that the underlying strength in the labor market is exceeding prior expectations, potentially indicating continued robust growth."
+      },
+      {
+        "article_id": "ev_bb8fee4c50f167ad",
+        "takeaway": "Nonfarm payrolls increased by 227,000 in November.",
+        "why_predictive": "Provides a specific, strong figure for November job growth, reinforcing the narrative of a rebound and exceeding expectations."
+      },
+      {
+        "article_id": "ev_130ec84f990365eb",
+        "takeaway": "Total nonfarm payroll employment was essentially unchanged in October 2024.",
+        "why_predictive": "Establishes a baseline of very weak or stagnant growth in the preceding month, highlighting the significance of the November rebound."
+      }
+    ],
+    "expert_reasoning": [
+      "The target is the monthly payroll growth for December 2024, compared against a recent range of 0.03% to 0.063%.",
+      "The baseline for October 2024 showed payroll employment was 'essentially unchanged' (ev_130ec84f990365eb).",
+      "However, November 2024 saw a significant rebound, with nonfarm payrolls increasing by 227,000 jobs (ev_7c01f86b7e48421f, ev_bb8fee4c50f167ad).",
+      "This November growth was described as a 'bounce-back from October slowdown' (ev_7c01f86b7e48421f) and a 'rebound from disruptions' (ev_247b3eda8b0cf55c).",
+      "Specific factors contributing to the November increase included the return of Boeing workers and the subsiding of hurricane impacts (ev_40d56dcaae8eba72).",
+      "Furthermore, November's nonfarm payroll increase exceeded expectations (ev_9c717397fe810ecc).",
+      "The evidence points to a strengthening labor market in November after a weak October, driven by the resolution of temporary disruptions and positive specific sector contributions.",
+      "This suggests that the momentum from November's rebound is likely to carry forward into December, potentially leading to growth above the lower bound of the recent range."
+    ],
+    "counterevidence": "The provided articles do not offer direct counterevidence to the observed rebound in November or its potential continuation. However, the weakness in October (ev_130ec84f990365eb) indicates underlying volatility.",
+    "prospective_target_estimate": "The strong rebound in November, exceeding expectations and driven by resolving disruptions, suggests continued positive momentum. This points towards payroll growth likely falling within or potentially above the recent range.",
+    "option_mapping": "The evidence suggests a rebound from October's stagnation, with November's growth exceeding expectations and driven by resolving disruptions. This implies December's growth will likely be at least within the recent range, and potentially above it.",
+    "uncertainty": "While November showed a strong rebound, the sustainability of this momentum into December is not definitively established. The 'essentially unchanged' figure for October (ev_130ec84f990365eb) highlights potential for volatility. The exact percentage growth for November is provided, but the underlying total payroll levels needed to precisely calculate the percentage change for December are not fully detailed in the summaries, leading to some uncertainty in projecting the exact magnitude.",
+    "dag_derived_lesson": "A recent period of weakness followed by a strong rebound, driven by the resolution of temporary negative factors and exceeding expectations, suggests a positive trajectory. However, the magnitude of future growth remains uncertain due to potential underlying volatility and the need for precise data to confirm momentum."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

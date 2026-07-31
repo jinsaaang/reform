@@ -5,8 +5,8 @@ import sys
 from pathlib import Path
 
 from hgf import manifest as artifact_manifest
-from hgf.baselines import METHODS
-from hgf.runner import _parse_args, _load_source_cases
+from hgf.baselines import METHODS, _parse_args
+from hgf.runner import _load_source_cases
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -60,7 +60,7 @@ def test_fixed_exemplars_cover_all_100_questions() -> None:
             encoding="utf-8"
         )
     )["question_ids"]
-    cases = _load_source_cases(ROOT / "artifacts" / "exemplars")
+    cases = _load_source_cases(ROOT / "artifacts" / "hgf" / "exemplars")
     assert len(selected) == len(set(selected)) == 100
     assert set(cases) == set(selected)
     for case in cases.values():
@@ -79,26 +79,30 @@ def test_final_memory_bank_has_200_entries() -> None:
     assert manifest["total_validated_count"] == 200
     assert len(manifest["entries"]) == 200
     for entry in manifest["entries"]:
-        path_keys = ["graph_path"]
-        if entry.get("guidance_path"):
-            path_keys.append("guidance_path")
-        else:
-            path_keys.extend(("audit_path", "evidence_path"))
-        assert all((ROOT / entry[key]).is_file() for key in path_keys)
+        assert "guidance_path" not in entry
+        assert (ROOT / entry["graph_path"]).is_file()
+        for key in ("audit_path", "evidence_path"):
+            if entry.get(key):
+                assert (ROOT / entry[key]).is_file()
 
 
 def test_reproduction_defaults_match_public_layout(monkeypatch) -> None:
     monkeypatch.setattr(sys, "argv", ["hgf-replay"])
-    args = _parse_args()
+    args = _parse_args(
+        default_methods=("hgf",),
+        default_output_dir=Path("runs/hgf"),
+    )
     assert args.questions_dir == Path("data/questions")
     assert args.evidence_dir == Path("data/evidence")
     assert args.memory_bank_manifest == Path(
         "data/memory_bank/manifest.json"
     )
     assert args.selection_file == Path("data/questions/selection.json")
-    assert args.exemplar_dir == Path("artifacts/exemplars")
-    assert args.semantic_cache_dir == Path("artifacts/semantic_lessons")
+    assert args.hgf_artifact_root == Path("artifacts/hgf")
+    assert not hasattr(args, "exemplar_dir")
+    assert not hasattr(args, "semantic_cache_dir")
     assert args.output_dir == Path("runs/hgf")
+    assert args.methods == ("hgf",)
     assert args.limit == 100
     assert args.workers == 4
 

@@ -1,0 +1,38 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_us_gasoline_monthly_change_2024_07",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "economic",
+      "target_operation": "price_change_prediction",
+      "option_geometry": "range_prediction"
+    },
+    "historical_question": "As of 2024-07-01, which range will the monthly retail gasoline-price change for United States regular gasoline price in 2024-07 fall into?",
+    "historical_cutoff": "2024-07-01T00:00:00+00:00",
+    "target_semantics": "The monthly percentage change in the retail price of regular gasoline in the United States for July 2024.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "ev_8f22c44bec1e463e",
+        "takeaway": "The U.S. Energy Information Administration (EIA) forecast for gasoline prices predicted a fall by the end of 2024.",
+        "why_predictive": "This EIA outlook provides a general direction for gasoline prices, suggesting a downward trend that could influence the July price change."
+      }
+    ],
+    "expert_reasoning": [
+      "The EIA's Short-Term Energy Outlook (ev_8f22c44bec1e463e) indicated a predicted fall in gasoline prices by the end of 2024.",
+      "This forecast suggests a potential downward pressure on prices during the summer driving season, which includes July.",
+      "While specific July data is not available in this forecast, the general trend points towards a decrease rather than a significant increase."
+    ],
+    "counterevidence": "The DAG identifies 'Gasoline prices rose briefly ahead of Independence Day' as potential counterevidence, but no specific forecast-time evidence directly supports or refutes this in the provided articles.",
+    "prospective_target_estimate": "The forecast suggests the monthly retail gasoline-price change for July 2024 will likely be within or below the recent range, leaning towards a decrease.",
+    "option_mapping": "Based on the EIA's prediction of falling prices by year-end, the most plausible outcome is 'within recent range' or 'below recent range'.",
+    "uncertainty": "The provided forecast-time evidence (ev_8f22c44bec1e463e) offers a general trend but lacks specific data for July 2024. The potential for short-term price increases around holidays, as noted in the DAG's counterevidence, introduces uncertainty.",
+    "dag_derived_lesson": "A general forecast for a commodity's price trend over a longer period can inform expectations for a specific month, but this must be weighed against potential short-term volatility and specific demand/supply factors not detailed in the general outlook."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

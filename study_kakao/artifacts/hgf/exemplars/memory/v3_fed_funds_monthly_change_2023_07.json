@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_fed_funds_monthly_change_2023_07",
+  "blueprint_sha256": "a58a2c36164d44a10b15c703b994431df47784a6d26847e645bf6cd0ca372984",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "economic_forecasting",
+      "target_operation": "rate_change_prediction",
+      "option_geometry": "range_comparison"
+    },
+    "historical_question": "As of 2023-07-01, which range will the monthly federal-funds-rate change for Federal Reserve effective federal funds rate in 2023-07 fall into?",
+    "historical_cutoff": "2023-07-01T00:00:00+00:00",
+    "target_semantics": "The monthly change in the Federal Reserve's effective federal funds rate for July 2023, compared to a recent range of 0.155 to 0.26 percentage points.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The DAG indicates that persistent inflation (checkpoint_1) and a resilient labor market (checkpoint_2) historically supported the Fed's hawkish stance, leading to rate hikes (checkpoint_5).",
+      "Furthermore, the Fed's Monetary Policy Report (checkpoint_3) and FedViews reports (checkpoint_4) signaled ongoing inflationary pressures and a commitment to fighting inflation, reinforcing the likelihood of further rate hikes.",
+      "However, Chairman Powell's signal of a data-dependent approach (checkpoint_6) led analysts to anticipate a pause (checkpoint_7), causing a shift in market sentiment towards rate stability (checkpoint_8) and market recalibration (checkpoint_9)."
+    ],
+    "counterevidence": "The FOMC's actual rate hike (checkpoint_5) is presented as a potential counter-mechanism, suggesting that the decision to raise rates might have overridden or complicated the anticipated pause signaled by Chairman Powell's data-dependent approach.",
+    "prospective_target_estimate": "The evidence suggests conflicting signals. While historical drivers point to continued rate hikes, the pivot to a data-dependent approach and market anticipation of a pause introduce uncertainty. Without specific cutoff-safe evidence, it is difficult to definitively place the monthly change.",
+    "option_mapping": "The target is the monthly change in the federal funds rate. Options are 'below recent range' (< 0.155 pp), 'within recent range' ([0.155, 0.26) pp), and 'above recent range' (>= 0.26 pp).",
+    "uncertainty": "The historical DAG shows weak support for all checkpoints and causal paths. Crucially, there is no cutoff-safe evidence provided to confirm the current state of inflation, labor market resilience, Fed communications, or market sentiment. The 'historical_support' for all checkpoints is 'weak', and the 'graph_diagnosis' lists no specific weaknesses, implying a general lack of strong, verifiable causal links at the time of the forecast.",
+    "dag_derived_lesson": "Economic policy decisions are influenced by multiple, often conflicting, factors. Initial drivers may be counteracted by subsequent communication or market reactions, necessitating a careful evaluation of the prevailing conditions at the time of the forecast."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

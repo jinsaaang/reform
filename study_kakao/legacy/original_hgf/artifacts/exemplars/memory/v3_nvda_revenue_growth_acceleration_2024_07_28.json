@@ -1,0 +1,53 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_nvda_revenue_growth_acceleration_2024_07_28",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial",
+      "target_operation": "growth_acceleration",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2024-07-28, will NVIDIA Corporation's quarterly revenue year-over-year growth for the fiscal quarter ending 2024-07-28 be at least 262.12 percent?",
+    "historical_cutoff": "2024-07-28T00:00:00+00:00",
+    "target_semantics": "NVIDIA Corporation's quarterly revenue year-over-year growth for the fiscal quarter ending 2024-07-28.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20240602_003_84598d6f",
+        "takeaway": "NVIDIA dominates the AI chip market, but faces rising competition.",
+        "why_predictive": "This article highlights NVIDIA's market position and introduces a potential headwind (competition) that could impact future revenue growth."
+      },
+      {
+        "article_id": "art_finance_20230828_004_19f9e47b",
+        "takeaway": "NVIDIA reported its Q2 2024 earnings.",
+        "why_predictive": "This provides a recent historical data point for NVIDIA's financial performance, which is essential for calculating year-over-year growth and acceleration."
+      },
+      {
+        "article_id": "art_finance_20230823_002_5898bfad",
+        "takeaway": "NVIDIA's Q2 2024 earnings report was released.",
+        "why_predictive": "This article offers another source for NVIDIA's Q2 2024 financial results, crucial for establishing a baseline revenue growth rate."
+      }
+    ],
+    "expert_reasoning": [
+      "The target is NVIDIA's quarterly revenue year-over-year growth acceleration for the fiscal quarter ending 2024-07-28, with a specific threshold of 262.12 percent.",
+      "The baseline for comparison is NVIDIA's prior quarter's year-over-year revenue growth rate.",
+      "A key driver to consider is the potential impact of competition on revenue growth, as indicated by reporting on NVIDIA's dominance in the AI chip market alongside rising competition (art_finance_20240602_003_84598d6f).",
+      "The mechanism connecting competition to revenue growth acceleration is that increased competition could pressure pricing or market share, potentially slowing the rate of revenue growth compared to previous periods.",
+      "Genuine counterevidence is not explicitly detailed in the provided forecast-time articles, but the existence of 'rising competition' (art_finance_20240602_003_84598d6f) serves as a potential moderating factor against extremely high growth acceleration.",
+      "Given the information, a prospective estimate would need to weigh NVIDIA's market dominance against emerging competitive pressures. Without specific Q2 2024 growth figures or detailed competitive impact analysis from the forecast-time articles, a precise quantitative estimate is difficult.",
+      "The option mapping is 'yes' if the year-over-year revenue growth is at least 262.12 percent, and 'no' otherwise.",
+      "Uncertainty exists due to the 'weak' historical support for the competition factor and the lack of precise forward-looking data on its impact on NVIDIA's revenue growth acceleration."
+    ],
+    "counterevidence": "The articles mention 'rising competition' (art_finance_20240602_003_84598d6f), which could potentially dampen revenue growth acceleration, although its specific impact is not quantified.",
+    "prospective_target_estimate": "The forecast-time evidence suggests NVIDIA's strong market position in AI chips (art_finance_20240602_003_84598d6f) may support high revenue growth. However, the emergence of competition introduces uncertainty. Without specific Q2 2024 growth figures or a clear quantification of competitive impact, a definitive estimate regarding the 262.12 percent threshold is not possible based solely on the provided articles.",
+    "option_mapping": "The target is 'yes' if NVIDIA's year-over-year revenue growth for the fiscal quarter ending 2024-07-28 is at least 262.12 percent; otherwise, it is 'no'.",
+    "uncertainty": "The historical support for the competitive pressure factor is weak. The provided articles do not offer specific quantitative data on the impact of competition on NVIDIA's revenue growth acceleration, making it difficult to precisely forecast whether the 262.12 percent threshold will be met.",
+    "dag_derived_lesson": "When assessing financial growth acceleration, consider the interplay between market dominance and emerging competitive pressures. While strong market position may suggest continued high growth, the introduction of new competitors can act as a moderating force, creating uncertainty around the sustainability of extreme growth rates. The strength of evidence for these competitive impacts is crucial for accurate forecasting."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

@@ -4,6 +4,7 @@ from types import SimpleNamespace
 
 from hgf.exemplar import (
     _call_json as exemplar_call_json,
+    _call_with_repair,
     _ensure_baseline_reasoning_step,
     _normalize_probability_rows,
 )
@@ -87,6 +88,31 @@ def test_run_seed_namespaces_repeated_experiments() -> None:
     assert canonical == _seed("question", "stage")
 
 
+def test_repair_can_override_reasoning_effort_for_serialization() -> None:
+    configure_generation(
+        reasoning_effort="medium",
+        max_output_tokens=8000,
+    )
+    try:
+        client = _client()
+        exemplar_call_json(
+            client,
+            model="google/gemini-2.5-flash-lite",
+            system="repair JSON only",
+            prompt="{}",
+            schema={"name": "test", "schema": {"type": "object"}},
+            seed=1,
+            max_tokens=123,
+            reasoning_effort_override="minimal",
+        )
+        request = client.chat.completions.requests[0]
+        assert request["extra_body"] == {
+            "reasoning": {"effort": "minimal"}
+        }
+    finally:
+        configure_generation()
+
+
 def test_provider_serialization_is_normalized_without_changing_ranking() -> None:
     payload = {
         "prediction": "b",
@@ -152,7 +178,7 @@ def test_string_reasoning_steps_preserve_text_in_structured_form() -> None:
     }
 
 
-def test_string_probability_rows_are_removed_before_validation() -> None:
+def test_incomplete_probability_rows_fall_back_to_neutral_serialization() -> None:
     payload = {
         "prediction": "a",
         "option_probabilities": [
@@ -164,6 +190,55 @@ def test_string_probability_rows_are_removed_before_validation() -> None:
     _normalize_probability_rows(payload, ["a", "b", "c"])
 
     assert payload["option_probabilities"] == [
-        {"option": "b", "probability": 0.3},
-        {"option": "c", "probability": 0.2},
+        {"option": "a", "probability": 1 / 3},
+        {"option": "b", "probability": 1 / 3},
+        {"option": "c", "probability": 1 / 3},
     ]
+
+
+def test_null_probability_rows_fall_back_to_neutral_serialization() -> None:
+    payload = {
+        "prediction": "a",
+        "option_probabilities": None,
+    }
+
+    _normalize_probability_rows(payload, ["a", "b"])
+
+    assert payload["option_probabilities"] == [
+        {"option": "a", "probability": 0.5},
+        {"option": "b", "probability": 0.5},
+    ]
+
+
+def test_null_reasoning_steps_are_normalized_before_baseline_insertion() -> None:
+    payload = {
+        "target_semantics": "exact target",
+        "reasoning_steps": None,
+    }
+
+    _ensure_baseline_reasoning_step(payload)
+
+    assert payload["reasoning_steps"][0]["step_type"] == "baseline"
+
+
+def test_validation_exhaustion_uses_declared_fallback_factory() -> None:
+    client = _client()
+
+    payload, probabilities, _, _, repaired = _call_with_repair(
+        client,
+        model="google/gemini-2.5-flash-lite",
+        system="system",
+        prompt="prompt",
+        schema={"name": "test", "schema": {"type": "object"}},
+        seed=1,
+        max_tokens=100,
+        validator=lambda value: (
+            {"yes": 0.5, "no": 0.5},
+            [] if value.get("status") == "neutral" else ["collapsed shell"],
+        ),
+        fallback_factory=lambda _current, _errors: {"status": "neutral"},
+    )
+
+    assert payload == {"status": "neutral"}
+    assert probabilities == {"yes": 0.5, "no": 0.5}
+    assert repaired is True

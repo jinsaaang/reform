@@ -1,0 +1,39 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_amzn_revenue_growth_acceleration_2023_12_31",
+  "blueprint_sha256": "b89ff219b63f4e0f5056e23a0945a195a42f3652d70d0a481bb4a72d566e938a",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_analysis",
+      "target_operation": "growth_acceleration",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2023-12-31, which range will Amazon.com, Inc.'s quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2023-12-31 fall into?",
+    "historical_cutoff": "2023-12-31T00:00:00+00:00",
+    "target_semantics": "Amazon's year-over-year revenue growth acceleration for the fiscal quarter ending December 31, 2023.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20210920_006_4378453b",
+        "takeaway": "Amazon's revenue growth has historically been influenced by factors such as consumer spending, e-commerce sales, and advertising revenue.",
+        "why_predictive": "This article provides general context on Amazon's historical revenue drivers, which are relevant to understanding potential influences on future revenue growth acceleration."
+      }
+    ],
+    "expert_reasoning": [
+      "The DAG suggests that robust consumer spending during the holiday season (checkpoint_1) historically drove strong e-commerce sales (checkpoint_2), which in turn contributed to overall revenue growth (checkpoint_10).",
+      "Additionally, the introduction of ads on Prime Video (checkpoint_3) historically boosted advertising revenue (checkpoint_4), also contributing to top-line growth.",
+      "The DAG also highlights that increased enterprise adoption of generative AI (checkpoint_7) was a critical factor in AWS revenue growth re-acceleration (checkpoint_9), which fed into overall performance."
+    ],
+    "counterevidence": "Prior concerns about AWS cloud growth slowdown (checkpoint_8) existed, which could have acted as a drag on overall revenue growth acceleration.",
+    "prospective_target_estimate": "within recent range",
+    "option_mapping": "The target metric is Amazon's quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2023-12-31. The options are 'below recent range' (-infinity, -0.936105), 'within recent range' [-0.936105, 1.536987), and 'above recent range' [1.536987, +infinity).",
+    "uncertainty": "The historical support for the identified drivers and mediators is weak, and the provided evidence is general, lacking specific data for the target period. The DAG indicates a potential for counterevidence related to AWS cloud growth slowdown to dominate.",
+    "dag_derived_lesson": "When assessing growth acceleration, consider the interplay of consumer spending, e-commerce, advertising, and cloud services, while also accounting for potential headwinds from segment slowdowns. The strength of evidence for each causal link must be re-evaluated at each forecast horizon."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

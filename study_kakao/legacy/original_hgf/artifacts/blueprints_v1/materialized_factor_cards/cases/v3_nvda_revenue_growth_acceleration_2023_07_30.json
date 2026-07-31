@@ -1,0 +1,212 @@
+{
+  "schema_version": "hgf_blueprint_v1",
+  "question_id": "v3_nvda_revenue_growth_acceleration_2023_07_30",
+  "target_definition": {
+    "metric": "NVIDIA quarterly year-over-year revenue growth",
+    "unit_or_option_space": "percent, compared with the prior-quarter growth reference",
+    "forecast_horizon": "fiscal quarter ending 2023-07-30"
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "The graph provides a reusable technology-leadership-to-AI-demand-to-revenue monitoring chain with a gaming contribution and expectation check.",
+    "weaknesses": [
+      "Several supporting disclosures occur after the forecast cutoff.",
+      "The graph lacks direct detail on segment mix and comparison-period revenue."
+    ]
+  },
+  "search_factors": [
+    {
+      "factor": "AI accelerator demand",
+      "why_search": "GPU demand is the primary sales channel in the graph.",
+      "preferred_source_types": [
+        "company earnings release",
+        "cloud-provider commentary"
+      ],
+      "source_event_ids": [
+        "evt_tech_20230730_009_57e67a11"
+      ]
+    },
+    {
+      "factor": "AI chip technology leadership",
+      "why_search": "Technology leadership conditions the ability to capture AI infrastructure demand.",
+      "preferred_source_types": [
+        "company product release",
+        "industry analysis"
+      ],
+      "source_event_ids": [
+        "evt_tech_20230730_014_af2b824a"
+      ]
+    },
+    {
+      "factor": "Gaming segment momentum",
+      "why_search": "Gaming growth provides a second source of revenue contribution.",
+      "preferred_source_types": [
+        "company segment disclosure",
+        "channel checks"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230730_011_7d88d9e9"
+      ]
+    },
+    {
+      "factor": "Management outlook and market expectations",
+      "why_search": "Guidance and expectations help test whether demand is already reflected in sales assumptions.",
+      "preferred_source_types": [
+        "company guidance",
+        "analyst research"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230820_008_239e4437",
+        "evt_finance_20230821_012_c5a1a85e"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "technology_leadership",
+      "role": "baseline",
+      "factor": "AI chip technology leadership",
+      "mechanism": "Technology leadership enables NVIDIA to serve AI infrastructure demand.",
+      "expected_direction": "up",
+      "evidence_requirement": "Product capability and customer adoption indicators remain favorable.",
+      "contradiction_signal": "Competitor offerings displace demand or limit adoption.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_tech_20230730_014_af2b824a"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_nvda_revenue_growth_acceleration_2023_07_30_20260724_220316_006_f7345026"
+      ]
+    },
+    {
+      "id": "ai_gpu_demand",
+      "role": "driver",
+      "factor": "AI accelerator demand",
+      "mechanism": "Demand for AI GPUs increases data-center sales.",
+      "expected_direction": "up",
+      "evidence_requirement": "Customer orders, supply commentary, and revenue disclosures agree.",
+      "contradiction_signal": "Customer spending slows or supply cannot convert demand to shipments.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_tech_20230730_009_57e67a11",
+        "evt_finance_20230824_010_69db036f"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_nvda_revenue_growth_acceleration_2023_07_30_20260724_220316_007_548d2f15"
+      ]
+    },
+    {
+      "id": "gaming_contribution",
+      "role": "mediator",
+      "factor": "Gaming segment momentum",
+      "mechanism": "Gaming growth adds a separate contribution to consolidated revenue.",
+      "expected_direction": "up",
+      "evidence_requirement": "Segment revenue is disclosed with a comparable prior-year period.",
+      "contradiction_signal": "Gaming demand weakens despite positive channel commentary.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_finance_20230730_011_7d88d9e9",
+        "evt_finance_20230824_010_69db036f"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_nvda_revenue_growth_acceleration_2023_07_30_20260724_220316_008_ec49d1ab"
+      ]
+    },
+    {
+      "id": "expectations_check",
+      "role": "counterevidence",
+      "factor": "Management outlook and market expectations",
+      "mechanism": "Elevated expectations can make demand signals less informative about realized revenue.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Compare guidance, consensus expectations, and reported revenue on the same basis.",
+      "contradiction_signal": "Demand evidence remains strong while guidance or expectations deteriorate.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230820_008_239e4437",
+        "evt_finance_20230821_012_c5a1a85e",
+        "evt_finance_20230821_013_77086d8e"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_nvda_revenue_growth_acceleration_2023_07_30_20260724_220316_009_95739332",
+        "hyp_v3_nvda_revenue_growth_acceleration_2023_07_30_20260724_220316_010_3ef1d7b7",
+        "hyp_v3_nvda_revenue_growth_acceleration_2023_07_30_20260724_220316_011_1d4681ae"
+      ]
+    },
+    {
+      "id": "consolidated_revenue_bridge",
+      "role": "target_bridge",
+      "factor": "AI and gaming revenue contribution",
+      "mechanism": "AI GPU demand and gaming sales combine to determine consolidated revenue growth.",
+      "expected_direction": "up",
+      "evidence_requirement": "Reconcile segment growth and management outlook to consolidated revenue.",
+      "contradiction_signal": "Segment strength fails to translate into consolidated growth.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_tech_20230730_009_57e67a11",
+        "evt_finance_20230730_011_7d88d9e9",
+        "evt_finance_20230824_010_69db036f"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_nvda_revenue_growth_acceleration_2023_07_30_20260724_220316_007_548d2f15",
+        "hyp_v3_nvda_revenue_growth_acceleration_2023_07_30_20260724_220316_008_ec49d1ab",
+        "hyp_v3_nvda_revenue_growth_acceleration_2023_07_30_20260724_220316_012_ea149dbe"
+      ]
+    }
+  ],
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "technology_leadership",
+        "ai_gpu_demand",
+        "consolidated_revenue_bridge"
+      ],
+      "generalized_mechanism": "Technology leadership enables AI GPU demand, which supports consolidated revenue growth.",
+      "expected_direction": "up",
+      "applicability_conditions": [
+        "AI infrastructure spending remains a material revenue driver."
+      ],
+      "failure_conditions": [
+        "Supply constraints or customer budget cuts prevent demand conversion."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "gaming_contribution",
+        "expectations_check",
+        "consolidated_revenue_bridge"
+      ],
+      "generalized_mechanism": "Gaming contribution supports revenue while guidance and expectations test the durability of that support.",
+      "expected_direction": "mixed",
+      "applicability_conditions": [
+        "Gaming remains material to consolidated revenue."
+      ],
+      "failure_conditions": [
+        "Expectation changes reflect non-operating market sentiment only."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "AI demand is strong but constrained by supply availability.",
+      "discriminating_evidence": "Compare order demand, supply commentary, and recognized revenue.",
+      "source_event_ids": [
+        "evt_tech_20230730_009_57e67a11",
+        "evt_finance_20230824_010_69db036f"
+      ]
+    },
+    {
+      "hypothesis": "Revenue strength is broad-based across AI and gaming rather than concentrated in one segment.",
+      "discriminating_evidence": "Compare segment growth contributions and customer-demand indicators.",
+      "source_event_ids": [
+        "evt_finance_20230730_011_7d88d9e9",
+        "evt_tech_20230730_009_57e67a11"
+      ]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Does AI GPU demand have corroborating customer and supply evidence?",
+    "Does gaming growth contribute materially to consolidated revenue?",
+    "Are guidance and market expectations measured on the same basis as revenue?",
+    "Do segment trends reconcile with consolidated growth?"
+  ]
+}

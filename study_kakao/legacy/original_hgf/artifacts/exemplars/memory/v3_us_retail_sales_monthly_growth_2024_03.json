@@ -1,0 +1,45 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_us_retail_sales_monthly_growth_2024_03",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "macro / consumption",
+      "target_operation": "growth rate",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2024-03-31, will the monthly retail-sales growth for United States retail sales in 2024-03 be at least 0.009 percent?",
+    "historical_cutoff": "2024-03-31T00:00:00+00:00",
+    "target_semantics": "United States monthly retail-sales growth for March 2024.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20110407_005_faabfd21",
+        "takeaway": "Retailers reported surprising strength in March sales.",
+        "why_predictive": "Indicates a potentially positive trend in overall retail activity for the month of March."
+      },
+      {
+        "article_id": "art_finance_20210415_004_a43ad47a",
+        "takeaway": "US retail sales for March rose significantly more than anticipated.",
+        "why_predictive": "Suggests that March retail sales performance can exceed expectations, implying upward momentum."
+      }
+    ],
+    "expert_reasoning": [
+      "The historical evidence suggests that March retail sales have shown surprising strength and have risen more than anticipated in past instances (art_finance_20110407_005_faabfd21, art_finance_20210415_004_a43ad47a).",
+      "This historical pattern indicates a potential for positive retail sales growth in March.",
+      "Specifically, general merchandise store sales rebounded in March (checkpoint_1), and U.S. vehicle buyers remained resilient (checkpoint_2), contributing to an increase in U.S. new-vehicle sales (checkpoint_4).",
+      "However, electric-vehicle sales growth slowed (checkpoint_3), which could act as a counteracting force.",
+      "The aggregate effect of these factors needs to be considered to determine the overall monthly retail-sales growth."
+    ],
+    "counterevidence": "The slowing growth of electric-vehicle sales (checkpoint_3) presents a potential headwind to overall retail sales growth.",
+    "prospective_target_estimate": "Given the historical tendency for March retail sales to exceed expectations and the reported resilience in vehicle sales, there is a possibility of achieving at least 0.009 percent growth. However, the slowing EV sales introduce uncertainty.",
+    "option_mapping": "The evidence suggests a potential for positive growth, leaning towards 'yes', but the counterevidence introduces doubt.",
+    "uncertainty": "The provided articles do not offer specific quantitative data for the target period or a clear baseline for comparison. The impact of the slowing electric-vehicle sales growth on the overall retail sales figure is not precisely quantified, making a definitive forecast challenging.",
+    "dag_derived_lesson": "When assessing a target metric, it is crucial to identify and weigh both supporting drivers and counteracting factors. The strength and interconnectedness of these elements, along with the availability of precise quantitative data, determine the confidence in the forecast. Acknowledging the impact of specific sub-category trends on the aggregate is also important."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

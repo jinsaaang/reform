@@ -1,0 +1,540 @@
+{
+  "schema_version": "hgf_blueprint_topology_v2",
+  "question_id": "v3_sp500_monthly_return_2024_12",
+  "target_definition": {
+    "metric": "monthly S&P 500 return",
+    "unit_or_option_space": [
+      "below recent range",
+      "within recent range",
+      "above recent range"
+    ],
+    "forecast_horizon": "Remap the historical target family to the current question's exact target period."
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Outcome-redacted topology preserves 7 checkpoints, 7 source edges, and 5 root-to-target paths.",
+    "weaknesses": []
+  },
+  "search_factors": [
+    {
+      "factor": "FactSet projects double-digit S&P 500 earnings growth for CY [CURRENT_PERIOD_REQUIRED], with [CURRENT_PERIOD_REQUIRED] showing highest projected growth",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20231211_005_948d7c81"
+      ]
+    },
+    {
+      "factor": "Magnificent 7 companies continue to show strong earnings results",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240203_006_f8f4077a"
+      ]
+    },
+    {
+      "factor": "Federal Reserve Bank of San Francisco publishes analysis of post-pandemic monetary tightening cycle",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240624_008_5f7a8886"
+      ]
+    },
+    {
+      "factor": "Geopolitical events contribute to market uncertainty and investor worries",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240927_003_8813ea76"
+      ]
+    },
+    {
+      "factor": "Federal Reserve cuts interest rates but projects fewer reductions for [CURRENT_PERIOD_REQUIRED] and higher inflation",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20241218_001_a8ea0744"
+      ]
+    },
+    {
+      "factor": "Hawkish interest rate outlook creates negative market sentiment and downward pressure on S&P 500",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20241218_002_e1baae5f"
+      ]
+    },
+    {
+      "factor": "FactSet projects [CURRENT_VALUE_REQUIRED] earnings growth for S&P 500 in CY [CURRENT_PERIOD_REQUIRED]",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20241220_004_b676b282"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "checkpoint_1",
+      "role": "counterevidence",
+      "factor": "FactSet projects double-digit S&P 500 earnings growth for CY [CURRENT_PERIOD_REQUIRED], with [CURRENT_PERIOD_REQUIRED] showing highest projected growth",
+      "mechanism": "Re-test whether this factor has a currently supported link to the exact target metric; do not transfer the historical outcome or magnitude.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20231211_005_948d7c81"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_sp500_monthly_return_2024_12_20260725_055455_004_f1c62b37"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_2",
+      "role": "counterevidence",
+      "factor": "Magnificent 7 companies continue to show strong earnings results",
+      "mechanism": "Re-test whether this factor has a currently supported link to the exact target metric; do not transfer the historical outcome or magnitude.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240203_006_f8f4077a"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_sp500_monthly_return_2024_12_20260725_055456_006_e0edcc99"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_3",
+      "role": "driver",
+      "factor": "Federal Reserve Bank of San Francisco publishes analysis of post-pandemic monetary tightening cycle",
+      "mechanism": "The analysis of the post-pandemic monetary tightening cycle provides context for the Fed's interest rate decisions, showing how markets reacted to rate changes and expectations. This is supported by A6.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240624_008_5f7a8886"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_sp500_monthly_return_2024_12_20260725_055456_007_7d7da253"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_4",
+      "role": "driver",
+      "factor": "Geopolitical events contribute to market uncertainty and investor worries",
+      "mechanism": "Geopolitical events contributed to cautious sentiment, reinforcing the negative impact of the Fed announcement, as mentioned in the causal chain analysis and supported by A3 and A4.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240927_003_8813ea76"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_sp500_monthly_return_2024_12_20260725_055455_003_6c668d25"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_5",
+      "role": "mediator",
+      "factor": "Federal Reserve cuts interest rates but projects fewer reductions for [CURRENT_PERIOD_REQUIRED] and higher inflation",
+      "mechanism": "The Fed's hawkish outlook directly led to a sharp market sell-off and negative sentiment, as stated in the explanation and supported by A2.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20241218_001_a8ea0744"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_sp500_monthly_return_2024_12_20260725_055455_001_2fd0ff2d"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_6",
+      "role": "mediator",
+      "factor": "Hawkish interest rate outlook creates negative market sentiment and downward pressure on S&P 500",
+      "mechanism": "Re-test whether this factor has a currently supported link to the exact target metric; do not transfer the historical outcome or magnitude.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20241218_002_e1baae5f"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_sp500_monthly_return_2024_12_20260725_055455_002_d74ebccb"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_7",
+      "role": "counterevidence",
+      "factor": "FactSet projects [CURRENT_VALUE_REQUIRED] earnings growth for S&P 500 in CY [CURRENT_PERIOD_REQUIRED]",
+      "mechanism": "Re-test whether this factor has a currently supported link to the exact target metric; do not transfer the historical outcome or magnitude.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20241220_004_b676b282"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_sp500_monthly_return_2024_12_20260725_055455_005_d53caeea"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "target_bridge",
+      "role": "target_bridge",
+      "factor": "monthly S&P 500 return",
+      "mechanism": "Map only currently supported paths into the exact target operator. Directional support alone is not magnitude or threshold-crossing support.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "A current target baseline and evidence supporting every edge used in the bridge.",
+      "contradiction_signal": "The current target baseline, magnitude evidence, or option boundary contradicts the proposed path.",
+      "historical_support": "medium",
+      "source_event_ids": [],
+      "source_edge_ids": [
+        "hyp_v3_sp500_monthly_return_2024_12_20260725_055455_002_d74ebccb",
+        "hyp_v3_sp500_monthly_return_2024_12_20260725_055455_004_f1c62b37",
+        "hyp_v3_sp500_monthly_return_2024_12_20260725_055455_005_d53caeea",
+        "hyp_v3_sp500_monthly_return_2024_12_20260725_055456_006_e0edcc99"
+      ],
+      "source_event_type": "target_bridge"
+    }
+  ],
+  "topology": {
+    "checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_5",
+      "checkpoint_6",
+      "checkpoint_7",
+      "target_bridge"
+    ],
+    "root_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_7"
+    ],
+    "target_bridge_id": "target_bridge",
+    "edges": [
+      {
+        "source_checkpoint_id": "checkpoint_5",
+        "target_checkpoint_id": "checkpoint_6",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "The Fed's hawkish outlook directly led to a sharp market sell-off and negative sentiment, as stated in the explanation and supported by A2.",
+        "source_edge_ids": [
+          "hyp_v3_sp500_monthly_return_2024_12_20260725_055455_001_2fd0ff2d"
+        ],
+        "source_article_ids": [
+          "art_finance_20241218_004_761b31b9"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_4",
+        "target_checkpoint_id": "checkpoint_6",
+        "relationship": "amplifies",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Geopolitical events contributed to cautious sentiment, reinforcing the negative impact of the Fed announcement, as mentioned in the causal chain analysis and supported by A3 and A4.",
+        "source_edge_ids": [
+          "hyp_v3_sp500_monthly_return_2024_12_20260725_055455_003_6c668d25"
+        ],
+        "source_article_ids": [
+          "art_finance_20241209_004_dc813b9f",
+          "art_finance_20240927_003_97d06a8f"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_3",
+        "target_checkpoint_id": "checkpoint_5",
+        "relationship": "correlates",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "The analysis of the post-pandemic monetary tightening cycle provides context for the Fed's interest rate decisions, showing how markets reacted to rate changes and expectations. This is supported by A6.",
+        "source_edge_ids": [
+          "hyp_v3_sp500_monthly_return_2024_12_20260725_055456_007_7d7da253"
+        ],
+        "source_article_ids": [
+          "art_finance_20240624_005_fffd90d5"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_6",
+        "target_checkpoint_id": "target_bridge",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Historical DAG connected this factor to the redacted target measurement; the realized value and outcome mapping are omitted.",
+        "source_edge_ids": [
+          "hyp_v3_sp500_monthly_return_2024_12_20260725_055455_002_d74ebccb"
+        ],
+        "source_article_ids": [
+          "art_finance_20241218_004_761b31b9"
+        ],
+        "terminal_to_target_bridge": true
+      },
+      {
+        "source_checkpoint_id": "checkpoint_1",
+        "target_checkpoint_id": "target_bridge",
+        "relationship": "inhibits",
+        "directionality": "counteracting",
+        "support_level": "",
+        "rationale": "Historical DAG connected this factor to the redacted target measurement; the realized value and outcome mapping are omitted.",
+        "source_edge_ids": [
+          "hyp_v3_sp500_monthly_return_2024_12_20260725_055455_004_f1c62b37"
+        ],
+        "source_article_ids": [
+          "art_finance_20231211_003_07c9287d"
+        ],
+        "terminal_to_target_bridge": true
+      },
+      {
+        "source_checkpoint_id": "checkpoint_7",
+        "target_checkpoint_id": "target_bridge",
+        "relationship": "inhibits",
+        "directionality": "counteracting",
+        "support_level": "",
+        "rationale": "Historical DAG connected this factor to the redacted target measurement; the realized value and outcome mapping are omitted.",
+        "source_edge_ids": [
+          "hyp_v3_sp500_monthly_return_2024_12_20260725_055455_005_d53caeea"
+        ],
+        "source_article_ids": [
+          "art_finance_20241220_002_8dc80890"
+        ],
+        "terminal_to_target_bridge": true
+      },
+      {
+        "source_checkpoint_id": "checkpoint_2",
+        "target_checkpoint_id": "target_bridge",
+        "relationship": "inhibits",
+        "directionality": "counteracting",
+        "support_level": "",
+        "rationale": "Historical DAG connected this factor to the redacted target measurement; the realized value and outcome mapping are omitted.",
+        "source_edge_ids": [
+          "hyp_v3_sp500_monthly_return_2024_12_20260725_055456_006_e0edcc99"
+        ],
+        "source_article_ids": [
+          "art_finance_20240203_007_51c37c09"
+        ],
+        "terminal_to_target_bridge": true
+      }
+    ],
+    "paths_truncated": false
+  },
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "checkpoint_1",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_sp500_monthly_return_2024_12_20260725_055455_004_f1c62b37"
+      ],
+      "relationships": [
+        "inhibits"
+      ],
+      "path_role": "counter_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from FactSet projects double-digit S&P 500 earnings growth for CY [CURRENT_PERIOD_REQUIRED], with [CURRENT_PERIOD_REQUIRED] showing highest projected growth to the current target; every edge requires current support.",
+      "expected_direction": "mixed",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_2",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_sp500_monthly_return_2024_12_20260725_055456_006_e0edcc99"
+      ],
+      "relationships": [
+        "inhibits"
+      ],
+      "path_role": "counter_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Magnificent 7 companies continue to show strong earnings results to the current target; every edge requires current support.",
+      "expected_direction": "mixed",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_3",
+        "checkpoint_5",
+        "checkpoint_6",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_sp500_monthly_return_2024_12_20260725_055456_007_7d7da253",
+        "hyp_v3_sp500_monthly_return_2024_12_20260725_055455_001_2fd0ff2d",
+        "hyp_v3_sp500_monthly_return_2024_12_20260725_055455_002_d74ebccb"
+      ],
+      "relationships": [
+        "correlates",
+        "causes",
+        "causes"
+      ],
+      "path_role": "main_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Federal Reserve Bank of San Francisco publishes analysis of post-pandemic monetary tightening cycle to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_4",
+        "checkpoint_6",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_sp500_monthly_return_2024_12_20260725_055455_003_6c668d25",
+        "hyp_v3_sp500_monthly_return_2024_12_20260725_055455_002_d74ebccb"
+      ],
+      "relationships": [
+        "amplifies",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Geopolitical events contribute to market uncertainty and investor worries to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_7",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_sp500_monthly_return_2024_12_20260725_055455_005_d53caeea"
+      ],
+      "relationships": [
+        "inhibits"
+      ],
+      "path_role": "counter_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from FactSet projects [CURRENT_VALUE_REQUIRED] earnings growth for S&P 500 in CY [CURRENT_PERIOD_REQUIRED] to the current target; every edge requires current support.",
+      "expected_direction": "mixed",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "FactSet projects double-digit S&P 500 earnings growth for CY [CURRENT_PERIOD_REQUIRED], with [CURRENT_PERIOD_REQUIRED] showing highest projected growth dominates or reverses the leading current path.",
+      "discriminating_evidence": "Compare current evidence for this counter-path with every edge on the leading supported path.",
+      "source_event_ids": [
+        "evt_finance_20231211_005_948d7c81"
+      ]
+    },
+    {
+      "hypothesis": "Magnificent 7 companies continue to show strong earnings results dominates or reverses the leading current path.",
+      "discriminating_evidence": "Compare current evidence for this counter-path with every edge on the leading supported path.",
+      "source_event_ids": [
+        "evt_finance_20240203_006_f8f4077a"
+      ]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Does every used checkpoint transition correspond to a preserved edge?",
+    "Which preserved edges are supported, contradicted, or unknown now?",
+    "Does a counter-path dominate the leading supported path?",
+    "Is there evidence for magnitude and boundary crossing, not direction alone?"
+  ],
+  "refinement_metadata": {
+    "model": "deterministic_topology_compiler_v2",
+    "source_graph": "data\\dags\\v3_sp500_monthly_return_2024_12\\graph.json",
+    "source_audit_status": "pass",
+    "outcome_nodes_redacted": 3,
+    "target_value_anchors_redacted": 0,
+    "historical_specifics_sanitized": true,
+    "sanitizer": "minimal_value_period_placeholders_v1",
+    "value_replacement_count": 3,
+    "period_replacement_count": 13
+  },
+  "topology_validation": {
+    "status": "pass",
+    "errors": [],
+    "metrics": {
+      "retained_checkpoint_count": 7,
+      "source_edge_count": 7,
+      "emitted_edge_count": 7,
+      "edge_coverage": 1.0,
+      "path_precision": 1.0,
+      "causal_path_count": 5,
+      "outcome_event_leak_count": 0,
+      "outcome_text_leak_count": 0,
+      "realized_value_count": 0,
+      "absolute_period_count": 0
+    }
+  }
+}

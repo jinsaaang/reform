@@ -1,0 +1,32 @@
+{
+  "schema_version": "fixed_exemplar_case",
+  "status": "success",
+  "question_id": "v3_us_housing_starts_monthly_growth_2026_06",
+  "retrieved_memory_question_id": "v3_us_housing_starts_monthly_growth_2024_09",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "macro / housing",
+      "target_operation": "monthly housing-starts growth",
+      "option_geometry": "ordered_categorical"
+    },
+    "historical_question": "As of 2024-09-30, which range will the monthly housing-starts growth for United States housing starts in 2024-09 fall into?",
+    "historical_cutoff": "2024-09-30T00:00:00+00:00",
+    "target_semantics": "The monthly percentage change in United States housing starts for September 2024, categorized as below -4.883%, between -4.883% and 7.204%, or at or above 7.204%.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The DAG indicates that earlier evidence of subdued builder sentiment (checkpoint_1) might have led to builder caution (checkpoint_5), potentially impacting housing starts. However, the historical support for this path is weak, and current evidence is required to confirm its relevance.",
+      "Another path suggests that a late-period forecast of elevated mortgage rates (checkpoint_2) could have restrained housing demand (checkpoint_4), influencing starts. This path also has weak historical support and requires current validation.",
+      "A third path considers the potential impact of interest rate cuts (checkpoint_3) on building, which could offset demand restraint. This factor has strong historical support but its immediate effect on the target period is not documented, and its direction is mixed."
+    ],
+    "counterevidence": "Discussion around the effects of interest-rate cuts on building (checkpoint_3) is noted as counterevidence, suggesting that such factors could potentially offset negative influences on housing starts. However, the immediate effect of these cuts on the target period is not documented.",
+    "prospective_target_estimate": "Given the weak historical support for the primary drivers and the mixed signals from potential counterevidence, it is difficult to confidently estimate the target range. The available information does not strongly support a specific direction or magnitude.",
+    "option_mapping": "The target is to determine if the monthly housing-starts growth for September 2024 falls below -4.883% ('below recent range'), between -4.883% and 7.204% ('within recent range'), or at or above 7.204% ('above recent range').",
+    "uncertainty": "The historical support for the identified drivers is weak, and there is a lack of current, cutoff-safe evidence to validate the proposed causal links. The potential impact of interest rate cuts is noted but not clearly quantified for the target period, leading to significant uncertainty.",
+    "dag_derived_lesson": "When evaluating a target metric, it is crucial to assess the current relevance and support for historically identified drivers and counter-drivers. Weak historical support necessitates current evidence, and the absence of such evidence, or the presence of conflicting factors with unclear immediate impact, leads to high uncertainty."
+  },
+  "hgf_provenance": {
+    "blueprint_schema": "hgf_blueprint_topology_v2",
+    "blueprint_sha256": "9b78d3449781b151f47b6faa94e901f62a1745d3d0c052451981d81cc6282504",
+    "memory_exemplar_sha256": "60d813043d337bbf616177f71c6ddffd10479ca9656396755e4f855867fac18d"
+  }
+}

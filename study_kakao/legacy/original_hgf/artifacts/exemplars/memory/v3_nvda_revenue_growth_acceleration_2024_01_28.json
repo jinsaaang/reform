@@ -1,0 +1,33 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_nvda_revenue_growth_acceleration_2024_01_28",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial",
+      "target_operation": "year-over-year growth",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2024-01-28, will NVIDIA Corporation's quarterly revenue year-over-year growth for the fiscal quarter ending 2024-01-28 be at least 205.51 percent?",
+    "historical_cutoff": "2024-01-28T00:00:00+00:00",
+    "target_semantics": "NVIDIA's year-over-year revenue growth for the fiscal quarter ending 2024-01-28.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "NVIDIA's dominant AI accelerator market position (strategy) is expected to drive strong AI accelerator demand (demand).",
+      "This demand is anticipated to translate into Data Center revenue (data_center).",
+      "The conversion of Data Center revenue to consolidated revenue growth (target_bridge) is the final step.",
+      "However, AI GPU supply (supply) could constrain shipments, and China export restrictions (exports) might reduce regional Data Center revenue."
+    ],
+    "counterevidence": "Supply constraints and export restrictions are potential headwinds that could limit revenue growth.",
+    "prospective_target_estimate": "The analysis suggests that NVIDIA's quarterly revenue year-over-year growth for the fiscal quarter ending 2024-01-28 will be at least 205.51 percent.",
+    "option_mapping": "yes",
+    "uncertainty": "The magnitude and timing of supply chain improvements and the impact of evolving export regulations introduce uncertainty.",
+    "dag_derived_lesson": "A strong market position can convert high demand into revenue, but supply limitations and geopolitical factors can act as significant constraints."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_tsla_revenue_growth_acceleration_2023_09_30",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial",
+      "target_operation": "growth_acceleration",
+      "option_geometry": "ordered_categorical"
+    },
+    "historical_question": "As of 2023-09-30, which range will Tesla, Inc.'s quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2023-09-30 fall into?",
+    "historical_cutoff": "2023-09-30T00:00:00+00:00",
+    "target_semantics": "Tesla's quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2023-09-30.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20201002_002_c6930520",
+        "takeaway": "Tesla's third-quarter deliveries exceeded estimates.",
+        "why_predictive": "Past delivery performance can indicate underlying demand and production capacity, which are drivers of revenue."
+      },
+      {
+        "article_id": "art_finance_20230302_004_860c0800",
+        "takeaway": "Tesla operates multiple Gigafactories.",
+        "why_predictive": "The number and operational status of Gigafactories are directly linked to production capacity and potential revenue generation."
+      }
+    ],
+    "expert_reasoning": [
+      "The baseline for revenue growth acceleration is influenced by interest rates, which can pressure demand and pricing (art_finance_20201002_002_c6930520, art_finance_20230302_004_860c0800).",
+      "Vehicle pricing is a key driver; price cuts can support volume but reduce revenue per vehicle (art_finance_20201002_002_c6930520).",
+      "Production disruptions can reduce deliveries and automotive revenue (art_finance_20230302_004_860c0800).",
+      "The energy business can provide a partial offset to automotive segment performance (art_finance_20230302_004_860c0800).",
+      "The target metric is a function of automotive volume, pricing, and diversified segments, which combine to determine revenue-growth acceleration (art_finance_20201002_002_c6930520, art_finance_20230302_004_860c0800)."
+    ],
+    "counterevidence": "While past deliveries have exceeded estimates (art_finance_20201002_002_c6930520), and Tesla has significant production capacity (art_finance_20230302_004_860c0800), the impact of potential price cuts on revenue per vehicle and the overall growth acceleration is not fully detailed in the provided articles.",
+    "prospective_target_estimate": "The provided forecast-time evidence does not offer sufficient detail to precisely estimate the revenue-growth acceleration. The articles confirm Tesla's production capacity and past delivery performance, but lack specific data on pricing strategies, demand elasticity, or the performance of the energy segment for the target quarter.",
+    "option_mapping": "Given the limited specific data for the target quarter, it is difficult to definitively map the revenue-growth acceleration to 'below recent range', 'within recent range', or 'above recent range'.",
+    "uncertainty": "Significant uncertainty exists due to the lack of specific financial data for the target quarter in the provided articles. Key factors like the net effect of pricing strategies, the precise impact of production levels, and the growth of the energy segment remain unclear.",
+    "dag_derived_lesson": "Revenue growth acceleration is a composite metric influenced by multiple factors including pricing, production, and segment diversification. The net effect of these drivers can be complex and requires specific data for accurate forecasting."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

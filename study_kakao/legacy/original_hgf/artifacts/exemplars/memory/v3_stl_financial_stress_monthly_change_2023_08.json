@@ -1,0 +1,38 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_stl_financial_stress_monthly_change_2023_08",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_stress_index",
+      "target_operation": "change",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2023-08-01, which range will the monthly financial-stress-index change for St. Louis Fed Financial Stress Index in 2023-08 fall into?",
+    "historical_cutoff": "2023-08-01T00:00:00+00:00",
+    "target_semantics": "The monthly change in the St. Louis Fed Financial Stress Index for August 2023.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "ev_2a6bf619e013fca7",
+        "takeaway": "The St. Louis Fed Financial Stress Index (STLFSI) can increase with rising interest rates and market volatility.",
+        "why_predictive": "This article establishes a direct link between macroeconomic conditions (interest rates) and financial market stress, which is the target metric. It suggests that factors leading to higher rates could drive the index higher."
+      }
+    ],
+    "expert_reasoning": [
+      "The St. Louis Fed Financial Stress Index (STLFSI) is sensitive to financial conditions (ev_2a6bf619e013fca7).",
+      "Rising interest rates and market volatility are identified as factors that can increase financial stress (ev_2a6bf619e013fca7).",
+      "Therefore, if conditions in August 2023 were characterized by rising rates or increased volatility, the STLFSI change would likely be positive, indicating increased stress."
+    ],
+    "counterevidence": "No specific counterevidence was provided in the forecast-time articles regarding factors that would decrease financial stress or mitigate the impact of rising rates and volatility.",
+    "prospective_target_estimate": "The provided evidence suggests a potential for increased financial stress, implying the index change could be positive. However, without specific data on August 2023 conditions, the direction is not definitively established.",
+    "option_mapping": "If August 2023 saw rising interest rates and market volatility, the monthly financial-stress-index change would likely be positive, potentially falling 'above recent range' or 'within recent range' depending on the magnitude.",
+    "uncertainty": "The forecast-time evidence indicates that rising interest rates and market volatility can increase financial stress, but it does not provide specific data for August 2023. Therefore, the exact magnitude and direction of the change remain uncertain.",
+    "dag_derived_lesson": "Economic indicators that influence market volatility and interest rates are predictive of financial stress index movements. The absence of specific data for the target period necessitates caution in forecasting the precise outcome."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

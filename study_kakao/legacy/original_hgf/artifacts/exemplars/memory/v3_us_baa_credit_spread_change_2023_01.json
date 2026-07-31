@@ -1,0 +1,40 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_us_baa_credit_spread_change_2023_01",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_market",
+      "target_operation": "change_in_spread",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2023-01-01, will the monthly Baa-minus-10-year-Treasury spread change for Moody's Baa corporate yield spread in 2023-01 be at least -0.045 percentage points?",
+    "historical_cutoff": "2023-01-01T00:00:00+00:00",
+    "target_semantics": "The change in the Moody's Baa corporate yield spread relative to the 10-year Treasury yield in January 2023.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "ev_7b8082ea33970ce6",
+        "takeaway": "Moody's provides historical median spread data for high-grade and high-yield bonds, offering context for credit spread movements.",
+        "why_predictive": "This article establishes that historical spread data, including for Baa-rated bonds, is tracked and available, which is directly relevant to understanding the target metric's behavior."
+      }
+    ],
+    "expert_reasoning": [
+      "The target is the change in the Baa-minus-10-year-Treasury spread for January 2023, with a threshold of -0.045 percentage points.",
+      "A key driver is the historical data on BAA10Y spreads, which Moody's Analytics tracks, providing context for spread movements (ev_7b8082ea33970ce6).",
+      "Another potential driver involves debt-ceiling developments affecting quantitative tightening, though its specific impact on the spread is not detailed in the provided evidence.",
+      "The mechanism connecting historical data to the target is that past spread behavior, as tracked by Moody's, informs expectations for future movements. However, the provided evidence is weak regarding the direction or magnitude of any expected change in January 2023.",
+      "The evidence does not provide specific data points for the BAA10Y spread around the cutoff date or any indication of its trend leading into January 2023, nor does it detail the impact of debt-ceiling developments."
+    ],
+    "counterevidence": "No specific counterevidence is provided in the forecast-time articles. The primary limitation is the lack of direct, actionable data on the BAA10Y spread's recent trend or the specific impact of macroeconomic factors like debt-ceiling developments on credit spreads.",
+    "prospective_target_estimate": "The available evidence is insufficient to form a confident estimate regarding whether the Baa-minus-10-year-Treasury spread change will be at least -0.045 percentage points in January 2023.",
+    "option_mapping": "The 'yes' option corresponds to a spread change of -0.045 percentage points or greater (i.e., less negative or more positive). The 'no' option corresponds to a spread change less than -0.045 percentage points (i.e., more negative).",
+    "uncertainty": "Significant uncertainty exists due to the absence of specific, recent data on the BAA10Y spread and the lack of detail on how macroeconomic factors like debt-ceiling developments would influence credit spreads in the target period. The provided evidence only confirms the existence of historical data tracking.",
+    "dag_derived_lesson": "Historical data availability is a necessary but not sufficient condition for forecasting. Understanding the specific trend, magnitude, and influencing factors of a financial metric at the forecast cutoff is crucial for making a supported prediction. Weak evidence regarding the direction of change or the impact of drivers necessitates acknowledging high uncertainty."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

@@ -1,0 +1,345 @@
+{
+  "schema_version": "hgf_blueprint_topology_v2",
+  "question_id": "v3_sp500_monthly_return_2023_07",
+  "target_definition": {
+    "metric": "monthly S&P 500 return",
+    "unit_or_option_space": [
+      "below recent range",
+      "within recent range",
+      "above recent range"
+    ],
+    "forecast_horizon": "Remap the historical target family to the current question's exact target period."
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Outcome-redacted topology preserves 4 checkpoints, 5 source edges, and 2 root-to-target paths.",
+    "weaknesses": []
+  },
+  "search_factors": [
+    {
+      "factor": "Reflections on Monetary Policy in [CURRENT_PERIOD_REQUIRED]",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20221129_013_a87507e3"
+      ]
+    },
+    {
+      "factor": "Federal Reserve Holds Key Interest Rate at [CURRENT_VALUE_REQUIRED] in [CURRENT_PERIOD_REQUIRED]",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230614_003_ba6b833a"
+      ]
+    },
+    {
+      "factor": "Consumer Sentiment Index Reaches Highest Point",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230717_012_3cccfaf7"
+      ]
+    },
+    {
+      "factor": "Key Fed inflation rate falls",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230728_011_f7113e47"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "checkpoint_1",
+      "role": "driver",
+      "factor": "Reflections on Monetary Policy in [CURRENT_PERIOD_REQUIRED]",
+      "mechanism": "Discussions and reflections on past monetary policy can enable future policy decisions, such as holding interest rates.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20221129_013_a87507e3"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_sp500_monthly_return_2023_07_20260725_052520_009_806bcce1"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_2",
+      "role": "mediator",
+      "factor": "Federal Reserve Holds Key Interest Rate at [CURRENT_VALUE_REQUIRED] in [CURRENT_PERIOD_REQUIRED]",
+      "mechanism": "The Federal Reserve's decision to hold interest rates can influence inflation trends.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230614_003_ba6b833a"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_sp500_monthly_return_2023_07_20260725_052507_005_72b4c0ac",
+        "hyp_v3_sp500_monthly_return_2023_07_20260725_052507_006_19249d7e"
+      ],
+      "source_event_type": "decision"
+    },
+    {
+      "id": "checkpoint_3",
+      "role": "mediator",
+      "factor": "Consumer Sentiment Index Reaches Highest Point",
+      "mechanism": "Re-test whether this factor has a currently supported link to the exact target metric; do not transfer the historical outcome or magnitude.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230717_012_3cccfaf7"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_sp500_monthly_return_2023_07_20260725_052507_008_a7a1d0cb"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_4",
+      "role": "mediator",
+      "factor": "Key Fed inflation rate falls",
+      "mechanism": "Re-test whether this factor has a currently supported link to the exact target metric; do not transfer the historical outcome or magnitude.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230728_011_f7113e47"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_sp500_monthly_return_2023_07_20260725_052507_007_23595319"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "target_bridge",
+      "role": "target_bridge",
+      "factor": "monthly S&P 500 return",
+      "mechanism": "Map only currently supported paths into the exact target operator. Directional support alone is not magnitude or threshold-crossing support.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "A current target baseline and evidence supporting every edge used in the bridge.",
+      "contradiction_signal": "The current target baseline, magnitude evidence, or option boundary contradicts the proposed path.",
+      "historical_support": "medium",
+      "source_event_ids": [],
+      "source_edge_ids": [
+        "hyp_v3_sp500_monthly_return_2023_07_20260725_052507_007_23595319",
+        "hyp_v3_sp500_monthly_return_2023_07_20260725_052507_008_a7a1d0cb"
+      ],
+      "source_event_type": "target_bridge"
+    }
+  ],
+  "topology": {
+    "checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "target_bridge"
+    ],
+    "root_checkpoint_ids": [
+      "checkpoint_1"
+    ],
+    "target_bridge_id": "target_bridge",
+    "edges": [
+      {
+        "source_checkpoint_id": "checkpoint_2",
+        "target_checkpoint_id": "checkpoint_4",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "The Federal Reserve's decision to hold interest rates can influence inflation trends.",
+        "source_edge_ids": [
+          "hyp_v3_sp500_monthly_return_2023_07_20260725_052507_005_72b4c0ac"
+        ],
+        "source_article_ids": [
+          "art_finance_20230614_004_ddebf37e",
+          "art_finance_20230728_008_69ba1443"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_2",
+        "target_checkpoint_id": "checkpoint_3",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "The Federal Reserve's decision to hold interest rates can influence consumer sentiment.",
+        "source_edge_ids": [
+          "hyp_v3_sp500_monthly_return_2023_07_20260725_052507_006_19249d7e"
+        ],
+        "source_article_ids": [
+          "art_finance_20230614_004_ddebf37e",
+          "art_finance_20230717_007_2d751aa8"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_1",
+        "target_checkpoint_id": "checkpoint_2",
+        "relationship": "enables",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Discussions and reflections on past monetary policy can enable future policy decisions, such as holding interest rates.",
+        "source_edge_ids": [
+          "hyp_v3_sp500_monthly_return_2023_07_20260725_052520_009_806bcce1"
+        ],
+        "source_article_ids": [
+          "art_finance_20221129_003_a94722a8",
+          "art_finance_20230614_004_ddebf37e"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_4",
+        "target_checkpoint_id": "target_bridge",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Historical DAG connected this factor to the redacted target measurement; the realized value and outcome mapping are omitted.",
+        "source_edge_ids": [
+          "hyp_v3_sp500_monthly_return_2023_07_20260725_052507_007_23595319"
+        ],
+        "source_article_ids": [
+          "art_finance_20230728_008_69ba1443"
+        ],
+        "terminal_to_target_bridge": true
+      },
+      {
+        "source_checkpoint_id": "checkpoint_3",
+        "target_checkpoint_id": "target_bridge",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Historical DAG connected this factor to the redacted target measurement; the realized value and outcome mapping are omitted.",
+        "source_edge_ids": [
+          "hyp_v3_sp500_monthly_return_2023_07_20260725_052507_008_a7a1d0cb"
+        ],
+        "source_article_ids": [
+          "art_finance_20230717_007_2d751aa8"
+        ],
+        "terminal_to_target_bridge": true
+      }
+    ],
+    "paths_truncated": false
+  },
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "checkpoint_1",
+        "checkpoint_2",
+        "checkpoint_4",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_sp500_monthly_return_2023_07_20260725_052520_009_806bcce1",
+        "hyp_v3_sp500_monthly_return_2023_07_20260725_052507_005_72b4c0ac",
+        "hyp_v3_sp500_monthly_return_2023_07_20260725_052507_007_23595319"
+      ],
+      "relationships": [
+        "enables",
+        "causes",
+        "causes"
+      ],
+      "path_role": "main_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Reflections on Monetary Policy in [CURRENT_PERIOD_REQUIRED] to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_1",
+        "checkpoint_2",
+        "checkpoint_3",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_sp500_monthly_return_2023_07_20260725_052520_009_806bcce1",
+        "hyp_v3_sp500_monthly_return_2023_07_20260725_052507_006_19249d7e",
+        "hyp_v3_sp500_monthly_return_2023_07_20260725_052507_008_a7a1d0cb"
+      ],
+      "relationships": [
+        "enables",
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Reflections on Monetary Policy in [CURRENT_PERIOD_REQUIRED] to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "A current factor outside the preserved historical topology dominates the target.",
+      "discriminating_evidence": "Search for current shocks and target observations not explained by any retained path.",
+      "source_event_ids": []
+    }
+  ],
+  "forecast_audit_questions": [
+    "Does every used checkpoint transition correspond to a preserved edge?",
+    "Which preserved edges are supported, contradicted, or unknown now?",
+    "Does a counter-path dominate the leading supported path?",
+    "Is there evidence for magnitude and boundary crossing, not direction alone?"
+  ],
+  "refinement_metadata": {
+    "model": "deterministic_topology_compiler_v2",
+    "source_graph": "data\\dags\\v3_sp500_monthly_return_2023_07\\graph.json",
+    "source_audit_status": "pass",
+    "outcome_nodes_redacted": 3,
+    "target_value_anchors_redacted": 0,
+    "historical_specifics_sanitized": true,
+    "sanitizer": "minimal_value_period_placeholders_v1",
+    "value_replacement_count": 2,
+    "period_replacement_count": 6
+  },
+  "topology_validation": {
+    "status": "pass",
+    "errors": [],
+    "metrics": {
+      "retained_checkpoint_count": 4,
+      "source_edge_count": 5,
+      "emitted_edge_count": 5,
+      "edge_coverage": 1.0,
+      "path_precision": 1.0,
+      "causal_path_count": 2,
+      "outcome_event_leak_count": 0,
+      "outcome_text_leak_count": 0,
+      "realized_value_count": 0,
+      "absolute_period_count": 0
+    }
+  }
+}

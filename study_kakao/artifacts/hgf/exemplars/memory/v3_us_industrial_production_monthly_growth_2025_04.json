@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_us_industrial_production_monthly_growth_2025_04",
+  "blueprint_sha256": "ce6e7c8cf06de08e997a2a7629b5977024e61eb5231b771aba01a92f8ded6d35",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "macro / industrial activity",
+      "target_operation": "monthly industrial-production growth",
+      "option_geometry": "ordered"
+    },
+    "historical_question": "As of 2025-04-30, which range will the monthly industrial-production growth for United States industrial production in 2025-04 fall into?",
+    "historical_cutoff": "2025-04-30T00:00:00+00:00",
+    "target_semantics": "The monthly growth rate of US industrial production for April 2025, categorized as below, within, or above a recent range defined by -0.281% and 0.6%.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The core calculation for the target metric is the percentage change between the industrial production index for March 2025 and April 2025.",
+      "The historical DAG indicates that the observed growth rate is a key mediator, and its relationship to the target options is strongly supported.",
+      "The pre-registered interval boundaries (-0.281% and 0.6%) are also strongly supported drivers for option mapping."
+    ],
+    "counterevidence": "No forecast-time evidence was provided to contradict the causal links or the nature of the industrial production index calculation.",
+    "prospective_target_estimate": "The target metric is the monthly industrial-production growth for April 2025. The options are 'below recent range' (-0.281%), 'within recent range' (-0.281% to 0.6%), and 'above recent range' (0.6%). Without specific index observations for March and April 2025, a precise estimate cannot be made, but the structure suggests evaluating the calculated growth against these boundaries.",
+    "option_mapping": "The calculated monthly industrial-production growth for April 2025 will be mapped to 'below recent range' if it is less than -0.281%, 'within recent range' if it is between -0.281% (inclusive) and 0.6% (exclusive), and 'above recent range' if it is 0.6% or greater.",
+    "uncertainty": "The primary uncertainty stems from the lack of specific forecast-time evidence regarding the actual index values for March and April 2025. The DAG highlights that the 'reference observation' and 'target observation' checkpoints have medium historical support, implying that their current values are not definitively known without direct evidence. This prevents a concrete determination of whether the growth falls below, within, or above the specified recent range.",
+    "dag_derived_lesson": "When forecasting a calculated metric, the strength of evidence supporting the input observations and the calculation mechanism itself is crucial. The relationship between the calculated value and predefined thresholds must also be supported to accurately map to discrete options. Weak evidence on input drivers necessitates preserving uncertainty in the final estimate."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

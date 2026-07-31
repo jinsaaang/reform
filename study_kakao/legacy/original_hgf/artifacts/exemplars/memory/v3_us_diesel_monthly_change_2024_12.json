@@ -1,0 +1,46 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_us_diesel_monthly_change_2024_12",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "energy_commodities / refined products",
+      "target_operation": "monthly retail diesel-price change",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2024-12-01, will the monthly retail diesel-price change for United States diesel price in 2024-12 be at least -1.941 percent?",
+    "historical_cutoff": "2024-12-01T00:00:00+00:00",
+    "target_semantics": "The question asks whether the percentage change in the U.S. retail diesel price from November to December 2024 will be greater than or equal to -1.941%.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "ev_b315a1f7eadbb4a3",
+        "takeaway": "The U.S. retail diesel price on November 25, 2024, was $3.539 per gallon, with a weekly increase of $0.048.",
+        "why_predictive": "This provides the most recent price data point immediately preceding the target month, essential for calculating the monthly change."
+      },
+      {
+        "article_id": "ev_71eb2ec508d0fc0c",
+        "takeaway": "An EIA outlook from January 2024 predicted decreasing diesel prices throughout 2024 due to increased refinery capacity and lower crack spreads.",
+        "why_predictive": "This provides a general expectation of price trends for the year, suggesting a downward pressure that could influence the December change."
+      }
+    ],
+    "expert_reasoning": [
+      "The target is the monthly retail diesel-price change for December 2024, specifically whether it is >= -1.941%.",
+      "The most recent available data (ev_b315a1f7eadbb4a3) shows the U.S. retail diesel price on November 25, 2024, was $3.539 per gallon, and it had increased by $0.048 weekly.",
+      "This weekly increase suggests that the price at the end of November was higher than in the preceding week, but it does not directly indicate the magnitude of the change from October to November, nor the direction of change into December.",
+      "A January 2024 EIA outlook (ev_71eb2ec508d0fc0c) predicted overall decreasing diesel prices for 2024, citing increased refinery capacity and lower crack spreads.",
+      "While this outlook suggests a general downward trend, it is a long-term forecast and does not provide specific monthly predictions for December 2024.",
+      "The available evidence provides a baseline price point and a general trend but lacks specific data or strong causal links to predict the precise monthly percentage change for December 2024 with high confidence."
+    ],
+    "counterevidence": "No specific counterevidence is provided in the forecast-time articles that directly contradicts the possibility of a price decrease of at least -1.941% in December 2024. The general expectation of decreasing prices (ev_71eb2ec508d0fc0c) could be seen as weakly supporting a negative change, but the magnitude is not specified.",
+    "prospective_target_estimate": "Given the limited specific data for the target month and the reliance on a general trend forecast, it is not possible to confidently estimate whether the price change will be at least -1.941%.",
+    "option_mapping": "The available forecast-time evidence does not provide sufficient detail to map to a 'yes' or 'no' outcome with confidence.",
+    "uncertainty": "Significant uncertainty exists due to the lack of specific monthly price change data for November to December 2024. The provided evidence offers a recent price point and a general annual trend, but these are insufficient to precisely forecast the target metric.",
+    "dag_derived_lesson": "When forecasting a specific percentage change for a target period, recent baseline data is crucial, but it must be complemented by evidence that directly links to the drivers of change within that specific period. General long-term trends or isolated data points are insufficient without a clear mechanism connecting them to the target metric's magnitude and direction."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

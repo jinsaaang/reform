@@ -1,0 +1,193 @@
+{
+  "schema_version": "hgf_blueprint_v1",
+  "question_id": "v3_us_pce_price_monthly_change_2023_01",
+  "target_definition": {
+    "metric": "United States monthly PCE price change",
+    "unit_or_option_space": "percent monthly change",
+    "forecast_horizon": "target month"
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Wages, purchasing power, spending, demand, and persistent inflation form a reusable PCE framework.",
+    "weaknesses": [
+      "A noncanonical outcome-restatement node and its edges are excluded."
+    ]
+  },
+  "search_factors": [
+    {
+      "factor": "Wage and income growth",
+      "why_search": "Income affects purchasing power.",
+      "preferred_source_types": [
+        "labor release"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230131_001_86b63c86"
+      ]
+    },
+    {
+      "factor": "Consumer spending",
+      "why_search": "Spending indicates demand pressure.",
+      "preferred_source_types": [
+        "BEA release"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230131_002_bb687683"
+      ]
+    },
+    {
+      "factor": "Purchasing power",
+      "why_search": "Income changes can support outlays.",
+      "preferred_source_types": [
+        "income release"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230131_005_65a3a995"
+      ]
+    },
+    {
+      "factor": "Inflation persistence",
+      "why_search": "Persistent price pressure affects PCE.",
+      "preferred_source_types": [
+        "PCE release"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230131_006_dbcc1d5b"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "income",
+      "role": "baseline",
+      "factor": "Wage and income growth",
+      "mechanism": "Income gains increase purchasing power.",
+      "expected_direction": "up",
+      "evidence_requirement": "Income measures improve.",
+      "contradiction_signal": "Income growth slows.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_finance_20230131_001_86b63c86",
+        "evt_finance_20230131_005_65a3a995"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011224_001_2a43496c"
+      ]
+    },
+    {
+      "id": "spending",
+      "role": "driver",
+      "factor": "Consumer spending",
+      "mechanism": "Greater purchasing power supports consumer spending.",
+      "expected_direction": "up",
+      "evidence_requirement": "Outlays and income agree.",
+      "contradiction_signal": "Consumers reduce spending.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_finance_20230131_005_65a3a995",
+        "evt_finance_20230131_002_bb687683"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011224_002_bcd61412"
+      ]
+    },
+    {
+      "id": "demand",
+      "role": "mediator",
+      "factor": "Consumer spending",
+      "mechanism": "Robust spending increases demand pressure.",
+      "expected_direction": "up",
+      "evidence_requirement": "Spending is broad-based.",
+      "contradiction_signal": "Demand weakens.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_finance_20230131_002_bb687683",
+        "evt_finance_20230131_007_f0aa19da"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011224_003_af6476ae"
+      ]
+    },
+    {
+      "id": "persistence",
+      "role": "counterevidence",
+      "factor": "Inflation persistence",
+      "mechanism": "Existing inflation persistence can sustain price pressure independent of spending.",
+      "expected_direction": "up",
+      "evidence_requirement": "Broad price measures remain elevated.",
+      "contradiction_signal": "Disinflation broadens.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_finance_20230131_006_dbcc1d5b",
+        "evt_finance_20230131_003_000095dd"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011224_005_997df0ae"
+      ]
+    },
+    {
+      "id": "pce_bridge",
+      "role": "target_bridge",
+      "factor": "Demand and inflation pressure",
+      "mechanism": "Income-supported demand and persistent inflation jointly determine the monthly PCE change.",
+      "expected_direction": "up",
+      "evidence_requirement": "Compare demand and price components in the PCE release.",
+      "contradiction_signal": "Demand and prices diverge.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_finance_20230131_007_f0aa19da",
+        "evt_finance_20230131_003_000095dd"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011224_004_c0e44dcb",
+        "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011224_005_997df0ae"
+      ]
+    }
+  ],
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "income",
+        "spending",
+        "demand",
+        "pce_bridge"
+      ],
+      "generalized_mechanism": "Income supports spending, demand, and price pressure.",
+      "expected_direction": "up",
+      "applicability_conditions": [
+        "Outlays remain responsive to income."
+      ],
+      "failure_conditions": [
+        "Savings absorb income gains."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "persistence",
+        "pce_bridge"
+      ],
+      "generalized_mechanism": "Persistent inflation sustains PCE pressure.",
+      "expected_direction": "up",
+      "applicability_conditions": [
+        "Price persistence remains broad."
+      ],
+      "failure_conditions": [
+        "Disinflation broadens."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "Spending strengthens while price pressure moderates.",
+      "discriminating_evidence": "Compare real outlays and component inflation.",
+      "source_event_ids": [
+        "evt_finance_20230131_002_bb687683",
+        "evt_finance_20230131_006_dbcc1d5b"
+      ]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Do income and outlays agree?",
+    "Is demand broad?",
+    "Does persistence remain broad?"
+  ]
+}

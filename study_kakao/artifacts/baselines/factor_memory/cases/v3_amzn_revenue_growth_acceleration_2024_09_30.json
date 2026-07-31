@@ -1,0 +1,206 @@
+{
+  "schema_version": "hgf_blueprint_v1",
+  "question_id": "v3_amzn_revenue_growth_acceleration_2024_09_30",
+  "target_definition": {
+    "metric": "Amazon quarterly year-over-year revenue-growth acceleration",
+    "unit_or_option_space": "percentage-point change in the revenue growth rate",
+    "forecast_horizon": "fiscal quarter ending 2024-09-30"
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Consumer demand, retail, advertising, and cloud activity provide a reusable segment-based revenue-monitoring frame.",
+    "weaknesses": [
+      "Most source observations were reported after the forecast cutoff.",
+      "Peer cloud results are indirect evidence for company cloud revenue."
+    ]
+  },
+  "search_factors": [
+    {
+      "factor": "Consumer spending resilience",
+      "why_search": "Household demand supports e-commerce transaction volume.",
+      "preferred_source_types": [
+        "macroeconomic release",
+        "consumer spending data"
+      ],
+      "source_event_ids": [
+        "evt_finance_20241030_029_694b6bb9"
+      ]
+    },
+    {
+      "factor": "Retail segment performance",
+      "why_search": "Retail trends are a direct consolidated revenue driver.",
+      "preferred_source_types": [
+        "company filing",
+        "earnings release"
+      ],
+      "source_event_ids": [
+        "evt_finance_20241030_032_c087e66e"
+      ]
+    },
+    {
+      "factor": "Advertising revenue growth",
+      "why_search": "Advertising can provide a distinct high-growth revenue contribution.",
+      "preferred_source_types": [
+        "company earnings release",
+        "segment disclosure"
+      ],
+      "source_event_ids": [
+        "evt_finance_20241031_034_060ad699"
+      ]
+    },
+    {
+      "factor": "Cloud-sector demand",
+      "why_search": "Cloud-market signals help test the cloud growth contribution.",
+      "preferred_source_types": [
+        "peer earnings release",
+        "company segment disclosure"
+      ],
+      "source_event_ids": [
+        "evt_finance_20241029_028_96c0acd6",
+        "evt_tech_20241029_033_87cd45d6"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "consumer_baseline",
+      "role": "baseline",
+      "factor": "Consumer spending resilience",
+      "mechanism": "Resilient spending supports marketplace demand.",
+      "expected_direction": "up",
+      "evidence_requirement": "Current spending data agrees with retail demand indicators.",
+      "contradiction_signal": "Disposable-income pressure weakens discretionary demand.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_finance_20241030_029_694b6bb9"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_amzn_revenue_growth_acceleration_2024_09_30_20260724_190123_021_f43ba606"
+      ]
+    },
+    {
+      "id": "retail_driver",
+      "role": "driver",
+      "factor": "Retail segment performance",
+      "mechanism": "Retail sales strength lifts consolidated revenue growth.",
+      "expected_direction": "up",
+      "evidence_requirement": "Comparable retail revenue is disclosed by the company.",
+      "contradiction_signal": "Unit demand rises but sales growth slows.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_finance_20241030_032_c087e66e"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_amzn_revenue_growth_acceleration_2024_09_30_20260724_190123_022_5a2890f3"
+      ]
+    },
+    {
+      "id": "ads_driver",
+      "role": "driver",
+      "factor": "Advertising revenue growth",
+      "mechanism": "Advertising expansion adds a separate revenue-growth channel.",
+      "expected_direction": "up",
+      "evidence_requirement": "Advertising growth is measured against a comparable period.",
+      "contradiction_signal": "Advertiser demand softens or growth decelerates.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_finance_20241031_034_060ad699"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_amzn_revenue_growth_acceleration_2024_09_30_20260724_190123_024_71b94a92"
+      ]
+    },
+    {
+      "id": "cloud_mediator",
+      "role": "mediator",
+      "factor": "Cloud-sector demand",
+      "mechanism": "Cloud demand can contribute to consolidated revenue momentum.",
+      "expected_direction": "up",
+      "evidence_requirement": "Company cloud revenue confirms sector-level indicators.",
+      "contradiction_signal": "Peer cloud growth does not translate to company demand.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_finance_20241029_028_96c0acd6",
+        "evt_tech_20241029_033_87cd45d6"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_amzn_revenue_growth_acceleration_2024_09_30_20260724_190123_020_fd7de626",
+        "hyp_v3_amzn_revenue_growth_acceleration_2024_09_30_20260724_190123_023_d8c27708"
+      ]
+    },
+    {
+      "id": "revenue_bridge",
+      "role": "target_bridge",
+      "factor": "Segment contribution to consolidated revenue",
+      "mechanism": "Retail, advertising, and cloud growth jointly change consolidated revenue momentum.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Compare segment contributions and total revenue with the prior quarter.",
+      "contradiction_signal": "Segment strength is insufficient to change consolidated growth.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_finance_20241030_032_c087e66e",
+        "evt_finance_20241031_034_060ad699",
+        "evt_tech_20241029_033_87cd45d6"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_amzn_revenue_growth_acceleration_2024_09_30_20260724_190123_022_5a2890f3",
+        "hyp_v3_amzn_revenue_growth_acceleration_2024_09_30_20260724_190123_023_d8c27708",
+        "hyp_v3_amzn_revenue_growth_acceleration_2024_09_30_20260724_190123_024_71b94a92"
+      ]
+    }
+  ],
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "consumer_baseline",
+        "retail_driver",
+        "revenue_bridge"
+      ],
+      "generalized_mechanism": "Consumer demand supports retail sales, changing consolidated revenue growth.",
+      "expected_direction": "up",
+      "applicability_conditions": [
+        "Consumer demand remains material to retail sales."
+      ],
+      "failure_conditions": [
+        "Price, mix, or competition decouples demand from sales."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "cloud_mediator",
+        "revenue_bridge"
+      ],
+      "generalized_mechanism": "Cloud growth provides an additional consolidated revenue-growth channel.",
+      "expected_direction": "up",
+      "applicability_conditions": [
+        "Cloud remains a material contributor."
+      ],
+      "failure_conditions": [
+        "Cloud growth is offset by retail weakness."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "Peer cloud momentum does not indicate company cloud demand.",
+      "discriminating_evidence": "Compare peer results with company cloud revenue and customer commentary.",
+      "source_event_ids": [
+        "evt_finance_20241029_028_96c0acd6",
+        "evt_tech_20241029_033_87cd45d6"
+      ]
+    },
+    {
+      "hypothesis": "Retail demand weakens despite favorable macro spending data.",
+      "discriminating_evidence": "Compare company retail sales with broader consumer spending indicators.",
+      "source_event_ids": [
+        "evt_finance_20241030_029_694b6bb9",
+        "evt_finance_20241030_032_c087e66e"
+      ]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Are segment results comparable with the preceding quarter?",
+    "Does company cloud data confirm the peer-sector signal?",
+    "Does consumer spending translate into retail revenue?"
+  ]
+}

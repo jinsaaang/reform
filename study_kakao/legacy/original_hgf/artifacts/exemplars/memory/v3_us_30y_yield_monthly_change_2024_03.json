@@ -1,0 +1,62 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_us_30y_yield_monthly_change_2024_03",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_market",
+      "target_operation": "change_in_value",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2024-03-01, will the monthly 30-year yield change for United States 30-year Treasury yield in 2024-03 be at least -0.17 percentage points?",
+    "historical_cutoff": "2024-03-01T00:00:00+00:00",
+    "target_semantics": "The United States 30-year Treasury yield's monthly change in March 2024.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "ev_d56aaf401bffa09e",
+        "takeaway": "The Federal Reserve continued its tapering of bond-buying stimulus in January 2014.",
+        "why_predictive": "This indicates a tightening monetary policy, which generally puts upward pressure on longer-term interest rates."
+      },
+      {
+        "article_id": "ev_9dcb1f470988e735",
+        "takeaway": "The FOMC was expected to continue tapering and potentially change its forward guidance.",
+        "why_predictive": "Further tapering suggests a continued path of monetary tightening, likely supporting higher yields."
+      },
+      {
+        "article_id": "ev_dfa294d20f2f98ee",
+        "takeaway": "The Fed's March 19, 2014 statement indicated a continuation of tapering.",
+        "why_predictive": "This confirms the ongoing reduction in asset purchases, a factor that tends to increase longer-term yields."
+      },
+      {
+        "article_id": "ev_c0ec31d7d0fed02d",
+        "takeaway": "The FOMC statement noted that economic growth had \"picked up recently\" and continued tapering.",
+        "why_predictive": "Stronger economic growth coupled with tapering signals a tightening environment, which is bearish for bonds and bullish for yields."
+      },
+      {
+        "article_id": "ev_40c1a2356d0ba146",
+        "takeaway": "Treasurys edged higher after crucial jobs data.",
+        "why_predictive": "While this article is from April 2014, it suggests that positive jobs data can lead to higher Treasury yields (lower prices)."
+      }
+    ],
+    "expert_reasoning": [
+      "The Federal Reserve was engaged in a process of tapering its bond-buying stimulus throughout early 2014 (ev_d56aaf401bffa09e).",
+      "The FOMC's statements confirmed the continuation of this tapering policy (ev_dfa294d20f2f98ee, ev_c0ec31d7d0fed02d).",
+      "Market expectations were for continued tapering and potential changes to forward guidance (ev_9dcb1f470988e735).",
+      "Economic growth was noted to have picked up recently (ev_c0ec31d7d0fed02d).",
+      "Positive economic data, such as jobs data, has historically been associated with upward pressure on Treasury yields (ev_40c1a2356d0ba146).",
+      "The combination of monetary tightening (tapering) and improving economic conditions suggests a trend towards higher long-term yields.",
+      "Therefore, the monthly change in the 30-year Treasury yield in March 2024 is likely to be negative, meaning it could fall below -0.17 percentage points."
+    ],
+    "counterevidence": "No direct counterevidence regarding the direction of the 30-year yield in March 2024 was present in the provided articles. The articles focus on the Fed's policy and economic conditions, which are generally supportive of higher yields.",
+    "prospective_target_estimate": "The monthly change in the United States 30-year Treasury yield in March 2024 will be less than -0.17 percentage points.",
+    "option_mapping": "yes",
+    "uncertainty": "The evidence points towards a tightening monetary policy and improving economic conditions, which typically lead to higher long-term yields. However, the exact magnitude of the yield change is not precisely forecastable from the provided information, and other market factors not detailed could influence the outcome.",
+    "dag_derived_lesson": "Monetary policy tightening and positive economic indicators are generally associated with upward pressure on long-term interest rates. The continuation of these trends suggests a potential for rates to move beyond a specific negative threshold."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

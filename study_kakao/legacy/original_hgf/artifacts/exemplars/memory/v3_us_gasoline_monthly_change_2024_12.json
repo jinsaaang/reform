@@ -1,0 +1,40 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_us_gasoline_monthly_change_2024_12",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "economic",
+      "target_operation": "price_change",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2024-12-01, which range will the monthly retail gasoline-price change for United States regular gasoline price in 2024-12 fall into?",
+    "historical_cutoff": "2024-12-01T00:00:00+00:00",
+    "target_semantics": "The monthly percentage change in the retail price of regular gasoline in the United States for December 2024.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "ev_b315a1f7eadbb4a3",
+        "takeaway": "The U.S. average gasoline price was $3.044 per gallon as of November 27, 2024, showing a slight decrease of $0.002 from the previous week.",
+        "why_predictive": "This indicates a recent downward trend in gasoline prices just before the target month, providing a baseline and suggesting potential downward momentum."
+      }
+    ],
+    "expert_reasoning": [
+      "The EIA report from November 27, 2024, establishes a baseline U.S. average gasoline price of $3.044 per gallon. This price point reflects a slight weekly decrease, suggesting a downward trend leading into December.",
+      "Checkpoint 2, 'National gasoline prices fell below $3 early in December,' is not directly supported by the provided forecast-time evidence, as the evidence only states the price was $3.044 on November 27th. However, the slight decrease noted could be a precursor to falling below $3.",
+      "Checkpoint 3, 'Gasoline prices showed a broad downward trend through December 19,' is partially supported by the weekly decrease reported on November 27th, indicating a recent downward movement.",
+      "The mechanism connecting these drivers to the target is that a continued downward trend, potentially crossing the $3 threshold, would likely result in a negative monthly price change for December.",
+      "The historical support for winter seasonality (Checkpoint 1) is weak, and no direct evidence for it is present in the forecast-time articles."
+    ],
+    "counterevidence": "No direct counterevidence is present in the forecast-time articles. The evidence is limited to a single weekly price point and a slight decrease, which does not strongly contradict a potential price change within or above the recent range.",
+    "prospective_target_estimate": "within recent range",
+    "option_mapping": "The observed slight decrease in gasoline prices leading into December, coupled with the potential for prices to fall below $3, suggests a negative price change. This aligns with the 'within recent range' option, which includes negative values down to -3.926 percent.",
+    "uncertainty": "The forecast-time evidence is limited to a single data point (price on Nov 27) and a weekly change. It does not provide comprehensive data on demand, supply, or broader economic factors that could influence gasoline prices throughout December. The historical support for winter seasonality is weak, and the evidence for prices falling below $3 is indirect.",
+    "dag_derived_lesson": "A recent downward trend in a price metric, supported by a baseline observation just before the target period, can be a strong indicator for the direction of the target metric's change, especially when combined with other supporting factors. However, the absence of direct evidence for all historical drivers and the limited scope of forecast-time data introduce significant uncertainty."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

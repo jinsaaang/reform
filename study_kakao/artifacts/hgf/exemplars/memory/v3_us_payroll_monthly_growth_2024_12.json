@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_us_payroll_monthly_growth_2024_12",
+  "blueprint_sha256": "fb17f3bdd5f1bb077a284ed5fdb0d7f31f26059d6dada98717de681e366b1524",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "macro / labour",
+      "target_operation": "monthly payroll growth",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2024-12-31, which range will the monthly payroll growth for United States nonfarm payrolls in 2024-12 fall into?",
+    "historical_cutoff": "2024-12-31T00:00:00+00:00",
+    "target_semantics": "The target is the percentage change in United States nonfarm payrolls for December 2024, categorized as 'below recent range' (< 0.03%), 'within recent range' (0.03% to 0.063% exclusive), or 'above recent range' (>= 0.063%).",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The core calculation for the target metric relies on the previous period's payroll observation and the current period's payroll observation (checkpoints 1 and 2).",
+      "The percentage growth is then computed from these two observations (checkpoint 3), which is then compared against pre-registered boundaries (checkpoint 5) to determine the final option.",
+      "The strength of the link from the observed growth to the target metric (checkpoint 4) is assessed as strong, suggesting this is a key factor if supported by current data."
+    ],
+    "counterevidence": "No forecast-time evidence was provided to support or contradict any of the causal links or factors identified in the DAG.",
+    "prospective_target_estimate": "The DAG indicates that the target metric is derived from a calculation involving current and prior payroll data, and then compared to defined ranges. Without specific data points for these factors at the cutoff, a precise estimate cannot be formed.",
+    "option_mapping": "The target metric is mapped to one of three options: 'below recent range', 'within recent range', or 'above recent range', based on its calculated percentage value relative to the pre-registered boundaries of 0.03% and 0.063%.",
+    "uncertainty": "The primary source of uncertainty stems from the complete lack of forecast-time evidence. Without data on the actual payroll figures for the relevant periods or any indicators of economic conditions, it is impossible to determine the direction or magnitude of payroll growth, and thus which option the target will fall into. The DAG's weakness report also highlights that underlying total-payroll levels were not provided, which could impact the accuracy of the percentage growth calculation.",
+    "dag_derived_lesson": "A target metric derived from a calculation involving specific input factors must be assessed based on the current support for each factor and the causal links between them. The absence of evidence for these factors or links introduces significant uncertainty, even if the historical causal structure is known."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

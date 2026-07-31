@@ -1,0 +1,48 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_sp500_monthly_return_2024_01",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "market_fx_credit / equity market",
+      "target_operation": "monthly S&P 500 return",
+      "option_geometry": "bucketed by recent range"
+    },
+    "historical_question": "As of 2024-01-01, which range will the monthly S&P 500 return for S&P 500 index in 2024-01 fall into?",
+    "historical_cutoff": "2024-01-01T00:00:00+00:00",
+    "target_semantics": "The monthly return of the S&P 500 index for January 2024, expressed as a percentage.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20231211_003_07c9287d",
+        "takeaway": "Analysts anticipate double-digit earnings growth for the S&P 500 in 2024.",
+        "why_predictive": "Strong earnings growth is a primary driver of equity market performance."
+      },
+      {
+        "article_id": "art_finance_20230830_005_29e60167",
+        "takeaway": "The US economy shows positive signs with lower inflation and GDP growth.",
+        "why_predictive": "A healthy economy generally supports corporate earnings and investor confidence."
+      },
+      {
+        "article_id": "art_finance_20230731_003_02c05217",
+        "takeaway": "Wall Street finished July on a strong note, buoyed by positive company earnings.",
+        "why_predictive": "Recent positive market performance driven by earnings suggests a supportive environment."
+      }
+    ],
+    "expert_reasoning": [
+      "The baseline expectation is for positive market performance, supported by an outlook for double-digit earnings growth in 2024 (art_finance_20231211_003_07c9287d).",
+      "This earnings optimism is further bolstered by positive macroeconomic indicators, including lower inflation and GDP growth in the US economy (art_finance_20230830_005_29e60167).",
+      "Recent market behavior, such as Wall Street's strong finish in July driven by upbeat company earnings, reinforces the view that earnings are a key driver of market sentiment (art_finance_20230731_003_02c05217)."
+    ],
+    "counterevidence": "While earnings and economic growth appear positive, there is a potential for geopolitical inflation risk to emerge, which could negatively impact markets by increasing inflation and risk premiums (DAG checkpoint 'geopolitical').",
+    "prospective_target_estimate": "Within recent range",
+    "option_mapping": "The forecast suggests that the S&P 500 monthly return for January 2024 will fall within the recent range of -1.878% to 4.935%.",
+    "uncertainty": "The primary uncertainty stems from the potential for geopolitical inflation risk to counteract the positive earnings and economic outlook. The strength and breadth of earnings, policy expectations, and the actualization of geopolitical risks are key factors to monitor.",
+    "dag_derived_lesson": "Positive earnings expectations and a supportive economic backdrop can drive market gains, but this can be undermined by geopolitical risks that increase inflation and risk premiums. The interplay between these factors determines the market's direction."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_us_payroll_monthly_growth_2023_07",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "macro / labour",
+      "target_operation": "monthly payroll growth",
+      "option_geometry": "bucketed by recent range"
+    },
+    "historical_question": "As of 2023-07-31, which range will the monthly payroll growth for United States nonfarm payrolls in 2023-07 fall into?",
+    "historical_cutoff": "2023-07-31T00:00:00+00:00",
+    "target_semantics": "The monthly percentage change in United States nonfarm payrolls for July 2023.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The target metric is the monthly payroll growth for United States nonfarm payrolls in July 2023.",
+      "The recent range for this metric is defined as 0.125% to 0.19%.",
+      "The available evidence indicates a reported job increase of 187,000 for July.",
+      "This figure needs to be converted to a percentage to compare against the recent range.",
+      "The conversion of 187,000 jobs to a percentage of the total nonfarm payroll is required to determine if it falls below, within, or above the recent range."
+    ],
+    "counterevidence": "No specific counterevidence was provided in the forecast-time articles. The DAG notes that the reported job increase alone does not determine the percentage rate, implying a need for further calculation or context not fully supplied.",
+    "prospective_target_estimate": "The reported 187,000 job increase suggests a positive growth, but its placement relative to the 0.125% to 0.19% range is not definitively established without the precise calculation of the percentage change.",
+    "option_mapping": "The estimate of 187,000 jobs needs to be translated into a percentage to determine if it falls below 0.125%, between 0.125% and 0.19% (inclusive of the lower bound, exclusive of the upper bound), or at or above 0.19%.",
+    "uncertainty": "The primary uncertainty stems from the lack of direct forecast-time evidence that explicitly states the percentage growth rate or provides the necessary context (e.g., total nonfarm payroll numbers) to calculate it. The DAG also highlights that the evidence summary is incomplete, synthesizing underlying payroll levels.",
+    "dag_derived_lesson": "When forecasting a metric's value relative to a defined range, ensure that all necessary components for calculating the metric's precise value are available. If only partial information (like an absolute change) is provided, acknowledge the uncertainty in mapping it to the defined options without the complete calculation or supporting context."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

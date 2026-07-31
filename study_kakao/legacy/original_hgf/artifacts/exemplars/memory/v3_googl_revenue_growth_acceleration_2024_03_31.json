@@ -1,0 +1,32 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_googl_revenue_growth_acceleration_2024_03_31",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial",
+      "target_operation": "year-over-year growth",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2024-03-31, will Alphabet Inc.'s quarterly revenue year-over-year growth for the fiscal quarter ending 2024-03-31 be at least 13.49 percent?",
+    "historical_cutoff": "2024-03-31T00:00:00+00:00",
+    "target_semantics": "Alphabet Inc. quarterly revenue year-over-year growth for the fiscal quarter ending 2024-03-31.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "Digital advertising demand is a key driver for YouTube revenue, which contributes to consolidated revenue growth. Strong ad demand would support upward pressure on revenue.",
+      "Cloud growth is another significant driver that can diversify and contribute to consolidated revenue. Persistent cloud growth would also support revenue.",
+      "The aggregate of segment contributions, particularly from advertising and cloud, determines the overall quarterly revenue growth. Reconciliation of segment trends to total revenue is crucial."
+    ],
+    "counterevidence": "Cost management, while supporting execution, does not directly drive revenue. If revenue improvement is absent despite cost management efforts, this would be a contradiction.",
+    "prospective_target_estimate": "The target metric is Alphabet's quarterly revenue year-over-year growth for the fiscal quarter ending 2024-03-31. The resolution rule states 'yes' if YoY revenue growth is at least 13.49 percent, otherwise 'no'.",
+    "option_mapping": "The 'yes' option corresponds to Alphabet's quarterly revenue year-over-year growth being at least 13.49 percent. The 'no' option corresponds to it being less than 13.49 percent.",
+    "uncertainty": "Evidence regarding the direct impact of cost management on revenue is weak. The reconciliation of segment trends to total revenue is a critical checkpoint, and any failure in this area would introduce significant uncertainty.",
+    "dag_derived_lesson": "A driver's impact on a target can be mediated through various factors. The aggregation of these factors must be consistent with the target's reported value. Alternative factors that do not directly influence the target metric but affect related financial aspects (like costs) should be carefully distinguished to avoid misinterpreting their predictive power."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

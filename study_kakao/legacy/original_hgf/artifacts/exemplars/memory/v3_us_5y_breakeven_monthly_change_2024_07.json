@@ -1,0 +1,40 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_us_5y_breakeven_monthly_change_2024_07",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "inflation_expectations",
+      "target_operation": "change_in_monthly_breakeven",
+      "option_geometry": "range_comparison"
+    },
+    "historical_question": "As of 2024-07-01, which range will the monthly 5-year breakeven change for United States 5-year breakeven inflation rate in 2024-07 fall into?",
+    "historical_cutoff": "2024-07-01T00:00:00+00:00",
+    "target_semantics": "The monthly change in the United States 5-year breakeven inflation rate for July 2024.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20080723_008_27840342",
+        "takeaway": "The provided article discusses current US inflation rates and historical trends, offering context for inflation expectations.",
+        "why_predictive": "Understanding historical and current inflation dynamics is crucial for forecasting future inflation expectations, which are directly reflected in breakeven rates."
+      }
+    ],
+    "expert_reasoning": [
+      "The baseline is the historical inflation data. Cooling inflation generally moderates expected future price pressures, suggesting a downward pressure on breakevens. (art_finance_20080723_008_27840342)",
+      "Policy communication is a key driver. An accommodative policy stance can reinforce lower inflation expectations, also pointing towards a decrease in breakevens. (art_finance_20080723_008_27840342)",
+      "Inflation expectations act as a mediator. Moderating expectations, if confirmed by both survey and market measures, would lower inflation compensation and thus breakevens. (art_finance_20080723_008_27840342)",
+      "However, persistent inflation in components like housing or services can counteract broad disinflationary trends and resist moderating expectations, potentially pushing breakevens higher. (art_finance_20080723_008_27840342)",
+      "The target, the monthly change in the 5-year breakeven inflation rate, is determined by the interplay of inflation data, policy signals, inflation expectations, and the persistence of specific price pressures. (art_finance_20080723_008_27840342)"
+    ],
+    "counterevidence": "Persistent housing or services inflation could offset broad disinflationary trends, preventing inflation expectations from moderating as much as anticipated.",
+    "prospective_target_estimate": "The forecast is for the monthly change in the 5-year breakeven inflation rate to fall within the recent range, considering the interplay of cooling inflation, policy signals, and expectations, while acknowledging the risk of persistent inflation components.",
+    "option_mapping": "The estimate suggests the monthly change will be between -0.093 and 0.068 percentage points, inclusive of the lower bound and exclusive of the upper bound.",
+    "uncertainty": "The primary uncertainty stems from the potential for persistent inflation in specific sectors to override broader disinflationary signals, which could lead to a divergence between inflation data and expectations.",
+    "dag_derived_lesson": "The direction of inflation compensation is influenced by the balance between broad price cooling and policy accommodation, versus the stickiness of specific inflation components, mediated by inflation expectations."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

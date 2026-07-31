@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_vix_monthly_change_2023_01",
+  "blueprint_sha256": "4e1625abc06d77c1b1766464939e9bcae780cd6083df3f7e481b921ba54e8e2e",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_market",
+      "target_operation": "range_prediction",
+      "option_geometry": "ordered_categorical"
+    },
+    "historical_question": "As of 2023-01-01, which range will the monthly VIX change for CBOE VIX index in 2023-01 fall into?",
+    "historical_cutoff": "2023-01-01T00:00:00+00:00",
+    "target_semantics": "The monthly percentage change of the CBOE VIX index for January 2023.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The VIX index reportedly sank into the mid-teens by the target period, suggesting a declining volatility trend.",
+      "Major U.S. stock indexes rose during the same period, which historically correlates with lower volatility.",
+      "However, strategists warned that a low VIX could precede a reversal, indicating potential for increased volatility."
+    ],
+    "counterevidence": "Strategists warned that low VIX levels could precede a reversal, suggesting that the observed decline might not persist and could even reverse, leading to an increase in volatility.",
+    "prospective_target_estimate": "within recent range",
+    "option_mapping": "The VIX index's recent range boundaries were -20.76% (lower) and 12.54% (upper). A 'within recent range' estimate implies the monthly change falls between these values, inclusive of the lower bound and exclusive of the upper bound.",
+    "uncertainty": "The evidence presents conflicting signals: a declining VIX trend and rising stock markets suggest lower volatility, while warnings of potential reversals introduce uncertainty about the persistence of this trend. The impact of Fed and inflation catalysts on the VIX path is also not clearly established by the available information.",
+    "dag_derived_lesson": "A declining trend in a volatility index, accompanied by rising equity markets, may be tempered by expert warnings of potential reversals, creating uncertainty about the target metric's final position relative to historical ranges."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

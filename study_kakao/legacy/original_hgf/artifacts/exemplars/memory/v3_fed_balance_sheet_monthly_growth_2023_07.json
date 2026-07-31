@@ -1,0 +1,33 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_fed_balance_sheet_monthly_growth_2023_07",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial",
+      "target_operation": "growth_rate_comparison",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2023-07-01, will the monthly Federal Reserve asset growth for Federal Reserve total assets in 2023-07 be at least -1.09 percent?",
+    "historical_cutoff": "2023-07-01T00:00:00+00:00",
+    "target_semantics": "The Federal Reserve's total assets will grow by at least -1.09 percent in July 2023.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The target is the monthly growth rate of Federal Reserve total assets for July 2023, compared to a threshold of -1.09 percent.",
+      "A baseline for the target metric is needed, along with evidence of factors influencing asset growth.",
+      "The available information does not provide specific drivers or a baseline for Federal Reserve asset growth as of the cutoff date.",
+      "The DAG indicates that the evidence summary reported monthly growth but lacked underlying total asset levels, suggesting a weakness in the data available for forecasting."
+    ],
+    "counterevidence": "No specific counterevidence was identified in the provided DAG structure or article IDs.",
+    "prospective_target_estimate": "Given the lack of specific forecast-time evidence and the DAG's indication of data limitations, a definitive estimate cannot be formed.",
+    "option_mapping": "The 'yes' option corresponds to a monthly asset growth of -1.09 percent or higher. The 'no' option corresponds to a monthly asset growth lower than -1.09 percent.",
+    "uncertainty": "High uncertainty exists due to the absence of forecast-time evidence and the DAG's diagnosis of insufficient data for a robust causal analysis.",
+    "dag_derived_lesson": "When forecasting a change in a financial metric, a clear baseline and supporting causal drivers are essential. Weaknesses in the granularity of available data, such as lacking underlying levels when only growth is reported, significantly increase uncertainty and may preclude a confident forecast."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

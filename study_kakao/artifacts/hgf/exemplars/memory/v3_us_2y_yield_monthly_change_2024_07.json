@@ -1,0 +1,54 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_us_2y_yield_monthly_change_2024_07",
+  "blueprint_sha256": "f6e104b77d14a291d3038a62b0a270809f4b61e2c29fcd55e88de86c9e32243f",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "yield_change",
+      "target_operation": "bucketed_change",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2024-07-01, which range will the monthly 2-year yield change for United States 2-year Treasury yield in 2024-07 fall into?",
+    "historical_cutoff": "2024-07-01T00:00:00+00:00",
+    "target_semantics": "The monthly change in the United States 2-year Treasury yield for July 2024.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20240624_005_fffd90d5",
+        "takeaway": "The Federal Reserve's monetary tightening cycle has been characterized by significant rate hikes, with recent discussions and data suggesting a potential shift towards easing.",
+        "why_predictive": "Provides context on the Fed's recent policy stance and market expectations for future policy adjustments, which directly influence Treasury yields."
+      },
+      {
+        "article_id": "art_finance_20240612_008_466128a2",
+        "takeaway": "The FOMC meeting in June 2024 indicated a cautious approach to rate cuts, with projections for fewer cuts than previously anticipated, but acknowledged ongoing progress in inflation.",
+        "why_predictive": "Directly reflects the Federal Reserve's current monetary policy stance and forward guidance, a key driver of short-term Treasury yields."
+      },
+      {
+        "article_id": "art_finance_20231128_006_b83f99a5",
+        "takeaway": "Economic outlook for 2024 suggests slower GDP growth and falling inflation, which typically supports a more accommodative monetary policy.",
+        "why_predictive": "Provides a macroeconomic backdrop that influences inflation expectations and, consequently, Fed policy and Treasury yields."
+      },
+      {
+        "article_id": "art_finance_20240329_013_d0413f35",
+        "takeaway": "Fed Chair Powell acknowledged progress on inflation but emphasized the need for more data before considering policy adjustments, signaling a data-dependent approach.",
+        "why_predictive": "Highlights the Fed's cautious stance and reliance on incoming economic data, which markets interpret to form rate expectations."
+      }
+    ],
+    "expert_reasoning": [
+      "The Federal Reserve's monetary policy is a primary driver of short-term Treasury yields. Recent communications and meeting minutes (art_finance_20240612_008_466128a2, art_finance_20240329_013_d0413f35) suggest a data-dependent approach, with a cautious stance on rate cuts despite some progress on inflation.",
+      "Slowing GDP growth and falling inflation (art_finance_20231128_006_b83f99a5) create a backdrop that could eventually lead to rate cuts, but the Fed's recent actions and statements indicate a preference for maintaining current policy until more conclusive data emerges.",
+      "The market's anticipation of rate cuts is influenced by inflation trends and labor market data. While inflation has eased (art_finance_20231128_006_b83f99a5), the Fed's recent signals suggest that the conditions for aggressive rate cuts may not yet be fully met, implying yields might not fall sharply."
+    ],
+    "counterevidence": "Consumer sentiment has shown some resilience, with indices reaching higher points (art_finance_20160621_002_6d7f025b, though this article is from 2016 and not directly relevant to the current period, it points to the potential for consumer behavior to influence economic outlooks). While not explicitly detailed for the current period in the provided articles, improving consumer sentiment can sometimes signal underlying economic strength that might temper expectations for significant rate cuts.",
+    "prospective_target_estimate": "within recent range",
+    "option_mapping": "The forecast suggests that the monthly 2-year yield change for July 2024 will fall within the recent range of -0.22 to 0.122 percentage points.",
+    "uncertainty": "The exact timing and magnitude of potential Federal Reserve rate cuts remain uncertain, heavily dependent on incoming inflation and employment data. While there's a general expectation of easing at some point, the pace and extent are subject to change, creating volatility in yield expectations.",
+    "dag_derived_lesson": "The relationship between inflation, economic growth, and monetary policy expectations is dynamic. Countervailing economic indicators and central bank communication strategies can create complex feedback loops that influence financial market pricing, requiring careful consideration of both supportive and restrictive factors."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

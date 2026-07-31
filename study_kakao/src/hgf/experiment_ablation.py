@@ -50,11 +50,11 @@ from hgf.question_io import (
 )
 from hgf.runner import (
     _call_dag_expert_reasoning,
-    _distill_dag_semantic_lessons,
     _inject_target_operator_step,
     _load_source_cases,
     _reasoning_schema,
     _wire_expert_memory,
+    canonical_semantic_lessons,
     compile_current_target_operator,
     compile_dag_expert_memory,
 )
@@ -78,14 +78,9 @@ def _parse_args() -> argparse.Namespace:
         default=Path("data/questions/selection.json"),
     )
     parser.add_argument(
-        "--exemplar-dir",
+        "--hgf-artifact-root",
         type=Path,
-        default=Path("artifacts/exemplars"),
-    )
-    parser.add_argument(
-        "--semantic-cache-dir",
-        type=Path,
-        default=Path("artifacts/semantic_lessons"),
+        default=Path("artifacts/hgf"),
     )
     parser.add_argument(
         "--output-dir",
@@ -106,7 +101,6 @@ def _parse_args() -> argparse.Namespace:
     parser.add_argument("--evidence-limit", type=int, default=20)
     parser.add_argument("--reasoning-max-tokens", type=int, default=2600)
     parser.add_argument("--boundary-max-tokens", type=int, default=1800)
-    parser.add_argument("--semantic-max-tokens", type=int, default=1200)
     parser.add_argument(
         "--reasoning-effort",
         choices=("minimal", "low", "medium", "high", "xhigh", "max"),
@@ -434,12 +428,10 @@ def _run_case(
     graphs_by_id: dict[str, dict[str, Any]],
     blueprints_by_id: dict[str, dict[str, Any]],
     exemplar_cases: dict[str, dict[str, Any]],
-    semantic_cache_dir: Path,
     candidate_evidence_limit: int,
     evidence_limit: int,
     reasoning_max_tokens: int,
     boundary_max_tokens: int,
-    semantic_max_tokens: int,
 ) -> dict[str, Any]:
     output_path = output_dir / "cases" / str(question.id) / f"{condition}.json"
     failed_path = output_path.with_suffix(".failed.json")
@@ -476,10 +468,6 @@ def _run_case(
     memory_id = str(fixed_case["retrieved_memory_question_id"])
     blueprint = blueprints_by_id[memory_id]
     graph = graphs_by_id[memory_id]
-    semantic_usage: dict[str, int] = {}
-    semantic_seconds = 0.0
-    semantic_cached = True
-
     canonical_expert_memory: dict[str, Any] | None = None
     if condition == "raw_dag":
         raw_memory = json.loads(compile_raw_dag_ablation([graph]))
@@ -495,20 +483,9 @@ def _run_case(
             blueprint=blueprint,
             worked_exemplar=fixed_case["worked_exemplar"],
         )
-        (
-            semantic_lessons,
-            semantic_usage,
-            semantic_seconds,
-            semantic_cached,
-        ) = _distill_dag_semantic_lessons(
-            client=client,
-            model=model,
-            source_question_id=memory_id,
-            expert_memory=expert_memory,
-            cache_dir=semantic_cache_dir,
-            max_tokens=semantic_max_tokens,
+        expert_memory["dag_derived_semantic_lessons"] = (
+            canonical_semantic_lessons()
         )
-        expert_memory["dag_derived_semantic_lessons"] = semantic_lessons
         expert_memory = transform_expert_memory(expert_memory, condition)
         canonical_expert_memory = expert_memory
         checkpoint_ids = [
@@ -531,6 +508,7 @@ def _run_case(
             expert_memory=canonical_expert_memory,
             target_operator=target_operator,
             max_tokens=reasoning_max_tokens,
+            allow_memory_rejection=True,
         )
     else:
         reasoning_result = _call_condition_reasoning(
@@ -580,6 +558,7 @@ def _run_case(
                 else f"ablation:{condition}:boundary"
             ),
             max_tokens=boundary_max_tokens,
+            allow_neutral_fallback=True,
         )
     (
         forecast,
@@ -609,13 +588,13 @@ def _run_case(
         "evidence_ids": sorted(evidence_ids),
         "retrieved_memory_question_id": memory_id,
         "memory": memory_payload,
-        "memory_cached": semantic_cached,
+        "memory_cached": True,
         "reasoning": reasoning,
         "forecast": forecast,
         "probabilities": probabilities,
         "metrics": metrics,
-        "usage": _add_usage(semantic_usage, reasoning_usage, boundary_usage),
-        "seconds": semantic_seconds + reasoning_seconds + boundary_seconds,
+        "usage": _add_usage(reasoning_usage, boundary_usage),
+        "seconds": reasoning_seconds + boundary_seconds,
         "elapsed_seconds": time.monotonic() - started,
         "repaired": reasoning_repaired or boundary_repaired,
     }
@@ -680,6 +659,7 @@ def main() -> None:
     questions_dir = args.questions_dir.resolve()
     evidence_dir = args.evidence_dir.resolve()
     output_dir = args.output_dir.resolve()
+    hgf_artifact_root = args.hgf_artifact_root.resolve()
     questions = {
         str(question.id): question
         for question in read_questions(questions_dir / "test_questions.jsonl")
@@ -691,6 +671,7 @@ def main() -> None:
     graphs, blueprints = load_final_memory_bank(
         args.memory_bank_manifest.resolve(),
         memory_questions,
+        hgf_artifact_root=hgf_artifact_root / "blueprints",
     )
     graphs_by_id = {
         str(blueprint["question_id"]): graph
@@ -699,7 +680,7 @@ def main() -> None:
     blueprints_by_id = {
         str(blueprint["question_id"]): blueprint for blueprint in blueprints
     }
-    exemplar_cases = _load_source_cases(args.exemplar_dir.resolve())
+    exemplar_cases = _load_source_cases(hgf_artifact_root / "exemplars")
     frozen = read_json(args.selection_file.resolve())["question_ids"]
     requested = set(args.question_ids or frozen)
     missing = sorted(requested - set(questions))
@@ -761,12 +742,10 @@ def main() -> None:
                 graphs_by_id=graphs_by_id,
                 blueprints_by_id=blueprints_by_id,
                 exemplar_cases=exemplar_cases,
-                semantic_cache_dir=args.semantic_cache_dir.resolve(),
                 candidate_evidence_limit=args.candidate_evidence_limit,
                 evidence_limit=args.evidence_limit,
                 reasoning_max_tokens=args.reasoning_max_tokens,
                 boundary_max_tokens=args.boundary_max_tokens,
-                semantic_max_tokens=args.semantic_max_tokens,
             ): (question, condition)
             for question, condition in tasks
         }

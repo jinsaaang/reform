@@ -1,0 +1,739 @@
+{
+  "schema_version": "hgf_blueprint_topology_v2",
+  "question_id": "v3_us_pce_price_monthly_change_2025_04",
+  "target_definition": {
+    "metric": "monthly PCE-price change",
+    "unit_or_option_space": [
+      "yes",
+      "no"
+    ],
+    "forecast_horizon": "Remap the historical target family to the current question's exact target period."
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Outcome-redacted topology preserves 9 checkpoints, 11 source edges, and 8 root-to-target paths.",
+    "weaknesses": []
+  },
+  "search_factors": [
+    {
+      "factor": "Does Monetary Policy Tightening Reduce Inflation?",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20250203_005_5bd92987"
+      ]
+    },
+    {
+      "factor": "U.S. inflation increases to [CURRENT_VALUE_REQUIRED], groceries and gasoline prices heading higher",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20250212_007_08fe8e96"
+      ]
+    },
+    {
+      "factor": "The Road to [CURRENT_VALUE_REQUIRED] Inflation: Are We There Yet?",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20250225_008_0e1781a3"
+      ]
+    },
+    {
+      "factor": "Easing Inflation In [CURRENT_PERIOD_REQUIRED] Supports Fed Interest Rate Cuts",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20250312_001_bf3ed04d"
+      ]
+    },
+    {
+      "factor": "Which Way for the Inflation Winds?",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20250417_009_9c12fe39"
+      ]
+    },
+    {
+      "factor": "5 Consumer Trends Shaping Spending Patterns in [CURRENT_PERIOD_REQUIRED]",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20250430_002_86556311"
+      ]
+    },
+    {
+      "factor": "US Inflation Rate In [CURRENT_PERIOD_REQUIRED] – Energy, Rent And Food Keep Pressure On Households",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20250430_006_0466674f"
+      ]
+    },
+    {
+      "factor": "The Effects of Tariffs on Inflation and Production Costs",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20250519_004_35b07260"
+      ]
+    },
+    {
+      "factor": "[CURRENT_PERIOD_REQUIRED] PCE Reading Shows Cooling Inflation",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20250530_003_477354da"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "checkpoint_1",
+      "role": "driver",
+      "factor": "Does Monetary Policy Tightening Reduce Inflation?",
+      "mechanism": "Monetary policy tightening by the Federal Reserve (E5) is a primary cause of easing inflation (E1).",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20250203_005_5bd92987"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_001_51825686",
+        "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_004_846e60b6"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_2",
+      "role": "counterevidence",
+      "factor": "U.S. inflation increases to [CURRENT_VALUE_REQUIRED], groceries and gasoline prices heading higher",
+      "mechanism": "An increase in inflation earlier in the year (E7) could have inhibited the easing inflation trend (E1), but the trend still prevailed.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20250212_007_08fe8e96"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_008_6d417127"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_3",
+      "role": "driver",
+      "factor": "The Road to [CURRENT_VALUE_REQUIRED] Inflation: Are We There Yet?",
+      "mechanism": "Ongoing efforts to control price increases and the journey towards [CURRENT_VALUE_REQUIRED] inflation (E8) enabled the easing inflation trend (E1).",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20250225_008_0e1781a3"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_009_662685d5",
+        "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_010_815ac2af"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_4",
+      "role": "mediator",
+      "factor": "Easing Inflation In [CURRENT_PERIOD_REQUIRED] Supports Fed Interest Rate Cuts",
+      "mechanism": "Easing inflation in [CURRENT_PERIOD_REQUIRED] (E1) directly contributed to the cooling PCE reading in [CURRENT_PERIOD_REQUIRED] (E3).",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20250312_001_bf3ed04d"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_002_c5bac482"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_5",
+      "role": "mediator",
+      "factor": "Which Way for the Inflation Winds?",
+      "mechanism": "An overall trend towards cooling inflation (E9) contributes to a lower-than-expected PCE reading (E3).",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20250417_009_9c12fe39"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_005_99f55de0"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_6",
+      "role": "driver",
+      "factor": "5 Consumer Trends Shaping Spending Patterns in [CURRENT_PERIOD_REQUIRED]",
+      "mechanism": "Shifts in consumer spending patterns (E2) can lead to a slowdown in demand, contributing to cooling inflation (E3).",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20250430_002_86556311"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_003_2da29ba0"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_7",
+      "role": "counterevidence",
+      "factor": "US Inflation Rate In [CURRENT_PERIOD_REQUIRED] – Energy, Rent And Food Keep Pressure On Households",
+      "mechanism": "Persistent high costs for energy, rent, and food (E6) could have inhibited the cooling of PCE (E3), but were ultimately overwhelmed by other factors.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20250430_006_0466674f"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_006_a44b8e3a"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_8",
+      "role": "counterevidence",
+      "factor": "The Effects of Tariffs on Inflation and Production Costs",
+      "mechanism": "The potential inflationary pressures from tariffs (E4) could have inhibited the cooling of PCE (E3), but did not drive it above the threshold.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20250519_004_35b07260"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_007_5d386e68"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_9",
+      "role": "mediator",
+      "factor": "[CURRENT_PERIOD_REQUIRED] PCE Reading Shows Cooling Inflation",
+      "mechanism": "Re-test whether this factor has a currently supported link to the exact target metric; do not transfer the historical outcome or magnitude.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20250530_003_477354da"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015841_011_544b8220"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "target_bridge",
+      "role": "target_bridge",
+      "factor": "monthly PCE-price change",
+      "mechanism": "Map only currently supported paths into the exact target operator. Directional support alone is not magnitude or threshold-crossing support.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "A current target baseline and evidence supporting every edge used in the bridge.",
+      "contradiction_signal": "The current target baseline, magnitude evidence, or option boundary contradicts the proposed path.",
+      "historical_support": "medium",
+      "source_event_ids": [],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015841_011_544b8220"
+      ],
+      "source_event_type": "target_bridge"
+    }
+  ],
+  "topology": {
+    "checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_5",
+      "checkpoint_6",
+      "checkpoint_7",
+      "checkpoint_8",
+      "checkpoint_9",
+      "target_bridge"
+    ],
+    "root_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_6",
+      "checkpoint_7",
+      "checkpoint_8"
+    ],
+    "target_bridge_id": "target_bridge",
+    "edges": [
+      {
+        "source_checkpoint_id": "checkpoint_1",
+        "target_checkpoint_id": "checkpoint_4",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Monetary policy tightening by the Federal Reserve (E5) is a primary cause of easing inflation (E1).",
+        "source_edge_ids": [
+          "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_001_51825686"
+        ],
+        "source_article_ids": [],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_4",
+        "target_checkpoint_id": "checkpoint_9",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Easing inflation in [CURRENT_PERIOD_REQUIRED] (E1) directly contributed to the cooling PCE reading in [CURRENT_PERIOD_REQUIRED] (E3).",
+        "source_edge_ids": [
+          "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_002_c5bac482"
+        ],
+        "source_article_ids": [],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_6",
+        "target_checkpoint_id": "checkpoint_9",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Shifts in consumer spending patterns (E2) can lead to a slowdown in demand, contributing to cooling inflation (E3).",
+        "source_edge_ids": [
+          "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_003_2da29ba0"
+        ],
+        "source_article_ids": [],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_1",
+        "target_checkpoint_id": "checkpoint_5",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "The Federal Reserve's monetary policy tightening (E5) influences the overall direction of inflation (E9), leading to a cooling trend.",
+        "source_edge_ids": [
+          "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_004_846e60b6"
+        ],
+        "source_article_ids": [],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_5",
+        "target_checkpoint_id": "checkpoint_9",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "An overall trend towards cooling inflation (E9) contributes to a lower-than-expected PCE reading (E3).",
+        "source_edge_ids": [
+          "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_005_99f55de0"
+        ],
+        "source_article_ids": [],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_7",
+        "target_checkpoint_id": "checkpoint_9",
+        "relationship": "inhibits",
+        "directionality": "counteracting",
+        "support_level": "",
+        "rationale": "Persistent high costs for energy, rent, and food (E6) could have inhibited the cooling of PCE (E3), but were ultimately overwhelmed by other factors.",
+        "source_edge_ids": [
+          "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_006_a44b8e3a"
+        ],
+        "source_article_ids": [],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_8",
+        "target_checkpoint_id": "checkpoint_9",
+        "relationship": "inhibits",
+        "directionality": "counteracting",
+        "support_level": "",
+        "rationale": "The potential inflationary pressures from tariffs (E4) could have inhibited the cooling of PCE (E3), but did not drive it above the threshold.",
+        "source_edge_ids": [
+          "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_007_5d386e68"
+        ],
+        "source_article_ids": [],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_2",
+        "target_checkpoint_id": "checkpoint_4",
+        "relationship": "inhibits",
+        "directionality": "counteracting",
+        "support_level": "",
+        "rationale": "An increase in inflation earlier in the year (E7) could have inhibited the easing inflation trend (E1), but the trend still prevailed.",
+        "source_edge_ids": [
+          "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_008_6d417127"
+        ],
+        "source_article_ids": [],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_3",
+        "target_checkpoint_id": "checkpoint_4",
+        "relationship": "enables",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Ongoing efforts to control price increases and the journey towards [CURRENT_VALUE_REQUIRED] inflation (E8) enabled the easing inflation trend (E1).",
+        "source_edge_ids": [
+          "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_009_662685d5"
+        ],
+        "source_article_ids": [],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_3",
+        "target_checkpoint_id": "checkpoint_9",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "The Federal Reserve's efforts to control price increases (E8) contributed to the cooling PCE reading (E3).",
+        "source_edge_ids": [
+          "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_010_815ac2af"
+        ],
+        "source_article_ids": [],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_9",
+        "target_checkpoint_id": "target_bridge",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Historical DAG connected this factor to the redacted target measurement; the realized value and outcome mapping are omitted.",
+        "source_edge_ids": [
+          "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015841_011_544b8220"
+        ],
+        "source_article_ids": [
+          "art_finance_20250530_003_2ebb7272"
+        ],
+        "terminal_to_target_bridge": true
+      }
+    ],
+    "paths_truncated": false
+  },
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "checkpoint_1",
+        "checkpoint_4",
+        "checkpoint_9",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_001_51825686",
+        "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_002_c5bac482",
+        "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015841_011_544b8220"
+      ],
+      "relationships": [
+        "causes",
+        "causes",
+        "causes"
+      ],
+      "path_role": "main_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Does Monetary Policy Tightening Reduce Inflation? to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_1",
+        "checkpoint_5",
+        "checkpoint_9",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_004_846e60b6",
+        "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_005_99f55de0",
+        "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015841_011_544b8220"
+      ],
+      "relationships": [
+        "causes",
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Does Monetary Policy Tightening Reduce Inflation? to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_2",
+        "checkpoint_4",
+        "checkpoint_9",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_008_6d417127",
+        "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_002_c5bac482",
+        "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015841_011_544b8220"
+      ],
+      "relationships": [
+        "inhibits",
+        "causes",
+        "causes"
+      ],
+      "path_role": "counter_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from U.S. inflation increases to [CURRENT_VALUE_REQUIRED], groceries and gasoline prices heading higher to the current target; every edge requires current support.",
+      "expected_direction": "mixed",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_3",
+        "checkpoint_4",
+        "checkpoint_9",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_009_662685d5",
+        "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_002_c5bac482",
+        "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015841_011_544b8220"
+      ],
+      "relationships": [
+        "enables",
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from The Road to [CURRENT_VALUE_REQUIRED] Inflation: Are We There Yet? to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_3",
+        "checkpoint_9",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_010_815ac2af",
+        "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015841_011_544b8220"
+      ],
+      "relationships": [
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from The Road to [CURRENT_VALUE_REQUIRED] Inflation: Are We There Yet? to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_6",
+        "checkpoint_9",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_003_2da29ba0",
+        "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015841_011_544b8220"
+      ],
+      "relationships": [
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from 5 Consumer Trends Shaping Spending Patterns in [CURRENT_PERIOD_REQUIRED] to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_7",
+        "checkpoint_9",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_006_a44b8e3a",
+        "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015841_011_544b8220"
+      ],
+      "relationships": [
+        "inhibits",
+        "causes"
+      ],
+      "path_role": "counter_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from US Inflation Rate In [CURRENT_PERIOD_REQUIRED] – Energy, Rent And Food Keep Pressure On Households to the current target; every edge requires current support.",
+      "expected_direction": "mixed",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_8",
+        "checkpoint_9",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015831_007_5d386e68",
+        "hyp_v3_us_pce_price_monthly_change_2025_04_20260725_015841_011_544b8220"
+      ],
+      "relationships": [
+        "inhibits",
+        "causes"
+      ],
+      "path_role": "counter_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from The Effects of Tariffs on Inflation and Production Costs to the current target; every edge requires current support.",
+      "expected_direction": "mixed",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "U.S. inflation increases to [CURRENT_VALUE_REQUIRED], groceries and gasoline prices heading higher dominates or reverses the leading current path.",
+      "discriminating_evidence": "Compare current evidence for this counter-path with every edge on the leading supported path.",
+      "source_event_ids": [
+        "evt_finance_20250212_007_08fe8e96"
+      ]
+    },
+    {
+      "hypothesis": "US Inflation Rate In [CURRENT_PERIOD_REQUIRED] – Energy, Rent And Food Keep Pressure On Households dominates or reverses the leading current path.",
+      "discriminating_evidence": "Compare current evidence for this counter-path with every edge on the leading supported path.",
+      "source_event_ids": [
+        "evt_finance_20250430_006_0466674f"
+      ]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Does every used checkpoint transition correspond to a preserved edge?",
+    "Which preserved edges are supported, contradicted, or unknown now?",
+    "Does a counter-path dominate the leading supported path?",
+    "Is there evidence for magnitude and boundary crossing, not direction alone?"
+  ],
+  "refinement_metadata": {
+    "model": "deterministic_topology_compiler_v2",
+    "source_graph": "data\\dags\\v3_us_pce_price_monthly_change_2025_04\\graph.json",
+    "source_audit_status": "pass",
+    "outcome_nodes_redacted": 2,
+    "target_value_anchors_redacted": 0,
+    "historical_specifics_sanitized": true,
+    "sanitizer": "minimal_value_period_placeholders_v1",
+    "value_replacement_count": 10,
+    "period_replacement_count": 15
+  },
+  "topology_validation": {
+    "status": "pass",
+    "errors": [],
+    "metrics": {
+      "retained_checkpoint_count": 9,
+      "source_edge_count": 11,
+      "emitted_edge_count": 11,
+      "edge_coverage": 1.0,
+      "path_precision": 1.0,
+      "causal_path_count": 8,
+      "outcome_event_leak_count": 0,
+      "outcome_text_leak_count": 0,
+      "realized_value_count": 0,
+      "absolute_period_count": 0
+    }
+  },
+  "pilot_usage": {
+    "top1_target_count": 2,
+    "top1_target_question_ids": [
+      "v3_us_pce_price_monthly_change_2025_10",
+      "v3_us_pce_price_monthly_change_2026_05"
+    ]
+  }
+}

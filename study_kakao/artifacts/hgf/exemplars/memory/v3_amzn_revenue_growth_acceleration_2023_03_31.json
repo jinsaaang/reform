@@ -1,0 +1,40 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_amzn_revenue_growth_acceleration_2023_03_31",
+  "blueprint_sha256": "0ffa9f1002e3375436d3d246c252b9eb2da05a8919fb3cf40e92c191a5e0c80f",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "corporate_earnings",
+      "target_operation": "growth_acceleration",
+      "option_geometry": "ordered_categorical"
+    },
+    "historical_question": "As of 2023-03-31, which range will Amazon.com, Inc.'s quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2023-03-31 fall into?",
+    "historical_cutoff": "2023-03-31T00:00:00+00:00",
+    "target_semantics": "Amazon's quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2023-03-31.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20220203_002_88670510",
+        "takeaway": "Amazon reported Q4 2021 earnings, with AWS revenue growing 40% year-over-year.",
+        "why_predictive": "This article provides a data point on AWS revenue growth from a prior period, which could inform future growth trends and acceleration."
+      }
+    ],
+    "expert_reasoning": [
+      "The DAG suggests that economic uncertainties and customer caution regarding cloud spending (checkpoint_1) led AWS to focus on optimizing cloud spend (checkpoint_2).",
+      "This focus by AWS was intended to enable it to beat revenue consensus despite economic headwinds (checkpoint_2 mechanism).",
+      "Strong growth in advertising and third-party seller services (checkpoint_4) is also identified as a driver of revenue acceleration.",
+      "The DAG indicates that AWS revenue growth beating consensus (checkpoint_5) contributed to Amazon's overall revenue beating analyst estimates (checkpoint_6)."
+    ],
+    "counterevidence": "The DAG notes that flat online retail sales in the target period acted as a drag on overall growth, inhibiting a higher revenue beat, though this was offset by other segments (checkpoint_3).",
+    "prospective_target_estimate": "The provided evidence is insufficient to determine the specific range for Amazon's quarterly year-over-year revenue-growth acceleration.",
+    "option_mapping": "The target metric is quarterly year-over-year revenue-growth acceleration. The options are 'below recent range', 'within recent range', and 'above recent range', defined by specific percentage point thresholds.",
+    "uncertainty": "The historical support for key drivers and mediators, such as economic uncertainties impacting cloud spend and the strength of advertising/third-party seller services, is weak. Furthermore, the specific magnitude of AWS revenue growth and its contribution to overall acceleration is not detailed in the forecast-time evidence, making it difficult to precisely map to the defined ranges.",
+    "dag_derived_lesson": "A causal chain involving economic conditions, strategic business unit focus, and performance of ancillary services can influence overall corporate revenue growth acceleration. However, the strength and direction of these influences require specific, current evidence to be reliably assessed against predefined thresholds."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

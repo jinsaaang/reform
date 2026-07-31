@@ -1,0 +1,54 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_us_m2_monthly_growth_2023_08",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "money_supply",
+      "target_operation": "monthly_growth_rate",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2023-08-01, which range will the monthly M2 growth for United States M2 money stock in 2023-08 fall into?",
+    "historical_cutoff": "2023-08-01T00:00:00+00:00",
+    "target_semantics": "The monthly percentage growth of the US M2 money stock for August 2023.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20201112_004_a404ffa1",
+        "takeaway": "The period following the 2008 Great Recession saw significant monetary policy interventions, including quantitative easing, aimed at stimulating the economy.",
+        "why_predictive": "Historical context of monetary policy responses to economic conditions can inform expectations about current policy approaches and their potential impact on money supply."
+      },
+      {
+        "article_id": "art_finance_20210831_002_24f239dd",
+        "takeaway": "Factors such as supply chain disruptions and increased consumer demand were identified as contributing to inflation concerns for the Federal Reserve.",
+        "why_predictive": "Inflationary pressures and the factors driving them are key considerations for monetary policy, which in turn influences money supply."
+      },
+      {
+        "article_id": "art_finance_20200420_005_6ed56322",
+        "takeaway": "US M2 money supply experienced a notable year-over-year increase in April 2020.",
+        "why_predictive": "Provides a data point on recent M2 growth trends, offering a baseline for understanding current dynamics."
+      },
+      {
+        "article_id": "art_finance_20201121_006_669a015e",
+        "takeaway": "US M2 money supply data is available historically, showing fluctuations over time.",
+        "why_predictive": "Indicates the availability of historical data for M2, which is essential for calculating growth rates and identifying trends."
+      }
+    ],
+    "expert_reasoning": [
+      "The historical context of monetary policy responses, such as those following the Great Recession (art_finance_20201112_004_a404ffa1), suggests that the Federal Reserve may employ measures that influence money supply.",
+      "Concerns about inflation, driven by factors like supply chain issues and demand (art_finance_20210831_002_24f239dd), are a primary driver for monetary policy decisions.",
+      "While historical M2 growth data (art_finance_20200420_005_6ed56322, art_finance_20201121_006_669a015e) shows past trends, the specific drivers and components of M2 in the current period are not detailed in the provided articles.",
+      "The relationship between policy actions, inflation concerns, and the actual M2 growth requires verification of M2 components, which is absent in the forecast-time evidence."
+    ],
+    "counterevidence": "The provided articles do not offer specific details on the current components of the M2 money stock or the direct transmission mechanisms of monetary policy to M2 growth for the target period. Therefore, a direct link between inflation concerns or policy discussions and the precise M2 growth rate cannot be established with the available information.",
+    "prospective_target_estimate": "Given the lack of specific M2 component data and transmission mechanisms, it is not possible to confidently estimate whether the monthly M2 growth for August 2023 will fall below, within, or above the recent range.",
+    "option_mapping": "The available evidence is insufficient to map to any of the options: 'below recent range', 'within recent range', or 'above recent range'.",
+    "uncertainty": "Significant uncertainty exists due to the absence of direct evidence on current M2 components and the specific impact of monetary policy on M2 growth for the target period. The forecast relies on general economic principles and historical context rather than specific, predictive data for the target month.",
+    "dag_derived_lesson": "Monetary policy discussions and inflation concerns provide a baseline context, but predicting money supply growth requires verified data on its components and the observed transmission mechanisms of policy actions."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_us_10y_real_yield_monthly_change_2024_03",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial",
+      "target_operation": "change",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2024-03-01, which range will the monthly 10-year real-yield change for United States 10-year real Treasury yield in 2024-03 fall into?",
+    "historical_cutoff": "2024-03-01T00:00:00+00:00",
+    "target_semantics": "The monthly change in the United States 10-year real Treasury yield for March 2024.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "ev_ada2b59ee25c7279",
+        "takeaway": "Real interest rates are defined as the difference between the Central Bank Policy Rate and the inflation rate.",
+        "why_predictive": "This provides the fundamental definition of real yields, which is the target metric."
+      },
+      {
+        "article_id": "ev_28ca4e3da3732a53",
+        "takeaway": "The Federal Reserve targets 2% inflation, and discussions around interest rate cuts are linked to inflation metrics.",
+        "why_predictive": "Inflation is a key component of real yields, and Fed policy influences interest rates."
+      },
+      {
+        "article_id": "ev_3cf348662df05788",
+        "takeaway": "Real rates of return are calculated by adjusting nominal returns for inflation.",
+        "why_predictive": "This reinforces the calculation method for real yields, directly impacting the target."
+      }
+    ],
+    "expert_reasoning": [
+      "The United States 10-year real Treasury yield is influenced by monetary policy and inflation expectations (ev_ada2b59ee25c7279).",
+      "The Federal Reserve's inflation target of 2% and considerations for interest rate cuts are relevant to the real yield calculation (ev_28ca4e3da3732a53).",
+      "Real yields are fundamentally nominal yields adjusted for inflation (ev_3cf348662df05788, ev_ada2b59ee25c7279)."
+    ],
+    "counterevidence": "No specific counterevidence was identified in the provided articles that directly contradicts the potential drivers of the real yield change.",
+    "prospective_target_estimate": "The provided articles do not contain sufficient quantitative information or specific forward-looking statements about the US 10-year real Treasury yield to make a precise estimate of its change in March 2024. The information is primarily definitional and contextual regarding inflation and monetary policy.",
+    "option_mapping": "Given the lack of specific quantitative data or directional indicators in the provided forecast-time evidence, it is not possible to map the prospective estimate to the options 'below recent range', 'within recent range', or 'above recent range'.",
+    "uncertainty": "Significant uncertainty exists due to the absence of specific quantitative data on market expectations, Federal Reserve actions, or inflation trends immediately preceding March 2024. The forecast-time evidence is largely definitional and historical, lacking the granularity needed for a precise forecast of the yield change.",
+    "dag_derived_lesson": "When forecasting a financial metric influenced by policy and inflation, it is crucial to assess the interplay between central bank targets, inflation dynamics, and the definition of the metric. If forecast-time evidence is primarily definitional or historical without specific quantitative indicators or forward-looking statements, significant uncertainty will remain regarding the precise outcome, preventing a confident mapping to predefined ranges."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

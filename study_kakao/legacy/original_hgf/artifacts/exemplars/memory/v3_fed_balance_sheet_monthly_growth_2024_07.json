@@ -1,0 +1,70 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_fed_balance_sheet_monthly_growth_2024_07",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "economic",
+      "target_operation": "growth_rate",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2024-07-01, will the monthly Federal Reserve asset growth for Federal Reserve total assets in 2024-07 be at least -1.099 percent?",
+    "historical_cutoff": "2024-07-01T00:00:00+00:00",
+    "target_semantics": "Federal Reserve total assets monthly growth rate in July 2024.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "ev_d5bc999c0b3fbf3e",
+        "takeaway": "The Federal Reserve's balance sheet dropped by $667 billion from its peak, reaching $8.3 trillion, as quantitative tightening (QT) continued and support for bank panic unwound.",
+        "why_predictive": "Indicates a period of balance sheet reduction driven by QT, suggesting a downward trend in assets."
+      },
+      {
+        "article_id": "ev_281140176e599f56",
+        "takeaway": "The Fed is accelerating its quantitative easing (QE) unwind.",
+        "why_predictive": "Suggests an ongoing process of reducing the Fed's asset holdings."
+      },
+      {
+        "article_id": "ev_0b2311dd3694d7dc",
+        "takeaway": "Chronology of Fed's Quantitative Easing.",
+        "why_predictive": "Provides historical context for Fed asset management policies, including QE and its eventual reversal."
+      },
+      {
+        "article_id": "ev_c3d747d3063e2a82",
+        "takeaway": "Fed slows asset purchases to $45 billion a month.",
+        "why_predictive": "Shows a past instance of the Fed reducing its asset purchase pace, a precursor to balance sheet reduction."
+      },
+      {
+        "article_id": "ev_1ea67e10c0818b35",
+        "takeaway": "Fed pares bond buying program to $35B.",
+        "why_predictive": "Another example of the Fed reducing its asset purchase pace."
+      },
+      {
+        "article_id": "ev_b44669682b2db51e",
+        "takeaway": "Fed, confident in economy, details end of bond-buying program.",
+        "why_predictive": "Signals the conclusion of asset purchase programs, implying a shift towards balance sheet reduction."
+      },
+      {
+        "article_id": "ev_36d601fd0b50077c",
+        "takeaway": "FOMC Statement: More Tapering.",
+        "why_predictive": "Indicates a continuation of the process of reducing asset purchases."
+      }
+    ],
+    "expert_reasoning": [
+      "The Federal Reserve's balance sheet has been undergoing a reduction, as evidenced by a significant drop from its peak and ongoing quantitative tightening (QT) (ev_d5bc999c0b3fbf3e).",
+      "This reduction is part of an accelerated unwind of previous quantitative easing (QE) programs (ev_281140176e599f56).",
+      "Historical actions show the Fed has previously slowed and ended asset purchase programs (ev_c3d747d3063e2a82, ev_1ea67e10c0818b35, ev_b44669682b2db51e, ev_36d601fd0b50077c), setting a precedent for balance sheet reduction.",
+      "The continued QT and unwinding of support mechanisms suggest a sustained downward pressure on the Fed's total assets.",
+      "Given the established trend of balance sheet reduction through QT, a negative monthly growth rate for Federal Reserve total assets is plausible."
+    ],
+    "counterevidence": "No specific forecast-time article directly contradicts the ongoing trend of balance sheet reduction or provides evidence of a reversal or significant pause in QT as of the cutoff date.",
+    "prospective_target_estimate": "The monthly Federal Reserve asset growth for July 2024 is likely to be negative, potentially exceeding the -1.099 percent threshold.",
+    "option_mapping": "yes",
+    "uncertainty": "While the trend of balance sheet reduction is clear, the exact magnitude of monthly asset growth can fluctuate. The evidence points towards a decline, but the precise percentage requires more granular, up-to-date data not fully captured in the provided articles.",
+    "dag_derived_lesson": "A sustained policy of asset reduction, evidenced by historical actions and ongoing programs, supports a negative trend in the target metric. The absence of counter-signals reinforces this expectation, though precise quantification remains subject to data granularity."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

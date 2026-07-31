@@ -1,0 +1,61 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_broad_usd_monthly_return_2023_07",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "market_fx_credit",
+      "target_operation": "monthly broad-dollar return",
+      "option_geometry": "bucketed"
+    },
+    "historical_question": "As of 2023-07-01, which range will the monthly broad-dollar return for Nominal broad U.S. dollar index in 2023-07 fall into?",
+    "historical_cutoff": "2023-07-01T00:00:00+00:00",
+    "target_semantics": "The monthly broad-dollar return for the Nominal broad U.S. dollar index in July 2023.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20230629_003_0fa65d0f",
+        "takeaway": "The dollar index reached a two-week high following economic data, with the yen remaining weak.",
+        "why_predictive": "Recent positive data and a strong dollar performance suggest upward momentum for the dollar index."
+      },
+      {
+        "article_id": "art_finance_20230615_007_6d07c29b",
+        "takeaway": "The Federal Reserve held its key interest rate at 5%, indicating a pause in rate hikes while evaluating economic conditions after a lower inflation reading.",
+        "why_predictive": "The Fed's decision to hold rates steady, especially after noting lower inflation, suggests a potential shift in monetary policy stance, which influences currency valuations."
+      },
+      {
+        "article_id": "art_finance_20230629_008_953c83e9",
+        "takeaway": "To achieve the Fed's inflation target, interest rates may need to remain restrictive for an extended period.",
+        "why_predictive": "This suggests that while rate hikes might be paused, the overall restrictive stance of monetary policy is likely to be maintained, potentially supporting the dollar."
+      },
+      {
+        "article_id": "art_finance_20230224_005_a4fcc9a2",
+        "takeaway": "The US dollar surged to seven-week highs following strong inflation data.",
+        "why_predictive": "Historically, strong inflation data has led to dollar appreciation due to expectations of tighter monetary policy."
+      },
+      {
+        "article_id": "art_finance_20230623_002_37abb383",
+        "takeaway": "The international role of the U.S. dollar remains significant post-COVID.",
+        "why_predictive": "The dollar's continued international importance suggests underlying demand and stability, which can support its value."
+      }
+    ],
+    "expert_reasoning": [
+      "The baseline expectation for the dollar index is influenced by Federal Reserve policy. Recent data and commentary suggest a pause in rate hikes but a continued restrictive stance (art_finance_20230615_007_6d07c29b, art_finance_20230629_008_953c83e9). This implies that rate differentials may continue to favor the dollar, supporting its value.",
+      "Market pricing of Federal Reserve policy is a key driver. While the Fed paused, the market's interpretation of 'restrictive for some time' could lead to sustained demand for the dollar if rate differentials remain favorable.",
+      "Global growth concerns can act as counterevidence by capping dollar strength. However, recent data showing the dollar reaching a two-week high after positive data (art_finance_20230629_003_0fa65d0f) suggests that global growth concerns might not be the dominant factor at this moment.",
+      "Dollar positioning is a factor, but the recent strength indicates it may not be excessively bearish, potentially allowing for further upside if other drivers align.",
+      "The overall mechanism suggests that sustained restrictive monetary policy, even without further hikes, combined with the dollar's international role, could support its value. Recent positive data also points to some resilience.",
+      "Considering the recent strength (art_finance_20230629_003_0fa65d0f) and the Fed's continued restrictive stance (art_finance_20230629_008_953c83e9), the dollar is likely to remain supported."
+    ],
+    "counterevidence": "While strong inflation data has historically supported the dollar (art_finance_20230224_005_a4fcc9a2), the Federal Reserve's decision to hold rates steady (art_finance_20230615_007_6d07c29b) could signal a peak in tightening expectations, potentially limiting further dollar appreciation.",
+    "prospective_target_estimate": "within recent range",
+    "option_mapping": "The recent range for the Nominal broad U.S. dollar index is between -1.774 and 0.28 percent. Given the recent strength and the Fed's continued restrictive stance, the dollar is expected to remain supported, likely falling within this range.",
+    "uncertainty": "The exact impact of the Fed's pause on rate differentials and market expectations remains a key uncertainty. If markets begin to price in earlier rate cuts, this could weaken the dollar. Additionally, shifts in global risk sentiment could alter safe-haven flows.",
+    "dag_derived_lesson": "Monetary policy expectations, particularly the duration of restrictive stances, can drive currency strength through rate differentials. However, this effect can be moderated by global growth concerns and market positioning, requiring a holistic assessment of these interacting factors."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

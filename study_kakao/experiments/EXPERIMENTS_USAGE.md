@@ -58,12 +58,13 @@ separate digest for the extension layer.
 
 ## Frozen-artifact boundary
 
-The public bundle contains 100 test-case exemplar artifacts representing 43
-unique retrieved memory questions. Top-k sensitivity requires a fixed v22
-worked exemplar and frozen semantic lesson for every top-seven candidate.
-Supply additional fixed artifacts with `--additional-exemplar-dir`. The top-k
-runner writes `preflight.json` and stops before any model call if coverage is
-incomplete or if the computed rank-1 item differs from the frozen k=1 mapping.
+The canonical HGF artifact root contains 200 memory exemplars and 100 fixed
+test-case mappings. Top-k sensitivity uses those exemplars together with the
+same fixed semantic lessons as canonical HGF. Replace the complete matched
+artifact bank with `--hgf-artifact-root`; partial Blueprint or Exemplar
+overrides are intentionally unsupported. The top-k runner writes
+`preflight.json` and stops before any model call if coverage is incomplete or
+if the computed rank-1 item differs from the fixed k=1 mapping.
 
 All runners preserve the canonical stage-specific token limits unless an
 explicit override is supplied.

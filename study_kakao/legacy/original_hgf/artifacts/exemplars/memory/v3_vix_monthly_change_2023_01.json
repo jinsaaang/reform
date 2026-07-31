@@ -1,0 +1,32 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_vix_monthly_change_2023_01",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "market_fx_credit / volatility",
+      "target_operation": "monthly VIX change",
+      "option_geometry": "ordered_categorical"
+    },
+    "historical_question": "As of 2023-01-01, which range will the monthly VIX change for CBOE VIX index in 2023-01 fall into?",
+    "historical_cutoff": "2023-01-01T00:00:00+00:00",
+    "target_semantics": "The monthly percentage change of the CBOE VIX index in January 2023.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The VIX index's movement in early January was influenced by 'Fed and inflation catalysts' creating uncertainty.",
+      "The VIX index experienced a decline, reaching the mid-teens by January 13.",
+      "The VIX index exhibited a general declining trend throughout January."
+    ],
+    "counterevidence": "No forecast-time evidence was available to contradict the identified drivers or suggest alternative mechanisms.",
+    "prospective_target_estimate": "The available historical checkpoints suggest a mixed expected direction for the monthly VIX change, as the drivers and mediators had unknown expected directions and varying historical support.",
+    "option_mapping": "The target metric is the monthly VIX change in percent. The options are 'below recent range' (less than -20.76%), 'within recent range' (-20.76% to 12.54%), and 'above recent range' (12.54% or greater).",
+    "uncertainty": "The historical support for the 'VIX showed a general declining trend during January' driver was weak. The expected direction for all identified drivers was unknown, and the overall expected direction for the target bridge was mixed, indicating significant uncertainty.",
+    "dag_derived_lesson": "When forecasting a target metric, identify and assess the impact of known catalysts and observed trends. Evaluate the strength of evidence for each factor and consider how they collectively bridge to the target, acknowledging uncertainty stemming from weak support or unknown directional impacts."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

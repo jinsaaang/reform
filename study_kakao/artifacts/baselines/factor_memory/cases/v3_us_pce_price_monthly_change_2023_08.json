@@ -1,0 +1,194 @@
+{
+  "schema_version": "hgf_blueprint_v1",
+  "question_id": "v3_us_pce_price_monthly_change_2023_08",
+  "target_definition": {
+    "metric": "United States monthly PCE price change",
+    "unit_or_option_space": "percent monthly change",
+    "forecast_horizon": "target month"
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Energy costs and consumer-demand cost pass-through provide reusable aggregate-price mechanisms.",
+    "weaknesses": [
+      "Release-confirmation and outcome shortcut edges are excluded."
+    ]
+  },
+  "search_factors": [
+    {
+      "factor": "Energy prices",
+      "why_search": "Energy can affect headline price pressure.",
+      "preferred_source_types": [
+        "energy price data"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230831_010_510512a8"
+      ]
+    },
+    {
+      "factor": "Consumer spending",
+      "why_search": "Demand can permit cost pass-through.",
+      "preferred_source_types": [
+        "spending release"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230831_011_517e49b3"
+      ]
+    },
+    {
+      "factor": "Business cost pass-through",
+      "why_search": "Pass-through links demand to prices.",
+      "preferred_source_types": [
+        "business survey"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230831_014_c8427958"
+      ]
+    },
+    {
+      "factor": "Headline price pressure",
+      "why_search": "Component pressure informs aggregate price direction.",
+      "preferred_source_types": [
+        "price release"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230831_013_dc07a6a2"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "energy",
+      "role": "baseline",
+      "factor": "Energy prices",
+      "mechanism": "Higher energy costs raise headline price pressure.",
+      "expected_direction": "up",
+      "evidence_requirement": "Energy prices rise broadly.",
+      "contradiction_signal": "Energy prices fall.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_finance_20230831_010_510512a8",
+        "evt_finance_20230831_013_dc07a6a2"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2023_08_20260725_012533_007_37ec3da9"
+      ]
+    },
+    {
+      "id": "spending",
+      "role": "driver",
+      "factor": "Consumer spending",
+      "mechanism": "Persistent spending enables business cost pass-through.",
+      "expected_direction": "up",
+      "evidence_requirement": "Outlays remain firm.",
+      "contradiction_signal": "Demand weakens.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_finance_20230831_011_517e49b3",
+        "evt_finance_20230831_014_c8427958"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2023_08_20260725_012533_008_9d1e11a7"
+      ]
+    },
+    {
+      "id": "pass_through",
+      "role": "mediator",
+      "factor": "Business cost pass-through",
+      "mechanism": "Cost pass-through contributes to aggregate price pressure.",
+      "expected_direction": "up",
+      "evidence_requirement": "Prices and margins indicate pass-through.",
+      "contradiction_signal": "Costs are absorbed.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_finance_20230831_014_c8427958",
+        "evt_finance_20230831_015_8ee4399d"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2023_08_20260725_012533_010_31a06b9f"
+      ]
+    },
+    {
+      "id": "aggregate",
+      "role": "counterevidence",
+      "factor": "Headline price pressure",
+      "mechanism": "Component pressure may be offset by other disinflationary components.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Compare energy and non-energy components.",
+      "contradiction_signal": "Pressure is broad-based.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_finance_20230831_013_dc07a6a2",
+        "evt_finance_20230831_015_8ee4399d"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2023_08_20260725_012533_009_685defbb"
+      ]
+    },
+    {
+      "id": "pce_bridge",
+      "role": "target_bridge",
+      "factor": "Energy and pass-through contribution",
+      "mechanism": "Energy-driven price pressure and demand-supported pass-through determine aggregate PCE direction.",
+      "expected_direction": "up",
+      "evidence_requirement": "Compare component contributions and outlays.",
+      "contradiction_signal": "Components offset each other.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_finance_20230831_013_dc07a6a2",
+        "evt_finance_20230831_014_c8427958",
+        "evt_finance_20230831_015_8ee4399d"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2023_08_20260725_012533_009_685defbb",
+        "hyp_v3_us_pce_price_monthly_change_2023_08_20260725_012533_010_31a06b9f"
+      ]
+    }
+  ],
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "energy",
+        "aggregate",
+        "pce_bridge"
+      ],
+      "generalized_mechanism": "Energy pressure contributes to aggregate PCE direction.",
+      "expected_direction": "up",
+      "applicability_conditions": [
+        "Energy has material weight."
+      ],
+      "failure_conditions": [
+        "Other components offset energy."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "spending",
+        "pass_through",
+        "pce_bridge"
+      ],
+      "generalized_mechanism": "Firm spending enables pass-through into aggregate prices.",
+      "expected_direction": "up",
+      "applicability_conditions": [
+        "Demand remains firm."
+      ],
+      "failure_conditions": [
+        "Firms absorb costs."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "Disinflationary components offset energy and pass-through.",
+      "discriminating_evidence": "Compare component contributions.",
+      "source_event_ids": [
+        "evt_finance_20230831_010_510512a8",
+        "evt_finance_20230831_015_8ee4399d"
+      ]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Are energy costs persistent?",
+    "Does demand permit pass-through?",
+    "Do other components offset pressure?"
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_global_copper_monthly_return_2024_09",
+  "blueprint_sha256": "202a8305e13ad0cde13e002be1ded8d1a05c15d77e878b728df03c2103a2f9c0",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_market",
+      "target_operation": "price_return_range",
+      "option_geometry": "bucketed_range"
+    },
+    "historical_question": "As of 2024-09-01, which range will the monthly copper-price return for Global copper price in 2024-09 fall into?",
+    "historical_cutoff": "2024-09-01T00:00:00+00:00",
+    "target_semantics": "The monthly percentage return of the global copper price for September 2024.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20240815_003_340203fa",
+        "takeaway": "A strike at BHP in Chile is currently underway and is buoying the global copper price.",
+        "why_predictive": "Labor disputes and supply disruptions in major copper-producing regions can directly impact global prices by reducing supply."
+      },
+      {
+        "article_id": "art_finance_20240527_005_f2cacf4d",
+        "takeaway": "Record-breaking copper prices are occurring amid speculations of supply shortages.",
+        "why_predictive": "Market sentiment driven by supply shortage concerns can lead to price increases."
+      },
+      {
+        "article_id": "art_finance_20240716_004_a9e93891",
+        "takeaway": "Copper faces potential long-term tailwinds alongside a cyclical opportunity.",
+        "why_predictive": "This suggests underlying positive factors for copper, potentially supporting prices, while also acknowledging cyclical market behavior."
+      },
+      {
+        "article_id": "art_finance_20240408_025_47e0ba55",
+        "takeaway": "AI development is projected to significantly increase copper demand by 2030.",
+        "why_predictive": "Anticipated future demand increases, even if not fully realized in the immediate month, can influence current market sentiment and pricing."
+      },
+      {
+        "article_id": "art_finance_20240620_027_12aed726",
+        "takeaway": "The energy transition requires critical minerals and metals like copper.",
+        "why_predictive": "The ongoing energy transition represents a structural demand driver for copper."
+      }
+    ],
+    "expert_reasoning": [
+      "The recent BHP strike in Chile (art_finance_20240815_003_340203fa) directly impacts copper supply, suggesting upward pressure on prices.",
+      "Speculation of supply shortages, coupled with record prices, indicates a market environment where prices are sensitive to supply constraints (art_finance_20240527_005_f2cacf4d).",
+      "Long-term demand drivers like the energy transition (art_finance_20240620_027_12aed726) and AI development (art_finance_20240408_025_47e0ba55) provide a supportive backdrop, suggesting that any cyclical downturns might be met with underlying strength."
+    ],
+    "counterevidence": "While supply disruptions and strong demand drivers are noted, the provided articles do not offer specific data on the magnitude of these factors or any immediate counteracting forces that would definitively push the price outside the recent range.",
+    "prospective_target_estimate": "within recent range",
+    "option_mapping": "The evidence points to factors that could support higher prices, but without clear indication of a significant break beyond recent historical volatility, the 'within recent range' option is the most plausible.",
+    "uncertainty": "The exact magnitude of the BHP strike's impact and the precise balance between speculative supply shortage concerns and actual demand realization remain uncertain. Furthermore, the 'cyclical opportunity' mentioned (art_finance_20240716_004_a9e93891) implies potential for price fluctuations within the broader trend.",
+    "dag_derived_lesson": "When evaluating commodity price movements, consider the interplay between immediate supply disruptions, market sentiment driven by shortage expectations, and underlying long-term demand trends. The absence of definitive evidence for extreme price movements necessitates a cautious approach, favoring a range that reflects historical volatility."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

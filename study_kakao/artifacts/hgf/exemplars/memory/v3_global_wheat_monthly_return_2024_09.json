@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_global_wheat_monthly_return_2024_09",
+  "blueprint_sha256": "ebf8b9916acc61ee1b6d8e334c0ca54f2fa35991ad9fb2f7830723a6b91325d3",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "wheat_price_return",
+      "target_operation": "at_least",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2024-09-01, will the monthly wheat-price return for Global wheat price in 2024-09 be at least -6.987 percent?",
+    "historical_cutoff": "2024-09-01T00:00:00+00:00",
+    "target_semantics": "The monthly wheat-price return for Global wheat price in September 2024 will be at least -6.987 percent.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The historical analysis identified several regional price increases (Poland, EU, US) as indicators of positive wheat price momentum.",
+      "A potential La Niña event was also noted as a prospective risk to wheat harvests and prices, though its realized impact was not established.",
+      "These factors were historically linked to a general positive momentum signal for wheat prices, which then bridged to the target metric."
+    ],
+    "counterevidence": "No forecast-time evidence was provided to support or contradict the identified drivers or their link to the target. The historical DAG notes that regional price indicators do not directly measure the global series and that La Niña's effect was prospective, not realized.",
+    "prospective_target_estimate": "The available information does not allow for a confident estimate of the target metric's value.",
+    "option_mapping": "The 'yes' option corresponds to a monthly wheat-price return of at least -6.987 percent. The 'no' option corresponds to a return less than -6.987 percent.",
+    "uncertainty": "The lack of forecast-time evidence means that the predictive power of the historical drivers cannot be assessed. The historical DAG explicitly states that most mechanism evidence is regional and that prospective risks like La Niña do not prove realized supply shocks, introducing significant uncertainty about the current relevance and impact of these factors.",
+    "dag_derived_lesson": "Regional price indicators and prospective supply risks may suggest momentum, but their connection to a global target metric requires direct, current evidence for each step in the causal chain. The absence of such evidence preserves uncertainty regarding the target's outcome."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

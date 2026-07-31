@@ -1,0 +1,44 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_us_retail_sales_monthly_growth_2023_01",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "macro / consumption",
+      "target_operation": "monthly retail-sales growth",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2023-01-31, will the monthly retail-sales growth for United States retail sales in 2023-01 be at least -0.712 percent?",
+    "historical_cutoff": "2023-01-31T00:00:00+00:00",
+    "target_semantics": "The monthly growth rate of United States retail sales for January 2023.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "ev_e7a5445cbb422dd4",
+        "takeaway": "US retail sales fell 0.7 percent in December 2020.",
+        "why_predictive": "This article provides a recent historical data point for US retail sales, indicating a negative growth trend in the preceding month."
+      },
+      {
+        "article_id": "ev_e1373ef89e3a37df",
+        "takeaway": "Analysis of retail sales growth can be done on a quarterly basis, annualized, and adjusted for inflation.",
+        "why_predictive": "This article discusses methodologies for analyzing retail sales, suggesting that a simple monthly figure might not capture the full picture, but it does not provide specific data for the target period."
+      }
+    ],
+    "expert_reasoning": [
+      "The target is the monthly retail-sales growth for the United States in January 2023, with a threshold of -0.712 percent.",
+      "A recent historical data point from December 2020 shows a retail sales drop of 0.7 percent (ev_e7a5445cbb422dd4).",
+      "While the article ev_e1373ef89e3a37df discusses methods of analyzing retail sales, it does not provide specific data relevant to the January 2023 forecast period.",
+      "The available evidence points to a recent negative trend in retail sales, suggesting a potential for continued decline or stagnation."
+    ],
+    "counterevidence": "The article ev_e7a5445cbb422dd4, while showing a 0.7% drop in December 2020, does not provide data for January 2023 or any subsequent months leading up to the cutoff. The article ev_e1373ef89e3a37df discusses analytical methods but offers no specific data for the target period.",
+    "prospective_target_estimate": "Given the recent negative trend indicated by the December 2020 data (ev_e7a5445cbb422dd4), and the lack of any evidence suggesting a significant rebound for January 2023, the growth is likely to be at or below -0.712 percent.",
+    "option_mapping": "The evidence suggests a negative growth rate, making 'no' (i.e., growth less than -0.712 percent) the more probable outcome.",
+    "uncertainty": "The primary piece of evidence (ev_e7a5445cbb422dd4) is from January 2021, which is significantly before the January 2023 target period. There is no direct information about retail sales trends in late 2022 or early 2023. The article ev_e1373ef89e3a37df is about analytical methods and not current data.",
+    "dag_derived_lesson": "When forecasting a metric, recent historical data points indicating a trend are valuable, but their predictive power diminishes significantly with temporal distance. The absence of data closer to the target period introduces substantial uncertainty, even if the older data suggests a particular direction."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

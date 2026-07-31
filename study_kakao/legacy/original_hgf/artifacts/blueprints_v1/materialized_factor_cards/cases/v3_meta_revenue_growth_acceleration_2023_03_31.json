@@ -1,0 +1,195 @@
+{
+  "schema_version": "hgf_blueprint_v1",
+  "question_id": "v3_meta_revenue_growth_acceleration_2023_03_31",
+  "target_definition": {
+    "metric": "Meta quarterly revenue-growth acceleration",
+    "unit_or_option_space": "percentage-point acceleration",
+    "forecast_horizon": "target quarter"
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Cost discipline, management guidance, advertising-market conditions, and shareholder actions provide limited reusable context for Meta revenue acceleration.",
+    "weaknesses": [
+      "The graph provides no supported engagement, pricing, competition, or foreign-exchange path.",
+      "Earnings-release, realized-revenue, guidance-reaction, and option links are excluded, leaving a weak bridge."
+    ]
+  },
+  "search_factors": [
+    {
+      "factor": "Advertising-market conditions",
+      "why_search": "Advertising demand and pricing drive revenue growth.",
+      "preferred_source_types": [
+        "industry ad-spend data",
+        "company disclosures"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230131_008_087b1d78"
+      ]
+    },
+    {
+      "factor": "Cost discipline",
+      "why_search": "Efficiency actions can affect capacity and operating focus, though not directly revenue.",
+      "preferred_source_types": [
+        "company filings",
+        "management commentary"
+      ],
+      "source_event_ids": [
+        "evt_business_20221001_010_2252213f",
+        "evt_business_20221109_006_00d67b4e",
+        "evt_business_20230201_007_6775def3"
+      ]
+    },
+    {
+      "factor": "Management outlook",
+      "why_search": "Forward guidance can summarize management's demand outlook but must be independently checked.",
+      "preferred_source_types": [
+        "company guidance",
+        "earnings-call transcript"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230201_003_e680097f"
+      ]
+    },
+    {
+      "factor": "Capital allocation",
+      "why_search": "Buybacks can signal management confidence but do not establish revenue demand.",
+      "preferred_source_types": [
+        "company filing"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230201_004_71b1eecb"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "ad_conditions",
+      "role": "baseline",
+      "factor": "Advertising-market conditions",
+      "mechanism": "Weak advertising demand or rising costs can constrain revenue growth.",
+      "expected_direction": "down",
+      "evidence_requirement": "Industry ad spending and advertiser budgets weaken.",
+      "contradiction_signal": "Ad demand and pricing improve.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230131_008_087b1d78",
+        "evt_finance_20230131_001_79cbf628"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_meta_revenue_growth_acceleration_2023_03_31_20260725_044604_001_969a5f5c"
+      ]
+    },
+    {
+      "id": "cost_discipline",
+      "role": "driver",
+      "factor": "Cost discipline",
+      "mechanism": "Efficiency actions can improve execution focus but do not by themselves prove stronger revenue demand.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Operational changes coincide with advertiser demand improvement.",
+      "contradiction_signal": "Cost cuts impair product or sales capacity.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_business_20221109_006_00d67b4e",
+        "evt_business_20230201_007_6775def3"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_meta_revenue_growth_acceleration_2023_03_31_20260725_044604_003_2ddaedf5"
+      ]
+    },
+    {
+      "id": "efficiency",
+      "role": "mediator",
+      "factor": "Management efficiency focus",
+      "mechanism": "An explicit efficiency program can reinforce cost discipline.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Management actions are reflected in operating metrics.",
+      "contradiction_signal": "Execution deteriorates.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_business_20230201_005_ccd1f870",
+        "evt_business_20230201_007_6775def3"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_meta_revenue_growth_acceleration_2023_03_31_20260725_044604_004_aafa0503"
+      ]
+    },
+    {
+      "id": "outlook",
+      "role": "counterevidence",
+      "factor": "Management outlook",
+      "mechanism": "Positive guidance must be tested against independent ad-demand, engagement, pricing, competition, and FX evidence.",
+      "expected_direction": "up",
+      "evidence_requirement": "Guidance is corroborated by external operating indicators.",
+      "contradiction_signal": "External demand indicators diverge.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230201_003_e680097f"
+      ],
+      "source_edge_ids": []
+    },
+    {
+      "id": "bridge",
+      "role": "target_bridge",
+      "factor": "Advertising demand into revenue growth",
+      "mechanism": "Advertising demand, pricing, engagement, competitive conditions, and foreign exchange determine revenue-growth acceleration; efficiency is only an indirect modifier.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Reconcile ad demand, pricing, engagement, competition, and FX with company revenue disclosures.",
+      "contradiction_signal": "Revenue growth diverges from those operating drivers.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230131_008_087b1d78",
+        "evt_business_20230201_007_6775def3"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_meta_revenue_growth_acceleration_2023_03_31_20260725_044604_003_2ddaedf5"
+      ]
+    }
+  ],
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "ad_conditions",
+        "bridge"
+      ],
+      "generalized_mechanism": "Advertising demand and pricing directly shape revenue growth.",
+      "expected_direction": "mixed",
+      "applicability_conditions": [
+        "Ad demand is independently observed."
+      ],
+      "failure_conditions": [
+        "Company-specific factors dominate."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "cost_discipline",
+        "efficiency",
+        "bridge"
+      ],
+      "generalized_mechanism": "Efficiency can modify execution but cannot substitute for advertiser demand.",
+      "expected_direction": "mixed",
+      "applicability_conditions": [
+        "Cost actions preserve commercial capacity."
+      ],
+      "failure_conditions": [
+        "Cuts impair growth investment."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "Management confidence is not corroborated by advertising demand.",
+      "discriminating_evidence": "Compare guidance with ad-spend, engagement, pricing, competition, and FX data.",
+      "source_event_ids": [
+        "evt_finance_20230201_003_e680097f",
+        "evt_finance_20230131_008_087b1d78"
+      ]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Are ad demand and pricing improving?",
+    "Do engagement and competition support the demand view?",
+    "Does FX change reported growth?",
+    "Do efficiency actions preserve commercial capacity?"
+  ]
+}

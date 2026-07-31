@@ -1,0 +1,55 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_us_2y_yield_monthly_change_2024_12",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_market",
+      "target_operation": "yield_change_range",
+      "option_geometry": "ordered_categorical"
+    },
+    "historical_question": "As of 2024-12-01, which range will the monthly 2-year yield change for United States 2-year Treasury yield in 2024-12 fall into?",
+    "historical_cutoff": "2024-12-01T00:00:00+00:00",
+    "target_semantics": "The monthly change in the United States 2-year Treasury yield for December 2024.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20241115_004_923fc316",
+        "takeaway": "The Federal Reserve, as communicated by Chair Powell, is not in a hurry to cut rates, leading to a jump in the 10-year Treasury yield.",
+        "why_predictive": "This suggests a persistent 'higher for longer' interest rate environment, which would likely keep upward pressure on shorter-term yields."
+      },
+      {
+        "article_id": "art_finance_20240722_012_6b65e11e",
+        "takeaway": "The Federal Reserve's July Monetary Policy Report indicated a focus on bringing inflation back to target, implying a cautious approach to monetary policy.",
+        "why_predictive": "A cautious Fed stance, prioritizing inflation control, supports the idea that rate cuts might be delayed, thus influencing yield expectations."
+      },
+      {
+        "article_id": "art_finance_20240126_009_4bfbf592",
+        "takeaway": "The Fed's preferred inflation gauge (PCE) showed a 2.9% year-over-year increase in December, indicating inflation remains above the Fed's 2% target.",
+        "why_predictive": "Sticky inflation above the target necessitates a more restrictive monetary policy, which would tend to keep yields elevated or rising."
+      },
+      {
+        "article_id": "art_finance_20240201_002_0dbae6dc",
+        "takeaway": "Following a Fed rate decision and policy guidance, the 10-year Treasury yield dipped, but the underlying message from the Fed often implies a careful approach to easing.",
+        "why_predictive": "While short-term reactions can vary, the Fed's guidance is key to longer-term rate expectations, suggesting that any easing would be gradual and data-dependent."
+      }
+    ],
+    "expert_reasoning": [
+      "The Federal Reserve's communication, particularly from Chair Powell, indicates a reluctance to rush into rate cuts, suggesting a 'higher for longer' interest rate scenario (art_finance_20241115_004_923fc316).",
+      "Inflation, as measured by the PCE, remains above the Fed's 2% target (art_finance_20240126_009_4bfbf592), reinforcing the Fed's cautious stance on monetary policy.",
+      "The Fed's July Monetary Policy Report also highlighted a commitment to returning inflation to target, implying a data-dependent and potentially slow path to easing (art_finance_20240722_012_6b65e11e).",
+      "This combination of persistent inflation and a cautious Fed policy path suggests that expectations for short-term rates will remain elevated, potentially leading to an increase in the 2-year Treasury yield.",
+      "While short-term market reactions can fluctuate (art_finance_20240201_002_0dbae6dc), the overarching message from the Fed points towards sustained policy caution."
+    ],
+    "counterevidence": "There is no direct counterevidence in the provided articles suggesting a rapid pivot to aggressive rate cuts or a significant decline in inflation that would immediately lower yield expectations.",
+    "prospective_target_estimate": "above recent range",
+    "option_mapping": "The evidence suggests that the Federal Reserve's commitment to fighting inflation and its cautious communication will likely keep upward pressure on short-term Treasury yields, pushing the monthly change for December 2024 above the recent range.",
+    "uncertainty": "The exact magnitude of the yield change is subject to incoming economic data, shifts in market sentiment, and the precise timing and pace of any future Fed policy adjustments, which are not fully detailed in the provided articles.",
+    "dag_derived_lesson": "Persistent inflation and resilient economic activity, coupled with cautious central bank communication, tend to support expectations of sustained higher policy rates, which can translate into upward pressure on shorter-term sovereign debt yields. Conversely, signs of broad disinflation or weakening economic growth could signal a shift towards easing, potentially lowering yields. Fiscal risks can also independently influence rate expectations, sometimes counteracting policy easing narratives."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

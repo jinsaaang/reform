@@ -1,0 +1,228 @@
+{
+  "schema_version": "hgf_blueprint_v1",
+  "question_id": "v3_amzn_revenue_growth_acceleration_2023_12_31",
+  "target_definition": {
+    "metric": "Quarterly year-over-year revenue-growth acceleration",
+    "unit_or_option_space": "Percentage-point change in growth rate",
+    "forecast_horizon": "Fiscal quarter ending 2023-12-31"
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Consumer, cloud, and advertising drivers form a diversified revenue framework.",
+    "weaknesses": [
+      "Several observations arrived with the earnings release.",
+      "The cloud-slowdown concern is not contemporaneous with all drivers."
+    ]
+  },
+  "search_factors": [
+    {
+      "factor": "Holiday consumer spending",
+      "why_search": "It drives core e-commerce volume.",
+      "preferred_source_types": [
+        "retail sales data",
+        "company disclosures"
+      ],
+      "source_event_ids": [
+        "evt_business_20231231_009_9336ec18"
+      ]
+    },
+    {
+      "factor": "Holiday e-commerce sales",
+      "why_search": "Core commerce performance contributes to consolidated revenue.",
+      "preferred_source_types": [
+        "company earnings release",
+        "channel data"
+      ],
+      "source_event_ids": [
+        "evt_business_20231231_003_703c1cfa"
+      ]
+    },
+    {
+      "factor": "AWS demand",
+      "why_search": "Cloud growth is a material revenue driver.",
+      "preferred_source_types": [
+        "segment disclosure",
+        "enterprise surveys"
+      ],
+      "source_event_ids": [
+        "evt_tech_20231231_007_23ab57a0",
+        "evt_tech_20240201_002_b4145237"
+      ]
+    },
+    {
+      "factor": "Advertising growth",
+      "why_search": "Advertising diversifies top-line growth.",
+      "preferred_source_types": [
+        "segment disclosure"
+      ],
+      "source_event_ids": [
+        "evt_business_20240201_004_f2b834b3"
+      ]
+    },
+    {
+      "factor": "Cloud-spending risk",
+      "why_search": "Enterprise optimization can offset cloud strength.",
+      "preferred_source_types": [
+        "enterprise surveys",
+        "company commentary"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240119_006_14d0fb10"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "consumer_spending",
+      "role": "baseline",
+      "factor": "Holiday consumer spending",
+      "mechanism": "Consumer spending supports marketplace and retail demand.",
+      "expected_direction": "up",
+      "evidence_requirement": "Check holiday retail and platform activity.",
+      "contradiction_signal": "Weak discretionary spending.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_business_20231231_009_9336ec18"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_amzn_revenue_growth_acceleration_2023_12_31_20260724_184819_008_b4b8364b"
+      ]
+    },
+    {
+      "id": "commerce",
+      "role": "driver",
+      "factor": "Holiday e-commerce sales",
+      "mechanism": "Strong holiday sales lift consolidated revenue.",
+      "expected_direction": "up",
+      "evidence_requirement": "Verify holiday sales growth.",
+      "contradiction_signal": "Slower marketplace activity.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_business_20231231_003_703c1cfa"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_amzn_revenue_growth_acceleration_2023_12_31_20260724_184819_003_6288005d"
+      ]
+    },
+    {
+      "id": "cloud",
+      "role": "driver",
+      "factor": "AWS demand",
+      "mechanism": "Enterprise AI adoption can strengthen cloud growth.",
+      "expected_direction": "up",
+      "evidence_requirement": "Verify cloud bookings and AI adoption.",
+      "contradiction_signal": "Customer optimization persists.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_tech_20231231_007_23ab57a0",
+        "evt_tech_20240201_002_b4145237"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_amzn_revenue_growth_acceleration_2023_12_31_20260724_184819_006_bfbc8da3",
+        "hyp_v3_amzn_revenue_growth_acceleration_2023_12_31_20260724_184819_002_67a60200"
+      ]
+    },
+    {
+      "id": "ad_growth",
+      "role": "mediator",
+      "factor": "Advertising growth",
+      "mechanism": "Advertising expansion adds a separate revenue engine.",
+      "expected_direction": "up",
+      "evidence_requirement": "Check advertising sales trend.",
+      "contradiction_signal": "Advertising growth decelerates.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_business_20240129_005_7a299ed9",
+        "evt_business_20240201_004_f2b834b3"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_amzn_revenue_growth_acceleration_2023_12_31_20260724_184819_005_34c51ec1",
+        "hyp_v3_amzn_revenue_growth_acceleration_2023_12_31_20260724_184819_004_f1210c76"
+      ]
+    },
+    {
+      "id": "cloud_risk",
+      "role": "counterevidence",
+      "factor": "Cloud-spending risk",
+      "mechanism": "Enterprise cost controls can slow AWS growth.",
+      "expected_direction": "down",
+      "evidence_requirement": "Check customer optimization commentary.",
+      "contradiction_signal": "Rising cloud usage or bookings.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_finance_20240119_006_14d0fb10"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_amzn_revenue_growth_acceleration_2023_12_31_20260724_184819_007_960874b4"
+      ]
+    },
+    {
+      "id": "target_bridge",
+      "role": "target_bridge",
+      "factor": "Diversified revenue mix",
+      "mechanism": "Commerce, cloud, and advertising combine into consolidated growth-rate change.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Calculate sequential change in year-over-year consolidated revenue growth.",
+      "contradiction_signal": "Segment trends do not reconcile to consolidated revenue.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_business_20231231_003_703c1cfa",
+        "evt_tech_20240201_002_b4145237",
+        "evt_business_20240201_004_f2b834b3"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_amzn_revenue_growth_acceleration_2023_12_31_20260724_184819_002_67a60200",
+        "hyp_v3_amzn_revenue_growth_acceleration_2023_12_31_20260724_184819_003_6288005d",
+        "hyp_v3_amzn_revenue_growth_acceleration_2023_12_31_20260724_184819_004_f1210c76"
+      ]
+    }
+  ],
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "consumer_spending",
+        "commerce",
+        "target_bridge"
+      ],
+      "generalized_mechanism": "Holiday consumer demand can improve consolidated growth momentum.",
+      "expected_direction": "up",
+      "applicability_conditions": [
+        "Commerce remains a material revenue contributor."
+      ],
+      "failure_conditions": [
+        "Other segments weaken sharply."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "cloud",
+        "ad_growth",
+        "target_bridge"
+      ],
+      "generalized_mechanism": "Cloud and advertising expansion can diversify revenue acceleration.",
+      "expected_direction": "up",
+      "applicability_conditions": [
+        "Both businesses sustain growth."
+      ],
+      "failure_conditions": [
+        "Cloud optimization or ad demand weakens."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "Cloud cost controls offset consumer and advertising strength.",
+      "discriminating_evidence": "Compare AWS usage indicators with retail and advertising sales.",
+      "source_event_ids": [
+        "evt_finance_20240119_006_14d0fb10",
+        "evt_business_20231231_003_703c1cfa",
+        "evt_business_20240201_004_f2b834b3"
+      ]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Is holiday spending broad-based?",
+    "Are cloud indicators improving independently?",
+    "Does advertising strength persist?"
+  ]
+}

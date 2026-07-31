@@ -1,0 +1,54 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_us_5y_breakeven_monthly_change_2023_07",
+  "blueprint_sha256": "08bc591d7e2cb5dbdd70ab45acfbc05aab0dade1af850dd0b3a81e2fd43b2a6e",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "inflation_expectations",
+      "target_operation": "change",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2023-07-01, which range will the monthly 5-year breakeven change for United States 5-year breakeven inflation rate in 2023-07 fall into?",
+    "historical_cutoff": "2023-07-01T00:00:00+00:00",
+    "target_semantics": "The change in the United States 5-year breakeven inflation rate for July 2023.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20230110_002_0044d463",
+        "takeaway": "Global economic prospects indicate a sharp, long-lasting slowdown.",
+        "why_predictive": "A global slowdown can influence domestic demand and supply, potentially impacting inflation expectations and monetary policy."
+      },
+      {
+        "article_id": "art_finance_20230106_003_69ef7510",
+        "takeaway": "Concerns about a potential 'hard landing' for the economy are present.",
+        "why_predictive": "Economic hard landing concerns can lead to shifts in monetary policy expectations, influencing inflation expectations."
+      },
+      {
+        "article_id": "art_finance_20220222_004_9b40e74a",
+        "takeaway": "Bond prices and yields move in opposite directions.",
+        "why_predictive": "Understanding this dynamic is crucial for interpreting signals from the bond market, which are related to inflation expectations."
+      },
+      {
+        "article_id": "art_finance_20211005_002_5b2b1c16",
+        "takeaway": "Updates on real interest rates and Federal Reserve commentary (Powell) are key indicators.",
+        "why_predictive": "These factors directly influence the Fed's stance on inflation and future monetary policy, impacting breakeven rates."
+      }
+    ],
+    "expert_reasoning": [
+      "The DAG suggests that real interest rates and Fed commentary (checkpoint_1) influence the Fed's stance on inflation (checkpoint_5), which in turn affects monetary policy (checkpoint_6) and ultimately the breakeven inflation rate change (target_bridge).",
+      "Similarly, concerns about a hard landing (checkpoint_3) and global slowdown (checkpoint_4) may impact PCE releases (checkpoint_7), which could also feed into the target metric.",
+      "The relationship between bond market dynamics (checkpoint_2), US Treasury bill rates (checkpoint_8), and the target metric (target_bridge) is also a potential pathway."
+    ],
+    "counterevidence": "No specific forecast-time article directly contradicts the general mechanisms identified in the DAG. However, the historical support for each checkpoint is noted as 'weak', indicating a lack of strong, direct evidence linking these factors to the target metric at the time.",
+    "prospective_target_estimate": "The provided information does not offer sufficient quantitative detail to estimate a specific range for the monthly 5-year breakeven change. The evidence points to potential downward pressures from global slowdown and hard landing concerns, but also to Fed actions aimed at controlling inflation.",
+    "option_mapping": "Without a clear directional signal or magnitude from the forecast-time evidence, it is not possible to map the prospective estimate to 'below recent range', 'within recent range', or 'above recent range'.",
+    "uncertainty": "Significant uncertainty exists due to the weak historical support for all identified drivers and mediators. The interplay between global economic slowdown, potential Fed tightening, and inflation expectations is complex and not clearly resolved by the available forecast-time articles.",
+    "dag_derived_lesson": "When evaluating a target metric influenced by monetary policy and economic conditions, it is crucial to assess the current relevance and evidential support for each causal link in a historical chain. Weak support for intermediate factors necessitates caution in projecting outcomes, even if the overall causal structure appears plausible."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

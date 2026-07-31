@@ -1,0 +1,32 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_global_wheat_monthly_return_2023_01",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial",
+      "target_operation": "return",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2023-01-01, will the monthly wheat-price return for Global wheat price in 2023-01 be at least -0.259 percent?",
+    "historical_cutoff": "2023-01-01T00:00:00+00:00",
+    "target_semantics": "The monthly wheat-price return for Global wheat price in January 2023 will be greater than or equal to -0.259 percent.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The IGC wheat index declined 2.6% month over month, which is a strong indicator of downward price pressure.",
+      "Competitive wheat supplies from Russia and Ukraine are a historically relevant factor, but current evidence regarding their specific impact on this period is weak.",
+      "The market-index and futures sources corroborate the general direction of price movement but do not establish the exact FRED-series return magnitude."
+    ],
+    "counterevidence": "No specific counterevidence was identified in the provided articles that would directly contradict the downward pressure indicated by the IGC wheat index.",
+    "prospective_target_estimate": "The available evidence suggests a potential for a negative wheat price return, but the exact magnitude is uncertain.",
+    "option_mapping": "Given the strong signal from the IGC wheat index decline, the 'no' option (return less than -0.259 percent) appears more likely, but the weak evidence for other drivers and the lack of precise magnitude prevent a definitive conclusion.",
+    "uncertainty": "The weak historical support for competitive wheat supplies and the inability of market indices to establish exact return magnitudes introduce significant uncertainty. The precise impact of these factors on the target metric remains unclear.",
+    "dag_derived_lesson": "When evaluating a target metric, assess the strength of evidence for each contributing factor. A strong signal from one factor may be insufficient if other relevant factors have weak or contradictory evidence, or if the mechanism linking evidence to the target metric is not precisely established."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

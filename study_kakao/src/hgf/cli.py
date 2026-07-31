@@ -22,11 +22,14 @@ def package_working_directory() -> Iterator[None]:
 
 
 def replay_main() -> None:
-    """Run HGF with the fixed exemplar artifacts."""
-    from .runner import main
+    """Run canonical HGF through the shared paper-method engine."""
+    from .baselines import main
 
     with package_working_directory():
-        main()
+        main(
+            default_methods=("hgf",),
+            default_output_dir=Path("runs/hgf"),
+        )
 
 
 def main_table_main() -> None:

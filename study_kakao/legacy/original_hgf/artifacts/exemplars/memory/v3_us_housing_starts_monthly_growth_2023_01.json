@@ -1,0 +1,50 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_us_housing_starts_monthly_growth_2023_01",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "macro / housing",
+      "target_operation": "monthly change",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2023-01-31, which range will the monthly housing-starts growth for United States housing starts in 2023-01 fall into?",
+    "historical_cutoff": "2023-01-31T00:00:00+00:00",
+    "target_semantics": "United States monthly housing-starts growth in 2023-01",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20210924_002_c3f751e1",
+        "takeaway": "Housing market expected to face headwinds into 2022.",
+        "why_predictive": "Suggests a potentially prolonged period of subdued housing activity due to ongoing hindrances."
+      },
+      {
+        "article_id": "art_finance_20110216_002_e9302307",
+        "takeaway": "US housing starts surged in January 2011.",
+        "why_predictive": "Provides a historical example of a strong January surge in housing starts, though from a different economic context."
+      },
+      {
+        "article_id": "art_finance_20220415_002_b6f392e9",
+        "takeaway": "Bond market selloff continues.",
+        "why_predictive": "Indicates rising interest rates, which typically dampen housing demand and construction."
+      }
+    ],
+    "expert_reasoning": [
+      "The housing market has faced headwinds, with expectations of these persisting into 2022 (art_finance_20210924_002_c3f751e1).",
+      "Rising interest rates, as indicated by a continuing bond market selloff (art_finance_20220415_002_b6f392e9), are a known dampener of housing demand and construction.",
+      "While there's a historical precedent for a January surge in housing starts (art_finance_20110216_002_e9302307), the current economic environment, characterized by rate hikes and persistent headwinds, suggests this is less likely to be the dominant factor.",
+      "The baseline for housing starts entering January 2023 was weaker due to late 2022 conditions, and elevated rates and uncertainty create headwinds.",
+      "Despite these headwinds, there is evidence that total housing starts rebounded in January 2023, suggesting builders may have responded to perceived demand, potentially leading to growth."
+    ],
+    "counterevidence": "The provided articles do not offer direct counterevidence to the specific monthly growth rate for January 2023. The historical context of a January surge (art_finance_20110216_002_e9302307) is from a different economic period and may not be directly comparable.",
+    "prospective_target_estimate": "within recent range",
+    "option_mapping": "The evidence suggests a mixed picture. While headwinds from rising rates and prior weaker conditions exist, a rebound in total housing starts in January 2023, potentially driven by builders responding to demand, points towards a moderate outcome. This aligns with the 'within recent range' option, as it balances the negative pressures with a potential for recovery.",
+    "uncertainty": "The historical support for the key drivers is weak to medium. The exact magnitude of the rebound in January 2023 and its net effect against persistent headwinds (like rising interest rates) is not precisely quantified by the provided articles. The historical example of a January surge (art_finance_20110216_002_e9302307) is from a significantly different economic climate.",
+    "dag_derived_lesson": "When forecasting a target metric, consider the interplay between persistent headwinds and potential short-term rebounds. Acknowledge historical precedents but weigh them against current economic conditions, especially concerning interest rates and market sentiment. Weak historical support for individual drivers necessitates a cautious approach to the final estimate."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

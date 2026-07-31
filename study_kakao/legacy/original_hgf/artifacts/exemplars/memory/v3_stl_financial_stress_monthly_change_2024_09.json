@@ -1,0 +1,40 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_stl_financial_stress_monthly_change_2024_09",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_stress_index",
+      "target_operation": "change",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2024-09-01, which range will the monthly financial-stress-index change for St. Louis Fed Financial Stress Index in 2024-09 fall into?",
+    "historical_cutoff": "2024-09-01T00:00:00+00:00",
+    "target_semantics": "The monthly change in the St. Louis Fed Financial Stress Index for September 2024.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "ev_2a6bf619e013fca7",
+        "takeaway": "The St. Louis Fed Financial Stress Index (STLFSI) is influenced by factors such as transitions in benchmark interest rates (e.g., LIBOR to SOFR) and Federal Reserve tightening policies.",
+        "why_predictive": "This article provides foundational knowledge about the STLFSI's construction and the types of macroeconomic policies and market shifts that can affect its movements, suggesting that changes in financial conditions and monetary policy are key drivers."
+      }
+    ],
+    "expert_reasoning": [
+      "The St. Louis Fed Financial Stress Index (STLFSI) is sensitive to shifts in financial conditions and monetary policy (ev_2a6bf619e013fca7).",
+      "Historical drivers indicate that August 2024 experienced substantial market volatility and deleveraging pressures (checkpoint_1, checkpoint_2).",
+      "While consumer sentiment improved and inflation expectations eased (checkpoint_3), these factors might be counteracted by market turbulence.",
+      "The combination of market volatility and deleveraging pressures could plausibly lead to upward stress in September (checkpoint_4).",
+      "The aggregate effect of these drivers suggests a potential for increased financial stress."
+    ],
+    "counterevidence": "No specific counterevidence was identified in the provided forecast-time articles that directly contradicts the potential for increased financial stress. The articles focus on the general drivers of the index rather than specific monthly movements or counteracting positive economic news.",
+    "prospective_target_estimate": "The monthly financial-stress-index change for September 2024 is likely to be within the recent range, but with a possibility of exceeding it due to ongoing market pressures.",
+    "option_mapping": "The estimate suggests the index change will likely fall 'within recent range', with a non-negligible chance of being 'above recent range'.",
+    "uncertainty": "The exact direction and magnitude of the index change are uncertain due to the mixed signals from market volatility versus improving consumer sentiment and inflation expectations. The historical support for some drivers is strong, but for others, it is weak, indicating potential for unpredictable outcomes.",
+    "dag_derived_lesson": "Significant market volatility and deleveraging pressures can exert upward stress on financial stress indexes, potentially overriding positive signals from consumer sentiment or inflation expectations. The interplay between these factors requires careful consideration when forecasting index movements."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

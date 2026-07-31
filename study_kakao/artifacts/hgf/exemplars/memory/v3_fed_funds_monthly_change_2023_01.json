@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_fed_funds_monthly_change_2023_01",
+  "blueprint_sha256": "7ae563c5a3774960fd80de78eee91bf007d5bce7f0a811b8498eb4f69193d2d2",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_policy",
+      "target_operation": "rate_change",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2023-01-01, which range will the monthly federal-funds-rate change for Federal Reserve effective federal funds rate in 2023-01 fall into?",
+    "historical_cutoff": "2023-01-01T00:00:00+00:00",
+    "target_semantics": "The monthly change in the Federal Reserve's effective federal funds rate for January 2023.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The DAG indicates that persistent high inflation (checkpoint_1) historically pressured rate hikes, but the Fed may have maintained rates. This suggests a potential conflict or mixed signal regarding the rate change.",
+      "Signs of inflation easing (checkpoint_2, checkpoint_3) are presented as drivers that could lead to a slower pace of rate hikes, influencing market expectations (checkpoint_4, checkpoint_5) and potentially leading the Fed to maintain the rate (checkpoint_6).",
+      "The FOMC meeting (checkpoint_7) is a direct driver for the rate decision, but its specific outcome in relation to the target range is not detailed, requiring re-testing of its link to the target metric."
+    ],
+    "counterevidence": "Persistent high inflation created pressure for rate hikes, but the Fed chose to maintain the rate in January 2023.",
+    "prospective_target_estimate": "The evidence suggests a potential for the rate to remain within the recent range, given signs of inflation easing and market expectations of a slower pace of hikes, which could lead the Fed to maintain the rate. However, the historical counter-evidence of persistent high inflation creating pressure for hikes introduces uncertainty.",
+    "option_mapping": "The target metric is the monthly federal-funds-rate change. The options are 'below recent range' (change < 0.41), 'within recent range' (0.41 <= change < 0.552), and 'above recent range' (change >= 0.552). The DAG suggests a potential for the rate to be maintained, which would imply a smaller change, likely falling within or below the recent range, but the counterevidence of inflation pressure complicates this.",
+    "uncertainty": "The historical support for all checkpoints is weak. There is no forecast-time evidence provided to confirm or deny the mechanisms described in the DAG. The specific outcome of the FOMC meeting and its precise impact on the rate change are not detailed, and the relationship between easing inflation and the actual rate change requires re-testing.",
+    "dag_derived_lesson": "When evaluating policy rate changes, consider the interplay between persistent inflationary pressures and emerging signs of inflation easing. Market expectations and official committee meetings are key mediators, but their influence can be counteracted by underlying economic conditions. The strength of evidence supporting each causal link is critical for accurate forecasting."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

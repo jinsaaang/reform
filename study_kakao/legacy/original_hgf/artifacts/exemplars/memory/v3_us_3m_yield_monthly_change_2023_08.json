@@ -1,0 +1,43 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_us_3m_yield_monthly_change_2023_08",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial",
+      "target_operation": "change_in_value",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2023-08-01, will the monthly 3-month yield change for United States 3-month Treasury yield in 2023-08 be at least 0.185 percentage points?",
+    "historical_cutoff": "2023-08-01T00:00:00+00:00",
+    "target_semantics": "The monthly change in the US 3-month Treasury yield for August 2023.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "ev_e6998560f77a5dac",
+        "takeaway": "By midyear 2023, yields had risen again due to economic resilience, setting the stage for the August environment.",
+        "why_predictive": "This establishes a baseline trend of rising yields leading into the target month."
+      },
+      {
+        "article_id": "ev_25605139c5ba8b9c",
+        "takeaway": "A 'soft CPI surprise' in mid-July pushed down USD forward curves, suggesting a downward pressure on future rate expectations.",
+        "why_predictive": "This indicates a potential dampening effect on future yield movements due to inflation data."
+      }
+    ],
+    "expert_reasoning": [
+      "The US 3-month Treasury yield had been rising due to economic resilience leading up to August 2023 (ev_e6998560f77a5dac).",
+      "However, a recent 'soft CPI surprise' in mid-July exerted downward pressure on forward curves, implying a potential decrease in future rate expectations (ev_25605139c5ba8b9c).",
+      "These opposing forces create uncertainty regarding the direction and magnitude of the yield change for August 2023."
+    ],
+    "counterevidence": "The 'soft CPI surprise' in mid-July pushing down USD forward curves (ev_25605139c5ba8b9c) suggests a potential downward pressure on yields, contradicting the general upward trend.",
+    "prospective_target_estimate": "The conflicting signals of economic resilience pushing yields up and a soft CPI surprise pushing them down make it difficult to definitively estimate the monthly change. The target change is uncertain.",
+    "option_mapping": "Given the uncertainty, neither 'yes' nor 'no' can be confidently selected. The evidence does not strongly support a change of at least 0.185 percentage points.",
+    "uncertainty": "The evidence presents conflicting signals: economic resilience suggests upward pressure on yields, while a recent inflation surprise suggests downward pressure. The magnitude and net effect of these forces on the 3-month Treasury yield in August 2023 are unclear.",
+    "dag_derived_lesson": "When assessing a target metric influenced by both persistent economic conditions and recent data surprises, evaluate the relative strength and timing of each factor. A recent surprise that contradicts an established trend introduces significant uncertainty, potentially weakening the predictive power of the trend alone."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

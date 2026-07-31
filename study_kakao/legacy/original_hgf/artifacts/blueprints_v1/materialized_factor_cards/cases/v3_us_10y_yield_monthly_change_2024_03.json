@@ -1,0 +1,216 @@
+{
+  "schema_version": "hgf_blueprint_v1",
+  "question_id": "v3_us_10y_yield_monthly_change_2024_03",
+  "target_definition": {
+    "metric": "United States 10-year Treasury yield monthly change",
+    "unit_or_option_space": "percentage points over March 2024",
+    "forecast_horizon": "monthly observation ending 2024-03"
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "The graph provides a reusable inflation-growth-policy-expectations framework for monitoring Treasury-yield changes.",
+    "weaknesses": [
+      "Most policy and market observations occur after the cutoff.",
+      "Political commentary is weak evidence for market pricing."
+    ]
+  },
+  "search_factors": [
+    {
+      "factor": "Inflation and economic resilience",
+      "why_search": "Persistent inflation and strong activity affect the policy path.",
+      "preferred_source_types": [
+        "economic release",
+        "central-bank communication"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240301_015_ad565fdc",
+        "evt_finance_20240315_020_92c00171"
+      ]
+    },
+    {
+      "factor": "Federal Reserve policy signals",
+      "why_search": "Policy projections shape expected short rates and longer yields.",
+      "preferred_source_types": [
+        "FOMC statement",
+        "FOMC projections"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240308_011_07c108ff",
+        "evt_finance_20240320_012_3d98005d"
+      ]
+    },
+    {
+      "factor": "Rate-cut expectations",
+      "why_search": "Changes in expected easing alter Treasury demand and yield pricing.",
+      "preferred_source_types": [
+        "rates market data",
+        "analyst commentary"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240308_016_f47af588",
+        "evt_finance_20240320_021_b7a818e8"
+      ]
+    },
+    {
+      "factor": "Yield-curve and bond-market positioning",
+      "why_search": "Curve conditions and market positioning can amplify yield moves.",
+      "preferred_source_types": [
+        "Treasury market data",
+        "market commentary"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240321_013_e53c1269",
+        "evt_finance_20240321_018_c783bf78"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "macro_resilience",
+      "role": "baseline",
+      "factor": "Inflation and economic resilience",
+      "mechanism": "Persistent inflation and resilient activity reduce the urgency of easing.",
+      "expected_direction": "up",
+      "evidence_requirement": "Inflation and activity releases remain firmer than policy targets.",
+      "contradiction_signal": "Disinflation or activity weakness broadens.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_finance_20240301_015_ad565fdc",
+        "evt_finance_20240315_020_92c00171"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_10y_yield_monthly_change_2024_03_20260725_000343_011_1f4a52e5",
+        "hyp_v3_us_10y_yield_monthly_change_2024_03_20260725_000343_012_e5521b17"
+      ]
+    },
+    {
+      "id": "policy_stance",
+      "role": "driver",
+      "factor": "Federal Reserve policy signals",
+      "mechanism": "Policy projections and communications condition the expected pace of easing.",
+      "expected_direction": "up",
+      "evidence_requirement": "Official communications and projections point to a less accommodative path.",
+      "contradiction_signal": "Officials signal earlier or larger easing.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_finance_20240320_012_3d98005d",
+        "evt_finance_20240320_017_6a627165"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_10y_yield_monthly_change_2024_03_20260725_000343_013_1c9e293a",
+        "hyp_v3_us_10y_yield_monthly_change_2024_03_20260725_000343_014_27b08cb4"
+      ]
+    },
+    {
+      "id": "cut_expectations",
+      "role": "mediator",
+      "factor": "Rate-cut expectations",
+      "mechanism": "Repricing the timing and magnitude of cuts transmits policy signals to Treasury yields.",
+      "expected_direction": "up",
+      "evidence_requirement": "Futures, surveys, and market commentary show a consistent repricing.",
+      "contradiction_signal": "Easing expectations deepen despite policy signals.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_finance_20240308_016_f47af588",
+        "evt_finance_20240320_021_b7a818e8"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_10y_yield_monthly_change_2024_03_20260725_000343_010_1954dfb5",
+        "hyp_v3_us_10y_yield_monthly_change_2024_03_20260725_000343_014_27b08cb4"
+      ]
+    },
+    {
+      "id": "curve_positioning",
+      "role": "counterevidence",
+      "factor": "Yield-curve and bond-market positioning",
+      "mechanism": "Curve inversion and bond-demand conditions can amplify or offset policy-driven yield moves.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Curve measures and Treasury-market flows confirm the positioning effect.",
+      "contradiction_signal": "Safe-haven demand drives yields lower despite firm policy expectations.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_finance_20240321_013_e53c1269",
+        "evt_finance_20240321_018_c783bf78"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_10y_yield_monthly_change_2024_03_20260725_000343_016_25ef90b0"
+      ]
+    },
+    {
+      "id": "yield_change_bridge",
+      "role": "target_bridge",
+      "factor": "Policy expectations and bond-market repricing",
+      "mechanism": "Macro evidence, policy expectations, and positioning combine to determine the monthly 10-year yield change.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Compare month-start and current 10-year yields with changes in policy expectations.",
+      "contradiction_signal": "Yield moves diverge from repricing and market-flow evidence.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_finance_20240320_021_b7a818e8",
+        "evt_finance_20240321_018_c783bf78",
+        "evt_finance_20240326_019_93e9d512"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_10y_yield_monthly_change_2024_03_20260725_000343_015_4a92b1b7",
+        "hyp_v3_us_10y_yield_monthly_change_2024_03_20260725_000343_018_0f5f51ab"
+      ]
+    }
+  ],
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "macro_resilience",
+        "policy_stance",
+        "cut_expectations",
+        "yield_change_bridge"
+      ],
+      "generalized_mechanism": "Firm macro conditions support a less accommodative policy stance, repricing expected cuts and Treasury yields.",
+      "expected_direction": "up",
+      "applicability_conditions": [
+        "Policy expectations remain a material yield driver."
+      ],
+      "failure_conditions": [
+        "Risk aversion creates offsetting demand for Treasuries."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "cut_expectations",
+        "curve_positioning",
+        "yield_change_bridge"
+      ],
+      "generalized_mechanism": "Policy repricing interacts with curve positioning to amplify or offset the monthly yield move.",
+      "expected_direction": "mixed",
+      "applicability_conditions": [
+        "Positioning and curve conditions remain influential."
+      ],
+      "failure_conditions": [
+        "Market flows are dominated by unrelated supply shocks."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "Safe-haven bond demand offsets firm macro and policy signals.",
+      "discriminating_evidence": "Compare Treasury fund flows and volatility with policy-expectation repricing.",
+      "source_event_ids": [
+        "evt_finance_20240321_018_c783bf78",
+        "evt_finance_20240326_019_93e9d512"
+      ]
+    },
+    {
+      "hypothesis": "Yield changes reflect curve technicals rather than an altered policy outlook.",
+      "discriminating_evidence": "Compare changes across maturities with futures-implied policy expectations.",
+      "source_event_ids": [
+        "evt_finance_20240320_021_b7a818e8",
+        "evt_finance_20240321_013_e53c1269"
+      ]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Do inflation and activity data support the policy-path assumption?",
+    "Do futures and policy communications indicate the same repricing?",
+    "Are curve and flow effects offsetting the macro signal?",
+    "Is the monthly yield move measured consistently from the month-start level?"
+  ]
+}

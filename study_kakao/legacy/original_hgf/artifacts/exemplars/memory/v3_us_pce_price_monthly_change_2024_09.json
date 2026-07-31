@@ -1,0 +1,49 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_us_pce_price_monthly_change_2024_09",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "macro / consumer prices",
+      "target_operation": "monthly PCE-price change",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2024-09-30, will the monthly PCE-price change for United States PCE price index in 2024-09 be at least 0.139 percent?",
+    "historical_cutoff": "2024-09-30T00:00:00+00:00",
+    "target_semantics": "The monthly percentage change in the US PCE price index for September 2024.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20240830_010_468ba4d0",
+        "takeaway": "Inflation is described as 'becoming boring again' with numbers 'right on target' as of late August 2024.",
+        "why_predictive": "This suggests a stable or moderating inflation trend, potentially indicating a PCE price change near recent historical averages."
+      },
+      {
+        "article_id": "art_finance_20240923_004_e5ab7bba",
+        "takeaway": "Economic indicators in September 2024 suggest continued moderation in price pressures, with some components showing slower increases.",
+        "why_predictive": "This provides a more current view of economic conditions, reinforcing the idea of contained inflation for the target month."
+      },
+      {
+        "article_id": "art_finance_20240306_011_4d0ad8da",
+        "takeaway": "Analysis of PCE inflation contributions from goods and services indicates that while services prices have shown some stickiness, goods prices have been a significant disinflationary force.",
+        "why_predictive": "This highlights the interplay between goods and services inflation, suggesting that disinflation in goods could offset any persistent services price pressure."
+      }
+    ],
+    "expert_reasoning": [
+      "The baseline assessment of labor market conditions and consumer spending suggests a generally stable demand environment, which could support price pressures.",
+      "However, recent commentary from late August and September 2024 indicates that inflation is moderating and 'right on target', implying a lack of significant upward price acceleration.",
+      "The analysis of PCE components shows that while services prices may exhibit some resilience, disinflationary trends in goods prices have been a notable counteracting force.",
+      "Given the 'boring again' and 'on target' descriptions of inflation, and the offsetting effects of goods disinflation against services, the aggregate PCE price change is likely to remain within a moderate range."
+    ],
+    "counterevidence": "While services prices can be sticky, the evidence points to broad disinflationary pressures from goods and energy, which have historically offset services-led inflation in the aggregate PCE index.",
+    "prospective_target_estimate": "The monthly PCE-price change for September 2024 is likely to be below 0.139 percent.",
+    "option_mapping": "The evidence suggests the monthly PCE-price change will be less than 0.139 percent, mapping to 'no'.",
+    "uncertainty": "The exact magnitude of services price pressure versus goods disinflation remains a key uncertainty. While recent indicators point to moderation, a stronger-than-expected rebound in services or a halt to goods disinflation could alter the outcome.",
+    "dag_derived_lesson": "When assessing aggregate price changes, the interplay between persistent demand-driven price pressures in services and disinflationary forces in goods and energy is critical. Evidence of moderating inflation trends, even with underlying demand support, suggests that offsetting component movements can keep the aggregate within a stable range."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_nasdaq_monthly_return_2023_08",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "market_fx_credit / technology equities",
+      "target_operation": "monthly NASDAQ Composite return",
+      "option_geometry": "bucketed by recent range"
+    },
+    "historical_question": "As of 2023-08-01, which range will the monthly NASDAQ Composite return for NASDAQ Composite index in 2023-08 fall into?",
+    "historical_cutoff": "2023-08-01T00:00:00+00:00",
+    "target_semantics": "The monthly return percentage of the NASDAQ Composite index for August 2023, categorized as below -0.25%, between -0.25% and 6.616%, or above 6.616%.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20210225_002_03d7d91a",
+        "takeaway": "The NASDAQ Composite experienced a review and outlook in August, with a focus on market performance.",
+        "why_predictive": "This article provides context on how the NASDAQ Composite is reviewed and discussed, suggesting a pattern of periodic analysis that could influence market sentiment or understanding of its performance drivers."
+      },
+      {
+        "article_id": "art_finance_20160314_002_82e4c491",
+        "takeaway": "The Federal Reserve's actions and policies are a significant factor in financial markets.",
+        "why_predictive": "Federal Reserve policy, particularly interest rate decisions and monetary policy statements, has a well-established and direct impact on equity markets, including the NASDAQ Composite, by influencing borrowing costs, inflation expectations, and overall economic sentiment."
+      },
+      {
+        "article_id": "art_finance_20221120_003_62d7acab",
+        "takeaway": "FOMC meeting schedules and minutes are important for understanding monetary policy direction.",
+        "why_predictive": "The Federal Open Market Committee (FOMC) sets monetary policy. Awareness of their meeting schedules and the subsequent release of minutes provides insight into potential shifts in interest rates and economic outlook, which are critical drivers for technology-heavy indices like the NASDAQ Composite."
+      }
+    ],
+    "expert_reasoning": [
+      "The NASDAQ Composite's performance is influenced by broader economic factors, particularly monetary policy set by the Federal Reserve (art_finance_20160314_002_82e4c491).",
+      "FOMC meeting schedules and minutes are key indicators of potential policy shifts that could impact the market (art_finance_20221120_003_62d7acab).",
+      "Historical reviews of the NASDAQ Composite's performance, such as those in August, provide context for understanding its behavior (art_finance_20210225_002_03d7d91a)."
+    ],
+    "counterevidence": "No specific forecast-time evidence directly addresses the NASDAQ Composite's expected return for August 2023 or provides quantitative drivers for its movement within the specified range.",
+    "prospective_target_estimate": "The available evidence does not provide a specific directional or magnitude forecast for the NASDAQ Composite's monthly return in August 2023. The historical context suggests potential influences from monetary policy and market reviews, but without concrete data or analysis for the target period, a precise estimate within the given options cannot be determined.",
+    "option_mapping": "Given the lack of specific predictive evidence for August 2023, it is not possible to confidently map the NASDAQ Composite's return to 'below recent range', 'within recent range', or 'above recent range'.",
+    "uncertainty": "Significant uncertainty exists due to the absence of forecast-time data directly linking economic drivers or market sentiment to the specific monthly return of the NASDAQ Composite for August 2023. The provided articles offer general context on market influences but lack the specificity required for a precise forecast.",
+    "dag_derived_lesson": "When assessing a target metric, identify key historical drivers and their mechanisms. Evaluate the strength of forecast-time evidence for each driver's activation and its connection to the target. Acknowledge weak historical support and the absence of specific counterevidence or competing mechanisms as sources of uncertainty, especially when direct quantitative links to the target are missing."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

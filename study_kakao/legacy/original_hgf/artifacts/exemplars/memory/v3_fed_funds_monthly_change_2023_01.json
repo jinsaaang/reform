@@ -1,0 +1,34 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_fed_funds_monthly_change_2023_01",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_policy",
+      "target_operation": "monthly_change_classification",
+      "option_geometry": "ordered_categorical"
+    },
+    "historical_question": "As of 2023-01-01, which range will the monthly federal-funds-rate change for Federal Reserve effective federal funds rate in 2023-01 fall into?",
+    "historical_cutoff": "2023-01-01T00:00:00+00:00",
+    "target_semantics": "The monthly change in the Federal Reserve's effective federal funds rate for January 2023, classified relative to a recent range of 0.41 to 0.552 percentage points.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The underlying inflation trend is a baseline factor. Easing inflation can support a slower pace of policy adjustment. Evidence for this is weak, requiring verification of breadth and momentum with official inflation releases.",
+      "The pace-of-hikes communication is a driver. Slower-hike communication can reduce expected near-term rate movement. Evidence for this is weak, requiring confirmation in official policymaker statements.",
+      "Rate-market expectations act as a mediator. Rate-market pricing transmits policy communication into expected adjustment size. Evidence for this is weak, requiring checks against independent market data.",
+      "Inflation-control resolve is counterevidence. Persistent inflation can maintain pressure for continued tightening. Evidence for this is weak, requiring checks for persistent tightening pressure in official releases and statements.",
+      "Decision implementation timing is a target bridge. Meeting decisions and implementation dates determine the monthly effective-rate change. Evidence for this is medium, requiring mapping of official statements, implementation dates, and published rates."
+    ],
+    "counterevidence": "Persistent inflation can maintain pressure for continued tightening. Evidence for this is weak, requiring checks for persistent tightening pressure in official releases and statements.",
+    "prospective_target_estimate": "The monthly federal-funds-rate change is expected to fall within the recent range, driven by expectations of easing inflation and slower policy communication, which are partially offset by concerns over persistent inflation.",
+    "option_mapping": "The estimate suggests the monthly change will be within the [0.41, 0.5525) percentage points range.",
+    "uncertainty": "Evidence supporting the easing inflation trend, policy pace communication, and market pricing is weak. The influence of persistent inflation and the precise timing of decision implementation remain significant sources of uncertainty.",
+    "dag_derived_lesson": "A policy rate's monthly change is influenced by the underlying inflation trend and communicated policy intentions, which are then priced by markets. However, persistent inflationary pressures can counteract these effects, and the exact timing of policy implementation relative to observation periods is critical for the final observed change."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_tsla_revenue_growth_acceleration_2023_12_31",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_metric",
+      "target_operation": "growth_acceleration",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2023-12-31, which range will Tesla, Inc.'s quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2023-12-31 fall into?",
+    "historical_cutoff": "2023-12-31T00:00:00+00:00",
+    "target_semantics": "Tesla's quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2023-12-31.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20230125_005_519fcaef",
+        "takeaway": "Tesla's Q4 2022 earnings report indicated a significant increase in revenue, but also highlighted challenges related to rising costs and supply chain issues.",
+        "why_predictive": "Provides context on Tesla's financial performance and potential headwinds affecting revenue growth in subsequent quarters."
+      },
+      {
+        "article_id": "art_finance_20230703_009_a820a0a7",
+        "takeaway": "Tesla exceeded Q2 delivery expectations, but analysts expressed concerns about the near-term direction of the stock due to factors like price cuts and competition.",
+        "why_predictive": "Indicates that while delivery volumes might be strong, pricing strategies could be impacting revenue and margins, relevant for growth acceleration."
+      }
+    ],
+    "expert_reasoning": [
+      "Tesla implemented aggressive price cuts throughout 2023 (art_finance_20230703_009_a820a0a7).",
+      "These price cuts likely led to a decline in the average selling price per vehicle (art_finance_20230703_009_a820a0a7).",
+      "A decline in average selling price per vehicle directly contributes to decelerated automotive revenue growth, even with increased deliveries (art_finance_20230703_009_a820a0a7).",
+      "While Tesla achieved record vehicle deliveries in 2023 (art_finance_20230703_009_a820a0a7), the lower prices would have compressed profit margins and decelerated automotive revenue growth.",
+      "The strong performance of Tesla's energy generation and storage business may have partially offset the automotive slowdown (art_finance_20230125_005_519fcaef, art_finance_20230703_009_a820a0a7)."
+    ],
+    "counterevidence": "The provided articles do not offer direct counter-evidence to the proposed causal links. However, the information is general and lacks specific quantitative data for the target quarter.",
+    "prospective_target_estimate": "Within recent range",
+    "option_mapping": "The evidence suggests that while deliveries were strong, price cuts and margin compression would lead to a deceleration in revenue growth. This deceleration, even with positive absolute growth, is likely to place the growth acceleration within the 'within recent range' based on the provided boundaries.",
+    "uncertainty": "The forecast-time evidence is weak as it does not provide specific figures for the fiscal quarter ending 2023-12-31. The impact of price cuts versus delivery volume is not precisely quantified, and the contribution of the energy business is not detailed for the specific period. Therefore, the estimate carries significant uncertainty.",
+    "dag_derived_lesson": "Aggressive pricing strategies can lead to a decline in average selling prices, which in turn decelerates revenue growth even with increased volumes. While other business segments might offer some offset, the direct impact on core automotive revenue needs careful consideration when forecasting growth acceleration. The magnitude of these effects requires specific, period-relevant data."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_us_retail_sales_monthly_growth_2023_08",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "macro / consumption",
+      "target_operation": "monthly retail-sales growth",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2023-08-31, will the monthly retail-sales growth for United States retail sales in 2023-08 be at least 0.493 percent?",
+    "historical_cutoff": "2023-08-31T00:00:00+00:00",
+    "target_semantics": "The monthly percentage change in United States retail sales for August 2023.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "ev_cd1045ac694c2e49",
+        "takeaway": "US consumer confidence pulled back in August.",
+        "why_predictive": "Consumer confidence is a leading indicator for consumer spending, which directly impacts retail sales."
+      },
+      {
+        "article_id": "art_finance_20121015_002_9f15db11",
+        "takeaway": "US retail sales data is a key economic indicator.",
+        "why_predictive": "This article establishes the general importance of retail sales data, implying that factors influencing it are relevant for forecasting."
+      }
+    ],
+    "expert_reasoning": [
+      "The target is the monthly retail-sales growth for United States retail sales in August 2023.",
+      "The baseline for 'yes' is a growth of at least 0.493 percent.",
+      "Supported drivers include the general importance of retail sales data (art_finance_20121015_002_9f15db11).",
+      "The mechanism connecting evidence to the target is that consumer confidence, a measure of consumer willingness to spend, directly influences retail sales. A pullback in confidence suggests potentially weaker sales.",
+      "Counterevidence includes the report that US consumer confidence pulled back in August (ev_cd1045ac694c2e49).",
+      "Given the pullback in consumer confidence, the prospective estimate is that monthly retail-sales growth may not reach the 0.493 percent threshold.",
+      "Option mapping: 'no' corresponds to retail-sales growth below 0.493 percent.",
+      "Uncertainty remains due to the lack of specific data on the magnitude of the pullback in consumer confidence and its precise impact on retail sales, as well as other potential unobserved drivers."
+    ],
+    "counterevidence": "US consumer confidence pulled back in August (ev_cd1045ac694c2e49).",
+    "prospective_target_estimate": "The monthly retail-sales growth for United States retail sales in August 2023 is likely to be less than 0.493 percent.",
+    "option_mapping": "The 'no' option corresponds to a monthly retail-sales growth of less than 0.493 percent.",
+    "uncertainty": "The extent to which the pullback in consumer confidence will translate into lower retail sales growth is uncertain, as is the influence of other economic factors not detailed in the provided evidence.",
+    "dag_derived_lesson": "A decline in a leading indicator of consumer sentiment suggests a potential weakening of the target metric, but the precise magnitude of impact remains uncertain without more granular data or a direct causal link."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

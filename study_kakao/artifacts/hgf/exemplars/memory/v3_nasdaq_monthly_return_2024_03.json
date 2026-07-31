@@ -1,0 +1,54 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_nasdaq_monthly_return_2024_03",
+  "blueprint_sha256": "4bfa62dcc3453c9dd2638b294b39a9cb988cd7e38e51b727d399fa4ecca68209",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "market_fx_credit / technology equities",
+      "target_operation": "monthly NASDAQ Composite return",
+      "option_geometry": "ordered_categorical"
+    },
+    "historical_question": "As of 2024-03-01, which range will the monthly NASDAQ Composite return for NASDAQ Composite index in 2024-03 fall into?",
+    "historical_cutoff": "2024-03-01T00:00:00+00:00",
+    "target_semantics": "The monthly return percentage for the NASDAQ Composite index in March 2024, categorized as below -2.322%, between -2.322% and 5.669%, or above 5.669%.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20240102_002_24bea0f2",
+        "takeaway": "Wall Street analysts offered predictions for the Nasdaq Composite's performance in 2024.",
+        "why_predictive": "Analyst predictions directly inform market sentiment and expectations for future index performance."
+      },
+      {
+        "article_id": "art_finance_20231024_004_d24232aa",
+        "takeaway": "Cautionary signs were noted for the stock market in the six months following October 2023, despite significant gains in tech stocks.",
+        "why_predictive": "This indicates a potential for market shifts or corrections, which could impact the NASDAQ Composite."
+      },
+      {
+        "article_id": "art_finance_20240228_005_7a85a966",
+        "takeaway": "The article highlights top-performing tech stock ETFs as of late February 2024.",
+        "why_predictive": "The performance of tech ETFs is a strong indicator of the health and direction of the technology sector, a major component of the NASDAQ Composite."
+      },
+      {
+        "article_id": "art_finance_20221202_007_8e81db1c",
+        "takeaway": "The NASDAQ Index experienced a specific performance trend in November 2022.",
+        "why_predictive": "Historical performance data, even if from a different period, can provide context for understanding market dynamics and potential drivers of future returns."
+      }
+    ],
+    "expert_reasoning": [
+      "The NASDAQ Composite's performance is heavily influenced by the technology sector. Recent reports indicate strong performance in tech ETFs (art_finance_20240228_005_7a85a966), suggesting positive momentum.",
+      "Wall Street's outlook for the Nasdaq in 2024 (art_finance_20240102_002_24bea0f2) is a key driver of investor sentiment. While specific predictions are not detailed, the existence of such forecasts implies active analyst coverage and interest.",
+      "However, a note of caution regarding the broader stock market in the six months following October 2023 (art_finance_20231024_004_d24232aa) suggests that underlying economic factors might temper tech sector gains."
+    ],
+    "counterevidence": "Despite positive signals from tech ETFs, there were cautionary signs for the broader stock market in the six months leading up to the forecast cutoff (art_finance_20231024_004_d24232aa), suggesting potential headwinds that could negatively impact the NASDAQ Composite.",
+    "prospective_target_estimate": "within recent range",
+    "option_mapping": "The evidence suggests a mixed outlook. While tech stocks and ETFs show strength, broader market caution implies that the NASDAQ Composite's return for March 2024 is likely to fall within the pre-registered recent range of -2.322% to 5.669%.",
+    "uncertainty": "The evidence provides conflicting signals: strong performance in tech ETFs and analyst interest in the Nasdaq's 2024 outlook are countered by broader market caution. The exact magnitude and direction of these influences on the NASDAQ Composite for March 2024 remain uncertain.",
+    "dag_derived_lesson": "When evaluating a target metric, consider both sector-specific performance indicators and broader market sentiment. Positive trends in a key sector may be offset by macroeconomic caution, leading to a more moderate outcome than initially suggested by sector strength alone."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

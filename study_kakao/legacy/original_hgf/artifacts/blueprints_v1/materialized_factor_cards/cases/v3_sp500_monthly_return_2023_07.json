@@ -1,0 +1,194 @@
+{
+  "schema_version": "hgf_blueprint_v1",
+  "question_id": "v3_sp500_monthly_return_2023_07",
+  "target_definition": {
+    "metric": "S&P 500 monthly return",
+    "unit_or_option_space": "percent monthly return",
+    "forecast_horizon": "target month"
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Policy restraint, inflation progress, and consumer sentiment provide limited reusable equity-return context.",
+    "weaknesses": [
+      "All realized-index and option links are excluded.",
+      "Target support is indirect and requires current inflation, rate, earnings, and risk verification."
+    ]
+  },
+  "search_factors": [
+    {
+      "factor": "Federal Reserve policy",
+      "why_search": "Policy restraint affects discount rates and risk appetite.",
+      "preferred_source_types": [
+        "FOMC statement"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230614_001_7317c7d7",
+        "evt_finance_20230614_003_ba6b833a"
+      ]
+    },
+    {
+      "factor": "Inflation progress",
+      "why_search": "Disinflation can improve expected policy conditions.",
+      "preferred_source_types": [
+        "inflation release"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230728_005_d1f53573",
+        "evt_finance_20230728_011_f7113e47"
+      ]
+    },
+    {
+      "factor": "Consumer sentiment",
+      "why_search": "Sentiment can support consumption and risk appetite.",
+      "preferred_source_types": [
+        "consumer survey"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230717_012_3cccfaf7"
+      ]
+    },
+    {
+      "factor": "Market risk appetite",
+      "why_search": "Market reaction around inflation can reveal risk appetite.",
+      "preferred_source_types": [
+        "market data"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230711_003_c8f99a51"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "policy",
+      "role": "baseline",
+      "factor": "Federal Reserve policy",
+      "mechanism": "Restrictive policy conditions influence equity discount rates.",
+      "expected_direction": "down",
+      "evidence_requirement": "Rate futures and bond yields confirm policy restraint.",
+      "contradiction_signal": "Futures reprice toward easier policy.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230614_001_7317c7d7",
+        "evt_finance_20230706_002_c8373cca"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_sp500_monthly_return_2023_07_20260725_052442_001_1ebf2f31"
+      ]
+    },
+    {
+      "id": "inflation",
+      "role": "driver",
+      "factor": "Inflation progress",
+      "mechanism": "Disinflation can reduce expected discount-rate pressure.",
+      "expected_direction": "up",
+      "evidence_requirement": "Inflation cooling is broad and sustained.",
+      "contradiction_signal": "Inflation reaccelerates.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230711_003_c8f99a51",
+        "evt_finance_20230728_005_d1f53573"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_sp500_monthly_return_2023_07_20260725_052442_003_611904ec"
+      ]
+    },
+    {
+      "id": "sentiment",
+      "role": "mediator",
+      "factor": "Consumer sentiment",
+      "mechanism": "Improved sentiment can support risk appetite.",
+      "expected_direction": "up",
+      "evidence_requirement": "Sentiment aligns with consumption and market breadth.",
+      "contradiction_signal": "Sentiment weakens.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230614_003_ba6b833a",
+        "evt_finance_20230717_012_3cccfaf7"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_sp500_monthly_return_2023_07_20260725_052507_006_19249d7e"
+      ]
+    },
+    {
+      "id": "risk",
+      "role": "counterevidence",
+      "factor": "Market risk appetite",
+      "mechanism": "Risk appetite can reverse if inflation or policy uncertainty rises.",
+      "expected_direction": "down",
+      "evidence_requirement": "Volatility and risk-premium measures deteriorate.",
+      "contradiction_signal": "Risk measures ease.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230711_003_c8f99a51"
+      ],
+      "source_edge_ids": []
+    },
+    {
+      "id": "bridge",
+      "role": "target_bridge",
+      "factor": "Discount rates, inflation, and risk appetite",
+      "mechanism": "Policy expectations, inflation progress, sentiment, and risk appetite combine to determine S&P 500 direction.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Verify current inflation, rate futures, earnings breadth, and risk appetite.",
+      "contradiction_signal": "Index moves diverge from current drivers.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230614_001_7317c7d7",
+        "evt_finance_20230728_005_d1f53573",
+        "evt_finance_20230717_012_3cccfaf7"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_sp500_monthly_return_2023_07_20260725_052442_001_1ebf2f31",
+        "hyp_v3_sp500_monthly_return_2023_07_20260725_052507_006_19249d7e"
+      ]
+    }
+  ],
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "policy",
+        "inflation",
+        "bridge"
+      ],
+      "generalized_mechanism": "Disinflation can ease expected policy restraint and discount-rate pressure.",
+      "expected_direction": "up",
+      "applicability_conditions": [
+        "Futures confirm easier conditions."
+      ],
+      "failure_conditions": [
+        "Inflation reaccelerates."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "sentiment",
+        "risk",
+        "bridge"
+      ],
+      "generalized_mechanism": "Sentiment can support equities unless risk appetite reverses.",
+      "expected_direction": "mixed",
+      "applicability_conditions": [
+        "Market breadth remains healthy."
+      ],
+      "failure_conditions": [
+        "Risk premiums rise."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "Restrictive policy outweighs disinflation.",
+      "discriminating_evidence": "Compare rate futures with inflation and volatility measures.",
+      "source_event_ids": [
+        "evt_finance_20230614_001_7317c7d7",
+        "evt_finance_20230728_005_d1f53573"
+      ]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Is disinflation broad?",
+    "Do rate futures confirm easier conditions?",
+    "Does sentiment support risk appetite?"
+  ]
+}

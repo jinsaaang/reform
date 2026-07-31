@@ -1,0 +1,46 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_us_high_yield_spread_monthly_change_2025_03",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_market",
+      "target_operation": "change_in_spread",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2025-03-01, will the monthly high-yield spread change for United States high-yield corporate option-adjusted spread in 2025-03 be at least 0.02 percentage points?",
+    "historical_cutoff": "2025-03-01T00:00:00+00:00",
+    "target_semantics": "The monthly change in the United States high-yield corporate option-adjusted spread for March 2025.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20241211_002_b79ca9d0",
+        "takeaway": "High-yield bond spreads are influenced by economic concerns, market sentiment, and credit risk.",
+        "why_predictive": "This article provides general context on factors affecting high-yield spreads, which are relevant drivers for the target metric."
+      },
+      {
+        "article_id": "art_finance_20200817_004_07afa2f3",
+        "takeaway": "Market dispersion can increase during periods of economic uncertainty, impacting credit markets.",
+        "why_predictive": "This article suggests that market dispersion, potentially linked to economic conditions, can affect bond markets, including high-yield segments."
+      }
+    ],
+    "expert_reasoning": [
+      "The target is the monthly change in the US high-yield corporate option-adjusted spread for March 2025, with a threshold of 0.02 percentage points.",
+      "Checkpoint 1: 'Economic concerns increased during March' is a potential driver. Evidence from art_finance_20241211_002_b79ca9d0 suggests economic concerns influence high-yield spreads. However, the historical support for this factor is weak, and no specific forecast-time data confirms increased economic concerns for March 2025.",
+      "Checkpoint 2: 'Earnings-season evidence showed increased market dispersion' is another potential driver. Art_finance_20200817_004_07afa2f3 links market dispersion to credit markets. This factor has strong historical support, but direct forecast-time evidence confirming increased market dispersion specifically due to earnings season in March 2025 is absent.",
+      "The target bridge mechanism requires aggregating supported drivers. Given the weak historical support and lack of specific forecast-time confirmation for both identified drivers, their connection to the target metric is uncertain.",
+      "The causal path from 'Economic concerns increased during March' to the target is not strongly supported by forecast-time evidence.",
+      "The causal path from 'Earnings-season evidence showed increased market dispersion' to the target is also not definitively supported by forecast-time evidence for the specific period."
+    ],
+    "counterevidence": "No specific forecast-time evidence directly contradicts the potential for increased economic concerns or market dispersion. However, the absence of strong, direct support for these factors in the context of March 2025 weakens their predictive power.",
+    "prospective_target_estimate": "The evidence does not provide a clear direction or magnitude for the monthly high-yield spread change in March 2025. Both potential drivers have weak or unconfirmed forecast-time support.",
+    "option_mapping": "Given the lack of strong, confirmed drivers and the weak historical support for the identified factors, it is not possible to confidently map to 'yes' or 'no'.",
+    "uncertainty": "Significant uncertainty exists due to the lack of specific, forecast-time data confirming the activation of the identified drivers (economic concerns and market dispersion) for March 2025. The historical support for these factors is also mixed (weak for economic concerns, strong for dispersion, but not confirmed for the target period).",
+    "dag_derived_lesson": "When evaluating a target metric influenced by potential drivers, it is crucial to confirm the activation of these drivers with evidence specific to the forecast period. Weak historical support or a lack of direct, current evidence for a driver necessitates a cautious approach, preserving uncertainty in the final estimate."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

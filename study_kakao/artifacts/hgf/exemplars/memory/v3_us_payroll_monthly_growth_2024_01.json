@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_us_payroll_monthly_growth_2024_01",
+  "blueprint_sha256": "39d631399e014197693a4885b98c00ac17b14f5846884006853ba729db9b1f7b",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "macro / labour",
+      "target_operation": "monthly payroll growth",
+      "option_geometry": "ordered_interval"
+    },
+    "historical_question": "As of 2024-01-31, which range will the monthly payroll growth for United States nonfarm payrolls in 2024-01 fall into?",
+    "historical_cutoff": "2024-01-31T00:00:00+00:00",
+    "target_semantics": "The monthly percentage change in United States nonfarm payrolls for January 2024.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The DAG indicates that strong contributions from Professional and business services (checkpoint_1) and payroll gains exceeding forecasts (checkpoint_2) are potential drivers that historically led to official reports of nonfarm-payroll gains (checkpoint_3).",
+      "The DAG suggests that these official reports (checkpoint_3) are then linked to the target metric of monthly payroll growth (target_bridge). However, the DAG notes that the link from forecast comparisons to the reported gain (checkpoint_2 to checkpoint_3) contextualizes rather than causes the gain.",
+      "Given the lack of forecast-time evidence, the reasoning must rely on the abstract causal roles identified in the DAG, acknowledging that the strength and direction of these links are unknown without specific data."
+    ],
+    "counterevidence": "No forecast-time evidence was provided to support or contradict the identified causal pathways or the specific magnitude of the target metric.",
+    "prospective_target_estimate": "The provided DAG structure and lack of evidence do not allow for a specific estimate of the target metric's range.",
+    "option_mapping": "The target metric is monthly payroll growth in percent. The options are 'below recent range' (below 0.099%), 'within recent range' (0.099% to 0.141%), and 'above recent range' (0.141% or above).",
+    "uncertainty": "The absence of any forecast-time evidence means that the predictive power of the identified causal drivers (professional and business services contributions, exceeding forecasts) and their link to the official payroll report, and subsequently to the target growth rate, remains entirely unquantified and uncertain.",
+    "dag_derived_lesson": "When evaluating a target metric, consider potential drivers that historically influenced official reports, and how those reports subsequently mapped to the target. The absence of current evidence necessitates a cautious approach, preserving uncertainty about the strength and direction of these causal links and their ability to predict the target's position relative to predefined boundaries."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

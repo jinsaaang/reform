@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_us_retail_sales_monthly_growth_2023_01",
+  "blueprint_sha256": "b57b2c98d1f219ae1771fb393fc26da0912553ecd7999c6074ad78848998124a",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "macro / consumption",
+      "target_operation": "monthly retail-sales growth",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2023-01-31, will the monthly retail-sales growth for United States retail sales in 2023-01 be at least -0.712 percent?",
+    "historical_cutoff": "2023-01-31T00:00:00+00:00",
+    "target_semantics": "The target is the monthly percentage change in United States retail sales for January 2023, specifically whether this growth rate meets or exceeds -0.712 percent.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The core of the prediction relies on the calculation of the monthly retail-sales growth for January 2023, which is derived from the retail-sales observation for January 2023 and the preceding month's observation.",
+      "The historical DAG indicates that the comparison of this calculated growth against a pre-registered threshold of -0.712 percent is a key step in determining the outcome.",
+      "The DAG also highlights that the strength of the prediction depends on the direct measurement of these factors and the support for the causal links between them, with historical support for the growth calculation and threshold comparison being medium to strong."
+    ],
+    "counterevidence": "No forecast-time evidence was provided to support or contradict the drivers or mechanisms identified in the DAG. The DAG itself notes that underlying RSAFS levels are not quoted in the evidence summary, and contemporaneous reports use a differently defined headline figure, suggesting potential discrepancies in available information.",
+    "prospective_target_estimate": "The DAG does not provide specific values for the retail-sales observations or the calculated growth rate, only the structure of the reasoning. Therefore, a quantitative estimate cannot be formed.",
+    "option_mapping": "The 'yes' option corresponds to a monthly retail-sales growth of -0.712 percent or higher. The 'no' option corresponds to a monthly retail-sales growth below -0.712 percent.",
+    "uncertainty": "Significant uncertainty exists due to the complete lack of forecast-time evidence. The DAG's 'weaknesses' section also points to potential issues with the benchmark snapshot used for resolution and the absence of underlying data, further increasing uncertainty about the reliability of any historical path.",
+    "dag_derived_lesson": "The prediction of a quantitative target metric relies on the accurate measurement of its constituent parts and the comparison against a defined threshold. The strength of the prediction is contingent on the availability and quality of evidence supporting each step in the causal chain, from raw observations to the final decision boundary."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

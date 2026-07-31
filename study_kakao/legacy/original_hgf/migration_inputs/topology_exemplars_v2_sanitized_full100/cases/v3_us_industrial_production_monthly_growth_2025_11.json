@@ -1,0 +1,54 @@
+{
+  "schema_version": "fixed_exemplar_case",
+  "status": "success",
+  "question_id": "v3_us_industrial_production_monthly_growth_2025_11",
+  "retrieved_memory_question_id": "v3_us_industrial_production_monthly_growth_2024_09",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "macro / industrial activity",
+      "target_operation": "monthly industrial-production growth",
+      "option_geometry": "bucketed by quartiles"
+    },
+    "historical_question": "As of 2024-09-30, which range will the monthly industrial-production growth for United States industrial production in 2024-09 fall into?",
+    "historical_cutoff": "2024-09-30T00:00:00+00:00",
+    "target_semantics": "The monthly industrial production growth rate for the United States in September 2024.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "ev_21fd806c6a52b53d",
+        "takeaway": "US industrial production increased sharply by 0.8% in August 2024, recovering from a July decline, with motor vehicles and parts being a key driver.",
+        "why_predictive": "This is a direct measure of industrial production for the month immediately preceding the target month, indicating recent performance."
+      },
+      {
+        "article_id": "ev_4f1da29df057ba38",
+        "takeaway": "The ISM Manufacturing Index rose to 47.2 in August 2024, still indicating contraction (below 50), with a drop in new orders suggesting underlying weakness.",
+        "why_predictive": "The ISM Manufacturing Index is a leading indicator for manufacturing activity, and its components like new orders can signal future industrial production trends."
+      },
+      {
+        "article_id": "ev_65ae048f6e2045bc",
+        "takeaway": "US manufacturing activity contracted for the fifth consecutive month in August 2024, suggesting a challenging environment for industrial production.",
+        "why_predictive": "Sustained contraction in manufacturing activity is a strong signal of ongoing weakness that could persist into the next month's industrial production."
+      },
+      {
+        "article_id": "ev_55c94aae56d75dbe",
+        "takeaway": "US Sector PMI data for August 2024 showed weaker manufacturing performance than services, with specific sectors like Basic Materials and Consumer Goods reducing output.",
+        "why_predictive": "Sector-specific output reductions in manufacturing provide granular evidence of broad-based weakness that could impact overall industrial production."
+      }
+    ],
+    "expert_reasoning": [
+      "The ISM Manufacturing Index for August 2024 was 47.2, indicating contraction (below 50) [ev_4f1da29df057ba38].",
+      "This contraction has persisted for five consecutive months as of August 2024 [ev_65ae048f6e2045bc].",
+      "Sector PMI data for August also showed weaker manufacturing output, with some sectors reducing output [ev_55c94aae56d75dbe].",
+      "These indicators collectively suggest underlying weakness in the manufacturing sector.",
+      "However, US industrial production itself jumped 0.8% in August 2024, recovering from a July decline [ev_21fd806c6a52b53d]."
+    ],
+    "counterevidence": "The sharp 0.8% increase in US industrial production in August 2024 [ev_21fd806c6a52b53d] contrasts with the broader signals of manufacturing contraction indicated by the ISM Manufacturing Index [ev_4f1da29df057ba38], the five consecutive months of manufacturing contraction [ev_65ae048f6e2045bc], and weak sector PMI data [ev_55c94aae56d75dbe].",
+    "prospective_target_estimate": "The August industrial production rebound of 0.8% suggests that the target month's growth might be within or above the recent range, despite broader manufacturing weakness.",
+    "option_mapping": "The August industrial production growth of 0.8% falls within the recent range of -0.387% to 0.496%. However, the persistent manufacturing contraction signals could pull future growth down.",
+    "uncertainty": "There is significant uncertainty due to conflicting signals: the strong August industrial production figure versus the weak manufacturing indicators. The rebound in August could be temporary, or it could signal a turning point.",
+    "dag_derived_lesson": "A strong recent reading of the target metric can override or temper signals of underlying weakness from related leading indicators, especially when the leading indicators have shown persistent but not necessarily accelerating contraction."
+  },
+  "pilot_provenance": {
+    "blueprint_schema": "hgf_blueprint_topology_v2",
+    "memory_exemplar_sha256": "d75a305d558041a861d81d552ab752139960c9fff6f614ae9b91ee13b6e0ba1f"
+  }
+}

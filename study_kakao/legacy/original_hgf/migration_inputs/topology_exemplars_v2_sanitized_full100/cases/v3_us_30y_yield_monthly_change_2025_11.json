@@ -1,0 +1,53 @@
+{
+  "schema_version": "fixed_exemplar_case",
+  "status": "success",
+  "question_id": "v3_us_30y_yield_monthly_change_2025_11",
+  "retrieved_memory_question_id": "v3_us_30y_yield_monthly_change_2023_01",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_market_prediction",
+      "target_operation": "change_threshold_prediction",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2023-01-01, will the monthly 30-year yield change for United States 30-year Treasury yield in 2023-01 be at least 0.3 percentage points?",
+    "historical_cutoff": "2023-01-01T00:00:00+00:00",
+    "target_semantics": "The monthly change in the US 30-year Treasury yield for January 2023 will be at least 0.3 percentage points.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20220823_003_63a78def",
+        "takeaway": "US inflation rates have been high and are expected to remain a concern.",
+        "why_predictive": "High inflation is a primary driver for central bank hawkishness, which influences long-term yields."
+      },
+      {
+        "article_id": "art_finance_20220616_002_093ebaaa",
+        "takeaway": "30-year fixed mortgage rates have spiked significantly.",
+        "why_predictive": "Mortgage rates are closely tied to long-term Treasury yields, indicating upward pressure on these yields."
+      },
+      {
+        "article_id": "art_finance_20211219_005_44743575",
+        "takeaway": "A significant portion of US dollars were printed in the recent past (Jan 2020 - Oct 2021).",
+        "why_predictive": "Rapid money printing can contribute to inflationary pressures, a key factor influencing monetary policy and yields."
+      },
+      {
+        "article_id": "art_finance_20200314_003_64328fcf",
+        "takeaway": "The 10-year Treasury yield jumped above 1% following clarity on the government's coronavirus response.",
+        "why_predictive": "This shows that significant events and policy responses can directly impact Treasury yields, suggesting sensitivity to economic news."
+      }
+    ],
+    "expert_reasoning": [
+      "Persistent inflation, evidenced by high rates (art_finance_20220823_003_63a78def) and potentially exacerbated by past monetary expansion (art_finance_20211219_005_44743575), suggests a hawkish stance from the Federal Reserve.",
+      "A hawkish Fed typically leads to higher interest rates across the yield curve, including long-term Treasury yields.",
+      "The observed spike in 30-year fixed mortgage rates (art_finance_20220616_002_093ebaaa) directly reflects upward pressure on long-term yields.",
+      "Historical precedent shows that Treasury yields are sensitive to economic conditions and policy responses (art_finance_20200314_003_64328fcf)."
+    ],
+    "counterevidence": "No direct counterevidence regarding the magnitude of the 30-year yield change for January 2023 was available in the forecast-time articles. The articles focus on general trends and past events rather than specific forward-looking data for the target period.",
+    "prospective_target_estimate": "Given the persistent inflationary pressures and the observed upward trend in related long-term rates (mortgages), it is plausible that the 30-year Treasury yield could experience a significant monthly change. However, without specific data points for the target month, it is difficult to confirm if the change would meet the 0.3 percentage point threshold.",
+    "option_mapping": "The evidence suggests upward pressure on long-term yields, making a 'yes' outcome (change >= 0.3 percentage points) possible, but the lack of precise data prevents a definitive conclusion.",
+    "uncertainty": "The forecast is highly uncertain due to the lack of specific data points for the US 30-year Treasury yield change in January 2023. While inflation and related rate movements suggest potential for a significant change, the exact magnitude required for a 'yes' resolution is not supported by the available forecast-time evidence.",
+    "dag_derived_lesson": "When assessing the likelihood of a significant change in a financial metric, consider the chain of influence from macroeconomic factors like inflation and monetary policy to market indicators. Recognize that while trends may suggest direction, precise magnitude often requires specific, forward-looking data that may be absent."
+  },
+  "pilot_provenance": {
+    "blueprint_schema": "hgf_blueprint_topology_v2",
+    "memory_exemplar_sha256": "0a02f88aaf6543b6db89d2a9459f4f808067864957621d83c0ce6114a6c45ef4"
+  }
+}

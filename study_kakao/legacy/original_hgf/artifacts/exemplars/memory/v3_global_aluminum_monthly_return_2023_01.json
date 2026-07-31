@@ -1,0 +1,38 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_global_aluminum_monthly_return_2023_01",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial",
+      "target_operation": "return",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2023-01-01, will the monthly aluminum-price return for Global aluminum price in 2023-01 be at least 1.702 percent?",
+    "historical_cutoff": "2023-01-01T00:00:00+00:00",
+    "target_semantics": "The monthly return of the Global aluminum price in January 2023.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "ev_37eeec5b0ab64113",
+        "takeaway": "The aluminum 3-month price rose 1.5 percent over the past month.",
+        "why_predictive": "This indicates a recent positive trend in aluminum prices, suggesting potential for continued gains."
+      }
+    ],
+    "expert_reasoning": [
+      "The target is the monthly aluminum price return for January 2023, with a threshold of 1.702 percent.",
+      "A baseline observation from July 2014 (ev_37eeec5b0ab64113) indicates that the aluminum 3-month price rose 1.5 percent in the preceding month.",
+      "This prior rise suggests a potential upward momentum in aluminum prices."
+    ],
+    "counterevidence": "No specific counterevidence was provided in the forecast-time articles that directly contradicts a positive return for January 2023.",
+    "prospective_target_estimate": "The provided evidence suggests a positive return, but the magnitude is uncertain.",
+    "option_mapping": "The evidence points towards a 'yes' if the 1.5% prior gain is indicative of continued momentum exceeding the 1.702% threshold, but this is not guaranteed.",
+    "uncertainty": "The single piece of evidence is from 2014 and reports a 1.5% gain, which is below the 1.702% threshold. The evidence does not provide the underlying price levels needed to calculate the exact return, nor does it offer recent data closer to the forecast period. Therefore, the predictive power of this historical data is weak.",
+    "dag_derived_lesson": "A historical positive trend in a price metric, even if below the target threshold, can be considered a weak supporting driver for a future positive return, but its predictive power is limited without more recent or specific data."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

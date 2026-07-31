@@ -1,0 +1,56 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_us_5y_breakeven_monthly_change_2023_07",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "inflation_expectations",
+      "target_operation": "change_classification",
+      "option_geometry": "ordered_categorical"
+    },
+    "historical_question": "As of 2023-07-01, which range will the monthly 5-year breakeven change for United States 5-year breakeven inflation rate in 2023-07 fall into?",
+    "historical_cutoff": "2023-07-01T00:00:00+00:00",
+    "target_semantics": "The monthly change in the US 5-year breakeven inflation rate for July 2023.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20230110_002_0044d463",
+        "takeaway": "Global economic prospects indicate a sharp, long-lasting slowdown.",
+        "why_predictive": "A significant global economic slowdown could reduce demand and inflation pressures, potentially leading to lower breakeven inflation rates."
+      },
+      {
+        "article_id": "art_finance_20230106_003_69ef7510",
+        "takeaway": "There is a risk of a 'hard landing' for the economy.",
+        "why_predictive": "A 'hard landing' scenario implies a sharp economic contraction, which typically dampens inflation expectations and could lead to a decrease in breakeven rates."
+      },
+      {
+        "article_id": "art_finance_20200104_003_6fd927ae",
+        "takeaway": "The Federal Reserve has struggled to understand why inflation has been difficult to increase.",
+        "why_predictive": "This suggests that underlying inflationary pressures might not be as robust as sometimes assumed, and the Fed's tools may have limitations in stimulating inflation, implying a potential for lower inflation expectations if demand falters."
+      },
+      {
+        "article_id": "art_finance_20220222_004_9b40e74a",
+        "takeaway": "Bond prices and yields move in opposite directions.",
+        "why_predictive": "This fundamental relationship implies that if market participants anticipate rising yields (due to inflation concerns or Fed tightening), bond prices would fall. Conversely, expectations of falling yields (due to economic slowdown or Fed easing) would lead to rising bond prices. This dynamic influences breakeven rates."
+      }
+    ],
+    "expert_reasoning": [
+      "The baseline factor is underlying inflation pressure. Persistent pressure can sustain medium-term inflation expectations. Evidence for this needs to verify current inflation breadth and momentum.",
+      "A key driver is Federal Reserve communication. Hawkish communication signals sustained inflation-control efforts, which can influence market expectations. Evidence requires checking statements for inflation emphasis.",
+      "Market reaction acts as a mediator. Policy reactions update market-implied inflation expectations. This can be observed through inflation swaps and nominal-real yield moves.",
+      "PCE inflation data is another driver. Inflation data can directly update medium-term expectations. The evidence requirement is to compare PCE inflation with consensus.",
+      "Growth slowdown risk serves as counterevidence. A hard landing can suppress expected inflation. Evidence involves checking global activity and demand indicators.",
+      "The target bridge is medium-term inflation pricing. Inflation data and policy repricing combine into the monthly breakeven change. Evidence requires measuring monthly breakeven movement against inflation and policy surprises."
+    ],
+    "counterevidence": "The risk of a 'hard landing' for the economy (art_finance_20230106_003_69ef7510) and a global economic slowdown (art_finance_20230110_002_0044d463) suggest that demand could weaken significantly, which would likely suppress inflation expectations and thus the breakeven inflation rate.",
+    "prospective_target_estimate": "The potential for a significant economic slowdown and a 'hard landing' suggests that inflation expectations might decrease. This would imply that the monthly 5-year breakeven change could fall below recent ranges.",
+    "option_mapping": "The forecast is for the monthly change in the 5-year breakeven inflation rate to be below -0.185 percentage points.",
+    "uncertainty": "The direction of the breakeven inflation rate is uncertain as it depends on the interplay between persistent inflation pressures, Federal Reserve policy signals, and the growing risk of an economic slowdown. The impact of a potential hard landing on inflation expectations is a significant source of uncertainty.",
+    "dag_derived_lesson": "Economic slowdown risks can counteract inflation pressures, leading to downward revisions in inflation expectations. The market's pricing of inflation expectations is sensitive to both inflation data and the perceived likelihood of recessionary conditions."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}

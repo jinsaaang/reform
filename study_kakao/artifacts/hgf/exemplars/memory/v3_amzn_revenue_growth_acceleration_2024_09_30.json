@@ -1,0 +1,38 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_amzn_revenue_growth_acceleration_2024_09_30",
+  "blueprint_sha256": "35287ec36398dacc6e486e87ca3bc879eda9a1e1145836af9414b541fd052be9",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "corporate_earnings",
+      "target_operation": "growth_acceleration",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2024-09-30, which range will Amazon.com, Inc.'s quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2024-09-30 fall into?",
+    "historical_cutoff": "2024-09-30T00:00:00+00:00",
+    "target_semantics": "Amazon.com, Inc.'s quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2024-09-30.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "Investor anticipation for Amazon's earnings report is a potential driver.",
+      "Alphabet's strong cloud revenue could set a positive precedent for AWS.",
+      "Resilient consumer spending might indicate strong performance in Amazon's e-commerce segment.",
+      "Strong growth in Amazon's advertising unit is another potential driver.",
+      "The core e-commerce retail segment's performance is a mediator.",
+      "Robust growth in Amazon Web Services (AWS) is a mediator.",
+      "Amazon's earnings beat is a mediator.",
+      "Multiple reports confirming strong performance are mediators."
+    ],
+    "counterevidence": "No forecast-time evidence was provided to support or contradict any of the potential drivers or mediators.",
+    "prospective_target_estimate": "Given the lack of specific forecast-time evidence, it is not possible to determine if the revenue-growth acceleration will be below, within, or above the recent range.",
+    "option_mapping": "The target metric is Amazon's quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2024-09-30. The options are 'below recent range' (-1.641 percentage points), 'within recent range' (-1.641 to 1.435 percentage points), and 'above recent range' (1.435 percentage points).",
+    "uncertainty": "The absence of any forecast-time evidence means all potential causal paths are unsupported, leading to high uncertainty regarding the target metric's value.",
+    "dag_derived_lesson": "When evaluating a target metric, assess the strength of evidence for each potential driver and mediator. If no forecast-time evidence is available for any component of a causal path, the entire path remains unsupported, and the target cannot be reliably estimated. The absence of evidence necessitates a declaration of high uncertainty."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

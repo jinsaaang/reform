@@ -1,0 +1,32 @@
+{
+  "schema_version": "fixed_memory_exemplar_v1",
+  "memory_question_id": "v3_us_industrial_production_monthly_growth_2023_01",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "macro / industrial activity",
+      "target_operation": "monthly industrial-production growth",
+      "option_geometry": "ordered_categorical"
+    },
+    "historical_question": "As of 2023-01-31, which range will the monthly industrial-production growth for United States industrial production in 2023-01 fall into?",
+    "historical_cutoff": "2023-01-31T00:00:00+00:00",
+    "target_semantics": "The monthly industrial-production growth rate for the United States in January 2023, categorized as 'below recent range' (less than -0.298%), 'within recent range' (-0.298% to 0.02%), or 'above recent range' (0.02% or greater).",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The historical DAG suggests that strong U.S. job growth in January 2023 (checkpoint_1) could be a driver for industrial production. This is supported by a weak historical link to January data indicating a robust labor market (checkpoint_2), which in turn may have supported consumer demand (checkpoint_3).",
+      "The mechanism connecting these factors to the target is that a strong labor market and consumer demand typically correlate with increased industrial output.",
+      "The DAG indicates that the strength of U.S. job growth in January 2023 is a 'strong' historical support, while the subsequent links to a robust labor market and consumer demand are 'weak' historical supports."
+    ],
+    "counterevidence": "No forecast-time evidence was provided to assess current conditions or contradict the potential drivers. The DAG notes that counterevidence would arise if current evidence shows the factor is absent, reversed, or dominated by a competing mechanism, or if the target baseline or current observations diverge from the proposed driver path.",
+    "prospective_target_estimate": "Given the lack of forecast-time evidence and the mixed historical support (strong for job growth, weak for subsequent links), a definitive estimate cannot be made. The target bridge mechanism is rated 'medium' historical support, suggesting potential but not certainty.",
+    "option_mapping": "The options are 'below recent range' (<-0.298%), 'within recent range' [-0.298%, 0.02%), and 'above recent range' (>=0.02%). Without specific data on January 2023 industrial production growth, mapping to an option is not possible.",
+    "uncertainty": "High uncertainty exists due to the complete absence of forecast-time evidence. The DAG's identified drivers (job growth, labor market, consumer demand) are only potential pathways, and their activation and impact in the specific January 2023 period are unknown. The 'weak' historical support for intermediate factors further increases uncertainty.",
+    "dag_derived_lesson": "When assessing a target metric, identify strong historical drivers and trace their causal chains through intermediate factors. Evaluate the historical support for each link and the overall mechanism. The absence of current evidence for these factors necessitates a cautious approach, acknowledging that unverified drivers introduce significant uncertainty. Alternative hypotheses or counterevidence not present in the historical data could also alter the forecast."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source_logic": "v22 _distill_exemplar"
+  }
+}
