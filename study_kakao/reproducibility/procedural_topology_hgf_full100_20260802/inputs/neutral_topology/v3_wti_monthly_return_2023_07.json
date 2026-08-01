@@ -1,0 +1,407 @@
+{
+  "schema_version": "outcome_neutral_topology_template_v2",
+  "source_question_id": "v3_wti_monthly_return_2023_07",
+  "source_blueprint_sha256": "669d0903a73261027a137879d1be54acf50a716d1fad9397eb050371fa413e85",
+  "target_operation": "monthly WTI price return",
+  "factor_checks": [
+    {
+      "id": "checkpoint_1",
+      "causal_role": "counterevidence",
+      "factor": "Iraq Oil Production Potential",
+      "state_question": "What is the current status of Iraq's oil production expansion efforts?",
+      "mechanism": "The potential for Iraq to increase oil production may influence global supply dynamics.",
+      "effect_if_active": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_2",
+      "causal_role": "counterevidence",
+      "factor": "Global Oil Demand vs. Supply Balance",
+      "state_question": "What is the current balance between global oil demand and supply?",
+      "mechanism": "The interplay between global demand concerns and supply adjustments may affect oil prices.",
+      "effect_if_active": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_3",
+      "causal_role": "driver",
+      "factor": "IEA Oil Market Report",
+      "state_question": "For the current target period, When is the next IEA Oil Market Report scheduled for release?",
+      "mechanism": "The release of the IEA Oil Market Report may provide insights into future oil market conditions.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_4",
+      "causal_role": "counterevidence",
+      "factor": "Kuwait Oil Output Plans",
+      "state_question": "What are Kuwait's current plans for future oil output?",
+      "mechanism": "Kuwait's indications of future output expansion may influence global oil supply expectations.",
+      "effect_if_active": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_5",
+      "causal_role": "driver",
+      "factor": "U.S. Oil Rig Count Trend",
+      "state_question": "What is the current trend in the U.S. oil rig count?",
+      "mechanism": "A declining U.S. oil rig count may signal a reduction in future oil supply.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_6",
+      "causal_role": "counterevidence",
+      "factor": "Russia Oil Drilling Activity",
+      "state_question": "What is Russia's current oil drilling activity level?",
+      "mechanism": "Russia's oil drilling activity, irrespective of production cut agreements, may affect global supply.",
+      "effect_if_active": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_7",
+      "causal_role": "driver",
+      "factor": "Global Geopolitics and Petrodollar Status",
+      "state_question": "What is the current state of global geopolitics and the petrodollar?",
+      "mechanism": "Shifting global geopolitics and petrodollar dynamics can influence geopolitical considerations relevant to oil markets.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_8",
+      "causal_role": "mediator",
+      "factor": "OPEC+ Production Decision Basis",
+      "state_question": "What are the current geopolitical considerations influencing OPEC+ production decisions?",
+      "mechanism": "Geopolitical considerations may influence OPEC+ decisions regarding production levels.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_9",
+      "causal_role": "mediator",
+      "factor": "OPEC+ Supply Impact",
+      "state_question": "What is the current impact of OPEC+ production adjustments on supply tightness?",
+      "mechanism": "OPEC+ production adjustments may influence supply tightness in the oil market.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    }
+  ],
+  "topology_edges": [
+    {
+      "id": "edge_001",
+      "source_checkpoint_id": "checkpoint_8",
+      "target_checkpoint_id": "checkpoint_9",
+      "relationship": "enables",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Geopolitical considerations influencing OPEC+ production decisions may enable or solidify OPEC+ production adjustments.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_002",
+      "source_checkpoint_id": "checkpoint_7",
+      "target_checkpoint_id": "checkpoint_8",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Shifting global geopolitics and petrodollar dynamics can contribute to geopolitical considerations influencing OPEC+ production decisions.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_003",
+      "source_checkpoint_id": "checkpoint_9",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The impact of OPEC+ production adjustments on supply tightness may influence the target metric.",
+      "terminal_to_target_bridge": true
+    },
+    {
+      "id": "edge_004",
+      "source_checkpoint_id": "checkpoint_5",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The trend in the U.S. oil rig count may influence the target metric.",
+      "terminal_to_target_bridge": true
+    },
+    {
+      "id": "edge_005",
+      "source_checkpoint_id": "checkpoint_2",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "inhibits",
+      "directionality": "counteracting",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The balance between global oil demand and supply may influence the target metric.",
+      "terminal_to_target_bridge": true
+    },
+    {
+      "id": "edge_006",
+      "source_checkpoint_id": "checkpoint_3",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "correlates",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The IEA Oil Market Report may influence the target metric.",
+      "terminal_to_target_bridge": true
+    },
+    {
+      "id": "edge_007",
+      "source_checkpoint_id": "checkpoint_4",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "inhibits",
+      "directionality": "counteracting",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Kuwait's future oil output plans may influence the target metric.",
+      "terminal_to_target_bridge": true
+    },
+    {
+      "id": "edge_008",
+      "source_checkpoint_id": "checkpoint_1",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "inhibits",
+      "directionality": "counteracting",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Iraq's oil production potential may influence the target metric.",
+      "terminal_to_target_bridge": true
+    },
+    {
+      "id": "edge_009",
+      "source_checkpoint_id": "checkpoint_6",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "inhibits",
+      "directionality": "counteracting",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Russia's oil drilling activity may influence the target metric.",
+      "terminal_to_target_bridge": true
+    }
+  ],
+  "conditional_paths": [
+    {
+      "id": "path_1",
+      "factor_ids": [
+        "checkpoint_1"
+      ],
+      "edge_ids": [
+        "edge_008"
+      ],
+      "relationships": [
+        "inhibits"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "Iraq's oil production potential may influence the target metric.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_2",
+      "factor_ids": [
+        "checkpoint_2"
+      ],
+      "edge_ids": [
+        "edge_005"
+      ],
+      "relationships": [
+        "inhibits"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "The balance between global oil demand and supply may influence the target metric.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_3",
+      "factor_ids": [
+        "checkpoint_3"
+      ],
+      "edge_ids": [
+        "edge_006"
+      ],
+      "relationships": [
+        "correlates"
+      ],
+      "path_role": "main_path",
+      "conditional_mechanism": "The IEA Oil Market Report may influence the target metric.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_4",
+      "factor_ids": [
+        "checkpoint_4"
+      ],
+      "edge_ids": [
+        "edge_007"
+      ],
+      "relationships": [
+        "inhibits"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "Kuwait's future oil output plans may influence the target metric.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_5",
+      "factor_ids": [
+        "checkpoint_5"
+      ],
+      "edge_ids": [
+        "edge_004"
+      ],
+      "relationships": [
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "The trend in the U.S. oil rig count may influence the target metric.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_6",
+      "factor_ids": [
+        "checkpoint_6"
+      ],
+      "edge_ids": [
+        "edge_009"
+      ],
+      "relationships": [
+        "inhibits"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "Russia's oil drilling activity may influence the target metric.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_7",
+      "factor_ids": [
+        "checkpoint_7",
+        "checkpoint_8",
+        "checkpoint_9"
+      ],
+      "edge_ids": [
+        "edge_002",
+        "edge_001",
+        "edge_003"
+      ],
+      "relationships": [
+        "causes",
+        "enables",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "Shifting global geopolitics and petrodollar dynamics can contribute to geopolitical considerations influencing OPEC+ production decisions. Geopolitical considerations influencing OPEC+ production decisions may enable or solidify OPEC+ production adjustments. The impact of OPEC+ production adjustments on supply tightness may influence the target metric.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    }
+  ],
+  "target_bridge": {
+    "id": "target_bridge",
+    "mechanism": "Map only currently supported paths into the current target period and exact metric.",
+    "magnitude_requirement": "Current numerical evidence must support the relevant option boundary, not only the direction of change.",
+    "failure_signal": "The current baseline, target timing, or magnitude evidence does not support the proposed boundary crossing."
+  },
+  "competing_explanations": [],
+  "worked_procedure": [
+    "Lock the exact current target operation and baseline.",
+    "Fill the preserved factor nodes with current evidence.",
+    "Check each preserved directed edge and its timing condition.",
+    "Reject paths containing an unsupported or contradicted link.",
+    "Compare supported paths with current factors outside the graph.",
+    "Require current magnitude support before option mapping."
+  ],
+  "topology_contract": {
+    "path_order_generated_by_model": false,
+    "edge_direction_generated_by_model": false,
+    "source_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_5",
+      "checkpoint_6",
+      "checkpoint_7",
+      "checkpoint_8",
+      "checkpoint_9"
+    ],
+    "source_edge_ids": [
+      "edge_001",
+      "edge_002",
+      "edge_003",
+      "edge_004",
+      "edge_005",
+      "edge_006",
+      "edge_007",
+      "edge_008",
+      "edge_009"
+    ]
+  },
+  "template_sha256": "e74ba62fb5cb02e278f748c20f2baec8d6099741656c2e4cfd86438ba9e21086"
+}

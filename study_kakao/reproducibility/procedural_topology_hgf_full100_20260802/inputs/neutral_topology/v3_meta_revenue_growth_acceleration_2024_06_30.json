@@ -1,0 +1,165 @@
+{
+  "schema_version": "outcome_neutral_topology_template_v2",
+  "source_question_id": "v3_meta_revenue_growth_acceleration_2024_06_30",
+  "source_blueprint_sha256": "cb831768ed95c439d70d5ed3514d3ad9e88f12340469dff7d05c8e12997a58e1",
+  "target_operation": "quarterly revenue year-over-year growth acceleration",
+  "factor_checks": [
+    {
+      "id": "checkpoint_1",
+      "causal_role": "driver",
+      "factor": "Meta Platforms, Inc. current period earnings announcement event",
+      "state_question": "Has the Meta Platforms, Inc. current period earnings announcement event occurred?",
+      "mechanism": "The occurrence of the Meta Platforms, Inc. current period earnings announcement event leads to the disclosure of its current period revenue.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_2",
+      "causal_role": "mediator",
+      "factor": "Meta Platforms, Inc. current period revenue magnitude",
+      "state_question": "What is the relevant current magnitude of Meta Platforms, Inc.'s current period revenue?",
+      "mechanism": "The relevant current magnitude of Meta Platforms, Inc.'s current period revenue is a basis for calculating its year-over-year growth percentage.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_3",
+      "causal_role": "mediator",
+      "factor": "Meta Platforms, Inc. current period year-over-year revenue growth rate",
+      "state_question": "What is the relevant current magnitude of Meta Platforms, Inc.'s current period year-over-year revenue growth rate?",
+      "mechanism": "The relevant current magnitude of Meta Platforms, Inc.'s current period year-over-year revenue growth rate is assessed in relation to a threshold.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_4",
+      "causal_role": "mediator",
+      "factor": "Meta Platforms, Inc. current period revenue growth rate vs. threshold",
+      "state_question": "How does Meta Platforms, Inc.'s current period revenue growth rate compare to a relevant threshold?",
+      "mechanism": "The comparison of Meta Platforms, Inc.'s current period revenue growth rate against a relevant threshold is a determinant for the target metric.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    }
+  ],
+  "topology_edges": [
+    {
+      "id": "edge_001",
+      "source_checkpoint_id": "checkpoint_2",
+      "target_checkpoint_id": "checkpoint_3",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The relevant current magnitude of Meta Platforms, Inc.'s current period revenue is used to calculate the year-over-year growth percentage.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_002",
+      "source_checkpoint_id": "checkpoint_3",
+      "target_checkpoint_id": "checkpoint_4",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The relevant current magnitude of Meta Platforms, Inc.'s current period year-over-year revenue growth rate is compared against a relevant threshold.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_003",
+      "source_checkpoint_id": "checkpoint_1",
+      "target_checkpoint_id": "checkpoint_2",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The occurrence of the Meta Platforms, Inc. current period earnings announcement event leads to the disclosure of its current period revenue.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_004",
+      "source_checkpoint_id": "checkpoint_4",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The comparison of Meta Platforms, Inc.'s current period revenue growth rate against a relevant threshold is a determinant for the target metric.",
+      "terminal_to_target_bridge": true
+    }
+  ],
+  "conditional_paths": [
+    {
+      "id": "path_1",
+      "factor_ids": [
+        "checkpoint_1",
+        "checkpoint_2",
+        "checkpoint_3",
+        "checkpoint_4"
+      ],
+      "edge_ids": [
+        "edge_003",
+        "edge_001",
+        "edge_002",
+        "edge_004"
+      ],
+      "relationships": [
+        "causes",
+        "causes",
+        "causes",
+        "causes"
+      ],
+      "path_role": "main_path",
+      "conditional_mechanism": "The occurrence of the Meta Platforms, Inc. current period earnings announcement event leads to the disclosure of its current period revenue. The relevant current magnitude of Meta Platforms, Inc.'s current period revenue is used to calculate the year-over-year growth percentage. The relevant current magnitude of Meta Platforms, Inc.'s current period year-over-year revenue growth rate is compared against a relevant threshold. The comparison of Meta Platforms, Inc.'s current period revenue growth rate against a relevant threshold is a determinant for the target metric.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    }
+  ],
+  "target_bridge": {
+    "id": "target_bridge",
+    "mechanism": "Map only currently supported paths into the current target period and exact metric.",
+    "magnitude_requirement": "Current numerical evidence must support the relevant option boundary, not only the direction of change.",
+    "failure_signal": "The current baseline, target timing, or magnitude evidence does not support the proposed boundary crossing."
+  },
+  "competing_explanations": [],
+  "worked_procedure": [
+    "Lock the exact current target operation and baseline.",
+    "Fill the preserved factor nodes with current evidence.",
+    "Check each preserved directed edge and its timing condition.",
+    "Reject paths containing an unsupported or contradicted link.",
+    "Compare supported paths with current factors outside the graph.",
+    "Require current magnitude support before option mapping."
+  ],
+  "topology_contract": {
+    "path_order_generated_by_model": false,
+    "edge_direction_generated_by_model": false,
+    "source_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4"
+    ],
+    "source_edge_ids": [
+      "edge_001",
+      "edge_002",
+      "edge_003",
+      "edge_004"
+    ]
+  },
+  "template_sha256": "5332a386fe98d2cbaa3cf85c5ce98d77259c713e1382e6e1facc3f8a4120fcee"
+}

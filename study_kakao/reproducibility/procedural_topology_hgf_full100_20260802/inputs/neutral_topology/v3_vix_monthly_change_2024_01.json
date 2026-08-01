@@ -1,0 +1,247 @@
+{
+  "schema_version": "outcome_neutral_topology_template_v2",
+  "source_question_id": "v3_vix_monthly_change_2024_01",
+  "source_blueprint_sha256": "4e19cf83cdd1c475fd2004b86557a55a8e5ef971a469ffad4c9fec67f7e5da1f",
+  "target_operation": "monthly VIX change",
+  "factor_checks": [
+    {
+      "id": "checkpoint_1",
+      "causal_role": "counterevidence",
+      "factor": "S&P 500 Performance",
+      "state_question": "What is the current S&P 500 performance?",
+      "mechanism": "The relationship between S&P 500 performance and the target metric is being re-evaluated.",
+      "effect_if_active": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "strong"
+    },
+    {
+      "id": "checkpoint_2",
+      "causal_role": "baseline",
+      "factor": "VIX Starting Level",
+      "state_question": "What is the current starting level of the VIX?",
+      "mechanism": "The starting level of the VIX may provide context for subsequent changes.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "strong"
+    },
+    {
+      "id": "checkpoint_3",
+      "causal_role": "driver",
+      "factor": "Market Concerns",
+      "state_question": "What are the current market concerns?",
+      "mechanism": "Market concerns may influence expectations of volatility.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "medium"
+    },
+    {
+      "id": "checkpoint_4",
+      "causal_role": "mediator",
+      "factor": "VIX Movement",
+      "state_question": "What is the current movement of the VIX?",
+      "mechanism": "The relationship between VIX movement and the target metric is being re-evaluated.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "strong"
+    },
+    {
+      "id": "checkpoint_5",
+      "causal_role": "driver",
+      "factor": "Market Commentary",
+      "state_question": "What is the current market commentary regarding VIX?",
+      "mechanism": "The relationship between market commentary and the target metric is being re-evaluated.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "strong"
+    }
+  ],
+  "topology_edges": [
+    {
+      "id": "edge_001",
+      "source_checkpoint_id": "checkpoint_2",
+      "target_checkpoint_id": "checkpoint_4",
+      "relationship": "provides_baseline_for",
+      "directionality": "forward",
+      "support_level": "evidence_synthesized",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The VIX starting level provides context for VIX movement.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_002",
+      "source_checkpoint_id": "checkpoint_3",
+      "target_checkpoint_id": "checkpoint_4",
+      "relationship": "supports",
+      "directionality": "forward",
+      "support_level": "background_hypothesis",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Market concerns may support expectations of VIX movement.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_003",
+      "source_checkpoint_id": "checkpoint_4",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "contributes_to",
+      "directionality": "forward",
+      "support_level": "evidence_synthesized",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "VIX movement contributes to the target metric.",
+      "terminal_to_target_bridge": true
+    },
+    {
+      "id": "edge_004",
+      "source_checkpoint_id": "checkpoint_5",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "supports",
+      "directionality": "forward",
+      "support_level": "background_hypothesis",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Market commentary supports the target metric.",
+      "terminal_to_target_bridge": true
+    },
+    {
+      "id": "edge_005",
+      "source_checkpoint_id": "checkpoint_1",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "counteracts",
+      "directionality": "counteracting",
+      "support_level": "background_hypothesis",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "S&P 500 performance counteracts the target metric.",
+      "terminal_to_target_bridge": true
+    }
+  ],
+  "conditional_paths": [
+    {
+      "id": "path_1",
+      "factor_ids": [
+        "checkpoint_1"
+      ],
+      "edge_ids": [
+        "edge_005"
+      ],
+      "relationships": [
+        "counteracts"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "S&P 500 performance counteracts the target metric.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_2",
+      "factor_ids": [
+        "checkpoint_2",
+        "checkpoint_4"
+      ],
+      "edge_ids": [
+        "edge_001",
+        "edge_003"
+      ],
+      "relationships": [
+        "provides_baseline_for",
+        "contributes_to"
+      ],
+      "path_role": "main_path",
+      "conditional_mechanism": "The VIX starting level provides context for VIX movement. VIX movement contributes to the target metric.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_3",
+      "factor_ids": [
+        "checkpoint_3",
+        "checkpoint_4"
+      ],
+      "edge_ids": [
+        "edge_002",
+        "edge_003"
+      ],
+      "relationships": [
+        "supports",
+        "contributes_to"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "Market concerns may support expectations of VIX movement. VIX movement contributes to the target metric.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_4",
+      "factor_ids": [
+        "checkpoint_5"
+      ],
+      "edge_ids": [
+        "edge_004"
+      ],
+      "relationships": [
+        "supports"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "Market commentary supports the target metric.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    }
+  ],
+  "target_bridge": {
+    "id": "target_bridge",
+    "mechanism": "Map only currently supported paths into the current target period and exact metric.",
+    "magnitude_requirement": "Current numerical evidence must support the relevant option boundary, not only the direction of change.",
+    "failure_signal": "The current baseline, target timing, or magnitude evidence does not support the proposed boundary crossing."
+  },
+  "competing_explanations": [],
+  "worked_procedure": [
+    "Lock the exact current target operation and baseline.",
+    "Fill the preserved factor nodes with current evidence.",
+    "Check each preserved directed edge and its timing condition.",
+    "Reject paths containing an unsupported or contradicted link.",
+    "Compare supported paths with current factors outside the graph.",
+    "Require current magnitude support before option mapping."
+  ],
+  "topology_contract": {
+    "path_order_generated_by_model": false,
+    "edge_direction_generated_by_model": false,
+    "source_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_5"
+    ],
+    "source_edge_ids": [
+      "edge_001",
+      "edge_002",
+      "edge_003",
+      "edge_004",
+      "edge_005"
+    ]
+  },
+  "template_sha256": "39e26cd75740cc3576dd598632fb4c8a6778dd7a6025537cd2750cd5f564c094"
+}

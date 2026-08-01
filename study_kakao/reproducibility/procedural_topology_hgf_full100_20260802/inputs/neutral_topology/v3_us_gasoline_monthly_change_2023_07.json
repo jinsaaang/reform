@@ -1,0 +1,312 @@
+{
+  "schema_version": "outcome_neutral_topology_template_v2",
+  "source_question_id": "v3_us_gasoline_monthly_change_2023_07",
+  "source_blueprint_sha256": "f922543c0355af17c983c633087d0db563a187da4cd637e5a835b51e347cd1bc",
+  "target_operation": "monthly retail gasoline-price change",
+  "factor_checks": [
+    {
+      "id": "checkpoint_1",
+      "causal_role": "driver",
+      "factor": "EIA Summer Gasoline Price Outlook",
+      "state_question": "What is the current EIA outlook for summer gasoline prices?",
+      "mechanism": "The EIA outlook for summer gasoline prices is subject to updates and revisions.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "strong"
+    },
+    {
+      "id": "checkpoint_2",
+      "causal_role": "driver",
+      "factor": "Recent Gasoline Price Trend",
+      "state_question": "For the current target period, What is the recent trend in gasoline prices?",
+      "mechanism": "Recent price trends can inform expectations about future price movements.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "strong"
+    },
+    {
+      "id": "checkpoint_3",
+      "causal_role": "driver",
+      "factor": "Oil Production Restraint",
+      "state_question": "Are there current announcements or actions regarding oil production restraint by major producers?",
+      "mechanism": "Oil production restraint by major producers can exert upward pressure on oil prices.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "strong"
+    },
+    {
+      "id": "checkpoint_4",
+      "causal_role": "mediator",
+      "factor": "Updated Gasoline Price Outlook",
+      "state_question": "What is the current gasoline price outlook?",
+      "mechanism": "An updated gasoline price outlook may reflect anticipated pressures from underlying market factors.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "strong"
+    },
+    {
+      "id": "checkpoint_5",
+      "causal_role": "driver",
+      "factor": "Domestic Refinery Supply Constraints",
+      "state_question": "Are there current domestic refinery issues affecting gasoline supply?",
+      "mechanism": "Domestic refinery issues can constrain gasoline supply.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "strong"
+    },
+    {
+      "id": "checkpoint_6",
+      "causal_role": "mediator",
+      "factor": "Crude Oil Costs",
+      "state_question": "What are the current crude oil costs?",
+      "mechanism": "Higher crude oil costs are a factor that can influence gasoline prices.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "strong"
+    },
+    {
+      "id": "checkpoint_7",
+      "causal_role": "mediator",
+      "factor": "Retail Gasoline Price Level",
+      "state_question": "What is the current level of retail gasoline prices?",
+      "mechanism": "The level of retail gasoline prices is a key metric for the gasoline market.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "strong"
+    }
+  ],
+  "topology_edges": [
+    {
+      "id": "edge_001",
+      "source_checkpoint_id": "checkpoint_1",
+      "target_checkpoint_id": "checkpoint_4",
+      "relationship": "updated_by",
+      "directionality": "forward",
+      "support_level": "evidence_synthesized",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "An updated outlook may revise a prior forecast sequence.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_002",
+      "source_checkpoint_id": "checkpoint_2",
+      "target_checkpoint_id": "checkpoint_4",
+      "relationship": "provides_context_for",
+      "directionality": "forward",
+      "support_level": "evidence_synthesized",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Recent price trends can provide context for revised outlooks.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_003",
+      "source_checkpoint_id": "checkpoint_3",
+      "target_checkpoint_id": "checkpoint_6",
+      "relationship": "contributes_to",
+      "directionality": "forward",
+      "support_level": "evidence_synthesized",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Oil production restraint can influence crude oil costs.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_004",
+      "source_checkpoint_id": "checkpoint_4",
+      "target_checkpoint_id": "checkpoint_7",
+      "relationship": "anticipates",
+      "directionality": "forward",
+      "support_level": "evidence_synthesized",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "An updated gasoline price outlook may anticipate pressures that could affect retail gasoline prices.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_005",
+      "source_checkpoint_id": "checkpoint_6",
+      "target_checkpoint_id": "checkpoint_7",
+      "relationship": "contributes_to",
+      "directionality": "forward",
+      "support_level": "observed",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Crude oil costs can influence the level of retail gasoline prices.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_006",
+      "source_checkpoint_id": "checkpoint_5",
+      "target_checkpoint_id": "checkpoint_7",
+      "relationship": "contributes_to",
+      "directionality": "forward",
+      "support_level": "observed",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Domestic refinery supply constraints can influence the level of retail gasoline prices.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_007",
+      "source_checkpoint_id": "checkpoint_7",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "measured_as",
+      "directionality": "forward",
+      "support_level": "evidence_synthesized",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The level of retail gasoline prices is a component in determining the monthly retail gasoline-price change.",
+      "terminal_to_target_bridge": true
+    }
+  ],
+  "conditional_paths": [
+    {
+      "id": "path_1",
+      "factor_ids": [
+        "checkpoint_1",
+        "checkpoint_4",
+        "checkpoint_7"
+      ],
+      "edge_ids": [
+        "edge_001",
+        "edge_004",
+        "edge_007"
+      ],
+      "relationships": [
+        "updated_by",
+        "anticipates",
+        "measured_as"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "An updated outlook may revise a prior forecast sequence. An updated gasoline price outlook may anticipate pressures that could affect retail gasoline prices. The level of retail gasoline prices is a component in determining the monthly retail gasoline-price change.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_2",
+      "factor_ids": [
+        "checkpoint_2",
+        "checkpoint_4",
+        "checkpoint_7"
+      ],
+      "edge_ids": [
+        "edge_002",
+        "edge_004",
+        "edge_007"
+      ],
+      "relationships": [
+        "provides_context_for",
+        "anticipates",
+        "measured_as"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "Recent price trends can provide context for revised outlooks. An updated gasoline price outlook may anticipate pressures that could affect retail gasoline prices. The level of retail gasoline prices is a component in determining the monthly retail gasoline-price change.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_3",
+      "factor_ids": [
+        "checkpoint_3",
+        "checkpoint_6",
+        "checkpoint_7"
+      ],
+      "edge_ids": [
+        "edge_003",
+        "edge_005",
+        "edge_007"
+      ],
+      "relationships": [
+        "contributes_to",
+        "contributes_to",
+        "measured_as"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "Oil production restraint can influence crude oil costs. Crude oil costs can influence the level of retail gasoline prices. The level of retail gasoline prices is a component in determining the monthly retail gasoline-price change.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_4",
+      "factor_ids": [
+        "checkpoint_5",
+        "checkpoint_7"
+      ],
+      "edge_ids": [
+        "edge_006",
+        "edge_007"
+      ],
+      "relationships": [
+        "contributes_to",
+        "measured_as"
+      ],
+      "path_role": "main_path",
+      "conditional_mechanism": "Domestic refinery supply constraints can influence the level of retail gasoline prices. The level of retail gasoline prices is a component in determining the monthly retail gasoline-price change.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    }
+  ],
+  "target_bridge": {
+    "id": "target_bridge",
+    "mechanism": "Map only currently supported paths into the current target period and exact metric.",
+    "magnitude_requirement": "Current numerical evidence must support the relevant option boundary, not only the direction of change.",
+    "failure_signal": "The current baseline, target timing, or magnitude evidence does not support the proposed boundary crossing."
+  },
+  "competing_explanations": [],
+  "worked_procedure": [
+    "Lock the exact current target operation and baseline.",
+    "Fill the preserved factor nodes with current evidence.",
+    "Check each preserved directed edge and its timing condition.",
+    "Reject paths containing an unsupported or contradicted link.",
+    "Compare supported paths with current factors outside the graph.",
+    "Require current magnitude support before option mapping."
+  ],
+  "topology_contract": {
+    "path_order_generated_by_model": false,
+    "edge_direction_generated_by_model": false,
+    "source_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_5",
+      "checkpoint_6",
+      "checkpoint_7"
+    ],
+    "source_edge_ids": [
+      "edge_001",
+      "edge_002",
+      "edge_003",
+      "edge_004",
+      "edge_005",
+      "edge_006",
+      "edge_007"
+    ]
+  },
+  "template_sha256": "6c80a5e414d0eae8b5cc3a192eae7efbcb50c70e08e7cc2f63ff3b4a6ed5ddba"
+}

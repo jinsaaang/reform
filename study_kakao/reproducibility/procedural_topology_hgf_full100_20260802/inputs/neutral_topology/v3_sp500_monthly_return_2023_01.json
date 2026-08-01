@@ -1,0 +1,407 @@
+{
+  "schema_version": "outcome_neutral_topology_template_v2",
+  "source_question_id": "v3_sp500_monthly_return_2023_01",
+  "source_blueprint_sha256": "b5cb488a577693e29880b5fcfcfef38d339c4b378cdee7cbb545fbac7543c9df",
+  "target_operation": "monthly S&P 500 return",
+  "factor_checks": [
+    {
+      "id": "checkpoint_1",
+      "causal_role": "driver",
+      "factor": "U.S. Inflation Rate",
+      "state_question": "What is the current U.S. inflation rate?",
+      "mechanism": "If the U.S. inflation rate is elevated, investors may anticipate aggressive monetary policy adjustments.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_2",
+      "causal_role": "mediator",
+      "factor": "Investor Expectations of Fed Rate Hikes",
+      "state_question": "What are current investor expectations regarding Fed rate hikes?",
+      "mechanism": "Investor expectations of Fed rate hikes can influence market indicators of future interest rate levels.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_3",
+      "causal_role": "mediator",
+      "factor": "Fed Funds Futures Interest Rate Peak",
+      "state_question": "For the current target period, What do Fed funds futures indicate about the peak of U.S. interest rates?",
+      "mechanism": "The level indicated by Fed funds futures for the peak of U.S. interest rates may be associated with future market movements.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_4",
+      "causal_role": "counterevidence",
+      "factor": "Inflation Shockwaves Risk",
+      "state_question": "Is 'Inflation shockwaves' identified as a current top risk?",
+      "mechanism": "The identification of 'Inflation shockwaves' as a significant risk may influence economic conditions.",
+      "effect_if_active": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_5",
+      "causal_role": "counterevidence",
+      "factor": "Inflation Impact on Low-Income Households",
+      "state_question": "What is the current impact of high inflation on low-income households?",
+      "mechanism": "The disproportionate impact of high inflation on low-income households can reflect broader economic pressures.",
+      "effect_if_active": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_6",
+      "causal_role": "counterevidence",
+      "factor": "Corporate Profits and Inflation",
+      "state_question": "What is the current suggested contribution of corporate profits to inflation?",
+      "mechanism": "The extent to which corporate profits contribute to inflation may influence overall price levels.",
+      "effect_if_active": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_7",
+      "causal_role": "driver",
+      "factor": "Morgan Stanley Earnings Performance",
+      "state_question": "How is Morgan Stanley's earnings performance currently trending?",
+      "mechanism": "Strong earnings performance by major financial institutions may be associated with market sentiment.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_8",
+      "causal_role": "counterevidence",
+      "factor": "Supply Chain Complexity and Inflation",
+      "state_question": "What is the current discussion regarding complex supply chains contributing to inflation?",
+      "mechanism": "The complexity of supply chains may be a factor contributing to inflationary pressures.",
+      "effect_if_active": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_9",
+      "causal_role": "counterevidence",
+      "factor": "Public Concern on Inflation",
+      "state_question": "What is the current level of public concern regarding inflation?",
+      "mechanism": "The prominence of inflation as a public concern may reflect its perceived economic impact.",
+      "effect_if_active": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    }
+  ],
+  "topology_edges": [
+    {
+      "id": "edge_001",
+      "source_checkpoint_id": "checkpoint_1",
+      "target_checkpoint_id": "checkpoint_2",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Elevated inflation may lead investors to anticipate aggressive monetary policy adjustments.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_002",
+      "source_checkpoint_id": "checkpoint_2",
+      "target_checkpoint_id": "checkpoint_3",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Investor expectations of rate hikes can influence market indicators of future interest rate peaks.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_003",
+      "source_checkpoint_id": "checkpoint_3",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The level indicated by Fed funds futures for the peak of U.S. interest rates may be associated with the target metric.",
+      "terminal_to_target_bridge": true
+    },
+    {
+      "id": "edge_004",
+      "source_checkpoint_id": "checkpoint_7",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Strong earnings performance by major financial institutions may be associated with the target metric.",
+      "terminal_to_target_bridge": true
+    },
+    {
+      "id": "edge_005",
+      "source_checkpoint_id": "checkpoint_4",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "inhibits",
+      "directionality": "counteracting",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The identification of 'Inflation shockwaves' as a significant risk may counteract movements in the target metric.",
+      "terminal_to_target_bridge": true
+    },
+    {
+      "id": "edge_006",
+      "source_checkpoint_id": "checkpoint_5",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "inhibits",
+      "directionality": "counteracting",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The disproportionate impact of high inflation on low-income households may counteract movements in the target metric.",
+      "terminal_to_target_bridge": true
+    },
+    {
+      "id": "edge_007",
+      "source_checkpoint_id": "checkpoint_6",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "inhibits",
+      "directionality": "counteracting",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The extent to which corporate profits contribute to inflation may counteract movements in the target metric.",
+      "terminal_to_target_bridge": true
+    },
+    {
+      "id": "edge_008",
+      "source_checkpoint_id": "checkpoint_8",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "inhibits",
+      "directionality": "counteracting",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The complexity of supply chains may counteract movements in the target metric.",
+      "terminal_to_target_bridge": true
+    },
+    {
+      "id": "edge_009",
+      "source_checkpoint_id": "checkpoint_9",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "inhibits",
+      "directionality": "counteracting",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The prominence of inflation as a public concern may counteract movements in the target metric.",
+      "terminal_to_target_bridge": true
+    }
+  ],
+  "conditional_paths": [
+    {
+      "id": "path_1",
+      "factor_ids": [
+        "checkpoint_1",
+        "checkpoint_2",
+        "checkpoint_3"
+      ],
+      "edge_ids": [
+        "edge_001",
+        "edge_002",
+        "edge_003"
+      ],
+      "relationships": [
+        "causes",
+        "causes",
+        "causes"
+      ],
+      "path_role": "main_path",
+      "conditional_mechanism": "Elevated inflation may lead investors to anticipate aggressive monetary policy adjustments. Investor expectations of rate hikes can influence market indicators of future interest rate peaks. The level indicated by Fed funds futures for the peak of U.S. interest rates may be associated with the target metric.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_2",
+      "factor_ids": [
+        "checkpoint_4"
+      ],
+      "edge_ids": [
+        "edge_005"
+      ],
+      "relationships": [
+        "inhibits"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "The identification of 'Inflation shockwaves' as a significant risk may counteract movements in the target metric.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_3",
+      "factor_ids": [
+        "checkpoint_5"
+      ],
+      "edge_ids": [
+        "edge_006"
+      ],
+      "relationships": [
+        "inhibits"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "The disproportionate impact of high inflation on low-income households may counteract movements in the target metric.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_4",
+      "factor_ids": [
+        "checkpoint_6"
+      ],
+      "edge_ids": [
+        "edge_007"
+      ],
+      "relationships": [
+        "inhibits"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "The extent to which corporate profits contribute to inflation may counteract movements in the target metric.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_5",
+      "factor_ids": [
+        "checkpoint_7"
+      ],
+      "edge_ids": [
+        "edge_004"
+      ],
+      "relationships": [
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "Strong earnings performance by major financial institutions may be associated with the target metric.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_6",
+      "factor_ids": [
+        "checkpoint_8"
+      ],
+      "edge_ids": [
+        "edge_008"
+      ],
+      "relationships": [
+        "inhibits"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "The complexity of supply chains may counteract movements in the target metric.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_7",
+      "factor_ids": [
+        "checkpoint_9"
+      ],
+      "edge_ids": [
+        "edge_009"
+      ],
+      "relationships": [
+        "inhibits"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "The prominence of inflation as a public concern may counteract movements in the target metric.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    }
+  ],
+  "target_bridge": {
+    "id": "target_bridge",
+    "mechanism": "Map only currently supported paths into the current target period and exact metric.",
+    "magnitude_requirement": "Current numerical evidence must support the relevant option boundary, not only the direction of change.",
+    "failure_signal": "The current baseline, target timing, or magnitude evidence does not support the proposed boundary crossing."
+  },
+  "competing_explanations": [],
+  "worked_procedure": [
+    "Lock the exact current target operation and baseline.",
+    "Fill the preserved factor nodes with current evidence.",
+    "Check each preserved directed edge and its timing condition.",
+    "Reject paths containing an unsupported or contradicted link.",
+    "Compare supported paths with current factors outside the graph.",
+    "Require current magnitude support before option mapping."
+  ],
+  "topology_contract": {
+    "path_order_generated_by_model": false,
+    "edge_direction_generated_by_model": false,
+    "source_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_5",
+      "checkpoint_6",
+      "checkpoint_7",
+      "checkpoint_8",
+      "checkpoint_9"
+    ],
+    "source_edge_ids": [
+      "edge_001",
+      "edge_002",
+      "edge_003",
+      "edge_004",
+      "edge_005",
+      "edge_006",
+      "edge_007",
+      "edge_008",
+      "edge_009"
+    ]
+  },
+  "template_sha256": "f0f14f7ab01474fb527d799c45475d21a9fa29edd766dca187a27ca6d63e852d"
+}

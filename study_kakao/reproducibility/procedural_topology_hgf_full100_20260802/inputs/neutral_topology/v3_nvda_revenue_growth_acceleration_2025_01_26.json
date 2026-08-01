@@ -1,0 +1,365 @@
+{
+  "schema_version": "outcome_neutral_topology_template_v2",
+  "source_question_id": "v3_nvda_revenue_growth_acceleration_2025_01_26",
+  "source_blueprint_sha256": "453ba0fc3adf1d846107aee9c76231a16d881423ff2013f8bbe0bc5761bc57f7",
+  "target_operation": "quarterly revenue year-over-year growth acceleration",
+  "factor_checks": [
+    {
+      "id": "checkpoint_1",
+      "causal_role": "driver",
+      "factor": "Fiscal Quarter End",
+      "state_question": "For the current target period, Has the fiscal quarter ended?",
+      "mechanism": "The end of the fiscal quarter is a prerequisite for revenue reporting.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_2",
+      "causal_role": "counterevidence",
+      "factor": "Other Segments Performance",
+      "state_question": "For the current target period, How is the performance of NVIDIA's other segments relative to the Data Center segment?",
+      "mechanism": "The relative performance of NVIDIA's other segments can condition overall revenue growth.",
+      "effect_if_active": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_3",
+      "causal_role": "driver",
+      "factor": "AI Demand for Data Center",
+      "state_question": "What is the current demand driven by the AI boom for NVIDIA's Data Center products?",
+      "mechanism": "The AI boom's impact on demand for NVIDIA's Data Center products is a condition for market anticipation.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_4",
+      "causal_role": "mediator",
+      "factor": "AI Product Demand",
+      "state_question": "What is the current market anticipation and demand for NVIDIA's AI products?",
+      "mechanism": "Market anticipation and demand for NVIDIA's AI products condition the growth of the Data Center segment.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_5",
+      "causal_role": "mediator",
+      "factor": "Blackwell Product Launch",
+      "state_question": "For the current target period, Have new NVIDIA Blackwell architecture products been launched?",
+      "mechanism": "The launch of new NVIDIA Blackwell architecture products is a condition for demand and revenue growth in the Data Center segment.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_6",
+      "causal_role": "mediator",
+      "factor": "Data Center Revenue Growth",
+      "state_question": "What is the current year-over-year growth of NVIDIA's Data Center segment revenue?",
+      "mechanism": "The growth of NVIDIA's Data Center segment revenue conditions overall revenue growth.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_7",
+      "causal_role": "mediator",
+      "factor": "Overall Revenue Growth",
+      "state_question": "What is NVIDIA's current overall revenue growth year-over-year?",
+      "mechanism": "NVIDIA's overall revenue growth is a condition for assessing growth acceleration.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_8",
+      "causal_role": "mediator",
+      "factor": "Overall Revenue Growth vs. Threshold",
+      "state_question": "For the current target period, Does NVIDIA's overall revenue growth meet or exceed a relevant threshold?",
+      "mechanism": "The comparison of NVIDIA's overall revenue growth to a threshold conditions the target metric.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    }
+  ],
+  "topology_edges": [
+    {
+      "id": "edge_001",
+      "source_checkpoint_id": "checkpoint_1",
+      "target_checkpoint_id": "checkpoint_7",
+      "relationship": "triggers",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The fiscal quarter ending conditions the reporting of overall revenue growth.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_002",
+      "source_checkpoint_id": "checkpoint_4",
+      "target_checkpoint_id": "checkpoint_6",
+      "relationship": "enables",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Market anticipation and demand for AI products enable Data Center segment revenue growth.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_003",
+      "source_checkpoint_id": "checkpoint_6",
+      "target_checkpoint_id": "checkpoint_7",
+      "relationship": "amplifies",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Data Center segment revenue growth amplifies overall revenue growth.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_004",
+      "source_checkpoint_id": "checkpoint_2",
+      "target_checkpoint_id": "checkpoint_7",
+      "relationship": "inhibits",
+      "directionality": "counteracting",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The performance of other segments inhibits overall revenue growth.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_005",
+      "source_checkpoint_id": "checkpoint_7",
+      "target_checkpoint_id": "checkpoint_8",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Overall revenue growth conditions the comparison against a threshold.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_006",
+      "source_checkpoint_id": "checkpoint_3",
+      "target_checkpoint_id": "checkpoint_4",
+      "relationship": "amplifies",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The AI boom amplifies market anticipation and demand for NVIDIA's AI products.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_007",
+      "source_checkpoint_id": "checkpoint_5",
+      "target_checkpoint_id": "checkpoint_6",
+      "relationship": "triggers",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The launch of new NVIDIA Blackwell architecture products triggers Data Center segment revenue growth.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_008",
+      "source_checkpoint_id": "checkpoint_3",
+      "target_checkpoint_id": "checkpoint_5",
+      "relationship": "enables",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The AI boom enables the launch of new NVIDIA Blackwell architecture products.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_009",
+      "source_checkpoint_id": "checkpoint_8",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The comparison of overall revenue growth to a threshold conditions the target metric.",
+      "terminal_to_target_bridge": true
+    }
+  ],
+  "conditional_paths": [
+    {
+      "id": "path_1",
+      "factor_ids": [
+        "checkpoint_1",
+        "checkpoint_7",
+        "checkpoint_8"
+      ],
+      "edge_ids": [
+        "edge_001",
+        "edge_005",
+        "edge_009"
+      ],
+      "relationships": [
+        "triggers",
+        "causes",
+        "causes"
+      ],
+      "path_role": "main_path",
+      "conditional_mechanism": "The fiscal quarter ending conditions the reporting of overall revenue growth. Overall revenue growth conditions the comparison against a threshold. The comparison of overall revenue growth to a threshold conditions the target metric.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_2",
+      "factor_ids": [
+        "checkpoint_2",
+        "checkpoint_7",
+        "checkpoint_8"
+      ],
+      "edge_ids": [
+        "edge_004",
+        "edge_005",
+        "edge_009"
+      ],
+      "relationships": [
+        "inhibits",
+        "causes",
+        "causes"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "The performance of other segments inhibits overall revenue growth. Overall revenue growth conditions the comparison against a threshold. The comparison of overall revenue growth to a threshold conditions the target metric.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_3",
+      "factor_ids": [
+        "checkpoint_3",
+        "checkpoint_4",
+        "checkpoint_6",
+        "checkpoint_7",
+        "checkpoint_8"
+      ],
+      "edge_ids": [
+        "edge_006",
+        "edge_002",
+        "edge_003",
+        "edge_005",
+        "edge_009"
+      ],
+      "relationships": [
+        "amplifies",
+        "enables",
+        "amplifies",
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "The AI boom amplifies market anticipation and demand for NVIDIA's AI products. Market anticipation and demand for AI products enable Data Center segment revenue growth. Data Center segment revenue growth amplifies overall revenue growth. Overall revenue growth conditions the comparison against a threshold. The comparison of overall revenue growth to a threshold conditions the target metric.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_4",
+      "factor_ids": [
+        "checkpoint_3",
+        "checkpoint_5",
+        "checkpoint_6",
+        "checkpoint_7",
+        "checkpoint_8"
+      ],
+      "edge_ids": [
+        "edge_008",
+        "edge_007",
+        "edge_003",
+        "edge_005",
+        "edge_009"
+      ],
+      "relationships": [
+        "enables",
+        "triggers",
+        "amplifies",
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "The AI boom enables the launch of new NVIDIA Blackwell architecture products. The launch of new NVIDIA Blackwell architecture products triggers Data Center segment revenue growth. Data Center segment revenue growth amplifies overall revenue growth. Overall revenue growth conditions the comparison against a threshold. The comparison of overall revenue growth to a threshold conditions the target metric.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    }
+  ],
+  "target_bridge": {
+    "id": "target_bridge",
+    "mechanism": "Map only currently supported paths into the current target period and exact metric.",
+    "magnitude_requirement": "Current numerical evidence must support the relevant option boundary, not only the direction of change.",
+    "failure_signal": "The current baseline, target timing, or magnitude evidence does not support the proposed boundary crossing."
+  },
+  "competing_explanations": [],
+  "worked_procedure": [
+    "Lock the exact current target operation and baseline.",
+    "Fill the preserved factor nodes with current evidence.",
+    "Check each preserved directed edge and its timing condition.",
+    "Reject paths containing an unsupported or contradicted link.",
+    "Compare supported paths with current factors outside the graph.",
+    "Require current magnitude support before option mapping."
+  ],
+  "topology_contract": {
+    "path_order_generated_by_model": false,
+    "edge_direction_generated_by_model": false,
+    "source_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_5",
+      "checkpoint_6",
+      "checkpoint_7",
+      "checkpoint_8"
+    ],
+    "source_edge_ids": [
+      "edge_001",
+      "edge_002",
+      "edge_003",
+      "edge_004",
+      "edge_005",
+      "edge_006",
+      "edge_007",
+      "edge_008",
+      "edge_009"
+    ]
+  },
+  "template_sha256": "9dcba7153ba4d375b98eafe12c0d8f9d8a16f4751b0280b479bd0c1ede3c1537"
+}

@@ -1,0 +1,286 @@
+{
+  "schema_version": "outcome_neutral_topology_template_v2",
+  "source_question_id": "v3_broad_usd_monthly_return_2024_12",
+  "source_blueprint_sha256": "ea4f5f8f7cf4e3935217508ca9c95f701cf451b7d83d90ea8d02dd75131f35f2",
+  "target_operation": "monthly broad-dollar return",
+  "factor_checks": [
+    {
+      "id": "checkpoint_1",
+      "causal_role": "driver",
+      "factor": "Consumer Price Index (CPI) trend",
+      "state_question": "What is the current trend of the Consumer Price Index?",
+      "mechanism": "If the Consumer Price Index shows persistent inflation, it may influence monetary policy decisions towards a more cautious stance.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_2",
+      "causal_role": "counterevidence",
+      "factor": "Federal Reserve interest rate adjustments",
+      "state_question": "Are there current adjustments to Federal Reserve interest rates?",
+      "mechanism": "If the Federal Reserve adjusts interest rates, it may impact the target metric.",
+      "effect_if_active": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_3",
+      "causal_role": "mediator",
+      "factor": "Fed's forward guidance on rate policy and inflation",
+      "state_question": "What is the Fed's current forward guidance on interest rate reductions and inflation projections?",
+      "mechanism": "If the Fed projects fewer rate reductions and higher inflation, market participants may adjust expectations for an easing cycle.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_4",
+      "causal_role": "mediator",
+      "factor": "Market expectations for monetary policy easing",
+      "state_question": "What are the current market expectations regarding the pace of monetary policy easing?",
+      "mechanism": "If market expectations adjust towards a less aggressive easing cycle, it may lead to perceptions of sustained higher interest rates.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_5",
+      "causal_role": "mediator",
+      "factor": "Relative interest rate differentials (US vs. others)",
+      "state_question": "What is the current outlook for US interest rates relative to other major economies?",
+      "mechanism": "If the US is perceived to maintain relatively higher interest rates for longer, it may increase the attractiveness of dollar-denominated assets.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_6",
+      "causal_role": "driver",
+      "factor": "Geopolitical risk environment",
+      "state_question": "What is the current geopolitical risk environment?",
+      "mechanism": "If geopolitical uncertainties are elevated, investors may seek safe-haven assets, potentially increasing the attractiveness of dollar assets.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_7",
+      "causal_role": "mediator",
+      "factor": "Attractiveness of dollar-denominated assets",
+      "state_question": "What is the current attractiveness of dollar-denominated assets?",
+      "mechanism": "If dollar-denominated assets become more attractive, it may influence the monthly broad-dollar return.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    }
+  ],
+  "topology_edges": [
+    {
+      "id": "edge_001",
+      "source_checkpoint_id": "checkpoint_1",
+      "target_checkpoint_id": "checkpoint_3",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If the Consumer Price Index shows persistent inflation, it may influence the Fed's forward guidance on rate policy and inflation projections.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_002",
+      "source_checkpoint_id": "checkpoint_3",
+      "target_checkpoint_id": "checkpoint_4",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If the Fed's forward guidance indicates fewer rate reductions and higher inflation, market participants may adjust expectations for an easing cycle.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_003",
+      "source_checkpoint_id": "checkpoint_4",
+      "target_checkpoint_id": "checkpoint_5",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If market expectations adjust towards a less aggressive easing cycle, it may lead to perceptions of sustained higher US interest rates relative to other economies.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_004",
+      "source_checkpoint_id": "checkpoint_5",
+      "target_checkpoint_id": "checkpoint_7",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If the US is perceived to maintain relatively higher interest rates for longer, it may increase the attractiveness of dollar-denominated assets.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_005",
+      "source_checkpoint_id": "checkpoint_6",
+      "target_checkpoint_id": "checkpoint_7",
+      "relationship": "enables",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If geopolitical uncertainties are elevated, investors may seek safe-haven assets, potentially increasing the attractiveness of dollar assets.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_006",
+      "source_checkpoint_id": "checkpoint_7",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If dollar-denominated assets become more attractive, it may influence the monthly broad-dollar return.",
+      "terminal_to_target_bridge": true
+    },
+    {
+      "id": "edge_007",
+      "source_checkpoint_id": "checkpoint_2",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "inhibits",
+      "directionality": "counteracting",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If the Federal Reserve adjusts interest rates, it may influence the monthly broad-dollar return.",
+      "terminal_to_target_bridge": true
+    }
+  ],
+  "conditional_paths": [
+    {
+      "id": "path_1",
+      "factor_ids": [
+        "checkpoint_1",
+        "checkpoint_3",
+        "checkpoint_4",
+        "checkpoint_5",
+        "checkpoint_7"
+      ],
+      "edge_ids": [
+        "edge_001",
+        "edge_002",
+        "edge_003",
+        "edge_004",
+        "edge_006"
+      ],
+      "relationships": [
+        "causes",
+        "causes",
+        "causes",
+        "causes",
+        "causes"
+      ],
+      "path_role": "main_path",
+      "conditional_mechanism": "If the Consumer Price Index shows persistent inflation, it may influence the Fed's forward guidance on rate policy and inflation projections. If the Fed's forward guidance indicates fewer rate reductions and higher inflation, market participants may adjust expectations for an easing cycle. If market expectations adjust towards a less aggressive easing cycle, it may lead to perceptions of sustained higher US interest rates relative to other economies. If the US is perceived to maintain relatively higher interest rates for longer, it may increase the attractiveness of dollar-denominated assets. If dollar-denominated assets become more attractive, it may influence the monthly broad-dollar return.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_2",
+      "factor_ids": [
+        "checkpoint_2"
+      ],
+      "edge_ids": [
+        "edge_007"
+      ],
+      "relationships": [
+        "inhibits"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "If the Federal Reserve adjusts interest rates, it may influence the monthly broad-dollar return.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_3",
+      "factor_ids": [
+        "checkpoint_6",
+        "checkpoint_7"
+      ],
+      "edge_ids": [
+        "edge_005",
+        "edge_006"
+      ],
+      "relationships": [
+        "enables",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If geopolitical uncertainties are elevated, investors may seek safe-haven assets, potentially increasing the attractiveness of dollar assets. If dollar-denominated assets become more attractive, it may influence the monthly broad-dollar return.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    }
+  ],
+  "target_bridge": {
+    "id": "target_bridge",
+    "mechanism": "Map only currently supported paths into the current target period and exact metric.",
+    "magnitude_requirement": "Current numerical evidence must support the relevant option boundary, not only the direction of change.",
+    "failure_signal": "The current baseline, target timing, or magnitude evidence does not support the proposed boundary crossing."
+  },
+  "competing_explanations": [],
+  "worked_procedure": [
+    "Lock the exact current target operation and baseline.",
+    "Fill the preserved factor nodes with current evidence.",
+    "Check each preserved directed edge and its timing condition.",
+    "Reject paths containing an unsupported or contradicted link.",
+    "Compare supported paths with current factors outside the graph.",
+    "Require current magnitude support before option mapping."
+  ],
+  "topology_contract": {
+    "path_order_generated_by_model": false,
+    "edge_direction_generated_by_model": false,
+    "source_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_5",
+      "checkpoint_6",
+      "checkpoint_7"
+    ],
+    "source_edge_ids": [
+      "edge_001",
+      "edge_002",
+      "edge_003",
+      "edge_004",
+      "edge_005",
+      "edge_006",
+      "edge_007"
+    ]
+  },
+  "template_sha256": "cdc8196663bc16efeebdd50d1c79d62c1d81924937cc04fa0bd691ee755f7712"
+}

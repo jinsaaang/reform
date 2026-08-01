@@ -1,0 +1,185 @@
+{
+  "schema_version": "outcome_neutral_topology_template_v2",
+  "source_question_id": "v3_us_baa_credit_spread_change_2024_01",
+  "source_blueprint_sha256": "bf5ec3894608d58aedc88438b191597b4f98be1e6b911f4f8ce8deb3ffa0d130",
+  "target_operation": "monthly Baa-minus-10-year-Treasury spread change",
+  "factor_checks": [
+    {
+      "id": "checkpoint_1",
+      "causal_role": "driver",
+      "factor": "Fed Rate Cut Expectations",
+      "state_question": "What are the current market expectations for Federal Reserve rate cuts?",
+      "mechanism": "If markets anticipate substantial Federal Reserve rate cuts, this may influence credit conditions.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "strong"
+    },
+    {
+      "id": "checkpoint_2",
+      "causal_role": "mediator",
+      "factor": "Corporate Credit Conditions",
+      "state_question": "What are the current corporate credit conditions?",
+      "mechanism": "If corporate credit conditions are favorable, this may influence spread stability.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_3",
+      "causal_role": "driver",
+      "factor": "Investment-Grade Spread Regimes",
+      "state_question": "What is the current context of investment-grade spread regimes?",
+      "mechanism": "If historical investment-grade spread regimes are considered, they may provide context for current spread behavior.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "strong"
+    },
+    {
+      "id": "checkpoint_4",
+      "causal_role": "mediator",
+      "factor": "Spread Stability",
+      "state_question": "What is the current state of spread stability?",
+      "mechanism": "The current state of spread stability is a potential determinant of the monthly Baa-minus-10-year-Treasury spread change.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    }
+  ],
+  "topology_edges": [
+    {
+      "id": "edge_001",
+      "source_checkpoint_id": "checkpoint_1",
+      "target_checkpoint_id": "checkpoint_2",
+      "relationship": "supports",
+      "directionality": "forward",
+      "support_level": "background_hypothesis",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If market expectations favor substantial Federal Reserve rate cuts, this may influence corporate credit conditions.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_002",
+      "source_checkpoint_id": "checkpoint_2",
+      "target_checkpoint_id": "checkpoint_4",
+      "relationship": "supports",
+      "directionality": "forward",
+      "support_level": "background_hypothesis",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If corporate credit conditions are favorable, this may contribute to spread stability.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_003",
+      "source_checkpoint_id": "checkpoint_3",
+      "target_checkpoint_id": "checkpoint_4",
+      "relationship": "provides_context_for",
+      "directionality": "forward",
+      "support_level": "evidence_synthesized",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If historical investment-grade spread regimes are considered, they may provide context for current spread stability.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_004",
+      "source_checkpoint_id": "checkpoint_4",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "contributes_to",
+      "directionality": "forward",
+      "support_level": "background_hypothesis",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If spread stability is influenced, this may contribute to the monthly Baa-minus-10-year-Treasury spread change.",
+      "terminal_to_target_bridge": true
+    }
+  ],
+  "conditional_paths": [
+    {
+      "id": "path_1",
+      "factor_ids": [
+        "checkpoint_1",
+        "checkpoint_2",
+        "checkpoint_4"
+      ],
+      "edge_ids": [
+        "edge_001",
+        "edge_002",
+        "edge_004"
+      ],
+      "relationships": [
+        "supports",
+        "supports",
+        "contributes_to"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If market expectations favor substantial Federal Reserve rate cuts, this may influence corporate credit conditions. If corporate credit conditions are favorable, this may contribute to spread stability. If spread stability is influenced, this may contribute to the monthly Baa-minus-10-year-Treasury spread change.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_2",
+      "factor_ids": [
+        "checkpoint_3",
+        "checkpoint_4"
+      ],
+      "edge_ids": [
+        "edge_003",
+        "edge_004"
+      ],
+      "relationships": [
+        "provides_context_for",
+        "contributes_to"
+      ],
+      "path_role": "main_path",
+      "conditional_mechanism": "If historical investment-grade spread regimes are considered, they may provide context for current spread stability. If spread stability is influenced, this may contribute to the monthly Baa-minus-10-year-Treasury spread change.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    }
+  ],
+  "target_bridge": {
+    "id": "target_bridge",
+    "mechanism": "Map only currently supported paths into the current target period and exact metric.",
+    "magnitude_requirement": "Current numerical evidence must support the relevant option boundary, not only the direction of change.",
+    "failure_signal": "The current baseline, target timing, or magnitude evidence does not support the proposed boundary crossing."
+  },
+  "competing_explanations": [],
+  "worked_procedure": [
+    "Lock the exact current target operation and baseline.",
+    "Fill the preserved factor nodes with current evidence.",
+    "Check each preserved directed edge and its timing condition.",
+    "Reject paths containing an unsupported or contradicted link.",
+    "Compare supported paths with current factors outside the graph.",
+    "Require current magnitude support before option mapping."
+  ],
+  "topology_contract": {
+    "path_order_generated_by_model": false,
+    "edge_direction_generated_by_model": false,
+    "source_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4"
+    ],
+    "source_edge_ids": [
+      "edge_001",
+      "edge_002",
+      "edge_003",
+      "edge_004"
+    ]
+  },
+  "template_sha256": "03ee2d6aa1e9da49e8c4ee24b20f6d49c073d0436bddb7fc8db502858bc992e3"
+}

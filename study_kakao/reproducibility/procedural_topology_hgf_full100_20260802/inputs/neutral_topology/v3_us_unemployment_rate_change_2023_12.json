@@ -1,0 +1,236 @@
+{
+  "schema_version": "outcome_neutral_topology_template_v2",
+  "source_question_id": "v3_us_unemployment_rate_change_2023_12",
+  "source_blueprint_sha256": "88c87ab9316873d01b7dffab45079a026675e9365e4a824182d1a0382a89caa5",
+  "target_operation": "monthly unemployment-rate change",
+  "factor_checks": [
+    {
+      "id": "checkpoint_1",
+      "causal_role": "driver",
+      "factor": "U.S. unemployment rate",
+      "state_question": "What is the current U.S. unemployment rate?",
+      "mechanism": "The current U.S. unemployment rate is a direct input to the monthly-change calculation.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "strong"
+    },
+    {
+      "id": "checkpoint_2",
+      "causal_role": "driver",
+      "factor": "U.S. job gains",
+      "state_question": "What is the current U.S. job gain figure?",
+      "mechanism": "Current U.S. job gains provide labor-market context but do not mechanically determine the household-survey unemployment rate.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "strong"
+    },
+    {
+      "id": "checkpoint_3",
+      "causal_role": "counterevidence",
+      "factor": "Weekly initial unemployment claims",
+      "state_question": "What are the current weekly initial unemployment claims?",
+      "mechanism": "Current weekly initial unemployment claims may signal labor market changes, but their effect on the monthly unemployment rate is not definitively identified.",
+      "effect_if_active": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "strong"
+    },
+    {
+      "id": "checkpoint_4",
+      "causal_role": "mediator",
+      "factor": "U.S. unemployment rate",
+      "state_question": "What is the current U.S. unemployment rate?",
+      "mechanism": "The current U.S. unemployment rate is a direct input to the monthly-change calculation.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "strong"
+    },
+    {
+      "id": "checkpoint_5",
+      "causal_role": "mediator",
+      "factor": "Monthly unemployment rate change calculation",
+      "state_question": "For the current target period, How is the monthly unemployment rate change calculated?",
+      "mechanism": "The monthly unemployment rate change is calculated by comparing current and prior period unemployment rates.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "strong"
+    }
+  ],
+  "topology_edges": [
+    {
+      "id": "edge_001",
+      "source_checkpoint_id": "checkpoint_2",
+      "target_checkpoint_id": "checkpoint_4",
+      "relationship": "supports",
+      "directionality": "forward",
+      "support_level": "background_hypothesis",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Current U.S. job gains provide labor-market context for the U.S. unemployment rate.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_002",
+      "source_checkpoint_id": "checkpoint_3",
+      "target_checkpoint_id": "checkpoint_4",
+      "relationship": "counteracts",
+      "directionality": "counteracting",
+      "support_level": "background_hypothesis",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Current weekly initial unemployment claims may influence the U.S. unemployment rate, though the precise effect is not identified.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_003",
+      "source_checkpoint_id": "checkpoint_1",
+      "target_checkpoint_id": "checkpoint_5",
+      "relationship": "input_to",
+      "directionality": "forward",
+      "support_level": "observed",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The current U.S. unemployment rate is an input to the monthly unemployment rate change calculation.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_004",
+      "source_checkpoint_id": "checkpoint_4",
+      "target_checkpoint_id": "checkpoint_5",
+      "relationship": "input_to",
+      "directionality": "forward",
+      "support_level": "observed",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The current U.S. unemployment rate is an input to the monthly unemployment rate change calculation.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_005",
+      "source_checkpoint_id": "checkpoint_5",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "measured_as",
+      "directionality": "forward",
+      "support_level": "observed",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The monthly unemployment rate change is measured as the target metric.",
+      "terminal_to_target_bridge": true
+    }
+  ],
+  "conditional_paths": [
+    {
+      "id": "path_1",
+      "factor_ids": [
+        "checkpoint_1",
+        "checkpoint_5"
+      ],
+      "edge_ids": [
+        "edge_003",
+        "edge_005"
+      ],
+      "relationships": [
+        "input_to",
+        "measured_as"
+      ],
+      "path_role": "main_path",
+      "conditional_mechanism": "The current U.S. unemployment rate is an input to the monthly unemployment rate change calculation. The monthly unemployment rate change is measured as the target metric.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_2",
+      "factor_ids": [
+        "checkpoint_2",
+        "checkpoint_4",
+        "checkpoint_5"
+      ],
+      "edge_ids": [
+        "edge_001",
+        "edge_004",
+        "edge_005"
+      ],
+      "relationships": [
+        "supports",
+        "input_to",
+        "measured_as"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "Current U.S. job gains provide labor-market context for the U.S. unemployment rate. The current U.S. unemployment rate is an input to the monthly unemployment rate change calculation. The monthly unemployment rate change is measured as the target metric.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_3",
+      "factor_ids": [
+        "checkpoint_3",
+        "checkpoint_4",
+        "checkpoint_5"
+      ],
+      "edge_ids": [
+        "edge_002",
+        "edge_004",
+        "edge_005"
+      ],
+      "relationships": [
+        "counteracts",
+        "input_to",
+        "measured_as"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "Current weekly initial unemployment claims may influence the U.S. unemployment rate, though the precise effect is not identified. The current U.S. unemployment rate is an input to the monthly unemployment rate change calculation. The monthly unemployment rate change is measured as the target metric.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    }
+  ],
+  "target_bridge": {
+    "id": "target_bridge",
+    "mechanism": "Map only currently supported paths into the current target period and exact metric.",
+    "magnitude_requirement": "Current numerical evidence must support the relevant option boundary, not only the direction of change.",
+    "failure_signal": "The current baseline, target timing, or magnitude evidence does not support the proposed boundary crossing."
+  },
+  "competing_explanations": [],
+  "worked_procedure": [
+    "Lock the exact current target operation and baseline.",
+    "Fill the preserved factor nodes with current evidence.",
+    "Check each preserved directed edge and its timing condition.",
+    "Reject paths containing an unsupported or contradicted link.",
+    "Compare supported paths with current factors outside the graph.",
+    "Require current magnitude support before option mapping."
+  ],
+  "topology_contract": {
+    "path_order_generated_by_model": false,
+    "edge_direction_generated_by_model": false,
+    "source_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_5"
+    ],
+    "source_edge_ids": [
+      "edge_001",
+      "edge_002",
+      "edge_003",
+      "edge_004",
+      "edge_005"
+    ]
+  },
+  "template_sha256": "6a319b2b5256d2437fc804b924fc5c35027ed7f5eb670962a202c87dfc17ed27"
+}

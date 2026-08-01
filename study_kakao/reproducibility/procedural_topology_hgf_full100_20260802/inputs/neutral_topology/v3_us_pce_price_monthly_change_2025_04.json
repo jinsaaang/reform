@@ -1,0 +1,483 @@
+{
+  "schema_version": "outcome_neutral_topology_template_v2",
+  "source_question_id": "v3_us_pce_price_monthly_change_2025_04",
+  "source_blueprint_sha256": "282920e04044d743d657a29f73dd76fd2165a0ee47179ca4104e3662c5b8ff85",
+  "target_operation": "monthly PCE-price change",
+  "factor_checks": [
+    {
+      "id": "checkpoint_1",
+      "causal_role": "driver",
+      "factor": "Monetary Policy Tightening",
+      "state_question": "What is the current stance of monetary policy tightening?",
+      "mechanism": "Monetary policy tightening by the Federal Reserve is a factor that may influence inflation.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_2",
+      "causal_role": "counterevidence",
+      "factor": "Inflationary Pressures",
+      "state_question": "Are there current inflationary pressures in key sectors like groceries and gasoline?",
+      "mechanism": "Increases in specific price categories like groceries and gasoline may exert upward pressure on overall inflation.",
+      "effect_if_active": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_3",
+      "causal_role": "driver",
+      "factor": "Progress Towards Inflation Targets",
+      "state_question": "What is the current progress towards inflation targets?",
+      "mechanism": "Efforts to control price increases and progress towards inflation targets may influence the inflation trend.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_4",
+      "causal_role": "mediator",
+      "factor": "Inflation Trend",
+      "state_question": "What is the current trend of inflation?",
+      "mechanism": "The inflation trend may influence the PCE price reading.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_5",
+      "causal_role": "mediator",
+      "factor": "Overall Inflationary Environment",
+      "state_question": "What is the current overall inflationary environment?",
+      "mechanism": "The overall inflationary environment may influence the PCE price reading.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_6",
+      "causal_role": "driver",
+      "factor": "Consumer Spending Patterns",
+      "state_question": "What are the current consumer spending patterns?",
+      "mechanism": "Consumer spending patterns can influence demand, which may affect inflation.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_7",
+      "causal_role": "counterevidence",
+      "factor": "Specific Cost Pressures",
+      "state_question": "Are there current specific cost pressures in energy, rent, or food?",
+      "mechanism": "Specific cost pressures in sectors like energy, rent, and food may influence the PCE price reading.",
+      "effect_if_active": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_8",
+      "causal_role": "counterevidence",
+      "factor": "Tariff Impacts",
+      "state_question": "What are the current impacts of tariffs?",
+      "mechanism": "Tariff impacts may influence production costs and inflation.",
+      "effect_if_active": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_9",
+      "causal_role": "mediator",
+      "factor": "Monthly PCE-price change",
+      "state_question": "What is the current monthly PCE-price change?",
+      "mechanism": "The monthly PCE-price change is a measure of inflation that is subject to economic conditions.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    }
+  ],
+  "topology_edges": [
+    {
+      "id": "edge_001",
+      "source_checkpoint_id": "checkpoint_1",
+      "target_checkpoint_id": "checkpoint_4",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If monetary policy tightening occurs, the inflation trend may be affected.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_002",
+      "source_checkpoint_id": "checkpoint_4",
+      "target_checkpoint_id": "checkpoint_9",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If the inflation trend changes, the monthly PCE-price change may be affected.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_003",
+      "source_checkpoint_id": "checkpoint_6",
+      "target_checkpoint_id": "checkpoint_9",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If consumer spending patterns shift, the monthly PCE-price change may be affected.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_004",
+      "source_checkpoint_id": "checkpoint_1",
+      "target_checkpoint_id": "checkpoint_5",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If monetary policy tightening occurs, the overall inflationary environment may be affected.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_005",
+      "source_checkpoint_id": "checkpoint_5",
+      "target_checkpoint_id": "checkpoint_9",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If the overall inflationary environment changes, the monthly PCE-price change may be affected.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_006",
+      "source_checkpoint_id": "checkpoint_7",
+      "target_checkpoint_id": "checkpoint_9",
+      "relationship": "inhibits",
+      "directionality": "counteracting",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If specific cost pressures arise, the monthly PCE-price change may be affected.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_007",
+      "source_checkpoint_id": "checkpoint_8",
+      "target_checkpoint_id": "checkpoint_9",
+      "relationship": "inhibits",
+      "directionality": "counteracting",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If tariff impacts change, the monthly PCE-price change may be affected.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_008",
+      "source_checkpoint_id": "checkpoint_2",
+      "target_checkpoint_id": "checkpoint_4",
+      "relationship": "inhibits",
+      "directionality": "counteracting",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If inflationary pressures increase, the inflation trend may be affected.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_009",
+      "source_checkpoint_id": "checkpoint_3",
+      "target_checkpoint_id": "checkpoint_4",
+      "relationship": "enables",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If progress towards inflation targets is made, the inflation trend may be affected.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_010",
+      "source_checkpoint_id": "checkpoint_3",
+      "target_checkpoint_id": "checkpoint_9",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If progress towards inflation targets is made, the monthly PCE-price change may be affected.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_011",
+      "source_checkpoint_id": "checkpoint_9",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If the monthly PCE-price change is observed, the target outcome may be affected.",
+      "terminal_to_target_bridge": true
+    }
+  ],
+  "conditional_paths": [
+    {
+      "id": "path_1",
+      "factor_ids": [
+        "checkpoint_1",
+        "checkpoint_4",
+        "checkpoint_9"
+      ],
+      "edge_ids": [
+        "edge_001",
+        "edge_002",
+        "edge_011"
+      ],
+      "relationships": [
+        "causes",
+        "causes",
+        "causes"
+      ],
+      "path_role": "main_path",
+      "conditional_mechanism": "If monetary policy tightening occurs, the inflation trend may be affected. If the inflation trend changes, the monthly PCE-price change may be affected. If the monthly PCE-price change is observed, the target outcome may be affected.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_2",
+      "factor_ids": [
+        "checkpoint_1",
+        "checkpoint_5",
+        "checkpoint_9"
+      ],
+      "edge_ids": [
+        "edge_004",
+        "edge_005",
+        "edge_011"
+      ],
+      "relationships": [
+        "causes",
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If monetary policy tightening occurs, the overall inflationary environment may be affected. If the overall inflationary environment changes, the monthly PCE-price change may be affected. If the monthly PCE-price change is observed, the target outcome may be affected.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_3",
+      "factor_ids": [
+        "checkpoint_2",
+        "checkpoint_4",
+        "checkpoint_9"
+      ],
+      "edge_ids": [
+        "edge_008",
+        "edge_002",
+        "edge_011"
+      ],
+      "relationships": [
+        "inhibits",
+        "causes",
+        "causes"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "If inflationary pressures increase, the inflation trend may be affected. If the inflation trend changes, the monthly PCE-price change may be affected. If the monthly PCE-price change is observed, the target outcome may be affected.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_4",
+      "factor_ids": [
+        "checkpoint_3",
+        "checkpoint_4",
+        "checkpoint_9"
+      ],
+      "edge_ids": [
+        "edge_009",
+        "edge_002",
+        "edge_011"
+      ],
+      "relationships": [
+        "enables",
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If progress towards inflation targets is made, the inflation trend may be affected. If the inflation trend changes, the monthly PCE-price change may be affected. If the monthly PCE-price change is observed, the target outcome may be affected.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_5",
+      "factor_ids": [
+        "checkpoint_3",
+        "checkpoint_9"
+      ],
+      "edge_ids": [
+        "edge_010",
+        "edge_011"
+      ],
+      "relationships": [
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If progress towards inflation targets is made, the monthly PCE-price change may be affected. If the monthly PCE-price change is observed, the target outcome may be affected.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_6",
+      "factor_ids": [
+        "checkpoint_6",
+        "checkpoint_9"
+      ],
+      "edge_ids": [
+        "edge_003",
+        "edge_011"
+      ],
+      "relationships": [
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If consumer spending patterns shift, the monthly PCE-price change may be affected. If the monthly PCE-price change is observed, the target outcome may be affected.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_7",
+      "factor_ids": [
+        "checkpoint_7",
+        "checkpoint_9"
+      ],
+      "edge_ids": [
+        "edge_006",
+        "edge_011"
+      ],
+      "relationships": [
+        "inhibits",
+        "causes"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "If specific cost pressures arise, the monthly PCE-price change may be affected. If the monthly PCE-price change is observed, the target outcome may be affected.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_8",
+      "factor_ids": [
+        "checkpoint_8",
+        "checkpoint_9"
+      ],
+      "edge_ids": [
+        "edge_007",
+        "edge_011"
+      ],
+      "relationships": [
+        "inhibits",
+        "causes"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "If tariff impacts change, the monthly PCE-price change may be affected. If the monthly PCE-price change is observed, the target outcome may be affected.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    }
+  ],
+  "target_bridge": {
+    "id": "target_bridge",
+    "mechanism": "Map only currently supported paths into the current target period and exact metric.",
+    "magnitude_requirement": "Current numerical evidence must support the relevant option boundary, not only the direction of change.",
+    "failure_signal": "The current baseline, target timing, or magnitude evidence does not support the proposed boundary crossing."
+  },
+  "competing_explanations": [],
+  "worked_procedure": [
+    "Lock the exact current target operation and baseline.",
+    "Fill the preserved factor nodes with current evidence.",
+    "Check each preserved directed edge and its timing condition.",
+    "Reject paths containing an unsupported or contradicted link.",
+    "Compare supported paths with current factors outside the graph.",
+    "Require current magnitude support before option mapping."
+  ],
+  "topology_contract": {
+    "path_order_generated_by_model": false,
+    "edge_direction_generated_by_model": false,
+    "source_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_5",
+      "checkpoint_6",
+      "checkpoint_7",
+      "checkpoint_8",
+      "checkpoint_9"
+    ],
+    "source_edge_ids": [
+      "edge_001",
+      "edge_002",
+      "edge_003",
+      "edge_004",
+      "edge_005",
+      "edge_006",
+      "edge_007",
+      "edge_008",
+      "edge_009",
+      "edge_010",
+      "edge_011"
+    ]
+  },
+  "template_sha256": "04a8bf3252c377448af8b3c90462b9f3652246919b475a554284620ea55c0f0d"
+}

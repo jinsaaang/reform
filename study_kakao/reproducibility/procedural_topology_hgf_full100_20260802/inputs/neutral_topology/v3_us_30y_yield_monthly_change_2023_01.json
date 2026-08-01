@@ -1,0 +1,221 @@
+{
+  "schema_version": "outcome_neutral_topology_template_v2",
+  "source_question_id": "v3_us_30y_yield_monthly_change_2023_01",
+  "source_blueprint_sha256": "758a3bfa51fae80b490d12b87f937ddd7b0c8c6f9f531714b052328e83535b93",
+  "target_operation": "monthly 30-year yield change",
+  "factor_checks": [
+    {
+      "id": "checkpoint_1",
+      "causal_role": "driver",
+      "factor": "Global Economic Slowdown Concerns",
+      "state_question": "For the current target period, Are there concerns about a global economic slowdown?",
+      "mechanism": "If global economic slowdown concerns are present, persistent inflation may be associated.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_2",
+      "causal_role": "mediator",
+      "factor": "Persistent Inflationary Pressures",
+      "state_question": "For the current target period, Are inflationary pressures persisting?",
+      "mechanism": "If persistent inflationary pressures are observed, central banks may adopt a hawkish stance.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_3",
+      "causal_role": "mediator",
+      "factor": "Central Bank Hawkish Stance",
+      "state_question": "For the current target period, Is the central bank adopting a hawkish stance?",
+      "mechanism": "If the central bank adopts a hawkish stance, market volatility may increase.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_4",
+      "causal_role": "mediator",
+      "factor": "Market Volatility",
+      "state_question": "For the current target period, Is market volatility increasing?",
+      "mechanism": "If market volatility increases, this may precede or coincide with significant economic reports.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_5",
+      "causal_role": "mediator",
+      "factor": "Strong US Jobs Report",
+      "state_question": "For the current target period, Is there a strong US jobs report?",
+      "mechanism": "If a strong US jobs report is observed, expectations for further rate hikes may increase.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_6",
+      "causal_role": "mediator",
+      "factor": "Fed Rate Hike Expectations",
+      "state_question": "For the current target period, Are Fed rate hike expectations rising?",
+      "mechanism": "If Fed rate hike expectations rise, this may influence the target metric.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    }
+  ],
+  "topology_edges": [
+    {
+      "id": "edge_001",
+      "source_checkpoint_id": "checkpoint_1",
+      "target_checkpoint_id": "checkpoint_2",
+      "relationship": "correlates",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If global economic slowdown concerns are present, persistent inflation may be observed.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_002",
+      "source_checkpoint_id": "checkpoint_2",
+      "target_checkpoint_id": "checkpoint_3",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If persistent inflationary pressures are observed, central banks may adopt a hawkish stance.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_003",
+      "source_checkpoint_id": "checkpoint_3",
+      "target_checkpoint_id": "checkpoint_4",
+      "relationship": "triggers",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If the central bank adopts a hawkish stance, market volatility may increase.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_004",
+      "source_checkpoint_id": "checkpoint_4",
+      "target_checkpoint_id": "checkpoint_5",
+      "relationship": "correlates",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If market volatility increases, this may precede or coincide with significant economic reports.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_005",
+      "source_checkpoint_id": "checkpoint_5",
+      "target_checkpoint_id": "checkpoint_6",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If a strong US jobs report is observed, expectations for further rate hikes may increase.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_006",
+      "source_checkpoint_id": "checkpoint_6",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "amplifies",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If Fed rate hike expectations rise, this may influence the monthly 30-year yield change.",
+      "terminal_to_target_bridge": true
+    }
+  ],
+  "conditional_paths": [
+    {
+      "id": "path_1",
+      "factor_ids": [
+        "checkpoint_1",
+        "checkpoint_2",
+        "checkpoint_3",
+        "checkpoint_4",
+        "checkpoint_5",
+        "checkpoint_6"
+      ],
+      "edge_ids": [
+        "edge_001",
+        "edge_002",
+        "edge_003",
+        "edge_004",
+        "edge_005",
+        "edge_006"
+      ],
+      "relationships": [
+        "correlates",
+        "causes",
+        "triggers",
+        "correlates",
+        "causes",
+        "amplifies"
+      ],
+      "path_role": "main_path",
+      "conditional_mechanism": "If global economic slowdown concerns are present, persistent inflation may be observed. If persistent inflationary pressures are observed, central banks may adopt a hawkish stance. If the central bank adopts a hawkish stance, market volatility may increase. If market volatility increases, this may precede or coincide with significant economic reports. If a strong US jobs report is observed, expectations for further rate hikes may increase. If Fed rate hike expectations rise, this may influence the monthly 30-year yield change.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    }
+  ],
+  "target_bridge": {
+    "id": "target_bridge",
+    "mechanism": "Map only currently supported paths into the current target period and exact metric.",
+    "magnitude_requirement": "Current numerical evidence must support the relevant option boundary, not only the direction of change.",
+    "failure_signal": "The current baseline, target timing, or magnitude evidence does not support the proposed boundary crossing."
+  },
+  "competing_explanations": [],
+  "worked_procedure": [
+    "Lock the exact current target operation and baseline.",
+    "Fill the preserved factor nodes with current evidence.",
+    "Check each preserved directed edge and its timing condition.",
+    "Reject paths containing an unsupported or contradicted link.",
+    "Compare supported paths with current factors outside the graph.",
+    "Require current magnitude support before option mapping."
+  ],
+  "topology_contract": {
+    "path_order_generated_by_model": false,
+    "edge_direction_generated_by_model": false,
+    "source_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_5",
+      "checkpoint_6"
+    ],
+    "source_edge_ids": [
+      "edge_001",
+      "edge_002",
+      "edge_003",
+      "edge_004",
+      "edge_005",
+      "edge_006"
+    ]
+  },
+  "template_sha256": "9c85d7808a656cb0d605a906c52462c13b220aec54c72d3225f001acb3368c52"
+}

@@ -1,0 +1,264 @@
+{
+  "schema_version": "outcome_neutral_topology_template_v2",
+  "source_question_id": "v3_nvda_revenue_growth_acceleration_2024_07_28",
+  "source_blueprint_sha256": "0c3cccbaecb7c427a4421e43be2e6c646cd91b02b454ad48612ea6c3cb6cd674",
+  "target_operation": "quarterly revenue year-over-year growth acceleration",
+  "factor_checks": [
+    {
+      "id": "checkpoint_1",
+      "causal_role": "driver",
+      "factor": "Prior-quarter revenue growth benchmark",
+      "state_question": "For the current target period, What is the prior-quarter revenue growth benchmark?",
+      "mechanism": "The prior-quarter revenue growth benchmark is a factor to be assessed for its link to the target vs prior-quarter growth comparison.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "strong"
+    },
+    {
+      "id": "checkpoint_2",
+      "causal_role": "driver",
+      "factor": "AI-chip competitive pressure",
+      "state_question": "For the current target period, What is the AI-chip competitive pressure?",
+      "mechanism": "AI-chip competitive pressure is a factor to be assessed for its link to potential revenue-growth pressure from competition.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "medium"
+    },
+    {
+      "id": "checkpoint_3",
+      "causal_role": "counterevidence",
+      "factor": "Potential revenue growth pressure from competition",
+      "state_question": "For the current target period, What is the potential revenue growth pressure from competition?",
+      "mechanism": "Potential revenue-growth pressure from competition is a factor to be assessed for its link to current condition target period revenue growth.",
+      "effect_if_active": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_4",
+      "causal_role": "driver",
+      "factor": "Management revenue guidance",
+      "state_question": "For the current target period, What is the management revenue guidance?",
+      "mechanism": "Management revenue guidance is a factor to be assessed for its link to current condition target period revenue growth.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "strong"
+    },
+    {
+      "id": "checkpoint_5",
+      "causal_role": "mediator",
+      "factor": "current condition target period revenue growth",
+      "state_question": "For the current target period, What is the current condition target period revenue growth?",
+      "mechanism": "current condition target period revenue growth is a factor to be assessed for its link to the target vs prior-quarter growth comparison.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "strong"
+    },
+    {
+      "id": "checkpoint_6",
+      "causal_role": "mediator",
+      "factor": "Target vs prior-quarter growth comparison",
+      "state_question": "For the current target period, What is the target vs prior-quarter growth comparison?",
+      "mechanism": "The target vs prior-quarter growth comparison is a factor to be assessed for its link to quarterly revenue year-over-year growth acceleration.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "strong"
+    }
+  ],
+  "topology_edges": [
+    {
+      "id": "edge_001",
+      "source_checkpoint_id": "checkpoint_2",
+      "target_checkpoint_id": "checkpoint_3",
+      "relationship": "enables",
+      "directionality": "forward",
+      "support_level": "background_hypothesis",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "AI-chip competitive pressure is a condition that may influence potential revenue-growth pressure from competition.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_002",
+      "source_checkpoint_id": "checkpoint_3",
+      "target_checkpoint_id": "checkpoint_5",
+      "relationship": "inhibits",
+      "directionality": "counteracting",
+      "support_level": "background_hypothesis",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Potential revenue-growth pressure from competition is a condition that may influence current condition target period revenue growth.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_003",
+      "source_checkpoint_id": "checkpoint_4",
+      "target_checkpoint_id": "checkpoint_5",
+      "relationship": "correlates",
+      "directionality": "forward",
+      "support_level": "evidence_synthesized",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Management revenue guidance is a condition that may influence current condition target period revenue growth.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_004",
+      "source_checkpoint_id": "checkpoint_1",
+      "target_checkpoint_id": "checkpoint_6",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "observed",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The prior-quarter revenue growth benchmark is a condition that may influence the target vs prior-quarter growth comparison.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_005",
+      "source_checkpoint_id": "checkpoint_5",
+      "target_checkpoint_id": "checkpoint_6",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "observed",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "current condition target period revenue growth is a condition that may influence the target vs prior-quarter growth comparison.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_006",
+      "source_checkpoint_id": "checkpoint_6",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "observed",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The target vs prior-quarter growth comparison is a condition that may influence quarterly revenue year-over-year growth acceleration.",
+      "terminal_to_target_bridge": true
+    }
+  ],
+  "conditional_paths": [
+    {
+      "id": "path_1",
+      "factor_ids": [
+        "checkpoint_1",
+        "checkpoint_6"
+      ],
+      "edge_ids": [
+        "edge_004",
+        "edge_006"
+      ],
+      "relationships": [
+        "causes",
+        "causes"
+      ],
+      "path_role": "main_path",
+      "conditional_mechanism": "The prior-quarter revenue growth benchmark is a condition that may influence the target vs prior-quarter growth comparison. The target vs prior-quarter growth comparison is a condition that may influence quarterly revenue year-over-year growth acceleration.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_2",
+      "factor_ids": [
+        "checkpoint_2",
+        "checkpoint_3",
+        "checkpoint_5",
+        "checkpoint_6"
+      ],
+      "edge_ids": [
+        "edge_001",
+        "edge_002",
+        "edge_005",
+        "edge_006"
+      ],
+      "relationships": [
+        "enables",
+        "inhibits",
+        "causes",
+        "causes"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "AI-chip competitive pressure is a condition that may influence potential revenue-growth pressure from competition. Potential revenue-growth pressure from competition is a condition that may influence current condition target period revenue growth. current condition target period revenue growth is a condition that may influence the target vs prior-quarter growth comparison. The target vs prior-quarter growth comparison is a condition that may influence quarterly revenue year-over-year growth acceleration.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_3",
+      "factor_ids": [
+        "checkpoint_4",
+        "checkpoint_5",
+        "checkpoint_6"
+      ],
+      "edge_ids": [
+        "edge_003",
+        "edge_005",
+        "edge_006"
+      ],
+      "relationships": [
+        "correlates",
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "Management revenue guidance is a condition that may influence current condition target period revenue growth. current condition target period revenue growth is a condition that may influence the target vs prior-quarter growth comparison. The target vs prior-quarter growth comparison is a condition that may influence quarterly revenue year-over-year growth acceleration.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    }
+  ],
+  "target_bridge": {
+    "id": "target_bridge",
+    "mechanism": "Map only currently supported paths into the current target period and exact metric.",
+    "magnitude_requirement": "Current numerical evidence must support the relevant option boundary, not only the direction of change.",
+    "failure_signal": "The current baseline, target timing, or magnitude evidence does not support the proposed boundary crossing."
+  },
+  "competing_explanations": [],
+  "worked_procedure": [
+    "Lock the exact current target operation and baseline.",
+    "Fill the preserved factor nodes with current evidence.",
+    "Check each preserved directed edge and its timing condition.",
+    "Reject paths containing an unsupported or contradicted link.",
+    "Compare supported paths with current factors outside the graph.",
+    "Require current magnitude support before option mapping."
+  ],
+  "topology_contract": {
+    "path_order_generated_by_model": false,
+    "edge_direction_generated_by_model": false,
+    "source_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_5",
+      "checkpoint_6"
+    ],
+    "source_edge_ids": [
+      "edge_001",
+      "edge_002",
+      "edge_003",
+      "edge_004",
+      "edge_005",
+      "edge_006"
+    ]
+  },
+  "template_sha256": "82600c853aef3d2f9790784757dc17960c3712b546e1addfe57bad3776902c79"
+}

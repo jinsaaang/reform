@@ -1,0 +1,683 @@
+{
+  "schema_version": "outcome_neutral_topology_template_v2",
+  "source_question_id": "v3_henry_hub_monthly_return_2024_03",
+  "source_blueprint_sha256": "94d379a781670ebe7285cd73f9253d1f00bd286990e40a2bc85c7e89e08c370d",
+  "target_operation": "monthly Henry Hub price return",
+  "factor_checks": [
+    {
+      "id": "checkpoint_1",
+      "causal_role": "driver",
+      "factor": "Global Climate Anomalies",
+      "state_question": "For the current target period, Are there global climate anomalies?",
+      "mechanism": "If global climate anomalies are present, they can influence global weather patterns.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_2",
+      "causal_role": "mediator",
+      "factor": "Global Weather Patterns",
+      "state_question": "What are the current global weather patterns?",
+      "mechanism": "If global weather patterns are favorable, they can influence US winter conditions and heating demand.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_3",
+      "causal_role": "driver",
+      "factor": "Winter Weather",
+      "state_question": "What is the current winter weather like in the US?",
+      "mechanism": "If winter weather is mild, it can reduce heating demand for natural gas.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_4",
+      "causal_role": "driver",
+      "factor": "US Natural Gas Infrastructure Investment",
+      "state_question": "For the current target period, What is the level of investment in US natural gas infrastructure?",
+      "mechanism": "If there is sustained investment in US natural gas infrastructure, it supports production and storage capabilities.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_5",
+      "causal_role": "driver",
+      "factor": "Natural Gas Demand",
+      "state_question": "What is the current natural gas demand?",
+      "mechanism": "If natural gas demand is moderate, it can amplify the effect of winter weather on heating demand.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_6",
+      "causal_role": "mediator",
+      "factor": "Heating Demand Reduction",
+      "state_question": "For the current target period, Is heating demand being reduced?",
+      "mechanism": "If heating demand is reduced, it can influence the target metric.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_7",
+      "causal_role": "driver",
+      "factor": "Natural Gas Supply",
+      "state_question": "For the current target period, Is there sufficient natural gas supply?",
+      "mechanism": "If natural gas supply is sufficient, it can support domestic production and storage levels.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_8",
+      "causal_role": "driver",
+      "factor": "Global Energy Market Stability",
+      "state_question": "What is the current stability of global energy markets?",
+      "mechanism": "If global energy markets are stable, the US market may be insulated from geopolitical influences.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_9",
+      "causal_role": "driver",
+      "factor": "Global LNG Balance",
+      "state_question": "For the current target period, Is there a balance in global LNG supply and demand?",
+      "mechanism": "If there is a balance in global LNG supply and demand, it can affect US supply dynamics.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_10",
+      "causal_role": "counterevidence",
+      "factor": "Russia Oil and Gas Revenue",
+      "state_question": "What is the current revenue from Russia's oil and gas?",
+      "mechanism": "If Russia's oil and gas revenue changes, it may influence the target metric.",
+      "effect_if_active": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_11",
+      "causal_role": "counterevidence",
+      "factor": "Gas Prices Ahead of Spring Break",
+      "state_question": "For the current target period, Are gas prices rising ahead of spring break?",
+      "mechanism": "If gas prices rise ahead of spring break, it may influence the target metric.",
+      "effect_if_active": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_12",
+      "causal_role": "mediator",
+      "factor": "US Gas Production and Storage",
+      "state_question": "What are the current US domestic natural gas production and storage levels?",
+      "mechanism": "If US domestic natural gas production and storage levels are robust, they can influence the target metric.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_13",
+      "causal_role": "mediator",
+      "factor": "Global LNG Market Dynamics",
+      "state_question": "What are the current global LNG market dynamics?",
+      "mechanism": "If global LNG market dynamics are stable, they can influence the target metric.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_14",
+      "causal_role": "driver",
+      "factor": "Geopolitical Disruptions",
+      "state_question": "For the current target period, Are there geopolitical disruptions to energy markets?",
+      "mechanism": "If there are limited geopolitical disruptions to energy markets, it can influence the US energy market.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_15",
+      "causal_role": "mediator",
+      "factor": "Geopolitical Stability Impact",
+      "state_question": "What is the current impact of geopolitical stability on the US market?",
+      "mechanism": "If geopolitical stability has a certain impact on the US market, it can influence the target metric.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_16",
+      "causal_role": "counterevidence",
+      "factor": "Oil and Gas Politics",
+      "state_question": "What do current oil and gas politics signal?",
+      "mechanism": "If oil and gas politics signal market growth, it may influence the target metric.",
+      "effect_if_active": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    }
+  ],
+  "topology_edges": [
+    {
+      "id": "edge_001",
+      "source_checkpoint_id": "checkpoint_5",
+      "target_checkpoint_id": "checkpoint_6",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If natural gas demand is moderate, it can influence the reduction in heating demand.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_002",
+      "source_checkpoint_id": "checkpoint_7",
+      "target_checkpoint_id": "checkpoint_12",
+      "relationship": "enables",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If natural gas supply is sufficient, it can support US domestic natural gas production and storage levels.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_003",
+      "source_checkpoint_id": "checkpoint_8",
+      "target_checkpoint_id": "checkpoint_15",
+      "relationship": "enables",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If global energy markets are stable, it can enable geopolitical stability's impact on the US market.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_004",
+      "source_checkpoint_id": "checkpoint_2",
+      "target_checkpoint_id": "checkpoint_6",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If global weather patterns are favorable, they can influence the reduction in heating demand.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_005",
+      "source_checkpoint_id": "checkpoint_4",
+      "target_checkpoint_id": "checkpoint_12",
+      "relationship": "enables",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If there is sustained investment in US natural gas infrastructure, it can support US domestic natural gas production and storage levels.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_006",
+      "source_checkpoint_id": "checkpoint_9",
+      "target_checkpoint_id": "checkpoint_13",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If there is a balance in global LNG supply and demand, it can influence stable global LNG market dynamics.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_007",
+      "source_checkpoint_id": "checkpoint_14",
+      "target_checkpoint_id": "checkpoint_15",
+      "relationship": "enables",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If there are limited geopolitical disruptions to energy markets, it can enable geopolitical stability's impact on the US market.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_008",
+      "source_checkpoint_id": "checkpoint_3",
+      "target_checkpoint_id": "checkpoint_6",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If winter weather is mild, it can influence the reduction in heating demand.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_009",
+      "source_checkpoint_id": "checkpoint_1",
+      "target_checkpoint_id": "checkpoint_2",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If global climate anomalies are present, they can influence global weather patterns.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_010",
+      "source_checkpoint_id": "checkpoint_6",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If heating demand is reduced, it can influence the target metric.",
+      "terminal_to_target_bridge": true
+    },
+    {
+      "id": "edge_011",
+      "source_checkpoint_id": "checkpoint_12",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "enables",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If US domestic natural gas production and storage levels are robust, they can influence the target metric.",
+      "terminal_to_target_bridge": true
+    },
+    {
+      "id": "edge_012",
+      "source_checkpoint_id": "checkpoint_13",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "enables",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If global LNG market dynamics are stable, they can influence the target metric.",
+      "terminal_to_target_bridge": true
+    },
+    {
+      "id": "edge_013",
+      "source_checkpoint_id": "checkpoint_15",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "enables",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If geopolitical stability has a certain impact on the US market, it can influence the target metric.",
+      "terminal_to_target_bridge": true
+    },
+    {
+      "id": "edge_014",
+      "source_checkpoint_id": "checkpoint_10",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "inhibits",
+      "directionality": "counteracting",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If Russia's oil and gas revenue changes, it may influence the target metric.",
+      "terminal_to_target_bridge": true
+    },
+    {
+      "id": "edge_015",
+      "source_checkpoint_id": "checkpoint_16",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "inhibits",
+      "directionality": "counteracting",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If oil and gas politics signal market growth, it may influence the target metric.",
+      "terminal_to_target_bridge": true
+    },
+    {
+      "id": "edge_016",
+      "source_checkpoint_id": "checkpoint_11",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "inhibits",
+      "directionality": "counteracting",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If gas prices rise ahead of spring break, it may influence the target metric.",
+      "terminal_to_target_bridge": true
+    }
+  ],
+  "conditional_paths": [
+    {
+      "id": "path_1",
+      "factor_ids": [
+        "checkpoint_1",
+        "checkpoint_2",
+        "checkpoint_6"
+      ],
+      "edge_ids": [
+        "edge_009",
+        "edge_004",
+        "edge_010"
+      ],
+      "relationships": [
+        "causes",
+        "causes",
+        "causes"
+      ],
+      "path_role": "main_path",
+      "conditional_mechanism": "If global climate anomalies are present, they can influence global weather patterns. If global weather patterns are favorable, they can influence the reduction in heating demand. If heating demand is reduced, it can influence the target metric.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_2",
+      "factor_ids": [
+        "checkpoint_3",
+        "checkpoint_6"
+      ],
+      "edge_ids": [
+        "edge_008",
+        "edge_010"
+      ],
+      "relationships": [
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If winter weather is mild, it can influence the reduction in heating demand. If heating demand is reduced, it can influence the target metric.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_3",
+      "factor_ids": [
+        "checkpoint_4",
+        "checkpoint_12"
+      ],
+      "edge_ids": [
+        "edge_005",
+        "edge_011"
+      ],
+      "relationships": [
+        "enables",
+        "enables"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If there is sustained investment in US natural gas infrastructure, it can support US domestic natural gas production and storage levels. If US domestic natural gas production and storage levels are robust, they can influence the target metric.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_4",
+      "factor_ids": [
+        "checkpoint_5",
+        "checkpoint_6"
+      ],
+      "edge_ids": [
+        "edge_001",
+        "edge_010"
+      ],
+      "relationships": [
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If natural gas demand is moderate, it can influence the reduction in heating demand. If heating demand is reduced, it can influence the target metric.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_5",
+      "factor_ids": [
+        "checkpoint_7",
+        "checkpoint_12"
+      ],
+      "edge_ids": [
+        "edge_002",
+        "edge_011"
+      ],
+      "relationships": [
+        "enables",
+        "enables"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If natural gas supply is sufficient, it can support US domestic natural gas production and storage levels. If US domestic natural gas production and storage levels are robust, they can influence the target metric.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_6",
+      "factor_ids": [
+        "checkpoint_8",
+        "checkpoint_15"
+      ],
+      "edge_ids": [
+        "edge_003",
+        "edge_013"
+      ],
+      "relationships": [
+        "enables",
+        "enables"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If global energy markets are stable, it can enable geopolitical stability's impact on the US market. If geopolitical stability has a certain impact on the US market, it can influence the target metric.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_7",
+      "factor_ids": [
+        "checkpoint_9",
+        "checkpoint_13"
+      ],
+      "edge_ids": [
+        "edge_006",
+        "edge_012"
+      ],
+      "relationships": [
+        "causes",
+        "enables"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If there is a balance in global LNG supply and demand, it can influence stable global LNG market dynamics. If global LNG market dynamics are stable, they can influence the target metric.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_8",
+      "factor_ids": [
+        "checkpoint_10"
+      ],
+      "edge_ids": [
+        "edge_014"
+      ],
+      "relationships": [
+        "inhibits"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "If Russia's oil and gas revenue changes, it may influence the target metric.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_9",
+      "factor_ids": [
+        "checkpoint_11"
+      ],
+      "edge_ids": [
+        "edge_016"
+      ],
+      "relationships": [
+        "inhibits"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "If gas prices rise ahead of spring break, it may influence the target metric.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_10",
+      "factor_ids": [
+        "checkpoint_14",
+        "checkpoint_15"
+      ],
+      "edge_ids": [
+        "edge_007",
+        "edge_013"
+      ],
+      "relationships": [
+        "enables",
+        "enables"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If there are limited geopolitical disruptions to energy markets, it can enable geopolitical stability's impact on the US market. If geopolitical stability has a certain impact on the US market, it can influence the target metric.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_11",
+      "factor_ids": [
+        "checkpoint_16"
+      ],
+      "edge_ids": [
+        "edge_015"
+      ],
+      "relationships": [
+        "inhibits"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "If oil and gas politics signal market growth, it may influence the target metric.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    }
+  ],
+  "target_bridge": {
+    "id": "target_bridge",
+    "mechanism": "Map only currently supported paths into the current target period and exact metric.",
+    "magnitude_requirement": "Current numerical evidence must support the relevant option boundary, not only the direction of change.",
+    "failure_signal": "The current baseline, target timing, or magnitude evidence does not support the proposed boundary crossing."
+  },
+  "competing_explanations": [],
+  "worked_procedure": [
+    "Lock the exact current target operation and baseline.",
+    "Fill the preserved factor nodes with current evidence.",
+    "Check each preserved directed edge and its timing condition.",
+    "Reject paths containing an unsupported or contradicted link.",
+    "Compare supported paths with current factors outside the graph.",
+    "Require current magnitude support before option mapping."
+  ],
+  "topology_contract": {
+    "path_order_generated_by_model": false,
+    "edge_direction_generated_by_model": false,
+    "source_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_5",
+      "checkpoint_6",
+      "checkpoint_7",
+      "checkpoint_8",
+      "checkpoint_9",
+      "checkpoint_10",
+      "checkpoint_11",
+      "checkpoint_12",
+      "checkpoint_13",
+      "checkpoint_14",
+      "checkpoint_15",
+      "checkpoint_16"
+    ],
+    "source_edge_ids": [
+      "edge_001",
+      "edge_002",
+      "edge_003",
+      "edge_004",
+      "edge_005",
+      "edge_006",
+      "edge_007",
+      "edge_008",
+      "edge_009",
+      "edge_010",
+      "edge_011",
+      "edge_012",
+      "edge_013",
+      "edge_014",
+      "edge_015",
+      "edge_016"
+    ]
+  },
+  "template_sha256": "7a3a8d69fd5178ab2a4c5eaa6573b8bbe63b5520f74be82d451723f9cd0effee"
+}

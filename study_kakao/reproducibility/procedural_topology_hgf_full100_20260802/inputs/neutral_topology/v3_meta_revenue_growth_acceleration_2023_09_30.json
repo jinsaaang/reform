@@ -1,0 +1,461 @@
+{
+  "schema_version": "outcome_neutral_topology_template_v2",
+  "source_question_id": "v3_meta_revenue_growth_acceleration_2023_09_30",
+  "source_blueprint_sha256": "bc821819f892192a4ec0a7f016c26bbe64463c6b0b2f86e64aac185341466a1f",
+  "target_operation": "quarterly revenue year-over-year growth acceleration",
+  "factor_checks": [
+    {
+      "id": "checkpoint_1",
+      "causal_role": "driver",
+      "factor": "Layoff Announcements",
+      "state_question": "Are there current layoff announcements?",
+      "mechanism": "Layoff announcements may be associated with restructuring costs.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_2",
+      "causal_role": "driver",
+      "factor": "Cost-Cutting Measures",
+      "state_question": "For the current target period, Are cost-cutting measures being implemented?",
+      "mechanism": "Implementation of cost-cutting measures can drive efficiency initiatives.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_3",
+      "causal_role": "mediator",
+      "factor": "Efficiency Initiatives",
+      "state_question": "For the current target period, Is there a focus on operational efficiency?",
+      "mechanism": "A focus on operational efficiency may enable the issuance of guidance.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_4",
+      "causal_role": "counterevidence",
+      "factor": "Restructuring Costs Impact",
+      "state_question": "What is the current impact of restructuring costs?",
+      "mechanism": "Restructuring costs may temporarily influence the issuance of guidance.",
+      "effect_if_active": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_5",
+      "causal_role": "driver",
+      "factor": "Analyst Growth Expectations",
+      "state_question": "For the current target period, What are analyst expectations for earnings growth?",
+      "mechanism": "Analyst expectations for earnings growth may correlate with the issuance of guidance.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_6",
+      "causal_role": "mediator",
+      "factor": "Guidance and Results",
+      "state_question": "For the current target period, What guidance is being issued and what are the recent results?",
+      "mechanism": "Issued guidance and recent results may indicate anticipated market performance.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_7",
+      "causal_role": "driver",
+      "factor": "Ad Market Recovery",
+      "state_question": "For the current target period, Is the digital advertising market showing signs of recovery?",
+      "mechanism": "Digital advertising market recovery may contribute to a favorable market environment.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_8",
+      "causal_role": "mediator",
+      "factor": "Ad Market Environment",
+      "state_question": "What is the current state of the broader digital advertising market environment?",
+      "mechanism": "A favorable digital advertising market environment may enable business performance.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_9",
+      "causal_role": "driver",
+      "factor": "Competitor Ad Revenue",
+      "state_question": "For the current target period, What are competitor reports on digital advertising revenue?",
+      "mechanism": "Competitor ad revenue reports may indicate the health of the broader market.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_10",
+      "causal_role": "mediator",
+      "factor": "Ad Business Performance",
+      "state_question": "For the current target period, How is the advertising business performing?",
+      "mechanism": "Advertising business performance may influence revenue trends.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    }
+  ],
+  "topology_edges": [
+    {
+      "id": "edge_001",
+      "source_checkpoint_id": "checkpoint_1",
+      "target_checkpoint_id": "checkpoint_4",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Layoff announcements may be associated with restructuring costs.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_002",
+      "source_checkpoint_id": "checkpoint_1",
+      "target_checkpoint_id": "checkpoint_3",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Layoff announcements may be a component of or drive efficiency initiatives.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_003",
+      "source_checkpoint_id": "checkpoint_2",
+      "target_checkpoint_id": "checkpoint_3",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Cost-cutting measures can drive efficiency initiatives.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_004",
+      "source_checkpoint_id": "checkpoint_3",
+      "target_checkpoint_id": "checkpoint_6",
+      "relationship": "enables",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Efficiency initiatives may enable the issuance of guidance.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_005",
+      "source_checkpoint_id": "checkpoint_4",
+      "target_checkpoint_id": "checkpoint_6",
+      "relationship": "inhibits",
+      "directionality": "counteracting",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Restructuring costs may temporarily influence the issuance of guidance.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_006",
+      "source_checkpoint_id": "checkpoint_5",
+      "target_checkpoint_id": "checkpoint_6",
+      "relationship": "correlates",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Analyst growth expectations may correlate with the issuance of guidance.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_007",
+      "source_checkpoint_id": "checkpoint_6",
+      "target_checkpoint_id": "checkpoint_10",
+      "relationship": "triggers",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Issued guidance and recent results may indicate anticipated advertising business performance.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_008",
+      "source_checkpoint_id": "checkpoint_7",
+      "target_checkpoint_id": "checkpoint_8",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Digital advertising market recovery may contribute to a favorable market environment.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_009",
+      "source_checkpoint_id": "checkpoint_8",
+      "target_checkpoint_id": "checkpoint_10",
+      "relationship": "enables",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "A favorable digital advertising market environment may enable advertising business performance.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_010",
+      "source_checkpoint_id": "checkpoint_9",
+      "target_checkpoint_id": "checkpoint_10",
+      "relationship": "enables",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Competitor ad revenue reports may indicate conditions that enable advertising business performance.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_011",
+      "source_checkpoint_id": "checkpoint_10",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Advertising business performance may influence revenue trends.",
+      "terminal_to_target_bridge": true
+    }
+  ],
+  "conditional_paths": [
+    {
+      "id": "path_1",
+      "factor_ids": [
+        "checkpoint_1",
+        "checkpoint_4",
+        "checkpoint_6",
+        "checkpoint_10"
+      ],
+      "edge_ids": [
+        "edge_001",
+        "edge_005",
+        "edge_007",
+        "edge_011"
+      ],
+      "relationships": [
+        "causes",
+        "inhibits",
+        "triggers",
+        "causes"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "Layoff announcements may be associated with restructuring costs. Restructuring costs may temporarily influence the issuance of guidance. Issued guidance and recent results may indicate anticipated advertising business performance. Advertising business performance may influence revenue trends.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_2",
+      "factor_ids": [
+        "checkpoint_1",
+        "checkpoint_3",
+        "checkpoint_6",
+        "checkpoint_10"
+      ],
+      "edge_ids": [
+        "edge_002",
+        "edge_004",
+        "edge_007",
+        "edge_011"
+      ],
+      "relationships": [
+        "causes",
+        "enables",
+        "triggers",
+        "causes"
+      ],
+      "path_role": "main_path",
+      "conditional_mechanism": "Layoff announcements may be a component of or drive efficiency initiatives. Efficiency initiatives may enable the issuance of guidance. Issued guidance and recent results may indicate anticipated advertising business performance. Advertising business performance may influence revenue trends.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_3",
+      "factor_ids": [
+        "checkpoint_2",
+        "checkpoint_3",
+        "checkpoint_6",
+        "checkpoint_10"
+      ],
+      "edge_ids": [
+        "edge_003",
+        "edge_004",
+        "edge_007",
+        "edge_011"
+      ],
+      "relationships": [
+        "causes",
+        "enables",
+        "triggers",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "Cost-cutting measures can drive efficiency initiatives. Efficiency initiatives may enable the issuance of guidance. Issued guidance and recent results may indicate anticipated advertising business performance. Advertising business performance may influence revenue trends.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_4",
+      "factor_ids": [
+        "checkpoint_5",
+        "checkpoint_6",
+        "checkpoint_10"
+      ],
+      "edge_ids": [
+        "edge_006",
+        "edge_007",
+        "edge_011"
+      ],
+      "relationships": [
+        "correlates",
+        "triggers",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "Analyst growth expectations may correlate with the issuance of guidance. Issued guidance and recent results may indicate anticipated advertising business performance. Advertising business performance may influence revenue trends.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_5",
+      "factor_ids": [
+        "checkpoint_7",
+        "checkpoint_8",
+        "checkpoint_10"
+      ],
+      "edge_ids": [
+        "edge_008",
+        "edge_009",
+        "edge_011"
+      ],
+      "relationships": [
+        "causes",
+        "enables",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "Digital advertising market recovery may contribute to a favorable market environment. A favorable digital advertising market environment may enable advertising business performance. Advertising business performance may influence revenue trends.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_6",
+      "factor_ids": [
+        "checkpoint_9",
+        "checkpoint_10"
+      ],
+      "edge_ids": [
+        "edge_010",
+        "edge_011"
+      ],
+      "relationships": [
+        "enables",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "Competitor ad revenue reports may indicate conditions that enable advertising business performance. Advertising business performance may influence revenue trends.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    }
+  ],
+  "target_bridge": {
+    "id": "target_bridge",
+    "mechanism": "Map only currently supported paths into the current target period and exact metric.",
+    "magnitude_requirement": "Current numerical evidence must support the relevant option boundary, not only the direction of change.",
+    "failure_signal": "The current baseline, target timing, or magnitude evidence does not support the proposed boundary crossing."
+  },
+  "competing_explanations": [],
+  "worked_procedure": [
+    "Lock the exact current target operation and baseline.",
+    "Fill the preserved factor nodes with current evidence.",
+    "Check each preserved directed edge and its timing condition.",
+    "Reject paths containing an unsupported or contradicted link.",
+    "Compare supported paths with current factors outside the graph.",
+    "Require current magnitude support before option mapping."
+  ],
+  "topology_contract": {
+    "path_order_generated_by_model": false,
+    "edge_direction_generated_by_model": false,
+    "source_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_5",
+      "checkpoint_6",
+      "checkpoint_7",
+      "checkpoint_8",
+      "checkpoint_9",
+      "checkpoint_10"
+    ],
+    "source_edge_ids": [
+      "edge_001",
+      "edge_002",
+      "edge_003",
+      "edge_004",
+      "edge_005",
+      "edge_006",
+      "edge_007",
+      "edge_008",
+      "edge_009",
+      "edge_010",
+      "edge_011"
+    ]
+  },
+  "template_sha256": "1814895ecaa87cdea4b8fe8b290223b10dc575c29fd2179a1d1c2a759171e071"
+}

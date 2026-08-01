@@ -1,133 +1,92 @@
-# HGF
+# Procedural Topology HGF
 
-HGF (Hindsight-Guided Forecasting)는 과거에 해결된 forecasting 사건의
-정답을 재사용하지 않고, 그 사건의 refined hindsight DAG에서 검증된
-인과 구조와 증거 요구조건을 현재 예측의 절차적 memory로 재사용한다.
-현재 구현에서 HGF는 하나의 canonical 방법이며 별도 실험 variant가 아니다.
+이 문서는 현재 논문과 실험에서 사용하는 HGF 방법론의 유일한 기준 문서다. 이전 개발 버전과 진단 기록은 `legacy/experimental_variants`에 보존하며 현재 방법으로 간주하지 않는다.
 
-## 1. 전체 구조
+## 연구 목적
 
-```text
-과거 해결 사건 + 사후 근거
-        ↓
-Refined Hindsight DAG
-        ↓ deterministic compile + sanitize + topology validation
-Blueprint
-        ↓ cutoff-safe historical evidence로 생성
-Exemplar
-        ↓ fixed retrieval
-현재 질문 + 현재 cutoff 이전 E1 증거
-        ↓
-family_id + target_metric compatibility 검사
-        ├─ compatible   → Blueprint + sanitized Exemplar 사용
-        └─ incompatible → historical memory 완전 제거
-        ↓
-현재 target operator에 맞춘 구조화 reasoning
-        ↓ boundary validation / schema repair
-모델이 출력한 최종 확률
-```
+반복되는 금융 이벤트는 예측 대상과 작동 구조가 비슷하지만 매 시점의 증거와 시장 상태는 달라진다. HGF는 과거 사건의 정답이나 확률을 현재 답의 prior로 사용하지 않는다. 해결된 과거 사건에서 얻은 인과 구조를 가져와 현재 증거로 각 관계를 다시 확인함으로써 LLM의 예측 추론을 개선한다.
 
-마지막 확률에는 temperature scaling, modal boost, calibration boost 등
-별도의 probability postprocessing을 적용하지 않는다. Schema repair와 생성
-실패 시 neutral fallback은 실행 안정성을 위한 검증 경로이며 확률을 성능
-향상 목적으로 재조정하는 단계가 아니다.
+핵심 가설은 과거 사건의 가치가 정답 자체보다 증거를 어떤 요인과 관계로 해석해야 하는지를 보여 주는 구조에 있다는 것이다.
 
-## 2. Blueprint 구축
+## Offline graph bank
 
-입력은 200개의 refined DAG와 memory question metadata이다. 각 DAG는
-deterministic compiler를 거쳐 다음 요소로 변환된다.
+각 과거 금융 이벤트에는 WorldReasoner로 구축한 hindsight DAG가 있다. DAG는 예측 요인인 node와 이들 사이의 방향을 가진 edge, lag, support, confidence, root to target path를 포함한다. 현재 예측에는 forecast cutoff 전에 해결된 같은 event family와 target metric의 DAG만 사용할 수 있다.
 
-- `target_definition`: metric, operation, horizon, unit, comparator
-- `checkpoints`: 원 DAG 노드의 causal role, evidence requirement,
-  contradiction signal
-- `causal_paths`: root-to-target 연결, mechanism, applicability 및 failure
-  condition
-- `alternative_hypotheses`: 경쟁 경로와 이를 구분할 증거
-- `forecast_audit_questions`: 현재 reasoning을 점검할 질문
-- `topology_validation`: edge coverage, path precision, acyclic 및 leakage
-  검사 결과
+이 graph bank는 데이터와 같은 고정 연구 산출물이다. Forecaster model마다 다시 만들지 않는다. 과거 정답, 과거 확률, 실현값과 사후 결론은 live forecaster 입력에서 제외한다. Graph의 node와 edge topology는 유지하며 과거 상태를 현재 사실처럼 전달하지 않는다.
 
-Compiler는 과거 outcome, answer label, realized target value와 절대
-period를 제거한다. 값과 시점은 현재 사건에 직접 복사할 수 없는 일반
-조건으로 치환하지만, DAG의 노드 역할·edge·root-to-target path는 유지한다.
-Canonical artifact의 내부 호환성 schema는
-`hgf_blueprint_topology_v2`로 남아 있으나 외부 method 이름은 항상 `HGF`다.
+## End to end forecasting pipeline
 
-`hgf-build-memory`는 source graph hash, compiler, Blueprint hash,
-checkpoint/edge/path 통계를 manifest에 기록한다. V1 card fallback은 없다.
-현재 bank의 완료 조건은 200/200, edge coverage 1.0, path precision 1.0,
-acyclic, outcome/value/period leakage 0이다.
+Procedural Topology HGF는 하나의 예측 흐름으로 작동한다.
 
-## 3. Exemplar 구축
+1. 현재 질문의 metric, period, unit, comparison rule과 answer boundary를 target contract로 고정한다.
+2. 해당 모델이 cutoff safe evidence 후보에서 현재 질문에 필요한 증거를 독립적으로 선택한다.
+3. 같은 event family와 target metric에 속하고 시간상 사용 가능한 hindsight DAG를 검색한다.
+4. 검색된 여러 DAG에서 현재 증거와 관련된 complete subgraph를 선택한다. Node, edge, 방향, 관계, lag와 path 순서는 보존한다.
+5. 선택한 subgraph의 node와 edge를 현재 evidence로 다시 확인한다. 각 node에는 current state와 evidence를, 각 edge에는 현재 관계가 유지되는지, 반전되는지, 반박되는지 또는 아직 확인되지 않는지를 기록한다.
+6. 현재 상태가 채워진 graph를 따라 baseline, driver, mechanism, counterevidence와 target bridge를 작성한다. 현재 증거가 지지하지 않는 path는 기각하거나 uncertainty로 남긴다.
+7. 별도 boundary mapper가 완성된 reasoning을 target unit과 answer boundary에 맞춰 하나의 probability distribution으로 변환한다.
 
-Exemplar는 Blueprint와 독립적인 memory가 아니라, 해당 Blueprint를
-어떻게 current-case reasoning으로 실행하는지 보여주는 cutoff-safe
-demonstration이다. 따라서 각 memory Exemplar는 자신이 결합된 Blueprint의
-hash를 기록한다.
+이 exact canonical 구현은 historical worked exemplar를 사용하지 않는다. 성능을 위해 baseline 답을 참조하거나 확률을 사후 조정하지도 않는다.
 
-Generator는 historical question의 forecast cutoff 이전 article만 사용할 수
-있다. 결과에는 target semantics, forecast-time evidence, structured reasoning,
-counterevidence, prospective estimate, option mapping과 uncertainty가 포함된다.
-`hgf-build-exemplars`는 다음을 보장한다.
+## 정보 흐름과 실행 계약
 
-- memory Exemplar 200개
-- 고정 평가 질문 100개의 top-1 case wrapper
-- 모든 citation이 해당 historical cutoff 이전 evidence에 포함
-- Blueprint hash와 Exemplar wrapper의 일치
-- 기존의 유효한 결과를 보존하고 누락분만 생성하는 resume
+- 현재 evidence와 과거 DAG는 모두 forecast cutoff를 지킨다.
+- 다른 방법의 prediction이나 probability는 HGF 입력에 들어가지 않는다.
+- 과거 topology는 현재 사실의 근거로 인용할 수 없다.
+- 현재 factual claim은 현재 evidence ID와 연결되어야 한다.
+- Reasoning 단계는 최종 probability를 출력하지 않는다.
+- Probability는 마지막 boundary 단계에서 한 번만 생성한다.
+- Probability pooling, posterior adjustment와 result conditioned retry를 금지한다.
+- API 또는 parsing 실패만 같은 model, provider, seed와 입력으로 다시 호출한다. 이미 성공한 출력을 점수에 따라 다시 생성하거나 선택하지 않는다.
 
-## 4. 현재 질문에서의 실행
+## Baselines
 
-1. 현재 질문의 cutoff를 확정하고 E1 evidence를 cutoff-safe하게 로드한다.
-2. 고정 mapping으로 historical memory를 선택한다.
-3. 현재 질문과 memory의 `family_id`와 `target_metric`을 정확히 비교한다.
-4. 불일치하면 Blueprint와 Exemplar를 모두 제거하고 현재 증거만 사용한다.
-5. 호환되면 Blueprint 전체 topology와 sanitized demonstration을 Expert
-   Memory로 컴파일한다.
-6. 각 reasoning step은 실제로 충족한 checkpoint ID, `CURRENT_NEW`, 또는
-   public arithmetic용 `TARGET_CONTRACT`를 기록한다.
-7. 현재 증거가 checkpoint 요구조건을 충족하지 않으면 임의의 첫
-   checkpoint로 연결하지 않는다. 정책에 따라 validation error가 되거나,
-   memory rejection이 허용된 경우 `CURRENT_NEW`로 남긴다.
-8. exact target operator가 level, change, return, growth acceleration 등을
-   구분하고 target-period quantity와 comparator의 단위·산술을 검사한다.
-9. boundary mapper가 option별 확률과 prediction의 schema 및 합계를
-   검증한다. 통과한 raw probability가 최종 출력이다.
+한 모델 안에서는 모든 방법이 같은 100개 질문, 같은 model specific current evidence와 같은 historical retrieval manifest에서 시작한다.
 
-Canonical HGF가 사용하는 semantic lesson은 고정된 일반 원칙뿐이다.
-Historical lesson distillation이나 semantic cache는 사용하지 않는다.
-또한 이번 구현에는 mechanism-level applicability gate나 calibration
-단계가 추가되어 있지 않다.
-
-## 5. Baseline과의 입력 분리
-
-공유되는 것은 question, cutoff, evidence contract, scorer와 refined DAG
-loader이다. Memory payload는 분리된다.
-
-| Method | Memory 입력 |
+| Method | 입력과 역할 |
 |---|---|
-| HGF | `artifacts/hgf/blueprints` + matching Exemplar |
-| Factor-Memory | `artifacts/baselines/factor_memory`의 frozen V1 card |
-| Case/Text/Direct DAG | 각 baseline 정의에 따른 독립 payload |
-| Search-only/Prospective DAG | historical HGF memory 없음 |
+| Structured Direct Forecasting | 과거 정보 없이 현재 evidence로 target semantics, baseline, driver, mechanism과 counterevidence를 작성하는 강한 통제군 |
+| DAG Forecasting | 현재 evidence만으로 prospective DAG를 구축하고 예측 |
+| Outcome Neutral Direct DAG Retrieval | 검색된 과거 DAG에서 과거 값과 실현 방향 및 episode specific conclusion을 제거한 뒤 graph를 직접 전달 |
+| Factor Memory | 이전 registered memory bank의 주요 예측 요인을 전달하는 강한 expert factor baseline |
+| Outcome Redacted Case Retrieval | 과거 질문과 cutoff time evidence를 제공하되 resolved option, realized value와 post resolution rationale는 제거 |
+| Forecasting Principles | 해결된 과거 사건에서 추출한 일반 예측 원칙을 전달 |
+| Procedural Topology HGF | 과거 subgraph의 구조를 현재 evidence로 다시 채우고 활성 경로와 경쟁 설명을 따라 예측 |
 
-Factor-Memory가 HGF Blueprint의 mutable 목록을 공유하지 않으므로 HGF
-변경이 baseline 정의를 바꾸지 않는다.
+Factor Memory는 현재 HGF graph에서 edge만 제거한 topology matched ablation이 아니다. 정보 출처와 정제 방식이 다른 독립적인 강한 baseline으로 해석한다.
 
-## 6. 이전 구현과의 차이
+## Canonical full 100 experiment
 
-- 일부 stored guidance와 generic fallback의 혼합 대신 200개 전체 DAG를
-  동일 compiler로 처리한다.
-- DAG를 소수 factor로 평탄화하지 않고 checkpoint와 causal path를 보존한다.
-- Blueprint와 Exemplar의 hash 결합을 검증한다.
-- 정확한 family/metric 호환성 검사와 incompatible-memory 제거가 항상
-  활성화된다.
-- arbitrary checkpoint repair를 금지한다.
-- historical semantic distillation/cache와 probability postprocessing을
-  제거한다.
-- `hgf-replay`와 `hgf-main-table`이 동일한 runtime 함수를 사용한다.
-- 부분 Blueprint override 대신 완전한 `--hgf-artifact-root`만 허용한다.
+최종 성능 판단에는 모델별로 고정된 100문항만 사용한다. 40문항 subset과 중간 결과는 진단용이며 논문의 성능 주장에 사용하지 않는다. Seed는 0 한 번이며 다중 seed 안정성을 주장하지 않는다.
 
-이전 HGF의 코드, V1 cards, Exemplar, semantic lessons와 결과는
-[legacy/original_hgf](legacy/original_hgf/README.md)에 실행 가능한 보관본으로
-격리되어 있다.
+| Model | HGF Accuracy | HGF Brier | HGF NLL | Lowest Brier method |
+|---|---:|---:|---:|---|
+| Gemini 2.5 Flash Lite | 0.550 | 0.2122 | 0.9078 | HGF 0.2122 |
+| GPT 5 mini | 0.550 | 0.2112 | 0.9068 | HGF 0.2112 |
+| DeepSeek V3.2 | 0.500 | 0.2257 | 0.9532 | Forecasting Principles 0.2218 |
+| Llama 4 Maverick | 0.530 | 0.2207 | 0.9302 | HGF 0.2207 |
+| MiniMax M2.5 | 0.510 | 0.2227 | 0.9708 | HGF 0.2227 |
+
+HGF의 500개 pooled 결과는 Accuracy 0.528, Brier 0.2185, NLL 0.9337이다. 일곱 방법 중 네 모델에서 HGF의 Brier가 가장 낮고 DeepSeek에서는 Forecasting Principles가 더 낮다.
+
+Leakage를 제거한 두 history baseline의 pooled 결과는 다음과 같다.
+
+| Method | Accuracy | Brier | NLL |
+|---|---:|---:|---:|
+| Outcome Redacted Case Retrieval | 0.492 | 0.2374 | 1.0034 |
+| Outcome Neutral Direct DAG Retrieval | 0.494 | 0.2324 | 0.9770 |
+| Procedural Topology HGF | 0.528 | 0.2185 | 0.9337 |
+
+문항 ID를 cluster로 사용한 10,000회 paired bootstrap에서 HGF minus Case Retrieval의 Brier 차이는 -0.0190이고 95 percent interval은 [-0.0314, -0.0070]이다. HGF minus Direct DAG Retrieval은 -0.0139이고 interval은 [-0.0273, -0.0002]다.
+
+## Reasoning and execution quality
+
+500개 HGF 출력 모두 written reasoning step과 실제 prediction pipeline이 사용한 evidence 기록을 가진다. Strict structured contract 통과 수는 Gemini 86, GPT 95, DeepSeek 95, Llama 65, MiniMax 59다. Strict 실패는 reasoning 부재와 같지 않으며 boundary fallback, incomplete path contract와 graph default 사용을 별도 항목으로 보고해야 한다. 특히 Llama와 MiniMax는 성능과 함께 낮은 strict compliance를 limitation으로 명시한다.
+
+모든 raw request와 response, provider, prediction, probability, evidence ID, reasoning, token, cost, elapsed time, repair와 transport retry가 canonical run directory에 보존되어 있다.
+
+## Reproduction and paper synchronization
+
+재현 번들은 `reproducibility/procedural_topology_hgf_full100_20260802`에 있다. 이 번들은 exact HGF method source, historical shared dependencies, input adapter, 두 sanitized baseline, five model specific evidence와 retrieval manifest, neutral topology cache와 canonical provenance를 포함한다.
+
+결과 표와 논문 동기화 정보는 `experiments/final_results_20260802`에 있다. 논문의 방법론은 이전 v27 설명이 아니라 이 문서의 Procedural Topology HGF 흐름으로 수정해야 한다. 모델, provider, 100문항, seed 0, metric, baseline 이름과 제한도 sync manifest를 따른다.

@@ -1,0 +1,554 @@
+{
+  "schema_version": "outcome_neutral_topology_template_v2",
+  "source_question_id": "v3_fed_funds_monthly_change_2024_07",
+  "source_blueprint_sha256": "ec0177f0623ec9ddffd32221fe0e79007766307029f723be5531e8a134ab96b9",
+  "target_operation": "monthly federal-funds-rate change",
+  "factor_checks": [
+    {
+      "id": "checkpoint_1",
+      "causal_role": "driver",
+      "factor": "Fed's Dual Mandate",
+      "state_question": "What is the current state of the Fed's dual mandate considerations?",
+      "mechanism": "The Fed's dual mandate influences its approach to monetary policy.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_2",
+      "causal_role": "driver",
+      "factor": "Fed's Inflation Experience",
+      "state_question": "What is the current relevance of the Fed's historical experience with inflation?",
+      "mechanism": "The Fed's historical experience with inflation may inform its current policy considerations.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_3",
+      "causal_role": "counterevidence",
+      "factor": "Labor Market Conditions",
+      "state_question": "What are the current labor market conditions?",
+      "mechanism": "Labor market conditions can influence monetary policy decisions.",
+      "effect_if_active": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_4",
+      "causal_role": "driver",
+      "factor": "Monetary Policy Report",
+      "state_question": "For the current target period, What does the latest Monetary Policy Report indicate?",
+      "mechanism": "The Monetary Policy Report can shape the Fed's policy stance.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_5",
+      "causal_role": "counterevidence",
+      "factor": "Market Rate Expectations",
+      "state_question": "What are current market expectations regarding rate changes?",
+      "mechanism": "Market expectations for rate changes can influence monetary policy considerations.",
+      "effect_if_active": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_6",
+      "causal_role": "driver",
+      "factor": "PCE Inflation Report",
+      "state_question": "For the current target period, What are the latest PCE inflation figures?",
+      "mechanism": "PCE inflation figures can influence the Fed's monetary policy stance.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_7",
+      "causal_role": "mediator",
+      "factor": "Fed's Policy Approach",
+      "state_question": "What is the Fed's current approach to monetary policy?",
+      "mechanism": "The Fed's policy approach guides its decisions on monetary policy instruments.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_8",
+      "causal_role": "mediator",
+      "factor": "FOMC Meeting",
+      "state_question": "For the current target period, When is the next FOMC meeting scheduled?",
+      "mechanism": "FOMC meetings are occasions for monetary policy decisions.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_9",
+      "causal_role": "mediator",
+      "factor": "FOMC Rate Decision",
+      "state_question": "What is the current FOMC rate decision?",
+      "mechanism": "The FOMC rate decision directly impacts the federal funds rate.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_10",
+      "causal_role": "mediator",
+      "factor": "Fed's Inflation Target and Strategy",
+      "state_question": "What is the Fed's current inflation target and strategy?",
+      "mechanism": "The Fed's commitment to its inflation target and strategy influences its policy actions.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_11",
+      "causal_role": "mediator",
+      "factor": "Federal Funds Rate Range",
+      "state_question": "What is the current range of the federal funds rate?",
+      "mechanism": "The federal funds rate range is an outcome of monetary policy decisions.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    }
+  ],
+  "topology_edges": [
+    {
+      "id": "edge_001",
+      "source_checkpoint_id": "checkpoint_6",
+      "target_checkpoint_id": "checkpoint_7",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If PCE inflation figures are moderating but still elevated, this may lead to a cautious policy approach.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_002",
+      "source_checkpoint_id": "checkpoint_2",
+      "target_checkpoint_id": "checkpoint_7",
+      "relationship": "amplifies",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If the Fed has historical experience with inflation, this may inform a cautious policy approach.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_003",
+      "source_checkpoint_id": "checkpoint_7",
+      "target_checkpoint_id": "checkpoint_8",
+      "relationship": "enables",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If the Fed adopts a cautious policy approach, this may set the stage for FOMC decisions.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_004",
+      "source_checkpoint_id": "checkpoint_8",
+      "target_checkpoint_id": "checkpoint_11",
+      "relationship": "triggers",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If an FOMC meeting occurs, this may trigger a decision regarding the federal funds rate.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_005",
+      "source_checkpoint_id": "checkpoint_9",
+      "target_checkpoint_id": "checkpoint_11",
+      "relationship": "triggers",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If an FOMC rate decision is made, this may trigger a change in the federal funds rate.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_006",
+      "source_checkpoint_id": "checkpoint_4",
+      "target_checkpoint_id": "checkpoint_7",
+      "relationship": "enables",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If the Monetary Policy Report indicates a restrictive stance, this may lead to a cautious policy approach.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_007",
+      "source_checkpoint_id": "checkpoint_5",
+      "target_checkpoint_id": "checkpoint_11",
+      "relationship": "inhibits",
+      "directionality": "counteracting",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If market expectations favor a rate cut, this may exert pressure against maintaining the federal funds rate.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_008",
+      "source_checkpoint_id": "checkpoint_10",
+      "target_checkpoint_id": "checkpoint_11",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If the Fed is committed to its inflation target and strategy, this may influence the federal funds rate.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_009",
+      "source_checkpoint_id": "checkpoint_6",
+      "target_checkpoint_id": "checkpoint_10",
+      "relationship": "enables",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If PCE inflation figures are moderating but still elevated, this may reinforce the Fed's commitment to its inflation target.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_010",
+      "source_checkpoint_id": "checkpoint_5",
+      "target_checkpoint_id": "checkpoint_9",
+      "relationship": "inhibits",
+      "directionality": "counteracting",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If market expectations favor a rate cut, this may put pressure on the FOMC rate decision.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_011",
+      "source_checkpoint_id": "checkpoint_3",
+      "target_checkpoint_id": "checkpoint_9",
+      "relationship": "inhibits",
+      "directionality": "counteracting",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If labor market conditions are weakening, this may put pressure on the FOMC rate decision.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_012",
+      "source_checkpoint_id": "checkpoint_1",
+      "target_checkpoint_id": "checkpoint_7",
+      "relationship": "enables",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If the Fed's dual mandate requires balancing employment and price stability, this may lead to a cautious policy approach.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_013",
+      "source_checkpoint_id": "checkpoint_11",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "triggers",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If the federal funds rate is within a certain range, this may influence the target metric.",
+      "terminal_to_target_bridge": true
+    }
+  ],
+  "conditional_paths": [
+    {
+      "id": "path_1",
+      "factor_ids": [
+        "checkpoint_1",
+        "checkpoint_7",
+        "checkpoint_8",
+        "checkpoint_11"
+      ],
+      "edge_ids": [
+        "edge_012",
+        "edge_003",
+        "edge_004",
+        "edge_013"
+      ],
+      "relationships": [
+        "enables",
+        "enables",
+        "triggers",
+        "triggers"
+      ],
+      "path_role": "main_path",
+      "conditional_mechanism": "If the Fed's dual mandate requires balancing employment and price stability, this may lead to a cautious policy approach. If the Fed adopts a cautious policy approach, this may set the stage for FOMC decisions. If an FOMC meeting occurs, this may trigger a decision regarding the federal funds rate. If the federal funds rate is within a certain range, this may influence the target metric.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_2",
+      "factor_ids": [
+        "checkpoint_2",
+        "checkpoint_7",
+        "checkpoint_8",
+        "checkpoint_11"
+      ],
+      "edge_ids": [
+        "edge_002",
+        "edge_003",
+        "edge_004",
+        "edge_013"
+      ],
+      "relationships": [
+        "amplifies",
+        "enables",
+        "triggers",
+        "triggers"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If the Fed has historical experience with inflation, this may inform a cautious policy approach. If the Fed adopts a cautious policy approach, this may set the stage for FOMC decisions. If an FOMC meeting occurs, this may trigger a decision regarding the federal funds rate. If the federal funds rate is within a certain range, this may influence the target metric.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_3",
+      "factor_ids": [
+        "checkpoint_3",
+        "checkpoint_9",
+        "checkpoint_11"
+      ],
+      "edge_ids": [
+        "edge_011",
+        "edge_005",
+        "edge_013"
+      ],
+      "relationships": [
+        "inhibits",
+        "triggers",
+        "triggers"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "If labor market conditions are weakening, this may put pressure on the FOMC rate decision. If an FOMC rate decision is made, this may trigger a change in the federal funds rate. If the federal funds rate is within a certain range, this may influence the target metric.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_4",
+      "factor_ids": [
+        "checkpoint_4",
+        "checkpoint_7",
+        "checkpoint_8",
+        "checkpoint_11"
+      ],
+      "edge_ids": [
+        "edge_006",
+        "edge_003",
+        "edge_004",
+        "edge_013"
+      ],
+      "relationships": [
+        "enables",
+        "enables",
+        "triggers",
+        "triggers"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If the Monetary Policy Report indicates a restrictive stance, this may lead to a cautious policy approach. If the Fed adopts a cautious policy approach, this may set the stage for FOMC decisions. If an FOMC meeting occurs, this may trigger a decision regarding the federal funds rate. If the federal funds rate is within a certain range, this may influence the target metric.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_5",
+      "factor_ids": [
+        "checkpoint_5",
+        "checkpoint_11"
+      ],
+      "edge_ids": [
+        "edge_007",
+        "edge_013"
+      ],
+      "relationships": [
+        "inhibits",
+        "triggers"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "If market expectations favor a rate cut, this may exert pressure against maintaining the federal funds rate. If the federal funds rate is within a certain range, this may influence the target metric.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_6",
+      "factor_ids": [
+        "checkpoint_5",
+        "checkpoint_9",
+        "checkpoint_11"
+      ],
+      "edge_ids": [
+        "edge_010",
+        "edge_005",
+        "edge_013"
+      ],
+      "relationships": [
+        "inhibits",
+        "triggers",
+        "triggers"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "If market expectations favor a rate cut, this may put pressure on the FOMC rate decision. If an FOMC rate decision is made, this may trigger a change in the federal funds rate. If the federal funds rate is within a certain range, this may influence the target metric.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_7",
+      "factor_ids": [
+        "checkpoint_6",
+        "checkpoint_7",
+        "checkpoint_8",
+        "checkpoint_11"
+      ],
+      "edge_ids": [
+        "edge_001",
+        "edge_003",
+        "edge_004",
+        "edge_013"
+      ],
+      "relationships": [
+        "causes",
+        "enables",
+        "triggers",
+        "triggers"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If PCE inflation figures are moderating but still elevated, this may lead to a cautious policy approach. If the Fed adopts a cautious policy approach, this may set the stage for FOMC decisions. If an FOMC meeting occurs, this may trigger a decision regarding the federal funds rate. If the federal funds rate is within a certain range, this may influence the target metric.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_8",
+      "factor_ids": [
+        "checkpoint_6",
+        "checkpoint_10",
+        "checkpoint_11"
+      ],
+      "edge_ids": [
+        "edge_009",
+        "edge_008",
+        "edge_013"
+      ],
+      "relationships": [
+        "enables",
+        "causes",
+        "triggers"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If PCE inflation figures are moderating but still elevated, this may reinforce the Fed's commitment to its inflation target. If the Fed is committed to its inflation target and strategy, this may influence the federal funds rate. If the federal funds rate is within a certain range, this may influence the target metric.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    }
+  ],
+  "target_bridge": {
+    "id": "target_bridge",
+    "mechanism": "Map only currently supported paths into the current target period and exact metric.",
+    "magnitude_requirement": "Current numerical evidence must support the relevant option boundary, not only the direction of change.",
+    "failure_signal": "The current baseline, target timing, or magnitude evidence does not support the proposed boundary crossing."
+  },
+  "competing_explanations": [],
+  "worked_procedure": [
+    "Lock the exact current target operation and baseline.",
+    "Fill the preserved factor nodes with current evidence.",
+    "Check each preserved directed edge and its timing condition.",
+    "Reject paths containing an unsupported or contradicted link.",
+    "Compare supported paths with current factors outside the graph.",
+    "Require current magnitude support before option mapping."
+  ],
+  "topology_contract": {
+    "path_order_generated_by_model": false,
+    "edge_direction_generated_by_model": false,
+    "source_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_5",
+      "checkpoint_6",
+      "checkpoint_7",
+      "checkpoint_8",
+      "checkpoint_9",
+      "checkpoint_10",
+      "checkpoint_11"
+    ],
+    "source_edge_ids": [
+      "edge_001",
+      "edge_002",
+      "edge_003",
+      "edge_004",
+      "edge_005",
+      "edge_006",
+      "edge_007",
+      "edge_008",
+      "edge_009",
+      "edge_010",
+      "edge_011",
+      "edge_012",
+      "edge_013"
+    ]
+  },
+  "template_sha256": "188ef3ea9b96aedfc84fd24ee0fc26b1cc31510e2330515968dbb9c2468c4a08"
+}

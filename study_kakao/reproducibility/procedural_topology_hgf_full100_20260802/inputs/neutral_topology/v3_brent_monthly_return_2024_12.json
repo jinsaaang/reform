@@ -1,0 +1,510 @@
+{
+  "schema_version": "outcome_neutral_topology_template_v2",
+  "source_question_id": "v3_brent_monthly_return_2024_12",
+  "source_blueprint_sha256": "f0e9ea7fda21c94f42c6d359749091ddae3869e536941f822501d202322dd8c9",
+  "target_operation": "monthly Brent price return",
+  "factor_checks": [
+    {
+      "id": "checkpoint_1",
+      "causal_role": "driver",
+      "factor": "Asian Crude Oil Prices",
+      "state_question": "What is the current state of Asian crude oil prices?",
+      "mechanism": "Asian crude oil prices are a factor in the monthly Brent price return.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_2",
+      "causal_role": "counterevidence",
+      "factor": "Economic Headwinds",
+      "state_question": "For the current target period, What is the status of global economic headwinds and inflationary concerns?",
+      "mechanism": "Economic headwinds and inflationary concerns can impact oil demand.",
+      "effect_if_active": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_3",
+      "causal_role": "driver",
+      "factor": "OPEC+ Increase Delays",
+      "state_question": "For the current target period, Are OPEC+ members delaying planned production increases?",
+      "mechanism": "OPEC+ decisions on production increases are a factor in supply management.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_4",
+      "causal_role": "counterevidence",
+      "factor": "OPEC+ Cuts",
+      "state_question": "For the current target period, What is the status of OPEC+ production cuts?",
+      "mechanism": "OPEC+ production cuts are a factor in managing global oil supply.",
+      "effect_if_active": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_5",
+      "causal_role": "counterevidence",
+      "factor": "US Oil Production",
+      "state_question": "What are the current US oil production levels?",
+      "mechanism": "US oil production levels are a factor in global oil supply.",
+      "effect_if_active": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_6",
+      "causal_role": "driver",
+      "factor": "Geopolitical Tensions",
+      "state_question": "For the current target period, What is the level of geopolitical tensions affecting energy markets?",
+      "mechanism": "Geopolitical tensions can affect energy market stability.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_7",
+      "causal_role": "driver",
+      "factor": "IEA Report",
+      "state_question": "For the current target period, What does the latest IEA Oil Market Report indicate?",
+      "mechanism": "The IEA Oil Market Report provides data relevant to global oil market analysis.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_8",
+      "causal_role": "driver",
+      "factor": "China Demand Outlook",
+      "state_question": "For the current target period, What is the projected outlook for China's oil demand?",
+      "mechanism": "China's oil demand outlook can influence global consumption patterns.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_9",
+      "causal_role": "mediator",
+      "factor": "India Demand Growth",
+      "state_question": "For the current target period, What is the trend in India's oil demand growth?",
+      "mechanism": "India's oil demand growth is a factor in overall global demand.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_10",
+      "causal_role": "counterevidence",
+      "factor": "Global Output Change",
+      "state_question": "What is the current trend in global oil output?",
+      "mechanism": "Changes in global oil output affect market supply.",
+      "effect_if_active": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    }
+  ],
+  "topology_edges": [
+    {
+      "id": "edge_001",
+      "source_checkpoint_id": "checkpoint_8",
+      "target_checkpoint_id": "checkpoint_9",
+      "relationship": "enables",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The outlook for China's oil demand can influence India's role in global oil consumption growth.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_002",
+      "source_checkpoint_id": "checkpoint_7",
+      "target_checkpoint_id": "checkpoint_10",
+      "relationship": "correlates",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The IEA Oil Market Report provides data that informs the assessment of global oil output changes.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_003",
+      "source_checkpoint_id": "checkpoint_4",
+      "target_checkpoint_id": "checkpoint_10",
+      "relationship": "inhibits",
+      "directionality": "counteracting",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "OPEC+ production cuts can counteract changes in global oil output.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_004",
+      "source_checkpoint_id": "checkpoint_2",
+      "target_checkpoint_id": "checkpoint_9",
+      "relationship": "inhibits",
+      "directionality": "counteracting",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Economic headwinds can potentially dampen oil demand growth, including in India.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_005",
+      "source_checkpoint_id": "checkpoint_3",
+      "target_checkpoint_id": "checkpoint_4",
+      "relationship": "triggers",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Delays in OPEC+ production increases can lead to the extension of production cuts.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_006",
+      "source_checkpoint_id": "checkpoint_4",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "OPEC+ production cuts influence the monthly Brent price return.",
+      "terminal_to_target_bridge": true
+    },
+    {
+      "id": "edge_007",
+      "source_checkpoint_id": "checkpoint_9",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "India's oil demand growth influences the monthly Brent price return.",
+      "terminal_to_target_bridge": true
+    },
+    {
+      "id": "edge_008",
+      "source_checkpoint_id": "checkpoint_10",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "inhibits",
+      "directionality": "counteracting",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Changes in global oil output influence the monthly Brent price return.",
+      "terminal_to_target_bridge": true
+    },
+    {
+      "id": "edge_009",
+      "source_checkpoint_id": "checkpoint_6",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "correlates",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Geopolitical tensions influence the monthly Brent price return.",
+      "terminal_to_target_bridge": true
+    },
+    {
+      "id": "edge_010",
+      "source_checkpoint_id": "checkpoint_5",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "inhibits",
+      "directionality": "counteracting",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "US oil production levels influence the monthly Brent price return.",
+      "terminal_to_target_bridge": true
+    },
+    {
+      "id": "edge_011",
+      "source_checkpoint_id": "checkpoint_1",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "triggers",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Asian crude oil prices influence the monthly Brent price return.",
+      "terminal_to_target_bridge": true
+    },
+    {
+      "id": "edge_012",
+      "source_checkpoint_id": "checkpoint_2",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "inhibits",
+      "directionality": "counteracting",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Economic headwinds and inflationary concerns influence the monthly Brent price return.",
+      "terminal_to_target_bridge": true
+    }
+  ],
+  "conditional_paths": [
+    {
+      "id": "path_1",
+      "factor_ids": [
+        "checkpoint_1"
+      ],
+      "edge_ids": [
+        "edge_011"
+      ],
+      "relationships": [
+        "triggers"
+      ],
+      "path_role": "main_path",
+      "conditional_mechanism": "Asian crude oil prices influence the monthly Brent price return.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_2",
+      "factor_ids": [
+        "checkpoint_2",
+        "checkpoint_9"
+      ],
+      "edge_ids": [
+        "edge_004",
+        "edge_007"
+      ],
+      "relationships": [
+        "inhibits",
+        "causes"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "Economic headwinds can potentially dampen oil demand growth, including in India. India's oil demand growth influences the monthly Brent price return.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_3",
+      "factor_ids": [
+        "checkpoint_2"
+      ],
+      "edge_ids": [
+        "edge_012"
+      ],
+      "relationships": [
+        "inhibits"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "Economic headwinds and inflationary concerns influence the monthly Brent price return.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_4",
+      "factor_ids": [
+        "checkpoint_3",
+        "checkpoint_4",
+        "checkpoint_10"
+      ],
+      "edge_ids": [
+        "edge_005",
+        "edge_003",
+        "edge_008"
+      ],
+      "relationships": [
+        "triggers",
+        "inhibits",
+        "inhibits"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "Delays in OPEC+ production increases can lead to the extension of production cuts. OPEC+ production cuts can counteract changes in global oil output. Changes in global oil output influence the monthly Brent price return.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_5",
+      "factor_ids": [
+        "checkpoint_3",
+        "checkpoint_4"
+      ],
+      "edge_ids": [
+        "edge_005",
+        "edge_006"
+      ],
+      "relationships": [
+        "triggers",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "Delays in OPEC+ production increases can lead to the extension of production cuts. OPEC+ production cuts influence the monthly Brent price return.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_6",
+      "factor_ids": [
+        "checkpoint_5"
+      ],
+      "edge_ids": [
+        "edge_010"
+      ],
+      "relationships": [
+        "inhibits"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "US oil production levels influence the monthly Brent price return.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_7",
+      "factor_ids": [
+        "checkpoint_6"
+      ],
+      "edge_ids": [
+        "edge_009"
+      ],
+      "relationships": [
+        "correlates"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "Geopolitical tensions influence the monthly Brent price return.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_8",
+      "factor_ids": [
+        "checkpoint_7",
+        "checkpoint_10"
+      ],
+      "edge_ids": [
+        "edge_002",
+        "edge_008"
+      ],
+      "relationships": [
+        "correlates",
+        "inhibits"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "The IEA Oil Market Report provides data that informs the assessment of global oil output changes. Changes in global oil output influence the monthly Brent price return.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_9",
+      "factor_ids": [
+        "checkpoint_8",
+        "checkpoint_9"
+      ],
+      "edge_ids": [
+        "edge_001",
+        "edge_007"
+      ],
+      "relationships": [
+        "enables",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "The outlook for China's oil demand can influence India's role in global oil consumption growth. India's oil demand growth influences the monthly Brent price return.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    }
+  ],
+  "target_bridge": {
+    "id": "target_bridge",
+    "mechanism": "Map only currently supported paths into the current target period and exact metric.",
+    "magnitude_requirement": "Current numerical evidence must support the relevant option boundary, not only the direction of change.",
+    "failure_signal": "The current baseline, target timing, or magnitude evidence does not support the proposed boundary crossing."
+  },
+  "competing_explanations": [],
+  "worked_procedure": [
+    "Lock the exact current target operation and baseline.",
+    "Fill the preserved factor nodes with current evidence.",
+    "Check each preserved directed edge and its timing condition.",
+    "Reject paths containing an unsupported or contradicted link.",
+    "Compare supported paths with current factors outside the graph.",
+    "Require current magnitude support before option mapping."
+  ],
+  "topology_contract": {
+    "path_order_generated_by_model": false,
+    "edge_direction_generated_by_model": false,
+    "source_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_5",
+      "checkpoint_6",
+      "checkpoint_7",
+      "checkpoint_8",
+      "checkpoint_9",
+      "checkpoint_10"
+    ],
+    "source_edge_ids": [
+      "edge_001",
+      "edge_002",
+      "edge_003",
+      "edge_004",
+      "edge_005",
+      "edge_006",
+      "edge_007",
+      "edge_008",
+      "edge_009",
+      "edge_010",
+      "edge_011",
+      "edge_012"
+    ]
+  },
+  "template_sha256": "38b8e252fae5b01b1e5a563f1338d5c05c52b66e6f0895b9d1b547724d040892"
+}

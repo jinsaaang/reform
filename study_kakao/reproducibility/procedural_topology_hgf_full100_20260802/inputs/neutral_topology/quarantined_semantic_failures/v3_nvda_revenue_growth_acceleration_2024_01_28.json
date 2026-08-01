@@ -1,0 +1,379 @@
+{
+  "schema_version": "outcome_neutral_topology_template_v2",
+  "source_question_id": "v3_nvda_revenue_growth_acceleration_2024_01_28",
+  "source_blueprint_sha256": "a96be064f2c6c973c71a33f148e6b73297ae52084a5862bda478aa905128c381",
+  "target_operation": "quarterly revenue year-over-year growth acceleration",
+  "factor_checks": [
+    {
+      "id": "checkpoint_1",
+      "causal_role": "counterevidence",
+      "factor": "AI GPU Supply Constraints",
+      "state_question": "Are there current supply constraints impacting AI GPU availability?",
+      "mechanism": "If AI GPU supply constraints exist, they may influence NVIDIA's growth trajectory.",
+      "effect_if_active": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_2",
+      "causal_role": "driver",
+      "factor": "Market Earnings Expectations",
+      "state_question": "What are the current market expectations for NVIDIA's earnings report?",
+      "mechanism": "Market expectations for NVIDIA's earnings report can influence the perception of its financial results.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_3",
+      "causal_role": "counterevidence",
+      "factor": "Export Restrictions Impact",
+      "state_question": "Are current export restrictions impacting NVIDIA's revenue in specific regions?",
+      "mechanism": "If export restrictions are in place, they may affect regional revenue streams.",
+      "effect_if_active": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_4",
+      "causal_role": "driver",
+      "factor": "AI Accelerator Focus",
+      "state_question": "What is NVIDIA's current strategic focus regarding AI accelerators?",
+      "mechanism": "NVIDIA's strategic focus on AI accelerators can influence its ability to meet market demand.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_5",
+      "causal_role": "mediator",
+      "factor": "AI Chip Demand",
+      "state_question": "What is the current global demand for NVIDIA's AI chips?",
+      "mechanism": "Global demand for AI chips can drive sales within NVIDIA's Data Center segment.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_6",
+      "causal_role": "mediator",
+      "factor": "Market Dominance",
+      "state_question": "What is NVIDIA's current market dominance in AI accelerators?",
+      "mechanism": "NVIDIA's market dominance in AI accelerators can influence how demand translates into financial outcomes.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_7",
+      "causal_role": "mediator",
+      "factor": "Data Center Revenue Growth",
+      "state_question": "What is the current year-over-year growth rate of NVIDIA's Data Center revenue?",
+      "mechanism": "The growth rate of NVIDIA's Data Center revenue can be a primary driver of overall revenue increases.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_8",
+      "causal_role": "mediator",
+      "factor": "Financial Results Announcement",
+      "state_question": "What are the current financial results being announced by NVIDIA?",
+      "mechanism": "The announcement of financial results can reflect underlying business performance.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    }
+  ],
+  "topology_edges": [
+    {
+      "id": "edge_001",
+      "source_checkpoint_id": "checkpoint_5",
+      "target_checkpoint_id": "checkpoint_7",
+      "relationship": "triggers",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If global demand for AI chips is high, it can lead to current condition sales in the Data Center segment.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_002",
+      "source_checkpoint_id": "checkpoint_6",
+      "target_checkpoint_id": "checkpoint_7",
+      "relationship": "enables",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If NVIDIA holds a dominant position in AI accelerators, it can influence how demand translates into Data Center segment sales.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_003",
+      "source_checkpoint_id": "checkpoint_7",
+      "target_checkpoint_id": "checkpoint_8",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If the Data Center segment experiences strong growth, it can be a primary driver of overall revenue increases reflected in financial results.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_004",
+      "source_checkpoint_id": "checkpoint_1",
+      "target_checkpoint_id": "checkpoint_8",
+      "relationship": "inhibits",
+      "directionality": "counteracting",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If supply constraints exist, they may counteract the positive impact on financial results.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_005",
+      "source_checkpoint_id": "checkpoint_3",
+      "target_checkpoint_id": "checkpoint_7",
+      "relationship": "inhibits",
+      "directionality": "counteracting",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If export restrictions are in place, they may negatively influence Data Center revenue, depending on overall demand.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_006",
+      "source_checkpoint_id": "checkpoint_2",
+      "target_checkpoint_id": "checkpoint_8",
+      "relationship": "triggers",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If market expectations are high, they can influence the perception of announced financial results.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_007",
+      "source_checkpoint_id": "checkpoint_4",
+      "target_checkpoint_id": "checkpoint_5",
+      "relationship": "enables",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If NVIDIA has a strategic focus on AI accelerators, it can enable it to capitalize on AI chip demand.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_008",
+      "source_checkpoint_id": "checkpoint_4",
+      "target_checkpoint_id": "checkpoint_6",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If NVIDIA has a strategic focus on AI accelerators, it can contribute to its market dominance.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_009",
+      "source_checkpoint_id": "checkpoint_8",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If financial results are announced, they can provide information about the target metric.",
+      "terminal_to_target_bridge": true
+    }
+  ],
+  "conditional_paths": [
+    {
+      "id": "path_1",
+      "factor_ids": [
+        "checkpoint_1",
+        "checkpoint_8"
+      ],
+      "edge_ids": [
+        "edge_004",
+        "edge_009"
+      ],
+      "relationships": [
+        "inhibits",
+        "causes"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "If supply constraints exist, they may counteract the positive impact on financial results. If financial results are announced, they can provide information about the target metric.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_2",
+      "factor_ids": [
+        "checkpoint_2",
+        "checkpoint_8"
+      ],
+      "edge_ids": [
+        "edge_006",
+        "edge_009"
+      ],
+      "relationships": [
+        "triggers",
+        "causes"
+      ],
+      "path_role": "main_path",
+      "conditional_mechanism": "If market expectations are high, they can influence the perception of announced financial results. If financial results are announced, they can provide information about the target metric.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_3",
+      "factor_ids": [
+        "checkpoint_3",
+        "checkpoint_7",
+        "checkpoint_8"
+      ],
+      "edge_ids": [
+        "edge_005",
+        "edge_003",
+        "edge_009"
+      ],
+      "relationships": [
+        "inhibits",
+        "causes",
+        "causes"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "If export restrictions are in place, they may negatively influence Data Center revenue, depending on overall demand. If the Data Center segment experiences strong growth, it can be a primary driver of overall revenue increases reflected in financial results. If financial results are announced, they can provide information about the target metric.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_4",
+      "factor_ids": [
+        "checkpoint_4",
+        "checkpoint_5",
+        "checkpoint_7",
+        "checkpoint_8"
+      ],
+      "edge_ids": [
+        "edge_007",
+        "edge_001",
+        "edge_003",
+        "edge_009"
+      ],
+      "relationships": [
+        "enables",
+        "triggers",
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If NVIDIA has a strategic focus on AI accelerators, it can enable it to capitalize on AI chip demand. If global demand for AI chips is high, it can lead to current condition sales in the Data Center segment. If the Data Center segment experiences strong growth, it can be a primary driver of overall revenue increases reflected in financial results. If financial results are announced, they can provide information about the target metric.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_5",
+      "factor_ids": [
+        "checkpoint_4",
+        "checkpoint_6",
+        "checkpoint_7",
+        "checkpoint_8"
+      ],
+      "edge_ids": [
+        "edge_008",
+        "edge_002",
+        "edge_003",
+        "edge_009"
+      ],
+      "relationships": [
+        "causes",
+        "enables",
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If NVIDIA has a strategic focus on AI accelerators, it can contribute to its market dominance. If NVIDIA holds a dominant position in AI accelerators, it can influence how demand translates into Data Center segment sales. If the Data Center segment experiences strong growth, it can be a primary driver of overall revenue increases reflected in financial results. If financial results are announced, they can provide information about the target metric.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    }
+  ],
+  "target_bridge": {
+    "id": "target_bridge",
+    "mechanism": "Map only currently supported paths into the current target period and exact metric.",
+    "magnitude_requirement": "Current numerical evidence must support the relevant option boundary, not only the direction of change.",
+    "failure_signal": "The current baseline, target timing, or magnitude evidence does not support the proposed boundary crossing."
+  },
+  "competing_explanations": [],
+  "worked_procedure": [
+    "Lock the exact current target operation and baseline.",
+    "Fill the preserved factor nodes with current evidence.",
+    "Check each preserved directed edge and its timing condition.",
+    "Reject paths containing an unsupported or contradicted link.",
+    "Compare supported paths with current factors outside the graph.",
+    "Require current magnitude support before option mapping."
+  ],
+  "topology_contract": {
+    "path_order_generated_by_model": false,
+    "edge_direction_generated_by_model": false,
+    "source_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_5",
+      "checkpoint_6",
+      "checkpoint_7",
+      "checkpoint_8"
+    ],
+    "source_edge_ids": [
+      "edge_001",
+      "edge_002",
+      "edge_003",
+      "edge_004",
+      "edge_005",
+      "edge_006",
+      "edge_007",
+      "edge_008",
+      "edge_009"
+    ]
+  },
+  "template_sha256": "bdbe213c14b79e54f1f8c60b3612b74a8ccbcf3bd3f88cc70f7d3ec1c7eec400"
+}

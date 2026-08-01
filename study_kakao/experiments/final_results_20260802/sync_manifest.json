@@ -1,0 +1,173 @@
+{
+  "schema_version": "procedural_topology_hgf_paper_sync_v2",
+  "registered_date": "2026-08-02",
+  "branch": "experiment/live-topology-hgf-v1",
+  "base_commit": "27ff13cf8b2e1f20e88822e895a7b02055d9be30",
+  "implementation_commit": null,
+  "archived_method_commit": "a3b07a06e51772bb25d2fb99b3d36a61fccc2898",
+  "historical_dependency_commit": "27ff13cf8b2e1f20e88822e895a7b02055d9be30",
+  "selection": {
+    "path": "data/questions/selection.json",
+    "sha256": "13e18cfd89300e819c1dd0a35450caa1a3cd7fa8dededa1b6c83cfffbff7eba9",
+    "question_count": 100
+  },
+  "models": {
+    "google/gemini-2.5-flash-lite": {
+      "hgf_provider": "google-ai-studio",
+      "sanitized_baseline_provider": "google-ai-studio",
+      "reasoning_effort": "medium",
+      "max_output_tokens": 16000
+    },
+    "openai/gpt-5-mini": {
+      "hgf_provider": "openai",
+      "sanitized_baseline_provider": "openai",
+      "reasoning_effort": "medium",
+      "max_output_tokens": 16000
+    },
+    "deepseek/deepseek-v3.2": {
+      "hgf_provider": "baidu",
+      "sanitized_baseline_provider": "baidu",
+      "reasoning_effort": "medium",
+      "max_output_tokens": 16000
+    },
+    "meta-llama/llama-4-maverick": {
+      "hgf_provider": "deepinfra",
+      "sanitized_baseline_provider": "deepinfra/base",
+      "reasoning_effort": "not exposed by endpoint",
+      "max_output_tokens": 16000
+    },
+    "minimax/minimax-m2.5": {
+      "hgf_provider": "friendli",
+      "sanitized_baseline_provider": "friendli",
+      "reasoning_effort": "medium",
+      "max_output_tokens": 32768
+    }
+  },
+  "methods": {
+    "search_only": "Structured Direct Forecasting",
+    "prospective_dag": "DAG Forecasting",
+    "direct_dag": "Outcome-Neutral Direct DAG Retrieval",
+    "factor_memory": "Factor Memory",
+    "case_memory": "Outcome-Redacted Case Retrieval",
+    "text_memory": "Forecasting Principles",
+    "procedural_topology_hgf": "Procedural Topology HGF"
+  },
+  "counts": {
+    "models": 5,
+    "methods": 7,
+    "questions_per_model": 100,
+    "main_table_predictions": 3500,
+    "fresh_hgf_predictions": 500,
+    "fresh_sanitized_baseline_predictions": 1000,
+    "retained_registered_baseline_predictions": 2000
+  },
+  "metrics": [
+    "accuracy",
+    "multiclass_brier",
+    "nll"
+  ],
+  "integrity": {
+    "all_performance_claims_use_full100_per_model": true,
+    "seed": 0,
+    "probability_postprocessing": "none",
+    "baseline_predictions_visible_to_hgf": false,
+    "result_conditioned_retry": false,
+    "transport_retry_only": true,
+    "same_question_ids": true,
+    "same_model_specific_initial_evidence_within_model": true,
+    "same_model_specific_retrieval_within_model": true,
+    "hgf_execution_quality": {
+      "google/gemini-2.5-flash-lite": {
+        "audit_count": 100,
+        "strict_reportable_count": 86,
+        "boundary_fallback_count": 11,
+        "reasoning_incomplete_count": 4,
+        "graph_default_only_count": 8,
+        "reasoning_steps_present_count": 100,
+        "probability_postprocessing_none_count": 100,
+        "prior_prediction_hidden_count": 100
+      },
+      "openai/gpt-5-mini": {
+        "audit_count": 100,
+        "strict_reportable_count": 95,
+        "boundary_fallback_count": 1,
+        "reasoning_incomplete_count": 4,
+        "graph_default_only_count": 2,
+        "reasoning_steps_present_count": 100,
+        "probability_postprocessing_none_count": 100,
+        "prior_prediction_hidden_count": 100
+      },
+      "deepseek/deepseek-v3.2": {
+        "audit_count": 100,
+        "strict_reportable_count": 95,
+        "boundary_fallback_count": 5,
+        "reasoning_incomplete_count": 0,
+        "graph_default_only_count": 10,
+        "reasoning_steps_present_count": 100,
+        "probability_postprocessing_none_count": 100,
+        "prior_prediction_hidden_count": 100
+      },
+      "meta-llama/llama-4-maverick": {
+        "audit_count": 100,
+        "strict_reportable_count": 65,
+        "boundary_fallback_count": 4,
+        "reasoning_incomplete_count": 33,
+        "graph_default_only_count": 1,
+        "reasoning_steps_present_count": 100,
+        "probability_postprocessing_none_count": 100,
+        "prior_prediction_hidden_count": 100
+      },
+      "minimax/minimax-m2.5": {
+        "audit_count": 100,
+        "strict_reportable_count": 59,
+        "boundary_fallback_count": 6,
+        "reasoning_incomplete_count": 35,
+        "graph_default_only_count": 7,
+        "reasoning_steps_present_count": 100,
+        "probability_postprocessing_none_count": 100,
+        "prior_prediction_hidden_count": 100
+      }
+    }
+  },
+  "paper_updates": {
+    "method_name": "Procedural Topology HGF",
+    "method_flow": "retrieve eligible hindsight DAGs, route relevant subgraphs, instantiate their nodes and relations with current evidence, reason over active and competing paths, then map the resulting judgment to the answer boundaries",
+    "historical_exemplar": "excluded in the exact canonical implementation",
+    "direct_forecasting_name": "Structured Direct Forecasting",
+    "case_baseline_name": "Outcome-Redacted Case Retrieval",
+    "direct_dag_name": "Outcome-Neutral Direct DAG Retrieval",
+    "factor_memory_scope": "strong expert factor-memory baseline from the earlier registered memory bank; it is not a topology-matched node-only ablation",
+    "result_claim": "HGF has the lowest Brier score on four of five models. DeepSeek is the exception. The pooled 500-question HGF Brier is 0.2185.",
+    "robustness_boundary": "one registered seed; do not claim multi-seed robustness",
+    "reasoning_reporting": "reasoning steps exist for all 500 HGF outputs, while strict structured-contract compliance must be reported separately by model"
+  },
+  "source_artifacts": {
+    "registered_old_four_baselines": {
+      "path": "runs/paper_canonical_v2_20260801/paper_results/core5_final/summary.json",
+      "bundle_copy": "reproducibility/procedural_topology_hgf_full100_20260802/manifests/registered_core5_summary_20260801.json",
+      "sha256": "a01096d306831f806a04e252e6d0ae13d03ab1bca508661ba834f15ff6b77810"
+    },
+    "full100_comparison": {
+      "path": "runs/full100_comparison_procedural_topology_vs_sanitized_20260802.json",
+      "bundle_copy": "reproducibility/procedural_topology_hgf_full100_20260802/manifests/full100_comparison.json",
+      "sha256": "e5b5e15a732e4c88fc79d2a5ce2f0ce6f7ccfde9adb4250f122d7f31f3706f74"
+    },
+    "hgf_canonical_manifest": {
+      "path": "runs/original_procedural_topology_exactbase_full100_20260802_canonical/canonical_manifest.json",
+      "bundle_copy": "reproducibility/procedural_topology_hgf_full100_20260802/manifests/hgf_canonical_manifest.json",
+      "sha256": "619aad2379b85a0410a98593a23c382f0aab46c8fbb3cb962c0fc67fb1eaf081"
+    },
+    "baseline_canonical_manifest": {
+      "path": "runs/baseline_sanitation_full100_v1_2_20260802/canonical/canonical_manifest.json",
+      "bundle_copy": "reproducibility/procedural_topology_hgf_full100_20260802/manifests/baseline_canonical_manifest.json",
+      "sha256": "a93b10ad7ef0cb20f8de0ecaa68f2ab73621d9958f4c3807e938ea4a58025b80"
+    }
+  },
+  "included_paths": [
+    "HGF.md",
+    "experiments/final_results_20260802",
+    "experiments/build_procedural_topology_full100_summary.py",
+    "legacy/experimental_variants/HGF_research_history_pre_full100_20260802.md",
+    "reproducibility/procedural_topology_hgf_full100_20260802"
+  ]
+}

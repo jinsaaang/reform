@@ -1,0 +1,1130 @@
+{
+  "schema_version": "outcome_neutral_topology_template_v2",
+  "source_question_id": "v3_henry_hub_monthly_return_2023_01",
+  "source_blueprint_sha256": "ab60ef1f8ddf910957377986d369802d566dde79464006cf5ff8a19003f6d61e",
+  "target_operation": "monthly Henry Hub price return",
+  "factor_checks": [
+    {
+      "id": "checkpoint_1",
+      "causal_role": "counterevidence",
+      "factor": "Utility long-term contract prices",
+      "state_question": "Are utility companies currently locked into higher prices through long-term contracts?",
+      "mechanism": "If utility companies are locked into higher prices through long-term contracts, this may influence the monthly Henry Hub price return.",
+      "effect_if_active": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_2",
+      "causal_role": "driver",
+      "factor": "LNG imports and European stockpiles",
+      "state_question": "What is the current level of LNG imports into Europe and the status of stockpiles?",
+      "mechanism": "If LNG imports are high and European stockpiles are healthy, this may contribute to oversupply in the natural gas spot market.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_3",
+      "causal_role": "counterevidence",
+      "factor": "Natural gas exports",
+      "state_question": "What is the current trend in natural gas exports?",
+      "mechanism": "If natural gas exports are rising, this may influence the monthly Henry Hub price return.",
+      "effect_if_active": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_4",
+      "causal_role": "driver",
+      "factor": "Winter weather conditions",
+      "state_question": "What are the current winter weather conditions in the US and Europe?",
+      "mechanism": "If winter weather is unseasonably mild, this may directly cause reduced heating demand for natural gas.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_5",
+      "causal_role": "mediator",
+      "factor": "Heating demand for natural gas",
+      "state_question": "What is the current level of heating demand for natural gas?",
+      "mechanism": "If heating demand for natural gas is reduced, this may lead to oversupply in the natural gas spot market.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_6",
+      "causal_role": "mediator",
+      "factor": "Natural gas spot market oversupply",
+      "state_question": "Is there currently oversupply in the natural gas spot market?",
+      "mechanism": "If there is oversupply in the natural gas spot market, this may cause Henry Hub futures prices to fall.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_7",
+      "causal_role": "mediator",
+      "factor": "Henry Hub futures price trend",
+      "state_question": "What is the current trend in Henry Hub futures prices?",
+      "mechanism": "If Henry Hub futures prices are falling, this may lead to further price reductions.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_8",
+      "causal_role": "counterevidence",
+      "factor": "Localized natural gas price spikes",
+      "state_question": "Are there currently localized natural gas price spikes?",
+      "mechanism": "If there are localized natural gas price spikes, this may influence the monthly Henry Hub price return.",
+      "effect_if_active": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_9",
+      "causal_role": "mediator",
+      "factor": "Henry Hub price change",
+      "state_question": "What is the current change in Henry Hub prices relative to a baseline period?",
+      "mechanism": "If Henry Hub prices have changed significantly, this may influence the monthly Henry Hub price return.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    }
+  ],
+  "topology_edges": [
+    {
+      "id": "edge_001",
+      "source_checkpoint_id": "checkpoint_4",
+      "target_checkpoint_id": "checkpoint_5",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If winter weather conditions are unseasonably mild, then heating demand for natural gas may be reduced.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_002",
+      "source_checkpoint_id": "checkpoint_5",
+      "target_checkpoint_id": "checkpoint_6",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If heating demand for natural gas is reduced, then there may be oversupply in the natural gas spot market.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_003",
+      "source_checkpoint_id": "checkpoint_6",
+      "target_checkpoint_id": "checkpoint_7",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If there is oversupply in the natural gas spot market, then Henry Hub futures prices may fall.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_004",
+      "source_checkpoint_id": "checkpoint_7",
+      "target_checkpoint_id": "checkpoint_9",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If Henry Hub futures prices are falling, then the Henry Hub price change may be significant.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_005",
+      "source_checkpoint_id": "checkpoint_2",
+      "target_checkpoint_id": "checkpoint_6",
+      "relationship": "amplifies",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If LNG imports are high and European stockpiles are healthy, this may contribute to oversupply in the natural gas spot market.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_006",
+      "source_checkpoint_id": "checkpoint_4",
+      "target_checkpoint_id": "checkpoint_5",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If winter weather conditions are unseasonably mild, then heating demand for natural gas may be reduced.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_007",
+      "source_checkpoint_id": "checkpoint_5",
+      "target_checkpoint_id": "checkpoint_6",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If heating demand for natural gas is reduced, then there may be oversupply in the natural gas spot market.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_008",
+      "source_checkpoint_id": "checkpoint_6",
+      "target_checkpoint_id": "checkpoint_7",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If there is oversupply in the natural gas spot market, then Henry Hub futures prices may fall.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_009",
+      "source_checkpoint_id": "checkpoint_7",
+      "target_checkpoint_id": "checkpoint_9",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If Henry Hub futures prices are falling, then the Henry Hub price change may be significant.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_010",
+      "source_checkpoint_id": "checkpoint_2",
+      "target_checkpoint_id": "checkpoint_6",
+      "relationship": "amplifies",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If LNG imports are high and European stockpiles are healthy, this may contribute to oversupply in the natural gas spot market.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_011",
+      "source_checkpoint_id": "checkpoint_9",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If the Henry Hub price change is significant, this may influence the monthly Henry Hub price return.",
+      "terminal_to_target_bridge": true
+    },
+    {
+      "id": "edge_012",
+      "source_checkpoint_id": "checkpoint_8",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "inhibits",
+      "directionality": "counteracting",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If there are localized natural gas price spikes, this may influence the monthly Henry Hub price return.",
+      "terminal_to_target_bridge": true
+    },
+    {
+      "id": "edge_013",
+      "source_checkpoint_id": "checkpoint_1",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "inhibits",
+      "directionality": "counteracting",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If utility companies are locked into higher prices through long-term contracts, this may influence the monthly Henry Hub price return.",
+      "terminal_to_target_bridge": true
+    },
+    {
+      "id": "edge_014",
+      "source_checkpoint_id": "checkpoint_3",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "inhibits",
+      "directionality": "counteracting",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If natural gas exports are rising, this may influence the monthly Henry Hub price return.",
+      "terminal_to_target_bridge": true
+    }
+  ],
+  "conditional_paths": [
+    {
+      "id": "path_1",
+      "factor_ids": [
+        "checkpoint_1"
+      ],
+      "edge_ids": [
+        "edge_013"
+      ],
+      "relationships": [
+        "inhibits"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "If utility companies are locked into higher prices through long-term contracts, this may influence the monthly Henry Hub price return.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_2",
+      "factor_ids": [
+        "checkpoint_2",
+        "checkpoint_6",
+        "checkpoint_7",
+        "checkpoint_9"
+      ],
+      "edge_ids": [
+        "edge_005",
+        "edge_003",
+        "edge_004",
+        "edge_011"
+      ],
+      "relationships": [
+        "amplifies",
+        "causes",
+        "causes",
+        "causes"
+      ],
+      "path_role": "main_path",
+      "conditional_mechanism": "If LNG imports are high and European stockpiles are healthy, this may contribute to oversupply in the natural gas spot market. If there is oversupply in the natural gas spot market, then Henry Hub futures prices may fall. If Henry Hub futures prices are falling, then the Henry Hub price change may be significant. If the Henry Hub price change is significant, this may influence the monthly Henry Hub price return.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_3",
+      "factor_ids": [
+        "checkpoint_2",
+        "checkpoint_6",
+        "checkpoint_7",
+        "checkpoint_9"
+      ],
+      "edge_ids": [
+        "edge_005",
+        "edge_003",
+        "edge_009",
+        "edge_011"
+      ],
+      "relationships": [
+        "amplifies",
+        "causes",
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If LNG imports are high and European stockpiles are healthy, this may contribute to oversupply in the natural gas spot market. If there is oversupply in the natural gas spot market, then Henry Hub futures prices may fall. If Henry Hub futures prices are falling, then the Henry Hub price change may be significant. If the Henry Hub price change is significant, this may influence the monthly Henry Hub price return.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_4",
+      "factor_ids": [
+        "checkpoint_2",
+        "checkpoint_6",
+        "checkpoint_7",
+        "checkpoint_9"
+      ],
+      "edge_ids": [
+        "edge_005",
+        "edge_008",
+        "edge_004",
+        "edge_011"
+      ],
+      "relationships": [
+        "amplifies",
+        "causes",
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If LNG imports are high and European stockpiles are healthy, this may contribute to oversupply in the natural gas spot market. If there is oversupply in the natural gas spot market, then Henry Hub futures prices may fall. If Henry Hub futures prices are falling, then the Henry Hub price change may be significant. If the Henry Hub price change is significant, this may influence the monthly Henry Hub price return.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_5",
+      "factor_ids": [
+        "checkpoint_2",
+        "checkpoint_6",
+        "checkpoint_7",
+        "checkpoint_9"
+      ],
+      "edge_ids": [
+        "edge_005",
+        "edge_008",
+        "edge_009",
+        "edge_011"
+      ],
+      "relationships": [
+        "amplifies",
+        "causes",
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If LNG imports are high and European stockpiles are healthy, this may contribute to oversupply in the natural gas spot market. If there is oversupply in the natural gas spot market, then Henry Hub futures prices may fall. If Henry Hub futures prices are falling, then the Henry Hub price change may be significant. If the Henry Hub price change is significant, this may influence the monthly Henry Hub price return.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_6",
+      "factor_ids": [
+        "checkpoint_2",
+        "checkpoint_6",
+        "checkpoint_7",
+        "checkpoint_9"
+      ],
+      "edge_ids": [
+        "edge_010",
+        "edge_003",
+        "edge_004",
+        "edge_011"
+      ],
+      "relationships": [
+        "amplifies",
+        "causes",
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If LNG imports are high and European stockpiles are healthy, this may contribute to oversupply in the natural gas spot market. If there is oversupply in the natural gas spot market, then Henry Hub futures prices may fall. If Henry Hub futures prices are falling, then the Henry Hub price change may be significant. If the Henry Hub price change is significant, this may influence the monthly Henry Hub price return.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_7",
+      "factor_ids": [
+        "checkpoint_2",
+        "checkpoint_6",
+        "checkpoint_7",
+        "checkpoint_9"
+      ],
+      "edge_ids": [
+        "edge_010",
+        "edge_003",
+        "edge_009",
+        "edge_011"
+      ],
+      "relationships": [
+        "amplifies",
+        "causes",
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If LNG imports are high and European stockpiles are healthy, this may contribute to oversupply in the natural gas spot market. If there is oversupply in the natural gas spot market, then Henry Hub futures prices may fall. If Henry Hub futures prices are falling, then the Henry Hub price change may be significant. If the Henry Hub price change is significant, this may influence the monthly Henry Hub price return.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_8",
+      "factor_ids": [
+        "checkpoint_2",
+        "checkpoint_6",
+        "checkpoint_7",
+        "checkpoint_9"
+      ],
+      "edge_ids": [
+        "edge_010",
+        "edge_008",
+        "edge_004",
+        "edge_011"
+      ],
+      "relationships": [
+        "amplifies",
+        "causes",
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If LNG imports are high and European stockpiles are healthy, this may contribute to oversupply in the natural gas spot market. If there is oversupply in the natural gas spot market, then Henry Hub futures prices may fall. If Henry Hub futures prices are falling, then the Henry Hub price change may be significant. If the Henry Hub price change is significant, this may influence the monthly Henry Hub price return.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_9",
+      "factor_ids": [
+        "checkpoint_2",
+        "checkpoint_6",
+        "checkpoint_7",
+        "checkpoint_9"
+      ],
+      "edge_ids": [
+        "edge_010",
+        "edge_008",
+        "edge_009",
+        "edge_011"
+      ],
+      "relationships": [
+        "amplifies",
+        "causes",
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If LNG imports are high and European stockpiles are healthy, this may contribute to oversupply in the natural gas spot market. If there is oversupply in the natural gas spot market, then Henry Hub futures prices may fall. If Henry Hub futures prices are falling, then the Henry Hub price change may be significant. If the Henry Hub price change is significant, this may influence the monthly Henry Hub price return.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_10",
+      "factor_ids": [
+        "checkpoint_3"
+      ],
+      "edge_ids": [
+        "edge_014"
+      ],
+      "relationships": [
+        "inhibits"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "If natural gas exports are rising, this may influence the monthly Henry Hub price return.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_11",
+      "factor_ids": [
+        "checkpoint_4",
+        "checkpoint_5",
+        "checkpoint_6",
+        "checkpoint_7",
+        "checkpoint_9"
+      ],
+      "edge_ids": [
+        "edge_001",
+        "edge_002",
+        "edge_003",
+        "edge_004",
+        "edge_011"
+      ],
+      "relationships": [
+        "causes",
+        "causes",
+        "causes",
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If winter weather conditions are unseasonably mild, then heating demand for natural gas may be reduced. If heating demand for natural gas is reduced, then there may be oversupply in the natural gas spot market. If there is oversupply in the natural gas spot market, then Henry Hub futures prices may fall. If Henry Hub futures prices are falling, then the Henry Hub price change may be significant. If the Henry Hub price change is significant, this may influence the monthly Henry Hub price return.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_12",
+      "factor_ids": [
+        "checkpoint_4",
+        "checkpoint_5",
+        "checkpoint_6",
+        "checkpoint_7",
+        "checkpoint_9"
+      ],
+      "edge_ids": [
+        "edge_001",
+        "edge_002",
+        "edge_003",
+        "edge_009",
+        "edge_011"
+      ],
+      "relationships": [
+        "causes",
+        "causes",
+        "causes",
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If winter weather conditions are unseasonably mild, then heating demand for natural gas may be reduced. If heating demand for natural gas is reduced, then there may be oversupply in the natural gas spot market. If there is oversupply in the natural gas spot market, then Henry Hub futures prices may fall. If Henry Hub futures prices are falling, then the Henry Hub price change may be significant. If the Henry Hub price change is significant, this may influence the monthly Henry Hub price return.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_13",
+      "factor_ids": [
+        "checkpoint_4",
+        "checkpoint_5",
+        "checkpoint_6",
+        "checkpoint_7",
+        "checkpoint_9"
+      ],
+      "edge_ids": [
+        "edge_001",
+        "edge_002",
+        "edge_008",
+        "edge_004",
+        "edge_011"
+      ],
+      "relationships": [
+        "causes",
+        "causes",
+        "causes",
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If winter weather conditions are unseasonably mild, then heating demand for natural gas may be reduced. If heating demand for natural gas is reduced, then there may be oversupply in the natural gas spot market. If there is oversupply in the natural gas spot market, then Henry Hub futures prices may fall. If Henry Hub futures prices are falling, then the Henry Hub price change may be significant. If the Henry Hub price change is significant, this may influence the monthly Henry Hub price return.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_14",
+      "factor_ids": [
+        "checkpoint_4",
+        "checkpoint_5",
+        "checkpoint_6",
+        "checkpoint_7",
+        "checkpoint_9"
+      ],
+      "edge_ids": [
+        "edge_001",
+        "edge_002",
+        "edge_008",
+        "edge_009",
+        "edge_011"
+      ],
+      "relationships": [
+        "causes",
+        "causes",
+        "causes",
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If winter weather conditions are unseasonably mild, then heating demand for natural gas may be reduced. If heating demand for natural gas is reduced, then there may be oversupply in the natural gas spot market. If there is oversupply in the natural gas spot market, then Henry Hub futures prices may fall. If Henry Hub futures prices are falling, then the Henry Hub price change may be significant. If the Henry Hub price change is significant, this may influence the monthly Henry Hub price return.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_15",
+      "factor_ids": [
+        "checkpoint_4",
+        "checkpoint_5",
+        "checkpoint_6",
+        "checkpoint_7",
+        "checkpoint_9"
+      ],
+      "edge_ids": [
+        "edge_001",
+        "edge_007",
+        "edge_003",
+        "edge_004",
+        "edge_011"
+      ],
+      "relationships": [
+        "causes",
+        "causes",
+        "causes",
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If winter weather conditions are unseasonably mild, then heating demand for natural gas may be reduced. If heating demand for natural gas is reduced, then there may be oversupply in the natural gas spot market. If there is oversupply in the natural gas spot market, then Henry Hub futures prices may fall. If Henry Hub futures prices are falling, then the Henry Hub price change may be significant. If the Henry Hub price change is significant, this may influence the monthly Henry Hub price return.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_16",
+      "factor_ids": [
+        "checkpoint_4",
+        "checkpoint_5",
+        "checkpoint_6",
+        "checkpoint_7",
+        "checkpoint_9"
+      ],
+      "edge_ids": [
+        "edge_001",
+        "edge_007",
+        "edge_003",
+        "edge_009",
+        "edge_011"
+      ],
+      "relationships": [
+        "causes",
+        "causes",
+        "causes",
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If winter weather conditions are unseasonably mild, then heating demand for natural gas may be reduced. If heating demand for natural gas is reduced, then there may be oversupply in the natural gas spot market. If there is oversupply in the natural gas spot market, then Henry Hub futures prices may fall. If Henry Hub futures prices are falling, then the Henry Hub price change may be significant. If the Henry Hub price change is significant, this may influence the monthly Henry Hub price return.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_17",
+      "factor_ids": [
+        "checkpoint_4",
+        "checkpoint_5",
+        "checkpoint_6",
+        "checkpoint_7",
+        "checkpoint_9"
+      ],
+      "edge_ids": [
+        "edge_001",
+        "edge_007",
+        "edge_008",
+        "edge_004",
+        "edge_011"
+      ],
+      "relationships": [
+        "causes",
+        "causes",
+        "causes",
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If winter weather conditions are unseasonably mild, then heating demand for natural gas may be reduced. If heating demand for natural gas is reduced, then there may be oversupply in the natural gas spot market. If there is oversupply in the natural gas spot market, then Henry Hub futures prices may fall. If Henry Hub futures prices are falling, then the Henry Hub price change may be significant. If the Henry Hub price change is significant, this may influence the monthly Henry Hub price return.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_18",
+      "factor_ids": [
+        "checkpoint_4",
+        "checkpoint_5",
+        "checkpoint_6",
+        "checkpoint_7",
+        "checkpoint_9"
+      ],
+      "edge_ids": [
+        "edge_001",
+        "edge_007",
+        "edge_008",
+        "edge_009",
+        "edge_011"
+      ],
+      "relationships": [
+        "causes",
+        "causes",
+        "causes",
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If winter weather conditions are unseasonably mild, then heating demand for natural gas may be reduced. If heating demand for natural gas is reduced, then there may be oversupply in the natural gas spot market. If there is oversupply in the natural gas spot market, then Henry Hub futures prices may fall. If Henry Hub futures prices are falling, then the Henry Hub price change may be significant. If the Henry Hub price change is significant, this may influence the monthly Henry Hub price return.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_19",
+      "factor_ids": [
+        "checkpoint_4",
+        "checkpoint_5",
+        "checkpoint_6",
+        "checkpoint_7",
+        "checkpoint_9"
+      ],
+      "edge_ids": [
+        "edge_006",
+        "edge_002",
+        "edge_003",
+        "edge_004",
+        "edge_011"
+      ],
+      "relationships": [
+        "causes",
+        "causes",
+        "causes",
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If winter weather conditions are unseasonably mild, then heating demand for natural gas may be reduced. If heating demand for natural gas is reduced, then there may be oversupply in the natural gas spot market. If there is oversupply in the natural gas spot market, then Henry Hub futures prices may fall. If Henry Hub futures prices are falling, then the Henry Hub price change may be significant. If the Henry Hub price change is significant, this may influence the monthly Henry Hub price return.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_20",
+      "factor_ids": [
+        "checkpoint_4",
+        "checkpoint_5",
+        "checkpoint_6",
+        "checkpoint_7",
+        "checkpoint_9"
+      ],
+      "edge_ids": [
+        "edge_006",
+        "edge_002",
+        "edge_003",
+        "edge_009",
+        "edge_011"
+      ],
+      "relationships": [
+        "causes",
+        "causes",
+        "causes",
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If winter weather conditions are unseasonably mild, then heating demand for natural gas may be reduced. If heating demand for natural gas is reduced, then there may be oversupply in the natural gas spot market. If there is oversupply in the natural gas spot market, then Henry Hub futures prices may fall. If Henry Hub futures prices are falling, then the Henry Hub price change may be significant. If the Henry Hub price change is significant, this may influence the monthly Henry Hub price return.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_21",
+      "factor_ids": [
+        "checkpoint_4",
+        "checkpoint_5",
+        "checkpoint_6",
+        "checkpoint_7",
+        "checkpoint_9"
+      ],
+      "edge_ids": [
+        "edge_006",
+        "edge_002",
+        "edge_008",
+        "edge_004",
+        "edge_011"
+      ],
+      "relationships": [
+        "causes",
+        "causes",
+        "causes",
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If winter weather conditions are unseasonably mild, then heating demand for natural gas may be reduced. If heating demand for natural gas is reduced, then there may be oversupply in the natural gas spot market. If there is oversupply in the natural gas spot market, then Henry Hub futures prices may fall. If Henry Hub futures prices are falling, then the Henry Hub price change may be significant. If the Henry Hub price change is significant, this may influence the monthly Henry Hub price return.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_22",
+      "factor_ids": [
+        "checkpoint_4",
+        "checkpoint_5",
+        "checkpoint_6",
+        "checkpoint_7",
+        "checkpoint_9"
+      ],
+      "edge_ids": [
+        "edge_006",
+        "edge_002",
+        "edge_008",
+        "edge_009",
+        "edge_011"
+      ],
+      "relationships": [
+        "causes",
+        "causes",
+        "causes",
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If winter weather conditions are unseasonably mild, then heating demand for natural gas may be reduced. If heating demand for natural gas is reduced, then there may be oversupply in the natural gas spot market. If there is oversupply in the natural gas spot market, then Henry Hub futures prices may fall. If Henry Hub futures prices are falling, then the Henry Hub price change may be significant. If the Henry Hub price change is significant, this may influence the monthly Henry Hub price return.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_23",
+      "factor_ids": [
+        "checkpoint_4",
+        "checkpoint_5",
+        "checkpoint_6",
+        "checkpoint_7",
+        "checkpoint_9"
+      ],
+      "edge_ids": [
+        "edge_006",
+        "edge_007",
+        "edge_003",
+        "edge_004",
+        "edge_011"
+      ],
+      "relationships": [
+        "causes",
+        "causes",
+        "causes",
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If winter weather conditions are unseasonably mild, then heating demand for natural gas may be reduced. If heating demand for natural gas is reduced, then there may be oversupply in the natural gas spot market. If there is oversupply in the natural gas spot market, then Henry Hub futures prices may fall. If Henry Hub futures prices are falling, then the Henry Hub price change may be significant. If the Henry Hub price change is significant, this may influence the monthly Henry Hub price return.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_24",
+      "factor_ids": [
+        "checkpoint_4",
+        "checkpoint_5",
+        "checkpoint_6",
+        "checkpoint_7",
+        "checkpoint_9"
+      ],
+      "edge_ids": [
+        "edge_006",
+        "edge_007",
+        "edge_003",
+        "edge_009",
+        "edge_011"
+      ],
+      "relationships": [
+        "causes",
+        "causes",
+        "causes",
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If winter weather conditions are unseasonably mild, then heating demand for natural gas may be reduced. If heating demand for natural gas is reduced, then there may be oversupply in the natural gas spot market. If there is oversupply in the natural gas spot market, then Henry Hub futures prices may fall. If Henry Hub futures prices are falling, then the Henry Hub price change may be significant. If the Henry Hub price change is significant, this may influence the monthly Henry Hub price return.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_25",
+      "factor_ids": [
+        "checkpoint_4",
+        "checkpoint_5",
+        "checkpoint_6",
+        "checkpoint_7",
+        "checkpoint_9"
+      ],
+      "edge_ids": [
+        "edge_006",
+        "edge_007",
+        "edge_008",
+        "edge_004",
+        "edge_011"
+      ],
+      "relationships": [
+        "causes",
+        "causes",
+        "causes",
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If winter weather conditions are unseasonably mild, then heating demand for natural gas may be reduced. If heating demand for natural gas is reduced, then there may be oversupply in the natural gas spot market. If there is oversupply in the natural gas spot market, then Henry Hub futures prices may fall. If Henry Hub futures prices are falling, then the Henry Hub price change may be significant. If the Henry Hub price change is significant, this may influence the monthly Henry Hub price return.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_26",
+      "factor_ids": [
+        "checkpoint_4",
+        "checkpoint_5",
+        "checkpoint_6",
+        "checkpoint_7",
+        "checkpoint_9"
+      ],
+      "edge_ids": [
+        "edge_006",
+        "edge_007",
+        "edge_008",
+        "edge_009",
+        "edge_011"
+      ],
+      "relationships": [
+        "causes",
+        "causes",
+        "causes",
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If winter weather conditions are unseasonably mild, then heating demand for natural gas may be reduced. If heating demand for natural gas is reduced, then there may be oversupply in the natural gas spot market. If there is oversupply in the natural gas spot market, then Henry Hub futures prices may fall. If Henry Hub futures prices are falling, then the Henry Hub price change may be significant. If the Henry Hub price change is significant, this may influence the monthly Henry Hub price return.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_27",
+      "factor_ids": [
+        "checkpoint_8"
+      ],
+      "edge_ids": [
+        "edge_012"
+      ],
+      "relationships": [
+        "inhibits"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "If there are localized natural gas price spikes, this may influence the monthly Henry Hub price return.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    }
+  ],
+  "target_bridge": {
+    "id": "target_bridge",
+    "mechanism": "Map only currently supported paths into the current target period and exact metric.",
+    "magnitude_requirement": "Current numerical evidence must support the relevant option boundary, not only the direction of change.",
+    "failure_signal": "The current baseline, target timing, or magnitude evidence does not support the proposed boundary crossing."
+  },
+  "competing_explanations": [],
+  "worked_procedure": [
+    "Lock the exact current target operation and baseline.",
+    "Fill the preserved factor nodes with current evidence.",
+    "Check each preserved directed edge and its timing condition.",
+    "Reject paths containing an unsupported or contradicted link.",
+    "Compare supported paths with current factors outside the graph.",
+    "Require current magnitude support before option mapping."
+  ],
+  "topology_contract": {
+    "path_order_generated_by_model": false,
+    "edge_direction_generated_by_model": false,
+    "source_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_5",
+      "checkpoint_6",
+      "checkpoint_7",
+      "checkpoint_8",
+      "checkpoint_9"
+    ],
+    "source_edge_ids": [
+      "edge_001",
+      "edge_002",
+      "edge_003",
+      "edge_004",
+      "edge_005",
+      "edge_006",
+      "edge_007",
+      "edge_008",
+      "edge_009",
+      "edge_010",
+      "edge_011",
+      "edge_012",
+      "edge_013",
+      "edge_014"
+    ]
+  },
+  "template_sha256": "39960f34a29e30ee3334465b4f215c598f0a2f87f588bb26e3cb4159d0c953d3"
+}

@@ -1,0 +1,454 @@
+{
+  "schema_version": "outcome_neutral_topology_template_v2",
+  "source_question_id": "v3_us_m2_monthly_growth_2023_01",
+  "source_blueprint_sha256": "34e79279a39a20f6e92bdd8c7eb2d1483f99eb15183d1d1d8e267aaf80c13ff2",
+  "target_operation": "monthly M2 growth",
+  "factor_checks": [
+    {
+      "id": "checkpoint_1",
+      "causal_role": "driver",
+      "factor": "St. Louis Fed inflation discussion",
+      "state_question": "For the current target period, Is there ongoing discussion from the St. Louis Fed regarding inflation adjustments?",
+      "mechanism": "The St. Louis Fed's discussion on inflation adjustments may provide context for future acknowledgments of inflation trends.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_2",
+      "causal_role": "counterevidence",
+      "factor": "Dallas Fed low-income inflation impact",
+      "state_question": "For the current target period, Is the Dallas Fed discussing the impact of inflation on low-income households?",
+      "mechanism": "The Dallas Fed's discussion on inflation's impact on low-income households may influence the motivation to combat inflation, potentially affecting decisions on rate adjustments.",
+      "effect_if_active": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_3",
+      "causal_role": "driver",
+      "factor": "St. Louis Fed interest rate review",
+      "state_question": "For the current target period, Is the St. Louis Fed reviewing recent interest rate levels?",
+      "mechanism": "A review of recent interest rates by the St. Louis Fed may provide context for decisions regarding the pace of future rate adjustments.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_4",
+      "causal_role": "mediator",
+      "factor": "Fed acknowledgment of easing inflation",
+      "state_question": "Has the Federal Reserve acknowledged signs of easing inflation?",
+      "mechanism": "The Federal Reserve's acknowledgment of easing inflation may serve as a rationale for adjusting the pace of interest rate hikes.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_5",
+      "causal_role": "mediator",
+      "factor": "Federal Reserve rate adjustment",
+      "state_question": "For the current target period, Has the Federal Reserve implemented a rate adjustment?",
+      "mechanism": "Federal Reserve rate adjustments are a factor that may influence economic outcomes.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_6",
+      "causal_role": "counterevidence",
+      "factor": "Kashkari statement on Fed progress",
+      "state_question": "For the current target period, Has Neel Kashkari stated that the Federal Reserve has not made sufficient progress?",
+      "mechanism": "Statements by Neel Kashkari regarding the Federal Reserve's progress may influence perceptions of economic policy advancement.",
+      "effect_if_active": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    }
+  ],
+  "topology_edges": [
+    {
+      "id": "edge_001",
+      "source_checkpoint_id": "checkpoint_4",
+      "target_checkpoint_id": "checkpoint_5",
+      "relationship": "enables",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If the Federal Reserve acknowledges easing inflation, it may enable adjustments to the pace of interest rate hikes.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_002",
+      "source_checkpoint_id": "checkpoint_1",
+      "target_checkpoint_id": "checkpoint_4",
+      "relationship": "correlates",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If the St. Louis Fed discusses inflation adjustments, it may provide background context for the acknowledgment of easing inflation.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_003",
+      "source_checkpoint_id": "checkpoint_2",
+      "target_checkpoint_id": "checkpoint_5",
+      "relationship": "inhibits",
+      "directionality": "counteracting",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If the Dallas Fed discusses inflation's impact on low-income households, it may inhibit decisions to slow the pace of rate hikes.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_004",
+      "source_checkpoint_id": "checkpoint_3",
+      "target_checkpoint_id": "checkpoint_5",
+      "relationship": "enables",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If the St. Louis Fed reviews recent interest rates, it may enable decisions to slow the pace of rate hikes.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_005",
+      "source_checkpoint_id": "checkpoint_4",
+      "target_checkpoint_id": "checkpoint_5",
+      "relationship": "enables",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If the Federal Reserve acknowledges easing inflation, it may enable adjustments to the pace of interest rate hikes.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_006",
+      "source_checkpoint_id": "checkpoint_1",
+      "target_checkpoint_id": "checkpoint_4",
+      "relationship": "correlates",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If the St. Louis Fed discusses inflation adjustments, it may provide background context for the acknowledgment of easing inflation.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_007",
+      "source_checkpoint_id": "checkpoint_2",
+      "target_checkpoint_id": "checkpoint_5",
+      "relationship": "inhibits",
+      "directionality": "counteracting",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If the Dallas Fed discusses inflation's impact on low-income households, it may inhibit decisions to slow the pace of rate hikes.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_008",
+      "source_checkpoint_id": "checkpoint_3",
+      "target_checkpoint_id": "checkpoint_5",
+      "relationship": "enables",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If the St. Louis Fed reviews recent interest rates, it may enable decisions to slow the pace of rate hikes.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_009",
+      "source_checkpoint_id": "checkpoint_5",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "amplifies",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Federal Reserve rate adjustments may influence monthly M2 growth.",
+      "terminal_to_target_bridge": true
+    },
+    {
+      "id": "edge_010",
+      "source_checkpoint_id": "checkpoint_6",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "inhibits",
+      "directionality": "counteracting",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If Neel Kashkari states the Fed has not made enough progress, it may influence monthly M2 growth.",
+      "terminal_to_target_bridge": true
+    }
+  ],
+  "conditional_paths": [
+    {
+      "id": "path_1",
+      "factor_ids": [
+        "checkpoint_1",
+        "checkpoint_4",
+        "checkpoint_5"
+      ],
+      "edge_ids": [
+        "edge_002",
+        "edge_001",
+        "edge_009"
+      ],
+      "relationships": [
+        "correlates",
+        "enables",
+        "amplifies"
+      ],
+      "path_role": "main_path",
+      "conditional_mechanism": "If the St. Louis Fed discusses inflation adjustments, it may provide background context for the acknowledgment of easing inflation. If the Federal Reserve acknowledges easing inflation, it may enable adjustments to the pace of interest rate hikes. Federal Reserve rate adjustments may influence monthly M2 growth.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_2",
+      "factor_ids": [
+        "checkpoint_1",
+        "checkpoint_4",
+        "checkpoint_5"
+      ],
+      "edge_ids": [
+        "edge_002",
+        "edge_005",
+        "edge_009"
+      ],
+      "relationships": [
+        "correlates",
+        "enables",
+        "amplifies"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If the St. Louis Fed discusses inflation adjustments, it may provide background context for the acknowledgment of easing inflation. If the Federal Reserve acknowledges easing inflation, it may enable adjustments to the pace of interest rate hikes. Federal Reserve rate adjustments may influence monthly M2 growth.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_3",
+      "factor_ids": [
+        "checkpoint_1",
+        "checkpoint_4",
+        "checkpoint_5"
+      ],
+      "edge_ids": [
+        "edge_006",
+        "edge_001",
+        "edge_009"
+      ],
+      "relationships": [
+        "correlates",
+        "enables",
+        "amplifies"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If the St. Louis Fed discusses inflation adjustments, it may provide background context for the acknowledgment of easing inflation. If the Federal Reserve acknowledges easing inflation, it may enable adjustments to the pace of interest rate hikes. Federal Reserve rate adjustments may influence monthly M2 growth.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_4",
+      "factor_ids": [
+        "checkpoint_1",
+        "checkpoint_4",
+        "checkpoint_5"
+      ],
+      "edge_ids": [
+        "edge_006",
+        "edge_005",
+        "edge_009"
+      ],
+      "relationships": [
+        "correlates",
+        "enables",
+        "amplifies"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If the St. Louis Fed discusses inflation adjustments, it may provide background context for the acknowledgment of easing inflation. If the Federal Reserve acknowledges easing inflation, it may enable adjustments to the pace of interest rate hikes. Federal Reserve rate adjustments may influence monthly M2 growth.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_5",
+      "factor_ids": [
+        "checkpoint_2",
+        "checkpoint_5"
+      ],
+      "edge_ids": [
+        "edge_003",
+        "edge_009"
+      ],
+      "relationships": [
+        "inhibits",
+        "amplifies"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "If the Dallas Fed discusses inflation's impact on low-income households, it may inhibit decisions to slow the pace of rate hikes. Federal Reserve rate adjustments may influence monthly M2 growth.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_6",
+      "factor_ids": [
+        "checkpoint_2",
+        "checkpoint_5"
+      ],
+      "edge_ids": [
+        "edge_007",
+        "edge_009"
+      ],
+      "relationships": [
+        "inhibits",
+        "amplifies"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "If the Dallas Fed discusses inflation's impact on low-income households, it may inhibit decisions to slow the pace of rate hikes. Federal Reserve rate adjustments may influence monthly M2 growth.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_7",
+      "factor_ids": [
+        "checkpoint_3",
+        "checkpoint_5"
+      ],
+      "edge_ids": [
+        "edge_004",
+        "edge_009"
+      ],
+      "relationships": [
+        "enables",
+        "amplifies"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If the St. Louis Fed reviews recent interest rates, it may enable decisions to slow the pace of rate hikes. Federal Reserve rate adjustments may influence monthly M2 growth.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_8",
+      "factor_ids": [
+        "checkpoint_3",
+        "checkpoint_5"
+      ],
+      "edge_ids": [
+        "edge_008",
+        "edge_009"
+      ],
+      "relationships": [
+        "enables",
+        "amplifies"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If the St. Louis Fed reviews recent interest rates, it may enable decisions to slow the pace of rate hikes. Federal Reserve rate adjustments may influence monthly M2 growth.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_9",
+      "factor_ids": [
+        "checkpoint_6"
+      ],
+      "edge_ids": [
+        "edge_010"
+      ],
+      "relationships": [
+        "inhibits"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "If Neel Kashkari states the Fed has not made enough progress, it may influence monthly M2 growth.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    }
+  ],
+  "target_bridge": {
+    "id": "target_bridge",
+    "mechanism": "Map only currently supported paths into the current target period and exact metric.",
+    "magnitude_requirement": "Current numerical evidence must support the relevant option boundary, not only the direction of change.",
+    "failure_signal": "The current baseline, target timing, or magnitude evidence does not support the proposed boundary crossing."
+  },
+  "competing_explanations": [],
+  "worked_procedure": [
+    "Lock the exact current target operation and baseline.",
+    "Fill the preserved factor nodes with current evidence.",
+    "Check each preserved directed edge and its timing condition.",
+    "Reject paths containing an unsupported or contradicted link.",
+    "Compare supported paths with current factors outside the graph.",
+    "Require current magnitude support before option mapping."
+  ],
+  "topology_contract": {
+    "path_order_generated_by_model": false,
+    "edge_direction_generated_by_model": false,
+    "source_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_5",
+      "checkpoint_6"
+    ],
+    "source_edge_ids": [
+      "edge_001",
+      "edge_002",
+      "edge_003",
+      "edge_004",
+      "edge_005",
+      "edge_006",
+      "edge_007",
+      "edge_008",
+      "edge_009",
+      "edge_010"
+    ]
+  },
+  "template_sha256": "1c4e14d9419fbc02041209d82af3ffde34f42646bb999d59cae4f0b52ef20d0a"
+}

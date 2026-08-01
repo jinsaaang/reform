@@ -1,0 +1,818 @@
+{
+  "schema_version": "paper_method_protocol",
+  "model": "deepseek/deepseek-v3.2",
+  "workers": 8,
+  "generation": {
+    "reasoning_effort": "medium",
+    "max_output_tokens": 16000,
+    "run_seed": 0
+  },
+  "provider_policy": {
+    "only": [
+      "baidu"
+    ],
+    "allow_fallbacks": false,
+    "require_parameters": true
+  },
+  "run_contract_sha256": "19892cd22fc6cd6979c72204db61f207f1fbb678dde7a4f4bfe27d9a2d35b1ac",
+  "implementation_source_hashes": {
+    "hgf/baselines.py": "1229246e56d63ee51334621d9b875a5db95d79c16fe91e0de7d5cc60733b6a95",
+    "hgf/boundary.py": "c43bf7a26c309f6bec6c99fefc3c7d2fe406a68ce6dd98582082888640816df4",
+    "hgf/exemplar.py": "d7766bf043b0a1ab2f9c968384fd037d5cdd9e399a589a822b1a0bb073d36029",
+    "hgf/evidence_selection.py": "841960ed818cded4b0eebf427a9415561bdbed8643ebdf878fa8ee30b0a22044",
+    "hgf/retrieval_manifest.py": "8e5dbe829525469cf3dcfe0f7579b01caa8e520868d737e3f8777b15352c66b0",
+    "hgf/text_memory.py": "6373aeb8d96d86430c05e1267864caf7ad7e88bb7837cee388f51acc8f3e4532",
+    "hgf/raw_audit.py": "ea30eb9f2fde44561194d6f1bac51e42fb54ab7287a18a58774344cd060f2303",
+    "hgf/provider_serialization.py": "4edb9d00b06d0480120ff5e8b402776a9724306bfc6ea465c29d4b6ac2331bc7",
+    "hgf_historical_live_structured/neutral_topology.py": "17a302dd26b0949dd09cad072f08ff2400f78f7c60e7e2ab7e98a29be11e83ba"
+  },
+  "hgf_configuration": {
+    "artifact_root": "/tmp/hgf-main-r8LLSr/study_kakao/artifacts/hgf",
+    "artifact_manifest": {
+      "blueprints": "/tmp/hgf-main-r8LLSr/study_kakao/artifacts/hgf/blueprints/manifest.json",
+      "blueprints_sha256": "897caad609dd5f17a0078708ad7a9a685f26ac2691a79ba6e721e1d58bc4c7c4",
+      "exemplars": "/tmp/hgf-main-r8LLSr/study_kakao/artifacts/hgf/exemplars/manifest.json",
+      "exemplars_sha256": "f9b29906f6300237f21e267ed53bb6a7f3758387e7e44534d25d0525bdbe06ce"
+    },
+    "compatibility_policy": "exact_family_id_and_target_metric",
+    "runtime_demonstration": "sanitized",
+    "memory_rejection": "CURRENT_NEW",
+    "probability_postprocessing": "none"
+  },
+  "baseline_configuration": {
+    "factor_memory_source": "node_only_view_of_frozen_neutral_topology",
+    "factor_memory_manifest": "/tmp/hgf-main-r8LLSr/study_kakao/runs/baseline_sanitation_v1_20260802_r3/frozen_outcome_neutral_topology/manifest.json",
+    "factor_memory_manifest_sha256": "1bf536f603e53a358c6332ef532939713ee6b696b612be3750e4d0a225e51fcc",
+    "factor_memory_topology_removed": true,
+    "direct_dag_source": "same_frozen_neutral_topology_without_current_instantiation",
+    "shared_boundary_policy": "prospective_anchors_allowed",
+    "shared_retrieval_manifest": {
+      "v3_aapl_revenue_growth_acceleration_2025_03_29": [
+        "v3_aapl_revenue_growth_acceleration_2023_04_01",
+        "v3_aapl_revenue_growth_acceleration_2024_12_28",
+        "v3_aapl_revenue_growth_acceleration_2024_06_29"
+      ],
+      "v3_brent_monthly_return_2025_06": [
+        "v3_brent_monthly_return_2024_07",
+        "v3_brent_monthly_return_2023_07",
+        "v3_brent_monthly_return_2024_12"
+      ],
+      "v3_us_core_cpi_monthly_change_2025_06": [
+        "v3_us_core_cpi_monthly_change_2024_12",
+        "v3_us_core_cpi_monthly_change_2024_06",
+        "v3_us_core_cpi_monthly_change_2023_07"
+      ],
+      "v3_broad_usd_monthly_return_2025_06": [
+        "v3_broad_usd_monthly_return_2024_12",
+        "v3_broad_usd_monthly_return_2024_07",
+        "v3_broad_usd_monthly_return_2024_01"
+      ],
+      "v3_fed_balance_sheet_monthly_growth_2025_06": [
+        "v3_fed_balance_sheet_monthly_growth_2024_12",
+        "v3_fed_balance_sheet_monthly_growth_2024_07",
+        "v3_fed_balance_sheet_monthly_growth_2024_01"
+      ],
+      "v3_tsla_revenue_growth_acceleration_2025_03_31": [
+        "v3_tsla_revenue_growth_acceleration_2024_09_30",
+        "v3_tsla_revenue_growth_acceleration_2024_06_30",
+        "v3_tsla_revenue_growth_acceleration_2023_12_31"
+      ],
+      "v3_us_diesel_monthly_change_2025_06": [
+        "v3_us_diesel_monthly_change_2023_07",
+        "v3_us_diesel_monthly_change_2024_01",
+        "v3_us_diesel_monthly_change_2023_01"
+      ],
+      "v3_us_cpi_monthly_change_2025_06": [
+        "v3_us_cpi_monthly_change_2024_12",
+        "v3_us_cpi_monthly_change_2024_06",
+        "v3_us_cpi_monthly_change_2023_01"
+      ],
+      "v3_sp500_monthly_return_2025_06": [
+        "v3_sp500_monthly_return_2024_12",
+        "v3_sp500_monthly_return_2024_01",
+        "v3_sp500_monthly_return_2024_07"
+      ],
+      "v3_fed_funds_monthly_change_2025_06": [
+        "v3_fed_funds_monthly_change_2024_07",
+        "v3_fed_funds_monthly_change_2023_07",
+        "v3_fed_funds_monthly_change_2024_01"
+      ],
+      "v3_msft_revenue_growth_acceleration_2025_03_31": [
+        "v3_msft_revenue_growth_acceleration_2023_03_31",
+        "v3_msft_revenue_growth_acceleration_2023_12_31",
+        "v3_msft_revenue_growth_acceleration_2023_09_30"
+      ],
+      "v3_us_gasoline_monthly_change_2025_06": [
+        "v3_us_gasoline_monthly_change_2024_12",
+        "v3_us_gasoline_monthly_change_2024_07",
+        "v3_us_gasoline_monthly_change_2023_07"
+      ],
+      "v3_us_payroll_monthly_growth_2025_06": [
+        "v3_us_payroll_monthly_growth_2023_01",
+        "v3_us_payroll_monthly_growth_2024_01",
+        "v3_us_payroll_monthly_growth_2024_12"
+      ],
+      "v3_us_baa_credit_spread_change_2025_06": [
+        "v3_us_baa_credit_spread_change_2024_12",
+        "v3_us_baa_credit_spread_change_2023_07",
+        "v3_us_baa_credit_spread_change_2023_01"
+      ],
+      "v3_us_2y_yield_monthly_change_2025_06": [
+        "v3_us_2y_yield_monthly_change_2024_12",
+        "v3_us_2y_yield_monthly_change_2024_07",
+        "v3_us_2y_yield_monthly_change_2024_01"
+      ],
+      "v3_meta_revenue_growth_acceleration_2025_03_31": [
+        "v3_meta_revenue_growth_acceleration_2024_09_30",
+        "v3_meta_revenue_growth_acceleration_2023_12_31",
+        "v3_meta_revenue_growth_acceleration_2023_09_30"
+      ],
+      "v3_wti_monthly_return_2025_06": [
+        "v3_wti_monthly_return_2024_12",
+        "v3_wti_monthly_return_2024_01",
+        "v3_wti_monthly_return_2023_07"
+      ],
+      "v3_us_unemployment_rate_change_2025_06": [
+        "v3_us_unemployment_rate_change_2024_12",
+        "v3_us_unemployment_rate_change_2023_12",
+        "v3_us_unemployment_rate_change_2024_06"
+      ],
+      "v3_vix_monthly_change_2025_06": [
+        "v3_vix_monthly_change_2024_12",
+        "v3_vix_monthly_change_2023_01",
+        "v3_vix_monthly_change_2024_01"
+      ],
+      "v3_us_5y_breakeven_monthly_change_2025_06": [
+        "v3_us_5y_breakeven_monthly_change_2024_07",
+        "v3_us_5y_breakeven_monthly_change_2024_01",
+        "v3_us_5y_breakeven_monthly_change_2024_12"
+      ],
+      "v3_amzn_revenue_growth_acceleration_2025_03_31": [
+        "v3_amzn_revenue_growth_acceleration_2024_09_30",
+        "v3_amzn_revenue_growth_acceleration_2023_12_31",
+        "v3_amzn_revenue_growth_acceleration_2023_03_31"
+      ],
+      "v3_henry_hub_monthly_return_2025_11": [
+        "v3_henry_hub_monthly_return_2025_04",
+        "v3_henry_hub_monthly_return_2024_09",
+        "v3_henry_hub_monthly_return_2024_03"
+      ],
+      "v3_us_pce_price_monthly_change_2025_10": [
+        "v3_us_pce_price_monthly_change_2024_02",
+        "v3_us_pce_price_monthly_change_2025_04",
+        "v3_us_pce_price_monthly_change_2024_09"
+      ],
+      "v3_nasdaq_monthly_return_2025_11": [
+        "v3_nasdaq_monthly_return_2025_04",
+        "v3_nasdaq_monthly_return_2024_03",
+        "v3_nasdaq_monthly_return_2023_01"
+      ],
+      "v3_us_m2_monthly_growth_2025_10": [
+        "v3_us_m2_monthly_growth_2024_02",
+        "v3_us_m2_monthly_growth_2025_04",
+        "v3_us_m2_monthly_growth_2023_08"
+      ],
+      "v3_wmt_revenue_growth_acceleration_2025_04_30": [
+        "v3_wmt_revenue_growth_acceleration_2024_04_30",
+        "v3_wmt_revenue_growth_acceleration_2023_10_31",
+        "v3_wmt_revenue_growth_acceleration_2023_01_31"
+      ],
+      "v3_global_aluminum_monthly_return_2025_11": [
+        "v3_global_aluminum_monthly_return_2025_04",
+        "v3_global_aluminum_monthly_return_2024_03",
+        "v3_global_aluminum_monthly_return_2024_09"
+      ],
+      "v3_us_housing_starts_monthly_growth_2025_11": [
+        "v3_us_housing_starts_monthly_growth_2024_09",
+        "v3_us_housing_starts_monthly_growth_2025_04",
+        "v3_us_housing_starts_monthly_growth_2023_01"
+      ],
+      "v3_stl_financial_stress_monthly_change_2025_11": [
+        "v3_stl_financial_stress_monthly_change_2023_08",
+        "v3_stl_financial_stress_monthly_change_2024_09",
+        "v3_stl_financial_stress_monthly_change_2023_01"
+      ],
+      "v3_us_10y_real_yield_monthly_change_2025_11": [
+        "v3_us_10y_real_yield_monthly_change_2024_09",
+        "v3_us_10y_real_yield_monthly_change_2023_08",
+        "v3_us_10y_real_yield_monthly_change_2023_01"
+      ],
+      "v3_googl_revenue_growth_acceleration_2025_06_30": [
+        "v3_googl_revenue_growth_acceleration_2024_12_31",
+        "v3_googl_revenue_growth_acceleration_2024_09_30",
+        "v3_googl_revenue_growth_acceleration_2024_03_31"
+      ],
+      "v3_global_copper_monthly_return_2025_11": [
+        "v3_global_copper_monthly_return_2025_04",
+        "v3_global_copper_monthly_return_2023_08",
+        "v3_global_copper_monthly_return_2024_03"
+      ],
+      "v3_us_industrial_production_monthly_growth_2025_11": [
+        "v3_us_industrial_production_monthly_growth_2024_09",
+        "v3_us_industrial_production_monthly_growth_2023_01",
+        "v3_us_industrial_production_monthly_growth_2025_04"
+      ],
+      "v3_us_10y_yield_monthly_change_2025_11": [
+        "v3_us_10y_yield_monthly_change_2024_09",
+        "v3_us_10y_yield_monthly_change_2024_03",
+        "v3_us_10y_yield_monthly_change_2023_01"
+      ],
+      "v3_us_30y_yield_monthly_change_2025_11": [
+        "v3_us_30y_yield_monthly_change_2023_08",
+        "v3_us_30y_yield_monthly_change_2023_01",
+        "v3_us_30y_yield_monthly_change_2025_04"
+      ],
+      "v3_tsla_revenue_growth_acceleration_2025_06_30": [
+        "v3_tsla_revenue_growth_acceleration_2024_09_30",
+        "v3_tsla_revenue_growth_acceleration_2024_06_30",
+        "v3_tsla_revenue_growth_acceleration_2023_12_31"
+      ],
+      "v3_global_wheat_monthly_return_2025_11": [
+        "v3_global_wheat_monthly_return_2023_08",
+        "v3_global_wheat_monthly_return_2025_04",
+        "v3_global_wheat_monthly_return_2024_09"
+      ],
+      "v3_us_retail_sales_monthly_growth_2025_11": [
+        "v3_us_retail_sales_monthly_growth_2023_08",
+        "v3_us_retail_sales_monthly_growth_2024_09",
+        "v3_us_retail_sales_monthly_growth_2024_03"
+      ],
+      "v3_broad_usd_monthly_return_2025_12": [
+        "v3_broad_usd_monthly_return_2024_07",
+        "v3_broad_usd_monthly_return_2024_12",
+        "v3_broad_usd_monthly_return_2024_01"
+      ],
+      "v3_us_3m_yield_monthly_change_2025_11": [
+        "v3_us_3m_yield_monthly_change_2024_09",
+        "v3_us_3m_yield_monthly_change_2023_01",
+        "v3_us_3m_yield_monthly_change_2025_04"
+      ],
+      "v3_msft_revenue_growth_acceleration_2025_06_30": [
+        "v3_msft_revenue_growth_acceleration_2023_03_31",
+        "v3_msft_revenue_growth_acceleration_2023_12_31",
+        "v3_msft_revenue_growth_acceleration_2023_09_30"
+      ],
+      "v3_us_diesel_monthly_change_2025_12": [
+        "v3_us_diesel_monthly_change_2023_07",
+        "v3_us_diesel_monthly_change_2023_01",
+        "v3_us_diesel_monthly_change_2024_01"
+      ],
+      "v3_us_core_cpi_monthly_change_2025_12": [
+        "v3_us_core_cpi_monthly_change_2024_12",
+        "v3_us_core_cpi_monthly_change_2023_07",
+        "v3_us_core_cpi_monthly_change_2023_01"
+      ],
+      "v3_sp500_monthly_return_2025_12": [
+        "v3_sp500_monthly_return_2024_12",
+        "v3_sp500_monthly_return_2023_01",
+        "v3_sp500_monthly_return_2024_07"
+      ],
+      "v3_fed_balance_sheet_monthly_growth_2025_12": [
+        "v3_fed_balance_sheet_monthly_growth_2024_12",
+        "v3_fed_balance_sheet_monthly_growth_2024_07",
+        "v3_fed_balance_sheet_monthly_growth_2024_01"
+      ],
+      "v3_meta_revenue_growth_acceleration_2025_06_30": [
+        "v3_meta_revenue_growth_acceleration_2024_09_30",
+        "v3_meta_revenue_growth_acceleration_2023_12_31",
+        "v3_meta_revenue_growth_acceleration_2023_09_30"
+      ],
+      "v3_us_gasoline_monthly_change_2025_12": [
+        "v3_us_gasoline_monthly_change_2023_07",
+        "v3_us_gasoline_monthly_change_2024_07",
+        "v3_us_gasoline_monthly_change_2023_01"
+      ],
+      "v3_us_cpi_monthly_change_2025_12": [
+        "v3_us_cpi_monthly_change_2024_12",
+        "v3_us_cpi_monthly_change_2023_01",
+        "v3_us_cpi_monthly_change_2024_06"
+      ],
+      "v3_us_baa_credit_spread_change_2025_12": [
+        "v3_us_baa_credit_spread_change_2024_12",
+        "v3_us_baa_credit_spread_change_2024_01",
+        "v3_us_baa_credit_spread_change_2023_07"
+      ],
+      "v3_fed_funds_monthly_change_2025_12": [
+        "v3_fed_funds_monthly_change_2024_12",
+        "v3_fed_funds_monthly_change_2024_07",
+        "v3_fed_funds_monthly_change_2024_01"
+      ],
+      "v3_amzn_revenue_growth_acceleration_2025_06_30": [
+        "v3_amzn_revenue_growth_acceleration_2024_09_30",
+        "v3_amzn_revenue_growth_acceleration_2023_03_31",
+        "v3_amzn_revenue_growth_acceleration_2023_12_31"
+      ],
+      "v3_brent_monthly_return_2025_12": [
+        "v3_brent_monthly_return_2024_07",
+        "v3_brent_monthly_return_2023_07",
+        "v3_brent_monthly_return_2024_12"
+      ],
+      "v3_us_payroll_monthly_growth_2025_12": [
+        "v3_us_payroll_monthly_growth_2023_01",
+        "v3_us_payroll_monthly_growth_2024_01",
+        "v3_us_payroll_monthly_growth_2024_12"
+      ],
+      "v3_vix_monthly_change_2025_12": [
+        "v3_vix_monthly_change_2023_01",
+        "v3_vix_monthly_change_2024_12",
+        "v3_vix_monthly_change_2024_01"
+      ],
+      "v3_us_2y_yield_monthly_change_2025_12": [
+        "v3_us_2y_yield_monthly_change_2024_12",
+        "v3_us_2y_yield_monthly_change_2024_07",
+        "v3_us_2y_yield_monthly_change_2024_01"
+      ],
+      "v3_nvda_revenue_growth_acceleration_2025_07_27": [
+        "v3_nvda_revenue_growth_acceleration_2024_01_28",
+        "v3_nvda_revenue_growth_acceleration_2023_07_30",
+        "v3_nvda_revenue_growth_acceleration_2025_01_26"
+      ],
+      "v3_wti_monthly_return_2025_12": [
+        "v3_wti_monthly_return_2024_07",
+        "v3_wti_monthly_return_2024_12",
+        "v3_wti_monthly_return_2024_01"
+      ],
+      "v3_us_unemployment_rate_change_2025_12": [
+        "v3_us_unemployment_rate_change_2023_12",
+        "v3_us_unemployment_rate_change_2024_12",
+        "v3_us_unemployment_rate_change_2023_07"
+      ],
+      "v3_us_high_yield_spread_monthly_change_2026_01": [
+        "v3_us_high_yield_spread_monthly_change_2023_12",
+        "v3_us_high_yield_spread_monthly_change_2025_08",
+        "v3_us_high_yield_spread_monthly_change_2024_10"
+      ],
+      "v3_us_5y_breakeven_monthly_change_2025_12": [
+        "v3_us_5y_breakeven_monthly_change_2024_07",
+        "v3_us_5y_breakeven_monthly_change_2024_01",
+        "v3_us_5y_breakeven_monthly_change_2024_12"
+      ],
+      "v3_wmt_revenue_growth_acceleration_2025_07_31": [
+        "v3_wmt_revenue_growth_acceleration_2023_10_31",
+        "v3_wmt_revenue_growth_acceleration_2024_10_31",
+        "v3_wmt_revenue_growth_acceleration_2024_04_30"
+      ],
+      "v3_us_diesel_monthly_change_2026_06": [
+        "v3_us_diesel_monthly_change_2023_07",
+        "v3_us_diesel_monthly_change_2023_01",
+        "v3_us_diesel_monthly_change_2024_01"
+      ],
+      "v3_us_pce_price_monthly_change_2026_05": [
+        "v3_us_pce_price_monthly_change_2024_02",
+        "v3_us_pce_price_monthly_change_2025_04",
+        "v3_us_pce_price_monthly_change_2024_09"
+      ],
+      "v3_stl_financial_stress_monthly_change_2026_06": [
+        "v3_stl_financial_stress_monthly_change_2023_08",
+        "v3_stl_financial_stress_monthly_change_2023_01",
+        "v3_stl_financial_stress_monthly_change_2024_09"
+      ],
+      "v3_us_m2_monthly_growth_2026_05": [
+        "v3_us_m2_monthly_growth_2024_02",
+        "v3_us_m2_monthly_growth_2025_04",
+        "v3_us_m2_monthly_growth_2023_08"
+      ],
+      "v3_aapl_revenue_growth_acceleration_2025_09_27": [
+        "v3_aapl_revenue_growth_acceleration_2023_04_01",
+        "v3_aapl_revenue_growth_acceleration_2024_12_28",
+        "v3_aapl_revenue_growth_acceleration_2024_06_29"
+      ],
+      "v3_us_gasoline_monthly_change_2026_06": [
+        "v3_us_gasoline_monthly_change_2023_07",
+        "v3_us_gasoline_monthly_change_2024_07",
+        "v3_us_gasoline_monthly_change_2023_01"
+      ],
+      "v3_us_core_cpi_monthly_change_2026_06": [
+        "v3_us_core_cpi_monthly_change_2024_12",
+        "v3_us_core_cpi_monthly_change_2024_06",
+        "v3_us_core_cpi_monthly_change_2023_07"
+      ],
+      "v3_broad_usd_monthly_return_2026_06": [
+        "v3_broad_usd_monthly_return_2024_12",
+        "v3_broad_usd_monthly_return_2024_07",
+        "v3_broad_usd_monthly_return_2024_01"
+      ],
+      "v3_fed_balance_sheet_monthly_growth_2026_06": [
+        "v3_fed_balance_sheet_monthly_growth_2024_12",
+        "v3_fed_balance_sheet_monthly_growth_2024_07",
+        "v3_fed_balance_sheet_monthly_growth_2024_01"
+      ],
+      "v3_meta_revenue_growth_acceleration_2025_12_31": [
+        "v3_meta_revenue_growth_acceleration_2024_09_30",
+        "v3_meta_revenue_growth_acceleration_2023_12_31",
+        "v3_meta_revenue_growth_acceleration_2023_09_30"
+      ],
+      "v3_brent_monthly_return_2026_06": [
+        "v3_brent_monthly_return_2024_07",
+        "v3_brent_monthly_return_2023_07",
+        "v3_brent_monthly_return_2024_12"
+      ],
+      "v3_us_cpi_monthly_change_2026_06": [
+        "v3_us_cpi_monthly_change_2024_12",
+        "v3_us_cpi_monthly_change_2023_01",
+        "v3_us_cpi_monthly_change_2024_06"
+      ],
+      "v3_nasdaq_monthly_return_2026_06": [
+        "v3_nasdaq_monthly_return_2024_03",
+        "v3_nasdaq_monthly_return_2023_01",
+        "v3_nasdaq_monthly_return_2024_09"
+      ],
+      "v3_fed_funds_monthly_change_2026_06": [
+        "v3_fed_funds_monthly_change_2024_12",
+        "v3_fed_funds_monthly_change_2024_07",
+        "v3_fed_funds_monthly_change_2024_01"
+      ],
+      "v3_tsla_revenue_growth_acceleration_2025_12_31": [
+        "v3_tsla_revenue_growth_acceleration_2023_12_31",
+        "v3_tsla_revenue_growth_acceleration_2023_09_30",
+        "v3_tsla_revenue_growth_acceleration_2023_03_31"
+      ],
+      "v3_henry_hub_monthly_return_2026_06": [
+        "v3_henry_hub_monthly_return_2024_03",
+        "v3_henry_hub_monthly_return_2025_04",
+        "v3_henry_hub_monthly_return_2023_08"
+      ],
+      "v3_us_housing_starts_monthly_growth_2026_06": [
+        "v3_us_housing_starts_monthly_growth_2024_09",
+        "v3_us_housing_starts_monthly_growth_2025_04",
+        "v3_us_housing_starts_monthly_growth_2023_01"
+      ],
+      "v3_sp500_monthly_return_2026_06": [
+        "v3_sp500_monthly_return_2024_12",
+        "v3_sp500_monthly_return_2024_07",
+        "v3_sp500_monthly_return_2023_01"
+      ],
+      "v3_us_10y_real_yield_monthly_change_2026_06": [
+        "v3_us_10y_real_yield_monthly_change_2024_09",
+        "v3_us_10y_real_yield_monthly_change_2023_08",
+        "v3_us_10y_real_yield_monthly_change_2024_03"
+      ],
+      "v3_googl_revenue_growth_acceleration_2025_12_31": [
+        "v3_googl_revenue_growth_acceleration_2024_12_31",
+        "v3_googl_revenue_growth_acceleration_2024_09_30",
+        "v3_googl_revenue_growth_acceleration_2024_03_31"
+      ],
+      "v3_wti_monthly_return_2026_06": [
+        "v3_wti_monthly_return_2024_07",
+        "v3_wti_monthly_return_2024_12",
+        "v3_wti_monthly_return_2024_01"
+      ],
+      "v3_us_industrial_production_monthly_growth_2026_06": [
+        "v3_us_industrial_production_monthly_growth_2024_09",
+        "v3_us_industrial_production_monthly_growth_2023_01",
+        "v3_us_industrial_production_monthly_growth_2025_04"
+      ],
+      "v3_us_10y_yield_monthly_change_2026_06": [
+        "v3_us_10y_yield_monthly_change_2024_09",
+        "v3_us_10y_yield_monthly_change_2024_03",
+        "v3_us_10y_yield_monthly_change_2023_08"
+      ],
+      "v3_us_2y_yield_monthly_change_2026_06": [
+        "v3_us_2y_yield_monthly_change_2024_12",
+        "v3_us_2y_yield_monthly_change_2024_07",
+        "v3_us_2y_yield_monthly_change_2024_01"
+      ],
+      "v3_amzn_revenue_growth_acceleration_2025_12_31": [
+        "v3_amzn_revenue_growth_acceleration_2024_09_30",
+        "v3_amzn_revenue_growth_acceleration_2023_12_31",
+        "v3_amzn_revenue_growth_acceleration_2023_09_30"
+      ],
+      "v3_global_aluminum_monthly_return_2026_06": [
+        "v3_global_aluminum_monthly_return_2025_04",
+        "v3_global_aluminum_monthly_return_2024_03",
+        "v3_global_aluminum_monthly_return_2024_09"
+      ],
+      "v3_us_payroll_monthly_growth_2026_06": [
+        "v3_us_payroll_monthly_growth_2023_01",
+        "v3_us_payroll_monthly_growth_2024_01",
+        "v3_us_payroll_monthly_growth_2024_07"
+      ],
+      "v3_us_baa_credit_spread_change_2026_06": [
+        "v3_us_baa_credit_spread_change_2024_01",
+        "v3_us_baa_credit_spread_change_2024_12",
+        "v3_us_baa_credit_spread_change_2023_07"
+      ],
+      "v3_us_30y_yield_monthly_change_2026_06": [
+        "v3_us_30y_yield_monthly_change_2023_08",
+        "v3_us_30y_yield_monthly_change_2023_01",
+        "v3_us_30y_yield_monthly_change_2025_04"
+      ],
+      "v3_nvda_revenue_growth_acceleration_2026_01_25": [
+        "v3_nvda_revenue_growth_acceleration_2025_01_26",
+        "v3_nvda_revenue_growth_acceleration_2024_01_28",
+        "v3_nvda_revenue_growth_acceleration_2023_07_30"
+      ],
+      "v3_global_copper_monthly_return_2026_06": [
+        "v3_global_copper_monthly_return_2025_04",
+        "v3_global_copper_monthly_return_2023_08",
+        "v3_global_copper_monthly_return_2024_09"
+      ],
+      "v3_us_retail_sales_monthly_growth_2026_06": [
+        "v3_us_retail_sales_monthly_growth_2023_08",
+        "v3_us_retail_sales_monthly_growth_2024_09",
+        "v3_us_retail_sales_monthly_growth_2024_03"
+      ],
+      "v3_us_high_yield_spread_monthly_change_2026_06": [
+        "v3_us_high_yield_spread_monthly_change_2024_05",
+        "v3_us_high_yield_spread_monthly_change_2023_12",
+        "v3_us_high_yield_spread_monthly_change_2025_08"
+      ],
+      "v3_us_3m_yield_monthly_change_2026_06": [
+        "v3_us_3m_yield_monthly_change_2024_09",
+        "v3_us_3m_yield_monthly_change_2023_01",
+        "v3_us_3m_yield_monthly_change_2025_04"
+      ],
+      "v3_wmt_revenue_growth_acceleration_2026_01_31": [
+        "v3_wmt_revenue_growth_acceleration_2024_04_30",
+        "v3_wmt_revenue_growth_acceleration_2023_10_31",
+        "v3_wmt_revenue_growth_acceleration_2023_07_31"
+      ],
+      "v3_global_wheat_monthly_return_2026_06": [
+        "v3_global_wheat_monthly_return_2023_01",
+        "v3_global_wheat_monthly_return_2025_04",
+        "v3_global_wheat_monthly_return_2023_08"
+      ],
+      "v3_us_unemployment_rate_change_2026_06": [
+        "v3_us_unemployment_rate_change_2024_12",
+        "v3_us_unemployment_rate_change_2023_12",
+        "v3_us_unemployment_rate_change_2023_07"
+      ],
+      "v3_vix_monthly_change_2026_06": [
+        "v3_vix_monthly_change_2023_01",
+        "v3_vix_monthly_change_2024_12",
+        "v3_vix_monthly_change_2024_01"
+      ],
+      "v3_us_5y_breakeven_monthly_change_2026_06": [
+        "v3_us_5y_breakeven_monthly_change_2024_07",
+        "v3_us_5y_breakeven_monthly_change_2023_07",
+        "v3_us_5y_breakeven_monthly_change_2024_01"
+      ]
+    },
+    "shared_retrieval_manifest_file": "/tmp/hgf-main-r8LLSr/study_kakao/runs/paper_canonical_v2_20260801/model_evidence/deepseek_deepseek-v3.2/retrieval_manifest.json",
+    "shared_retrieval_manifest_sha256": "3bd165b8160cfa41809fe734a3834b17158a47bc14ec8da84701560054a2c570",
+    "max_dags": 3
+  },
+  "methods": [
+    "case_memory",
+    "direct_dag"
+  ],
+  "method_labels": {
+    "search_only": "Direct Forecasting",
+    "prospective_dag": "DAG Forecasting",
+    "direct_dag": "Outcome-Neutral Direct DAG Retrieval",
+    "factor_memory": "Factor Memory",
+    "case_memory": "Outcome-Redacted Case Retrieval",
+    "text_memory": "Forecasting Principles",
+    "hgf": "HGF (Ours)"
+  },
+  "method_references": {
+    "search_only": [
+      "AutoCast++",
+      "Human-level Forecasting"
+    ],
+    "factor_memory": [
+      "ExpeL",
+      "AutoCast++"
+    ],
+    "case_memory": [
+      "A-Mem"
+    ],
+    "text_memory": [
+      "ExpeL"
+    ],
+    "direct_dag": [
+      "WorldReasoner"
+    ],
+    "prospective_dag": [
+      "WorldReasoner Search-Enabled Graph"
+    ],
+    "hgf": [
+      "Ours; WorldReasoner is the upstream DAG generator"
+    ]
+  },
+  "selection_rule": "fixed 100-question selection",
+  "question_ids": [
+    "v3_aapl_revenue_growth_acceleration_2025_03_29",
+    "v3_brent_monthly_return_2025_06",
+    "v3_us_core_cpi_monthly_change_2025_06",
+    "v3_broad_usd_monthly_return_2025_06",
+    "v3_fed_balance_sheet_monthly_growth_2025_06",
+    "v3_tsla_revenue_growth_acceleration_2025_03_31",
+    "v3_us_diesel_monthly_change_2025_06",
+    "v3_us_cpi_monthly_change_2025_06",
+    "v3_sp500_monthly_return_2025_06",
+    "v3_fed_funds_monthly_change_2025_06",
+    "v3_msft_revenue_growth_acceleration_2025_03_31",
+    "v3_us_gasoline_monthly_change_2025_06",
+    "v3_us_payroll_monthly_growth_2025_06",
+    "v3_us_baa_credit_spread_change_2025_06",
+    "v3_us_2y_yield_monthly_change_2025_06",
+    "v3_meta_revenue_growth_acceleration_2025_03_31",
+    "v3_wti_monthly_return_2025_06",
+    "v3_us_unemployment_rate_change_2025_06",
+    "v3_vix_monthly_change_2025_06",
+    "v3_us_5y_breakeven_monthly_change_2025_06",
+    "v3_amzn_revenue_growth_acceleration_2025_03_31",
+    "v3_henry_hub_monthly_return_2025_11",
+    "v3_us_pce_price_monthly_change_2025_10",
+    "v3_nasdaq_monthly_return_2025_11",
+    "v3_us_m2_monthly_growth_2025_10",
+    "v3_wmt_revenue_growth_acceleration_2025_04_30",
+    "v3_global_aluminum_monthly_return_2025_11",
+    "v3_us_housing_starts_monthly_growth_2025_11",
+    "v3_stl_financial_stress_monthly_change_2025_11",
+    "v3_us_10y_real_yield_monthly_change_2025_11",
+    "v3_googl_revenue_growth_acceleration_2025_06_30",
+    "v3_global_copper_monthly_return_2025_11",
+    "v3_us_industrial_production_monthly_growth_2025_11",
+    "v3_us_10y_yield_monthly_change_2025_11",
+    "v3_us_30y_yield_monthly_change_2025_11",
+    "v3_tsla_revenue_growth_acceleration_2025_06_30",
+    "v3_global_wheat_monthly_return_2025_11",
+    "v3_us_retail_sales_monthly_growth_2025_11",
+    "v3_broad_usd_monthly_return_2025_12",
+    "v3_us_3m_yield_monthly_change_2025_11",
+    "v3_msft_revenue_growth_acceleration_2025_06_30",
+    "v3_us_diesel_monthly_change_2025_12",
+    "v3_us_core_cpi_monthly_change_2025_12",
+    "v3_sp500_monthly_return_2025_12",
+    "v3_fed_balance_sheet_monthly_growth_2025_12",
+    "v3_meta_revenue_growth_acceleration_2025_06_30",
+    "v3_us_gasoline_monthly_change_2025_12",
+    "v3_us_cpi_monthly_change_2025_12",
+    "v3_us_baa_credit_spread_change_2025_12",
+    "v3_fed_funds_monthly_change_2025_12",
+    "v3_amzn_revenue_growth_acceleration_2025_06_30",
+    "v3_brent_monthly_return_2025_12",
+    "v3_us_payroll_monthly_growth_2025_12",
+    "v3_vix_monthly_change_2025_12",
+    "v3_us_2y_yield_monthly_change_2025_12",
+    "v3_nvda_revenue_growth_acceleration_2025_07_27",
+    "v3_wti_monthly_return_2025_12",
+    "v3_us_unemployment_rate_change_2025_12",
+    "v3_us_high_yield_spread_monthly_change_2026_01",
+    "v3_us_5y_breakeven_monthly_change_2025_12",
+    "v3_wmt_revenue_growth_acceleration_2025_07_31",
+    "v3_us_diesel_monthly_change_2026_06",
+    "v3_us_pce_price_monthly_change_2026_05",
+    "v3_stl_financial_stress_monthly_change_2026_06",
+    "v3_us_m2_monthly_growth_2026_05",
+    "v3_aapl_revenue_growth_acceleration_2025_09_27",
+    "v3_us_gasoline_monthly_change_2026_06",
+    "v3_us_core_cpi_monthly_change_2026_06",
+    "v3_broad_usd_monthly_return_2026_06",
+    "v3_fed_balance_sheet_monthly_growth_2026_06",
+    "v3_meta_revenue_growth_acceleration_2025_12_31",
+    "v3_brent_monthly_return_2026_06",
+    "v3_us_cpi_monthly_change_2026_06",
+    "v3_nasdaq_monthly_return_2026_06",
+    "v3_fed_funds_monthly_change_2026_06",
+    "v3_tsla_revenue_growth_acceleration_2025_12_31",
+    "v3_henry_hub_monthly_return_2026_06",
+    "v3_us_housing_starts_monthly_growth_2026_06",
+    "v3_sp500_monthly_return_2026_06",
+    "v3_us_10y_real_yield_monthly_change_2026_06",
+    "v3_googl_revenue_growth_acceleration_2025_12_31",
+    "v3_wti_monthly_return_2026_06",
+    "v3_us_industrial_production_monthly_growth_2026_06",
+    "v3_us_10y_yield_monthly_change_2026_06",
+    "v3_us_2y_yield_monthly_change_2026_06",
+    "v3_amzn_revenue_growth_acceleration_2025_12_31",
+    "v3_global_aluminum_monthly_return_2026_06",
+    "v3_us_payroll_monthly_growth_2026_06",
+    "v3_us_baa_credit_spread_change_2026_06",
+    "v3_us_30y_yield_monthly_change_2026_06",
+    "v3_nvda_revenue_growth_acceleration_2026_01_25",
+    "v3_global_copper_monthly_return_2026_06",
+    "v3_us_retail_sales_monthly_growth_2026_06",
+    "v3_us_high_yield_spread_monthly_change_2026_06",
+    "v3_us_3m_yield_monthly_change_2026_06",
+    "v3_wmt_revenue_growth_acceleration_2026_01_31",
+    "v3_global_wheat_monthly_return_2026_06",
+    "v3_us_unemployment_rate_change_2026_06",
+    "v3_vix_monthly_change_2026_06",
+    "v3_us_5y_breakeven_monthly_change_2026_06"
+  ],
+  "categories": [
+    "corporate_earnings",
+    "energy_commodities",
+    "macro",
+    "market_fx_credit",
+    "monetary_policy",
+    "corporate_earnings",
+    "energy_commodities",
+    "macro",
+    "market_fx_credit",
+    "monetary_policy",
+    "corporate_earnings",
+    "energy_commodities",
+    "macro",
+    "market_fx_credit",
+    "monetary_policy",
+    "corporate_earnings",
+    "energy_commodities",
+    "macro",
+    "market_fx_credit",
+    "monetary_policy",
+    "corporate_earnings",
+    "energy_commodities",
+    "macro",
+    "market_fx_credit",
+    "monetary_policy",
+    "corporate_earnings",
+    "energy_commodities",
+    "macro",
+    "market_fx_credit",
+    "monetary_policy",
+    "corporate_earnings",
+    "energy_commodities",
+    "macro",
+    "market_fx_credit",
+    "monetary_policy",
+    "corporate_earnings",
+    "energy_commodities",
+    "macro",
+    "market_fx_credit",
+    "monetary_policy",
+    "corporate_earnings",
+    "energy_commodities",
+    "macro",
+    "market_fx_credit",
+    "monetary_policy",
+    "corporate_earnings",
+    "energy_commodities",
+    "macro",
+    "market_fx_credit",
+    "monetary_policy",
+    "corporate_earnings",
+    "energy_commodities",
+    "macro",
+    "market_fx_credit",
+    "monetary_policy",
+    "corporate_earnings",
+    "energy_commodities",
+    "macro",
+    "market_fx_credit",
+    "monetary_policy",
+    "corporate_earnings",
+    "energy_commodities",
+    "macro",
+    "market_fx_credit",
+    "monetary_policy",
+    "corporate_earnings",
+    "energy_commodities",
+    "macro",
+    "market_fx_credit",
+    "monetary_policy",
+    "corporate_earnings",
+    "energy_commodities",
+    "macro",
+    "market_fx_credit",
+    "monetary_policy",
+    "corporate_earnings",
+    "energy_commodities",
+    "macro",
+    "market_fx_credit",
+    "monetary_policy",
+    "corporate_earnings",
+    "energy_commodities",
+    "macro",
+    "market_fx_credit",
+    "monetary_policy",
+    "corporate_earnings",
+    "energy_commodities",
+    "macro",
+    "market_fx_credit",
+    "monetary_policy",
+    "corporate_earnings",
+    "energy_commodities",
+    "macro",
+    "market_fx_credit",
+    "monetary_policy",
+    "corporate_earnings",
+    "energy_commodities",
+    "macro",
+    "market_fx_credit",
+    "monetary_policy"
+  ],
+  "evidence_contract": {
+    "E0": [],
+    "E1": [
+      "case_memory",
+      "direct_dag"
+    ],
+    "cutoff_checked_on_every_article": true,
+    "same_evidence_for_every_method": true,
+    "selection_source": "model_specific_manifest",
+    "selection_manifest": "/tmp/hgf-main-r8LLSr/study_kakao/runs/paper_canonical_v2_20260801/model_evidence/deepseek_deepseek-v3.2/manifest.json",
+    "selection_manifest_sha256": "82373ec3ef7f12ab130e67bc2b579c006699d3c39bf6a81fa9fef860ec23882b",
+    "shared_across_models": false
+  },
+  "shared": {
+    "target_contract": true,
+    "model": true,
+    "probability_scorer": true,
+    "boundary_mapper_for_non_graph_methods": true,
+    "baseline_probability_editing": false
+  }
+}

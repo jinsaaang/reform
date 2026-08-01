@@ -1,0 +1,791 @@
+{
+  "schema_version": "outcome_neutral_topology_template_v2",
+  "source_question_id": "v3_sp500_monthly_return_2024_07",
+  "source_blueprint_sha256": "b51e87115e439c39be88b12df61e732689cc70de1b5c5569f59a4929799fe14c",
+  "target_operation": "monthly S&P 500 return",
+  "factor_checks": [
+    {
+      "id": "checkpoint_1",
+      "causal_role": "counterevidence",
+      "factor": "S&P 500 Earnings Growth Expectations",
+      "state_question": "What are the current expectations for S&P 500 earnings growth?",
+      "mechanism": "High earnings expectations may be associated with concerns about growth concentration.",
+      "effect_if_active": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_2",
+      "causal_role": "driver",
+      "factor": "Federal Reserve Interest Rate Stance",
+      "state_question": "What is the current stance of the Federal Reserve on interest rates?",
+      "mechanism": "The Federal Reserve's interest rate decisions can influence market caution.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_3",
+      "causal_role": "mediator",
+      "factor": "Cautious Federal Reserve Stance",
+      "state_question": "For the current target period, Is there a cautious Federal Reserve stance?",
+      "mechanism": "A cautious Federal Reserve stance is a potential factor for the target metric.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_4",
+      "causal_role": "driver",
+      "factor": "Economic Policy Uncertainty Brief (Richmond Fed)",
+      "state_question": "For the current target period, What is the content of the latest Economic Policy Uncertainty Brief from the Federal Reserve Bank of Richmond?",
+      "mechanism": "The Economic Policy Uncertainty Brief is a potential factor for the target metric.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_5",
+      "causal_role": "driver",
+      "factor": "S&P 500 Earnings Season",
+      "state_question": "For the current target period, Has the S&P 500 earnings season begun?",
+      "mechanism": "The commencement of earnings season enables the reporting of financial results.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_6",
+      "causal_role": "mediator",
+      "factor": "Broad S&P 500 Earnings Growth Skepticism",
+      "state_question": "For the current target period, Is there growing skepticism about broad S&P 500 earnings growth?",
+      "mechanism": "Growing skepticism about broad earnings growth may correlate with concerns about concentration.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_7",
+      "causal_role": "mediator",
+      "factor": "S&P 500 Earnings Growth Reliance on 'Magnificent 7'",
+      "state_question": "For the current target period, Are there concerns about S&P 500 earnings growth reliance on the 'Magnificent 7'?",
+      "mechanism": "Concerns about reliance on specific growth drivers are potential factors for the target metric.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_8",
+      "causal_role": "driver",
+      "factor": "Federal Reserve Monetary Policy Report",
+      "state_question": "For the current target period, What are the key indicators in the latest Federal Reserve Monetary Policy Report?",
+      "mechanism": "The Monetary Policy Report may indicate persistent inflation concerns.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_9",
+      "causal_role": "mediator",
+      "factor": "Persistent Inflation Concerns",
+      "state_question": "For the current target period, Are there persistent inflation concerns?",
+      "mechanism": "Persistent inflation concerns are potential factors for the target metric.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_10",
+      "causal_role": "mediator",
+      "factor": "Company Earnings Miss",
+      "state_question": "For the current target period, Have any significant companies current condition earnings misses?",
+      "mechanism": "Company earnings misses are potential indicators for the target metric.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    }
+  ],
+  "topology_edges": [
+    {
+      "id": "edge_001",
+      "source_checkpoint_id": "checkpoint_1",
+      "target_checkpoint_id": "checkpoint_6",
+      "relationship": "inhibits",
+      "directionality": "counteracting",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "High earnings expectations may be inhibited by concerns about growth concentration.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_002",
+      "source_checkpoint_id": "checkpoint_5",
+      "target_checkpoint_id": "checkpoint_10",
+      "relationship": "enables",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The commencement of earnings season enables the reporting of company earnings misses.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_003",
+      "source_checkpoint_id": "checkpoint_5",
+      "target_checkpoint_id": "checkpoint_6",
+      "relationship": "enables",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The commencement of earnings season enables the emergence of skepticism about broad earnings growth.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_004",
+      "source_checkpoint_id": "checkpoint_2",
+      "target_checkpoint_id": "checkpoint_3",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The Federal Reserve's interest rate stance influences the caution of its stance.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_005",
+      "source_checkpoint_id": "checkpoint_8",
+      "target_checkpoint_id": "checkpoint_9",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The Federal Reserve Monetary Policy Report may indicate persistent inflation concerns.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_006",
+      "source_checkpoint_id": "checkpoint_1",
+      "target_checkpoint_id": "checkpoint_7",
+      "relationship": "inhibits",
+      "directionality": "counteracting",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "High earnings expectations may be inhibited by concerns about reliance on specific growth drivers.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_007",
+      "source_checkpoint_id": "checkpoint_6",
+      "target_checkpoint_id": "checkpoint_7",
+      "relationship": "amplifies",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Growing skepticism about broad earnings growth amplifies concerns about reliance on specific growth drivers.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_008",
+      "source_checkpoint_id": "checkpoint_5",
+      "target_checkpoint_id": "checkpoint_10",
+      "relationship": "enables",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The commencement of earnings season enables the reporting of company earnings misses.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_009",
+      "source_checkpoint_id": "checkpoint_5",
+      "target_checkpoint_id": "checkpoint_6",
+      "relationship": "enables",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The commencement of earnings season enables the emergence of skepticism about broad earnings growth.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_010",
+      "source_checkpoint_id": "checkpoint_2",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The Federal Reserve's interest rate stance may influence the target metric.",
+      "terminal_to_target_bridge": true
+    },
+    {
+      "id": "edge_011",
+      "source_checkpoint_id": "checkpoint_8",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Persistent inflation concerns indicated by the Monetary Policy Report may influence the target metric.",
+      "terminal_to_target_bridge": true
+    },
+    {
+      "id": "edge_012",
+      "source_checkpoint_id": "checkpoint_6",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Skepticism about broad earnings growth may influence the target metric.",
+      "terminal_to_target_bridge": true
+    },
+    {
+      "id": "edge_013",
+      "source_checkpoint_id": "checkpoint_4",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Economic policy uncertainty may influence the target metric.",
+      "terminal_to_target_bridge": true
+    },
+    {
+      "id": "edge_014",
+      "source_checkpoint_id": "checkpoint_10",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "triggers",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Company earnings misses may trigger changes in the target metric.",
+      "terminal_to_target_bridge": true
+    },
+    {
+      "id": "edge_015",
+      "source_checkpoint_id": "checkpoint_3",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "A cautious Federal Reserve stance may influence the target metric.",
+      "terminal_to_target_bridge": true
+    },
+    {
+      "id": "edge_016",
+      "source_checkpoint_id": "checkpoint_9",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Persistent inflation concerns may influence the target metric.",
+      "terminal_to_target_bridge": true
+    },
+    {
+      "id": "edge_017",
+      "source_checkpoint_id": "checkpoint_7",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Concerns about reliance on specific growth drivers may influence the target metric.",
+      "terminal_to_target_bridge": true
+    },
+    {
+      "id": "edge_018",
+      "source_checkpoint_id": "checkpoint_4",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Economic policy uncertainty may influence the target metric.",
+      "terminal_to_target_bridge": true
+    },
+    {
+      "id": "edge_019",
+      "source_checkpoint_id": "checkpoint_10",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "triggers",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Company earnings misses may trigger changes in the target metric.",
+      "terminal_to_target_bridge": true
+    }
+  ],
+  "conditional_paths": [
+    {
+      "id": "path_1",
+      "factor_ids": [
+        "checkpoint_1",
+        "checkpoint_6",
+        "checkpoint_7"
+      ],
+      "edge_ids": [
+        "edge_001",
+        "edge_007",
+        "edge_017"
+      ],
+      "relationships": [
+        "inhibits",
+        "amplifies",
+        "causes"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "High earnings expectations may be inhibited by concerns about growth concentration. Growing skepticism about broad earnings growth amplifies concerns about reliance on specific growth drivers. Concerns about reliance on specific growth drivers may influence the target metric.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_2",
+      "factor_ids": [
+        "checkpoint_1",
+        "checkpoint_6"
+      ],
+      "edge_ids": [
+        "edge_001",
+        "edge_012"
+      ],
+      "relationships": [
+        "inhibits",
+        "causes"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "High earnings expectations may be inhibited by concerns about growth concentration. Skepticism about broad earnings growth may influence the target metric.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_3",
+      "factor_ids": [
+        "checkpoint_1",
+        "checkpoint_7"
+      ],
+      "edge_ids": [
+        "edge_006",
+        "edge_017"
+      ],
+      "relationships": [
+        "inhibits",
+        "causes"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "High earnings expectations may be inhibited by concerns about reliance on specific growth drivers. Concerns about reliance on specific growth drivers may influence the target metric.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_4",
+      "factor_ids": [
+        "checkpoint_2",
+        "checkpoint_3"
+      ],
+      "edge_ids": [
+        "edge_004",
+        "edge_015"
+      ],
+      "relationships": [
+        "causes",
+        "causes"
+      ],
+      "path_role": "main_path",
+      "conditional_mechanism": "The Federal Reserve's interest rate stance influences the caution of its stance. A cautious Federal Reserve stance may influence the target metric.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_5",
+      "factor_ids": [
+        "checkpoint_2"
+      ],
+      "edge_ids": [
+        "edge_010"
+      ],
+      "relationships": [
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "The Federal Reserve's interest rate stance may influence the target metric.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_6",
+      "factor_ids": [
+        "checkpoint_4"
+      ],
+      "edge_ids": [
+        "edge_013"
+      ],
+      "relationships": [
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "Economic policy uncertainty may influence the target metric.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_7",
+      "factor_ids": [
+        "checkpoint_4"
+      ],
+      "edge_ids": [
+        "edge_018"
+      ],
+      "relationships": [
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "Economic policy uncertainty may influence the target metric.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_8",
+      "factor_ids": [
+        "checkpoint_5",
+        "checkpoint_10"
+      ],
+      "edge_ids": [
+        "edge_002",
+        "edge_014"
+      ],
+      "relationships": [
+        "enables",
+        "triggers"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "The commencement of earnings season enables the reporting of company earnings misses. Company earnings misses may trigger changes in the target metric.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_9",
+      "factor_ids": [
+        "checkpoint_5",
+        "checkpoint_10"
+      ],
+      "edge_ids": [
+        "edge_002",
+        "edge_019"
+      ],
+      "relationships": [
+        "enables",
+        "triggers"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "The commencement of earnings season enables the reporting of company earnings misses. Company earnings misses may trigger changes in the target metric.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_10",
+      "factor_ids": [
+        "checkpoint_5",
+        "checkpoint_6",
+        "checkpoint_7"
+      ],
+      "edge_ids": [
+        "edge_003",
+        "edge_007",
+        "edge_017"
+      ],
+      "relationships": [
+        "enables",
+        "amplifies",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "The commencement of earnings season enables the emergence of skepticism about broad earnings growth. Growing skepticism about broad earnings growth amplifies concerns about reliance on specific growth drivers. Concerns about reliance on specific growth drivers may influence the target metric.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_11",
+      "factor_ids": [
+        "checkpoint_5",
+        "checkpoint_6"
+      ],
+      "edge_ids": [
+        "edge_003",
+        "edge_012"
+      ],
+      "relationships": [
+        "enables",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "The commencement of earnings season enables the emergence of skepticism about broad earnings growth. Skepticism about broad earnings growth may influence the target metric.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_12",
+      "factor_ids": [
+        "checkpoint_5",
+        "checkpoint_10"
+      ],
+      "edge_ids": [
+        "edge_008",
+        "edge_014"
+      ],
+      "relationships": [
+        "enables",
+        "triggers"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "The commencement of earnings season enables the reporting of company earnings misses. Company earnings misses may trigger changes in the target metric.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_13",
+      "factor_ids": [
+        "checkpoint_5",
+        "checkpoint_10"
+      ],
+      "edge_ids": [
+        "edge_008",
+        "edge_019"
+      ],
+      "relationships": [
+        "enables",
+        "triggers"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "The commencement of earnings season enables the reporting of company earnings misses. Company earnings misses may trigger changes in the target metric.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_14",
+      "factor_ids": [
+        "checkpoint_5",
+        "checkpoint_6",
+        "checkpoint_7"
+      ],
+      "edge_ids": [
+        "edge_009",
+        "edge_007",
+        "edge_017"
+      ],
+      "relationships": [
+        "enables",
+        "amplifies",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "The commencement of earnings season enables the emergence of skepticism about broad earnings growth. Growing skepticism about broad earnings growth amplifies concerns about reliance on specific growth drivers. Concerns about reliance on specific growth drivers may influence the target metric.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_15",
+      "factor_ids": [
+        "checkpoint_5",
+        "checkpoint_6"
+      ],
+      "edge_ids": [
+        "edge_009",
+        "edge_012"
+      ],
+      "relationships": [
+        "enables",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "The commencement of earnings season enables the emergence of skepticism about broad earnings growth. Skepticism about broad earnings growth may influence the target metric.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_16",
+      "factor_ids": [
+        "checkpoint_8",
+        "checkpoint_9"
+      ],
+      "edge_ids": [
+        "edge_005",
+        "edge_016"
+      ],
+      "relationships": [
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "The Federal Reserve Monetary Policy Report may indicate persistent inflation concerns. Persistent inflation concerns may influence the target metric.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_17",
+      "factor_ids": [
+        "checkpoint_8"
+      ],
+      "edge_ids": [
+        "edge_011"
+      ],
+      "relationships": [
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "Persistent inflation concerns indicated by the Monetary Policy Report may influence the target metric.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    }
+  ],
+  "target_bridge": {
+    "id": "target_bridge",
+    "mechanism": "Map only currently supported paths into the current target period and exact metric.",
+    "magnitude_requirement": "Current numerical evidence must support the relevant option boundary, not only the direction of change.",
+    "failure_signal": "The current baseline, target timing, or magnitude evidence does not support the proposed boundary crossing."
+  },
+  "competing_explanations": [],
+  "worked_procedure": [
+    "Lock the exact current target operation and baseline.",
+    "Fill the preserved factor nodes with current evidence.",
+    "Check each preserved directed edge and its timing condition.",
+    "Reject paths containing an unsupported or contradicted link.",
+    "Compare supported paths with current factors outside the graph.",
+    "Require current magnitude support before option mapping."
+  ],
+  "topology_contract": {
+    "path_order_generated_by_model": false,
+    "edge_direction_generated_by_model": false,
+    "source_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_5",
+      "checkpoint_6",
+      "checkpoint_7",
+      "checkpoint_8",
+      "checkpoint_9",
+      "checkpoint_10"
+    ],
+    "source_edge_ids": [
+      "edge_001",
+      "edge_002",
+      "edge_003",
+      "edge_004",
+      "edge_005",
+      "edge_006",
+      "edge_007",
+      "edge_008",
+      "edge_009",
+      "edge_010",
+      "edge_011",
+      "edge_012",
+      "edge_013",
+      "edge_014",
+      "edge_015",
+      "edge_016",
+      "edge_017",
+      "edge_018",
+      "edge_019"
+    ]
+  },
+  "template_sha256": "df0494fc918469cfcf457b275b7edcb40529fda8c2451c62b7220e23b3d7a873"
+}

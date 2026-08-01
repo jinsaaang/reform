@@ -1,0 +1,213 @@
+{
+  "schema_version": "outcome_neutral_topology_template_v2",
+  "source_question_id": "v3_us_housing_starts_monthly_growth_2023_01",
+  "source_blueprint_sha256": "c82c11435b14a1ea44e9c6006ca6c879e32db3fcce6f6c9bbf1246b4c176bc5a",
+  "target_operation": "monthly housing-starts growth",
+  "factor_checks": [
+    {
+      "id": "checkpoint_1",
+      "causal_role": "counterevidence",
+      "factor": "Macroeconomic Headwinds",
+      "state_question": "What is the current state of macroeconomic headwinds, such as interest rates and economic uncertainty?",
+      "mechanism": "Elevated interest rates and economic uncertainty may influence the baseline economic conditions.",
+      "effect_if_active": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_2",
+      "causal_role": "mediator",
+      "factor": "Prior Period Housing Starts Level",
+      "state_question": "What is the current housing starts level from the prior period?",
+      "mechanism": "The housing starts level from the prior period serves as a baseline for subsequent activity.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "medium"
+    },
+    {
+      "id": "checkpoint_3",
+      "causal_role": "driver",
+      "factor": "Mortgage Rate Conditions",
+      "state_question": "What are the current mortgage rate conditions?",
+      "mechanism": "Temporary mortgage rate relief can influence builder decisions regarding housing activity.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_4",
+      "causal_role": "mediator",
+      "factor": "Builder Demand Perception",
+      "state_question": "How are builders perceiving current demand?",
+      "mechanism": "Builder decisions based on perceived demand can contribute to housing starts.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_5",
+      "causal_role": "mediator",
+      "factor": "Total Housing Starts",
+      "state_question": "What is the current level of total housing starts?",
+      "mechanism": "The level of total housing starts is a potential indicator for the target metric.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "strong"
+    }
+  ],
+  "topology_edges": [
+    {
+      "id": "edge_001",
+      "source_checkpoint_id": "checkpoint_1",
+      "target_checkpoint_id": "checkpoint_2",
+      "relationship": "inhibits",
+      "directionality": "counteracting",
+      "support_level": "background_hypothesis",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Macroeconomic headwinds may condition the prior period housing starts level.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_002",
+      "source_checkpoint_id": "checkpoint_2",
+      "target_checkpoint_id": "checkpoint_5",
+      "relationship": "precedes",
+      "directionality": "forward",
+      "support_level": "evidence_synthesized",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The prior period housing starts level may influence the current total housing starts level.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_003",
+      "source_checkpoint_id": "checkpoint_3",
+      "target_checkpoint_id": "checkpoint_4",
+      "relationship": "enables",
+      "directionality": "forward",
+      "support_level": "background_hypothesis",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Mortgage rate conditions may influence builder perception of demand.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_004",
+      "source_checkpoint_id": "checkpoint_4",
+      "target_checkpoint_id": "checkpoint_5",
+      "relationship": "contributes_to",
+      "directionality": "forward",
+      "support_level": "background_hypothesis",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Builder perception of demand may influence total housing starts.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_005",
+      "source_checkpoint_id": "checkpoint_5",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "quantified_as",
+      "directionality": "forward",
+      "support_level": "observed",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The total housing starts level may be a determinant of monthly housing-starts growth.",
+      "terminal_to_target_bridge": true
+    }
+  ],
+  "conditional_paths": [
+    {
+      "id": "path_1",
+      "factor_ids": [
+        "checkpoint_1",
+        "checkpoint_2",
+        "checkpoint_5"
+      ],
+      "edge_ids": [
+        "edge_001",
+        "edge_002",
+        "edge_005"
+      ],
+      "relationships": [
+        "inhibits",
+        "precedes",
+        "quantified_as"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "Macroeconomic headwinds may condition the prior period housing starts level. The prior period housing starts level may influence the current total housing starts level. The total housing starts level may be a determinant of monthly housing-starts growth.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_2",
+      "factor_ids": [
+        "checkpoint_3",
+        "checkpoint_4",
+        "checkpoint_5"
+      ],
+      "edge_ids": [
+        "edge_003",
+        "edge_004",
+        "edge_005"
+      ],
+      "relationships": [
+        "enables",
+        "contributes_to",
+        "quantified_as"
+      ],
+      "path_role": "main_path",
+      "conditional_mechanism": "Mortgage rate conditions may influence builder perception of demand. Builder perception of demand may influence total housing starts. The total housing starts level may be a determinant of monthly housing-starts growth.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    }
+  ],
+  "target_bridge": {
+    "id": "target_bridge",
+    "mechanism": "Map only currently supported paths into the current target period and exact metric.",
+    "magnitude_requirement": "Current numerical evidence must support the relevant option boundary, not only the direction of change.",
+    "failure_signal": "The current baseline, target timing, or magnitude evidence does not support the proposed boundary crossing."
+  },
+  "competing_explanations": [],
+  "worked_procedure": [
+    "Lock the exact current target operation and baseline.",
+    "Fill the preserved factor nodes with current evidence.",
+    "Check each preserved directed edge and its timing condition.",
+    "Reject paths containing an unsupported or contradicted link.",
+    "Compare supported paths with current factors outside the graph.",
+    "Require current magnitude support before option mapping."
+  ],
+  "topology_contract": {
+    "path_order_generated_by_model": false,
+    "edge_direction_generated_by_model": false,
+    "source_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_5"
+    ],
+    "source_edge_ids": [
+      "edge_001",
+      "edge_002",
+      "edge_003",
+      "edge_004",
+      "edge_005"
+    ]
+  },
+  "template_sha256": "af524215a511c6cc7aca6ca3ad2b0bbd2d0c2241865c8828f395930428ea896b"
+}

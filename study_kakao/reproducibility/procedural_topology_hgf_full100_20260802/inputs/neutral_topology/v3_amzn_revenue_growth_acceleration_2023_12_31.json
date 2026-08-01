@@ -1,0 +1,452 @@
+{
+  "schema_version": "outcome_neutral_topology_template_v2",
+  "source_question_id": "v3_amzn_revenue_growth_acceleration_2023_12_31",
+  "source_blueprint_sha256": "b89ff219b63f4e0f5056e23a0945a195a42f3652d70d0a481bb4a72d566e938a",
+  "target_operation": "quarterly revenue year-over-year growth acceleration",
+  "factor_checks": [
+    {
+      "id": "checkpoint_1",
+      "causal_role": "driver",
+      "factor": "Consumer Spending",
+      "state_question": "What is the current state of consumer spending?",
+      "mechanism": "If consumer spending is robust, then e-commerce sales may be strong.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_2",
+      "causal_role": "mediator",
+      "factor": "E-commerce Sales Performance",
+      "state_question": "What is the current performance of e-commerce sales?",
+      "mechanism": "If e-commerce sales perform strongly, then overall revenue may increase.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_3",
+      "causal_role": "driver",
+      "factor": "Prime Video Advertising Introduction",
+      "state_question": "For the current target period, Has Prime Video advertising been introduced or expanded?",
+      "mechanism": "If Prime Video advertising is introduced or expanded, then advertising inventory and appeal may increase.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_4",
+      "causal_role": "mediator",
+      "factor": "Advertising Revenue Growth",
+      "state_question": "What is the current growth rate of advertising revenue?",
+      "mechanism": "If advertising revenue grows significantly, then the top line may be boosted.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_5",
+      "causal_role": "driver",
+      "factor": "Diversified Revenue Stream Resilience",
+      "state_question": "For the current target period, How resilient are Amazon's diversified revenue streams?",
+      "mechanism": "If diversified revenue streams show resilience, then overall performance may be supported.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_6",
+      "causal_role": "driver",
+      "factor": "Fiscal Period End",
+      "state_question": "Has the current fiscal period ended?",
+      "mechanism": "If the fiscal period has ended, then an earnings report can be generated.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_7",
+      "causal_role": "driver",
+      "factor": "Generative AI Enterprise Adoption",
+      "state_question": "What is the current level of enterprise adoption for generative AI?",
+      "mechanism": "If enterprise adoption of generative AI increases, then AWS revenue growth may re-accelerate.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_8",
+      "causal_role": "counterevidence",
+      "factor": "AWS Cloud Growth Concerns",
+      "state_question": "Are there current concerns about AWS cloud growth slowdown?",
+      "mechanism": "If concerns about AWS cloud growth slowdown exist, then AWS growth may be inhibited.",
+      "effect_if_active": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_9",
+      "causal_role": "mediator",
+      "factor": "AWS Growth Acceleration",
+      "state_question": "What is the current AWS growth acceleration?",
+      "mechanism": "If AWS growth accelerates, then overall performance may be positively impacted.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_10",
+      "causal_role": "mediator",
+      "factor": "Earnings Release and Performance",
+      "state_question": "What is the current earnings release and performance outcome?",
+      "mechanism": "If an earnings release shows strong performance, then it may influence the target metric.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    }
+  ],
+  "topology_edges": [
+    {
+      "id": "edge_001",
+      "source_checkpoint_id": "checkpoint_6",
+      "target_checkpoint_id": "checkpoint_10",
+      "relationship": "enables",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The end of the fiscal period enables the generation of an earnings report.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_002",
+      "source_checkpoint_id": "checkpoint_9",
+      "target_checkpoint_id": "checkpoint_10",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If AWS growth accelerates, then it may contribute to overall strong performance and influence the earnings release outcome.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_003",
+      "source_checkpoint_id": "checkpoint_2",
+      "target_checkpoint_id": "checkpoint_10",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If e-commerce sales perform strongly, then this may contribute to overall performance and influence the earnings release outcome.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_004",
+      "source_checkpoint_id": "checkpoint_4",
+      "target_checkpoint_id": "checkpoint_10",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If advertising revenue grows significantly, then this may contribute to overall performance and influence the earnings release outcome.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_005",
+      "source_checkpoint_id": "checkpoint_3",
+      "target_checkpoint_id": "checkpoint_4",
+      "relationship": "enables",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If Prime Video advertising is introduced or expanded, then advertising inventory and appeal may increase, potentially leading to advertising revenue growth.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_006",
+      "source_checkpoint_id": "checkpoint_7",
+      "target_checkpoint_id": "checkpoint_9",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If enterprise adoption of generative AI increases, then AWS revenue growth may re-accelerate.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_007",
+      "source_checkpoint_id": "checkpoint_8",
+      "target_checkpoint_id": "checkpoint_9",
+      "relationship": "inhibits",
+      "directionality": "counteracting",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If concerns about AWS cloud growth slowdown exist, then AWS growth may be inhibited.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_008",
+      "source_checkpoint_id": "checkpoint_1",
+      "target_checkpoint_id": "checkpoint_2",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If consumer spending is robust, then e-commerce sales may be strong.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_009",
+      "source_checkpoint_id": "checkpoint_5",
+      "target_checkpoint_id": "checkpoint_10",
+      "relationship": "enables",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If diversified revenue streams show resilience, then overall performance may be supported and influence the earnings release outcome.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_010",
+      "source_checkpoint_id": "checkpoint_7",
+      "target_checkpoint_id": "checkpoint_8",
+      "relationship": "prevents",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If enterprise adoption of generative AI increases, then it may mitigate concerns about AWS cloud growth slowdown.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_011",
+      "source_checkpoint_id": "checkpoint_10",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If the earnings release and performance outcome is favorable, then it may influence the target metric of quarterly revenue year-over-year growth acceleration.",
+      "terminal_to_target_bridge": true
+    }
+  ],
+  "conditional_paths": [
+    {
+      "id": "path_1",
+      "factor_ids": [
+        "checkpoint_1",
+        "checkpoint_2",
+        "checkpoint_10"
+      ],
+      "edge_ids": [
+        "edge_008",
+        "edge_003",
+        "edge_011"
+      ],
+      "relationships": [
+        "causes",
+        "causes",
+        "causes"
+      ],
+      "path_role": "main_path",
+      "conditional_mechanism": "If consumer spending is robust, then e-commerce sales may be strong. If e-commerce sales perform strongly, then this may contribute to overall performance and influence the earnings release outcome. If the earnings release and performance outcome is favorable, then it may influence the target metric of quarterly revenue year-over-year growth acceleration.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_2",
+      "factor_ids": [
+        "checkpoint_3",
+        "checkpoint_4",
+        "checkpoint_10"
+      ],
+      "edge_ids": [
+        "edge_005",
+        "edge_004",
+        "edge_011"
+      ],
+      "relationships": [
+        "enables",
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If Prime Video advertising is introduced or expanded, then advertising inventory and appeal may increase, potentially leading to advertising revenue growth. If advertising revenue grows significantly, then this may contribute to overall performance and influence the earnings release outcome. If the earnings release and performance outcome is favorable, then it may influence the target metric of quarterly revenue year-over-year growth acceleration.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_3",
+      "factor_ids": [
+        "checkpoint_5",
+        "checkpoint_10"
+      ],
+      "edge_ids": [
+        "edge_009",
+        "edge_011"
+      ],
+      "relationships": [
+        "enables",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If diversified revenue streams show resilience, then overall performance may be supported and influence the earnings release outcome. If the earnings release and performance outcome is favorable, then it may influence the target metric of quarterly revenue year-over-year growth acceleration.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_4",
+      "factor_ids": [
+        "checkpoint_6",
+        "checkpoint_10"
+      ],
+      "edge_ids": [
+        "edge_001",
+        "edge_011"
+      ],
+      "relationships": [
+        "enables",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "The end of the fiscal period enables the generation of an earnings report. If the earnings release and performance outcome is favorable, then it may influence the target metric of quarterly revenue year-over-year growth acceleration.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_5",
+      "factor_ids": [
+        "checkpoint_7",
+        "checkpoint_9",
+        "checkpoint_10"
+      ],
+      "edge_ids": [
+        "edge_006",
+        "edge_002",
+        "edge_011"
+      ],
+      "relationships": [
+        "causes",
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If enterprise adoption of generative AI increases, then AWS revenue growth may re-accelerate. If AWS growth accelerates, then it may contribute to overall strong performance and influence the earnings release outcome. If the earnings release and performance outcome is favorable, then it may influence the target metric of quarterly revenue year-over-year growth acceleration.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_6",
+      "factor_ids": [
+        "checkpoint_7",
+        "checkpoint_8",
+        "checkpoint_9",
+        "checkpoint_10"
+      ],
+      "edge_ids": [
+        "edge_010",
+        "edge_007",
+        "edge_002",
+        "edge_011"
+      ],
+      "relationships": [
+        "prevents",
+        "inhibits",
+        "causes",
+        "causes"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "If enterprise adoption of generative AI increases, then it may mitigate concerns about AWS cloud growth slowdown. If concerns about AWS cloud growth slowdown exist, then AWS growth may be inhibited. If AWS growth accelerates, then it may contribute to overall strong performance and influence the earnings release outcome. If the earnings release and performance outcome is favorable, then it may influence the target metric of quarterly revenue year-over-year growth acceleration.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    }
+  ],
+  "target_bridge": {
+    "id": "target_bridge",
+    "mechanism": "Map only currently supported paths into the current target period and exact metric.",
+    "magnitude_requirement": "Current numerical evidence must support the relevant option boundary, not only the direction of change.",
+    "failure_signal": "The current baseline, target timing, or magnitude evidence does not support the proposed boundary crossing."
+  },
+  "competing_explanations": [],
+  "worked_procedure": [
+    "Lock the exact current target operation and baseline.",
+    "Fill the preserved factor nodes with current evidence.",
+    "Check each preserved directed edge and its timing condition.",
+    "Reject paths containing an unsupported or contradicted link.",
+    "Compare supported paths with current factors outside the graph.",
+    "Require current magnitude support before option mapping."
+  ],
+  "topology_contract": {
+    "path_order_generated_by_model": false,
+    "edge_direction_generated_by_model": false,
+    "source_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_5",
+      "checkpoint_6",
+      "checkpoint_7",
+      "checkpoint_8",
+      "checkpoint_9",
+      "checkpoint_10"
+    ],
+    "source_edge_ids": [
+      "edge_001",
+      "edge_002",
+      "edge_003",
+      "edge_004",
+      "edge_005",
+      "edge_006",
+      "edge_007",
+      "edge_008",
+      "edge_009",
+      "edge_010",
+      "edge_011"
+    ]
+  },
+  "template_sha256": "e90b135994a18fcab4a2895ee0e4d7bdfba2105e1d7056319b203e83e081a16a"
+}

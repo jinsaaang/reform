@@ -1,0 +1,233 @@
+{
+  "schema_version": "outcome_neutral_topology_template_v2",
+  "source_question_id": "v3_stl_financial_stress_monthly_change_2023_01",
+  "source_blueprint_sha256": "14e53f5c09771c84700aa1332bca77f492f2df3bb42d1e7acfebaccf342e60e2",
+  "target_operation": "monthly financial-stress-index change",
+  "factor_checks": [
+    {
+      "id": "checkpoint_1",
+      "causal_role": "driver",
+      "factor": "Debt Ceiling Conditions",
+      "state_question": "What are the current debt ceiling conditions?",
+      "mechanism": "Debt ceiling conditions may influence monetary policy adjustments.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "strong"
+    },
+    {
+      "id": "checkpoint_2",
+      "causal_role": "mediator",
+      "factor": "Market Liquidity",
+      "state_question": "What is the current state of market liquidity?",
+      "mechanism": "Market liquidity can affect financial conditions.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_3",
+      "causal_role": "driver",
+      "factor": "Survey Indicators",
+      "state_question": "What do current survey indicators report regarding sentiment, inflation expectations, and borrowing costs?",
+      "mechanism": "Survey indicators can provide insights into economic perceptions that may influence financial stress.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "strong"
+    },
+    {
+      "id": "checkpoint_4",
+      "causal_role": "counterevidence",
+      "factor": "Global Financial Conditions",
+      "state_question": "What are the current global financial conditions, including tightening and credit concerns?",
+      "mechanism": "Global financial conditions can exert counteracting influences on domestic financial stress.",
+      "effect_if_active": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "strong"
+    },
+    {
+      "id": "checkpoint_5",
+      "causal_role": "mediator",
+      "factor": "Financial Conditions",
+      "state_question": "What are the current financial conditions?",
+      "mechanism": "Financial conditions can influence the target metric.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    }
+  ],
+  "topology_edges": [
+    {
+      "id": "edge_001",
+      "source_checkpoint_id": "checkpoint_1",
+      "target_checkpoint_id": "checkpoint_2",
+      "relationship": "supports",
+      "directionality": "forward",
+      "support_level": "background_hypothesis",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Debt ceiling conditions may influence market liquidity.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_002",
+      "source_checkpoint_id": "checkpoint_2",
+      "target_checkpoint_id": "checkpoint_5",
+      "relationship": "contributes_to",
+      "directionality": "forward",
+      "support_level": "background_hypothesis",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Market liquidity can contribute to overall financial conditions.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_003",
+      "source_checkpoint_id": "checkpoint_3",
+      "target_checkpoint_id": "checkpoint_5",
+      "relationship": "contributes_to",
+      "directionality": "forward",
+      "support_level": "background_hypothesis",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Survey indicators can contribute to overall financial conditions.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_004",
+      "source_checkpoint_id": "checkpoint_4",
+      "target_checkpoint_id": "checkpoint_5",
+      "relationship": "counteracts",
+      "directionality": "counteracting",
+      "support_level": "background_hypothesis",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Global financial conditions can counteract overall financial conditions.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_005",
+      "source_checkpoint_id": "checkpoint_5",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "contributes_to",
+      "directionality": "forward",
+      "support_level": "background_hypothesis",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Financial conditions can influence the monthly financial-stress-index change.",
+      "terminal_to_target_bridge": true
+    }
+  ],
+  "conditional_paths": [
+    {
+      "id": "path_1",
+      "factor_ids": [
+        "checkpoint_1",
+        "checkpoint_2",
+        "checkpoint_5"
+      ],
+      "edge_ids": [
+        "edge_001",
+        "edge_002",
+        "edge_005"
+      ],
+      "relationships": [
+        "supports",
+        "contributes_to",
+        "contributes_to"
+      ],
+      "path_role": "main_path",
+      "conditional_mechanism": "Debt ceiling conditions may influence market liquidity. Market liquidity can contribute to overall financial conditions. Financial conditions can influence the monthly financial-stress-index change.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_2",
+      "factor_ids": [
+        "checkpoint_3",
+        "checkpoint_5"
+      ],
+      "edge_ids": [
+        "edge_003",
+        "edge_005"
+      ],
+      "relationships": [
+        "contributes_to",
+        "contributes_to"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "Survey indicators can contribute to overall financial conditions. Financial conditions can influence the monthly financial-stress-index change.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_3",
+      "factor_ids": [
+        "checkpoint_4",
+        "checkpoint_5"
+      ],
+      "edge_ids": [
+        "edge_004",
+        "edge_005"
+      ],
+      "relationships": [
+        "counteracts",
+        "contributes_to"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "Global financial conditions can counteract overall financial conditions. Financial conditions can influence the monthly financial-stress-index change.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    }
+  ],
+  "target_bridge": {
+    "id": "target_bridge",
+    "mechanism": "Map only currently supported paths into the current target period and exact metric.",
+    "magnitude_requirement": "Current numerical evidence must support the relevant option boundary, not only the direction of change.",
+    "failure_signal": "The current baseline, target timing, or magnitude evidence does not support the proposed boundary crossing."
+  },
+  "competing_explanations": [],
+  "worked_procedure": [
+    "Lock the exact current target operation and baseline.",
+    "Fill the preserved factor nodes with current evidence.",
+    "Check each preserved directed edge and its timing condition.",
+    "Reject paths containing an unsupported or contradicted link.",
+    "Compare supported paths with current factors outside the graph.",
+    "Require current magnitude support before option mapping."
+  ],
+  "topology_contract": {
+    "path_order_generated_by_model": false,
+    "edge_direction_generated_by_model": false,
+    "source_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_5"
+    ],
+    "source_edge_ids": [
+      "edge_001",
+      "edge_002",
+      "edge_003",
+      "edge_004",
+      "edge_005"
+    ]
+  },
+  "template_sha256": "9c1005c8cf8035e561ac810bbaefb6a3c165cce5d2f11ebc60b1a58d94eef632"
+}

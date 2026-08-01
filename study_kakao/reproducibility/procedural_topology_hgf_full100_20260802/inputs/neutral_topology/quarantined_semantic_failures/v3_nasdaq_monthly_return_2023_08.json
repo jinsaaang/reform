@@ -1,0 +1,185 @@
+{
+  "schema_version": "outcome_neutral_topology_template_v2",
+  "source_question_id": "v3_nasdaq_monthly_return_2023_08",
+  "source_blueprint_sha256": "3e7da32298bdaeb1ec2d70404b7590c35c56f84dc50dc9bb30bec25431a8bffc",
+  "target_operation": "monthly NASDAQ Composite return",
+  "factor_checks": [
+    {
+      "id": "checkpoint_1",
+      "causal_role": "driver",
+      "factor": "Preceding market trend",
+      "state_question": "For the current target period, What current condition the preceding market trend?",
+      "mechanism": "If there current condition a preceding market trend, it establishes a baseline context.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "medium"
+    },
+    {
+      "id": "checkpoint_2",
+      "causal_role": "driver",
+      "factor": "Recent Nasdaq trend",
+      "state_question": "For the current target period, What has been the recent Nasdaq trend?",
+      "mechanism": "If there has been a recent Nasdaq trend, it introduces a dynamic element.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "strong"
+    },
+    {
+      "id": "checkpoint_3",
+      "causal_role": "mediator",
+      "factor": "Offsetting performance",
+      "state_question": "For the current target period, To what extent has recent performance offset earlier trends?",
+      "mechanism": "If recent performance offsets earlier trends, it modifies the overall market sentiment.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "medium"
+    },
+    {
+      "id": "checkpoint_4",
+      "causal_role": "mediator",
+      "factor": "Month-to-date performance context",
+      "state_question": "For the current target period, What is the month-to-date performance context?",
+      "mechanism": "If the month-to-date performance context is established, it provides an input for the final outcome.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "medium"
+    }
+  ],
+  "topology_edges": [
+    {
+      "id": "edge_001",
+      "source_checkpoint_id": "checkpoint_2",
+      "target_checkpoint_id": "checkpoint_3",
+      "relationship": "contributes_to",
+      "directionality": "forward",
+      "support_level": "evidence_synthesized",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "A recent Nasdaq trend may contribute to the degree of offsetting performance.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_002",
+      "source_checkpoint_id": "checkpoint_1",
+      "target_checkpoint_id": "checkpoint_4",
+      "relationship": "contributes_to",
+      "directionality": "forward",
+      "support_level": "evidence_synthesized",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The preceding market trend may contribute to the month-to-date performance context.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_003",
+      "source_checkpoint_id": "checkpoint_3",
+      "target_checkpoint_id": "checkpoint_4",
+      "relationship": "contributes_to",
+      "directionality": "forward",
+      "support_level": "evidence_synthesized",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The degree of offsetting performance may contribute to the month-to-date performance context.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_004",
+      "source_checkpoint_id": "checkpoint_4",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "contributes_to",
+      "directionality": "forward",
+      "support_level": "evidence_synthesized",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The month-to-date performance context may contribute to the monthly NASDAQ Composite return.",
+      "terminal_to_target_bridge": true
+    }
+  ],
+  "conditional_paths": [
+    {
+      "id": "path_1",
+      "factor_ids": [
+        "checkpoint_1",
+        "checkpoint_4"
+      ],
+      "edge_ids": [
+        "edge_002",
+        "edge_004"
+      ],
+      "relationships": [
+        "contributes_to",
+        "contributes_to"
+      ],
+      "path_role": "main_path",
+      "conditional_mechanism": "The preceding market trend may contribute to the month-to-date performance context. The month-to-date performance context may contribute to the monthly NASDAQ Composite return.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_2",
+      "factor_ids": [
+        "checkpoint_2",
+        "checkpoint_3",
+        "checkpoint_4"
+      ],
+      "edge_ids": [
+        "edge_001",
+        "edge_003",
+        "edge_004"
+      ],
+      "relationships": [
+        "contributes_to",
+        "contributes_to",
+        "contributes_to"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "A recent Nasdaq trend may contribute to the degree of offsetting performance. The degree of offsetting performance may contribute to the month-to-date performance context. The month-to-date performance context may contribute to the monthly NASDAQ Composite return.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    }
+  ],
+  "target_bridge": {
+    "id": "target_bridge",
+    "mechanism": "Map only currently supported paths into the current target period and exact metric.",
+    "magnitude_requirement": "Current numerical evidence must support the relevant option boundary, not only the direction of change.",
+    "failure_signal": "The current baseline, target timing, or magnitude evidence does not support the proposed boundary crossing."
+  },
+  "competing_explanations": [],
+  "worked_procedure": [
+    "Lock the exact current target operation and baseline.",
+    "Fill the preserved factor nodes with current evidence.",
+    "Check each preserved directed edge and its timing condition.",
+    "Reject paths containing an unsupported or contradicted link.",
+    "Compare supported paths with current factors outside the graph.",
+    "Require current magnitude support before option mapping."
+  ],
+  "topology_contract": {
+    "path_order_generated_by_model": false,
+    "edge_direction_generated_by_model": false,
+    "source_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4"
+    ],
+    "source_edge_ids": [
+      "edge_001",
+      "edge_002",
+      "edge_003",
+      "edge_004"
+    ]
+  },
+  "template_sha256": "fd9013abbf0afd1ea12e0d404d547bb8a60238b2cc4186701fd7cab61682be43"
+}

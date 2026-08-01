@@ -1,0 +1,395 @@
+{
+  "schema_version": "outcome_neutral_topology_template_v2",
+  "source_question_id": "v3_brent_monthly_return_2024_01",
+  "source_blueprint_sha256": "8f1e0b23da3fb8f22da5c016801f3a60fed26c3379652f88f66596d8921c775e",
+  "target_operation": "monthly Brent price return",
+  "factor_checks": [
+    {
+      "id": "checkpoint_1",
+      "causal_role": "counterevidence",
+      "factor": "Global Demand and Supply Concerns",
+      "state_question": "For the current target period, Are there concerns about weak global demand and oversupply?",
+      "mechanism": "If concerns about weak global demand and oversupply are present, this may influence the target metric.",
+      "effect_if_active": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_2",
+      "causal_role": "counterevidence",
+      "factor": "EIA Brent Crude Price Report",
+      "state_question": "For the current target period, What does the latest EIA report indicate about Brent crude oil prices?",
+      "mechanism": "The findings in the EIA report on Brent crude oil prices may influence the target metric.",
+      "effect_if_active": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_3",
+      "causal_role": "driver",
+      "factor": "OPEC+ Market Management",
+      "state_question": "For the current target period, Is OPEC+ continuing its market management policies?",
+      "mechanism": "OPEC+ market management actions may influence the target metric.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_4",
+      "causal_role": "driver",
+      "factor": "Houthi Red Sea Activity",
+      "state_question": "For the current target period, Is there an intensification of Houthi activity impacting Red Sea shipping?",
+      "mechanism": "If Houthi activity impacting Red Sea shipping intensifies, this may influence geopolitical risk perceptions and market conditions.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_5",
+      "causal_role": "mediator",
+      "factor": "Oil Price Reaction to Tensions",
+      "state_question": "For the current target period, Are oil prices reacting to Middle East tensions?",
+      "mechanism": "If oil prices begin to rise due to Middle East tensions, this may amplify shifts in market sentiment regarding supply concerns.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_6",
+      "causal_role": "mediator",
+      "factor": "US/UK Retaliatory Strikes",
+      "state_question": "For the current target period, Are there US and UK retaliatory strikes against Houthis?",
+      "mechanism": "If US and UK retaliatory strikes occur, this may lead to current condition risk perceptions for shipping in the region.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_7",
+      "causal_role": "mediator",
+      "factor": "Red Sea Shipping Avoidance",
+      "state_question": "For the current target period, Are tankers beginning to avoid the Red Sea?",
+      "mechanism": "If tankers begin to avoid the Red Sea, this may lead to current condition shipping times and costs, influencing market sentiment towards supply concerns.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_8",
+      "causal_role": "mediator",
+      "factor": "Market Sentiment Shift",
+      "state_question": "For the current target period, Is there a shift in market sentiment towards supply concerns?",
+      "mechanism": "A shift in market sentiment towards supply concerns may lead to an escalated perception of supply scarcity.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_9",
+      "causal_role": "mediator",
+      "factor": "Supply Scarcity Perception",
+      "state_question": "For the current target period, Is there an escalated perception of supply scarcity?",
+      "mechanism": "An escalated perception of supply scarcity may influence the target metric.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    }
+  ],
+  "topology_edges": [
+    {
+      "id": "edge_001",
+      "source_checkpoint_id": "checkpoint_4",
+      "target_checkpoint_id": "checkpoint_5",
+      "relationship": "triggers",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If Houthi activity impacting Red Sea shipping intensifies, this may trigger a rise in oil prices due to geopolitical risk.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_002",
+      "source_checkpoint_id": "checkpoint_4",
+      "target_checkpoint_id": "checkpoint_6",
+      "relationship": "triggers",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If Houthi activity impacting Red Sea shipping intensifies, this may trigger retaliatory strikes.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_003",
+      "source_checkpoint_id": "checkpoint_6",
+      "target_checkpoint_id": "checkpoint_7",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If US and UK retaliatory strikes occur, this may cause tankers to avoid the Red Sea.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_004",
+      "source_checkpoint_id": "checkpoint_7",
+      "target_checkpoint_id": "checkpoint_8",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If tankers begin to avoid the Red Sea, this may cause a shift in market sentiment towards supply concerns.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_005",
+      "source_checkpoint_id": "checkpoint_5",
+      "target_checkpoint_id": "checkpoint_8",
+      "relationship": "amplifies",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If oil prices begin to rise due to Middle East tensions, this may amplify a shift in market sentiment towards supply concerns.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_006",
+      "source_checkpoint_id": "checkpoint_8",
+      "target_checkpoint_id": "checkpoint_9",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If there is a shift in market sentiment towards supply concerns, this may cause an escalated perception of supply scarcity.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_007",
+      "source_checkpoint_id": "checkpoint_9",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If there is an escalated perception of supply scarcity, this may influence the monthly Brent price return.",
+      "terminal_to_target_bridge": true
+    },
+    {
+      "id": "edge_008",
+      "source_checkpoint_id": "checkpoint_1",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "inhibits",
+      "directionality": "counteracting",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If concerns about weak global demand and oversupply are present, this may influence the monthly Brent price return.",
+      "terminal_to_target_bridge": true
+    },
+    {
+      "id": "edge_009",
+      "source_checkpoint_id": "checkpoint_2",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "inhibits",
+      "directionality": "counteracting",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The findings in the EIA report on Brent crude oil prices may influence the monthly Brent price return.",
+      "terminal_to_target_bridge": true
+    },
+    {
+      "id": "edge_010",
+      "source_checkpoint_id": "checkpoint_3",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "enables",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "OPEC+ market management actions may influence the monthly Brent price return.",
+      "terminal_to_target_bridge": true
+    }
+  ],
+  "conditional_paths": [
+    {
+      "id": "path_1",
+      "factor_ids": [
+        "checkpoint_1"
+      ],
+      "edge_ids": [
+        "edge_008"
+      ],
+      "relationships": [
+        "inhibits"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "If concerns about weak global demand and oversupply are present, this may influence the monthly Brent price return.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_2",
+      "factor_ids": [
+        "checkpoint_2"
+      ],
+      "edge_ids": [
+        "edge_009"
+      ],
+      "relationships": [
+        "inhibits"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "The findings in the EIA report on Brent crude oil prices may influence the monthly Brent price return.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_3",
+      "factor_ids": [
+        "checkpoint_3"
+      ],
+      "edge_ids": [
+        "edge_010"
+      ],
+      "relationships": [
+        "enables"
+      ],
+      "path_role": "main_path",
+      "conditional_mechanism": "OPEC+ market management actions may influence the monthly Brent price return.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_4",
+      "factor_ids": [
+        "checkpoint_4",
+        "checkpoint_5",
+        "checkpoint_8",
+        "checkpoint_9"
+      ],
+      "edge_ids": [
+        "edge_001",
+        "edge_005",
+        "edge_006",
+        "edge_007"
+      ],
+      "relationships": [
+        "triggers",
+        "amplifies",
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If Houthi activity impacting Red Sea shipping intensifies, this may trigger a rise in oil prices due to geopolitical risk. If oil prices begin to rise due to Middle East tensions, this may amplify a shift in market sentiment towards supply concerns. If there is a shift in market sentiment towards supply concerns, this may cause an escalated perception of supply scarcity. If there is an escalated perception of supply scarcity, this may influence the monthly Brent price return.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_5",
+      "factor_ids": [
+        "checkpoint_4",
+        "checkpoint_6",
+        "checkpoint_7",
+        "checkpoint_8",
+        "checkpoint_9"
+      ],
+      "edge_ids": [
+        "edge_002",
+        "edge_003",
+        "edge_004",
+        "edge_006",
+        "edge_007"
+      ],
+      "relationships": [
+        "triggers",
+        "causes",
+        "causes",
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If Houthi activity impacting Red Sea shipping intensifies, this may trigger retaliatory strikes. If US and UK retaliatory strikes occur, this may cause tankers to avoid the Red Sea. If tankers begin to avoid the Red Sea, this may cause a shift in market sentiment towards supply concerns. If there is a shift in market sentiment towards supply concerns, this may cause an escalated perception of supply scarcity. If there is an escalated perception of supply scarcity, this may influence the monthly Brent price return.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    }
+  ],
+  "target_bridge": {
+    "id": "target_bridge",
+    "mechanism": "Map only currently supported paths into the current target period and exact metric.",
+    "magnitude_requirement": "Current numerical evidence must support the relevant option boundary, not only the direction of change.",
+    "failure_signal": "The current baseline, target timing, or magnitude evidence does not support the proposed boundary crossing."
+  },
+  "competing_explanations": [],
+  "worked_procedure": [
+    "Lock the exact current target operation and baseline.",
+    "Fill the preserved factor nodes with current evidence.",
+    "Check each preserved directed edge and its timing condition.",
+    "Reject paths containing an unsupported or contradicted link.",
+    "Compare supported paths with current factors outside the graph.",
+    "Require current magnitude support before option mapping."
+  ],
+  "topology_contract": {
+    "path_order_generated_by_model": false,
+    "edge_direction_generated_by_model": false,
+    "source_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_5",
+      "checkpoint_6",
+      "checkpoint_7",
+      "checkpoint_8",
+      "checkpoint_9"
+    ],
+    "source_edge_ids": [
+      "edge_001",
+      "edge_002",
+      "edge_003",
+      "edge_004",
+      "edge_005",
+      "edge_006",
+      "edge_007",
+      "edge_008",
+      "edge_009",
+      "edge_010"
+    ]
+  },
+  "template_sha256": "022149bd1aced5278fc1079c1b0be5a0b1a3b927330448b32defed14676f994c"
+}

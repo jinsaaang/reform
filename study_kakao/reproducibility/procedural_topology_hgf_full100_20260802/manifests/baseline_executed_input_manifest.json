@@ -1,0 +1,87 @@
+{
+  "schema_version": "baseline_sanitation_full100_manifest_v1_2",
+  "output_root": "/tmp/hgf-main-r8LLSr/study_kakao/runs/baseline_sanitation_full100_v1_2_20260802",
+  "methods": [
+    "case_memory",
+    "direct_dag"
+  ],
+  "selection": {
+    "path": "/tmp/hgf-main-r8LLSr/study_kakao/data/questions/selection.json",
+    "sha256": "13e18cfd89300e819c1dd0a35450caa1a3cd7fa8dededa1b6c83cfffbff7eba9",
+    "question_count": 100
+  },
+  "balanced40_reporting_subset": {
+    "path": "/tmp/hgf-main-r8LLSr/study_kakao/data/questions/selection_balanced_40.json",
+    "sha256": "fe43853bd6601b4f8fec4de6bc722f0f5bab583f66075eb918538de807f34233",
+    "question_count": 40,
+    "derivation": "filtered from complete full100 results only"
+  },
+  "frozen_topology": {
+    "path": "/tmp/hgf-main-r8LLSr/study_kakao/runs/baseline_sanitation_v1_20260802_r3/frozen_outcome_neutral_topology/manifest.json",
+    "sha256": "1bf536f603e53a358c6332ef532939713ee6b696b612be3750e4d0a225e51fcc"
+  },
+  "source_hashes": {
+    "baseline_sanitation_v1": "2d31c994e2891901eaa3e86c9137ad0415c86143e7d84d9411cbce6076ae1201",
+    "baseline_sanitation_v1_1": "61a2e4659daa5cb2e715910992d024b93d86f71c21e772620f7c2d1e713f22ba",
+    "baseline_sanitation_v1_2": "5278473534c17253a237e60daa9f38ac5c26725f223d079ad3768518853c99e2",
+    "baseline_admission_audit_v1_2": "d125ef7b023a83b64777e1f766487f5d8ff1dcc95c9fc5970cd43b1a71ff533c",
+    "baseline_core": "1229246e56d63ee51334621d9b875a5db95d79c16fe91e0de7d5cc60733b6a95",
+    "raw_audit": "ea30eb9f2fde44561194d6f1bac51e42fb54ab7287a18a58774344cd060f2303",
+    "neutral_topology": "17a302dd26b0949dd09cad072f08ff2400f78f7c60e7e2ab7e98a29be11e83ba"
+  },
+  "model_configs": {
+    "google/gemini-2.5-flash-lite": {
+      "provider": "google-ai-studio",
+      "reasoning_effort": "medium",
+      "max_output_tokens": 16000,
+      "evidence_manifest": "/tmp/hgf-main-r8LLSr/study_kakao/runs/paper_canonical_v2_20260801/model_evidence/google_gemini-2.5-flash-lite/manifest.json",
+      "evidence_manifest_sha256": "e5b20123b9abbff412c8e89cbb6ba4caab0f61fb899e63c165d4f59dba8461e4",
+      "retrieval_manifest": "/tmp/hgf-main-r8LLSr/study_kakao/runs/paper_canonical_v2_20260801/model_evidence/google_gemini-2.5-flash-lite/retrieval_manifest.json",
+      "retrieval_manifest_sha256": "85eeb9ae141eca881fe5740b80e435e0587880e2d18ba5440e20d6135ff8e7ec"
+    },
+    "openai/gpt-5-mini": {
+      "provider": "openai",
+      "reasoning_effort": "medium",
+      "max_output_tokens": 16000,
+      "evidence_manifest": "/tmp/hgf-main-r8LLSr/study_kakao/runs/paper_canonical_v2_20260801/model_evidence/openai_gpt-5-mini/manifest.json",
+      "evidence_manifest_sha256": "ba62dbefadda65405a09490db83817f40a923849bd5bb83bd66edce5b1563f5c",
+      "retrieval_manifest": "/tmp/hgf-main-r8LLSr/study_kakao/runs/paper_canonical_v2_20260801/model_evidence/openai_gpt-5-mini/retrieval_manifest.json",
+      "retrieval_manifest_sha256": "f22bcecfc86673dd82b6f54ecb20725a3e4a3cef90f5b3012553c4dd04297e66"
+    },
+    "deepseek/deepseek-v3.2": {
+      "provider": "baidu",
+      "reasoning_effort": "medium",
+      "max_output_tokens": 16000,
+      "evidence_manifest": "/tmp/hgf-main-r8LLSr/study_kakao/runs/paper_canonical_v2_20260801/model_evidence/deepseek_deepseek-v3.2/manifest.json",
+      "evidence_manifest_sha256": "82373ec3ef7f12ab130e67bc2b579c006699d3c39bf6a81fa9fef860ec23882b",
+      "retrieval_manifest": "/tmp/hgf-main-r8LLSr/study_kakao/runs/paper_canonical_v2_20260801/model_evidence/deepseek_deepseek-v3.2/retrieval_manifest.json",
+      "retrieval_manifest_sha256": "3bd165b8160cfa41809fe734a3834b17158a47bc14ec8da84701560054a2c570"
+    },
+    "meta-llama/llama-4-maverick": {
+      "provider": "deepinfra/base",
+      "reasoning_effort": "none",
+      "max_output_tokens": 16000,
+      "evidence_manifest": "/tmp/hgf-main-r8LLSr/study_kakao/runs/paper_canonical_v2_20260801/model_evidence/meta-llama_llama-4-maverick/manifest.json",
+      "evidence_manifest_sha256": "a230c78559695cac9b0ed22c3caee13b83256def6fcfbc516d0391b57b70dc49",
+      "retrieval_manifest": "/tmp/hgf-main-r8LLSr/study_kakao/runs/paper_canonical_v2_20260801/model_evidence/meta-llama_llama-4-maverick/retrieval_manifest.json",
+      "retrieval_manifest_sha256": "7b1d0427db166f6017461e25c746067d9422b851ca5111df93e1c02906a37bbf"
+    },
+    "minimax/minimax-m2.5": {
+      "provider": "friendli",
+      "reasoning_effort": "medium",
+      "max_output_tokens": 32768,
+      "evidence_manifest": "/tmp/hgf-main-r8LLSr/study_kakao/runs/paper_canonical_v2_20260801/additional_model_evidence/minimax_minimax-m2.5_friendli/manifest.json",
+      "evidence_manifest_sha256": "79e16d3ecc44b76bcd1073e87be095b21c40a6a0549b48c085d4992ef5a6aa16",
+      "retrieval_manifest": "/tmp/hgf-main-r8LLSr/study_kakao/runs/paper_canonical_v2_20260801/additional_model_evidence/minimax_minimax-m2.5_friendli/retrieval_manifest.json",
+      "retrieval_manifest_sha256": "4c9c8ed5fde02cfcbdac0fc86d57ef458304d0a0c10d8ba98095ea425ef39323"
+    }
+  },
+  "generation_policy": {
+    "run_seed": 0,
+    "provider_fallback": false,
+    "baseline_fallback": false,
+    "probability_pooling": false,
+    "posterior_adjustment": false,
+    "cross_method_prediction_reuse": false
+  }
+}

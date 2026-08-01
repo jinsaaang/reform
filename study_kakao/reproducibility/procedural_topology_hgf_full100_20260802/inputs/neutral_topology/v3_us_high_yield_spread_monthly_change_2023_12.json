@@ -1,0 +1,319 @@
+{
+  "schema_version": "outcome_neutral_topology_template_v2",
+  "source_question_id": "v3_us_high_yield_spread_monthly_change_2023_12",
+  "source_blueprint_sha256": "8341e682f2406a149fc7191ac0fe59c6b25fcd8ff8e708f83bdd22884658c33d",
+  "target_operation": "monthly high-yield spread change",
+  "factor_checks": [
+    {
+      "id": "checkpoint_1",
+      "causal_role": "driver",
+      "factor": "Credit Market Liquidity",
+      "state_question": "What is the current state of credit market liquidity?",
+      "mechanism": "If credit market liquidity is elevated, it may support demand for credit instruments.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "strong"
+    },
+    {
+      "id": "checkpoint_2",
+      "causal_role": "driver",
+      "factor": "Inflation Trend",
+      "state_question": "What is the current trend in inflation data?",
+      "mechanism": "If inflation data indicates cooling, this may influence monetary policy considerations.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "strong"
+    },
+    {
+      "id": "checkpoint_3",
+      "causal_role": "mediator",
+      "factor": "Monetary Policy Stance",
+      "state_question": "What is the current stance of monetary policy?",
+      "mechanism": "If the monetary policy stance is steady, it may influence market uncertainty.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "strong"
+    },
+    {
+      "id": "checkpoint_4",
+      "causal_role": "mediator",
+      "factor": "Perceived Credit Risk",
+      "state_question": "What is the current level of perceived credit risk?",
+      "mechanism": "If perceived credit risk is reduced, this may support demand for credit instruments.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_5",
+      "causal_role": "counterevidence",
+      "factor": "Rate Cut Expectations",
+      "state_question": "What are the current expectations regarding imminent rate cuts?",
+      "mechanism": "If expectations of imminent rate cuts are tempered, this may influence risk appetite.",
+      "effect_if_active": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "strong"
+    },
+    {
+      "id": "checkpoint_6",
+      "causal_role": "mediator",
+      "factor": "High-Yield Credit Demand Conditions",
+      "state_question": "What are the current conditions supporting demand for high-yield credit?",
+      "mechanism": "If current conditions support demand for high-yield credit, this may influence the monthly high-yield spread change.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    }
+  ],
+  "topology_edges": [
+    {
+      "id": "edge_001",
+      "source_checkpoint_id": "checkpoint_2",
+      "target_checkpoint_id": "checkpoint_3",
+      "relationship": "supports",
+      "directionality": "forward",
+      "support_level": "evidence_synthesized",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If inflation data indicates cooling, this may influence the monetary policy stance.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_002",
+      "source_checkpoint_id": "checkpoint_3",
+      "target_checkpoint_id": "checkpoint_4",
+      "relationship": "contributes_to",
+      "directionality": "forward",
+      "support_level": "background_hypothesis",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If the monetary policy stance is steady, this may influence perceived credit risk.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_003",
+      "source_checkpoint_id": "checkpoint_2",
+      "target_checkpoint_id": "checkpoint_4",
+      "relationship": "contributes_to",
+      "directionality": "forward",
+      "support_level": "background_hypothesis",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If inflation data indicates cooling, this may influence perceived credit risk.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_004",
+      "source_checkpoint_id": "checkpoint_3",
+      "target_checkpoint_id": "checkpoint_5",
+      "relationship": "followed_by",
+      "directionality": "forward",
+      "support_level": "evidence_synthesized",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If the monetary policy stance is steady, this may influence expectations regarding imminent rate cuts.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_005",
+      "source_checkpoint_id": "checkpoint_4",
+      "target_checkpoint_id": "checkpoint_6",
+      "relationship": "enables",
+      "directionality": "forward",
+      "support_level": "background_hypothesis",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If perceived credit risk is reduced, this may influence conditions supporting demand for high-yield credit.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_006",
+      "source_checkpoint_id": "checkpoint_5",
+      "target_checkpoint_id": "checkpoint_6",
+      "relationship": "inhibits",
+      "directionality": "counteracting",
+      "support_level": "background_hypothesis",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If expectations of imminent rate cuts are tempered, this may influence conditions supporting demand for high-yield credit.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_007",
+      "source_checkpoint_id": "checkpoint_1",
+      "target_checkpoint_id": "checkpoint_6",
+      "relationship": "enables",
+      "directionality": "forward",
+      "support_level": "background_hypothesis",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If credit market liquidity is elevated, this may influence conditions supporting demand for high-yield credit.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_008",
+      "source_checkpoint_id": "checkpoint_6",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "is_consistent_with",
+      "directionality": "forward",
+      "support_level": "background_hypothesis",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If current conditions support demand for high-yield credit, this may be consistent with the monthly high-yield spread change.",
+      "terminal_to_target_bridge": true
+    }
+  ],
+  "conditional_paths": [
+    {
+      "id": "path_1",
+      "factor_ids": [
+        "checkpoint_1",
+        "checkpoint_6"
+      ],
+      "edge_ids": [
+        "edge_007",
+        "edge_008"
+      ],
+      "relationships": [
+        "enables",
+        "is_consistent_with"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If credit market liquidity is elevated, this may influence conditions supporting demand for high-yield credit. If current conditions support demand for high-yield credit, this may be consistent with the monthly high-yield spread change.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_2",
+      "factor_ids": [
+        "checkpoint_2",
+        "checkpoint_3",
+        "checkpoint_4",
+        "checkpoint_6"
+      ],
+      "edge_ids": [
+        "edge_001",
+        "edge_002",
+        "edge_005",
+        "edge_008"
+      ],
+      "relationships": [
+        "supports",
+        "contributes_to",
+        "enables",
+        "is_consistent_with"
+      ],
+      "path_role": "main_path",
+      "conditional_mechanism": "If inflation data indicates cooling, this may influence the monetary policy stance. If the monetary policy stance is steady, this may influence perceived credit risk. If perceived credit risk is reduced, this may influence conditions supporting demand for high-yield credit. If current conditions support demand for high-yield credit, this may be consistent with the monthly high-yield spread change.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_3",
+      "factor_ids": [
+        "checkpoint_2",
+        "checkpoint_3",
+        "checkpoint_5",
+        "checkpoint_6"
+      ],
+      "edge_ids": [
+        "edge_001",
+        "edge_004",
+        "edge_006",
+        "edge_008"
+      ],
+      "relationships": [
+        "supports",
+        "followed_by",
+        "inhibits",
+        "is_consistent_with"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "If inflation data indicates cooling, this may influence the monetary policy stance. If the monetary policy stance is steady, this may influence expectations regarding imminent rate cuts. If expectations of imminent rate cuts are tempered, this may influence conditions supporting demand for high-yield credit. If current conditions support demand for high-yield credit, this may be consistent with the monthly high-yield spread change.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_4",
+      "factor_ids": [
+        "checkpoint_2",
+        "checkpoint_4",
+        "checkpoint_6"
+      ],
+      "edge_ids": [
+        "edge_003",
+        "edge_005",
+        "edge_008"
+      ],
+      "relationships": [
+        "contributes_to",
+        "enables",
+        "is_consistent_with"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "If inflation data indicates cooling, this may influence perceived credit risk. If perceived credit risk is reduced, this may influence conditions supporting demand for high-yield credit. If current conditions support demand for high-yield credit, this may be consistent with the monthly high-yield spread change.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    }
+  ],
+  "target_bridge": {
+    "id": "target_bridge",
+    "mechanism": "Map only currently supported paths into the current target period and exact metric.",
+    "magnitude_requirement": "Current numerical evidence must support the relevant option boundary, not only the direction of change.",
+    "failure_signal": "The current baseline, target timing, or magnitude evidence does not support the proposed boundary crossing."
+  },
+  "competing_explanations": [],
+  "worked_procedure": [
+    "Lock the exact current target operation and baseline.",
+    "Fill the preserved factor nodes with current evidence.",
+    "Check each preserved directed edge and its timing condition.",
+    "Reject paths containing an unsupported or contradicted link.",
+    "Compare supported paths with current factors outside the graph.",
+    "Require current magnitude support before option mapping."
+  ],
+  "topology_contract": {
+    "path_order_generated_by_model": false,
+    "edge_direction_generated_by_model": false,
+    "source_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_5",
+      "checkpoint_6"
+    ],
+    "source_edge_ids": [
+      "edge_001",
+      "edge_002",
+      "edge_003",
+      "edge_004",
+      "edge_005",
+      "edge_006",
+      "edge_007",
+      "edge_008"
+    ]
+  },
+  "template_sha256": "f9b7035b5ba4918ea355124b78434edef1403bfd78ea2cb23ca926f41390e242"
+}

@@ -1,0 +1,338 @@
+{
+  "schema_version": "outcome_neutral_topology_template_v2",
+  "source_question_id": "v3_us_industrial_production_monthly_growth_2024_09",
+  "source_blueprint_sha256": "0434c545a0aa86ac4bf32dde382a863230a4daf5c1fdd3500ed90874e2960f4d",
+  "target_operation": "monthly industrial-production growth",
+  "factor_checks": [
+    {
+      "id": "checkpoint_1",
+      "causal_role": "driver",
+      "factor": "ISM Manufacturing Index Level",
+      "state_question": "For the current target period, Is the ISM Manufacturing Index below 50?",
+      "mechanism": "If the ISM Manufacturing Index is below 50, it indicates a contractionary signal.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "strong"
+    },
+    {
+      "id": "checkpoint_2",
+      "causal_role": "driver",
+      "factor": "Manufacturing New Orders Trend",
+      "state_question": "For the current target period, Is there a weakening trend in manufacturing new orders?",
+      "mechanism": "A weakening trend in manufacturing new orders indicates underlying manufacturing weakness.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "strong"
+    },
+    {
+      "id": "checkpoint_3",
+      "causal_role": "driver",
+      "factor": "Manufacturing Contraction Duration",
+      "state_question": "Is U.S. manufacturing currently in a contractionary period?",
+      "mechanism": "Sustained manufacturing contraction supports an interpretation of widespread weakness.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "strong"
+    },
+    {
+      "id": "checkpoint_4",
+      "causal_role": "driver",
+      "factor": "Sector PMI Manufacturing Output",
+      "state_question": "For the current target period, Does sector PMI data indicate weak manufacturing output?",
+      "mechanism": "Weak manufacturing output indicated by sector PMI data reinforces the manufacturing signal.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "strong"
+    },
+    {
+      "id": "checkpoint_5",
+      "causal_role": "counterevidence",
+      "factor": "Industrial Production Rebound",
+      "state_question": "For the current target period, Has industrial production shown a rebound?",
+      "mechanism": "A rebound in industrial production may counter a narrative of persistent decline.",
+      "effect_if_active": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "strong"
+    },
+    {
+      "id": "checkpoint_6",
+      "causal_role": "mediator",
+      "factor": "Collective Manufacturing Weakness Signal",
+      "state_question": "For the current target period, Do collective indicators suggest underlying manufacturing weakness?",
+      "mechanism": "Underlying manufacturing weakness, as indicated by collective signals, may influence future production.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "medium"
+    },
+    {
+      "id": "checkpoint_7",
+      "causal_role": "mediator",
+      "factor": "Production Momentum from Weakness",
+      "state_question": "For the current target period, Has underlying weakness created negative momentum for production?",
+      "mechanism": "Negative production momentum may arise from underlying weakness.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    }
+  ],
+  "topology_edges": [
+    {
+      "id": "edge_001",
+      "source_checkpoint_id": "checkpoint_1",
+      "target_checkpoint_id": "checkpoint_6",
+      "relationship": "supports",
+      "directionality": "forward",
+      "support_level": "evidence_synthesized",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If the ISM Manufacturing Index is below 50, it contributes to the collective manufacturing weakness signal.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_002",
+      "source_checkpoint_id": "checkpoint_2",
+      "target_checkpoint_id": "checkpoint_6",
+      "relationship": "supports",
+      "directionality": "forward",
+      "support_level": "evidence_synthesized",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "A weakening trend in manufacturing new orders contributes to the collective manufacturing weakness signal.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_003",
+      "source_checkpoint_id": "checkpoint_3",
+      "target_checkpoint_id": "checkpoint_6",
+      "relationship": "supports",
+      "directionality": "forward",
+      "support_level": "evidence_synthesized",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Sustained manufacturing contraction contributes to the collective manufacturing weakness signal.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_004",
+      "source_checkpoint_id": "checkpoint_4",
+      "target_checkpoint_id": "checkpoint_6",
+      "relationship": "supports",
+      "directionality": "forward",
+      "support_level": "evidence_synthesized",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Weak manufacturing output indicated by sector PMI data contributes to the collective manufacturing weakness signal.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_005",
+      "source_checkpoint_id": "checkpoint_6",
+      "target_checkpoint_id": "checkpoint_7",
+      "relationship": "contributes_to",
+      "directionality": "forward",
+      "support_level": "background_hypothesis",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "If collective indicators suggest underlying manufacturing weakness, it may contribute to negative production momentum.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_006",
+      "source_checkpoint_id": "checkpoint_5",
+      "target_checkpoint_id": "checkpoint_7",
+      "relationship": "counteracts",
+      "directionality": "counteracting",
+      "support_level": "evidence_synthesized",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "A rebound in industrial production may counteract negative production momentum.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_007",
+      "source_checkpoint_id": "checkpoint_7",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "is_consistent_with",
+      "directionality": "forward",
+      "support_level": "background_hypothesis",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Negative production momentum may be consistent with the target metric's behavior.",
+      "terminal_to_target_bridge": true
+    }
+  ],
+  "conditional_paths": [
+    {
+      "id": "path_1",
+      "factor_ids": [
+        "checkpoint_1",
+        "checkpoint_6",
+        "checkpoint_7"
+      ],
+      "edge_ids": [
+        "edge_001",
+        "edge_005",
+        "edge_007"
+      ],
+      "relationships": [
+        "supports",
+        "contributes_to",
+        "is_consistent_with"
+      ],
+      "path_role": "main_path",
+      "conditional_mechanism": "If the ISM Manufacturing Index is below 50, it contributes to the collective manufacturing weakness signal. If collective indicators suggest underlying manufacturing weakness, it may contribute to negative production momentum. Negative production momentum may be consistent with the target metric's behavior.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_2",
+      "factor_ids": [
+        "checkpoint_2",
+        "checkpoint_6",
+        "checkpoint_7"
+      ],
+      "edge_ids": [
+        "edge_002",
+        "edge_005",
+        "edge_007"
+      ],
+      "relationships": [
+        "supports",
+        "contributes_to",
+        "is_consistent_with"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "A weakening trend in manufacturing new orders contributes to the collective manufacturing weakness signal. If collective indicators suggest underlying manufacturing weakness, it may contribute to negative production momentum. Negative production momentum may be consistent with the target metric's behavior.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_3",
+      "factor_ids": [
+        "checkpoint_3",
+        "checkpoint_6",
+        "checkpoint_7"
+      ],
+      "edge_ids": [
+        "edge_003",
+        "edge_005",
+        "edge_007"
+      ],
+      "relationships": [
+        "supports",
+        "contributes_to",
+        "is_consistent_with"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "Sustained manufacturing contraction contributes to the collective manufacturing weakness signal. If collective indicators suggest underlying manufacturing weakness, it may contribute to negative production momentum. Negative production momentum may be consistent with the target metric's behavior.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_4",
+      "factor_ids": [
+        "checkpoint_4",
+        "checkpoint_6",
+        "checkpoint_7"
+      ],
+      "edge_ids": [
+        "edge_004",
+        "edge_005",
+        "edge_007"
+      ],
+      "relationships": [
+        "supports",
+        "contributes_to",
+        "is_consistent_with"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "Weak manufacturing output indicated by sector PMI data contributes to the collective manufacturing weakness signal. If collective indicators suggest underlying manufacturing weakness, it may contribute to negative production momentum. Negative production momentum may be consistent with the target metric's behavior.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_5",
+      "factor_ids": [
+        "checkpoint_5",
+        "checkpoint_7"
+      ],
+      "edge_ids": [
+        "edge_006",
+        "edge_007"
+      ],
+      "relationships": [
+        "counteracts",
+        "is_consistent_with"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "A rebound in industrial production may counteract negative production momentum. Negative production momentum may be consistent with the target metric's behavior.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    }
+  ],
+  "target_bridge": {
+    "id": "target_bridge",
+    "mechanism": "Map only currently supported paths into the current target period and exact metric.",
+    "magnitude_requirement": "Current numerical evidence must support the relevant option boundary, not only the direction of change.",
+    "failure_signal": "The current baseline, target timing, or magnitude evidence does not support the proposed boundary crossing."
+  },
+  "competing_explanations": [],
+  "worked_procedure": [
+    "Lock the exact current target operation and baseline.",
+    "Fill the preserved factor nodes with current evidence.",
+    "Check each preserved directed edge and its timing condition.",
+    "Reject paths containing an unsupported or contradicted link.",
+    "Compare supported paths with current factors outside the graph.",
+    "Require current magnitude support before option mapping."
+  ],
+  "topology_contract": {
+    "path_order_generated_by_model": false,
+    "edge_direction_generated_by_model": false,
+    "source_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_5",
+      "checkpoint_6",
+      "checkpoint_7"
+    ],
+    "source_edge_ids": [
+      "edge_001",
+      "edge_002",
+      "edge_003",
+      "edge_004",
+      "edge_005",
+      "edge_006",
+      "edge_007"
+    ]
+  },
+  "template_sha256": "7ed944afb6f9f948240a8fdad6502cdfb4fa64a8d8d71b91d6b1d7b068ce7207"
+}

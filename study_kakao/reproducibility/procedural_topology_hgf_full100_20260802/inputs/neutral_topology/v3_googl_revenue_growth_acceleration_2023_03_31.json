@@ -1,0 +1,377 @@
+{
+  "schema_version": "outcome_neutral_topology_template_v2",
+  "source_question_id": "v3_googl_revenue_growth_acceleration_2023_03_31",
+  "source_blueprint_sha256": "1465a141099fdf8149894ee062fda649c1bb391c1429518242481c62adaebeea",
+  "target_operation": "quarterly revenue year-over-year growth acceleration",
+  "factor_checks": [
+    {
+      "id": "checkpoint_1",
+      "causal_role": "driver",
+      "factor": "Google Search Performance",
+      "state_question": "What is the current performance of Google Search?",
+      "mechanism": "If Google Search performance is stronger than anticipated, it can contribute to overall revenue.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_2",
+      "causal_role": "counterevidence",
+      "factor": "Search & Other Revenue Growth",
+      "state_question": "What is the current growth rate of Search & Other revenues?",
+      "mechanism": "If Search & Other revenues experience slower growth, it may act as a drag on overall revenue growth.",
+      "effect_if_active": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_3",
+      "causal_role": "driver",
+      "factor": "Google Cloud Profitability",
+      "state_question": "Is Google Cloud currently profitable?",
+      "mechanism": "If Google Cloud achieves profitability, it can contribute to overall revenue and offset weaker segments.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_4",
+      "causal_role": "counterevidence",
+      "factor": "YouTube Ad Revenue Growth",
+      "state_question": "What is the current year-over-year growth of YouTube ad revenue?",
+      "mechanism": "If YouTube ad revenue declines, it may act as a countervailing factor against overall revenue performance.",
+      "effect_if_active": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_5",
+      "causal_role": "driver",
+      "factor": "Advertising Market Conditions",
+      "state_question": "What are the current conditions in the advertising market and recession outlook?",
+      "mechanism": "If the advertising market is challenging or recession fears are present, cost-cutting measures may be implemented.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_6",
+      "causal_role": "mediator",
+      "factor": "Layoff Measures",
+      "state_question": "For the current target period, Are layoff measures being implemented?",
+      "mechanism": "If layoff measures are implemented as a cost-cutting strategy, they can contribute to improved financial efficiency.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_7",
+      "causal_role": "driver",
+      "factor": "Share Buyback Authorization",
+      "state_question": "For the current target period, Is a share buyback authorized?",
+      "mechanism": "If a share buyback is authorized, it may signal strong financial position and confidence, potentially influencing investor perception.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    },
+    {
+      "id": "checkpoint_8",
+      "causal_role": "mediator",
+      "factor": "Revenue Performance vs. Estimates",
+      "state_question": "What is the current revenue performance relative to estimates?",
+      "mechanism": "Current revenue performance relative to estimates is influenced by underlying business drivers and market conditions.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "weak"
+    }
+  ],
+  "topology_edges": [
+    {
+      "id": "edge_001",
+      "source_checkpoint_id": "checkpoint_5",
+      "target_checkpoint_id": "checkpoint_6",
+      "relationship": "triggers",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Challenging advertising market conditions and recession fears may trigger cost-cutting measures such as layoffs.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_002",
+      "source_checkpoint_id": "checkpoint_6",
+      "target_checkpoint_id": "checkpoint_8",
+      "relationship": "enables",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Implemented layoff measures, as a cost-cutting strategy, may contribute to improved financial efficiency, potentially influencing revenue estimates performance.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_003",
+      "source_checkpoint_id": "checkpoint_1",
+      "target_checkpoint_id": "checkpoint_8",
+      "relationship": "amplifies",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Stronger Google Search performance may amplify revenue estimates performance.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_004",
+      "source_checkpoint_id": "checkpoint_3",
+      "target_checkpoint_id": "checkpoint_8",
+      "relationship": "amplifies",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Google Cloud profitability may amplify revenue estimates performance.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_005",
+      "source_checkpoint_id": "checkpoint_4",
+      "target_checkpoint_id": "checkpoint_8",
+      "relationship": "inhibits",
+      "directionality": "counteracting",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "YouTube ad revenue declines may inhibit revenue estimates performance.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_006",
+      "source_checkpoint_id": "checkpoint_2",
+      "target_checkpoint_id": "checkpoint_8",
+      "relationship": "inhibits",
+      "directionality": "counteracting",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Slower Search & Other revenue growth may inhibit revenue estimates performance.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_007",
+      "source_checkpoint_id": "checkpoint_7",
+      "target_checkpoint_id": "checkpoint_8",
+      "relationship": "correlates",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Share buyback authorization may correlate with revenue estimates performance.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_008",
+      "source_checkpoint_id": "checkpoint_8",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "causes",
+      "directionality": "forward",
+      "support_level": "unknown",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "Current revenue performance relative to estimates may influence the target metric of quarterly revenue year-over-year growth acceleration.",
+      "terminal_to_target_bridge": true
+    }
+  ],
+  "conditional_paths": [
+    {
+      "id": "path_1",
+      "factor_ids": [
+        "checkpoint_1",
+        "checkpoint_8"
+      ],
+      "edge_ids": [
+        "edge_003",
+        "edge_008"
+      ],
+      "relationships": [
+        "amplifies",
+        "causes"
+      ],
+      "path_role": "main_path",
+      "conditional_mechanism": "Stronger Google Search performance may amplify revenue estimates performance. Current revenue performance relative to estimates may influence the target metric of quarterly revenue year-over-year growth acceleration.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_2",
+      "factor_ids": [
+        "checkpoint_2",
+        "checkpoint_8"
+      ],
+      "edge_ids": [
+        "edge_006",
+        "edge_008"
+      ],
+      "relationships": [
+        "inhibits",
+        "causes"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "Slower Search & Other revenue growth may inhibit revenue estimates performance. Current revenue performance relative to estimates may influence the target metric of quarterly revenue year-over-year growth acceleration.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_3",
+      "factor_ids": [
+        "checkpoint_3",
+        "checkpoint_8"
+      ],
+      "edge_ids": [
+        "edge_004",
+        "edge_008"
+      ],
+      "relationships": [
+        "amplifies",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "Google Cloud profitability may amplify revenue estimates performance. Current revenue performance relative to estimates may influence the target metric of quarterly revenue year-over-year growth acceleration.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_4",
+      "factor_ids": [
+        "checkpoint_4",
+        "checkpoint_8"
+      ],
+      "edge_ids": [
+        "edge_005",
+        "edge_008"
+      ],
+      "relationships": [
+        "inhibits",
+        "causes"
+      ],
+      "path_role": "counter_path",
+      "conditional_mechanism": "YouTube ad revenue declines may inhibit revenue estimates performance. Current revenue performance relative to estimates may influence the target metric of quarterly revenue year-over-year growth acceleration.",
+      "effect_if_active": "mixed",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_5",
+      "factor_ids": [
+        "checkpoint_5",
+        "checkpoint_6",
+        "checkpoint_8"
+      ],
+      "edge_ids": [
+        "edge_001",
+        "edge_002",
+        "edge_008"
+      ],
+      "relationships": [
+        "triggers",
+        "enables",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "Challenging advertising market conditions and recession fears may trigger cost-cutting measures such as layoffs. Implemented layoff measures, as a cost-cutting strategy, may contribute to improved financial efficiency, potentially influencing revenue estimates performance. Current revenue performance relative to estimates may influence the target metric of quarterly revenue year-over-year growth acceleration.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_6",
+      "factor_ids": [
+        "checkpoint_7",
+        "checkpoint_8"
+      ],
+      "edge_ids": [
+        "edge_007",
+        "edge_008"
+      ],
+      "relationships": [
+        "correlates",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "Share buyback authorization may correlate with revenue estimates performance. Current revenue performance relative to estimates may influence the target metric of quarterly revenue year-over-year growth acceleration.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    }
+  ],
+  "target_bridge": {
+    "id": "target_bridge",
+    "mechanism": "Map only currently supported paths into the current target period and exact metric.",
+    "magnitude_requirement": "Current numerical evidence must support the relevant option boundary, not only the direction of change.",
+    "failure_signal": "The current baseline, target timing, or magnitude evidence does not support the proposed boundary crossing."
+  },
+  "competing_explanations": [],
+  "worked_procedure": [
+    "Lock the exact current target operation and baseline.",
+    "Fill the preserved factor nodes with current evidence.",
+    "Check each preserved directed edge and its timing condition.",
+    "Reject paths containing an unsupported or contradicted link.",
+    "Compare supported paths with current factors outside the graph.",
+    "Require current magnitude support before option mapping."
+  ],
+  "topology_contract": {
+    "path_order_generated_by_model": false,
+    "edge_direction_generated_by_model": false,
+    "source_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_5",
+      "checkpoint_6",
+      "checkpoint_7",
+      "checkpoint_8"
+    ],
+    "source_edge_ids": [
+      "edge_001",
+      "edge_002",
+      "edge_003",
+      "edge_004",
+      "edge_005",
+      "edge_006",
+      "edge_007",
+      "edge_008"
+    ]
+  },
+  "template_sha256": "d74a5540ab708593c265ef0e5dac9f98005ccd72fc8a221341bed80b98854b63"
+}

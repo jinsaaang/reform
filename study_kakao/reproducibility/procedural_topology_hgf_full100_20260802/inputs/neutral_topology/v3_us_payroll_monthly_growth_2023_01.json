@@ -1,0 +1,185 @@
+{
+  "schema_version": "outcome_neutral_topology_template_v2",
+  "source_question_id": "v3_us_payroll_monthly_growth_2023_01",
+  "source_blueprint_sha256": "9c7fe40775d8b7556c54f476e22c23ef2c1adaf4d3290394b81b24d13f313523",
+  "target_operation": "monthly payroll growth",
+  "factor_checks": [
+    {
+      "id": "checkpoint_1",
+      "causal_role": "driver",
+      "factor": "Market Payroll Estimate",
+      "state_question": "What is the market estimate for the relevant current magnitude of payroll gains in the current target period?",
+      "mechanism": "The market estimate for payroll gains in the current target period is compared against the relevant current magnitude.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "strong"
+    },
+    {
+      "id": "checkpoint_2",
+      "causal_role": "mediator",
+      "factor": "Nonfarm Payroll Gain",
+      "state_question": "What is the relevant current magnitude of the nonfarm payroll gain for the current target period?",
+      "mechanism": "The nonfarm payroll gain for the current target period is evaluated relative to the market estimate.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "strong"
+    },
+    {
+      "id": "checkpoint_3",
+      "causal_role": "driver",
+      "factor": "Unemployment Rate",
+      "state_question": "What is the relevant current magnitude of the unemployment rate for the current target period?",
+      "mechanism": "The unemployment rate for the current target period is considered in relation to labor-market strength.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "strong"
+    },
+    {
+      "id": "checkpoint_4",
+      "causal_role": "mediator",
+      "factor": "Labor Market Strength",
+      "state_question": "Are the labor-market results for the current target period stronger than expected?",
+      "mechanism": "The assessment of labor-market strength is contingent on the current target metric.",
+      "effect_if_active": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must establish this node's state and timing for the target period.",
+      "failure_signal": "Current evidence contradicts the node state or leaves its required timing unresolved.",
+      "structural_support": "medium"
+    }
+  ],
+  "topology_edges": [
+    {
+      "id": "edge_001",
+      "source_checkpoint_id": "checkpoint_1",
+      "target_checkpoint_id": "checkpoint_2",
+      "relationship": "contrasts_with",
+      "directionality": "forward",
+      "support_level": "observed",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The market estimate for payroll gains contrasts with the actual nonfarm payroll gain for the current target period.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_002",
+      "source_checkpoint_id": "checkpoint_2",
+      "target_checkpoint_id": "checkpoint_4",
+      "relationship": "supports",
+      "directionality": "forward",
+      "support_level": "evidence_synthesized",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The nonfarm payroll gain for the current target period supports the assessment of labor-market strength.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_003",
+      "source_checkpoint_id": "checkpoint_3",
+      "target_checkpoint_id": "checkpoint_4",
+      "relationship": "supports",
+      "directionality": "forward",
+      "support_level": "evidence_synthesized",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The unemployment rate for the current target period supports the assessment of labor-market strength.",
+      "terminal_to_target_bridge": false
+    },
+    {
+      "id": "edge_004",
+      "source_checkpoint_id": "checkpoint_4",
+      "target_checkpoint_id": "target_bridge",
+      "relationship": "is_consistent_with",
+      "directionality": "forward",
+      "support_level": "evidence_synthesized",
+      "lag": "not specified",
+      "confidence": "not specified",
+      "conditional_mechanism": "The assessment of labor-market strength is consistent with the monthly payroll growth in the current target period.",
+      "terminal_to_target_bridge": true
+    }
+  ],
+  "conditional_paths": [
+    {
+      "id": "path_1",
+      "factor_ids": [
+        "checkpoint_1",
+        "checkpoint_2",
+        "checkpoint_4"
+      ],
+      "edge_ids": [
+        "edge_001",
+        "edge_002",
+        "edge_004"
+      ],
+      "relationships": [
+        "contrasts_with",
+        "supports",
+        "is_consistent_with"
+      ],
+      "path_role": "main_path",
+      "conditional_mechanism": "The market estimate for payroll gains contrasts with the actual nonfarm payroll gain for the current target period. The nonfarm payroll gain for the current target period supports the assessment of labor-market strength. The assessment of labor-market strength is consistent with the monthly payroll growth in the current target period.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    },
+    {
+      "id": "path_2",
+      "factor_ids": [
+        "checkpoint_3",
+        "checkpoint_4"
+      ],
+      "edge_ids": [
+        "edge_003",
+        "edge_004"
+      ],
+      "relationships": [
+        "supports",
+        "is_consistent_with"
+      ],
+      "path_role": "supporting_path",
+      "conditional_mechanism": "The unemployment rate for the current target period supports the assessment of labor-market strength. The assessment of labor-market strength is consistent with the monthly payroll growth in the current target period.",
+      "effect_if_active": "unknown",
+      "activation_condition": "Every retained node state and directed relationship is supported by current cutoff-safe evidence.",
+      "failure_conditions": [
+        "A required node or edge is contradicted or unverified.",
+        "A stronger current mechanism bypasses or dominates the path."
+      ]
+    }
+  ],
+  "target_bridge": {
+    "id": "target_bridge",
+    "mechanism": "Map only currently supported paths into the current target period and exact metric.",
+    "magnitude_requirement": "Current numerical evidence must support the relevant option boundary, not only the direction of change.",
+    "failure_signal": "The current baseline, target timing, or magnitude evidence does not support the proposed boundary crossing."
+  },
+  "competing_explanations": [],
+  "worked_procedure": [
+    "Lock the exact current target operation and baseline.",
+    "Fill the preserved factor nodes with current evidence.",
+    "Check each preserved directed edge and its timing condition.",
+    "Reject paths containing an unsupported or contradicted link.",
+    "Compare supported paths with current factors outside the graph.",
+    "Require current magnitude support before option mapping."
+  ],
+  "topology_contract": {
+    "path_order_generated_by_model": false,
+    "edge_direction_generated_by_model": false,
+    "source_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4"
+    ],
+    "source_edge_ids": [
+      "edge_001",
+      "edge_002",
+      "edge_003",
+      "edge_004"
+    ]
+  },
+  "template_sha256": "1b1e4833eb6cca7b6f558c2dc43f97085d88494b2da506de67b6ae16e30273f3"
+}
