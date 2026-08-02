@@ -4,6 +4,7 @@
 
 - Branch: `experiment/live-topology-hgf-v1`
 - Basis commit: `e8d6dc1`
+- Archived code, inputs, and result-summary commit: `576d556`
 - Method: Procedural Topology HGF with an answer-free worked reasoning check
 - Question set: `data/questions/selection.json`
 - Question set SHA256: `13e18cfd89300e819c1dd0a35450caa1a3cd7fa8dededa1b6c83cfffbff7eba9`
