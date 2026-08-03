@@ -4,7 +4,8 @@
 
 - Branch: `experiment/live-topology-hgf-v1`
 - Repository basis commit: `9353138350bb9ceb7230bb22f5fec6a8287a6124`
-- Canonical archive commit: `PENDING_FIRST_ARCHIVE_COMMIT`
+- Canonical archive commit: `8ae09cc223d5b3c93a17815c1cba8311fc24bb23`
+- Sync manifest commit: the follow-up commit containing this line
 - Method: Procedural Topology HGF
 - Bundle: `reproducibility/procedural_topology_hgf_canonical_v1_6_3_20260803`
 - Paper source to update later: `/home/kong/code/study_kakao/paper/main1.tex`
