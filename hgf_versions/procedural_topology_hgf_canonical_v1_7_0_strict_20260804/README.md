@@ -12,6 +12,9 @@ or above-range modal option:
 - `direction_only`: every option probability must be at most `0.50`.
 - `insufficient`: every option probability must be at most `0.45`.
 
+These caps apply only to three-option recent-range contracts. Binary and other
+contracts use ordinary normalized probabilities summing to `1.0`.
+
 No prediction, central estimate, mapped option, or probability is changed by
 code. The model receives the joint mapping and confidence constraints as
 validation feedback and must return a conforming forecast. Probability

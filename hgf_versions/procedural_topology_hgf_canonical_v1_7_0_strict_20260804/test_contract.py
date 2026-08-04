@@ -290,6 +290,68 @@ def _boundary_errors(
     return errors
 
 
+def _binary_boundary_payload(
+    *,
+    central: float,
+    mapped_option: str,
+    support: str,
+    probabilities: tuple[float, float],
+) -> dict[str, object]:
+    options = ["yes", "no"]
+    return {
+        "target_operation_check": "Exact target operation checked.",
+        "directional_signal": "uncertain",
+        "magnitude_assessment": {
+            "support": support,
+            "evidence_ids": ["e1"],
+            "rationale": "Magnitude support is explicitly assessed.",
+        },
+        "latent_target_estimate": {
+            "low": central - 1.0,
+            "central": central,
+            "high": central + 1.0,
+            "unit": "percent",
+            "basis": "Cutoff-safe evidence and a neutral anchor.",
+        },
+        "boundary_checks": [
+            {
+                "option": option,
+                "interval": "public interval",
+                "compatibility": "plausible",
+                "rationale": "Compared with the central estimate.",
+            }
+            for option in options
+        ],
+        "mapped_option": mapped_option,
+        "prediction": mapped_option,
+        "option_probabilities": [
+            {"option": option, "probability": probability}
+            for option, probability in zip(options, probabilities, strict=True)
+        ],
+        "uncertainty": "Uncertainty is high.",
+    }
+
+
+def _binary_boundary_errors(payload: dict[str, object]) -> list[str]:
+    _, errors = _validate_boundary_forecast(
+        payload,
+        options=["yes", "no"],
+        contract={
+            "predicate": {
+                "operator": ">=",
+                "threshold": -0.1,
+                "yes_interval": "[-0.1, +infinity)",
+                "no_interval": "(-infinity, -0.1)",
+            }
+        },
+        evidence_ids={"e1"},
+        reasoning_policy="boundary_only",
+        validation_policy="strict",
+        prospective_anchor_support="none",
+    )
+    return errors
+
+
 def test_weak_magnitude_allows_arithmetic_outer_mapping_with_low_confidence() -> None:
     payload = _boundary_payload(
         central=0.0,
@@ -345,3 +407,27 @@ def test_repair_feedback_fixes_probabilities_not_arithmetic_mapping() -> None:
     assert "fixes both mapped_option and prediction" in errors[0]
     assert "Change option_probabilities" in errors[0]
     assert "at or below 0.45" in errors[0]
+
+
+def test_binary_weak_support_does_not_apply_three_way_confidence_cap() -> None:
+    payload = _binary_boundary_payload(
+        central=0.0,
+        mapped_option="yes",
+        support="insufficient",
+        probabilities=(0.45, 0.45),
+    )
+    errors = _binary_boundary_errors(payload)
+    assert len(errors) == 1
+    assert "caps apply only to three-option recent-range contracts" in errors[0]
+    assert "sum to 1.0" in errors[0]
+    assert "Keep mapped_option and prediction at 'yes'" in errors[0]
+
+
+def test_binary_weak_support_accepts_a_normalized_modal_distribution() -> None:
+    payload = _binary_boundary_payload(
+        central=0.0,
+        mapped_option="yes",
+        support="insufficient",
+        probabilities=(0.51, 0.49),
+    )
+    assert _binary_boundary_errors(payload) == []

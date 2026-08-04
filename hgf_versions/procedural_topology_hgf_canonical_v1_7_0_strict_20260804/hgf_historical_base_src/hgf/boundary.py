@@ -362,6 +362,31 @@ def _validate_boundary_forecast(
         and bool(mapped_by_code)
         and mapped_by_code.strip().lower() != "within recent range"
     )
+    probability_total = sum(probabilities.values()) if probabilities else 0.0
+    weak_cap_misapplied_to_non_range = (
+        kind != "three_way_range"
+        and weak_cap is not None
+        and bool(probabilities)
+        and abs(probability_total - 1.0) > 0.011
+        and all(value <= weak_cap + 1e-9 for value in probabilities.values())
+    )
+    if weak_cap_misapplied_to_non_range:
+        # Replace the generic sum error with contract-specific repair feedback.
+        # The weak-support caps were introduced solely for three-option recent-
+        # range contracts and cannot form a valid binary distribution at 0.45.
+        errors = [
+            error
+            for error in errors
+            if not error.startswith("probabilities sum to ")
+        ]
+        errors.append(
+            "weak-support confidence caps apply only to three-option "
+            "recent-range contracts; this binary/non-range contract requires "
+            "option probabilities to sum to 1.0. Keep mapped_option and "
+            f"prediction at {mapped_by_code!r} and revise only "
+            "option_probabilities so they sum to 1.0 and that arithmetic "
+            "option is tied for or higher than every alternative"
+        )
     if (
         validation_policy == "strict"
         and expected_is_outer
@@ -606,7 +631,10 @@ def _call_boundary_mapping(
         "central estimate. When that option is below or above recent range and "
         "magnitude support is direction_only, keep the mapped option modal but "
         "cap every option probability at 0.50; when support is insufficient, cap "
-        "every option probability at 0.45. Reduce confidence rather than "
+        "every option probability at 0.45. These caps apply only to three-option "
+        "recent-range contracts. For binary or other contracts, probabilities "
+        "must sum to 1.0; do not cap both binary options at 0.45. Reduce "
+        "confidence rather than "
         "relabeling the estimate as within range or moving the estimate merely "
         "to enter that interval. For "
         "change, return, growth, or acceleration targets, identify both quantities "

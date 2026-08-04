@@ -22,6 +22,11 @@ and prediction, and change the probabilities so that arithmetic option is tied
 for or above every alternative. This prevents prediction/argmax repair
 oscillation without changing a model output in code.
 
+The `0.50`/`0.45` confidence caps are explicitly scoped to three-option
+recent-range contracts. Binary and other contracts retain the ordinary
+requirement that probabilities sum to `1.0`; contract-specific repair feedback
+prevents a model from applying the three-way cap to both binary options.
+
 ## Execution change
 
 `run_qwen_seed0.py` provides a persistent, resumable, two-trial maximum runner.
