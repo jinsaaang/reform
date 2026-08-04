@@ -404,7 +404,7 @@ def _write_run_manifest(
     overall = (status.get("final_summary") or {}).get("overall") or {}
     results_path = output_dir / "results.json"
     lines = [
-        "# Qwen Plus — canonical v1.7.0 strict, seed 0",
+        f"# Qwen Plus — canonical v1.7.0 strict, seed {status['run_seed']}",
         "",
         f"- Model: `{status['model']}`",
         f"- Method revision: `{status['method_revision']}`",
