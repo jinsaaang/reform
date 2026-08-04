@@ -1,0 +1,29 @@
+{
+  "schema_version": "minimax_hgf_multiseed_campaign_v1",
+  "model": "minimax/minimax-m2.5",
+  "selection_file": "data/questions/selection.json",
+  "questions_per_seed": 100,
+  "workers_per_model": 20,
+  "selection_rule": "first truth-free forecast-contract-valid execution in declared root order; never score-conditioned",
+  "seeds": {
+    "1": {
+      "roots": [
+        "runs/procedural_topology_hgf_v1_6_0_strict_minimax_multiseed_20260803/seed_1",
+        "runs/procedural_topology_hgf_v1_6_0_strict_minimax_multiseed_20260803/seed_1_auto_latency_resume_2",
+        "runs/procedural_topology_hgf_v1_6_0_strict_minimax_multiseed_20260803/seed_1_16k_continuation_1",
+        "runs/procedural_topology_hgf_v1_6_0_strict_minimax_multiseed_20260803/seed_1_16k_continuation_2",
+        "runs/procedural_topology_hgf_v1_6_0_strict_minimax_multiseed_20260803/seed_1_16k_continuation_3"
+      ]
+    },
+    "2": {
+      "roots": [
+        "runs/procedural_topology_hgf_v1_6_0_strict_minimax_multiseed_20260803/seed_2",
+        "runs/procedural_topology_hgf_v1_6_0_strict_minimax_multiseed_20260803/seed_2_auto_latency_resume_2",
+        "runs/procedural_topology_hgf_v1_6_0_strict_minimax_multiseed_20260803/seed_2_16k_continuation_1",
+        "runs/procedural_topology_hgf_v1_6_0_strict_minimax_multiseed_20260803/seed_2_16k_continuation_2",
+        "runs/procedural_topology_hgf_v1_6_0_strict_minimax_multiseed_20260803/seed_2_16k_continuation_3"
+      ]
+    }
+  },
+  "continuation_note": "Successful rows were preserved. Missing technical cases were continued with the same model, inputs, prompts, seed, and method. The initial and first auto-routed continuations used a 32768 output cap; later continuations used a 16000 output cap by explicit instruction. No result was selected by its score."
+}
