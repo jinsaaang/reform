@@ -40,10 +40,9 @@ and connect current evidence.
 - `text_memory` distills general forecasting principles from resolved events
   and removes the graph representation before forecasting.
 
-The frozen baseline module also contains an obsolete `hgf` branch because the
-final method imports a small shared evidence loader from that module. The
-public baseline launcher never selects that branch. Current HGF is always run
-through `scripts/run_hgf.py`.
+HGF is not one of them. It is a separate implementation under
+`hgf/method_src/hgf_e2e_topology` and is always run through
+`scripts/run_hgf.py`.
 
 ## Evidence contract
 

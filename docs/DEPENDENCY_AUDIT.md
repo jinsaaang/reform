@@ -40,10 +40,8 @@ requires the two model-specific input manifests supplied on the command line.
 
 ## Baseline caveat
 
-The shared baseline module is the frozen controlled-comparison implementation.
-It contains dead code for an earlier HGF arm, but the public launcher restricts
-selection to six baselines and cannot call it. Direct DAG and resolved-case
-inputs require the same semantic leakage audit used in the paper experiment
-before their numbers are reportable. The portable launcher does not silently
-rewrite user-provided DAG or case artifacts.
+The shared baseline module implements exactly the six controlled baselines.
+Direct DAG and resolved-case inputs require the same semantic leakage audit
+used in the paper experiment before their numbers are reportable. The portable
+launcher does not silently rewrite user-provided DAG or case artifacts.
 

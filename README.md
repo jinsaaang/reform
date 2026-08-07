@@ -25,8 +25,7 @@ posterior, anchor to a baseline prediction, or choose a result by its score.
   historical retrieval.
 - `hgf/execution_src` records raw calls and pins an OpenRouter provider.
 - `scripts/run_hgf.py` runs HGF on a compatible benchmark.
-- `scripts/run_baselines.py` runs baselines without exposing the obsolete HGF
-  implementation that remains unreachable inside the frozen shared module.
+- `scripts/run_baselines.py` runs the six baselines.
 - `scripts/validate_inputs.py` checks the required benchmark artifacts without
   making an API call.
 - `results` contains compact summaries from the registered five-model run.

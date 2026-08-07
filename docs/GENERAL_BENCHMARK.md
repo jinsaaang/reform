@@ -31,8 +31,10 @@ BENCHMARK_ROOT/
         cases/*.json
 ```
 
-HGF requires E1. The complete baseline suite additionally requires E0, the raw
-DAG manifest, and factor-memory artifacts.
+HGF requires E1 plus the Blueprint and exemplar artifacts under
+`artifacts/hgf`. The six baselines require E0, E1 for Factor Memory, the raw
+DAG manifest, and the factor-memory artifacts; they do not read
+`artifacts/hgf`.
 
 ## Questions
 
