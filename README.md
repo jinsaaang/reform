@@ -172,6 +172,24 @@ without creating an output directory or calling an API. The method reranks
 current evidence and retrieves compatible Blueprints at runtime from the
 artifacts you supply.
 
+### Resuming
+
+A run writes one file per case, and both launchers refuse an existing
+`--output-dir` so that a fresh run cannot be mixed into an old one. Pass
+`--resume` to continue instead: cases already recorded as successful are read
+back from their case file without an API call, and only the missing and
+previously failed ones run.
+
+```bash
+python3 scripts/run_baselines.py --dataset-root . \
+  --model google/gemini-2.5-flash-lite \
+  --output-dir runs/gemini_baselines --workers 20 --limit 100 --resume
+```
+
+Expect some cases to fail on any given pass. The models truncate structured
+output and providers return transport errors, so a run that reports a handful
+of failures is normal; re-running with `--resume` picks up exactly those.
+
 ## Method
 
 HGF forecasts in six stages.

@@ -33,6 +33,16 @@ def _args() -> argparse.Namespace:
     parser.add_argument("--question-ids", nargs="*")
     parser.add_argument("--disable-native-reasoning", action="store_true")
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument(
+        "--resume",
+        action="store_true",
+        help=(
+            "Continue an existing --output-dir instead of requiring a "
+            "fresh one. Cases already recorded as successful are returned "
+            "from their case file and not re-requested; only missing and "
+            "previously failed cases run."
+        ),
+    )
     return parser.parse_args()
 
 
@@ -44,8 +54,11 @@ def main() -> int:
     args = _args()
     dataset = args.dataset_root.expanduser().resolve()
     output = args.output_dir.expanduser().resolve()
-    if output.exists() and not args.dry_run:
-        raise FileExistsError(f"fresh output directory required: {output}")
+    if output.exists() and not (args.dry_run or args.resume):
+        raise FileExistsError(
+            f"output directory already exists: {output}; "
+            "pass --resume to continue it"
+        )
 
     questions = _resolve(args.questions_dir, dataset / "data" / "questions")
     evidence = _resolve(args.evidence_dir, dataset / "data" / "evidence")
@@ -105,7 +118,7 @@ def main() -> int:
         print(json.dumps(launch, ensure_ascii=False, indent=2))
         print(shlex.join(command))
         return 0
-    output.mkdir(parents=True, exist_ok=False)
+    output.mkdir(parents=True, exist_ok=args.resume)
     (output / "portable_launch.json").write_text(
         json.dumps(launch, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )

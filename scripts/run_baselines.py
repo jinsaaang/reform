@@ -34,6 +34,16 @@ def _args() -> argparse.Namespace:
     parser.add_argument("--run-seed", type=int, default=0)
     parser.add_argument("--question-ids", nargs="*")
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument(
+        "--resume",
+        action="store_true",
+        help=(
+            "Continue an existing --output-dir instead of requiring a "
+            "fresh one. Cases already recorded as successful are returned "
+            "from their case file and not re-requested; only missing and "
+            "previously failed cases run."
+        ),
+    )
     return parser.parse_args()
 
 
@@ -41,8 +51,11 @@ def main() -> int:
     args = _args()
     dataset = args.dataset_root.expanduser().resolve()
     output = args.output_dir.expanduser().resolve()
-    if output.exists() and not args.dry_run:
-        raise FileExistsError(f"fresh output directory required: {output}")
+    if output.exists() and not (args.dry_run or args.resume):
+        raise FileExistsError(
+            f"output directory already exists: {output}; "
+            "pass --resume to continue it"
+        )
     selection = (
         args.selection_file or dataset / "data/questions/selection.json"
     ).resolve()
