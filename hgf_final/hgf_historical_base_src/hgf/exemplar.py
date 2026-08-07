@@ -6,7 +6,6 @@ from __future__ import annotations
 import json
 import math
 import re
-import threading
 import time
 from datetime import datetime, timezone
 from typing import Any, Callable
@@ -22,9 +21,6 @@ from hgf.repair_resilience import (
 from hgf.forecast_core import (
     _probabilities,
 )
-
-
-_EXEMPLAR_LOCK = threading.Lock()
 _EVIDENCE_STOPWORDS = {
     "about",
     "after",
@@ -454,60 +450,6 @@ def _exemplar_article_ids(graph: dict[str, Any], cutoff: datetime) -> set[str]:
         for item in graph.get("evidence", {}).get("articles", [])
         if (published := _parse_date(item.get("published_date")))
         and published < cutoff
-    }
-
-
-def _transferable_dag_structure(blueprint: dict[str, Any]) -> dict[str, Any]:
-    """Expose audited causal structure without event IDs or outcome facts."""
-    return {
-        "target_definition": blueprint.get("target_definition", {}),
-        "graph_diagnosis": {
-            "summary": blueprint.get("graph_diagnosis", {}).get("summary"),
-            "weaknesses": blueprint.get("graph_diagnosis", {}).get(
-                "weaknesses", []
-            ),
-        },
-        "checkpoints": [
-            {
-                key: item.get(key)
-                for key in (
-                    "id",
-                    "role",
-                    "factor",
-                    "mechanism",
-                    "expected_direction",
-                    "evidence_requirement",
-                    "contradiction_signal",
-                    "historical_support",
-                )
-            }
-            for item in blueprint.get("checkpoints", [])
-        ],
-        "causal_paths": [
-            {
-                key: item.get(key)
-                for key in (
-                    "checkpoint_ids",
-                    "generalized_mechanism",
-                    "expected_direction",
-                    "applicability_conditions",
-                    "failure_conditions",
-                )
-            }
-            for item in blueprint.get("causal_paths", [])
-        ],
-        "alternative_hypotheses": [
-            {
-                "hypothesis": item.get("hypothesis"),
-                "discriminating_evidence": item.get(
-                    "discriminating_evidence"
-                ),
-            }
-            for item in blueprint.get("alternative_hypotheses", [])
-        ],
-        "forecast_audit_questions": blueprint.get(
-            "forecast_audit_questions", []
-        ),
     }
 
 

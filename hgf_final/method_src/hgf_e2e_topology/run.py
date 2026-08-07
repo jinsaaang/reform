@@ -29,7 +29,7 @@ from hgf.generation import configure_generation
 from hgf.memory_bank import load_hgf_blueprint_bank
 from hgf.memory_retrieval import select_relevant_blueprints
 from hgf.question_io import family_metadata, read_questions, resolve_forecast_cutoff
-from hgf.runner import compile_current_target_operator
+from hgf.contracts import compile_current_target_operator
 
 from .core import (
     attach_graph_audit,

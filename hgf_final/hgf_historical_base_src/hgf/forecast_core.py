@@ -8,13 +8,11 @@ import hashlib
 import json
 import os
 import time
-from datetime import datetime
 from pathlib import Path
 from typing import Any
 
 from openai import OpenAI
 
-from hgf.evidence_store import _direct_evidence_pack
 from hgf.generation import completion_parameters, seed_suffix
 
 
@@ -47,27 +45,6 @@ def _atomic_write(path: Path, payload: dict[str, Any]) -> None:
         encoding="utf-8",
     )
     os.replace(temporary, path)
-
-
-def _resolve_evidence(
-    evidence_dir: Path,
-    question: Any,
-    cutoff: datetime,
-    limit: int,
-) -> tuple[Path, list[dict[str, Any]]]:
-    question_id = str(question.id)
-    path = (evidence_dir / "e1" / f"{question_id}.sqlite").resolve()
-    if not path.is_file():
-        raise FileNotFoundError(f"missing E1 evidence DB for {question_id}")
-    evidence = _direct_evidence_pack(
-        path,
-        question_id,
-        cutoff,
-        limit=limit,
-    )
-    if not evidence:
-        raise ValueError(f"No cutoff-safe evidence for {question_id}")
-    return path, evidence
 
 
 def _forecast_schema(options: list[str], graph_arm: bool) -> dict[str, Any]:
@@ -695,36 +672,3 @@ def _ground_truth_option(question: Any) -> str:
         if option.casefold() == value.casefold():
             return option
     raise ValueError(f"Ground truth {ground_truth!r} not in {options}")
-
-
-def _score(
-    probabilities: dict[str, float],
-    ground_truth: str,
-    options: list[str],
-    *,
-    explicit_prediction: str | None = None,
-) -> tuple[float, float]:
-    max_probability = max(probabilities[option] for option in options)
-    tied = [
-        option
-        for option in options
-        if abs(probabilities[option] - max_probability) <= 1e-12
-    ]
-    predicted = (
-        explicit_prediction
-        if explicit_prediction in tied
-        else tied[0]
-    )
-    accuracy = float(predicted == ground_truth)
-    brier = (
-        sum(
-            (
-                probabilities[option]
-                - (1.0 if option == ground_truth else 0.0)
-            )
-            ** 2
-            for option in options
-        )
-        / len(options)
-    )
-    return accuracy, brier

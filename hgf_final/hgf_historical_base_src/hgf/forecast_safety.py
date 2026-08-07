@@ -1,69 +1,12 @@
-"""Deterministic safety gates for transferring hindsight memory.
+"""Deterministic scoring of a raw forecast.
 
-The helpers in this module deliberately avoid model calls and resolved test
-outcomes. They decide whether a retrieved memory is structurally compatible,
-how strongly a checkpoint must be enforced, and how raw forecasts are scored.
+Scoring never calls a model and never reads a resolved outcome before the
+forecast has been produced.
 """
 
 from __future__ import annotations
 
-from dataclasses import dataclass
 from typing import Mapping, Sequence
-
-
-@dataclass(frozen=True)
-class ForecastTarget:
-    family_id: str
-    target_metric: str
-
-
-@dataclass(frozen=True)
-class MemoryMetadata:
-    family_id: str
-    target_metric: str
-
-
-_WEAK_SUPPORT = {
-    "",
-    "weak",
-    "unsupported",
-    "insufficient",
-    "direction_only",
-}
-
-
-def _normalized_label(value: str) -> str:
-    return " ".join(str(value).strip().casefold().split())
-
-
-def is_memory_compatible(
-    target: ForecastTarget,
-    memory: MemoryMetadata,
-) -> bool:
-    """Require the same recurring family and exact target operation."""
-    return (
-        _normalized_label(target.family_id)
-        == _normalized_label(memory.family_id)
-        and _normalized_label(target.target_metric)
-        == _normalized_label(memory.target_metric)
-    )
-
-
-def checkpoint_requirement(
-    *,
-    memory_accepted: bool,
-    memory_compatible: bool,
-    magnitude_support: str,
-) -> str:
-    """Return whether a historical checkpoint is mandatory in the trace."""
-    support = _normalized_label(magnitude_support)
-    if (
-        memory_accepted
-        and memory_compatible
-        and support not in _WEAK_SUPPORT
-    ):
-        return "required"
-    return "optional"
 
 
 def score_forecast(

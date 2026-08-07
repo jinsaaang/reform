@@ -75,3 +75,46 @@ def _is_temporally_eligible(memory_question: Any, cutoff: datetime) -> bool:
     if normalized_cutoff.tzinfo is None:
         normalized_cutoff = normalized_cutoff.replace(tzinfo=timezone.utc)
     return resolution <= normalized_cutoff
+
+
+def compile_current_target_operator(
+    contract: dict[str, Any],
+) -> dict[str, Any]:
+    """Compile the public target contract into an explicit semantic operator."""
+    metric = str(contract.get("target_metric") or "")
+    metric_lower = metric.lower()
+    comparison_rule = str(contract.get("comparison_rule") or "")
+    resolution_rule = str(contract.get("resolution_rule") or "")
+    if "acceleration" in metric_lower:
+        semantic_guard = (
+            "Estimate the target-period growth rate relative to the prior-period "
+            "growth rate. Positive or strong growth alone does not imply positive "
+            "growth acceleration."
+        )
+    elif "return" in metric_lower:
+        semantic_guard = (
+            "Estimate the return over the exact target period relative to the "
+            "immediately preceding period endpoint. A price level or annual price "
+            "outlook does not determine the target-period return."
+        )
+    elif "change" in metric_lower or "growth" in metric_lower:
+        semantic_guard = (
+            "Estimate the change from the immediately preceding observation, not "
+            "the level of the series or a broad annual outlook."
+        )
+    else:
+        semantic_guard = (
+            "Estimate exactly the target metric and horizon in the public "
+            "contract; do not substitute a related level, direction, or period."
+        )
+    return {
+        "target_metric": metric,
+        "target_period": str(contract.get("target_period") or ""),
+        "unit": str(contract.get("change_unit") or ""),
+        "comparison_rule": comparison_rule,
+        "resolution_rule": resolution_rule,
+        "semantic_guard": semantic_guard,
+        "predicate_or_intervals": (
+            contract.get("predicate") or contract.get("intervals") or {}
+        ),
+    }

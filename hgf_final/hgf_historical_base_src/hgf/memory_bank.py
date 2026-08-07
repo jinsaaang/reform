@@ -265,22 +265,3 @@ def load_factor_blueprint_bank(
                 f"{question_id}"
             )
     return bank
-
-
-def load_final_memory_bank(
-    manifest_path: Path,
-    memory_questions: dict[str, Any],
-    *,
-    hgf_artifact_root: Path = HGF_BLUEPRINT_ROOT,
-) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
-    """Compatibility wrapper returning shared graphs plus canonical HGF cards."""
-    graphs = load_graph_bank(manifest_path, memory_questions)
-    blueprints = load_hgf_blueprint_bank(
-        hgf_artifact_root,
-        expected_ids=set(memory_questions),
-    )
-    ordered_ids = list(memory_questions)
-    return (
-        [graphs[question_id] for question_id in ordered_ids],
-        [blueprints[question_id] for question_id in ordered_ids],
-    )

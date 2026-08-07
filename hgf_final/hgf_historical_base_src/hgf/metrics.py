@@ -1,8 +1,6 @@
 from __future__ import annotations
 
-import json
 import math
-from pathlib import Path
 from typing import Any
 
 from hgf.forecast_safety import score_forecast
@@ -73,12 +71,3 @@ def evaluate_results(
         "brier": brier_total / count,
         "nll": nll_total / count,
     }
-
-
-def evaluate_file(
-    path: Path,
-    *,
-    probability_floor: float = 1e-6,
-) -> dict[str, int | float]:
-    payload = json.loads(path.read_text(encoding="utf-8"))
-    return evaluate_results(payload, probability_floor=probability_floor)

@@ -32,8 +32,6 @@ from hgf_e2e_topology import run as frozen_run
 
 _CONTEXT = threading.local()
 _ORIGINAL_RUN_CASE = frozen_run._run_case
-_PACKAGE_ROOT = Path(__file__).resolve().parent
-_SOURCE_ROOT = _PACKAGE_ROOT.parent
 
 
 def _sha256(path: Path) -> str:

@@ -7,13 +7,6 @@ import math
 from typing import Any
 
 
-def forecast_reasoning_schema(options: list[str]) -> dict[str, Any]:
-    """Expose the production reasoning contract without duplicating its schema."""
-    from hgf.exemplar import _forecast_schema_exemplar
-
-    return _forecast_schema_exemplar(options, "none")
-
-
 def _is_empty(value: Any) -> bool:
     if value is None:
         return True

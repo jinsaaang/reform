@@ -1,9 +1,7 @@
 from __future__ import annotations
 
-import json
 import os
 from pathlib import Path
-from typing import Any
 
 
 def _find_repository_root() -> Path:
@@ -22,10 +20,3 @@ def _find_repository_root() -> Path:
 
 
 PACKAGE_ROOT = _find_repository_root()
-PROTOCOL_PATH = PACKAGE_ROOT / "configs" / "reproduction.json"
-
-
-def load_protocol() -> dict[str, Any]:
-    return json.loads(
-        PROTOCOL_PATH.read_text(encoding="utf-8")
-    )

@@ -31,10 +31,6 @@ from hgf_e2e_topology import run as frozen_run
 from hgf_e2e_topology_provider_pinned import run as provider_run
 
 
-_ORIGINAL_EVIDENCE_SELECTOR = frozen_run._rerank_current_evidence
-_ORIGINAL_RETRIEVAL_SELECTOR = frozen_run._select_compatible_blueprints
-
-
 def _sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
@@ -180,7 +176,6 @@ def _write_execution_manifest(
         "hgf.memory_bank",
         "hgf.memory_retrieval",
         "hgf.question_io",
-        "hgf.runner",
     )
     loaded_shared_dependencies: dict[str, dict[str, str]] = {}
     for module_name in shared_dependency_modules:
