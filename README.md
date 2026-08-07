@@ -187,8 +187,20 @@ python3 scripts/run_baselines.py --dataset-root . \
 ```
 
 Expect some cases to fail on any given pass. The models truncate structured
-output and providers return transport errors, so a run that reports a handful
+output, providers return transport errors, and the forecast-contract validator
+rejects a payload the repair loop could not fix. A run that reports a handful
 of failures is normal; re-running with `--resume` picks up exactly those.
+
+Seeds are derived per question and stage, so a case that fails on a contract
+violation tends to fail the same way on every retry at the same `--run-seed`.
+Give that case a different seed to get an independent attempt:
+
+```bash
+python3 scripts/run_hgf.py --dataset-root . \
+  --model google/gemini-2.5-flash-lite --provider google-ai-studio \
+  --output-dir runs/gemini_seed0 --resume \
+  --question-ids THE_FAILING_ID --run-seed 1
+```
 
 ## Method
 
