@@ -69,12 +69,3 @@ def resolve_forecast_cutoff(
 
     setup = get_forecast_date_for_slot(question, fallback_slot)
     return setup["simulated_date"], f"forecast_slot.{fallback_slot.value}"
-
-
-
-
-
-
-
-
-

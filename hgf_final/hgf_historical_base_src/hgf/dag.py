@@ -111,18 +111,3 @@ def _finance_metadata(value: Any) -> dict[str, Any]:
         if isinstance(candidate, dict):
             return candidate
     return metadata
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

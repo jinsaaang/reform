@@ -49,8 +49,6 @@ def _atomic_write(path: Path, payload: dict[str, Any]) -> None:
     os.replace(temporary, path)
 
 
-
-
 def _resolve_evidence(
     evidence_dir: Path,
     question: Any,
@@ -70,10 +68,6 @@ def _resolve_evidence(
     if not evidence:
         raise ValueError(f"No cutoff-safe evidence for {question_id}")
     return path, evidence
-
-
-
-
 
 
 def _forecast_schema(options: list[str], graph_arm: bool) -> dict[str, Any]:
@@ -145,12 +139,6 @@ def _forecast_schema(options: list[str], graph_arm: bool) -> dict[str, Any]:
             "required": required,
         },
     }
-
-
-
-
-
-
 
 
 def _single_dag_plan_schema() -> dict[str, Any]:
@@ -449,8 +437,6 @@ def _compile_single_dag_plan(
     }
 
 
-
-
 def _call_json(
     client: OpenAI,
     *,
@@ -621,10 +607,6 @@ def _validate_graph(
                 f"{node.get('id')} instantiates an unverified checkpoint"
             )
     return errors
-
-
-
-
 
 
 def _probabilities(

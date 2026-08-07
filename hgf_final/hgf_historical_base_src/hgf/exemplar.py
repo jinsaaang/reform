@@ -110,8 +110,6 @@ def _rerank_current_evidence(
     return [item[2] for item in scored[:limit]]
 
 
-
-
 def _usage(response: Any) -> dict[str, int]:
     raw = response.usage.model_dump() if response.usage else {}
     return {
@@ -132,8 +130,6 @@ def _add_usage(*items: dict[str, int]) -> dict[str, int]:
             "call_count",
         )
     }
-
-
 
 
 def _normalize_probability_rows(
@@ -263,8 +259,6 @@ def _ensure_baseline_reasoning_step(
             )
         steps.pop(removable)
     payload["reasoning_steps"] = steps
-
-
 
 
 def _call_json(
@@ -454,12 +448,6 @@ def _parse_date(value: Any) -> datetime | None:
     return parsed if parsed.tzinfo else parsed.replace(tzinfo=timezone.utc)
 
 
-
-
-
-
-
-
 def _exemplar_article_ids(graph: dict[str, Any], cutoff: datetime) -> set[str]:
     return {
         str(item.get("id"))
@@ -467,8 +455,6 @@ def _exemplar_article_ids(graph: dict[str, Any], cutoff: datetime) -> set[str]:
         if (published := _parse_date(item.get("published_date")))
         and published < cutoff
     }
-
-
 
 
 def _transferable_dag_structure(blueprint: dict[str, Any]) -> dict[str, Any]:
@@ -523,8 +509,6 @@ def _transferable_dag_structure(blueprint: dict[str, Any]) -> dict[str, Any]:
             "forecast_audit_questions", []
         ),
     }
-
-
 
 
 def _forecast_schema_exemplar(

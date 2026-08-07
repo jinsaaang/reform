@@ -35,8 +35,6 @@ from hgf.forecast_core import _atomic_write, _seed
 _WRITE_LOCK = threading.Lock()
 
 
-
-
 def _text_memory_schema() -> dict[str, Any]:
     return {
         "name": "plain_text_hindsight_memory",
@@ -191,8 +189,3 @@ def _distill_text_memory(
         "seconds": seconds,
         "repaired": repaired,
     }
-
-
-
-
-

@@ -25,8 +25,6 @@ from hgf.forecast_core import (
 _NUMBER = r"[-+]?(?:\d+(?:\.\d*)?|\.\d+)"
 
 
-
-
 def _numeric_boundaries(
     contract: dict[str, Any],
 ) -> tuple[str, float, float | None]:

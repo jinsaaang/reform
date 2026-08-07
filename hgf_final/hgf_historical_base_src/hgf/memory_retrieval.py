@@ -161,8 +161,6 @@ def _resolution_timestamp(question: Any) -> float:
         return 0.0
 
 
-
-
 def select_relevant_blueprints(
     blueprints: list[dict[str, Any]],
     memory_questions: dict[str, Any],
@@ -305,10 +303,6 @@ def compile_hgf_search_memory(
         ensure_ascii=False,
         indent=2,
     )
-
-
-
-
 
 
 def compile_raw_dag_ablation(graphs: list[dict[str, Any]]) -> str:
