@@ -56,8 +56,6 @@ def main() -> int:
         str(dataset / "data/evidence"),
         "--memory-bank-manifest",
         str(dataset / "data/memory_bank/manifest.json"),
-        "--hgf-artifact-root",
-        str(dataset / "artifacts/hgf"),
         "--selection-file",
         str(selection),
         "--output-dir",
