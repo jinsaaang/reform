@@ -26,9 +26,9 @@ The final HGF method imports only modules shipped in this branch.
 There are no imports from exploratory HGF packages, no reads from previous run
 directories, and no absolute `/home` or `/tmp` path in executable source.
 
-The name `hgf_historical_base_src` means a frozen internal utility layer. It is
-part of this branch and is not checked out or loaded from another commit at
-runtime. The method protocol records `previous_experiment_packages: []` and
+`hgf/shared` is a frozen internal utility layer. It is part of this branch and
+is not checked out or loaded from another commit at runtime. The method
+protocol records `previous_experiment_packages: []` and
 `previous_result_files: []`.
 
 ## Data dependencies

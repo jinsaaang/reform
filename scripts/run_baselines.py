@@ -11,7 +11,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-BASE_SRC = ROOT / "hgf" / "hgf_historical_base_src"
+BASE_SRC = ROOT / "hgf" / "shared"
 METHODS = (
     "search_only",
     "prospective_dag",

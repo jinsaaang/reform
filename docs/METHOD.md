@@ -41,7 +41,7 @@ and connect current evidence.
   and removes the graph representation before forecasting.
 
 HGF is not one of them. It is a separate implementation under
-`hgf/method_src/hgf_e2e_topology` and is always run through
+`hgf/method/hgf_e2e_topology` and is always run through
 `scripts/run_hgf.py`.
 
 ## Evidence contract

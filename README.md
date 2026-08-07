@@ -18,12 +18,12 @@ posterior, anchor to a baseline prediction, or choose a result by its score.
 
 ## What is included
 
-- `hgf/method_src` contains the final HGF method.
-- `hgf/hgf_historical_base_src` contains frozen shared utilities and the
-  six baseline implementations used by the controlled experiment.
-- `hgf/input_adapter_src` optionally freezes model-specific evidence and
-  historical retrieval.
-- `hgf/execution_src` records raw calls and pins an OpenRouter provider.
+- `hgf/method` contains the final HGF method.
+- `hgf/shared` contains frozen shared utilities and the six baseline
+  implementations used by the controlled experiment.
+- `hgf/input_adapter` optionally freezes model-specific evidence and historical
+  retrieval.
+- `hgf/execution` records raw calls and pins an OpenRouter provider.
 - `scripts/run_hgf.py` runs HGF on a compatible benchmark.
 - `scripts/run_baselines.py` runs the six baselines.
 - `scripts/validate_inputs.py` checks the required benchmark artifacts without
