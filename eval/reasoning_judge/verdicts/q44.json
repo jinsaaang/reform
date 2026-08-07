@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_tsla_revenue_growth_acceleration_2025_12_31",
+  "verdicts": [
+    {
+      "trace_id": "v3_tsla_revenue_growth_acceleration_2025_12_31::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 5,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The central estimate of -4.0 percentage points falls within the 'within recent range' interval, and the lack of magnitude support requires the estimate to remain within this range.",
+      "verdict_one_line": "Correctly separates a supported downward direction from an unsupported threshold crossing, and lets that separation, not a guessed magnitude, pick the option and shape the 0.30/0.60/0.10 mass.",
+      "would_a_careful_analyst_accept_this": "yes"
+    },
+    {
+      "trace_id": "v3_tsla_revenue_growth_acceleration_2025_12_31::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 5,
+        "logical_validity": 4,
+        "prediction_alignment": 3,
+        "probability_justification": 4,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The recovery in Q3 suggests positive acceleration, but the prediction of Q4 losses points towards potential negative acceleration. The magnitude support is weak.",
+      "verdict_one_line": "The only E0 trace that dates every cited figure correctly (8% to Q4 2024, 20% to Q1 2025) and whose spread mass is explained option by option, but the -2.0 central estimate that fixes the choice is asserted rather than derived.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_tsla_revenue_growth_acceleration_2025_12_31::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "While counterevidence strongly suggests a negative acceleration, the precise degree of this decline (e.g., whether it crosses the -7.119 pp threshold) introduces uncertainty.",
+      "verdict_one_line": "Clean, correctly dated E1 chain from falling deliveries and price cuts to negative acceleration, but it posts a central -15.0 pp and a boundary crossing off 'direction_only' support, and its boundary_checks call 'within' highly improbable while handing it 0.30.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_tsla_revenue_growth_acceleration_2025_12_31::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "No evidence-supported magnitude distinguishes this option; the contract-centered abstention is intentionally broad.",
+      "verdict_one_line": "Grounded and honest about having no magnitude, and it states the acceleration operator correctly, but the reasoning block argues 0.4/0.5/0.1 with 'negative acceleration is more probable' while the forecast block reverts to a symmetric 0.323/0.353/0.323 abstention with directional_signal 'uncertain'.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_tsla_revenue_growth_acceleration_2025_12_31::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": false
+      },
+      "decisive_quote": "These combined factors suggest a substantial deceleration in the rate of revenue growth, making an outcome below the recent range threshold of -7.119 percentage points the most probable.",
+      "verdict_one_line": "Builds a DAG whose only negative node is cost- and profit-side, then asserts those cost items are 'more directly impactful on the acceleration of revenue growth' than its own record-delivery and demand drivers, and puts 0.70 on a threshold crossing supported by no quantity anywhere.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_tsla_revenue_growth_acceleration_2025_12_31::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 4,
+        "mechanism_specificity": 1
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": true,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "No evidence-supported point estimate; retain a broad neutral range.",
+      "verdict_one_line": "An honest abstention with an appropriately flat 0.3/0.4/0.3, but it cites zero evidence, its steps ('Retain a neutral baseline for the exact public target') would fit any question, and its reasoning block states 'below recent range' while the forecast block returns 'within recent range'.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_tsla_revenue_growth_acceleration_2025_12_31::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 1,
+        "logical_validity": 2,
+        "prediction_alignment": 4,
+        "probability_justification": 1,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": true,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "A significant 8% drop in Tesla's automotive revenue was reported for Q4 2025, directly impacting its primary revenue stream.",
+      "verdict_one_line": "Re-dates the 2025-01-29 headline about an 8% Q4 2024 automotive revenue drop as a reported Q4 2025 result, a period that cannot have been reported by the 2025-12-31 cutoff, then declares magnitude 'supported' and puts 0.75-0.85 on 'below' off that single misattributed figure while its own uncertainty note concedes the Q4 2024 growth rate it needs is unavailable.",
+      "would_a_careful_analyst_accept_this": "no"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_tsla_revenue_growth_acceleration_2025_12_31::hgf",
+    "v3_tsla_revenue_growth_acceleration_2025_12_31::principle_memory",
+    "v3_tsla_revenue_growth_acceleration_2025_12_31::factor_memory",
+    "v3_tsla_revenue_growth_acceleration_2025_12_31::direct_forecast",
+    "v3_tsla_revenue_growth_acceleration_2025_12_31::structured_reasoning",
+    "v3_tsla_revenue_growth_acceleration_2025_12_31::case_memory",
+    "v3_tsla_revenue_growth_acceleration_2025_12_31::structure_memory"
+  ],
+  "ranking_rationale": "Every bank entry here is a bare headline with almost no numbers, so the discriminating question was whether a trace kept the well-supported directional claim separate from the wholly unsupported claim about crossing -7.119 pp; hgf and principle_memory held that line explicitly and priced it, factor_memory held it in prose but then posted a -15.0 pp central anyway, and structured_reasoning and structure_memory collapsed it into confident boundary calls. The bottom is set by grounding failures rather than by length: structure_memory attached a real 8% figure to the wrong quarter and staked 0.75 on it, structured_reasoning routed cost- and profit-side evidence into a revenue-acceleration conclusion, and case_memory produced no question-specific content at all while disagreeing with itself about which option it had chosen.",
+  "shared_evidence_note": "Bank membership explains little here, since both banks carry the same Q3 2025 revenue-growth and Q4-loss-prediction headlines and the E1-only December delivery and price-cut items were used by hgf and factor_memory to reach opposite options; the split between 'within' and 'below' came almost entirely from whether a trace treated a directional signal as licence to assert a threshold crossing."
+}

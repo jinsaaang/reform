@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_fed_funds_monthly_change_2025_06",
+  "verdicts": [
+    {
+      "trace_id": "v3_fed_funds_monthly_change_2025_06::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 5,
+        "probability_justification": 3,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": false
+      },
+      "decisive_quote": "A predicted change of 0.0 percentage points therefore falls into the 'above recent range' category.",
+      "verdict_one_line": "Only trace that carries its own premise through the boundary rule correctly: a May-2025 hold implies a 0.0 monthly change, and 0.0 sits in [0.0, +infinity), so the selected option is uniquely entailed and both neighbours are excluded with reasons.",
+      "would_a_careful_analyst_accept_this": "yes"
+    },
+    {
+      "trace_id": "v3_fed_funds_monthly_change_2025_06::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 3,
+        "probability_justification": 4,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Therefore, a monthly change falling within the recent range ([-0.1675, 0.0)) due to a small rate cut, or a change of 0.0 ('above recent range') due to a policy pause, are the most probable outcomes.",
+      "verdict_one_line": "Correctly identifies that a pause maps to 'above recent range' and leaves real mass (0.35) there, but the tiebreak between the two live options rests on an unargued central estimate of -0.05, so the selection is underdetermined by its own reasoning.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_fed_funds_monthly_change_2025_06::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 3,
+        "probability_justification": 4,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "This places the likely outcome in the 'within recent range' (negative) or 'above recent range' (zero) categories, with uncertainty due to the lack of specific forward-looking data for mid-2025.",
+      "verdict_one_line": "Honestly declares magnitude support 'insufficient' and spreads the flattest mass of the E0 group to match, but like principle_memory it never argues why the negative branch beats the zero branch; also slips on the boundary value (writes -0.167 for -0.1675).",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_fed_funds_monthly_change_2025_06::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 2,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 2
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": false
+      },
+      "decisive_quote": "The specific magnitude is uncertain due to countervailing factors, but the 'likely rate cut' suggests a change that is likely to be at least -0.25 percentage points, which would fall into the 'below recent range' category.",
+      "verdict_one_line": "Reaches its option only by conjuring a -0.25 magnitude that no cited item supplies, and its two key nodes invent content for a February 2025 report whose snippet says nothing while mislabelling an August 2024 minutes story as a 'September 2024 FOMC' target-period signal.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_fed_funds_monthly_change_2025_06::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The evidence strongly supports a negative monthly change due to expected rate cuts. However, the precise magnitude of the change in June 2025 relative to the -0.1675 boundary is not explicitly detailed, creating uncertainty.",
+      "verdict_one_line": "Ships two incompatible answers in one artifact - the reasoning block predicts 'below recent range' at 0.60 while the forecast block predicts 'within recent range' at 0.60 with no reconciliation - and never considers that a policy hold would land at 0.0, which it assigns only 0.05.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_fed_funds_monthly_change_2025_06::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 2,
+        "prediction_alignment": 1,
+        "probability_justification": 2,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Although evidence points to 0.0 (the boundary), insufficient magnitude support requires the modal option to be within the recent range, making this option unsupported as the primary outcome.",
+      "verdict_one_line": "Best-grounded and most specific causal chain in the packet - inflation persistence to cautious Fed to May hold to zero change - but it then states outright that the evidence points to 0.0 and overrides that with a procedural rule, moving its central estimate to -0.05 'to align with the within recent range option'; the reasoning entails the option it did not pick.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_fed_funds_monthly_change_2025_06::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 2,
+        "mechanism_specificity": 2
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Evidence indicates a trend towards rate cuts or holding steady, not rate hikes, making this option unsupported.",
+      "verdict_one_line": "Rules out 'above recent range' by treating it as a hike-only bucket immediately after conceding 'significant probability for holding rates steady' - a hold is exactly 0.0 and sits in that bucket - and silently flips its own distribution from 0.15/0.50/0.35 to 0.35/0.60/0.05 between blocks.",
+      "would_a_careful_analyst_accept_this": "no"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_fed_funds_monthly_change_2025_06::factor_memory",
+    "v3_fed_funds_monthly_change_2025_06::principle_memory",
+    "v3_fed_funds_monthly_change_2025_06::case_memory",
+    "v3_fed_funds_monthly_change_2025_06::structured_reasoning",
+    "v3_fed_funds_monthly_change_2025_06::direct_forecast",
+    "v3_fed_funds_monthly_change_2025_06::hgf",
+    "v3_fed_funds_monthly_change_2025_06::structure_memory"
+  ],
+  "ranking_rationale": "What separated the top from the bottom was whether a trace carried its own stated premise through the pre-registered boundary rule: factor_memory alone noticed that a policy hold means a 0.0 change and that 0.0 falls in [0.0, +infinity), while principle_memory and case_memory at least surfaced that mapping and kept honest mass on both live options. The bottom four either fabricated a magnitude to clear a threshold (structured_reasoning), carried two different predictions or two different distributions in one artifact (direct_forecast, structure_memory), or explicitly conceded the evidence pointed at 0.0 and then overrode it with a procedural rule to select a different option (hgf).",
+  "shared_evidence_note": "The split is largely evidence-driven - the two E1 traces saw the May 2025 hold and reasoned to a flat 0.0 change while the five E0 traces had nothing after February 2025 and extrapolated the 2024 easing cycle - but the two E1 traces then diverged from each other on identical evidence purely over how a 0.0 change maps to the boundary, which is a reasoning difference, not an evidence one."
+}

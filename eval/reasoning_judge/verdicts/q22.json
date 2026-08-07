@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_global_wheat_monthly_return_2025_11",
+  "verdicts": [
+    {
+      "trace_id": "v3_global_wheat_monthly_return_2025_11::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "predicting a return less negative than -3.119% (i.e., 'yes') is difficult, while a return more negative than -3.119% (i.e., 'no') is plausible but not strongly supported.",
+      "verdict_one_line": "Honest about weak magnitude support and keeps the split modest at 0.6/0.4, but the decisive step is a central estimate of -3.5% conjured from headline-level claims of 'slight' index easing, so the threshold crossing is asserted rather than derived.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_global_wheat_monthly_return_2025_11::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 2,
+        "prediction_alignment": 1,
+        "probability_justification": 4,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The 'no' prediction is selected as a default in the absence of clear evidence supporting the 'yes' condition (return >= -3.119%).",
+      "verdict_one_line": "Its own graph names the two upward drivers (D1 tight stocks, D2 fertilizer costs) as dominant against a single downward countervailing factor, which implies the price does not fall more than 3.1 percent, yet it selects 'no' by arbitrary default; the 50/50 mass is at least honest about the gap.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_global_wheat_monthly_return_2025_11::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 3,
+        "probability_justification": 2,
+        "mechanism_specificity": 2
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The central estimate of -4.0% falls within the 'no' interval of (-infinity, -3.118691), aligning with the downward directional signal.",
+      "verdict_one_line": "Builds a [-5.0, -2.0] band whose best case is already a 2 percent fall from two headlines about China tariffs and Michigan farm stress, ignores its own retrieved factor that the wheat market previously shrugged off tariffs, and inflates 0.65 in the reasoning block to 0.8 in the forecast after declaring magnitude support 'insufficient'.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_global_wheat_monthly_return_2025_11::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The evidence for easing prices suggests a negative return is possible, but the counterarguments and uncertainty mean it's not guaranteed to fall by *at least* -3.119%.",
+      "verdict_one_line": "Correctly separates direction from threshold crossing, declines to invent a magnitude ('retain a broad contract-centered estimate without an evidence magnitude claim'), and lands on a near-uniform 0.51/0.49 that matches its declared support; the final number comes from an admitted output-validation fallback rather than the argument, and the boundary check calls 'yes' most_supported while saying nothing distinguishes the options.",
+      "would_a_careful_analyst_accept_this": "yes"
+    },
+    {
+      "trace_id": "v3_global_wheat_monthly_return_2025_11::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The evidence is mixed, but recent downward trends in food commodity prices and easing supply conditions suggest a higher probability of a price decline exceeding -3.119% than not.",
+      "verdict_one_line": "Lists three up/mixed drivers and two down ones, records directional_signal as 'mixed', then without weighing them converts a 'slight' FAO index decline into a better-than-even chance of a greater than 3.1 percent wheat fall and a -3.5% central estimate; it also rates horizon_match 'direct' for May and September sources against a November target.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_global_wheat_monthly_return_2025_11::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 5,
+        "probability_justification": 4,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The combined downward pressures are not strong enough to definitively predict a return below -3.119% due to unspecified magnitude and counteracting factors, leading to uncertainty about crossing the threshold.",
+      "verdict_one_line": "The only trace that reasons the whole way to the boundary: accepts the downward direction, states explicitly that unspecified magnitude cannot carry a 3.1 percent threshold crossing, excludes 'no' on that basis, and sets 0.65/0.35 consistently with its own [-5, +2] band; the mechanisms remain headline-level and the -1.5% central is still a judgement call, and it correctly refused to import the -2.667% figure sitting in its redacted-hindsight memory.",
+      "would_a_careful_analyst_accept_this": "yes"
+    },
+    {
+      "trace_id": "v3_global_wheat_monthly_return_2025_11::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 1,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Current leading signals of depressed crop prices and strengthening trade policy/inflationary pressures suggest a downward influence on the monthly wheat-price return for November 2025. However, the magnitude of this return relative to the -3.119% threshold remains unobserved and unsupported by current data.",
+      "verdict_one_line": "The path bookkeeping is disciplined (D3 contradicted, D1 unresolved) and it states magnitude support as 'unsupported' while its own retrieved bridge warns that 'Directional support alone is not magnitude or threshold-crossing support' -- then it does exactly that, inventing a [-7.0, -1.0] band with a -4.5% centre that excludes every non-negative outcome and staking 0.7 on the crossing.",
+      "would_a_careful_analyst_accept_this": "no"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_global_wheat_monthly_return_2025_11::structure_memory",
+    "v3_global_wheat_monthly_return_2025_11::principle_memory",
+    "v3_global_wheat_monthly_return_2025_11::direct_forecast",
+    "v3_global_wheat_monthly_return_2025_11::case_memory",
+    "v3_global_wheat_monthly_return_2025_11::structured_reasoning",
+    "v3_global_wheat_monthly_return_2025_11::factor_memory",
+    "v3_global_wheat_monthly_return_2025_11::hgf"
+  ],
+  "ranking_rationale": "Every trace faced the same problem -- headline-only snippets that carry direction but no quantity -- so the separator was whether a trace respected the gap between 'prices are easing' and 'prices fall more than 3.1 percent in one month': structure_memory and principle_memory named that gap and priced it near-uniform, while direct_forecast, case_memory, factor_memory and hgf silently closed it with invented central estimates. Ranking weights prediction_alignment as the rubric's central test, which puts structured_reasoning low despite clean citations (its dominant factors point up while it predicts a large fall) and puts hgf last because it wrote the anti-leap rule down and then broke it at 0.7 confidence.",
+  "shared_evidence_note": "Mostly different reasoning, not different evidence: the two E1 methods saw only tariff and farm-stress headlines and both went 'no', but the five E0 methods split 3-2 across yes and no from the identical ten snippets, so the disagreement turns on how each handled the direction-to-magnitude gap rather than on bank contents."
+}

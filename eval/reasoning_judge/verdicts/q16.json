@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_fed_funds_monthly_change_2025_12",
+  "verdicts": [
+    {
+      "trace_id": "v3_fed_funds_monthly_change_2025_12::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "If policymakers are opposed to a rate cut, the monthly change in the federal funds rate is expected to be zero or positive, rather than negative.",
+      "verdict_one_line": "Cleanly maps a no-cut read of its own E0 headlines onto the >=0.0 bucket and honestly labels magnitude support as 'direction_only', but silently ignores the E0 item reporting officials expected two more cuts, tags every hawkish step 'effect_on_target: down', and shifts 0.80 to 0.75 across blocks without explanation.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_fed_funds_monthly_change_2025_12::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": false
+      },
+      "decisive_quote": "Concerns about the labor market can temper the urgency for rate cuts, contributing to a scenario where the federal funds rate change is limited.",
+      "verdict_one_line": "Its second driver inverts the cited source: art_snippet_a0e5def7c3e543c4 is titled 'Fed Cuts Rates as Officials Worry About Labor Market', i.e. labour-market worry drove easing, yet the trace turns it into 'upward pressure on rate change', so a conclusion-supporting driver rests on evidence that says the opposite; the DAG does at least state and weigh the countervailing two-more-cuts node.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_fed_funds_monthly_change_2025_12::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 2,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": false
+      },
+      "decisive_quote": "A standard 25 basis point rate cut, resulting in a monthly change of -0.25 percentage points, falls below the -0.115 threshold, thus mapping to the 'below recent range' option.",
+      "verdict_one_line": "The whole option choice turns on equating a December cut with a full -0.25 monthly change, a quantity its cited support (art_snippet_d6061018c255b363, about the 29 October decision) does not supply for December and which ignores that a mid-month decision only partially moves a monthly average; it then declares 'directional_signal: mixed' and 'not a certainty' while collapsing the hold branch to 0.05.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_fed_funds_monthly_change_2025_12::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 2,
+        "prediction_alignment": 1,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Boundary output could not be validated; retain a broad contract-centered estimate without an evidence magnitude claim.",
+      "verdict_one_line": "Its argued reasoning is the most careful of the E0 set and it uniquely admits it cannot validate a magnitude, but the delivered prediction is 'within recent range' with a near-uniform 0.32/0.35/0.32 fallback, flatly contradicting its own conclusion that 'The prediction of a zero or positive change maps to the above recent range option' at 0.6.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_fed_funds_monthly_change_2025_12::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": false
+      },
+      "decisive_quote": "The central estimate of 0.0 is the exclusive upper bound of the interval [-0.115, 0.0) and therefore not included.",
+      "verdict_one_line": "The sharpest boundary handling in the packet and an explicit, recency-based resolution of the October two-more-cuts counterevidence, but it labels magnitude support 'direct' from a bank whose entries are bare headlines containing no numbers, calls 'within recent range' unsupported while still assigning it 0.20, and drops 0.90 to 0.75 between blocks unexplained.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_fed_funds_monthly_change_2025_12::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 2,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": false
+      },
+      "decisive_quote": "The reported opposition to a December rate cut suggests the FOMC is likely to hold the federal funds rate steady, resulting in a monthly change of 0.0 percentage points.",
+      "verdict_one_line": "The most faithful reader of its E0 bank, correctly using the October cut as an easing counter-trend rather than as hawkish support, but its confidence is the least earned in the packet: a latent interval of low -0.05 to high 0.0 lies almost entirely inside 'within recent range', yet it puts 0.84 (0.95 in the reasoning block) on 'above recent range' from headline-only evidence.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_fed_funds_monthly_change_2025_12::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 3,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Fed Chair Powell's statement that a December rate cut is 'not a foregone conclusion' and strong jobs data suggest a leaning towards holding rates steady (a change of 0.0, falling into the 'above recent range' category).",
+      "verdict_one_line": "Best-grounded and most mechanism-specific trace, and the only one to rule QT out as irrelevant to the policy rate and to state outright that it cannot judge threshold-crossing, yet it names a lean toward 'above recent range', then declares that same option 'unsupported' at 0.15 and lands on 'within recent range' purely because an invented central of -0.05 - the midpoint of a hold-versus-cut split neither branch produces - falls in that interval.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_fed_funds_monthly_change_2025_12::case_memory",
+    "v3_fed_funds_monthly_change_2025_12::structure_memory",
+    "v3_fed_funds_monthly_change_2025_12::direct_forecast",
+    "v3_fed_funds_monthly_change_2025_12::factor_memory",
+    "v3_fed_funds_monthly_change_2025_12::hgf",
+    "v3_fed_funds_monthly_change_2025_12::structured_reasoning",
+    "v3_fed_funds_monthly_change_2025_12::principle_memory"
+  ],
+  "ranking_rationale": "Top traces built an explicit chain from a named decision (hold or cut) through the monthly-change operator to a boundary, resolved their strongest counter-item by name rather than dropping it, and did not need a quantity their bank never contained; case_memory and structure_memory did this most cleanly, differing only in that structure_memory's 0.84-0.95 confidence sits at odds with its own mostly-negative latent interval. The bottom is defined by breaks between argument and answer rather than by evidence quality: principle_memory argues 'above recent range' and then ships 'within recent range' on a near-uniform validation-failure fallback, hgf names a lean toward 'above' and then rates it unsupported, and structured_reasoning props a hawkish driver on a source whose headline says the Fed cut because of that very concern.",
+  "shared_evidence_note": "The split is mostly bank-driven rather than reasoning-driven: E0's latest items are the 19-20 November minutes stories about opposition to a December cut, which pushed all five E0 traces to a hold, while E1 additionally carried the 12 November Reuters poll of economists expecting a December cut alongside the strong-jobs and Powell-caution items, producing the mixed reads behind factor_memory's 'below' and hgf's 'within' - though principle_memory's contradiction between its reasoning and its output is a within-method failure independent of any bank."
+}

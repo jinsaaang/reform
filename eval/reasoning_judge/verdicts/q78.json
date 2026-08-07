@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_us_industrial_production_monthly_growth_2025_11",
+  "verdicts": [
+    {
+      "trace_id": "v3_us_industrial_production_monthly_growth_2025_11::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 2,
+        "prediction_alignment": 3,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Boundary output could not be validated; retain a broad contract-centered estimate without an evidence magnitude claim.",
+      "verdict_one_line": "All five E0 citations match their titles and the reasoning stage argues cleanly for 'within recent range' at 0.70, but the forecast stage then asserts 'No evidence-supported magnitude distinguishes this option' and collapses to a near-uniform 0.32/0.35/0.32 abstention, so the trace both claims and denies that its evidence discriminates between the options.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_industrial_production_monthly_growth_2025_11::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": false
+      },
+      "decisive_quote": "The qualitative descriptions of 'sluggish' and 'modest' growth on the positive side, contrasted with 'significantly impacting' tariffs, suggest that the net effect is likely to result in growth that is neither strongly positive nor negative, thus falling within the recent historical range.",
+      "verdict_one_line": "The tariff-cost-to-demand-to-output mechanism is the most concrete in the set and the asymmetric 0.30/0.60/0.10 split is explicitly argued ('This strong negative pressure makes a prediction of \"above recent range\" unlikely'), but grounding is docked because it reads the headline 'The Sluggish Renaissance of U.S. Manufacturing' as 'suggesting an underlying upward trend', a positive spin the source text does not carry.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_industrial_production_monthly_growth_2025_11::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 2,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "the monthly industrial production growth for November 2025 is estimated to be negative, potentially falling below the recent range due to forward-looking indicators of economic slowdown and persistent manufacturing weakness",
+      "verdict_one_line": "Every citation is a real E1 id and identifying the Philadelphia Fed November survey as the most direct target-month indicator (while admitting 'The specific content of the November 2025 Manufacturing Business Outlook Survey is unknown but critical') is genuinely sharp, but the trace reasons to 'below recent range' at 0.45 and then delivers 'within recent range', relabelling below as 'unsupported' on the ground of 'the instruction to keep it within the range due to insufficient magnitude evidence' rather than on its own analysis.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_us_industrial_production_monthly_growth_2025_11::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 5,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": false
+      },
+      "decisive_quote": "Evidence points to persistent sluggishness and weakness in the U.S. manufacturing sector, compounded by tariffs and policy risks, suggesting a contraction or very weak growth, overriding recent isolated positive data.",
+      "verdict_one_line": "The reasoning does uniquely and explicitly select 'below recent range' and says why 'above' is excluded, but it labels magnitude support 'derived' and posts a latent estimate of low -1.5 / central -0.3 percent from an E0 bank containing no figures at all, then puts 0.70 on a boundary crossing at -0.187 while its own uncertainty note calls the signals conflicting and leans on the carried-over 'calibration lesson suggests a higher likelihood of outcomes falling below recent trends'.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_industrial_production_monthly_growth_2025_11::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 4,
+        "prediction_alignment": 5,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The forecast is mapped to 'within recent range' because the evidence suggests that growth is unlikely to be significantly negative (below -0.187%) or strongly positive (at or above 0.167%), aligning with a scenario of moderate or stagnant activity.",
+      "verdict_one_line": "Cleanest option mapping of the E0 group and it correctly treats the retrieved 2024-09 episode as analogy rather than evidence, but it cites the numberless Statista snippet art_snippet_9e51c2ad11e521c7 as support for 'pre-registered boundaries for monthly industrial production growth set at -0.187% (lower) and 0.167% (upper)' and asserts a latent band of low -0.1 / high 0.1 labelled 'derived' with no derivation, a band narrower than the option interval that manufactures the 0.70 confidence despite admitting 'ambiguity regarding the precise magnitude'.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_industrial_production_monthly_growth_2025_11::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 5,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "These conflicting signals suggest that growth is unlikely to be strongly positive (above 0.167%) or strongly negative (below -0.187%), making the 'within recent range' [-0.187%, 0.167%) the most probable outcome.",
+      "verdict_one_line": "Both boundaries are excluded by name from cited E0 headlines, the ablation memory's redacted figures (0.8%, -0.62%) are correctly never imported, and it admits the evidence 'lacks specific quantitative data for the target period to assess magnitude directly'; the reservations are that 0.75 is heavy for self-declared 'direction_only' support and the target_semantics field pre-states the answer ('predicting it will fall within the recent range') before any reasoning step runs.",
+      "would_a_careful_analyst_accept_this": "yes"
+    },
+    {
+      "trace_id": "v3_us_industrial_production_monthly_growth_2025_11::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 3,
+        "probability_justification": 4,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "No currently supported paths or direct evidence link to the target metric's magnitude or threshold crossing. The baseline is unavailable, and current signals are mixed and lack quantitative support for the target period.",
+      "verdict_one_line": "The most honest bookkeeping in the set - all three carried-over paths are marked UNMAPPED rather than reused, magnitude is declared 'insufficient', and the 0.25/0.50/0.25 spread genuinely matches that declared ignorance - but the selected option is a by-product of centring a zero estimate rather than an argued conclusion, and it overreads 'The Philadelphia Fed November survey' and the 'worst inflation' headline slightly ('severe inflation in U.S. cities') while calling the quartile baseline 'unavailable' and then using those exact quartile intervals in its boundary checks.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_us_industrial_production_monthly_growth_2025_11::structure_memory",
+    "v3_us_industrial_production_monthly_growth_2025_11::structured_reasoning",
+    "v3_us_industrial_production_monthly_growth_2025_11::case_memory",
+    "v3_us_industrial_production_monthly_growth_2025_11::hgf",
+    "v3_us_industrial_production_monthly_growth_2025_11::principle_memory",
+    "v3_us_industrial_production_monthly_growth_2025_11::direct_forecast",
+    "v3_us_industrial_production_monthly_growth_2025_11::factor_memory"
+  ],
+  "ranking_rationale": "The top traces named both option boundaries explicitly and showed why the cited qualitative signals fail to clear either one, so the stated reasoning entails the option actually returned. The bottom traces broke that link in two different ways: factor_memory and direct_forecast each argue one conclusion in their reasoning stage and return a different confidence or a different option in their forecast stage, while principle_memory keeps its link but buys it with an invented -0.3 percent central estimate that no item in a headline-only bank can support.",
+  "shared_evidence_note": "The banks were not the driver: both E0 and E1 consist of headlines with no numeric content, and the split verdicts appear inside a single bank (principle_memory read E0 to 'below' while case_memory and structure_memory read the same E0 to 'within'), so the disagreement is one of how each trace weighed identical qualitative signals and how strictly it refused to convert direction into a boundary crossing."
+}

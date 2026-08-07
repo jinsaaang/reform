@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_us_unemployment_rate_change_2025_06",
+  "verdicts": [
+    {
+      "trace_id": "v3_us_unemployment_rate_change_2025_06::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The forecast is mapped to the option 'within recent range' as it encompasses small positive or negative changes, which are most likely given the mixed evidence. 'Below recent range' is possible if May's strength leads to a notable decrease, and 'above recent range' is possible if the 'recent rise' trend is dominant.",
+      "verdict_one_line": "Short and honest: the only two numeric claims (4.2%, 139,000) trace exactly to E0, the mixed signal is named on both sides, and the symmetric 0.2/0.6/0.2 mass matches the declared 'insufficient' magnitude support, though the 0.6 itself is asserted rather than derived.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_unemployment_rate_change_2025_06::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The 'within recent range' option is chosen as it best preserves uncertainty and accounts for the possibility of a moderate change resulting from the interplay of these factors, or a situation where opposing forces largely offset each other.",
+      "verdict_one_line": "The DAG scaffolding is duplicated verbatim between plan and graph without adding information, the breakeven-growth node is asserted as a countervailing force though the trace never states any breakeven quantity to compare 139,000 against, and the middle bucket is selected because it 'preserves uncertainty' rather than because the reasoning entails it.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_unemployment_rate_change_2025_06::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 3,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Reports from late 2024 and early 2025 indicate the US unemployment rate was dipping or falling, with an absolute rate of 4.2% reported for May 2025.",
+      "verdict_one_line": "Every figure is genuinely in E1, but the trace files a 'down' driver whose own cited numbers run 4.0% in January to 4.2% in May (i.e. upward), and its reasoning ranking of 0.3/0.6/0.1 with 'above recent range is less likely given job growth' is then overwritten by a near-uniform 0.323/0.353/0.323 abstention that makes above and below equally likely.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_us_unemployment_rate_change_2025_06::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Given the strong May payrolls, a significant increase in the unemployment rate is less probable. However, the 'recent rise' counterevidence tempers expectations of a substantial decrease. The monthly change is therefore likely to be modest, potentially falling within or just below the recent range.",
+      "verdict_one_line": "The reasoning is defensible but leaves 'within' and 'below' nearly tied (0.5 vs 0.4) so the selection is underdetermined, and it claims 'metric_match: direct' with 'magnitude_support: partial' from two title-only snippets before the forecast stage negates both with 'support: insufficient' and a near-uniform mass that contradicts its own 'significant increase is less probable'.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_unemployment_rate_change_2025_06::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The monthly unemployment-rate change for June 2025 is forecast to be a small positive value, likely within the range of 0.0 to 0.1 percentage points, reflecting a recent upward trend tempered by labor market resilience.",
+      "verdict_one_line": "The clearest option-exclusion argument of the E0 group and the only one whose asymmetric mass (0.1/0.6/0.3) tracks its own upward tilt, but it converts a bare article title into a numeric band of 0.0 to 0.1 pp, and its option_mapping carries the retrieved 2024-12 memory's boundaries ('within recent range' (0 to 0.1)) into the same sentence as the current '< -0.025' boundary, leaving [-0.025, 0) unassigned.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_unemployment_rate_change_2025_06::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Based on positive job growth in May 2025, the monthly unemployment-rate change for June 2025 is expected to be negative, indicating a potential decrease in the unemployment rate.",
+      "verdict_one_line": "The reasoning block concludes 'below recent range' at 0.5 while forecast.prediction is 'within recent range' at 0.55 with no argued reconciliation; it also asserts 'No specific current evidence points to factors that would cause a significant increase' while the FRBSF 'Assessing the Recent Rise in Unemployment' item sits unused in its own E0 bank, and it fills in the redacted memory outcome by claiming 'the historical DAG example of a -0.1 change mapping to below recent range'.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_us_unemployment_rate_change_2025_06::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The trend from January to May 2025 shows a slight increase in the unemployment rate (from 4.0% to 4.2%) and a decrease in job additions (from 143,000 to 139,000), suggesting a potential softening labor market.",
+      "verdict_one_line": "The only trace that builds a level trajectory of the target series itself rather than reasoning from payroll headlines, reads the same two E1 items in the correct direction (up) where factor_memory read them as falling, states the real measurement mechanism ('Job growth ... does not mechanically determine the household-survey unemployment rate'), marks every routed path UNMAPPED instead of pretending they resolve, and allocates 0.15/0.5/0.35 so the fat tail sits on the side its evidence actually points to.",
+      "would_a_careful_analyst_accept_this": "yes"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_us_unemployment_rate_change_2025_06::hgf",
+    "v3_us_unemployment_rate_change_2025_06::direct_forecast",
+    "v3_us_unemployment_rate_change_2025_06::case_memory",
+    "v3_us_unemployment_rate_change_2025_06::structured_reasoning",
+    "v3_us_unemployment_rate_change_2025_06::principle_memory",
+    "v3_us_unemployment_rate_change_2025_06::factor_memory",
+    "v3_us_unemployment_rate_change_2025_06::structure_memory"
+  ],
+  "ranking_rationale": "The top traces kept every number attached to a source, read the direction of their own cited data points correctly, and let the probability mass follow the admitted gap rather than a template: hgf tilted its tail upward because its evidence tilted upward, and direct_forecast stayed symmetric because it declared its evidence mixed. The bottom traces broke the link between what they argued and what they output: structure_memory concluded 'below recent range' in its reasoning and then predicted 'within recent range', factor_memory labelled a 4.0%-to-4.2% path as 'dipping or falling' and then flattened its own ranking to a near-uniform abstention, and both it and principle_memory ended with above and below equally likely after arguing that above was the less likely tail.",
+  "shared_evidence_note": "All seven landed on the same prediction, so the bank split did not drive disagreement about the option — it only changed the ceiling: E1 contained the January print that let hgf construct a 4.0%-to-4.2% trajectory of the target series, which no E0 method could see, yet factor_memory read that identical pair as 'falling' and structure_memory left the 'Recent Rise in Unemployment' item sitting unused in its own E0 bank, so the spread in quality came from reasoning rather than from the evidence supplied."
+}

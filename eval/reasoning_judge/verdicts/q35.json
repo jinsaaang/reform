@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_nvda_revenue_growth_acceleration_2025_07_27",
+  "verdicts": [
+    {
+      "trace_id": "v3_nvda_revenue_growth_acceleration_2025_07_27::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 3,
+        "probability_justification": 4,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The target quarter's (Q2 FY2026) actual revenue growth rate is unknown. The prior quarter's (Q1 FY2026) growth rate is also not explicitly detailed, preventing assessment of acceleration. While demand indicators are strong, the Q1 guidance miss introduces uncertainty, and the 78% Q4 FY2025 growth sets a high bar for acceleration.",
+      "verdict_one_line": "The only trace that invents no numbers, names the exact contract ambiguity (threshold quantifies growth, not acceleration), and matches near-uniform mass to its declared gaps, though it still calls 'yes' after judging both intervals merely 'plausible'.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_nvda_revenue_growth_acceleration_2025_07_27::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "the threshold for acceleration (69.18pp) is extremely high, making the 'no' prediction robust even with minor variations in these figures, especially given the explicit mention of a guidance miss.",
+      "verdict_one_line": "Every cited fact (78% Q4 FY2025, Q1 beat with guidance miss, Amazon's $20B, Blackwell) traces to E1 and the chain to 'no' is tight, but it silently reads the threshold as 69.18 percentage points of acceleration and then posts a -20/-5/+10 interval it has just called unsupported.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_nvda_revenue_growth_acceleration_2025_07_27::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 2,
+        "prediction_alignment": 3,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": false
+      },
+      "decisive_quote": "the historical baseline of 78% YoY growth in Q4 FY2025 and the 'strong' projection for the target quarter suggest that the YoY revenue growth will likely meet or exceed the 69.18% threshold required for a 'yes' resolution.",
+      "verdict_one_line": "Invents nothing and correctly anchors on E0's 78% headline, but converts a qualitative 'strong' into a boundary clearance at 0.85 while never engaging the 122%-to-78% deceleration visible in the same bank.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_nvda_revenue_growth_acceleration_2025_07_27::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 1,
+        "logical_validity": 2,
+        "prediction_alignment": 3,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": true,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Projecting year-over-year revenue growth for the fiscal quarter ending 2025-07-27 by comparing the Q2 FY2026 guidance ($28B) to the Q2 FY2025 actual revenue ($13.51B) yields approximately 107.25% growth.",
+      "verdict_one_line": "The whole bridge rests on a $28B guidance figure and a $13.51B base that appear nowhere in E0 (whose snippets are headline-only), and the trace then declares magnitude support 'supported' at 0.95 before the delivered forecast abstains at 0.51 saying no evidence distinguishes the options.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_nvda_revenue_growth_acceleration_2025_07_27::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 1,
+        "logical_validity": 1,
+        "prediction_alignment": 3,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": true,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": false
+      },
+      "decisive_quote": "NVIDIA's Q1 FY2026 earnings release (art_snippet_2b7156531d6aaf7b) provides guidance for Q2 FY2026 (ending 2025-07-27) projecting approximately 107% year-over-year revenue growth. This direct projection for the target period significantly exceeds the 69.18% threshold.",
+      "verdict_one_line": "Calls its magnitude support 'direct' while the cited article is a bare NVIDIA press-release headline containing no numbers, invents both the 107% guidance and an '18% in Q1 FY2026' deceleration, and never reconciles a claimed fall to 18% with a claimed rebound to 107%.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_nvda_revenue_growth_acceleration_2025_07_27::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 1,
+        "prediction_alignment": 1,
+        "probability_justification": 2,
+        "mechanism_specificity": 2
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The central estimate of 75.0 percent falls within the 'yes' interval, supported by indications of strong guidance for the target quarter.",
+      "verdict_one_line": "Honestly establishes that the growth rate cannot be computed from E0 and its reasoning block predicts 'no' at 0.7, yet the forecast block flips to 'yes' at 0.7 on a 75.0% central estimate it derives from 'strong guidance' it has just said contains no extractable figures.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_nvda_revenue_growth_acceleration_2025_07_27::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 1,
+        "logical_validity": 1,
+        "prediction_alignment": 1,
+        "probability_justification": 2,
+        "mechanism_specificity": 2
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": true,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "NVIDIA's year-over-year revenue growth has decelerated sharply from 265% in Q4 FY2025 to 18% in Q1 FY2026, suggesting a normalization or maturation of demand drivers.",
+      "verdict_one_line": "Both anchor figures are fabricated and the 265% claim directly contradicts E0's own 'Nvidia sales grow 78%' item for that quarter, and the trace then argues 'no' at 0.9 before emitting 'yes' at 0.51 as a validation-failure fallback.",
+      "would_a_careful_analyst_accept_this": "no"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_nvda_revenue_growth_acceleration_2025_07_27::hgf",
+    "v3_nvda_revenue_growth_acceleration_2025_07_27::factor_memory",
+    "v3_nvda_revenue_growth_acceleration_2025_07_27::structured_reasoning",
+    "v3_nvda_revenue_growth_acceleration_2025_07_27::case_memory",
+    "v3_nvda_revenue_growth_acceleration_2025_07_27::structure_memory",
+    "v3_nvda_revenue_growth_acceleration_2025_07_27::principle_memory",
+    "v3_nvda_revenue_growth_acceleration_2025_07_27::direct_forecast"
+  ],
+  "ranking_rationale": "The separator was whether a trace respected that neither bank contains a revenue figure or guidance number for the target quarter: hgf and factor_memory reasoned from the headline facts they actually had (78% Q4 FY2025, the Q1 report and its guidance miss) and said out loud what they could not compute, while case_memory, structure_memory and direct_forecast manufactured the decisive quantities ($28B, $13.51B, 107%, 265%, 18%) that headline-only snippets cannot supply. A second separator was self-consistency: direct_forecast and principle_memory each argued their way to 'no' and then emitted 'yes', which is the sharpest possible failure of prediction alignment regardless of grounding.",
+  "shared_evidence_note": "The disagreement is overwhelmingly about reasoning rather than evidence, since E0 and E1 overlap on the two decisive NVIDIA items (the 78% Q4 FY2025 headline and the Q1 FY2026 results release) and neither bank contains any target-quarter number; the one genuine asymmetry is E1's Yahoo item noting the forward guidance missed expectations, which both E1 traces used and which is the only reason their 'down' signal is evidence-based rather than invented."
+}

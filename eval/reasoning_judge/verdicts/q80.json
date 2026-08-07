@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_us_m2_monthly_growth_2025_10",
+  "verdicts": [
+    {
+      "trace_id": "v3_us_m2_monthly_growth_2025_10::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 5,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "There is no direct or derived evidence in the current ledger that quantifies the expected monthly M2 growth rate for October 2025, making magnitude assessment insufficient.",
+      "verdict_one_line": "Separates a supported upward direction from an unsupported threshold crossing, marks one inherited path CONTRADICTED and two UNKNOWN against its own E1 evidence, and allocates mass (0.15/0.55/0.30) that visibly tracks the stated estimate bounds and admitted gaps.",
+      "would_a_careful_analyst_accept_this": "yes"
+    },
+    {
+      "trace_id": "v3_us_m2_monthly_growth_2025_10::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "a specific report for May 2025 indicated an annualized M2 growth rate that, when converted to a monthly figure, falls below the lower bound of the recent range.",
+      "verdict_one_line": "The only E0 trace that converts its single quantitative anchor to the target's monthly units and then confronts the resulting counter-signal head-on, though it undercuts itself by labelling magnitude_support 'supported' and horizon_match 'direct' when neither is true and by giving that below-range computation only 0.15.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_m2_monthly_growth_2025_10::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Given the evidence suggesting continued growth but not strong acceleration, and the counteracting forces of QT, the most probable outcome is for M2 growth to fall within the recent range.",
+      "verdict_one_line": "Balances growth drivers against a damping force and lands on a near-symmetric 0.2/0.6/0.2 that matches its declared lack of forward data, but asserts 'Ongoing quantitative tightening (QT) by the Federal Reserve continues to reduce system liquidity' with an empty evidence_ids list and overclaims metric_match as 'direct' when nothing in E1 measures monthly M2 growth.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_m2_monthly_growth_2025_10::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The reported 2.1% growth in May 2025 is an annual figure, making direct comparison to the target monthly percentage range (0.303%-0.378%) challenging.",
+      "verdict_one_line": "Catches the annual-versus-monthly unit mismatch that most E0 traces ignore and keeps the resolved 2024-02 episode out of its evidence, but its reasoning block records prediction 'above recent range' at 0.55 while the forecast block resolves to 'within recent range' at 0.65 with no stated reason for the flip.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_m2_monthly_growth_2025_10::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Derived from qualitative evidence of a dovish Fed pivot and observed M2 growth trends, suggesting a magnitude likely exceeding the recent historical range.",
+      "verdict_one_line": "Internally coherent in selecting 'above' and explicit about why 'within' stays plausible, but manufactures a 0.45% central estimate out of headline-level qualitative evidence, then puts 0.75 on a boundary crossing it simultaneously concedes is 'not definitively quantified'; the target_semantics field states the answer before any reasoning ('predicting it to be above the recent historical range').",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_us_m2_monthly_growth_2025_10::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The constraint imposed by insufficient magnitude evidence requires the central estimate and modal option to remain within the recent range.",
+      "verdict_one_line": "Quotes the 2.1% figure accurately as *real* M2 and honestly flags it as non-comparable to a monthly nominal range, but every reasoning step runs 'up' and its option_mapping concludes \"making 'above recent range' the most probable outcome\" while the delivered prediction is 'within recent range' backed by a central estimate (0.34) that is exactly the midpoint of the target interval.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_m2_monthly_growth_2025_10::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 2,
+        "prediction_alignment": 3,
+        "probability_justification": 1,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": false
+      },
+      "decisive_quote": "the net effect points towards continued robust growth likely exceeding the upper quartile threshold of prior observed changes.",
+      "verdict_one_line": "Drops the word 'Real' from its only numeric source and re-reads it as \"U.S. M2 money supply showed a 2.1% growth in May 2025\", then jumps straight from a directional dovish-Fed story to crossing a 0.378% monthly boundary with 0.85 confidence and no quantity, no unit reconciliation, and no admitted gap anywhere in the trace.",
+      "would_a_careful_analyst_accept_this": "no"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_us_m2_monthly_growth_2025_10::hgf",
+    "v3_us_m2_monthly_growth_2025_10::structure_memory",
+    "v3_us_m2_monthly_growth_2025_10::factor_memory",
+    "v3_us_m2_monthly_growth_2025_10::case_memory",
+    "v3_us_m2_monthly_growth_2025_10::principle_memory",
+    "v3_us_m2_monthly_growth_2025_10::direct_forecast",
+    "v3_us_m2_monthly_growth_2025_10::structured_reasoning"
+  ],
+  "ranking_rationale": "The separator was whether a trace kept the difference between direction and magnitude: every bank here is headline-only, so the honest move is to note that nothing measures monthly nominal M2 growth in percent and to price a threshold crossing accordingly, which hgf, structure_memory and factor_memory each do in different ways (explicit path falsification, an annual-to-monthly unit conversion, an explicit damping factor). The bottom three all failed at the reasoning-to-answer join: structured_reasoning put 0.85 on crossing a 0.378% boundary it never quantified, principle_memory invented a 0.45% central estimate from qualitative headlines and pre-stated its answer in the target_semantics field, and direct_forecast argued 'above' throughout and then delivered 'within'.",
+  "shared_evidence_note": "The bank split contributed at the margin - E0 alone carries the '2.1% Real M2 growth in May 2025' and 'ninth month' items that pulled several E0 traces toward 'above', while E1 offers no M2 growth figure at all - but the decisive variation was reasoning, not evidence: within E0 alone the same five snippets produced 0.85 on 'above' (structured_reasoning) and 0.55 on 'within' (structure_memory), differing only in whether the trace converted the annual figure to monthly units and admitted the magnitude gap."
+}

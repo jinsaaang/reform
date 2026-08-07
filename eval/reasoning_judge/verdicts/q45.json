@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_us_10y_real_yield_monthly_change_2025_11",
+  "verdicts": [
+    {
+      "trace_id": "v3_us_10y_real_yield_monthly_change_2025_11::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The specific monthly change for November 2025 will depend on the Fed's policy stance and inflation data released leading up to and during that month, which are not precisely forecastable from the current evidence.",
+      "verdict_one_line": "Honest, self-limiting E0 trace that rates its own metric and horizon fit as only 'partial', keeps a wide symmetric band around zero and matches it with a near-uninformative 0.25/0.50/0.25, but never traces its named drivers through to the real-yield magnitude.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_10y_real_yield_monthly_change_2025_11::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 2,
+        "prediction_alignment": 3,
+        "probability_justification": 2,
+        "mechanism_specificity": 2
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Given the strength of the downward drivers (rate cuts and safe-haven demand), there is a substantial probability that the monthly change in the 10-year real yield will fall below the -0.045 percentage point threshold.",
+      "verdict_one_line": "Every node in its own graph is labelled ambiguous or 'mixed', yet the decision rationale declares 'strong indications of rate cuts' and puts 0.5 on crossing a specific -0.045 pp threshold with no quantity behind it; it also cites the E0 item titled 'Why Have 10-Year U.S. Treasury Yields Increased Since The Fed Started Cutting Rates?' as downward evidence and asserts that rising inflation raises real yields.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_us_10y_real_yield_monthly_change_2025_11::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 2,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The evidence for significant easing is strong, making 'below recent range' a plausible outcome, though magnitude is uncertain.",
+      "verdict_one_line": "Best real-yield mechanism in the set (real yields fall only if inflation expectations fall at least as fast as nominal yields) and accurate use of the E1 Fed-cut and inflation-downside items, but the reasoning block concludes 'below recent range' at 0.45 while the forecast block returns 'within recent range' at 0.60 with no account of the reversal, and its -0.03/-0.01/+0.03 band is offered as 'derived from evidence analysis' right after declaring magnitude support 'insufficient'.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_us_10y_real_yield_monthly_change_2025_11::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Given the evidence suggesting a positive monthly change but with uncertain magnitude, the outcome is most likely to be 'within recent range' if the change is moderate, or 'above recent range' if upward pressures are strong. 'Below recent range' is less probable.",
+      "verdict_one_line": "Reads its E0 headlines the way they actually run (yields rose after the Fed began cutting; foreign selling pushes yields up), converts that upward lean into an explicitly asymmetric 0.15/0.55/0.30 rather than a symmetric default, and names the missing piece ('the absence of specific historical data on the distribution of prior monthly changes'); only blemish is a self-rated 'direct' metric/horizon fit the bank does not support and a shaky 'lower inflation expectations reduce real yields' link.",
+      "would_a_careful_analyst_accept_this": "yes"
+    },
+    {
+      "trace_id": "v3_us_10y_real_yield_monthly_change_2025_11::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The upper bound of the latent estimate (0.05) falls above the 0.045 threshold, making this option plausible, though not the most supported given the central estimate.",
+      "verdict_one_line": "Cleanly quarantines the retrieved 2023 episode (never imports its boundaries or resolved option), is the only E0 trace to use the actual snippet text on technical drivers of negative yields, and derives its symmetric 0.20/0.60/0.20 from where its own band straddles the boundaries — but its drivers are all logged as 'mixed' and never traced to a magnitude.",
+      "would_a_careful_analyst_accept_this": "yes"
+    },
+    {
+      "trace_id": "v3_us_10y_real_yield_monthly_change_2025_11::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 3,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Rate cuts typically aim to stimulate the economy, which can lead to lower nominal yields. However, economic weakness may also reduce inflation expectations, and the net impact on real yields depends on the relative magnitude of these changes.",
+      "verdict_one_line": "Correct nominal-versus-real decomposition and a sound reading of the 'yields rose despite cuts' counterevidence, but the reasoning block says 'within' with 'a slight lean towards exceeding the upper bound' at 0.45/0.40, the forecast silently rewrites that to 0.50/0.30, and the middle bucket is partly held up by 'the instruction to keep the central estimate within the recent range' rather than by the analysis.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_10y_real_yield_monthly_change_2025_11::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Qualitative indicators from monetary policy easing (Fed rate cuts) and moderating inflation suggest potential downward pressure on real yields. However, direct quantitative evidence for the magnitude of the monthly change is unavailable, and the link between these drivers and the specific target metric is unverified, thus only directional support is available.",
+      "verdict_one_line": "The only trace that separates direction from threshold-crossing and then acts on it — it marks the retrieved Fed-rates path CONTRADICTED and the tariff path UNMAPPED, leaves evidence_ids empty on the steps it cannot support, and carries the down-tilt into 0.20 below versus 0.05 above while keeping the mode in the middle; the 0.75 concentration is the one unargued number, and 'lowered interest rates in September and October 2025' slightly outruns an article that only says the October cut was sealed.",
+      "would_a_careful_analyst_accept_this": "yes"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_us_10y_real_yield_monthly_change_2025_11::hgf",
+    "v3_us_10y_real_yield_monthly_change_2025_11::principle_memory",
+    "v3_us_10y_real_yield_monthly_change_2025_11::case_memory",
+    "v3_us_10y_real_yield_monthly_change_2025_11::direct_forecast",
+    "v3_us_10y_real_yield_monthly_change_2025_11::structure_memory",
+    "v3_us_10y_real_yield_monthly_change_2025_11::factor_memory",
+    "v3_us_10y_real_yield_monthly_change_2025_11::structured_reasoning"
+  ],
+  "ranking_rationale": "The separator was whether a trace kept the distinction between a direction and a threshold crossing: hgf, principle_memory and case_memory each state that no quantitative magnitude evidence exists and then allocate mass accordingly, with the tail asymmetry (or symmetry) explicitly derived from their own stated lean. The bottom two collapsed that distinction in opposite ways — structured_reasoning turned ambiguous graph nodes into 'strong downward drivers' and 0.5 on crossing -0.045 pp, while factor_memory reasoned to 'below recent range' and then emitted 'within recent range' without reconciling the two.",
+  "shared_evidence_note": "Bank differences explain the downward tilt but not the disagreement: only E1 carried the September/October 2025 Fed-cut and inflation-downside headlines, so the two E1 traces reasonably lean down, yet the sharpest split — structured_reasoning's 'below recent range' against four other 'within' answers from the identical E0 headlines — is purely a reasoning difference."
+}

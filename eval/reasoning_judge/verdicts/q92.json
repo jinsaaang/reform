@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_vix_monthly_change_2025_06",
+  "verdicts": [
+    {
+      "trace_id": "v3_vix_monthly_change_2025_06::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 5,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The link from elevated uncertainty to a declining VIX trend during the target period (checkpoint D3:checkpoint_5) is unverified by current evidence.",
+      "verdict_one_line": "Every cited id is in its own E1 bank and its characterisations track the titles closely; it names the missing input rather than inventing it (\"Key data points required for calculation (May 2025 VIX) are also unavailable\"), declares direction uncertain and magnitude insufficient, and then allocates 0.25/0.50/0.25 mass that actually matches that declared support level, at the cost of never connecting its named drivers to the target quantity.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_vix_monthly_change_2025_06::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The central estimate falls within this range, and due to insufficient magnitude evidence, the modal option is constrained to this range.",
+      "verdict_one_line": "The strongest explicit principle in the set — directional evidence without a magnitude anchor cannot license a threshold crossing — plus the clearest causal chain (\"increases demand for hedging and speculative bets on price movements, driving up option prices\") and honest fit labels (\"magnitude_support\": \"unsupported\"), but the reasoning block first selects \"above recent range\" at 0.55 and the forecast block then selects \"within recent range\" at 0.75 with no acknowledgement of the reversal, and it reads a Dec-2023 Fed title as evidence that volatility is \"already heightened\" for June 2025.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_vix_monthly_change_2025_06::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Election years, such as 2025 (leading into the US presidential election), are historically associated with increased market uncertainty and potential for higher volatility, which could lead to a positive VIX change.",
+      "verdict_one_line": "Both stages agree on \"within recent range\" and the boundary checks make the selection explicit, but its load-bearing driver rests on an anachronistic reading of an Oct-2024 \"Trump vs. Harris\" snippet as a 2025 election-year signal, and an invented central estimate whose only stated basis is \"qualitative drivers and uncertainty\" is used to declare \"above recent range\" outright unsupported — which the trace then contradicts by assigning that option 0.30 mass.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_vix_monthly_change_2025_06::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 3,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Given the significant drivers of uncertainty, a move above this boundary is plausible, but a substantial move within the range is also possible.",
+      "verdict_one_line": "Its own option mapping concedes the evidence does not discriminate between the two upper buckets, and the trace then asserts \"above recent range\" at 0.55 in the reasoning block before silently reversing to \"within recent range\" at 0.60 in the forecast block; the honest gap statement (\"the precise magnitude of the VIX change is not definitively quantified by the available evidence\") is the redeeming feature.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_vix_monthly_change_2025_06::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 3,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "the forecast leans towards the VIX change being positive, potentially falling within the recent range or exceeding it.",
+      "verdict_one_line": "The stated reasoning is explicitly indifferent between the two upper buckets, yet the trace selects \"above recent range\" at 0.55 in the reasoning block and \"within recent range\" at 0.60 in the forecast block without reconciling them, and it puts 0.30 on an option lying entirely outside its own stated interval high of 15 percent; it is at least candid that \"there is no direct quantitative forecast for June 2025\".",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_vix_monthly_change_2025_06::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 2,
+        "prediction_alignment": 3,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Derived from qualitative evidence of increased uncertainty and political/economic risks driving volatility, adjusted to align with the highest probability outcome.",
+      "verdict_one_line": "Its citations are legitimately from its own E1 bank and the tariff-to-VIX-surge driver is real, but the trace states in writing that the 25 percent central estimate was reverse-engineered to fit the chosen option, grades its own evidence \"magnitude_support\": \"supported\" while the forecast block says \"direction_only\" and \"no specific quantitative forecast for the magnitude of the VIX change in June 2025 is provided\", and then puts 0.60 on the boundary-crossing bucket it admits it cannot verify.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_vix_monthly_change_2025_06::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 2,
+        "prediction_alignment": 3,
+        "probability_justification": 1,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": false
+      },
+      "decisive_quote": "The monthly VIX change for 2025-06 is expected to be at or above 21.713273 percent.",
+      "verdict_one_line": "The target estimate is simply the chosen bucket's boundary restated as a prediction, with no quantity anywhere in the trace supporting a 21.7 percent threshold crossing, and 0.70 mass is placed on it from title-only snippets; the sole countervailing node is fabricated out of two Cboe product-launch headlines (\"sophisticated financial instruments and market participant strategies designed to hedge against market volatility can help to absorb or manage extreme price swings\") purely so it can be dismissed, and the trace never admits a single unverified step.",
+      "would_a_careful_analyst_accept_this": "no"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_vix_monthly_change_2025_06::hgf",
+    "v3_vix_monthly_change_2025_06::case_memory",
+    "v3_vix_monthly_change_2025_06::structure_memory",
+    "v3_vix_monthly_change_2025_06::principle_memory",
+    "v3_vix_monthly_change_2025_06::direct_forecast",
+    "v3_vix_monthly_change_2025_06::factor_memory",
+    "v3_vix_monthly_change_2025_06::structured_reasoning"
+  ],
+  "ranking_rationale": "The separator was whether a trace kept the distinction between a directional signal and a threshold-crossing claim: hgf and case_memory both state that no cited source quantifies the monthly change and then hold their probability mass to what that supports, while structured_reasoning and factor_memory convert the same kind of qualitative uncertainty commentary into a specific boundary crossing, one by restating the 21.713273 boundary as its estimate and the other by openly admitting the central estimate was 'adjusted to align with the highest probability outcome'. The middle of the field is occupied by traces whose final block reasons correctly but which contradict an earlier stage of their own output or lean on an anachronistic 2024-election snippet as a June-2025 signal.",
+  "shared_evidence_note": "Evidence differences explain little here: the two E1 traces read the identical tariff-and-uncertainty bank to opposite conclusions (factor_memory to 0.60 'above', hgf to an explicitly uncertain 0.50 'within'), and the five E0 traces split across both answers from the same ten snippets, so the disagreement is almost entirely about reasoning discipline on the magnitude step rather than about what each method was given."
+}

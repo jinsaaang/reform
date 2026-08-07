@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_us_payroll_monthly_growth_2025_06",
+  "verdicts": [
+    {
+      "trace_id": "v3_us_payroll_monthly_growth_2025_06::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 3,
+        "mechanism_specificity": 1
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": true,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Neutral baseline due to lack of specific evidence and reasoning abstention, with modal option constrained to 'within recent range' due to insufficient magnitude evidence.",
+      "verdict_one_line": "An honest but wholly content-free abstention that cites nothing from E0, names 'below recent range' in its reasoning block while its forecast selects 'within', and reaches the modal option by a stated default rule rather than by argument.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_us_payroll_monthly_growth_2025_06::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": false
+      },
+      "decisive_quote": "the strength of the May figure suggests that the growth is likely to remain within the recent range rather than falling below it, and the slowdown is unlikely to be severe enough to push it above the recent range",
+      "verdict_one_line": "The only E0 trace that explicitly argues why both neighbouring options are excluded, grounded in the May 139k print and the two slowdown forecasts, but it asserts the 0.017724-0.072354 percent bracket without ever converting job counts into a percentage, and the phrase about a slowdown pushing growth 'above' is muddled.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_payroll_monthly_growth_2025_06::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 3,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "While May's job additions (139k) are numerically above the estimated threshold for the upper range boundary (approx. 108k jobs for 0.072% growth on 150M payroll), the trend shows deceleration from April (177k), and the broader economic slowdown suggests this growth rate may not be sustained above the recent range.",
+      "verdict_one_line": "Uniquely does the level-to-percent bridge that the target actually requires and cites E1 accurately (139k May, 177k April, GDP contraction, tariff risk), but its own arithmetic places the two most recent prints above the upper boundary while it then asserts a 0.05 percent central estimate and rules 'above recent range' unsupported, so the quantitative step contradicts the selection it makes.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_payroll_monthly_growth_2025_06::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 1,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The combination of strong forward-looking indicators of economic deceleration and the recent factual data point suggests that June 2025 payroll growth is likely to be at the lower end of historical performance, potentially falling below the recent range.",
+      "verdict_one_line": "The reasoning argues consistently and at 0.55 probability for 'below recent range', yet the forecast block abandons that chain after a validation failure and outputs 'within recent range' on a near-uniform distribution, so the stated reasoning points squarely at a different option than the one selected; the drop from 139k to sub-0.018 percent is also never quantified, and one driver claim about Fed growth forecasts carries no evidence id.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_us_payroll_monthly_growth_2025_06::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 5,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "it does not provide the specific June 2025 payroll growth figure or the necessary comparator data (e.g., total nonfarm employment for April 2025) to directly calculate the target metric's magnitude in percent",
+      "verdict_one_line": "Every claim matches E0 verbatim, the tension between May's beat and the slowdown forecasts is resolved explicitly rather than dropped, and it names the exact missing quantity (the payroll level comparator) instead of inventing one; the only weakness is that 0.6 mass on 'within' is heavier than its own 'unsupported' magnitude verdict warrants.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_payroll_monthly_growth_2025_06::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 1,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The observed recent job additions (around 140k) and the general economic outlook pointing to a slowdown suggest that monthly payroll growth is unlikely to be exceptionally high, potentially falling below the lower end of the recent range.",
+      "verdict_one_line": "Citations to the January 143k, May 139k, Fed and UCLA items are accurate, but the inference runs 'not exceptionally high, therefore below the lower quartile' with no quantity connecting ~140k job gains to a 0.017724 percent floor, and it then puts 0.6 on that option immediately after declaring magnitude support weak.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_us_payroll_monthly_growth_2025_06::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "This option is most supported by the instruction regarding insufficient magnitude evidence.",
+      "verdict_one_line": "Cites E1 faithfully and is candid that all three routed paths are UNMAPPED and the June percentage is unknowable, but it simultaneously reports 'Directional conflict is absent' and '3 of 3 routed paths contributed' while every path assessment says unresolved and the narrative stresses conflicting signals, and the modal option is admittedly selected by a fallback instruction rather than by the evidence.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_us_payroll_monthly_growth_2025_06::case_memory",
+    "v3_us_payroll_monthly_growth_2025_06::structured_reasoning",
+    "v3_us_payroll_monthly_growth_2025_06::hgf",
+    "v3_us_payroll_monthly_growth_2025_06::factor_memory",
+    "v3_us_payroll_monthly_growth_2025_06::structure_memory",
+    "v3_us_payroll_monthly_growth_2025_06::principle_memory",
+    "v3_us_payroll_monthly_growth_2025_06::direct_forecast"
+  ],
+  "ranking_rationale": "The top traces stayed inside what their bank could support, named the specific quantity they lacked (the payroll level comparator needed to turn job counts into a percentage), and made the option choice follow from an explicitly resolved tension between May's stronger-than-expected print and the slowdown forecasts. The bottom traces either leapt from 'growth will moderate' to a specific boundary crossing and then loaded 0.55-0.6 probability onto it, or produced reasoning that named one option while the forecast block emitted another, with direct_forecast contributing no question-specific content at all.",
+  "shared_evidence_note": "Bank differences explain only the richer driver set available to factor_memory and hgf (April 177k, Q1 GDP contraction, tariff-risk items unique to E1); the actual disagreement is a reasoning difference, since 'below' and 'within' were both selected from within E0 alone and the decisive issue everywhere was whether a trace attempted to convert reported job gains into the pre-registered percentage boundaries."
+}

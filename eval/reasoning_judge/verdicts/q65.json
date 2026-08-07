@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_us_cpi_monthly_change_2025_06",
+  "verdicts": [
+    {
+      "trace_id": "v3_us_cpi_monthly_change_2025_06::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 2
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The May 2025 CPI change of 0.1% is below the lower boundary of the recent range (0.146%), suggesting that the June 2025 CPI change is likely to also be below this boundary, absent significant new inflationary pressures.",
+      "verdict_one_line": "A clean, honest one-anchor persistence argument that maps unambiguously to 'below', but it supplies no causal mechanism, its boundary check calls 'within recent range' unsupported while still assigning it 0.30, and the reasoning block's 0.7/0.25/0.05 is silently revised to 0.6/0.3/0.1 in the forecast.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_cpi_monthly_change_2025_06::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 2,
+        "mechanism_specificity": 2
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": false
+      },
+      "decisive_quote": "The US economic outlook for 2024 indicated slower GDP growth and falling inflation.",
+      "verdict_one_line": "Promotes a November-2023 outlook piece about calendar 2024 into a live disinflationary driver for June 2025 without ever noting the eighteen-month staleness, then rides that plus one data point to 0.80 confidence with no uncertainty statement anywhere in the forecast block.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_cpi_monthly_change_2025_06::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Elevated housing inflation is noted as a potential factor that could sustain overall CPI pressure, acting as a counterforce to disinflationary trends.",
+      "verdict_one_line": "The only trace that carries a genuine upward counterforce all the way through to its numbers: the shelter-lag channel widens the latent band to 0.08-0.16 so it straddles the 0.146 boundary, and the 0.60/0.35/0.05 split is exactly what that straddle plus an admitted single-data-point basis warrants.",
+      "would_a_careful_analyst_accept_this": "yes"
+    },
+    {
+      "trace_id": "v3_us_cpi_monthly_change_2025_06::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 4,
+        "probability_justification": 2,
+        "mechanism_specificity": 2
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "19% of the probability mass is allocated here due to uncertainty and the need to avoid probability concentration.",
+      "verdict_one_line": "Its counterevidence slot is filled with a factor it labels 'down', so no competing consideration is ever weighed; it then drops the central estimate to 0.05 (below the only observed quantity, 0.1%) on 'general inflation trends' alone, and justifies its boundary checks by pointing at the probability mass rather than the evidence.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_cpi_monthly_change_2025_06::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 1,
+        "prediction_alignment": 1,
+        "probability_justification": 2,
+        "mechanism_specificity": 2
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Deterministic abstention centered on the public boundary contract after structured-output failure.",
+      "verdict_one_line": "The reasoning block calls its magnitude support 'supported' and concludes 'below recent range' at 0.70, then the forecast block declares magnitude 'insufficient', recenters on the contract midpoint 0.222644, and emits 'within recent range' at a near-uniform 0.32/0.35/0.32 - the stated reasoning points squarely at the option that was not selected.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_us_cpi_monthly_change_2025_06::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 2,
+        "mechanism_specificity": 2
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Potential for persistent upward pressures from factors like housing inflation, though not explicitly detailed in current evidence for the target period, could counteract disinflationary trends.",
+      "verdict_one_line": "Creditably marks its housing counterforce as unsupported by current evidence rather than smuggling it in from the hindsight DAG, but then calls a prior-month print 'direct' magnitude support for the target month, declares uncertainty 'Moderate', and assigns 0.8415 - a spuriously precise number that also overrides its own reasoning-block 0.75.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_cpi_monthly_change_2025_06::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 4,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Centered near the lower bound of the recent range, acknowledging May 2025 CPI of 0.1%.",
+      "verdict_one_line": "Best mechanism in the set - services and shelter persistence traced to all-items monthly CPI, with each inherited path explicitly marked aligned, contradicted or unresolved - and its wide 0.35/0.45/0.20 honestly matches the 'direction_only' support it declares, but the central estimate of 0.15 clears the 0.146074 boundary by 0.004 on purely directional evidence, so nothing but that unsupported placement separates 'within' from 'below'.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_us_cpi_monthly_change_2025_06::factor_memory",
+    "v3_us_cpi_monthly_change_2025_06::direct_forecast",
+    "v3_us_cpi_monthly_change_2025_06::hgf",
+    "v3_us_cpi_monthly_change_2025_06::structure_memory",
+    "v3_us_cpi_monthly_change_2025_06::structured_reasoning",
+    "v3_us_cpi_monthly_change_2025_06::principle_memory",
+    "v3_us_cpi_monthly_change_2025_06::case_memory"
+  ],
+  "ranking_rationale": "The separator at the top was whether an upward counterforce was actually priced rather than merely mentioned: factor_memory let shelter persistence widen its band across the 0.146 boundary and sized 0.60/0.35/0.05 to that straddle, while direct_forecast earned second on a spare, transparent extrapolation that maps to exactly one option. The bottom is defined by traces whose numbers detached from their arguments - principle_memory pushed its central estimate below the only observed quantity and justified boundary checks by citing its own probability mass, and case_memory reasoned its way to 'below recent range' at 0.70 and then shipped 'within recent range' from a mechanical abstention.",
+  "shared_evidence_note": "Both causes are present but reasoning dominates: five of the seven traces (four on E0, one on E1) read the same CNBC May-0.1% print and landed on 'below', so the two 'within' predictions came not from bank composition alone but from hgf leaning on E1-only stale services and housing outlooks to place a central estimate 0.004 above the boundary, and from case_memory discarding its own E0-grounded reasoning after a structured-output failure."
+}

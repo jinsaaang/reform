@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_us_unemployment_rate_change_2025_12",
+  "verdicts": [
+    {
+      "trace_id": "v3_us_unemployment_rate_change_2025_12::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 5,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The recent signals of a rising unemployment rate and softening labor market suggest a positive monthly change. However, the earlier 'leveling off' trend and current economic uncertainty from the Fed indicate that the magnitude of this positive change may be modest, potentially falling within or just above the lower boundary.",
+      "verdict_one_line": "Every claim maps cleanly onto E0 headlines, the reasoning block and the forecast block agree, and the 0.1/0.6/0.3 split leaves real mass on 'above' exactly as the declared direction-only magnitude support warrants; the weakness is that the only argument for a modest magnitude is a 2024 'leveling off' article and no mechanism links drivers to the rate arithmetic.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_unemployment_rate_change_2025_12::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Given the lack of specific magnitude data for prior observed changes to precisely define the 'recent range' quartiles and the complex dynamic, the forecast leans towards a positive monthly change that is likely to fall within the recent range, rather than significantly above it.",
+      "verdict_one_line": "Names a genuine countervailing mechanism (steady participation absorbing labor-market pressure) and matches a 0.5/0.4 near-split to its admitted lack of quartile data, but it labels the same 2024-vintage BLS article both 'historical_baseline' and 'target_period_signal', asserting steady participation as a current-period fact without support.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_unemployment_rate_change_2025_12::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 2,
+        "prediction_alignment": 1,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The forecast is 'within recent range' because the evidence for November and early December suggests a positive change (rise in unemployment), which would fall into this bucket or potentially 'above recent range'.",
+      "verdict_one_line": "Four of five reasoning steps point up and the trace's own target estimate is 'between 0.0 and 0.1 percentage points', yet the forecast block silently flips to 'below recent range' on a central estimate of -0.05 derived from a single 'claims dropped' headline, so the stated reasoning selects a different option than the one submitted.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_us_unemployment_rate_change_2025_12::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 2,
+        "prediction_alignment": 4,
+        "probability_justification": 1,
+        "mechanism_specificity": 2
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The 'warning sign' and 'softening labor market' indicators, coupled with Fed policy uncertainty, suggest the magnitude of this change is likely to be at or above 0.1 percentage points, thus falling into the 'above recent range' bucket.",
+      "verdict_one_line": "Reads a threshold crossing of 0.1 pp out of headline adjectives, then declares 'within recent range' outright unsupported and lifts the mass on 'above' from 0.60 to 0.75 between blocks while its own uncertainty note says the within/above distinction 'is not definitively established'.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_us_unemployment_rate_change_2025_12::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The evidence points towards a positive monthly change in the unemployment rate, but the magnitude is uncertain. The presence of both upward pressures and stabilizing factors suggests the change is likely to be small and positive, fitting the [0.0, 0.1) range.",
+      "verdict_one_line": "Coherent and honest about using the 2024 episode only as an analogue rather than transferring its resolved option, but it converts direction-only evidence into a hard interval of [0.00, 0.08] and then calls both neighbouring buckets 'unsupported' while resting 0.7 of the mass on that unquantified interval.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_unemployment_rate_change_2025_12::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "While it could fall within the [0.0, 0.1) range, the language implies a greater probability of exceeding this threshold and falling into the 'above recent range' category.",
+      "verdict_one_line": "The reasoning block argues that 'warning sign' rhetoric implies crossing 0.1 pp and predicts 'above recent range' at 0.60, but the forecast block returns 'within recent range' on a stated requirement that the modal option 'remain within the recent range' — the option is fixed by a rule and the rationale rebuilt around it.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_us_unemployment_rate_change_2025_12::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 5,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 4,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "While leading indicators suggest upward pressure (positive change), the lack of precise data for November's unemployment rate and the December rate prevents determining if the change will fall below 0.0, between 0.0 and 0.1, or above 0.1 percentage points.",
+      "verdict_one_line": "The only trace that states the actual mechanism — the December change is the December-minus-November rate difference — and every quantity it cites (64,000 November jobs, the claims drop) matches E1 exactly, but its bookkeeping contradicts itself by listing D2:path_3 in 'used_path_ids' after marking that same path CONTRADICTED, and the boundary checks call both neighbours 'unsupported' despite the quoted admission.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_us_unemployment_rate_change_2025_12::direct_forecast",
+    "v3_us_unemployment_rate_change_2025_12::hgf",
+    "v3_us_unemployment_rate_change_2025_12::structured_reasoning",
+    "v3_us_unemployment_rate_change_2025_12::case_memory",
+    "v3_us_unemployment_rate_change_2025_12::structure_memory",
+    "v3_us_unemployment_rate_change_2025_12::factor_memory",
+    "v3_us_unemployment_rate_change_2025_12::principle_memory"
+  ],
+  "ranking_rationale": "The top traces kept one conclusion across the reasoning and forecast blocks, declared that their evidence supported direction only, and left substantial probability on the neighbouring bucket they could not rule out. The bottom traces either flipped option between blocks (factor_memory reasoned to 'within' and submitted 'below'; structure_memory reasoned to 'above' and submitted 'within') or converted headline adjectives into a 0.1 pp threshold crossing and then staked 0.75 on it (principle_memory).",
+  "shared_evidence_note": "Bank differences explain little here — E1 gave factor_memory and hgf actual quantities (64,000 November jobs, a late-December claims drop) that E0 lacked, yet the two E1 traces still split from each other and the E0 traces split among themselves, so the disagreement came from how each trace bridged direction-only evidence to the 0.0/0.1 pp boundaries, not from what it read."
+}

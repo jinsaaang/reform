@@ -1,0 +1,170 @@
+{
+ "question_id": "v3_us_industrial_production_monthly_growth_2026_06",
+ "verdicts": [
+  {
+   "trace_id": "v3_us_industrial_production_monthly_growth_2026_06::hgf",
+   "method": "hgf",
+   "scores": {
+    "evidence_grounding": 4,
+    "logical_validity": 4,
+    "prediction_alignment": 4,
+    "probability_justification": 4,
+    "mechanism_specificity": 3
+   },
+   "flags": {
+    "unsupported_magnitude_leap": false,
+    "hallucinated_number": false,
+    "internal_contradiction": false,
+    "boilerplate_only": false,
+    "post_hoc_option_fit": false,
+    "admits_own_gap": true
+   },
+   "decisive_quote": "The target metric, monthly industrial-production growth for June 2026, is not yet observed, and current evidence provides directional signals but lacks the specific magnitude required to cross the pre-registered range boundaries.",
+   "verdict_one_line": "Tests each inherited causal path against current E1 evidence (marking one REVERSED), declares magnitude unsupported, and allocates a modestly up-tilted 0.15/0.55/0.30 that matches that declared support level; weakened by defaulting to 'within' procedurally rather than confronting its own bank's 'fastest pace in nearly 5 years' item, and by reading the easing supply-chain index (1.77 vs 1.82) as a downward driver.",
+   "would_a_careful_analyst_accept_this": "with_reservations"
+  },
+  {
+   "trace_id": "v3_us_industrial_production_monthly_growth_2026_06::direct_forecast",
+   "method": "direct_forecast",
+   "scores": {
+    "evidence_grounding": 4,
+    "logical_validity": 4,
+    "prediction_alignment": 4,
+    "probability_justification": 4,
+    "mechanism_specificity": 3
+   },
+   "flags": {
+    "unsupported_magnitude_leap": false,
+    "hallucinated_number": false,
+    "internal_contradiction": false,
+    "boilerplate_only": false,
+    "post_hoc_option_fit": false,
+    "admits_own_gap": true
+   },
+   "decisive_quote": "the evidence does not provide the exact target-period quantity for June 2026 nor explicit arithmetic to derive it",
+   "verdict_one_line": "Every claim traces to E0 headlines (Feb +0.2%, April jump, job losses, 'sluggish renaissance'), neighbouring options are excluded by explicit boundary checks, and the 0.35 left on 'above' is justified by the admitted magnitude gap; the -0.1/0.2/0.6 latent interval and the treatment of gas-consumption and food-manufacturing-employment articles as 'strong forward-looking indicators' are asserted rather than derived.",
+   "would_a_careful_analyst_accept_this": "with_reservations"
+  },
+  {
+   "trace_id": "v3_us_industrial_production_monthly_growth_2026_06::factor_memory",
+   "method": "factor_memory",
+   "scores": {
+    "evidence_grounding": 4,
+    "logical_validity": 4,
+    "prediction_alignment": 4,
+    "probability_justification": 3,
+    "mechanism_specificity": 4
+   },
+   "flags": {
+    "unsupported_magnitude_leap": true,
+    "hallucinated_number": false,
+    "internal_contradiction": false,
+    "boilerplate_only": false,
+    "post_hoc_option_fit": false,
+    "admits_own_gap": true
+   },
+   "decisive_quote": "The resolution rule defines 'above recent range' as growth at or above 0.539 percent. The evidence of 'U.S. Manufacturing Production Rises At Fastest Pace in Nearly 5 Years' strongly suggests a positive growth rate that will exceed this threshold.",
+   "verdict_one_line": "Makes the sharpest boundary-relevant argument in the set - a 5-year-superlative print inside the target month plausibly exceeds an 8-month upper quartile - and explicitly excludes both neighbours, but inflates it into a latent central of 1.5% and high of 3.0% 'derived from qualitative evidence', never checks that a manufacturing-output superlative maps onto total INDPRO, and labels magnitude 'supported' in evidence_fit while calling it 'direction_only' in the forecast.",
+   "would_a_careful_analyst_accept_this": "with_reservations"
+  },
+  {
+   "trace_id": "v3_us_industrial_production_monthly_growth_2026_06::structure_memory",
+   "method": "structure_memory",
+   "scores": {
+    "evidence_grounding": 4,
+    "logical_validity": 4,
+    "prediction_alignment": 4,
+    "probability_justification": 3,
+    "mechanism_specificity": 3
+   },
+   "flags": {
+    "unsupported_magnitude_leap": false,
+    "hallucinated_number": false,
+    "internal_contradiction": false,
+    "boilerplate_only": false,
+    "post_hoc_option_fit": false,
+    "admits_own_gap": true
+   },
+   "decisive_quote": "The forecast leans towards 'within recent range' due to positive recent performance and recovery signs, balanced against job loss concerns and the absence of direct June 2026 data, which prevents a stronger conviction for 'above recent range'.",
+   "verdict_one_line": "Correctly refuses to transfer the redacted hindsight DAG's below-range path and grounds a modest positive estimate in E0, but its boundary audit calls 'above recent range' outright 'unsupported' while the narrative calls it possible and the forecast still assigns it 0.20, and the mass tightens from 0.10/0.55/0.35 to 0.15/0.65/0.20 between stages with no stated reason.",
+   "would_a_careful_analyst_accept_this": "with_reservations"
+  },
+  {
+   "trace_id": "v3_us_industrial_production_monthly_growth_2026_06::principle_memory",
+   "method": "principle_memory",
+   "scores": {
+    "evidence_grounding": 4,
+    "logical_validity": 2,
+    "prediction_alignment": 2,
+    "probability_justification": 2,
+    "mechanism_specificity": 3
+   },
+   "flags": {
+    "unsupported_magnitude_leap": false,
+    "hallucinated_number": false,
+    "internal_contradiction": true,
+    "boilerplate_only": false,
+    "post_hoc_option_fit": false,
+    "admits_own_gap": true
+   },
+   "decisive_quote": "The significant jump in April 2026 and positive forward-looking indicators suggest growth could exceed the upper boundary, despite tempering factors.",
+   "verdict_one_line": "Its own boundary audit labels 'above recent range' most_supported while mapped_option and prediction are 'within recent range', and it declares magnitude_support 'supported' before conceding 'The exact growth rate for June 2026 is not provided' - the facts cited are traceable but the audit points at a different option than the one chosen.",
+   "would_a_careful_analyst_accept_this": "no"
+  },
+  {
+   "trace_id": "v3_us_industrial_production_monthly_growth_2026_06::structured_reasoning",
+   "method": "structured_reasoning",
+   "scores": {
+    "evidence_grounding": 3,
+    "logical_validity": 2,
+    "prediction_alignment": 2,
+    "probability_justification": 2,
+    "mechanism_specificity": 2
+   },
+   "flags": {
+    "unsupported_magnitude_leap": true,
+    "hallucinated_number": false,
+    "internal_contradiction": false,
+    "boilerplate_only": false,
+    "post_hoc_option_fit": true,
+    "admits_own_gap": false
+   },
+   "decisive_quote": "These factors suggest a continuation of positive momentum that is likely to push the June 2026 monthly growth rate above the upper quartile boundary of 0.539%, despite countervailing pressures.",
+   "verdict_one_line": "Its own synthesis node calls the outlook 'mixed' and 'complex' and it cites no quantity at all, yet it crosses the 0.539% boundary on the strength of an undated-magnitude 'Jumped in April' headline and converts the questioning title 'Is manufacturing productivity recovering?' into an asserted driver; the counterevidence is dismissed by re-weighting assertion rather than argument.",
+   "would_a_careful_analyst_accept_this": "no"
+  },
+  {
+   "trace_id": "v3_us_industrial_production_monthly_growth_2026_06::case_memory",
+   "method": "case_memory",
+   "scores": {
+    "evidence_grounding": 2,
+    "logical_validity": 2,
+    "prediction_alignment": 2,
+    "probability_justification": 3,
+    "mechanism_specificity": 1
+   },
+   "flags": {
+    "unsupported_magnitude_leap": false,
+    "hallucinated_number": false,
+    "internal_contradiction": true,
+    "boilerplate_only": true,
+    "post_hoc_option_fit": false,
+    "admits_own_gap": true
+   },
+   "decisive_quote": "Structured reasoning could not be validated; no current evidence-supported magnitude claim is retained.",
+   "verdict_one_line": "An honest abstention after a validation failure, and the 0.20/0.60/0.20 mass is roughly the quartile base rate its ignorance warrants, but it cites zero evidence from a bank containing directly on-target industrial-production prints, asserts without support that 'No validated current driver is strong enough', and its reasoning stage states prediction 'below recent range' while the forecast stage returns 'within recent range'.",
+   "would_a_careful_analyst_accept_this": "no"
+  }
+ ],
+ "within_question_ranking": [
+  "v3_us_industrial_production_monthly_growth_2026_06::hgf",
+  "v3_us_industrial_production_monthly_growth_2026_06::direct_forecast",
+  "v3_us_industrial_production_monthly_growth_2026_06::factor_memory",
+  "v3_us_industrial_production_monthly_growth_2026_06::structure_memory",
+  "v3_us_industrial_production_monthly_growth_2026_06::principle_memory",
+  "v3_us_industrial_production_monthly_growth_2026_06::structured_reasoning",
+  "v3_us_industrial_production_monthly_growth_2026_06::case_memory"
+ ],
+ "ranking_rationale": "The top traces all declared the same gap - no June 2026 quantity exists in either bank - and then let that declaration govern both the option choice and the mass allocation, whether they landed on 'within' (hgf, direct_forecast) or argued a specific threshold crossing from a same-month superlative (factor_memory). The bottom traces either crossed the 0.539% boundary on purely qualitative headline momentum (structured_reasoning), predicted one option while their own boundary audit named another (principle_memory, case_memory), or produced no evidence-based content at all (case_memory).",
+ "shared_evidence_note": "Bank composition mattered - only E1 contained June-dated on-target items ('U.S. Manufacturing Production Rises At Fastest Pace in Nearly 5 Years', 'manufacturing growth hits four-year high in May'), so the only well-argued 'above' case came from an E1 method - but the two E1 methods still split (factor_memory above, hgf within) and the five E0 methods split too, so reasoning style, not evidence alone, drove the disagreement."
+}

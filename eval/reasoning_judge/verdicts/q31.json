@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_msft_revenue_growth_acceleration_2025_03_31",
+  "verdicts": [
+    {
+      "trace_id": "v3_msft_revenue_growth_acceleration_2025_03_31::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 5,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Magnitude support is insufficient as the target period's year-over-year revenue growth rate and its change from the prior quarter are not available in the current evidence.",
+      "verdict_one_line": "Names the exact missing inputs to the acceleration calculation, marks both retrieved paths UNRESOLVED, and spreads mass 0.5/0.3/0.2 in proportion to that declared insufficiency, but contradicts itself by asserting 'No explicit counterevidence was found in the current evidence ledger' and 'Directional conflict is absent' after listing weak revenue guidance as an effect-down factor and describing 'conflicting leading signals (weak guidance vs. strong cloud/AI performance, capacity constraints)'.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_msft_revenue_growth_acceleration_2025_03_31::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The 'weak guidance' and 'concern' evidence points to negative acceleration. The strong current performance suggests it might not be severely negative. Therefore, 'within recent range' is the most probable outcome, balancing these factors.",
+      "verdict_one_line": "The only E0 trace that uses the fact that the recent range is itself entirely negative to discriminate between the options, excluding 'above' on direction and 'below' on severity, with 0.6/0.3/0.1 mass that matches its self-declared 'insufficient' magnitude support; the $13B AI run-rate figure it cites is genuinely in its own bank.",
+      "would_a_careful_analyst_accept_this": "yes"
+    },
+    {
+      "trace_id": "v3_msft_revenue_growth_acceleration_2025_03_31::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 2,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The central estimate of -4.75 pp falls within this range, and the weak revenue guidance strongly supports acceleration below the recent range.",
+      "verdict_one_line": "Best mechanism of the seven, correctly routing a horizon-appropriate January 2025 guidance headline through target-quarter YoY versus prior-quarter YoY to the sign of the acceleration, but having declared support 'direction_only' it then manufactures a -7.0/-4.75/-2.5 interval lying entirely below the -2.318 boundary and puts 0.75 on the tail option, when its own premise (negative acceleration) is equally satisfied by the already-negative 'within recent range'.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_msft_revenue_growth_acceleration_2025_03_31::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The quarterly year-over-year revenue-growth acceleration is expected to fall below the recent range of -2.318 to -0.201 percentage points.",
+      "verdict_one_line": "Cleanly grounded in its own bank and honest that 'The exact magnitude of this acceleration is not precisely quantified by the evidence', yet it crosses a numeric boundary on the strength of two October 2024 headlines about 'weak guidance' and puts 0.65 there, never addressing that a merely negative acceleration lands inside the negative recent range rather than below it.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_msft_revenue_growth_acceleration_2025_03_31::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Central estimate of -1.8 is greater than the upper bound of this interval (-2.318).",
+      "verdict_one_line": "Self-contradicting across its own stages: the reasoning block ends with prediction 'below recent range' at 0.5, then the forecast block introduces an underived central estimate of -1.8 that declares 'below recent range' compatibility 'unsupported' and flips the answer to 'within recent range' at 0.65, with no statement anywhere of why the earlier conclusion was abandoned.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_msft_revenue_growth_acceleration_2025_03_31::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 3,
+        "probability_justification": 2,
+        "mechanism_specificity": 2
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": false
+      },
+      "decisive_quote": "the overall strength of the core business drivers is anticipated to keep the acceleration above the threshold of -0.201 percentage points",
+      "verdict_one_line": "Confuses the level of growth with its change throughout, filling its own 'level_change_distinction' slot with the non-answer 'The synthesis indicates a positive trend in revenue growth acceleration' and anchoring its baseline on a 2023 headline about earnings, not revenue, acceleration; the countervailing guidance node is named, conceded to possibly 'shift the outcome towards the within recent range', then overridden by assertion at 0.70 with no gap ever admitted.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_msft_revenue_growth_acceleration_2025_03_31::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 2,
+        "mechanism_specificity": 2
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The historical acceleration was 4.821 percentage points, which falls into the 'above recent range' category.",
+      "verdict_one_line": "Transplants a redacted prior-case value straight into the current baseline despite its own retrieved block instructing 'Do not treat their paths as current evidence' and despite that figure having been bucketed against different boundaries, then, after declaring the direction 'mixed' and the magnitude 'weak' and conceding 'ambiguity regarding the precise magnitude', produces a central +0.75 that rules two options 'unsupported' and raises confidence from 0.5 to 0.65 between stages.",
+      "would_a_careful_analyst_accept_this": "no"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_msft_revenue_growth_acceleration_2025_03_31::hgf",
+    "v3_msft_revenue_growth_acceleration_2025_03_31::principle_memory",
+    "v3_msft_revenue_growth_acceleration_2025_03_31::factor_memory",
+    "v3_msft_revenue_growth_acceleration_2025_03_31::direct_forecast",
+    "v3_msft_revenue_growth_acceleration_2025_03_31::case_memory",
+    "v3_msft_revenue_growth_acceleration_2025_03_31::structured_reasoning",
+    "v3_msft_revenue_growth_acceleration_2025_03_31::structure_memory"
+  ],
+  "ranking_rationale": "Both banks are headline-only and contain no revenue or growth figures at all, so the question is really whether a trace notices that the recent range is itself entirely negative (-2.318 to -0.201) and therefore that 'negative acceleration' alone cannot select a bucket; hgf and principle_memory are the only two that keep their confidence proportional to that gap, hgf by naming the missing YoY inputs and spreading mass 0.5/0.3/0.2 and principle_memory by arguing explicitly that a non-severe negative belongs inside the range. The bottom four fail on option discipline rather than on facts: case_memory reverses its own prediction between stages, structured_reasoning treats strong cloud levels as evidence of a positive change in growth, and structure_memory anchors on a 4.821-point figure its own retrieved block forbade it to transfer.",
+  "shared_evidence_note": "Bank differences explain almost none of the disagreement: the two E1 methods split against each other (factor_memory 'below' at 0.75 versus hgf 'within' at 0.50) from overlapping ids, and the five E0 methods spread across all three options from the same twelve headlines, so the divergence comes from how each trace bridged qualitative guidance language to a numeric boundary."
+}

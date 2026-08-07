@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_aapl_revenue_growth_acceleration_2025_03_29",
+  "verdicts": [
+    {
+      "trace_id": "v3_aapl_revenue_growth_acceleration_2025_03_29::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 5,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The forecast maps to 'within recent range' because the evidence suggests a balance between growth drivers (services) and headwinds (iPhone sales, consumer spending), preventing extreme acceleration or deceleration.",
+      "verdict_one_line": "Every claim traces to an E1 headline, the target quarter (Q2 FY25) is correctly distinguished from the reported Q1 FY25 base, and both neighbouring options are excluded by an argued balance rather than by assertion; the only slip is labelling the tails 'unsupported' while its own -5/+5 band straddles them.",
+      "would_a_careful_analyst_accept_this": "yes"
+    },
+    {
+      "trace_id": "v3_aapl_revenue_growth_acceleration_2025_03_29::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 3,
+        "probability_justification": 5,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The provided evidence is for the quarter preceding the target quarter and offers qualitative insights rather than quantitative data on revenue growth acceleration.",
+      "verdict_one_line": "The most epistemically honest E0 trace: it flags the horizon mismatch, refuses to import the retrieved episode's resolved option, and matches a wide -5/+5 band to a modest 0.55/0.225/0.225 split, but it says mapping to the boundaries is 'impossible' and then still selects 'within', leaving the choice underdetermined, and it misdefines acceleration as a change versus 'the prior year's growth rate'.",
+      "would_a_careful_analyst_accept_this": "yes"
+    },
+    {
+      "trace_id": "v3_aapl_revenue_growth_acceleration_2025_03_29::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 5,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 5,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The broad, evidence-agnostic central estimate of 0.0 falls within this range. However, the lack of specific data means this range is not definitively supported.",
+      "verdict_one_line": "Best-grounded trace (the one hard number, record Q1 2025 revenue of $124.30 billion, is quoted from its own E1 bank) and the confidence genuinely tracks the declared ignorance at 0.40/0.30/0.30, but it twice calls Q1 2025 'the target quarter', rates horizon_match 'direct' when the evidence is pre-target, and its bookkeeping claims '3 of 3 routed paths contributed' while every path is graded contradicted or unresolved.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_aapl_revenue_growth_acceleration_2025_03_29::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 2,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Mixed performance in Q1 2025 (strong services vs. weak iPhone/China) suggests the YoY growth rate may have been stable or slightly decreased compared to Q4 2024. For Q2 2025, these trends likely persist, implying acceleration will be near zero or slightly negative.",
+      "verdict_one_line": "The clearest causal chain in the E0 group and the only one to use the single quantity its bank offers ('Apple sales rise 6%'), but it declares magnitude support 'insufficient' and then narrows to a -2.0/+1.0 band with no supporting quantity, and silently raises 'within' from 0.70 in the reasoning block to 0.85 in the forecast.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_aapl_revenue_growth_acceleration_2025_03_29::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 3,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The target is the year-over-year revenue growth acceleration for Apple's fiscal Q1 2025. The predefined recent range for this acceleration is [-3.181, 3.196) percentage points.",
+      "verdict_one_line": "Misidentifies the target period as the already-reported fiscal Q1 2025 and rates horizon_match 'direct', so the whole chain reasons about a quarter whose results are in evidence rather than the March 2025 quarter; it then labels magnitude support 'unsupported' and still emits a -2.5/+2.5 band with 0.70 mass.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_aapl_revenue_growth_acceleration_2025_03_29::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 2,
+        "prediction_alignment": 3,
+        "probability_justification": 2,
+        "mechanism_specificity": 2
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": false
+      },
+      "decisive_quote": "iPhone sales are a significant contributor to Apple's revenue, with recent reports indicating resilience or rebound.",
+      "verdict_one_line": "Builds a driver node asserting iPhone 'resilience or rebound' while citing the very article titled 'iPhone, China Sales Fall Short Of Forecasts', then reverses that sign in its counterevidence rationale; the DAG never bridges any driver to a magnitude, its 'geopolitical challenges' node cites sources that mention none, and it puts 0.30 on 'above' immediately after arguing 'above' is improbable.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_aapl_revenue_growth_acceleration_2025_03_29::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 2,
+        "mechanism_specificity": 2
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The achievement of record revenue in Q1 2025, despite specific product and regional weaknesses, suggests that the underlying growth rate of revenue may be accelerating, as other segments compensate for or outperform these areas.",
+      "verdict_one_line": "Its central mechanism is a non-sequitur that treats a record revenue level in the seasonal peak quarter as evidence of growth-rate acceleration; it asserts an 'iPhone rebound in Q1 2025' (the rebound headline is dated Q4 FY24) and then relies on 'iPhone decline in Q1 2025', concludes the evidence 'points towards the upper end of the recent range or potentially above it', yet selects 'within' with a band whose stated basis is that it was 'kept broad and within the recent range'.",
+      "would_a_careful_analyst_accept_this": "no"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_aapl_revenue_growth_acceleration_2025_03_29::factor_memory",
+    "v3_aapl_revenue_growth_acceleration_2025_03_29::case_memory",
+    "v3_aapl_revenue_growth_acceleration_2025_03_29::hgf",
+    "v3_aapl_revenue_growth_acceleration_2025_03_29::direct_forecast",
+    "v3_aapl_revenue_growth_acceleration_2025_03_29::principle_memory",
+    "v3_aapl_revenue_growth_acceleration_2025_03_29::structured_reasoning",
+    "v3_aapl_revenue_growth_acceleration_2025_03_29::structure_memory"
+  ],
+  "ranking_rationale": "The top traces keep the target period straight (March 2025 quarter, with the reported December 2024 quarter as the base), say plainly that no bank contained a growth-rate number, and let that admission set the width of their probability mass instead of manufacturing a narrow band. The bottom traces conflate a record revenue level with an accelerating growth rate, cite fall-short headlines as evidence of strength, or fit the magnitude estimate to the option after choosing it, and their probability splits do not follow from anything they argued.",
+  "shared_evidence_note": "The banks differed materially in size (E0 eleven headlines, E1 forty-two including the only explicit revenue figure, $124.30 billion) yet all seven traces landed on 'within recent range', so the score spread reflects differences in reasoning discipline - horizon handling, level-versus-growth distinctions, and confidence calibration - not differences in evidence."
+}

@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_us_core_cpi_monthly_change_2026_06",
+  "verdicts": [
+    {
+      "trace_id": "v3_us_core_cpi_monthly_change_2026_06::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Based on the annual PCE inflation rate of 3.40% in May 2026, which implies an average monthly change of approximately 0.283%, and ongoing labor cost pressures, the monthly core CPI change for June 2026 is likely to be around or above the 0.212% threshold. However, direct CPI data is absent.",
+      "verdict_one_line": "The only trace that builds an explicit arithmetic bridge from a cited figure (3.40% annual PCE) to the 0.212% monthly boundary while labelling the proxy gap honestly, and its 0.6 mass matches that partial support; it loses points for asserting wage pressure from an Average Hourly Earnings snippet that contains no earnings data and for claiming 'No direct counterevidence' when its own bank carries the rising-jobless-claims item.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_core_cpi_monthly_change_2026_06::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 5,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Magnitude support is insufficient because the target resolution rule requires a comparison against the median of the four prior observed monthly core CPI changes, which is unavailable in the current evidence. Without this baseline, the threshold of 0.212 percent cannot be assessed.",
+      "verdict_one_line": "Best-calibrated trace in the set: it declares the baseline missing, marks all three transferred paths CONTRADICTED, and holds mass at 0.48/0.52 accordingly, but the choice of 'no' rests on a base-rate central of 0.20 that is underdetermined, it over-reads the missing median as making the stated numeric threshold unassessable, and it never engages the May 2026 'inflation tops forecasts as services costs climb' item in its own E1 bank.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_core_cpi_monthly_change_2026_06::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": false
+      },
+      "decisive_quote": "The DAG's analysis indicates that these direct inflation indicators point towards continued upward movement in the monthly core CPI change, likely meeting or exceeding the 0.212 percent threshold.",
+      "verdict_one_line": "Internally consistent yes-case that explicitly weighs and outweighs its countervailing factor, but it jumps from a 0.1pp move in an annual PCE rate straight to a monthly threshold crossing with no quantity, builds a driver node on 'Rising average hourly earnings' from a snippet that reports only EUR/USD commentary, and asserts 0.75 without ever naming a gap.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_core_cpi_monthly_change_2026_06::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 2,
+        "prediction_alignment": 1,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Given the mixed signals and uncertainty, the forecast leans towards the change being slightly below 0.212 percent, but with a notable probability of exceeding it.",
+      "verdict_one_line": "Careful, well-sourced balancing of E0 (PCE 3.40%, ECI, retail sales, jobless claims) that states outright it leans below the threshold and predicts 'no' at 0.55, then emits a final prediction of 'yes' on an undrived central estimate of 0.25 — the reasoning selects the option that was not chosen.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_us_core_cpi_monthly_change_2026_06::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 2,
+        "prediction_alignment": 1,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The prediction of 'no' implies that the monthly core CPI change for June 2026 is expected to be less than 0.212073 percent.",
+      "verdict_one_line": "Unusually honest about what each snippet does and does not say ('the specific trend and magnitude of ECI growth in early 2026 are not detailed'), but it states its prediction is 'no' at 0.55 and then reports 'yes' at 0.6 on a central estimate of 0.23 produced while magnitude support is declared 'insufficient'.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_us_core_cpi_monthly_change_2026_06::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 2,
+        "prediction_alignment": 4,
+        "probability_justification": 1,
+        "mechanism_specificity": 2
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "A statement from the US Treasury Secretary on June 24, 2026, explicitly states that the US can achieve significant GDP growth without reigniting inflation, strongly implying that inflation is expected to remain subdued and below critical thresholds like 0.212% monthly core CPI change.",
+      "verdict_one_line": "Direction and selection are consistent, but the trace rates its magnitude support 'supported' off headline-only sources, converts a Treasury official's GDP remark into a sub-0.212% monthly core claim, invents a range [0.05, 0.20] that stops just under the threshold, silently drops the May 2026 'inflation tops forecasts as services costs climb' and 'hottest inflation in years' items sitting in its own E1 bank, and then raises confidence from 0.80 to 0.95 while conceding it 'lacks precise monthly data for June 2026'.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_us_core_cpi_monthly_change_2026_06::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 1,
+        "prediction_alignment": 1,
+        "probability_justification": 2,
+        "mechanism_specificity": 2
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Since no evidence supports the condition 'at least 0.212 percent', the outcome is mapped to 'no'.",
+      "verdict_one_line": "Its few cited facts are accurate and it admits it has no direct data, but the chain is a non-sequitur (absence of evidence treated as 'counterevidence against a yes'), it assigns 0.99 to 'no' on that non-argument, and the emitted forecast then flips to 'yes' at 0.51 with 'yes' marked 'most_supported' under a rationale saying no evidence distinguishes either option.",
+      "would_a_careful_analyst_accept_this": "no"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_us_core_cpi_monthly_change_2026_06::case_memory",
+    "v3_us_core_cpi_monthly_change_2026_06::hgf",
+    "v3_us_core_cpi_monthly_change_2026_06::structured_reasoning",
+    "v3_us_core_cpi_monthly_change_2026_06::principle_memory",
+    "v3_us_core_cpi_monthly_change_2026_06::structure_memory",
+    "v3_us_core_cpi_monthly_change_2026_06::factor_memory",
+    "v3_us_core_cpi_monthly_change_2026_06::direct_forecast"
+  ],
+  "ranking_rationale": "The top two either supplied an auditable quantity linking cited evidence to the 0.212% boundary (case_memory's 3.40% annual PCE implying ~0.283% per month) or refused to manufacture one and held their probability mass near-uniform to match the gap they named (hgf at 0.48/0.52). The bottom four either flipped between the option their own text selected and the option they emitted (direct_forecast, principle_memory, structure_memory) or asserted 0.95 confidence from headline-only sources while ignoring the contrary hot-inflation items in their own bank (factor_memory).",
+  "shared_evidence_note": "Bank differences mattered only at the margin — E1 methods split 'no'/'no' and E0 methods split three ways on essentially the same PCE-and-labour-cost snippets — so the disagreement is overwhelmingly about how each trace bridged directional proxies to a precise monthly threshold, not about what it was allowed to read."
+}

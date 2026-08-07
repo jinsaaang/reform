@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_vix_monthly_change_2026_06",
+  "verdicts": [
+    {
+      "trace_id": "v3_vix_monthly_change_2026_06::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Recent VIX movements show a retreat to 24.54 in April 2026 followed by a sharp reversal towards 30, indicating recent upward pressure on volatility.",
+      "verdict_one_line": "Only trace to pull dated VIX levels out of its own bank (E1) and to say exactly why the boundary cannot be tested ('the comparison rule requires historical data (the 8 prior monthly VIX changes) which is unavailable'), but it reports 'Structural use facts: 3 of 3 routed paths contributed' while every path assessment reads 'Current graph instantiation marks this path unresolved', and its symmetric 0.25/0.50/0.25 mass sits oddly against its own upside-skewed -15/+25 range.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_vix_monthly_change_2026_06::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The provided evidence is insufficient to directly assess the monthly VIX change for June 2026.",
+      "verdict_one_line": "Honest, compact E0 read that correctly labels its magnitude support 'unsupported' and defaults to the middle bucket via an explicit boundary check, but it never questions whether a Bitcoin volatility product plausibly moves the equity VIX ('may lead to higher VIX readings') and its probability vector shifts from 0.25/0.40/0.35 to 0.25/0.45/0.30 with no stated reason.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_vix_monthly_change_2026_06::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 2
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Another piece discusses new volatility futures, but for Bitcoin, not the broad market VIX.",
+      "verdict_one_line": "Sharpest evidence critique of the E0 group - it is the only trace to notice the CME item is a Bitcoin product rather than a VIX driver - yet it still retains that item as its sole up-driver, argues its counterevidence from silence, and stamps an asymmetric -15/0/+20 interval with basis 'derived' when nothing in the trace derives it.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_vix_monthly_change_2026_06::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The mixed evidence suggests a higher probability for the 'within recent range' option due to the balance of upward and downward pressures, but with notable uncertainty.",
+      "verdict_one_line": "Genuine two-sided balancing of E1's VIX headlines, but it grades its own evidence 'metric_match: direct, horizon_match: direct' when nothing in the bank observes June, reads an Indian rupee implied-vol story ('volatility expectations dip to one-month low') as a general fall in volatility expectations, never orders the March-surge / April-retreat / May-firm signals by recency, and quietly cuts 'above recent range' from 0.30 to 0.20 between its reasoning and forecast blocks.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_vix_monthly_change_2026_06::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 2,
+        "mechanism_specificity": 2
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The weak evidence means no option can be strongly favored.",
+      "verdict_one_line": "Best evidence hygiene in the E0 group - it names the stale 2011-2017 snippets as such and refuses to import the retrieved 2024-01 episode's resolved option - but having declared that no option can be strongly favored it then lands on 0.30/0.60/0.10, reversing its own earlier 0.30 on 'above recent range' to 0.10 without a word of justification.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_vix_monthly_change_2026_06::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 2
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The introduction of new volatility instruments and general market anticipation for the start of June may push VIX higher, but the market's established focus on fiscal policy events could moderate this upward pressure.",
+      "verdict_one_line": "An elaborate node-and-edge apparatus resting on thin content: its baseline is that a Yahoo VIX history page exists, its countervailing factor is an Indian budget-day article recast as 'Market attention was directed towards fiscal policy events', and its mechanisms ('heightened market attention can lead to increased trading activity') would fit any volatility question, though it does resolve its drivers against its counter-factor explicitly and admits the historical quartiles were never provided.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_vix_monthly_change_2026_06::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 1,
+        "prediction_alignment": 1,
+        "probability_justification": 2,
+        "mechanism_specificity": 1
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": true,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "High; this is an explicit abstention after structured-output validation failure.",
+      "verdict_one_line": "A pipeline failure rather than a forecast: it selects no evidence at all, its reasoning block declares abstention with uniform thirds and states the prediction 'below recent range', and the forecast block then returns 'within recent range' at 0.60 - the reasoning names a different option than the trace predicts, and the only content beyond the restated target contract is 'No validated current driver is strong enough to move the forecast away from the neutral baseline.'",
+      "would_a_careful_analyst_accept_this": "no"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_vix_monthly_change_2026_06::hgf",
+    "v3_vix_monthly_change_2026_06::direct_forecast",
+    "v3_vix_monthly_change_2026_06::principle_memory",
+    "v3_vix_monthly_change_2026_06::factor_memory",
+    "v3_vix_monthly_change_2026_06::case_memory",
+    "v3_vix_monthly_change_2026_06::structured_reasoning",
+    "v3_vix_monthly_change_2026_06::structure_memory"
+  ],
+  "ranking_rationale": "The top traces earned their place by handling their own bank honestly - hgf quoted dated VIX levels (24.54, a reversal towards 30) and specified the exact missing inputs that block a threshold call, while direct_forecast and principle_memory correctly labelled their support 'unsupported' and, in principle_memory's case, spotted that the CME snippet concerns Bitcoin rather than the equity VIX. The bottom traces either dressed thin material in structure (structured_reasoning's DAG built on a Yahoo history page and an Indian budget article) or collapsed entirely (structure_memory abstained, cited nothing, and let its reasoning block name a different option than its forecast).",
+  "shared_evidence_note": "All seven converged on 'within recent range', so the separation was not disagreement about the answer but about reasoning quality, and it tracked the banks: the two E1 traces had dated April-May 2026 VIX headlines to reason from, while the five E0 traces faced a bank of 2011-2017 index pages plus a Bitcoin-futures announcement and reached the same bucket by defaulting to a neutral central estimate of zero."
+}

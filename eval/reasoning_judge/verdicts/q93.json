@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_vix_monthly_change_2025_12",
+  "verdicts": [
+    {
+      "trace_id": "v3_vix_monthly_change_2025_12::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "While current conditions (elevated VIX, market declines, economic uncertainty) strongly suggest increased volatility and potential for larger changes, there is no direct evidence quantifying this change or placing it definitively within or outside the pre-registered historical range boundaries.",
+      "verdict_one_line": "Only trace that re-tests each retrieved historical path against dated E1 items, reports honestly that none survived ('0 of 3 routed paths contributed'), and then refuses to convert a direction-only signal into a threshold crossing - keeping the central estimate inside the band while tilting 0.30 to 'above'.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_vix_monthly_change_2025_12::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 5,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 4,
+        "mechanism_specificity": 2
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The title of one article suggests a VIX price target, but its excerpt is empty, highlighting the lack of specific data.",
+      "verdict_one_line": "The most accurate reading of its own bank - it alone notices the E0 snippets are title-only and matches mass to that ignorance with a flat 1/3 - but it names 'below recent range' in the reasoning block while the forecast maps to 'within', and it never uses the interquartile comparison rule sitting in its own retrieved memory to justify anything better than uniform.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_vix_monthly_change_2025_12::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The evidence suggests a dynamic market with evolving sentiment and active risk, leaning towards increased volatility. However, the lack of specific quantitative drivers or clear signals for extreme moves means the outcome is uncertain, with potential for moderate or significant increases.",
+      "verdict_one_line": "Internally consistent (reasoning and forecast both select 'within' with a real 0.35 tail on 'above'), but it declares evidence_fit 'direct' for a bank of title-only snippets and reads a McKinsey fashion-industry headline ('when the rules change') as a VIX driver.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_vix_monthly_change_2025_12::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 3,
+        "mechanism_specificity": 2
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Emerging opportunities in sustainable capital markets may attract stable investment.",
+      "verdict_one_line": "Builds a full DAG whose node contents are invented from headlines alone - a Goldman sustainable-capital title becomes a countervailing force damping the VIX - though it at least resolves its up-drivers against that counterweight explicitly and lets the 0.45/0.40 split show the choice was close.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_vix_monthly_change_2025_12::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 3,
+        "probability_justification": 3,
+        "mechanism_specificity": 2
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The central estimate of 0.0 is well below the interval for 'above recent range'. Evidence does not provide a clear upward signal.",
+      "verdict_one_line": "Correctly refuses to import the 15.26 percent figure sitting in its redacted hindsight DAG, but its boundary check calls 'above' unsupported with 'no clear upward signal' immediately after a target_estimate asserting 'a notable possibility of exceeding the upper boundary due to prevailing market volatility themes'.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_vix_monthly_change_2025_12::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 3,
+        "mechanism_specificity": 2
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Due to the lack of specific, quantitative evidence linking market drivers to the VIX change metric and the defined boundaries, a precise forecast cannot be made. The available evidence is too general to support a directional prediction.",
+      "verdict_one_line": "Honest about the bank's emptiness and invents no figures, but the reasoning block records 'below recent range' with a flat 1/3 while the forecast block outputs 'within recent range' at 0.50 - the same trace states two different answers and never reconciles them.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_vix_monthly_change_2025_12::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The forecast estimate range (1.0 to 15.0) and the central estimate (7.0) fall within the 'above recent range' interval, supported by the directional signal and uncertainty about magnitude.",
+      "verdict_one_line": "Declares magnitude support 'direction_only' and then plants a 7.0 percent central estimate barely past the 6.274 percent boundary to manufacture 'above' at 0.60, asserts a 1.0-15.0 band 'falls within' an interval starting at 6.274, and flatly contradicts its own reasoning block, which selected 'within recent range' at 0.60.",
+      "would_a_careful_analyst_accept_this": "no"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_vix_monthly_change_2025_12::hgf",
+    "v3_vix_monthly_change_2025_12::case_memory",
+    "v3_vix_monthly_change_2025_12::principle_memory",
+    "v3_vix_monthly_change_2025_12::structured_reasoning",
+    "v3_vix_monthly_change_2025_12::structure_memory",
+    "v3_vix_monthly_change_2025_12::direct_forecast",
+    "v3_vix_monthly_change_2025_12::factor_memory"
+  ],
+  "ranking_rationale": "What separated the top was discipline about the direction/magnitude gap: hgf and case_memory both stated exactly what their evidence could not establish and then allocated mass consistently with that admission, rather than letting a qualitative 'volatility is elevated' signal decide a quartile-threshold question. The bottom traces either fabricated node content from bare headlines (structured_reasoning), contradicted their own boundary checks (structure_memory, direct_forecast), or - worst - converted an explicitly direction-only signal into a point estimate sited just past the upper boundary while the reasoning block selected the opposite option (factor_memory).",
+  "shared_evidence_note": "Bank content explains part of the split - only E1 carried dated late-November stress reporting (Reuters 11-20 tech-led reversal, NYT 11-25 global risk buildup), which is why the two E1 methods alone produced an 'up' directional signal - but it does not explain the outcome, since those same two methods diverged from each other ('above' vs 'within') purely on whether direction-only evidence was allowed to license a threshold crossing."
+}

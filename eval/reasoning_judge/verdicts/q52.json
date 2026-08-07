@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_us_30y_yield_monthly_change_2025_11",
+  "verdicts": [
+    {
+      "trace_id": "v3_us_30y_yield_monthly_change_2025_11::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 5,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 5,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The target baseline for the United States 30-year Treasury yield monthly change for 2025-11 is unavailable due to a lack of specific yield data in the provided evidence.",
+      "verdict_one_line": "Every factor is tied to a real E1 headline with a faithful reading, the missing baseline and absent magnitude support are named outright, and the near-uniform 0.60/0.40 mass is the only allocation in the set that actually matches the uncertainty the trace declares.",
+      "would_a_careful_analyst_accept_this": "yes"
+    },
+    {
+      "trace_id": "v3_us_30y_yield_monthly_change_2025_11::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The potential for significant yield decreases (leading to 'no') is balanced by factors suggesting yield increases (leading to 'yes').",
+      "verdict_one_line": "Cites only E1 ids (including f0dc0bb6f2e2d004 and b4ed12fab7331305, absent from E0 but correct for its bank), keeps both directions live rather than collapsing them, and lands at 0.55/0.45 consistent with its declared insufficient magnitude support; the mechanism stops at yield direction and never reaches the threshold.",
+      "would_a_careful_analyst_accept_this": "yes"
+    },
+    {
+      "trace_id": "v3_us_30y_yield_monthly_change_2025_11::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 5,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "If long-term yields are trending upwards due to independent market dynamics or strong growth, the monthly change will likely be positive. A positive change is always greater than -0.015 percentage points.",
+      "verdict_one_line": "The sharpest option-boundary argument in the set - it is the only trace to state why any non-negative change and any decline under 1.5bp both resolve yes - but it declares magnitude support 'unsupported', invents a central estimate of +0.01, and still assigns 0.80 to yes; its reference to a 'median of 4 prior observed changes' rule appears nowhere in the stated question.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_30y_yield_monthly_change_2025_11::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "A potential risk exists where the current economic boom, fueled by spending like AI data centers, could lead to an unsustainable situation and an economic crash, which would likely trigger a flight to safety and push Treasury yields down significantly.",
+      "verdict_one_line": "The only E0 trace to read the downside half of its own cited Fortune source and price a flight-to-safety channel, but it declares magnitude_support 'supported' on a bank containing no quantities at all (its own forecast block then says 'direction_only'), and the reasoning's 0.80 silently becomes 0.70.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_30y_yield_monthly_change_2025_11::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": false
+      },
+      "decisive_quote": "This upward pressure makes it likely that the monthly change in the yield for November 2025 will be at least -0.015 percentage points, satisfying the resolution rule.",
+      "verdict_one_line": "A large DAG that moves straight from directional headlines to a precise threshold claim with no quantity anywhere, reads the AI-capex source only as a growth driver while dropping the 'could crash the American economy' half it cites, has a content-free baseline node with zero evidence ids, and never admits a gap while assigning 0.80.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_30y_yield_monthly_change_2025_11::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "While the evidence points towards upward pressure on yields, it does not provide specific quantitative data for November 2025, thus offering partial support for the target magnitude.",
+      "verdict_one_line": "Correctly refuses to import the 2023 episode's resolved option, but grades its headline-only bank as metric_match 'direct' in the same breath as conceding it has no quantitative data, then posts a latent band of [-0.01, +0.02] that leaves no room for 'no' while still assigning 'no' 0.30.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_30y_yield_monthly_change_2025_11::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The trend suggests the change might be less negative than -0.015 pp, or even positive.",
+      "verdict_one_line": "The narrative argues throughout that upward pressure makes a sub-threshold decline less probable, yet the reasoning block records prediction 'no' with 0.60 mass on 'no' before the forecast block flips to 'yes' with 0.60 on 'yes' with no reconciliation; it also reads the tariff article, which describes the U.S. avoiding a bond rout, as upward pressure on yields.",
+      "would_a_careful_analyst_accept_this": "no"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_us_30y_yield_monthly_change_2025_11::hgf",
+    "v3_us_30y_yield_monthly_change_2025_11::factor_memory",
+    "v3_us_30y_yield_monthly_change_2025_11::structure_memory",
+    "v3_us_30y_yield_monthly_change_2025_11::principle_memory",
+    "v3_us_30y_yield_monthly_change_2025_11::structured_reasoning",
+    "v3_us_30y_yield_monthly_change_2025_11::case_memory",
+    "v3_us_30y_yield_monthly_change_2025_11::direct_forecast"
+  ],
+  "ranking_rationale": "What separated the top from the bottom was whether a trace let a headline's direction stand in for a magnitude it admitted it did not have: hgf and factor_memory named the missing baseline and the absent quantitative support and kept their mass near uniform, while structured_reasoning, structure_memory and case_memory conceded unsupported magnitude and then assigned 0.70-0.80 or invented narrow bands that excluded the losing option. Bottom place goes to direct_forecast, whose reasoning block records the opposite prediction and the opposite probability split from the forecast it ultimately returns.",
+  "shared_evidence_note": "The banks differ in a way that visibly matters - E1 carries Fed-easing headlines (the Fed 'quietly buying billions in bonds', inflation data reviving easing hopes) that E0 lacks, while E0 carries the 'long-term rates went higher despite the cut' headlines that E1 lacks, which is why the E1 pair sat near 50/50 and the E0 traces tilted hard to yes - but all seven ended on the same option, so the real spread (0.55 to 0.80) came from differing discipline about magnitude, not from differing evidence."
+}

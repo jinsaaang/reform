@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_us_retail_sales_monthly_growth_2026_06",
+  "verdicts": [
+    {
+      "trace_id": "v3_us_retail_sales_monthly_growth_2026_06::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 5,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Given that the most recent data point (May 2026) is below the required 0.974% threshold, projecting June 2026 to meet or exceed this threshold is not strongly supported by current evidence.",
+      "verdict_one_line": "Both numbers it uses (May 0.9%, March 1.7%) are exactly what E0 says, the 0.95% central sits between them and cleanly selects 'no', but the mass silently hardens from 0.55 to 0.65 with no argument for the tightening; gap admitted in 'Uncertainty stems from the fact that the target month (June 2026) has not yet been reported.'",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_retail_sales_monthly_growth_2026_06::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 5,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 2,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The most recent specific data point for monthly retail sales growth (May 2026) was 0.9%. This is below the target threshold of 0.974% required for a 'yes' prediction.",
+      "verdict_one_line": "Grounding is exact and the gasoline-to-discretionary-spending channel is a real mechanism, but the graph names D1 and D2 as dominant with 'Positive impact on June 2026 retail sales growth' and then puts 0.70 on 'no' without ever reconciling momentum-up against level-below-threshold; the gap admission is 'there is insufficient direct evidence to project growth exceeding the threshold for June 2026'.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_retail_sales_monthly_growth_2026_06::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 5,
+        "logical_validity": 4,
+        "prediction_alignment": 3,
+        "probability_justification": 2,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "lacks precise monthly growth percentage figures for May or April needed to directly calculate or infer June's growth rate relative to the 0.974% threshold",
+      "verdict_one_line": "Every claim matches an E1 headline and it correctly reports that its own bank carries no monthly percentages, but it then fixes a 0.5% central from purely qualitative signals ('Coarse estimate based on conflicting signals') and raises 'no' from 0.6 to 0.7 despite calling magnitude support insufficient.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_retail_sales_monthly_growth_2026_06::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 5,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The May 2026 growth of 0.9% is below the 0.974% target. While general economic resilience offers upward potential, the recent deceleration trend makes it uncertain whether June's growth will cross the threshold.",
+      "verdict_one_line": "The only trace whose mass matches its stated uncertainty: it keeps 'yes' explicitly 'plausible' at 0.40 because the last print misses the boundary by 0.07pp, grounds both figures correctly, and admits 'The absence of direct June data makes precise prediction difficult' — weakest point is the unexplained 0.75% central below both observed months and a thin causal story.",
+      "would_a_careful_analyst_accept_this": "yes"
+    },
+    {
+      "trace_id": "v3_us_retail_sales_monthly_growth_2026_06::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 4,
+        "mechanism_specificity": 1
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": true,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "No evidence-supported magnitude distinguishes this option; the contract-centered abstention is intentionally broad.",
+      "verdict_one_line": "A degenerate abstention that cites nothing from E0 (which did contain the 0.9% May print) and offers only 'No validated current driver is strong enough to move the forecast away from the neutral baseline', yet it labels 'yes' most_supported in the same breath as saying nothing distinguishes the options; the near-uniform 0.51/0.49 is the one honest part.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_us_retail_sales_monthly_growth_2026_06::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 1,
+        "mechanism_specificity": 2
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The strong performance in May (0.9%) is very close to the target threshold (0.974%), suggesting that continued economic resilience could lead to crossing the threshold in June.",
+      "verdict_one_line": "Proximity below a threshold is treated as evidence of crossing it, magnitude support is declared 'insufficient' and then a 1.0% central is asserted to make 'yes' most_supported at 0.70 — the highest confidence in the set on the weakest inference — and 'No specific counterevidence was found in the provided current evidence' is false of its own bank, which carries the September-2025 consumer-pullback item.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_us_retail_sales_monthly_growth_2026_06::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 5,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 2,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "rendering a definitive forecast of crossing the 0.974% threshold impossible based on available data",
+      "verdict_one_line": "Grounding in E1 is precise (income -0.76% over six months, stable 3.0% savings rate, April dip, stronger-than-expected May) and it honestly notes 'The specific percentage growth for May 2026 is not provided', but it books all three paths as CONTRADICTED while reporting 'Structural use facts: 3 of 3 routed paths contributed... Directional conflict is absent.' and still leans on their downward effects to place a 0.2% central and 0.65 on 'no' after calling magnitude support unsupported.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_us_retail_sales_monthly_growth_2026_06::principle_memory",
+    "v3_us_retail_sales_monthly_growth_2026_06::direct_forecast",
+    "v3_us_retail_sales_monthly_growth_2026_06::factor_memory",
+    "v3_us_retail_sales_monthly_growth_2026_06::structured_reasoning",
+    "v3_us_retail_sales_monthly_growth_2026_06::hgf",
+    "v3_us_retail_sales_monthly_growth_2026_06::case_memory",
+    "v3_us_retail_sales_monthly_growth_2026_06::structure_memory"
+  ],
+  "ranking_rationale": "The separator was whether the trace let the 0.07pp distance between the last observed print and the 0.974% boundary govern its confidence: principle_memory and direct_forecast anchored on cited figures and kept mass modest, while structure_memory turned 'close to the threshold' into a 0.70 bet on crossing it and case_memory produced no question-specific content at all. Middle traces (factor_memory, structured_reasoning, hgf) were well grounded in their own banks but each declared magnitude support insufficient and then hardened the distribution anyway.",
+  "shared_evidence_note": "Partly both: the E1 traces (factor_memory, hgf) genuinely never saw the 0.9% May or 1.7% March figures that anchored the E0 traces and correctly said so, yet within E0 itself structure_memory reached 'yes' and the other four reached 'no' from the identical 0.9% print, so the sharpest disagreement is one of reasoning, not evidence."
+}

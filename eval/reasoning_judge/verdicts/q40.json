@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_stl_financial_stress_monthly_change_2025_11",
+  "verdicts": [
+    {
+      "trace_id": "v3_stl_financial_stress_monthly_change_2025_11::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Magnitude support is weak due to the absence of direct measurements for the target period and the reliance on qualitative assessments of drivers and their potential impact on the STLFSI monthly change. The probabilities reflect this uncertainty, with a slight bias towards increased stress but significant probability assigned to the 'within recent range' outcome.",
+      "verdict_one_line": "Cleanly separates a genuine up-direction signal from the absence of any magnitude evidence, keeps the modal option inside the range while tilting 0.35 vs 0.15 toward the upside tail, cites E0 items whose titles actually say what is claimed, and never imports the redacted 0.379 figure from its ablation memory.",
+      "would_a_careful_analyst_accept_this": "yes"
+    },
+    {
+      "trace_id": "v3_stl_financial_stress_monthly_change_2025_11::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Leading indicators suggest factors that may increase financial stress ('up' signal). This directionally supports a move towards or above this range. However, the central estimate (0.1) is just below the lower bound of this interval, and the magnitude is unsupported, making this plausible but not as strongly supported as 'within' by the central estimate itself.",
+      "verdict_one_line": "Audits all three intervals explicitly and matches 0.6/0.3/0.1 to a declared direction-only support level, but manufactures a central estimate of exactly 0.1 — a precise value sitting a hair under the 0.1054 boundary — from evidence it itself labels 'direction_only', and the EV-demand-to-US-stress-index link is asserted rather than traced.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_stl_financial_stress_monthly_change_2025_11::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The central estimate of 0.0 is positive and falls well above the negative interval for 'below recent range'.",
+      "verdict_one_line": "Balanced up-versus-down framing from two correctly cited E1 trade items lands defensibly on 'within', but it calls 0.0 'positive' in one boundary check and 'zero' in the next, overclaims evidence_fit as metric_match 'direct' for articles about Chinese exports and EU trade probes, and its 0.163/0.289 tails are asserted rather than derived from the 'unsupported' labels it just gave both neighbours.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_stl_financial_stress_monthly_change_2025_11::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 2
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Elevated volatility in financial markets, characterized by uncertainty and risk aversion, tends to increase financial stress.",
+      "verdict_one_line": "The offsetting-drivers argument to 'within' is coherent and the counterevidence_rationale names what would move it either way, but the current-state claims are attached to a 2021 Richmond Fed and 2022 St. Louis Fed snippet labelled 'target_period_signal' — neither says anything about volatility in late 2025 — and the drivers named would fit any stress-index question in any month.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_stl_financial_stress_monthly_change_2025_11::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 2,
+        "mechanism_specificity": 1
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": true,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "No validated current driver is strong enough to move the forecast away from the neutral baseline.",
+      "verdict_one_line": "An honest abstention after a self-reported validation failure — but the reasoning block names 'below recent range' as its prediction with uniform 1/3 mass while the forecast block maps to 'within recent range', and the final 0.25/0.40/0.35 puts asymmetric tail mass on a latent estimate that is perfectly symmetric at [-0.5, 0.0, 0.5], with no driver, mechanism or evidence id anywhere in the trace.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_stl_financial_stress_monthly_change_2025_11::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 2,
+        "mechanism_specificity": 1
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": true,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Competing mechanisms remain unresolved because the structured reasoning output was not valid.",
+      "verdict_one_line": "Identical neutral-fallback abstention: the same internal split between a reasoning-block prediction of 'below recent range' and a forecast-block mapping of 'within recent range', the same unexplained 0.25/0.40/0.35 over a symmetric latent range, and it engages none of the four retrieved principle lessons it was handed, including the calibration lesson about amplified moves.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_stl_financial_stress_monthly_change_2025_11::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 1,
+        "prediction_alignment": 1,
+        "probability_justification": 1,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "While identified drivers suggest potential upward pressure on financial stress, the weak magnitude support and inherent uncertainties mean the forecast acknowledges this potential without strong conviction for breaching the upper boundary, leading to a prediction that leans towards exceeding the range.",
+      "verdict_one_line": "The target_estimate says the change is 'likely to fall within the pre-registered range' and the bridge step disclaims conviction about breaching the upper boundary, yet the trace predicts 'above recent range' at 0.6 on a fabricated central estimate of 0.15 index points while declaring magnitude support 'insufficient' — and the boundary-check narration quotes 0.30/0.60 against the reasoning block's own 0.4/0.5, which reads as the option being fixed first.",
+      "would_a_careful_analyst_accept_this": "no"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_stl_financial_stress_monthly_change_2025_11::structure_memory",
+    "v3_stl_financial_stress_monthly_change_2025_11::hgf",
+    "v3_stl_financial_stress_monthly_change_2025_11::factor_memory",
+    "v3_stl_financial_stress_monthly_change_2025_11::structured_reasoning",
+    "v3_stl_financial_stress_monthly_change_2025_11::direct_forecast",
+    "v3_stl_financial_stress_monthly_change_2025_11::principle_memory",
+    "v3_stl_financial_stress_monthly_change_2025_11::case_memory"
+  ],
+  "ranking_rationale": "What separated the top from the bottom was discipline about the direction/magnitude gap: structure_memory and hgf both found an up-direction signal, said plainly that nothing in their bank quantifies it, and therefore kept the modal option inside the range while skewing the residual mass upward, whereas case_memory took the same qualitative up-drivers and invented a 0.15-index-point central estimate to cross a boundary its own target_estimate said it would not cross. The two neutral-fallback traces sat between them: they are honest about having nothing, but they are boilerplate, they name one option in the reasoning block and a different one in the forecast block, and they still split the tails unevenly over a symmetric latent range.",
+  "shared_evidence_note": "The disagreement was overwhelmingly about reasoning rather than evidence — both banks are title-only snippets containing no usable figure on this index (the sole number, gurufocus's 13.53% year-over-year, sits in both banks and no trace used it), so the E0 and E1 traces converged on the same 'within recent range' answer and the one outlier, case_memory, diverged on an internal contradiction rather than on anything it read."
+}

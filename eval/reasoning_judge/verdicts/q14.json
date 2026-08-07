@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_fed_balance_sheet_monthly_growth_2026_06",
+  "verdicts": [
+    {
+      "trace_id": "v3_fed_balance_sheet_monthly_growth_2026_06::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Current evidence indicates a strengthening trend towards modest balance sheet contraction, suggesting negative asset growth.",
+      "verdict_one_line": "The most target-specific trace in the set: it names the exact missing quantity ('The baseline median of prior growth rates is unavailable, and no current evidence provides a quantitative forecast for June 2026 asset growth'), reads its own E1 items accurately, and maps a contraction signal to the low side of a +0.52% threshold, but it silently drops art_snippet_23038d161918c27e (the balance-sheet expansion phase) which it listed in selected_evidence_ids, and its 0.85 mass sits awkwardly against its own 'favored_direction: uncertain'.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_fed_balance_sheet_monthly_growth_2026_06::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "A precise numerical baseline for Federal Reserve asset growth in June 2026 cannot be established from the current evidence, as it lacks historical data for the WALCL series or the median of prior observed changes required by the resolution and comparison rules.",
+      "verdict_one_line": "Best gap statement among the E0 traces because it names the exact resolution-rule quantity it cannot compute and keeps an honestly wide -2.0 to +2.0 interval, but its central estimate of -0.5% asserts contraction on the strength of a single 'hawkish stance' headline, and the probability drifts from 0.55 in the reasoning block to 0.63 in the forecast without explanation.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_fed_balance_sheet_monthly_growth_2026_06::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "While there are indications of policy shifts and a hawkish stance in 2026, there is no direct evidence detailing the Federal Reserve's specific plans for its balance sheet growth in June 2026, making it difficult to assess if asset growth will meet or exceed 0.52%.",
+      "verdict_one_line": "Honest about its weak metric and horizon fit and its 0.65 tilt is proportionate to a bank of headline-only snippets, but it declares 'directional_signal': 'down' while placing its central estimate at +0.1%, so the stated direction and the latent estimate do not sit together.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_fed_balance_sheet_monthly_growth_2026_06::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The target requires monthly asset growth of at least 0.52% for June 2026. The evidence lacks specific forecasts for this metric and period, and the identified drivers present conflicting signals, making it impossible to confirm the threshold will be met.",
+      "verdict_one_line": "The mapping to 'no' is explicit and the exclusion of 'yes' is stated, but declaring the threshold 'impossible to confirm' and 'High' uncertainty and then assigning 0.80 to one side is a magnitude of confidence that is asserted rather than earned from a bank of title-only snippets.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_fed_balance_sheet_monthly_growth_2026_06::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 2,
+        "mechanism_specificity": 2
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Without concrete evidence supporting a monthly growth rate exceeding the 0.520455% threshold, a 'no' prediction is made, reflecting the lack of definitive support.",
+      "verdict_one_line": "An elaborate DAG whose nodes never touch the target quantity ('Interest rate decisions are a primary tool of monetary policy, and the Fed's actions in this area often involve adjustments to its balance sheet'), and it anchors a baseline node on an FT headline that contains no asset level; it then states a 'no' prediction while allocating exactly 0.50/0.50, so the declared choice and the mass disagree.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_fed_balance_sheet_monthly_growth_2026_06::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 3,
+        "mechanism_specificity": 1
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": true,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "No validated current driver is strong enough to move the forecast away from the neutral baseline.",
+      "verdict_one_line": "A content-free abstention with an empty selected_evidence_ids and steps that would fit any question on any indicator ('Retain a neutral baseline for the exact public target'); the 0.50/0.50 mass at least matches its declared zero support, but the reasoning block states 'prediction': 'yes' while the forecast block states 'prediction': 'no', an outright internal contradiction about its own answer.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_fed_balance_sheet_monthly_growth_2026_06::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 2,
+        "mechanism_specificity": 2
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "If the balance sheet is in an expansionary phase or experiencing only modest contraction, the monthly change in total assets is likely to be positive.",
+      "verdict_one_line": "It converts its own counterevidence into support - 'modest contraction' and 'Battles to shrink the Federal Reserve's balance sheet begin' are read as 'implying potential for growth' - contradicts itself by declaring magnitude_support 'supported' in evidence_fit and 'insufficient' in the forecast, and lands a central estimate of 0.60% just above the 0.520455% boundary with no quantity anywhere in its bank, which reads as the option chosen first and the rationale fitted afterwards.",
+      "would_a_careful_analyst_accept_this": "no"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_fed_balance_sheet_monthly_growth_2026_06::hgf",
+    "v3_fed_balance_sheet_monthly_growth_2026_06::case_memory",
+    "v3_fed_balance_sheet_monthly_growth_2026_06::principle_memory",
+    "v3_fed_balance_sheet_monthly_growth_2026_06::direct_forecast",
+    "v3_fed_balance_sheet_monthly_growth_2026_06::structured_reasoning",
+    "v3_fed_balance_sheet_monthly_growth_2026_06::structure_memory",
+    "v3_fed_balance_sheet_monthly_growth_2026_06::factor_memory"
+  ],
+  "ranking_rationale": "The separator was whether a trace stated what it could not compute and then kept its claims inside that limit: hgf, case_memory and principle_memory each named the missing baseline or magnitude and mapped a directional read onto the wide side of a +0.52% threshold, which is a legitimate asymmetry, while direct_forecast and structured_reasoning reached the same option with mass that their own stated uncertainty did not support. At the bottom, structure_memory produced no question-specific content and disagreed with itself about its own prediction, and factor_memory misread contraction reporting as growth support and manufactured a central estimate just above the boundary.",
+  "shared_evidence_note": "The two methods on E1 read identical evidence and split in opposite directions (factor_memory 'yes' at 0.70, hgf 'no' at 0.85), so the disagreement here is a reasoning difference rather than an evidence difference, though the E0 methods were additionally handicapped by a bank whose ten title-only snippets contain no balance-sheet flow reporting at all."
+}

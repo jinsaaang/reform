@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_tsla_revenue_growth_acceleration_2025_03_31",
+  "verdicts": [
+    {
+      "trace_id": "v3_tsla_revenue_growth_acceleration_2025_03_31::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 5,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The estimate is broad and centered around a negative value due to headwinds, constrained to the 'within recent range' due to insufficient magnitude evidence, as per instructions.",
+      "verdict_one_line": "Every driver (annual sales fall, used-EV price plunge, demand problem, Canada price rise, new-model timing) traces to a real E1 item and is connected to the target with an explicit note that the baseline acceleration is unavailable, but the latent estimate is openly admitted to have been constrained to the chosen bucket rather than derived, and 'favored_direction: uncertain' sits awkwardly beside 'directional_signal: down'.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_tsla_revenue_growth_acceleration_2025_03_31::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The qualitative descriptions ('immense', 'down', 'drag') do not allow for a precise quantification of the acceleration's magnitude relative to the resolution rule thresholds of -7.321 and 6.908 percentage points.",
+      "verdict_one_line": "Internally consistent from drivers to conclusion, explicitly discounts the new-model driver for this specific quarter and names the exact quantification gap, but the 0.20/0.50/0.30 split gives 'above' more mass than 'below' without arguing why the energy tailwind should dominate the automotive drag.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_tsla_revenue_growth_acceleration_2025_03_31::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Given the mixed qualitative evidence and lack of quantitative data on growth rates, the forecast is mapped to the option 'within recent range' as the most probable outcome, reflecting a balance of opposing forces.",
+      "verdict_one_line": "The only E0 trace whose reasoning block and final forecast select the same option, correctly refuses to treat the redacted ablation DAG as evidence, but the profit-decline step is linked to revenue only as 'could indirectly influence revenue dynamics' and the final symmetric 0.25/0.50/0.25 tails discard the downward tilt its own drivers describe.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_tsla_revenue_growth_acceleration_2025_03_31::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "\"prediction\": \"below recent range\" (reasoning block) versus \"mapped_option\": \"within recent range\" / \"prediction\": \"within recent range\" (forecast block)",
+      "verdict_one_line": "Citations to the energy-storage and automotive-revenue snippets are accurate and the mechanism ('A decline in automotive revenue growth, if not fully offset by acceleration in energy segment growth, would lead to negative overall growth acceleration') is real, but the trace's own reasoning selects 'below recent range' with 0.40 while the delivered forecast selects 'within recent range' with 0.50, so the stated reasoning does not entail the answer given.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_tsla_revenue_growth_acceleration_2025_03_31::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 2,
+        "prediction_alignment": 3,
+        "probability_justification": 1,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The strong negative indicators for automotive revenue and sales suggest negative acceleration, but the precise magnitude to cross the -7.321 pp threshold remains uncertain due to a lack of specific quantitative data for the target period.",
+      "verdict_one_line": "Its down-direction case is the best-sourced in the packet (all six ids sit in E1), but it states the -7.321 threshold crossing is undetermined and then invents a central estimate of -10.0 pp to declare 'within recent range' 'highly improbable', escalating from 0.60 to 0.80 on 'below' on 'direction_only' support; it also conflates demand and used-price levels with the second-difference target.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_tsla_revenue_growth_acceleration_2025_03_31::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "A sharp profit fall indicates potential overall revenue growth deceleration.",
+      "verdict_one_line": "Treats the NYT profit-decline headline as a revenue-growth signal without support, and like direct_forecast its reasoning block returns 'below recent range' at 0.40 while the forecast returns 'within recent range' at 0.50, leaving the delivered option unentailed by the stated argument.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_tsla_revenue_growth_acceleration_2025_03_31::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 1,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Given the mixed signals and weak magnitude support, the prediction is uncertain but leans towards the lower end of the spectrum or within the range.",
+      "verdict_one_line": "Says the read leans low and its reasoning block puts 0.45 on 'below', yet the delivered forecast declares direction 'uncertain', support 'insufficient', then assigns 0.7114731 to 'within' with spurious eight-decimal precision and less mass on 'below' (0.134) than on 'above' (0.155) — the mass ordering reverses the tilt it just argued for.",
+      "would_a_careful_analyst_accept_this": "no"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_tsla_revenue_growth_acceleration_2025_03_31::hgf",
+    "v3_tsla_revenue_growth_acceleration_2025_03_31::structured_reasoning",
+    "v3_tsla_revenue_growth_acceleration_2025_03_31::structure_memory",
+    "v3_tsla_revenue_growth_acceleration_2025_03_31::direct_forecast",
+    "v3_tsla_revenue_growth_acceleration_2025_03_31::factor_memory",
+    "v3_tsla_revenue_growth_acceleration_2025_03_31::principle_memory",
+    "v3_tsla_revenue_growth_acceleration_2025_03_31::case_memory"
+  ],
+  "ranking_rationale": "The top three keep one line of argument from drivers through the netting mechanism to a single option, name the missing quantity (prior-quarter growth rates) instead of papering over it, and let the probability mass follow the admitted gap. The bottom four break at the join: three deliver an option their own reasoning block rejected, and the fourth admits the -7.321 pp threshold is undetermined before inventing a -10.0 pp point estimate to put 0.80 on crossing it.",
+  "shared_evidence_note": "Bank differences explain part of the split — only E1 carried the Tesla-specific demand and used-price deterioration items (77f028bd, ae5b6dce, fbc33017, b405f666) that pushed factor_memory to 'below' — but they do not explain the rest, since all five E0 traces read the same three snippets and still produced contradictory internal predictions and mass allocations ranging from 0.45 to 0.71 on the same option."
+}

@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_fed_balance_sheet_monthly_growth_2025_12",
+  "verdicts": [
+    {
+      "trace_id": "v3_fed_balance_sheet_monthly_growth_2025_12::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Uncertainty stems from the lack of precise quantitative data in the current evidence regarding the exact magnitude of asset growth/contraction following the end of QT, and how it will precisely compare to the -0.424 percent threshold.",
+      "verdict_one_line": "Cites only the two E0 items that actually carry the QT-ending claim, labels its own magnitude support 'partial'/'insufficient', and sets a latent band (-0.5 to 1.0) that straddles the threshold so that 0.85/0.15 is roughly coherent with the gap it admits; weakened by an empty counterevidence step ('No direct counterevidence was found') and by calling the 'no' interval 'unsupported' despite conceding it has no quantity, and it correctly refused to import the -0.278 percent figure sitting in its retrieved hindsight DAG.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_fed_balance_sheet_monthly_growth_2025_12::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 4,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The resolution rule requires the median of four prior observed monthly growth rates, which are unavailable. Furthermore, no current evidence quantifies the expected monthly asset growth for December 2025, making magnitude assessment impossible.",
+      "verdict_one_line": "The only trace to name the exact missing input (the median of four prior changes) and the only one to re-test each carried-over path and mark two of them unsupported, with a modest 0.65/0.35 and a wide straddling interval that matches the admitted gap; but it labels the QT wind-down driver and mechanism 'effect_on_target': 'down' and then relies on the opposite sign in its boundary check ('Evidence suggesting the winding down of Quantitative Tightening implies a slowing of balance sheet contraction, which is directionally consistent with meeting the yes condition'), and by its own words the choice is undetermined: 'preventing a determination of whether the target threshold will be met'.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_fed_balance_sheet_monthly_growth_2025_12::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The cessation of QT on December 1, 2025, means the active reduction of the Fed's balance sheet will stop. This is expected to halt the decline in total assets and likely result in growth that is zero or positive for December 2025.",
+      "verdict_one_line": "Cleanest causal chain of the E0 set - QT stops, active runoff stops, contraction halts - with every citation present in E0 and the resolved historical episode properly held at arm's length, but it grades its own magnitude support as 'supported' and pins a -0.2/+0.1/+0.5 band when no source in the bank contains a single figure, so the 0.9 and the claim that 'no' is 'unsupported' are asserted rather than derived.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_fed_balance_sheet_monthly_growth_2025_12::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 2,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": false
+      },
+      "decisive_quote": "the net effect is anticipated to prevent a significant decline, suggesting asset growth will likely be less negative than -0.424 percent.",
+      "verdict_one_line": "Only trace to carry an explicit countervailing node and resolve it on the record, but the countervailing item is a misread - the MarketWatch 'end its massive market intervention' story is the same QT-ending event entered with the opposite sign - the rate-cut-to-asset-holdings channel is asserted with no support, and it jumps straight from directional evidence to the -0.424 boundary at 0.9 without ever admitting the bank contains no quantities.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_fed_balance_sheet_monthly_growth_2025_12::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 3,
+        "probability_justification": 2,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Boundary output could not be validated; retain a broad contract-centered estimate without an evidence magnitude claim.",
+      "verdict_one_line": "Its reasoning stage cites only E1 ids that exist, gives a genuine runoff mechanism and rates the direction 'strongly supported' at 0.9, then its decision stage reverses to 'directional_signal': 'uncertain', 'No evidence-supported magnitude distinguishes this option' and 0.51/0.49 - the two halves are never reconciled, and the reasoning stage's 'magnitude_support': 'supported' overclaims a bank that contains no figures at all.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_fed_balance_sheet_monthly_growth_2025_12::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 1,
+        "mechanism_specificity": 2
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "No evidence-supported point estimate; retain a broad neutral range.",
+      "verdict_one_line": "An explicit abstention - zero selected evidence, 'No boundary crossing is supported before the boundary audit', 50/50 in the reasoning stage - that then invents a -0.25/0.0/+0.25 band 'derived from directional signal of ending Quantitative Tightening' it never cited and settles at 0.95/0.05 while still declaring uncertainty 'High'; the rationale is assembled after the option, and the confidence is the exact inverse of the support the trace claims for itself.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_fed_balance_sheet_monthly_growth_2025_12::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 1,
+        "mechanism_specificity": 2
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "High; this is an explicit abstention after structured-output validation failure.",
+      "verdict_one_line": "Content-identical to direct_forecast - a contentless abstention with no cited evidence followed by a fabricated -0.25 to +0.25 band and 0.95/0.05 - and it is placed last because its retrieved memory handed it an explicit instruction it then ignored: 'Calibrate uncertainty by considering the potential range of monthly asset growth rates that could occur around a significant policy transition.'",
+      "would_a_careful_analyst_accept_this": "no"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_fed_balance_sheet_monthly_growth_2025_12::structure_memory",
+    "v3_fed_balance_sheet_monthly_growth_2025_12::hgf",
+    "v3_fed_balance_sheet_monthly_growth_2025_12::case_memory",
+    "v3_fed_balance_sheet_monthly_growth_2025_12::structured_reasoning",
+    "v3_fed_balance_sheet_monthly_growth_2025_12::factor_memory",
+    "v3_fed_balance_sheet_monthly_growth_2025_12::direct_forecast",
+    "v3_fed_balance_sheet_monthly_growth_2025_12::principle_memory"
+  ],
+  "ranking_rationale": "Neither bank contains a single number - every item is a bare headline - so the discriminating question was whether a trace noticed that 'QT ends December 1' is directional evidence only and priced its confidence accordingly; structure_memory and hgf both named the missing quantity (hgf even identified the exact missing input, the median of four prior changes) and held mass back to 0.85 and 0.65, while case_memory and structured_reasoning ran the better causal chains but graded their own magnitude support as 'supported' and went to 0.9 on the boundary anyway. The bottom three broke internally: factor_memory argued 0.9 and then output 0.51, and direct_forecast and principle_memory declared an explicit abstention with no evidence selected and then emitted 0.95.",
+  "shared_evidence_note": "The disagreement is not evidentiary - all seven read the same QT-ending headlines (art_snippet_814dbf694d294262 appears in both banks) and all seven predicted yes - so the spread from 0.51 to 0.95 came entirely from how each trace converted an unquantified directional signal into mass against a numeric threshold."
+}

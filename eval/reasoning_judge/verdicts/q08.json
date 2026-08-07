@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_brent_monthly_return_2026_06",
+  "verdicts": [
+    {
+      "trace_id": "v3_brent_monthly_return_2026_06::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "This evidence supports a directional move above the recent range but does not provide specific quantitative data to derive an exact magnitude.",
+      "verdict_one_line": "Bullish call that is honest about having only directional support, and uniquely the one bullish trace that keeps 'within recent range' explicitly plausible with 0.35 mass instead of declaring it unsupported.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_brent_monthly_return_2026_06::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Uncertainty is high due to several factors: the target baseline (May 2026 monthly return) is unavailable; historical data for calculating the recent range boundaries is missing; all historical causal pathways have been contradicted; and current evidence presents conflicting directional signals from geopolitical events, supply policies, and demand outlooks.",
+      "verdict_one_line": "Cleanly calibrated abstention whose 0.50/0.25/0.25 mass matches its declared insufficiency, but it contradicts itself by claiming the range boundaries are missing after reciting them verbatim in target_semantics, and it marks all three routed paths CONTRADICTED with no stated reason despite ALIGNED anchors.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_brent_monthly_return_2026_06::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 2,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": false
+      },
+      "decisive_quote": "While slowing demand presents a countervailing force, the evidence suggests supply issues will prevail, pushing the monthly Brent price return above the recent range.",
+      "verdict_one_line": "Well-built DAG that resolves the demand-slowdown counterweight explicitly and grounds every node in E0, but it slides from 'upward pressure' straight to 'above 3.476%' with no threshold argument and no uncertainty statement behind its 0.75.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_brent_monthly_return_2026_06::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 2,
+        "prediction_alignment": 3,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The forecast maps the potential outcomes to 'below recent range' if demand concerns and supply increases dominate, 'within recent range' if geopolitical risks and demand concerns balance out, or 'above recent range' if geopolitical events cause significant price spikes.",
+      "verdict_one_line": "Genuinely balanced two-sided read of E1 (Hormuz/Goldman upside versus OPEC+ hikes and the OPEC demand-growth cut), but its reasoning block selects 'below recent range' while the forecast block selects 'within', so the trace names three conditional branches without committing to one.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_brent_monthly_return_2026_06::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 4,
+        "probability_justification": 1,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The evidence points to severe undersupply and upward momentum, making a return within the recent range unlikely. The coarse central estimate of 8.0% is far above this range.",
+      "verdict_one_line": "Declares magnitude support 'direction_only' and then uses a self-generated 8% central to rule the middle bucket 'unsupported' and stack 0.85 on 'above', which is confidence its own stated support level does not carry.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_brent_monthly_return_2026_06::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 2,
+        "prediction_alignment": 4,
+        "probability_justification": 1,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The central estimate of 10.0% is significantly above the upper limit of this interval.",
+      "verdict_one_line": "The most extreme leap in the set: from title-only qualitative headlines to a 5-20% band with a 10% central, used to declare the middle bucket 'unsupported' while the same trace rates its magnitude support 'direction_only'.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_brent_monthly_return_2026_06::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 1,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Boundary output could not be validated; retain a broad contract-centered estimate without an evidence magnitude claim.",
+      "verdict_one_line": "The reasoning argues at length for 'above recent range' with 0.65 mass, then the delivered forecast abandons it for 'within recent range' at near-uniform 0.32/0.35/0.32 via a declared generation fallback, so the stated reasoning does not entail the selected option.",
+      "would_a_careful_analyst_accept_this": "no"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_brent_monthly_return_2026_06::principle_memory",
+    "v3_brent_monthly_return_2026_06::hgf",
+    "v3_brent_monthly_return_2026_06::structured_reasoning",
+    "v3_brent_monthly_return_2026_06::factor_memory",
+    "v3_brent_monthly_return_2026_06::structure_memory",
+    "v3_brent_monthly_return_2026_06::case_memory",
+    "v3_brent_monthly_return_2026_06::direct_forecast"
+  ],
+  "ranking_rationale": "The separator was whether a trace kept its confidence inside the support level it itself declared: principle_memory and hgf both admit they have direction-only or insufficient magnitude evidence and allocate mass accordingly, while case_memory and structure_memory declare the same 'direction_only' support and then invent 8-10% central estimates to rule the middle bucket out at 0.85. Bottom place goes to direct_forecast, whose reasoning selects 'above recent range' and whose delivered forecast selects 'within' after a structured-output failure, breaking the prediction-alignment test outright.",
+  "shared_evidence_note": "Both causes are present: the bank split matters (E0 is dominated by May-2026 IEA deficit and record-inventory-drawdown headlines and all five E0 methods read them as bullish, whereas E1 pairs the geopolitical headlines with OPEC+ output-hike and OPEC demand-cut items and both E1 methods land neutral), but reasoning quality also separates traces reading the identical bank, since the five E0 traces span 0.85-on-above to a near-uniform abstention."
+}

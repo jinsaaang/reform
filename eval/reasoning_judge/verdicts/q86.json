@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_us_pce_price_monthly_change_2026_05",
+  "verdicts": [
+    {
+      "trace_id": "v3_us_pce_price_monthly_change_2026_05::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "no direct data or strong indicators are provided for the specific monthly PCE price change in May 2026, making magnitude support weak.",
+      "verdict_one_line": "Honest about its E0 bank's limits and cleanly mapped to 'no', but it folds the one upward-pointing item ('Tariffs are identified as a factor in inflation, but they cannot fully explain the rise in goods inflation') into a downward mechanism, then converts headline-only evidence into a numeric interval ('low': 0.1, 'central': 0.25, 'high': 0.45) that carries the 0.8 confidence.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_pce_price_monthly_change_2026_05::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 4,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": false
+      },
+      "decisive_quote": "The presence of unexplained pressures (D2) suggests a risk of inflation remaining elevated or exceeding the 0.405% threshold for May 2026, leading to a slight lean towards 'yes' despite the countervailing factors and overall uncertainty.",
+      "verdict_one_line": "It declines to invent a magnitude and its 0.52/0.48 mass genuinely matches the 'Uncertain' synthesis it declares, but the same tariff node is signed 'directional_effect': 'Positive' as a driver and then relied on in the negative direction ('this specific source of upward pressure is likely diminishing by May 2026, which could moderate inflation'), and the lean to 'yes' rests entirely on a driver it can only label 'Unexplained Inflationary Pressures'.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_pce_price_monthly_change_2026_05::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 1,
+        "prediction_alignment": 1,
+        "probability_justification": 1,
+        "mechanism_specificity": 1
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": true,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "High; this is an explicit abstention after structured-output validation failure.",
+      "verdict_one_line": "The reasoning block abstains at 50/50 and records 'prediction': 'yes', both boundary checks are marked 'unsupported' ('No evidence supports the target falling below the threshold'), and the forecast block nevertheless outputs 'no' at 0.77 with a range centred on 0.0 percent, so a declared abstention is silently converted into a confident directional call with zero cited evidence from its own E1 bank.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_us_pce_price_monthly_change_2026_05::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 4,
+        "probability_justification": 2,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The central estimate of 0.15% and the entire estimated range fall below the 'yes' threshold of 0.405098%. Evidence points to moderating inflation.",
+      "verdict_one_line": "Its threshold-to-annualised bridge ('implying an annualized rate of approximately 4.95%') is the most concrete target mechanism in the E0 set, but it books the Minneapolis piece as downward ('Evidence suggests that tariffs cannot fully explain rising goods inflation ... their peak impact has passed') when that source implies non-tariff upward pressure, and it moves from 'magnitude_support': 'unsupported' in the reasoning block to 'Evidence strongly supports this outcome' at 0.90 confidence.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_pce_price_monthly_change_2026_05::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The central estimate of 0.2 percent falls within the 'no' interval (-infinity, 0.405098). The evidence suggests that the threshold of 0.405 percent is not strongly supported, making the 'no' option the most supported.",
+      "verdict_one_line": "Alone in the E0 set it reads 'inflation was edging further away from the Federal Reserve's target' as a genuine upward driver rather than reclassifying it downward, keeps 'directional_signal': 'uncertain' honest, and its 0.24 yes-mass is exactly the share of its own stated -0.2 to 0.6 interval lying above the threshold — the interval itself is still asserted rather than derived.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_pce_price_monthly_change_2026_05::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 2,
+        "prediction_alignment": 4,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The target threshold of 0.405098 percent monthly PCE change is a high level, and current evidence points to moderating factors or unspecified drivers, without direct support for such an increase.",
+      "verdict_one_line": "Its three E0 citations are used accurately, but it declares 'there is no direct or derived evidence to support a specific magnitude of monthly PCE price change' and then narrows to a 0.0-0.3 percent band, calls a threshold that the target contract defines as the median of the four prior changes 'a high level', and concludes 'the available evidence strongly leans against the target threshold' at 0.85.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_pce_price_monthly_change_2026_05::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 5,
+        "logical_validity": 3,
+        "prediction_alignment": 2,
+        "probability_justification": 3,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The central estimate is kept within the assumed recent range (0.1-0.3%) due to insufficient magnitude evidence, reflecting high uncertainty and unobserved target value and baseline.",
+      "verdict_one_line": "Every figure it cites traces exactly to its E1 bank ('a 6% annual increase in wholesale prices (PPI) in April and significant rises in gasoline prices (50% since the Iran war)') and it is the only trace to notice that the threshold is a median of four prior changes whose 'baseline required for comparison ... is unavailable', yet after establishing that the gauge is at 'its highest level since 2023' and that 'Inflation is spreading across multiple sectors' it decides the option purely on an admittedly assumed 0.1-0.3 percent band, so the stated reasoning leans upward while the prediction is 'no'.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_us_pce_price_monthly_change_2026_05::case_memory",
+    "v3_us_pce_price_monthly_change_2026_05::direct_forecast",
+    "v3_us_pce_price_monthly_change_2026_05::structured_reasoning",
+    "v3_us_pce_price_monthly_change_2026_05::hgf",
+    "v3_us_pce_price_monthly_change_2026_05::structure_memory",
+    "v3_us_pce_price_monthly_change_2026_05::principle_memory",
+    "v3_us_pce_price_monthly_change_2026_05::factor_memory"
+  ],
+  "ranking_rationale": "The separator was whether the declared uncertainty, the stated interval and the assigned mass were the same object: case_memory's 24 percent yes-mass is literally the share of its own stated range above the threshold, while structure_memory and principle_memory declared their magnitude unsupported and then spent 0.85-0.90 of the mass on it, and factor_memory converted an explicit 50/50 abstention into a 0.77 directional call with no citations at all. hgf earned the best grounding and the only recognition that the threshold is the median of four unobserved prior changes, but it forfeited the central test by resolving the option on an anchor it itself labels 'assumed' and which contradicts the elevated, broadening inflation it had just documented.",
+  "shared_evidence_note": "Both: the E0 traces saw only headline-level tariff and late-2025 inflation snippets and reasonably read them as moderating, while E1 carried the April PPI, gasoline and core-PCE material that points upward — yet the two E1 traces still landed on 'no', one by ignoring its bank entirely and one by overriding it with an assumed range, so the disagreement is at least as much reasoning as evidence."
+}

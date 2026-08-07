@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_fed_funds_monthly_change_2026_06",
+  "verdicts": [
+    {
+      "trace_id": "v3_fed_funds_monthly_change_2026_06::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 5,
+        "logical_validity": 4,
+        "prediction_alignment": 5,
+        "probability_justification": 4,
+        "mechanism_specificity": 5
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "While current evidence strongly points to a hawkish shift favoring a zero or positive rate change (i.e., 'above recent range'), the specific FOMC meeting outcome for June 2026 is unobserved.",
+      "verdict_one_line": "Every claim traces to an E1 headline (3.3% April core inflation, May minutes showing openness to a hike, the April third-straight hold), the sign argument is exactly what the 0.0 boundary requires, and it names the one thing it could not observe; only the invented 0.05 central estimate and the unreconciled 0.10 mass on a bucket it called 'unsupported' hold it back.",
+      "would_a_careful_analyst_accept_this": "yes"
+    },
+    {
+      "trace_id": "v3_fed_funds_monthly_change_2026_06::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 5,
+        "logical_validity": 4,
+        "prediction_alignment": 5,
+        "probability_justification": 3,
+        "mechanism_specificity": 5
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "This supports a directional outcome of no decrease in rates, but the exact magnitude of any change is not explicitly provided.",
+      "verdict_one_line": "Cleanly grounded in E1 and the only trace to time-order its own counterevidence (the February June-cut futures bet superseded by May hawkishness), but having conceded that magnitude is unavailable it still posits a central of +0.125pp, a hike-sized figure no cited source supports.",
+      "would_a_careful_analyst_accept_this": "yes"
+    },
+    {
+      "trace_id": "v3_fed_funds_monthly_change_2026_06::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 5,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The narrowness of the 'within' and 'above' boundaries means minor deviations could alter the outcome.",
+      "verdict_one_line": "The best-calibrated trace of the seven: it alone recognises that its central estimate of exactly 0.0 sits on the knife-edge between 'within' and 'above' and prices that honestly at 0.50/0.40, though it labels headline-only E0 magnitude support as 'supported'.",
+      "would_a_careful_analyst_accept_this": "yes"
+    },
+    {
+      "trace_id": "v3_fed_funds_monthly_change_2026_06::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "However, the broader estimate range [-0.10, 0.10] overlaps with this interval, making it a plausible outcome due to uncertainty.",
+      "verdict_one_line": "Handles the boundary correctly by testing the interval against its whole band rather than its point estimate, and revises to a defensible 0.60, but the mechanism is thin ('holding steady implies 0.0') and the jump from the reasoning stage's 0.95 to the forecast stage's 0.60 is never explained.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_fed_funds_monthly_change_2026_06::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The central estimate of 0.0 is not included in the interval [-0.1375, 0.0).",
+      "verdict_one_line": "Correctly grounded in E0 and honest about the March-to-June gap, but it rules 'within recent range' unsupported on the point estimate alone even though its own band [-0.05, 0.05] overlaps that interval, then hands the same bucket 0.25 of the mass without reconciling the two.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_fed_funds_monthly_change_2026_06::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 1,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": false
+      },
+      "decisive_quote": "The monthly federal-funds-rate change is estimated to be approximately 0.0 percentage points, placing it in the 'above recent range' category as per the resolution rule (change >= 0.0).",
+      "verdict_one_line": "The causal graph is the most articulated of the E0 group, but an estimate that is only 'approximately 0.0' straddles a bucket boundary sitting exactly at 0.0, and converting that into 0.98 confidence with no uncertainty statement and no mass left for the countervailing employment factor it just raised is the clearest calibration failure in the set.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_fed_funds_monthly_change_2026_06::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 1,
+        "prediction_alignment": 1,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Deterministic abstention centered on the public boundary contract after structured-output failure.",
+      "verdict_one_line": "Its reasoning argues a hold implying 0.0pp and assigns 0.60 to 'above recent range', yet the emitted forecast discards all of that after a structured-output failure and predicts 'within recent range' on a near-uniform split, so the stated reasoning points squarely at an option other than the one selected.",
+      "would_a_careful_analyst_accept_this": "no"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_fed_funds_monthly_change_2026_06::hgf",
+    "v3_fed_funds_monthly_change_2026_06::factor_memory",
+    "v3_fed_funds_monthly_change_2026_06::principle_memory",
+    "v3_fed_funds_monthly_change_2026_06::direct_forecast",
+    "v3_fed_funds_monthly_change_2026_06::case_memory",
+    "v3_fed_funds_monthly_change_2026_06::structured_reasoning",
+    "v3_fed_funds_monthly_change_2026_06::structure_memory"
+  ],
+  "ranking_rationale": "The separator was how each trace treated a bucket boundary that sits exactly at 0.0: the top traces either argued the sign explicitly and named what they could not observe (hgf, factor_memory) or priced the knife-edge honestly at roughly even odds (principle_memory), while the bottom traces either converted an 'approximately zero' estimate into 0.98 confidence with no admitted uncertainty (structured_reasoning) or abandoned their own worked reasoning and emitted the opposite bucket (structure_memory). Grounding quality was uniformly acceptable, so the ranking turned almost entirely on prediction alignment and calibration rather than on citation accuracy.",
+  "shared_evidence_note": "Both causes are present: the E1 methods saw May 2026 hawkish material (minutes showing openness to a hike, 3.3% April core inflation) that E0 methods could not see, so their 'hold-or-hike' framing is bank-driven, but all seven nonetheless converged on a non-negative change and the actual spread in verdicts came from reasoning quality at the 0.0 boundary, not from the banks."
+}

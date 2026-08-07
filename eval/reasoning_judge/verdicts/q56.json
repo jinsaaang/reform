@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_us_5y_breakeven_monthly_change_2025_06",
+  "verdicts": [
+    {
+      "trace_id": "v3_us_5y_breakeven_monthly_change_2025_06::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The forecast maps to 'within recent range' because while inflationary factors are present, they are counterbalanced by slower growth projections and the Fed's steady policy, suggesting the monthly change is unlikely to break significantly outside the historical band of fluctuations. However, the persistent inflation and tariff risks elevate the probability of exceeding the upper bound.",
+      "verdict_one_line": "The only trace that explicitly resolves the up/down forces, names both neighbouring buckets and admits the decisive gap ('the unknown distribution of the 8 prior observed changes'), but it labels an invented central of 0.10 pp as an 'Evidence-based forecast' while its own magnitude support is only 'direction_only', and it misreads the lower bucket as requiring a 'significant drop' when it only requires a change under +0.01 pp.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_5y_breakeven_monthly_change_2025_06::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The evidence suggests a positive change, making 'below recent range' unlikely. The uncertainty in magnitude means the change could fall 'within recent range' [0.01, 0.115) or 'above recent range' [0.115, +infinity). The former is more probable due to the lack of definitive evidence for a large magnitude.",
+      "verdict_one_line": "Cleanly grounded in E0 headlines and the sharpest explicit statement of why the middle bucket beats the upper one, but the growth-slowdown counterevidence is listed after the 'up' mechanism and never weighed, the central 0.05 pp band [0.02, 0.15] is asserted on 'qualitative evidence', and only 0.05 mass is left for the lower bucket despite magnitude support declared 'insufficient'.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_5y_breakeven_monthly_change_2025_06::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 3,
+        "probability_justification": 5,
+        "mechanism_specificity": 2
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Magnitude evidence is insufficient. As per instructions, the central estimate is set within the 'within recent range' [0.01, 0.115) to reflect this constraint. The estimate is broad within this range, centered around 0.06.",
+      "verdict_one_line": "Reads its two-item E1 bank accurately, correctly identifies that the T5YIE series needed to compute the change is simply absent, and is the only trace whose mass (0.2/0.6/0.2) is explicitly tied to its declared support level; the cost is that the option was fixed by a default rule before the 0.06 central existed, making the boundary exclusions circular, and it offers no causal mechanism at all ('current_new_factors': []).",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_5y_breakeven_monthly_change_2025_06::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 4,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The central estimate (0.05) falls within this interval, and evidence points to continued inflation vigilance, making this the most likely outcome given insufficient magnitude evidence.",
+      "verdict_one_line": "Grounded in E0 and commendably widens its mass to 0.25/0.5/0.25 once it declares magnitude support 'insufficient', but the whole bucket choice rests on a 0.05 pp central whose stated basis is only 'derived from qualitative evidence', and a genuinely balanced up-versus-down net is equally consistent with a near-zero change that would land below the +0.01 boundary — a possibility it never addresses.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_5y_breakeven_monthly_change_2025_06::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The arithmetic for deriving this magnitude is not explicitly stated but is inferred from the interplay of these qualitative drivers.",
+      "verdict_one_line": "Grades its own magnitude support as 'derived' in the same breath as conceding no arithmetic exists, then rules both neighbouring buckets 'unsupported' purely because they do not contain the invented 0.05 pp central — while still assigning 0.3 to the option it just called unsupported.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_5y_breakeven_monthly_change_2025_06::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 1,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": false
+      },
+      "decisive_quote": "These factors exert significant upward pressure on inflation expectations, suggesting that the monthly 5-year breakeven inflation change is likely to exceed recent historical ranges, specifically the upper bound of 0.115 percentage points.",
+      "verdict_one_line": "Jumps from four headline-only qualitative snippets straight to a named threshold crossing at 0.115 pp with no quantity anywhere in its bank, waves off the growth counterfactor by simply declaring the upward pressures 'more dominant', and then puts 0.6 on the tail bucket with no uncertainty statement at all — even though its own mediator node is labelled 'Neutral'.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_us_5y_breakeven_monthly_change_2025_06::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 1,
+        "prediction_alignment": 1,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The central estimate of 0.0 falls within the interval (-infinity, 0.01), which defines the 'below recent range' option.",
+      "verdict_one_line": "Honest about its two-item E1 bank and its own gaps, but it contradicts itself outright: the reasoning stage concludes 'within recent range' at 0.6 and states it cannot bridge to 'a precise magnitude or direction', then the forecast stage flips to 'below recent range' at 0.5 solely because a placeholder zero central landed under +0.01 — and it declares the other two buckets 'unsupported' despite its own stated band of -0.1 to 0.2 pp spanning all three.",
+      "would_a_careful_analyst_accept_this": "no"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_us_5y_breakeven_monthly_change_2025_06::principle_memory",
+    "v3_us_5y_breakeven_monthly_change_2025_06::case_memory",
+    "v3_us_5y_breakeven_monthly_change_2025_06::hgf",
+    "v3_us_5y_breakeven_monthly_change_2025_06::direct_forecast",
+    "v3_us_5y_breakeven_monthly_change_2025_06::structure_memory",
+    "v3_us_5y_breakeven_monthly_change_2025_06::structured_reasoning",
+    "v3_us_5y_breakeven_monthly_change_2025_06::factor_memory"
+  ],
+  "ranking_rationale": "The top traces earned their place by naming the magnitude gap and then keeping their confidence and their bucket choice inside it — principle_memory and case_memory by explicitly arguing why the middle bucket beats the upper one, hgf by refusing to manufacture a direction from a bank that lacks the target series and pricing its mass accordingly. The bottom two failed the central test in opposite ways: structured_reasoning leapt from headline-only qualitative snippets to a specific 0.115 pp threshold crossing and staked 0.6 on it with no uncertainty statement, while factor_memory's reasoning stage selected 'within recent range' and its forecast stage then selected 'below recent range' off a placeholder zero.",
+  "shared_evidence_note": "The banks did differ in kind — E0's ten headline-only macro snippets invited directional storytelling while E1's two generic definitional items supported none — but the disagreement is primarily reasoning, not evidence: the outlier 'above recent range' call came from an E0 method that four other E0 methods read the same way and still put in the middle bucket, and the two E1 methods reading identical evidence split between 'below' and 'within'."
+}

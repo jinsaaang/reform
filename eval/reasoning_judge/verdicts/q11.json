@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_broad_usd_monthly_return_2026_06",
+  "verdicts": [
+    {
+      "trace_id": "v3_broad_usd_monthly_return_2026_06::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 4,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The strong evidence for dollar weakness points towards 'below recent range', but the possibility of rebounds means 'within recent range' is also a significant consideration. 'Above recent range' is improbable.",
+      "verdict_one_line": "Cleanly grounded in E0 titles and honest that magnitude is unquantified, but the reasoning stage names 'below recent range' at 0.60 while the forecast stage silently switches to 'within recent range', so the selection is only partially entailed by the narrative that precedes it.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_broad_usd_monthly_return_2026_06::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 2,
+        "mechanism_specificity": 2
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": false
+      },
+      "decisive_quote": "The recent sharp decline in the Nominal broad U.S. dollar index (BASE) and market sentiment indicating positioning for further weakness (M, D2) are the dominant signals.",
+      "verdict_one_line": "Puts 0.65 on a tail bucket purely from a directional weakness narrative without ever asking whether the move clears -1.195 percent, and enlists node D2 as a dominant downward signal even though D2's own stated effect is that risk aversion 'would likely strengthen the dollar' (D2 also appears in both dominant_factor_ids and counter_factor_ids).",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_broad_usd_monthly_return_2026_06::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 2,
+        "prediction_alignment": 1,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The 'within recent range' option is favored as the most probable outcome, reflecting a balance of these forces. 'Above recent range' is a significant secondary possibility due to the strength of recent upward drivers.",
+      "verdict_one_line": "Every citation is legitimately from its own E1 bank and the inflation-jump and safe-haven channels are real, but the trace names 'within recent range' as most probable and then predicts 'above recent range', backing the flip with an asserted +0.5 percent central estimate that clears the upper bound while its own magnitude support is 'direction_only'.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_broad_usd_monthly_return_2026_06::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The observed trend of dollar weakness suggests a potential for returns below or within the recent range. However, the documented resilience and the unknown impact of upcoming economic events mean that a return within the range or even above it cannot be ruled out, especially if Fed policy shifts or global risk appetite changes.",
+      "verdict_one_line": "The only trace whose stated uncertainty, mass allocation and selection agree end to end: it weighs weakness against Fed-driven resilience, explicitly names the unverifiable step (direction of the June 1-7 calendar events), and lets that ignorance produce a central bucket with symmetric 0.25 tails rather than a confident tail call.",
+      "would_a_careful_analyst_accept_this": "yes"
+    },
+    {
+      "trace_id": "v3_broad_usd_monthly_return_2026_06::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The central estimate of -2.0% and low estimate of -4.0% fall within this range. Strong downward signals in evidence support this outcome.",
+      "verdict_one_line": "Internally consistent and the most decisive mapping in the packet, but it converts headline-level statements about the dollar's level from January and February 2026 into a -2.0 percent central estimate for a June monthly return and then puts 0.65 on that tail, one line after conceding the evidence 'does not provide specific quantitative data'.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_broad_usd_monthly_return_2026_06::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The persistent narrative of dollar weakness and sharp declines, supported by multiple recent articles, suggests a strong likelihood of negative returns. However, the documented potential for dollar rebounds due to Fed policy introduces significant uncertainty regarding whether the decline will cross the lower bound of -1.195%.",
+      "verdict_one_line": "Poses exactly the right question - whether directional weakness is enough to cross -1.195 percent - and correctly declines to assert the crossing, which entails the final 'within recent range'; the blemish is that its own earlier stage had already declared 'below recent range' at 0.55 and the reversal is never acknowledged, and it labels 'above' unsupported while still assigning it 0.15.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_broad_usd_monthly_return_2026_06::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 4,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The currently supported causal paths and signals do not provide sufficient evidence to determine the monthly broad-dollar return for the Nominal broad U.S. dollar index in June 2026 relative to the recent range boundaries.",
+      "verdict_one_line": "Carries the packet's most concrete chain (inflation gauge to fewer projected cuts to higher-for-longer to dollar-asset demand) and is unusually candid that the baseline is missing and both routed paths are UNKNOWN, but the 'higher rates for longer' link is attributed to Warsh-commentary and Bitcoin-outlook items whose titles do not say that, and the forecast header declares directional_signal 'up' while causal_balance says 'uncertain' and 0.35 sits on an option its own boundary check calls unsupported; the central bucket follows from a stated default rule rather than from evidence, so the choice is underdetermined.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_broad_usd_monthly_return_2026_06::principle_memory",
+    "v3_broad_usd_monthly_return_2026_06::structure_memory",
+    "v3_broad_usd_monthly_return_2026_06::hgf",
+    "v3_broad_usd_monthly_return_2026_06::direct_forecast",
+    "v3_broad_usd_monthly_return_2026_06::case_memory",
+    "v3_broad_usd_monthly_return_2026_06::factor_memory",
+    "v3_broad_usd_monthly_return_2026_06::structured_reasoning"
+  ],
+  "ranking_rationale": "What separated the top from the bottom was whether a trace noticed that its evidence was directional only and therefore could not license a threshold crossing: principle_memory, structure_memory and hgf each said so explicitly and let that constraint set both the option and the mass, while structured_reasoning and case_memory rode a qualitative weakness narrative straight into a tail bucket at 0.65. The bottom two additionally broke internally - structured_reasoning recruits node D2 as a downward driver after defining its effect as dollar-strengthening, and factor_memory declares 'within recent range' most probable and then predicts 'above recent range'.",
+  "shared_evidence_note": "Both causes are present: the two E1 methods leaned neutral-to-up because their bank carried late-May 2026 items (an inflation-gauge jump, COT positioning, a range-bound Reuters headline) that E0 simply does not contain, while the five E0 methods, reading one identical January-February 2026 dollar-weakness cluster, still split between 'below' and 'within' purely on whether they treated directional weakness as sufficient for crossing -1.195 percent."
+}

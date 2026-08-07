@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_us_baa_credit_spread_change_2025_12",
+  "verdicts": [
+    {
+      "trace_id": "v3_us_baa_credit_spread_change_2025_12::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 5,
+        "logical_validity": 5,
+        "prediction_alignment": 5,
+        "probability_justification": 5,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "U.S. Corporate Bond Spreads (OAS) were at their tightest level in 15 years (74 bps) as of October 7, 2025, indicating strong credit market conditions.",
+      "verdict_one_line": "The only figure it uses is quoted verbatim and correctly dated from its own bank (E1 art_snippet_a79f700578585ec6), every historical path is marked unresolved rather than asserted, the gap is named outright ('no direct measurement of the target metric or its components for the target period'), and the 0.35/0.65 split is what a symmetric [-0.15, 0.15] band around zero implies against a +0.055 threshold; the 'Directional conflict is absent' line refers to routed paths, not to the current evidence it elsewhere calls conflicting, so it is not a self-contradiction.",
+      "would_a_careful_analyst_accept_this": "yes"
+    },
+    {
+      "trace_id": "v3_us_baa_credit_spread_change_2025_12::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 5,
+        "logical_validity": 4,
+        "prediction_alignment": 5,
+        "probability_justification": 4,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The central estimate of 0.00 percentage points falls within the 'no' interval of (-infinity, 0.055). While there are risks of spread widening, the evidence does not provide sufficient conviction to breach the 0.055 threshold.",
+      "verdict_one_line": "Every claim maps to an E1 item with the right date (tight spreads Oct 2025, profitability 'early 2025', Fed cut 'late 2025', yields/stocks 'late November 2025'), the tight starting level is used as a real boundary condition rather than decoration, and it states plainly that 'The precise impact of rising US yields on the Baa-minus-10Y spread ... remains unclear' instead of inventing a sign; the [-0.1, 0.1] band would imply ~0.22 on yes and it carries 0.35, a defensible but unargued widening of the tail.",
+      "would_a_careful_analyst_accept_this": "yes"
+    },
+    {
+      "trace_id": "v3_us_baa_credit_spread_change_2025_12::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 5,
+        "probability_justification": 5,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The estimate range [-0.15, 0.15] largely overlaps with the 'no' interval (-infinity, 0.055), with the central estimate of 0.0 being well within this interval. The evidence is insufficient to strongly favor the 'yes' outcome.",
+      "verdict_one_line": "Threshold asymmetry is worked explicitly and the 0.3167 on yes is exactly the mass its own [-0.15, 0.15] band places above 0.055, which is unusually disciplined; it loses a point for redating a 2025-03-04 headline as 'As of late 2025, US firms' default risk has reached a post-financial crisis high' and for a widening mechanism that never touches the Baa-minus-Treasury arithmetic.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_baa_credit_spread_change_2025_12::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 2,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The recent upward trend in Treasury yields, combined with historical precedent of spread narrowing in December, suggests the spread change will not reach the 0.055 pp threshold required for a 'yes' prediction.",
+      "verdict_one_line": "Alone among the E0 traces it gets the arithmetic right ('upward pressure on US Treasury yields, which tends to narrow the Baa spread'), but the pivot is a bare 'Historical data for a past December showed a negative spread change' carrying no evidence_ids, and its central estimate of -0.02 is precisely the December figure sitting in the ablation memory it was told not to treat as current evidence; it also claims metric_match 'direct' when E0 contains no observation of the series, then escalates 0.70 to 0.85 on self-declared 'unsupported' magnitude.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_us_baa_credit_spread_change_2025_12::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The magnitude of 0.055 pp in a single month is significant, but the severity of the default risk and recent market sentiment make it plausible.",
+      "verdict_one_line": "Dates its E0 items correctly and argues a coherent up-direction, but 'plausible' is the entire bridge from direction to a magnitude threshold: it self-labels magnitude support 'direction_only', then places central 0.07 above the line, calls the whole 'no' interval (-infinity, 0.055) 'unsupported', and silently escalates 0.60 to 0.75 on yes between the reasoning block and the forecast, with confidence rising exactly where support is thinnest.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_us_baa_credit_spread_change_2025_12::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 3,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The central estimate of 0.06 percentage points falls within the 'yes' interval [0.055, +infinity), supported by the directional signal indicating spread widening.",
+      "verdict_one_line": "Best-dated of the E0 traces (it flags the borrowing-outlook item as 'An older report from May 2024'), but the verdict rests entirely on a central estimate of 0.06 whose stated basis is the single word 'derived' one line after conceding the evidence 'does not provide a specific quantitative measure', and it inverts the arithmetic in claiming a 10-year yield decline unmatched by corporate yields 'would also narrow the spread' when a larger Treasury fall widens it.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_us_baa_credit_spread_change_2025_12::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The monthly Baa-minus-10-year-Treasury spread change for 2025-12 is projected to be at least 0.055 percentage points.",
+      "verdict_one_line": "Its own synthesis node is 'uncertain' and it splits the mass exactly 0.5/0.5, so nothing in the trace selects 'yes' over 'no', yet the target_estimate flatly projects the threshold being met while the rationale in the same object cites 'the lack of precise quantitative support for the spread change magnitude'; it also mis-signs the key channel, claiming a rising risk-free rate 'can contribute to a widening of the Baa-minus-10-year-Treasury spread', and rewrites the predicate as 'absolute change' when the question asks for a signed change of at least +0.055.",
+      "would_a_careful_analyst_accept_this": "no"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_us_baa_credit_spread_change_2025_12::hgf",
+    "v3_us_baa_credit_spread_change_2025_12::factor_memory",
+    "v3_us_baa_credit_spread_change_2025_12::direct_forecast",
+    "v3_us_baa_credit_spread_change_2025_12::structure_memory",
+    "v3_us_baa_credit_spread_change_2025_12::case_memory",
+    "v3_us_baa_credit_spread_change_2025_12::principle_memory",
+    "v3_us_baa_credit_spread_change_2025_12::structured_reasoning"
+  ],
+  "ranking_rationale": "The separator was what each trace did at the direction-to-magnitude step: the top three held a central estimate at or near zero, kept the threshold asymmetry explicit, and let the probability follow from the width of their own interval, while the bottom four manufactured a pivot number (0.06, 0.07, -0.02) or a bare 'projected to be at least 0.055' out of evidence they had just labelled direction-only or unsupported. Confidence discipline reinforced the same ordering, with case_memory escalating 0.60 to 0.75 and structure_memory 0.70 to 0.85 without adding any support, whereas hgf and direct_forecast carried mass that matched the bands they had declared.",
+  "shared_evidence_note": "Bank differences mattered but were not decisive: only E1 contained a quantitative anchor (corporate OAS at 74bps on 2025-10-07), which let hgf and factor_memory start from a measured level, yet the five E0 traces split three ways among themselves on identical headlines, so the disagreement is mostly reasoning quality, not evidence."
+}

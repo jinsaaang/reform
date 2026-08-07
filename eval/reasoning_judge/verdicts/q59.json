@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_us_baa_credit_spread_change_2025_06",
+  "verdicts": [
+    {
+      "trace_id": "v3_us_baa_credit_spread_change_2025_06::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 5,
+        "probability_justification": 3,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The recent 'debt worries' suggest a potential for widening, but the persistent strength in corporate profitability may limit the magnitude of this widening. The evidence does not provide a clear indication that the spread will widen by the specific threshold of 0.155 percentage points.",
+      "verdict_one_line": "Extracts the only two E1 items with any bearing on credit risk, dates both correctly (Feb-2025 profitability, May-2025 debt worries), builds an explicit two-sided argument in which the widening impulse is bounded below the threshold, and carries that argument unchanged into a modest 0.4/0.6 split.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_baa_credit_spread_change_2025_06::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The evidence provides qualitative indicators of upward pressure on credit spreads due to high default risk, but also counteracting factors from an improved borrowing outlook. Crucially, there is no quantitative data to support or refute the specific magnitude threshold of 0.155 percentage points.",
+      "verdict_one_line": "Clean end-to-end trace: accurate use of the E0 default-risk item, an explicit yield-premium mechanism running to the sign of the monthly change, correct refusal to transfer the retrieved 2024-01 episode's outcome, and a consistent 0.35/0.65 split; only the target_bridge phrase 'potentially exceeding the 0.155 percentage point threshold' sits in mild tension with the chosen option.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_baa_credit_spread_change_2025_06::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The prediction is 'yes' if the monthly change in the Baa-minus-10-year-Treasury spread for June 2025 is >= 0.155 percentage points, and 'no' otherwise. Due to insufficient evidence, a definitive mapping is not possible.",
+      "verdict_one_line": "Grounding and mechanism are sound and the gap is named honestly ('lacks the specific quantitative data required to establish a baseline'), but the trace carries a live self-contradiction: its reasoning block records \"'prediction': 'yes'\" at 0.5/0.5 while the forecast block returns 'no' at 0.345/0.655, and neither stage acknowledges the other.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_baa_credit_spread_change_2025_06::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The provided evidence offers qualitative insights into factors influencing credit spreads, such as default risk and corporate borrowing outlook. However, it lacks specific quantitative data or forecasts for the monthly change in the Baa-minus-10-year Treasury spread, which is crucial for assessing the 0.155 percentage point threshold.",
+      "verdict_one_line": "Reaches 'no' by a defensible route, but overstates its own evidence fit ('metric_match': 'direct', 'magnitude_support': 'partial') against a bank of bare headlines and then downgrades the same magnitude support to 'insufficient' in the forecast block; the retrieved calibration lesson is never actually applied to the 0.155 threshold.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_baa_credit_spread_change_2025_06::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "All identified historical paths are marked as unverified in the current context, rendering the target unassessable.",
+      "verdict_one_line": "Unusually honest about structural failure (every routed path marked UNKNOWN, magnitude support 'insufficient'), but declaring the target 'unassessable' and then emitting the most confident distribution of the seven (0.70/0.30) is a contradiction, and the driver 'Tesla's Q1 2025 earnings ... may signal increased risk aversion and wider credit spreads' is an unargued leap from a single-company miss to the Baa spread.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_baa_credit_spread_change_2025_06::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 1,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "While the precise magnitude of the monthly change (>= 0.155 pp) remains uncertain, the direction of pressure supports the possibility of meeting the threshold, outweighing older, less specific counterevidence.",
+      "verdict_one_line": "The only trace to choose 'yes', and it does so by converting a directional headline into a central estimate of 0.2 pp with 'magnitude_support': 'unsupported' declared in the same object, then paying 0.65 for a threshold it admits it cannot quantify; the prediction does follow from its own reasoning, but that reasoning is exactly the directional-to-magnitude leap the target bridge is meant to block.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_us_baa_credit_spread_change_2025_06::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 2,
+        "prediction_alignment": 3,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "There has been a historic flight to bonds, with 10-year Treasury yields hitting an all-time low of 0.318%.",
+      "verdict_one_line": "Installs a March-2020 CNBC snippet as a 'target_period_signal' countervailing node for June 2025 while elsewhere discounting a May-2024 item as 'dated', then names D1 and C1 as dominant widening forces and returns 'no' at exactly 0.5/0.5 - the mass selects nothing and the chosen option is left arbitrary.",
+      "would_a_careful_analyst_accept_this": "no"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_us_baa_credit_spread_change_2025_06::factor_memory",
+    "v3_us_baa_credit_spread_change_2025_06::case_memory",
+    "v3_us_baa_credit_spread_change_2025_06::direct_forecast",
+    "v3_us_baa_credit_spread_change_2025_06::principle_memory",
+    "v3_us_baa_credit_spread_change_2025_06::hgf",
+    "v3_us_baa_credit_spread_change_2025_06::structure_memory",
+    "v3_us_baa_credit_spread_change_2025_06::structured_reasoning"
+  ],
+  "ranking_rationale": "Both banks are content-free headline snippets with no Baa spread level, no prior monthly changes and no quantity anywhere near 0.155 pp, so the separator is how each trace handled a threshold it demonstrably could not measure: the top traces stated the magnitude gap, kept the directional impulse bounded, and priced a modest tilt consistent with that admission. The bottom traces failed in opposite directions - structure_memory manufactured a 0.2 pp central estimate and paid 0.65 for a threshold it called unsupported, while structured_reasoning imported a 2020 Treasury-yield article as a current signal and then returned a stated option at a 50/50 split that selects nothing.",
+  "shared_evidence_note": "The disagreement is mostly reasoning, not evidence: E0 and E1 are both devoid of any Baa-spread quantity, and the lone 'yes' (structure_memory) came from the same E0 default-risk headline that four other E0 traces read and correctly declined to convert into a magnitude."
+}

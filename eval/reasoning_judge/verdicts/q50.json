@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_us_2y_yield_monthly_change_2025_12",
+  "verdicts": [
+    {
+      "trace_id": "v3_us_2y_yield_monthly_change_2025_12::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 1,
+        "prediction_alignment": 1,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The monthly change in the United States 2-year Treasury yield in December 2025 is forecast to be above the recent range of [-0.2, 0.063) percentage points.",
+      "verdict_one_line": "Every reasoning step and its own target estimate argue for 'above recent range', yet the trace outputs 'within recent range' and defends it only by 'the constraint to keep the modal option within the recent range', which is a rule-driven override rather than an inference.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_us_2y_yield_monthly_change_2025_12::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 5,
+        "prediction_alignment": 5,
+        "probability_justification": 4,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": false
+      },
+      "decisive_quote": "The immediate upward trend in yields makes 'below recent range' improbable. However, the strong countervailing forces and policy uncertainty temper the conviction for a move 'above recent range'.",
+      "verdict_one_line": "Both neighbouring options are excluded explicitly and for stated reasons, the mass (0.55/0.35/0.10) mirrors the argued asymmetry, and no numeric estimate is invented; the only weakness is that it never states outright that its E0 headlines carry no magnitude information.",
+      "would_a_careful_analyst_accept_this": "yes"
+    },
+    {
+      "trace_id": "v3_us_2y_yield_monthly_change_2025_12::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The uncertainty lies in whether the magnitude of this negative change will exceed the lower boundary of -0.2 percentage points, thus falling into the 'below recent range' category, or remain within the [-0.2, 0.063) range.",
+      "verdict_one_line": "Correctly grounded in its own E1 bank (rate cuts plus the end of QT) and honest that the magnitude is unquantified, but it resolves that stated toss-up as 'below recent range' at 0.65 in the reasoning stage and then as 'within recent range' at 0.68 in the forecast stage, and the -0.3/-0.15/-0.05 interval is asserted after declaring support 'direction_only'.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_2y_yield_monthly_change_2025_12::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 3,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The central estimate (0.07) is above the upper bound of this interval (0.063). While the low end of the estimate range (-0.1) falls within this interval, the overall assessment and probability distribution do not support it as the primary outcome.",
+      "verdict_one_line": "Declares magnitude support 'insufficient', then manufactures a central estimate of 0.07 that clears the 0.063 threshold by 0.007 and rules the widest bucket 'unsupported' while conceding its own interval lies mostly inside it — the rationale is fitted to a pre-chosen option and 0.65 confidence is unearned.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_us_2y_yield_monthly_change_2025_12::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "the change is more likely to be above the recent range boundary of 0.063 percentage points than within or below it, though magnitude is not precisely determined",
+      "verdict_one_line": "Internally consistent from reasoning to forecast and it keeps the 2023 analogue's boundaries out of the current contract, but it grades its own magnitude support 'unsupported' and still puts 0.6 on the one option that is defined purely by magnitude, resting on a single 30 November headline about rising yields.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_2y_yield_monthly_change_2025_12::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 5,
+        "probability_justification": 2,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The prediction 'within recent range' is chosen because the conflicting signals of past rate cuts and current policy doubts, alongside a recent yield rise, suggest the monthly change will likely fall between -0.2 (inclusive) and 0.063 (exclusive) percentage points, rather than moving decisively below -0.2 or at or above 0.063.",
+      "verdict_one_line": "Names both boundaries and says why neither is breached, and correctly treats the redacted 2023 topology as non-evidence, but it declares uncertainty 'High' while cutting 'above recent range' from 0.4 to 0.15 and concentrating 0.7 on the middle bucket with no argument for the tightening.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_2y_yield_monthly_change_2025_12::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 5,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 5,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "While current evidence suggests downward directional pressure on the 2-year yield due to anticipated Fed rate cuts and labor market weakness, the absence of historical data for the target metric and the specific prior observations needed for range comparison makes it impossible to ascertain the magnitude of the monthly change and thus its placement relative to the defined thresholds.",
+      "verdict_one_line": "Cleanest grounding of the seven — every claim maps to an E1 headline (cuts, end of QT, the 911,000 downward payroll revision) — and it reports that 0 of 3 routed historical paths contributed rather than pretending they did, then spreads 0.35/0.55/0.10 in a way that matches its declared magnitude gap; 'below recent range' is left out only by a default constraint rather than by evidence.",
+      "would_a_careful_analyst_accept_this": "yes"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_us_2y_yield_monthly_change_2025_12::structured_reasoning",
+    "v3_us_2y_yield_monthly_change_2025_12::hgf",
+    "v3_us_2y_yield_monthly_change_2025_12::structure_memory",
+    "v3_us_2y_yield_monthly_change_2025_12::case_memory",
+    "v3_us_2y_yield_monthly_change_2025_12::factor_memory",
+    "v3_us_2y_yield_monthly_change_2025_12::principle_memory",
+    "v3_us_2y_yield_monthly_change_2025_12::direct_forecast"
+  ],
+  "ranking_rationale": "The top traces kept one direction from premise to option and matched their confidence to a stated level of magnitude support, explicitly excluding the neighbouring buckets (structured_reasoning) or explicitly conceding that no bucket could be pinned down and spreading mass accordingly (hgf). The bottom traces either asserted a precise central estimate that just clears the 0.063 threshold on headline-only evidence (principle_memory, case_memory) or reversed their own conclusion between the reasoning and forecast stages (factor_memory, and most severely direct_forecast, which argued 'above' throughout and then answered 'within' by rule).",
+  "shared_evidence_note": "Both: the E0 methods alone saw the 30 November 'US yields rise' and 19 November 'doubt about December' headlines and mostly leaned up while the E1 methods saw only the cut-and-end-QT stream and leaned down, but the five E0 traces still split three ways among themselves, so reasoning differences — chiefly how much weight one late-November headline was allowed to carry against the easing cycle — did as much work as the bank split."
+}

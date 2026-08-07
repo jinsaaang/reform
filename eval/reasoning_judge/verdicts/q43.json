@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_tsla_revenue_growth_acceleration_2025_06_30",
+  "verdicts": [
+    {
+      "trace_id": "v3_tsla_revenue_growth_acceleration_2025_06_30::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 3,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Given the strong negative performance in Q1 2025 and the vague positive outlook for Q2 2025, it is difficult to determine if the revenue growth acceleration will fall above, within, or below the specified recent range.",
+      "verdict_one_line": "Honest and correctly defines acceleration as a change in the YoY growth rate, but the middle bucket is reached by defaulting a central estimate to zero rather than by argument, and the forecast-stage mass (0.35/0.50/0.15) tilts toward 'below' even though the only Q2 signal it cites (upcoming deliveries) tilts up.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_tsla_revenue_growth_acceleration_2025_06_30::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 2,
+        "prediction_alignment": 3,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Directly contributes to a lower starting point for revenue growth in the subsequent quarter, potentially hindering acceleration.",
+      "verdict_one_line": "Sign error at the core of the graph: node D1 is scored as lowering acceleration because Q1 growth was low, while the decision rationale relies on the opposite ('It is plausible that Q2 2025 year-over-year growth will improve from Q1 2025 levels, leading to positive acceleration'), and it reads the headline 'Tesla Roundtrips Robotaxi Gain' as 'Tesla is experiencing gains in its Robotaxi segment' and an analyst price target as a revenue driver.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_tsla_revenue_growth_acceleration_2025_06_30::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 2,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "If Q1 2025 year-over-year revenue growth was approximately -20% and Q2 2025 year-over-year revenue growth declines further to, for example, -28%, the resulting acceleration would be -8 percentage points, falling below the -7.119 percentage point threshold.",
+      "verdict_one_line": "The only trace whose reasoning genuinely picks a tail bucket and shows the arithmetic that would put it there, but the -28% is an invented illustration with no quantity behind it, two of its three 'Q2 indicators' (used-EV prices 2025-03-29, demand problem 2025-03-09) predate the target quarter, and it declares magnitude support 'insufficient' while raising 'below' from 0.55 to 0.70 between stages.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_tsla_revenue_growth_acceleration_2025_06_30::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 5,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Given the strong negative revenue growth in Q1 2025 (estimated at -20% YoY), the Q2 2025 acceleration will be positive if Q2 YoY growth is less negative than -20%, and negative if Q2 YoY growth is more negative than -20%.",
+      "verdict_one_line": "States the pivot condition explicitly, refuses to claim a magnitude it cannot support, labels both tails 'plausible' and then actually spends mass on them (0.26/0.47/0.27) — the tightest match in this set between declared support and allocated probability.",
+      "would_a_careful_analyst_accept_this": "yes"
+    },
+    {
+      "trace_id": "v3_tsla_revenue_growth_acceleration_2025_06_30::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 2,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The 'within recent range' option covers acceleration values from -7.119 to 6.908 percentage points. This range is plausible if Q2 2025 YoY revenue growth falls between approximately -27.119% and -13.092%.",
+      "verdict_one_line": "Best boundary bridging of the E0 group — it inverts the bucket into an implied Q2 growth window — but it self-reports metric and horizon fit as 'direct' in the same object where it concedes the Q2 evidence is indirect, and puts 0.35 on a +6.9pp-or-better upside whose only support is the headline 'Vehicle Deliveries Upcoming'.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_tsla_revenue_growth_acceleration_2025_06_30::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The evidence strongly suggests a negative trend in revenue growth. This implies that the acceleration (change in YoY growth rate) is likely negative. However, without specific quantitative data for Q1 and Q2 2025 YoY growth rates, it is impossible to definitively place the acceleration below, within, or above the specified recent range.",
+      "verdict_one_line": "The reasoning block ends on prediction 'below recent range' (0.40/0.30/0.30) and the forecast block then returns 'within recent range' (0.40/0.50/0.10) with no reconciliation, and the chain also slips level for change ('may remain negative or become even more negative... implies negative acceleration') while reading an analyst price target as vehicle pricing pressure.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_tsla_revenue_growth_acceleration_2025_06_30::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Derived from leading indicators of slowing demand, price erosion, and market share loss, and Q1 2025 performance, with insufficient magnitude to precisely quantify.",
+      "verdict_one_line": "Cleanest separation of direction from threshold-crossing — every driver points down yet it explains why that need not clear -7.119pp — and it honestly reports that 0 of 3 retrieved structural paths contributed, but it commits to a wholly negative band [-8, -1] it simultaneously calls unquantifiable, and never engages the offsetting signals in its own bank (record global EV year, new Model Y ramp).",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_tsla_revenue_growth_acceleration_2025_06_30::principle_memory",
+    "v3_tsla_revenue_growth_acceleration_2025_06_30::hgf",
+    "v3_tsla_revenue_growth_acceleration_2025_06_30::direct_forecast",
+    "v3_tsla_revenue_growth_acceleration_2025_06_30::factor_memory",
+    "v3_tsla_revenue_growth_acceleration_2025_06_30::case_memory",
+    "v3_tsla_revenue_growth_acceleration_2025_06_30::structured_reasoning",
+    "v3_tsla_revenue_growth_acceleration_2025_06_30::structure_memory"
+  ],
+  "ranking_rationale": "What separated the top was keeping the direction of the signal distinct from the magnitude needed to cross a pre-registered boundary, and then spending probability in proportion to the support actually claimed: principle_memory and hgf both state the pivot condition and price the tails accordingly, whereas factor_memory and case_memory each buy a tail bucket with a number they invented or a headline they over-read. The bottom two fail on internal coherence rather than evidence — structured_reasoning scores the Q1 revenue collapse as lowering acceleration and then argues the opposite, and structure_memory states 'below recent range' in its reasoning and 'within recent range' in its forecast.",
+  "shared_evidence_note": "The bank split mattered but did not drive the disagreement: E1 gave factor_memory and hgf genuine target-window demand indicators (May European sales falling, Tesla's Q1 US share loss against a growing EV market) that E0 lacked, and both duly read direction as down — yet they still landed on different buckets from each other, and the E0 traces landed on three different answers from one identical set of four headlines, so the spread is overwhelmingly about how each trace handled the magnitude threshold, not about what it read."
+}

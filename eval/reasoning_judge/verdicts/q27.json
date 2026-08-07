@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_henry_hub_monthly_return_2026_06",
+  "verdicts": [
+    {
+      "trace_id": "v3_henry_hub_monthly_return_2026_06::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 5,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Total U.S. natural gas supply rose slightly by 0.2 Bcf/d (less than 1%) as of May 28, 2026, which is a minor bearish factor.",
+      "verdict_one_line": "Every claim maps cleanly onto its own E1 items with correct dates and the only real quantity in either bank, and the mass allocation is tied back to where the estimate sits relative to each boundary; the invented -15.0/-3.0/10.0 band is the one unsupported step, and it is honestly labelled as lacking 'specific quantitative forecasts for June 2026'.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_henry_hub_monthly_return_2026_06::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 5,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The target month of June falls after the winter season, making supply-side factors and storage levels more dominant.",
+      "verdict_one_line": "The only trace that explicitly discounts the January/February winter-weather evidence on seasonality grounds and argues both boundary exclusions ('a move away from extreme highs, while near-average storage suggests avoiding extreme lows'); the +40% and +23% figures are quoted accurately from E0, but the central 8.0% used to declare both neighbours 'unsupported' is invented and the mass shifts from 0.25/0.65/0.10 to 0.15/0.65/0.20 without explanation.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_henry_hub_monthly_return_2026_06::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The recent upward price movement makes a return below the recent range less likely. Conversely, downward pressures from record production and trimmed forecasts make a return significantly above the recent range improbable. Therefore, the most likely outcome is a return within the recent range.",
+      "verdict_one_line": "Both neighbours are excluded with named drivers and all E0 citations check out, but the asymmetry it argues (below 'less likely', above 'improbable') is then flattened to 0.2/0.6/0.2, and the -20/0/+20 band carries the basis 'forecast' with no derivation at all.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_henry_hub_monthly_return_2026_06::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": false
+      },
+      "decisive_quote": "While a positive return is expected, exceeding the upper bound of 'above recent range' is less certain due to the strong countervailing production and forecast trim signals.",
+      "verdict_one_line": "The mechanism chain and the exclusion of both neighbours are stated clearly, but it labels the 2026-01-23 severe-winter-weather item a 'target_period_signal' for a June return and never notes the seasonal mismatch, then asserts a positive-but-sub-27% return with 0.7 mass and no quantity anywhere behind it.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_henry_hub_monthly_return_2026_06::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 3,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The baseline comparison intervals for the monthly Henry Hub price return are unavailable from the provided evidence.",
+      "verdict_one_line": "It repeats four times that the comparison intervals are unavailable and then relies on those exact intervals ('[-9.463508, 27.029221)') to run its boundary checks, and it converts a 2026-01-22 freeze headline into upward pressure 'for the target period' of June, which is what buys 'above recent range' its 25%; the path re-testing and the honest 'insufficient' magnitude label are the redeeming parts.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_henry_hub_monthly_return_2026_06::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 2,
+        "prediction_alignment": 3,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The balance between seasonal demand factors, record production levels, and evolving market sentiment will determine if the June 2026 monthly return falls below, within, or above the recent range.",
+      "verdict_one_line": "The target bridge is a tautology that weighs nothing, and the reasoning block's 0.15/0.55/0.30 becomes 0.30/0.65/0.05 in the forecast block with no stated reason, so the final mass puts six times more weight on the downside than the upside immediately after arguing that 'Henry Hub prices are climbing'.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_henry_hub_monthly_return_2026_06::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 4,
+        "mechanism_specificity": 1
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": true,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "No evidence-supported magnitude distinguishes this option; the contract-centered abstention is intentionally broad.",
+      "verdict_one_line": "An honest abstention whose near-uniform 0.323/0.353/0.323 genuinely matches its declared ignorance, but it stamps that same 'nothing distinguishes this option' rationale on all three buckets while marking one 'most_supported', cites zero evidence and names zero drivers, and its reasoning block records prediction 'below recent range' against the forecast block's 'within recent range'.",
+      "would_a_careful_analyst_accept_this": "no"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_henry_hub_monthly_return_2026_06::factor_memory",
+    "v3_henry_hub_monthly_return_2026_06::principle_memory",
+    "v3_henry_hub_monthly_return_2026_06::case_memory",
+    "v3_henry_hub_monthly_return_2026_06::structured_reasoning",
+    "v3_henry_hub_monthly_return_2026_06::hgf",
+    "v3_henry_hub_monthly_return_2026_06::structure_memory",
+    "v3_henry_hub_monthly_return_2026_06::direct_forecast"
+  ],
+  "ranking_rationale": "The top traces kept their factual claims tied to dated items in their own bank, handled the seasonal mismatch between winter-2026 headlines and a June return either by discounting it (principle_memory) or by not invoking it at all (factor_memory), and connected their probability mass to where their estimate sat relative to the two boundaries. The bottom traces either asserted something and then leaned on its negation - hgf calling the intervals unavailable and then using them, structure_memory reversing its own upside and downside mass between blocks, direct_forecast recording two different predictions - or, in direct_forecast's case, offered no question-specific content at all.",
+  "shared_evidence_note": "All seven landed on 'within recent range', so the split was not caused by the different banks: the two E1 methods leaned bearish off April/May futures-sentiment and supply items that E0 lacks while the E0 methods weighed EIA revision headlines, but the real separation came from reasoning discipline - whether a January freeze was allowed to speak for a June return, and whether the probability mass was argued or simply restated between blocks."
+}

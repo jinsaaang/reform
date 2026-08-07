@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_global_wheat_monthly_return_2026_06",
+  "verdicts": [
+    {
+      "trace_id": "v3_global_wheat_monthly_return_2026_06::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 5,
+        "logical_validity": 4,
+        "prediction_alignment": 5,
+        "probability_justification": 4,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The evidence does not contain specific monthly wheat price return data for June 2026 or preceding months, nor does it provide forecasts that can be directly mapped to the 6.762% threshold.",
+      "verdict_one_line": "Every claim tracks an E0 headline at exactly the strength the headline supports, the wide [-10, +10] interval is honestly labelled 'basis: uncertainty', and the 0.16 mass on 'yes' is very nearly what that uniform interval implies; the only blemish is an unexplained shift from the reasoning stage's 0.30 to the forecast's 0.16 and an 'a definitive mapping ... is not possible' line immediately followed by a mapping.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_global_wheat_monthly_return_2026_06::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 5,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The explicit uncertainty in the synthesis node (M) means there is insufficient clear evidence to confidently predict that the high threshold of 6.762% for a 'yes' outcome will be met.",
+      "verdict_one_line": "Clean driver/countervailing decomposition over E0 that resolves its conflict explicitly rather than burying it, but it stamps the 2025-05-22 World Bank 'prices ease' item as a 'target_period_signal' for June 2026, and the 0.35 mass on a demanding +6.76% threshold is asserted with no reasoning after it has just argued that threshold is high.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_global_wheat_monthly_return_2026_06::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 5,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "However, none of the provided current evidence directly supports or suggests a specific monthly return of 6.762 percent, which is a substantial positive price movement.",
+      "verdict_one_line": "Short, honest and correctly confined to its own E1 bank (all four cited ids are genuine E1 items), but it silently drops every one of the five retrieved factor cards it was told to verify (Black Sea pressure, futures positioning, tariff pass-through) and overstates horizon_match as 'direct' when its newest item predates the target month.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_global_wheat_monthly_return_2026_06::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 3,
+        "mechanism_specificity": 1
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": true,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "\"option_mapping\": \"No boundary crossing is supported before the boundary audit.\",\n  \"prediction\": \"yes\",",
+      "verdict_one_line": "An explicit abstention after a structured-output validation failure whose reasoning block records prediction 'yes' at 0.50/0.50 while the forecast block records 'no' at 0.45/0.55 — the reasoning names a different option than the trace selects — and whose steps ('Retain a neutral baseline for the exact public target', 'No validated current driver is strong enough') carry zero wheat-specific content; the near-uniform mass at least matches its declared emptiness, though it sits oddly beside a boundary audit calling 'yes' unsupported.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_global_wheat_monthly_return_2026_06::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 4,
+        "prediction_alignment": 5,
+        "probability_justification": 1,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The central estimate of -2.0% is significantly below the lower bound of the 'yes' interval, and the evidence strongly suggests bearish conditions.",
+      "verdict_one_line": "The richest mechanism of the E0 set (short-term geopolitical pressure versus persistent supply fundamentals, tied explicitly to how large a +6.762% move is), but it declares magnitude support 'unsupported' and the outcome 'speculative' and then narrows to low -10 / central -2.0 / high +5.0 — an interval with no supporting quantity whose upper bound excludes the threshold outright — and jumps from 0.30 in its reasoning to 0.05 in its forecast with no explanation; it also carries the corn-and-soybean weather headline over to wheat without noting the crop switch.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_global_wheat_monthly_return_2026_06::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 5,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "\"low\": -5.0,\n   \"central\": 0.0,\n   \"high\": 5.0,\n   \"unit\": \"percent\",\n   \"basis\": \"derived\"",
+      "verdict_one_line": "Deserves credit for refusing the bait in its ablation memory — it never imports the redacted '7.404 percent' historical return — and its reasoning is orderly, but it labels a [-5, +5] interval 'derived' with nothing deriving it, and that interval excludes the +6.762% threshold entirely while the trace still assigns 0.35 to 'yes', so its own stated range and its mass do not correspond.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_global_wheat_monthly_return_2026_06::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 5,
+        "probability_justification": 4,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "U.S. tariff uncertainty and delays are ongoing, with past announcements and discussions of duties creating pressure and uncertainty for wheat farmers, leading to weaker overnight grain prices.",
+      "verdict_one_line": "Best discipline about what it does not have — it names the missing PWHEAMTUSDM baseline, marks two of three historical paths UNMAPPED with the reason, and its 0.20 mass follows from the wide interval it declared — but the anchor claim is misgrounded: it supports a 'U.S. tariff' step with a PricePedia aluminium-duties piece and two South African wheat-tariff items, and it asserts 'Directional conflict is absent' while its own balance rests on conflicting up/down signals.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_global_wheat_monthly_return_2026_06::direct_forecast",
+    "v3_global_wheat_monthly_return_2026_06::structured_reasoning",
+    "v3_global_wheat_monthly_return_2026_06::hgf",
+    "v3_global_wheat_monthly_return_2026_06::structure_memory",
+    "v3_global_wheat_monthly_return_2026_06::factor_memory",
+    "v3_global_wheat_monthly_return_2026_06::case_memory",
+    "v3_global_wheat_monthly_return_2026_06::principle_memory"
+  ],
+  "ranking_rationale": "All seven correctly recognised that neither bank contains any wheat return magnitude, so what separated them was whether the probability mass respected that admission: direct_forecast and hgf kept a wide, honestly-labelled interval and allocated mass consistent with it, while case_memory and structure_memory invented narrow intervals ('central -2.0', 'basis: derived') that no cited quantity supports. At the bottom, principle_memory is content-free boilerplate whose reasoning block selects 'yes' while its forecast selects 'no', the one outright reasoning-versus-prediction reversal in the set.",
+  "shared_evidence_note": "The E0/E1 split changed which stories the traces told — E0 methods argued from FAO food-index rises and abundant 2026 supply, E1 methods from tariff delays and USDA-report grain gains — but not the answer, since both banks are headline-only with no wheat return figure, so the spread from 0.05 to 0.45 on 'yes' came from differing discipline about converting an admitted evidence gap into probability, not from differing evidence."
+}

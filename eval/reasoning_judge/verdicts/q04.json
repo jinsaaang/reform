@@ -1,0 +1,170 @@
+{
+ "question_id": "v3_amzn_revenue_growth_acceleration_2025_06_30",
+ "verdicts": [
+  {
+   "trace_id": "v3_amzn_revenue_growth_acceleration_2025_06_30::direct_forecast",
+   "method": "direct_forecast",
+   "scores": {
+    "evidence_grounding": 3,
+    "logical_validity": 4,
+    "prediction_alignment": 3,
+    "probability_justification": 4,
+    "mechanism_specificity": 3
+   },
+   "flags": {
+    "unsupported_magnitude_leap": true,
+    "hallucinated_number": false,
+    "internal_contradiction": false,
+    "boilerplate_only": false,
+    "post_hoc_option_fit": false,
+    "admits_own_gap": true
+   },
+   "decisive_quote": "Qualitative evidence suggests negative revenue growth acceleration due to light Q2 guidance and sales forecast lags. Without specific figures, it is difficult to determine if the acceleration will fall below -2.006 pp. Therefore, 'within recent range' is the most probable outcome, reflecting a moderate slowdown.",
+   "verdict_one_line": "Clean E0-grounded directional case for deceleration that reasons the below/-2.006 boundary out loud, but it invents a -1.0 pp central on a self-declared 'unsupported' magnitude and never explains why a mild slowdown would not clear the very tight -0.18 pp upper boundary; it also carries two different distributions (0.15/0.70/0.15 in reasoning vs 0.30/0.50/0.20 as emitted) without reconciling them.",
+   "would_a_careful_analyst_accept_this": "with_reservations"
+  },
+  {
+   "trace_id": "v3_amzn_revenue_growth_acceleration_2025_06_30::structured_reasoning",
+   "method": "structured_reasoning",
+   "scores": {
+    "evidence_grounding": 2,
+    "logical_validity": 2,
+    "prediction_alignment": 2,
+    "probability_justification": 3,
+    "mechanism_specificity": 2
+   },
+   "flags": {
+    "unsupported_magnitude_leap": true,
+    "hallucinated_number": false,
+    "internal_contradiction": true,
+    "boilerplate_only": false,
+    "post_hoc_option_fit": true,
+    "admits_own_gap": true
+   },
+   "decisive_quote": "The quarterly revenue year-over-year growth acceleration is estimated to fall within the range of -2.006% to -0.18%.",
+   "verdict_one_line": "Reads content into headlines that do not contain it ('Amazon's stock price prediction and forecast for 2025-2030 indicate a generally positive outlook' from a bare stock-price-forecast title), anchors on a 2022 'slowest growth since dot-com bust' article, names D1/D2 (positive) as dominant factors yet concludes a strictly negative band, and states the bucket boundaries themselves as its estimate - the middle option is treated as a neutral hedge rather than the specific negative interval it is.",
+   "would_a_careful_analyst_accept_this": "no"
+  },
+  {
+   "trace_id": "v3_amzn_revenue_growth_acceleration_2025_06_30::factor_memory",
+   "method": "factor_memory",
+   "scores": {
+    "evidence_grounding": 4,
+    "logical_validity": 4,
+    "prediction_alignment": 3,
+    "probability_justification": 4,
+    "mechanism_specificity": 4
+   },
+   "flags": {
+    "unsupported_magnitude_leap": false,
+    "hallucinated_number": false,
+    "internal_contradiction": false,
+    "boilerplate_only": false,
+    "post_hoc_option_fit": false,
+    "admits_own_gap": true
+   },
+   "decisive_quote": "This option is also favored due to the instruction to keep the central estimate within the recent range when magnitude evidence is insufficient.",
+   "verdict_one_line": "Best-grounded of the E1 pair - every claim including the 19% Q1 advertising growth traces to its own bank, competing ad-strength vs cloud-guidance signals are both carried and the net is honestly called 'difficult to definitively place' - but that honesty means the chosen option comes from a disclosed fallback rule rather than from the reasoning, leaving the selection underdetermined.",
+   "would_a_careful_analyst_accept_this": "with_reservations"
+  },
+  {
+   "trace_id": "v3_amzn_revenue_growth_acceleration_2025_06_30::principle_memory",
+   "method": "principle_memory",
+   "scores": {
+    "evidence_grounding": 1,
+    "logical_validity": 1,
+    "prediction_alignment": 1,
+    "probability_justification": 1,
+    "mechanism_specificity": 1
+   },
+   "flags": {
+    "unsupported_magnitude_leap": true,
+    "hallucinated_number": false,
+    "internal_contradiction": true,
+    "boilerplate_only": true,
+    "post_hoc_option_fit": true,
+    "admits_own_gap": true
+   },
+   "decisive_quote": "Central estimate of 0.0 falls within the interval [-0.179717, +infinity).",
+   "verdict_one_line": "An explicit abstention with zero cited evidence and no question-specific content that then contradicts itself twice: the reasoning block emits 'below recent range' at a uniform one-third, while the forecast block invents a 0.0 pp central out of nothing, maps it to 'above recent range', and hands that option 45% - a conclusion manufactured entirely from a placeholder number after declaring 'No boundary crossing is supported before the boundary audit.'",
+   "would_a_careful_analyst_accept_this": "no"
+  },
+  {
+   "trace_id": "v3_amzn_revenue_growth_acceleration_2025_06_30::case_memory",
+   "method": "case_memory",
+   "scores": {
+    "evidence_grounding": 3,
+    "logical_validity": 3,
+    "prediction_alignment": 4,
+    "probability_justification": 2,
+    "mechanism_specificity": 3
+   },
+   "flags": {
+    "unsupported_magnitude_leap": true,
+    "hallucinated_number": false,
+    "internal_contradiction": false,
+    "boilerplate_only": false,
+    "post_hoc_option_fit": false,
+    "admits_own_gap": true
+   },
+   "decisive_quote": "The qualitative nature of the evidence (e.g., 'light guidance', 'forecast lag') provides directional signals but lacks the quantitative precision to determine the exact magnitude of the growth acceleration",
+   "verdict_one_line": "Argues the within-vs-below boundary explicitly and well, but declares magnitude support 'insufficient' and then assigns 'above recent range' just 1% (0.396/0.594/0.010) - near-certain exclusion of an entire bucket whose boundary sits only -0.18 pp away, from headline evidence alone; it also self-labels metric and horizon fit as 'direct' while its own assessment says the quantitative data is missing.",
+   "would_a_careful_analyst_accept_this": "with_reservations"
+  },
+  {
+   "trace_id": "v3_amzn_revenue_growth_acceleration_2025_06_30::structure_memory",
+   "method": "structure_memory",
+   "scores": {
+    "evidence_grounding": 4,
+    "logical_validity": 4,
+    "prediction_alignment": 4,
+    "probability_justification": 4,
+    "mechanism_specificity": 3
+   },
+   "flags": {
+    "unsupported_magnitude_leap": true,
+    "hallucinated_number": false,
+    "internal_contradiction": false,
+    "boilerplate_only": false,
+    "post_hoc_option_fit": false,
+    "admits_own_gap": true
+   },
+   "decisive_quote": "The evidence points towards deceleration, making 'above recent range' unlikely. 'Within recent range' is most probable, with a possibility of 'below recent range' if deceleration is severe.",
+   "verdict_one_line": "The only trace that explicitly disposes of all three options and ties its mass split to the gap it admits ('uncertainty in distinguishing between below and within'), with claims dated correctly against E0 headlines; its residual defect is that 'making above recent range unlikely' is still a boundary claim resting on direction alone, and the -1.0 pp central is labelled 'derived' while magnitude support is 'insufficient'.",
+   "would_a_careful_analyst_accept_this": "with_reservations"
+  },
+  {
+   "trace_id": "v3_amzn_revenue_growth_acceleration_2025_06_30::hgf",
+   "method": "hgf",
+   "scores": {
+    "evidence_grounding": 4,
+    "logical_validity": 4,
+    "prediction_alignment": 3,
+    "probability_justification": 3,
+    "mechanism_specificity": 4
+   },
+   "flags": {
+    "unsupported_magnitude_leap": false,
+    "hallucinated_number": false,
+    "internal_contradiction": false,
+    "boilerplate_only": false,
+    "post_hoc_option_fit": false,
+    "admits_own_gap": true
+   },
+   "decisive_quote": "Actual financial results for the target quarter and specific prior-quarter growth rates are missing, preventing magnitude assessment of revenue growth acceleration.",
+   "verdict_one_line": "Most disciplined about its own limits - it tests the three transferred historical paths, reports that they fail current verification, cites E1 accurately (ads +19%, slight cloud miss, disappointing cloud forecast), leaves magnitude_readiness evidence empty and labels its central as an instruction anchor rather than a finding - but having called direction 'uncertain' with a latent band of -4.0 to +1.0 spanning all three buckets, the 60% placed on 'within' is asserted rather than argued.",
+   "would_a_careful_analyst_accept_this": "with_reservations"
+  }
+ ],
+ "within_question_ranking": [
+  "v3_amzn_revenue_growth_acceleration_2025_06_30::structure_memory",
+  "v3_amzn_revenue_growth_acceleration_2025_06_30::factor_memory",
+  "v3_amzn_revenue_growth_acceleration_2025_06_30::hgf",
+  "v3_amzn_revenue_growth_acceleration_2025_06_30::direct_forecast",
+  "v3_amzn_revenue_growth_acceleration_2025_06_30::case_memory",
+  "v3_amzn_revenue_growth_acceleration_2025_06_30::structured_reasoning",
+  "v3_amzn_revenue_growth_acceleration_2025_06_30::principle_memory"
+ ],
+ "ranking_rationale": "The top traces separated themselves by naming the operator they were forecasting and then policing the gap between a directional headline and a threshold crossing - structure_memory by disposing of all three buckets explicitly, factor_memory and hgf by disclosing that their central estimate was a fallback anchor rather than an evidence-derived quantity. The bottom traces failed on internal coherence rather than on evidence: structured_reasoning read a positive outlook into a bare stock-price-forecast headline and called its positive drivers dominant while predicting a negative band, and principle_memory abstained in its reasoning yet emitted a different, more confident option built on an invented 0.0 pp central.",
+ "shared_evidence_note": "The banks differed only marginally in usable content - both are headline-only snippets with no revenue figures, E1 adding the single quantitative item (advertising +19%) - and six of seven traces converged on 'within recent range' from either bank, so the lone disagreement (principle_memory's 'above') came from a self-admitted structured-output validation failure rather than from reading different evidence."
+}

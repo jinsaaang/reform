@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_msft_revenue_growth_acceleration_2025_06_30",
+  "verdicts": [
+    {
+      "trace_id": "v3_msft_revenue_growth_acceleration_2025_06_30::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The target metric, quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2025-06-30, is unobserved, preventing classification into the provided ranges.",
+      "verdict_one_line": "Every cited id (including art_snippet_5096ad09dd16e461, which is E1-only and therefore legitimate here) matches its headline, it names the two missing inputs to the acceleration arithmetic instead of inventing them, and it is the only trace whose boundary labels ('plausible', 'plausible', 'most_supported') and mass (0.25/0.50/0.25) agree; it loses points only because the drivers are never bridged to a magnitude and much of the length is procedural scaffolding ('Structural use facts: 2 of 2 routed paths contributed').",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_msft_revenue_growth_acceleration_2025_06_30::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "This aligns with the 'within recent range' option, as extreme deceleration ('below recent range') is less probable given the Q3 beat, and acceleration ('above recent range') is unlikely due to guidance.",
+      "verdict_one_line": "The only trace that both states the level-vs-change distinction correctly ('If the YoY growth rate is positive but decreasing, the acceleration will be negative') and excludes each neighbouring option by name, with probabilities identical across its reasoning and forecast blocks; it is docked for narrowing a headline-only bank to a latent band of low -3.5 / central -1.5 / high 0.5 labelled only 'derived', and its historical episode (resolved 'above recent range') is correctly quarantined rather than leaked.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_msft_revenue_growth_acceleration_2025_06_30::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 2,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The weak revenue guidance suggests a downward pressure on growth acceleration, potentially pushing it towards the lower end of the 'within recent range' or even 'below recent range'. However, strong cloud and AI growth indicates that revenue growth remains robust, preventing a significant collapse and making 'within recent range' the most probable outcome.",
+      "verdict_one_line": "Clean mechanism from guidance to growth rate to acceleration and an explicit exclusion of both neighbours, but the baseline step attributes the boundaries '-2.318182 and 0.886099' to art_snippet_0a624c57e584f049 (a bare FY25 Q2 press-release headline that contains no such figures), and the trace states two different distributions for the same forecast (0.2/0.6/0.2 in the reasoning block, 0.3/0.4/0.3 in the forecast) while calling both neighbours 'unsupported' and then handing them 0.3 each.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_msft_revenue_growth_acceleration_2025_06_30::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 3,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Given the qualitative nature of the evidence, it is difficult to definitively place the acceleration below -2.318 pp or within the negative part of the range [-2.318, 0.886).",
+      "verdict_one_line": "Honest about the gap it cannot close and correctly grounded in E0 headlines, but by its own admission the argument does not separate 'below' from 'within', and the choice is then settled by an asserted latent band (low -7.0, central -1.5, high 2.0) whose stated basis is nothing more than 'Qualitative evidence regarding revenue guidance and cloud performance' after declaring magnitude support 'insufficient'.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_msft_revenue_growth_acceleration_2025_06_30::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The strong Q3 FY25 growth in AI and Cloud suggests positive revenue growth. If this growth rate exceeds the Q2 FY25 growth rate (which was potentially impacted by weak guidance), it would indicate acceleration.",
+      "verdict_one_line": "Cites only ids present in its own E1 bank and deserves credit for engaging the difference-of-growth-rates definition, but it compares Q3 to Q2 rather than the target quarter to its predecessor, its central estimate is simply the 'neutral base-rate' rather than anything derived from evidence, and it reports 0.15/0.6/0.25 in the reasoning block against 0.3/0.4/0.3 in the forecast while labelling the two options that receive 0.6 of the mass 'unsupported'.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_msft_revenue_growth_acceleration_2025_06_30::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 2,
+        "mechanism_specificity": 2
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": false
+      },
+      "decisive_quote": "Contributes positively to overall revenue growth by driving demand and adoption of key services.",
+      "verdict_one_line": "Elaborate DAG scaffolding whose mechanism text is one generic sentence reused verbatim for both drivers and never reaches the target quantity - the target_bridge says only that the metric 'is distinguished by its position relative to pre-registered growth-acceleration boundaries', it never notes that strong cloud growth speaks to the level rather than the change, it dates a July-2024 cloud miss as a 'target_period_signal', it never admits the missing quantities, and the 0.1/0.6/0.3 split is asserted with no argument for putting three times as much mass above as below.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_msft_revenue_growth_acceleration_2025_06_30::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 2,
+        "prediction_alignment": 3,
+        "probability_justification": 3,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Coarse estimate based on mixed evidence and uncertainty, leaning towards below range due to weak guidance.",
+      "verdict_one_line": "The prior-quarter-versus-target-quarter framing is the sharpest in the set, but the chain rests on an unsupported reading - the January 2025 guidance headline is asserted to be 'signaling potential slowdowns in future revenue performance for the target quarter (Q4 FY2025)' when nothing in the snippet says which quarter was guided - it borrows the historical bucket as the current starting state ('a shift away from the historical \"above recent range\" state') from a memory view that says 'Do not treat their paths as current evidence', and it gets from 'negative acceleration' to the sub -2.318 bucket only via a central estimate of -3.0 whose stated basis is that it leans toward the option already chosen.",
+      "would_a_careful_analyst_accept_this": "no"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_msft_revenue_growth_acceleration_2025_06_30::hgf",
+    "v3_msft_revenue_growth_acceleration_2025_06_30::case_memory",
+    "v3_msft_revenue_growth_acceleration_2025_06_30::principle_memory",
+    "v3_msft_revenue_growth_acceleration_2025_06_30::direct_forecast",
+    "v3_msft_revenue_growth_acceleration_2025_06_30::factor_memory",
+    "v3_msft_revenue_growth_acceleration_2025_06_30::structured_reasoning",
+    "v3_msft_revenue_growth_acceleration_2025_06_30::structure_memory"
+  ],
+  "ranking_rationale": "The top two are separated from the rest by doing real work on the target operator - hgf by naming the two unobserved growth rates that make the acceleration incomputable and then matching a near-flat distribution to that admission, case_memory by distinguishing a high growth level from a falling growth rate and excluding each neighbouring bucket by name. The bottom three either never connect their drivers to a change in the growth rate (structured_reasoning), publish two conflicting distributions while calling the options they fund 'unsupported' (factor_memory), or reach a distinct bucket through an invented central value openly described as leaning toward the option already picked (structure_memory).",
+  "shared_evidence_note": "The two banks differ in size but overlap on every Microsoft-specific item that mattered, and all seven traces leaned on the same three headlines (Futurum Q3 FY25 beat, CNBC weak January guidance, crn Copilot), so the lone disagreement - structure_memory choosing 'below recent range' - came from how it reasoned, not from what it was given."
+}

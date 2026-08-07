@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_us_10y_yield_monthly_change_2026_06",
+  "verdicts": [
+    {
+      "trace_id": "v3_us_10y_yield_monthly_change_2026_06::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Current evidence provides directional signals suggesting upward pressure on yields but lacks quantitative data to assess the magnitude of the monthly change or its crossing of the 0.075 percentage point threshold. The target baseline for calculating the monthly change is also unavailable.",
+      "verdict_one_line": "Cleanly separates direction from magnitude, retires its own historical paths as contradicted by current E1 headlines ('Historical paths anticipating Federal Reserve interest rate cuts are contradicted by current evidence indicating officials embracing the possibility of higher rates'), and maps to 'no' on threshold grounds, but never explains why an admitted 'up' direction ends up with a 0.0 central estimate and only 0.35 on 'yes'.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_10y_yield_monthly_change_2026_06::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "There is no specific evidence to support that the monthly change in June 2026 will reach or exceed the 0.075 percentage point threshold.",
+      "verdict_one_line": "Every claim traces to an E0 title it actually cites, competing up/down drivers are named and left unresolved honestly, and the boundary check selects 'no' explicitly; the unexplained tightening from 0.55 to 0.70 on 'no' between the reasoning and forecast blocks is the main defect.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_10y_yield_monthly_change_2026_06::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The monthly change in the 10-year US Treasury yield in June 2026 is unlikely to be at least 0.075 percentage points, given the mixed signals and weak magnitude support from current evidence.",
+      "verdict_one_line": "Substantive reasoning and the final 'no' forecast with near-uniform 0.45/0.55 mass match its declared uncertainty well, but the same reasoning block states 'The prediction 'no' corresponds to the target change being less than 0.075' and then records \"prediction\": \"yes\", a flat self-contradiction; it also overstates fit as 'metric_match: direct' for contentless title snippets.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_10y_yield_monthly_change_2026_06::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 2,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The central estimate of 0.08 percentage points falls within the 'yes' interval, supported by the upward trend in yields and the expectation of continued monetary tightening.",
+      "verdict_one_line": "Its E1 citations (hawkish Fed, rising global yields, inflation worries) genuinely support an upward direction and the mechanism runs through to the target, but after declaring magnitude support 'direction_only' it manufactures a 0.08 central estimate landing 0.005 above the threshold and puts 0.70 on 'yes', and it declares 'No direct counterevidence was found' without addressing the downward-leaning mortgage-rate item in its own bank.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_10y_yield_monthly_change_2026_06::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 3,
+        "prediction_alignment": 2,
+        "probability_justification": 4,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Without this data, it is impossible to definitively determine if the yield change will meet the 0.075 percentage point threshold or the median of prior changes.",
+      "verdict_one_line": "The 50/50 mass honestly matches its declared impossibility and the age-discount on the October 2025 counterevidence is a real analytical point, but it still emits 'yes' as the prediction with nothing in the reasoning selecting it, and it assigns a 'Positive' directional effect to an article it admits only 'may contain information regarding market sentiment'.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_us_10y_yield_monthly_change_2026_06::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 2,
+        "mechanism_specificity": 1
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": true,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "No validated current driver is strong enough to move the forecast away from the neutral baseline.",
+      "verdict_one_line": "An explicit abstention that cites nothing from its bank and offers no question-specific mechanism, then contradicts itself by recording \"prediction\": \"yes\" beside 'No boundary crossing is supported' before mapping to 'no' at 0.70 — a confidence its own symmetric [-0.5, 0.5] band does not justify; the honest admission of the validation failure is its only credit.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_us_10y_yield_monthly_change_2026_06::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 2,
+        "mechanism_specificity": 1
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": true,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Structured reasoning could not be validated; no current evidence-supported magnitude claim is retained.",
+      "verdict_one_line": "Identical fallback abstention text to principle_memory: no evidence cited, no mechanism, an internal \"prediction\": \"yes\" alongside 'No boundary crossing is supported' that is then overridden by a 0.70 'no', and it correctly refrains from importing the resolved 2024-09 episode but extracts nothing else from it either.",
+      "would_a_careful_analyst_accept_this": "no"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_us_10y_yield_monthly_change_2026_06::hgf",
+    "v3_us_10y_yield_monthly_change_2026_06::direct_forecast",
+    "v3_us_10y_yield_monthly_change_2026_06::structure_memory",
+    "v3_us_10y_yield_monthly_change_2026_06::factor_memory",
+    "v3_us_10y_yield_monthly_change_2026_06::structured_reasoning",
+    "v3_us_10y_yield_monthly_change_2026_06::principle_memory",
+    "v3_us_10y_yield_monthly_change_2026_06::case_memory"
+  ],
+  "ranking_rationale": "The top traces kept direction and magnitude separate: hgf and direct_forecast both named concrete drivers, stated plainly that no quantity in their bank speaks to a 0.075 pp threshold, and let that admission govern both the option mapping and a modest probability spread. The bottom traces either produced a prediction their own text says cannot be determined (structured_reasoning), or abstained entirely with generic fallback prose while still emitting a 0.70 confidence and an internally contradictory prediction field (principle_memory, case_memory); factor_memory sits mid-pack because its mechanism is the most specific of all but it invented a central estimate 0.005 above the threshold to carry an already-chosen 'yes'.",
+  "shared_evidence_note": "Both causes are present: the E1 methods saw May 2026 headlines on a hawkish Fed and rising global yields that gave them a real upward directional read the E0 methods (whose bank is almost entirely contentless title stubs) never had, yet the two E1 methods still split yes/no from that same bank purely on whether directional evidence was allowed to stand in for magnitude."
+}

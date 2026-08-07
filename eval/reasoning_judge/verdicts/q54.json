@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_us_3m_yield_monthly_change_2025_11",
+  "verdicts": [
+    {
+      "trace_id": "v3_us_3m_yield_monthly_change_2025_11::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 5,
+        "probability_justification": 3,
+        "mechanism_specificity": 5
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": false
+      },
+      "decisive_quote": "The target threshold is a monthly change of at least -0.155 percentage points. A quarter-point cut (-0.25 pp) would result in a change less than -0.155 pp (leading to 'no'). Doubts about further easing make this large cut less likely, thus increasing the probability of a change that is at least -0.155 pp (leading to 'yes').",
+      "verdict_one_line": "The only trace that anchors the threshold to a real quantity from its own bank (the quarter-point cut) and shows why 'no' would require that cut, though it overclaims its evidence fit as 'direct'/'supported' and silently escalates from 0.65 to 0.75.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_3m_yield_monthly_change_2025_11::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": false
+      },
+      "decisive_quote": "The tempering effect of uncertainty about future policy actions makes it more probable that the yield change will be less negative than -0.155 percentage points, thus satisfying the 'yes' condition.",
+      "verdict_one_line": "Internally consistent across both stages and it states the condition under which 'no' would win, but it crosses from a purely directional 'tempering' claim to a specific -0.155 boundary with no quantity, and it reads the 29 October source only for Powell's doubts while ignoring that the same item reports another cut.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_3m_yield_monthly_change_2025_11::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 3,
+        "probability_justification": 4,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "A standard 0.25pp cut might result in a change below -0.155pp ('no'), but tempered expectations or a Fed pause could lead to a change above -0.155pp ('yes').",
+      "verdict_one_line": "Honest and well-calibrated — it names the missing arithmetic and lands on a 0.50/0.50 mass that matches its declared insufficiency — but by its own account the choice of 'yes' is underdetermined, and the -0.10 central estimate is labelled 'derived' without any derivation.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_3m_yield_monthly_change_2025_11::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Given the conflicting signals, the forecast is uncertain. However, the potential for policy moderation suggested by Powell's doubts slightly favors the yield change being less negative than -0.155 percentage points.",
+      "verdict_one_line": "Coherent and consistent across stages, and it correctly declines to reuse the redacted hindsight DAG's -0.48 pp figure, but it never engages any quantity to justify the -0.155 boundary, so the mechanism stops at 'downward pressure, moderated'.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_3m_yield_monthly_change_2025_11::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 3,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "This requires calculating the change from the September 2025 to October 2025 observation of the US 3-month Treasury yield (FRED DGS3MO) and comparing it to the threshold of -0.155 percentage points.",
+      "verdict_one_line": "Admirably explicit that magnitude is undeterminable and the only trace to mark 'yes' merely 'plausible', but it misstates the target operation as a September-to-October change, and it declares all three routed paths CONTRADICTED while simultaneously reporting '3 of 3 routed paths contributed' with 'directional conflict absent'.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_us_3m_yield_monthly_change_2025_11::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Therefore, it is not possible to confirm if the change will be at least -0.155 percentage points.",
+      "verdict_one_line": "Citations are accurate and it honestly names the missing quantity, but the reasoning stage predicts 'no' at 0.60 and the forecast stage then predicts 'yes' at 0.65 off a central estimate of 0.00 that no step in the reasoning produced.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_us_3m_yield_monthly_change_2025_11::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 1,
+        "prediction_alignment": 2,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "A 'yes' prediction corresponds to a monthly yield change of -0.155 percentage points or more negative. A 'no' prediction corresponds to a monthly yield change less than -0.155 percentage points (i.e., a decrease of less than 0.155 pp, or an increase).",
+      "verdict_one_line": "Its E1 citations (2.9% inflation, the June governor comment, the January hold) are accurate, but it inverts the predicate in its option mapping — contradicting its own boundary_checks — and then predicts 'no' at 0.60 in the reasoning stage before predicting 'yes' at 0.60 in the forecast stage.",
+      "would_a_careful_analyst_accept_this": "no"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_us_3m_yield_monthly_change_2025_11::principle_memory",
+    "v3_us_3m_yield_monthly_change_2025_11::structured_reasoning",
+    "v3_us_3m_yield_monthly_change_2025_11::case_memory",
+    "v3_us_3m_yield_monthly_change_2025_11::structure_memory",
+    "v3_us_3m_yield_monthly_change_2025_11::hgf",
+    "v3_us_3m_yield_monthly_change_2025_11::direct_forecast",
+    "v3_us_3m_yield_monthly_change_2025_11::factor_memory"
+  ],
+  "ranking_rationale": "What separated the top from the bottom was whether the trace stated the predicate correctly and then held one position through to its probabilities: principle_memory and structured_reasoning each argue explicitly why the change should land above -0.155, and principle_memory alone supplies a quantity (a 25 bp cut versus a 15.5 bp threshold) that makes the exclusion of 'no' concrete. The bottom three all break internally — direct_forecast and factor_memory each predict 'no' in their reasoning block and 'yes' in their forecast block, factor_memory additionally inverts the yes/no interval mapping, and hgf misdefines the target as a September-to-October change while calling three paths contradicted and contributing at once.",
+  "shared_evidence_note": "The two banks differ materially — E0 carries the September and October 2025 cut reporting that anchored the E0 traces' threshold argument, while E1 stops at mid-September and contains no cut at all — yet all seven converged on 'yes', so the quality spread here came from how each trace reasoned about magnitude and mapped its own predicate, not from what it was given to read."
+}

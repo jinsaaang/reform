@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_us_baa_credit_spread_change_2026_06",
+  "verdicts": [
+    {
+      "trace_id": "v3_us_baa_credit_spread_change_2026_06::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 5
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The change in the Baa-minus-10-year-Treasury spread depends on the relative movement of Baa corporate yields versus 10-year Treasury yields. Increased default risk tends to widen the spread (positive change), while rising Treasury yields can either widen or narrow the spread depending on how corporate yields respond.",
+      "verdict_one_line": "The only E0 trace that decomposes the spread into its two components and therefore correctly refuses to read 'rising global yields' as unambiguously spread-widening, and it holds its confidence to a modest 0.60 after stating that no baseline or magnitude data exists.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_baa_credit_spread_change_2026_06::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 4,
+        "probability_justification": 1,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The lack of precise magnitude for these effects introduces uncertainty, but the directional signal from the DAG favors a positive spread change.",
+      "verdict_one_line": "Admits it has no magnitude for any effect and that its evidence is title-level, then assigns 0.90 to 'yes' on the strength of a mediator node it simply labelled 'positive' without weighting the opposing driver.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_us_baa_credit_spread_change_2026_06::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 2,
+        "prediction_alignment": 3,
+        "probability_justification": 2,
+        "mechanism_specificity": 1
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": true,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "No validated current driver is strong enough to move the forecast away from the neutral baseline.",
+      "verdict_one_line": "An honest abstention that invents nothing, but it engages neither its E1 bank nor its retrieved factor cards, offers no mechanism at all, and then drifts from the 0.50/0.50 its own reasoning declares to an unexplained 0.65 while calling 'no' 'unsupported' despite a self-declared range of [-1.0, +1.0].",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_baa_credit_spread_change_2026_06::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Global bond yields are rising to levels that threaten stock markets, suggesting a broad increase in borrowing costs and potentially heightened risk aversion, which typically leads to wider credit spreads.",
+      "verdict_one_line": "Signs the Treasury-yield driver as 'up' for a Baa-minus-Treasury spread and then declares 'All relevant evidence points towards factors that would likely cause the spread to widen', dropping the offsetting leg entirely, though it does keep the band wide and concedes the threshold comparison 'remains speculative'.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_baa_credit_spread_change_2026_06::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 1,
+        "prediction_alignment": 3,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "No evidence-supported magnitude distinguishes this option; the contract-centered abstention is intentionally broad.",
+      "verdict_one_line": "Rates its magnitude support 'supported' and its horizon match 'direct' against a bank of bare headlines, calls itself 'moderately certain' at 0.85, then hands back a 0.51 boundary abstention whose own rationale says nothing distinguishes the options while still stamping 'yes' as 'most_supported'.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_us_baa_credit_spread_change_2026_06::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 2,
+        "prediction_alignment": 4,
+        "probability_justification": 2,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "US firms' default risk has reached a post-financial crisis high of 9.2% as of March 2025, indicating increased credit risk.",
+      "verdict_one_line": "The only trace to quote the single number its bank actually contains, and it quotes it accurately, but it treats a fifteen-month-old reading as a June-2026 signal, marks the rising-Treasury driver 'up' without comment, and converts 'weak' magnitude support into a band as tight as [-0.02, +0.15] and a 0.80 confidence.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_baa_credit_spread_change_2026_06::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 5,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "There is no direct or derived support for the magnitude of the monthly Baa-minus-10-year-Treasury spread change for 2026-06. The available evidence consists of leading indicators with uncertain directional impacts.",
+      "verdict_one_line": "Every claim maps to an E1 title without embellishment, each retrieved historical path is individually marked unresolved with a stated reason rather than quietly reused, and the resulting 0.55/0.45 is the mass allocation its declared ignorance actually warrants.",
+      "would_a_careful_analyst_accept_this": "yes"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_us_baa_credit_spread_change_2026_06::direct_forecast",
+    "v3_us_baa_credit_spread_change_2026_06::hgf",
+    "v3_us_baa_credit_spread_change_2026_06::principle_memory",
+    "v3_us_baa_credit_spread_change_2026_06::structure_memory",
+    "v3_us_baa_credit_spread_change_2026_06::structured_reasoning",
+    "v3_us_baa_credit_spread_change_2026_06::factor_memory",
+    "v3_us_baa_credit_spread_change_2026_06::case_memory"
+  ],
+  "ranking_rationale": "The separator was whether a trace kept its confidence tied to the fact that neither bank contains a single number about the Baa-minus-10Y series: direct_forecast and hgf both state the gap explicitly and settle near 0.55-0.60, and direct_forecast additionally decomposes the spread so that the rising-Treasury leg is correctly treated as sign-ambiguous rather than as widening pressure. The bottom traces fail in two distinct ways - structured_reasoning converts an unweighted directional label into 0.90 and counts its own countervailing node among the positive drivers, while case_memory claims 'supported' magnitude evidence and 'moderately certain' 0.85 in its reasoning and then contradicts both with a 0.51 boundary abstention.",
+  "shared_evidence_note": "The disagreement is almost entirely about reasoning rather than evidence: E0 and E1 differ in composition but both are title-only snippets with no spread data, and all seven traces reached 'yes' anyway, so the spread of probabilities from 0.51 to 0.90 reflects how much confidence each method manufactured from the same absence of quantities."
+}

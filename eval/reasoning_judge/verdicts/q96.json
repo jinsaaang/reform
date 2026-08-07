@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_wmt_revenue_growth_acceleration_2025_07_31",
+  "verdicts": [
+    {
+      "trace_id": "v3_wmt_revenue_growth_acceleration_2025_07_31::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 5,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Magnitude support is insufficient because the target quarter's financial results have not been reported, rendering the baseline unavailable and preventing direct measurement of the revenue growth acceleration.",
+      "verdict_one_line": "The only trace that separates directional support from threshold-crossing support and lets that separation set the mass (0.50/0.35/0.15 with the 'up' signal reflected in above>below), though it dates its E1 citations loosely - a 2024-08-16 retail-sales piece is read as current 'July retail sales' and the 2024-02-20 Grocery Dive item is labelled 'Q4 FY2025' - and its 'Structural use facts: 3 of 3 routed paths contributed' sits oddly beside path assessments that all read 'Current graph instantiation marks this path unresolved.'",
+      "would_a_careful_analyst_accept_this": "yes"
+    },
+    {
+      "trace_id": "v3_wmt_revenue_growth_acceleration_2025_07_31::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "While revenue growth appears robust due to consumer resilience and segment strength, the evidence does not strongly support an *increase* in the growth rate (acceleration).",
+      "verdict_one_line": "Makes the sharpest move in the packet - level-of-revenue evidence is not evidence about the second difference - and uses it to exclude both neighbours, but it claims horizon_match 'direct' while leaning on 2024-08 headlines, its 'stable growth' language actually maps to the 'above' bucket under these all-negative boundaries, and it puts a precise central of -1.0 pp on a basis of 'Qualitative assessment of revenue drivers and headwinds' while silently cutting 'above' from 0.25 in the reasoning block to 0.10 in the forecast.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_wmt_revenue_growth_acceleration_2025_07_31::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 2,
+        "probability_justification": 4,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "While indicators like stable consumer health suggest continued revenue, the specific acceleration of this growth rate relative to the defined historical boundaries remains unclear due to mixed signals (regional weakness) and lack of direct historical acceleration figures.",
+      "verdict_one_line": "By far the most honest evidence audit in the E0 group - it alone records 'magnitude_support': 'unsupported' and that 'most evidence pertains to prior fiscal years relative to the target quarter', and it dates the 'almost 6%' snippet correctly to Q2 FY2024 - but the trace contradicts itself outright, its reasoning block declaring \"prediction\": \"above recent range\" at 0.20/0.35/0.45 while the forecast block returns 'within recent range' at 0.25/0.50/0.25.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_wmt_revenue_growth_acceleration_2025_07_31::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The strong positive drivers, particularly the raised outlook and resilient consumer spending, suggest that the recent trend of deceleration (negative acceleration) is likely moderating or reversing. This points towards an acceleration value that is less negative than the recent range, likely falling above the upper bound of -0.759 percentage points.",
+      "verdict_one_line": "Names real drivers and admits 'The evidence is qualitative and lacks specific quantitative data on the magnitude of recent acceleration/deceleration', then crosses a numbered boundary on that same qualitative basis and raises 'above' from 0.60 in the reasoning block to 0.75 in the forecast with no added argument; its 'raised outlook' and 'blockbuster growth' drivers are 2024-08 headlines presented under horizon_match 'direct'.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_wmt_revenue_growth_acceleration_2025_07_31::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 2,
+        "prediction_alignment": 3,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": false
+      },
+      "decisive_quote": "The quarterly revenue year-over-year growth acceleration is expected to be at or above -0.759 percentage points.",
+      "verdict_one_line": "Well-organised nodes and edges around correctly quoted snippets ('revenue up almost 6%', the 10% Walmex profit dip), but it stamps the 2024-08-15 CNBC and Grocery Dive items as \"temporal_relation\": \"target_period_signal\" for a quarter ending 2025-07-31, never distinguishes revenue level from growth acceleration, states the boundary-crossing estimate as a bare assertion, and is the one trace that names no gap at all while assigning 0.75.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_wmt_revenue_growth_acceleration_2025_07_31::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "While historical acceleration has been negative, these positive factors suggest that the rate of deceleration may be slowing, potentially leading to an acceleration value above the recent historical lower bound.",
+      "verdict_one_line": "Its own mechanism step concludes only that acceleration clears the recent range's *lower* bound (-1.385), which is the 'within recent range' bucket, yet the target bridge silently converts this into clearing the *upper* bound (-0.759); the trace also declares \"magnitude_support\": \"supported\" in evidence_fit while its forecast records support as 'direction_only' and concedes it 'does not provide specific quantitative data for the target period'.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_wmt_revenue_growth_acceleration_2025_07_31::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 2,
+        "prediction_alignment": 3,
+        "probability_justification": 1,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "While direct figures for revenue growth acceleration are not present, the qualitative information strongly supports the predicted outcome.",
+      "verdict_one_line": "Rates its own magnitude support 'supported' in the same breath as conceding no acceptable figures exist, reasons toward 'the predicted outcome' rather than from evidence to an option, invents a central estimate of -0.4 pp from headlines and then uses that self-chosen central to rule the neighbouring buckets 'unsupported', and assigns 0.01 to 'below recent range' - a bucket that is roughly a quartile a priori - on purely qualitative grounds.",
+      "would_a_careful_analyst_accept_this": "no"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_wmt_revenue_growth_acceleration_2025_07_31::hgf",
+    "v3_wmt_revenue_growth_acceleration_2025_07_31::case_memory",
+    "v3_wmt_revenue_growth_acceleration_2025_07_31::principle_memory",
+    "v3_wmt_revenue_growth_acceleration_2025_07_31::direct_forecast",
+    "v3_wmt_revenue_growth_acceleration_2025_07_31::structured_reasoning",
+    "v3_wmt_revenue_growth_acceleration_2025_07_31::factor_memory",
+    "v3_wmt_revenue_growth_acceleration_2025_07_31::structure_memory"
+  ],
+  "ranking_rationale": "Both banks contain only headlines and no series of revenue-growth accelerations, so the question is entirely whether a trace notices that directional retail commentary cannot locate a value against numbered boundaries; hgf and case_memory say so explicitly and let their mass reflect it, while structure_memory, factor_memory and structured_reasoning assert a boundary crossing to -0.759 pp from the same headlines and pile 0.70-0.75 behind it. The separation is honesty about the missing baseline plus keeping the level-versus-acceleration distinction, not depth of formatting - the two most elaborately structured traces sit at the bottom.",
+  "shared_evidence_note": "Bank membership does not explain the split: the two E1 traces landed on opposite options (factor_memory 'above', hgf 'within') and the five E0 traces split three-to-two on the same thirteen headlines, so the disagreement came from how each trace converted directional commentary into a threshold claim rather than from what it was allowed to read."
+}

@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_amzn_revenue_growth_acceleration_2025_03_31",
+  "verdicts": [
+    {
+      "trace_id": "v3_amzn_revenue_growth_acceleration_2025_03_31::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 3,
+        "probability_justification": 5,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Current signals are mixed, with positive drivers in advertising and AWS offset by a weak revenue forecast and AI capacity constraints. This leads to an uncertain overall direction for revenue growth acceleration.",
+      "verdict_one_line": "The only trace whose probability mass (0.32/0.42/0.26) actually matches the uncertainty it declares ('The actual results for the target quarter are unavailable'), though its central estimate of -0.9 is admittedly 'Derived from mixed evidence and range constraints' — i.e. the midpoint of the very bucket it then selects, making the option choice circular rather than uniquely entailed.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_amzn_revenue_growth_acceleration_2025_03_31::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Given the 'weak guidance' and 'cloud growth comes up short', the acceleration is likely to be a moderate negative, falling within the recent range rather than significantly below it.",
+      "verdict_one_line": "Balances named segment drivers (AWS 19% in Q4, advertising 'still speeding up') against weak guidance and short cloud growth, and is one of the few traces to explicitly argue the below-vs-within distinction rather than assume it; the 0.65 mass on 'within' is still asserted after declaring magnitude support 'insufficient' and producing a numeric central of -0.8.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_amzn_revenue_growth_acceleration_2025_03_31::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "the prediction leans towards the negative side, with a higher probability for 'within recent range' due to the qualitative nature of the evidence, suggesting a significant but not necessarily extreme deceleration.",
+      "verdict_one_line": "Declines to invent a numeric acceleration, resolves its one countervailing factor explicitly ('this is a measure of absolute scale rather than growth rate acceleration'), and spreads mass 0.4/0.5/0.1 in line with admitting it lacks 'specific prior quarter data to define the quartiles'; the DAG scaffolding adds little beyond the same two headline drivers.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_amzn_revenue_growth_acceleration_2025_03_31::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "This points towards the 'below recent range' or 'within recent range' options, with 'above recent range' being unlikely.",
+      "verdict_one_line": "Correctly excludes 'above' but leaves below-vs-within openly undetermined in its own option mapping, then commits 0.65 to 'below' on the back of a latent estimate of -4.0/-2.5/-1.0 pp that its own magnitude assessment labels 'direction_only'.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_amzn_revenue_growth_acceleration_2025_03_31::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 3,
+        "probability_justification": 1,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The precise magnitude of the revenue growth acceleration is not quantified in the current evidence, making it difficult to definitively place it relative to the upper boundary of the 'below recent range' (-1.641 pp).",
+      "verdict_one_line": "States outright that it cannot place the acceleration relative to the -1.641 pp boundary, then puts 0.75 on exactly that side; its boundary check is circular, justifying 'below' by citing its own earlier assertion ('The reasoning trace explicitly states that...') rather than any evidence.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_amzn_revenue_growth_acceleration_2025_03_31::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The choice is between 'within recent range' ([-1.641, -0.18) pp) and 'below recent range' (< -1.641 pp), with qualitative evidence suggesting a significant slowdown.",
+      "verdict_one_line": "The narrative concludes 'below recent range' at 0.6 while the forecast block returns 'within recent range' at 0.5, and the boundary check asserts 'the estimate range does not overlap with this interval' for [-0.179717, +infinity) when its own stated high of -0.1 lies inside it — the trace argues against the answer it files.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_amzn_revenue_growth_acceleration_2025_03_31::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 2,
+        "prediction_alignment": 3,
+        "probability_justification": 1,
+        "mechanism_specificity": 2
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "the revenue growth acceleration is most likely to fall into the 'below recent range' category, as the negative acceleration is expected to be more pronounced than the 'within recent range' (-1.641% to -0.18%).",
+      "verdict_one_line": "Claims magnitude_support 'supported' in evidence_fit while the forecast block concedes the same evidence 'does not provide specific quantitative values', then manufactures a -5.0/-3.0/-1.7 pp interval whose upper end stops just past the -1.641 boundary and stakes 0.75 on it — the numbers read as reverse-engineered from the chosen option.",
+      "would_a_careful_analyst_accept_this": "no"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_amzn_revenue_growth_acceleration_2025_03_31::hgf",
+    "v3_amzn_revenue_growth_acceleration_2025_03_31::factor_memory",
+    "v3_amzn_revenue_growth_acceleration_2025_03_31::structured_reasoning",
+    "v3_amzn_revenue_growth_acceleration_2025_03_31::direct_forecast",
+    "v3_amzn_revenue_growth_acceleration_2025_03_31::principle_memory",
+    "v3_amzn_revenue_growth_acceleration_2025_03_31::structure_memory",
+    "v3_amzn_revenue_growth_acceleration_2025_03_31::case_memory"
+  ],
+  "ranking_rationale": "All three buckets here are negative or near-zero, so 'revenue growth is decelerating' cannot by itself distinguish 'below' from 'within'; the top traces recognised this and either kept mass broad (hgf) or argued explicitly for a moderate rather than extreme deceleration (factor_memory, structured_reasoning). The bottom traces asserted the same directional headlines, invented a precise pp interval their own magnitude fields called insufficient, and then concentrated 0.6-0.75 of the mass on the boundary crossing they had just declared unverifiable, with principle_memory filing an option its own narrative argued against and case_memory contradicting its own support label.",
+  "shared_evidence_note": "The E1 traces did see segment-level items absent from E0 (AWS up 19% in Q4, advertising 'still speeding up', 'cloud growth comes up short'), which let them post genuine up-drivers against the weak guidance, but the decisive split was reasoning rather than evidence: within E0 alone the same four headlines produced both 'below recent range' at 0.75 and 'within recent range' at 0.5."
+}

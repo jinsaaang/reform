@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_fed_balance_sheet_monthly_growth_2025_06",
+  "verdicts": [
+    {
+      "trace_id": "v3_fed_balance_sheet_monthly_growth_2025_06::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 4,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Historical path D1:path_3 is contradicted because current evidence shows the Federal Reserve held interest rates steady in May 2025, reversing the historical premise of a rate cut.",
+      "verdict_one_line": "The only trace that actually re-tests each carried-over causal path against its own bank and reports the result honestly, but it still converts a self-declared unbridgeable target into a decisive -0.5 point estimate ('Central estimate of -0.5 is below the yes interval starting at -0.498315') and mislabels an absence of evidence on the QT-end path as 'REVERSED' with empty evidence_ids.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_fed_balance_sheet_monthly_growth_2025_06::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 4,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The ongoing QT implies negative asset growth. However, the specific magnitude of this growth relative to the -0.498 percent threshold is uncertain due to a lack of precise data on the pace of QT and asset changes for June 2025.",
+      "verdict_one_line": "Coherent and internally consistent (0.55/0.45 in both the reasoning and forecast blocks, matching its declared 'unsupported' magnitude fit), but every driver it names points 'down' while the yes selection rests entirely on an unsourced central estimate of -0.25, and it never tests the four retrieved factor cards it was handed.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_fed_balance_sheet_monthly_growth_2025_06::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The inference from steady rates suggests a potentially moderate pace of QT, which weakly supports the 'yes' outcome, but significant uncertainty remains regarding the exact growth rate.",
+      "verdict_one_line": "Honest about the gap and end-to-end consistent in direction, but it infers balance-sheet pace from policy-rate stance without warrant, then raises confidence from 0.55 to 0.65 after declaring magnitude support 'insufficient' and calls the 'no' interval 'unsupported' even though its own low bound of -1.0 sits inside it.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_fed_balance_sheet_monthly_growth_2025_06::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 4,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The prediction is uncertain as current evidence does not provide a specific growth rate for June 2025 to compare against the resolution threshold of -0.498 percent.",
+      "verdict_one_line": "Best-matched probability mass in the packet (0.45/0.55 against a self-declared 'highly uncertain' state) and commendably refuses to copy the -0.278 percent figure sitting in its redacted-DAG memory, but its reasoning block concludes 'yes' at 50/50 while the forecast block answers 'no', with the flip produced solely by a -0.5 central estimate landing 0.0017pp on the far side of the boundary.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_fed_balance_sheet_monthly_growth_2025_06::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 2,
+        "prediction_alignment": 3,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "If QT is indeed slowing down or nearing its end by June 2025, the monthly asset growth rate would become less negative. This implies a potential for the growth rate to be greater than -0.498 percent, thus satisfying the 'yes' condition.",
+      "verdict_one_line": "The decisive step imports the antecedent 'QT is slowing down or nearing its end' from the carried-over 2024-12 lesson and cites art_snippet_5cd91853960bd7bc for it, a source that says nothing of the kind; it then marks both intervals 'plausible' yet still moves mass from 0.55 to 0.65 on 'yes'.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_fed_balance_sheet_monthly_growth_2025_06::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 3,
+        "mechanism_specificity": 2
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "However, a cautious policy may imply a moderation of Quantitative Tightening (QT), leading to a less severe contraction (i.e., a growth rate greater than -0.498 percent). This qualitative assessment favors a \"yes\" prediction.",
+      "verdict_one_line": "Uses the same factor in both directions - D1 'holding rates steady' is the dominant driver of 'reduced asset growth or asset contraction', then the identical cautious stance is re-read as moderating QT to flip the answer to yes - and crosses a precise numeric boundary on a purely 'qualitative assessment' with no quantity anywhere, while the elaborate node/edge scaffolding adds mechanism language ('Policy decisions directly influence the Federal Reserve's balance sheet operations') that would fit any Fed question.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_fed_balance_sheet_monthly_growth_2025_06::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 1,
+        "prediction_alignment": 1,
+        "probability_justification": 1,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The central estimate of -0.5 percent is less than the threshold of -0.498315 percent, thus falling within the 'no' interval.",
+      "verdict_one_line": "Its reasoning block states prediction 'yes' at 0.55 and every reasoning step resolves to 'uncertain' or 'neutral', yet the forecast answers 'no' at 0.70 - a 0.0017 percentage-point margin on a wholly invented -0.5 estimate is converted into the packet's most confident claim, and it declares metric_match 'direct' while conceding magnitude support is 'unsupported'.",
+      "would_a_careful_analyst_accept_this": "no"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_fed_balance_sheet_monthly_growth_2025_06::hgf",
+    "v3_fed_balance_sheet_monthly_growth_2025_06::factor_memory",
+    "v3_fed_balance_sheet_monthly_growth_2025_06::direct_forecast",
+    "v3_fed_balance_sheet_monthly_growth_2025_06::structure_memory",
+    "v3_fed_balance_sheet_monthly_growth_2025_06::principle_memory",
+    "v3_fed_balance_sheet_monthly_growth_2025_06::structured_reasoning",
+    "v3_fed_balance_sheet_monthly_growth_2025_06::case_memory"
+  ],
+  "ranking_rationale": "The separator at the top was whether a trace did question-specific work and then kept its confidence inside the limits it had just declared: hgf explicitly re-tested each inherited causal path and marked the rate-cut premise reversed against dated sources, and it, factor_memory and structure_memory all held their mass near uniform after conceding magnitude support was insufficient. The bottom three all crossed a precise numeric boundary on no quantity at all - principle_memory by assuming an unevidenced end to QT, structured_reasoning by re-reading its own dominant down-driver as an up-driver, and case_memory by turning a 0.0017pp gap between an invented -0.5 and the -0.498315 threshold into 70 percent confidence while its reasoning block still said 'yes'.",
+  "shared_evidence_note": "The disagreement is not evidentiary - both banks are title-only snippets with no balance-sheet quantities, and E0 and E1 share the decisive QT and May-2025 rate-hold items - so the yes/no split traces entirely to how each method handled the same admitted magnitude gap, specifically whether its fabricated central estimate happened to land above or below -0.498315."
+}

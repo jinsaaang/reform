@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_us_diesel_monthly_change_2026_06",
+  "verdicts": [
+    {
+      "trace_id": "v3_us_diesel_monthly_change_2026_06::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 5,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 5
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The actual monthly percentage change for June 2026 and the median of the four preceding monthly changes are unavailable. While evidence points to upward price pressures from supply shortages and geopolitical events, the specific magnitude required for the target resolution is not supported by current data.",
+      "verdict_one_line": "Every cited id is in its own bank E1 and the paraphrases match the headlines (fifth straight weekly crude stock drop, distillate inventories at multiyear lows, India easing export levies from June 1); it traces stock draws through refined-product cost to retail diesel, names the exact missing quantity (the GASDESW monthly change and the median of four prior changes), and maps a below-threshold central with a live yes tail to a moderate 0.35/0.65 split.",
+      "would_a_careful_analyst_accept_this": "yes"
+    },
+    {
+      "trace_id": "v3_us_diesel_monthly_change_2026_06::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The target requires a monthly change of at least 4.16%. While upward price pressures exist, the evidence does not strongly support this specific magnitude of monthly change, leaving the outcome uncertain.",
+      "verdict_one_line": "Cleanly separates a real upward direction (all cited ids are in E0 and the adjectives 'high', 'soaring', 'dizzying' are genuinely in those titles) from an unsupported magnitude, and picks the interval containing its own central estimate without transferring the retrieved 2024 episode; the baseline step asserts an increase with no evidence_ids, the 2.0% central is underived, and the probability drifts from 0.20 to 0.45 on yes with no stated reason.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_diesel_monthly_change_2026_06::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 5,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 4,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The central estimate of 2.0% falls outside the 'yes' interval of [4.159604, +infinity). However, evidence of supply crunches and low inventories supports the potential for prices to exceed this threshold, making the 'yes' option plausible despite the central estimate.",
+      "verdict_one_line": "Grounding is the best in the set (all eight selected ids sit in its own bank E1 and each paraphrase matches the source headline) and the scarcity-to-retail mechanism plus the India-export-levy counterweight are concrete, but the trace answers itself twice: the reasoning block declares magnitude_support 'supported' and prediction 'yes' at 0.65 while the forecast block sets a 2.0% central and predicts 'no' at 0.65, so the narrative and the final choice point opposite ways.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_diesel_monthly_change_2026_06::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The confluence of strong upward pressures from geopolitical events, global shocks, and existing price trends suggests that the price change could exceed this threshold.",
+      "verdict_one_line": "All five cited ids are genuine E0 items and the crude-to-diesel and demand-destruction mechanisms are real, but the DAG's own synthesis node records 'uncertainty in price direction' and the target_bridge only restates the interval, so the 0.65 on a 4.16 percent threshold rests on nothing quantitative and on a burden reversal ('the provided evidence and DAG do not quantify its impact sufficiently to definitively negate the upward pressures').",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_us_diesel_monthly_change_2026_06::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 4,
+        "probability_justification": 1,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The central estimate of 5.0% falls outside the 'no' interval of (-infinity, 4.16%). The strong upward directional signal and qualitative evidence of surging prices make a change below 4.16% unlikely.",
+      "verdict_one_line": "The option mapping is at least explicit, but it declares magnitude support 'insufficient' and then rules the entire below-threshold interval 'unsupported' at 0.75 confidence on the strength of the words 'soaring' and 'surging'; the 5.0% central, basis 'derived from directional evidence and qualitative magnitude indicators', lands just above the 4.16% line with no derivation, and an EIA-forecast claim is cited to the Air Canada flight-suspension headline (art_snippet_d77a6b1d4543d0ba), which says nothing of the kind.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_us_diesel_monthly_change_2026_06::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 3,
+        "probability_justification": 3,
+        "mechanism_specificity": 1
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": true,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "No validated current driver is strong enough to move the forecast away from the neutral baseline.",
+      "verdict_one_line": "An honest abstention after a validation failure that cites nothing and offers no mechanism; its one question-relevant sentence correctly reports that the bank has no quantitative data for 2026-06, but the reasoning block records prediction 'yes' at 0.5/0.5 while the forecast block records 'no' at 0.3/0.7, and the 'up' directional_signal sits oddly beside a 0.0 central with a symmetric -5 to +5 range that would imply far less than 0.3 on yes.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_diesel_monthly_change_2026_06::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 2,
+        "prediction_alignment": 3,
+        "probability_justification": 3,
+        "mechanism_specificity": 1
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": true,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Structured reasoning could not be validated; no current evidence-supported magnitude claim is retained.",
+      "verdict_one_line": "Pure template abstention with zero engagement with any evidence item in its bank and no driver named at all; the -15 to +15 range at least makes the 0.3/0.7 split roughly coherent, but the reasoning block states prediction 'yes' while the forecast block states 'no', so the trace disagrees with itself on the answer.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_us_diesel_monthly_change_2026_06::hgf",
+    "v3_us_diesel_monthly_change_2026_06::case_memory",
+    "v3_us_diesel_monthly_change_2026_06::factor_memory",
+    "v3_us_diesel_monthly_change_2026_06::structured_reasoning",
+    "v3_us_diesel_monthly_change_2026_06::principle_memory",
+    "v3_us_diesel_monthly_change_2026_06::direct_forecast",
+    "v3_us_diesel_monthly_change_2026_06::structure_memory"
+  ],
+  "ranking_rationale": "What separated the top from the bottom was the handling of the direction-versus-magnitude gap: hgf and case_memory both saw clear upward pressure, said plainly which quantity they could not obtain (the GASDESW monthly change and the median of four prior changes), and mapped a below-threshold central to the option that contains it, while structured_reasoning and principle_memory converted the same qualitative language into a confident claim that a 4.16 percent monthly move would occur. Below them, direct_forecast and structure_memory carry no mechanism and no citations at all, and three traces (factor_memory, direct_forecast, structure_memory) state one prediction in their reasoning block and the opposite in their forecast block.",
+  "shared_evidence_note": "The banks were not the source of the split: both E0 and E1 pointed upward on diesel, and the E1 pair diverged from each other in narrative while agreeing on 'no', so the disagreement came from whether each trace treated directional evidence as sufficient to assert a 4.16 percent threshold crossing rather than from what it read."
+}

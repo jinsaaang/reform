@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_stl_financial_stress_monthly_change_2026_06",
+  "verdicts": [
+    {
+      "trace_id": "v3_stl_financial_stress_monthly_change_2026_06::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Derived from qualitative evidence of drivers and counterdrivers, balanced towards a moderate positive outcome within the recent range.",
+      "verdict_one_line": "Every qualitative claim traces to an E0 headline, but the trace converts headline-only drivers into a narrow numeric band (low -0.05, central 0.05, high 0.1) whose stated basis is the answer bucket itself, then rides that fabricated band to the highest centre mass in the field (0.7) while admitting it 'lacks precise quantitative data for the target period'.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_stl_financial_stress_monthly_change_2026_06::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 2,
+        "prediction_alignment": 3,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "the prediction is set to 'within recent range' as a representative moderate positive outcome",
+      "verdict_one_line": "Node D1 records that 'Federal Reserve officials indicate no imminent need to change the monetary policy stance' yet assigns it directional_effect 'increases financial stress', so a stability signal is inverted into one of the two drivers of the 'net increase' synthesis; the trace then declares 'the DAG lacks specific magnitude support' while assigning 0.01 to 'below recent range' and splitting the rest 0.495/0.495, conceding the point prediction is a coin-flip label rather than an implication of the argument.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_stl_financial_stress_monthly_change_2026_06::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 4,
+        "mechanism_specificity": 2
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The evidence provides mixed signals, and the lack of precise quantitative data makes it difficult to assign high probabilities to any single option.",
+      "verdict_one_line": "Working from the four-item E1 bank it quotes the IMF figure accurately ('Global economic growth is projected to be steady in 2026') and keeps its mass appropriately diffuse (0.225/0.55/0.225), but it labels evidence_fit 'metric_match: direct' for headlines about Chinese bonds and Indonesian regulation that are never connected to a U.S. stress index, so the middle bucket is a default rather than an entailment.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_stl_financial_stress_monthly_change_2026_06::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "the balance of potential upward pressures (oil, uncertainty) against strong mitigating factors (Fed, consumers, FHLB) suggests a moderate likelihood of the change remaining within the recent historical range, with some possibility of exceeding it due to persistent shocks",
+      "verdict_one_line": "The only E0 trace that argues the bucket ranking rather than just centring an estimate at zero, and its flat, upward-tilted mass (0.25/0.40/0.35) mirrors the stated conflict; small demerits for introducing the series label 'STLFSI4', which appears in neither its bank nor its retrieved principles, and for boundary_checks calling the tails 'unsupported' while handing them 60% of the mass.",
+      "would_a_careful_analyst_accept_this": "yes"
+    },
+    {
+      "trace_id": "v3_stl_financial_stress_monthly_change_2026_06::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Evidence provides qualitative insights into factors influencing financial stress but does not directly quantify the expected change in the index for the target month.",
+      "verdict_one_line": "Short, clean and correctly quarantined — it never imports the 2023-01 episode's resolved option from its retrieved memory, invents nothing, and pairs 'insufficient' magnitude support with a symmetric 0.25/0.50/0.25; but nothing in the argument selects the middle bucket beyond a zero-centred estimate, and the 0.50 is asserted with no base-rate or width reasoning behind it.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_stl_financial_stress_monthly_change_2026_06::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 5,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Increased global uncertainty and oil price shocks can amplify financial market volatility and credit concerns, leading to a rise in the financial stress index.",
+      "verdict_one_line": "Best-grounded trace in the set: it date-stamps each E0 item correctly ('all-time high World Uncertainty Index (February 2026)', 'consumer resilience to gas price increases (May 2026)', 'Federal Home Loan Banks ... (December 2025)'), builds a recency contrast between stabilising recent data and forward-looking risk, states a real transmission chain to the index, honestly records magnitude_support 'unsupported', and keeps mass diffuse (0.2/0.5/0.3) with the tilt matching its stated forward risk; it also resisted the ablation memory's redacted -0.471 figure.",
+      "would_a_careful_analyst_accept_this": "yes"
+    },
+    {
+      "trace_id": "v3_stl_financial_stress_monthly_change_2026_06::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The causal links from observed economic factors to the target metric remain unverified.",
+      "verdict_one_line": "The most epistemically honest handling of the tails — it is the only trace whose boundary_checks call 'below' and 'above' 'plausible' rather than 'unsupported' ('The broad estimate range includes values below -0.11895. However, there is no specific evidence supporting this outcome'), and it refuses to claim a direction after marking two of three routed paths UNMAPPED; the weakness is that it then puts 0.6 on the middle bucket, the second-highest centre mass in the field, with no argument for why 0.6 rather than a near-uniform split, and the structural bookkeeping jargon carries no question-specific content.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_stl_financial_stress_monthly_change_2026_06::structure_memory",
+    "v3_stl_financial_stress_monthly_change_2026_06::principle_memory",
+    "v3_stl_financial_stress_monthly_change_2026_06::hgf",
+    "v3_stl_financial_stress_monthly_change_2026_06::case_memory",
+    "v3_stl_financial_stress_monthly_change_2026_06::factor_memory",
+    "v3_stl_financial_stress_monthly_change_2026_06::direct_forecast",
+    "v3_stl_financial_stress_monthly_change_2026_06::structured_reasoning"
+  ],
+  "ranking_rationale": "Both banks are headline-only and contain no observation of the index, so the separator is what each trace did with that poverty: the top three (structure_memory, principle_memory, hgf) named their gap explicitly, kept probability mass diffuse in proportion to it, and let the middle bucket be the reasoned residual rather than a manufactured point estimate. The bottom two did the reverse — direct_forecast manufactured a narrow band whose stated basis is the answer bucket and then claimed 0.7 confidence, while structured_reasoning inverted a Fed-stability headline into a stress-increasing driver, declared it had no magnitude support, and still assigned 0.01 to one option before conceding its point prediction was an arbitrary label over a 0.495/0.495 tie.",
+  "shared_evidence_note": "The methods did not disagree at all on the option — all seven chose 'within recent range' — so the split between E0 (six datable U.S. macro headlines about oil, uncertainty, Fed stance and consumer resilience) and E1 (four global growth/inflation headlines with no U.S. stress content) changed only the richness of the narrative each could tell and the confidence each claimed, not the conclusion; the real variation is in reasoning discipline from the same evidential vacuum."
+}

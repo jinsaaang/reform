@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_us_cpi_monthly_change_2025_12",
+  "verdicts": [
+    {
+      "trace_id": "v3_us_cpi_monthly_change_2025_12::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 5,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The ambiguity regarding whether reported August (2.9%) and September (3%) CPI figures represent monthly or annual changes limits their direct use in assessing the target monthly CPI change.",
+      "verdict_one_line": "Every figure it uses (2.9% August, 3% September, housing-into-2025, steady electricity increases, the cancelled October report) traces exactly to its own E1 bank, it refuses to over-read the content-free ECB services title ('The outlook for services inflation in the US is currently unknown'), and it names the missing baseline outright ('The target baseline is unavailable due to missing historical monthly CPI data required for the comparison rule'), so the wide 0.1/0.5/0.4 spread is earned rather than asserted; it stops short of 5 on mechanism because housing and electricity are named as upward pressures but never carried through to the 0.146/0.264 boundaries.",
+      "would_a_careful_analyst_accept_this": "yes"
+    },
+    {
+      "trace_id": "v3_us_cpi_monthly_change_2025_12::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 3,
+        "mechanism_specificity": 2
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The provided data consists of annual inflation rates (e.g., 2.7% for November 2025), not the target metric of monthly CPI change.",
+      "verdict_one_line": "Quotes E0 accurately and is the clearest of the E0 group about the annual-versus-monthly metric mismatch, but it labels a February 2025 print a 'target_period_signal' for December, its causal edges are filler ('This annual rate provides a general economic context'), and after concluding the drivers 'point towards a lower monthly CPI change' it selects the middle option as a hedge, leaving 'below' equally consistent and the 0.2 on 'above' unexplained.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_cpi_monthly_change_2025_12::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 3,
+        "mechanism_specificity": 2
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "A trend of decelerating annual inflation is observed, with figures reported at 2.9% (August 2025), 2.8% (February 2025), and 2.7% (November 2025), suggesting moderating price pressures.",
+      "verdict_one_line": "The three figures are each faithful to E0, but presenting them out of chronological order manufactures a 'decelerating' trend that the actual sequence (Feb 2.8, Aug 2.9, Nov 2.7) does not support; it is honest about the missing monthly series ('lack of direct historical monthly CPI data to precisely calibrate probabilities') and its central 0.15% sitting a hair above the 0.146 boundary genuinely leaves 'below' and 'within' undetermined, yet it calls 'above' 'highly unlikely' while still assigning it 0.15.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_cpi_monthly_change_2025_12::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 2,
+        "prediction_alignment": 3,
+        "probability_justification": 3,
+        "mechanism_specificity": 2
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The observed easing inflation in early 2025 supports expectations for Fed interest rate cuts, which can influence economic conditions and potentially dampen inflationary pressures.",
+      "verdict_one_line": "Its only named mechanism has the sign backwards — rate cuts are logged with 'effect_on_target': 'down' on a one-month CPI print — and it reuses the same misordered 'decelerating' framing; it deserves credit for naming the gap ('the lack of direct evidence for the 8 prior observed changes used to define the comparison range'), but it marks 'below recent range' compatibility 'unsupported' in the boundary audit while handing that same option 0.4 of the mass.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_cpi_monthly_change_2025_12::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 2,
+        "prediction_alignment": 4,
+        "probability_justification": 2,
+        "mechanism_specificity": 2
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The central estimate of 0.05 falls within the (-infinity, 0.146074) interval, and the evidence strongly suggests a downward trend leading to values below the recent range.",
+      "verdict_one_line": "It is the one trace whose reasoning genuinely and explicitly selects its option and excludes the neighbours, but it gets there by treating a falling year-over-year rate as if it directly implied a bottom-quartile monthly print: it declares support 'direction_only' and admits 'the absence of precise historical context for the recent range boundaries', then still fixes a 0.05% central value (its own cited 2.7% annual pace implies roughly 0.22% a month) and puts 0.6 on the boundary crossing.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_cpi_monthly_change_2025_12::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 2,
+        "prediction_alignment": 3,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The explicit forecast states the target will be within this range, supported by upward inflationary pressures, and the central estimate falls within this interval.",
+      "verdict_one_line": "The boundary audit justifies the mapping by pointing at the forecast itself, which is circular, and the target_bridge step simply asserts 'is forecast to be within the recent range' with no derivation; it also claims 'metric_match': 'direct' and 'horizon_match': 'direct' when nothing in E1 measures a December 2025 monthly change, and it reads 'a continued outlook for elevated price pressures' out of an ECB headline that carries no such content — the same source the HGF trace correctly declined to interpret.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_us_cpi_monthly_change_2025_12::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 4,
+        "mechanism_specificity": 1
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": true,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "High; this is an explicit abstention after structured-output validation failure.",
+      "verdict_one_line": "The abstention is honest and the near-flat 0.3/0.4/0.3 correctly matches the declared void, but the reasoning block closes on 'prediction': 'below recent range' while the forecast block returns 'within recent range', the option is then settled purely by a midpoint artefact ('Central estimate (0.205) falls within the interval'), and it carries no question-specific content at all ('Retain a neutral baseline for the exact public target') despite an E0 bank containing usable November CPI reporting.",
+      "would_a_careful_analyst_accept_this": "no"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_us_cpi_monthly_change_2025_12::hgf",
+    "v3_us_cpi_monthly_change_2025_12::structured_reasoning",
+    "v3_us_cpi_monthly_change_2025_12::principle_memory",
+    "v3_us_cpi_monthly_change_2025_12::direct_forecast",
+    "v3_us_cpi_monthly_change_2025_12::structure_memory",
+    "v3_us_cpi_monthly_change_2025_12::factor_memory",
+    "v3_us_cpi_monthly_change_2025_12::case_memory"
+  ],
+  "ranking_rationale": "What separated the top was discipline about what the sources actually said: the HGF trace refused to extract content from bare headlines, flagged that its 2.9%/3% figures might be annual rather than monthly, and named the missing eight-observation baseline before allocating a deliberately wide distribution. The bottom traces failed in opposite directions — factor_memory over-read title-only sources, declared 'direct' metric and horizon match that its bank cannot support, and justified its mapping by citing its own forecast, while case_memory abstained without touching an evidence bank that was available to it and emitted two different predictions in the same trace.",
+  "shared_evidence_note": "Bank membership shaped the tail the traces worried about — E1 methods saw component-level upward pressures (shelter lag, electricity, tariffs) and put 0.3-0.4 on 'above', while E0 methods saw the November 2.7% 'less than expected' headline and put 0.3-0.4 on 'below' — but six of seven still landed on the same modal option, and structure_memory's departure to 'below recent range' came from reasoning differently over the very same E0 evidence three other traces read, not from seeing anything the others did not."
+}

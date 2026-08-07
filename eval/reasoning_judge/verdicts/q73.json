@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_us_gasoline_monthly_change_2026_06",
+  "verdicts": [
+    {
+      "trace_id": "v3_us_gasoline_monthly_change_2026_06::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 5,
+        "probability_justification": 3,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "While strong demand could push prices up, robust supply and crude oil price uncertainty make it more probable that the change will fall within the recent range rather than exceeding it, and highly unlikely to be negative.",
+      "verdict_one_line": "The only trace that explicitly excludes both neighbouring options with reasons, built on E1 items that genuinely report rising prices, though its 0.5/2.0/4.0 percent band is invented and the within-mass silently jumps from 0.55 to 0.75 between blocks.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_gasoline_monthly_change_2026_06::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 5,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 4,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Upward trend in gasoline prices, rebounding economy, mixed oil prices, but insufficient magnitude data and missing baseline. Central estimate constrained to within recent range due to insufficient magnitude.",
+      "verdict_one_line": "Best-grounded trace and the probability spread (0.15/0.5/0.35) genuinely matches its declared 'direction up, magnitude undeterminable' position, but it admits in writing that the central estimate was constrained to the bucket it then 'derives', and it labels unobserved historical anchors 'CONTRADICTED' while the summary claims all three paths contributed.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_gasoline_monthly_change_2026_06::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The EIA's expectation of lower prices and recent local price drops suggest a potential for a negative price change, possibly falling below the lower bound of -0.023.",
+      "verdict_one_line": "The one E0 trace that notices the lower boundary sits essentially at zero so any decline resolves 'below', yet after stacking three downward drivers against one upward one it posts a +1.0 percent central estimate with no derivation, leaving the choice of 'within' underdetermined.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_gasoline_monthly_change_2026_06::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The prediction 'within recent range' is based on the assessment that the conflicting signals from EIA (bearish overall for 2026) and IEA (bullish short-term due to inventory depletion) create a balanced outlook, making a moderate price change the most probable outcome.",
+      "verdict_one_line": "The balance-of-forces story is asserted rather than argued (the option_mapping and mechanism steps carry no evidence ids at all), the mass moves from 0.1/0.6/0.3 to 0.25/0.5/0.25 without explanation, and 'above recent range' is called both 'unsupported' and 'plausible' in the same boundary check.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_gasoline_monthly_change_2026_06::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The central estimate of -0.01% is not less than the lower boundary of -0.023%.",
+      "verdict_one_line": "The selection rests entirely on a central estimate parked 0.013 points inside the boundary with no quantitative basis, and the reasoning's own near-uniform 0.3/0.4/0.3 is replaced by 0.35/0.5/0.15 despite the text insisting risks are significant on both sides.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_us_gasoline_monthly_change_2026_06::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": false
+      },
+      "decisive_quote": "The 'within recent range' option is the most probable as it can accommodate moderate price decreases (from EIA forecasts tempered by turmoil) or moderate price increases (if turmoil dominates)",
+      "verdict_one_line": "It recites the boundary correctly ('below -0.023 percent, between -0.023 and 4.634') and then justifies its pick with the false claim that this bucket accommodates moderate decreases, so its own negative synthesis actually points at 'below'; it also codes 'UBS sounds alarm' and 'EIA revises outlook' as negative-direction drivers the titles do not support.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_us_gasoline_monthly_change_2026_06::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "making 'within recent range' the most probable outcome as it can accommodate moderate price decreases",
+      "verdict_one_line": "The reasoning section names 'within recent range' as most probable at 0.5 while the forecast section rules that same option 'unsupported' and returns 'below recent range' at 0.55, so the document answers the question two different ways; the -0.5 percent central that decides the split is asserted after declaring support 'direction_only'.",
+      "would_a_careful_analyst_accept_this": "no"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_us_gasoline_monthly_change_2026_06::factor_memory",
+    "v3_us_gasoline_monthly_change_2026_06::hgf",
+    "v3_us_gasoline_monthly_change_2026_06::principle_memory",
+    "v3_us_gasoline_monthly_change_2026_06::structure_memory",
+    "v3_us_gasoline_monthly_change_2026_06::case_memory",
+    "v3_us_gasoline_monthly_change_2026_06::structured_reasoning",
+    "v3_us_gasoline_monthly_change_2026_06::direct_forecast"
+  ],
+  "ranking_rationale": "The top two traces keep one direction from evidence to option and say out loud what they could not verify, with factor_memory uniquely giving reasons for excluding both neighbours and hgf pairing the best grounding with a probability spread that actually matches its 'magnitude insufficient' admission. The bottom three all fail the central test in the same place, the near-zero lower boundary: direct_forecast picks opposite options in its two halves, structured_reasoning defends 'within' with the false claim that the bucket contains moderate decreases, and case_memory substitutes a -0.01 percent point estimate for an argument.",
+  "shared_evidence_note": "The banks drove the directional split rather than the reasoning - E0 traces saw only EIA lower-price headlines plus a San Diego decline and leaned down, while E1 traces saw a run of rising-price and record-jump reports and leaned up - but all seven converged on 'within recent range' anyway, so what separated them was how each handled a lower boundary sitting essentially at zero, not what they read."
+}

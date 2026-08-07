@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_nasdaq_monthly_return_2026_06",
+  "verdicts": [
+    {
+      "trace_id": "v3_nasdaq_monthly_return_2026_06::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "While the central estimate of 1.5% is below the start of this interval, the broad estimate range extends into it, and the evidence supports potential upside, making this a plausible outcome.",
+      "verdict_one_line": "The only trace whose boundary-compatibility labels stay consistent with its own stated estimate band and its probability mass, with a real transmission mechanism ('The NASDAQ Composite, heavily weighted towards technology and growth stocks, is susceptible to shifts in investor sentiment regarding growth versus value'), though the -2.5/1.5/6.5 percent band is still invented from headline-only sources ('This prevents a precise magnitude determination') and the 0.10 weight on 'below' is never argued.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_nasdaq_monthly_return_2026_06::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Given the wide historical range and the presence of both bullish and bearish signals, the most probable outcome is that the monthly return will fall within the established recent range, though there is a notable possibility of it falling outside either boundary.",
+      "verdict_one_line": "Gives the best non-circular argument for the middle bucket (width of the range plus offsetting signals) and explicitly ties its balanced 0.25/0.50/0.25 mass to weak magnitude support ('The magnitude of these effects on a single monthly return is difficult to precisely quantify, leading to a balanced probability distribution across options'), but the mechanism stays at the level of 'catalyst' versus 'headwind' and it still derives a -4.0/1.5/7.0 percent band with basis 'derived' from title-only snippets.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_nasdaq_monthly_return_2026_06::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 3,
+        "probability_justification": 4,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The link from these factors to the specific monthly return for June 2026 remains unverified by current evidence, and magnitude support is insufficient.",
+      "verdict_one_line": "Best evidence discipline of the set - every cited id (including the E1-only correction and consumer-sentiment items) is in its own bank, the 2.4 percent CPI figure is quoted from the snippet title rather than invented, and carried-over paths are individually marked ALIGNED/REVERSED/UNMAPPED with the contradicted one named - and its near-uniform 0.3/0.4/0.3 mass genuinely matches its declared 'insufficient' support; it loses on the central test because, having admitted the target link is unverified, its selection of 'within' rests on a 0.0 percent central estimate rather than an argument, and its boundary checks call two options 'unsupported' while still holding 30 percent each.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_nasdaq_monthly_return_2026_06::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "'Above recent range' is a secondary possibility reflecting AI optimism, while 'below recent range' is less likely but considered due to general market readjustment advice.",
+      "verdict_one_line": "Cleanly ranks both neighbouring options and correctly refuses to import the redacted hindsight DAG it was handed, but the mechanism never gets past 'conflicting pressures', the 0.30 on an option its own boundary check calls 'unsupported' is unexplained, and the -3.0/2.0/7.0 percent band comes from evidence it concedes 'lacks specific quantitative forecasts for June 2026'.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_nasdaq_monthly_return_2026_06::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 2,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "These factors introduce significant headwinds that could prevent the index from achieving a sustained 'above recent range' performance, despite the strong AI growth narrative (D1).",
+      "verdict_one_line": "The one trace that resists inventing a numeric point estimate and the one with the sharpest mechanism ('reallocation from growth to value stocks poses a risk to the NASDAQ Composite, as it is heavily weighted towards growth sectors'), but its every named countervailing force is a downside force and it then puts 0.40 on 'above recent range' against 0.10 on 'below' - the mass allocation relies on the negation of its own counterevidence section, which is never reconciled.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_nasdaq_monthly_return_2026_06::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 3,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Without specific monthly return data for June 2026, it is challenging to definitively place the outcome within the defined range.",
+      "verdict_one_line": "Honest about its limits and correctly grounded in its own E0 bank, but the mechanism is filler ('influences investor sentiment and capital flows'), the option is selected only because an invented 1.0 percent central lands mid-interval while the trace's own -3.0 to 7.0 band spans all three buckets, and the modal weight silently rises from 0.40 in the reasoning to 0.55 in the forecast despite uncertainty declared 'significant'.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_nasdaq_monthly_return_2026_06::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 2,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "the NASDAQ Composite's monthly return for June 2026 is likely to be negative or flat, falling below or within the lower end of the recent range.",
+      "verdict_one_line": "The lone dissenter, and its named drivers are concrete, but its own target estimate ('negative or flat, falling below or within') is equally compatible with 'within' while the option mapping asserts 'below' at 0.60; it rates evidence fit 'direct' on both metric and horizon when no snippet measures a June 2026 return, and treats a 2026-03-28 correction headline as the current state at a 2026-06-01 cutoff, so a threshold-crossing claim (worse than -1.981 percent) is carried by direction-only headlines it admits leave placement 'challenging'.",
+      "would_a_careful_analyst_accept_this": "no"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_nasdaq_monthly_return_2026_06::case_memory",
+    "v3_nasdaq_monthly_return_2026_06::principle_memory",
+    "v3_nasdaq_monthly_return_2026_06::hgf",
+    "v3_nasdaq_monthly_return_2026_06::structure_memory",
+    "v3_nasdaq_monthly_return_2026_06::structured_reasoning",
+    "v3_nasdaq_monthly_return_2026_06::direct_forecast",
+    "v3_nasdaq_monthly_return_2026_06::factor_memory"
+  ],
+  "ranking_rationale": "Both banks are title-only with no return series, so the separator was whether a trace kept its confidence and its boundary language inside what headlines can support: case_memory, principle_memory and hgf each state the gap and then allocate mass consistent with it, while direct_forecast and structure_memory select the middle bucket purely because an invented point estimate lands mid-interval. The bottom two break internally rather than externally - structured_reasoning argues only downside headwinds and then weights 'above' four times 'below', and factor_memory converts a two-month-old correction headline and a hedged 'below or within' estimate into a 0.60 threshold-crossing call.",
+  "shared_evidence_note": "Bank differences do not explain the split: factor_memory and hgf read the same larger E1 bank (with its E1-only correction, IPO and consumer-sentiment items) yet landed on opposite answers, so the disagreement came from how much weight each trace let direction-only headlines carry toward a numeric boundary, not from what it was allowed to read."
+}

@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_us_2y_yield_monthly_change_2026_06",
+  "verdicts": [
+    {
+      "trace_id": "v3_us_2y_yield_monthly_change_2026_06::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The available evidence discusses monetary policy and economic conditions relevant to yield movements but lacks direct quantitative data on the specific metric of monthly 2-year yield change, making magnitude support unsupported.",
+      "verdict_one_line": "Every qualitative claim traces cleanly to the two E0 Fed items and the gap is named, but the trace declares magnitude 'unsupported' and then emits a precise band ('low': -0.02, 'central': 0.03, 'high': 0.07) used to rule both tails 'unsupported', while quietly raising the within-range mass from 0.5 in the reasoning block to 0.7 in the forecast with no argument.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_2y_yield_monthly_change_2026_06::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Given the balancing of these opposing forces and the lack of precise quantitative support for their magnitudes, the most probable outcome is that the monthly 2-year yield change will fall 'within recent range'.",
+      "verdict_one_line": "The only trace that makes no numeric magnitude claim at all: it names the gap, explains why each neighbouring option is excluded, and keeps a symmetric 0.2/0.6/0.2 identical across both blocks; the weakness is that its 'Positive' driver and its 'Negative' countervailing factor are both read off the same clause of the same single January-2026 headline, and its 'Historical 2-Year Yield Change Reference' baseline node carries no value or evidence.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_2y_yield_monthly_change_2026_06::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The 2-year Treasury yield is highly sensitive to expectations of near-term Federal Reserve policy. The conflicting signals from Fed policymakers and uncertainty surrounding inflation create a scenario where markets may struggle to price a strong directional move, potentially leading to a more contained monthly yield change.",
+      "verdict_one_line": "Builds its balance from genuinely different, correctly dated E1 sources rather than one clause, names the real conflict ('growing openness to rate hikes' in March 2026 versus a 'rate cut outlook' for Spring 2026), resolves it explicitly into a tenor-appropriate mechanism, and admits the evidence 'covers a period leading up to June 2026 rather than the specific month'; docked for labelling magnitude support 'derived' and emitting [-0.05, 0.03, 0.10] with no comparator quantity, and for calling 'above recent range' unsupported when its own high of 0.10 sits past the 0.092 boundary.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_2y_yield_monthly_change_2026_06::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "No direct counterevidence is present in the provided snippets that strongly suggests a significant downward or upward movement in yields that contradicts the Fed's stated policy stance or economic outlook as of early 2026.",
+      "verdict_one_line": "Dates its single driver correctly to January 2026 but then declares its own bank free of counterevidence when that bank contains a Fed rate-cut piece, drops the competing consideration without comment, and pairs a declared-'unsupported' magnitude with the tightest interval and the most confident distribution in the set (0.05/0.75/0.20), leaving the 5% on 'below' entirely unargued.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_us_2y_yield_monthly_change_2026_06::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "A cautious Fed holding rates steady due to elevated inflation suggests that market expectations for significant rate cuts are likely subdued, which tends to support stable or rising Treasury yields.",
+      "verdict_one_line": "The transmission channel is real and the horizon gap is admitted, but the step is cited partly to an item titled 'How Much Will the Fed Cut Interest Rates?', which points the other way, and the trace then asserts its evidence holds no counterevidence; its up-lean leaves within versus above genuinely underdetermined, its high of 0.15 straddles the 0.092 boundary while 'above' is labelled unsupported yet given 0.25, and the two blocks report different vectors (0.6 versus 0.65 on within).",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_2y_yield_monthly_change_2026_06::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The prevailing conditions of elevated inflation and unchanged Fed rates suggest a positive monthly yield change. The uncertainty in magnitude and counter-pressure from potential rate cuts make the outcome most likely to fall 'within recent range' or 'above recent range', with 'below recent range' being less probable.",
+      "verdict_one_line": "Its own reasoning block scores within at 0.45 against above at 0.40, so the selection is near-arbitrary on its own numbers, and the forecast block then silently rewrites the distribution to 0.05/0.65/0.30, cutting the 'below' tail by two-thirds even though the trace had just named potential Fed rate cuts as downward counterevidence; every mechanism step is marked 'up' while the chosen bucket is the middle one, and a magnitude support of 'direction_only' still yields a high of 0.11 that crosses the upper boundary.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_us_2y_yield_monthly_change_2026_06::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 4,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The available current evidence, characterized by mixed signals and a lack of direct historical baseline data, does not provide a clear bridge to determine the specific monthly 2-year yield change for June 2026.",
+      "verdict_one_line": "Best-calibrated mass in the set: it states plainly that 'No direct historical observation of this metric or the required 8 prior observed changes is available', declares magnitude support 'insufficient', and answers with the widest distribution and lowest mode (0.2/0.5/0.3) rather than betting on an unsupported interval; it loses points because two reasoning steps attach carried-over 2024 memory content (Powell 'not in a hurry to cut rates', the long-yield 'divergence') to 2026 evidence ids that say nothing of the kind, and because it advances D1:path_1 as an 'up' driver while its own path_assessments record 'Current graph instantiation marks this path contradicted' and its summary asserts 'Directional conflict is absent' against a causal_balance of 'uncertain due to conflicting signals'.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_us_2y_yield_monthly_change_2026_06::factor_memory",
+    "v3_us_2y_yield_monthly_change_2026_06::structured_reasoning",
+    "v3_us_2y_yield_monthly_change_2026_06::hgf",
+    "v3_us_2y_yield_monthly_change_2026_06::direct_forecast",
+    "v3_us_2y_yield_monthly_change_2026_06::case_memory",
+    "v3_us_2y_yield_monthly_change_2026_06::principle_memory",
+    "v3_us_2y_yield_monthly_change_2026_06::structure_memory"
+  ],
+  "ranking_rationale": "The top traces earned the middle bucket rather than defaulting to it: factor_memory and structured_reasoning each identified opposing forces, said explicitly why both neighbouring options were excluded, and kept one consistent distribution whose symmetry matched the mixed signal they had described, while hgf ranked third on the strength of matching the thinnest declared support in the set to the widest mass. The bottom traces failed on the honesty-versus-confidence join, not on the option they picked: principle_memory declared its magnitude unsupported and its bank free of counterevidence yet produced the sharpest distribution, and structure_memory reasoned to a positive change with within and above nearly tied at 0.45 against 0.40, then republished a 0.05/0.65/0.30 vector with no reconciling argument.",
+  "shared_evidence_note": "The banks differed materially in usable content, with E1 supplying dated March-May 2026 Fed material (divided hold, minutes showing openness to hikes, dove/hawk tallies) while E0 traces leaned almost entirely on one January-2026 headline, yet all seven converged on 'within recent range', so the spread in quality reflects differences in reasoning discipline and probability calibration rather than any disagreement produced by the evidence."
+}

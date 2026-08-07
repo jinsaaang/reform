@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_us_unemployment_rate_change_2026_06",
+  "verdicts": [
+    {
+      "trace_id": "v3_us_unemployment_rate_change_2026_06::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Strong job growth in May provides labor market context but does not mechanically determine the household-survey unemployment rate for June 2026, as the relationship is indirect and the subsequent calculation step is unverified.",
+      "verdict_one_line": "The only trace that both uses its bank's hard numbers (172,000 May payrolls) and names the payroll-vs-household-survey gap that blocks converting them into a rate change, then keeps mass diffuse to match its declared 'Magnitude support is insufficient'; docked for asserting that 'the June and May 2026 unemployment rates' are 'unavailable' when its own cited snippet reports 'unemployment at 4.3%' for May, and for structural filler like 'Structural use facts: 3 of 3 routed paths contributed'.",
+      "would_a_careful_analyst_accept_this": "yes"
+    },
+    {
+      "trace_id": "v3_us_unemployment_rate_change_2026_06::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The specific details of the June 2026 jobs report and its precise impact on inflation and the Fed's policy decisions are not provided in the current evidence, leading to uncertainty about whether job growth will be strong enough to lower the unemployment rate significantly or if inflation concerns will temper policy support.",
+      "verdict_one_line": "Honest, coherent handling of a headline-only bank: it declines to import the redacted historical -0.1 change from its hindsight DAG, calls magnitude support 'insufficient', and matches that to a near-symmetric 0.25/0.5/0.25 split, though the mechanism stays at the generic 'monetary easing typically stimulates job creation' level and the stated 'slight tendency towards the lower end' is not reflected in the symmetric tails.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_unemployment_rate_change_2026_06::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The 'inflation-first stance' and 'unclear rate path' make a significant decrease in the unemployment rate (below -0.1) less probable. The most likely outcomes are a change within the recent range [-0.1, 0.1) or a slight increase (above 0.1).",
+      "verdict_one_line": "Cleanly grounded in the four E0 headlines it cites with no invented figures, and it states up front that 'the evidence does not offer direct quantitative predictions', which justifies the neutral central estimate and the asymmetric 0.1/0.6/0.3 tilt; it loses a point for leaving the within-versus-above choice partly open and for silently revising its own reasoning-stage 0.2/0.5/0.3 to 0.1/0.6/0.3.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_unemployment_rate_change_2026_06::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 3,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": false
+      },
+      "decisive_quote": "This is primarily driven by the observed weakening pace of US job creation (D1) and persistent inflationary pressures that reinforce the Federal Reserve's inflation-first stance (C1).",
+      "verdict_one_line": "The decision rationale leans on D1 as a 'weakening pace of US job creation' when the D1 node it built says the opposite ('A higher pace of job creation is expected to lead to a decrease in the monthly unemployment rate change'), and it then jumps from that directional story straight to 'the monthly change is expected to be close to zero, falling within the [-0.1, 0.1) percentage point interval' with no quantity behind the boundary claim; a bond-explainer and a 2024 construction-cost article are also stretched into Fed-policy and headwind roles.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_us_unemployment_rate_change_2026_06::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 2,
+        "prediction_alignment": 4,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": false
+      },
+      "decisive_quote": "The evidence provides specific figures for job growth (172,000 in May) and the previous unemployment rate (4.3% in May), which are direct inputs for calculating the monthly change in the unemployment rate for June. This allows for a derived magnitude assessment.",
+      "verdict_one_line": "The 172,000 and 4.3% figures are genuinely in E1, but the claim that they are 'direct inputs for calculating the monthly change ... for June' is false — a May payroll count and a May level cannot produce a June household-survey rate change — and this bogus derivation is what manufactures the central estimate of -0.15 and the 0.7 on a threshold crossing, while the trace simultaneously grades its own magnitude_support as 'supported' and says 'The magnitude of the negative change is uncertain'.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_us_unemployment_rate_change_2026_06::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 2,
+        "prediction_alignment": 1,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The forecast predicts a positive change in the unemployment rate likely exceeding 0.1 percentage points, aligning with the 'above recent range' option.",
+      "verdict_one_line": "Every reasoning step argues upward pressure and the trace explicitly maps itself to 'above recent range' at 0.6, then the forecast block silently returns 'within recent range' on the boilerplate ground that 'insufficient magnitude evidence directs the central estimate to remain within this range' — the reasoning points at a different option than the one selected, and the leap to 'exceeding 0.1 percentage points' rests on a ten-month-old 73,000-jobs headline with no quantity for June.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_us_unemployment_rate_change_2026_06::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 4,
+        "mechanism_specificity": 1
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": true,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "High; this is an explicit abstention after structured-output validation failure.",
+      "verdict_one_line": "A candid abstention whose 0.25/0.5/0.25 mass does match its declared total absence of support, but it cites none of the eight E0 items it was given, offers no mechanism beyond 'Retain a neutral baseline for the exact public target', and its reasoning block states prediction 'below recent range' under uniform thirds while the forecast block returns 'within recent range'.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_us_unemployment_rate_change_2026_06::hgf",
+    "v3_us_unemployment_rate_change_2026_06::structure_memory",
+    "v3_us_unemployment_rate_change_2026_06::direct_forecast",
+    "v3_us_unemployment_rate_change_2026_06::structured_reasoning",
+    "v3_us_unemployment_rate_change_2026_06::factor_memory",
+    "v3_us_unemployment_rate_change_2026_06::case_memory",
+    "v3_us_unemployment_rate_change_2026_06::principle_memory"
+  ],
+  "ranking_rationale": "The separator was whether a trace kept its confidence tied to what it could actually verify about June 2026: the top three each declared magnitude support insufficient and spread mass accordingly, with hgf ahead because it alone named the payroll-versus-household-survey break that stops May's 172,000 from becoming a June rate change. The bottom four each broke internally — factor_memory invented a derivation to license 0.7 on a threshold crossing, case_memory reasoned to 'above recent range' and then predicted 'within', structured_reasoning inverted its own D1 node, and principle_memory produced no question-specific content at all.",
+  "shared_evidence_note": "Both causes are present but reasoning dominates: E1 uniquely contained the May 2026 payroll and 4.3% rate figures, yet the two methods that read E1 diverged sharply (factor_memory forced them into a -0.15 point estimate while hgf treated them as context that does not identify the target), and among the five E0 methods the same headline set produced 'within', 'above' and an abstention."
+}

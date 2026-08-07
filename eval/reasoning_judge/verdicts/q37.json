@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_sp500_monthly_return_2025_06",
+  "verdicts": [
+    {
+      "trace_id": "v3_sp500_monthly_return_2025_06::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The driver 'Optimistic S&P 500 Earnings Forecasts' (D2:checkpoint_1) is UNOBSERVED. Mediators 'Positive Market Sentiment Established' (D2:checkpoint_2) and 'Market Equilibrium Maintained' (D2:checkpoint_9) are CONTRADICTED by current evidence of mixed investor sentiment and a Q1 2025 correction. Edges are UNVERIFIED or CONTRADICTED.",
+      "verdict_one_line": "The only trace that names concrete current market conditions from its own bank (Q1 correction, strong earnings with antsy investors, tariff forecasts), tests each carried-over path against them and declares the ones that fail, though it still invents the band '[-1.5, 2.5]' that mechanically excludes both tails after declaring magnitude unsupported.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_sp500_monthly_return_2025_06::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 4,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The evidence supports 'within recent range' as the most probable outcome due to the balanced nature of positive economic indicators and potential market volatility. Strong evidence for consistently exceeding or falling below the range is absent.",
+      "verdict_one_line": "Declares magnitude support as 'direction_only', keeps its latent band wide and centred at zero, and allocates symmetric 0.225/0.55/0.225 tails that actually match that declared ignorance; it also correctly refuses to import the retrieved 2023 episode's resolved option as evidence, though its 'generally stable to positive economic environment' reads more into title-only E0 snippets than they say.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_sp500_monthly_return_2025_06::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The forecast suggests a moderate positive return, aligning best with the 'within recent range' option, with 'above recent range' being a secondary possibility due to seasonal tailwinds. 'Below recent range' is considered least likely.",
+      "verdict_one_line": "Ranks all three options explicitly and gives the one genuinely title-supported driver (summer seasonality) a real role, but claims 'horizon_match: direct' for evidence that touches no part of June 2025 and manufactures a -2.0/0.5/4.0 band after conceding no quantitative forecast exists.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_sp500_monthly_return_2025_06::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 2
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The lack of definitive positive guidance from market signals (D1) or specific magnitude forecasts from professional forecasters (D2) prevents a strong conviction for an 'above recent range' outcome, thus reinforcing the likelihood of a 'within recent range' prediction.",
+      "verdict_one_line": "The most grounding-disciplined E0 trace: it keeps its driver observations at the level its title-only snippets actually support ('Key market signals are being watched'), marks them 'uncertain' rather than positive, and invents no numeric band, but its causal content is pure filler ('A strong economic foundation generally supports positive market performance') dressed in DAG scaffolding.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_sp500_monthly_return_2025_06::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Multiple sources indicate a positive economic outlook for the US in 2025, including Q1 and Q2, suggesting a supportive environment for equity markets.",
+      "verdict_one_line": "Reads a directional 'positive economic outlook' into five E0 items that are bare titles stating no direction at all (CBO, Deloitte, SPF, St. Louis Fed), then declares magnitude support 'insufficient' while still producing a -0.5/1.0/3.5 band whose upper edge is used to grade the boundary; the option choice itself is cleanly argued.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_sp500_monthly_return_2025_06::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 4,
+        "probability_justification": 1,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The central estimate of 0.5% falls significantly above the upper bound of this interval.",
+      "verdict_one_line": "Sets directional_signal 'up', grades 'below recent range' as outright unsupported on that quote, then hands 'below' 0.30 — double the 0.15 it gives 'above' — after its own reasoning stage had them symmetric at 0.20/0.20, so the mass ordering relies on the negation of what it asserted.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_sp500_monthly_return_2025_06::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 1,
+        "logical_validity": 1,
+        "prediction_alignment": 1,
+        "probability_justification": 2,
+        "mechanism_specificity": 1
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": true,
+        "internal_contradiction": true,
+        "boilerplate_only": true,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Insufficient magnitude evidence requires the central estimate and modal option to remain within the recent range as per instructions.",
+      "verdict_one_line": "An abstention shell with zero evidence cited from its own bank and no question-specific content ('Retain a neutral baseline for the exact public target'), whose reasoning stage names 'below recent range' with uniform 1/3 mass while the forecast stage returns 'within recent range' at 0.50, and which pulls a three-decimal central estimate of 0.883 percent out of a basis that itself says no validated evidence exists; the honest self-labelling as an explicit abstention is the only redeeming feature.",
+      "would_a_careful_analyst_accept_this": "no"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_sp500_monthly_return_2025_06::hgf",
+    "v3_sp500_monthly_return_2025_06::case_memory",
+    "v3_sp500_monthly_return_2025_06::principle_memory",
+    "v3_sp500_monthly_return_2025_06::structured_reasoning",
+    "v3_sp500_monthly_return_2025_06::direct_forecast",
+    "v3_sp500_monthly_return_2025_06::structure_memory",
+    "v3_sp500_monthly_return_2025_06::factor_memory"
+  ],
+  "ranking_rationale": "The top traces earned their identical 'within recent range' answer by naming what they could not verify and then letting the probability mass reflect it — hgf by falsifying each carried-over causal path against named current conditions, case_memory by holding symmetric tails around a declared direction-only signal. The bottom traces broke on self-consistency rather than on evidence: structure_memory called 'below' unsupported and then gave it the largest tail, and factor_memory abstained, named 'below recent range' in its reasoning, invented a 0.883 percent central estimate, and shipped 'within recent range' anyway.",
+  "shared_evidence_note": "All seven landed on the same option, so the split is about reasoning discipline rather than evidence, but the banks were not neutral: E0 is a set of bare headlines with no directional content, which the five E0 traces variously over-read as a 'positive economic outlook', whereas E1 gave hgf the only concrete current-market facts in the packet (a Q1 2025 correction, strong earnings alongside anxious investors, tariff forecasts) and hence the only mechanism tied to the target period."
+}

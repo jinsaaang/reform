@@ -1,0 +1,170 @@
+{
+ "question_id": "v3_us_3m_yield_monthly_change_2026_06",
+ "verdicts": [
+  {
+   "trace_id": "v3_us_3m_yield_monthly_change_2026_06::direct_forecast",
+   "method": "direct_forecast",
+   "scores": {
+    "evidence_grounding": 4,
+    "logical_validity": 2,
+    "prediction_alignment": 2,
+    "probability_justification": 4,
+    "mechanism_specificity": 1
+   },
+   "flags": {
+    "unsupported_magnitude_leap": false,
+    "hallucinated_number": false,
+    "internal_contradiction": true,
+    "boilerplate_only": false,
+    "post_hoc_option_fit": false,
+    "admits_own_gap": true
+   },
+   "decisive_quote": "Given the lack of evidence, the prediction cannot be definitively mapped to 'yes' or 'no' based on factual support.",
+   "verdict_one_line": "Honestly diagnoses that the E0 bank (title-only stubs) supports nothing and holds mass at 50/50, but the reasoning stage records prediction 'yes' while the forecast stage outputs 'no', and no mechanism is offered at all.",
+   "would_a_careful_analyst_accept_this": "with_reservations"
+  },
+  {
+   "trace_id": "v3_us_3m_yield_monthly_change_2026_06::structured_reasoning",
+   "method": "structured_reasoning",
+   "scores": {
+    "evidence_grounding": 2,
+    "logical_validity": 3,
+    "prediction_alignment": 3,
+    "probability_justification": 3,
+    "mechanism_specificity": 3
+   },
+   "flags": {
+    "unsupported_magnitude_leap": true,
+    "hallucinated_number": false,
+    "internal_contradiction": false,
+    "boilerplate_only": false,
+    "post_hoc_option_fit": false,
+    "admits_own_gap": true
+   },
+   "decisive_quote": "the evidence from the Professional Forecasters' Survey (art_snippet_77c3c6d77d893137) suggests moderating inflation, which is expected to limit the need for aggressive monetary policy tightening",
+   "verdict_one_line": "Builds a genuine driver/countervailing structure and resolves it explicitly, but the decisive 'moderating inflation' content is attributed to an E0 snippet that contains only a headline, and the jump from that direction to a sub-half-basis-point boundary is unquantified.",
+   "would_a_careful_analyst_accept_this": "with_reservations"
+  },
+  {
+   "trace_id": "v3_us_3m_yield_monthly_change_2026_06::factor_memory",
+   "method": "factor_memory",
+   "scores": {
+    "evidence_grounding": 4,
+    "logical_validity": 4,
+    "prediction_alignment": 4,
+    "probability_justification": 3,
+    "mechanism_specificity": 4
+   },
+   "flags": {
+    "unsupported_magnitude_leap": true,
+    "hallucinated_number": false,
+    "internal_contradiction": false,
+    "boilerplate_only": false,
+    "post_hoc_option_fit": false,
+    "admits_own_gap": true
+   },
+   "decisive_quote": "The prevailing hawkish sentiment from the Fed in May 2026 suggests that the 3-month Treasury yield is likely to experience upward movement in June 2026, increasing the probability that the monthly change will be at least 0.005 percentage points.",
+   "verdict_one_line": "Cleanest chain in the set: dated May-2026 Fed-minutes evidence from its own E1 bank, older rate-cut expectations explicitly retired as superseded counterevidence, and a modest 0.6 that matches direction-only support, though the central estimate placed exactly on the 0.005 threshold and calling 'no' 'unsupported' overstates what direction-only evidence can settle.",
+   "would_a_careful_analyst_accept_this": "with_reservations"
+  },
+  {
+   "trace_id": "v3_us_3m_yield_monthly_change_2026_06::principle_memory",
+   "method": "principle_memory",
+   "scores": {
+    "evidence_grounding": 4,
+    "logical_validity": 2,
+    "prediction_alignment": 2,
+    "probability_justification": 2,
+    "mechanism_specificity": 2
+   },
+   "flags": {
+    "unsupported_magnitude_leap": false,
+    "hallucinated_number": false,
+    "internal_contradiction": true,
+    "boilerplate_only": false,
+    "post_hoc_option_fit": false,
+    "admits_own_gap": true
+   },
+   "decisive_quote": "The provided evidence is insufficient to form a reliable estimate for the monthly 3-month yield change in June 2026.",
+   "verdict_one_line": "Correctly notes the only relevant E0 item is a prior-quarter survey with no usable content, but then contradicts its own 'yes' reasoning-stage prediction with a 'no' forecast and moves from 50/50 to 30/70 with no argument beyond a null central estimate.",
+   "would_a_careful_analyst_accept_this": "with_reservations"
+  },
+  {
+   "trace_id": "v3_us_3m_yield_monthly_change_2026_06::case_memory",
+   "method": "case_memory",
+   "scores": {
+    "evidence_grounding": 3,
+    "logical_validity": 2,
+    "prediction_alignment": 2,
+    "probability_justification": 2,
+    "mechanism_specificity": 1
+   },
+   "flags": {
+    "unsupported_magnitude_leap": false,
+    "hallucinated_number": false,
+    "internal_contradiction": true,
+    "boilerplate_only": true,
+    "post_hoc_option_fit": false,
+    "admits_own_gap": true
+   },
+   "decisive_quote": "No validated current driver is strong enough to move the forecast away from the neutral baseline.",
+   "verdict_one_line": "A generic post-validation-failure abstention with no question-specific content, whose declared 50/50 abstention is nonetheless converted into a 30/70 'no' after a reasoning stage that had recorded 'yes'.",
+   "would_a_careful_analyst_accept_this": "no"
+  },
+  {
+   "trace_id": "v3_us_3m_yield_monthly_change_2026_06::structure_memory",
+   "method": "structure_memory",
+   "scores": {
+    "evidence_grounding": 3,
+    "logical_validity": 2,
+    "prediction_alignment": 2,
+    "probability_justification": 2,
+    "mechanism_specificity": 1
+   },
+   "flags": {
+    "unsupported_magnitude_leap": false,
+    "hallucinated_number": false,
+    "internal_contradiction": true,
+    "boilerplate_only": true,
+    "post_hoc_option_fit": false,
+    "admits_own_gap": true
+   },
+   "decisive_quote": "Structured reasoning could not be validated; no current evidence-supported magnitude claim is retained.",
+   "verdict_one_line": "Byte-identical fallback abstention to case_memory: honest about the failure, but contains no drivers, no citations and no mechanism, and still shifts to 30/70 against its own stated 50/50 abstention.",
+   "would_a_careful_analyst_accept_this": "no"
+  },
+  {
+   "trace_id": "v3_us_3m_yield_monthly_change_2026_06::hgf",
+   "method": "hgf",
+   "scores": {
+    "evidence_grounding": 3,
+    "logical_validity": 2,
+    "prediction_alignment": 2,
+    "probability_justification": 3,
+    "mechanism_specificity": 4
+   },
+   "flags": {
+    "unsupported_magnitude_leap": true,
+    "hallucinated_number": false,
+    "internal_contradiction": true,
+    "boilerplate_only": false,
+    "post_hoc_option_fit": true,
+    "admits_own_gap": true
+   },
+   "decisive_quote": "Furthermore, historical causal paths are either contradicted or unresolved, leaving no clear directional support for the target metric.",
+   "verdict_one_line": "Richest mechanism work in the set and accurate use of the E1 payroll figures plus an honest report that one historical path is contradicted, but its own causal balance concludes 'uncertain' with 'no clear directional support' while the forecast asserts directional_signal 'up', sets the central estimate exactly on the threshold and calls 'no' unsupported.",
+   "would_a_careful_analyst_accept_this": "with_reservations"
+  }
+ ],
+ "within_question_ranking": [
+  "v3_us_3m_yield_monthly_change_2026_06::factor_memory",
+  "v3_us_3m_yield_monthly_change_2026_06::structured_reasoning",
+  "v3_us_3m_yield_monthly_change_2026_06::hgf",
+  "v3_us_3m_yield_monthly_change_2026_06::direct_forecast",
+  "v3_us_3m_yield_monthly_change_2026_06::principle_memory",
+  "v3_us_3m_yield_monthly_change_2026_06::case_memory",
+  "v3_us_3m_yield_monthly_change_2026_06::structure_memory"
+ ],
+ "ranking_rationale": "The top trace tied dated, on-topic evidence from its own bank to a short-rate mechanism, retired its counterevidence explicitly, and kept its probability modest, so its reasoning and its selection point the same way. The bottom traces either produced content-free fallback abstentions or let a 'yes' reasoning stage stand behind a 'no' forecast, and the middle traces lost points for inventing survey content or for declaring the direction uncertain and then forecasting on it anyway.",
+ "shared_evidence_note": "The yes/no split tracks the banks rather than reasoning skill: the E0 bank contained only title-stub snippets with no policy content, pushing those five traces to abstain or to invent a dovish reading, while the two E1 traces saw dated May-2026 headlines about Fed officials opening to a hike and both mapped that to 'yes'."
+}

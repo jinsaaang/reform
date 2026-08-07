@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_us_10y_yield_monthly_change_2025_11",
+  "verdicts": [
+    {
+      "trace_id": "v3_us_10y_yield_monthly_change_2025_11::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 3,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The evidence suggests a balance of forces; Fed caution against further easing may limit significant yield declines, leaning towards the 'yes' outcome (change >= -0.06 pp), but market volatility and other factors introduce substantial uncertainty.",
+      "verdict_one_line": "Faithful to its E0 headlines and honest that magnitude is 'unsupported', but it then rules the 'no' branch out ('The central estimate of 0.0 falls outside the 'no' interval') even though its own stated band of -0.5 to +0.5 puts heavy mass below -0.06, and the probability silently rises from 0.55 in the reasoning to 0.65 in the forecast.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_10y_yield_monthly_change_2025_11::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": false
+      },
+      "decisive_quote": "While downward pressures exist, the evidence emphasizes 'whipsaw' and 'uncertainty,' suggesting that the yield change may not be a large enough decrease to fall below -0.06 percentage points.",
+      "verdict_one_line": "The stated dominant driver points the other way - 'The Federal Reserve has been cutting rates (D1), which generally puts downward pressure on Treasury yields' - yet D1 is listed among the dominant factors supporting 'yes', and the pivot rests on treating whipsaw volatility as evidence for a *smaller* move, which inverts what volatility implies.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_us_10y_yield_monthly_change_2025_11::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 2,
+        "logical_validity": 2,
+        "prediction_alignment": 4,
+        "probability_justification": 1,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": false
+      },
+      "decisive_quote": "The available evidence suggests factors that would likely lead to yields remaining stable or increasing, rather than decreasing by at least 0.06 percentage points in November 2025. This supports the 'yes' prediction.",
+      "verdict_one_line": "The 2.9% inflation figure is correctly taken from its own E1 bank, but it labels the fit 'metric_match: direct' and 'magnitude_support: supported' when E1 contains no yield quantity at all, mis-reads a UK IFS Budget headline as 'Concerns regarding US fiscal health', treats a May-2025 'Fed keeps interest rates higher' headline as the November stance, then converts absence of contrary evidence into a -0.05/0.00/+0.10 band and 0.9 confidence.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_us_10y_yield_monthly_change_2025_11::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 4,
+        "mechanism_specificity": 1
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": true,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "High; this is an explicit abstention after structured-output validation failure.",
+      "verdict_one_line": "A clean, self-declared abstention - 'Structured reasoning could not be validated; no current evidence-supported magnitude claim is retained' - whose near-uniform 0.55/0.45 correctly matches its declared ignorance, but it cites no evidence, offers no mechanism, and its 'yes' is a tie-break artifact of a 0.0 central estimate rather than a selected option.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_10y_yield_monthly_change_2025_11::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 5,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 4,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The evidence suggests a downward pressure on yields from rate cuts, which could lead to a change of -0.06 pp or more (satisfying 'yes'). However, the volatility and uncertainty mean the change could also be less than -0.06 pp (leading to 'no'), or even positive (also 'yes'). The specific magnitude is not supported.",
+      "verdict_one_line": "Every claim maps accurately onto its E0 headlines (July hold, October cut, Powell's doubts, whipsaw), it declines to invent a magnitude, marks both boundary branches 'plausible' and keeps mass near-uniform at 0.55/0.45 - the sign handling in the bridge sentence is garbled (downward pressure is labelled as satisfying 'yes'), and the final 'yes' is left underdetermined.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_10y_yield_monthly_change_2025_11::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The Fed's rate cut pushes yields down (more negative change), while the doubts about future easing push yields up or limit the fall (less negative or positive change). Given these counteracting forces, it is plausible that the net monthly change will be less negative than -0.06 pp, thus satisfying the 'yes' condition.",
+      "verdict_one_line": "The tightest causal chain here - it resolves the cut-versus-hawkish-guidance tension explicitly and correctly refuses to treat the ablation DAG as evidence - but it declares support 'direction_only' and then manufactures a -0.07/-0.04/+0.01 band from a single headline, placing the central estimate 2bp on the convenient side of the threshold.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_us_10y_yield_monthly_change_2025_11::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 3,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The target metric (monthly 10-year yield change) is unobservable due to the missing baseline data. Current evidence points to upward pressure on yields from inflation, monetary policy, and market sentiment, but cannot confirm if the change will meet the -0.06 percentage point threshold.",
+      "verdict_one_line": "The only trace that audits its retrieved historical paths against current evidence and reports them contradicted, and it names its blocking gap honestly, but it cites the Lisa Cook removal article as support for 'The Federal Reserve is maintaining higher interest rates', never reconciles 'favored_direction: up' with a 0.5/0.5 split, and its -2.0 to +2.0 pp band is an implausible range for a monthly 10-year yield change.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_us_10y_yield_monthly_change_2025_11::case_memory",
+    "v3_us_10y_yield_monthly_change_2025_11::structure_memory",
+    "v3_us_10y_yield_monthly_change_2025_11::direct_forecast",
+    "v3_us_10y_yield_monthly_change_2025_11::hgf",
+    "v3_us_10y_yield_monthly_change_2025_11::principle_memory",
+    "v3_us_10y_yield_monthly_change_2025_11::structured_reasoning",
+    "v3_us_10y_yield_monthly_change_2025_11::factor_memory"
+  ],
+  "ranking_rationale": "The top traces kept their claims inside what their bank actually says and matched confidence to it: case_memory paraphrased its headlines accurately, refused to invent a magnitude and stayed near 0.55, while structure_memory built the clearest cut-versus-hawkish-guidance mechanism but paid for a fabricated -0.04 central estimate. The bottom two failed the central test in opposite ways - structured_reasoning nominated a downward driver as the dominant support for a not-much-decline conclusion, and factor_memory declared magnitude 'supported' from a bank containing no yield quantity and escalated to 0.9.",
+  "shared_evidence_note": "Bank composition drove the directional split - the E0 methods saw the 29 October 'Fed cuts rates again, but Powell raises doubts' headline and reasoned around a dovish-but-cautious Fed, while the E1 methods saw no rate-cut news at all (only a May 'Fed keeps interest rates higher' headline plus the October bond selloff) and therefore leaned 'up' - but the confidence spread from 0.50 to 0.90 came purely from how differently each method reasoned over equally headline-thin evidence."
+}

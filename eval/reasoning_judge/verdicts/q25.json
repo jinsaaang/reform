@@ -1,0 +1,170 @@
+{
+  "question_id": "v3_googl_revenue_growth_acceleration_2025_12_31",
+  "verdicts": [
+    {
+      "trace_id": "v3_googl_revenue_growth_acceleration_2025_12_31::hgf",
+      "method": "hgf",
+      "scores": {
+        "evidence_grounding": 5,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 5
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Derived from Q3 2025 performance (16% YoY growth) and identified positive growth drivers (AI, Cloud, Advertising), tempered by the absence of specific Q4 2025 forecasts",
+      "verdict_one_line": "Only trace whose central estimate is anchored to a quantity actually in its bank (the 16% Q3 figure in E1) and carried through a named AI-to-Cloud-to-revenue and AI-to-YouTube-ads mechanism, but a symmetric [10,22] interval centred at 16 against a 15.95 threshold implies roughly even odds, not the 0.65 it assigns.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_googl_revenue_growth_acceleration_2025_12_31::factor_memory",
+      "method": "factor_memory",
+      "scores": {
+        "evidence_grounding": 5,
+        "logical_validity": 3,
+        "prediction_alignment": 4,
+        "probability_justification": 2,
+        "mechanism_specificity": 4
+      },
+      "flags": {
+        "unsupported_magnitude_leap": false,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "No evidence-supported magnitude distinguishes this option; the contract-centered abstention is intentionally broad.",
+      "verdict_one_line": "The narrative reasoning is the best-grounded of the E1 pair and cleanly entails 'yes' via \"Alphabet Inc. reported 16% year-over-year revenue growth in Q3 2025, which is above the target threshold of 15.95%\" at 0.7, but the delivered forecast block then negates that finding as an abstention and collapses the mass to 0.51/0.49, so the stated support and the final distribution point in opposite directions.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_googl_revenue_growth_acceleration_2025_12_31::principle_memory",
+      "method": "principle_memory",
+      "scores": {
+        "evidence_grounding": 4,
+        "logical_validity": 4,
+        "prediction_alignment": 4,
+        "probability_justification": 3,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "To achieve at least 15.95% YoY revenue growth in Q4 2025, Alphabet must demonstrate a significant acceleration from its Q4 2024 performance (12%)",
+      "verdict_one_line": "Within the thin E0 bank this is the most coherent chain: it anchors on the one number E0 actually contains (12% in Q4 2024), states plainly that Q3 2025 percentages are absent, and reaches 'no' by an explicit size-of-required-acceleration argument, though the central 14% that excludes 'yes' rests on \"Qualitative assessment\" and the mass hardens from 0.6 to 0.7 between blocks with no added reason.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_googl_revenue_growth_acceleration_2025_12_31::case_memory",
+      "method": "case_memory",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 4,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The analogous resolved episode for Q4 2024 indicated that achieving a high growth threshold (15.09%) was not met.",
+      "verdict_one_line": "Leans on the prior episode's resolved outcome as downward counterevidence despite its own memory block instructing that \"Historical facts and its resolved option are never evidence for the current target\", and its decisive central of 15.5% is asserted rather than derived; credit for the sharp catch that the contract says 'growth acceleration' while the predicate is a fixed threshold, and for keeping the mass near-uniform (0.45/0.55) to match its declared insufficiency.",
+      "would_a_careful_analyst_accept_this": "with_reservations"
+    },
+    {
+      "trace_id": "v3_googl_revenue_growth_acceleration_2025_12_31::structured_reasoning",
+      "method": "structured_reasoning",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 3,
+        "prediction_alignment": 3,
+        "probability_justification": 2,
+        "mechanism_specificity": 3
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": false,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "the evidence suggests the positive impacts are likely to lead to year-over-year revenue growth at or above the 15.95% threshold required by the resolution rule",
+      "verdict_one_line": "Builds a plausible driver/countervailing DAG (AI, Ads versus a Cloud miss) but leaves its own baseline node \"Alphabet Inc. Q3 2025 YoY Revenue Growth Rate\" with zero evidence and no value, then crosses a numeric boundary and assigns 0.6 to 'yes' on purely directional grounds; nothing in the trace distinguishes 15.95% from any other threshold.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_googl_revenue_growth_acceleration_2025_12_31::direct_forecast",
+      "method": "direct_forecast",
+      "scores": {
+        "evidence_grounding": 3,
+        "logical_validity": 2,
+        "prediction_alignment": 2,
+        "probability_justification": 2,
+        "mechanism_specificity": 2
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": false,
+        "post_hoc_option_fit": false,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "Broad range reflecting positive trends and AI-driven growth, but lacking specific Q4 2025 forecasts.",
+      "verdict_one_line": "Every reasoning step is marked 'up' with \"No specific counterevidence\" and the reasoning block records prediction 'yes' at 0.5/0.5, yet the forecast block conjures a central of 12% from a basis that cites only \"positive trends\" and flips to 'no' at 0.6 — the trace relies on the negation of what it just argued, and the number that decides the answer is never tied to a source.",
+      "would_a_careful_analyst_accept_this": "no"
+    },
+    {
+      "trace_id": "v3_googl_revenue_growth_acceleration_2025_12_31::structure_memory",
+      "method": "structure_memory",
+      "scores": {
+        "evidence_grounding": 1,
+        "logical_validity": 1,
+        "prediction_alignment": 1,
+        "probability_justification": 1,
+        "mechanism_specificity": 1
+      },
+      "flags": {
+        "unsupported_magnitude_leap": true,
+        "hallucinated_number": false,
+        "internal_contradiction": true,
+        "boilerplate_only": true,
+        "post_hoc_option_fit": true,
+        "admits_own_gap": true
+      },
+      "decisive_quote": "The broad estimate [-20, 20] has significant overlap with the 'no' interval, including its central estimate (0), making it the most supported option by the estimate.",
+      "verdict_one_line": "Cites no evidence at all, offers only placeholders such as \"Retain a neutral baseline for the exact public target\", records prediction 'yes' at 0.5/0.5 in its reasoning, then manufactures a [-20, 20] interval centred on 0 percent revenue growth — a figure with no basis in anything it read — and converts that artefact into 0.7 on 'no' while calling itself an explicit abstention.",
+      "would_a_careful_analyst_accept_this": "no"
+    }
+  ],
+  "within_question_ranking": [
+    "v3_googl_revenue_growth_acceleration_2025_12_31::hgf",
+    "v3_googl_revenue_growth_acceleration_2025_12_31::factor_memory",
+    "v3_googl_revenue_growth_acceleration_2025_12_31::principle_memory",
+    "v3_googl_revenue_growth_acceleration_2025_12_31::case_memory",
+    "v3_googl_revenue_growth_acceleration_2025_12_31::structured_reasoning",
+    "v3_googl_revenue_growth_acceleration_2025_12_31::direct_forecast",
+    "v3_googl_revenue_growth_acceleration_2025_12_31::structure_memory"
+  ],
+  "ranking_rationale": "What separated the top from the bottom was whether the trace attached its boundary decision to a quantity it could actually point at: hgf and factor_memory both located a concrete anchor and named the mechanism carrying it into the target quarter, while principle_memory did the same honest job with the weaker number available to it. The bottom three all crossed or straddled a precise threshold on purely directional grounds, and two of them (direct_forecast, structure_memory) reversed their own recorded prediction between the reasoning and forecast blocks, with structure_memory inventing a [-20, 20] interval to justify a 0.7 it had just declared itself unable to support.",
+  "shared_evidence_note": "Both causes are present but the bank difference dominates: the 16% Q3 2025 figure exists only in E1, so the two E1 traces could anchor on a number straddling the 15.95% threshold and reached 'yes', while the E0 traces saw only headline-level Q3 coverage plus the 12% Q4 2024 print and mostly reached 'no' — yet within E0 the methods still diverged (structured_reasoning said 'yes', principle_memory and case_memory said 'no') from identical material, so reasoning differences matter on top of the bank split."
+}
