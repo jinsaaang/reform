@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Run the six controlled baselines from the frozen comparison implementation."""
 
 from __future__ import annotations
@@ -10,7 +9,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-BASE_SRC = ROOT / "hgf" / "shared"
+SOURCE_ROOT = ROOT / "hgf"
 METHODS = (
     "direct_forecast",
     "structured_reasoning",
@@ -80,7 +79,7 @@ def main() -> int:
     env = os.environ.copy()
     existing = env.get("PYTHONPATH")
     env["PYTHONPATH"] = os.pathsep.join(
-        [str(BASE_SRC), *([existing] if existing else [])]
+        [str(SOURCE_ROOT), *([existing] if existing else [])]
     )
     if args.dry_run:
         print(" ".join(command))

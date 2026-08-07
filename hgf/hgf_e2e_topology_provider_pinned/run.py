@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Run frozen Procedural Topology HGF with an exact provider route.
 
 The forecasting prompts, schemas, validators, and stage order are unchanged.
@@ -15,12 +14,6 @@ import json
 import sys
 from pathlib import Path
 from typing import Any
-
-import hgf as hgf_package
-
-_ACTIVE_HGF_EXTENSION = Path(__file__).resolve().parents[1] / "hgf"
-if str(_ACTIVE_HGF_EXTENSION) not in hgf_package.__path__:
-    hgf_package.__path__.append(str(_ACTIVE_HGF_EXTENSION))
 
 from hgf.forecast_core import _atomic_write
 from hgf_e2e_topology_sidecar import run as sidecar_run

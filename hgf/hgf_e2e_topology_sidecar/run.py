@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Run the byte-identical frozen HGF while recording API calls as sidecars.
 
 The recorder forwards every client constructor argument and completion-call
@@ -17,17 +16,10 @@ import time
 from pathlib import Path
 from typing import Any
 
-from openai import OpenAI as OriginalOpenAI
-
-import hgf as hgf_package
-
-_ACTIVE_HGF_EXTENSION = Path(__file__).resolve().parents[1] / "hgf"
-if str(_ACTIVE_HGF_EXTENSION) not in hgf_package.__path__:
-    hgf_package.__path__.append(str(_ACTIVE_HGF_EXTENSION))
-
 from hgf.forecast_core import _atomic_write
 from hgf.provider_serialization import unwrap_function_envelope
 from hgf_e2e_topology import run as frozen_run
+from openai import OpenAI as OriginalOpenAI
 
 _CONTEXT = threading.local()
 _ORIGINAL_RUN_CASE = frozen_run._run_case

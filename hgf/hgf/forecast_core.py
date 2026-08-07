@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Shared evidence, schema, scoring, and forecast-DAG primitives."""
 
 from __future__ import annotations

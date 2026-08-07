@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Run independent single-forecast end-to-end topology HGF."""
 
 from __future__ import annotations
@@ -16,8 +15,6 @@ from statistics import fmean
 from typing import Any
 
 from dotenv import find_dotenv, load_dotenv
-from openai import OpenAI
-
 from hgf.baselines import _condition_evidence
 from hgf.boundary import _call_boundary_mapping
 from hgf.contracts import (
@@ -33,6 +30,7 @@ from hgf.generation import configure_generation
 from hgf.memory_bank import load_hgf_blueprint_bank
 from hgf.memory_retrieval import select_relevant_blueprints
 from hgf.question_io import family_metadata, read_questions, resolve_forecast_cutoff
+from openai import OpenAI
 
 from .core import (
     attach_graph_audit,

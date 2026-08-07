@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Boundary-aware probability mapping for an existing reasoning trace.
 
 The previous prediction and probabilities are hidden from this stage. The

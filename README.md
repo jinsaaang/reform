@@ -18,16 +18,18 @@ anchor to a baseline prediction, or choose a result by its score.
 
 | Path | Contents |
 |---|---|
-| `hgf/method` | The HGF method. |
-| `hgf/shared` | Shared utilities and the six baseline implementations. |
-| `hgf/execution` | Raw-call recording and OpenRouter provider pinning. |
+| `hgf/hgf` | Shared utilities, the six baselines, and benchmark validation. |
+| `hgf/hgf_e2e_topology` | The HGF method. |
+| `hgf/hgf_e2e_topology_sidecar` | Records every API call alongside the run. |
+| `hgf/hgf_e2e_topology_provider_pinned` | Pins the OpenRouter provider. |
 | `scripts/run_hgf.py` | Run HGF on a compatible benchmark. |
 | `scripts/run_baselines.py` | Run the six baselines. |
 | `scripts/validate_inputs.py` | Check benchmark artifacts without an API call. |
 
-The three directories under `hgf/` are `PYTHONPATH` roots, not packages. They
-supply the importable packages `hgf`, `hgf_e2e_topology`,
-`hgf_e2e_topology_sidecar`, and `hgf_e2e_topology_provider_pinned`.
+`hgf/` is the single `PYTHONPATH` root and holds the four importable packages.
+Each script is a thin launcher: it puts that root on `PYTHONPATH` and runs the
+corresponding module with `python -m`. There is no build step and nothing to
+install; `pip install .` is not supported.
 
 ## Install
 

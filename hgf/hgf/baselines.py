@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Run the controlled paper-method comparison on frozen cutoff-safe evidence.
 
 The six baselines share the same model, target contract, output validator,

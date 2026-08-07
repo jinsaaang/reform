@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Evidence reranking, JSON repair, and fixed-exemplar forecast contracts."""
 
 from __future__ import annotations

@@ -4,12 +4,12 @@ import inspect
 from types import SimpleNamespace
 
 import pytest
-
-from hgf import exemplar
 from hgf.boundary import _neutral_boundary_payload, _validate_boundary_forecast
 from hgf_e2e_topology.core import _schema, _validate
 from hgf_e2e_topology.pipeline import compile_worked_reasoning_check
 from hgf_e2e_topology_sidecar.run import _stage
+
+from hgf import exemplar
 
 
 def _step(step_type: str, source_id: str) -> dict[str, object]:

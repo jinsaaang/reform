@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Run the canonical Procedural Topology HGF on a compatible benchmark."""
 
 from __future__ import annotations
@@ -12,11 +11,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE_ROOTS = (
-    ROOT / "hgf" / "method",
-    ROOT / "hgf" / "shared",
-    ROOT / "hgf" / "execution",
-)
+SOURCE_ROOT = ROOT / "hgf"
 
 
 def _args() -> argparse.Namespace:
@@ -98,13 +93,13 @@ def main() -> int:
     env = os.environ.copy()
     existing = env.get("PYTHONPATH")
     env["PYTHONPATH"] = os.pathsep.join(
-        [*(str(path) for path in SOURCE_ROOTS), *([existing] if existing else [])]
+        [str(SOURCE_ROOT), *([existing] if existing else [])]
     )
     launch = {
         "schema_version": "procedural_topology_hgf_portable_launch_v1",
         "command": command,
         "dataset_root": str(dataset),
-        "source_roots": [str(path) for path in SOURCE_ROOTS],
+        "source_root": str(SOURCE_ROOT),
     }
     if args.dry_run:
         print(json.dumps(launch, ensure_ascii=False, indent=2))

@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Principle Memory baseline primitives on frozen cutoff-safe evidence.
 
 One resolved historical event is distilled into answer-free forecasting
