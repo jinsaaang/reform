@@ -262,7 +262,7 @@ def select_relevant_blueprints(
     return selected
 
 
-def compile_hgf_search_memory(
+def compile_factor_memory_cards(
     blueprints: list[dict[str, Any]],
     max_factors: int = 8,
 ) -> str:
@@ -292,7 +292,7 @@ def compile_hgf_search_memory(
     )[:max_factors]
     return json.dumps(
         {
-            "view": "hgf_search_cards",
+            "view": "factor_memory_cards",
             "instructions": (
                 "Use these as query-expansion and coverage hints only. The target "
                 "question remains the search anchor; no historical outcome or edge "

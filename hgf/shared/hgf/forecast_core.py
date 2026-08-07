@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Shared evidence, schema, scoring, and prospective-DAG primitives."""
+"""Shared evidence, schema, scoring, and forecast-DAG primitives."""
 
 from __future__ import annotations
 
@@ -14,20 +14,9 @@ from openai import OpenAI
 
 from hgf.generation import completion_parameters, seed_suffix
 
-_SEED_SALTS = {
-    "semantic_lessons": "dag-semantic-lessons-v27",
-    "expert_reasoning": "dag-only-expert-memory-v27-reasoning",
-    "boundary_mapping": "dag-only-expert-memory-v27-boundary",
-}
-
 
 def _seed(question_id: str, stage: str) -> int:
-    """Derive the per-stage seed.
-
-    The salts are the stage names under which the registered runs were seeded.
-    They are kept verbatim so that a replay reproduces the same seeds.
-    """
-    stage = _SEED_SALTS.get(stage, stage)
+    """Derive a deterministic per-question, per-stage seed."""
     seed_material = f"{question_id}:{stage}{seed_suffix()}"
     return (
         int(
@@ -153,7 +142,7 @@ def _single_dag_plan_schema() -> dict[str, Any]:
         ],
     }
     return {
-        "name": "single_prospective_dag_plan",
+        "name": "single_dag_plan",
         "strict": True,
         "schema": {
             "type": "object",

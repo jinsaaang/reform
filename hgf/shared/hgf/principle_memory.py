@@ -34,7 +34,7 @@ _WRITE_LOCK = threading.Lock()
 
 def _principle_memory_schema() -> dict[str, Any]:
     return {
-        "name": "plain_text_hindsight_memory",
+        "name": "principle_memory",
         "strict": True,
         "schema": {
             "type": "object",
@@ -172,7 +172,7 @@ def _distill_principle_memory(
         ),
         prompt=prompt,
         schema=_principle_memory_schema(),
-        seed=_seed(str(memory_question.id), "plain-text-hindsight-memory"),
+        seed=_seed(str(memory_question.id), "paper-principle-memory-distillation"),
         max_tokens=max_tokens,
         validator=validator,
     )

@@ -56,7 +56,7 @@ from hgf.memory_bank import (
     load_graph_bank,
 )
 from hgf.memory_retrieval import (
-    compile_hgf_search_memory,
+    compile_factor_memory_cards,
     compile_raw_dag_ablation,
     select_relevant_blueprints,
 )
@@ -77,7 +77,6 @@ METHODS = (
     "structure_memory",
 )
 NO_MEMORY_METHODS = frozenset({"direct_forecast", "structured_reasoning"})
-_FACTOR_MEMORY_WIRE_VIEW = "hgf_search_cards_v1"
 
 
 METHOD_LABELS = {
@@ -105,15 +104,6 @@ METHOD_REFERENCES = {
     "principle_memory": ["ExpeL"],
     "case_memory": ["A-Mem"],
     "structure_memory": ["WorldReasoner"],
-}
-
-_BOUNDARY_SEED_ROLES = {
-    "direct_forecast": "paper-search_only-boundary",
-    "structured_reasoning": "paper-prospective_dag-boundary",
-    "factor_memory": "paper-factor_memory-boundary",
-    "principle_memory": "paper-text_memory-boundary",
-    "case_memory": "paper-case_memory-boundary",
-    "structure_memory": "paper-direct_dag-boundary",
 }
 
 _WRITE_LOCK = threading.Lock()
@@ -287,9 +277,6 @@ def _call_memory_reasoning(
     allow_neutral_fallback: bool = False,
 ) -> tuple[dict[str, Any], dict[str, int], float, bool]:
     evidence_ids = {str(item["id"]) for item in evidence}
-    wire_memory = memory
-    if isinstance(memory, dict) and memory.get("view") == "hgf_search_cards":
-        wire_memory = {**memory, "view": _FACTOR_MEMORY_WIRE_VIEW}
     memory_instruction = {
         "none": (
             "No historical memory is available. Reason only from the current "
@@ -327,7 +314,7 @@ def _call_memory_reasoning(
         "crossing. Use only current evidence IDs for current factual claims. "
         f"{memory_instruction}\n\n"
         f"CURRENT CASE:\n{json.dumps(public_case, ensure_ascii=False)}\n\n"
-        f"MEMORY:\n{json.dumps(wire_memory, ensure_ascii=False)}\n\n"
+        f"MEMORY:\n{json.dumps(memory, ensure_ascii=False)}\n\n"
         f"CURRENT EVIDENCE:\n{json.dumps(evidence, ensure_ascii=False)}"
     )
     def validator(
@@ -502,7 +489,7 @@ def _structured_reasoning_forecast(
         ),
         prompt=graph_prompt,
         schema=_single_dag_plan_schema(),
-        seed=_seed(question_id, "paper-prospective-dag"),
+        seed=_seed(question_id, "paper-structured-reasoning-plan"),
         max_tokens=max_tokens,
     )
     plan, corrections = _normalize_single_dag_plan(
@@ -536,7 +523,7 @@ def _structured_reasoning_forecast(
             ),
             prompt=repair_prompt,
             schema=_single_dag_plan_schema(),
-            seed=_seed(question_id, "paper-prospective-dag-repair"),
+            seed=_seed(question_id, "paper-structured-reasoning-repair"),
             max_tokens=max_tokens,
         )
         plan, repair_corrections = _normalize_single_dag_plan(
@@ -617,7 +604,7 @@ def _structured_reasoning_forecast(
         ),
         prompt=forecast_prompt,
         schema=_forecast_schema(options, graph_arm=True),
-        seed=_seed(question_id, "paper-prospective-dag-forecast"),
+        seed=_seed(question_id, "paper-structured-reasoning-forecast"),
         max_tokens=max(1000, max_tokens // 2),
         validator=lambda payload: _validate_forecast(
             payload,
@@ -732,7 +719,7 @@ def _run_method(
     if method == "factor_memory":
         memory_type = "factor"
         memory_payload = json.loads(
-            compile_hgf_search_memory([blueprint])
+            compile_factor_memory_cards([blueprint])
         )
     elif method == "case_memory":
         memory_type = "case"
@@ -813,7 +800,7 @@ def _run_method(
             options=options,
             contract=contract,
             reasoning=reasoning,
-            seed_role=_BOUNDARY_SEED_ROLES[method],
+            seed_role=f"paper-{method}-boundary",
             max_tokens=args.boundary_max_tokens,
             allow_neutral_fallback=True,
         )

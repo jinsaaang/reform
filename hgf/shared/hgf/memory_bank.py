@@ -249,13 +249,13 @@ def load_factor_blueprint_bank(
         expected_manifest_schema="factor_memory_blueprint_manifest_v1",
         expected_blueprint_schema=None,
     )
-    from .memory_retrieval import compile_hgf_search_memory
+    from .memory_retrieval import compile_factor_memory_cards
 
     manifest = _read(artifact_root.resolve() / "manifest.json")
     for entry in manifest.get("entries", []):
         question_id = str(entry["question_id"])
         expected_hash = str(entry.get("search_card_sha256") or "")
-        compiled = compile_hgf_search_memory([bank[question_id]]).encode(
+        compiled = compile_factor_memory_cards([bank[question_id]]).encode(
             "utf-8"
         )
         if expected_hash and hashlib.sha256(compiled).hexdigest() != expected_hash:
