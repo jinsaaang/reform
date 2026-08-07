@@ -34,8 +34,11 @@ def conservative_repair_merge(
             )
             for key in keys
         }
-    if isinstance(original, list) and isinstance(repaired, list):
-        if all(isinstance(item, dict) for item in original + repaired):
+    if (
+        isinstance(original, list)
+        and isinstance(repaired, list)
+        and all(isinstance(item, dict) for item in original + repaired)
+    ):
             merged: list[Any] = []
             for index in range(max(len(original), len(repaired))):
                 if index >= len(repaired):

@@ -553,7 +553,6 @@ def _prospective_dag_forecast(
             graph,
             evidence_ids=evidence_ids,
             checkpoint_ids=set(),
-            options=set(options),
         )
         if error
         not in {
@@ -607,7 +606,6 @@ def _prospective_dag_forecast(
             allowed_ids={str(item["id"]) for item in graph["nodes"]},
             graph_arm=True,
             evidence_ids=linked_ids,
-            graph=graph,
         ),
     )
     return (

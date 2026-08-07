@@ -629,21 +629,22 @@ def _call_boundary_mapping(
         f"CURRENT EVIDENCE:\n{json.dumps(evidence, ensure_ascii=False)}"
         f"{anchor_view}"
     )
-    validator = lambda payload: _validate_boundary_forecast(
-        payload,
-        options=options,
-        contract=contract,
-        evidence_ids=evidence_ids,
-        reasoning_policy="boundary_only",
-        validation_policy=(
-            "strict" if allow_prospective_anchors else "recovery"
-        ),
-        prospective_anchor_support=(
-            str(prospective_anchor.get("support") or "")
-            if prospective_anchor is not None
-            else None
-        ),
-    )
+    def validator(payload: dict[str, Any]) -> tuple[dict[str, float], list[str]]:
+        return _validate_boundary_forecast(
+            payload,
+            options=options,
+            contract=contract,
+            evidence_ids=evidence_ids,
+            reasoning_policy="boundary_only",
+            validation_policy=(
+                "strict" if allow_prospective_anchors else "recovery"
+            ),
+            prospective_anchor_support=(
+                str(prospective_anchor.get("support") or "")
+                if prospective_anchor is not None
+                else None
+            ),
+        )
     return _call_with_repair(
         client,
         model=model,

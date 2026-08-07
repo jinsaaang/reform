@@ -463,7 +463,6 @@ def _validate_graph(
     *,
     evidence_ids: set[str],
     checkpoint_ids: set[str],
-    options: set[str],
 ) -> list[str]:
     errors: list[str] = []
     nodes = graph.get("nodes", [])
@@ -542,12 +541,10 @@ def _validate_graph(
         unknown = citations - evidence_ids
         if unknown:
             errors.append(f"{node_id} cites unknown evidence: {sorted(unknown)}")
-        if node.get("role") not in {"target", "target_bridge"}:
-            if not citations:
-                errors.append(f"{node_id} has no current evidence")
-        if node.get("role") != "target":
-            if not reaches_target(node_id):
-                errors.append(f"{node_id} does not reach target")
+        if node.get("role") not in {"target", "target_bridge"} and not citations:
+            errors.append(f"{node_id} has no current evidence")
+        if node.get("role") != "target" and not reaches_target(node_id):
+            errors.append(f"{node_id} does not reach target")
         checkpoint_id = str(node.get("checkpoint_id"))
         if (
             node.get("role") == "target_bridge"
@@ -626,7 +623,6 @@ def _validate_forecast(
     allowed_ids: set[str],
     graph_arm: bool,
     evidence_ids: set[str] | None = None,
-    graph: dict[str, Any] | None = None,
 ) -> tuple[dict[str, float], list[str]]:
     probabilities, errors = _probabilities(payload, options)
     key = "evidence_article_ids"

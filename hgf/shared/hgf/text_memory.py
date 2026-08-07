@@ -160,10 +160,11 @@ def _distill_text_memory(
         "ARTICLES AVAILABLE AT THE HISTORICAL FORECAST CUTOFF:\n"
         f"{json.dumps(articles, ensure_ascii=False)}"
     )
-    validator = lambda payload: _validate_text_memory(
-        payload,
-        ground_truth=str(memory_question.ground_truth),
-    )
+    def validator(payload: dict[str, Any]) -> tuple[dict[str, float], list[str]]:
+        return _validate_text_memory(
+            payload,
+            ground_truth=str(memory_question.ground_truth),
+        )
     memory, _, usage, seconds, repaired = _call_with_repair(
         client,
         model=model,
