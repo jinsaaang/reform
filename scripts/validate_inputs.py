@@ -11,7 +11,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "hgf_final" / "hgf_historical_base_src"))
+sys.path.insert(0, str(ROOT / "hgf" / "hgf_historical_base_src"))
 
 from hgf.exemplar_selection import load_fixed_exemplar_bank
 from hgf.memory_bank import load_hgf_blueprint_bank

@@ -14,10 +14,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE_ROOTS = (
-    ROOT / "hgf_final" / "method_src",
-    ROOT / "hgf_final" / "hgf_historical_base_src",
-    ROOT / "hgf_final" / "input_adapter_src",
-    ROOT / "hgf_final" / "execution_src",
+    ROOT / "hgf" / "method_src",
+    ROOT / "hgf" / "hgf_historical_base_src",
+    ROOT / "hgf" / "input_adapter_src",
+    ROOT / "hgf" / "execution_src",
 )
 
 

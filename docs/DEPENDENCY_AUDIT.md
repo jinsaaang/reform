@@ -2,7 +2,7 @@
 
 ## Scope
 
-The audit covers the code under `hgf_final` and the public launchers under
+The audit covers the code under `hgf` and the public launchers under
 `scripts`. The source was extracted from canonical archive commit
 `dbf76bce37955e7ef5f287e70b7dc56556446971`.
 
