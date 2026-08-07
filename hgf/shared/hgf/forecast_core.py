@@ -3,7 +3,6 @@
 
 from __future__ import annotations
 
-import base64
 import hashlib
 import json
 import os
@@ -15,18 +14,20 @@ from openai import OpenAI
 
 from hgf.generation import completion_parameters, seed_suffix
 
-
 _SEED_SALTS = {
-    "semantic_lessons": "ZGFnLXNlbWFudGljLWxlc3NvbnMtdjI3",
-    "expert_reasoning": "ZGFnLW9ubHktZXhwZXJ0LW1lbW9yeS12MjctcmVhc29uaW5n",
-    "boundary_mapping": "ZGFnLW9ubHktZXhwZXJ0LW1lbW9yeS12MjctYm91bmRhcnk=",
+    "semantic_lessons": "dag-semantic-lessons-v27",
+    "expert_reasoning": "dag-only-expert-memory-v27-reasoning",
+    "boundary_mapping": "dag-only-expert-memory-v27-boundary",
 }
 
 
 def _seed(question_id: str, stage: str) -> int:
-    encoded = _SEED_SALTS.get(stage)
-    if encoded is not None:
-        stage = base64.b64decode(encoded).decode("utf-8")
+    """Derive the per-stage seed.
+
+    The salts are the stage names under which the registered runs were seeded.
+    They are kept verbatim so that a replay reproduces the same seeds.
+    """
+    stage = _SEED_SALTS.get(stage, stage)
     seed_material = f"{question_id}:{stage}{seed_suffix()}"
     return (
         int(
