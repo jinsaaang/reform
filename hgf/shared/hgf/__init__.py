@@ -1,7 +1,3 @@
-"""Public interface for Hindsight-Guided Forecasting."""
-
-from .metrics import evaluate_results
+"""Shared utilities for Hindsight-Guided Forecasting."""
 
 __version__ = "1.0.0"
-
-__all__ = ["evaluate_results"]

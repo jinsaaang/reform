@@ -34,30 +34,6 @@ def test_hgf_portable_launcher_builds_canonical_command(tmp_path: Path) -> None:
     assert not (tmp_path / "run").exists()
 
 
-def test_hgf_launcher_rejects_partially_frozen_inputs(tmp_path: Path) -> None:
-    completed = subprocess.run(
-        [
-            sys.executable,
-            str(ROOT / "scripts/run_hgf.py"),
-            "--dataset-root",
-            str(tmp_path / "benchmark"),
-            "--model",
-            "example/model",
-            "--provider",
-            "example-provider",
-            "--output-dir",
-            str(tmp_path / "run"),
-            "--evidence-selection-manifest",
-            str(tmp_path / "evidence.json"),
-            "--dry-run",
-        ],
-        check=False,
-        capture_output=True,
-        text=True,
-    )
-    assert completed.returncode != 0
-    assert "requires both" in completed.stderr
-
 
 def test_public_baseline_choices_exclude_obsolete_hgf() -> None:
     completed = subprocess.run(

@@ -20,17 +20,14 @@ anchor to a baseline prediction, or choose a result by its score.
 |---|---|
 | `hgf/method` | The HGF method. |
 | `hgf/shared` | Shared utilities and the six baseline implementations. |
-| `hgf/input_adapter` | Optional replay of frozen model-specific evidence and retrieval. |
 | `hgf/execution` | Raw-call recording and OpenRouter provider pinning. |
 | `scripts/run_hgf.py` | Run HGF on a compatible benchmark. |
 | `scripts/run_baselines.py` | Run the six baselines. |
 | `scripts/validate_inputs.py` | Check benchmark artifacts without an API call. |
-| `scripts/audit_dependencies.py` | Report the runtime's third-party imports. |
 
-The four directories under `hgf/` are `PYTHONPATH` roots, not packages. They
+The three directories under `hgf/` are `PYTHONPATH` roots, not packages. They
 supply the importable packages `hgf`, `hgf_e2e_topology`,
-`hgf_original_input_adapter`, `hgf_e2e_topology_sidecar`, and
-`hgf_e2e_topology_provider_pinned`.
+`hgf_e2e_topology_sidecar`, and `hgf_e2e_topology_provider_pinned`.
 
 ## Install
 
@@ -165,27 +162,9 @@ python3 scripts/run_baselines.py \
 ```
 
 Both launchers accept `--dry-run`, which prints the resolved command and exits
-without creating an output directory or calling an API.
-
-### Frozen replay
-
-By default the method reranks current evidence and retrieves compatible
-Blueprints at runtime, which is what you want when transferring it to a new
-benchmark. For a controlled replay, supply both model-specific manifests:
-
-```bash
-python3 scripts/run_hgf.py \
-  --dataset-root /path/to/benchmark \
-  --model MODEL \
-  --provider PROVIDER \
-  --output-dir RUN_DIR \
-  --evidence-selection-manifest INPUTS/evidence.json \
-  --retrieval-manifest INPUTS/retrieval.json
-```
-
-The evidence manifest fixes selected current evidence IDs; the retrieval
-manifest fixes historical memory question IDs. Supplying only one is rejected,
-because that would produce a partially frozen, ambiguous experiment.
+without creating an output directory or calling an API. The method reranks
+current evidence and retrieves compatible Blueprints at runtime from the
+artifacts you supply.
 
 ## Method
 
@@ -256,7 +235,6 @@ HGF is not one of the six. It is a separate implementation under
 
 ```bash
 python3 -m pytest
-python3 scripts/audit_dependencies.py
 ```
 
 ## License

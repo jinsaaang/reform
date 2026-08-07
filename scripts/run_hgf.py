@@ -15,7 +15,6 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE_ROOTS = (
     ROOT / "hgf" / "method",
     ROOT / "hgf" / "shared",
-    ROOT / "hgf" / "input_adapter",
     ROOT / "hgf" / "execution",
 )
 
@@ -31,8 +30,6 @@ def _args() -> argparse.Namespace:
     parser.add_argument("--selection-file", type=Path)
     parser.add_argument("--blueprint-root", type=Path)
     parser.add_argument("--exemplar-root", type=Path)
-    parser.add_argument("--evidence-selection-manifest", type=Path)
-    parser.add_argument("--retrieval-manifest", type=Path)
     parser.add_argument("--limit", type=int, default=100)
     parser.add_argument("--workers", type=int, default=20)
     parser.add_argument("--reasoning-effort", default="medium")
@@ -55,14 +52,6 @@ def main() -> int:
     if output.exists() and not args.dry_run:
         raise FileExistsError(f"fresh output directory required: {output}")
 
-    evidence_manifest = args.evidence_selection_manifest
-    retrieval_manifest = args.retrieval_manifest
-    if bool(evidence_manifest) != bool(retrieval_manifest):
-        raise ValueError(
-            "frozen replay requires both --evidence-selection-manifest and "
-            "--retrieval-manifest"
-        )
-
     questions = _resolve(args.questions_dir, dataset / "data" / "questions")
     evidence = _resolve(args.evidence_dir, dataset / "data" / "evidence")
     selection = _resolve(args.selection_file, questions / "selection.json")
@@ -73,15 +62,10 @@ def main() -> int:
         args.exemplar_root, dataset / "artifacts" / "hgf" / "exemplars"
     )
 
-    module = (
-        "hgf_original_input_adapter.run"
-        if evidence_manifest
-        else "hgf_e2e_topology_provider_pinned.run"
-    )
     command = [
         sys.executable,
         "-m",
-        module,
+        "hgf_e2e_topology_provider_pinned.run",
         "--provider-only",
         args.provider,
         *(["--disable-native-reasoning"] if args.disable_native_reasoning else []),
@@ -110,16 +94,6 @@ def main() -> int:
         "--run-seed",
         str(args.run_seed),
         *(["--question-ids", *args.question_ids] if args.question_ids else []),
-        *(
-            [
-                "--evidence-selection-manifest",
-                str(evidence_manifest.expanduser().resolve()),
-                "--retrieval-manifest",
-                str(retrieval_manifest.expanduser().resolve()),
-            ]
-            if evidence_manifest and retrieval_manifest
-            else []
-        ),
     ]
     env = os.environ.copy()
     existing = env.get("PYTHONPATH")
@@ -130,7 +104,6 @@ def main() -> int:
         "schema_version": "procedural_topology_hgf_portable_launch_v1",
         "command": command,
         "dataset_root": str(dataset),
-        "frozen_inputs": bool(evidence_manifest),
         "source_roots": [str(path) for path in SOURCE_ROOTS],
     }
     if args.dry_run:

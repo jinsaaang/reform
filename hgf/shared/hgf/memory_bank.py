@@ -7,7 +7,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from hgf.package import PACKAGE_ROOT
+PACKAGE_ROOT = Path(__file__).resolve().parents[2]
 
 HGF_BLUEPRINT_ROOT = PACKAGE_ROOT / "artifacts" / "hgf" / "blueprints"
 FACTOR_BLUEPRINT_ROOT = (
