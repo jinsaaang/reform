@@ -7,6 +7,13 @@ import json
 from pathlib import Path
 from typing import Any
 
+from hgf.package import PACKAGE_ROOT
+
+HGF_BLUEPRINT_ROOT = PACKAGE_ROOT / "artifacts" / "hgf" / "blueprints"
+FACTOR_BLUEPRINT_ROOT = (
+    PACKAGE_ROOT / "artifacts" / "baselines" / "factor_memory"
+)
+
 
 def _read(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
@@ -117,13 +124,8 @@ def load_graph_bank(
     manifest_path: Path,
     memory_questions: dict[str, Any],
 ) -> dict[str, dict[str, Any]]:
-    """Load all 200 shared DAGs without loading any forecasting Blueprint.
-
-    Relative paths in the manifest resolve against the manifest's own
-    directory, matching how the Blueprint banks resolve theirs.
-    """
+    """Load all 200 shared DAGs without loading any forecasting Blueprint."""
     manifest_path = manifest_path.resolve()
-    manifest_root = manifest_path.parent
     manifest = _read(manifest_path)
     entries = {
         str(entry["question_id"]): entry
@@ -141,17 +143,17 @@ def load_graph_bank(
     for question_id, question in memory_questions.items():
         entry = entries[question_id]
         raw_graph = _read(
-            _resolve(manifest_root, str(entry["graph_path"]))
+            _resolve(PACKAGE_ROOT, str(entry["graph_path"]))
         )
         if entry.get("evidence_path") and entry.get("audit_path"):
             graph = _canonical_graph(
                 raw_graph=raw_graph,
                 question=question,
                 evidence_pack=_read(
-                    _resolve(manifest_root, str(entry["evidence_path"]))
+                    _resolve(PACKAGE_ROOT, str(entry["evidence_path"]))
                 ),
                 audit=_read(
-                    _resolve(manifest_root, str(entry["audit_path"]))
+                    _resolve(PACKAGE_ROOT, str(entry["audit_path"]))
                 ),
             )
         else:
@@ -222,7 +224,7 @@ def _load_blueprint_bank(
 
 
 def load_hgf_blueprint_bank(
-    artifact_root: Path,
+    artifact_root: Path = HGF_BLUEPRINT_ROOT,
     *,
     expected_ids: set[str] | None = None,
 ) -> dict[str, dict[str, Any]]:
@@ -236,7 +238,7 @@ def load_hgf_blueprint_bank(
 
 
 def load_factor_blueprint_bank(
-    artifact_root: Path,
+    artifact_root: Path = FACTOR_BLUEPRINT_ROOT,
     *,
     expected_ids: set[str] | None = None,
 ) -> dict[str, dict[str, Any]]:
