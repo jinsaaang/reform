@@ -68,6 +68,6 @@ def test_public_baseline_choices_exclude_obsolete_hgf() -> None:
     )
     assert "procedural_topology_hgf" not in completed.stdout
     assert (
-        "{search_only,prospective_dag,direct_dag,factor_memory,case_memory,"
-        "text_memory}" in completed.stdout
+        "{direct_forecast,structured_reasoning,factor_memory,principle_memory,"
+        "case_memory,structure_memory}" in completed.stdout
     )

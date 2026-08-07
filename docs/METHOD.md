@@ -28,17 +28,31 @@ and connect current evidence.
 
 ## Baselines
 
-- `search_only` is structured direct forecasting. It uses current E0 evidence
-  and the shared target and probability boundary, but no historical memory.
-- `prospective_dag` constructs a DAG from the current E0 evidence and forecasts
-  from that graph. It tests whether hindsight-derived structure is necessary.
-- `direct_dag` retrieves a past DAG and gives it directly to the forecaster. It
-  tests whether HGF's current instantiation and procedural use are necessary.
-- `factor_memory` retrieves compact historical factors and uses E1 evidence. It
-  is a strong non-topological memory baseline.
-- `case_memory` retrieves resolved historical episodes as analogical memory.
-- `text_memory` distills general forecasting principles from resolved events
-  and removes the graph representation before forecasting.
+The six baselines fall into two groups by whether they read resolved-event
+memory at all.
+
+### No-memory
+
+- `direct_forecast` is standard retrieval-augmented forecasting. It uses
+  current E0 evidence and the shared target and probability boundary, and no
+  resolved-event memory.
+- `structured_reasoning` builds a forecast DAG from the current E0 evidence and
+  forecasts from that graph, still without resolved-event memory. It tests
+  whether hindsight-derived structure is necessary.
+
+### Resolved-event memory
+
+- `factor_memory` retrieves compact historical factors, without the relations
+  between them, and uses E1 evidence. It is a strong non-topological memory
+  baseline.
+- `principle_memory` distills answer-free forecasting principles from resolved
+  events into text and retrieves those, removing the graph representation
+  before forecasting.
+- `case_memory` retrieves a complete resolved episode as analogical memory:
+  question, evidence, outcome, and resolution reasoning.
+- `structure_memory` retrieves an outcome-redacted past DAG and gives it to the
+  forecaster as-is, without instantiating it against current evidence. It tests
+  whether HGF's current instantiation and procedural use are necessary.
 
 HGF is not one of them. It is a separate implementation under
 `hgf/method/hgf_e2e_topology` and is always run through
@@ -46,8 +60,9 @@ HGF is not one of them. It is a separate implementation under
 
 ## Evidence contract
 
-The registered experiment used E0 for `search_only`, `prospective_dag`,
-`direct_dag`, `case_memory`, and `text_memory`. It used E1 for `factor_memory`
+The registered experiment used E0 for `direct_forecast`,
+`structured_reasoning`, `structure_memory`, `case_memory`, and
+`principle_memory`. It used E1 for `factor_memory`
 and HGF. E0 and E1 are frozen evidence databases, not model predictions.
 Paper comparisons should preserve this contract or explicitly report a new,
 uniform evidence design as a separate experiment.

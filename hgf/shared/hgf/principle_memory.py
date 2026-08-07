@@ -1,16 +1,14 @@
 #!/usr/bin/env python3
-"""Text-memory baseline primitives on frozen cutoff-safe evidence.
+"""Principle Memory baseline primitives on frozen cutoff-safe evidence.
 
-The script reuses the completed Evidence-only and full HGF forecasts, then
-generates only the three missing arms:
+One resolved historical event is distilled into answer-free forecasting
+principles in ordinary prose. The distiller may read the resolved outcome to
+decide what mattered, but the stored memory must not reveal the answer label,
+resolved direction, or resolved value, and must not mention a graph, nodes,
+edges, paths, checkpoints, or DAGs.
 
-1. Naive Text-Memory
-2. No-Memory Structured
-3. Text-Memory Structured
-
-Every model-based arm uses the same model and current evidence. Text memories
-use the same historical case retrieved by HGF, but are distilled without DAG
-nodes, edges, blueprints, or graph-derived exemplars.
+The schema and seed strings below keep the names the registered runs used, so
+a replay reproduces the same requests and seeds.
 """
 
 from __future__ import annotations
@@ -34,7 +32,7 @@ from hgf.question_io import resolve_forecast_cutoff
 _WRITE_LOCK = threading.Lock()
 
 
-def _text_memory_schema() -> dict[str, Any]:
+def _principle_memory_schema() -> dict[str, Any]:
     return {
         "name": "plain_text_hindsight_memory",
         "strict": True,
@@ -61,7 +59,7 @@ def _text_memory_schema() -> dict[str, Any]:
     }
 
 
-def _validate_text_memory(
+def _validate_principle_memory(
     payload: dict[str, Any],
     *,
     ground_truth: str,
@@ -100,7 +98,7 @@ def _validate_text_memory(
     return {}, errors
 
 
-def _distill_text_memory(
+def _distill_principle_memory(
     *,
     client: OpenAI,
     model: str,
@@ -112,7 +110,7 @@ def _distill_text_memory(
     cache_path = cache_dir / f"{memory_question.id}.json"
     if cache_path.exists():
         cached = json.loads(cache_path.read_text(encoding="utf-8"))
-        _, errors = _validate_text_memory(
+        _, errors = _validate_principle_memory(
             cached,
             ground_truth=str(memory_question.ground_truth),
         )
@@ -161,7 +159,7 @@ def _distill_text_memory(
         f"{json.dumps(articles, ensure_ascii=False)}"
     )
     def validator(payload: dict[str, Any]) -> tuple[dict[str, float], list[str]]:
-        return _validate_text_memory(
+        return _validate_principle_memory(
             payload,
             ground_truth=str(memory_question.ground_truth),
         )
@@ -173,7 +171,7 @@ def _distill_text_memory(
             "ordinary text. Return only schema-conforming JSON."
         ),
         prompt=prompt,
-        schema=_text_memory_schema(),
+        schema=_principle_memory_schema(),
         seed=_seed(str(memory_question.id), "plain-text-hindsight-memory"),
         max_tokens=max_tokens,
         validator=validator,

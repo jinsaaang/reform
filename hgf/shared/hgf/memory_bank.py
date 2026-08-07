@@ -242,7 +242,7 @@ def load_factor_blueprint_bank(
     *,
     expected_ids: set[str] | None = None,
 ) -> dict[str, dict[str, Any]]:
-    """Load the frozen legacy cards used only by Factor-Memory baseline."""
+    """Load the frozen legacy cards used only by Factor Memory baseline."""
     bank = _load_blueprint_bank(
         artifact_root,
         expected_ids=expected_ids,
@@ -260,7 +260,7 @@ def load_factor_blueprint_bank(
         )
         if expected_hash and hashlib.sha256(compiled).hexdigest() != expected_hash:
             raise ValueError(
-                f"frozen Factor-Memory search-card hash mismatch for "
+                f"frozen Factor Memory search-card hash mismatch for "
                 f"{question_id}"
             )
     return bank

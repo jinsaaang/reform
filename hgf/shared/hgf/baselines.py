@@ -60,41 +60,60 @@ from hgf.memory_retrieval import (
     compile_raw_dag_ablation,
     select_relevant_blueprints,
 )
+from hgf.principle_memory import _distill_principle_memory
 from hgf.question_io import (
     family_metadata,
     read_questions,
     resolve_forecast_cutoff,
 )
 from hgf.repair_resilience import neutral_reasoning_payload
-from hgf.text_memory import _distill_text_memory
 
 METHODS = (
-    "search_only",
+    "direct_forecast",
+    "structured_reasoning",
     "factor_memory",
+    "principle_memory",
     "case_memory",
-    "text_memory",
-    "direct_dag",
-    "prospective_dag",
+    "structure_memory",
 )
+NO_MEMORY_METHODS = frozenset({"direct_forecast", "structured_reasoning"})
 _FACTOR_MEMORY_WIRE_VIEW = "hgf_search_cards_v1"
 
 
 METHOD_LABELS = {
-    "search_only": "Search-only Agent",
-    "factor_memory": "Factor-Memory Agent",
-    "case_memory": "Case-Memory Agent",
-    "text_memory": "Text-Memory Agent",
-    "direct_dag": "Direct DAG Agent",
-    "prospective_dag": "Prospective DAG Agent",
+    "direct_forecast": "Direct Forecast",
+    "structured_reasoning": "Structured Reasoning",
+    "factor_memory": "Factor Memory",
+    "principle_memory": "Principle Memory",
+    "case_memory": "Case Memory",
+    "structure_memory": "Structure Memory",
+}
+
+METHOD_GROUPS = {
+    "direct_forecast": "No-memory",
+    "structured_reasoning": "No-memory",
+    "factor_memory": "Resolved-event memory",
+    "principle_memory": "Resolved-event memory",
+    "case_memory": "Resolved-event memory",
+    "structure_memory": "Resolved-event memory",
 }
 
 METHOD_REFERENCES = {
-    "search_only": ["AutoCast++", "Human-level Forecasting"],
+    "direct_forecast": ["AutoCast++", "Human-level Forecasting"],
+    "structured_reasoning": ["WorldReasoner Search-Enabled Graph"],
     "factor_memory": ["ExpeL", "AutoCast++"],
+    "principle_memory": ["ExpeL"],
     "case_memory": ["A-Mem"],
-    "text_memory": ["ExpeL"],
-    "direct_dag": ["WorldReasoner"],
-    "prospective_dag": ["WorldReasoner Search-Enabled Graph"],
+    "structure_memory": ["WorldReasoner"],
+}
+
+_BOUNDARY_SEED_ROLES = {
+    "direct_forecast": "paper-search_only-boundary",
+    "structured_reasoning": "paper-prospective_dag-boundary",
+    "factor_memory": "paper-factor_memory-boundary",
+    "principle_memory": "paper-text_memory-boundary",
+    "case_memory": "paper-case_memory-boundary",
+    "structure_memory": "paper-direct_dag-boundary",
 }
 
 _WRITE_LOCK = threading.Lock()
@@ -444,7 +463,7 @@ def _validate_no_memory_plan(
     ]
 
 
-def _prospective_dag_forecast(
+def _structured_reasoning_forecast(
     *,
     client: OpenAI,
     model: str,
@@ -721,27 +740,27 @@ def _run_method(
             memory_question=memory_question,
             memory_graph=memory_graph,
         )
-    elif method == "text_memory":
+    elif method == "principle_memory":
         memory_type = "text"
-        distilled = _distill_text_memory(
+        distilled = _distill_principle_memory(
             client=client,
             model=model,
             memory_question=memory_question,
             memory_graph=memory_graph,
-            cache_dir=output_dir / "memory_cache" / "text",
+            cache_dir=output_dir / "memory_cache" / "principle",
             max_tokens=args.semantic_max_tokens,
         )
         memory_payload = distilled["memory"]
         memory_usage = distilled.get("usage", {})
         memory_seconds = float(distilled.get("seconds") or 0)
         memory_cached = bool(distilled.get("cached"))
-    elif method == "direct_dag":
+    elif method == "structure_memory":
         memory_type = "raw_dag"
         memory_payload = json.loads(
             compile_raw_dag_ablation([memory_graph])
         )
 
-    if method == "prospective_dag":
+    if method == "structured_reasoning":
         (
             forecast,
             probabilities,
@@ -749,7 +768,7 @@ def _run_method(
             usage,
             seconds,
             repaired,
-        ) = _prospective_dag_forecast(
+        ) = _structured_reasoning_forecast(
             client=client,
             model=model,
             question_id=str(question.id),
@@ -794,7 +813,7 @@ def _run_method(
             options=options,
             contract=contract,
             reasoning=reasoning,
-            seed_role=f"paper-{method}-boundary",
+            seed_role=_BOUNDARY_SEED_ROLES[method],
             max_tokens=args.boundary_max_tokens,
             allow_neutral_fallback=True,
         )
@@ -833,7 +852,7 @@ def _run_method(
         "evidence_ids": sorted(evidence_ids),
         "retrieved_memory_question_id": (
             memory_id
-            if method not in {"search_only", "prospective_dag"}
+            if method not in NO_MEMORY_METHODS
             else None
         ),
         "memory": memory_payload,
@@ -1064,11 +1083,11 @@ def main(
             ],
             "evidence_contract": {
                 "E0": [
-                    "search_only",
+                    "direct_forecast",
+                    "structured_reasoning",
                     "case_memory",
-                    "text_memory",
-                    "direct_dag",
-                    "prospective_dag",
+                    "principle_memory",
+                    "structure_memory",
                 ],
                 "E1": ["factor_memory"],
                 "cutoff_checked_on_every_article": True,

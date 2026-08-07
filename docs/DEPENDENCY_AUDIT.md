@@ -41,7 +41,7 @@ requires the two model-specific input manifests supplied on the command line.
 ## Baseline caveat
 
 The shared baseline module implements exactly the six controlled baselines.
-Direct DAG and resolved-case inputs require the same semantic leakage audit
+Structure Memory and Case Memory inputs require the same semantic leakage audit
 used in the paper experiment before their numbers are reportable. The portable
 launcher does not silently rewrite user-provided DAG or case artifacts.
 

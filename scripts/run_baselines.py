@@ -12,12 +12,12 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 BASE_SRC = ROOT / "hgf" / "shared"
 METHODS = (
-    "search_only",
-    "prospective_dag",
-    "direct_dag",
+    "direct_forecast",
+    "structured_reasoning",
     "factor_memory",
+    "principle_memory",
     "case_memory",
-    "text_memory",
+    "structure_memory",
 )
 
 
