@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_us_diesel_monthly_change_2024_07",
+  "blueprint_sha256": "7bc8444d9dbcdfdad13d8782c155624d06a581cb60041c0c4b88ddd2ddaf7516",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "price_prediction",
+      "target_operation": "threshold_crossing",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2024-07-01, will the monthly retail diesel-price change for United States diesel price in 2024-07 be at least -1.374 percent?",
+    "historical_cutoff": "2024-07-01T00:00:00+00:00",
+    "target_semantics": "The monthly percentage change in US retail diesel prices for July 2024 must be greater than or equal to -1.374%.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The core of the prediction relies on the calculation of the monthly percentage change in US diesel prices, which requires the latest available price observation before the cutoff and the price from the preceding month.",
+      "The target condition is met if this calculated percentage change is at least -1.374%. The DAG indicates that the historical relationship between the price calculation and the threshold comparison is strong.",
+      "However, without any forecast-time evidence, the specific values of the reference and target prices, and thus the calculated change, remain unknown. The DAG also highlights that the threshold itself is a strong driver."
+    ],
+    "counterevidence": "No forecast-time evidence was available to confirm or deny the expected price movements or the actual calculated price change.",
+    "prospective_target_estimate": "The target is 'yes' if the calculated monthly retail diesel-price change for July 2024 is >= -1.374 percent, and 'no' otherwise.",
+    "option_mapping": "The 'yes' option corresponds to the target metric being greater than or equal to -1.374 percent. The 'no' option corresponds to the target metric being less than -1.374 percent.",
+    "uncertainty": "The absence of any forecast-time evidence regarding the actual diesel prices or any market-moving events makes it impossible to determine the direction or magnitude of the price change. The historical support for the price calculation and threshold comparison is strong, but without current data, these relationships cannot be applied.",
+    "dag_derived_lesson": "A causal path involving a calculation based on prior observations and a comparison to a pre-defined threshold is only actionable if current data supports the intermediate calculation and the specific values involved. Directional support alone is insufficient when magnitude and boundary crossing are critical."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

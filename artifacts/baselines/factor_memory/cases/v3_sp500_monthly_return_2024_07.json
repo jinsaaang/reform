@@ -1,0 +1,202 @@
+{
+  "schema_version": "hgf_blueprint_v1",
+  "question_id": "v3_sp500_monthly_return_2024_07",
+  "target_definition": {
+    "metric": "S&P 500 monthly return",
+    "unit_or_option_space": "percent monthly return",
+    "forecast_horizon": "target month"
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Earnings breadth, policy restraint, inflation, and uncertainty provide reusable equity context.",
+    "weaknesses": [
+      "All direct option and realized-index links are excluded.",
+      "Current earnings breadth, rate, inflation, and risk verification is required."
+    ]
+  },
+  "search_factors": [
+    {
+      "factor": "Earnings breadth",
+      "why_search": "Breadth determines whether index earnings strength is durable.",
+      "preferred_source_types": [
+        "earnings releases",
+        "analyst estimates"
+      ],
+      "source_event_ids": [
+        "evt_finance_20231211_008_c72b3208",
+        "evt_finance_20240710_011_4a450e7d",
+        "evt_finance_20240710_017_260eb792"
+      ]
+    },
+    {
+      "factor": "Federal Reserve policy",
+      "why_search": "Policy restraint affects discount rates.",
+      "preferred_source_types": [
+        "FOMC communication"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240131_009_cea47884",
+        "evt_finance_20240131_016_b7ccf4d3"
+      ]
+    },
+    {
+      "factor": "Inflation risk",
+      "why_search": "Persistent inflation can sustain restrictive rates.",
+      "preferred_source_types": [
+        "inflation release",
+        "policy report"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240722_012_7504816d",
+        "evt_finance_20240722_015_73ba2fe8"
+      ]
+    },
+    {
+      "factor": "Policy uncertainty",
+      "why_search": "Uncertainty can raise equity risk premiums.",
+      "preferred_source_types": [
+        "policy-uncertainty index"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240626_010_136a6030"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "earnings",
+      "role": "baseline",
+      "factor": "Earnings breadth",
+      "mechanism": "Weakening breadth can reduce support from optimistic earnings expectations.",
+      "expected_direction": "down",
+      "evidence_requirement": "Estimate revisions and breadth weaken together.",
+      "contradiction_signal": "Strength broadens.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20231211_008_c72b3208",
+        "evt_finance_20240710_011_4a450e7d"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_sp500_monthly_return_2024_07_20260725_054825_010_c7290376"
+      ]
+    },
+    {
+      "id": "concentration",
+      "role": "driver",
+      "factor": "Earnings breadth",
+      "mechanism": "Concentrated earnings reliance can increase index vulnerability.",
+      "expected_direction": "down",
+      "evidence_requirement": "Leadership concentration and revisions worsen.",
+      "contradiction_signal": "Breadth improves.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240710_011_4a450e7d",
+        "evt_finance_20240710_017_260eb792"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_sp500_monthly_return_2024_07_20260725_054839_021_2d3899b0"
+      ]
+    },
+    {
+      "id": "policy",
+      "role": "mediator",
+      "factor": "Federal Reserve policy",
+      "mechanism": "Cautious policy can sustain discount-rate pressure.",
+      "expected_direction": "down",
+      "evidence_requirement": "Futures and policy communication agree.",
+      "contradiction_signal": "Easing is repriced.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240131_009_cea47884",
+        "evt_finance_20240131_016_b7ccf4d3"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_sp500_monthly_return_2024_07_20260725_054839_016_14b91ed2"
+      ]
+    },
+    {
+      "id": "inflation",
+      "role": "counterevidence",
+      "factor": "Inflation risk",
+      "mechanism": "Persistent inflation can offset optimism by prolonging restrictive conditions.",
+      "expected_direction": "down",
+      "evidence_requirement": "Inflation and rate expectations remain elevated.",
+      "contradiction_signal": "Disinflation broadens.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240722_012_7504816d",
+        "evt_finance_20240722_015_73ba2fe8"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_sp500_monthly_return_2024_07_20260725_054839_017_68d579e1"
+      ]
+    },
+    {
+      "id": "bridge",
+      "role": "target_bridge",
+      "factor": "Earnings, discount rates, and risk premiums",
+      "mechanism": "Earnings breadth, policy restraint, inflation risk, and uncertainty combine to determine S&P 500 direction.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Verify earnings breadth, rate futures, inflation, and volatility at the forecast date.",
+      "contradiction_signal": "Index moves diverge from current drivers.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240710_011_4a450e7d",
+        "evt_finance_20240131_016_b7ccf4d3",
+        "evt_finance_20240722_015_73ba2fe8"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_sp500_monthly_return_2024_07_20260725_054825_010_c7290376",
+        "hyp_v3_sp500_monthly_return_2024_07_20260725_054839_016_14b91ed2",
+        "hyp_v3_sp500_monthly_return_2024_07_20260725_054839_017_68d579e1"
+      ]
+    }
+  ],
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "earnings",
+        "concentration",
+        "bridge"
+      ],
+      "generalized_mechanism": "Weak earnings breadth and concentration can raise equity vulnerability.",
+      "expected_direction": "down",
+      "applicability_conditions": [
+        "Revisions weaken broadly."
+      ],
+      "failure_conditions": [
+        "Breadth improves."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "policy",
+        "inflation",
+        "bridge"
+      ],
+      "generalized_mechanism": "Restrictive policy and persistent inflation can raise discount-rate pressure.",
+      "expected_direction": "down",
+      "applicability_conditions": [
+        "Futures remain restrictive."
+      ],
+      "failure_conditions": [
+        "Disinflation accelerates."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "Earnings breadth improves despite restrictive policy.",
+      "discriminating_evidence": "Compare revisions and breadth with rate futures.",
+      "source_event_ids": [
+        "evt_finance_20240710_011_4a450e7d",
+        "evt_finance_20240131_016_b7ccf4d3"
+      ]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Is earnings strength broad?",
+    "Do futures sustain restrictive conditions?",
+    "Is inflation risk rising?"
+  ]
+}

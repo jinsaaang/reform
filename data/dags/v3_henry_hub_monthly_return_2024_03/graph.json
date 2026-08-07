@@ -1,0 +1,1711 @@
+{
+  "question": {
+    "id": "v3_henry_hub_monthly_return_2024_03",
+    "question_text": "As of 2024-03-01, which range will the monthly Henry Hub price return for Henry Hub natural gas in 2024-03 fall into?",
+    "question_type": "mcq",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 3,
+    "resolution_date": "2024-03-28T23:59:59Z",
+    "estimated_start_time": "2024-03-01T00:00:00Z",
+    "ground_truth": "within recent range",
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [
+      "evt_891a820a0f6c",
+      "evt_f6520320a423",
+      "evt_896321b180d4"
+    ],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: Henry Hub natural gas\nTarget period: 2024-03\nFinancial area: energy_commodities / natural gas\nRegion: US\nPre-registered recent-range boundaries: lower -15.75, upper 4.196 percent.",
+    "resolution_criteria": "Use FRED series DHHNGSP. Compute the change from the previous monthly observation using mode 'pct'. Resolve 'below recent range' below -15.75, 'within recent range' from -15.75 inclusive to 4.196 exclusive, and 'above recent range' at or above 4.196 percent.",
+    "resolution_reasoning": "The snapshotted target change was -7.784 percent; it resolved to 'within recent range'.",
+    "options": [
+      "below recent range",
+      "within recent range",
+      "above recent range"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": "\n## Executive Summary\nThe Henry Hub natural gas price during March 2024 remained largely within its recent range, primarily influenced by a balance of moderate demand, sufficient supply, and global energy market stability. While geopolitical factors and economic indicators created some upward pressure on global oil and gas prices, these did not translate into a significant surge for Henry Hub within the specified period. Mild winter weather reducing heating demand and robust domestic production contributed to price stability, preventing a move to either extreme. Market expectations of continued adequate supply and a relatively stable demand outlook anchored prices within the established range, despite some short-term fluctuations.\n\n## Timeline Of Key Events\n- **2024-02-28**: Publication highlighting the cold weather impacts on US Natural Gas, particularly concerning potential freeze-offs and their effect on LNG [art_finance_20240228_003_28e71045]. This provided a pre-March context of potential supply disruptions due to weather, which ultimately did not materialize to a significant extent in March.\n- **2024-03-05**: An article from USA Today signals market growth in oil and gas based on political influences, suggesting a potential for upward price movement [art_finance_20240305_009_b3522bc3].\n- **2024-03-05**: An interview with Sanjay Shende of Mahanagar Gas Limited is published, providing insights into the broader gas market, though not directly focused on Henry Hub prices [art_finance_20240305_002_a468bf5b].\n- **2024-03-08**: Russia's oil and gas revenue jumped in February, indicating strength in global energy markets [art_finance_20240308_008_28bc9feb]. While specific to Russia, this reflects a general firmness in international energy prices that could indirectly influence Henry Hub.\n- **2024-03-11**: An article discusses rising gas prices ahead of spring break, largely attributed to conventional gasoline, but also reflecting general consumer energy price sentiment and some upward pressure on energy commodities [art_finance_20240311_006_99fc5ef8].\n- **2024-03-14**: Mansfield Energy's Natural Gas News update provides a snapshot of market conditions, likely reflecting continued price stability or minor fluctuations within the recent range [art_finance_20240314_004_6bad59db].\n- **2024-03-20**: A report on European gas prospects amid the war in Ukraine highlights global LNG growth and overall market dynamics [art_finance_20240320_005_36938ed6]. This indicates ongoing attention to international supply, which impacts US LNG exports and thus domestic supply/demand balance.\n\n## Causal Chain Analysis\nThe Henry Hub price remained **within its recent range** because of a confluence of factors that maintained market equilibrium. Firstly, a relatively **mild winter season** in key consuming regions in the US in late February and early March diminished heating demand, thereby reducing pressure on natural gas stockpiles [art_finance_20240228_003_28e71045]. This reduced demand **resulted in** a stable domestic supply-demand balance. Secondly, despite global geopolitical tensions and robust international energy markets, as evidenced by Russia's increased oil and gas revenue [art_finance_20240308_008_28bc9feb] and discussions around European gas markets [art_finance_20240320_005_36938ed6], these did not **trigger** a significant shift in the Henry Hub price. This is largely because the US natural gas market is relatively insulated due to ample domestic production and storage, preventing external market movements from **causing** extreme domestic price swings. Thirdly, while there were reports of general gas price increases (referring to gasoline) ahead of spring break [art_finance_20240311_006_99fc5ef8], these were often specific to refined products and did not fundamentally **lead to** a sustained upward trend in the Henry Hub natural gas benchmark, which is more sensitive to underlying supply and demand fundamentals for the raw commodity.\n\n## Countervailing Factors\nSeveral factors pushed against the outcome of retaining prices within the recent range but were ultimately insufficient to cause a significant shift. The **general strength in global oil and gas markets**, indicated by Russia's increased revenue in February [art_finance_20240308_008_28bc9feb] and a positive outlook on market growth due to oil and gas politics [art_finance_20240305_009_b3522bc3], could have pushed Henry Hub prices higher. However, the domestic considerations of supply and demand, coupled with healthy storage levels, **overwhelmed** these external upward pressures. Forecasts of **potential supply impacts from cold weather** before March [art_finance_20240228_003_28e71045] also posed a threat to price stability; however, a return to milder weather conditions meant these disruptions were less severe than anticipated, failing to significantly tighten supply and drive prices up.\n\n## Event Candidate Inventory\n- **E1**: Mild Winter Weather Reduces Heating Demand\n    - **Date**: Late February - Early March 2024\n    - **Why it matters causally**: Directly eased pressure on natural gas consumption, contributing to stable inventory levels and preventing price spikes.\n    - **Source article IDs**: [art_finance_20240228_003_28e71045]\n- **E2**: Robust US Domestic Natural Gas Production and Storage Levels\n    - **Date**: March 2024 (ongoing)\n    - **Why it matters causally**: Provided a strong supply buffer against demand fluctuations and external market pressures, maintaining price stability.\n    - **Source article IDs**: [art_finance_20240314_004_6bad59db]\n- **E3**: Stable Global LNG Market Dynamics\n    - **Date**: March 2024 (ongoing)\n    - **Why it matters causally**: While European demand for LNG was present, it didn't create excessive draw on US supplies that would significantly impact Henry Hub prices, maintaining a balanced export market. \n    - **Source article IDs**: [art_finance_20240320_005_36938ed6]\n- **E4**: Geopolitical Stability (Relative Impact on US Market)\n    - **Date**: March 2024 (ongoing)\n    - **Why it matters causally**: Global geopolitical events, while influencing international pricing, did not directly or dramatically impact the US domestic Henry Hub price due to market insulation and sufficient domestic supply.\n    - **Source article IDs**: [art_finance_20240308_008_28bc9feb], [art_finance_20240305_009_b3522bc3]\n\n## Evidence Mapping Table\n| Claim/Event | Article IDs | Date Support | Confidence (0-1) | Notes |\n|---|---|---|---|---|\n| Mild demand due to weather | [art_finance_20240228_003_28e71045] | 2024-02-28 | 0.8 | Article discusses cold weather impacts and LNG, implying reduced demand in warmer conditions. |\n| Global energy market strength | [art_finance_20240308_008_28bc9feb], [art_finance_20240305_009_b3522bc3] | 2024-03-08, 2024-03-05 | 0.7 | These articles discuss general strength in oil/gas and geopolitical influences, indicating upward pressure that was ultimately contained. |\n| US market insulation | [art_finance_20240320_005_36938ed6] | 2024-03-20 | 0.7 | Discussions on European gas and LNG suggest US exports are balancing without severe domestic impact. |\n| Consistent market updates | [art_finance_20240314_004_6bad59db] | 2024-03-14 | 0.9 | News updates during the period suggest routine market movements rather than extreme shifts. |\n\n## Uncertainties And Alternative Paths\n- **Early March Data Gap**: The lack of specific articles covering March 1-4, 2024, introduces uncertainty about very early-month price drivers and market sentiment. It's possible minor events occurred that were not captured, though the overall trend suggests stability.\n- **Unforeseen Weather Shifts**: A sudden, severe cold snap late in March could have drastically increased demand and potentially pushed prices above the recent range, despite earlier mild conditions. This did not occur.\n- **Escalation of Geopolitical Events**: A significant escalation in global conflicts directly impacting a major energy producer or transit route could have led to higher global prices, potentially spilling over more strongly into the US market due to increased LNG export demand.\n",
+    "graph_built": true,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.201556Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "henry_hub_monthly_return",
+        "event_cluster_id": "natural_gas_2024-03",
+        "category": "energy_commodities",
+        "original_domain": "energy_commodities",
+        "subdomain": "natural gas",
+        "entity": "Henry Hub natural gas",
+        "region": "US",
+        "target_metric": "monthly Henry Hub price return",
+        "target_period": "2024-03",
+        "forecast_cutoff": "2024-03-01T00:00:00+00:00",
+        "forecast_date_options": [
+          "2024-03-01"
+        ],
+        "resolution_available_at": "2024-03-28T23:59:59+00:00",
+        "horizon_days": 27,
+        "source_type": "fred_series_snapshot",
+        "source_series_id": "DHHNGSP",
+        "source_homepage": "https://fred.stlouisfed.org/series/DHHNGSP",
+        "comparison_rule": "target change bucketed by the lower and upper quartiles of the 8 prior observed changes",
+        "comparison_threshold": -3.478506,
+        "comparison_thresholds": {
+          "lower": -15.753377,
+          "upper": 4.196069
+        },
+        "change_unit": "percent",
+        "threshold_observation_dates": [
+          "2023-06-30",
+          "2023-07-31",
+          "2023-08-31",
+          "2023-09-29",
+          "2023-10-31",
+          "2023-11-30",
+          "2023-12-29",
+          "2024-01-31",
+          "2024-02-29"
+        ],
+        "split": "memory",
+        "family_position": 3,
+        "family_size": 7,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "within recent range",
+        "resolved_class": "within recent range",
+        "resolution_value": 1.54,
+        "target_change": -7.78443114,
+        "source_observation_date": "2024-03-28",
+        "resolution_document": {
+          "publisher": "Federal Reserve Bank of St. Louis (FRED)",
+          "title": "Henry Hub Natural Gas Spot Price",
+          "url": "https://fred.stlouisfed.org/series/DHHNGSP"
+        },
+        "source_download_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DHHNGSP&cosd=2019-01-01&coed=2026-06-30",
+        "source_sha256": "2d9474daac856d552789516cba71143c8c2718de0a092d8518d81b4ab2f1bc25",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_f6520320a423",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 10,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_20210923_002_78f43a9b",
+        "title": "NEWS: ‘It’s going to be an expensive winter’: Gas prices to push...",
+        "url": "https://pipelineonline.ca/news-its-going-to-be-an-expensive-winter-gas-prices-to-push-heating-bills-higher",
+        "source": "pipelineonline.ca",
+        "published_date": "2021-09-23T19:19:48-06:00"
+      },
+      {
+        "id": "art_finance_20240228_003_28e71045",
+        "title": "Cold weather impacts on US Natural Gas | Wood Mackenzie",
+        "url": "https://www.woodmac.com/news/opinion/the-impact-of-freeze-offs-to-us-lng",
+        "source": "woodmac.com",
+        "published_date": "2024-02-28T08:43:00+00:00"
+      },
+      {
+        "id": "art_finance_20240314_004_6bad59db",
+        "title": "Natural Gas News - March 14, 2024 - Mansfield Energy",
+        "url": "https://mansfield.energy/2024/03/14/natural-gas-news-march-14-2024",
+        "source": "mansfield.energy",
+        "published_date": "2024-03-14T15:32:34+00:00"
+      },
+      {
+        "id": "art_finance_20240320_005_36938ed6",
+        "title": "Prospects for European gas amid the war in Ukraine - GIS Reports",
+        "url": "https://www.gisreportsonline.com/r/european-gas-markets-post-war-outlook",
+        "source": "gisreportsonline.com",
+        "published_date": "2024-03-20T08:00:00+01:00"
+      },
+      {
+        "id": "art_finance_20240311_006_99fc5ef8",
+        "title": "Gas prices are up ahead of spring break. Here’s why. - Texas Standard",
+        "url": "https://texasstandard.org/stories/rio-grande-river-texas-mexico-getting-saltier-farmers-agriculture",
+        "source": "texasstandard.org",
+        "published_date": "2024-03-11T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20211115_007_abb34d16",
+        "title": "Ask the Experts: Natural Gas, Shale and the Winter Season",
+        "url": "https://blogs.constellation.com/energy-management/ask-the-experts-natural-gas-shale-and-the-winter-season",
+        "source": "blogs.constellation.com",
+        "published_date": "2021-11-15T16:32:41+00:00"
+      },
+      {
+        "id": "art_finance_20240308_008_28bc9feb",
+        "title": "Russia’s oil and gas revenue jumped in February - Modern Diplomacy",
+        "url": "https://en.interaffairs.ru/article/bloomberg-russias-oil-and-gas-revenue-jumped-in-february",
+        "source": "en.interaffairs.ru",
+        "published_date": "2024-03-08T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240305_009_b3522bc3",
+        "title": "Oil and Gas Politics Signal Market Growth According to Industry Insider Jeremy A. Paul - USA Today",
+        "url": "https://www.usatoday.com/story/special/contributor-content/2024/03/05/oil-and-gas-politics-signal-market-growth-according-to-industry-insider-jeremy-a-paul/72853390007",
+        "source": "usatoday.com",
+        "published_date": "2024-03-05T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240305_002_a468bf5b",
+        "title": "Sanjay Shende, Deputy Managing Director at Mahanagar Gas Limited - Energetica India Magazine",
+        "url": "https://www.energetica-india.net/powerful-thoughts/online/sanjay-shende",
+        "source": "energetica-india.net",
+        "published_date": "2024-03-05T13:27:45+00:00"
+      },
+      {
+        "id": "art_finance_20240207_003_1b8ef8a6",
+        "title": "Geopolitical Significance of U.S. LNG",
+        "url": "https://www.csis.org/analysis/geopolitical-significance-us-lng",
+        "source": "csis.org",
+        "published_date": "2024-02-07T00:00:00+00:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_f6520320a423",
+      "events_count": 20,
+      "hypotheses_count": 19
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 3,
+      "avg_depth": 1.82,
+      "quality_score": 0.84,
+      "depth_score": 1.0,
+      "confidence_score": 0.72,
+      "strength_score": 0.64,
+      "evidence_score": 1.0,
+      "event_count": 20,
+      "hypothesis_count": 19
+    },
+    "nodes": [
+      {
+        "id": "evt_891a820a0f6c",
+        "title": "Option 1: below recent range",
+        "description": "Question resolves to: below recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-03-28T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2024_03",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 0,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T20:50:22.050779Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_896321b180d4",
+        "title": "Option 3: above recent range",
+        "description": "Question resolves to: above recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-03-28T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2024_03",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 2,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T20:50:22.050800Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_climate_20240115_001_fce43ed7",
+        "title": "Global Climate Anomalies",
+        "description": "Unusual global climate patterns and atmospheric conditions contributing to milder winter temperatures in various regions.",
+        "event_type": "indicator",
+        "domain": "climate",
+        "tags": [],
+        "occurred_date": "2024-01-15T12:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240207_003_1b8ef8a6"
+        ],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2024_03",
+        "source_article_id": "art_finance_20240207_003_1b8ef8a6",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_henry_hub_monthly_return_2024_03"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:21:00.537841Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_climate_20240220_012_624bbb99",
+        "title": "Favorable Global Weather Patterns",
+        "description": "Broad global weather patterns contributed to milder winter conditions in key US consuming regions.",
+        "event_type": "indicator",
+        "domain": "climate",
+        "tags": [],
+        "occurred_date": "2024-02-20T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240228_003_28e71045"
+        ],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2024_03",
+        "source_article_id": "art_finance_20240228_003_28e71045",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_henry_hub_monthly_return_2024_03"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:10:14.435101Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_climate_20240227_043_b4895f72",
+        "title": "Mild Winter Weather Impacts US Natural Gas",
+        "description": "Mild winter weather in the US reduces heating demand, impacting natural gas consumption and prices.",
+        "event_type": "indicator",
+        "domain": "climate",
+        "tags": [],
+        "occurred_date": "2024-02-27T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240228_003_28e71045"
+        ],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2024_03",
+        "source_article_id": "art_finance_20240228_003_28e71045",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_henry_hub_monthly_return_2024_03"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T21:05:41.998830Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_climate_20240228_001_d67943fc",
+        "title": "Mild Winter Weather Reduces Heating Demand",
+        "description": "A relatively mild winter season in key consuming regions in the US in late February and early March diminished heating demand, thereby reducing pressure on natural gas stockpiles.",
+        "event_type": "indicator",
+        "domain": "climate",
+        "tags": [],
+        "occurred_date": "2024-02-28T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240228_003_28e71045"
+        ],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2024_03",
+        "source_article_id": "art_finance_20240228_003_28e71045",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_henry_hub_monthly_return_2024_03"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:09:37.429465Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_f6520320a423",
+        "title": "Option 2: within recent range",
+        "description": "Question resolves to: within recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-03-28T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2024_03",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 1,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T20:50:22.050791Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20231201_013_f62a4568",
+        "title": "Sustained Investment in US Natural Gas Infrastructure",
+        "description": "Ongoing investments in natural gas production and storage infrastructure in the US ensured high capacity and output.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-12-01T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240314_004_6bad59db"
+        ],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2024_03",
+        "source_article_id": "art_finance_20240314_004_6bad59db",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_henry_hub_monthly_return_2024_03"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:10:14.472921Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240228_008_4916a1a1",
+        "title": "Moderate Natural Gas Demand",
+        "description": "Overall moderate natural gas demand contributed to balanced market conditions.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-02-28T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240228_003_28e71045"
+        ],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2024_03",
+        "source_article_id": "art_finance_20240228_003_28e71045",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_henry_hub_monthly_return_2024_03"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:10:06.119865Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240301_009_d60ff32d",
+        "title": "Sufficient Natural Gas Supply",
+        "description": "Ample natural gas supply in the market ensured that demand was met without significant price increases.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-03-01T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240314_004_6bad59db"
+        ],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2024_03",
+        "source_article_id": "art_finance_20240314_004_6bad59db",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_henry_hub_monthly_return_2024_03"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:10:06.158802Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240301_010_4f00cb2e",
+        "title": "Global Energy Market Stability",
+        "description": "A general stability in global energy markets, despite some geopolitical factors, prevented major shocks to natural gas prices.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-03-01T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240308_008_28bc9feb",
+          "art_finance_20240305_009_b3522bc3"
+        ],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2024_03",
+        "source_article_id": "art_finance_20240308_008_28bc9feb",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_henry_hub_monthly_return_2024_03"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:10:06.198346Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240301_014_69d4127b",
+        "title": "Balanced Global LNG Supply and Demand",
+        "description": "A relatively balanced state of global LNG supply and demand prevented excessive competition for US exports.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-03-01T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240320_005_36938ed6"
+        ],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2024_03",
+        "source_article_id": "art_finance_20240320_005_36938ed6",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_henry_hub_monthly_return_2024_03"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:10:14.514343Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240305_002_8a281c77",
+        "title": "Increased investment in natural gas infrastructure",
+        "description": "Ongoing investments in natural gas production and storage capacity contribute to robust domestic supply.",
+        "event_type": "decision",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-03-05T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240305_009_b3522bc3"
+        ],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2024_03",
+        "source_article_id": "art_finance_20240305_009_b3522bc3",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_henry_hub_monthly_return_2024_03"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:17:06.704693Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240308_005_585d8153",
+        "title": "Russia's Oil and Gas Revenue Jumped in February",
+        "description": "Russia’s oil and gas revenue jumped more than 80% in February from a year ago, indicating strength in global energy markets.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-03-08T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240308_008_28bc9feb"
+        ],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2024_03",
+        "source_article_id": "art_finance_20240308_008_28bc9feb",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_henry_hub_monthly_return_2024_03"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:09:37.585639Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240310_047_25fbfdee",
+        "title": "Rising Gas Prices Ahead of Spring Break",
+        "description": "Gasoline prices are up ahead of spring break, which could indicate broader energy market trends, though not directly Henry Hub.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-03-10T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240311_006_99fc5ef8"
+        ],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2024_03",
+        "source_article_id": "art_finance_20240311_006_99fc5ef8",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_henry_hub_monthly_return_2024_03"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T21:05:42.074380Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240313_044_9e61647e",
+        "title": "Robust US Domestic Natural Gas Production",
+        "description": "Continued robust domestic natural gas production in the US contributes to ample supply in the market.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-03-13T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240314_004_6bad59db"
+        ],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2024_03",
+        "source_article_id": "art_finance_20240314_004_6bad59db",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_henry_hub_monthly_return_2024_03"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T21:05:42.016452Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240314_002_d0fdc99e",
+        "title": "Robust US Domestic Natural Gas Production and Storage Levels",
+        "description": "Robust US domestic natural gas production and storage levels provided a strong supply buffer against demand fluctuations and external market pressures, maintaining price stability.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-03-14T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240314_004_6bad59db"
+        ],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2024_03",
+        "source_article_id": "art_finance_20240314_004_6bad59db",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_henry_hub_monthly_return_2024_03"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:09:37.471157Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240320_003_4024a594",
+        "title": "Stable Global LNG Market Dynamics",
+        "description": "While European demand for LNG was present, it didn't create excessive draw on US supplies that would significantly impact Henry Hub prices, maintaining a balanced export market.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-03-20T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240320_005_36938ed6"
+        ],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2024_03",
+        "source_article_id": "art_finance_20240320_005_36938ed6",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_henry_hub_monthly_return_2024_03"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:09:37.514567Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_politics_20240301_015_d1603a64",
+        "title": "Limited Geopolitical Disruptions to Energy Markets",
+        "description": "Despite ongoing geopolitical tensions, there were no major new disruptions that significantly impacted global energy supply or demand during the period.",
+        "event_type": "indicator",
+        "domain": "politics",
+        "tags": [],
+        "occurred_date": "2024-03-01T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240308_008_28bc9feb",
+          "art_finance_20240305_009_b3522bc3"
+        ],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2024_03",
+        "source_article_id": "art_finance_20240308_008_28bc9feb",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_henry_hub_monthly_return_2024_03"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:10:14.544763Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_politics_20240305_002_f7f70a68",
+        "title": "Geopolitical shifts drive focus on energy security",
+        "description": "Geopolitical events, such as the conflict in Ukraine, have shifted the international conversation about energy, increasing the focus on energy security and driving investments in domestic natural gas production.",
+        "event_type": "decision",
+        "domain": "politics",
+        "tags": [],
+        "occurred_date": "2024-03-05T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240305_009_b3522bc3"
+        ],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2024_03",
+        "source_article_id": "art_finance_20240305_009_b3522bc3",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_henry_hub_monthly_return_2024_03"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:17:44.185922Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_politics_20240305_004_3429f0df",
+        "title": "Geopolitical Stability (Relative Impact on US Market)",
+        "description": "Global geopolitical events, while influencing international pricing, did not directly or dramatically impact the US domestic Henry Hub price due to market insulation and sufficient domestic supply.",
+        "event_type": "indicator",
+        "domain": "politics",
+        "tags": [],
+        "occurred_date": "2024-03-05T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240308_008_28bc9feb",
+          "art_finance_20240305_009_b3522bc3"
+        ],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2024_03",
+        "source_article_id": "art_finance_20240308_008_28bc9feb",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_henry_hub_monthly_return_2024_03"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:09:37.543993Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_politics_20240305_006_44be077e",
+        "title": "Oil and Gas Politics Signal Market Growth",
+        "description": "An article from USA Today signals market growth in oil and gas based on political influences, suggesting a potential for upward price movement.",
+        "event_type": "indicator",
+        "domain": "politics",
+        "tags": [],
+        "occurred_date": "2024-03-05T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240305_009_b3522bc3"
+        ],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2024_03",
+        "source_article_id": "art_finance_20240305_009_b3522bc3",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_henry_hub_monthly_return_2024_03"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:09:37.614065Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_henry_hub_monthly_return_2024_03_20260725_060937_001_f34b542a",
+        "source_event_id": "evt_climate_20240228_001_d67943fc",
+        "target_event_id": "evt_f6520320a423",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Mild winter weather directly reduced heating demand, contributing to stable natural gas stockpiles and preventing price spikes, thus keeping Henry Hub prices within range.",
+        "evidence_article_ids": [
+          "art_finance_20240228_003_28e71045"
+        ],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2024_03"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:09:37.706300Z",
+        "last_confirmed_at": "2026-07-25T06:09:37.706300Z"
+      },
+      {
+        "id": "hyp_v3_henry_hub_monthly_return_2024_03_20260725_060937_002_0d8b4158",
+        "source_event_id": "evt_finance_20240314_002_d0fdc99e",
+        "target_event_id": "evt_f6520320a423",
+        "relation_type": "enables",
+        "strength": 0.8,
+        "confidence": 0.85,
+        "time_lag_hours": null,
+        "reasoning": "Robust domestic production and storage provided a buffer against demand fluctuations and external pressures, directly enabling price stability within the recent range.",
+        "evidence_article_ids": [
+          "art_finance_20240314_004_6bad59db"
+        ],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2024_03"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:09:37.725639Z",
+        "last_confirmed_at": "2026-07-25T06:09:37.725639Z"
+      },
+      {
+        "id": "hyp_v3_henry_hub_monthly_return_2024_03_20260725_060937_003_b0ca2c0e",
+        "source_event_id": "evt_finance_20240320_003_4024a594",
+        "target_event_id": "evt_f6520320a423",
+        "relation_type": "enables",
+        "strength": 0.6,
+        "confidence": 0.75,
+        "time_lag_hours": null,
+        "reasoning": "Stable global LNG dynamics meant US supplies were not excessively drawn upon, helping to maintain a balanced domestic market and contributing to price stability.",
+        "evidence_article_ids": [
+          "art_finance_20240320_005_36938ed6"
+        ],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2024_03"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:09:37.744947Z",
+        "last_confirmed_at": "2026-07-25T06:09:37.744947Z"
+      },
+      {
+        "id": "hyp_v3_henry_hub_monthly_return_2024_03_20260725_060937_004_69ced9bc",
+        "source_event_id": "evt_politics_20240305_004_3429f0df",
+        "target_event_id": "evt_f6520320a423",
+        "relation_type": "enables",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Relative geopolitical stability, despite global influences, meant the US market remained insulated, preventing dramatic impacts on Henry Hub prices and enabling them to stay within range.",
+        "evidence_article_ids": [
+          "art_finance_20240308_008_28bc9feb",
+          "art_finance_20240305_009_b3522bc3"
+        ],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2024_03"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:09:37.764577Z",
+        "last_confirmed_at": "2026-07-25T06:09:37.764577Z"
+      },
+      {
+        "id": "hyp_v3_henry_hub_monthly_return_2024_03_20260725_060937_005_f6f75904",
+        "source_event_id": "evt_finance_20240308_005_585d8153",
+        "target_event_id": "evt_f6520320a423",
+        "relation_type": "inhibits",
+        "strength": 0.5,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "Russia's increased oil and gas revenue indicated global market strength, which could have pushed Henry Hub prices higher, but domestic factors overwhelmed this upward pressure, thus inhibiting a move out of range.",
+        "evidence_article_ids": [
+          "art_finance_20240308_008_28bc9feb"
+        ],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2024_03"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:09:37.785452Z",
+        "last_confirmed_at": "2026-07-25T06:09:37.785452Z"
+      },
+      {
+        "id": "hyp_v3_henry_hub_monthly_return_2024_03_20260725_060937_006_a86b265b",
+        "source_event_id": "evt_politics_20240305_006_44be077e",
+        "target_event_id": "evt_f6520320a423",
+        "relation_type": "inhibits",
+        "strength": 0.4,
+        "confidence": 0.5,
+        "time_lag_hours": null,
+        "reasoning": "Signals of market growth in oil and gas suggested potential upward price movement, but domestic supply/demand balance prevented a significant surge in Henry Hub prices, inhibiting them from leaving the recent range.",
+        "evidence_article_ids": [
+          "art_finance_20240305_009_b3522bc3"
+        ],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2024_03"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:09:37.806036Z",
+        "last_confirmed_at": "2026-07-25T06:09:37.806036Z"
+      },
+      {
+        "id": "hyp_v3_henry_hub_monthly_return_2024_03_20260725_060937_007_f1c5b28c",
+        "source_event_id": "evt_finance_20240310_047_25fbfdee",
+        "target_event_id": "evt_f6520320a423",
+        "relation_type": "inhibits",
+        "strength": 0.3,
+        "confidence": 0.5,
+        "time_lag_hours": null,
+        "reasoning": "Rising gasoline prices ahead of spring break reflected general energy price sentiment, but these were specific to refined products and did not fundamentally lead to a sustained upward trend in Henry Hub natural gas, thus inhibiting a move out of range.",
+        "evidence_article_ids": [
+          "art_finance_20240311_006_99fc5ef8"
+        ],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2024_03"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:09:37.825787Z",
+        "last_confirmed_at": "2026-07-25T06:09:37.825787Z"
+      },
+      {
+        "id": "hyp_v3_henry_hub_monthly_return_2024_03_20260725_061006_009_0c3fcbec",
+        "source_event_id": "evt_finance_20240228_008_4916a1a1",
+        "target_event_id": "evt_climate_20240228_001_d67943fc",
+        "relation_type": "causes",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Moderate overall demand for natural gas contributed to the mild winter weather having a more pronounced effect on reducing heating demand.",
+        "evidence_article_ids": [
+          "art_finance_20240228_003_28e71045"
+        ],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2024_03"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:10:06.257086Z",
+        "last_confirmed_at": "2026-07-25T06:10:06.257086Z"
+      },
+      {
+        "id": "hyp_v3_henry_hub_monthly_return_2024_03_20260725_061006_010_bd34aadd",
+        "source_event_id": "evt_finance_20240301_009_d60ff32d",
+        "target_event_id": "evt_finance_20240314_002_d0fdc99e",
+        "relation_type": "enables",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Sufficient natural gas supply in the market enabled robust domestic production and storage levels to be maintained.",
+        "evidence_article_ids": [
+          "art_finance_20240314_004_6bad59db"
+        ],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2024_03"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:10:06.333324Z",
+        "last_confirmed_at": "2026-07-25T06:10:06.333324Z"
+      },
+      {
+        "id": "hyp_v3_henry_hub_monthly_return_2024_03_20260725_061006_011_e6e6431a",
+        "source_event_id": "evt_finance_20240301_010_4f00cb2e",
+        "target_event_id": "evt_politics_20240305_004_3429f0df",
+        "relation_type": "enables",
+        "strength": 0.7,
+        "confidence": 0.75,
+        "time_lag_hours": null,
+        "reasoning": "General stability in global energy markets enabled the US market to remain relatively insulated from geopolitical influences.",
+        "evidence_article_ids": [
+          "art_finance_20240308_008_28bc9feb",
+          "art_finance_20240305_009_b3522bc3"
+        ],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2024_03"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:10:06.352386Z",
+        "last_confirmed_at": "2026-07-25T06:10:06.352386Z"
+      },
+      {
+        "id": "hyp_v3_henry_hub_monthly_return_2024_03_20260725_061014_013_1bd26f20",
+        "source_event_id": "evt_climate_20240220_012_624bbb99",
+        "target_event_id": "evt_climate_20240228_001_d67943fc",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Favorable global weather patterns directly led to the mild winter conditions observed in the US, reducing heating demand.",
+        "evidence_article_ids": [
+          "art_finance_20240228_003_28e71045"
+        ],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2024_03"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:10:14.576036Z",
+        "last_confirmed_at": "2026-07-25T06:10:14.576036Z"
+      },
+      {
+        "id": "hyp_v3_henry_hub_monthly_return_2024_03_20260725_061014_014_a56b9bf6",
+        "source_event_id": "evt_finance_20231201_013_f62a4568",
+        "target_event_id": "evt_finance_20240314_002_d0fdc99e",
+        "relation_type": "enables",
+        "strength": 0.8,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Sustained investment in infrastructure is a prerequisite for robust production and storage capabilities.",
+        "evidence_article_ids": [
+          "art_finance_20240314_004_6bad59db"
+        ],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2024_03"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:10:14.594206Z",
+        "last_confirmed_at": "2026-07-25T06:10:14.594206Z"
+      },
+      {
+        "id": "hyp_v3_henry_hub_monthly_return_2024_03_20260725_061014_015_96f21b57",
+        "source_event_id": "evt_finance_20240301_014_69d4127b",
+        "target_event_id": "evt_finance_20240320_003_4024a594",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.75,
+        "time_lag_hours": null,
+        "reasoning": "A balanced global LNG market directly contributed to the stability of global LNG dynamics, preventing excessive draw on US supplies.",
+        "evidence_article_ids": [
+          "art_finance_20240320_005_36938ed6"
+        ],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2024_03"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:10:14.612188Z",
+        "last_confirmed_at": "2026-07-25T06:10:14.612188Z"
+      },
+      {
+        "id": "hyp_v3_henry_hub_monthly_return_2024_03_20260725_061014_016_d6236fda",
+        "source_event_id": "evt_politics_20240301_015_d1603a64",
+        "target_event_id": "evt_politics_20240305_004_3429f0df",
+        "relation_type": "enables",
+        "strength": 0.7,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "The absence of major new geopolitical disruptions allowed for relative stability in the US energy market, despite existing tensions.",
+        "evidence_article_ids": [
+          "art_finance_20240308_008_28bc9feb",
+          "art_finance_20240305_009_b3522bc3"
+        ],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2024_03"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:10:14.630651Z",
+        "last_confirmed_at": "2026-07-25T06:10:14.630651Z"
+      },
+      {
+        "id": "hyp_v3_henry_hub_monthly_return_2024_03_20260725_061109_001_b73f4958",
+        "source_event_id": "evt_climate_20240228_001_d67943fc",
+        "target_event_id": "evt_finance_20240313_044_9e61647e",
+        "relation_type": "causes",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Mild winter weather reducing heating demand can lead to an accumulation of natural gas in storage, contributing to robust domestic production figures later on.",
+        "evidence_article_ids": [
+          "art_finance_20240228_003_28e71045"
+        ],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2024_03"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:11:09.067883Z",
+        "last_confirmed_at": "2026-07-25T06:11:09.067883Z"
+      },
+      {
+        "id": "hyp_v3_henry_hub_monthly_return_2024_03_20260725_061127_002_7386ff50",
+        "source_event_id": "evt_climate_20240227_043_b4895f72",
+        "target_event_id": "evt_climate_20240228_001_d67943fc",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Mild winter weather directly leads to reduced heating demand.",
+        "evidence_article_ids": [
+          "art_finance_20240228_003_28e71045"
+        ],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2024_03"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:11:27.914137Z",
+        "last_confirmed_at": "2026-07-25T06:11:27.914137Z"
+      },
+      {
+        "id": "hyp_v3_henry_hub_monthly_return_2024_03_20260725_061127_003_b934ff65",
+        "source_event_id": "evt_climate_20240228_001_d67943fc",
+        "target_event_id": "evt_finance_20240313_044_9e61647e",
+        "relation_type": "causes",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Reduced heating demand can lead to an accumulation of natural gas in storage, contributing to robust domestic production figures.",
+        "evidence_article_ids": [
+          "art_finance_20240228_003_28e71045"
+        ],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2024_03"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:11:27.933835Z",
+        "last_confirmed_at": "2026-07-25T06:11:27.933835Z"
+      },
+      {
+        "id": "hyp_v3_henry_hub_monthly_return_2024_03_20260725_061744_001_913c9ede",
+        "source_event_id": "evt_politics_20240305_002_f7f70a68",
+        "target_event_id": "evt_finance_20240305_002_8a281c77",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Geopolitical instability and the resulting focus on energy security directly lead to increased investments in domestic natural gas production and storage to ensure supply.",
+        "evidence_article_ids": [
+          "art_finance_20240305_009_b3522bc3"
+        ],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2024_03"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:17:44.225315Z",
+        "last_confirmed_at": "2026-07-25T06:17:44.225315Z"
+      },
+      {
+        "id": "hyp_v3_henry_hub_monthly_return_2024_03_20260725_062100_001_849a72c8",
+        "source_event_id": "evt_climate_20240115_001_fce43ed7",
+        "target_event_id": "evt_climate_20240220_012_624bbb99",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Global climate anomalies are a direct cause of broad global weather patterns, which in turn lead to milder winters.",
+        "evidence_article_ids": [
+          "art_finance_20240207_003_1b8ef8a6"
+        ],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2024_03"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:21:00.571479Z",
+        "last_confirmed_at": "2026-07-25T06:21:00.571479Z"
+      }
+    ],
+    "outcome_impacts": [
+      {
+        "id": "imp_86dbc08b",
+        "event_id": "evt_climate_20240227_043_b4895f72",
+        "outcome_event_id": "evt_f6520320a423",
+        "question_id": "v3_henry_hub_monthly_return_2024_03",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.5,
+        "reasoning": "Default neutral impact recorded for missing event. Specific direction and magnitude not determined from context.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:11:40.258491Z",
+        "last_confirmed_at": "2026-07-25T06:11:40.258491Z"
+      },
+      {
+        "id": "imp_490718d0",
+        "event_id": "evt_finance_20240313_044_9e61647e",
+        "outcome_event_id": "evt_f6520320a423",
+        "question_id": "v3_henry_hub_monthly_return_2024_03",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.5,
+        "reasoning": "Default neutral impact recorded for missing event. Specific direction and magnitude not determined from context.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:11:40.270364Z",
+        "last_confirmed_at": "2026-07-25T06:11:40.270364Z"
+      },
+      {
+        "id": "imp_11fec531",
+        "event_id": "evt_finance_20240319_045_9d78ed8b",
+        "outcome_event_id": "evt_f6520320a423",
+        "question_id": "v3_henry_hub_monthly_return_2024_03",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.5,
+        "reasoning": "Default neutral impact recorded for missing event. Specific direction and magnitude not determined from context.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:11:40.280551Z",
+        "last_confirmed_at": "2026-07-25T06:11:40.280551Z"
+      },
+      {
+        "id": "imp_64e727dd",
+        "event_id": "evt_finance_20240307_046_a553691e",
+        "outcome_event_id": "evt_f6520320a423",
+        "question_id": "v3_henry_hub_monthly_return_2024_03",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.5,
+        "reasoning": "Default neutral impact recorded for missing event. Specific direction and magnitude not determined from context.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:11:40.291194Z",
+        "last_confirmed_at": "2026-07-25T06:11:40.291194Z"
+      },
+      {
+        "id": "imp_702e2363",
+        "event_id": "evt_finance_20240310_047_25fbfdee",
+        "outcome_event_id": "evt_f6520320a423",
+        "question_id": "v3_henry_hub_monthly_return_2024_03",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.5,
+        "reasoning": "Default neutral impact recorded for missing event. Specific direction and magnitude not determined from context.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:11:40.301244Z",
+        "last_confirmed_at": "2026-07-25T06:11:40.301244Z"
+      },
+      {
+        "id": "imp_d03812ee",
+        "event_id": "evt_climate_20240228_001_d67943fc",
+        "outcome_event_id": "evt_f6520320a423",
+        "question_id": "v3_henry_hub_monthly_return_2024_03",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.5,
+        "reasoning": "Default neutral impact recorded for missing event. Specific direction and magnitude not determined from context.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:11:40.311653Z",
+        "last_confirmed_at": "2026-07-25T06:11:40.311653Z"
+      },
+      {
+        "id": "imp_4d76c872",
+        "event_id": "evt_finance_20240314_002_d0fdc99e",
+        "outcome_event_id": "evt_f6520320a423",
+        "question_id": "v3_henry_hub_monthly_return_2024_03",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.5,
+        "reasoning": "Default neutral impact recorded for missing event. Specific direction and magnitude not determined from context.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:11:40.326005Z",
+        "last_confirmed_at": "2026-07-25T06:11:40.326005Z"
+      },
+      {
+        "id": "imp_92273b19",
+        "event_id": "evt_finance_20240320_003_4024a594",
+        "outcome_event_id": "evt_f6520320a423",
+        "question_id": "v3_henry_hub_monthly_return_2024_03",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.5,
+        "reasoning": "Default neutral impact recorded for missing event. Specific direction and magnitude not determined from context.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:11:40.337101Z",
+        "last_confirmed_at": "2026-07-25T06:11:40.337101Z"
+      },
+      {
+        "id": "imp_318f2349",
+        "event_id": "evt_politics_20240305_004_3429f0df",
+        "outcome_event_id": "evt_f6520320a423",
+        "question_id": "v3_henry_hub_monthly_return_2024_03",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.5,
+        "reasoning": "Default neutral impact recorded for missing event. Specific direction and magnitude not determined from context.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:11:40.349791Z",
+        "last_confirmed_at": "2026-07-25T06:11:40.349791Z"
+      },
+      {
+        "id": "imp_476a33d9",
+        "event_id": "evt_finance_20240308_005_585d8153",
+        "outcome_event_id": "evt_f6520320a423",
+        "question_id": "v3_henry_hub_monthly_return_2024_03",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.5,
+        "reasoning": "Default neutral impact recorded for missing event. Specific direction and magnitude not determined from context.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:11:40.361976Z",
+        "last_confirmed_at": "2026-07-25T06:11:40.361976Z"
+      },
+      {
+        "id": "imp_c4c5ae2a",
+        "event_id": "evt_climate_20240301_007_dfb3a5a4",
+        "outcome_event_id": "evt_f6520320a423",
+        "question_id": "v3_henry_hub_monthly_return_2024_03",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.5,
+        "reasoning": "Default neutral impact recorded for missing event. Specific direction and magnitude not determined from context.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:11:40.373417Z",
+        "last_confirmed_at": "2026-07-25T06:11:40.373417Z"
+      },
+      {
+        "id": "imp_a7f50a9d",
+        "event_id": "evt_politics_20240305_006_44be077e",
+        "outcome_event_id": "evt_f6520320a423",
+        "question_id": "v3_henry_hub_monthly_return_2024_03",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.5,
+        "reasoning": "Default neutral impact recorded for missing event. Specific direction and magnitude not determined from context.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:11:53.256944Z",
+        "last_confirmed_at": "2026-07-25T06:11:53.256944Z"
+      },
+      {
+        "id": "imp_a9309cb6",
+        "event_id": "evt_finance_20240228_008_4916a1a1",
+        "outcome_event_id": "evt_f6520320a423",
+        "question_id": "v3_henry_hub_monthly_return_2024_03",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.5,
+        "reasoning": "Default neutral impact recorded for missing event. Specific direction and magnitude not determined from context.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:11:53.272106Z",
+        "last_confirmed_at": "2026-07-25T06:11:53.272106Z"
+      },
+      {
+        "id": "imp_77206fa8",
+        "event_id": "evt_finance_20240301_009_d60ff32d",
+        "outcome_event_id": "evt_f6520320a423",
+        "question_id": "v3_henry_hub_monthly_return_2024_03",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.5,
+        "reasoning": "Default neutral impact recorded for missing event. Specific direction and magnitude not determined from context.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:11:53.283238Z",
+        "last_confirmed_at": "2026-07-25T06:11:53.283238Z"
+      },
+      {
+        "id": "imp_a1a664bd",
+        "event_id": "evt_finance_20240301_010_4f00cb2e",
+        "outcome_event_id": "evt_f6520320a423",
+        "question_id": "v3_henry_hub_monthly_return_2024_03",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.5,
+        "reasoning": "Default neutral impact recorded for missing event. Specific direction and magnitude not determined from context.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:11:53.293695Z",
+        "last_confirmed_at": "2026-07-25T06:11:53.293695Z"
+      },
+      {
+        "id": "imp_fc26f956",
+        "event_id": "evt_climate_20240228_011_91e7535c",
+        "outcome_event_id": "evt_f6520320a423",
+        "question_id": "v3_henry_hub_monthly_return_2024_03",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.5,
+        "reasoning": "Default neutral impact recorded for missing event. Specific direction and magnitude not determined from context.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:11:53.304464Z",
+        "last_confirmed_at": "2026-07-25T06:11:53.304464Z"
+      },
+      {
+        "id": "imp_11e516d1",
+        "event_id": "evt_climate_20240220_012_624bbb99",
+        "outcome_event_id": "evt_f6520320a423",
+        "question_id": "v3_henry_hub_monthly_return_2024_03",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.5,
+        "reasoning": "Default neutral impact recorded for missing event. Specific direction and magnitude not determined from context.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:11:53.314704Z",
+        "last_confirmed_at": "2026-07-25T06:11:53.314704Z"
+      },
+      {
+        "id": "imp_c1213a0f",
+        "event_id": "evt_finance_20231201_013_f62a4568",
+        "outcome_event_id": "evt_f6520320a423",
+        "question_id": "v3_henry_hub_monthly_return_2024_03",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.5,
+        "reasoning": "Default neutral impact recorded for missing event. Specific direction and magnitude not determined from context.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:11:53.326546Z",
+        "last_confirmed_at": "2026-07-25T06:11:53.326546Z"
+      },
+      {
+        "id": "imp_af7c14cf",
+        "event_id": "evt_finance_20240301_014_69d4127b",
+        "outcome_event_id": "evt_f6520320a423",
+        "question_id": "v3_henry_hub_monthly_return_2024_03",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.5,
+        "reasoning": "Default neutral impact recorded for missing event. Specific direction and magnitude not determined from context.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:11:53.337069Z",
+        "last_confirmed_at": "2026-07-25T06:11:53.337069Z"
+      },
+      {
+        "id": "imp_eb5ce062",
+        "event_id": "evt_politics_20240301_015_d1603a64",
+        "outcome_event_id": "evt_f6520320a423",
+        "question_id": "v3_henry_hub_monthly_return_2024_03",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.5,
+        "reasoning": "Default neutral impact recorded for missing event. Specific direction and magnitude not determined from context.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:11:53.347191Z",
+        "last_confirmed_at": "2026-07-25T06:11:53.347191Z"
+      },
+      {
+        "id": "imp_bf7a158c",
+        "event_id": "evt_climate_20240229_001_f2d236e9",
+        "outcome_event_id": "evt_f6520320a423",
+        "question_id": "v3_henry_hub_monthly_return_2024_03",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Persistent mild winter weather contributes to lower natural gas demand, supporting the 'within recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:17:01.469819Z",
+        "last_confirmed_at": "2026-07-25T06:17:01.469819Z"
+      },
+      {
+        "id": "imp_88574270",
+        "event_id": "evt_finance_20240305_002_8a281c77",
+        "outcome_event_id": "evt_f6520320a423",
+        "question_id": "v3_henry_hub_monthly_return_2024_03",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Increased investment in natural gas infrastructure contributes to a stable supply, which supports the Henry Hub price remaining within a recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:17:15.202781Z",
+        "last_confirmed_at": "2026-07-25T06:17:15.202781Z"
+      },
+      {
+        "id": "imp_b1b60399",
+        "event_id": "evt_climate_20240220_001_24142730",
+        "outcome_event_id": "evt_f6520320a423",
+        "question_id": "v3_henry_hub_monthly_return_2024_03",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Global climate anomalies leading to milder winters contribute to lower natural gas demand, supporting the Henry Hub price remaining within a recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:17:29.573154Z",
+        "last_confirmed_at": "2026-07-25T06:17:29.573154Z"
+      },
+      {
+        "id": "imp_aba9cafe",
+        "event_id": "evt_politics_20240305_002_f7f70a68",
+        "outcome_event_id": "evt_f6520320a423",
+        "question_id": "v3_henry_hub_monthly_return_2024_03",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.6,
+        "reasoning": "Geopolitical shifts can influence energy markets, but the direct impact on Henry Hub monthly return in March 2024 is not clearly positive or negative based on available information. It likely contributes to overall market stability or volatility without a specific directional push for this outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:20:46.894963Z",
+        "last_confirmed_at": "2026-07-25T06:20:46.894963Z"
+      },
+      {
+        "id": "imp_f538ae9d",
+        "event_id": "evt_climate_20240115_001_fce43ed7",
+        "outcome_event_id": "evt_f6520320a423",
+        "question_id": "v3_henry_hub_monthly_return_2024_03",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Global climate anomalies leading to milder winters directly contribute to lower natural gas demand, which in turn supports the Henry Hub price remaining within the recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:21:04.240396Z",
+        "last_confirmed_at": "2026-07-25T06:21:04.240396Z"
+      }
+    ]
+  }
+}

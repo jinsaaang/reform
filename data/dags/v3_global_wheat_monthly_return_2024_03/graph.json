@@ -1,0 +1,139 @@
+{
+  "schema_version": "1.0",
+  "actual_outcome_event_id": "node_6",
+  "graph": {
+    "nodes": [
+      {
+        "id": "node_1",
+        "label": "February global wheat-price reference observation",
+        "event_type": "indicator",
+        "occurred_date": "2024-02-29",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_711b8a9ff8a415bb"
+        ]
+      },
+      {
+        "id": "node_2",
+        "label": "March global wheat-price target observation",
+        "event_type": "indicator",
+        "occurred_date": "2024-03-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_711b8a9ff8a415bb",
+          "ev_ac08eefb5f85ee3c"
+        ]
+      },
+      {
+        "id": "node_3",
+        "label": "March-over-February wheat-price return calculation",
+        "event_type": "milestone",
+        "occurred_date": "2024-03-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_711b8a9ff8a415bb"
+        ]
+      },
+      {
+        "id": "node_4",
+        "label": "Observed March global wheat return was -3.374%",
+        "event_type": "indicator",
+        "occurred_date": "2024-03-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_711b8a9ff8a415bb"
+        ]
+      },
+      {
+        "id": "node_5",
+        "label": "Pre-registered yes threshold was -0.881%",
+        "event_type": "milestone",
+        "occurred_date": "2024-03-01",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_711b8a9ff8a415bb"
+        ]
+      },
+      {
+        "id": "node_6",
+        "label": "Resolved outcome: No, March wheat return missed the threshold",
+        "event_type": "outcome",
+        "occurred_date": "2024-04-15",
+        "is_outcome": true,
+        "is_actual_outcome": true,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_711b8a9ff8a415bb"
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_1",
+        "source": "node_1",
+        "target": "node_3",
+        "relationship": "input_to",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_711b8a9ff8a415bb"
+        ],
+        "rationale": "The February series observation is the reference input to the monthly return calculation."
+      },
+      {
+        "id": "edge_2",
+        "source": "node_2",
+        "target": "node_3",
+        "relationship": "input_to",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_711b8a9ff8a415bb",
+          "ev_ac08eefb5f85ee3c"
+        ],
+        "rationale": "The March series observation is the target input to the monthly return calculation."
+      },
+      {
+        "id": "edge_3",
+        "source": "node_3",
+        "target": "node_4",
+        "relationship": "yields",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_711b8a9ff8a415bb"
+        ],
+        "rationale": "Applying the pre-specified percentage-change method yields the observed -3.374% return."
+      },
+      {
+        "id": "edge_4",
+        "source": "node_4",
+        "target": "node_6",
+        "relationship": "classified_as",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_711b8a9ff8a415bb"
+        ],
+        "rationale": "The observed -3.374% return is below the -0.881% threshold."
+      },
+      {
+        "id": "edge_5",
+        "source": "node_5",
+        "target": "node_6",
+        "relationship": "classification_rule_for",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_711b8a9ff8a415bb"
+        ],
+        "rationale": "The pre-registered threshold defines the yes/no answer boundary."
+      }
+    ]
+  }
+}

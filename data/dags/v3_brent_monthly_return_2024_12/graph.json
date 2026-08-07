@@ -1,0 +1,1076 @@
+{
+  "question": {
+    "id": "v3_brent_monthly_return_2024_12",
+    "question_text": "As of 2024-12-01, which range will the monthly Brent price return for Brent crude oil in 2024-12 fall into?",
+    "question_type": "mcq",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 3,
+    "resolution_date": "2024-12-31T23:59:59Z",
+    "estimated_start_time": "2024-12-01T00:00:00Z",
+    "ground_truth": "within recent range",
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [
+      "evt_7e7eb52d903f",
+      "evt_00cc46c78aa5",
+      "evt_1471184816cd"
+    ],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: Brent crude oil\nTarget period: 2024-12\nFinancial area: energy_commodities / crude oil\nRegion: US\nPre-registered recent-range boundaries: lower -7.492, upper 1.531 percent.",
+    "resolution_criteria": "Use FRED series DCOILBRENTEU. Compute the change from the previous monthly observation using mode 'pct'. Resolve 'below recent range' below -7.492, 'within recent range' from -7.492 inclusive to 1.531 exclusive, and 'above recent range' at or above 1.531 percent.",
+    "resolution_reasoning": "The snapshotted target change was 0.566 percent; it resolved to 'within recent range'.",
+    "options": [
+      "below recent range",
+      "within recent range",
+      "above recent range"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": "\n## Executive Summary\n\nBrent crude oil prices for December 2024 remained within the recent range primarily due to a balanced interplay of supply and demand dynamics. While OPEC+ extended production cuts [art_finance_20241206_003_a9b9e956, art_finance_20241205_002_80886d1e], global oil supply still saw a slight increase [art_finance_20241226_002_965dc487]. Demand growth, particularly from Asia [art_finance_20241219_005_26d3b1c0], provided support, offsetting concerns about economic indicators. Geopolitical tensions contributed to price volatility but did not fundamentally shift prices outside the established range [art_finance_20241210_007_b3258d61].\n\n## Timeline Of Key Events\n\n- **2024-12-04:** Crude oil prices rebound in Asia, catching up with Brent spike [art_finance_20241204_011_979b94e5].\n- **2024-12-05:** OPEC+ members announce a delay in oil production increases, pushing back plans to unwind cuts [art_finance_20241205_002_80886d1e].\n- **2024-12-06:** OPEC+ officially extends production cuts until the end of 2026, aiming to stabilize the market [art_finance_20241206_003_a9b9e956].\n- **2024-12-09:** Discussions emerge about how US oil production threatens OPEC’s market hold, indicating potential supply competition [art_finance_20241209_004_d5d7c02b].\n- **2024-12-10:** Analysis of the new geopolitics of energy suggests continued oil price-risk relationships in the Middle East [art_finance_20241210_007_b3258d61].\n- **2024-12-12:** The IEA releases its December Oil Market Report, providing an updated outlook on supply and demand [art_finance_20241212_006_766c00d8].\n- **2024-12-19:** EIA reports that India is set to surpass China in global oil consumption growth for 2024 and 2025 [art_finance_20241219_005_26d3b1c0]. Concurrently, China's oil demand is projected to peak in 2025 [art_finance_20241219_006_6c3a5118], and a broader analysis of oil consumption trends in China, India, and the USA is published [art_finance_20241219_005_727f2b3e].\n- **2024-12-26:** IEA reports that global oil output increased slightly by 20,000 barrels per day in December 2024, reaching 103.53 million bpd [art_finance_20241226_002_965dc487].\n- **2024-12-30:** A Nature article discusses the impact of global crisis events on the dependence and risk spillover between gold and crude oil, highlighting market interconnectedness [art_finance_20241230_008_18003a07].\n\n## Causal Chain Analysis\n\nThe Brent crude oil price return in December 2024 remained within the recent range because a delicate balance between supply constraints and sustained, albeit shifting, demand was maintained. Primarily, the **extension of OPEC+ production cuts** [art_finance_20241206_003_a9b9e956, art_finance_20241205_002_80886d1e] acted as a foundational floor for prices, limiting downside movement by restricting supply. This decision contributed to market stability and prevented a significant drop in prices.\n\nConcurrently, **robust global demand, largely driven by India and other Asian economies** [art_finance_20241219_005_26d3b1c0, art_finance_20241219_005_727f2b3e], provided consistent upward pressure. Even as China's demand growth is projected to peak [art_finance_20241219_006_6c3a5118], the overall demand landscape remained strong enough to absorb available supply. This sustained demand directly led to prices staying within the established range. The **slight increase in global oil output in December** [art_finance_20241226_002_965dc487] was insufficient to overwhelm the market given these demand dynamics, thereby enabling prices to hold steady.\n\nFinally, **geopolitical influences and broader economic indicators** [art_finance_20241210_007_b3258d61, art_finance_20241204_010_f0a58fdc] played a role in creating volatility but did not fundamentally alter the equilibrium. While geopolitical events continued to pose risks and US production threatened OPEC's dominance [art_finance_20241209_004_d5d7c02b], these factors largely counterbalanced each other, keeping prices from breaking out of the recent range.\n\n## Countervailing Factors\n\nSeveral factors worked against the outcome of prices remaining within the recent range, but ultimately they were either insufficient or counterbalanced each other.\n\n- **Increased US Oil Production:** The growing US oil production [art_finance_20241209_004_d5d7c02b] posed a threat to OPEC's market share and could have led to a downward pressure on prices due to increased supply. However, OPEC+'s sustained production cuts mitigated this potential oversupply.\n\n- **Slight Increase in Global Oil Output:** Despite OPEC+ cuts, the IEA reported an overall increase in global oil output in December [art_finance_20241226_002_965dc487]. This additional supply could have pushed prices lower, but robust demand, particularly from Asia, absorbed this increase.\n\n- **Economic Headwinds/Inflationary Concerns:** Broader economic indicators, including discussions around inflation and potential impacts of policies like tariffs [art_finance_20241204_010_f0a58fdc], introduced uncertainty. While such concerns could depress demand and thus prices, the fundamental demand strength from growing economies largely offset these worries.\n\n## Event Candidate Inventory\n\n- **E1: OPEC+ Extends Production Cuts**\n    - **Date:** 2024-12-06\n    - **Why it matters causally:** Directly limited oil supply, providing a floor for Brent crude prices and preventing a significant decline.\n    - **Source article IDs:** [art_finance_20241206_003_a9b9e956, art_finance_20241205_002_80886d1e]\n\n- **E2: India Leads Global Oil Demand Growth**\n    - **Date:** 2024-12-19\n    - **Why it matters causally:** Signified strong underlying demand, absorbing available supply and supporting Brent crude prices, preventing a downturn.\n    - **Source article IDs:** [art_finance_20241219_005_26d3b1c0, art_finance_20241219_005_727f2b3e]\n\n- **E3: Global Oil Output Sees Slight Increase**\n    - **Date:** 2024-12-26\n    - **Why it matters causally:** Indicated a minor easing of supply constraints, which could have led to price drops. However, its impact was offset by strong demand and existing OPEC+ cuts.\n    - **Source article IDs:** [art_finance_20241226_002_965dc487]\n\n- **E4: Geopolitical Tensions and Market Stability**\n    - **Date:** 2024-12-10 (analysis published)\n    - **Why it matters causally:** Contributed to price volatility but ultimately balanced out with other factors, keeping prices within the recent range.\n    - **Source article IDs:** [art_finance_20241210_007_b3258d61]\n\n- **E5: US Production Threatens OPEC Dominance**\n    - **Date:** 2024-12-09 (discussion published)\n    - **Why it matters causally:** A potential increase in non-OPEC supply that could put downward pressure on prices, but its impact was mitigated by OPEC+ actions.\n    - **Source article IDs:** [art_finance_20241209_004_d5d7c02b]\n\n## Evidence Mapping Table\n\n| Claim/Event                             | Article IDs                                           | Date Support | Confidence (0-1) | Notes                                                                  |\n|-----------------------------------------|-------------------------------------------------------|--------------|------------------|------------------------------------------------------------------------|\n| OPEC+ extends production cuts           | art_finance_20241206_003_a9b9e956, art_finance_20241205_002_80886d1e | 2024-12-05, 2024-12-06 | 1.0              | Direct reporting on OPEC+ decisions to limit supply.                   |\n| India leads global oil demand growth    | art_finance_20241219_005_26d3b1c0, art_finance_20241219_005_727f2b3e | 2024-12-19   | 0.9              | EIA report clearly states India surpassing China in demand growth.     |\n| Global oil output sees slight increase  | art_finance_20241226_002_965dc487                      | 2024-12-26   | 0.9              | IEA report on global output increment, but small in magnitude.         |\n| Geopolitical tensions & market stability| art_finance_20241210_007_b3258d61                      | 2024-12-10   | 0.8              | Analysis of ongoing geopolitical impacts on oil prices.                |\n| US production threatens OPEC dominance  | art_finance_20241209_004_d5d7c02b                      | 2024-12-09   | 0.8              | Discussion of US role in global supply and its implications for OPEC.  |\n| China oil demand to peak in 2025        | art_finance_20241219_006_6c3a5118                      | 2024-12-19   | 0.8              | Forecast impacting long-term demand outlook.                           |\n| Impact of global crisis events on oil   | art_finance_20241230_008_18003a07                      | 2024-12-30   | 0.7              | Academic discussion on broader market interconnectedness and risk.     |\n\n## Uncertainties And Alternative Paths\n\nOne uncertainty is the precise short-term response of global demand to sudden economic shifts or unforeseen geopolitical escalations. While the current balance held, a sharper-than-expected economic slowdown (e.g., from more aggressive interest rate hikes globally than anticipated in December) could have significantly dampened demand, pushing prices below the recent range.\n\nAn alternative path could have been a more substantial increase in supply from non-OPEC+ producers, particularly the US, or a breakdown in OPEC+ unity leading to a surprise increase in production. Either scenario could have flooded the market, driving prices below the recent range, overriding the demand-side support. Conversely, a major supply disruption from a significant geopolitical event could have rapidly escalated prices above the recent range, despite the existing market stabilizers.",
+    "graph_built": true,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.201062Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "brent_monthly_return",
+        "event_cluster_id": "crude_oil_2024-12",
+        "category": "energy_commodities",
+        "original_domain": "energy_commodities",
+        "subdomain": "crude oil",
+        "entity": "Brent crude oil",
+        "region": "US",
+        "target_metric": "monthly Brent price return",
+        "target_period": "2024-12",
+        "forecast_cutoff": "2024-12-01T00:00:00+00:00",
+        "forecast_date_options": [
+          "2024-12-01"
+        ],
+        "resolution_available_at": "2024-12-31T23:59:59+00:00",
+        "horizon_days": 30,
+        "source_type": "fred_series_snapshot",
+        "source_series_id": "DCOILBRENTEU",
+        "source_homepage": "https://fred.stlouisfed.org/series/DCOILBRENTEU",
+        "comparison_rule": "target change bucketed by the lower and upper quartiles of the 8 prior observed changes",
+        "comparison_threshold": -0.109888,
+        "comparison_thresholds": {
+          "lower": -7.492274,
+          "upper": 1.530621
+        },
+        "change_unit": "percent",
+        "threshold_observation_dates": [
+          "2024-03-28",
+          "2024-04-30",
+          "2024-05-31",
+          "2024-06-28",
+          "2024-07-31",
+          "2024-08-30",
+          "2024-09-30",
+          "2024-10-31",
+          "2024-11-29"
+        ],
+        "split": "memory",
+        "family_position": 5,
+        "family_size": 8,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "within recent range",
+        "resolved_class": "within recent range",
+        "resolution_value": 74.58,
+        "target_change": 0.56634304,
+        "source_observation_date": "2024-12-31",
+        "resolution_document": {
+          "publisher": "Federal Reserve Bank of St. Louis (FRED)",
+          "title": "Brent Crude Oil Price",
+          "url": "https://fred.stlouisfed.org/series/DCOILBRENTEU"
+        },
+        "source_download_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILBRENTEU&cosd=2019-01-01&coed=2026-06-30",
+        "source_sha256": "7f2ac7b05845237ea944de5480b7ef13013acde61312ff0f9a64db260fc4a500",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_00cc46c78aa5",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 15,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_20241106_004_e91f7076",
+        "title": "OPEC+ members extend oil output cuts until the end of December 2024 - Enerdata",
+        "url": "https://www.enerdata.net/publications/daily-energy-news/global-oil-output-cuts-december-2024.html",
+        "source": "enerdata.net",
+        "published_date": "2024-11-06T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20241226_002_965dc487",
+        "title": "IEA: Global oil output up by 20,000 barrels per day in December 2024 - Anadolu Ajansı",
+        "url": "https://www.aa.com.tr/en/energy/oil/iea-global-oil-output-up-by-20-000-barrels-per-day-in-december-2024/46856",
+        "source": "aa.com.tr",
+        "published_date": "2024-12-26T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20241114_003_38e79aae",
+        "title": "Oil Market Report - November 2024 – Analysis - IEA – International Energy Agency",
+        "url": "https://www.iea.org/reports/oil-market-report-november-2024",
+        "source": "iea.org",
+        "published_date": "2024-11-14T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20241205_002_80886d1e",
+        "title": "OPEC+ members to delay oil production increases - CNBC",
+        "url": "https://www.cnbc.com/2024/12/05/opec-members-to-delay-oil-production-increase-until-april.html",
+        "source": "cnbc.com",
+        "published_date": "2024-12-05T12:34:40+00:00"
+      },
+      {
+        "id": "art_finance_20241206_003_a9b9e956",
+        "title": "OPEC+ Extends Production Cuts Until End of 2026 - The Astana Times",
+        "url": "https://astanatimes.com/2024/12/opec-extends-production-cuts-until-end-of-2026",
+        "source": "astanatimes.com",
+        "published_date": "2024-12-06T14:40:39+05:00"
+      },
+      {
+        "id": "art_finance_20241209_004_d5d7c02b",
+        "title": "US production is threatening OPEC’s hold on the oil market - Texas Standard",
+        "url": "https://texasstandard.org/stories/us-oil-production-opec-market-saudia-arabia-russia-gas-prices",
+        "source": "texasstandard.org",
+        "published_date": "2024-12-09T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20241219_005_26d3b1c0",
+        "title": "India to surpass China as the top source of global oil consumption growth in 2024 and 2025 - U.S. Energy Information Administration (EIA) (.gov)",
+        "url": "https://www.eia.gov/todayinenergy/detail.php?id=64084",
+        "source": "eia.gov",
+        "published_date": "2024-12-19T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20241219_006_6c3a5118",
+        "title": "China’s oil demand could peak in 2025 - Dialogue Earth",
+        "url": "https://dialogue.earth/en/digest/chinas-oil-demand-could-peak-in-2025",
+        "source": "dialogue.earth",
+        "published_date": "2024-12-19T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20241212_006_766c00d8",
+        "title": "Oil Market Report - December 2024 – Analysis - IEA – International Energy Agency",
+        "url": "https://www.iea.org/reports/oil-market-report-december-2024",
+        "source": "iea.org",
+        "published_date": "2024-12-12T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20241210_007_b3258d61",
+        "title": "How the New Geopolitics of Energy Informs the Current Oil Price-Risk Relationship in the Middle East - Georgetown Journal of International Affairs",
+        "url": "https://gjia.georgetown.edu/conflict-security/how-the-new-geopolitics-of-energy-informs-the-current-oil-price-risk-relationship-in-the-middle-east",
+        "source": "gjia.georgetown.edu",
+        "published_date": "2024-12-10T01:47:27+00:00"
+      },
+      {
+        "id": "art_finance_20241230_008_18003a07",
+        "title": "Impact of global crisis events on the dependence and risk spillover between gold and crude oil: a regime-switching copula approach - Nature",
+        "url": "https://www.nature.com/articles/s41599-024-04329-y",
+        "source": "nature.com",
+        "published_date": "2024-12-30T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20241220_009_95b7a1db",
+        "title": "What Would Be The Point Of A 'Strategic Bitcoin Reserve'? - Investopedia",
+        "url": "https://www.investopedia.com/what-would-be-the-point-of-a-strategic-bitcoin-reserve-8763067",
+        "source": "investopedia.com",
+        "published_date": "2024-12-20T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20241204_010_f0a58fdc",
+        "title": "Here's why Trump's tariffs may not result in price gains — and how inflation could actually decline - Business Insider",
+        "url": "https://www.businessinsider.com/trump-tariffs-impact-on-inflation-tax-cut-policy-oil-prices-2024-12",
+        "source": "businessinsider.com",
+        "published_date": "2024-12-04T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20241219_005_727f2b3e",
+        "title": "Oil Consumption Growth Trends in China, India, & USA — Is 2025 Forecast Accurate? - CleanTechnica",
+        "url": "https://cleantechnica.com/2024/12/19/oil-consumption-growth-trends-in-china-india-usa-is-2025-forecast-accurate",
+        "source": "cleantechnica.com",
+        "published_date": "2024-12-19T18:06:31+00:00"
+      },
+      {
+        "id": "art_finance_20241204_011_979b94e5",
+        "title": "Asia oil/products: Crude rebounds, diesel EFS narrows - Quantum Commodity Intelligence",
+        "url": "https://www.qcintel.com/article/asia-oil-products-crude-rebounds-diesel-efs-narrows-32949.html",
+        "source": "qcintel.com",
+        "published_date": "2024-12-04T08:00:00+00:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_00cc46c78aa5",
+      "events_count": 11,
+      "hypotheses_count": 12
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 3,
+      "avg_depth": 1.67,
+      "quality_score": 0.83,
+      "depth_score": 1.0,
+      "confidence_score": 0.73,
+      "strength_score": 0.55,
+      "evidence_score": 1.0,
+      "event_count": 11,
+      "hypothesis_count": 12
+    },
+    "nodes": [
+      {
+        "id": "evt_00cc46c78aa5",
+        "title": "Option 2: within recent range",
+        "description": "Question resolves to: within recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-12-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_brent_monthly_return_2024_12",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 1,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:17:11.409728Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_1471184816cd",
+        "title": "Option 3: above recent range",
+        "description": "Question resolves to: above recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-12-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_brent_monthly_return_2024_12",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 2,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:17:11.409739Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_7e7eb52d903f",
+        "title": "Option 1: below recent range",
+        "description": "Question resolves to: below recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-12-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_brent_monthly_return_2024_12",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 0,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:17:11.409716Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20241204_013_55922749",
+        "title": "Crude Oil Prices Rebound in Asia",
+        "description": "Crude oil prices rebound in Asia, catching up with Brent spike.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-12-04T08:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241204_011_979b94e5"
+        ],
+        "extracted_for_question_id": "v3_brent_monthly_return_2024_12",
+        "source_article_id": "art_finance_20241204_011_979b94e5",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_brent_monthly_return_2024_12"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:24:26.168930Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20241204_016_af28245d",
+        "title": "Economic Headwinds and Inflationary Concerns",
+        "description": "Broader economic indicators, including discussions around inflation and potential impacts of policies like tariffs, introduced uncertainty.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-12-04T08:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241204_010_f0a58fdc"
+        ],
+        "extracted_for_question_id": "v3_brent_monthly_return_2024_12",
+        "source_article_id": "art_finance_20241204_010_f0a58fdc",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_brent_monthly_return_2024_12"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:24:44.997577Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20241205_008_762e3baa",
+        "title": "OPEC+ Extends Production Cuts",
+        "description": "OPEC+ officially extends production cuts until the end of 2026, aiming to stabilize the market.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-12-05T12:34:40Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241206_003_a9b9e956",
+          "art_finance_20241205_002_80886d1e"
+        ],
+        "extracted_for_question_id": "v3_brent_monthly_return_2024_12",
+        "source_article_id": "art_finance_20241206_003_a9b9e956",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_brent_monthly_return_2024_12"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:24:26.078314Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20241205_018_ada0e5b9",
+        "title": "OPEC+ Members Delay Oil Production Increases",
+        "description": "OPEC+ members announce a delay in oil production increases, pushing back plans to unwind cuts.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-12-05T12:34:40Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241205_002_80886d1e"
+        ],
+        "extracted_for_question_id": "v3_brent_monthly_return_2024_12",
+        "source_article_id": "art_finance_20241205_002_80886d1e",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_brent_monthly_return_2024_12"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:24:54.057084Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20241209_012_2f59fbec",
+        "title": "US Production Threatens OPEC Dominance",
+        "description": "Discussions emerge about how US oil production threatens OPEC’s market hold, indicating potential supply competition.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-12-09T08:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241209_004_d5d7c02b"
+        ],
+        "extracted_for_question_id": "v3_brent_monthly_return_2024_12",
+        "source_article_id": "art_finance_20241209_004_d5d7c02b",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_brent_monthly_return_2024_12"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:24:26.153666Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20241210_011_5b27076f",
+        "title": "Geopolitical Tensions and Market Stability",
+        "description": "Analysis of the new geopolitics of energy suggests continued oil price-risk relationships in the Middle East.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-12-10T01:47:27Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241210_007_b3258d61"
+        ],
+        "extracted_for_question_id": "v3_brent_monthly_return_2024_12",
+        "source_article_id": "art_finance_20241210_007_b3258d61",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_brent_monthly_return_2024_12"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:24:26.135180Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20241212_015_e335cbf1",
+        "title": "IEA Releases December Oil Market Report",
+        "description": "The IEA releases its December Oil Market Report, providing an updated outlook on supply and demand.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-12-12T08:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241212_006_766c00d8"
+        ],
+        "extracted_for_question_id": "v3_brent_monthly_return_2024_12",
+        "source_article_id": "art_finance_20241212_006_766c00d8",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_brent_monthly_return_2024_12"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:24:26.214941Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20241219_009_8bb4eec2",
+        "title": "India Leads Global Oil Demand Growth",
+        "description": "EIA reports that India is set to surpass China in global oil consumption growth for 2024 and 2025.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-12-19T08:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241219_005_26d3b1c0",
+          "art_finance_20241219_005_727f2b3e"
+        ],
+        "extracted_for_question_id": "v3_brent_monthly_return_2024_12",
+        "source_article_id": "art_finance_20241219_005_26d3b1c0",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_brent_monthly_return_2024_12"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:24:26.094526Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20241219_014_095a00d3",
+        "title": "China's Oil Demand Projected to Peak in 2025",
+        "description": "China's oil demand is projected to peak in 2025.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-12-19T08:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241219_006_6c3a5118"
+        ],
+        "extracted_for_question_id": "v3_brent_monthly_return_2024_12",
+        "source_article_id": "art_finance_20241219_006_6c3a5118",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_brent_monthly_return_2024_12"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:24:26.189236Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20241226_010_9f57adeb",
+        "title": "Global Oil Output Sees Slight Increase",
+        "description": "IEA reports that global oil output increased slightly by 20,000 barrels per day in December 2024, reaching 103.53 million bpd.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-12-26T08:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20241226_002_965dc487"
+        ],
+        "extracted_for_question_id": "v3_brent_monthly_return_2024_12",
+        "source_article_id": "art_finance_20241226_002_965dc487",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_brent_monthly_return_2024_12"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:24:26.113100Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_brent_monthly_return_2024_12_20260724_192433_001_5b0429a8",
+        "source_event_id": "evt_finance_20241205_008_762e3baa",
+        "target_event_id": "evt_00cc46c78aa5",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "OPEC+ production cuts directly limited oil supply, providing a floor for Brent crude prices and preventing a significant decline, thus contributing to prices remaining within the recent range.",
+        "evidence_article_ids": [
+          "art_finance_20241206_003_a9b9e956",
+          "art_finance_20241205_002_80886d1e"
+        ],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2024_12"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:24:33.307212Z",
+        "last_confirmed_at": "2026-07-24T19:24:33.307212Z"
+      },
+      {
+        "id": "hyp_v3_brent_monthly_return_2024_12_20260724_192433_002_c17960e9",
+        "source_event_id": "evt_finance_20241219_009_8bb4eec2",
+        "target_event_id": "evt_00cc46c78aa5",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Robust global demand, largely driven by India and other Asian economies, provided consistent upward pressure, absorbing available supply and supporting Brent crude prices, preventing a downturn.",
+        "evidence_article_ids": [
+          "art_finance_20241219_005_26d3b1c0",
+          "art_finance_20241219_005_727f2b3e"
+        ],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2024_12"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:24:33.322849Z",
+        "last_confirmed_at": "2026-07-24T19:24:33.322849Z"
+      },
+      {
+        "id": "hyp_v3_brent_monthly_return_2024_12_20260724_192433_003_8609ccf8",
+        "source_event_id": "evt_finance_20241226_010_9f57adeb",
+        "target_event_id": "evt_00cc46c78aa5",
+        "relation_type": "inhibits",
+        "strength": 0.4,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "A slight increase in global oil output could have pushed prices lower, but its impact was offset by strong demand and existing OPEC+ cuts, thus inhibiting a move outside the recent range.",
+        "evidence_article_ids": [
+          "art_finance_20241226_002_965dc487"
+        ],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2024_12"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:24:33.335659Z",
+        "last_confirmed_at": "2026-07-24T19:24:33.335659Z"
+      },
+      {
+        "id": "hyp_v3_brent_monthly_return_2024_12_20260724_192433_004_5e47aa18",
+        "source_event_id": "evt_finance_20241210_011_5b27076f",
+        "target_event_id": "evt_00cc46c78aa5",
+        "relation_type": "correlates",
+        "strength": 0.5,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "Geopolitical influences contributed to price volatility but ultimately balanced out with other factors, keeping prices within the recent range.",
+        "evidence_article_ids": [
+          "art_finance_20241210_007_b3258d61"
+        ],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2024_12"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:24:33.348824Z",
+        "last_confirmed_at": "2026-07-24T19:24:33.348824Z"
+      },
+      {
+        "id": "hyp_v3_brent_monthly_return_2024_12_20260724_192433_005_975023af",
+        "source_event_id": "evt_finance_20241209_012_2f59fbec",
+        "target_event_id": "evt_00cc46c78aa5",
+        "relation_type": "inhibits",
+        "strength": 0.4,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Increased US oil production posed a threat to OPEC's market share and could have led to downward pressure on prices. However, OPEC+'s sustained production cuts mitigated this potential oversupply, thus inhibiting a move outside the recent range.",
+        "evidence_article_ids": [
+          "art_finance_20241209_004_d5d7c02b"
+        ],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2024_12"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:24:33.361159Z",
+        "last_confirmed_at": "2026-07-24T19:24:33.361159Z"
+      },
+      {
+        "id": "hyp_v3_brent_monthly_return_2024_12_20260724_192433_006_9106a15b",
+        "source_event_id": "evt_finance_20241204_013_55922749",
+        "target_event_id": "evt_00cc46c78aa5",
+        "relation_type": "triggers",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Crude oil prices rebounding in Asia indicates strong regional demand, contributing to the overall stability of Brent prices within the recent range.",
+        "evidence_article_ids": [
+          "art_finance_20241204_011_979b94e5"
+        ],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2024_12"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:24:33.373776Z",
+        "last_confirmed_at": "2026-07-24T19:24:33.373776Z"
+      },
+      {
+        "id": "hyp_v3_brent_monthly_return_2024_12_20260724_192433_007_c324bbab",
+        "source_event_id": "evt_finance_20241219_014_095a00d3",
+        "target_event_id": "evt_finance_20241219_009_8bb4eec2",
+        "relation_type": "enables",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "While China's oil demand is projected to peak, this enables India to take a more prominent role in global oil consumption growth, thus indirectly supporting overall demand.",
+        "evidence_article_ids": [
+          "art_finance_20241219_006_6c3a5118",
+          "art_finance_20241219_005_26d3b1c0"
+        ],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2024_12"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:24:33.386103Z",
+        "last_confirmed_at": "2026-07-24T19:24:33.386103Z"
+      },
+      {
+        "id": "hyp_v3_brent_monthly_return_2024_12_20260724_192433_008_fa88418c",
+        "source_event_id": "evt_finance_20241212_015_e335cbf1",
+        "target_event_id": "evt_finance_20241226_010_9f57adeb",
+        "relation_type": "correlates",
+        "strength": 0.3,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "The IEA report provides data on global oil output, which includes the slight increase mentioned in E3.",
+        "evidence_article_ids": [
+          "art_finance_20241212_006_766c00d8",
+          "art_finance_20241226_002_965dc487"
+        ],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2024_12"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:24:33.399269Z",
+        "last_confirmed_at": "2026-07-24T19:24:33.399269Z"
+      },
+      {
+        "id": "hyp_v3_brent_monthly_return_2024_12_20260724_192433_009_ec40c921",
+        "source_event_id": "evt_finance_20241205_008_762e3baa",
+        "target_event_id": "evt_finance_20241226_010_9f57adeb",
+        "relation_type": "inhibits",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "OPEC+ production cuts directly counteracted the slight increase in global oil output, preventing a larger oversupply.",
+        "evidence_article_ids": [
+          "art_finance_20241206_003_a9b9e956",
+          "art_finance_20241205_002_80886d1e",
+          "art_finance_20241226_002_965dc487"
+        ],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2024_12"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:24:33.414012Z",
+        "last_confirmed_at": "2026-07-24T19:24:33.414012Z"
+      },
+      {
+        "id": "hyp_v3_brent_monthly_return_2024_12_20260724_192445_010_89effa18",
+        "source_event_id": "evt_finance_20241204_016_af28245d",
+        "target_event_id": "evt_00cc46c78aa5",
+        "relation_type": "inhibits",
+        "strength": 0.3,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "Economic headwinds could depress demand and thus prices, but the fundamental demand strength from growing economies largely offset these worries, thus inhibiting a move outside the recent range.",
+        "evidence_article_ids": [
+          "art_finance_20241204_010_f0a58fdc"
+        ],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2024_12"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:24:45.028535Z",
+        "last_confirmed_at": "2026-07-24T19:24:45.028535Z"
+      },
+      {
+        "id": "hyp_v3_brent_monthly_return_2024_12_20260724_192445_011_863f2312",
+        "source_event_id": "evt_finance_20241204_016_af28245d",
+        "target_event_id": "evt_finance_20241219_009_8bb4eec2",
+        "relation_type": "inhibits",
+        "strength": 0.4,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "Economic headwinds could potentially dampen global demand, including from India, though the explanation states India's demand remained robust.",
+        "evidence_article_ids": [
+          "art_finance_20241204_010_f0a58fdc"
+        ],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2024_12"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:24:45.040585Z",
+        "last_confirmed_at": "2026-07-24T19:24:45.040585Z"
+      },
+      {
+        "id": "hyp_v3_brent_monthly_return_2024_12_20260724_192454_012_4a3f7cd5",
+        "source_event_id": "evt_finance_20241205_018_ada0e5b9",
+        "target_event_id": "evt_finance_20241205_008_762e3baa",
+        "relation_type": "triggers",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The announcement of delaying production increases directly led to the official extension of production cuts.",
+        "evidence_article_ids": [
+          "art_finance_20241205_002_80886d1e",
+          "art_finance_20241206_003_a9b9e956"
+        ],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2024_12"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:24:54.074889Z",
+        "last_confirmed_at": "2026-07-24T19:24:54.074889Z"
+      }
+    ],
+    "outcome_impacts": [
+      {
+        "id": "imp_d2136803",
+        "event_id": "evt_finance_20241205_008_762e3baa",
+        "outcome_event_id": "evt_00cc46c78aa5",
+        "question_id": "v3_brent_monthly_return_2024_12",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.7,
+        "reasoning": "OPEC+ production cuts tend to stabilize oil prices, keeping them within a recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2024_12"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:25:17.405411Z",
+        "last_confirmed_at": "2026-07-24T19:25:17.405411Z"
+      },
+      {
+        "id": "imp_f392658d",
+        "event_id": "evt_finance_20241219_009_8bb4eec2",
+        "outcome_event_id": "evt_00cc46c78aa5",
+        "question_id": "v3_brent_monthly_return_2024_12",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.6,
+        "reasoning": "India's growing demand could support prices, preventing a significant drop below the recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2024_12"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:25:17.415980Z",
+        "last_confirmed_at": "2026-07-24T19:25:17.415980Z"
+      },
+      {
+        "id": "imp_9a54fff2",
+        "event_id": "evt_finance_20241226_010_9f57adeb",
+        "outcome_event_id": "evt_00cc46c78aa5",
+        "question_id": "v3_brent_monthly_return_2024_12",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.5,
+        "confidence": 0.6,
+        "reasoning": "Increased global oil output could put downward pressure on prices, potentially moving them below the recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2024_12"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:25:17.426739Z",
+        "last_confirmed_at": "2026-07-24T19:25:17.426739Z"
+      },
+      {
+        "id": "imp_5098de4a",
+        "event_id": "evt_finance_20241210_011_5b27076f",
+        "outcome_event_id": "evt_00cc46c78aa5",
+        "question_id": "v3_brent_monthly_return_2024_12",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.5,
+        "reasoning": "Geopolitical tensions can introduce volatility, but their net effect on the 'within recent range' outcome is not always clear without more specific details.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2024_12"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:25:17.439376Z",
+        "last_confirmed_at": "2026-07-24T19:25:17.439376Z"
+      },
+      {
+        "id": "imp_6b18792b",
+        "event_id": "evt_finance_20241209_012_2f59fbec",
+        "outcome_event_id": "evt_00cc46c78aa5",
+        "question_id": "v3_brent_monthly_return_2024_12",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Increased US oil production could increase supply, putting downward pressure on prices and potentially moving them below the recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2024_12"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:25:17.449573Z",
+        "last_confirmed_at": "2026-07-24T19:25:17.449573Z"
+      },
+      {
+        "id": "imp_d3d9aba3",
+        "event_id": "evt_finance_20241204_013_55922749",
+        "outcome_event_id": "evt_00cc46c78aa5",
+        "question_id": "v3_brent_monthly_return_2024_12",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.5,
+        "confidence": 0.6,
+        "reasoning": "Crude oil price rebounds suggest upward pressure, helping to keep prices within or push them towards the higher end of the recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2024_12"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:25:17.461637Z",
+        "last_confirmed_at": "2026-07-24T19:25:17.461637Z"
+      },
+      {
+        "id": "imp_72629067",
+        "event_id": "evt_finance_20241219_014_095a00d3",
+        "outcome_event_id": "evt_00cc46c78aa5",
+        "question_id": "v3_brent_monthly_return_2024_12",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "A peak in China's oil demand could signal weakening demand, putting downward pressure on prices.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2024_12"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:25:17.472656Z",
+        "last_confirmed_at": "2026-07-24T19:25:17.472656Z"
+      },
+      {
+        "id": "imp_dbd11af6",
+        "event_id": "evt_finance_20241212_015_e335cbf1",
+        "outcome_event_id": "evt_00cc46c78aa5",
+        "question_id": "v3_brent_monthly_return_2024_12",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.5,
+        "reasoning": "The IEA report itself is an indicator; its impact depends on the content, which is not fully detailed here. Assuming a neutral direct impact on the outcome without further information.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2024_12"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:25:17.482902Z",
+        "last_confirmed_at": "2026-07-24T19:25:17.482902Z"
+      },
+      {
+        "id": "imp_9dd0df68",
+        "event_id": "evt_finance_20241204_016_af28245d",
+        "outcome_event_id": "evt_00cc46c78aa5",
+        "question_id": "v3_brent_monthly_return_2024_12",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.5,
+        "confidence": 0.6,
+        "reasoning": "Economic headwinds and inflationary concerns generally dampen demand, potentially leading to lower oil prices.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2024_12"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:25:17.493192Z",
+        "last_confirmed_at": "2026-07-24T19:25:17.493192Z"
+      },
+      {
+        "id": "imp_fe98203c",
+        "event_id": "evt_finance_20241230_017_bded2296",
+        "outcome_event_id": "evt_00cc46c78aa5",
+        "question_id": "v3_brent_monthly_return_2024_12",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.5,
+        "reasoning": "Global crisis events can have varied impacts; without specific details, a neutral stance on the 'within recent range' outcome is taken.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2024_12"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:25:17.503714Z",
+        "last_confirmed_at": "2026-07-24T19:25:17.503714Z"
+      },
+      {
+        "id": "imp_1ece6b10",
+        "event_id": "evt_finance_20241205_018_ada0e5b9",
+        "outcome_event_id": "evt_00cc46c78aa5",
+        "question_id": "v3_brent_monthly_return_2024_12",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.7,
+        "reasoning": "Delaying production increases helps stabilize supply, supporting prices within the recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_brent_monthly_return_2024_12"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:25:22.322304Z",
+        "last_confirmed_at": "2026-07-24T19:25:22.322304Z"
+      }
+    ]
+  }
+}

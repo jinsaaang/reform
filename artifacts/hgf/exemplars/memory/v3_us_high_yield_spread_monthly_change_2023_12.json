@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_us_high_yield_spread_monthly_change_2023_12",
+  "blueprint_sha256": "8341e682f2406a149fc7191ac0fe59c6b25fcd8ff8e708f83bdd22884658c33d",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_market",
+      "target_operation": "change_prediction",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2023-12-01, will the monthly high-yield spread change for United States high-yield corporate option-adjusted spread in 2023-12 be at least 0.12 percentage points?",
+    "historical_cutoff": "2023-12-01T00:00:00+00:00",
+    "target_semantics": "The monthly change in the US high-yield corporate option-adjusted spread for December 2023 will be at least 0.12 percentage points.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The DAG suggests that cooling inflation (checkpoint_2) and a steady Federal Reserve policy rate (checkpoint_3) may have reduced perceived credit risk (checkpoint_4), potentially supporting demand for high-yield credit (checkpoint_6).",
+      "However, the DAG also indicates that Fed officials tempered expectations of imminent rate cuts (checkpoint_5), which could have limited risk appetite.",
+      "The historical evidence does not directly link these factors to the specific OAS change for the target period, nor does it provide magnitude or threshold-crossing support."
+    ],
+    "counterevidence": "Fed officials tempered expectations of imminent rate cuts (checkpoint_5), which could have limited risk appetite, but the DAG notes this effect on high-yield demand is unmeasured.",
+    "prospective_target_estimate": "The evidence does not provide sufficient directional or magnitude support to estimate whether the monthly high-yield spread change will be at least 0.12 percentage points.",
+    "option_mapping": "The 'yes' option corresponds to a monthly high-yield spread change of >= 0.12 percentage points, and the 'no' option corresponds to a change < 0.12 percentage points.",
+    "uncertainty": "The DAG highlights that while several factors were historically associated with credit market dynamics, their specific impact on the target metric for the current period is not directly evidenced, and the magnitude required for threshold crossing is unmeasured.",
+    "dag_derived_lesson": "When evaluating a target metric's change, assess the current evidential support for each causal link in a proposed path, paying close attention to whether the evidence supports not just direction but also the magnitude required to cross a specified threshold, and consider the impact of counter-evidence that may reverse or dampen the primary path."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

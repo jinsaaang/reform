@@ -1,0 +1,990 @@
+{
+  "question": {
+    "id": "v3_us_2y_yield_monthly_change_2024_01",
+    "question_text": "As of 2024-01-01, which range will the monthly 2-year yield change for United States 2-year Treasury yield in 2024-01 fall into?",
+    "question_type": "mcq",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 3,
+    "resolution_date": "2024-02-15T23:59:59Z",
+    "estimated_start_time": "2024-01-01T00:00:00Z",
+    "ground_truth": "within recent range",
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [
+      "evt_ef589a62c1c7",
+      "evt_3cd40e1c8b61",
+      "evt_360349ae81a8"
+    ],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: United States 2-year Treasury yield\nTarget period: 2024-01\nFinancial area: monetary_policy / rate expectations\nRegion: US\nPre-registered recent-range boundaries: lower -0.108, upper 0.225 percentage points.",
+    "resolution_criteria": "Use FRED series DGS2. Compute the change from the previous monthly observation using mode 'absolute'. Resolve 'below recent range' below -0.108, 'within recent range' from -0.108 inclusive to 0.225 exclusive, and 'above recent range' at or above 0.225 percentage points.",
+    "resolution_reasoning": "The snapshotted target change was 0.04 percentage points; it resolved to 'within recent range'.",
+    "options": [
+      "below recent range",
+      "within recent range",
+      "above recent range"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": "\n## Executive Summary\nThe monthly 2-year yield change for United States 2-year Treasury yield in January 2024 remained within a recent range primarily due to a delicate balance between persistent, albeit moderating, inflation and a cautious Federal Reserve stance. Despite strong economic growth and employment data, the Fed held interest rates steady, signaling potential future cuts. Market sentiment, anticipating these cuts, influenced yields, preventing extreme fluctuations. Core inflation, while easing, remained above the Fed's target, justifying the central bank's measured approach and keeping yields from significantly declining.\n\n## Timeline Of Key Events\n- **2023-07-28**: Core PCE Price Index rises 4.1% year-over-year, the smallest increase since September 2021, favored by the Fed. This indicates inflation is moderating but still above target. [art_finance_20230728_013_bd5da42d]\n- **2023-11-17**: Discussion emerges on whether the Fed is done raising interest rates, with some anticipation of future cuts due to moderating inflation. [art_finance_20231117_018_a06aa25d]\n- **2023-12-13**: Fed holds rates steady and forecasts three rate cuts in 2024, citing easing inflation and a cooling economy. This significantly shifts market expectations. [art_finance_20231213_011_723d743a]\n- **2024-01-06**: Dallas Fed President Lorie Logan remarks that inflation is in a much better place but the job of restoring price stability is not yet complete. She notes cooler inflation data and a rebalancing labor market, but emphasizes bringing inflation sustainably back to 2%. [art_finance_20240106_006_66c914e0]\n- **2024-01-12**: Federal Reserve Board announces preliminary financial information for 2023, showing substantial increases in interest expenses on reserve balances. [art_finance_20240112_005_9305b02f]\n- **2024-01-25**: U.S. economy grows at a robust 3.3% annualized rate in Q4 2023, while inflation (Core PCE) pulls back to 2% for the period. This strong economic data, combined with easing inflation, suggests a 'Goldilocks' scenario. [art_finance_20240125_010_78be2d32]\n- **2024-02-12**: Traders eye upcoming US CPI data for Fed clues amidst expectations that rate cuts might be pushed to the second half of the year due to strong economic data. [art_finance_20240212_012_0c1958f9]\n\n## Causal Chain Analysis\nThe 'within recent range' outcome for the 2-year Treasury yield in January 2024 was primarily caused by the Federal Reserve's monetary policy, which balanced ongoing inflation concerns with strong economic data and expectations of future rate cuts. The initial root cause was the persistent, though moderating, inflation throughout 2023, as evidenced by the Core PCE Price Index [art_finance_20230728_013_bd5da42d]. This led to the Fed maintaining a hawkish stance for most of 2023, keeping interest rates elevated. However, by December 2023, the Fed signaled a shift by holding rates steady and forecasting three cuts in 2024, which triggered market expectations for lower short-term rates [art_finance_20231213_011_723d743a].\n\nDuring January 2024, strong economic indicators, such as the blistering 3.3% GDP growth in Q4 2023 and easing inflation, created a 'Goldilocks' scenario where the economy was robust without reigniting inflation fears [art_finance_20240125_010_78be2d32]. This economic strength, coupled with Federal Reserve officials like Lorie Logan emphasizing the need to sustainably bring inflation to 2% [art_finance_20240106_006_66c914e0], acted as an intermediate mechanism. It suggested that while rate cuts were on the horizon, they wouldn't be immediate or aggressive, preventing a sharp drop in yields. The market's anticipation of future rate cuts (proximate trigger), combined with the realization that these cuts would be data-dependent and likely deferred to the latter half of 2024 due to robust economic performance, resulted in the 2-year yield remaining within a recent, rather than falling below, range [art_finance_20240212_012_0c1958f9].\n\n## Countervailing Factors\n\nOne significant countervailing factor was the strong U.S. economic growth, with a 3.3% annualized GDP increase in Q4 2023 [art_finance_20240125_010_78be2d32]. Typically, such robust economic data could lead to higher Treasury yields as it might signal less need for aggressive rate cuts and potentially higher inflation. However, this factor was overwhelmed by the concurrent moderation of inflation and the Federal Reserve's forward guidance of future rate cuts [art_finance_20231213_011_723d743a]. The market interpreted the strong economy as indicative of a soft landing, allowing the Fed flexibility without necessitating immediate rate hikes, thus keeping yields stable rather than pushing them higher.\n\nAnother countervailing force was the persistent inflation, which, despite easing, remained above the Fed's 2% target [art_finance_20240106_006_66c914e0]. This could have led to a more hawkish Fed stance and higher yields. However, this was mitigated by clear signals from the Fed that they were confident inflation was moving in the right direction, and that eventually, rate cuts would occur [art_finance_20231213_011_723d743a]. The market priced in the expectation of future cuts, preventing yields from rising significantly due to lingering inflation concerns.\n\n## Event Candidate Inventory\n- **E1: Fed's December 2023 Policy Meeting and Projection of Rate Cuts**\n    - title: Fed holds rates steady as inflation eases, forecasts 3 cuts in 2024\n    - date: 2023-12-13\n    - why it matters causally: This event set the market expectation for future rate cuts, influencing the trajectory of Treasury yields in January 2024.\n    - source article IDs: [art_finance_20231213_011_723d743a]\n- **E2: Release of Q4 2023 U.S. GDP Growth Data**\n    - title: The U.S. economy grew at blistering 3.3% pace in Q4 while inflation pulled back\n    - date: 2024-01-25\n    - why it matters causally: Strong economic growth, coupled with easing inflation, supported a 'soft landing' narrative, suggesting gradual, rather than aggressive, Fed rate cuts, keeping yields within range.\n    - source article IDs: [art_finance_20240125_010_78be2d32]\n- **E3: Federal Reserve Officials' Statements on Inflation and Monetary Policy in early 2024**\n    - title: Opening remarks at panel on Market Monitoring and the Implementation of Monetary Policy\n    - date: 2024-01-06\n    - why it matters causally: Speeches from Fed officials reinforced the cautious but optimistic stance on inflation, guiding market expectations for the timing and pace of rate adjustments.\n    - source article IDs: [art_finance_20240106_006_66c914e0]\n- **E4: Moderation of Core PCE Price Index in late 2023**\n    - title: Fed Favored “Core” PCE Price Index Rises 4.1%, Least since Sept 2021\n    - date: 2023-07-28\n    - why it matters causally: This data point provided early evidence of easing inflation, foundational to the Fed's later decision to hold rates steady and consider future cuts.\n    - source article IDs: [art_finance_20230728_013_bd5da42d]\n- **E5: Market anticipation of CPI data and delayed rate cuts**\n    - title: Gold drops as traders eye US CPI data for Fed clues\n    - date: 2024-02-12\n    - why it matters causally: Market sentiment, influenced by upcoming inflation data and strong economic figures, began to anticipate later rate cuts, supporting current yield ranges.\n    - source article IDs: [art_finance_20240212_012_0c1958f9]\n\n## Evidence Mapping Table\n\n| Claim/Event                                                      | Article IDs                                                      | Date Support  | Confidence (0-1) | Notes                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |\n| :--------------------------------------------------------------- | :--------------------------------------------------------------- | :------------ | :--------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| Fed holds rates steady, forecasts 3 cuts in 2024                 | [art_finance_20231213_011_723d743a]                               | 2023-12-13    | 0.9              | Direct evidence of Fed policy influencing future expectations.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |\n| U.S. economy grew at 3.3% in Q4 2023                             | [art_finance_20240125_010_78be2d32]                               | 2024-01-25    | 0.9              | Strong economic data contributing to a 'soft landing' narrative, impacting yield expectations.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |\n| Inflation moderates but remains above 2% target (Core PCE)       | [art_finance_20230728_013_bd5da42d], [art_finance_20240106_006_66c914e0] | 2023-07-28, 2024-01-06 | 0.8              | This indicates the ongoing challenge for the Fed, preventing aggressive rate cuts and keeping yields from significantly dropping. Information about Core PCE is from July, with Logan's speech confirming persistent vigilance needed in January.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |\n| Federal Reserve officials discuss monetary policy, market monitoring | [art_finance_20240106_006_66c914e0]                               | 2024-01-06    | 0.8              | Logan's speech provided insight into the Fed's thinking on inflation and the economy's rebalancing, influencing market sentiment implicitly on yields.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |\n| Market expects delayed Fed rate cuts due to strong data         | [art_finance_20240212_012_0c1958f9]                               | 2024-02-12    | 0.8              | Shows market sentiment leaning towards later rate cuts, which would help maintain current yield ranges rather than causing a sharp drop.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |\n\n## Uncertainties And Alternative Paths\n\nOne uncertainty was the exact timing and magnitude of future Fed rate cuts. While three cuts were forecasted, the data-dependent approach of the Fed meant this could change based on incoming economic data, particularly inflation. An alternative path could have been a more rapid decline in inflation, leading the Fed to hint at earlier and more aggressive rate cuts, which would have pushed the 2-year Treasury yield below the recent range. Conversely, if inflation had proven more sticky or if economic growth had overheated, the Fed might have postponed cuts further or even considered additional hikes, which could have driven the yield above the recent range. Geopolitical events, for which we have limited coverage, also presented a potential, albeit unquantified, alternative path if they had significantly impacted economic stability or energy prices.",
+    "graph_built": true,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.204806Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "us_2y_yield_monthly_change",
+        "event_cluster_id": "treasury_2y_2024-01",
+        "category": "monetary_policy",
+        "original_domain": "monetary_policy",
+        "subdomain": "rate expectations",
+        "entity": "United States 2-year Treasury yield",
+        "region": "US",
+        "target_metric": "monthly 2-year yield change",
+        "target_period": "2024-01",
+        "forecast_cutoff": "2024-01-01T00:00:00+00:00",
+        "forecast_date_options": [
+          "2024-01-01"
+        ],
+        "resolution_available_at": "2024-02-15T23:59:59+00:00",
+        "horizon_days": 45,
+        "source_type": "fred_series_snapshot",
+        "source_series_id": "DGS2",
+        "source_homepage": "https://fred.stlouisfed.org/series/DGS2",
+        "comparison_rule": "target change bucketed by the lower and upper quartiles of the 8 prior observed changes",
+        "comparison_threshold": 0.025,
+        "comparison_thresholds": {
+          "lower": -0.1075,
+          "upper": 0.225
+        },
+        "change_unit": "percentage points",
+        "threshold_observation_dates": [
+          "2023-04-28",
+          "2023-05-31",
+          "2023-06-30",
+          "2023-07-31",
+          "2023-08-31",
+          "2023-09-29",
+          "2023-10-31",
+          "2023-11-30",
+          "2023-12-29"
+        ],
+        "split": "memory",
+        "family_position": 3,
+        "family_size": 8,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "within recent range",
+        "resolved_class": "within recent range",
+        "resolution_value": 4.27,
+        "target_change": 0.04,
+        "source_observation_date": "2024-01-31",
+        "resolution_document": {
+          "publisher": "Federal Reserve Bank of St. Louis (FRED)",
+          "title": "2-Year Treasury Constant Maturity Rate",
+          "url": "https://fred.stlouisfed.org/series/DGS2"
+        },
+        "source_download_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS2&cosd=2019-01-01&coed=2026-06-30",
+        "source_sha256": "ac501e477bdea94fffdc1c585107555fc924f468ef05ab5ac1c0f8dc3f3f4f3b",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_3cd40e1c8b61",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 23,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_19620102_002_a6430054",
+        "title": "5 Year Treasury Rate (Market Daily) - United States - Histo… - YCharts",
+        "url": "https://ycharts.com/indicators/5_year_treasury_rate_h15",
+        "source": "ycharts.com",
+        "published_date": "1962-01-02T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_19540104_003_1910c74d",
+        "title": "3 Month Treasury Bill Rate (Market Daily) - United States -… - YCharts",
+        "url": "https://ycharts.com/indicators/3_month_t_bill",
+        "source": "ycharts.com",
+        "published_date": "1954-01-04T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_19530430_017_01c84418",
+        "title": "3 Year Treasury Rate (Monthly) - United States - Historical… - YCharts",
+        "url": "https://ycharts.com/indicators/3_year_treasury_rate_monthly",
+        "source": "ycharts.com",
+        "published_date": "1953-04-30T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_19590731_004_6064bc23",
+        "title": "1 Year Treasury Bill Rate (Monthly) - United States - Histo… - YCharts",
+        "url": "https://ycharts.com/indicators/1_year_treasury_bill_rate_monthly",
+        "source": "ycharts.com",
+        "published_date": "1959-07-31T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240112_005_9305b02f",
+        "title": "Federal Reserve Board announces preliminary financial information for the Federal Reserve Banks’ income and expenses in 2023 - Federal Reserve (.gov)",
+        "url": "https://www.federalreserve.gov/newsevents/pressreleases/other20240112a.htm",
+        "source": "federalreserve.gov",
+        "published_date": "2024-01-12T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240106_006_66c914e0",
+        "title": "Opening remarks at panel on Market Monitoring and the Implementation of Monetary Policy - Federal Reserve Bank of Dallas",
+        "url": "https://www.dallasfed.org/news/speeches/logan/2024/lkl240106",
+        "source": "dallasfed.org",
+        "published_date": "2024-01-06T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20201109_007_8b04dc71",
+        "title": "The Treasury-Fed Accord - Federal Reserve History",
+        "url": "https://www.federalreservehistory.org/essays/treasury-fed-accord",
+        "source": "federalreservehistory.org",
+        "published_date": "2020-11-09T18:27:39+00:00"
+      },
+      {
+        "id": "art_finance_20220728_006_b8815e08",
+        "title": "Federal Reserve Hikes: But Will it Cut in 2023? - Morningstar",
+        "url": "https://global.morningstar.com/en-gb/economy/federal-reserve-hikes-but-will-it-cut-in-2023",
+        "source": "global.morningstar.com",
+        "published_date": "2022-07-28T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20210820_008_abc73e4a",
+        "title": "Treasury Yields, Inflation, and Real Interest Rates: Analyzing the Historical Record - American Enterprise Institute - AEI",
+        "url": "https://www.aei.org/economics/treasury-yields-inflation-and-real-interest-rates-analyzing-the-historical-record",
+        "source": "aei.org",
+        "published_date": "2021-08-20T15:59:00+00:00"
+      },
+      {
+        "id": "art_finance_19620102_002_079ede08",
+        "title": "3 Year Treasury Rate (Market Daily) - United States - Histo… - YCharts",
+        "url": "https://ycharts.com/indicators/3_year_treasury_rate_h15",
+        "source": "ycharts.com",
+        "published_date": "1962-01-02T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230510_009_613dafd9",
+        "title": "The Impacts of Supply Chain Disruptions on Inflation - Federal Reserve Bank of Cleveland",
+        "url": "https://www.clevelandfed.org/publications/economic-commentary/2023/ec-202308-impacts-supply-chain-disruptions-on-inflation",
+        "source": "clevelandfed.org",
+        "published_date": "2023-05-10T00:00:00-04:00"
+      },
+      {
+        "id": "art_finance_20240125_010_78be2d32",
+        "title": "The U.S. economy grew at blistering 3.3% pace in Q4 while inflation pulled back - CNBC",
+        "url": "https://www.cnbc.com/2024/01/25/gdp-q4-2023-the-us-economy-grew-at-a-3point3percent-pace-in-the-fourth-quarter.html",
+        "source": "cnbc.com",
+        "published_date": "2024-01-25T13:30:58+00:00"
+      },
+      {
+        "id": "art_finance_20231213_011_723d743a",
+        "title": "Fed holds rates steady as inflation eases, forecasts 3 cuts in 2024 - USA Today",
+        "url": "https://www.usatoday.com/story/money/2023/12/13/fed-interest-rate-hike-live-updates/71896343007",
+        "source": "usatoday.com",
+        "published_date": "2023-12-13T12:27:30+00:00"
+      },
+      {
+        "id": "art_finance_20240212_012_0c1958f9",
+        "title": "Gold drops as traders eye US CPI data for Fed clues - Reuters",
+        "url": "https://sg.finance.yahoo.com/news/gold-stalls-thin-trading-eyes-024624466.html",
+        "source": "sg.finance.yahoo.com",
+        "published_date": "2024-02-12T02:46:24+00:00"
+      },
+      {
+        "id": "art_finance_20230728_013_bd5da42d",
+        "title": "Fed Favored “Core” PCE Price Index Rises 4.1%, Least since Sept 2021, on Drop in Durable Goods. But Monthly Services Inflation Accelerates - Wolf Street",
+        "url": "https://wolfstreet.com/2023/07/28/fed-favored-core-pce-price-index-rises-4-1-least-since-sept-2021-on-drop-in-durable-goods-but-monthly-services-inflation-accelerates",
+        "source": "wolfstreet.com",
+        "published_date": "2023-07-28T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230821_014_84e72de2",
+        "title": "Rising interest rates create more challenges for businesses - Federal Reserve Bank of Minneapolis",
+        "url": "https://www.minneapolisfed.org/article/2023/rising-interest-rates-create-more-challenges-for-businesses",
+        "source": "minneapolisfed.org",
+        "published_date": "2023-08-21T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20221214_015_0a04b841",
+        "title": "The Fed continues its crackdown on inflation, pushing up interest rates again - NPR",
+        "url": "https://www.kuow.org/stories/the-fed-continues-its-crackdown-on-inflation-pushing-up-interest-rates-again",
+        "source": "kuow.org",
+        "published_date": "2022-12-14T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230405_016_1c30054a",
+        "title": "When Should the Fed Stop Raising Interest Rates? - Econofact",
+        "url": "https://econofact.org/when-should-the-fed-stop-raising-interest-rates",
+        "source": "econofact.org",
+        "published_date": "2023-04-05T12:21:03-04:00"
+      },
+      {
+        "id": "art_finance_20230110_006_5e075ae1",
+        "title": "High inflation disproportionately hurts low-income households - Federal Reserve Bank of Dallas",
+        "url": "https://www.dallasfed.org/research/economics/2023/0110",
+        "source": "dallasfed.org",
+        "published_date": "2023-01-10T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230207_017_c0f7891c",
+        "title": "How do rising U.S. interest rates affect emerging and developing economies? - World Bank Blogs",
+        "url": "https://blogs.worldbank.org/en/developmenttalk/how-do-rising-us-interest-rates-affect-emerging-and-developing-economies",
+        "source": "blogs.worldbank.org",
+        "published_date": "2023-02-07T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20231117_018_a06aa25d",
+        "title": "You Decide: Is the Fed Done Raising Interest Rates? - NC State University",
+        "url": "https://cals.ncsu.edu/news/you-decide-is-the-fed-done-raising-interest-rates",
+        "source": "cals.ncsu.edu",
+        "published_date": "2023-11-17T09:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230713_019_a410c8d9",
+        "title": "What Would Be the Impact of an AI Boom on Interest Rates and Inflation? - American Enterprise Institute - AEI",
+        "url": "https://www.aei.org/articles/what-would-be-the-impact-of-an-ai-boom-on-interest-rates-and-inflation",
+        "source": "aei.org",
+        "published_date": "2023-07-13T18:17:00+00:00"
+      },
+      {
+        "id": "art_finance_20230718_020_5e468cda",
+        "title": "Rising U.S. Interest Rates and Emerging Market Distress - Econofact",
+        "url": "https://econofact.org/rising-u-s-interest-rates-and-emerging-market-distress",
+        "source": "econofact.org",
+        "published_date": "2023-07-18T21:48:41-04:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_3cd40e1c8b61",
+      "events_count": 9,
+      "hypotheses_count": 10
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 3,
+      "avg_depth": 2.33,
+      "quality_score": 0.87,
+      "depth_score": 1.0,
+      "confidence_score": 0.77,
+      "strength_score": 0.69,
+      "evidence_score": 1.0,
+      "event_count": 9,
+      "hypothesis_count": 10
+    },
+    "nodes": [
+      {
+        "id": "evt_360349ae81a8",
+        "title": "Option 3: above recent range",
+        "description": "Question resolves to: above recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-02-15T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_us_2y_yield_monthly_change_2024_01",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 2,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:11:05.898032Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_3cd40e1c8b61",
+        "title": "Option 2: within recent range",
+        "description": "Question resolves to: within recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-02-15T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_us_2y_yield_monthly_change_2024_01",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 1,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:11:05.898023Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_ef589a62c1c7",
+        "title": "Option 1: below recent range",
+        "description": "Question resolves to: below recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-02-15T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_us_2y_yield_monthly_change_2024_01",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 0,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:11:05.898011Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230728_001_765a15fb",
+        "title": "Core PCE Price Index rises 4.1% year-over-year, smallest increase since September 2021",
+        "description": "The Core PCE Price Index, favored by the Fed, rose 4.1% year-over-year, indicating moderating inflation but still above target.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-07-28T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230728_013_bd5da42d"
+        ],
+        "extracted_for_question_id": "v3_us_2y_yield_monthly_change_2024_01",
+        "source_article_id": "art_finance_20230728_013_bd5da42d",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_2y_yield_monthly_change_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:16:06.902335Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20231117_002_880f677a",
+        "title": "Discussion emerges on whether the Fed is done raising interest rates",
+        "description": "Discussion emerges on whether the Fed is done raising interest rates, with some anticipation of future cuts due to moderating inflation.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-11-17T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20231117_018_a06aa25d"
+        ],
+        "extracted_for_question_id": "v3_us_2y_yield_monthly_change_2024_01",
+        "source_article_id": "art_finance_20231117_018_a06aa25d",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_2y_yield_monthly_change_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:16:06.933161Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20231213_003_553a4517",
+        "title": "Fed holds rates steady and forecasts three rate cuts in 2024",
+        "description": "The Federal Reserve held interest rates steady and forecasted three rate cuts in 2024, citing easing inflation and a cooling economy, significantly shifting market expectations.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-12-13T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20231213_011_723d743a"
+        ],
+        "extracted_for_question_id": "v3_us_2y_yield_monthly_change_2024_01",
+        "source_article_id": "art_finance_20231213_011_723d743a",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_2y_yield_monthly_change_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:16:06.964392Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20231213_008_b46562fe",
+        "title": "Market anticipation of future rate cuts",
+        "description": "Market sentiment, anticipating future rate cuts, influenced yields, preventing extreme fluctuations.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-12-13T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20231213_011_723d743a"
+        ],
+        "extracted_for_question_id": "v3_us_2y_yield_monthly_change_2024_01",
+        "source_article_id": "art_finance_20231213_011_723d743a",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_2y_yield_monthly_change_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:16:07.111920Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240106_004_4e8cb21f",
+        "title": "Dallas Fed President Lorie Logan remarks on inflation and price stability",
+        "description": "Dallas Fed President Lorie Logan remarks that inflation is in a much better place but the job of restoring price stability is not yet complete, emphasizing bringing inflation sustainably back to 2%.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-06T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240106_006_66c914e0"
+        ],
+        "extracted_for_question_id": "v3_us_2y_yield_monthly_change_2024_01",
+        "source_article_id": "art_finance_20240106_006_66c914e0",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_2y_yield_monthly_change_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:16:06.995877Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240125_006_8fb2db27",
+        "title": "U.S. economy grows at a robust 3.3% in Q4 2023, inflation pulls back to 2%",
+        "description": "The U.S. economy grew at a robust 3.3% annualized rate in Q4 2023, while inflation (Core PCE) pulled back to 2% for the period, suggesting a 'Goldilocks' scenario.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-25T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240125_010_78be2d32"
+        ],
+        "extracted_for_question_id": "v3_us_2y_yield_monthly_change_2024_01",
+        "source_article_id": "art_finance_20240125_010_78be2d32",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_2y_yield_monthly_change_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:16:07.053693Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240125_009_bea48369",
+        "title": "'Goldilocks' scenario emerges from strong economic data and easing inflation",
+        "description": "Strong economic indicators, such as robust GDP growth and easing inflation, created a 'Goldilocks' scenario where the economy was robust without reigniting inflation fears.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-25T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240125_010_78be2d32"
+        ],
+        "extracted_for_question_id": "v3_us_2y_yield_monthly_change_2024_01",
+        "source_article_id": "art_finance_20240125_010_78be2d32",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_2y_yield_monthly_change_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:16:07.140418Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240212_007_fb335538",
+        "title": "Traders eye upcoming US CPI data for Fed clues amidst expectations of delayed rate cuts",
+        "description": "Traders eye upcoming US CPI data for Fed clues amidst expectations that rate cuts might be pushed to the second half of the year due to strong economic data.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-02-12T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240212_012_0c1958f9"
+        ],
+        "extracted_for_question_id": "v3_us_2y_yield_monthly_change_2024_01",
+        "source_article_id": "art_finance_20240212_012_0c1958f9",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_2y_yield_monthly_change_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:16:07.083822Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_us_2y_yield_monthly_change_2024_01_20260725_061607_001_ccc4a913",
+        "source_event_id": "evt_finance_20230728_001_765a15fb",
+        "target_event_id": "evt_finance_20231213_003_553a4517",
+        "relation_type": "enables",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Moderating inflation provided the basis for the Fed to hold rates steady and forecast future cuts.",
+        "evidence_article_ids": [
+          "art_finance_20230728_013_bd5da42d",
+          "art_finance_20231213_011_723d743a"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:16:07.165836Z",
+        "last_confirmed_at": "2026-07-25T06:16:07.165836Z"
+      },
+      {
+        "id": "hyp_v3_us_2y_yield_monthly_change_2024_01_20260725_061607_002_d760b4cf",
+        "source_event_id": "evt_finance_20231117_002_880f677a",
+        "target_event_id": "evt_finance_20231213_003_553a4517",
+        "relation_type": "correlates",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Discussions about the Fed being done raising rates preceded and correlated with the Fed's decision to hold rates steady.",
+        "evidence_article_ids": [
+          "art_finance_20231117_018_a06aa25d",
+          "art_finance_20231213_011_723d743a"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:16:07.180887Z",
+        "last_confirmed_at": "2026-07-25T06:16:07.180887Z"
+      },
+      {
+        "id": "hyp_v3_us_2y_yield_monthly_change_2024_01_20260725_061607_003_ac0d6359",
+        "source_event_id": "evt_finance_20231213_003_553a4517",
+        "target_event_id": "evt_finance_20231213_008_b46562fe",
+        "relation_type": "triggers",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The Fed's forecast of rate cuts directly triggered market anticipation for lower short-term rates.",
+        "evidence_article_ids": [
+          "art_finance_20231213_011_723d743a"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:16:07.195866Z",
+        "last_confirmed_at": "2026-07-25T06:16:07.195866Z"
+      },
+      {
+        "id": "hyp_v3_us_2y_yield_monthly_change_2024_01_20260725_061607_004_18c75b39",
+        "source_event_id": "evt_finance_20240125_006_8fb2db27",
+        "target_event_id": "evt_finance_20240125_009_bea48369",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Strong economic growth and easing inflation directly led to the 'Goldilocks' scenario.",
+        "evidence_article_ids": [
+          "art_finance_20240125_010_78be2d32"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:16:07.210736Z",
+        "last_confirmed_at": "2026-07-25T06:16:07.210736Z"
+      },
+      {
+        "id": "hyp_v3_us_2y_yield_monthly_change_2024_01_20260725_061607_005_51ceb23e",
+        "source_event_id": "evt_finance_20240106_004_4e8cb21f",
+        "target_event_id": "evt_finance_20240125_009_bea48369",
+        "relation_type": "enables",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Logan's remarks reinforced the idea of a balanced economic situation, contributing to the 'Goldilocks' narrative.",
+        "evidence_article_ids": [
+          "art_finance_20240106_006_66c914e0",
+          "art_finance_20240125_010_78be2d32"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:16:07.227764Z",
+        "last_confirmed_at": "2026-07-25T06:16:07.227764Z"
+      },
+      {
+        "id": "hyp_v3_us_2y_yield_monthly_change_2024_01_20260725_061607_006_4f8751f7",
+        "source_event_id": "evt_finance_20240125_009_bea48369",
+        "target_event_id": "evt_finance_20240212_007_fb335538",
+        "relation_type": "amplifies",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "The 'Goldilocks' scenario, with strong growth and easing inflation, amplified expectations of delayed rate cuts.",
+        "evidence_article_ids": [
+          "art_finance_20240125_010_78be2d32",
+          "art_finance_20240212_012_0c1958f9"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:16:07.243010Z",
+        "last_confirmed_at": "2026-07-25T06:16:07.243010Z"
+      },
+      {
+        "id": "hyp_v3_us_2y_yield_monthly_change_2024_01_20260725_061607_007_815757a1",
+        "source_event_id": "evt_finance_20231213_008_b46562fe",
+        "target_event_id": "evt_3cd40e1c8b61",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Market anticipation of future rate cuts, combined with the realization of delayed cuts, kept the 2-year yield within a recent range.",
+        "evidence_article_ids": [
+          "art_finance_20231213_011_723d743a",
+          "art_finance_20240212_012_0c1958f9"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:16:07.257764Z",
+        "last_confirmed_at": "2026-07-25T06:16:07.257764Z"
+      },
+      {
+        "id": "hyp_v3_us_2y_yield_monthly_change_2024_01_20260725_061607_008_cf48e63e",
+        "source_event_id": "evt_finance_20240212_007_fb335538",
+        "target_event_id": "evt_3cd40e1c8b61",
+        "relation_type": "enables",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Expectations of delayed rate cuts, influenced by strong economic data and upcoming CPI, supported the 2-year yield remaining within its recent range.",
+        "evidence_article_ids": [
+          "art_finance_20240212_012_0c1958f9"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:16:07.275629Z",
+        "last_confirmed_at": "2026-07-25T06:16:07.275629Z"
+      },
+      {
+        "id": "hyp_v3_us_2y_yield_monthly_change_2024_01_20260725_061607_009_ee63a025",
+        "source_event_id": "evt_finance_20240125_006_8fb2db27",
+        "target_event_id": "evt_3cd40e1c8b61",
+        "relation_type": "inhibits",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Strong economic growth could have led to higher yields, but its combination with easing inflation inhibited a sharp rise, contributing to the 'within recent range' outcome.",
+        "evidence_article_ids": [
+          "art_finance_20240125_010_78be2d32"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:16:07.290494Z",
+        "last_confirmed_at": "2026-07-25T06:16:07.290494Z"
+      },
+      {
+        "id": "hyp_v3_us_2y_yield_monthly_change_2024_01_20260725_061607_010_7a43836f",
+        "source_event_id": "evt_finance_20230728_001_765a15fb",
+        "target_event_id": "evt_3cd40e1c8b61",
+        "relation_type": "enables",
+        "strength": 0.5,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "The moderation of inflation, while still above target, enabled the Fed's cautious stance, which in turn contributed to yields remaining within range.",
+        "evidence_article_ids": [
+          "art_finance_20230728_013_bd5da42d"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:16:07.306453Z",
+        "last_confirmed_at": "2026-07-25T06:16:07.306453Z"
+      }
+    ],
+    "outcome_impacts": [
+      {
+        "id": "imp_153c33d2",
+        "event_id": "evt_finance_20230728_001_765a15fb",
+        "outcome_event_id": "evt_3cd40e1c8b61",
+        "question_id": "v3_us_2y_yield_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Moderating inflation (PCE) enabled the Fed's cautious stance, contributing to yields remaining within range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:16:14.678405Z",
+        "last_confirmed_at": "2026-07-25T06:16:14.678405Z"
+      },
+      {
+        "id": "imp_35eb0cb2",
+        "event_id": "evt_finance_20231117_002_880f677a",
+        "outcome_event_id": "evt_3cd40e1c8b61",
+        "question_id": "v3_us_2y_yield_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.5,
+        "confidence": 0.6,
+        "reasoning": "Discussion about the Fed being done raising rates contributed to market expectations that would keep yields from rising too much.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:16:14.688943Z",
+        "last_confirmed_at": "2026-07-25T06:16:14.688943Z"
+      },
+      {
+        "id": "imp_05163ebd",
+        "event_id": "evt_finance_20231213_003_553a4517",
+        "outcome_event_id": "evt_3cd40e1c8b61",
+        "question_id": "v3_us_2y_yield_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "The Fed holding rates steady and forecasting cuts directly influenced market expectations, preventing extreme fluctuations and keeping yields within range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:16:14.701125Z",
+        "last_confirmed_at": "2026-07-25T06:16:14.701125Z"
+      },
+      {
+        "id": "imp_275472a9",
+        "event_id": "evt_finance_20240106_004_4e8cb21f",
+        "outcome_event_id": "evt_3cd40e1c8b61",
+        "question_id": "v3_us_2y_yield_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Logan's remarks reinforced the cautious but optimistic stance on inflation, guiding market expectations for rate adjustments and contributing to stable yields.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:16:14.711829Z",
+        "last_confirmed_at": "2026-07-25T06:16:14.711829Z"
+      },
+      {
+        "id": "imp_d8e48109",
+        "event_id": "evt_finance_20240112_005_af9f140f",
+        "outcome_event_id": "evt_3cd40e1c8b61",
+        "question_id": "v3_us_2y_yield_monthly_change_2024_01",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.2,
+        "confidence": 0.4,
+        "reasoning": "While providing financial information, this event's direct impact on the 2-year yield range is less clear and likely indirect.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:16:14.721549Z",
+        "last_confirmed_at": "2026-07-25T06:16:14.721549Z"
+      },
+      {
+        "id": "imp_82c8e614",
+        "event_id": "evt_finance_20240125_006_8fb2db27",
+        "outcome_event_id": "evt_3cd40e1c8b61",
+        "question_id": "v3_us_2y_yield_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Strong economic growth combined with easing inflation created a 'Goldilocks' scenario, supporting the idea of a soft landing and preventing sharp yield movements.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:16:14.732325Z",
+        "last_confirmed_at": "2026-07-25T06:16:14.732325Z"
+      },
+      {
+        "id": "imp_cbf40a86",
+        "event_id": "evt_finance_20240212_007_fb335538",
+        "outcome_event_id": "evt_3cd40e1c8b61",
+        "question_id": "v3_us_2y_yield_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Market anticipation of delayed rate cuts due to strong economic data supported current yield ranges, preventing a sharp drop.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:16:14.742405Z",
+        "last_confirmed_at": "2026-07-25T06:16:14.742405Z"
+      },
+      {
+        "id": "imp_11b04850",
+        "event_id": "evt_finance_20231213_008_b46562fe",
+        "outcome_event_id": "evt_3cd40e1c8b61",
+        "question_id": "v3_us_2y_yield_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "Market anticipation of future rate cuts, while also factoring in delayed cuts, was a primary driver in keeping the 2-year yield within a recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:16:14.756569Z",
+        "last_confirmed_at": "2026-07-25T06:16:14.756569Z"
+      },
+      {
+        "id": "imp_4ec33efa",
+        "event_id": "evt_finance_20240125_009_bea48369",
+        "outcome_event_id": "evt_3cd40e1c8b61",
+        "question_id": "v3_us_2y_yield_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.8,
+        "reasoning": "The 'Goldilocks' scenario, combining strong growth and easing inflation, was a key factor in stabilizing yields and keeping them within the recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:16:14.768719Z",
+        "last_confirmed_at": "2026-07-25T06:16:14.768719Z"
+      }
+    ]
+  }
+}

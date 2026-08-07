@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_brent_monthly_return_2024_07",
+  "blueprint_sha256": "bef43303be667012ed54dcbc0ba43f119b4300c884e6956f36b6787d934bf45b",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "price_return",
+      "target_operation": "predict",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2024-07-01, which range will the monthly Brent price return for Brent crude oil in 2024-07 fall into?",
+    "historical_cutoff": "2024-07-01T00:00:00+00:00",
+    "target_semantics": "The monthly percentage change in Brent crude oil prices for July 2024.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The DAG indicates that a drop in U.S. crude and gasoline stocks (checkpoint_1) was historically linked to strong U.S. demand (checkpoint_2), which in turn acted as a countervailing factor against price declines (checkpoint_8).",
+      "Furthermore, lingering demand concerns in China (checkpoint_4) and the release of the IEA Oil Market Report (checkpoint_3) were identified as drivers amplifying a weakening global demand outlook (checkpoint_6), leading to bearish market sentiment (checkpoint_7) and downward pressure on prices (checkpoint_8).",
+      "Mixed inventory signals, with crude inventories falling but fuel stocks building (checkpoint_5), also contributed to downward price pressure (checkpoint_8)."
+    ],
+    "counterevidence": "No forecast-time evidence was provided to support or contradict the identified causal pathways or their mechanisms.",
+    "prospective_target_estimate": "The provided DAG structure highlights multiple pathways leading to downward pressure on prices, driven by factors such as weakening global demand, concerns about Chinese demand, and mixed inventory signals. However, without specific forecast-time evidence to confirm the current state and direction of these factors, a precise estimate within the given ranges cannot be determined.",
+    "option_mapping": "The target is to determine if the monthly Brent price return for July 2024 falls below -5.167%, within the range of -5.167% to 3.495%, or above 3.495%.",
+    "uncertainty": "The historical analysis reveals multiple potential drivers for price movement, but the lack of forecast-time evidence means the current relevance and direction of these drivers are unknown. The 'historical_support' for all checkpoints is 'weak', and the 'expected_direction' for most is 'unknown', indicating significant uncertainty.",
+    "dag_derived_lesson": "When assessing price movements, it is crucial to evaluate the interplay between domestic demand indicators, international demand outlooks (especially from key consuming regions), inventory levels (both crude and refined products), and market sentiment, as these factors can exert significant, sometimes opposing, pressures on prices. The absence of current evidence to validate these historical links introduces substantial uncertainty."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

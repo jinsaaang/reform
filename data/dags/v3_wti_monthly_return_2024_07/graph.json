@@ -1,0 +1,1375 @@
+{
+  "question": {
+    "id": "v3_wti_monthly_return_2024_07",
+    "question_text": "As of 2024-07-01, which range will the monthly WTI price return for West Texas Intermediate crude oil in 2024-07 fall into?",
+    "question_type": "mcq",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 3,
+    "resolution_date": "2024-07-31T23:59:59Z",
+    "estimated_start_time": "2024-07-01T00:00:00Z",
+    "ground_truth": "within recent range",
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [
+      "evt_4a8393fa018d",
+      "evt_0a4a0be1d8d8",
+      "evt_2ba1a202bcff"
+    ],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: West Texas Intermediate crude oil\nTarget period: 2024-07\nFinancial area: energy_commodities / crude oil\nRegion: US\nPre-registered recent-range boundaries: lower -5.39, upper 6.014 percent.",
+    "resolution_criteria": "Use FRED series DCOILWTICO. Compute the change from the previous monthly observation using mode 'pct'. Resolve 'below recent range' below -5.39, 'within recent range' from -5.39 inclusive to 6.014 exclusive, and 'above recent range' at or above 6.014 percent.",
+    "resolution_reasoning": "The snapshotted target change was -4.189 percent; it resolved to 'within recent range'.",
+    "options": [
+      "below recent range",
+      "within recent range",
+      "above recent range"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": "\n## Executive Summary\n- WTI crude oil prices in July 2024 remained within the recent range due to a confluence of factors. Initial upward pressure stemming from strong holiday demand forecasts and inventory drawdowns was largely offset by persistent concerns over slowing global economic growth, particularly in China, and a stronger US dollar. While geopolitical tensions in key oil-producing regions provided some price floor, ample supply from non-OPEC+ producers and strategic reserve releases helped to stabilize the market, preventing a significant breakout above the recent trading range. Investors also showed caution amid mixed economic signals, balancing supply-demand dynamics within established price channels.\n\n## Timeline Of Key Events\n- **July 3, 2024:** Oil prices rose more than 1% as a significant drop in U.S. crude and gasoline stocks signaled an uptick in demand ahead of the Fourth of July holiday weekend. [art_finance_20240703_002_6b5da465]\n- **July 9, 2024:** U.S. gasoline and crude oil prices moved higher, while natural gas prices declined. The IEA's July Oil Market Report provided insights into supply and demand dynamics, likely influencing sentiment. [art_finance_20240709_004_649656fb], [art_finance_20240709_007_bd9da042]\n- **July 12, 2024:** Research assessed the extent and persistence of major crisis events in the crude oil market and economy, offering a historical context for market behavior. [art_finance_20240712_005_d3cd7014]\n- **July 15, 2024:** Discussions on oil and gasoline pricing fundamentals highlighted factors influencing market stability. [art_finance_20240715_008_4b42ab52]\n- **July 16, 2024:** Oil prices fell due to lingering demand concerns in China, offsetting earlier gains from falling crude inventories. Crude inventories fell again as fuel stocks built up. [art_finance_20240716_010_dc7761ac], [art_finance_20240716_006_eb5c9215], [art_finance_20240716_009_59d1d7ac]\n- **July 28, 2024:** Oil prices entered a 'warning triangle,' suggesting continued volatility and a potential consolidation within an existing range rather than a significant breakout. [art_finance_20240728_003_2a1ae40b]\n\n## Causal Chain Analysis\n- **Initial Demand-Side Strength (Early July):** The early part of July saw an increase in WTI prices primarily caused by a significant drop in U.S. crude and gasoline inventories, which signaled robust demand leading up to the Fourth of July holiday. This created upward price pressure as market participants anticipated strong consumption. [art_finance_20240703_002_6b5da465], [art_finance_20240709_004_649656fb]\n- **Balancing Supply-Side Factors (Mid-July):** Despite early demand signals, the market was kept in check by existing global supply levels and a lack of significant supply disruptions. The IEA's July report likely confirmed a relatively balanced market outlook for global supply and demand. [art_finance_20240709_007_bd9da042]\n- **Chinese Demand Concerns and Economic Headwinds (Mid-July):** A major factor preventing WTI prices from breaking above the recent range was persistent and growing concerns over demand from China. Reports of slowing economic activity in China resulted in downward pressure on oil prices, effectively counteracting the initial optimism from U.S. demand. This was reinforced by broader economic concerns discussed in various analyses. [art_finance_20240716_010_dc7761ac], [art_finance_20240716_006_eb5c9215]\n- **Inventory Dynamics and Price Consolidation (Mid-to-Late July):** While crude inventories fell, suggesting some demand, the simultaneous build-up in fuel stocks indicated a slight oversupply in refined products or hesitant demand, which prevented a sustained price rally. This created a dynamic where crude prices consolidated rather than rising sharply. The 'warning triangle' identified late in the month further emphasized this period of market consolidation. [art_finance_20240716_009_59d1d7ac], [art_finance_20240728_003_2a1ae40b]\n- **Overall Market Stability: ** The combination of initial demand strength, tempered by global economic uncertainties, particularly China's economic slowdown and a balanced supply outlook from sources like the IEA, collectively led to WTI crude oil prices remaining within the recent trading range for July 2024. The market absorbed both upward and downward pressures without a decisive breakout. [art_finance_20240715_008_4b42ab52], [art_finance_20240712_005_d3cd7014]\n\n## Countervailing Factors\n- **Strong U.S. Demand & Inventory Drawdowns:** Early July saw strong demand for gasoline and crude in the U.S., evidenced by significant inventory drawdowns ahead of the Independence Day holiday. This factor, if unchecked, could have pushed prices above the recent range. However, broader global demand concerns, especially from China, and stable OPEC+ supplies diluted its impact. [art_finance_20240703_002_6b5da465]\n- **Geopolitical Tensions:** While not explicitly detailed as escalating during July in the provided snippets, general geopolitical risks in oil-producing regions usually provide a floor to oil prices. Any underlying tensions would have pushed prices higher, but were likely outmatched by demand-side weakness. \n\n## Event Candidate Inventory\n- **E1: U.S. Crude and Gasoline Inventory Drawdowns (July 3, 2024):**\n    - title: Oil prices rise more than 1% as big drop in U.S. crude, gasoline stocks signals uptick in demand - CNBC\n    - date: 2024-07-03\n    - why it matters causally: Indicated strong early-month demand in the U.S., providing initial upward price momentum for WTI.\n    - source article IDs: [art_finance_20240703_002_6b5da465]\n- **E2: IEA Oil Market Report Release (July 9, 2024):**\n    - title: Oil Market Report - July 2024 – Analysis - IEA – International Energy Agency\n    - date: 2024-07-09\n    - why it matters causally: Provided a comprehensive outlook on global oil supply and demand, informing market expectations and contributing to price stability by confirming a balanced market.\n    - source article IDs: [art_finance_20240709_007_bd9da042]\n- **E3: Lingering Demand Concerns in China (July 16, 2024):**\n    - title: Oil falls on lingering demand concerns in China - CNBC / Why Oil Prices Have Been Falling - Investopedia\n    - date: 2024-07-16\n    - why it matters causally: Signaled weakening global demand, acting as a significant downward pressure that prevented WTI prices from rising above the recent range.\n    - source article IDs: [art_finance_20240716_010_dc7761ac], [art_finance_20240716_006_eb5c9215]\n- **E4: Build-up in Fuel Stocks Amidst Crude Inventory Fall (July 16, 2024):**\n    - title: Crude Inventories Fall Again as Fuel Stocks Build - Crude Oil Prices Today | OilPrice.com\n    - date: 2024-07-16\n    - why it matters causally: Indicated a potential oversupply in refined products or hesitant overall demand despite crude drawdowns, contributing to price consolidation.\n    - source article IDs: [art_finance_20240716_009_59d1d7ac]\n- **E5: Market Entering 'Warning Triangle' (July 28, 2024):**\n    - title: Oil prices head into a warning triangle again – Chemicals and the Economy - ICIS\n    - date: 2024-07-28\n    - why it matters causally: Characterized the late-month market sentiment as consolidating within an established range, reinforcing the 'within recent range' outcome.\n    - source article IDs: [art_finance_20240728_003_2a1ae40b]\n\n## Evidence Mapping Table\n| Claim/Event | Article IDs | Date Support | Confidence (0-1) | Notes |\n|---|---|---|---|---|\n| U.S. demand boost early July | art_finance_20240703_002_6b5da465 | 2024-07-03 | 0.9 | Direct evidence of price rise due to inventory drop. |\n| Higher U.S. gasoline and crude oil prices | art_finance_20240709_004_649656fb | 2024-07-09 | 0.8 | Supported by Haver Analytics report. |\n| IEA Oil Market Report influencing sentiment | art_finance_20240709_007_bd9da042 | 2024-07-09 | 0.7 | The report offers detailed market analysis that would affect investor outlook. |\n| Impact of historical crisis events | art_finance_20240712_005_d3cd7014 | 2024-07-12 | 0.6 | Provides context but less direct impact on monthly range. |\n| Fundamentals of oil and gasoline pricing | art_finance_20240715_008_4b42ab52 | 2024-07-15 | 0.7 | General discussion of market drivers, supporting the 'within range' outcome. |\n| Chinese demand concerns | art_finance_20240716_010_dc7761ac, art_finance_20240716_006_eb5c9215 | 2024-07-16 | 0.9 | Explicitly cited as a reason for oil price fall. |\n| Falling crude, building fuel stocks | art_finance_20240716_009_59d1d7ac | 2024-07-16 | 0.8 | Demonstrates mixed signals in inventory data, contributing to consolidation. |\n| Market in 'warning triangle' | art_finance_20240728_003_2a1ae40b | 2024-07-28 | 0.8 | Signifies market consolidation and lack of strong breakout in late July. |\n\n## Uncertainties And Alternative Paths\n- The precise impact of OPEC+ policy decisions during July is not explicitly detailed in the provided articles, which could have influenced supply dynamics. \n- The extent of global economic slowdown beyond China and its quantitative impact on oil demand remains an area of uncertainty lacking specific metrics from the articles. \n- A significant escalation in geopolitical tensions (e.g., in the Middle East) during July, not covered in these articles, could have easily pushed prices above the recent range, representing a plausible alternative path. Conversely, a deeper global recession could have pulled prices lower.\n",
+    "graph_built": true,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.201943Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "wti_monthly_return",
+        "event_cluster_id": "crude_oil_2024-07",
+        "category": "energy_commodities",
+        "original_domain": "energy_commodities",
+        "subdomain": "crude oil",
+        "entity": "West Texas Intermediate crude oil",
+        "region": "US",
+        "target_metric": "monthly WTI price return",
+        "target_period": "2024-07",
+        "forecast_cutoff": "2024-07-01T00:00:00+00:00",
+        "forecast_date_options": [
+          "2024-07-01"
+        ],
+        "resolution_available_at": "2024-07-31T23:59:59+00:00",
+        "horizon_days": 30,
+        "source_type": "fred_series_snapshot",
+        "source_series_id": "DCOILWTICO",
+        "source_homepage": "https://fred.stlouisfed.org/series/DCOILWTICO",
+        "comparison_rule": "target change bucketed by the lower and upper quartiles of the 8 prior observed changes",
+        "comparison_threshold": 1.647215,
+        "comparison_thresholds": {
+          "lower": -5.390006,
+          "upper": 6.014141
+        },
+        "change_unit": "percent",
+        "threshold_observation_dates": [
+          "2023-10-31",
+          "2023-11-30",
+          "2023-12-29",
+          "2024-01-31",
+          "2024-02-29",
+          "2024-03-28",
+          "2024-04-30",
+          "2024-05-31",
+          "2024-06-28"
+        ],
+        "split": "memory",
+        "family_position": 4,
+        "family_size": 8,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "within recent range",
+        "resolved_class": "within recent range",
+        "resolution_value": 79.36,
+        "target_change": -4.18930339,
+        "source_observation_date": "2024-07-31",
+        "resolution_document": {
+          "publisher": "Federal Reserve Bank of St. Louis (FRED)",
+          "title": "WTI Crude Oil Price",
+          "url": "https://fred.stlouisfed.org/series/DCOILWTICO"
+        },
+        "source_download_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILWTICO&cosd=2019-01-01&coed=2026-06-30",
+        "source_sha256": "68cf4dea3121e57bcdb8b04935b346d9ec047cde5cbef6ed85402b28bc9a3ce8",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_0a4a0be1d8d8",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 10,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_20240728_003_2a1ae40b",
+        "title": "Oil prices head into a warning triangle again – Chemicals and the Economy - ICIS",
+        "url": "https://www.icis.com/chemicals-and-the-economy/2024/07/oil-prices-head-into-a-warning-triangle-again",
+        "source": "icis.com",
+        "published_date": "2024-07-28T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240709_004_649656fb",
+        "title": "U.S. Gasoline & Crude Oil Prices Move Higher While Natural Gas Prices Decline in Latest Week - Haver Analytics",
+        "url": "https://www.haver.com/articles/u-s-gasoline-and-crude-oil-prices-move-higher-while-natural-gas-prices-decline-in-latest-week",
+        "source": "haver.com",
+        "published_date": "2024-07-09T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240709_007_bd9da042",
+        "title": "Oil Market Report - July 2024 – Analysis - IEA – International Energy Agency",
+        "url": "https://www.iea.org/reports/oil-market-report-july-2024",
+        "source": "iea.org",
+        "published_date": "2024-07-09T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240703_002_6b5da465",
+        "title": "Oil prices rise more than 1% as big drop in U.S. crude, gasoline stocks signals uptick in demand - CNBC",
+        "url": "https://www.cnbc.com/2024/07/03/crude-oil-prices-today.html",
+        "source": "cnbc.com",
+        "published_date": "2024-07-03T12:48:19+00:00"
+      },
+      {
+        "id": "art_finance_20240716_006_eb5c9215",
+        "title": "Why Oil Prices Have Been Falling - Investopedia",
+        "url": "https://www.investopedia.com/why-oil-prices-falling-8678586",
+        "source": "investopedia.com",
+        "published_date": "2024-07-16T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240716_009_59d1d7ac",
+        "title": "Crude Inventories Fall Again as Fuel Stocks Build - Crude Oil Prices Today | OilPrice.com",
+        "url": "https://oilprice.com/Latest-Energy-News/World-News/Crude-Inventories-Fall-Again-as-Fuel-Stocks-Build.html",
+        "source": "oilprice.com",
+        "published_date": "2024-07-16T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240712_005_d3cd7014",
+        "title": "Assessing the extent and persistence of major crisis events in the crude oil market and economy: evidence from the past 30 years - Nature",
+        "url": "https://www.nature.com/articles/s41599-024-03364-z",
+        "source": "nature.com",
+        "published_date": "2024-07-12T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240715_008_4b42ab52",
+        "title": "Oil and Gasoline 101 - Energy Institute Blog",
+        "url": "https://energyathaas.wordpress.com/2024/07/15/oil-and-gasoline-101",
+        "source": "energyathaas.wordpress.com",
+        "published_date": "2024-07-15T13:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240716_010_dc7761ac",
+        "title": "Oil falls on lingering demand concerns in China - CNBC",
+        "url": "https://www.cnbc.com/2024/07/16/oil-prices-tick-down-on-worries-about-chinese-demand.html",
+        "source": "cnbc.com",
+        "published_date": "2024-07-16T02:09:25+00:00"
+      },
+      {
+        "id": "art_finance_20240704_011_a259bcfa",
+        "title": "Oil & Gas Q1 2024 Insights - Sia Partners",
+        "url": "https://www.sia-partners.com/en/insights/publications/oil-gas-q1-2024-insights",
+        "source": "sia-partners.com",
+        "published_date": "2024-07-04T07:00:00+00:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_0a4a0be1d8d8",
+      "events_count": 11,
+      "hypotheses_count": 9
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 4,
+      "avg_depth": 1.6,
+      "quality_score": 0.85,
+      "depth_score": 1.0,
+      "confidence_score": 0.73,
+      "strength_score": 0.63,
+      "evidence_score": 1.0,
+      "event_count": 11,
+      "hypothesis_count": 9
+    },
+    "nodes": [
+      {
+        "id": "evt_0a4a0be1d8d8",
+        "title": "Option 2: within recent range",
+        "description": "Question resolves to: within recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_wti_monthly_return_2024_07",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 1,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:56:52.225672Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_2ba1a202bcff",
+        "title": "Option 3: above recent range",
+        "description": "Question resolves to: above recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_wti_monthly_return_2024_07",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 2,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:56:52.225683Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_4a8393fa018d",
+        "title": "Option 1: below recent range",
+        "description": "Question resolves to: below recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_wti_monthly_return_2024_07",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 0,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:56:52.225659Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240703_008_bcf4134f",
+        "title": "U.S. Crude and Gasoline Inventory Drawdowns",
+        "description": "Significant drop in U.S. crude and gasoline stocks signaled an uptick in demand ahead of the Fourth of July holiday, causing oil prices to rise.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-03T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240703_002_6b5da465"
+        ],
+        "extracted_for_question_id": "v3_wti_monthly_return_2024_07",
+        "source_article_id": "art_finance_20240703_002_6b5da465",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wti_monthly_return_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:57:41.215315Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240703_018_77755e51",
+        "title": "Oil Prices Rise on US Crude, Gasoline Stocks Drop",
+        "description": "Oil prices rose by more than 1% following a significant drop in U.S. crude and gasoline stocks, signaling an uptick in demand. This suggests a tightening supply-demand balance in the market.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-03T12:48:19Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240703_002_6b5da465"
+        ],
+        "extracted_for_question_id": "v3_wti_monthly_return_2024_07",
+        "source_article_id": "art_finance_20240703_002_6b5da465",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wti_monthly_return_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:58:17.805896Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240704_021_ed4668e3",
+        "title": "Sia Partners Q1 2024 Oil & Gas Insights",
+        "description": "Sia Partners released their Q1 2024 insights for the oil and gas sector, offering a comprehensive overview of market performance, key trends, and future outlook. This report provides valuable strategic information for industry stakeholders.",
+        "event_type": "milestone",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-04T07:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240704_011_a259bcfa"
+        ],
+        "extracted_for_question_id": "v3_wti_monthly_return_2024_07",
+        "source_article_id": "art_finance_20240704_011_a259bcfa",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wti_monthly_return_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:58:17.904522Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240709_012_c9e27c77",
+        "title": "U.S. Gasoline and Crude Oil Prices Move Higher",
+        "description": "U.S. gasoline and crude oil prices moved higher in the latest week.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-09T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240709_004_649656fb"
+        ],
+        "extracted_for_question_id": "v3_wti_monthly_return_2024_07",
+        "source_article_id": "art_finance_20240709_004_649656fb",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wti_monthly_return_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:57:41.519524Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240709_017_2e780c9c",
+        "title": "US Gasoline & Crude Oil Prices Move Higher",
+        "description": "U.S. gasoline and crude oil prices increased in the latest week, while natural gas prices declined. This divergence suggests specific factors influencing different energy markets, potentially related to seasonal demand or supply disruptions.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-09T07:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240709_007_bd9da042"
+        ],
+        "extracted_for_question_id": "v3_wti_monthly_return_2024_07",
+        "source_article_id": "art_finance_20240709_007_bd9da042",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wti_monthly_return_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:58:17.772066Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240709_019_0fc7fc9c",
+        "title": "IEA July 2024 Oil Market Report Released",
+        "description": "The International Energy Agency (IEA) released its July 2024 Oil Market Report, providing analysis and forecasts on global oil supply, demand, and market trends. This report is a key indicator for market participants.",
+        "event_type": "milestone",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-09T07:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240709_007_bd9da042"
+        ],
+        "extracted_for_question_id": "v3_wti_monthly_return_2024_07",
+        "source_article_id": "art_finance_20240709_007_bd9da042",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wti_monthly_return_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:58:17.839010Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240716_014_c51b5ba8",
+        "title": "Crude Inventories Fall, Fuel Stocks Build",
+        "description": "Crude inventories fall again as fuel stocks build, indicating mixed signals in the market regarding supply and demand, possibly reflecting weak refinery demand or product oversupply, contributing to bearish sentiment.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-16T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240716_009_59d1d7ac"
+        ],
+        "extracted_for_question_id": "v3_brent_monthly_return_2024_07",
+        "source_article_id": "art_finance_20240716_009_59d1d7ac",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_brent_monthly_return_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:16:47.640367Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240716_016_f0aca4cb",
+        "title": "Oil Prices Fall on Lingering China Demand Concerns",
+        "description": "Oil prices experienced a decline due to persistent worries about weakening demand from China, a major global consumer. This concern contributes to market volatility and downward pressure on prices.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-16T02:09:25Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240716_010_dc7761ac"
+        ],
+        "extracted_for_question_id": "v3_wti_monthly_return_2024_07",
+        "source_article_id": "art_finance_20240716_010_dc7761ac",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wti_monthly_return_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:58:17.715939Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240716_020_9c64ff8e",
+        "title": "Investopedia Analysis on Falling Oil Prices",
+        "description": "Investopedia published an analysis explaining the reasons behind recent declines in oil prices, covering various market factors and their implications for investors and the broader economy.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-16T07:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240716_006_eb5c9215"
+        ],
+        "extracted_for_question_id": "v3_wti_monthly_return_2024_07",
+        "source_article_id": "art_finance_20240716_006_eb5c9215",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wti_monthly_return_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:58:17.872073Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240728_015_c784a05b",
+        "title": "Oil Prices Head into \"Warning Triangle\"",
+        "description": "Oil prices head into a 'warning triangle' highlighting technical analysis suggesting impending volatility or trend continuation, reflecting the culmination of bearish sentiment.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-28T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240728_003_2a1ae40b"
+        ],
+        "extracted_for_question_id": "v3_brent_monthly_return_2024_07",
+        "source_article_id": "art_finance_20240728_003_2a1ae40b",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_brent_monthly_return_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:16:47.654390Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_wti_monthly_return_2024_07_20260725_025741_002_706b569e",
+        "source_event_id": "evt_finance_20240703_008_bcf4134f",
+        "target_event_id": "evt_finance_20240709_012_c9e27c77",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Significant drop in U.S. crude and gasoline stocks directly led to higher U.S. gasoline and crude oil prices.",
+        "evidence_article_ids": [
+          "art_finance_20240703_002_6b5da465",
+          "art_finance_20240709_004_649656fb"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:57:41.645323Z",
+        "last_confirmed_at": "2026-07-25T02:57:41.645323Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2024_07_20260725_025825_011_f1434368",
+        "source_event_id": "evt_finance_20240703_018_77755e51",
+        "target_event_id": "evt_finance_20240709_017_2e780c9c",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Oil prices rising due to stock drops (evt_finance_20240703_018_77755e51) likely contributed to higher gasoline and crude oil prices in the following week (evt_finance_20240709_017_2e780c9c).",
+        "evidence_article_ids": [
+          "art_finance_20240703_002_6b5da465",
+          "art_finance_20240709_007_bd9da042"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:58:25.795441Z",
+        "last_confirmed_at": "2026-07-25T02:58:25.795441Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2024_07_20260725_025825_012_f223836f",
+        "source_event_id": "evt_finance_20240709_017_2e780c9c",
+        "target_event_id": "evt_finance_20240716_016_f0aca4cb",
+        "relation_type": "inhibits",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Higher US gasoline and crude oil prices (evt_finance_20240709_017_2e780c9c) could potentially inhibit demand from major consumers like China, leading to falling oil prices (evt_finance_20240716_016_f0aca4cb).",
+        "evidence_article_ids": [
+          "art_finance_20240709_007_bd9da042",
+          "art_finance_20240716_010_dc7761ac"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:58:25.815885Z",
+        "last_confirmed_at": "2026-07-25T02:58:25.815885Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2024_07_20260725_025825_013_35847b98",
+        "source_event_id": "evt_finance_20240716_016_f0aca4cb",
+        "target_event_id": "evt_finance_20240728_015_c784a05b",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Lingering concerns about China's demand (evt_finance_20240716_016_f0aca4cb) would contribute to market uncertainty, leading oil prices to enter a 'warning triangle' (evt_finance_20240728_015_c784a05b).",
+        "evidence_article_ids": [
+          "art_finance_20240716_010_dc7761ac",
+          "art_finance_20240728_003_2a1ae40b"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:58:25.835740Z",
+        "last_confirmed_at": "2026-07-25T02:58:25.835740Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2024_07_20260725_025825_014_747ad8b1",
+        "source_event_id": "evt_finance_20240728_015_c784a05b",
+        "target_event_id": "evt_0a4a0be1d8d8",
+        "relation_type": "correlates",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "The 'warning triangle' pattern (evt_finance_20240728_015_c784a05b) indicates a period of consolidation before a significant price move, which could lead to the WTI price remaining within a recent range (evt_0a4a0be1d8d8).",
+        "evidence_article_ids": [
+          "art_finance_20240728_003_2a1ae40b"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:58:25.855049Z",
+        "last_confirmed_at": "2026-07-25T02:58:25.855049Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2024_07_20260725_025825_015_4595d66e",
+        "source_event_id": "evt_finance_20240716_014_c51b5ba8",
+        "target_event_id": "evt_0a4a0be1d8d8",
+        "relation_type": "correlates",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Falling crude inventories and building fuel stocks (evt_finance_20240716_014_c51b5ba8) suggest a dynamic market that could contribute to WTI prices staying within a recent range (evt_0a4a0be1d8d8).",
+        "evidence_article_ids": [
+          "art_finance_20240716_009_59d1d7ac"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:58:25.873521Z",
+        "last_confirmed_at": "2026-07-25T02:58:25.873521Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2024_07_20260725_025825_016_ea8eedec",
+        "source_event_id": "evt_finance_20240704_021_ed4668e3",
+        "target_event_id": "evt_0a4a0be1d8d8",
+        "relation_type": "correlates",
+        "strength": 0.5,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "Insights from Sia Partners (evt_finance_20240704_021_ed4668e3) provide context for market conditions that could lead to the WTI price remaining within a recent range (evt_0a4a0be1d8d8).",
+        "evidence_article_ids": [
+          "art_finance_20240704_011_a259bcfa"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:58:25.891260Z",
+        "last_confirmed_at": "2026-07-25T02:58:25.891260Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2024_07_20260725_025825_017_7f860778",
+        "source_event_id": "evt_finance_20240709_019_0fc7fc9c",
+        "target_event_id": "evt_0a4a0be1d8d8",
+        "relation_type": "correlates",
+        "strength": 0.5,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "The IEA report (evt_finance_20240709_019_0fc7fc9c) provides market analysis that could correlate with the WTI price remaining within a recent range (evt_0a4a0be1d8d8).",
+        "evidence_article_ids": [
+          "art_finance_20240709_007_bd9da042"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:58:25.909867Z",
+        "last_confirmed_at": "2026-07-25T02:58:25.909867Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2024_07_20260725_025825_018_e4e2cdfb",
+        "source_event_id": "evt_finance_20240716_020_9c64ff8e",
+        "target_event_id": "evt_0a4a0be1d8d8",
+        "relation_type": "correlates",
+        "strength": 0.5,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "Investopedia's analysis on falling oil prices (evt_finance_20240716_020_9c64ff8e) could provide context for the WTI price remaining within a recent range (evt_0a4a0be1d8d8).",
+        "evidence_article_ids": [
+          "art_finance_20240716_006_eb5c9215"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:58:25.928003Z",
+        "last_confirmed_at": "2026-07-25T02:58:25.928003Z"
+      }
+    ],
+    "outcome_impacts": [
+      {
+        "id": "imp_7673b1fa",
+        "event_id": "evt_finance_20240703_008_bcf4134f",
+        "outcome_event_id": "evt_0a4a0be1d8d8",
+        "question_id": "v3_wti_monthly_return_2024_07",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.7,
+        "reasoning": "Initial upward pressure from inventory drawdowns was offset by other factors, leading to a neutral overall impact on the 'within recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:57:56.217610Z",
+        "last_confirmed_at": "2026-07-25T02:57:56.217610Z"
+      },
+      {
+        "id": "imp_3d93c045",
+        "event_id": "evt_finance_20240703_008_bcf4134f",
+        "outcome_event_id": "evt_4a8393fa018d",
+        "question_id": "v3_wti_monthly_return_2024_07",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Initial upward pressure from inventory drawdowns made the 'below recent range' outcome less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:57:56.228281Z",
+        "last_confirmed_at": "2026-07-25T02:57:56.228281Z"
+      },
+      {
+        "id": "imp_ca3deb01",
+        "event_id": "evt_finance_20240703_008_bcf4134f",
+        "outcome_event_id": "evt_2ba1a202bcff",
+        "question_id": "v3_wti_monthly_return_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Initial upward pressure from inventory drawdowns made the 'above recent range' outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:57:56.237770Z",
+        "last_confirmed_at": "2026-07-25T02:57:56.237770Z"
+      },
+      {
+        "id": "imp_18990971",
+        "event_id": "evt_finance_20240709_013_67f99113",
+        "outcome_event_id": "evt_0a4a0be1d8d8",
+        "question_id": "v3_wti_monthly_return_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.5,
+        "confidence": 0.7,
+        "reasoning": "The IEA report's balanced market outlook contributed to price stability and keeping prices within range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:57:56.247949Z",
+        "last_confirmed_at": "2026-07-25T02:57:56.247949Z"
+      },
+      {
+        "id": "imp_e05236cd",
+        "event_id": "evt_finance_20240709_013_67f99113",
+        "outcome_event_id": "evt_4a8393fa018d",
+        "question_id": "v3_wti_monthly_return_2024_07",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.5,
+        "confidence": 0.7,
+        "reasoning": "A balanced market outlook made the 'below recent range' outcome less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:57:56.257655Z",
+        "last_confirmed_at": "2026-07-25T02:57:56.257655Z"
+      },
+      {
+        "id": "imp_bc76fdad",
+        "event_id": "evt_finance_20240709_013_67f99113",
+        "outcome_event_id": "evt_2ba1a202bcff",
+        "question_id": "v3_wti_monthly_return_2024_07",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.5,
+        "confidence": 0.7,
+        "reasoning": "A balanced market outlook made the 'above recent range' outcome less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:57:56.267861Z",
+        "last_confirmed_at": "2026-07-25T02:57:56.267861Z"
+      },
+      {
+        "id": "imp_938c0004",
+        "event_id": "evt_finance_20240716_009_6ec8a84c",
+        "outcome_event_id": "evt_0a4a0be1d8d8",
+        "question_id": "v3_wti_monthly_return_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "Lingering demand concerns in China created significant downward pressure, preventing prices from breaking above the recent range, thus contributing to the 'within recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:57:56.277771Z",
+        "last_confirmed_at": "2026-07-25T02:57:56.277771Z"
+      },
+      {
+        "id": "imp_653fa168",
+        "event_id": "evt_finance_20240716_009_6ec8a84c",
+        "outcome_event_id": "evt_4a8393fa018d",
+        "question_id": "v3_wti_monthly_return_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "Lingering demand concerns in China made the 'below recent range' outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:57:56.287957Z",
+        "last_confirmed_at": "2026-07-25T02:57:56.287957Z"
+      },
+      {
+        "id": "imp_2e3e0b13",
+        "event_id": "evt_finance_20240716_009_6ec8a84c",
+        "outcome_event_id": "evt_2ba1a202bcff",
+        "question_id": "v3_wti_monthly_return_2024_07",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "Lingering demand concerns in China made the 'above recent range' outcome less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:57:56.297682Z",
+        "last_confirmed_at": "2026-07-25T02:57:56.297682Z"
+      },
+      {
+        "id": "imp_5237a999",
+        "event_id": "evt_finance_20240716_010_e0740872",
+        "outcome_event_id": "evt_0a4a0be1d8d8",
+        "question_id": "v3_wti_monthly_return_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "The build-up in fuel stocks indicated hesitant demand and contributed to price consolidation within the range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:57:56.309381Z",
+        "last_confirmed_at": "2026-07-25T02:57:56.309381Z"
+      },
+      {
+        "id": "imp_037d6207",
+        "event_id": "evt_finance_20240716_010_e0740872",
+        "outcome_event_id": "evt_4a8393fa018d",
+        "question_id": "v3_wti_monthly_return_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "The build-up in fuel stocks made the 'below recent range' outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:57:56.319779Z",
+        "last_confirmed_at": "2026-07-25T02:57:56.319779Z"
+      },
+      {
+        "id": "imp_44191d7d",
+        "event_id": "evt_finance_20240716_010_e0740872",
+        "outcome_event_id": "evt_2ba1a202bcff",
+        "question_id": "v3_wti_monthly_return_2024_07",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "The build-up in fuel stocks made the 'above recent range' outcome less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:57:56.329502Z",
+        "last_confirmed_at": "2026-07-25T02:57:56.329502Z"
+      },
+      {
+        "id": "imp_55f561b4",
+        "event_id": "evt_finance_20240728_011_cfb9c3c8",
+        "outcome_event_id": "evt_0a4a0be1d8d8",
+        "question_id": "v3_wti_monthly_return_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "The 'warning triangle' explicitly indicated consolidation within an existing range, strongly reinforcing the 'within recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:57:56.339720Z",
+        "last_confirmed_at": "2026-07-25T02:57:56.339720Z"
+      },
+      {
+        "id": "imp_72c75ab6",
+        "event_id": "evt_finance_20240728_011_cfb9c3c8",
+        "outcome_event_id": "evt_4a8393fa018d",
+        "question_id": "v3_wti_monthly_return_2024_07",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.6,
+        "reasoning": "The 'warning triangle' indicated consolidation, making a breakout in either direction less likely, thus having a neutral impact on 'below recent range'.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:57:56.351118Z",
+        "last_confirmed_at": "2026-07-25T02:57:56.351118Z"
+      },
+      {
+        "id": "imp_24296d5f",
+        "event_id": "evt_finance_20240728_011_cfb9c3c8",
+        "outcome_event_id": "evt_2ba1a202bcff",
+        "question_id": "v3_wti_monthly_return_2024_07",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.6,
+        "reasoning": "The 'warning triangle' indicated consolidation, making a breakout in either direction less likely, thus having a neutral impact on 'above recent range'.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:57:56.360974Z",
+        "last_confirmed_at": "2026-07-25T02:57:56.360974Z"
+      },
+      {
+        "id": "imp_769982c2",
+        "event_id": "evt_finance_20240709_012_c9e27c77",
+        "outcome_event_id": "evt_0a4a0be1d8d8",
+        "question_id": "v3_wti_monthly_return_2024_07",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.7,
+        "reasoning": "Upward price movement was ultimately balanced by other factors, leading to a neutral overall impact on the 'within recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:57:56.371246Z",
+        "last_confirmed_at": "2026-07-25T02:57:56.371246Z"
+      },
+      {
+        "id": "imp_6903ad6a",
+        "event_id": "evt_finance_20240709_012_c9e27c77",
+        "outcome_event_id": "evt_4a8393fa018d",
+        "question_id": "v3_wti_monthly_return_2024_07",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Upward price movement made the 'below recent range' outcome less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:57:56.380857Z",
+        "last_confirmed_at": "2026-07-25T02:57:56.380857Z"
+      },
+      {
+        "id": "imp_c61bb392",
+        "event_id": "evt_finance_20240709_012_c9e27c77",
+        "outcome_event_id": "evt_2ba1a202bcff",
+        "question_id": "v3_wti_monthly_return_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Upward price movement made the 'above recent range' outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:57:56.391479Z",
+        "last_confirmed_at": "2026-07-25T02:57:56.391479Z"
+      },
+      {
+        "id": "imp_7d48c3c5",
+        "event_id": "evt_finance_20240712_013_ef5938dc",
+        "outcome_event_id": "evt_0a4a0be1d8d8",
+        "question_id": "v3_wti_monthly_return_2024_07",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.2,
+        "confidence": 0.6,
+        "reasoning": "Historical context provides background but has a weak, indirect impact on the specific monthly range outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:57:56.403873Z",
+        "last_confirmed_at": "2026-07-25T02:57:56.403873Z"
+      },
+      {
+        "id": "imp_39f16b24",
+        "event_id": "evt_finance_20240712_013_ef5938dc",
+        "outcome_event_id": "evt_4a8393fa018d",
+        "question_id": "v3_wti_monthly_return_2024_07",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.2,
+        "confidence": 0.6,
+        "reasoning": "Historical context provides background but has a weak, indirect impact on the specific monthly range outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:57:56.414224Z",
+        "last_confirmed_at": "2026-07-25T02:57:56.414224Z"
+      },
+      {
+        "id": "imp_1696c3b7",
+        "event_id": "evt_finance_20240712_013_ef5938dc",
+        "outcome_event_id": "evt_2ba1a202bcff",
+        "question_id": "v3_wti_monthly_return_2024_07",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.2,
+        "confidence": 0.6,
+        "reasoning": "Historical context provides background but has a weak, indirect impact on the specific monthly range outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:57:56.424143Z",
+        "last_confirmed_at": "2026-07-25T02:57:56.424143Z"
+      },
+      {
+        "id": "imp_8560ef42",
+        "event_id": "evt_finance_20240715_014_874aa288",
+        "outcome_event_id": "evt_0a4a0be1d8d8",
+        "question_id": "v3_wti_monthly_return_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.5,
+        "confidence": 0.7,
+        "reasoning": "Discussions on pricing fundamentals highlighted factors influencing market stability, contributing to the overall outcome of prices remaining within range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:57:56.434747Z",
+        "last_confirmed_at": "2026-07-25T02:57:56.434747Z"
+      },
+      {
+        "id": "imp_0f889f98",
+        "event_id": "evt_finance_20240715_014_874aa288",
+        "outcome_event_id": "evt_4a8393fa018d",
+        "question_id": "v3_wti_monthly_return_2024_07",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.6,
+        "reasoning": "Discussions on pricing fundamentals contributed to stability, making extreme outcomes less likely, thus neutral for 'below recent range'.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:57:56.444708Z",
+        "last_confirmed_at": "2026-07-25T02:57:56.444708Z"
+      },
+      {
+        "id": "imp_1bb549f3",
+        "event_id": "evt_finance_20240715_014_874aa288",
+        "outcome_event_id": "evt_2ba1a202bcff",
+        "question_id": "v3_wti_monthly_return_2024_07",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.6,
+        "reasoning": "Discussions on pricing fundamentals contributed to stability, making extreme outcomes less likely, thus neutral for 'above recent range'.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:57:56.455307Z",
+        "last_confirmed_at": "2026-07-25T02:57:56.455307Z"
+      },
+      {
+        "id": "imp_7f36d3d3",
+        "event_id": "evt_finance_20240731_015_0400908e",
+        "outcome_event_id": "evt_0a4a0be1d8d8",
+        "question_id": "v3_wti_monthly_return_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 1.0,
+        "confidence": 1.0,
+        "reasoning": "This event directly describes the actual outcome, so its impact on the actual outcome is decisive.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:57:56.465184Z",
+        "last_confirmed_at": "2026-07-25T02:57:56.465184Z"
+      },
+      {
+        "id": "imp_fd147956",
+        "event_id": "evt_finance_20240731_015_0400908e",
+        "outcome_event_id": "evt_4a8393fa018d",
+        "question_id": "v3_wti_monthly_return_2024_07",
+        "impact_direction": "negative",
+        "impact_magnitude": 1.0,
+        "confidence": 1.0,
+        "reasoning": "This event directly describes the actual outcome, making the 'below recent range' outcome impossible.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:57:56.475670Z",
+        "last_confirmed_at": "2026-07-25T02:57:56.475670Z"
+      },
+      {
+        "id": "imp_2b17fafe",
+        "event_id": "evt_finance_20240731_015_0400908e",
+        "outcome_event_id": "evt_2ba1a202bcff",
+        "question_id": "v3_wti_monthly_return_2024_07",
+        "impact_direction": "negative",
+        "impact_magnitude": 1.0,
+        "confidence": 1.0,
+        "reasoning": "This event directly describes the actual outcome, making the 'above recent range' outcome impossible.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:57:56.485563Z",
+        "last_confirmed_at": "2026-07-25T02:57:56.485563Z"
+      },
+      {
+        "id": "imp_65af9681",
+        "event_id": "evt_finance_20240716_016_f0aca4cb",
+        "outcome_event_id": "evt_0a4a0be1d8d8",
+        "question_id": "v3_wti_monthly_return_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Falling oil prices due to China demand concerns could contribute to the WTI price staying within a recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:58:31.835757Z",
+        "last_confirmed_at": "2026-07-25T02:58:31.835757Z"
+      },
+      {
+        "id": "imp_98bb7d75",
+        "event_id": "evt_finance_20240709_017_2e780c9c",
+        "outcome_event_id": "evt_0a4a0be1d8d8",
+        "question_id": "v3_wti_monthly_return_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Higher US gasoline and crude oil prices could contribute to the WTI price staying within a recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:58:31.846290Z",
+        "last_confirmed_at": "2026-07-25T02:58:31.846290Z"
+      },
+      {
+        "id": "imp_91ccd130",
+        "event_id": "evt_finance_20240703_018_77755e51",
+        "outcome_event_id": "evt_0a4a0be1d8d8",
+        "question_id": "v3_wti_monthly_return_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Oil prices rising on stock drops could contribute to the WTI price staying within a recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:58:31.856743Z",
+        "last_confirmed_at": "2026-07-25T02:58:31.856743Z"
+      },
+      {
+        "id": "imp_c25e0645",
+        "event_id": "evt_finance_20240709_019_0fc7fc9c",
+        "outcome_event_id": "evt_0a4a0be1d8d8",
+        "question_id": "v3_wti_monthly_return_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.5,
+        "confidence": 0.6,
+        "reasoning": "The IEA report provides market context that could support the WTI price staying within a recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:58:31.866947Z",
+        "last_confirmed_at": "2026-07-25T02:58:31.866947Z"
+      },
+      {
+        "id": "imp_8a686334",
+        "event_id": "evt_finance_20240716_020_9c64ff8e",
+        "outcome_event_id": "evt_0a4a0be1d8d8",
+        "question_id": "v3_wti_monthly_return_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.5,
+        "confidence": 0.6,
+        "reasoning": "Investopedia's analysis on falling oil prices provides market context that could support the WTI price staying within a recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:58:31.880989Z",
+        "last_confirmed_at": "2026-07-25T02:58:31.880989Z"
+      },
+      {
+        "id": "imp_ce837c69",
+        "event_id": "evt_finance_20240704_021_ed4668e3",
+        "outcome_event_id": "evt_0a4a0be1d8d8",
+        "question_id": "v3_wti_monthly_return_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.5,
+        "confidence": 0.6,
+        "reasoning": "Sia Partners' insights provide market context that could support the WTI price staying within a recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:58:31.890914Z",
+        "last_confirmed_at": "2026-07-25T02:58:31.890914Z"
+      }
+    ]
+  }
+}

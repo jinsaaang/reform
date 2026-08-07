@@ -1,0 +1,59 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_meta_revenue_growth_acceleration_2023_09_30",
+  "blueprint_sha256": "bc821819f892192a4ec0a7f016c26bbe64463c6b0b2f86e64aac185341466a1f",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_earnings",
+      "target_operation": "year_over_year_growth_acceleration",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2023-09-30, will Meta Platforms, Inc.'s quarterly revenue year-over-year growth for the fiscal quarter ending 2023-09-30 be at least 11.02 percent?",
+    "historical_cutoff": "2023-09-30T00:00:00+00:00",
+    "target_semantics": "Meta's year-over-year revenue growth for the quarter ending September 30, 2023, compared to the prior quarter's year-over-year growth rate.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20230726_002_6a08e168",
+        "takeaway": "Meta reported better-than-expected results for the second quarter of 2023 and issued optimistic guidance for the third quarter.",
+        "why_predictive": "Optimistic guidance for Q3 2023 suggests an expectation of strong performance, potentially including revenue growth acceleration."
+      },
+      {
+        "article_id": "art_finance_20230726_004_dff26d6d",
+        "takeaway": "Meta raised its revenue forecast for the third quarter of 2023 above analyst expectations.",
+        "why_predictive": "Raising guidance above expectations indicates management's confidence in continued revenue momentum, supporting growth acceleration."
+      },
+      {
+        "article_id": "art_finance_20230920_009_1e5fde96",
+        "takeaway": "Observations suggest a recovery in digital advertising prices.",
+        "why_predictive": "A recovering digital advertising market is a key external driver for Meta's advertising revenue, potentially boosting growth."
+      },
+      {
+        "article_id": "art_finance_20230321_007_9cd5c4aa",
+        "takeaway": "Meta announced significant job cuts as part of a 'Year of Efficiency' initiative, aiming to improve revenue per employee.",
+        "why_predictive": "Cost-cutting measures and efficiency drives can improve profitability and operational performance, indirectly supporting revenue growth."
+      },
+      {
+        "article_id": "art_finance_20221026_002_60250092",
+        "takeaway": "Meta's Q3 2022 earnings missed expectations, and the company issued a weak forecast for Q4 2022, leading to a stock price drop.",
+        "why_predictive": "This indicates a prior period of underperformance and cautious outlook, providing a baseline for potential recovery and growth acceleration."
+      }
+    ],
+    "expert_reasoning": [
+      "The company's 'Year of Efficiency' initiative, marked by significant layoffs (art_finance_20230321_007_9cd5c4aa), suggests a focus on operational improvements that could lead to better financial performance.",
+      "Meta's Q2 2023 earnings report included optimistic guidance for Q3 2023 (art_finance_20230726_002_6a08e168), and specifically raised its revenue forecast above analyst expectations (art_finance_20230726_004_dff26d6d), indicating a positive outlook for the target quarter.",
+      "The broader digital advertising market appears to be recovering (art_finance_20230920_009_1e5fde96), which is a crucial external factor that would directly benefit Meta's core advertising business and support revenue growth."
+    ],
+    "counterevidence": "Meta experienced a significant financial hit related to layoffs and restructuring in Q1 2023 (art_finance_20230426_005_42db1127), which, while a precursor to efficiency, could have temporarily suppressed revenue growth or masked underlying trends.",
+    "prospective_target_estimate": "The combination of optimistic guidance, a recovering ad market, and efficiency measures suggests that Meta's year-over-year revenue growth for the quarter ending September 30, 2023, is likely to accelerate beyond the prior quarter's growth rate.",
+    "option_mapping": "The evidence points towards a positive trajectory, suggesting that Meta's year-over-year revenue growth acceleration is likely to meet or exceed the threshold.",
+    "uncertainty": "While guidance and market trends are positive, the exact magnitude of the revenue growth acceleration and its comparison to the prior quarter's growth rate remain uncertain without specific Q3 2023 results. The impact of restructuring costs also introduces some ambiguity.",
+    "dag_derived_lesson": "A company's strategic cost-cutting initiatives, coupled with positive forward-looking guidance and a recovering market environment, can signal an acceleration in revenue growth, though initial restructuring costs may present a temporary headwind."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

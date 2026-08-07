@@ -1,0 +1,930 @@
+{
+  "question": {
+    "id": "v3_henry_hub_monthly_return_2025_04",
+    "question_text": "As of 2025-04-01, which range will the monthly Henry Hub price return for Henry Hub natural gas in 2025-04 fall into?",
+    "question_type": "mcq",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 3,
+    "resolution_date": "2025-04-30T23:59:59Z",
+    "estimated_start_time": "2025-04-01T00:00:00Z",
+    "ground_truth": "below recent range",
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [
+      "evt_97cf7a84c411",
+      "evt_60f3b48a53fc",
+      "evt_010d3f515184"
+    ],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: Henry Hub natural gas\nTarget period: 2025-04\nFinancial area: energy_commodities / natural gas\nRegion: US\nPre-registered recent-range boundaries: lower -3.842, upper 34.41 percent.",
+    "resolution_criteria": "Use FRED series DHHNGSP. Compute the change from the previous monthly observation using mode 'pct'. Resolve 'below recent range' below -3.842, 'within recent range' from -3.842 inclusive to 34.41 exclusive, and 'above recent range' at or above 34.41 percent.",
+    "resolution_reasoning": "The snapshotted target change was -24.09 percent; it resolved to 'below recent range'.",
+    "options": [
+      "below recent range",
+      "within recent range",
+      "above recent range"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": "\n## Executive Summary\nIn April 2025, Henry Hub natural gas prices experienced a significant decline, falling below recent ranges. This outcome was primarily driven by a combination of robust natural gas production, particularly from the Northeast and Texas, coupled with a decrease in demand due to milder shoulder season weather conditions across much of the U.S. Record-setting dry gas production and increased LNG export capacity contributed to an oversupplied market, while reduced residential and commercial consumption softened overall demand. Despite some initial price strength in early March, the prolonged mild weather and high production ultimately led to a bearish sentiment and lower prices by the end of April.\n\n## Timeline Of Key Events\n- **March 2025:** Henry Hub futures prices averaged $4.10 per MMBtu, 9.7% higher than the prior month, amid high demand and a strong storage draw [art_finance_20250410_005_c8537d8b].\n- **March 10, 2025:** Henry Hub futures prices reached a 2025-to-date high of $4.49 per MMBtu [art_finance_20250424_002_85242452].\n- **April 1-8, 2025:** May Henry Hub contracts dropped by more than 16% from April 3, with futures pricing below $3.70 per MMBtu [art_finance_20250410_005_c8537d8b].\n- **April 5, 2025:** U.S. weather was 10.6% warmer than last year and 12.2% warmer than normal [art_finance_20250410_005_c8537d8b].\n- **April 10, 2025:** The U.S. Department of the Interior announced a major increase in Gulf of America oil and gas reserves, indicating strong supply potential [art_finance_20250410_011_f441b77d].\n- **April 17, 2025:** EIA reported that U.S. natural gas production remained flat in 2024 (compared to 2023 levels), but Permian region production rose by 12%, offsetting declines elsewhere [art_finance_20250417_010_b1568fcc].\n- **April 19, 2025:** U.S. weather was 13.6% warmer than normal, as measured by gas-weighted heating degree days [art_finance_20250424_002_85242452].\n- **April 23, 2025:** May 2025 Henry Hub contracts were down 25.7% to nearly $3.00 per MMBtu, a price not seen since late December 2024 [art_finance_20250424_002_85242452]. Henry Hub futures prices settled at $3.02 per MMBtu, down 23.5% since April 1 [art_finance_20250424_002_85242452].\n- **April 24, 2025:** Mild shoulder season weather eased natural gas prices and demand as April came to an end [art_finance_20250424_002_85242452]. Dry gas production was on track to reach a new monthly record in April, averaging 106.7 Bcf per day [art_finance_20250424_002_85242452].\n- **April 28, 2025:** Western Canadian natural gas prices find footing despite record production [art_finance_20250428_006_597ad354].\n\n## Causal Chain Analysis\n**High Natural Gas Production and Supply:** Robust natural gas production, particularly from the Northeast and Texas regions, served as a primary root cause [art_finance_20250424_002_85242452]. This was further exacerbated by a significant increase in Gulf of America oil and gas reserves announced on April 10, 2025 [art_finance_20250410_011_f441b77d], and continued strong production in the Permian basin [art_finance_20250417_010_b1568fcc]. This high production caused an oversupply in the market.\n\n**Milder Weather and Reduced Demand:** A key intermediate mechanism was the persistent mild shoulder season weather across the U.S. in April 2025, which led to a significant decline in natural gas demand [art_finance_20250424_002_85242452]. Temperatures were consistently warmer than normal, resulting in fewer heating degree days [art_finance_20250410_005_c8537d8b, art_finance_20250424_002_85242452]. This reduced demand, especially in the residential and commercial sectors, directly countered the high supply levels.\n\n**Oversupplied Market and Bearish Sentiment:** The combination of record production and reduced demand created an oversupplied market, which triggered a bearish sentiment among market participants [art_finance_20250424_002_85242452]. This sentiment caused a sharp decline in Henry Hub futures prices throughout April, with May contracts dropping significantly [art_finance_20250424_002_85242452, art_finance_20250410_005_c8537d8b].\n\n**Final Outcome: Prices Below Recent Range:** The sustained oversupply, driven by high production, and the dwindling demand due to mild weather, resulted in Henry Hub natural gas prices falling below the recent range by the end of April 2025. Futures contracts dipped to levels not seen since late December 2024, confirming the downward price trajectory [art_finance_20250424_002_85242452].\n\n## Countervailing Factors\nInitially, in March 2025, Henry Hub futures prices showed strength, averaging $4.10 per MMBtu and even reaching a 2025-to-date high of $4.49 on March 10 [art_finance_20250410_005_c8537d8b, art_finance_20250424_002_85242452]. This initial strength suggested a potential for prices to remain within or above the recent range. However, this factor failed to counteract the eventual price decline because the mild weather conditions persisted and intensified throughout April, significantly eroding demand. Concurrently, natural gas production remained robust and even set new monthly records, leading to an increasing supply overhang that overwhelmed any short-term bullish sentiment from earlier in the year.\n\n## Event Candidate Inventory\n- **E1: Record Natural Gas Production in April 2025**\n    - **Date:** April 2025 (monthly average)\n    - **Why it matters causally:** Contributed to an oversupplied market, driving down prices.\n    - **Source article IDs:** [art_finance_20250424_002_85242452]\n\n- **E2: Milder-Than-Normal Weather in April 2025**\n    - **Date:** Throughout April 2025\n    - **Why it matters causally:** Reduced demand for natural gas, particularly in the residential and commercial sectors, contributing to oversupply.\n    - **Source article IDs:** [art_finance_20250424_002_85242452, art_finance_20250410_005_c8537d8b]\n\n- **E3: Decline in Henry Hub Futures Prices (April 2025)**\n    - **Date:** April 1 - April 23, 2025\n    - **Why it matters causally:** A direct indicator of bearish market sentiment and falling prices due to supply/demand imbalance.\n    - **Source article IDs:** [art_finance_20250424_002_85242452, art_finance_20250410_005_c8537d8b]\n\n- **E4: Increase in Gulf of America Oil and Gas Reserves Announcement**\n    - **Date:** April 10, 2025\n    - **Why it matters causally:** Signaled strong future supply potential, adding to bearish sentiment regarding natural gas prices.\n    - **Source article IDs:** [art_finance_20250410_011_f441b77d]\n\n## Evidence Mapping Table\n\n| Claim/Event | Article IDs | Date Support | Confidence (0-1) | Notes |\n| :---------- | :---------- | :----------: | :--------------: | :---- |\n| Record natural gas production | [art_finance_20250424_002_85242452] | 2025-04-24 | 0.9 | Dry gas production on track for monthly record. |\n| Milder weather reduces demand | [art_finance_20250424_002_85242452], [art_finance_20250410_005_c8537d8b] | 2025-04-24, 2025-04-10 | 0.9 | Consistent reports of warmer-than-normal weather and declining demand. |\n| Henry Hub prices decline | [art_finance_20250424_002_85242452], [art_finance_20250410_005_c8537d8b] | 2025-04-23, 2025-04-08 | 0.9 | Specific price drops and contract movements cited. |\n| Initial price strength in March | [art_finance_20250410_005_c8537d8b], [art_finance_20250424_002_85242452] | March 2025, 2025-03-10 | 0.8 | Acknowledged but ultimately overwhelmed by other factors. |\n| Increased Gulf of America reserves | [art_finance_20250410_011_f441b77d] | 2025-04-10 | 0.7 | Contributed to the overall supply picture and market sentiment.\n\n## Uncertainties And Alternative Paths\nOne uncertainty is the precise impact of new US LNG export facilities beyond the general forecast. While mentioned as contributing to supply increase, the granular effect on April 2025 pricing relative to other factors is not fully quantified in the collected articles. An alternative path could have been if a sudden cold snap occurred in late April, which might have temporarily boosted demand and arrested the price decline, potentially keeping prices within the recent range. Another alternative could have been a significant unforeseen disruption in natural gas production, which would have tightened supply and likely supported higher prices.\n",
+    "graph_built": true,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.201592Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "henry_hub_monthly_return",
+        "event_cluster_id": "natural_gas_2025-04",
+        "category": "energy_commodities",
+        "original_domain": "energy_commodities",
+        "subdomain": "natural gas",
+        "entity": "Henry Hub natural gas",
+        "region": "US",
+        "target_metric": "monthly Henry Hub price return",
+        "target_period": "2025-04",
+        "forecast_cutoff": "2025-04-01T00:00:00+00:00",
+        "forecast_date_options": [
+          "2025-04-01"
+        ],
+        "resolution_available_at": "2025-04-30T23:59:59+00:00",
+        "horizon_days": 29,
+        "source_type": "fred_series_snapshot",
+        "source_series_id": "DHHNGSP",
+        "source_homepage": "https://fred.stlouisfed.org/series/DHHNGSP",
+        "comparison_rule": "target change bucketed by the lower and upper quartiles of the 8 prior observed changes",
+        "comparison_threshold": 2.705037,
+        "comparison_thresholds": {
+          "lower": -3.84248,
+          "upper": 34.411749
+        },
+        "change_unit": "percent",
+        "threshold_observation_dates": [
+          "2024-07-31",
+          "2024-08-30",
+          "2024-09-30",
+          "2024-10-31",
+          "2024-11-29",
+          "2024-12-31",
+          "2025-01-31",
+          "2025-02-28",
+          "2025-03-31"
+        ],
+        "split": "memory",
+        "family_position": 5,
+        "family_size": 7,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "below recent range",
+        "resolved_class": "below recent range",
+        "resolution_value": 3.12,
+        "target_change": -24.08759124,
+        "source_observation_date": "2025-04-30",
+        "resolution_document": {
+          "publisher": "Federal Reserve Bank of St. Louis (FRED)",
+          "title": "Henry Hub Natural Gas Spot Price",
+          "url": "https://fred.stlouisfed.org/series/DHHNGSP"
+        },
+        "source_download_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DHHNGSP&cosd=2019-01-01&coed=2026-06-30",
+        "source_sha256": "2d9474daac856d552789516cba71143c8c2718de0a092d8518d81b4ab2f1bc25",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_97cf7a84c411",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 10,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_20250428_006_597ad354",
+        "title": "While Volatile, Western Canadian Natural Gas Prices Find Some Footing Despite Record Production and Tariffs - Natural Gas Intelligence",
+        "url": "https://naturalgasintel.com/news/while-volatile-western-canadian-natural-gas-prices-find-some-footing-despite-record-production-and-tariffs",
+        "source": "naturalgasintel.com",
+        "published_date": "2025-04-28T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20250410_007_eef45ec7",
+        "title": "Tariffs - implications for the oil and gas sector - Wood Mackenzie",
+        "url": "https://www.woodmac.com/blogs/the-edge/tariffs-implications-for-oil-and-gas",
+        "source": "woodmac.com",
+        "published_date": "2025-04-10T15:17:27+00:00"
+      },
+      {
+        "id": "art_finance_20250424_009_cccecdd3",
+        "title": "Experts challenge Evergy plans to add natural gas plants in Kansas - Kansas Reflector",
+        "url": "https://lawrencekstimes.com/2025/04/24/experts-challenge-evergy-plans",
+        "source": "lawrencekstimes.com",
+        "published_date": "2025-04-24T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20250417_010_b1568fcc",
+        "title": "U.S. natural gas production remained flat in 2024 - U.S. Energy Information Administration (EIA) (.gov)",
+        "url": "https://www.eia.gov/todayinenergy/detail.php?id=65025",
+        "source": "eia.gov",
+        "published_date": "2025-04-17T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20250410_005_c8537d8b",
+        "title": "Natural Gas Market Indicators – April 10, 2025 - American Gas Association",
+        "url": "https://www.aga.org/research-policy/resource-library/natural-gas-market-indicators-april-10-2025",
+        "source": "aga.org",
+        "published_date": "2025-04-10T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20250410_011_f441b77d",
+        "title": "Interior Announces Major Increase in Gulf of America Oil and Gas Reserves | U.S. Department of the Interior - U.S. Department of the Interior (.gov)",
+        "url": "https://www.doi.gov/pressreleases/interior-announces-major-increase-gulf-america-oil-and-gas-reserves",
+        "source": "doi.gov",
+        "published_date": "2025-04-10T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20250410_003_89fc7b10",
+        "title": "Henry Hub to Average $4.30 in 2025, Move Higher in ‘26, Says EIA - Natural Gas Intelligence",
+        "url": "https://www.naturalgasintel.com/news/henry-hub-to-average-430-in-2025-move-higher-in-26-says-eia",
+        "source": "naturalgasintel.com",
+        "published_date": "2025-04-10T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20250424_002_85242452",
+        "title": "Natural Gas Market Indicators – April 24, 2025 - American Gas Association",
+        "url": "https://www.aga.org/research-policy/resource-library/natural-gas-market-indicators-april-24-2025",
+        "source": "aga.org",
+        "published_date": "2025-04-24T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20250424_004_34ae73b1",
+        "title": "North America gas strategic planning outlook: A glimpse into 2050 - Wood Mackenzie",
+        "url": "https://www.woodmac.com/news/opinion/north-america-gas-strategic-planning-outlook-a-glimpse-into-2050",
+        "source": "woodmac.com",
+        "published_date": "2025-04-24T08:40:26+00:00"
+      },
+      {
+        "id": "art_finance_20250422_008_a47797ea",
+        "title": "How Eastern Europe Overhauled Its Natural Gas Market - Carnegie Endowment for International Peace",
+        "url": "https://carnegieendowment.org/research/2025/04/how-eastern-europe-overhauled-its-natural-gas-market?lang=en",
+        "source": "carnegieendowment.org",
+        "published_date": "2025-04-22T12:00:00+00:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_97cf7a84c411",
+      "events_count": 10,
+      "hypotheses_count": 10
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 4,
+      "avg_depth": 3.6,
+      "quality_score": 0.9,
+      "depth_score": 1.0,
+      "confidence_score": 0.84,
+      "strength_score": 0.74,
+      "evidence_score": 1.0,
+      "event_count": 10,
+      "hypothesis_count": 10
+    },
+    "nodes": [
+      {
+        "id": "evt_010d3f515184",
+        "title": "Option 3: above recent range",
+        "description": "Question resolves to: above recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-04-30T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2025_04",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 2,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T21:29:23.020165Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_60f3b48a53fc",
+        "title": "Option 2: within recent range",
+        "description": "Question resolves to: within recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-04-30T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2025_04",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 1,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T21:29:23.020158Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_97cf7a84c411",
+        "title": "Option 1: below recent range",
+        "description": "Question resolves to: below recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-04-30T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2025_04",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 0,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T21:29:23.020143Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_climate_20250401_009_e7be7d1b",
+        "title": "Milder-Than-Normal Weather in April 2025",
+        "description": "Persistent mild shoulder season weather across the U.S. in April 2025, with temperatures consistently warmer than normal, resulting in fewer heating degree days. Weather in the U.S. was 10.6 percent warmer than last year and 12.2 percent warmer than normal for the week ending April 5.",
+        "event_type": "indicator",
+        "domain": "climate",
+        "tags": [],
+        "occurred_date": "2025-04-01T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250424_002_85242452",
+          "art_finance_20250410_005_c8537d8b"
+        ],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2025_04",
+        "source_article_id": "art_finance_20250424_002_85242452",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_henry_hub_monthly_return_2025_04"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T21:39:34.412259Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20241231_014_f24d3e67",
+        "title": "Permian Region Natural Gas Production Rose by 12% in 2024",
+        "description": "EIA reported that U.S. natural gas production remained flat in 2024 (compared to 2023 levels), but Permian region production rose by 12%, offsetting declines elsewhere.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-12-31T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250417_010_b1568fcc"
+        ],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2025_04",
+        "source_article_id": "art_finance_20250417_010_b1568fcc",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_henry_hub_monthly_return_2025_04"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T21:39:34.511651Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20250310_012_a77659b7",
+        "title": "Initial Price Strength in March 2025",
+        "description": "Henry Hub futures prices averaged $4.10 per MMBtu in March 2025, 9.7 percent higher than the prior month, and reached a 2025-to-date high of $4.49 per MMBtu on March 10.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-03-10T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250410_005_c8537d8b",
+          "art_finance_20250424_002_85242452"
+        ],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2025_04",
+        "source_article_id": "art_finance_20250410_005_c8537d8b",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_henry_hub_monthly_return_2025_04"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T21:39:34.470354Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20250403_010_9ff0f769",
+        "title": "Initial Decline in Henry Hub Futures Prices (April 2025)",
+        "description": "May contracts at Henry Hub dropped by more than 16% from April 3, with futures pricing below $3.70 per MMBtu.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-04-03T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250410_005_c8537d8b"
+        ],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2025_04",
+        "source_article_id": "art_finance_20250410_005_c8537d8b",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_henry_hub_monthly_return_2025_04"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T21:39:34.431908Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20250408_015_eefe2bd1",
+        "title": "Significant Drop in May Henry Hub Contracts (April 8, 2025)",
+        "description": "May contracts at Henry Hub dropped to $3.47 per MMBtu on April 8, a decline of more than 16 percent.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-04-08T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250410_005_c8537d8b"
+        ],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2025_04",
+        "source_article_id": "art_finance_20250410_005_c8537d8b",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_henry_hub_monthly_return_2025_04"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T21:39:34.530434Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20250410_011_eafff977",
+        "title": "Increase in Gulf of America Oil and Gas Reserves Announcement",
+        "description": "The U.S. Department of the Interior announced a major increase in Gulf of America oil and gas reserves, indicating strong supply potential.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-04-10T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250410_011_f441b77d"
+        ],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2025_04",
+        "source_article_id": "art_finance_20250410_011_f441b77d",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_henry_hub_monthly_return_2025_04"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T21:39:34.450758Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20250418_008_356634e4",
+        "title": "Record Natural Gas Production in April 2025",
+        "description": "Dry gas production was on track to reach a new monthly record in April, averaging 106.7 Bcf per day. Domestic natural gas production reached new daily records on April 18.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-04-18T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250424_002_85242452"
+        ],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2025_04",
+        "source_article_id": "art_finance_20250424_002_85242452",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_henry_hub_monthly_return_2025_04"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T21:39:34.396188Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20250422_013_9b9fa2a6",
+        "title": "Oversupplied Market and Bearish Sentiment",
+        "description": "The combination of record production and reduced demand created an oversupplied market, which triggered a bearish sentiment among market participants.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-04-22T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250424_002_85242452"
+        ],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2025_04",
+        "source_article_id": "art_finance_20250424_002_85242452",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_henry_hub_monthly_return_2025_04"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T21:39:34.492071Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20250423_016_b22efb2d",
+        "title": "Henry Hub Futures Prices Settle at $3.02 (April 23, 2025)",
+        "description": "Henry Hub futures prices settled at $3.02 per MMBtu on April 23, down 23.5 percent since April 1.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-04-23T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250424_002_85242452"
+        ],
+        "extracted_for_question_id": "v3_henry_hub_monthly_return_2025_04",
+        "source_article_id": "art_finance_20250424_002_85242452",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_henry_hub_monthly_return_2025_04"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T21:39:34.551172Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_henry_hub_monthly_return_2025_04_20260724_213934_005_26eea304",
+        "source_event_id": "evt_finance_20241231_014_f24d3e67",
+        "target_event_id": "evt_finance_20250418_008_356634e4",
+        "relation_type": "enables",
+        "strength": 0.6,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Increased production in the Permian region contributes to overall high natural gas production.",
+        "evidence_article_ids": [
+          "art_finance_20250417_010_b1568fcc"
+        ],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2025_04"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T21:39:34.570244Z",
+        "last_confirmed_at": "2026-07-24T21:39:34.570244Z"
+      },
+      {
+        "id": "hyp_v3_henry_hub_monthly_return_2025_04_20260724_213934_006_f4b943eb",
+        "source_event_id": "evt_finance_20250418_008_356634e4",
+        "target_event_id": "evt_finance_20250422_013_9b9fa2a6",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Record natural gas production directly contributes to an oversupplied market.",
+        "evidence_article_ids": [
+          "art_finance_20250424_002_85242452"
+        ],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2025_04"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T21:39:34.584151Z",
+        "last_confirmed_at": "2026-07-24T21:39:34.584151Z"
+      },
+      {
+        "id": "hyp_v3_henry_hub_monthly_return_2025_04_20260724_213934_007_0d999b0b",
+        "source_event_id": "evt_climate_20250401_009_e7be7d1b",
+        "target_event_id": "evt_finance_20250422_013_9b9fa2a6",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Milder weather reduces demand, leading to an oversupplied market when production is high.",
+        "evidence_article_ids": [
+          "art_finance_20250424_002_85242452",
+          "art_finance_20250410_005_c8537d8b"
+        ],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2025_04"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T21:39:34.597066Z",
+        "last_confirmed_at": "2026-07-24T21:39:34.597066Z"
+      },
+      {
+        "id": "hyp_v3_henry_hub_monthly_return_2025_04_20260724_213934_008_7518a294",
+        "source_event_id": "evt_finance_20250410_011_eafff977",
+        "target_event_id": "evt_finance_20250422_013_9b9fa2a6",
+        "relation_type": "enables",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Announcement of increased reserves signals future supply potential, contributing to bearish sentiment and an oversupplied market perception.",
+        "evidence_article_ids": [
+          "art_finance_20250410_011_f441b77d"
+        ],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2025_04"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T21:39:34.610823Z",
+        "last_confirmed_at": "2026-07-24T21:39:34.610823Z"
+      },
+      {
+        "id": "hyp_v3_henry_hub_monthly_return_2025_04_20260724_213934_009_ab19d456",
+        "source_event_id": "evt_climate_20250401_009_e7be7d1b",
+        "target_event_id": "evt_finance_20250403_010_9ff0f769",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Milder weather reduces demand, contributing to initial price declines.",
+        "evidence_article_ids": [
+          "art_finance_20250410_005_c8537d8b"
+        ],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2025_04"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T21:39:34.623984Z",
+        "last_confirmed_at": "2026-07-24T21:39:34.623984Z"
+      },
+      {
+        "id": "hyp_v3_henry_hub_monthly_return_2025_04_20260724_213934_010_e4a86b0c",
+        "source_event_id": "evt_finance_20250403_010_9ff0f769",
+        "target_event_id": "evt_finance_20250408_015_eefe2bd1",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The initial decline in prices led to further significant drops in contracts.",
+        "evidence_article_ids": [
+          "art_finance_20250410_005_c8537d8b"
+        ],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2025_04"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T21:39:34.639238Z",
+        "last_confirmed_at": "2026-07-24T21:39:34.639238Z"
+      },
+      {
+        "id": "hyp_v3_henry_hub_monthly_return_2025_04_20260724_213934_011_9cbdd6fd",
+        "source_event_id": "evt_finance_20250408_015_eefe2bd1",
+        "target_event_id": "evt_finance_20250423_016_b22efb2d",
+        "relation_type": "causes",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The significant drop in May contracts directly contributed to the low settlement price on April 23.",
+        "evidence_article_ids": [
+          "art_finance_20250424_002_85242452"
+        ],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2025_04"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T21:39:34.652678Z",
+        "last_confirmed_at": "2026-07-24T21:39:34.652678Z"
+      },
+      {
+        "id": "hyp_v3_henry_hub_monthly_return_2025_04_20260724_213934_012_d4153850",
+        "source_event_id": "evt_finance_20250422_013_9b9fa2a6",
+        "target_event_id": "evt_finance_20250423_016_b22efb2d",
+        "relation_type": "causes",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "An oversupplied market directly leads to a decline in prices due to basic supply and demand economics, culminating in the low settlement price.",
+        "evidence_article_ids": [
+          "art_finance_20250424_002_85242452"
+        ],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2025_04"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T21:39:34.665954Z",
+        "last_confirmed_at": "2026-07-24T21:39:34.665954Z"
+      },
+      {
+        "id": "hyp_v3_henry_hub_monthly_return_2025_04_20260724_213934_013_e03d13f2",
+        "source_event_id": "evt_finance_20250423_016_b22efb2d",
+        "target_event_id": "evt_97cf7a84c411",
+        "relation_type": "causes",
+        "strength": 1.0,
+        "confidence": 1.0,
+        "time_lag_hours": null,
+        "reasoning": "The low settlement price on April 23 directly resulted in prices falling below the recent range.",
+        "evidence_article_ids": [
+          "art_finance_20250424_002_85242452"
+        ],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2025_04"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T21:39:34.680219Z",
+        "last_confirmed_at": "2026-07-24T21:39:34.680219Z"
+      },
+      {
+        "id": "hyp_v3_henry_hub_monthly_return_2025_04_20260724_213934_014_b8b2fbbc",
+        "source_event_id": "evt_finance_20250310_012_a77659b7",
+        "target_event_id": "evt_finance_20250403_010_9ff0f769",
+        "relation_type": "inhibits",
+        "strength": 0.4,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "Initial price strength in March temporarily counteracted the decline, but was ultimately overwhelmed by other factors.",
+        "evidence_article_ids": [
+          "art_finance_20250410_005_c8537d8b",
+          "art_finance_20250424_002_85242452"
+        ],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2025_04"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T21:39:34.693295Z",
+        "last_confirmed_at": "2026-07-24T21:39:34.693295Z"
+      }
+    ],
+    "outcome_impacts": [
+      {
+        "id": "imp_faff4af4",
+        "event_id": "evt_finance_20250418_008_356634e4",
+        "outcome_event_id": "evt_97cf7a84c411",
+        "question_id": "v3_henry_hub_monthly_return_2025_04",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Record natural gas production contributes to lower prices.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2025_04"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T21:40:10.319045Z",
+        "last_confirmed_at": "2026-07-24T21:40:10.319045Z"
+      },
+      {
+        "id": "imp_484a46c0",
+        "event_id": "evt_climate_20250401_009_e7be7d1b",
+        "outcome_event_id": "evt_97cf7a84c411",
+        "question_id": "v3_henry_hub_monthly_return_2025_04",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Milder weather reduces demand, contributing to lower prices.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2025_04"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T21:40:10.331876Z",
+        "last_confirmed_at": "2026-07-24T21:40:10.331876Z"
+      },
+      {
+        "id": "imp_8f57039d",
+        "event_id": "evt_finance_20250403_010_9ff0f769",
+        "outcome_event_id": "evt_97cf7a84c411",
+        "question_id": "v3_henry_hub_monthly_return_2025_04",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Initial decline in prices indicates a downward trend.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2025_04"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T21:40:10.344085Z",
+        "last_confirmed_at": "2026-07-24T21:40:10.344085Z"
+      },
+      {
+        "id": "imp_567c9719",
+        "event_id": "evt_finance_20250410_011_eafff977",
+        "outcome_event_id": "evt_97cf7a84c411",
+        "question_id": "v3_henry_hub_monthly_return_2025_04",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Increased reserves suggest higher supply, leading to lower prices.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2025_04"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T21:40:10.354792Z",
+        "last_confirmed_at": "2026-07-24T21:40:10.354792Z"
+      },
+      {
+        "id": "imp_956d28d9",
+        "event_id": "evt_finance_20250310_012_a77659b7",
+        "outcome_event_id": "evt_97cf7a84c411",
+        "question_id": "v3_henry_hub_monthly_return_2025_04",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Initial price strength in March might be offset by later factors leading to a decline.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2025_04"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T21:40:10.364861Z",
+        "last_confirmed_at": "2026-07-24T21:40:10.364861Z"
+      },
+      {
+        "id": "imp_8307e8c3",
+        "event_id": "evt_finance_20250422_013_9b9fa2a6",
+        "outcome_event_id": "evt_97cf7a84c411",
+        "question_id": "v3_henry_hub_monthly_return_2025_04",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Oversupplied market directly contributes to lower prices.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2025_04"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T21:40:10.377664Z",
+        "last_confirmed_at": "2026-07-24T21:40:10.377664Z"
+      },
+      {
+        "id": "imp_590bd4d1",
+        "event_id": "evt_finance_20241231_014_f24d3e67",
+        "outcome_event_id": "evt_97cf7a84c411",
+        "question_id": "v3_henry_hub_monthly_return_2025_04",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Increased production contributes to lower prices.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2025_04"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T21:40:10.387621Z",
+        "last_confirmed_at": "2026-07-24T21:40:10.387621Z"
+      },
+      {
+        "id": "imp_3892d1f6",
+        "event_id": "evt_finance_20250408_015_eefe2bd1",
+        "outcome_event_id": "evt_97cf7a84c411",
+        "question_id": "v3_henry_hub_monthly_return_2025_04",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Significant drop in contracts indicates a bearish market and lower prices.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2025_04"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T21:40:10.399226Z",
+        "last_confirmed_at": "2026-07-24T21:40:10.399226Z"
+      },
+      {
+        "id": "imp_50b4e5a8",
+        "event_id": "evt_finance_20250423_016_b22efb2d",
+        "outcome_event_id": "evt_97cf7a84c411",
+        "question_id": "v3_henry_hub_monthly_return_2025_04",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Settling at $3.02 is a direct indicator of prices being below the recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_henry_hub_monthly_return_2025_04"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T21:40:10.409633Z",
+        "last_confirmed_at": "2026-07-24T21:40:10.409633Z"
+      }
+    ]
+  }
+}

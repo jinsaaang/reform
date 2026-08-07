@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_us_30y_yield_monthly_change_2024_03",
+  "blueprint_sha256": "1c015d98b951602f266be54513d9b4446a85dfb56b1eb52ee81d7862c1e80459",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_market",
+      "target_operation": "threshold_crossing",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2024-03-01, will the monthly 30-year yield change for United States 30-year Treasury yield in 2024-03 be at least -0.17 percentage points?",
+    "historical_cutoff": "2024-03-01T00:00:00+00:00",
+    "target_semantics": "The question asks whether the change in the US 30-year Treasury yield during March 2024 will be greater than or equal to -0.17 percentage points.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The core of the prediction relies on calculating the absolute monthly change of the US 30-year Treasury yield. This requires two key data points: the yield level at the end of February 2024 and the yield level at the end of March 2024.",
+      "The DAG indicates that the calculation of the monthly change is a direct mediator between the yield observations and the target metric. The threshold of -0.17 percentage points is then compared against this calculated change.",
+      "Given the lack of specific forecast-time evidence regarding the yield levels or recent trends, the historical structure suggests focusing on the mechanics of the calculation and the comparison to the pre-registered threshold."
+    ],
+    "counterevidence": "No forecast-time evidence was available to directly support or contradict the expected yield levels or the resulting monthly change. The DAG's weakness highlights that the underlying yield levels, crucial for the calculation, were synthesized rather than directly observed in the provided evidence.",
+    "prospective_target_estimate": "The target is whether the monthly change in the US 30-year Treasury yield for March 2024 is >= -0.17 percentage points.",
+    "option_mapping": "The 'yes' option corresponds to a monthly yield change of -0.17 percentage points or greater (i.e., less negative or positive). The 'no' option corresponds to a monthly yield change less than -0.17 percentage points (i.e., more negative).",
+    "uncertainty": "Significant uncertainty exists due to the absence of forecast-time evidence. The historical DAG indicates that the direct yield observations, which are the primary drivers of the target metric, were synthesized. Without current data on these yield levels, it is impossible to determine the direction or magnitude of the monthly change.",
+    "dag_derived_lesson": "A target metric derived from a difference calculation is sensitive to the accuracy of its constituent observations. When direct observations are unavailable or synthesized, the reliability of the derived metric is compromised, necessitating a focus on the calculation's mechanics and threshold comparison rather than a confident directional prediction."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

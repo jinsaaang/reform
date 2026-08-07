@@ -1,0 +1,633 @@
+{
+  "schema_version": "hgf_blueprint_topology_v2",
+  "question_id": "v3_sp500_monthly_return_2024_01",
+  "target_definition": {
+    "metric": "monthly S&P 500 return",
+    "unit_or_option_space": [
+      "below recent range",
+      "within recent range",
+      "above recent range"
+    ],
+    "forecast_horizon": "Remap the historical target family to the current question's exact target period."
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Outcome-redacted topology preserves 9 checkpoints, 9 source edges, and 5 root-to-target paths.",
+    "weaknesses": []
+  },
+  "search_factors": [
+    {
+      "factor": "Optimistic S&P 500 Earnings Forecasts for [CURRENT_PERIOD_REQUIRED] Announced",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20231211_010_48371e5f"
+      ]
+    },
+    {
+      "factor": "Positive Market Sentiment Established",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20231211_015_7d0e5692"
+      ]
+    },
+    {
+      "factor": "Red Sea Crisis Escalates, Raising Inflation Concerns",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240111_011_14272fcd"
+      ]
+    },
+    {
+      "factor": "Major Tech Companies Begin Announcing [CURRENT_PERIOD_REQUIRED] Earnings",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240118_012_f73fa6a9"
+      ]
+    },
+    {
+      "factor": "Microsoft Reports Strong Earnings Driven by Azure Growth",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240130_013_c7c64b3c"
+      ]
+    },
+    {
+      "factor": "Investor Confidence Reinforced by Tech Earnings",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240130_016_e1d2b3a1"
+      ]
+    },
+    {
+      "factor": "Anticipation of Federal Reserve Monetary Policy Meeting",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240131_018_7145b2c4"
+      ]
+    },
+    {
+      "factor": "Expectation of Stable Monetary Policy",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240131_017_378de1d4"
+      ]
+    },
+    {
+      "factor": "Market Equilibrium Maintained",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240131_019_a786f604"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "checkpoint_1",
+      "role": "driver",
+      "factor": "Optimistic S&P 500 Earnings Forecasts for [CURRENT_PERIOD_REQUIRED] Announced",
+      "mechanism": "Optimistic earnings forecasts directly led to a positive baseline expectation for the market.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20231211_010_48371e5f"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_sp500_monthly_return_2024_01_20260725_053722_007_6a7868f9"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_2",
+      "role": "mediator",
+      "factor": "Positive Market Sentiment Established",
+      "mechanism": "Positive market sentiment established a stable environment for the S&P 500, enabling market equilibrium.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20231211_015_7d0e5692"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_sp500_monthly_return_2024_01_20260725_053722_008_ae614021"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_3",
+      "role": "counterevidence",
+      "factor": "Red Sea Crisis Escalates, Raising Inflation Concerns",
+      "mechanism": "Re-test whether this factor has a currently supported link to the exact target metric; do not transfer the historical outcome or magnitude.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240111_011_14272fcd"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_sp500_monthly_return_2024_01_20260725_053722_015_cef9c219"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_4",
+      "role": "driver",
+      "factor": "Major Tech Companies Begin Announcing [CURRENT_PERIOD_REQUIRED] Earnings",
+      "mechanism": "The start of earnings season provided the opportunity for strong tech company performances to reinforce investor confidence.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240118_012_f73fa6a9"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_sp500_monthly_return_2024_01_20260725_053722_009_2b31d1a5"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_5",
+      "role": "driver",
+      "factor": "Microsoft Reports Strong Earnings Driven by Azure Growth",
+      "mechanism": "Microsoft's strong earnings directly reinforced investor confidence in the broader market.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240130_013_c7c64b3c"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_sp500_monthly_return_2024_01_20260725_053722_010_98151746"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_6",
+      "role": "mediator",
+      "factor": "Investor Confidence Reinforced by Tech Earnings",
+      "mechanism": "Reinforced investor confidence offset negative movements and contributed to market stability, enabling market equilibrium.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240130_016_e1d2b3a1"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_sp500_monthly_return_2024_01_20260725_053722_011_4378f15c"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_7",
+      "role": "driver",
+      "factor": "Anticipation of Federal Reserve Monetary Policy Meeting",
+      "mechanism": "Anticipation of the Fed's meeting directly led to expectations of stable monetary policy.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240131_018_7145b2c4"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_sp500_monthly_return_2024_01_20260725_053722_012_93e49cfa"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_8",
+      "role": "mediator",
+      "factor": "Expectation of Stable Monetary Policy",
+      "mechanism": "Expectation of stable monetary policy helped maintain market equilibrium, preventing significant downturns or surges.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240131_017_378de1d4"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_sp500_monthly_return_2024_01_20260725_053722_013_9ce8c00c"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_9",
+      "role": "mediator",
+      "factor": "Market Equilibrium Maintained",
+      "mechanism": "Re-test whether this factor has a currently supported link to the exact target metric; do not transfer the historical outcome or magnitude.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240131_019_a786f604"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_sp500_monthly_return_2024_01_20260725_053722_014_fd1e0ef9"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "target_bridge",
+      "role": "target_bridge",
+      "factor": "monthly S&P 500 return",
+      "mechanism": "Map only currently supported paths into the exact target operator. Directional support alone is not magnitude or threshold-crossing support.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "A current target baseline and evidence supporting every edge used in the bridge.",
+      "contradiction_signal": "The current target baseline, magnitude evidence, or option boundary contradicts the proposed path.",
+      "historical_support": "medium",
+      "source_event_ids": [],
+      "source_edge_ids": [
+        "hyp_v3_sp500_monthly_return_2024_01_20260725_053722_014_fd1e0ef9",
+        "hyp_v3_sp500_monthly_return_2024_01_20260725_053722_015_cef9c219"
+      ],
+      "source_event_type": "target_bridge"
+    }
+  ],
+  "topology": {
+    "checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_5",
+      "checkpoint_6",
+      "checkpoint_7",
+      "checkpoint_8",
+      "checkpoint_9",
+      "target_bridge"
+    ],
+    "root_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_5",
+      "checkpoint_7"
+    ],
+    "target_bridge_id": "target_bridge",
+    "edges": [
+      {
+        "source_checkpoint_id": "checkpoint_1",
+        "target_checkpoint_id": "checkpoint_2",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Optimistic earnings forecasts directly led to a positive baseline expectation for the market.",
+        "source_edge_ids": [
+          "hyp_v3_sp500_monthly_return_2024_01_20260725_053722_007_6a7868f9"
+        ],
+        "source_article_ids": [
+          "art_finance_20231211_003_07c9287d"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_2",
+        "target_checkpoint_id": "checkpoint_9",
+        "relationship": "enables",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Positive market sentiment established a stable environment for the S&P 500, enabling market equilibrium.",
+        "source_edge_ids": [
+          "hyp_v3_sp500_monthly_return_2024_01_20260725_053722_008_ae614021"
+        ],
+        "source_article_ids": [
+          "art_finance_20231211_003_07c9287d"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_4",
+        "target_checkpoint_id": "checkpoint_6",
+        "relationship": "enables",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "The start of earnings season provided the opportunity for strong tech company performances to reinforce investor confidence.",
+        "source_edge_ids": [
+          "hyp_v3_sp500_monthly_return_2024_01_20260725_053722_009_2b31d1a5"
+        ],
+        "source_article_ids": [
+          "art_finance_20240118_005_c4f30f30"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_5",
+        "target_checkpoint_id": "checkpoint_6",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Microsoft's strong earnings directly reinforced investor confidence in the broader market.",
+        "source_edge_ids": [
+          "hyp_v3_sp500_monthly_return_2024_01_20260725_053722_010_98151746"
+        ],
+        "source_article_ids": [
+          "art_finance_20240130_004_96abf51e"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_6",
+        "target_checkpoint_id": "checkpoint_9",
+        "relationship": "enables",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Reinforced investor confidence offset negative movements and contributed to market stability, enabling market equilibrium.",
+        "source_edge_ids": [
+          "hyp_v3_sp500_monthly_return_2024_01_20260725_053722_011_4378f15c"
+        ],
+        "source_article_ids": [
+          "art_finance_20240130_004_96abf51e"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_7",
+        "target_checkpoint_id": "checkpoint_8",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Anticipation of the Fed's meeting directly led to expectations of stable monetary policy.",
+        "source_edge_ids": [
+          "hyp_v3_sp500_monthly_return_2024_01_20260725_053722_012_93e49cfa"
+        ],
+        "source_article_ids": [
+          "art_finance_20240131_002_9bb863b8"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_8",
+        "target_checkpoint_id": "checkpoint_9",
+        "relationship": "enables",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Expectation of stable monetary policy helped maintain market equilibrium, preventing significant downturns or surges.",
+        "source_edge_ids": [
+          "hyp_v3_sp500_monthly_return_2024_01_20260725_053722_013_9ce8c00c"
+        ],
+        "source_article_ids": [
+          "art_finance_20240131_002_9bb863b8"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_9",
+        "target_checkpoint_id": "target_bridge",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Historical DAG connected this factor to the redacted target measurement; the realized value and outcome mapping are omitted.",
+        "source_edge_ids": [
+          "hyp_v3_sp500_monthly_return_2024_01_20260725_053722_014_fd1e0ef9"
+        ],
+        "source_article_ids": [
+          "art_finance_20240131_002_9bb863b8"
+        ],
+        "terminal_to_target_bridge": true
+      },
+      {
+        "source_checkpoint_id": "checkpoint_3",
+        "target_checkpoint_id": "target_bridge",
+        "relationship": "inhibits",
+        "directionality": "counteracting",
+        "support_level": "",
+        "rationale": "Historical DAG connected this factor to the redacted target measurement; the realized value and outcome mapping are omitted.",
+        "source_edge_ids": [
+          "hyp_v3_sp500_monthly_return_2024_01_20260725_053722_015_cef9c219"
+        ],
+        "source_article_ids": [
+          "art_finance_20240111_002_ab9a0517"
+        ],
+        "terminal_to_target_bridge": true
+      }
+    ],
+    "paths_truncated": false
+  },
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "checkpoint_1",
+        "checkpoint_2",
+        "checkpoint_9",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_sp500_monthly_return_2024_01_20260725_053722_007_6a7868f9",
+        "hyp_v3_sp500_monthly_return_2024_01_20260725_053722_008_ae614021",
+        "hyp_v3_sp500_monthly_return_2024_01_20260725_053722_014_fd1e0ef9"
+      ],
+      "relationships": [
+        "causes",
+        "enables",
+        "causes"
+      ],
+      "path_role": "main_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Optimistic S&P 500 Earnings Forecasts for [CURRENT_PERIOD_REQUIRED] Announced to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_3",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_sp500_monthly_return_2024_01_20260725_053722_015_cef9c219"
+      ],
+      "relationships": [
+        "inhibits"
+      ],
+      "path_role": "counter_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Red Sea Crisis Escalates, Raising Inflation Concerns to the current target; every edge requires current support.",
+      "expected_direction": "mixed",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_4",
+        "checkpoint_6",
+        "checkpoint_9",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_sp500_monthly_return_2024_01_20260725_053722_009_2b31d1a5",
+        "hyp_v3_sp500_monthly_return_2024_01_20260725_053722_011_4378f15c",
+        "hyp_v3_sp500_monthly_return_2024_01_20260725_053722_014_fd1e0ef9"
+      ],
+      "relationships": [
+        "enables",
+        "enables",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Major Tech Companies Begin Announcing [CURRENT_PERIOD_REQUIRED] Earnings to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_5",
+        "checkpoint_6",
+        "checkpoint_9",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_sp500_monthly_return_2024_01_20260725_053722_010_98151746",
+        "hyp_v3_sp500_monthly_return_2024_01_20260725_053722_011_4378f15c",
+        "hyp_v3_sp500_monthly_return_2024_01_20260725_053722_014_fd1e0ef9"
+      ],
+      "relationships": [
+        "causes",
+        "enables",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Microsoft Reports Strong Earnings Driven by Azure Growth to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_7",
+        "checkpoint_8",
+        "checkpoint_9",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_sp500_monthly_return_2024_01_20260725_053722_012_93e49cfa",
+        "hyp_v3_sp500_monthly_return_2024_01_20260725_053722_013_9ce8c00c",
+        "hyp_v3_sp500_monthly_return_2024_01_20260725_053722_014_fd1e0ef9"
+      ],
+      "relationships": [
+        "causes",
+        "enables",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Anticipation of Federal Reserve Monetary Policy Meeting to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "Red Sea Crisis Escalates, Raising Inflation Concerns dominates or reverses the leading current path.",
+      "discriminating_evidence": "Compare current evidence for this counter-path with every edge on the leading supported path.",
+      "source_event_ids": [
+        "evt_finance_20240111_011_14272fcd"
+      ]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Does every used checkpoint transition correspond to a preserved edge?",
+    "Which preserved edges are supported, contradicted, or unknown now?",
+    "Does a counter-path dominate the leading supported path?",
+    "Is there evidence for magnitude and boundary crossing, not direction alone?"
+  ],
+  "refinement_metadata": {
+    "model": "deterministic_topology_compiler_v2",
+    "source_graph": "data\\dags\\v3_sp500_monthly_return_2024_01\\graph.json",
+    "source_audit_status": "pass",
+    "outcome_nodes_redacted": 3,
+    "target_value_anchors_redacted": 0,
+    "historical_specifics_sanitized": true,
+    "sanitizer": "minimal_value_period_placeholders_v1",
+    "value_replacement_count": 0,
+    "period_replacement_count": 6
+  },
+  "topology_validation": {
+    "status": "pass",
+    "errors": [],
+    "metrics": {
+      "retained_checkpoint_count": 9,
+      "source_edge_count": 9,
+      "emitted_edge_count": 9,
+      "edge_coverage": 1.0,
+      "path_precision": 1.0,
+      "causal_path_count": 5,
+      "outcome_event_leak_count": 0,
+      "outcome_text_leak_count": 0,
+      "realized_value_count": 0,
+      "absolute_period_count": 0
+    }
+  }
+}

@@ -1,0 +1,1321 @@
+{
+  "question": {
+    "id": "v3_us_2y_yield_monthly_change_2024_07",
+    "question_text": "As of 2024-07-01, which range will the monthly 2-year yield change for United States 2-year Treasury yield in 2024-07 fall into?",
+    "question_type": "mcq",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 3,
+    "resolution_date": "2024-08-15T23:59:59Z",
+    "estimated_start_time": "2024-07-01T00:00:00Z",
+    "ground_truth": "below recent range",
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [
+      "evt_c6a8f754aff0",
+      "evt_13b38677317f",
+      "evt_8974f9d7c6ce"
+    ],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: United States 2-year Treasury yield\nTarget period: 2024-07\nFinancial area: monetary_policy / rate expectations\nRegion: US\nPre-registered recent-range boundaries: lower -0.22, upper 0.122 percentage points.",
+    "resolution_criteria": "Use FRED series DGS2. Compute the change from the previous monthly observation using mode 'absolute'. Resolve 'below recent range' below -0.22, 'within recent range' from -0.22 inclusive to 0.122 exclusive, and 'above recent range' at or above 0.122 percentage points.",
+    "resolution_reasoning": "The snapshotted target change was -0.42 percentage points; it resolved to 'below recent range'.",
+    "options": [
+      "below recent range",
+      "within recent range",
+      "above recent range"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": "\n## Executive Summary\nIn July 2024, the United States 2-year Treasury yield experienced a monthly change that fell below its recent range. This outcome was likely influenced by a combination of factors including a continued easing of inflation, shifting expectations for Federal Reserve monetary policy, and a generally cooling, but still resilient, economic environment. While no single article directly attributes the specific 'below recent range' movement to a definitive cause, the prevailing macroeconomic conditions, as detailed in Federal Reserve reports and economic analyses, point to a market potentially pricing in future interest rate cuts and a moderating economic outlook. Consumer sentiment, though showing some resilience, also reflected ongoing concerns about high prices.\n\n## Timeline Of Key Events\n- **July 3, 2024:** U.S. House Financial Services Committee announces a hearing on the Federal Reserve’s Semi-Annual Monetary Policy Report, indicating ongoing scrutiny and discussion around Fed policy ([art_finance_20240703_005_94ecf0ed]).\n- **July 5, 2024:** The Federal Reserve submits its Monetary Policy Report (July 2024) to Congress, highlighting that inflation eased notably in the previous year and showed modest further progress in recent months, though remaining above the 2 percent objective ([art_finance_20240722_012_6b65e11e]).\n- **July 10, 2024:** Brookings publishes advice for the Federal Reserve’s review of its monetary policy framework, reflecting ongoing debate and potential future adjustments in monetary policy strategies ([art_finance_20240710_003_7ed126ce]).\n- **July 12, 2024:** The LSEG/Ipsos Primary Consumer Sentiment Index for July 2024 is released, indicating consumer confidence reaching its highest point in months ([art_finance_20240712_010_75620303]).\n- **July 18, 2024:** HispanicBusinessTV reports on a 'Wobbly Warming of Sentiment,' noting a slight dip in the University of Michigan's consumer sentiment index for July, alongside ongoing concerns about high prices, but an overall trend of choppy improvement ([art_finance_20240718_012_1c8b3051]).\n- **July 18, 2024:** The Federal Reserve Bank of San Francisco publishes 'FedViews,' noting that real GDP grew at an annualized rate of 1.4% in Q1 2024, the labor market remained strong but cooling, and average hourly earnings growth was declining. It also highlighted financial markets projecting approximately one to two 25 basis point rate cuts by the end of 2024, shifting closer to three cuts after the June CPI reading ([art_finance_20240718_004_b789ad10]).\n- **July 23, 2024:** Brookings publishes an article discussing conflicts between monetary policy and bank regulation in tackling inflation, indicating the complex environment the Federal Reserve operates within ([art_finance_20240723_007_7f3a3523]).\n- **July 26, 2024:** Thom-ng.com publishes a memo titled \"Is it 2020 all over again?\", reflecting broader market sentiment and speculation beyond the core economic data ([art_finance_20240726_011_5e269300]).\n\n## Causal Chain Analysis\nThe primary causal path leading to the 2-year Treasury yield falling 'below recent range' in July 2024 likely began with the **continued moderation of inflation** (root cause). The Federal Reserve's July Monetary Policy Report highlighted that \"inflation eased notably last year and has shown modest further progress in recent months\" ([art_finance_20240722_012_6b65e11e]). This easing inflation environment **led to** evolving expectations regarding the **Federal Reserve's future monetary policy** (intermediate mechanism). Specifically, financial markets began anticipating more aggressive interest rate cuts by the end of 2024, shifting from one to two 25 basis point cuts to potentially three, following the June CPI reading ([art_finance_20240718_004_b789ad10]). These **expectations of future rate cuts** (proximate trigger) typically **resulted in** a downward pressure on shorter-term Treasury yields, including the 2-year yield, as bond investors price in a lower future federal funds rate, consequently causing the yield to fall 'below recent range'. This sentiment was further reinforced by a **cooling, but still strong, labor market** where average hourly earnings growth was declining, signaling a potential slowdown without a hard landing ([art_finance_20240718_004_b789ad10]). The 'wobbly warming of sentiment' ([art_finance_20240718_012_1c8b3051]) also suggests a market that, while cautiously optimistic, might still react sensitively to signs of economic moderation and potential policy shifts.\n\n## Countervailing Factors\nDespite the downward pressure on yields, some factors might have pushed against a significant decline. \"Wobbly warming of sentiment\" ([art_finance_20240718_012_1c8b3051]) and improving consumer confidence ([art_finance_20240712_010_75620303]) could have indicated underlying economic resilience, potentially limiting yield decreases. The Federal Reserve's consistent message of maintaining the target range until greater confidence in inflation sustainably moving towards 2% is gained ([art_finance_20240718_004_b789ad10]) also served as a brake. These factors failed to outweigh the dominant narrative of declining inflation and increased probability of future rate cuts as market participants prioritized the implications of disinflation and expected dovish shifts from the FOMC.\n\n## Event Candidate Inventory\n- **E1: Federal Reserve's July 2024 Monetary Policy Report Release**\n    - Date: 2024-07-05\n    - Why it matters causally: Confirmed the ongoing trend of easing inflation, providing a fundamental basis for changing interest rate expectations.\n    - Source article IDs: art_finance_20240722_012_6b65e11e\n- **E2: FedViews July 18, 2024 Publication**\n    - Date: 2024-07-18\n    - Why it matters causally: Signaled a cooling yet resilient economy and highlighted market expectations for Fed rate cuts increasing after the June CPI reading.\n    - Source article IDs: art_finance_20240718_004_b789ad10\n- **E3: University of Michigan Consumer Sentiment Index for July Release**\n    - Date: 2024-07-18 (preliminary results)\n    - Why it matters causally: Demonstrated mixed but improving consumer sentiment with persistent concerns about high prices, influencing broader economic outlook.\n    - Source article IDs: art_finance_20240718_012_1c8b3051\n- **E4: June CPI Data Release (Impact on Market Projections)**\n    - Date: Early July 2024 (impact noted by July 18)\n    - Why it matters causally: Directly influenced financial markets to increase projections for Fed rate cuts by year-end, which would directly impact bond yields.\n    - Source article IDs: art_finance_20240718_004_b789ad10\n\n## Evidence Mapping Table\n\n| Claim/Event | Article IDs | Date Support | Confidence (0-1) | Notes |\n|---|---|---|---|---|\n| Easing inflation acknowledged by Fed | art_finance_20240722_012_6b65e11e | 2024-07-05 | 0.8 | Federal Reserve report directly states inflation easing. |\n| Market anticipates more Fed rate cuts | art_finance_20240718_004_b789ad10 | 2024-07-18 | 0.7 | FedViews article mentions market projections for rate cuts increasing. |\n| Cooling but strong labor market | art_finance_20240718_004_b789ad10 | 2024-07-18 | 0.7 | FedViews article discusses labor market cooling. |\n| Conflicting signals from consumer sentiment | art_finance_20240718_012_1c8b3051 | 2024-07-18 | 0.6 | Article explicitly describes \"wobbly warming\" and concerns. |\n\n## Uncertainties And Alternative Paths\nThere is a significant uncertainty regarding the precise definition of 'below recent range,' which hampered the ability to find highly specific articles. Additionally, the direct causal link from these macroeconomic factors to the *exact magnitude* of the 2-year Treasury yield falling 'below recent range' is not explicitly detailed in the collected articles. An alternative path could have been that despite inflation easing, other pressures (e.g., unexpectedly strong economic growth, increased supply of Treasuries) could have kept yields within or above their recent range. However, the available evidence leans more towards a market reacting to disinflationary trends and the increasing likelihood of Fed easing.",
+    "graph_built": true,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.204820Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "us_2y_yield_monthly_change",
+        "event_cluster_id": "treasury_2y_2024-07",
+        "category": "monetary_policy",
+        "original_domain": "monetary_policy",
+        "subdomain": "rate expectations",
+        "entity": "United States 2-year Treasury yield",
+        "region": "US",
+        "target_metric": "monthly 2-year yield change",
+        "target_period": "2024-07",
+        "forecast_cutoff": "2024-07-01T00:00:00+00:00",
+        "forecast_date_options": [
+          "2024-07-01"
+        ],
+        "resolution_available_at": "2024-08-15T23:59:59+00:00",
+        "horizon_days": 45,
+        "source_type": "fred_series_snapshot",
+        "source_series_id": "DGS2",
+        "source_homepage": "https://fred.stlouisfed.org/series/DGS2",
+        "comparison_rule": "target change bucketed by the lower and upper quartiles of the 8 prior observed changes",
+        "comparison_threshold": -0.1,
+        "comparison_thresholds": {
+          "lower": -0.22,
+          "upper": 0.1225
+        },
+        "change_unit": "percentage points",
+        "threshold_observation_dates": [
+          "2023-10-31",
+          "2023-11-30",
+          "2023-12-29",
+          "2024-01-31",
+          "2024-02-29",
+          "2024-03-28",
+          "2024-04-30",
+          "2024-05-31",
+          "2024-06-28"
+        ],
+        "split": "memory",
+        "family_position": 4,
+        "family_size": 8,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "below recent range",
+        "resolved_class": "below recent range",
+        "resolution_value": 4.29,
+        "target_change": -0.42,
+        "source_observation_date": "2024-07-31",
+        "resolution_document": {
+          "publisher": "Federal Reserve Bank of St. Louis (FRED)",
+          "title": "2-Year Treasury Constant Maturity Rate",
+          "url": "https://fred.stlouisfed.org/series/DGS2"
+        },
+        "source_download_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS2&cosd=2019-01-01&coed=2026-06-30",
+        "source_sha256": "ac501e477bdea94fffdc1c585107555fc924f468ef05ab5ac1c0f8dc3f3f4f3b",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_c6a8f754aff0",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 15,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_20160621_002_6d7f025b",
+        "title": "Part 2: Monetary Policy - Federal Reserve (.gov)",
+        "url": "https://www.federalreserve.gov/monetarypolicy/mpr-20160621-part2-accessible.htm",
+        "source": "federalreserve.gov",
+        "published_date": "2016-06-21T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240710_003_7ed126ce",
+        "title": "Advice for the Federal Reserve’s review of its monetary policy framework - Brookings",
+        "url": "https://www.brookings.edu/articles/comments-on-lessons-from-history-for-successful-disinflation",
+        "source": "brookings.edu",
+        "published_date": "2024-07-10T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240722_012_6b65e11e",
+        "title": "Part 1: Recent Economic and Financial Developments - Federal Reserve (.gov)",
+        "url": "https://www.federalreserve.gov/monetarypolicy/2024-07-mpr-part1.htm",
+        "source": "federalreserve.gov",
+        "published_date": "2024-07-22T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240718_004_b789ad10",
+        "title": "FedViews: July 18, 2024 - Federal Reserve Bank of San Francisco",
+        "url": "https://www.frbsf.org/research-and-insights/publications/fedviews/2024/07/fedviews-july-18-2024",
+        "source": "frbsf.org",
+        "published_date": "2024-07-18T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240703_005_94ecf0ed",
+        "title": "Hearing Entitled: The Federal Reserve’s Semi-Annual Monetary Policy Report - U.S. House Financial Services Committee (.gov)",
+        "url": "https://financialservices.house.gov/calendar/eventsingle.aspx?EventID=409311",
+        "source": "financialservices.house.gov",
+        "published_date": "2024-07-03T17:11:53+00:00"
+      },
+      {
+        "id": "art_finance_20231128_006_b83f99a5",
+        "title": "Slower GDP Growth and Falling Inflation in U.S. Economic Outlook for 2024 - Federal Reserve Bank of St. Louis",
+        "url": "https://www.stlouisfed.org/publications/regional-economist/2023/nov/slower-gdp-growth-falling-inflation-us-economic-outlook-2024",
+        "source": "stlouisfed.org",
+        "published_date": "2023-11-28T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240723_007_7f3a3523",
+        "title": "Federal Reserve: Conflicts between monetary policy and bank regulation in tackling inflation - Brookings",
+        "url": "https://www.brookings.edu/articles/federal-reserve-conflicts-between-monetary-policy-and-bank-regulation-in-tackling-inflation",
+        "source": "brookings.edu",
+        "published_date": "2024-07-23T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240624_005_fffd90d5",
+        "title": "Anatomy of the Post-Pandemic Monetary Tightening Cycle - Federal Reserve Bank of San Francisco",
+        "url": "https://www.frbsf.org/research-and-insights/publications/economic-letter/2024/06/anatomy-of-post-pandemic-monetary-tightening-cycle",
+        "source": "frbsf.org",
+        "published_date": "2024-06-24T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240612_008_466128a2",
+        "title": "The Fed - June 11-12, 2024 FOMC Meeting - Federal Reserve (.gov)",
+        "url": "https://www.federalreserve.gov/monetarypolicy/fomcpresconf20240612.htm",
+        "source": "federalreserve.gov",
+        "published_date": "2024-06-12T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240708_009_4f82a04c",
+        "title": "Charts of the Month: July 2024 | Bentley Reid",
+        "url": "https://www.bentleyreid.com/charts-of-month/charts-of-month-investor-sentiment-options-markets-bullish-bearish-readings-july-2024",
+        "source": "bentleyreid.com",
+        "published_date": "2024-07-08T10:18:02+00:00"
+      },
+      {
+        "id": "art_finance_20240712_010_75620303",
+        "title": "July 2024 LSEG/Ipsos Primary Consumer Sentiment Index",
+        "url": "https://www.ipsos.com/en-us/july-2024-lsegipsos-primary-consumer-sentiment-index",
+        "source": "ipsos.com",
+        "published_date": "2024-07-12T10:00:00+02:00"
+      },
+      {
+        "id": "art_finance_20240726_011_5e269300",
+        "title": "Is it 2020 all over again? - Thomas Ng Memo 22 July 2024",
+        "url": "https://www.thom-ng.com/post/is-it-2020-all-over-again-thomas-ng-memo-22-july-2024",
+        "source": "thom-ng.com",
+        "published_date": "2024-07-26T01:00:23.805000+00:00"
+      },
+      {
+        "id": "art_finance_20240718_012_1c8b3051",
+        "title": "The Wobbly Warming of Sentiment | Insights",
+        "url": "https://hispanicbusinesstv.com/the-wobbly-warming-of-sentiment-insights",
+        "source": "hispanicbusinesstv.com",
+        "published_date": "2024-07-18T18:36:34+00:00"
+      },
+      {
+        "id": "art_finance_20240329_013_d0413f35",
+        "title": "Remarks from Chair Jerome H. Powell at the Macroeconomics and Monetary Policy Conference - Federal Reserve Bank of San Francisco",
+        "url": "https://www.frbsf.org/news-and-media/events/2024/03/jerome-powell-remarks-with-kai-ryssdal-2024",
+        "source": "frbsf.org",
+        "published_date": "2024-03-29T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_19620102_002_079ede08",
+        "title": "3 Year Treasury Rate (Market Daily) - United States - Histo… - YCharts",
+        "url": "https://ycharts.com/indicators/3_year_treasury_rate_h15",
+        "source": "ycharts.com",
+        "published_date": "1962-01-02T00:00:00+00:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_c6a8f754aff0",
+      "events_count": 10,
+      "hypotheses_count": 9
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 3,
+      "avg_depth": 2.57,
+      "quality_score": 0.83,
+      "depth_score": 1.0,
+      "confidence_score": 0.71,
+      "strength_score": 0.59,
+      "evidence_score": 1.0,
+      "event_count": 10,
+      "hypothesis_count": 9
+    },
+    "nodes": [
+      {
+        "id": "evt_13b38677317f",
+        "title": "Option 2: within recent range",
+        "description": "Question resolves to: within recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-08-15T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_us_2y_yield_monthly_change_2024_07",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 1,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:16:17.757204Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_8974f9d7c6ce",
+        "title": "Option 3: above recent range",
+        "description": "Question resolves to: above recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-08-15T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_us_2y_yield_monthly_change_2024_07",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 2,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:16:17.757211Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_c6a8f754aff0",
+        "title": "Option 1: below recent range",
+        "description": "Question resolves to: below recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-08-15T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_us_2y_yield_monthly_change_2024_07",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 0,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:16:17.757188Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240705_011_db82362b",
+        "title": "Inflation Eased Notably in Previous Year and Showed Modest Further Progress",
+        "description": "The Federal Reserve's July 2024 Monetary Policy Report highlighted that inflation eased notably in the previous year and showed modest further progress in recent months, though remaining above the 2 percent objective.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-05T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240722_012_6b65e11e"
+        ],
+        "extracted_for_question_id": "v3_us_2y_yield_monthly_change_2024_07",
+        "source_article_id": "art_finance_20240722_012_6b65e11e",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_2y_yield_monthly_change_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:19:55.223300Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240710_020_20c467fb",
+        "title": "Brookings Publishes Advice for Federal Reserve’s Monetary Policy Framework Review",
+        "description": "Brookings publishes advice for the Federal Reserve’s review of its monetary policy framework, reflecting ongoing debate and potential future adjustments in monetary policy strategies.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-10T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240710_003_7ed126ce"
+        ],
+        "extracted_for_question_id": "v3_us_2y_yield_monthly_change_2024_07",
+        "source_article_id": "art_finance_20240710_003_7ed126ce",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_2y_yield_monthly_change_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:19:55.497734Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240712_017_c49b99bb",
+        "title": "LSEG/Ipsos Primary Consumer Sentiment Index Reaches Highest Point in Months",
+        "description": "The LSEG/Ipsos Primary Consumer Sentiment Index for July 2024 is released, indicating consumer confidence reaching its highest point in months.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-12T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240712_010_75620303"
+        ],
+        "extracted_for_question_id": "v3_us_2y_yield_monthly_change_2024_07",
+        "source_article_id": "art_finance_20240712_010_75620303",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_2y_yield_monthly_change_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:19:55.401930Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240718_013_d9bd1f30",
+        "title": "University of Michigan Consumer Sentiment Index for July Release",
+        "description": "The University of Michigan's consumer sentiment index for July showed a slight dip, alongside ongoing concerns about high prices, but an overall trend of choppy improvement.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-18T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240718_012_1c8b3051"
+        ],
+        "extracted_for_question_id": "v3_us_2y_yield_monthly_change_2024_07",
+        "source_article_id": "art_finance_20240718_012_1c8b3051",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_2y_yield_monthly_change_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:19:55.281385Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240718_014_fd05c653",
+        "title": "June CPI Data Release Influences Market Projections for Fed Rate Cuts",
+        "description": "The June CPI reading directly influenced financial markets to increase projections for Fed rate cuts by year-end, shifting from one to two 25 basis point cuts to potentially three.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-18T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240718_004_b789ad10"
+        ],
+        "extracted_for_question_id": "v3_us_2y_yield_monthly_change_2024_07",
+        "source_article_id": "art_finance_20240718_004_b789ad10",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_2y_yield_monthly_change_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:19:55.311582Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240718_015_9ad9c69e",
+        "title": "Financial Markets Anticipate More Aggressive Interest Rate Cuts",
+        "description": "Following the easing inflation and June CPI data, financial markets began anticipating more aggressive interest rate cuts by the end of 2024.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-18T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240718_004_b789ad10"
+        ],
+        "extracted_for_question_id": "v3_us_2y_yield_monthly_change_2024_07",
+        "source_article_id": "art_finance_20240718_004_b789ad10",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_2y_yield_monthly_change_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:19:55.341503Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240718_016_9eeb7ddd",
+        "title": "Labor Market Cooling with Declining Average Hourly Earnings Growth",
+        "description": "The labor market remained strong but cooling, and average hourly earnings growth was declining, signaling a potential slowdown without a hard landing.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-18T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240718_004_b789ad10"
+        ],
+        "extracted_for_question_id": "v3_us_2y_yield_monthly_change_2024_07",
+        "source_article_id": "art_finance_20240718_004_b789ad10",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_2y_yield_monthly_change_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:19:55.371353Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240718_018_50e3473e",
+        "title": "Downward Pressure on Shorter-Term Treasury Yields",
+        "description": "Expectations of future rate cuts typically resulted in a downward pressure on shorter-term Treasury yields, including the 2-year yield, as bond investors price in a lower future federal funds rate.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-18T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240718_004_b789ad10"
+        ],
+        "extracted_for_question_id": "v3_us_2y_yield_monthly_change_2024_07",
+        "source_article_id": "art_finance_20240718_004_b789ad10",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_2y_yield_monthly_change_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:19:55.439092Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_politics_20240703_019_462df718",
+        "title": "U.S. House Financial Services Committee Announces Hearing on Fed's Monetary Policy Report",
+        "description": "The U.S. House Financial Services Committee announces a hearing on the Federal Reserve’s Semi-Annual Monetary Policy Report, indicating ongoing scrutiny and discussion around Fed policy.",
+        "event_type": "indicator",
+        "domain": "politics",
+        "tags": [],
+        "occurred_date": "2024-07-03T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240703_005_94ecf0ed"
+        ],
+        "extracted_for_question_id": "v3_us_2y_yield_monthly_change_2024_07",
+        "source_article_id": "art_finance_20240703_005_94ecf0ed",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_2y_yield_monthly_change_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:19:55.462712Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_us_2y_yield_monthly_change_2024_07_20260725_061955_009_341ac34f",
+        "source_event_id": "evt_finance_20240705_011_db82362b",
+        "target_event_id": "evt_finance_20240718_015_9ad9c69e",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "The easing inflation environment led to evolving expectations regarding the Federal Reserve's future monetary policy, specifically anticipating more aggressive interest rate cuts.",
+        "evidence_article_ids": [
+          "art_finance_20240722_012_6b65e11e",
+          "art_finance_20240718_004_b789ad10"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:19:55.524550Z",
+        "last_confirmed_at": "2026-07-25T06:19:55.524550Z"
+      },
+      {
+        "id": "hyp_v3_us_2y_yield_monthly_change_2024_07_20260725_061955_010_0c608718",
+        "source_event_id": "evt_finance_20240718_014_fd05c653",
+        "target_event_id": "evt_finance_20240718_015_9ad9c69e",
+        "relation_type": "causes",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The June CPI reading directly influenced financial markets to increase projections for Fed rate cuts, contributing to the expectations of future rate cuts.",
+        "evidence_article_ids": [
+          "art_finance_20240718_004_b789ad10"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:19:55.541149Z",
+        "last_confirmed_at": "2026-07-25T06:19:55.541149Z"
+      },
+      {
+        "id": "hyp_v3_us_2y_yield_monthly_change_2024_07_20260725_061955_011_35e7ea9e",
+        "source_event_id": "evt_finance_20240718_015_9ad9c69e",
+        "target_event_id": "evt_finance_20240718_018_50e3473e",
+        "relation_type": "causes",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Expectations of future rate cuts typically result in a downward pressure on shorter-term Treasury yields, as bond investors price in a lower future federal funds rate.",
+        "evidence_article_ids": [
+          "art_finance_20240718_004_b789ad10"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:19:55.557651Z",
+        "last_confirmed_at": "2026-07-25T06:19:55.557651Z"
+      },
+      {
+        "id": "hyp_v3_us_2y_yield_monthly_change_2024_07_20260725_061955_012_c0da386d",
+        "source_event_id": "evt_finance_20240718_016_9eeb7ddd",
+        "target_event_id": "evt_finance_20240718_018_50e3473e",
+        "relation_type": "enables",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "A cooling labor market, with declining average hourly earnings growth, signals a potential slowdown, which can enable downward pressure on Treasury yields as it supports the case for rate cuts.",
+        "evidence_article_ids": [
+          "art_finance_20240718_004_b789ad10"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:19:55.573411Z",
+        "last_confirmed_at": "2026-07-25T06:19:55.573411Z"
+      },
+      {
+        "id": "hyp_v3_us_2y_yield_monthly_change_2024_07_20260725_061955_013_38594530",
+        "source_event_id": "evt_finance_20240718_013_d9bd1f30",
+        "target_event_id": "evt_finance_20240718_018_50e3473e",
+        "relation_type": "inhibits",
+        "strength": 0.4,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "Mixed but improving consumer sentiment, even with concerns about high prices, could indicate underlying economic resilience, potentially limiting yield decreases.",
+        "evidence_article_ids": [
+          "art_finance_20240718_012_1c8b3051"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:19:55.590365Z",
+        "last_confirmed_at": "2026-07-25T06:19:55.590365Z"
+      },
+      {
+        "id": "hyp_v3_us_2y_yield_monthly_change_2024_07_20260725_061955_014_177a5e33",
+        "source_event_id": "evt_finance_20240712_017_c49b99bb",
+        "target_event_id": "evt_finance_20240718_018_50e3473e",
+        "relation_type": "inhibits",
+        "strength": 0.3,
+        "confidence": 0.5,
+        "time_lag_hours": null,
+        "reasoning": "Improving consumer confidence could indicate underlying economic resilience, potentially limiting yield decreases.",
+        "evidence_article_ids": [
+          "art_finance_20240712_010_75620303"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:19:55.606819Z",
+        "last_confirmed_at": "2026-07-25T06:19:55.606819Z"
+      },
+      {
+        "id": "hyp_v3_us_2y_yield_monthly_change_2024_07_20260725_061955_015_88575434",
+        "source_event_id": "evt_finance_20240718_018_50e3473e",
+        "target_event_id": "evt_c6a8f754aff0",
+        "relation_type": "causes",
+        "strength": 1.0,
+        "confidence": 1.0,
+        "time_lag_hours": null,
+        "reasoning": "The downward pressure on shorter-term Treasury yields directly caused the 2-year yield to fall 'below recent range'.",
+        "evidence_article_ids": [
+          "art_finance_20240718_004_b789ad10"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:19:55.623655Z",
+        "last_confirmed_at": "2026-07-25T06:19:55.623655Z"
+      },
+      {
+        "id": "hyp_v3_us_2y_yield_monthly_change_2024_07_20260725_061955_016_ba75a3e1",
+        "source_event_id": "evt_politics_20240703_019_462df718",
+        "target_event_id": "evt_finance_20240718_015_9ad9c69e",
+        "relation_type": "correlates",
+        "strength": 0.2,
+        "confidence": 0.5,
+        "time_lag_hours": null,
+        "reasoning": "The announcement of a hearing on the Fed's monetary policy report indicates ongoing scrutiny, which could indirectly contribute to market expectations regarding future policy, though not a direct cause.",
+        "evidence_article_ids": [
+          "art_finance_20240703_005_94ecf0ed"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:19:55.640415Z",
+        "last_confirmed_at": "2026-07-25T06:19:55.640415Z"
+      },
+      {
+        "id": "hyp_v3_us_2y_yield_monthly_change_2024_07_20260725_061955_017_96e0b4b2",
+        "source_event_id": "evt_finance_20240710_020_20c467fb",
+        "target_event_id": "evt_finance_20240718_015_9ad9c69e",
+        "relation_type": "correlates",
+        "strength": 0.2,
+        "confidence": 0.5,
+        "time_lag_hours": null,
+        "reasoning": "Brookings publishing advice on the Fed's monetary policy framework review reflects ongoing debate and potential future adjustments, which could subtly influence market expectations.",
+        "evidence_article_ids": [
+          "art_finance_20240710_003_7ed126ce"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:19:55.656545Z",
+        "last_confirmed_at": "2026-07-25T06:19:55.656545Z"
+      }
+    ],
+    "outcome_impacts": [
+      {
+        "id": "imp_315e089d",
+        "event_id": "evt_finance_20240705_011_db82362b",
+        "outcome_event_id": "evt_c6a8f754aff0",
+        "question_id": "v3_us_2y_yield_monthly_change_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.8,
+        "reasoning": "Easing inflation leads to expectations of rate cuts, which puts downward pressure on yields, making 'below recent range' more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:20:14.181859Z",
+        "last_confirmed_at": "2026-07-25T06:20:14.181859Z"
+      },
+      {
+        "id": "imp_d536b410",
+        "event_id": "evt_finance_20240705_011_db82362b",
+        "outcome_event_id": "evt_8974f9d7c6ce",
+        "question_id": "v3_us_2y_yield_monthly_change_2024_07",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.8,
+        "confidence": 0.8,
+        "reasoning": "Easing inflation leads to expectations of rate cuts, which puts downward pressure on yields, making 'above recent range' less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:20:14.193274Z",
+        "last_confirmed_at": "2026-07-25T06:20:14.193274Z"
+      },
+      {
+        "id": "imp_af6de85c",
+        "event_id": "evt_finance_20240705_011_db82362b",
+        "outcome_event_id": "evt_13b38677317f",
+        "question_id": "v3_us_2y_yield_monthly_change_2024_07",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Easing inflation makes 'within recent range' less likely as it pushes yields lower.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:20:14.204715Z",
+        "last_confirmed_at": "2026-07-25T06:20:14.204715Z"
+      },
+      {
+        "id": "imp_99014fa0",
+        "event_id": "evt_finance_20240718_012_57fa2593",
+        "outcome_event_id": "evt_c6a8f754aff0",
+        "question_id": "v3_us_2y_yield_monthly_change_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.7,
+        "reasoning": "FedViews highlighting market projections for rate cuts and a cooling labor market supports downward pressure on yields, making 'below recent range' more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:20:14.214817Z",
+        "last_confirmed_at": "2026-07-25T06:20:14.214817Z"
+      },
+      {
+        "id": "imp_0d00eb0a",
+        "event_id": "evt_finance_20240718_012_57fa2593",
+        "outcome_event_id": "evt_8974f9d7c6ce",
+        "question_id": "v3_us_2y_yield_monthly_change_2024_07",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.7,
+        "confidence": 0.7,
+        "reasoning": "FedViews highlighting market projections for rate cuts and a cooling labor market supports downward pressure on yields, making 'above recent range' less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:20:14.225896Z",
+        "last_confirmed_at": "2026-07-25T06:20:14.225896Z"
+      },
+      {
+        "id": "imp_0aae3b4e",
+        "event_id": "evt_finance_20240718_012_57fa2593",
+        "outcome_event_id": "evt_13b38677317f",
+        "question_id": "v3_us_2y_yield_monthly_change_2024_07",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.5,
+        "confidence": 0.6,
+        "reasoning": "FedViews indicating downward pressure on yields makes 'within recent range' less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:20:14.236318Z",
+        "last_confirmed_at": "2026-07-25T06:20:14.236318Z"
+      },
+      {
+        "id": "imp_f60c90bb",
+        "event_id": "evt_finance_20240718_013_d9bd1f30",
+        "outcome_event_id": "evt_c6a8f754aff0",
+        "question_id": "v3_us_2y_yield_monthly_change_2024_07",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.4,
+        "confidence": 0.6,
+        "reasoning": "Mixed but improving consumer sentiment could indicate underlying economic resilience, potentially limiting yield decreases and thus making 'below recent range' less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:20:14.248848Z",
+        "last_confirmed_at": "2026-07-25T06:20:14.248848Z"
+      },
+      {
+        "id": "imp_22daf61c",
+        "event_id": "evt_finance_20240718_013_d9bd1f30",
+        "outcome_event_id": "evt_8974f9d7c6ce",
+        "question_id": "v3_us_2y_yield_monthly_change_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.4,
+        "confidence": 0.6,
+        "reasoning": "Mixed but improving consumer sentiment could indicate underlying economic resilience, potentially limiting yield decreases and thus making 'above recent range' more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:20:14.259664Z",
+        "last_confirmed_at": "2026-07-25T06:20:14.259664Z"
+      },
+      {
+        "id": "imp_50c1db2c",
+        "event_id": "evt_finance_20240718_013_d9bd1f30",
+        "outcome_event_id": "evt_13b38677317f",
+        "question_id": "v3_us_2y_yield_monthly_change_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.5,
+        "confidence": 0.6,
+        "reasoning": "Mixed but improving consumer sentiment could indicate underlying economic resilience, potentially keeping yields 'within recent range'.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:20:14.269411Z",
+        "last_confirmed_at": "2026-07-25T06:20:14.269411Z"
+      },
+      {
+        "id": "imp_4c8e1469",
+        "event_id": "evt_finance_20240718_014_fd05c653",
+        "outcome_event_id": "evt_c6a8f754aff0",
+        "question_id": "v3_us_2y_yield_monthly_change_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "June CPI data directly influenced market projections for more aggressive Fed rate cuts, strongly contributing to downward pressure on yields and making 'below recent range' more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:20:14.280136Z",
+        "last_confirmed_at": "2026-07-25T06:20:14.280136Z"
+      },
+      {
+        "id": "imp_a270053a",
+        "event_id": "evt_finance_20240718_014_fd05c653",
+        "outcome_event_id": "evt_8974f9d7c6ce",
+        "question_id": "v3_us_2y_yield_monthly_change_2024_07",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "June CPI data directly influenced market projections for more aggressive Fed rate cuts, strongly contributing to downward pressure on yields and making 'above recent range' less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:20:14.290080Z",
+        "last_confirmed_at": "2026-07-25T06:20:14.290080Z"
+      },
+      {
+        "id": "imp_d5b75f65",
+        "event_id": "evt_finance_20240718_014_fd05c653",
+        "outcome_event_id": "evt_13b38677317f",
+        "question_id": "v3_us_2y_yield_monthly_change_2024_07",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "June CPI data pushing for more rate cuts makes 'within recent range' less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:20:14.301139Z",
+        "last_confirmed_at": "2026-07-25T06:20:14.301139Z"
+      },
+      {
+        "id": "imp_e4ed2757",
+        "event_id": "evt_finance_20240718_015_9ad9c69e",
+        "outcome_event_id": "evt_c6a8f754aff0",
+        "question_id": "v3_us_2y_yield_monthly_change_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "Expectations of future rate cuts directly lead to downward pressure on shorter-term Treasury yields, making 'below recent range' more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:20:14.311898Z",
+        "last_confirmed_at": "2026-07-25T06:20:14.311898Z"
+      },
+      {
+        "id": "imp_7eb04a00",
+        "event_id": "evt_finance_20240718_015_9ad9c69e",
+        "outcome_event_id": "evt_8974f9d7c6ce",
+        "question_id": "v3_us_2y_yield_monthly_change_2024_07",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "Expectations of future rate cuts directly lead to downward pressure on shorter-term Treasury yields, making 'above recent range' less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:20:14.321969Z",
+        "last_confirmed_at": "2026-07-25T06:20:14.321969Z"
+      },
+      {
+        "id": "imp_c4e5ed16",
+        "event_id": "evt_finance_20240718_015_9ad9c69e",
+        "outcome_event_id": "evt_13b38677317f",
+        "question_id": "v3_us_2y_yield_monthly_change_2024_07",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Expectations of future rate cuts pushing yields lower makes 'within recent range' less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:20:14.334658Z",
+        "last_confirmed_at": "2026-07-25T06:20:14.334658Z"
+      },
+      {
+        "id": "imp_6b430941",
+        "event_id": "evt_finance_20240718_016_9eeb7ddd",
+        "outcome_event_id": "evt_c6a8f754aff0",
+        "question_id": "v3_us_2y_yield_monthly_change_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "A cooling labor market signals a potential slowdown, supporting the case for rate cuts and thus contributing to downward pressure on yields, making 'below recent range' more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:20:14.344329Z",
+        "last_confirmed_at": "2026-07-25T06:20:14.344329Z"
+      },
+      {
+        "id": "imp_a0c9f9a2",
+        "event_id": "evt_finance_20240718_016_9eeb7ddd",
+        "outcome_event_id": "evt_8974f9d7c6ce",
+        "question_id": "v3_us_2y_yield_monthly_change_2024_07",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "A cooling labor market signals a potential slowdown, supporting the case for rate cuts and thus contributing to downward pressure on yields, making 'above recent range' less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:20:14.354805Z",
+        "last_confirmed_at": "2026-07-25T06:20:14.354805Z"
+      },
+      {
+        "id": "imp_5cac5aec",
+        "event_id": "evt_finance_20240718_016_9eeb7ddd",
+        "outcome_event_id": "evt_13b38677317f",
+        "question_id": "v3_us_2y_yield_monthly_change_2024_07",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.4,
+        "confidence": 0.6,
+        "reasoning": "A cooling labor market pushing for rate cuts makes 'within recent range' less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:20:14.365721Z",
+        "last_confirmed_at": "2026-07-25T06:20:14.365721Z"
+      },
+      {
+        "id": "imp_7e82df66",
+        "event_id": "evt_finance_20240712_017_c49b99bb",
+        "outcome_event_id": "evt_c6a8f754aff0",
+        "question_id": "v3_us_2y_yield_monthly_change_2024_07",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.3,
+        "confidence": 0.5,
+        "reasoning": "Improving consumer confidence could indicate underlying economic resilience, potentially limiting yield decreases and thus making 'below recent range' less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:20:14.375719Z",
+        "last_confirmed_at": "2026-07-25T06:20:14.375719Z"
+      },
+      {
+        "id": "imp_284fa276",
+        "event_id": "evt_finance_20240712_017_c49b99bb",
+        "outcome_event_id": "evt_8974f9d7c6ce",
+        "question_id": "v3_us_2y_yield_monthly_change_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.3,
+        "confidence": 0.5,
+        "reasoning": "Improving consumer confidence could indicate underlying economic resilience, potentially limiting yield decreases and thus making 'above recent range' more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:20:14.390828Z",
+        "last_confirmed_at": "2026-07-25T06:20:14.390828Z"
+      },
+      {
+        "id": "imp_fc0f850f",
+        "event_id": "evt_finance_20240712_017_c49b99bb",
+        "outcome_event_id": "evt_13b38677317f",
+        "question_id": "v3_us_2y_yield_monthly_change_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.4,
+        "confidence": 0.6,
+        "reasoning": "Improving consumer confidence could indicate underlying economic resilience, potentially keeping yields 'within recent range'.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:20:14.402222Z",
+        "last_confirmed_at": "2026-07-25T06:20:14.402222Z"
+      },
+      {
+        "id": "imp_b9f6d1ec",
+        "event_id": "evt_finance_20240718_018_50e3473e",
+        "outcome_event_id": "evt_c6a8f754aff0",
+        "question_id": "v3_us_2y_yield_monthly_change_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 1.0,
+        "confidence": 1.0,
+        "reasoning": "This event directly represents the downward pressure on yields that led to the actual outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:20:14.416321Z",
+        "last_confirmed_at": "2026-07-25T06:20:14.416321Z"
+      },
+      {
+        "id": "imp_aef0657b",
+        "event_id": "evt_finance_20240718_018_50e3473e",
+        "outcome_event_id": "evt_8974f9d7c6ce",
+        "question_id": "v3_us_2y_yield_monthly_change_2024_07",
+        "impact_direction": "negative",
+        "impact_magnitude": 1.0,
+        "confidence": 1.0,
+        "reasoning": "This event directly represents the downward pressure on yields, making 'above recent range' impossible.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:20:14.430958Z",
+        "last_confirmed_at": "2026-07-25T06:20:14.430958Z"
+      },
+      {
+        "id": "imp_05d07d9a",
+        "event_id": "evt_finance_20240718_018_50e3473e",
+        "outcome_event_id": "evt_13b38677317f",
+        "question_id": "v3_us_2y_yield_monthly_change_2024_07",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "This event directly represents the downward pressure on yields, making 'within recent range' less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:20:14.443779Z",
+        "last_confirmed_at": "2026-07-25T06:20:14.443779Z"
+      },
+      {
+        "id": "imp_0a470543",
+        "event_id": "evt_politics_20240703_019_462df718",
+        "outcome_event_id": "evt_c6a8f754aff0",
+        "question_id": "v3_us_2y_yield_monthly_change_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.2,
+        "confidence": 0.5,
+        "reasoning": "Ongoing scrutiny of Fed policy could indirectly contribute to market expectations of rate cuts, thus slightly increasing the likelihood of 'below recent range'.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:20:14.455663Z",
+        "last_confirmed_at": "2026-07-25T06:20:14.455663Z"
+      },
+      {
+        "id": "imp_55679ce3",
+        "event_id": "evt_politics_20240703_019_462df718",
+        "outcome_event_id": "evt_8974f9d7c6ce",
+        "question_id": "v3_us_2y_yield_monthly_change_2024_07",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.2,
+        "confidence": 0.5,
+        "reasoning": "Ongoing scrutiny of Fed policy could indirectly contribute to market expectations of rate cuts, thus slightly decreasing the likelihood of 'above recent range'.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:20:14.467599Z",
+        "last_confirmed_at": "2026-07-25T06:20:14.467599Z"
+      },
+      {
+        "id": "imp_bb724542",
+        "event_id": "evt_politics_20240703_019_462df718",
+        "outcome_event_id": "evt_13b38677317f",
+        "question_id": "v3_us_2y_yield_monthly_change_2024_07",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.1,
+        "confidence": 0.3,
+        "reasoning": "The hearing's impact on 'within recent range' is likely minimal and indirect.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:20:14.481219Z",
+        "last_confirmed_at": "2026-07-25T06:20:14.481219Z"
+      },
+      {
+        "id": "imp_54f6b5f9",
+        "event_id": "evt_finance_20240710_020_20c467fb",
+        "outcome_event_id": "evt_c6a8f754aff0",
+        "question_id": "v3_us_2y_yield_monthly_change_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.2,
+        "confidence": 0.5,
+        "reasoning": "Debate and potential adjustments in monetary policy strategies could subtly influence market expectations towards rate cuts, slightly increasing the likelihood of 'below recent range'.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:20:14.493663Z",
+        "last_confirmed_at": "2026-07-25T06:20:14.493663Z"
+      },
+      {
+        "id": "imp_2a67f25d",
+        "event_id": "evt_finance_20240710_020_20c467fb",
+        "outcome_event_id": "evt_8974f9d7c6ce",
+        "question_id": "v3_us_2y_yield_monthly_change_2024_07",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.2,
+        "confidence": 0.5,
+        "reasoning": "Debate and potential adjustments in monetary policy strategies could subtly influence market expectations towards rate cuts, slightly decreasing the likelihood of 'above recent range'.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:20:14.506347Z",
+        "last_confirmed_at": "2026-07-25T06:20:14.506347Z"
+      },
+      {
+        "id": "imp_606bf302",
+        "event_id": "evt_finance_20240710_020_20c467fb",
+        "outcome_event_id": "evt_13b38677317f",
+        "question_id": "v3_us_2y_yield_monthly_change_2024_07",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.1,
+        "confidence": 0.3,
+        "reasoning": "The advice's impact on 'within recent range' is likely minimal and indirect.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_2y_yield_monthly_change_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:20:14.517849Z",
+        "last_confirmed_at": "2026-07-25T06:20:14.517849Z"
+      }
+    ]
+  }
+}

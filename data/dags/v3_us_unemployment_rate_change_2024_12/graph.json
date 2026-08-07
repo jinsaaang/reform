@@ -1,0 +1,166 @@
+{
+  "schema_version": "1.0",
+  "actual_outcome_event_id": "node_8",
+  "graph": {
+    "nodes": [
+      {
+        "id": "node_2",
+        "label": "November 2024 U.S. unemployment rate was 4.2 percent",
+        "event_type": "indicator",
+        "occurred_date": "2024-12-06",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_345f59d7907ce8cc",
+          "ev_16e16b22d9bfed3d"
+        ]
+      },
+      {
+        "id": "node_4",
+        "label": "The central bank reduced interest rates in December",
+        "event_type": "decision",
+        "occurred_date": "2024-12-18",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_85097850fca242fa"
+        ]
+      },
+      {
+        "id": "node_9",
+        "label": "Lower rates plausibly supported economic activity",
+        "event_type": "indicator",
+        "occurred_date": "2024-12-18",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_85097850fca242fa"
+        ]
+      },
+      {
+        "id": "node_5",
+        "label": "The U.S. economy added 256,000 jobs in December",
+        "event_type": "indicator",
+        "occurred_date": "2025-01-10",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_ad85287d9d2a1d3e"
+        ]
+      },
+      {
+        "id": "node_6",
+        "label": "December 2024 U.S. unemployment rate was 4.1 percent",
+        "event_type": "indicator",
+        "occurred_date": "2025-01-10",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_ad85287d9d2a1d3e",
+          "ev_645bbf36d65b9efd"
+        ]
+      },
+      {
+        "id": "node_7",
+        "label": "December unemployment-rate change was -0.1 percentage points",
+        "event_type": "indicator",
+        "occurred_date": "2025-01-21",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_1b8143a1030aaf64",
+          "ev_ad85287d9d2a1d3e"
+        ]
+      },
+      {
+        "id": "node_8",
+        "label": "Resolved outcome: below recent range",
+        "event_type": "outcome",
+        "occurred_date": "2025-01-21T23:59:59Z",
+        "is_outcome": true,
+        "is_actual_outcome": true,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_1b8143a1030aaf64"
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_1",
+        "source": "node_4",
+        "target": "node_9",
+        "relationship": "supports",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_85097850fca242fa"
+        ],
+        "rationale": "Lower rates may stimulate activity, but the supplied source does not establish a realized December employment effect."
+      },
+      {
+        "id": "edge_2",
+        "source": "node_9",
+        "target": "node_5",
+        "relationship": "supports",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_85097850fca242fa",
+          "ev_ad85287d9d2a1d3e"
+        ],
+        "rationale": "The timing and magnitude of any rate-cut effect on December payrolls are not identified."
+      },
+      {
+        "id": "edge_3",
+        "source": "node_5",
+        "target": "node_6",
+        "relationship": "supports",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_ad85287d9d2a1d3e"
+        ],
+        "rationale": "Payroll growth provides context but does not mechanically determine the household-survey unemployment rate."
+      },
+      {
+        "id": "edge_4",
+        "source": "node_2",
+        "target": "node_7",
+        "relationship": "input_to",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_345f59d7907ce8cc",
+          "ev_1b8143a1030aaf64"
+        ],
+        "rationale": "The November rate is the baseline for the December monthly-change calculation."
+      },
+      {
+        "id": "edge_5",
+        "source": "node_6",
+        "target": "node_7",
+        "relationship": "input_to",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_ad85287d9d2a1d3e",
+          "ev_1b8143a1030aaf64"
+        ],
+        "rationale": "The December rate is the ending input for the monthly-change calculation."
+      },
+      {
+        "id": "edge_6",
+        "source": "node_7",
+        "target": "node_8",
+        "relationship": "maps_to",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_1b8143a1030aaf64"
+        ],
+        "rationale": "The -0.1-point change maps directly to below recent range under the registered boundaries."
+      }
+    ]
+  }
+}

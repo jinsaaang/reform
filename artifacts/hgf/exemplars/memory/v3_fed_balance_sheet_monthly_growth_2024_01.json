@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_fed_balance_sheet_monthly_growth_2024_01",
+  "blueprint_sha256": "e90d5625100f53e4fc0fe9e3f7d0eabc101e3122db66dca88085caf96c4c571b",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "economic_indicator_growth",
+      "target_operation": "threshold_crossing",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2024-01-01, will the monthly Federal Reserve asset growth for Federal Reserve total assets in 2024-01 be at least -1.295 percent?",
+    "historical_cutoff": "2024-01-01T00:00:00+00:00",
+    "target_semantics": "The question asks whether the Federal Reserve's total assets will decrease by no more than 1.295% in January 2024, compared to the previous month.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The core of the prediction relies on calculating the percentage change in Federal Reserve total assets between the observation in December 2023 and the target observation in January 2024.",
+      "This calculation requires specific asset level data for both the reference and target periods, which are identified as key drivers in the DAG.",
+      "The final determination hinges on comparing the calculated growth rate against the pre-registered threshold of -1.295 percent."
+    ],
+    "counterevidence": "No forecast-time evidence was provided to support or contradict any aspect of the Federal Reserve's asset growth calculation or the threshold comparison.",
+    "prospective_target_estimate": "The provided DAG indicates that the calculation of monthly asset growth and its comparison to the threshold are the direct mechanisms for resolution. However, without any supporting evidence for the asset levels or the growth rate itself, a specific estimate cannot be made.",
+    "option_mapping": "The 'yes' option corresponds to a monthly asset growth rate of -1.295 percent or greater (i.e., a decrease of 1.295% or less). The 'no' option corresponds to a monthly asset growth rate less than -1.295 percent (i.e., a decrease of more than 1.295%).",
+    "uncertainty": "There is extreme uncertainty as no forecast-time evidence was available to support the critical drivers (reference and target asset observations) or the calculation mechanism. The DAG's 'medium' historical support for these drivers cannot be validated without current evidence.",
+    "dag_derived_lesson": "When forecasting a threshold-crossing event based on a calculated metric, it is crucial to have evidence supporting the input data for the calculation and the calculation mechanism itself. The absence of such evidence, even with a clear historical causal path, renders the forecast highly uncertain."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

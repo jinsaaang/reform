@@ -1,0 +1,54 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_henry_hub_monthly_return_2024_03",
+  "blueprint_sha256": "94d379a781670ebe7285cd73f9253d1f00bd286990e40a2bc85c7e89e08c370d",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "price_prediction",
+      "target_operation": "range_prediction",
+      "option_geometry": "ordered_categorical"
+    },
+    "historical_question": "As of 2024-03-01, which range will the monthly Henry Hub price return for Henry Hub natural gas in 2024-03 fall into?",
+    "historical_cutoff": "2024-03-01T00:00:00+00:00",
+    "target_semantics": "The monthly percentage return for the Henry Hub natural gas price in March 2024.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20240228_003_28e71045",
+        "takeaway": "Cold weather events, such as freeze-offs, can impact US natural gas supply and prices.",
+        "why_predictive": "Directly relates weather phenomena to natural gas market dynamics, which are key drivers of price."
+      },
+      {
+        "article_id": "art_finance_20210923_002_78f43a9b",
+        "takeaway": "Anticipation of an expensive winter suggests potential for higher natural gas prices due to increased heating demand.",
+        "why_predictive": "Indicates a historical expectation of price increases driven by seasonal demand, a relevant factor for future price movements."
+      },
+      {
+        "article_id": "art_finance_20240207_003_1b8ef8a6",
+        "takeaway": "The US LNG market has significant geopolitical importance.",
+        "why_predictive": "Highlights the role of international markets and geopolitical factors in influencing domestic energy prices."
+      },
+      {
+        "article_id": "art_finance_20211115_007_abb34d16",
+        "takeaway": "Expert opinions suggest that winter season and natural gas/shale production are interconnected.",
+        "why_predictive": "Connects seasonal factors with the supply side of the natural gas market, influencing price."
+      }
+    ],
+    "expert_reasoning": [
+      "The forecast-time evidence indicates that cold weather can impact natural gas prices (art_finance_20240228_003_28e71045), and historically, expectations of expensive winters have been linked to higher prices due to heating demand (art_finance_20210923_002_78f43a9b).",
+      "Furthermore, the geopolitical significance of US LNG (art_finance_20240207_003_1b8ef8a6) and the interplay between winter seasons and natural gas production (art_finance_20211115_007_abb34d16) suggest that supply and demand dynamics, influenced by both weather and global factors, are critical.",
+      "Given the recent period leading up to March 2024, the potential for weather-related supply disruptions or sustained demand, as hinted by past expectations, could push prices higher, potentially outside the recent range."
+    ],
+    "counterevidence": "No direct forecast-time evidence explicitly contradicts the potential for price increases or supports a price decrease. The provided articles focus on factors that could lead to price volatility or increases.",
+    "prospective_target_estimate": "above recent range",
+    "option_mapping": "The reasoning suggests that factors like cold weather impacts (art_finance_20240228_003_28e71045), historical expectations of expensive winters (art_finance_20210923_002_78f43a9b), and the interplay of seasonal demand with supply (art_finance_20211115_007_abb34d16) point towards upward price pressure. This aligns with the 'above recent range' option.",
+    "uncertainty": "The evidence is weak and indirect. While articles point to factors that *could* increase prices (weather, seasonal demand), there is no definitive statement about the *actual* conditions or price movements in March 2024. The geopolitical aspect (art_finance_20240207_003_1b8ef8a6) adds another layer of complexity without specific directional impact.",
+    "dag_derived_lesson": "Factors influencing commodity prices, such as weather patterns and seasonal demand, require careful consideration of both supply and demand-side dynamics. Geopolitical events can introduce additional volatility. When evidence for these factors is weak or indirect, uncertainty regarding the price direction remains high."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

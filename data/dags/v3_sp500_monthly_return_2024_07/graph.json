@@ -1,0 +1,1178 @@
+{
+  "question": {
+    "id": "v3_sp500_monthly_return_2024_07",
+    "question_text": "As of 2024-07-01, which range will the monthly S&P 500 return for S&P 500 index in 2024-07 fall into?",
+    "question_type": "mcq",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 3,
+    "resolution_date": "2024-07-31T23:59:59Z",
+    "estimated_start_time": "2024-07-01T00:00:00Z",
+    "ground_truth": "below recent range",
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [
+      "evt_e0012585dd05",
+      "evt_14d6fe960dcc",
+      "evt_1359c4c1c774"
+    ],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: S&P 500 index\nTarget period: 2024-07\nFinancial area: market_fx_credit / equity market\nRegion: US\nPre-registered recent-range boundaries: lower 2.724, upper 4.895 percent.",
+    "resolution_criteria": "Use FRED series SP500. Compute the change from the previous monthly observation using mode 'pct'. Resolve 'below recent range' below 2.724, 'within recent range' from 2.724 inclusive to 4.895 exclusive, and 'above recent range' at or above 4.895 percent.",
+    "resolution_reasoning": "The snapshotted target change was 1.132 percent; it resolved to 'below recent range'.",
+    "options": [
+      "below recent range",
+      "within recent range",
+      "above recent range"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": "\n## Executive Summary\n\nThroughout July 2024, the S&P 500 experienced a decline, primarily driven by a combination of disappointing corporate earnings, persistent inflation concerns, and a cautious stance from the Federal Reserve. A key factor was the earnings miss from major companies like Ford [art_finance_20240724_008_bc7b5f41], which, coupled with expectations of a broader slowdown in earnings growth beyond the 'Magnificent 7' [art_finance_20240710_003_194b357b], led to negative market sentiment. The Federal Reserve's Monetary Policy Report highlighted ongoing inflation challenges [art_finance_20240722_012_6b65e11e], dimming hopes for imminent interest rate cuts and contributing to market uncertainty. These factors collectively resulted in the S&P 500 returning below its recent range for July.\n\n## Timeline Of Key Events\n\n*   **2023-12-11:** Analysts expect double-digit S&P 500 earnings growth for CY 2024, particularly strong in Q4 [art_finance_20231211_003_07c9287d].\n*   **2024-01-31:** Federal Reserve holds interest rates steady, signaling a longer wait for cuts due to inflation concerns [art_finance_20240131_007_7040fbf7].\n*   **2024-06-26:** Economic Policy Uncertainty Brief published by Federal Reserve Bank of Richmond, highlighting increased global uncertainty and challenges for policymakers, particularly in election years [art_finance_20240626_005_89626bd5].\n*   **2024-07-10:** Investopedia article questions whether S&P 500 earnings growth can broaden beyond the 'Magnificent 7', with expectations of slowdown for the top companies in Q2 [art_finance_20240710_003_194b357b].\n*   **2024-07-22:** Federal Reserve's Monetary Policy Report indicates that inflation, while easing, remains elevated and above the 2 percent target, suggesting continued cautious monetary policy [art_finance_20240722_012_6b65e11e].\n*   **2024-07-24:** Ford shares tumble 13% after missing Wall Street's Q2 earnings expectations due to warranty costs, disappointing investors [art_finance_20240724_008_bc7b5f41].\n\n## Causal Chain Analysis\n\nThe S&P 500's performance below the recent range in July 2024 was primarily caused by a convergence of factors impacting investor confidence and corporate outlook.\n\n**Root Causes:**\n*   **Persistent Inflation and Federal Reserve Caution:** The Federal Reserve's sustained cautious stance on interest rate cuts, driven by elevated inflation persisting above its 2% target [art_finance_20240722_012_6b65e11e], created an environment of higher borrowing costs and reduced liquidity. This initially stemmed from early 2024 decisions to hold rates steady [art_finance_20240131_007_7040fbf7], gradually dampening market enthusiasm for future economic growth.\n\n**Intermediate Mechanisms:**\n*   **Weakening Corporate Earnings Outlook:** Despite earlier analyst expectations for double-digit S&P 500 earnings growth in 2024 [art_finance_20231211_003_07c9287d], concerns emerged that growth was too reliant on a few large companies. The notion that earnings growth might not broaden beyond the 'Magnificent 7' [art_finance_20240710_003_194b357b] fueled anxieties about the overall market's health.\n\n*   **Increased Economic Policy Uncertainty:** The underlying economic environment was marked by increased global uncertainty, as highlighted by the Federal Reserve [art_finance_20240626_005_89626bd5]. Such uncertainty, especially in an election year, tends to foster a risk-averse investment climate, leading to slower market activity.\n\n**Proximate Triggers:**\n*   **Disappointing Q2 Earnings Reports:** As Q2 earnings season unfolded, individual corporate misses, such as Ford's significant earnings shortfall and subsequent stock tumble [art_finance_20240724_008_bc7b5f41], served as strong signals that the broader corporate earnings scenario might be weaker than anticipated. These specific disappointments directly contributed to negative investor sentiment and selling pressure.\n\n**Final Outcome:**\n*   The combination of a hawkish Fed policy, a less optimistic corporate earnings landscape, and specific earnings misses directly led to a decline in the S&P 500, pushing its monthly return for July 2024 below recent ranges.\n\n## Countervailing Factors\n\nInitially, analysts projected strong double-digit earnings growth for the S&P 500 in 2024, with some expecting growth to broaden beyond the 'Magnificent 7' [art_finance_20231211_003_07c9287d, art_finance_20240710_003_194b357b]. This expectation acted as a positive force, suggesting underlying strength in the market. However, these optimistic forecasts were overwhelmed by several factors: the Federal Reserve's consistently cautious stance on inflation and interest rates [art_finance_20240722_012_6b65e11e], which curbed enthusiasm for aggressive market expansion, and the actual disappointing earnings reports from key companies like Ford [art_finance_20240724_008_bc7b5f41]. The reality of Q2 earnings, coupled with ongoing macro-economic concerns, rendered initial growth expectations insufficient to sustain upward momentum.\n\n## Event Candidate Inventory\n\n*   **E1: S&P 500 Q2 2024 Earnings Season Begins**\n    *   Date: Early July 2024 (specific start date not in articles)\n    *   Why it matters causally: The onset of earnings season begins to reveal actual corporate performance, which can significantly sway market sentiment. [art_finance_20240710_003_194b357b]\n    *   Source article IDs: art_finance_20240710_003_194b357b\n\n*   **E2: Federal Reserve Monetary Policy Report, July 2024**\n    *   Date: 2024-07-22\n    *   Why it matters causally: This report officially communicated the Fed's ongoing concerns about inflation and implicitly suggested a continuation of tight monetary policy, impacting market expectations for rate cuts. [art_finance_20240722_012_6b65e11e]\n    *   Source article IDs: art_finance_20240722_012_6b65e11e\n\n*   **E3: Ford Motor Company Q2 2024 Earnings Miss**\n    *   Date: 2024-07-24\n    *   Why it matters causally: A prominent company missing earnings expectations served as a specific, tangible event that negatively affected investor sentiment and contributed to concerns about overall corporate profitability. [art_finance_20240724_008_bc7b5f41]\n    *   Source article IDs: art_finance_20240724_008_bc7b5f41\n\n*   **E4: Growing Skepticism on Broad S&P 500 Earnings Growth**\n    *   Date: July 2024 (ongoing trend)\n    *   Why it matters causally: The realization that S&P 500 earnings growth might remain concentrated within a few 'Magnificent 7' stocks, rather than broadening, indicated a potential underlying weakness in the broader market. [art_finance_20240710_003_194b357b]\n    *   Source article IDs: art_finance_20240710_003_194b357b\n\n## Evidence Mapping Table\n\n| Claim/Event                                          | Article IDs                        | Date Support    | Confidence (0-1) | Notes                                                                                                    |\n| :--------------------------------------------------- | :--------------------------------- | :-------------- | :--------------- | :------------------------------------------------------------------------------------------------------- |\n| Federal Reserve's cautious stance on inflation persists | art_finance_20240722_012_6b65e11e, art_finance_20240131_007_7040fbf7 | 2024-07-22, 2024-01-31 | 0.9              | Fed reports inflation remains elevated, cementing expectations for sustained higher rates.                |\n| S&P 500 earnings growth struggles to broaden          | art_finance_20240710_003_194b357b, art_finance_20231211_003_07c9287d | 2024-07-10, 2023-12-11 | 0.8              | Earlier optimism about broad growth was tempered by current analysis focusing on the 'Magnificent 7'.    |\n| Major corporate earnings miss (Ford)                 | art_finance_20240724_008_bc7b5f41   | 2024-07-24      | 0.9              | A significant earnings miss from a major automaker directly signals potential sector-wide weakness.      |\n| Economic policy uncertainty impacts markets           | art_finance_20240626_005_89626bd5   | 2024-06-26      | 0.7              | General uncertainty around economic policy can contribute to a risk-off sentiment in markets.            |\n\n## Uncertainties And Alternative Paths\n\nOne uncertainty is the full extent to which global geopolitical events, mentioned in older articles [art_finance_20240423_004_bd352305, art_finance_20231012_009_9adb6261], played a role in July 2024 sentiment, as no specific July articles directly linked ongoing events to S&P 500 performance. An alternative causal path could have involved stronger-than-expected earnings from other major companies, which might have offset the negative impact of Ford's miss and the Fed's stance. Furthermore, a clearer signal from the Federal Reserve about potential future rate cuts, perhaps due to more rapidly declining inflation data, could have buoyed market sentiment and prevented the decline.\n",
+    "graph_built": true,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.203437Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "sp500_monthly_return",
+        "event_cluster_id": "equity_market_2024-07",
+        "category": "market_fx_credit",
+        "original_domain": "market_fx_credit",
+        "subdomain": "equity market",
+        "entity": "S&P 500 index",
+        "region": "US",
+        "target_metric": "monthly S&P 500 return",
+        "target_period": "2024-07",
+        "forecast_cutoff": "2024-07-01T00:00:00+00:00",
+        "forecast_date_options": [
+          "2024-07-01"
+        ],
+        "resolution_available_at": "2024-07-31T23:59:59+00:00",
+        "horizon_days": 30,
+        "source_type": "fred_series_snapshot",
+        "source_series_id": "SP500",
+        "source_homepage": "https://fred.stlouisfed.org/series/SP500",
+        "comparison_rule": "target change bucketed by the lower and upper quartiles of the 8 prior observed changes",
+        "comparison_threshold": 3.944946,
+        "comparison_thresholds": {
+          "lower": 2.723801,
+          "upper": 4.894607
+        },
+        "change_unit": "percent",
+        "threshold_observation_dates": [
+          "2023-10-31",
+          "2023-11-30",
+          "2023-12-29",
+          "2024-01-31",
+          "2024-02-29",
+          "2024-03-28",
+          "2024-04-30",
+          "2024-05-31",
+          "2024-06-28"
+        ],
+        "split": "memory",
+        "family_position": 4,
+        "family_size": 8,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "below recent range",
+        "resolved_class": "below recent range",
+        "resolution_value": 5522.3,
+        "target_change": 1.1321349,
+        "source_observation_date": "2024-07-31",
+        "resolution_document": {
+          "publisher": "Federal Reserve Bank of St. Louis (FRED)",
+          "title": "S&P 500",
+          "url": "https://fred.stlouisfed.org/series/SP500"
+        },
+        "source_download_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=SP500&cosd=2019-01-01&coed=2026-06-30",
+        "source_sha256": "d2c9c6f1ead626e34b16e4c51e8755e17abb9e6fd7dc94755aff2113ec32a126",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_e0012585dd05",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 14,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_20240712_002_fbac80b5",
+        "title": "US companies head into earnings facing high expectations - Reuters",
+        "url": "https://www.aol.com/news/us-companies-head-earnings-facing-100422934.html",
+        "source": "aol.com",
+        "published_date": "2024-07-12T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240108_003_a2b10c91",
+        "title": "The Federal Reserve Signals Interest Rate Cuts in 2024. History Says the Stock Market Will Do This Next. - The Motley Fool",
+        "url": "https://www.nasdaq.com/articles/the-federal-reserve-signals-interest-rate-cuts-in-2024.-history-says-the-stock-market-will",
+        "source": "nasdaq.com",
+        "published_date": "2024-01-08T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240710_003_194b357b",
+        "title": "Is S&P 500 Earnings Growth Finally Set To Broaden Beyond the Magnificent 7? - Investopedia",
+        "url": "https://finance.yahoo.com/news/p-500-earnings-growth-finally-192452106.html",
+        "source": "finance.yahoo.com",
+        "published_date": "2024-07-10T19:24:52+00:00"
+      },
+      {
+        "id": "art_finance_20190412_016_230dda3e",
+        "title": "US earnings season - Q2 2026 - Interactive Investor",
+        "url": "https://www.ii.co.uk/investing-with-ii/international-investing/us-earnings-season",
+        "source": "ii.co.uk",
+        "published_date": "2019-04-12T09:38:32+00:00"
+      },
+      {
+        "id": "art_finance_20240423_004_bd352305",
+        "title": "Let’s Talk about Geopolitical Events - Carson Group",
+        "url": "https://www.carsongroup.com/insights/blog/lets-talk-about-geopolitical-events",
+        "source": "carsongroup.com",
+        "published_date": "2024-04-23T15:49:39+00:00"
+      },
+      {
+        "id": "art_finance_20240722_012_6b65e11e",
+        "title": "Part 1: Recent Economic and Financial Developments - Federal Reserve (.gov)",
+        "url": "https://www.federalreserve.gov/monetarypolicy/2024-07-mpr-part1.htm",
+        "source": "federalreserve.gov",
+        "published_date": "2024-07-22T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20201116_005_30874374",
+        "title": "The Great Recession - Federal Reserve History",
+        "url": "https://www.federalreservehistory.org/essays/great-recession-of-200709",
+        "source": "federalreservehistory.org",
+        "published_date": "2020-11-16T19:11:21+00:00"
+      },
+      {
+        "id": "art_finance_20240626_005_89626bd5",
+        "title": "Economic Policy Uncertainty in Election Years - Federal Reserve Bank of Richmond",
+        "url": "https://www.richmondfed.org/publications/research/economic_brief/2024/eb_24-20",
+        "source": "richmondfed.org",
+        "published_date": "2024-06-26T10:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240501_006_d3cc418a",
+        "title": "Federal Reserve Meeting: Kiplinger Analysis and Commentary - Kiplinger",
+        "url": "https://www.kiplinger.com/investing/federal-reserve-meeting-latest",
+        "source": "kiplinger.com",
+        "published_date": "2024-05-01T14:15:54+00:00"
+      },
+      {
+        "id": "art_finance_20240131_007_7040fbf7",
+        "title": "Federal Reserve holds its interest rate steady. Here's what that means. - CBS News",
+        "url": "https://www.cbsnews.com/news/federal-reserve-interest-rate-decision-2024",
+        "source": "cbsnews.com",
+        "published_date": "2024-01-31T14:04:00-05:00"
+      },
+      {
+        "id": "art_finance_20231211_003_07c9287d",
+        "title": "S&P 500 CY 2024 Earnings Preview: Analysts Expect Double-Digit Earnings Growth - FactSet Insight",
+        "url": "https://insight.factset.com/sp-500-cy-2024-earnings-preview-analysts-expect-double-digit-earnings-growth",
+        "source": "insight.factset.com",
+        "published_date": "2023-12-11T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20231108_002_627cfc9e",
+        "title": "Arm reports first post-IPO earnings and the stock is down 7% - CNBC",
+        "url": "https://www.nbclosangeles.com/news/business/money-report/arm-beats-sales-expectations-in-first-post-ipo-earnings-report-but-guidance-falls-short/3263949",
+        "source": "nbclosangeles.com",
+        "published_date": "2023-11-08T13:07:42-08:00"
+      },
+      {
+        "id": "art_finance_20240724_008_bc7b5f41",
+        "title": "Ford shares tumble 13% after massive earnings miss - CNBC",
+        "url": "https://www.nbclosangeles.com/news/business/money-report/ford-motor-is-about-to-report-earnings-heres-what-to-expect/3467752",
+        "source": "nbclosangeles.com",
+        "published_date": "2024-07-24T09:00:01-07:00"
+      },
+      {
+        "id": "art_finance_20231012_009_9adb6261",
+        "title": "How geopolitical conflict impacts equity markets - Capitalmind",
+        "url": "https://www.capitalmind.in/2013/10/the-rally-no-one-wants-to-believe",
+        "source": "capitalmind.in",
+        "published_date": "2023-10-12T07:00:00+00:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_e0012585dd05",
+      "events_count": 11,
+      "hypotheses_count": 19
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 3,
+      "avg_depth": 1.94,
+      "quality_score": 0.88,
+      "depth_score": 1.0,
+      "confidence_score": 0.79,
+      "strength_score": 0.72,
+      "evidence_score": 1.0,
+      "event_count": 11,
+      "hypothesis_count": 19
+    },
+    "nodes": [
+      {
+        "id": "evt_1359c4c1c774",
+        "title": "Option 3: above recent range",
+        "description": "Question resolves to: above recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_sp500_monthly_return_2024_07",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 2,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T05:37:42.939816Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_14d6fe960dcc",
+        "title": "Option 2: within recent range",
+        "description": "Question resolves to: within recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_sp500_monthly_return_2024_07",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 1,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T05:37:42.939809Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_e0012585dd05",
+        "title": "Option 1: below recent range",
+        "description": "Question resolves to: below recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_sp500_monthly_return_2024_07",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 0,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T05:37:42.939793Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20231211_008_c72b3208",
+        "title": "Analysts expect double-digit S&P 500 earnings growth for CY 2024",
+        "description": "Analysts expect double-digit S&P 500 earnings growth for CY 2024, particularly strong in Q4.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-12-11T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20231211_003_07c9287d"
+        ],
+        "extracted_for_question_id": "v3_sp500_monthly_return_2024_07",
+        "source_article_id": "art_finance_20231211_003_07c9287d",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_sp500_monthly_return_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T05:48:24.897975Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240131_009_cea47884",
+        "title": "Federal Reserve holds interest rates steady in January 2024",
+        "description": "Federal Reserve holds interest rates steady, signaling a longer wait for cuts due to inflation concerns.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-31T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240131_007_7040fbf7"
+        ],
+        "extracted_for_question_id": "v3_sp500_monthly_return_2024_07",
+        "source_article_id": "art_finance_20240131_007_7040fbf7",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_sp500_monthly_return_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T05:48:24.924807Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240131_016_b7ccf4d3",
+        "title": "Cautious Federal Reserve Stance",
+        "description": "Federal Reserve holds interest rates steady, signaling a longer wait for cuts due to inflation concerns.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-31T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240131_007_7040fbf7"
+        ],
+        "extracted_for_question_id": "v3_sp500_monthly_return_2024_07",
+        "source_article_id": "art_finance_20240131_007_7040fbf7",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_sp500_monthly_return_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T05:48:39.757261Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240626_010_136a6030",
+        "title": "Economic Policy Uncertainty Brief published by Federal Reserve Bank of Richmond",
+        "description": "Economic Policy Uncertainty Brief published by Federal Reserve Bank of Richmond, highlighting increased global uncertainty and challenges for policymakers, particularly in election years.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-06-26T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240626_005_89626bd5"
+        ],
+        "extracted_for_question_id": "v3_sp500_monthly_return_2024_07",
+        "source_article_id": "art_finance_20240626_005_89626bd5",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_sp500_monthly_return_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T05:48:24.949923Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240701_014_e8b50d46",
+        "title": "S&P 500 Q2 2024 Earnings Season Begins",
+        "description": "The onset of earnings season begins to reveal actual corporate performance, which can significantly sway market sentiment.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-01T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240710_003_194b357b"
+        ],
+        "extracted_for_question_id": "v3_sp500_monthly_return_2024_07",
+        "source_article_id": "art_finance_20240710_003_194b357b",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_sp500_monthly_return_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T05:48:25.052127Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240710_011_4a450e7d",
+        "title": "Growing Skepticism on Broad S&P 500 Earnings Growth",
+        "description": "The realization that S&P 500 earnings growth might remain concentrated within a few 'Magnificent 7' stocks, rather than broadening, indicated a potential underlying weakness in the broader market.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-10T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240710_003_194b357b"
+        ],
+        "extracted_for_question_id": "v3_sp500_monthly_return_2024_07",
+        "source_article_id": "art_finance_20240710_003_194b357b",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_sp500_monthly_return_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T05:48:24.974023Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240710_017_260eb792",
+        "title": "Concerns about S&P 500 earnings growth reliance on 'Magnificent 7'",
+        "description": "Investopedia article questions whether S&P 500 earnings growth can broaden beyond the 'Magnificent 7', with expectations of slowdown for the top companies in Q2.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-10T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240710_003_194b357b"
+        ],
+        "extracted_for_question_id": "v3_sp500_monthly_return_2024_07",
+        "source_article_id": "art_finance_20240710_003_194b357b",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_sp500_monthly_return_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T05:48:39.782341Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240722_012_7504816d",
+        "title": "Federal Reserve Monetary Policy Report, July 2024",
+        "description": "Federal Reserve's Monetary Policy Report indicates that inflation, while easing, remains elevated and above the 2 percent target, suggesting continued cautious monetary policy.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-22T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240722_012_6b65e11e"
+        ],
+        "extracted_for_question_id": "v3_sp500_monthly_return_2024_07",
+        "source_article_id": "art_finance_20240722_012_6b65e11e",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_sp500_monthly_return_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T05:48:25.000769Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240722_015_73ba2fe8",
+        "title": "Persistent Inflation Concerns",
+        "description": "Inflation, while easing, remains elevated and above the 2 percent target, suggesting continued cautious monetary policy.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-22T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240722_012_6b65e11e"
+        ],
+        "extracted_for_question_id": "v3_sp500_monthly_return_2024_07",
+        "source_article_id": "art_finance_20240722_012_6b65e11e",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_sp500_monthly_return_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T05:48:39.731588Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240724_013_74887298",
+        "title": "Ford Motor Company Q2 2024 Earnings Miss",
+        "description": "Ford shares tumble 13% after missing Wall Street's Q2 earnings expectations due to warranty costs, disappointing investors.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-24T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240724_008_bc7b5f41"
+        ],
+        "extracted_for_question_id": "v3_sp500_monthly_return_2024_07",
+        "source_article_id": "art_finance_20240724_008_bc7b5f41",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_sp500_monthly_return_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T05:48:25.026714Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_sp500_monthly_return_2024_07_20260725_054825_008_f81ed117",
+        "source_event_id": "evt_finance_20240131_009_cea47884",
+        "target_event_id": "evt_e0012585dd05",
+        "relation_type": "causes",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "The Fed's decision to hold rates steady in January contributed to a cautious monetary policy environment, impacting the S&P 500.",
+        "evidence_article_ids": [
+          "art_finance_20240131_007_7040fbf7"
+        ],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T05:48:25.073685Z",
+        "last_confirmed_at": "2026-07-25T05:48:25.073685Z"
+      },
+      {
+        "id": "hyp_v3_sp500_monthly_return_2024_07_20260725_054825_009_bd878cfb",
+        "source_event_id": "evt_finance_20240722_012_7504816d",
+        "target_event_id": "evt_e0012585dd05",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The July Monetary Policy Report highlighted ongoing inflation concerns, reinforcing a cautious stance and negatively impacting market sentiment.",
+        "evidence_article_ids": [
+          "art_finance_20240722_012_6b65e11e"
+        ],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T05:48:25.087717Z",
+        "last_confirmed_at": "2026-07-25T05:48:25.087717Z"
+      },
+      {
+        "id": "hyp_v3_sp500_monthly_return_2024_07_20260725_054825_010_c7290376",
+        "source_event_id": "evt_finance_20231211_008_c72b3208",
+        "target_event_id": "evt_finance_20240710_011_4a450e7d",
+        "relation_type": "inhibits",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Initial strong earnings expectations were later inhibited by concerns about growth concentration.",
+        "evidence_article_ids": [
+          "art_finance_20231211_003_07c9287d",
+          "art_finance_20240710_003_194b357b"
+        ],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T05:48:25.102232Z",
+        "last_confirmed_at": "2026-07-25T05:48:25.102232Z"
+      },
+      {
+        "id": "hyp_v3_sp500_monthly_return_2024_07_20260725_054825_011_92f1cc51",
+        "source_event_id": "evt_finance_20240710_011_4a450e7d",
+        "target_event_id": "evt_e0012585dd05",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Growing skepticism about broad earnings growth indicated underlying market weakness, contributing to the S&P 500 decline.",
+        "evidence_article_ids": [
+          "art_finance_20240710_003_194b357b"
+        ],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T05:48:25.116115Z",
+        "last_confirmed_at": "2026-07-25T05:48:25.116115Z"
+      },
+      {
+        "id": "hyp_v3_sp500_monthly_return_2024_07_20260725_054825_012_262975e4",
+        "source_event_id": "evt_finance_20240626_010_136a6030",
+        "target_event_id": "evt_e0012585dd05",
+        "relation_type": "causes",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Increased economic policy uncertainty fostered a risk-averse investment climate, contributing to the S&P 500 decline.",
+        "evidence_article_ids": [
+          "art_finance_20240626_005_89626bd5"
+        ],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T05:48:25.130736Z",
+        "last_confirmed_at": "2026-07-25T05:48:25.130736Z"
+      },
+      {
+        "id": "hyp_v3_sp500_monthly_return_2024_07_20260725_054825_013_87a8e7d5",
+        "source_event_id": "evt_finance_20240724_013_74887298",
+        "target_event_id": "evt_e0012585dd05",
+        "relation_type": "triggers",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Ford's significant earnings miss served as a direct, tangible trigger for negative investor sentiment and selling pressure, contributing to the S&P 500 decline.",
+        "evidence_article_ids": [
+          "art_finance_20240724_008_bc7b5f41"
+        ],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T05:48:25.144681Z",
+        "last_confirmed_at": "2026-07-25T05:48:25.144681Z"
+      },
+      {
+        "id": "hyp_v3_sp500_monthly_return_2024_07_20260725_054825_014_ad610aca",
+        "source_event_id": "evt_finance_20240701_014_e8b50d46",
+        "target_event_id": "evt_finance_20240724_013_74887298",
+        "relation_type": "enables",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "The start of earnings season enabled the reporting of Q2 results, including Ford's miss.",
+        "evidence_article_ids": [
+          "art_finance_20240710_003_194b357b"
+        ],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T05:48:25.159279Z",
+        "last_confirmed_at": "2026-07-25T05:48:25.159279Z"
+      },
+      {
+        "id": "hyp_v3_sp500_monthly_return_2024_07_20260725_054825_015_f71fe2d9",
+        "source_event_id": "evt_finance_20240701_014_e8b50d46",
+        "target_event_id": "evt_finance_20240710_011_4a450e7d",
+        "relation_type": "enables",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "The earnings season enabled the emergence of concerns about broad earnings growth.",
+        "evidence_article_ids": [
+          "art_finance_20240710_003_194b357b"
+        ],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T05:48:25.172926Z",
+        "last_confirmed_at": "2026-07-25T05:48:25.172926Z"
+      },
+      {
+        "id": "hyp_v3_sp500_monthly_return_2024_07_20260725_054839_016_14b91ed2",
+        "source_event_id": "evt_finance_20240131_009_cea47884",
+        "target_event_id": "evt_finance_20240131_016_b7ccf4d3",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The Fed's decision to hold rates steady in January directly established a cautious stance.",
+        "evidence_article_ids": [
+          "art_finance_20240131_007_7040fbf7"
+        ],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T05:48:39.804443Z",
+        "last_confirmed_at": "2026-07-25T05:48:39.804443Z"
+      },
+      {
+        "id": "hyp_v3_sp500_monthly_return_2024_07_20260725_054839_017_68d579e1",
+        "source_event_id": "evt_finance_20240722_012_7504816d",
+        "target_event_id": "evt_finance_20240722_015_73ba2fe8",
+        "relation_type": "causes",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The July Monetary Policy Report directly indicated persistent inflation concerns.",
+        "evidence_article_ids": [
+          "art_finance_20240722_012_6b65e11e"
+        ],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T05:48:39.818703Z",
+        "last_confirmed_at": "2026-07-25T05:48:39.818703Z"
+      },
+      {
+        "id": "hyp_v3_sp500_monthly_return_2024_07_20260725_054839_018_21ee30c7",
+        "source_event_id": "evt_finance_20240131_016_b7ccf4d3",
+        "target_event_id": "evt_e0012585dd05",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "The cautious Fed stance, driven by inflation concerns, led to reduced liquidity and higher borrowing costs, negatively impacting the S&P 500.",
+        "evidence_article_ids": [
+          "art_finance_20240131_007_7040fbf7",
+          "art_finance_20240722_012_6b65e11e"
+        ],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T05:48:39.833253Z",
+        "last_confirmed_at": "2026-07-25T05:48:39.833253Z"
+      },
+      {
+        "id": "hyp_v3_sp500_monthly_return_2024_07_20260725_054839_019_35028df4",
+        "source_event_id": "evt_finance_20240722_015_73ba2fe8",
+        "target_event_id": "evt_e0012585dd05",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Persistent inflation concerns, as highlighted by the Fed, contributed to market uncertainty and negatively impacted the S&P 500.",
+        "evidence_article_ids": [
+          "art_finance_20240722_012_6b65e11e"
+        ],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T05:48:39.848942Z",
+        "last_confirmed_at": "2026-07-25T05:48:39.848942Z"
+      },
+      {
+        "id": "hyp_v3_sp500_monthly_return_2024_07_20260725_054839_020_6dcbdcde",
+        "source_event_id": "evt_finance_20231211_008_c72b3208",
+        "target_event_id": "evt_finance_20240710_017_260eb792",
+        "relation_type": "inhibits",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Initial strong earnings expectations were later inhibited by concerns about growth concentration on the 'Magnificent 7'.",
+        "evidence_article_ids": [
+          "art_finance_20231211_003_07c9287d",
+          "art_finance_20240710_003_194b357b"
+        ],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T05:48:39.862902Z",
+        "last_confirmed_at": "2026-07-25T05:48:39.862902Z"
+      },
+      {
+        "id": "hyp_v3_sp500_monthly_return_2024_07_20260725_054839_021_2d3899b0",
+        "source_event_id": "evt_finance_20240710_011_4a450e7d",
+        "target_event_id": "evt_finance_20240710_017_260eb792",
+        "relation_type": "amplifies",
+        "strength": 0.8,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Growing skepticism about broad earnings growth directly contributed to concerns about reliance on the 'Magnificent 7'.",
+        "evidence_article_ids": [
+          "art_finance_20240710_003_194b357b"
+        ],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T05:48:39.877175Z",
+        "last_confirmed_at": "2026-07-25T05:48:39.877175Z"
+      },
+      {
+        "id": "hyp_v3_sp500_monthly_return_2024_07_20260725_054839_022_ba7683dd",
+        "source_event_id": "evt_finance_20240710_017_260eb792",
+        "target_event_id": "evt_e0012585dd05",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Concerns about S&P 500 earnings growth being too reliant on the 'Magnificent 7' indicated underlying market weakness, contributing to the S&P 500 decline.",
+        "evidence_article_ids": [
+          "art_finance_20240710_003_194b357b"
+        ],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T05:48:39.891136Z",
+        "last_confirmed_at": "2026-07-25T05:48:39.891136Z"
+      },
+      {
+        "id": "hyp_v3_sp500_monthly_return_2024_07_20260725_054839_023_9fe1393b",
+        "source_event_id": "evt_finance_20240626_010_136a6030",
+        "target_event_id": "evt_e0012585dd05",
+        "relation_type": "causes",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Increased economic policy uncertainty fostered a risk-averse investment climate, contributing to the S&P 500 decline.",
+        "evidence_article_ids": [
+          "art_finance_20240626_005_89626bd5"
+        ],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T05:48:39.906515Z",
+        "last_confirmed_at": "2026-07-25T05:48:39.906515Z"
+      },
+      {
+        "id": "hyp_v3_sp500_monthly_return_2024_07_20260725_054839_024_a6c9a774",
+        "source_event_id": "evt_finance_20240724_013_74887298",
+        "target_event_id": "evt_e0012585dd05",
+        "relation_type": "triggers",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Ford's significant earnings miss served as a direct, tangible trigger for negative investor sentiment and selling pressure, contributing to the S&P 500 decline.",
+        "evidence_article_ids": [
+          "art_finance_20240724_008_bc7b5f41"
+        ],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T05:48:39.920491Z",
+        "last_confirmed_at": "2026-07-25T05:48:39.920491Z"
+      },
+      {
+        "id": "hyp_v3_sp500_monthly_return_2024_07_20260725_054839_025_17deff9f",
+        "source_event_id": "evt_finance_20240701_014_e8b50d46",
+        "target_event_id": "evt_finance_20240724_013_74887298",
+        "relation_type": "enables",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "The start of earnings season enabled the reporting of Q2 results, including Ford's miss.",
+        "evidence_article_ids": [
+          "art_finance_20240710_003_194b357b"
+        ],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T05:48:39.935027Z",
+        "last_confirmed_at": "2026-07-25T05:48:39.935027Z"
+      },
+      {
+        "id": "hyp_v3_sp500_monthly_return_2024_07_20260725_054839_026_d5157edf",
+        "source_event_id": "evt_finance_20240701_014_e8b50d46",
+        "target_event_id": "evt_finance_20240710_011_4a450e7d",
+        "relation_type": "enables",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "The earnings season enabled the emergence of concerns about broad earnings growth.",
+        "evidence_article_ids": [
+          "art_finance_20240710_003_194b357b"
+        ],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T05:48:39.948827Z",
+        "last_confirmed_at": "2026-07-25T05:48:39.948827Z"
+      }
+    ],
+    "outcome_impacts": [
+      {
+        "id": "imp_ba498c3c",
+        "event_id": "evt_finance_20231211_008_c72b3208",
+        "outcome_event_id": "evt_e0012585dd05",
+        "question_id": "v3_sp500_monthly_return_2024_07",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Initial optimistic analyst expectations for strong earnings growth were not met, thus making the 'below recent range' outcome more likely by setting up a disappointment.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T05:48:50.100946Z",
+        "last_confirmed_at": "2026-07-25T05:48:50.100946Z"
+      },
+      {
+        "id": "imp_63ba7c29",
+        "event_id": "evt_finance_20240131_009_cea47884",
+        "outcome_event_id": "evt_e0012585dd05",
+        "question_id": "v3_sp500_monthly_return_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "The Federal Reserve holding interest rates steady in January signaled a longer wait for cuts, contributing to a cautious monetary policy environment that negatively impacted market sentiment and made the 'below recent range' outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T05:48:50.111256Z",
+        "last_confirmed_at": "2026-07-25T05:48:50.111256Z"
+      },
+      {
+        "id": "imp_448b24ec",
+        "event_id": "evt_finance_20240626_010_136a6030",
+        "outcome_event_id": "evt_e0012585dd05",
+        "question_id": "v3_sp500_monthly_return_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "The Economic Policy Uncertainty Brief highlighting increased global uncertainty fostered a risk-averse investment climate, contributing to the S&P 500 decline and making the 'below recent range' outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T05:48:50.123125Z",
+        "last_confirmed_at": "2026-07-25T05:48:50.123125Z"
+      },
+      {
+        "id": "imp_203e8d5c",
+        "event_id": "evt_finance_20240710_011_4a450e7d",
+        "outcome_event_id": "evt_e0012585dd05",
+        "question_id": "v3_sp500_monthly_return_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Growing skepticism about broad S&P 500 earnings growth indicated underlying market weakness, contributing to negative sentiment and making the 'below recent range' outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T05:48:50.134867Z",
+        "last_confirmed_at": "2026-07-25T05:48:50.134867Z"
+      },
+      {
+        "id": "imp_21c9a43c",
+        "event_id": "evt_finance_20240722_012_7504816d",
+        "outcome_event_id": "evt_e0012585dd05",
+        "question_id": "v3_sp500_monthly_return_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "The Federal Reserve's Monetary Policy Report indicating elevated inflation reinforced a cautious monetary policy, dampening hopes for rate cuts and making the 'below recent range' outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T05:48:50.145103Z",
+        "last_confirmed_at": "2026-07-25T05:48:50.145103Z"
+      },
+      {
+        "id": "imp_3d6121a1",
+        "event_id": "evt_finance_20240724_013_74887298",
+        "outcome_event_id": "evt_e0012585dd05",
+        "question_id": "v3_sp500_monthly_return_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "Ford's significant Q2 earnings miss served as a direct, tangible trigger for negative investor sentiment and selling pressure, strongly contributing to the S&P 500 decline and making the 'below recent range' outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T05:48:50.155059Z",
+        "last_confirmed_at": "2026-07-25T05:48:50.155059Z"
+      },
+      {
+        "id": "imp_bfb55ba8",
+        "event_id": "evt_finance_20240701_014_e8b50d46",
+        "outcome_event_id": "evt_e0012585dd05",
+        "question_id": "v3_sp500_monthly_return_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.5,
+        "confidence": 0.6,
+        "reasoning": "The start of the S&P 500 Q2 earnings season enabled the reporting of corporate performance, which ultimately revealed weaknesses that contributed to the S&P 500 decline.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T05:48:50.166337Z",
+        "last_confirmed_at": "2026-07-25T05:48:50.166337Z"
+      },
+      {
+        "id": "imp_3ba790bc",
+        "event_id": "evt_finance_20240722_015_73ba2fe8",
+        "outcome_event_id": "evt_e0012585dd05",
+        "question_id": "v3_sp500_monthly_return_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "Persistent inflation concerns, as highlighted by the Fed, contributed to market uncertainty and negatively impacted the S&P 500, making the 'below recent range' outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T05:48:50.176105Z",
+        "last_confirmed_at": "2026-07-25T05:48:50.176105Z"
+      },
+      {
+        "id": "imp_87c5a1d0",
+        "event_id": "evt_finance_20240131_016_b7ccf4d3",
+        "outcome_event_id": "evt_e0012585dd05",
+        "question_id": "v3_sp500_monthly_return_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "The cautious Fed stance, driven by inflation concerns, led to reduced liquidity and higher borrowing costs, negatively impacting the S&P 500 and making the 'below recent range' outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T05:48:50.187395Z",
+        "last_confirmed_at": "2026-07-25T05:48:50.187395Z"
+      },
+      {
+        "id": "imp_107995f8",
+        "event_id": "evt_finance_20240710_017_260eb792",
+        "outcome_event_id": "evt_e0012585dd05",
+        "question_id": "v3_sp500_monthly_return_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Concerns about S&P 500 earnings growth being too reliant on the 'Magnificent 7' indicated underlying market weakness, contributing to the S&P 500 decline and making the 'below recent range' outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_sp500_monthly_return_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T05:48:50.198742Z",
+        "last_confirmed_at": "2026-07-25T05:48:50.198742Z"
+      }
+    ]
+  }
+}

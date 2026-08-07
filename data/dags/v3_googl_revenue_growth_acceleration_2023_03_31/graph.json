@@ -1,0 +1,806 @@
+{
+  "question": {
+    "id": "v3_googl_revenue_growth_acceleration_2023_03_31",
+    "question_text": "As of 2023-03-31, will Alphabet Inc.'s quarterly revenue year-over-year growth for the fiscal quarter ending 2023-03-31 be at least 0.96 percent?",
+    "question_type": "binary",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 4,
+    "resolution_date": "2023-04-26T23:59:59Z",
+    "estimated_start_time": "2023-03-31T00:00:00Z",
+    "ground_truth": true,
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [
+      "evt_dbab75ea6939",
+      "evt_3da658696fd7"
+    ],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: Alphabet Inc. (GOOGL)\nTarget period: fiscal quarter ending 2023-03-31\nFinancial area: corporate_earnings / digital advertising\nRegion: US",
+    "resolution_criteria": "Use the issuer's first SEC 10-Q or 10-K containing the target quarter. Resolve yes if YoY revenue growth is at least 0.96 percent, the prior quarter's pre-registered YoY growth rate; otherwise resolve no.",
+    "resolution_reasoning": "The snapshotted target-quarter YoY revenue growth was 2.611 percent and growth acceleration was 1.652 percentage points; it resolved to 'yes'.",
+    "options": [
+      "yes",
+      "no"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": "\n## Executive Summary\nAlphabet Inc. reported a 3% year-over-year revenue growth for the fiscal quarter ending March 31, 2023, reaching $69.79 billion, which surpassed analyst expectations of $68.9 billion [art_finance_20230425_002_33b872c4]. This positive growth, despite a challenging advertising market and a decline in YouTube ad revenue, led to the outcome of the question being 'True'. Key factors contributing to this overall revenue increase included stronger-than-expected performance in Google Search and the significant achievement of Google Cloud becoming profitable for the first time [art_finance_20230425_002_790ebe33]. The company also announced a $70 billion share buyback, further boosting investor confidence.\n\n## Timeline Of Key Events\n- **2023-01:** Alphabet announces layoffs of 12,000 employees, about 6% of its workforce, incurring $2.6 billion in charges for the quarter related to these cuts and office space reductions [art_finance_20230425_002_33b872c4].\n- **2023-04-25:** Alphabet Inc. releases its Q1 2023 earnings report, announcing revenue of $69.79 billion, a 3% year-over-year increase, beating analyst estimates [art_finance_20230425_002_33b872c4].\n- **2023-04-25:** Google Cloud reports its first-ever quarterly profit, contributing significantly to Alphabet's overall financial performance [art_finance_20230425_002_790ebe33].\n- **2023-04-25:** Alphabet's board authorizes a $70 billion share buyback program [art_finance_20230425_002_33b872c4].\n- **2023-04-25:** YouTube advertising revenue declines by 2.6% year-over-year to $6.69 billion [art_finance_20230425_004_0b49bfcb].\n\n## Causal Chain Analysis\nThe overall economic environment, characterized by recession fears and a weak online advertising market [art_finance_20230425_002_33b872c4], prompted Alphabet to implement cost-cutting measures, including significant layoffs [art_finance_20230425_002_33b872c4]. These measures, combined with a focus on core profitable segments like Google Search which performed better than expected [art_finance_20230425_002_790ebe33], and the crucial achievement of Google Cloud reaching profitability [art_finance_20230425_002_790ebe33], collectively increased Alphabet's revenue to $69.79 billion, representing a 3% year-over-year growth [art_finance_20230425_002_33b872c4]. This growth rate, being above 0.96 percent, directly resulted in the 'True' outcome for the question.\n\n## Countervailing Factors\nDespite the positive overall revenue growth, several factors pushed against a stronger performance. YouTube's advertising revenue experienced a decline of 2.6% year-over-year [art_finance_20230425_004_0b49bfcb], continuing a trend of decreases which was attributable to reduced advertiser spending and increased competition from platforms like TikTok [art_finance_20230425_002_33b872c4]. Alphabet's 'search & other' revenues also saw a slower growth of just 1.87% year-over-year, significantly down from previous years, indicating challenges in its primary business segment due to competition from AI-powered search tools [art_finance_20230425_002_790ebe33]. However, the strong performance of Google Cloud and overall Search, along with cost controls, managed to offset these declines and ensure positive overall revenue growth.\n\n## Event Candidate Inventory\n- **E1: Alphabet Announces Layoffs and Restructuring**\n    - **Date:** 2023-01\n    - **Why it matters causally:** Cost-cutting measures and restructuring contributed to improved financial efficiency, impacting overall profitability.\n    - **Source article IDs:** [art_finance_20230425_002_33b872c4]\n- **E2: Alphabet Exceeds Q1 2023 Revenue Estimates**\n    - **Date:** 2023-04-25\n    - **Why it matters causally:** The direct trigger for the 'True' outcome, demonstrating that total revenue growth exceeded the threshold.\n    - **Source article IDs:** [art_finance_20230425_002_33b872c4]\n- **E3: Google Cloud Achieves First-Ever Profitability**\n    - **Date:** 2023-04-25\n    - **Why it matters causally:** A significant internal milestone that positively contributed to Alphabet's overall revenue and profitability, offsetting weaker segments.\n    - **Source article IDs:** [art_finance_20230425_002_790ebe33]\n- **E4: YouTube Ad Revenue Decline Continues**\n    - **Date:** 2023-04-25\n    - **Why it matters causally:** A negative force that was overcome by other positive factors, illustrating the mixed financial performance.\n    - **Source article IDs:** [art_finance_20230425_004_0b49bfcb]\n- **E5: Alphabet Board Authorizes $70 Billion Share Buyback**\n    - **Date:** 2023-04-25\n    - **Why it matters causally:** Demonstrates strong financial position and management's confidence, which can positively influence investor perception and stock performance.\n    - **Source article IDs:** [art_finance_20230425_002_33b872c4]\n\n## Evidence Mapping Table\n| Claim/Event | Article IDs | Date Support | Confidence (0-1) | Notes |\n|---|---|---|---|---|\n| Alphabet's total revenue $69.79B, 3% YOY growth | [art_finance_20230425_002_33b872c4] | 2023-04-25 | 1.0 | Directly addresses the question's core metric. |\n| Exceeds analyst expectations ($68.9B) | [art_finance_20230425_002_33b872c4] | 2023-04-25 | 1.0 | Confirms positive financial performance against predictions. |\n| Google Cloud becomes profitable | [art_finance_20230425_002_790ebe33] | 2023-04-25 | 1.0 | A new revenue stream actively contributing to overall growth. |\n| YouTube ad revenue declines 2.6% | [art_finance_20230425_004_0b49bfcb], [art_finance_20230425_005_481cadf7] | 2023-04-25 | 1.0 | A significant countervailing factor that was overcome. |\n| Slower Search growth (1.87% YOY) | [art_finance_20230425_002_790ebe33] | 2023-04-25 | 1.0 | Indicates challenges in a core segment. |\n| Alphabet announces 12,000 layoffs | [art_finance_20230425_002_33b872c4] | 2023-04-25 (reported in Q1) | 1.0 | Cost-cutting measures to improve efficiency.\n\n## Uncertainties And Alternative Paths\nOne uncertainty is the long-term impact of the continued decline in YouTube ad revenue and the slowdown in search growth. If the struggles in these core advertising segments had been more severe, or if Google Cloud had not achieved profitability, Alphabet's overall revenue growth might have fallen below the 0.96% threshold. Another alternative path could have been if the broader economic downturn had led to even steeper cuts in advertising budgets, outweighing the positive contributions from other segments.\n",
+    "graph_built": true,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.200014Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "googl_revenue_growth_acceleration",
+        "event_cluster_id": "googl_earnings_2023-03-31",
+        "category": "corporate_earnings",
+        "original_domain": "corporate_earnings",
+        "subdomain": "digital advertising",
+        "entity": "Alphabet Inc. (GOOGL)",
+        "region": "US",
+        "target_metric": "quarterly revenue year-over-year growth acceleration",
+        "target_period": "fiscal quarter ending 2023-03-31",
+        "forecast_cutoff": "2023-03-31T00:00:00+00:00",
+        "forecast_date_options": [
+          "2023-03-31"
+        ],
+        "resolution_available_at": "2023-04-26T23:59:59+00:00",
+        "horizon_days": 26,
+        "source_type": "sec_companyfacts_snapshot",
+        "source_series_id": "CIK0001652044:revenue",
+        "source_homepage": "https://www.sec.gov/edgar/browse/?CIK=1652044",
+        "comparison_rule": "target YoY revenue growth >= prior-quarter YoY revenue growth",
+        "comparison_threshold": 0.959841,
+        "comparison_thresholds": null,
+        "change_unit": "percent",
+        "threshold_observation_dates": [
+          "2021-12-31",
+          "2022-03-31",
+          "2022-12-31"
+        ],
+        "split": "memory",
+        "family_position": 1,
+        "family_size": 7,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "yes",
+        "resolved_class": "yes",
+        "resolution_value": 69787000000,
+        "target_change": 2.61134228,
+        "target_yoy_growth": 2.61134228,
+        "target_growth_acceleration": 1.65150159,
+        "source_observation_date": "2023-03-31",
+        "resolution_document": {
+          "publisher": "U.S. Securities and Exchange Commission",
+          "title": "Alphabet Inc. 10-Q filed 2023-04-26",
+          "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204423000045/0001652044-23-000045-index.html"
+        },
+        "source_download_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001652044.json",
+        "source_sha256": "62d42c65a87b9c92cdaf9e5f342dd3a8cdbba2d2e3e4c5c495f2b884dab991c8",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00",
+        "accession_number": "0001652044-23-000045",
+        "xbrl_tag": "RevenueFromContractWithCustomerExcludingAssessedTax"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_dbab75ea6939",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 10,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_20230424_006_6e301ee0",
+        "title": "Philips announces its 2023 First Quarter Results - News - Philips",
+        "url": "https://www.philips.com/a-w/about/news/archive/corpcomms/news/press/2023/philips-first-quarter-results-2023.html",
+        "source": "philips.com",
+        "published_date": "2023-04-24T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230424_009_656b4e66",
+        "title": "Coca-Cola earnings beat estimates, fueled by price hikes and higher demand - CNBC",
+        "url": "https://www.cnbc.com/2023/04/24/coca-cola-ko-q1-2023-earnings.html",
+        "source": "cnbc.com",
+        "published_date": "2023-04-24T10:27:44+00:00"
+      },
+      {
+        "id": "art_finance_20230425_003_d6183bf3",
+        "title": "Listen to the Google (GOOGL) Q1 2023 earnings call here - Shacknews",
+        "url": "https://www.shacknews.com/article/135215/listen-to-google-q1-2023-earnings-call",
+        "source": "shacknews.com",
+        "published_date": "2023-04-25T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230425_002_33b872c4",
+        "title": "Alphabet reports revenue and earnings beat for first quarter - CNBC",
+        "url": "https://www.cnbc.com/2023/04/25/alphabet-googl-q1-earnings-report-2023.html",
+        "source": "cnbc.com",
+        "published_date": "2023-04-25T13:00:01+00:00"
+      },
+      {
+        "id": "art_finance_20230425_002_790ebe33",
+        "title": "Alphabet Q1 2023 Earnings: Slower Search Growth, YouTube Downturn - Search Engine Journal",
+        "url": "https://www.searchenginejournal.com/alphabet-q1-2023-earnings-slower-search-growth-youtube-downturn/485457",
+        "source": "searchenginejournal.com",
+        "published_date": "2023-04-25T22:25:38+00:00"
+      },
+      {
+        "id": "art_finance_20230425_004_0b49bfcb",
+        "title": "YouTube Ad Revenue Drops 2.6% in Q1, Alphabet Takes $2 Billion Charge for Layoffs - Variety",
+        "url": "https://variety.com/2023/digital/news/youtube-q1-2023-ad-revenue-decline-alphabet-earnings-1235594043",
+        "source": "variety.com",
+        "published_date": "2023-04-25T20:11:16+00:00"
+      },
+      {
+        "id": "art_finance_20230425_005_481cadf7",
+        "title": "YouTube Ad Revenue Drops to $6.7B During First Quarter - The Hollywood Reporter",
+        "url": "https://www.hollywoodreporter.com/business/digital/youtube-q1-2023-earnings-1235402061",
+        "source": "hollywoodreporter.com",
+        "published_date": "2023-04-25T20:16:45+00:00"
+      },
+      {
+        "id": "art_finance_20230425_007_fa623484",
+        "title": "Q1 Financial Results - Aecon Group Inc.",
+        "url": "https://www.aecon.com/investing/2023/04/25/investor-calendar/q1-financial-results",
+        "source": "aecon.com",
+        "published_date": "2023-04-25T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230419_008_de1878fe",
+        "title": "Tesla (TSLA) Q1 2023 earnings preview: What to expect today - Electrek",
+        "url": "https://electrek.co/2023/04/19/tesla-tsla-q1-2023-earnings-preview",
+        "source": "electrek.co",
+        "published_date": "2023-04-19T12:11:23+00:00"
+      },
+      {
+        "id": "art_finance_20230418_002_bc8ac36b",
+        "title": "Johnson & Johnson shares fall after company beats on earnings and revenue, but lowers pharmaceutical sales guidance - CNBC",
+        "url": "https://www.cnbc.com/2023/04/18/johnson-johnson-jnj-earnings-q1-2023.html",
+        "source": "cnbc.com",
+        "published_date": "2023-04-18T10:50:01+00:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_dbab75ea6939",
+      "events_count": 9,
+      "hypotheses_count": 8
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 3,
+      "avg_depth": 2.17,
+      "quality_score": 0.87,
+      "depth_score": 1.0,
+      "confidence_score": 0.81,
+      "strength_score": 0.65,
+      "evidence_score": 1.0,
+      "event_count": 9,
+      "hypothesis_count": 8
+    },
+    "nodes": [
+      {
+        "id": "evt_3da658696fd7",
+        "title": "No - As of 2023-03-31, will Alphabet Inc.'s quarterly r",
+        "description": "Negative resolution: As of 2023-03-31, will Alphabet Inc.'s quarterly revenue year-over-year growth for the fiscal quarter ending 2023-03-31 be at least 0.96 percent?",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-04-26T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_googl_revenue_growth_acceleration_2023_03_31",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "negative_resolution",
+        "outcome_option_index": null,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:32:24.121175Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_business_20230101_001_01d5d72a",
+        "title": "Alphabet Announces Layoffs of 12,000 Employees",
+        "description": "Alphabet Inc. announced layoffs of 12,000 employees, about 6% of its workforce, incurring $2.6 billion in charges for the quarter related to these cuts and office space reductions.",
+        "event_type": "indicator",
+        "domain": "business",
+        "tags": [],
+        "occurred_date": "2023-01-01T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230425_002_33b872c4"
+        ],
+        "extracted_for_question_id": "v3_googl_revenue_growth_acceleration_2023_03_31",
+        "source_article_id": "art_finance_20230425_002_33b872c4",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_googl_revenue_growth_acceleration_2023_03_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:36:30.817742Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_business_20230331_003_35446049",
+        "title": "Stronger-than-expected Google Search Performance",
+        "description": "Google Search performed better than expected, contributing positively to Alphabet's revenue.",
+        "event_type": "indicator",
+        "domain": "business",
+        "tags": [],
+        "occurred_date": "2023-03-31T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230425_002_790ebe33"
+        ],
+        "extracted_for_question_id": "v3_googl_revenue_growth_acceleration_2023_03_31",
+        "source_article_id": "art_finance_20230425_002_790ebe33",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_googl_revenue_growth_acceleration_2023_03_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:36:30.858558Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_business_20230331_008_6277fcee",
+        "title": "Alphabet's 'Search & Other' Revenues See Slower Growth",
+        "description": "Alphabet's 'search & other' revenues saw a slower growth of just 1.87% year-over-year, significantly down from previous years, indicating challenges in its primary business segment due to competition from AI-powered search tools.",
+        "event_type": "indicator",
+        "domain": "business",
+        "tags": [],
+        "occurred_date": "2023-03-31T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230425_002_790ebe33"
+        ],
+        "extracted_for_question_id": "v3_googl_revenue_growth_acceleration_2023_03_31",
+        "source_article_id": "art_finance_20230425_002_790ebe33",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_googl_revenue_growth_acceleration_2023_03_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:36:30.953940Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_business_20230425_004_6a0b1334",
+        "title": "Google Cloud Achieves First-Ever Quarterly Profit",
+        "description": "Google Cloud reported its first-ever quarterly profit, contributing significantly to Alphabet's overall financial performance.",
+        "event_type": "indicator",
+        "domain": "business",
+        "tags": [],
+        "occurred_date": "2023-04-25T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230425_002_790ebe33"
+        ],
+        "extracted_for_question_id": "v3_googl_revenue_growth_acceleration_2023_03_31",
+        "source_article_id": "art_finance_20230425_002_790ebe33",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_googl_revenue_growth_acceleration_2023_03_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:36:30.876224Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_business_20230425_006_a3ea24a6",
+        "title": "YouTube Ad Revenue Declines by 2.6% Year-over-Year",
+        "description": "YouTube advertising revenue declined by 2.6% year-over-year to $6.69 billion, continuing a trend of decreases attributable to reduced advertiser spending and increased competition.",
+        "event_type": "indicator",
+        "domain": "business",
+        "tags": [],
+        "occurred_date": "2023-04-25T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230425_004_0b49bfcb"
+        ],
+        "extracted_for_question_id": "v3_googl_revenue_growth_acceleration_2023_03_31",
+        "source_article_id": "art_finance_20230425_004_0b49bfcb",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_googl_revenue_growth_acceleration_2023_03_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:36:30.916734Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_dbab75ea6939",
+        "title": "Yes - As of 2023-03-31, will Alphabet Inc.'s quarterly r",
+        "description": "Positive resolution: As of 2023-03-31, will Alphabet Inc.'s quarterly revenue year-over-year growth for the fiscal quarter ending 2023-03-31 be at least 0.96 percent?",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-04-26T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_googl_revenue_growth_acceleration_2023_03_31",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "positive_resolution",
+        "outcome_option_index": null,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:32:24.121161Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230101_002_b05a951b",
+        "title": "Challenging Advertising Market and Recession Fears",
+        "description": "The overall economic environment was characterized by recession fears and a weak online advertising market.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-01T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230425_002_33b872c4"
+        ],
+        "extracted_for_question_id": "v3_googl_revenue_growth_acceleration_2023_03_31",
+        "source_article_id": "art_finance_20230425_002_33b872c4",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_googl_revenue_growth_acceleration_2023_03_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:36:30.841518Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230425_005_3da75be7",
+        "title": "Alphabet Exceeds Q1 2023 Revenue Estimates",
+        "description": "Alphabet Inc. released its Q1 2023 earnings report, announcing revenue of $69.79 billion, a 3% year-over-year increase, beating analyst estimates.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-04-25T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230425_002_33b872c4"
+        ],
+        "extracted_for_question_id": "v3_googl_revenue_growth_acceleration_2023_03_31",
+        "source_article_id": "art_finance_20230425_002_33b872c4",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_googl_revenue_growth_acceleration_2023_03_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:36:30.899621Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230425_007_4c440595",
+        "title": "Alphabet Board Authorizes $70 Billion Share Buyback",
+        "description": "Alphabet's board authorized a $70 billion share buyback program, boosting investor confidence.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-04-25T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230425_002_33b872c4"
+        ],
+        "extracted_for_question_id": "v3_googl_revenue_growth_acceleration_2023_03_31",
+        "source_article_id": "art_finance_20230425_002_33b872c4",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_googl_revenue_growth_acceleration_2023_03_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T19:36:30.937367Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_googl_revenue_growth_acceleration_2023_03_31_20260724_193630_001_809fab4b",
+        "source_event_id": "evt_finance_20230101_002_b05a951b",
+        "target_event_id": "evt_business_20230101_001_01d5d72a",
+        "relation_type": "triggers",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "The challenging economic environment and weak advertising market prompted Alphabet to implement cost-cutting measures, including layoffs.",
+        "evidence_article_ids": [
+          "art_finance_20230425_002_33b872c4"
+        ],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:36:30.977008Z",
+        "last_confirmed_at": "2026-07-24T19:36:30.977008Z"
+      },
+      {
+        "id": "hyp_v3_googl_revenue_growth_acceleration_2023_03_31_20260724_193630_002_9d262ea3",
+        "source_event_id": "evt_business_20230101_001_01d5d72a",
+        "target_event_id": "evt_finance_20230425_005_3da75be7",
+        "relation_type": "enables",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Cost-cutting measures from layoffs contributed to improved financial efficiency, helping Alphabet exceed revenue estimates.",
+        "evidence_article_ids": [
+          "art_finance_20230425_002_33b872c4"
+        ],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:36:30.993978Z",
+        "last_confirmed_at": "2026-07-24T19:36:30.993978Z"
+      },
+      {
+        "id": "hyp_v3_googl_revenue_growth_acceleration_2023_03_31_20260724_193631_003_d2d80be9",
+        "source_event_id": "evt_business_20230331_003_35446049",
+        "target_event_id": "evt_finance_20230425_005_3da75be7",
+        "relation_type": "amplifies",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Stronger-than-expected performance in Google Search was a key factor contributing to the overall revenue increase.",
+        "evidence_article_ids": [
+          "art_finance_20230425_002_790ebe33"
+        ],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:36:31.008579Z",
+        "last_confirmed_at": "2026-07-24T19:36:31.008579Z"
+      },
+      {
+        "id": "hyp_v3_googl_revenue_growth_acceleration_2023_03_31_20260724_193631_004_cb365fd6",
+        "source_event_id": "evt_business_20230425_004_6a0b1334",
+        "target_event_id": "evt_finance_20230425_005_3da75be7",
+        "relation_type": "amplifies",
+        "strength": 0.9,
+        "confidence": 0.95,
+        "time_lag_hours": null,
+        "reasoning": "Google Cloud becoming profitable for the first time significantly contributed to Alphabet's overall revenue increase, offsetting weaker segments.",
+        "evidence_article_ids": [
+          "art_finance_20230425_002_790ebe33"
+        ],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:36:31.025120Z",
+        "last_confirmed_at": "2026-07-24T19:36:31.025120Z"
+      },
+      {
+        "id": "hyp_v3_googl_revenue_growth_acceleration_2023_03_31_20260724_193631_005_09b781ed",
+        "source_event_id": "evt_business_20230425_006_a3ea24a6",
+        "target_event_id": "evt_finance_20230425_005_3da75be7",
+        "relation_type": "inhibits",
+        "strength": 0.5,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "The decline in YouTube ad revenue acted as a countervailing factor, pushing against a stronger overall revenue performance.",
+        "evidence_article_ids": [
+          "art_finance_20230425_004_0b49bfcb"
+        ],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:36:31.042293Z",
+        "last_confirmed_at": "2026-07-24T19:36:31.042293Z"
+      },
+      {
+        "id": "hyp_v3_googl_revenue_growth_acceleration_2023_03_31_20260724_193631_006_16231e70",
+        "source_event_id": "evt_business_20230331_008_6277fcee",
+        "target_event_id": "evt_finance_20230425_005_3da75be7",
+        "relation_type": "inhibits",
+        "strength": 0.4,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Slower growth in 'search & other' revenues indicated challenges in a primary business segment, acting as a drag on overall revenue growth.",
+        "evidence_article_ids": [
+          "art_finance_20230425_002_790ebe33"
+        ],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:36:31.057022Z",
+        "last_confirmed_at": "2026-07-24T19:36:31.057022Z"
+      },
+      {
+        "id": "hyp_v3_googl_revenue_growth_acceleration_2023_03_31_20260724_193631_007_19d06c0b",
+        "source_event_id": "evt_finance_20230425_005_3da75be7",
+        "target_event_id": "evt_dbab75ea6939",
+        "relation_type": "causes",
+        "strength": 1.0,
+        "confidence": 1.0,
+        "time_lag_hours": null,
+        "reasoning": "Alphabet's 3% year-over-year revenue growth, exceeding 0.96%, directly resulted in the 'True' outcome for the question.",
+        "evidence_article_ids": [
+          "art_finance_20230425_002_33b872c4"
+        ],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:36:31.072720Z",
+        "last_confirmed_at": "2026-07-24T19:36:31.072720Z"
+      },
+      {
+        "id": "hyp_v3_googl_revenue_growth_acceleration_2023_03_31_20260724_193631_008_c42e2777",
+        "source_event_id": "evt_finance_20230425_007_4c440595",
+        "target_event_id": "evt_finance_20230425_005_3da75be7",
+        "relation_type": "correlates",
+        "strength": 0.3,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "The share buyback announcement demonstrates strong financial position and management's confidence, which can positively influence investor perception and stock performance, indirectly supporting the positive revenue report.",
+        "evidence_article_ids": [
+          "art_finance_20230425_002_33b872c4"
+        ],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T19:36:31.087865Z",
+        "last_confirmed_at": "2026-07-24T19:36:31.087865Z"
+      }
+    ],
+    "outcome_impacts": [
+      {
+        "id": "imp_83a934f3",
+        "event_id": "evt_business_20230101_001_01d5d72a",
+        "outcome_event_id": "evt_dbab75ea6939",
+        "question_id": "v3_googl_revenue_growth_acceleration_2023_03_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Cost-cutting measures from layoffs contributed to improved financial efficiency, helping Alphabet exceed revenue estimates, thus positively impacting the 'True' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:36:37.036725Z",
+        "last_confirmed_at": "2026-07-24T19:36:37.036725Z"
+      },
+      {
+        "id": "imp_b0dc9f8a",
+        "event_id": "evt_finance_20230101_002_b05a951b",
+        "outcome_event_id": "evt_dbab75ea6939",
+        "question_id": "v3_googl_revenue_growth_acceleration_2023_03_31",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "The challenging economic environment and weak advertising market created headwinds for Alphabet, negatively impacting the 'True' outcome, but was overcome by other factors.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:36:37.048169Z",
+        "last_confirmed_at": "2026-07-24T19:36:37.048169Z"
+      },
+      {
+        "id": "imp_80eb666e",
+        "event_id": "evt_business_20230331_003_35446049",
+        "outcome_event_id": "evt_dbab75ea6939",
+        "question_id": "v3_googl_revenue_growth_acceleration_2023_03_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "Stronger-than-expected performance in Google Search was a key factor contributing to the overall revenue increase, positively impacting the 'True' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:36:37.059885Z",
+        "last_confirmed_at": "2026-07-24T19:36:37.059885Z"
+      },
+      {
+        "id": "imp_4c52f080",
+        "event_id": "evt_business_20230425_004_6a0b1334",
+        "outcome_event_id": "evt_dbab75ea6939",
+        "question_id": "v3_googl_revenue_growth_acceleration_2023_03_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.95,
+        "reasoning": "Google Cloud becoming profitable for the first time significantly contributed to Alphabet's overall revenue increase, strongly positively impacting the 'True' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:36:37.071098Z",
+        "last_confirmed_at": "2026-07-24T19:36:37.071098Z"
+      },
+      {
+        "id": "imp_44083f78",
+        "event_id": "evt_finance_20230425_005_3da75be7",
+        "outcome_event_id": "evt_dbab75ea6939",
+        "question_id": "v3_googl_revenue_growth_acceleration_2023_03_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 1.0,
+        "confidence": 1.0,
+        "reasoning": "Alphabet's 3% year-over-year revenue growth, exceeding 0.96%, directly resulted in the 'True' outcome for the question.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:36:37.082988Z",
+        "last_confirmed_at": "2026-07-24T19:36:37.082988Z"
+      },
+      {
+        "id": "imp_ae4345e4",
+        "event_id": "evt_business_20230425_006_a3ea24a6",
+        "outcome_event_id": "evt_dbab75ea6939",
+        "question_id": "v3_googl_revenue_growth_acceleration_2023_03_31",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.5,
+        "confidence": 0.8,
+        "reasoning": "The decline in YouTube ad revenue acted as a countervailing factor, pushing against a stronger overall revenue performance, thus negatively impacting the 'True' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:36:37.094474Z",
+        "last_confirmed_at": "2026-07-24T19:36:37.094474Z"
+      },
+      {
+        "id": "imp_c9f40b97",
+        "event_id": "evt_finance_20230425_007_4c440595",
+        "outcome_event_id": "evt_dbab75ea6939",
+        "question_id": "v3_googl_revenue_growth_acceleration_2023_03_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.3,
+        "confidence": 0.6,
+        "reasoning": "The share buyback announcement demonstrates strong financial position and management's confidence, indirectly supporting the positive revenue report and thus positively impacting the 'True' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:36:37.105191Z",
+        "last_confirmed_at": "2026-07-24T19:36:37.105191Z"
+      },
+      {
+        "id": "imp_9aa8130c",
+        "event_id": "evt_business_20230331_008_6277fcee",
+        "outcome_event_id": "evt_dbab75ea6939",
+        "question_id": "v3_googl_revenue_growth_acceleration_2023_03_31",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.4,
+        "confidence": 0.7,
+        "reasoning": "Slower growth in 'search & other' revenues indicated challenges in a primary business segment, acting as a drag on overall revenue growth, thus negatively impacting the 'True' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_googl_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T19:36:37.118130Z",
+        "last_confirmed_at": "2026-07-24T19:36:37.118130Z"
+      }
+    ]
+  }
+}

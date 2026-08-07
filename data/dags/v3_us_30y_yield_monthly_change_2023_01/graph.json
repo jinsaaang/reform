@@ -1,0 +1,1466 @@
+{
+  "question": {
+    "id": "v3_us_30y_yield_monthly_change_2023_01",
+    "question_text": "As of 2023-01-01, will the monthly 30-year yield change for United States 30-year Treasury yield in 2023-01 be at least 0.3 percentage points?",
+    "question_type": "binary",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 3,
+    "resolution_date": "2023-02-15T23:59:59Z",
+    "estimated_start_time": "2023-01-01T00:00:00Z",
+    "ground_truth": false,
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: United States 30-year Treasury yield\nTarget period: 2023-01\nFinancial area: monetary_policy / long-term rates\nRegion: US",
+    "resolution_criteria": "Use FRED series DGS30. Compute the change from the previous monthly observation using mode 'absolute'. Resolve yes if the change is at least 0.3 percentage points, otherwise no.",
+    "resolution_reasoning": "The snapshotted target change was -0.32 percentage points; it resolved to 'no'.",
+    "options": [
+      "yes",
+      "no"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": null,
+    "graph_built": false,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.204911Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "us_30y_yield_monthly_change",
+        "event_cluster_id": "treasury_30y_2023-01",
+        "category": "monetary_policy",
+        "original_domain": "monetary_policy",
+        "subdomain": "long-term rates",
+        "entity": "United States 30-year Treasury yield",
+        "region": "US",
+        "target_metric": "monthly 30-year yield change",
+        "target_period": "2023-01",
+        "forecast_cutoff": "2023-01-01T00:00:00+00:00",
+        "forecast_date_options": [
+          "2023-01-01"
+        ],
+        "resolution_available_at": "2023-02-15T23:59:59+00:00",
+        "horizon_days": 45,
+        "source_type": "fred_series_snapshot",
+        "source_series_id": "DGS30",
+        "source_homepage": "https://fred.stlouisfed.org/series/DGS30",
+        "comparison_rule": "target change >= median of 4 prior observed changes",
+        "comparison_threshold": 0.3,
+        "comparison_thresholds": null,
+        "change_unit": "percentage points",
+        "threshold_observation_dates": [
+          "2022-08-31",
+          "2022-09-30",
+          "2022-10-31",
+          "2022-11-30",
+          "2022-12-30"
+        ],
+        "split": "memory",
+        "family_position": 1,
+        "family_size": 7,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "no",
+        "resolved_class": "no",
+        "resolution_value": 3.65,
+        "target_change": -0.32,
+        "source_observation_date": "2023-01-31",
+        "resolution_document": {
+          "publisher": "Federal Reserve Bank of St. Louis (FRED)",
+          "title": "30-Year Treasury Constant Maturity Rate",
+          "url": "https://fred.stlouisfed.org/series/DGS30"
+        },
+        "source_download_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS30&cosd=2019-01-01&coed=2026-06-30",
+        "source_sha256": "358151905b19f2f7a811df363816ef8720badb4a22f9cf1c59a0fb2f30e87de9",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_353695517614",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 20,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_20220823_003_63a78def",
+        "title": "Current US Inflation Rate: 1948 to Today | [updated monthly] | Finder",
+        "url": "https://www.finder.com/economics/inflation-cpi",
+        "source": "finder.com",
+        "published_date": "2022-08-23T01:28:48+00:00"
+      },
+      {
+        "id": "art_finance_20220616_002_093ebaaa",
+        "title": "That was fast: 30-year fixed mortgage rate... - The Falling Darkness",
+        "url": "https://thefallingdarkness.com/that-was-fast-30-year-fixed-mortgage-rate-spikes-to-6-18-wolf-street",
+        "source": "thefallingdarkness.com",
+        "published_date": "2022-06-16T17:20:34+00:00"
+      },
+      {
+        "id": "art_finance_20210219_003_5f88b9d4",
+        "title": "US 30-Year Mortgage Rates Hit A 3-Month High - Christophe Barraud",
+        "url": "https://www.christophe-barraud.com/us-30-year-mortgage-rates-hit-a-3-month-high",
+        "source": "christophe-barraud.com",
+        "published_date": "2021-02-19T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230106_003_69ef7510",
+        "title": "Are You Prepared for a Hard Landing? | Economic Prism",
+        "url": "https://economicprism.com/are-you-prepared-for-a-hard-landing",
+        "source": "economicprism.com",
+        "published_date": "2023-01-06T09:05:59+00:00"
+      },
+      {
+        "id": "art_finance_20160314_002_b4549432",
+        "title": "cnbc.com/federal-reserve",
+        "url": "https://www.cnbc.com/federal-reserve",
+        "source": "cnbc.com",
+        "published_date": "2016-03-14T14:53:33+00:00"
+      },
+      {
+        "id": "art_finance_20230129_006_baddafde",
+        "title": "January FOMC Meeting: Too Soon... - International Business Weekly",
+        "url": "https://internationalbusinessweekly.com/january-fomc-meeting-too-soon-to-declare-victory-but-not-too-soon-to-pause",
+        "source": "internationalbusinessweekly.com",
+        "published_date": "2023-01-29T22:33:33+00:00"
+      },
+      {
+        "id": "art_finance_20130319_007_7e1b6744",
+        "title": "FOMC Meeting Preview: Fed Chairman Ben... | IBTimes",
+        "url": "https://www.ibtimes.com/fomc-meeting-preview-fed-chairman-ben-bernankes-press-conference-provide-clues-when-qe-will-end",
+        "source": "ibtimes.com",
+        "published_date": "2013-03-19T06:11:38-04:00"
+      },
+      {
+        "id": "art_finance_20230122_008_aa598ea5",
+        "title": "Pre January 2023 FOMC Meeting Package - Underlying Inflation",
+        "url": "https://underlyinginflation.com/pre-january-2023-fomc-meeting-package",
+        "source": "underlyinginflation.com",
+        "published_date": "2023-01-22T16:00:15+00:00"
+      },
+      {
+        "id": "art_finance_20230203_009_afe2305e",
+        "title": "US Hiring Surges in January as Unemployment Falls to 3.4% - NJBIA",
+        "url": "https://njbia.org/us-hiring-surges-in-january-as-unemployment-falls-to-3-4",
+        "source": "njbia.org",
+        "published_date": "2023-02-03T17:09:50+00:00"
+      },
+      {
+        "id": "art_finance_20230214_002_74c6ab6f",
+        "title": "Inflation rose 0.5% in January, more than expected and up 6.4% from a year ago",
+        "url": "https://www.cnbc.com/2023/02/14/consumer-price-index-january-2023-.html",
+        "source": "cnbc.com",
+        "published_date": "2023-02-14T13:31:07+00:00"
+      },
+      {
+        "id": "art_finance_20230131_002_fc64b927",
+        "title": "Govt Expects Inflationary Pressure to Calm Down ‘Gradually’",
+        "url": "https://propakistani.pk/2023/01/31/govt-expects-inflationary-pressure-to-calm-down-gradually",
+        "source": "propakistani.pk",
+        "published_date": "2023-01-31T15:19:18+00:00"
+      },
+      {
+        "id": "art_finance_20191004_004_094c2619",
+        "title": "War, Economic Ruin, and Liberty Destruction Will... - GaryDBarnett.com",
+        "url": "https://www.garydbarnett.com/war-economic-ruin-and-liberty-destruction-will-never-end-until-the-federal-reserve-is-abolished",
+        "source": "garydbarnett.com",
+        "published_date": "2019-10-04T14:00:26+00:00"
+      },
+      {
+        "id": "art_finance_20211219_005_44743575",
+        "title": "80% of all US dollars in existence were printed in the... - Tech Startups",
+        "url": "https://techstartups.com/2021/12/18/80-us-dollars-existence-printed-january-2020-october-2021",
+        "source": "techstartups.com",
+        "published_date": "2021-12-19T01:59:08+00:00"
+      },
+      {
+        "id": "art_finance_20080723_002_b1baaead",
+        "title": "Current U.S. Inflation Rates (2000-2026)",
+        "url": "https://www.usinflationcalculator.com/inflation/current-inflation-rates",
+        "source": "usinflationcalculator.com",
+        "published_date": "2008-07-23T03:07:58+00:00"
+      },
+      {
+        "id": "art_finance_20110101_004_33483734",
+        "title": "Economic Indicators, Events and Market News Thursday... | FXEmpire",
+        "url": "https://www.fxempire.com/news/article/economic-indicators-events-and-market-news-thursday-april-12-2012-45777",
+        "source": "fxempire.com",
+        "published_date": "2011-01-01T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20141002_005_2373f658",
+        "title": "Forward 1 Month T-bill Rates Fall Again, with Peak Down 0.10% at...",
+        "url": "https://www.kamakuraco.com/forward-1-month-t-bill-rates-fall-again-with-peak-down-0-10-at-3-39-in-april-2021",
+        "source": "kamakuraco.com",
+        "published_date": "2014-10-02T11:23:20+00:00"
+      },
+      {
+        "id": "art_finance_20200314_003_64328fcf",
+        "title": "10-year Treasury yield jumps above 1% after clarity on government...",
+        "url": "https://ramonare.com/10-year-treasury-yield-jumps-1-clarity-government-response-coronavirus",
+        "source": "ramonare.com",
+        "published_date": "2020-03-14T20:14:55+00:00"
+      },
+      {
+        "id": "art_finance_20230102_004_36af1b29",
+        "title": "Global economic forecast for 2023? A stormy start... | The Guardian",
+        "url": "https://www.theguardian.com/business/2023/jan/02/global-economic-forecast-for-2023-a-stormy-start-followed-by-a-ray-of-hope",
+        "source": "theguardian.com",
+        "published_date": "2023-01-02T15:44:33+00:00"
+      },
+      {
+        "id": "art_finance_20181129_002_e1b7b35a",
+        "title": "Macroscope | Why investors are turning to 3-month Treasury bills and...",
+        "url": "https://www.scmp.com/comment/insight-opinion/united-states/article/2175514/why-investors-are-turning-3-month-treasury",
+        "source": "scmp.com",
+        "published_date": "2018-11-29T14:00:15+08:00"
+      },
+      {
+        "id": "art_finance_20230116_002_d8bc1c94",
+        "title": "Weekly Forecast, Jan. 13: Forward U.S. Treasury Yields... | Forex.ca",
+        "url": "https://www.forex.ca/weekly-forecast-jan-13-forward-u-s-treasury-yields-twin-peaks-shrink",
+        "source": "forex.ca",
+        "published_date": "2023-01-16T00:00:00+00:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_353695517614",
+      "events_count": 18,
+      "hypotheses_count": 17
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 6,
+      "avg_depth": 6.0,
+      "quality_score": 0.88,
+      "depth_score": 1.0,
+      "confidence_score": 0.79,
+      "strength_score": 0.69,
+      "evidence_score": 1.0,
+      "event_count": 18,
+      "hypothesis_count": 17
+    },
+    "nodes": [
+      {
+        "id": "evt_353695517614",
+        "title": "No - As of 2023-01-01, will the monthly 30-year yield c",
+        "description": "Negative resolution: As of 2023-01-01, will the monthly 30-year yield change for United States 30-year Treasury yield in 2023-01 be at least 0.3 percentage points?",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-02-15T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_us_30y_yield_monthly_change_2023_01",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "negative_resolution",
+        "outcome_option_index": null,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-22T20:40:52.821668Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_528886fc2afd",
+        "title": "Yes - As of 2023-01-01, will the monthly 30-year yield c",
+        "description": "Positive resolution: As of 2023-01-01, will the monthly 30-year yield change for United States 30-year Treasury yield in 2023-01 be at least 0.3 percentage points?",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-02-15T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_us_30y_yield_monthly_change_2023_01",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "positive_resolution",
+        "outcome_option_index": null,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-22T20:40:52.821652Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20211231_046_bdaa8ce6",
+        "title": "Ultra-mega Money Printing in 2020-21",
+        "description": "Ultra-mega money printing in 2020-21 to counter the effects of government ordered lockdowns resulted in a supply of dollars that was far too great for the economy to absorb.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2021-12-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230106_003_69ef7510"
+        ],
+        "extracted_for_question_id": "v3_us_30y_yield_monthly_change_2023_01",
+        "source_article_id": "art_finance_20230106_003_69ef7510",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_30y_yield_monthly_change_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-22T23:31:15.183354Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20211231_047_8b69e972",
+        "title": "Supply of Dollars Too Great for Economy to Absorb",
+        "description": "The ultra-mega money printing in 2020-21 resulted in a supply of dollars that was far too great for the economy to absorb.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2021-12-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230106_003_69ef7510"
+        ],
+        "extracted_for_question_id": "v3_us_30y_yield_monthly_change_2023_01",
+        "source_article_id": "art_finance_20230106_003_69ef7510",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_30y_yield_monthly_change_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-22T23:31:15.199514Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20211231_048_e2bf609c",
+        "title": "Shortage of Goods and Services due to Government Lockdowns",
+        "description": "Government ordered lockdowns led to a shortage of goods and services.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2021-12-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230106_003_69ef7510"
+        ],
+        "extracted_for_question_id": "v3_us_30y_yield_monthly_change_2023_01",
+        "source_article_id": "art_finance_20230106_003_69ef7510",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_30y_yield_monthly_change_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-22T23:31:15.215593Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20211231_049_005978c5",
+        "title": "Too Many Dollars Chasing Too Few Goods",
+        "description": "The combination of an excessive supply of dollars and a shortage of goods and services led to a situation where too many dollars were chasing too few goods.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2021-12-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230106_003_69ef7510"
+        ],
+        "extracted_for_question_id": "v3_us_30y_yield_monthly_change_2023_01",
+        "source_article_id": "art_finance_20230106_003_69ef7510",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_30y_yield_monthly_change_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-22T23:31:15.232654Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20221231_044_4202cbb2",
+        "title": "10-Year Treasury Yields Doubled in 2022",
+        "description": "The yield on the 10-Year Treasury note spiked from 1.66 percent to 3.70 percent in 2022, more than doubling.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2022-12-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230106_003_69ef7510"
+        ],
+        "extracted_for_question_id": "v3_us_30y_yield_monthly_change_2023_01",
+        "source_article_id": "art_finance_20230106_003_69ef7510",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_30y_yield_monthly_change_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-22T23:31:15.150432Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20221231_045_4103eef3",
+        "title": "Federal Reserve Policies and Enduring Inflation",
+        "description": "Federal Reserve policies and enduring inflation contributed to the doubling of 10-Year Treasury yields in 2022.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2022-12-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230106_003_69ef7510"
+        ],
+        "extracted_for_question_id": "v3_us_30y_yield_monthly_change_2023_01",
+        "source_article_id": "art_finance_20230106_003_69ef7510",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_30y_yield_monthly_change_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-22T23:31:15.167570Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20221231_050_f4f29302",
+        "title": "Transitory Inflation Proved Enduring",
+        "description": "What was initially considered transitory inflation proved to be enduring, impacting the economy in 2022.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2022-12-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230106_003_69ef7510"
+        ],
+        "extracted_for_question_id": "v3_us_30y_yield_monthly_change_2023_01",
+        "source_article_id": "art_finance_20230106_003_69ef7510",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_30y_yield_monthly_change_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-22T23:31:15.249556Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20221231_052_5a243e6b",
+        "title": "Past Stock Market Performance in 2022",
+        "description": "The S&P 500 closed at 3,808, down over 20 percent from its peak on January 3, 2022, influencing the broad economic sentiment for 2023.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2022-12-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230106_003_69ef7510"
+        ],
+        "extracted_for_question_id": "v3_us_30y_yield_monthly_change_2023_01",
+        "source_article_id": "art_finance_20230106_003_69ef7510",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_30y_yield_monthly_change_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-22T23:31:15.283790Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20221231_053_38238066",
+        "title": "Impact of Federal Reserve Policies",
+        "description": "Federal Reserve monetary policy influenced job, investments, and discretionary income, contributing to the broad economic sentiment for 2023.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2022-12-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230106_003_69ef7510"
+        ],
+        "extracted_for_question_id": "v3_us_30y_yield_monthly_change_2023_01",
+        "source_article_id": "art_finance_20230106_003_69ef7510",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_30y_yield_monthly_change_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-22T23:31:15.329222Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20221231_054_82f43c93",
+        "title": "Potentially Volatile Environment for Yields",
+        "description": "The consequences of past high inflation and Federal Reserve money printing suggested a potentially volatile environment for yields.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2022-12-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230106_003_69ef7510"
+        ],
+        "extracted_for_question_id": "v3_us_30y_yield_monthly_change_2023_01",
+        "source_article_id": "art_finance_20230106_003_69ef7510",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_30y_yield_monthly_change_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-22T23:31:15.348238Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230102_057_86b4e22c",
+        "title": "Global Economic Slowdown Concerns",
+        "description": "Concerns about a global economic slowdown emerge at the start of the year.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-02T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230102_004_36af1b29"
+        ],
+        "extracted_for_question_id": "v3_us_30y_yield_monthly_change_2023_01",
+        "source_article_id": "art_finance_20230102_004_36af1b29",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_30y_yield_monthly_change_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-22T23:31:56.142739Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230106_043_94f2a1ee",
+        "title": "Article published discussing broad economic outlook for 2023",
+        "description": "Article published on January 6, 2023, discussing the broad economic outlook for 2023, past stock market performance, and the doubling of 10-Year Treasury yields in 2022 due to Federal Reserve policies and inflation.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-06T09:05:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230106_003_69ef7510"
+        ],
+        "extracted_for_question_id": "v3_us_30y_yield_monthly_change_2023_01",
+        "source_article_id": "art_finance_20230106_003_69ef7510",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_30y_yield_monthly_change_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-22T23:31:15.131520Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230106_058_0c7a42f9",
+        "title": "Inflationary Pressures Persist",
+        "description": "Reports indicate persistent inflationary pressures in the economy.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-06T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230106_003_69ef7510"
+        ],
+        "extracted_for_question_id": "v3_us_30y_yield_monthly_change_2023_01",
+        "source_article_id": "art_finance_20230106_003_69ef7510",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_30y_yield_monthly_change_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-22T23:31:56.160448Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230116_059_ec2f6d7d",
+        "title": "Central Bank Hawkish Stance",
+        "description": "Central banks signal a more aggressive stance on monetary policy to combat inflation.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-16T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230116_002_d8bc1c94"
+        ],
+        "extracted_for_question_id": "v3_us_30y_yield_monthly_change_2023_01",
+        "source_article_id": "art_finance_20230116_002_d8bc1c94",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_30y_yield_monthly_change_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-22T23:31:56.178288Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230122_060_9903d065",
+        "title": "Market Volatility Increases",
+        "description": "Financial markets experience increased volatility due to economic uncertainties.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-22T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230122_008_aa598ea5"
+        ],
+        "extracted_for_question_id": "v3_us_30y_yield_monthly_change_2023_01",
+        "source_article_id": "art_finance_20230122_008_aa598ea5",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_30y_yield_monthly_change_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-22T23:31:56.196889Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230203_061_8f6b17c9",
+        "title": "Strong US Jobs Report",
+        "description": "A surprisingly strong US jobs report is released, indicating a robust labor market.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-02-03T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230203_009_afe2305e"
+        ],
+        "extracted_for_question_id": "v3_us_30y_yield_monthly_change_2023_01",
+        "source_article_id": "art_finance_20230203_009_afe2305e",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_30y_yield_monthly_change_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-22T23:31:56.215765Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230214_062_2e33a4b2",
+        "title": "Fed Rate Hike Expectations Rise",
+        "description": "Following strong economic data, expectations for further Federal Reserve rate hikes increase.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-02-14T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230214_002_74c6ab6f"
+        ],
+        "extracted_for_question_id": "v3_us_30y_yield_monthly_change_2023_01",
+        "source_article_id": "art_finance_20230214_002_74c6ab6f",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_30y_yield_monthly_change_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-22T23:31:56.233165Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_us_30y_yield_monthly_change_2023_01_20260722_233115_042_7186bba6",
+        "source_event_id": "evt_finance_20211231_046_bdaa8ce6",
+        "target_event_id": "evt_finance_20211231_047_8b69e972",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Ultra-mega money printing directly led to an excessive supply of dollars.",
+        "evidence_article_ids": [
+          "art_finance_20230106_003_69ef7510"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_30y_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-22T23:31:15.400544Z",
+        "last_confirmed_at": "2026-07-22T23:31:15.400544Z"
+      },
+      {
+        "id": "hyp_v3_us_30y_yield_monthly_change_2023_01_20260722_233115_043_5f66f7ab",
+        "source_event_id": "evt_finance_20211231_046_bdaa8ce6",
+        "target_event_id": "evt_finance_20211231_048_e2bf609c",
+        "relation_type": "causes",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Government ordered lockdowns, which money printing aimed to counter, led to a shortage of goods and services.",
+        "evidence_article_ids": [
+          "art_finance_20230106_003_69ef7510"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_30y_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-22T23:31:15.413119Z",
+        "last_confirmed_at": "2026-07-22T23:31:15.413119Z"
+      },
+      {
+        "id": "hyp_v3_us_30y_yield_monthly_change_2023_01_20260722_233115_044_540e7dec",
+        "source_event_id": "evt_finance_20211231_047_8b69e972",
+        "target_event_id": "evt_finance_20211231_049_005978c5",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "An excessive supply of dollars is a direct component of 'too many dollars chasing too few goods'.",
+        "evidence_article_ids": [
+          "art_finance_20230106_003_69ef7510"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_30y_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-22T23:31:15.426332Z",
+        "last_confirmed_at": "2026-07-22T23:31:15.426332Z"
+      },
+      {
+        "id": "hyp_v3_us_30y_yield_monthly_change_2023_01_20260722_233115_045_dba6c0bf",
+        "source_event_id": "evt_finance_20211231_048_e2bf609c",
+        "target_event_id": "evt_finance_20211231_049_005978c5",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "A shortage of goods and services is a direct component of 'too many dollars chasing too few goods'.",
+        "evidence_article_ids": [
+          "art_finance_20230106_003_69ef7510"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_30y_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-22T23:31:15.438394Z",
+        "last_confirmed_at": "2026-07-22T23:31:15.438394Z"
+      },
+      {
+        "id": "hyp_v3_us_30y_yield_monthly_change_2023_01_20260722_233115_046_f836ab6f",
+        "source_event_id": "evt_finance_20211231_049_005978c5",
+        "target_event_id": "evt_finance_20221231_050_f4f29302",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The situation of too many dollars chasing too few goods directly resulted in enduring inflation.",
+        "evidence_article_ids": [
+          "art_finance_20230106_003_69ef7510"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_30y_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-22T23:31:15.451361Z",
+        "last_confirmed_at": "2026-07-22T23:31:15.451361Z"
+      },
+      {
+        "id": "hyp_v3_us_30y_yield_monthly_change_2023_01_20260722_233115_047_3ebe4147",
+        "source_event_id": "evt_finance_20221231_050_f4f29302",
+        "target_event_id": "evt_finance_20221231_045_4103eef3",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Enduring inflation was a key factor influencing Federal Reserve policies.",
+        "evidence_article_ids": [
+          "art_finance_20230106_003_69ef7510"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_30y_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-22T23:31:15.463975Z",
+        "last_confirmed_at": "2026-07-22T23:31:15.463975Z"
+      },
+      {
+        "id": "hyp_v3_us_30y_yield_monthly_change_2023_01_20260722_233115_048_058a1c07",
+        "source_event_id": "evt_finance_20221231_045_4103eef3",
+        "target_event_id": "evt_finance_20221231_044_4202cbb2",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Federal Reserve policies and inflation directly contributed to the doubling of 10-Year Treasury yields.",
+        "evidence_article_ids": [
+          "art_finance_20230106_003_69ef7510"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_30y_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-22T23:31:15.477020Z",
+        "last_confirmed_at": "2026-07-22T23:31:15.477020Z"
+      },
+      {
+        "id": "hyp_v3_us_30y_yield_monthly_change_2023_01_20260722_233115_049_7c50b389",
+        "source_event_id": "evt_finance_20221231_044_4202cbb2",
+        "target_event_id": "evt_finance_20230106_043_94f2a1ee",
+        "relation_type": "correlates",
+        "strength": 0.5,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "The article discusses the doubling of 10-Year Treasury yields as part of the broad economic outlook.",
+        "evidence_article_ids": [
+          "art_finance_20230106_003_69ef7510"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_30y_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-22T23:31:15.489667Z",
+        "last_confirmed_at": "2026-07-22T23:31:15.489667Z"
+      },
+      {
+        "id": "hyp_v3_us_30y_yield_monthly_change_2023_01_20260722_233115_050_9745bd44",
+        "source_event_id": "evt_finance_20221231_052_5a243e6b",
+        "target_event_id": "evt_finance_20230106_043_94f2a1ee",
+        "relation_type": "correlates",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Past market performance is discussed in the article as part of the broad economic outlook.",
+        "evidence_article_ids": [
+          "art_finance_20230106_003_69ef7510"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_30y_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-22T23:31:15.502883Z",
+        "last_confirmed_at": "2026-07-22T23:31:15.502883Z"
+      },
+      {
+        "id": "hyp_v3_us_30y_yield_monthly_change_2023_01_20260722_233115_051_259851b1",
+        "source_event_id": "evt_finance_20221231_053_38238066",
+        "target_event_id": "evt_finance_20230106_043_94f2a1ee",
+        "relation_type": "correlates",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "The impact of Federal Reserve policies is discussed in the article as part of the broad economic outlook.",
+        "evidence_article_ids": [
+          "art_finance_20230106_003_69ef7510"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_30y_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-22T23:31:15.515476Z",
+        "last_confirmed_at": "2026-07-22T23:31:15.515476Z"
+      },
+      {
+        "id": "hyp_v3_us_30y_yield_monthly_change_2023_01_20260722_233115_052_b287dae7",
+        "source_event_id": "evt_finance_20211231_049_005978c5",
+        "target_event_id": "evt_finance_20221231_054_82f43c93",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "The situation of too many dollars chasing too few goods suggests a volatile environment for yields.",
+        "evidence_article_ids": [
+          "art_finance_20230106_003_69ef7510"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_30y_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-22T23:31:15.530028Z",
+        "last_confirmed_at": "2026-07-22T23:31:15.530028Z"
+      },
+      {
+        "id": "hyp_v3_us_30y_yield_monthly_change_2023_01_20260722_233156_057_3dda5292",
+        "source_event_id": "evt_finance_20230102_057_86b4e22c",
+        "target_event_id": "evt_finance_20230106_058_0c7a42f9",
+        "relation_type": "correlates",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Global slowdown concerns often accompany persistent inflation.",
+        "evidence_article_ids": [
+          "art_finance_20230102_004_36af1b29",
+          "art_finance_20230106_003_69ef7510"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_30y_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-22T23:31:56.249577Z",
+        "last_confirmed_at": "2026-07-22T23:31:56.249577Z"
+      },
+      {
+        "id": "hyp_v3_us_30y_yield_monthly_change_2023_01_20260722_233156_058_65c68d26",
+        "source_event_id": "evt_finance_20230106_058_0c7a42f9",
+        "target_event_id": "evt_finance_20230116_059_ec2f6d7d",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Persistent inflation typically leads central banks to adopt a hawkish stance.",
+        "evidence_article_ids": [
+          "art_finance_20230106_003_69ef7510",
+          "art_finance_20230116_002_d8bc1c94"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_30y_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-22T23:31:56.262545Z",
+        "last_confirmed_at": "2026-07-22T23:31:56.262545Z"
+      },
+      {
+        "id": "hyp_v3_us_30y_yield_monthly_change_2023_01_20260722_233156_059_ea17f045",
+        "source_event_id": "evt_finance_20230116_059_ec2f6d7d",
+        "target_event_id": "evt_finance_20230122_060_9903d065",
+        "relation_type": "triggers",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "A hawkish central bank stance often triggers market volatility.",
+        "evidence_article_ids": [
+          "art_finance_20230116_002_d8bc1c94",
+          "art_finance_20230122_008_aa598ea5"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_30y_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-22T23:31:56.277137Z",
+        "last_confirmed_at": "2026-07-22T23:31:56.277137Z"
+      },
+      {
+        "id": "hyp_v3_us_30y_yield_monthly_change_2023_01_20260722_233156_060_33270011",
+        "source_event_id": "evt_finance_20230122_060_9903d065",
+        "target_event_id": "evt_finance_20230203_061_8f6b17c9",
+        "relation_type": "correlates",
+        "strength": 0.5,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "Market volatility can precede or coincide with significant economic reports like jobs data.",
+        "evidence_article_ids": [
+          "art_finance_20230122_008_aa598ea5",
+          "art_finance_20230203_009_afe2305e"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_30y_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-22T23:31:56.289995Z",
+        "last_confirmed_at": "2026-07-22T23:31:56.289995Z"
+      },
+      {
+        "id": "hyp_v3_us_30y_yield_monthly_change_2023_01_20260722_233156_061_c56167a8",
+        "source_event_id": "evt_finance_20230203_061_8f6b17c9",
+        "target_event_id": "evt_finance_20230214_062_2e33a4b2",
+        "relation_type": "causes",
+        "strength": 0.9,
+        "confidence": 0.95,
+        "time_lag_hours": null,
+        "reasoning": "A strong jobs report typically increases expectations for further rate hikes.",
+        "evidence_article_ids": [
+          "art_finance_20230203_009_afe2305e",
+          "art_finance_20230214_002_74c6ab6f"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_30y_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-22T23:31:56.302587Z",
+        "last_confirmed_at": "2026-07-22T23:31:56.302587Z"
+      },
+      {
+        "id": "hyp_v3_us_30y_yield_monthly_change_2023_01_20260722_233156_062_dab3556b",
+        "source_event_id": "evt_finance_20230214_062_2e33a4b2",
+        "target_event_id": "evt_353695517614",
+        "relation_type": "amplifies",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Increased rate hike expectations amplify upward pressure on long-term bond yields.",
+        "evidence_article_ids": [
+          "art_finance_20230214_002_74c6ab6f"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_30y_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-22T23:31:56.315759Z",
+        "last_confirmed_at": "2026-07-22T23:31:56.315759Z"
+      }
+    ],
+    "outcome_impacts": [
+      {
+        "id": "imp_78ac6f81",
+        "event_id": "evt_finance_20230106_043_94f2a1ee",
+        "outcome_event_id": "evt_353695517614",
+        "question_id": "v3_us_30y_yield_monthly_change_2023_01",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.1,
+        "confidence": 0.3,
+        "reasoning": "The economic outlook article provides general context but no direct impact on the specific yield change.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_30y_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-22T23:31:30.025711Z",
+        "last_confirmed_at": "2026-07-22T23:31:30.025711Z"
+      },
+      {
+        "id": "imp_7e44bcd0",
+        "event_id": "evt_finance_20221231_044_4202cbb2",
+        "outcome_event_id": "evt_353695517614",
+        "question_id": "v3_us_30y_yield_monthly_change_2023_01",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.2,
+        "confidence": 0.4,
+        "reasoning": "Doubling of 10-Year Treasury yields in 2022 indicates a volatile environment, but its direct impact on the specific January 2023 30-year yield change is not clear from the evidence.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_30y_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-22T23:31:30.039439Z",
+        "last_confirmed_at": "2026-07-22T23:31:30.039439Z"
+      },
+      {
+        "id": "imp_165a9039",
+        "event_id": "evt_finance_20221231_045_4103eef3",
+        "outcome_event_id": "evt_353695517614",
+        "question_id": "v3_us_30y_yield_monthly_change_2023_01",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.2,
+        "confidence": 0.4,
+        "reasoning": "Federal Reserve policies and enduring inflation created a general economic environment, but their specific impact on the January 2023 30-year yield change is not detailed.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_30y_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-22T23:31:30.050514Z",
+        "last_confirmed_at": "2026-07-22T23:31:30.050514Z"
+      },
+      {
+        "id": "imp_d57c42c3",
+        "event_id": "evt_finance_20211231_046_bdaa8ce6",
+        "outcome_event_id": "evt_353695517614",
+        "question_id": "v3_us_30y_yield_monthly_change_2023_01",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.1,
+        "confidence": 0.3,
+        "reasoning": "Ultra-mega money printing is a root cause of inflation, but its direct and specific impact on the January 2023 30-year yield change is too far removed to be strong.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_30y_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-22T23:31:30.061032Z",
+        "last_confirmed_at": "2026-07-22T23:31:30.061032Z"
+      },
+      {
+        "id": "imp_6f9056e0",
+        "event_id": "evt_finance_20211231_047_8b69e972",
+        "outcome_event_id": "evt_353695517614",
+        "question_id": "v3_us_30y_yield_monthly_change_2023_01",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.1,
+        "confidence": 0.3,
+        "reasoning": "Excessive supply of dollars is a root cause of inflation, but its direct and specific impact on the January 2023 30-year yield change is too far removed to be strong.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_30y_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-22T23:31:30.071406Z",
+        "last_confirmed_at": "2026-07-22T23:31:30.071406Z"
+      },
+      {
+        "id": "imp_0be42b84",
+        "event_id": "evt_finance_20211231_048_e2bf609c",
+        "outcome_event_id": "evt_353695517614",
+        "question_id": "v3_us_30y_yield_monthly_change_2023_01",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.1,
+        "confidence": 0.3,
+        "reasoning": "Shortage of goods and services is a root cause of inflation, but its direct and specific impact on the January 2023 30-year yield change is too far removed to be strong.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_30y_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-22T23:31:30.081589Z",
+        "last_confirmed_at": "2026-07-22T23:31:30.081589Z"
+      },
+      {
+        "id": "imp_65ef2c28",
+        "event_id": "evt_finance_20211231_049_005978c5",
+        "outcome_event_id": "evt_353695517614",
+        "question_id": "v3_us_30y_yield_monthly_change_2023_01",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.2,
+        "confidence": 0.4,
+        "reasoning": "Too many dollars chasing too few goods is a direct cause of inflation, but its specific impact on the January 2023 30-year yield change is not detailed.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_30y_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-22T23:31:30.093635Z",
+        "last_confirmed_at": "2026-07-22T23:31:30.093635Z"
+      },
+      {
+        "id": "imp_a7825248",
+        "event_id": "evt_finance_20221231_050_f4f29302",
+        "outcome_event_id": "evt_353695517614",
+        "question_id": "v3_us_30y_yield_monthly_change_2023_01",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.5,
+        "reasoning": "Enduring inflation created a general economic environment that could influence yields, but its specific impact on the January 2023 30-year yield change is not detailed.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_30y_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-22T23:31:30.104017Z",
+        "last_confirmed_at": "2026-07-22T23:31:30.104017Z"
+      },
+      {
+        "id": "imp_69f8dad5",
+        "event_id": "evt_finance_20230215_051_767cf28f",
+        "outcome_event_id": "evt_353695517614",
+        "question_id": "v3_us_30y_yield_monthly_change_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "The lack of specific causal factors directly explains why the monthly 30-year yield change was not at least 0.3 percentage points (the actual outcome).",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_30y_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-22T23:31:30.114506Z",
+        "last_confirmed_at": "2026-07-22T23:31:30.114506Z"
+      },
+      {
+        "id": "imp_c61006f0",
+        "event_id": "evt_finance_20221231_052_5a243e6b",
+        "outcome_event_id": "evt_353695517614",
+        "question_id": "v3_us_30y_yield_monthly_change_2023_01",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.1,
+        "confidence": 0.3,
+        "reasoning": "Past stock market performance provides general economic sentiment but no direct impact on the specific yield change.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_30y_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-22T23:31:30.125215Z",
+        "last_confirmed_at": "2026-07-22T23:31:30.125215Z"
+      },
+      {
+        "id": "imp_28189a67",
+        "event_id": "evt_finance_20221231_053_38238066",
+        "outcome_event_id": "evt_353695517614",
+        "question_id": "v3_us_30y_yield_monthly_change_2023_01",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.2,
+        "confidence": 0.4,
+        "reasoning": "Impact of Federal Reserve policies created a general economic environment, but their specific impact on the January 2023 30-year yield change is not detailed.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_30y_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-22T23:31:30.135071Z",
+        "last_confirmed_at": "2026-07-22T23:31:30.135071Z"
+      },
+      {
+        "id": "imp_786b0206",
+        "event_id": "evt_finance_20221231_054_82f43c93",
+        "outcome_event_id": "evt_353695517614",
+        "question_id": "v3_us_30y_yield_monthly_change_2023_01",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.5,
+        "reasoning": "A potentially volatile environment for yields suggests uncertainty, which could contribute to a lack of significant movement if no strong drivers emerge.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_30y_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-22T23:31:30.145551Z",
+        "last_confirmed_at": "2026-07-22T23:31:30.145551Z"
+      },
+      {
+        "id": "imp_b0689539",
+        "event_id": "evt_finance_20230131_055_b9a8cdc2",
+        "outcome_event_id": "evt_353695517614",
+        "question_id": "v3_us_30y_yield_monthly_change_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.8,
+        "reasoning": "The absence of specific events or mechanisms directly supports the outcome of the yield change not being at least 0.3 percentage points.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_30y_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-22T23:31:30.155967Z",
+        "last_confirmed_at": "2026-07-22T23:31:30.155967Z"
+      },
+      {
+        "id": "imp_561eb666",
+        "event_id": "evt_finance_20230106_056_4454dd82",
+        "outcome_event_id": "evt_353695517614",
+        "question_id": "v3_us_30y_yield_monthly_change_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.7,
+        "reasoning": "The report explicitly stating a lack of specific data for the January 2023 yield change directly supports the actual outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_30y_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-22T23:31:30.166814Z",
+        "last_confirmed_at": "2026-07-22T23:31:30.166814Z"
+      },
+      {
+        "id": "imp_1948dd2b",
+        "event_id": "evt_finance_20230214_062_2e33a4b2",
+        "outcome_event_id": "evt_353695517614",
+        "question_id": "v3_us_30y_yield_monthly_change_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "Increased rate hike expectations directly contribute to higher long-term bond yields, making the outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_30y_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-22T23:32:01.664406Z",
+        "last_confirmed_at": "2026-07-22T23:32:01.664406Z"
+      }
+    ]
+  },
+  "bank_provenance": {
+    "mode": "reused_strict_export",
+    "source": "/home/kong/code/study_kakao/research/forecaster/experiments/finance_500_v3_monetary_policy/all_dags/graphs/v3_us_30y_yield_monthly_change_2023_01.json",
+    "seeded_at": "2026-07-24T18:25:39.062038+00:00"
+  }
+}

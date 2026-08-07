@@ -22,6 +22,7 @@ anchor to a baseline prediction, or choose a result by its score.
 | `hgf/hgf_e2e_topology` | The HGF method. |
 | `hgf/hgf_e2e_topology_sidecar` | Records every API call alongside the run. |
 | `hgf/hgf_e2e_topology_provider_pinned` | Pins the OpenRouter provider. |
+| `data`, `artifacts` | The benchmark: questions, evidence, DAGs, Blueprints, exemplars. |
 | `scripts/run_hgf.py` | Run HGF on a compatible benchmark. |
 | `scripts/run_baselines.py` | Run the six baselines. |
 | `scripts/validate_inputs.py` | Check benchmark artifacts without an API call. |
@@ -47,8 +48,11 @@ The only third-party runtime dependencies are `openai`, `pydantic`, and
 
 ## Benchmark inputs
 
-The launchers assume historical DAGs have already been converted to the
-canonical topology-preserving Blueprint format. They do not build DAGs.
+The benchmark ships with the repository, so `--dataset-root .` runs against it
+directly. The layout below is also the contract for pointing the launchers at a
+different benchmark; the launchers assume historical DAGs have already been
+converted to the canonical topology-preserving Blueprint format, and do not
+build DAGs.
 
 ```text
 BENCHMARK_ROOT/
@@ -137,17 +141,17 @@ builds the reasoning check.
 Validate the benchmark first; this makes no API call.
 
 ```bash
-python3 scripts/validate_inputs.py --dataset-root /path/to/benchmark
+python3 scripts/validate_inputs.py --dataset-root .
 ```
 
 Run HGF:
 
 ```bash
 python3 scripts/run_hgf.py \
-  --dataset-root /path/to/benchmark \
+  --dataset-root . \
   --model google/gemini-2.5-flash-lite \
   --provider google-ai-studio \
-  --output-dir /path/to/runs/gemini_seed0 \
+  --output-dir runs/gemini_seed0 \
   --workers 20 \
   --limit 100
 ```
@@ -156,9 +160,9 @@ Run the baselines:
 
 ```bash
 python3 scripts/run_baselines.py \
-  --dataset-root /path/to/benchmark \
+  --dataset-root . \
   --model google/gemini-2.5-flash-lite \
-  --output-dir /path/to/runs/gemini_baselines \
+  --output-dir runs/gemini_baselines \
   --workers 20 \
   --limit 100
 ```

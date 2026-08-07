@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_us_3m_yield_monthly_change_2023_08",
+  "blueprint_sha256": "56dd1363240e029dd8a8ff8d0157695e46de1e998ae57a03b5fe55358b91af69",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_forecasting",
+      "target_operation": "threshold_crossing",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2023-08-01, will the monthly 3-month yield change for United States 3-month Treasury yield in 2023-08 be at least 0.185 percentage points?",
+    "historical_cutoff": "2023-08-01T00:00:00+00:00",
+    "target_semantics": "The question asks whether the absolute change in the US 3-month Treasury yield from July 2023 to August 2023 will be 0.185 percentage points or more.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The core of the question relies on calculating the absolute monthly change of the US 3-month Treasury yield. This requires knowing the yield level at the end of July 2023 and the yield level at the end of August 2023.",
+      "The DAG indicates that the calculation of the monthly change is a direct mechanism linking the two yield observations to the target metric.",
+      "The DAG also highlights that the comparison of this calculated change against a pre-registered threshold of 0.185 percentage points is a critical checkpoint for determining the final 'yes' or 'no' outcome."
+    ],
+    "counterevidence": "No forecast-time evidence was provided to support or contradict any aspect of the yield change calculation or its comparison to the threshold.",
+    "prospective_target_estimate": "The provided DAG structure and lack of forecast-time evidence prevent a quantitative estimate. The outcome depends entirely on the unknown yield values for July and August 2023 and their resulting change.",
+    "option_mapping": "A 'yes' outcome corresponds to a monthly yield change of 0.185 percentage points or greater. A 'no' outcome corresponds to a monthly yield change less than 0.185 percentage points.",
+    "uncertainty": "The primary uncertainty stems from the complete absence of forecast-time evidence regarding the actual yield levels or any factors influencing them. The DAG's 'weaknesses' also note that underlying yield levels were synthesized, implying potential issues even with historical data.",
+    "dag_derived_lesson": "When forecasting a change against a threshold, it is crucial to have evidence for both the reference and target observations that define the change, as well as evidence supporting the mechanism that calculates the change and compares it to the threshold. The absence of evidence for any of these components introduces significant uncertainty."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

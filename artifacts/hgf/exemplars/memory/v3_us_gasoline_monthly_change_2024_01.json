@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_us_gasoline_monthly_change_2024_01",
+  "blueprint_sha256": "920e2a96b572445caa36ba63adb9e9b139d3e808609f5e3da3c8f40dd6b80d9f",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "price_change",
+      "target_operation": "monthly_change",
+      "option_geometry": "range_comparison"
+    },
+    "historical_question": "As of 2024-01-01, which range will the monthly retail gasoline-price change for United States regular gasoline price in 2024-01 fall into?",
+    "historical_cutoff": "2024-01-01T00:00:00+00:00",
+    "target_semantics": "The target is the percentage change in the monthly retail price of regular gasoline in the United States for January 2024, compared against pre-registered boundaries.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The core calculation for the target metric is the percentage change between two consecutive monthly price observations.",
+      "The DAG indicates that the 'regular-gasoline price reference observation' and 'regular-gasoline price target observation' are direct drivers of this calculation.",
+      "The DAG also highlights the 'Pre-registered within-range interval' as a critical checkpoint for determining the final option."
+    ],
+    "counterevidence": "No forecast-time evidence was provided to support or contradict any causal links or factor values.",
+    "prospective_target_estimate": "The outcome is unknown due to the lack of forecast-time evidence.",
+    "option_mapping": "The target metric, monthly retail gasoline-price change, will be mapped to one of the options: 'below recent range', 'within recent range', or 'above recent range', based on its value relative to the pre-registered interval of [-4.517, 0.845) percent.",
+    "uncertainty": "The absence of any forecast-time evidence means that the historical causal paths cannot be validated or refuted, leading to complete uncertainty regarding the target metric's value and its corresponding option.",
+    "dag_derived_lesson": "A target metric derived from a calculation requires evidence supporting the input factors and the calculation mechanism itself. The comparison of the calculated value against predefined boundaries is a distinct step that also requires evidential support."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

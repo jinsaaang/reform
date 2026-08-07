@@ -1,0 +1,39 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_us_pce_price_monthly_change_2023_01",
+  "blueprint_sha256": "47bf7e65624b37331ae93d3c784e979161b2a84be47c30308db0a9041899c57d",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "macro / consumer prices",
+      "target_operation": "monthly PCE-price change >= 0.307 percent",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2023-01-31, will the monthly PCE-price change for United States PCE price index in 2023-01 be at least 0.307 percent?",
+    "historical_cutoff": "2023-01-31T00:00:00+00:00",
+    "target_semantics": "The monthly percentage change in the US PCE price index for January 2023.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20080723_002_1fbeb069",
+        "takeaway": "The article provides historical inflation rates for the US, covering the period from 2000 to 2025.",
+        "why_predictive": "This article offers a historical context for US inflation trends, which could inform expectations about future inflation rates, including PCE price changes, by showing past patterns and magnitudes of inflation."
+      }
+    ],
+    "expert_reasoning": [
+      "The DAG suggests that 'Persistent Inflationary Pressures' (checkpoint_3) can lead to an 'Acceleration of Inflation' (checkpoint_7), which in turn impacts the 'monthly PCE-price change' (checkpoint_8 and target_bridge).",
+      "Another path involves 'Strong Wage Gains and Social Security Adjustment' (checkpoint_1) leading to 'Increased Purchasing Power in Economy' (checkpoint_2), then to 'Surge in Consumer Spending' (checkpoint_5), 'Increased Demand' (checkpoint_6), 'Acceleration of Inflation' (checkpoint_7), and finally the target.",
+      "Given the limited forecast-time evidence, which only provides a broad historical overview of US inflation rates without specific details for the target period or immediate drivers, it is difficult to establish a strong causal link or direction for these checkpoints."
+    ],
+    "counterevidence": "The provided article (art_finance_20080723_002_1fbeb069) is a general overview of US inflation rates from 2000-2025 and does not contain specific data or analysis relevant to the drivers or mediators identified in the DAG for the January 2023 period. Therefore, it does not provide direct counterevidence but rather a lack of specific supporting evidence.",
+    "prospective_target_estimate": "The available evidence is insufficient to form a confident estimate.",
+    "option_mapping": "The question asks if the monthly PCE-price change will be at least 0.307 percent. 'Yes' corresponds to the PCE price index increasing by 0.307 percent or more, and 'No' corresponds to an increase less than 0.307 percent.",
+    "uncertainty": "The forecast-time evidence is too general to support or refute the specific causal pathways identified in the DAG. The historical support for all checkpoints is listed as 'weak', and the article does not provide cutoff-safe evidence to confirm or deny the mechanisms for the target period.",
+    "dag_derived_lesson": "When evaluating a target metric influenced by multiple potential causal chains, the absence of specific, cutoff-safe evidence for each link in those chains necessitates a cautious approach, preserving uncertainty rather than inferring support from general historical data."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

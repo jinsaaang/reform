@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_us_core_cpi_monthly_change_2024_06",
+  "blueprint_sha256": "9696ad1c4637b0f7b7d1a6ebbd28ff72366249772e5da5753ce91d466cef35ac",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "macro / inflation",
+      "target_operation": "change >= threshold",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2024-06-30, will the monthly core CPI change for United States core CPI in 2024-06 be at least 0.33 percent?",
+    "historical_cutoff": "2024-06-30T00:00:00+00:00",
+    "target_semantics": "The monthly percentage change in US core CPI for June 2024.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The DAG suggests that improvements in supply chain pressures could lead to broader inflation moderation, potentially impacting core CPI. However, no specific evidence from the forecast period directly quantifies this effect on US core CPI for June 2024.",
+      "Another path indicates that the Federal Reserve's tight monetary policy, implemented prior to the cutoff, is expected to have a lagged effect on dampening demand and reducing price increases. Again, direct evidence linking this policy to a specific core CPI change for June 2024 is absent.",
+      "A third path considers the stabilization of energy prices as a driver for moderated core CPI. Without specific data on energy price trends leading into June 2024, this link remains speculative."
+    ],
+    "counterevidence": "No forecast-time evidence was provided that directly contradicts the potential for core CPI to be at least 0.33 percent. However, the lack of supporting evidence for any of the identified causal pathways means that the baseline assumption of moderation cannot be confidently dismissed.",
+    "prospective_target_estimate": "The target is whether the monthly core CPI change for June 2024 will be at least 0.33 percent. Given the lack of specific supporting or contradicting evidence from the forecast period for the identified drivers (supply chains, monetary policy, energy prices), a definitive estimate cannot be made.",
+    "option_mapping": "The 'yes' option corresponds to a monthly core CPI change of 0.33 percent or higher. The 'no' option corresponds to a monthly core CPI change below 0.33 percent.",
+    "uncertainty": "Significant uncertainty exists due to the complete absence of forecast-time evidence. The historical DAG identifies potential drivers and mediators, but without current data to support or refute their impact on the target metric for the specified period, the forecast remains highly speculative.",
+    "dag_derived_lesson": "When evaluating a target metric, it is crucial to assess the current relevance and evidential support for historically identified causal pathways. The absence of specific, cutoff-safe evidence for each link in a causal chain, even if the general factors are known to be relevant, prevents a confident forecast. Relying solely on the existence of a historical connection without current validation introduces substantial uncertainty."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

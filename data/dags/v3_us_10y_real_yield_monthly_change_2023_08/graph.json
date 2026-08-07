@@ -1,0 +1,188 @@
+{
+  "schema_version": "1.0",
+  "actual_outcome_event_id": "node_8",
+  "graph": {
+    "nodes": [
+      {
+        "id": "node_1",
+        "label": "Nominal 10-year Treasury yields rose in July",
+        "event_type": "indicator",
+        "occurred_date": "2023-07-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_4847c152f7ee10f9"
+        ]
+      },
+      {
+        "id": "node_2",
+        "label": "July inflation data briefly pulled nominal yields lower",
+        "event_type": "indicator",
+        "occurred_date": "2023-08-10",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_41bd569026e43644",
+          "ev_0bd8287dbac4880a"
+        ]
+      },
+      {
+        "id": "node_3",
+        "label": "Ten-year U.S. real yield reached a 14-year high",
+        "event_type": "indicator",
+        "occurred_date": "2023-08-14",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_42f6c4dca12b338d"
+        ]
+      },
+      {
+        "id": "node_4",
+        "label": "Markets expected rates to remain higher for longer",
+        "event_type": "indicator",
+        "occurred_date": "2023-08-18",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_89e3da8509040deb"
+        ]
+      },
+      {
+        "id": "node_5",
+        "label": "Persistent inflation left open the possibility of further tightening",
+        "event_type": "indicator",
+        "occurred_date": "2023-08-22",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_b759afebbddcce54"
+        ]
+      },
+      {
+        "id": "node_6",
+        "label": "August evidence indicated sustained upward real-yield pressure",
+        "event_type": "indicator",
+        "occurred_date": "2023-08-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_42f6c4dca12b338d",
+          "ev_89e3da8509040deb",
+          "ev_b759afebbddcce54"
+        ]
+      },
+      {
+        "id": "node_7",
+        "label": "August 10-year real-yield monthly change measured 0.25 percentage points",
+        "event_type": "measurement",
+        "occurred_date": "2023-09-15",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_a7c576014bb28ec2"
+        ]
+      },
+      {
+        "id": "node_8",
+        "label": "Resolution: 10-year real-yield change was above the recent range",
+        "event_type": "outcome",
+        "occurred_date": "2023-09-15",
+        "is_outcome": true,
+        "is_actual_outcome": true,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_a7c576014bb28ec2"
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_1",
+        "source": "node_1",
+        "target": "node_3",
+        "relationship": "precedes",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_4847c152f7ee10f9",
+          "ev_42f6c4dca12b338d"
+        ],
+        "rationale": "July's nominal-yield rise preceded the observed mid-August real-yield high; the edge makes no causal claim."
+      },
+      {
+        "id": "edge_2",
+        "source": "node_3",
+        "target": "node_6",
+        "relationship": "supports",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_42f6c4dca12b338d"
+        ],
+        "rationale": "The observed 14-year high directly supports the synthesized upward-pressure interpretation."
+      },
+      {
+        "id": "edge_3",
+        "source": "node_4",
+        "target": "node_6",
+        "relationship": "contributes_to",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_89e3da8509040deb"
+        ],
+        "rationale": "Higher-for-longer expectations may support real yields, but their monthly contribution is not measured."
+      },
+      {
+        "id": "edge_4",
+        "source": "node_5",
+        "target": "node_6",
+        "relationship": "contributes_to",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_b759afebbddcce54"
+        ],
+        "rationale": "Further-tightening risk could raise real yields, but no causal contribution is isolated."
+      },
+      {
+        "id": "edge_5",
+        "source": "node_2",
+        "target": "node_6",
+        "relationship": "inhibits",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_41bd569026e43644",
+          "ev_0bd8287dbac4880a"
+        ],
+        "rationale": "The post-CPI nominal-yield dip is counterevidence to an uninterrupted upward yield path."
+      },
+      {
+        "id": "edge_6",
+        "source": "node_6",
+        "target": "node_7",
+        "relationship": "is_consistent_with",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_a7c576014bb28ec2"
+        ],
+        "rationale": "The synthesized upward pressure is consistent with the result, while the official TIPS series establishes the 0.25-point measurement."
+      },
+      {
+        "id": "edge_7",
+        "source": "node_7",
+        "target": "node_8",
+        "relationship": "classifies_as",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_a7c576014bb28ec2"
+        ],
+        "rationale": "A 0.25-point change exceeds the 0.202-point upper boundary and therefore resolves above the recent range."
+      }
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_us_m2_monthly_growth_2024_09",
+  "blueprint_sha256": "3c19d1c29dc7bc14d2fa8069498132356a58abfa7f5d31cd8271ffac8fb0c337",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "money_supply_growth",
+      "target_operation": "predict_monthly_growth_rate",
+      "option_geometry": "ordered_categorical_range"
+    },
+    "historical_question": "As of 2024-09-01, which range will the monthly M2 growth for United States M2 money stock in 2024-09 fall into?",
+    "historical_cutoff": "2024-09-01T00:00:00+00:00",
+    "target_semantics": "The monthly percentage growth rate of the US M2 money stock for September 2024.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The core calculation for the target metric is the percentage change between the M2 money stock level in August 2024 and September 2024.",
+      "The historical DAG indicates that the M2 money stock levels for both the reference period (August 2024) and the target period (September 2024) are critical drivers.",
+      "The DAG also highlights the pre-registered upper boundary for M2 growth as a key factor in determining the final option."
+    ],
+    "counterevidence": "No forecast-time evidence was provided to support or contradict any of the causal pathways identified in the DAG. The DAG itself notes that evidence for the M2 levels is synthesized, indicating a potential weakness in direct observation.",
+    "prospective_target_estimate": "The target metric is the monthly M2 growth rate for September 2024. Without forecast-time evidence, a specific value cannot be estimated, but the reasoning process would involve comparing the calculated growth rate against the pre-registered boundaries of 0.199% and 0.337%.",
+    "option_mapping": "The calculated monthly M2 growth rate for September 2024 will be mapped to one of three options: 'below recent range' (less than 0.199%), 'within recent range' (0.199% to 0.337% exclusive), or 'above recent range' (0.337% or greater).",
+    "uncertainty": "The primary source of uncertainty stems from the complete lack of forecast-time evidence. The DAG's diagnosis of 'medium' historical support for key drivers and the synthesis of M2 level observations suggest that even with historical data, the direct measurement of these factors is not robust. Without current data, the direction and magnitude of M2 growth remain unknown.",
+    "dag_derived_lesson": "When forecasting a rate of change, the direct measurement of the underlying levels at the reference and target periods are critical drivers. The relationship between these levels and pre-defined thresholds for categorization must be supported by current evidence to ensure accurate classification."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

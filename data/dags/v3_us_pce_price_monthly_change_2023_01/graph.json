@@ -1,0 +1,848 @@
+{
+  "question": {
+    "id": "v3_us_pce_price_monthly_change_2023_01",
+    "question_text": "As of 2023-01-31, will the monthly PCE-price change for United States PCE price index in 2023-01 be at least 0.307 percent?",
+    "question_type": "binary",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 3,
+    "resolution_date": "2023-03-07T23:59:59Z",
+    "estimated_start_time": "2023-01-31T00:00:00Z",
+    "ground_truth": true,
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [
+      "evt_762a2cac4531",
+      "evt_b467267226d5"
+    ],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: United States PCE price index\nTarget period: 2023-01\nFinancial area: macro / consumer prices\nRegion: US",
+    "resolution_criteria": "Use FRED series PCEPI. Compute the change from the previous monthly observation using mode 'pct'. Resolve yes if the change is at least 0.307 percent, otherwise no.",
+    "resolution_reasoning": "The snapshotted target change was 0.536 percent; it resolved to 'yes'.",
+    "options": [
+      "yes",
+      "no"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": "\n## Executive Summary\nThe monthly PCE-price change for January 2023 exceeded 0.307 percent, primarily driven by a significant surge in U.S. consumer spending and persistent inflationary pressures. Strong wage gains and a substantial cost of living adjustment for Social Security beneficiaries fueled robust consumer outlays on both goods and services. This increased demand, coupled with lingering inflation in core services, contributed to an acceleration in inflation, pushing the PCE index higher than anticipated. The Federal Reserve's continued interest rate hikes, including a quarter-point increase in early February, underscored the ongoing struggle to tame inflation, further confirming the upward trend in price indices for the period.\n\n## Timeline Of Key Events\n- **2023-02-01**: The Federal Reserve raised its key short-term interest rate by a quarter percentage point, bringing the federal funds rate to a range of 4.5% to 4.75%. This decision signaled the Fed's continued efforts to combat inflation, acknowledging that it remained elevated despite some moderation. [art_finance_20230201_007_0e03c9dd], [art_finance_20230201_005_db3ed715], [art_finance_20230201_006_deb479e2]\n- **2023-02-14**: An analysis projected that headline PCE was on track to remain virtually flat year-over-year in January, with a 0.5% month-over-month increase, and core PCE was expected to tick down slightly with a 0.4% month-over-month increase. This preliminary assessment highlighted the persistence of inflationary pressures, particularly in core services. [art_finance_20230214_002_74420cc3]\n- **2023-02-24**: The U.S. Commerce Department reported that consumer spending increased by 1.8% in January, the largest gain since March 2021. This surge was attributed to wage gains and a Social Security cost of living adjustment. Adjusted for inflation, consumer spending increased by 1.1%. Inflation also accelerated during the month, adding to concerns that the Federal Reserve would continue raising interest rates. [art_finance_20230224_002_6b484e66]\n\n## Causal Chain Analysis\nThe underlying cause of the elevated January 2023 PCE price change was a combination of **strong consumer demand and persistent inflationary pressures** in the economy. This was primarily driven by **significant wage gains and a substantial 8.7% cost of living adjustment for Social Security beneficiaries** in January 2023, which injected considerable purchasing power into the economy [art_finance_20230224_002_6b484e66]. This led to a **rebound in consumer spending**, which increased by 1.8% in January, the biggest gain in nearly two years, on both goods and services [art_finance_20230224_002_6b484e66]. The increased consumer spending, in turn, **accelerated inflation** [art_finance_20230224_002_6b484e66]. Preliminary analyses in mid-February indicated that the **PCE inflation was on track for a 0.5% month-over-month increase** [art_finance_20230214_002_74420cc3]. This ongoing inflationary environment, influenced by strong demand and sticky services inflation, ultimately **resulted in the monthly PCE-price change for January 2023 being at least 0.307 percent**.\n\n## Countervailing Factors\nOne major countervailing factor was the **Federal Reserve's aggressive monetary policy**, which included a series of interest rate hikes aimed at cooling inflation. On February 1, 2023, the Fed raised its key short-term interest rate by a quarter percentage point, bringing it to a range of 4.5% to 4.75% [art_finance_20230201_007_0e03c9dd]. While this action aimed to reduce aggregate demand and bring inflation down, it **failed to prevent the significant surge in consumer spending and the acceleration of inflation in January 2023**. The strong underlying economic conditions, particularly wage growth and social security adjustments, outweighed the immediate dampening effect of the Fed's rate hike, leading to continued inflationary pressures.\n\n## Event Candidate Inventory\n- **E1: Strong Wage Gains and Social Security Adjustment**: Date: January 2023. Why it matters causally: Directly increased consumer disposable income, fueling spending. Source article IDs: [art_finance_20230224_002_6b484e66]\n- **E2: Surge in Consumer Spending (January 2023)**: Date: January 2023. Why it matters causally: Directly increased demand, contributing to inflationary pressures. Source article IDs: [art_finance_20230224_002_6b484e66]\n- **E3: Acceleration of Inflation (January 2023)**: Date: January 2023. Why it matters causally: The direct manifestation of increased demand and persistent price pressures. Source article IDs: [art_finance_20230224_002_6b484e66], [art_finance_20230214_002_74420cc3]\n- **E4: Federal Reserve Interest Rate Hike**: Date: 2023-02-01. Why it matters causally: Policy response to inflation, attempting to curb demand; its limited immediate effect highlights the strength of other causal factors. Source article IDs: [art_finance_20230201_007_0e03c9dd], [art_finance_20230201_005_db3ed715], [art_finance_20230201_006_deb479e2]\n\n## Evidence Mapping Table\n\n| Claim/Event | Article IDs | Date Support | Confidence (0-1) | Notes |\n|---|---|---|---|---|\n| Strong Wage Gains | [art_finance_20230224_002_6b484e66] | January 2023 | 0.9 | Reported as a key driver of increased spending. |\n| Social Security COLA | [art_finance_20230224_002_6b484e66] | January 2023 | 0.9 | Contributed significantly to increased income. |\n| Consumer Spending Jump | [art_finance_20230224_002_6b484e66] | January 2023 | 0.95 | Direct reporting from Commerce Department. |\n| Inflation Acceleration | [art_finance_20230224_002_6b484e66], [art_finance_20230214_002_74420cc3] | January 2023 | 0.85 | Reported acceleration and projected PCE increase. |\n| Fed Rate Hike Feb 1 | [art_finance_20230201_007_0e03c9dd], [art_finance_20230201_005_db3ed715], [art_finance_20230201_006_deb479e2] | 2023-02-01 | 0.95 | Widely reported decision and context. |\n| PCE > 0.307% | [art_finance_20230224_002_6b484e66], [art_finance_20230214_002_74420cc3] | January 2023 data reported Feb 2023 | 0.8 | Direct and indirect evidence of significant PCE increase.\n\n## Uncertainties And Alternative Paths\nOne uncertainty is the precise magnitude of the impact of seasonal adjustments on the reported consumer spending figures for January. The article [art_finance_20230224_002_6b484e66] mentions \"difficulties ironing out seasonal fluctuations from the data at the start of the year,\" suggesting that some of the spending surge might have been an anomaly. An alternative path could have been a stronger and more immediate dampening effect of the Federal Reserve's consecutive rate hikes, leading to a more subdued consumer response and a lower PCE-price change. However, the available evidence suggests strong underlying economic activity, particularly in the labor market and income growth, overwhelmed these potential mitigating factors.\n",
+    "graph_built": true,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.202749Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "us_pce_price_monthly_change",
+        "event_cluster_id": "us_pce_prices_2023-01",
+        "category": "macro",
+        "original_domain": "macro",
+        "subdomain": "consumer prices",
+        "entity": "United States PCE price index",
+        "region": "US",
+        "target_metric": "monthly PCE-price change",
+        "target_period": "2023-01",
+        "forecast_cutoff": "2023-01-31T00:00:00+00:00",
+        "forecast_date_options": [
+          "2023-01-31"
+        ],
+        "resolution_available_at": "2023-03-07T23:59:59+00:00",
+        "horizon_days": 35,
+        "source_type": "fred_series_snapshot",
+        "source_series_id": "PCEPI",
+        "source_homepage": "https://fred.stlouisfed.org/series/PCEPI",
+        "comparison_rule": "target change >= median of 4 prior observed changes",
+        "comparison_threshold": 0.306743,
+        "comparison_thresholds": null,
+        "change_unit": "percent",
+        "threshold_observation_dates": [
+          "2022-08-01",
+          "2022-09-01",
+          "2022-10-01",
+          "2022-11-01",
+          "2022-12-01"
+        ],
+        "split": "memory",
+        "family_position": 1,
+        "family_size": 7,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "yes",
+        "resolved_class": "yes",
+        "resolution_value": 119.018,
+        "target_change": 0.53554534,
+        "source_observation_date": "2023-01-01",
+        "resolution_document": {
+          "publisher": "Federal Reserve Bank of St. Louis (FRED)",
+          "title": "Personal Consumption Expenditures: Chain-type Price Index",
+          "url": "https://fred.stlouisfed.org/series/PCEPI"
+        },
+        "source_download_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PCEPI&cosd=2019-01-01&coed=2026-06-30",
+        "source_sha256": "e2324358874ed7b15b98265e420878f48272635cc4ae0b0220144142083500fc",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_762a2cac4531",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 10,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_20230221_002_177c3893",
+        "title": "Evaluating Monetary Policy with Inflation Bands and Horizons - Federal Reserve Bank of San Francisco",
+        "url": "https://www.frbsf.org/research-and-insights/publications/economic-letter/2023/02/evaluating-monetary-policy-with-inflation-bands-and-horizons",
+        "source": "frbsf.org",
+        "published_date": "2023-02-21T10:00:00-08:00"
+      },
+      {
+        "id": "art_finance_20230201_007_0e03c9dd",
+        "title": "Fed lifts rate by quarter-point but says inflation is easing - AP News",
+        "url": "https://apnews.com/article/federal-reserve-powell-comments-682b416097d60a09c7072b6afe734478",
+        "source": "apnews.com",
+        "published_date": "2023-02-01T23:26:32+00:00"
+      },
+      {
+        "id": "art_finance_20230201_006_deb479e2",
+        "title": "Fed interest rate decision today: Central bank hikes by 0.25 percentage point to tame inflation - USA Today",
+        "url": "https://www.usatoday.com/story/money/economy/2023/02/01/federal-reserve-interest-rate-decision-meeting-live-updates/11135680002",
+        "source": "usatoday.com",
+        "published_date": "2023-02-01T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230224_002_6b484e66",
+        "title": "U.S. consumer spending posts biggest gain in nearly two years; inflation picks up - Reuters",
+        "url": "https://www.ibtimes.com/us-consumer-spending-posts-biggest-gain-nearly-two-years-inflation-picks-3671489",
+        "source": "ibtimes.com",
+        "published_date": "2023-02-24T13:00:29-05:00"
+      },
+      {
+        "id": "art_finance_20230214_002_74420cc3",
+        "title": "Introducing The Core-Cast: What We Learned About The Fed's PCE Inflation Gauges From January CPI - Employ America",
+        "url": "https://www.employamerica.org/core-cast/introducing-the-core-cast-nowcasting-pce-deflators",
+        "source": "employamerica.org",
+        "published_date": "2023-02-14T15:52:10+00:00"
+      },
+      {
+        "id": "art_finance_20080723_002_1fbeb069",
+        "title": "Current US Inflation Rates: 2000-2025",
+        "url": "https://www.usinflationcalculator.com/inflation/current-inflation-rates",
+        "source": "usinflationcalculator.com",
+        "published_date": "2008-07-23T03:07:58+00:00"
+      },
+      {
+        "id": "art_finance_20230210_003_50307934",
+        "title": "First Quarter 2023 Survey of Professional Forecasters - Philadelphia Federal Reserve Bank",
+        "url": "https://www.philadelphiafed.org/surveys-and-data/real-time-data-research/spf-q1-2023",
+        "source": "philadelphiafed.org",
+        "published_date": "2023-02-10T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230213_004_3f2586f5",
+        "title": "Can Monetary Policy Tame Rent Inflation? - Federal Reserve Bank of San Francisco",
+        "url": "https://www.frbsf.org/research-and-insights/publications/economic-letter/2023/02/can-monetary-policy-tame-rent-inflation",
+        "source": "frbsf.org",
+        "published_date": "2023-02-13T10:00:00-08:00"
+      },
+      {
+        "id": "art_finance_20230201_005_db3ed715",
+        "title": "Fed raises rates a quarter point, expects 'ongoing' increases - CNBC",
+        "url": "https://theloadstar.com/cnbc-fed-raises-rates-a-quarter-point-expects-ongoing-increases",
+        "source": "theloadstar.com",
+        "published_date": "2023-02-01T21:04:46+00:00"
+      },
+      {
+        "id": "art_finance_20230217_006_95d3c9bd",
+        "title": "Growth in Farmland Values Continues, but Higher Rates Temper the Outlook - Federal Reserve Bank of Kansas City",
+        "url": "https://www.kansascityfed.org/agriculture/ag-credit-survey/growth-in-farmland-value-continues-but-higher-rates-temper-the-outlook",
+        "source": "kansascityfed.org",
+        "published_date": "2023-02-17T08:00:00+00:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_762a2cac4531",
+      "events_count": 9,
+      "hypotheses_count": 9
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 7,
+      "avg_depth": 5.33,
+      "quality_score": 0.93,
+      "depth_score": 1.0,
+      "confidence_score": 0.88,
+      "strength_score": 0.84,
+      "evidence_score": 1.0,
+      "event_count": 9,
+      "hypothesis_count": 9
+    },
+    "nodes": [
+      {
+        "id": "evt_762a2cac4531",
+        "title": "Yes - As of 2023-01-31, will the monthly PCE-price chang",
+        "description": "Positive resolution: As of 2023-01-31, will the monthly PCE-price change for United States PCE price index in 2023-01 be at least 0.307 percent?",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-03-07T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_us_pce_price_monthly_change_2023_01",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "positive_resolution",
+        "outcome_option_index": null,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T01:01:41.109535Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_b467267226d5",
+        "title": "No - As of 2023-01-31, will the monthly PCE-price chang",
+        "description": "Negative resolution: As of 2023-01-31, will the monthly PCE-price change for United States PCE price index in 2023-01 be at least 0.307 percent?",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-03-07T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_us_pce_price_monthly_change_2023_01",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "negative_resolution",
+        "outcome_option_index": null,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T01:01:41.109547Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230131_001_86b63c86",
+        "title": "Strong Wage Gains and Social Security Adjustment",
+        "description": "Significant wage gains and a substantial 8.7% cost of living adjustment for Social Security beneficiaries in January 2023, which injected considerable purchasing power into the economy.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230224_002_6b484e66"
+        ],
+        "extracted_for_question_id": "v3_us_pce_price_monthly_change_2023_01",
+        "source_article_id": "art_finance_20230224_002_6b484e66",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_pce_price_monthly_change_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T01:12:24.005679Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230131_002_bb687683",
+        "title": "Surge in Consumer Spending (January 2023)",
+        "description": "U.S. consumer spending increased by 1.8% in January, the largest gain since March 2021, on both goods and services.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230224_002_6b484e66"
+        ],
+        "extracted_for_question_id": "v3_us_pce_price_monthly_change_2023_01",
+        "source_article_id": "art_finance_20230224_002_6b484e66",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_pce_price_monthly_change_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T01:12:24.038860Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230131_003_000095dd",
+        "title": "Acceleration of Inflation (January 2023)",
+        "description": "Inflation accelerated during January 2023, adding to concerns that the Federal Reserve would continue raising interest rates. Preliminary analyses indicated PCE inflation was on track for a 0.5% month-over-month increase.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230224_002_6b484e66",
+          "art_finance_20230214_002_74420cc3"
+        ],
+        "extracted_for_question_id": "v3_us_pce_price_monthly_change_2023_01",
+        "source_article_id": "art_finance_20230224_002_6b484e66",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_pce_price_monthly_change_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T01:12:24.074097Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230131_005_65a3a995",
+        "title": "Increased Purchasing Power in Economy",
+        "description": "Strong wage gains and a substantial cost of living adjustment for Social Security beneficiaries injected considerable purchasing power into the economy.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230224_002_6b484e66"
+        ],
+        "extracted_for_question_id": "v3_us_pce_price_monthly_change_2023_01",
+        "source_article_id": "art_finance_20230224_002_6b484e66",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_pce_price_monthly_change_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T01:12:24.136803Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230131_006_dbcc1d5b",
+        "title": "Persistent Inflationary Pressures",
+        "description": "Lingering inflation in core services and strong underlying economic conditions contributed to persistent inflationary pressures.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230224_002_6b484e66",
+          "art_finance_20230214_002_74420cc3"
+        ],
+        "extracted_for_question_id": "v3_us_pce_price_monthly_change_2023_01",
+        "source_article_id": "art_finance_20230224_002_6b484e66",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_pce_price_monthly_change_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T01:12:24.169497Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230131_007_f0aa19da",
+        "title": "Increased Demand",
+        "description": "Increased consumer spending on both goods and services led to increased demand in the economy.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230224_002_6b484e66"
+        ],
+        "extracted_for_question_id": "v3_us_pce_price_monthly_change_2023_01",
+        "source_article_id": "art_finance_20230224_002_6b484e66",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_pce_price_monthly_change_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T01:12:24.201440Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230131_008_535e070c",
+        "title": "Monthly PCE-price change for January 2023 at least 0.307 percent",
+        "description": "The monthly PCE-price change for January 2023 exceeded 0.307 percent.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230224_002_6b484e66",
+          "art_finance_20230214_002_74420cc3"
+        ],
+        "extracted_for_question_id": "v3_us_pce_price_monthly_change_2023_01",
+        "source_article_id": "art_finance_20230224_002_6b484e66",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_pce_price_monthly_change_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T01:12:24.235779Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230131_009_c4349f82",
+        "title": "Robust Consumer Outlays on Goods and Services",
+        "description": "Fueled by increased purchasing power, consumers engaged in robust outlays on both goods and services.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230224_002_6b484e66"
+        ],
+        "extracted_for_question_id": "v3_us_pce_price_monthly_change_2023_01",
+        "source_article_id": "art_finance_20230224_002_6b484e66",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_pce_price_monthly_change_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T01:12:43.645174Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011224_001_2a43496c",
+        "source_event_id": "evt_finance_20230131_001_86b63c86",
+        "target_event_id": "evt_finance_20230131_005_65a3a995",
+        "relation_type": "causes",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Strong wage gains and Social Security adjustment directly injected purchasing power into the economy.",
+        "evidence_article_ids": [
+          "art_finance_20230224_002_6b484e66"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T01:12:24.263271Z",
+        "last_confirmed_at": "2026-07-25T01:12:24.263271Z"
+      },
+      {
+        "id": "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011224_002_bcd61412",
+        "source_event_id": "evt_finance_20230131_005_65a3a995",
+        "target_event_id": "evt_finance_20230131_002_bb687683",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.85,
+        "time_lag_hours": null,
+        "reasoning": "Increased purchasing power fueled robust consumer outlays on both goods and services.",
+        "evidence_article_ids": [
+          "art_finance_20230224_002_6b484e66"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T01:12:24.280138Z",
+        "last_confirmed_at": "2026-07-25T01:12:24.280138Z"
+      },
+      {
+        "id": "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011224_003_af6476ae",
+        "source_event_id": "evt_finance_20230131_002_bb687683",
+        "target_event_id": "evt_finance_20230131_007_f0aa19da",
+        "relation_type": "causes",
+        "strength": 0.85,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Increased consumer spending directly led to increased demand.",
+        "evidence_article_ids": [
+          "art_finance_20230224_002_6b484e66"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T01:12:24.297333Z",
+        "last_confirmed_at": "2026-07-25T01:12:24.297333Z"
+      },
+      {
+        "id": "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011224_004_c0e44dcb",
+        "source_event_id": "evt_finance_20230131_007_f0aa19da",
+        "target_event_id": "evt_finance_20230131_003_000095dd",
+        "relation_type": "causes",
+        "strength": 0.75,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Increased demand, coupled with lingering inflation, contributed to an acceleration in inflation.",
+        "evidence_article_ids": [
+          "art_finance_20230224_002_6b484e66",
+          "art_finance_20230214_002_74420cc3"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T01:12:24.316642Z",
+        "last_confirmed_at": "2026-07-25T01:12:24.316642Z"
+      },
+      {
+        "id": "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011224_005_997df0ae",
+        "source_event_id": "evt_finance_20230131_006_dbcc1d5b",
+        "target_event_id": "evt_finance_20230131_003_000095dd",
+        "relation_type": "amplifies",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Lingering inflation in core services contributed to the acceleration of inflation.",
+        "evidence_article_ids": [
+          "art_finance_20230224_002_6b484e66",
+          "art_finance_20230214_002_74420cc3"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T01:12:24.334837Z",
+        "last_confirmed_at": "2026-07-25T01:12:24.334837Z"
+      },
+      {
+        "id": "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011224_006_f133b6a1",
+        "source_event_id": "evt_finance_20230131_003_000095dd",
+        "target_event_id": "evt_finance_20230131_008_535e070c",
+        "relation_type": "causes",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The acceleration of inflation directly resulted in the monthly PCE-price change exceeding the threshold.",
+        "evidence_article_ids": [
+          "art_finance_20230224_002_6b484e66",
+          "art_finance_20230214_002_74420cc3"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T01:12:24.352175Z",
+        "last_confirmed_at": "2026-07-25T01:12:24.352175Z"
+      },
+      {
+        "id": "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011243_007_5f25aaa0",
+        "source_event_id": "evt_finance_20230131_005_65a3a995",
+        "target_event_id": "evt_finance_20230131_009_c4349f82",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.85,
+        "time_lag_hours": null,
+        "reasoning": "Increased purchasing power directly led to robust consumer outlays.",
+        "evidence_article_ids": [
+          "art_finance_20230224_002_6b484e66"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T01:12:43.697659Z",
+        "last_confirmed_at": "2026-07-25T01:12:43.697659Z"
+      },
+      {
+        "id": "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011243_008_8c58c17a",
+        "source_event_id": "evt_finance_20230131_009_c4349f82",
+        "target_event_id": "evt_finance_20230131_002_bb687683",
+        "relation_type": "causes",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Robust consumer outlays are a direct manifestation of the surge in consumer spending.",
+        "evidence_article_ids": [
+          "art_finance_20230224_002_6b484e66"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T01:12:43.716796Z",
+        "last_confirmed_at": "2026-07-25T01:12:43.716796Z"
+      },
+      {
+        "id": "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011243_009_36e333b8",
+        "source_event_id": "evt_finance_20230131_008_535e070c",
+        "target_event_id": "evt_762a2cac4531",
+        "relation_type": "causes",
+        "strength": 1.0,
+        "confidence": 1.0,
+        "time_lag_hours": null,
+        "reasoning": "This event directly represents the actual outcome of the question.",
+        "evidence_article_ids": [
+          "art_finance_20230224_002_6b484e66",
+          "art_finance_20230214_002_74420cc3"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T01:12:43.734092Z",
+        "last_confirmed_at": "2026-07-25T01:12:43.734092Z"
+      }
+    ],
+    "outcome_impacts": [
+      {
+        "id": "imp_bc5d930a",
+        "event_id": "evt_finance_20230131_001_86b63c86",
+        "outcome_event_id": "evt_762a2cac4531",
+        "question_id": "v3_us_pce_price_monthly_change_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "Directly increased consumer disposable income, fueling spending.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T01:12:54.506890Z",
+        "last_confirmed_at": "2026-07-25T01:12:54.506890Z"
+      },
+      {
+        "id": "imp_f2660ca7",
+        "event_id": "evt_finance_20230131_005_65a3a995",
+        "outcome_event_id": "evt_762a2cac4531",
+        "question_id": "v3_us_pce_price_monthly_change_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.85,
+        "confidence": 0.85,
+        "reasoning": "Increased purchasing power led to robust consumer outlays.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T01:12:54.521032Z",
+        "last_confirmed_at": "2026-07-25T01:12:54.521032Z"
+      },
+      {
+        "id": "imp_78e2ccb9",
+        "event_id": "evt_finance_20230131_009_c4349f82",
+        "outcome_event_id": "evt_762a2cac4531",
+        "question_id": "v3_us_pce_price_monthly_change_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.8,
+        "reasoning": "Robust consumer outlays directly contributed to increased demand.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T01:12:54.532528Z",
+        "last_confirmed_at": "2026-07-25T01:12:54.532528Z"
+      },
+      {
+        "id": "imp_31f6adec",
+        "event_id": "evt_finance_20230131_002_bb687683",
+        "outcome_event_id": "evt_762a2cac4531",
+        "question_id": "v3_us_pce_price_monthly_change_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "Directly increased demand, contributing to inflationary pressures.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T01:12:54.545090Z",
+        "last_confirmed_at": "2026-07-25T01:12:54.545090Z"
+      },
+      {
+        "id": "imp_ca075a0a",
+        "event_id": "evt_finance_20230131_007_f0aa19da",
+        "outcome_event_id": "evt_762a2cac4531",
+        "question_id": "v3_us_pce_price_monthly_change_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.85,
+        "confidence": 0.85,
+        "reasoning": "Increased demand, coupled with lingering inflation, contributed to an acceleration in inflation.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T01:12:54.556408Z",
+        "last_confirmed_at": "2026-07-25T01:12:54.556408Z"
+      },
+      {
+        "id": "imp_a5419e1c",
+        "event_id": "evt_finance_20230131_006_dbcc1d5b",
+        "outcome_event_id": "evt_762a2cac4531",
+        "question_id": "v3_us_pce_price_monthly_change_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Lingering inflation in core services amplified the acceleration of inflation.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T01:12:54.567272Z",
+        "last_confirmed_at": "2026-07-25T01:12:54.567272Z"
+      },
+      {
+        "id": "imp_32378d90",
+        "event_id": "evt_finance_20230131_003_000095dd",
+        "outcome_event_id": "evt_762a2cac4531",
+        "question_id": "v3_us_pce_price_monthly_change_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.95,
+        "confidence": 0.95,
+        "reasoning": "The direct manifestation of increased demand and persistent price pressures, leading to the outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T01:12:54.579110Z",
+        "last_confirmed_at": "2026-07-25T01:12:54.579110Z"
+      },
+      {
+        "id": "imp_a23045bc",
+        "event_id": "evt_finance_20230131_008_535e070c",
+        "outcome_event_id": "evt_762a2cac4531",
+        "question_id": "v3_us_pce_price_monthly_change_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 1.0,
+        "confidence": 1.0,
+        "reasoning": "This event is the actual outcome of the question.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T01:12:54.590201Z",
+        "last_confirmed_at": "2026-07-25T01:12:54.590201Z"
+      },
+      {
+        "id": "imp_dceffb9d",
+        "event_id": "evt_finance_20230201_004_36c89f78",
+        "outcome_event_id": "evt_762a2cac4531",
+        "question_id": "v3_us_pce_price_monthly_change_2023_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Policy response to inflation, attempting to curb demand; its limited immediate effect highlights the strength of other causal factors, thus negatively impacting the 'true' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_pce_price_monthly_change_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T01:12:54.601527Z",
+        "last_confirmed_at": "2026-07-25T01:12:54.601527Z"
+      }
+    ]
+  }
+}

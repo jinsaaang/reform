@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_vix_monthly_change_2024_07",
+  "blueprint_sha256": "44d1ab1eb5e79c28cae2c23705c64c2b063083f6043e248d0feb41d8caa5f38a",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "market_fx_credit / volatility",
+      "target_operation": "monthly change",
+      "option_geometry": "ordered discrete"
+    },
+    "historical_question": "As of 2024-07-01, which range will the monthly VIX change for CBOE VIX index in 2024-07 fall into?",
+    "historical_cutoff": "2024-07-01T00:00:00+00:00",
+    "target_semantics": "The monthly percentage change of the CBOE VIX index for July 2024, categorized relative to its recent historical range.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The core task is to determine the monthly percentage change of the VIX index for July 2024. This requires understanding the VIX value at the beginning and end of the month.",
+      "The DAG indicates that the calculation of the percentage change is a key mediator. This calculation relies on both a reference VIX observation (likely the end of June 2024) and the target VIX observation (end of July 2024).",
+      "The final classification depends on comparing the calculated percentage change against pre-registered boundaries. The DAG highlights the 'Applicable pre-registered above-range classification boundary' as a driver for the target bridge."
+    ],
+    "counterevidence": "The DAG explicitly notes that the evidence pack lacks explicit counterevidence and retains a warning about this.",
+    "prospective_target_estimate": "The DAG's structure suggests a need to evaluate the VIX reference observation, the VIX target observation, the percentage-change calculation, and the classification boundary. Without specific data for these, a precise estimate cannot be formed, but the process would involve these steps.",
+    "option_mapping": "The target is to classify the VIX monthly percentage change into one of three bins: 'below recent range' (less than -9.326%), 'within recent range' (-9.326% to 1.632% exclusive), or 'above recent range' (1.632% or greater).",
+    "uncertainty": "The DAG indicates 'medium' historical support for key drivers and mediators, and explicitly states that the evidence pack lacks explicit counterevidence. The absence of forecast-time evidence further amplifies uncertainty regarding the VIX reference and target observations, and the resulting percentage change.",
+    "dag_derived_lesson": "When assessing a target metric defined by a change relative to historical boundaries, it is crucial to have evidence supporting the baseline observation, the target observation, the calculation of the change, and the boundary conditions. The absence of counterevidence and weak support for intermediate steps increases uncertainty."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

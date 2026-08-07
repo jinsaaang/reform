@@ -1,0 +1,1371 @@
+{
+  "question": {
+    "id": "v3_wti_monthly_return_2024_01",
+    "question_text": "As of 2024-01-01, which range will the monthly WTI price return for West Texas Intermediate crude oil in 2024-01 fall into?",
+    "question_type": "mcq",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 3,
+    "resolution_date": "2024-01-31T23:59:59Z",
+    "estimated_start_time": "2024-01-01T00:00:00Z",
+    "ground_truth": "above recent range",
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [
+      "evt_243de04a7569",
+      "evt_92449840dcd6",
+      "evt_adbf09385821"
+    ],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: West Texas Intermediate crude oil\nTarget period: 2024-01\nFinancial area: energy_commodities / crude oil\nRegion: US\nPre-registered recent-range boundaries: lower -8.008, upper 4.968 percent.",
+    "resolution_criteria": "Use FRED series DCOILWTICO. Compute the change from the previous monthly observation using mode 'pct'. Resolve 'below recent range' below -8.008, 'within recent range' from -8.008 inclusive to 4.968 exclusive, and 'above recent range' at or above 4.968 percent.",
+    "resolution_reasoning": "The snapshotted target change was 6.107 percent; it resolved to 'above recent range'.",
+    "options": [
+      "below recent range",
+      "within recent range",
+      "above recent range"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": "## Executive Summary\nWTI crude oil prices in January 2024 rose above the recent range primarily due to escalating geopolitical tensions in the Middle East, particularly the Red Sea attacks by Houthi rebels and subsequent US-UK military responses. These events disrupted critical shipping lanes and heightened fears of supply disruptions, overriding concerns about global economic slowdown and ample supply from increased US production. The market's reaction to the Red Sea crisis, combined with OPEC+ voluntary production cuts, pushed prices upwards despite earlier predictions of softness.\n\n## Timeline Of Key Events\n- **January 1, 2024:** Major oil companies begin the year with record shareholder payouts, indicating strong prior year performance despite looming concerns about future prices [art_finance_20240101_010_21f5df1a].\n- **January 2, 2024:** EIA reports Brent crude oil prices averaged $19 per barrel less in 2023 than 2022, suggesting a downward trend from the previous year, influenced by new trade dynamics and global demand falling short of expectations [art_finance_20240102_002_1f6b9e3e].\n- **January 3, 2024:** Predictions emerge that oil prices will continue to lag in 2024 due to weak global economic activity and record output from the United States [art_finance_20240103_007_f726f806].\n- **January 4, 2024:** World Bank reports oil prices remained volatile amid geopolitical conflict but were under downward pressure in late 2023 due to weak global economic activity, record US output, and steady Russian production. OPEC+ also extended supply cuts [art_finance_20240104_008_1ab660d6].\n- **January 10-11, 2024:** Global crude oil prices rise above $78 per barrel due to Libyan oil production halt amid political unrest and ongoing turmoil in the Red Sea [art_finance_20240115_005_1f8d48d9].\n- **January 12, 2024:** Oil prices jump by 4% after US and UK launched strikes in Yemen over Red Sea attacks by Houthi rebels. Brent crude hits $80 per barrel for the first time this year, and WTI increases to $74.03 [art_finance_20240112_009_ff496803].\n- **January 15, 2024:** Barclays lowers its 2024 crude oil price forecast despite recent price spikes, citing ample supply and bearish outlook [art_finance_20240115_005_1f8d48d9].\n- **January 18, 2024:** IEA reports global oil demand growth slowing but world oil supply rising, primarily from non-OPEC+ countries. Benchmark crude oil futures recovered from mid-December lows due to Red Sea tensions [art_finance_20240118_004_3a41c3f4].\n- **January 22, 2024:** Analysis suggests that despite Middle East conflicts and Red Sea disruptions, oil prices are not 'spiking' due to no reduction in overall global supply and constrained demand from global economic uncertainty [art_finance_20240122_006_b5cc0c6b].\n\n## Causal Chain Analysis\nThe WTI crude oil price in January 2024 rose above its recent range primarily due to the following causal chain:\n\n1.  **Geopolitical Instability (Red Sea Attacks):** Renewed and escalating attacks by Houthi rebels on commercial vessels in the Red Sea, starting in mid-November and intensifying into January, created significant instability in a crucial global shipping lane [art_finance_20240112_009_ff496803]. This **triggered** fears of disruptions to oil supplies travelling through the Suez Canal route.\n2.  **Military Response:** The US and UK launched retaliatory strikes against Houthi targets in Yemen on January 12th [art_finance_20240112_009_ff496803]. This military action **led to** an immediate increase in perceived risk in the region, directly **causing** a jump in oil prices, with Brent crude hitting $80/barrel and WTI rising significantly.\n3.  **Supply Disruption Fears:** The heightened geopolitical tensions and direct military involvement **resulted in** market participants pricing in a higher risk premium for oil, anticipating potential supply chain disruptions and reduced oil flows, even if actual supply remained stable at the time [art_finance_20240112_009_ff496803]. This **contributed to** the upward pressure on prices.\n4.  **Existing OPEC+ Production Cuts:** Voluntary production cuts by OPEC+ nations, extended through the end of 2024, provided a baseline of tighter supply [art_finance_20240102_002_1f6b9e3e, art_finance_20240104_008_1ab660d6]. While not a direct January event, these cuts **supported** the upward price movement by limiting the availability of additional oil to mitigate supply fears, thereby **amplifying** the impact of geopolitical events.\n5.  **Market Sentiment Shift:** The combination of actual military strikes and the underpinning of OPEC+ cuts **shifted** market sentiment from a bearish outlook (driven by global demand concerns) towards a more bullish one, ultimately **leading to** WTI prices moving 'above recent range' as indicated by the outcome.\n\n## Countervailing Factors\nSeveral factors pushed against the actual outcome of prices rising above the recent range, but were ultimately overwhelmed:\n\n-   **Weak Global Economic Activity and Demand Concerns:** Throughout late 2023 and early January 2024, concerns about slowing global economic growth, particularly in China, and 'higher for longer' interest rates, were widely cited as bearish factors for oil demand [art_finance_20240104_008_1ab660d6, art_finance_20240103_007_f726f806]. Predictions from institutions like Goldman Sachs and Barclays anticipated 'soft' oil prices in 2024 [art_finance_20240115_005_1f8d48d9]. These factors **failed** to keep prices down because the immediate and tangible threat of supply disruptions from geopolitical events in the Red Sea outweighed the more abstract demand concerns.\n-   **Record US Oil Production:** The United States achieved record oil output, contributing significantly to global supply [art_finance_20240104_008_1ab660d6]. This increased supply was expected to constrain prices by ensuring ample availability [art_finance_20240115_005_1f8d48d9]. However, this factor **was overwhelmed** by the perceived risk of supply interruptions from the Red Sea, which directly impacts a major seaborne trade route, rather than land-based US production.\n-   **Lack of Actual Supply Disruption:** As late as January 22nd, analysis indicated that the Red Sea crisis had not caused any significant reduction in the world's overall oil supply [art_finance_20240122_006_b5cc0c6b]. Despite this, prices still rose. This **suggests** that the market reacted to the *risk* and *fear* of disruption rather than an actual physical shortage, demonstrating the primacy of geopolitical risk perception over immediate physical supply data in this period.\n\n## Event Candidate Inventory\n-   **E1: Escalation of Red Sea Attacks:**\n    -   **Title:** Houthi attacks on Red Sea shipping\n    -   **Date:** Ongoing from mid-November 2023, intensified in early January 2024 (e.g., around Jan 10-11 for Libya/Red Sea impact).\n    -   **Why it matters causally:** Directly threatened global oil transit, heightened geopolitical risk.\n    -   **Source article IDs:** [art_finance_20240115_005_1f8d48d9], [art_finance_20240112_009_ff496803]\n-   **E2: US-UK Military Strikes in Yemen:**\n    -   **Title:** US-UK strikes against Houthi rebels\n    -   **Date:** January 12, 2024\n    -   **Why it matters causally:** Direct military intervention intensified the conflict, causing an immediate upward spike in oil prices due to increased risk premium.\n    -   **Source article IDs:** [art_finance_20240112_009_ff496803]\n-   **E3: OPEC+ Production Cuts Extension:**\n    -   **Title:** OPEC+ extends voluntary oil production cuts\n    -   **Date:** Announced June 4, 2023, for extension through end of 2024, confirmed by articles in January 2024 (e.g., Jan 4).\n    -   **Why it matters causally:** Created a tighter supply baseline, amplifying the impact of supply disruption fears.\n    -   **Source article IDs:** [art_finance_20240102_002_1f6b9e3e], [art_finance_20240104_008_1ab660d6]\n-   **E4: Global Economic Slowdown Fears:**\n    -   **Title:** Concerns over weak global economic activity and demand\n    -   **Date:** Continuous throughout late 2023 and early January 2024.\n    -   **Why it matters causally:** Acted as a countervailing force, limiting how high prices went, but was overcome by geopolitical catalysts.\n    -   **Source article IDs:** [art_finance_20240104_008_1ab660d6], [art_finance_20240103_007_f726f806], [art_finance_20240115_005_1f8d48d9]\n\n## Evidence Mapping Table\n\n| Claim/Event | Article IDs | Date Support | Confidence (0-1) | Notes |\n| :---------- | :---------- | :----------- | :--------------- | :---- |\n| Red Sea attacks increase oil price fears | [art_finance_20240115_005_1f8d48d9], [art_finance_20240112_009_ff496803], [art_finance_20240118_004_3a41c3f4] | Jan 10-15, 2024 | 0.9 | Direct correlation between attacks/strikes and price jumps. |\n| US-UK strikes cause price jump | [art_finance_20240112_009_ff496803] | Jan 12, 2024 | 1.0 | Explicitly states \"Oil prices jumped by 4% after the US and UK launched strikes.\" |\n| OPEC+ production cuts support prices | [art_finance_20240102_002_1f6b9e3e], [art_finance_20240104_008_1ab660d6] | Jan 2, 2024, Jan 4, 2024 | 0.8 | Ongoing cuts limited supply, providing upward pressure against demand concerns. |\n| Demand concerns could lead to soft prices | [art_finance_20240104_008_1ab660d6], [art_finance_20240103_007_f726f806], [art_finance_20240115_005_1f8d48d9] | Jan 3-15, 2024 | 0.8 | Multiple sources predicted downward price pressure due to macroeconomics, which was overcome by geopolitics. |\n| US record oil output offsets price hikes | [art_finance_20240104_008_1ab660d6], [art_finance_20240115_005_1f8d48d9] | Jan 4, 2024, Jan 15, 2024 | 0.7 | Record US output was a known bearish factor that was outweighed by geopolitical risks. |\n\n## Uncertainties And Alternative Paths\n-   **Duration and Intensity of Geopolitical Conflict:** The primary uncertainty was how long and how intensely the Red Sea conflict would continue and whether it would escalate further, potentially disrupting actual oil flows rather than just posing a threat. A rapid de-escalation could have led to prices falling back within or below the recent range.\n-   **OPEC+ Compliance and Future Decisions:** While cuts were extended, the degree of compliance by OPEC+ members and any unexpected policy shifts (e.g., further cuts or increases) could have significantly altered the supply-demand balance.\n-   **Magnitude of Global Economic Slowdown:** A more severe-than-expected global economic downturn, particularly in major oil-consuming nations like China, could have significantly depressed demand and overwhelmed geopolitical supply fears, pushing prices lower.",
+    "graph_built": true,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.201928Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "wti_monthly_return",
+        "event_cluster_id": "crude_oil_2024-01",
+        "category": "energy_commodities",
+        "original_domain": "energy_commodities",
+        "subdomain": "crude oil",
+        "entity": "West Texas Intermediate crude oil",
+        "region": "US",
+        "target_metric": "monthly WTI price return",
+        "target_period": "2024-01",
+        "forecast_cutoff": "2024-01-01T00:00:00+00:00",
+        "forecast_date_options": [
+          "2024-01-01"
+        ],
+        "resolution_available_at": "2024-01-31T23:59:59+00:00",
+        "horizon_days": 30,
+        "source_type": "fred_series_snapshot",
+        "source_series_id": "DCOILWTICO",
+        "source_homepage": "https://fred.stlouisfed.org/series/DCOILWTICO",
+        "comparison_rule": "target change bucketed by the lower and upper quartiles of the 8 prior observed changes",
+        "comparison_threshold": -1.421727,
+        "comparison_thresholds": {
+          "lower": -8.008228,
+          "upper": 4.968341
+        },
+        "change_unit": "percent",
+        "threshold_observation_dates": [
+          "2023-04-28",
+          "2023-05-31",
+          "2023-06-30",
+          "2023-07-31",
+          "2023-08-31",
+          "2023-09-29",
+          "2023-10-31",
+          "2023-11-30",
+          "2023-12-29"
+        ],
+        "split": "memory",
+        "family_position": 3,
+        "family_size": 8,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "above recent range",
+        "resolved_class": "above recent range",
+        "resolution_value": 76.28,
+        "target_change": 6.10655168,
+        "source_observation_date": "2024-01-31",
+        "resolution_document": {
+          "publisher": "Federal Reserve Bank of St. Louis (FRED)",
+          "title": "WTI Crude Oil Price",
+          "url": "https://fred.stlouisfed.org/series/DCOILWTICO"
+        },
+        "source_download_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILWTICO&cosd=2019-01-01&coed=2026-06-30",
+        "source_sha256": "68cf4dea3121e57bcdb8b04935b346d9ec047cde5cbef6ed85402b28bc9a3ce8",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_adbf09385821",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 10,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_20240102_002_1f6b9e3e",
+        "title": "Brent crude oil prices averaged $19 per barrel less in 2023 than 2022 - U.S. Energy Information Administration (EIA) (.gov)",
+        "url": "https://www.eia.gov/todayinenergy/detail.php?id=61142",
+        "source": "eia.gov",
+        "published_date": "2024-01-02T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240115_005_1f8d48d9",
+        "title": "What's happening with the brent crude oil price? And where will it go next? - Invezz",
+        "url": "https://invezz.com/news/2024/01/15/where-to-next-for-brent-crude-oil-price",
+        "source": "invezz.com",
+        "published_date": "2024-01-15T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240118_004_3a41c3f4",
+        "title": "Oil Market Report - January 2024 – Analysis - IEA – International Energy Agency",
+        "url": "https://www.iea.org/reports/oil-market-report-january-2024",
+        "source": "iea.org",
+        "published_date": "2024-01-18T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240122_006_b5cc0c6b",
+        "title": "Why Oil Prices Aren’t Spiking - The Washington Institute",
+        "url": "https://www.washingtoninstitute.org/policy-analysis/why-oil-prices-arent-spiking",
+        "source": "washingtoninstitute.org",
+        "published_date": "2024-01-22T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240112_009_ff496803",
+        "title": "Oil prices rise on US-UK strikes over Red Sea attacks - BBC",
+        "url": "https://www.bbc.com/news/business-67947795",
+        "source": "bbc.com",
+        "published_date": "2024-01-12T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240102_003_9e660e2d",
+        "title": "The impact of Russia–Ukraine war on crude oil prices: an EMC framework - Nature",
+        "url": "https://www.nature.com/articles/s41599-023-02526-9",
+        "source": "nature.com",
+        "published_date": "2024-01-02T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240103_007_f726f806",
+        "title": "Why Oil Prices Will Continue To Lag in 2024 - Crude Oil Prices Today | OilPrice.com",
+        "url": "https://oilprice.com/Energy/Crude-Oil/Why-Oil-Prices-Will-Continue-To-Lag-in-2024.html",
+        "source": "oilprice.com",
+        "published_date": "2024-01-03T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240104_008_1ab660d6",
+        "title": "Oil prices remain volatile amid uncertainty arising from geopolitical conflict - World Bank Blogs",
+        "url": "https://blogs.worldbank.org/en/opendata/oil-prices-remain-volatile-amid-uncertainty-arising-geopolitical-conflict",
+        "source": "blogs.worldbank.org",
+        "published_date": "2024-01-04T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240101_010_21f5df1a",
+        "title": "Big five oil companies to reward shareholders with record payouts - The Guardian",
+        "url": "https://www.theguardian.com/business/2024/jan/01/oil-companies-shareholders-payouts-bp-shell-chevron-exxonmobil-totalenergies",
+        "source": "theguardian.com",
+        "published_date": "2024-01-01T11:03:11+00:00"
+      },
+      {
+        "id": "art_finance_20240119_011_d2d5d44d",
+        "title": "What price oil? 2023 In review - Fuel Oil News",
+        "url": "https://fueloilnews.co.uk/2024/01/what-price-oil-2023-in-review",
+        "source": "fueloilnews.co.uk",
+        "published_date": "2024-01-19T09:11:00+00:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_adbf09385821",
+      "events_count": 14,
+      "hypotheses_count": 24
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 3,
+      "avg_depth": 1.71,
+      "quality_score": 0.86,
+      "depth_score": 1.0,
+      "confidence_score": 0.75,
+      "strength_score": 0.67,
+      "evidence_score": 1.0,
+      "event_count": 14,
+      "hypothesis_count": 24
+    },
+    "nodes": [
+      {
+        "id": "evt_243de04a7569",
+        "title": "Option 1: below recent range",
+        "description": "Question resolves to: below recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_wti_monthly_return_2024_01",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 0,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:54:11.937147Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_92449840dcd6",
+        "title": "Option 2: within recent range",
+        "description": "Question resolves to: within recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_wti_monthly_return_2024_01",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 1,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:54:11.937158Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_adbf09385821",
+        "title": "Option 3: above recent range",
+        "description": "Question resolves to: above recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-31T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_wti_monthly_return_2024_01",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 2,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:54:11.937165Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230604_023_8986aa05",
+        "title": "OPEC+ extends voluntary oil production cuts",
+        "description": "Voluntary production cuts by OPEC+ nations, extended through the end of 2024, provided a baseline of tighter supply.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-06-04T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240102_002_1f6b9e3e",
+          "art_finance_20240104_008_1ab660d6"
+        ],
+        "extracted_for_question_id": "v3_wti_monthly_return_2024_01",
+        "source_article_id": "art_finance_20240102_002_1f6b9e3e",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wti_monthly_return_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:55:55.038138Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240101_013_16cd7626",
+        "title": "Major oil companies begin year with record shareholder payouts",
+        "description": "Major oil companies begin the year with record shareholder payouts, indicating strong prior year performance despite looming concerns about future prices.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-01T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240101_010_21f5df1a"
+        ],
+        "extracted_for_question_id": "v3_wti_monthly_return_2024_01",
+        "source_article_id": "art_finance_20240101_010_21f5df1a",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wti_monthly_return_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:55:54.728554Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240102_014_d3e0574a",
+        "title": "EIA reports Brent crude oil prices averaged $19 less in 2023 than 2022",
+        "description": "EIA reports Brent crude oil prices averaged $19 per barrel less in 2023 than 2022, suggesting a downward trend from the previous year, influenced by new trade dynamics and global demand falling short of expectations.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-02T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240102_002_1f6b9e3e"
+        ],
+        "extracted_for_question_id": "v3_wti_monthly_return_2024_01",
+        "source_article_id": "art_finance_20240102_002_1f6b9e3e",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wti_monthly_return_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:55:54.759049Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240103_015_c593b0dc",
+        "title": "Predictions emerge that oil prices will continue to lag in 2024",
+        "description": "Predictions emerge that oil prices will continue to lag in 2024 due to weak global economic activity and record output from the United States.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-03T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240103_007_f726f806"
+        ],
+        "extracted_for_question_id": "v3_wti_monthly_return_2024_01",
+        "source_article_id": "art_finance_20240103_007_f726f806",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wti_monthly_return_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:55:54.789958Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240103_024_fc548da5",
+        "title": "Concerns over weak global economic activity and demand",
+        "description": "Concerns about slowing global economic growth, particularly in China, and 'higher for longer' interest rates, were widely cited as bearish factors for oil demand.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-03T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240104_008_1ab660d6",
+          "art_finance_20240103_007_f726f806",
+          "art_finance_20240115_005_1f8d48d9"
+        ],
+        "extracted_for_question_id": "v3_wti_monthly_return_2024_01",
+        "source_article_id": "art_finance_20240104_008_1ab660d6",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wti_monthly_return_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:55:55.072569Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240104_016_ea275639",
+        "title": "World Bank reports oil prices remained volatile amid geopolitical conflict",
+        "description": "World Bank reports oil prices remained volatile amid geopolitical conflict but were under downward pressure in late 2023 due to weak global economic activity, record US output, and steady Russian production. OPEC+ also extended supply cuts.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-04T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240104_008_1ab660d6"
+        ],
+        "extracted_for_question_id": "v3_wti_monthly_return_2024_01",
+        "source_article_id": "art_finance_20240104_008_1ab660d6",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wti_monthly_return_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:55:54.820403Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240104_025_6616ab91",
+        "title": "United States achieves record oil output",
+        "description": "The United States achieved record oil output, contributing significantly to global supply.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-04T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240104_008_1ab660d6",
+          "art_finance_20240115_005_1f8d48d9"
+        ],
+        "extracted_for_question_id": "v3_wti_monthly_return_2024_01",
+        "source_article_id": "art_finance_20240104_008_1ab660d6",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wti_monthly_return_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:55:55.106251Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240110_017_a61e2e0d",
+        "title": "Global crude oil prices rise above $78 per barrel",
+        "description": "Global crude oil prices rise above $78 per barrel due to Libyan oil production halt amid political unrest and ongoing turmoil in the Red Sea.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-10T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240115_005_1f8d48d9"
+        ],
+        "extracted_for_question_id": "v3_wti_monthly_return_2024_01",
+        "source_article_id": "art_finance_20240115_005_1f8d48d9",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wti_monthly_return_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:55:54.850881Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240112_018_1ab1efa1",
+        "title": "Oil prices jump by 4% after US and UK launched strikes in Yemen",
+        "description": "Oil prices jump by 4% after US and UK launched strikes in Yemen over Red Sea attacks by Houthi rebels. Brent crude hits $80 per barrel for the first time this year, and WTI increases to $74.03.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-12T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240112_009_ff496803"
+        ],
+        "extracted_for_question_id": "v3_wti_monthly_return_2024_01",
+        "source_article_id": "art_finance_20240112_009_ff496803",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wti_monthly_return_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:55:54.881119Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240115_019_818a1479",
+        "title": "Barclays lowers its 2024 crude oil price forecast",
+        "description": "Barclays lowers its 2024 crude oil price forecast despite recent price spikes, citing ample supply and bearish outlook.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-15T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240115_005_1f8d48d9"
+        ],
+        "extracted_for_question_id": "v3_wti_monthly_return_2024_01",
+        "source_article_id": "art_finance_20240115_005_1f8d48d9",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wti_monthly_return_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:55:54.911632Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240118_020_f0529a4f",
+        "title": "IEA reports global oil demand growth slowing but world oil supply rising",
+        "description": "IEA reports global oil demand growth slowing but world oil supply rising, primarily from non-OPEC+ countries. Benchmark crude oil futures recovered from mid-December lows due to Red Sea tensions.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-18T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240118_004_3a41c3f4"
+        ],
+        "extracted_for_question_id": "v3_wti_monthly_return_2024_01",
+        "source_article_id": "art_finance_20240118_004_3a41c3f4",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wti_monthly_return_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:55:54.942147Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240122_021_8f41ad16",
+        "title": "Analysis suggests oil prices are not 'spiking' despite Middle East conflicts",
+        "description": "Analysis suggests that despite Middle East conflicts and Red Sea disruptions, oil prices are not 'spiking' due to no reduction in overall global supply and constrained demand from global economic uncertainty.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-22T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240122_006_b5cc0c6b"
+        ],
+        "extracted_for_question_id": "v3_wti_monthly_return_2024_01",
+        "source_article_id": "art_finance_20240122_006_b5cc0c6b",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wti_monthly_return_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:55:54.974817Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_politics_20240110_022_c22e1ba1",
+        "title": "Houthi attacks on Red Sea shipping escalate",
+        "description": "Renewed and escalating attacks by Houthi rebels on commercial vessels in the Red Sea, starting in mid-November and intensifying into January, created significant instability in a crucial global shipping lane.",
+        "event_type": "indicator",
+        "domain": "politics",
+        "tags": [],
+        "occurred_date": "2024-01-10T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240115_005_1f8d48d9",
+          "art_finance_20240112_009_ff496803"
+        ],
+        "extracted_for_question_id": "v3_wti_monthly_return_2024_01",
+        "source_article_id": "art_finance_20240115_005_1f8d48d9",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wti_monthly_return_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T02:55:54.999455Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_wti_monthly_return_2024_01_20260725_025555_009_236525c6",
+        "source_event_id": "evt_politics_20240110_022_c22e1ba1",
+        "target_event_id": "evt_finance_20240112_018_1ab1efa1",
+        "relation_type": "triggers",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Escalating Houthi attacks directly led to US-UK retaliatory strikes.",
+        "evidence_article_ids": [
+          "art_finance_20240112_009_ff496803"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:55:55.135313Z",
+        "last_confirmed_at": "2026-07-25T02:55:55.135313Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2024_01_20260725_025555_010_89432a3c",
+        "source_event_id": "evt_politics_20240110_022_c22e1ba1",
+        "target_event_id": "evt_adbf09385821",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "The escalating attacks created fears of supply disruptions, contributing to the price rise.",
+        "evidence_article_ids": [
+          "art_finance_20240115_005_1f8d48d9",
+          "art_finance_20240112_009_ff496803"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:55:55.151584Z",
+        "last_confirmed_at": "2026-07-25T02:55:55.151584Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2024_01_20260725_025555_011_e216898f",
+        "source_event_id": "evt_finance_20240112_018_1ab1efa1",
+        "target_event_id": "evt_adbf09385821",
+        "relation_type": "causes",
+        "strength": 0.9,
+        "confidence": 1.0,
+        "time_lag_hours": null,
+        "reasoning": "The military action directly caused an immediate jump in oil prices, pushing WTI above the recent range.",
+        "evidence_article_ids": [
+          "art_finance_20240112_009_ff496803"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:55:55.166924Z",
+        "last_confirmed_at": "2026-07-25T02:55:55.166924Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2024_01_20260725_025555_012_922d6760",
+        "source_event_id": "evt_finance_20230604_023_8986aa05",
+        "target_event_id": "evt_adbf09385821",
+        "relation_type": "amplifies",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "OPEC+ production cuts created a tighter supply baseline, amplifying the impact of geopolitical events on prices.",
+        "evidence_article_ids": [
+          "art_finance_20240102_002_1f6b9e3e",
+          "art_finance_20240104_008_1ab660d6"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:55:55.183185Z",
+        "last_confirmed_at": "2026-07-25T02:55:55.183185Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2024_01_20260725_025555_013_3995c465",
+        "source_event_id": "evt_finance_20240103_024_fc548da5",
+        "target_event_id": "evt_adbf09385821",
+        "relation_type": "inhibits",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Concerns about weak global economic activity were a bearish factor that would have kept prices down, but were ultimately overwhelmed.",
+        "evidence_article_ids": [
+          "art_finance_20240104_008_1ab660d6",
+          "art_finance_20240103_007_f726f806",
+          "art_finance_20240115_005_1f8d48d9"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:55:55.200942Z",
+        "last_confirmed_at": "2026-07-25T02:55:55.200942Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2024_01_20260725_025555_014_7bfa670b",
+        "source_event_id": "evt_finance_20240104_025_6616ab91",
+        "target_event_id": "evt_adbf09385821",
+        "relation_type": "inhibits",
+        "strength": 0.5,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Record US oil production increased global supply, which should have constrained prices, but was overwhelmed by geopolitical risks.",
+        "evidence_article_ids": [
+          "art_finance_20240104_008_1ab660d6",
+          "art_finance_20240115_005_1f8d48d9"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:55:55.216021Z",
+        "last_confirmed_at": "2026-07-25T02:55:55.216021Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2024_01_20260725_025555_015_312724e5",
+        "source_event_id": "evt_politics_20240110_022_c22e1ba1",
+        "target_event_id": "evt_finance_20240110_017_a61e2e0d",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Ongoing turmoil in the Red Sea contributed to global crude oil prices rising above $78 per barrel.",
+        "evidence_article_ids": [
+          "art_finance_20240115_005_1f8d48d9"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:55:55.231560Z",
+        "last_confirmed_at": "2026-07-25T02:55:55.231560Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2024_01_20260725_025555_016_20d34d74",
+        "source_event_id": "evt_finance_20240103_024_fc548da5",
+        "target_event_id": "evt_finance_20240103_015_c593b0dc",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Weak global economic activity was a primary reason for predictions of lagging oil prices in 2024.",
+        "evidence_article_ids": [
+          "art_finance_20240103_007_f726f806"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:55:55.246496Z",
+        "last_confirmed_at": "2026-07-25T02:55:55.246496Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2024_01_20260725_025555_017_4c5e5e21",
+        "source_event_id": "evt_finance_20240102_014_d3e0574a",
+        "target_event_id": "evt_finance_20240103_015_c593b0dc",
+        "relation_type": "correlates",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "The downward trend in Brent crude prices in 2023 influenced predictions for 2024.",
+        "evidence_article_ids": [
+          "art_finance_20240102_002_1f6b9e3e"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:55:55.262175Z",
+        "last_confirmed_at": "2026-07-25T02:55:55.262175Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2024_01_20260725_025605_018_456fa936",
+        "source_event_id": "evt_politics_20240110_022_c22e1ba1",
+        "target_event_id": "evt_finance_20240118_020_f0529a4f",
+        "relation_type": "correlates",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "IEA report mentions benchmark crude oil futures recovered due to Red Sea tensions.",
+        "evidence_article_ids": [
+          "art_finance_20240118_004_3a41c3f4"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:56:05.122346Z",
+        "last_confirmed_at": "2026-07-25T02:56:05.122346Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2024_01_20260725_025608_019_2f1ed09b",
+        "source_event_id": "evt_finance_20240103_024_fc548da5",
+        "target_event_id": "evt_finance_20240104_016_ea275639",
+        "relation_type": "correlates",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "World Bank report highlights weak global economic activity as a factor for downward pressure on oil prices.",
+        "evidence_article_ids": [
+          "art_finance_20240104_008_1ab660d6"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:56:08.933127Z",
+        "last_confirmed_at": "2026-07-25T02:56:08.933127Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2024_01_20260725_025608_020_121379dd",
+        "source_event_id": "evt_finance_20240104_025_6616ab91",
+        "target_event_id": "evt_finance_20240104_016_ea275639",
+        "relation_type": "correlates",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "World Bank report mentions record US output as a factor for downward pressure on oil prices.",
+        "evidence_article_ids": [
+          "art_finance_20240104_008_1ab660d6"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:56:08.949357Z",
+        "last_confirmed_at": "2026-07-25T02:56:08.949357Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2024_01_20260725_025608_021_3e2d0691",
+        "source_event_id": "evt_finance_20230604_023_8986aa05",
+        "target_event_id": "evt_finance_20240104_016_ea275639",
+        "relation_type": "correlates",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "World Bank report mentions OPEC+ extending supply cuts.",
+        "evidence_article_ids": [
+          "art_finance_20240104_008_1ab660d6"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:56:08.968690Z",
+        "last_confirmed_at": "2026-07-25T02:56:08.968690Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2024_01_20260725_025608_022_c93221fe",
+        "source_event_id": "evt_finance_20240103_024_fc548da5",
+        "target_event_id": "evt_finance_20240118_020_f0529a4f",
+        "relation_type": "correlates",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "IEA report mentions global oil demand growth slowing, aligning with weak global economic activity concerns.",
+        "evidence_article_ids": [
+          "art_finance_20240118_004_3a41c3f4"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:56:08.984453Z",
+        "last_confirmed_at": "2026-07-25T02:56:08.984453Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2024_01_20260725_025609_023_3b1e1a57",
+        "source_event_id": "evt_finance_20240104_025_6616ab91",
+        "target_event_id": "evt_finance_20240118_020_f0529a4f",
+        "relation_type": "correlates",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "IEA report mentions world oil supply rising, primarily from non-OPEC+ countries, which includes US production.",
+        "evidence_article_ids": [
+          "art_finance_20240118_004_3a41c3f4"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:56:09.000118Z",
+        "last_confirmed_at": "2026-07-25T02:56:09.000118Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2024_01_20260725_025609_024_41d78cfa",
+        "source_event_id": "evt_finance_20240103_024_fc548da5",
+        "target_event_id": "evt_finance_20240122_021_8f41ad16",
+        "relation_type": "correlates",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Analysis mentions constrained demand from global economic uncertainty as a reason for no price spike.",
+        "evidence_article_ids": [
+          "art_finance_20240122_006_b5cc0c6b"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:56:09.016067Z",
+        "last_confirmed_at": "2026-07-25T02:56:09.016067Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2024_01_20260725_025615_025_5688b7b1",
+        "source_event_id": "evt_finance_20240101_013_16cd7626",
+        "target_event_id": "evt_finance_20240102_014_d3e0574a",
+        "relation_type": "correlates",
+        "strength": 0.5,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "Strong prior year performance indicated by payouts could be seen in contrast to the downward trend reported by EIA.",
+        "evidence_article_ids": [
+          "art_finance_20240101_010_21f5df1a",
+          "art_finance_20240102_002_1f6b9e3e"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:56:15.702613Z",
+        "last_confirmed_at": "2026-07-25T02:56:15.702613Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2024_01_20260725_025615_026_fb84d6a3",
+        "source_event_id": "evt_finance_20240102_014_d3e0574a",
+        "target_event_id": "evt_finance_20240103_015_c593b0dc",
+        "relation_type": "correlates",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "The downward trend in Brent crude prices in 2023 influenced predictions for 2024.",
+        "evidence_article_ids": [
+          "art_finance_20240102_002_1f6b9e3e",
+          "art_finance_20240103_007_f726f806"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:56:15.721063Z",
+        "last_confirmed_at": "2026-07-25T02:56:15.721063Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2024_01_20260725_025615_027_eaa5b231",
+        "source_event_id": "evt_finance_20240103_015_c593b0dc",
+        "target_event_id": "evt_finance_20240115_019_818a1479",
+        "relation_type": "correlates",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Barclays lowering its forecast aligns with earlier predictions of lagging oil prices.",
+        "evidence_article_ids": [
+          "art_finance_20240103_007_f726f806",
+          "art_finance_20240115_005_1f8d48d9"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:56:15.737821Z",
+        "last_confirmed_at": "2026-07-25T02:56:15.737821Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2024_01_20260725_025615_028_1bb8024c",
+        "source_event_id": "evt_politics_20240110_022_c22e1ba1",
+        "target_event_id": "evt_finance_20240110_017_a61e2e0d",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Ongoing turmoil in the Red Sea contributed to global crude oil prices rising above $78 per barrel.",
+        "evidence_article_ids": [
+          "art_finance_20240115_005_1f8d48d9"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:56:15.754421Z",
+        "last_confirmed_at": "2026-07-25T02:56:15.754421Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2024_01_20260725_025615_029_db62389e",
+        "source_event_id": "evt_finance_20240110_017_a61e2e0d",
+        "target_event_id": "evt_finance_20240112_018_1ab1efa1",
+        "relation_type": "triggers",
+        "strength": 0.7,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "The initial rise in global crude prices set the stage for the further jump after US-UK strikes.",
+        "evidence_article_ids": [
+          "art_finance_20240115_005_1f8d48d9",
+          "art_finance_20240112_009_ff496803"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:56:15.772683Z",
+        "last_confirmed_at": "2026-07-25T02:56:15.772683Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2024_01_20260725_025615_030_0a2096e5",
+        "source_event_id": "evt_finance_20240112_018_1ab1efa1",
+        "target_event_id": "evt_finance_20240118_020_f0529a4f",
+        "relation_type": "correlates",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "IEA report mentions benchmark crude oil futures recovered due to Red Sea tensions, which were exacerbated by the strikes.",
+        "evidence_article_ids": [
+          "art_finance_20240112_009_ff496803",
+          "art_finance_20240118_004_3a41c3f4"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:56:15.789334Z",
+        "last_confirmed_at": "2026-07-25T02:56:15.789334Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2024_01_20260725_025615_031_9dba7022",
+        "source_event_id": "evt_finance_20240103_024_fc548da5",
+        "target_event_id": "evt_finance_20240122_021_8f41ad16",
+        "relation_type": "correlates",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Analysis mentions constrained demand from global economic uncertainty as a reason for no price spike.",
+        "evidence_article_ids": [
+          "art_finance_20240122_006_b5cc0c6b"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:56:15.805581Z",
+        "last_confirmed_at": "2026-07-25T02:56:15.805581Z"
+      },
+      {
+        "id": "hyp_v3_wti_monthly_return_2024_01_20260725_025615_032_a4335f8d",
+        "source_event_id": "evt_finance_20240104_025_6616ab91",
+        "target_event_id": "evt_finance_20240122_021_8f41ad16",
+        "relation_type": "correlates",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Analysis mentions no reduction in overall global supply, which is supported by record US oil production.",
+        "evidence_article_ids": [
+          "art_finance_20240122_006_b5cc0c6b"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T02:56:15.822417Z",
+        "last_confirmed_at": "2026-07-25T02:56:15.822417Z"
+      }
+    ],
+    "outcome_impacts": [
+      {
+        "id": "imp_4f6596e7",
+        "event_id": "evt_finance_20240101_013_16cd7626",
+        "outcome_event_id": "evt_adbf09385821",
+        "question_id": "v3_wti_monthly_return_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.7,
+        "reasoning": "Major oil companies beginning the year with record share prices suggests a positive market outlook for oil, making higher prices more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:56:40.885960Z",
+        "last_confirmed_at": "2026-07-25T02:56:40.885960Z"
+      },
+      {
+        "id": "imp_ddb6fd18",
+        "event_id": "evt_finance_20240102_014_d3e0574a",
+        "outcome_event_id": "evt_adbf09385821",
+        "question_id": "v3_wti_monthly_return_2024_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.6,
+        "confidence": 0.6,
+        "reasoning": "EIA reporting Brent crude oil prices averaged $19 below WTI suggests a downward pressure on WTI prices, making higher prices less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:56:40.898673Z",
+        "last_confirmed_at": "2026-07-25T02:56:40.898673Z"
+      },
+      {
+        "id": "imp_8b1cf4aa",
+        "event_id": "evt_finance_20240103_015_c593b0dc",
+        "outcome_event_id": "evt_adbf09385821",
+        "question_id": "v3_wti_monthly_return_2024_01",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.5,
+        "reasoning": "Predictions of continued volatility do not clearly indicate a positive or negative impact on the specific outcome of WTI price being above the recent range, but rather suggest uncertainty.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:56:40.910321Z",
+        "last_confirmed_at": "2026-07-25T02:56:40.910321Z"
+      },
+      {
+        "id": "imp_fa84439f",
+        "event_id": "evt_finance_20240104_016_ea275639",
+        "outcome_event_id": "evt_adbf09385821",
+        "question_id": "v3_wti_monthly_return_2024_01",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.5,
+        "reasoning": "World Bank reporting volatile oil prices does not clearly indicate a positive or negative impact on the specific outcome of WTI price being above the recent range, but rather suggests uncertainty.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:56:40.923445Z",
+        "last_confirmed_at": "2026-07-25T02:56:40.923445Z"
+      },
+      {
+        "id": "imp_d88af3da",
+        "event_id": "evt_finance_20240110_017_a61e2e0d",
+        "outcome_event_id": "evt_adbf09385821",
+        "question_id": "v3_wti_monthly_return_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "Global crude oil prices rising above $78 per barrel directly supports the outcome of WTI price being above the recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:56:40.935354Z",
+        "last_confirmed_at": "2026-07-25T02:56:40.935354Z"
+      },
+      {
+        "id": "imp_a043c824",
+        "event_id": "evt_finance_20240112_018_1ab1efa1",
+        "outcome_event_id": "evt_adbf09385821",
+        "question_id": "v3_wti_monthly_return_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "Oil prices jumping by 4% after US and UK strikes directly supports the outcome of WTI price being above the recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:56:40.946340Z",
+        "last_confirmed_at": "2026-07-25T02:56:40.946340Z"
+      },
+      {
+        "id": "imp_df33c482",
+        "event_id": "evt_finance_20240115_019_818a1479",
+        "outcome_event_id": "evt_adbf09385821",
+        "question_id": "v3_wti_monthly_return_2024_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.7,
+        "confidence": 0.7,
+        "reasoning": "Barclays lowering its 2024 crude oil price forecast suggests a negative outlook for oil prices, making higher prices less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:56:40.958313Z",
+        "last_confirmed_at": "2026-07-25T02:56:40.958313Z"
+      },
+      {
+        "id": "imp_2ec96b14",
+        "event_id": "evt_finance_20240118_020_f0529a4f",
+        "outcome_event_id": "evt_adbf09385821",
+        "question_id": "v3_wti_monthly_return_2024_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.7,
+        "confidence": 0.7,
+        "reasoning": "IEA reporting slowing global oil demand growth suggests downward pressure on oil prices, making higher prices less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:56:40.969263Z",
+        "last_confirmed_at": "2026-07-25T02:56:40.969263Z"
+      },
+      {
+        "id": "imp_ac998355",
+        "event_id": "evt_finance_20240122_021_8f41ad16",
+        "outcome_event_id": "evt_adbf09385821",
+        "question_id": "v3_wti_monthly_return_2024_01",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.5,
+        "reasoning": "Analysis suggesting oil prices are not 'spiking' but rather stabilizing does not clearly indicate a positive or negative impact on the specific outcome of WTI price being above the recent range, but rather suggests a more moderate trend.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:56:40.980691Z",
+        "last_confirmed_at": "2026-07-25T02:56:40.980691Z"
+      },
+      {
+        "id": "imp_a18609fe",
+        "event_id": "evt_politics_20240110_022_c22e1ba1",
+        "outcome_event_id": "evt_adbf09385821",
+        "question_id": "v3_wti_monthly_return_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.8,
+        "reasoning": "Houthi attacks on Red Sea shipping escalating disrupt supply chains and typically lead to higher oil prices, making the outcome of WTI price being above the recent range more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:56:40.993716Z",
+        "last_confirmed_at": "2026-07-25T02:56:40.993716Z"
+      },
+      {
+        "id": "imp_d3d90a2c",
+        "event_id": "evt_politics_20240112_026_250bcaa3",
+        "outcome_event_id": "evt_adbf09385821",
+        "question_id": "v3_wti_monthly_return_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.8,
+        "reasoning": "US and UK strikes on Houthi targets in Yemen escalate regional tensions, which often leads to higher oil prices, making the outcome of WTI price being above the recent range more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wti_monthly_return_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T02:56:45.791933Z",
+        "last_confirmed_at": "2026-07-25T02:56:45.791933Z"
+      }
+    ]
+  }
+}

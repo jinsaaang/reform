@@ -1,0 +1,192 @@
+{
+  "schema_version": "hgf_blueprint_v1",
+  "question_id": "v3_wmt_revenue_growth_acceleration_2023_01_31",
+  "target_definition": {
+    "metric": "Walmart quarterly revenue-growth acceleration",
+    "unit_or_option_space": "percentage-point acceleration",
+    "forecast_horizon": "target quarter"
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Consumer spending, inflation, frugality, and economic uncertainty provide limited reusable retail-demand context.",
+    "weaknesses": [
+      "All earnings, guidance, realized-revenue, and option links are excluded; post-cutoff earnings anchors are provenance only.",
+      "The graph has no supported mix, inventory, competitive, or e-commerce driver.",
+      "The target bridge is weak and requires current consumer, pricing, mix, inventory, competition, and online-sales verification."
+    ]
+  },
+  "search_factors": [
+    {
+      "factor": "Consumer spending",
+      "why_search": "Household spending affects retail demand.",
+      "preferred_source_types": [
+        "retail-sales data",
+        "income-and-outlays release"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230131_006_156716d7"
+      ]
+    },
+    {
+      "factor": "Inflation and frugality",
+      "why_search": "Inflation can shift households toward essentials and value channels.",
+      "preferred_source_types": [
+        "inflation release",
+        "consumer survey"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230101_001_99043136",
+        "evt_finance_20230201_002_447c622c"
+      ]
+    },
+    {
+      "factor": "Economic uncertainty",
+      "why_search": "Uncertainty can restrain discretionary spending.",
+      "preferred_source_types": [
+        "consumer survey",
+        "economic data"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230207_005_0f120e61"
+      ]
+    },
+    {
+      "factor": "Financial-market inflation concern",
+      "why_search": "Inflation concerns can signal continued pressure on household budgets.",
+      "preferred_source_types": [
+        "inflation release",
+        "market data"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230131_007_551607b0"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "inflation",
+      "role": "baseline",
+      "factor": "Inflation and frugality",
+      "mechanism": "Persistent inflation can shift households toward value and essential purchases.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Inflation and category spending data confirm the shift.",
+      "contradiction_signal": "Discretionary demand broadens.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230101_001_99043136",
+        "evt_finance_20230201_002_447c622c"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_wmt_revenue_growth_acceleration_2023_01_31_20260725_063614_001_2472b0f4"
+      ]
+    },
+    {
+      "id": "spending",
+      "role": "driver",
+      "factor": "Consumer spending",
+      "mechanism": "Strong aggregate spending can support retail demand, subject to category mix.",
+      "expected_direction": "up",
+      "evidence_requirement": "Spending breadth and retailer category data agree.",
+      "contradiction_signal": "Spending is concentrated outside retail categories.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230131_006_156716d7"
+      ],
+      "source_edge_ids": []
+    },
+    {
+      "id": "uncertainty",
+      "role": "counterevidence",
+      "factor": "Economic uncertainty",
+      "mechanism": "Economic uncertainty can restrain discretionary spending and planning.",
+      "expected_direction": "down",
+      "evidence_requirement": "Consumer confidence and discretionary categories weaken.",
+      "contradiction_signal": "Confidence improves.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230207_005_0f120e61"
+      ],
+      "source_edge_ids": []
+    },
+    {
+      "id": "market_inflation",
+      "role": "alternative",
+      "factor": "Financial-market inflation concern",
+      "mechanism": "Renewed inflation concern can pressure household budgets and sentiment.",
+      "expected_direction": "down",
+      "evidence_requirement": "Inflation expectations and consumer prices rise together.",
+      "contradiction_signal": "Disinflation broadens.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230131_007_551607b0"
+      ],
+      "source_edge_ids": []
+    },
+    {
+      "id": "bridge",
+      "role": "target_bridge",
+      "factor": "Consumer demand into retail revenue growth",
+      "mechanism": "Consumer spending, inflation-driven mix, uncertainty, inventory, competition, and online demand combine to determine retail revenue-growth acceleration.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Verify current consumer spending, inflation, category mix, inventories, competitive pricing, and online sales.",
+      "contradiction_signal": "Company revenue diverges from current retail drivers.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230131_006_156716d7",
+        "evt_finance_20230201_002_447c622c",
+        "evt_finance_20230207_005_0f120e61"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_wmt_revenue_growth_acceleration_2023_01_31_20260725_063614_001_2472b0f4"
+      ]
+    }
+  ],
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "inflation",
+        "spending",
+        "bridge"
+      ],
+      "generalized_mechanism": "Inflation can change retail mix while aggregate spending supports demand.",
+      "expected_direction": "mixed",
+      "applicability_conditions": [
+        "Value and essentials demand is verified."
+      ],
+      "failure_conditions": [
+        "Households retrench broadly."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "uncertainty",
+        "market_inflation",
+        "bridge"
+      ],
+      "generalized_mechanism": "Uncertainty and inflation concern can restrain discretionary demand.",
+      "expected_direction": "down",
+      "applicability_conditions": [
+        "Confidence weakens."
+      ],
+      "failure_conditions": [
+        "Inflation and uncertainty ease."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "Value-channel mix offsets weaker discretionary demand.",
+      "discriminating_evidence": "Compare category mix and price gaps with consumer spending.",
+      "source_event_ids": [
+        "evt_finance_20230201_002_447c622c",
+        "evt_finance_20230131_006_156716d7"
+      ]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Is spending broad?",
+    "Is inflation shifting mix toward essentials?",
+    "Are confidence and discretionary categories weakening?",
+    "Do inventory, competition, and online sales corroborate demand?"
+  ]
+}

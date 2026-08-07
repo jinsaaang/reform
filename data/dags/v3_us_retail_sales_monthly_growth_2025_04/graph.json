@@ -1,0 +1,137 @@
+{
+  "schema_version": "1.0",
+  "actual_outcome_event_id": "node_6",
+  "graph": {
+    "nodes": [
+      {
+        "id": "node_1",
+        "label": "March US retail-sales reference observation",
+        "event_type": "indicator",
+        "occurred_date": "2025-03-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_5864034feeac806a"
+        ]
+      },
+      {
+        "id": "node_2",
+        "label": "April US retail-sales target observation",
+        "event_type": "indicator",
+        "occurred_date": "2025-04-30",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_5864034feeac806a"
+        ]
+      },
+      {
+        "id": "node_3",
+        "label": "April-over-March retail-sales percentage-growth calculation",
+        "event_type": "milestone",
+        "occurred_date": "2025-04-30",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_5864034feeac806a"
+        ]
+      },
+      {
+        "id": "node_4",
+        "label": "Observed April retail-sales growth was -0.124%",
+        "event_type": "indicator",
+        "occurred_date": "2025-04-30",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_5864034feeac806a"
+        ]
+      },
+      {
+        "id": "node_5",
+        "label": "Pre-registered yes threshold was 0.402%",
+        "event_type": "milestone",
+        "occurred_date": "2025-04-30",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_5864034feeac806a"
+        ]
+      },
+      {
+        "id": "node_6",
+        "label": "Resolved outcome: No, April retail-sales growth missed the threshold",
+        "event_type": "outcome",
+        "occurred_date": "2025-05-21",
+        "is_outcome": true,
+        "is_actual_outcome": true,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_5864034feeac806a"
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_1",
+        "source": "node_1",
+        "target": "node_3",
+        "relationship": "input_to",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_5864034feeac806a"
+        ],
+        "rationale": "The March sales observation is the reference input to the monthly percentage-growth calculation."
+      },
+      {
+        "id": "edge_2",
+        "source": "node_2",
+        "target": "node_3",
+        "relationship": "input_to",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_5864034feeac806a"
+        ],
+        "rationale": "The April sales observation is the target input to the monthly percentage-growth calculation."
+      },
+      {
+        "id": "edge_3",
+        "source": "node_3",
+        "target": "node_4",
+        "relationship": "yields",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_5864034feeac806a"
+        ],
+        "rationale": "Applying the pre-specified percentage-change method yields the observed -0.124% growth."
+      },
+      {
+        "id": "edge_4",
+        "source": "node_4",
+        "target": "node_6",
+        "relationship": "classified_as",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_5864034feeac806a"
+        ],
+        "rationale": "The observed -0.124% growth is below the 0.402% threshold."
+      },
+      {
+        "id": "edge_5",
+        "source": "node_5",
+        "target": "node_6",
+        "relationship": "classification_rule_for",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_5864034feeac806a"
+        ],
+        "rationale": "The pre-registered threshold defines the yes/no answer boundary."
+      }
+    ]
+  }
+}

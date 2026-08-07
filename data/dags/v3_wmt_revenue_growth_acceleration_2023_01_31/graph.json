@@ -1,0 +1,881 @@
+{
+  "question": {
+    "id": "v3_wmt_revenue_growth_acceleration_2023_01_31",
+    "question_text": "As of 2023-01-31, which range will Walmart Inc.'s quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2023-01-31 fall into?",
+    "question_type": "mcq",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 4,
+    "resolution_date": "2023-03-17T23:59:59Z",
+    "estimated_start_time": "2023-01-31T00:00:00Z",
+    "ground_truth": "below recent range",
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [
+      "evt_d6c6e1a2b155",
+      "evt_ad61ce73d358",
+      "evt_d162c5ffc2a5"
+    ],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: Walmart Inc. (WMT)\nTarget period: fiscal quarter ending 2023-01-31\nFinancial area: corporate_earnings / retail\nRegion: US\nPre-registered growth-acceleration boundaries: lower -0.496, upper 2.93 percentage points.",
+    "resolution_criteria": "Use the issuer's first SEC 10-Q or 10-K containing the target quarter. Compute the change in YoY revenue growth from the prior quarter. Resolve 'below recent range' below -0.496, 'within recent range' from -0.496 inclusive to 2.93 exclusive, and 'above recent range' at or above 2.93 percentage points.",
+    "resolution_reasoning": "The snapshotted target-quarter YoY revenue growth was 7.403 percent and growth acceleration was -1.405 percentage points; it resolved to 'below recent range'.",
+    "options": [
+      "below recent range",
+      "within recent range",
+      "above recent range"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": "\n## Executive Summary\nWalmart Inc.'s quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2023-01-31 fell below its recent range primarily due to a cautious outlook for the fiscal year 2023 driven by persistent inflation and changing consumer spending habits. While Walmart beat Q4 2023 earnings expectations, management issued weaker-than-expected guidance, anticipating continued pressure from inflation on consumer discretionary spending. Consumers were increasingly frugal, prioritizing essential goods like groceries over discretionary items, which impacted overall revenue growth acceleration despite strong grocery sales. This shift, coupled with an uncertain economic environment, led to a conservative forecast.\n\n## Timeline Of Key Events\n- **2023-02-07:** Q4 Corporate Earnings Moving In Opposite Direction of Economic Indicators [art_finance_20230207_002_96ef60ac]\n- **2023-02-09:** PepsiCo earnings beat expectations as price hikes boost snack and beverage sales [art_finance_20230209_004_b049627f]\n- **2023-02-13:** India's retail inflation breaches RBI's tolerance level first time since October [art_finance_20230213_005_1ce744bb]\n- **2023-02-21:** Walmart (WMT) beats Q4 expectations but gives cautious guidance for 2023 due to inflation [art_finance_20230221_003_d336396b, art_finance_20230221_012_3b054cb7, art_finance_20230221_002_daabd140, art_finance_20230221_006_66cbcb2a]\n- **2023-02-23:** Consumers confront inflation with frugality, prioritizing essentials over discretionary spending [art_finance_20230223_004_4ef85bfd]\n- **2023-02-24:** U.S. consumer spending posts biggest gain in nearly two years; inflation picks up. Inflation accelerated, adding to financial market fears [art_finance_20230224_002_6b484e66]\n- **2023-02-28:** Grocery price inflation in the UK goes above 17% for the first time, indicating broader inflationary pressures on consumers [art_finance_20230228_006_f81bee6b]\n- **2023-03-01:** AMC CEO discusses microwave popcorn sales, highlighting a focus on less discretionary, in-home consumption [art_finance_20230301_003_68b19776]\n- **2023-03-15:** Forex crisis and inflation impact smartphone market, causing import declines by 32%, reflecting broad impact on discretionary goods [art_finance_20230315_004_8437f948]\n\n## Causal Chain Analysis\nPersistent high inflation (E1) across global and domestic markets, particularly in essential categories like groceries, forced consumers to adopt increasingly frugal spending habits (E2). This led to a significant shift in consumer purchasing, with a strong focus on necessities and a reduction in discretionary spending (E3) [art_finance_20230223_004_4ef85bfd]. While Walmart's Q4 2023 performance itself beat expectations due to strong grocery sales and a rebound in other categories (reflecting inflation-driven nominal growth) [art_finance_20230221_003_d336396b], its management issued cautious guidance for fiscal year 2023 (E4) due to the anticipated continuation of these inflationary pressures and the consequent impact on discretionary purchases [art_finance_20230221_012_3b054cb7]. This cautious guidance directly reflected expectations of a deceleration in revenue growth, causing the year-over-year revenue-growth acceleration to fall below the recent range (E5).\n\n## Countervailing Factors\nDespite the overall cautious outlook, several factors pushed against the outcome. Walmart's Q4 2023 earnings actually *beat* expectations, driven by strong sales in groceries and a slight rebound in general merchandise [art_finance_20230221_003_d336396b]. This indicated underlying consumer resilience and Walmart's ability to capture essential spending. Additionally, U.S. consumer spending saw its biggest gain in nearly two years in January 2023, accompanied by accelerated inflation [art_finance_20230224_002_6b484e66]. This surge in spending could have indicated stronger future revenue growth. However, this gain was largely offset by the acceleration of inflation itself, which spurred worries about continued interest rate hikes and consumer frugality being sustained, thereby overriding the positive Q4 performance and leading to the cautious guidance.\n\n## Event Candidate Inventory\n- **E1: Persistent High Inflation**\n    - Date: Ongoing into 2023 (evidenced Feb-March 2023)\n    - Why it matters causally: Reduced consumer purchasing power and shifted spending away from discretionary items.\n    - Source article IDs: art_finance_20230213_005_1ce744bb, art_finance_20230224_002_6b484e66, art_finance_20230228_006_f81bee6b, art_finance_20230315_004_8437f948\n- **E2: Increased Consumer Frugality and Shift to Essentials**\n    - Date: Evident throughout Q4 2022 and early 2023 (Feb 2023)\n    - Why it matters causally: Directly impacted Walmart's sales mix, reducing demand for higher-margin discretionary goods.\n    - Source article IDs: art_finance_20230223_004_4ef85bfd, art_finance_20230301_003_68b19776\n- **E3: Walmart Beats Q4 2023 Earnings Expectations**\n    - Date: 2023-02-21\n    - Why it matters causally: Demonstrated robust performance in essential categories, but did not translate into aggressive future guidance.\n    - Source article IDs: art_finance_20230221_003_d336396b, art_finance_20230221_002_daabd140\n- **E4: Walmart Issues Cautious FY2023 Guidance**\n    - Date: 2023-02-21\n    - Why it matters causally: Directly signaled lower expected revenue growth acceleration for the upcoming fiscal year.\n    - Source article IDs: art_finance_20230221_012_3b054cb7, art_finance_20230221_006_66cbcb2a\n- **E5: Overall Economic Uncertainty and Accelerating Inflation in Early 2023**\n    - Date: January-February 2023\n    - Why it matters causally: Created a challenging operating environment and influenced conservative corporate forecasting.\n    - Source article IDs: art_finance_20230224_002_6b484e66, art_finance_20230207_002_96ef60ac\n\n## Evidence Mapping Table\n| Claim/Event | Article IDs | Date Support | Confidence (0-1) | Notes |\n|---|---|---|---|---|\n| Cautious FY2023 guidance | art_finance_20230221_012_3b054cb7, art_finance_20230221_003_d336396b, art_finance_20230221_006_66cbcb2a | 2023-02-21 | 1.0 | Directly stated by Walmart management. |\n| Impact of inflation on consumer spending | art_finance_20230223_004_4ef85bfd, art_finance_20230224_002_6b484e66, art_finance_20230228_006_f81bee6b | Feb 2023 | 0.9 | Multiple sources confirm consumer frugality and rising grocery inflation. |\n| Walmart beats Q4 expectations | art_finance_20230221_003_d336396b, art_finance_20230221_002_daabd140 | 2023-02-21 | 1.0 | Confirmed by multiple news outlets reporting on earnings. |\n| Shift away from discretionary spending | art_finance_20230223_004_4ef85bfd, art_finance_20230315_004_8437f948 | Feb-Mar 2023 | 0.8 | Deloitte report and smartphone market analysis. |\n\n## Uncertainties And Alternative Paths\n- **Severity and duration of inflation:** While inflation was persistent, a more rapid cooling could have led to less consumer frugality and stronger discretionary spending, pushing revenue acceleration within or above the recent range.\n- **Consumer resilience and savings:** A stronger-than-anticipated draw on consumer savings or a quicker adaptation to inflationary pressures could have maintained higher spending levels.\n- **Competitor strategies:** Aggressive pricing or innovative strategies by competitors could have altered market share dynamics, independently influencing Walmart's revenue growth.\n- **Supply chain improvements:** Unforeseen improvements in the global supply chain could have reduced costs and allowed for more competitive pricing, potentially boosting sales.\n",
+    "graph_built": true,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.200852Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "wmt_revenue_growth_acceleration",
+        "event_cluster_id": "wmt_earnings_2023-01-31",
+        "category": "corporate_earnings",
+        "original_domain": "corporate_earnings",
+        "subdomain": "retail",
+        "entity": "Walmart Inc. (WMT)",
+        "region": "US",
+        "target_metric": "quarterly revenue year-over-year growth acceleration",
+        "target_period": "fiscal quarter ending 2023-01-31",
+        "forecast_cutoff": "2023-01-31T00:00:00+00:00",
+        "forecast_date_options": [
+          "2023-01-31"
+        ],
+        "resolution_available_at": "2023-03-17T23:59:59+00:00",
+        "horizon_days": 45,
+        "source_type": "sec_companyfacts_snapshot",
+        "source_series_id": "CIK0000104169:revenue",
+        "source_homepage": "https://www.sec.gov/edgar/browse/?CIK=104169",
+        "comparison_rule": "target YoY revenue-growth acceleration bucketed by quartiles of the four prior quarterly accelerations",
+        "comparison_threshold": 8.808465,
+        "comparison_thresholds": {
+          "lower": -0.495608,
+          "upper": 2.929661
+        },
+        "change_unit": "percent",
+        "threshold_observation_dates": [
+          "2021-10-31",
+          "2022-01-31",
+          "2022-10-31"
+        ],
+        "split": "memory",
+        "family_position": 1,
+        "family_size": 8,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "below recent range",
+        "resolved_class": "below recent range",
+        "resolution_value": 162743000000,
+        "target_change": -1.40506631,
+        "target_yoy_growth": 7.40339878,
+        "target_growth_acceleration": -1.40506631,
+        "source_observation_date": "2023-01-31",
+        "resolution_document": {
+          "publisher": "U.S. Securities and Exchange Commission",
+          "title": "Walmart Inc. 10-K filed 2023-03-17",
+          "url": "https://www.sec.gov/Archives/edgar/data/104169/000010416923000020/0000104169-23-000020-index.html"
+        },
+        "source_download_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000104169.json",
+        "source_sha256": "8f3d9abe26f7f7842a070f4b639dbd39296144349270eeb0df5659e7510e9cec",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00",
+        "accession_number": "0000104169-23-000020",
+        "xbrl_tag": "RevenueFromContractWithCustomerExcludingAssessedTax"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_d6c6e1a2b155",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 22,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_20230301_003_68b19776",
+        "title": "On the AMC Earnings Call, CEO Adam Aron Couldn’t Stop Talking About Microwave Popcorn - IndieWire",
+        "url": "https://www.indiewire.com/features/general/amc-q4-earnings-adam-aron-popcorn-1234814497",
+        "source": "indiewire.com",
+        "published_date": "2023-03-01T01:45:58+00:00"
+      },
+      {
+        "id": "art_finance_20230209_004_b049627f",
+        "title": "PepsiCo earnings beat expectations as price hikes boost snack and beverage sales - CNBC",
+        "url": "https://www.linkedin.com/posts/amelia-lucas-500524109_pepsico-earnings-beat-expectations-as-price-activity-7029545171427958784-uuZW",
+        "source": "linkedin.com",
+        "published_date": "2023-02-09T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20221130_005_99ebd729",
+        "title": "Walmart (WMT) stock forecast for 2023. Forecast tables and ...",
+        "url": "https://leoprophet.com/stock_forecasts/forecast_wmt/for2023",
+        "source": "leoprophet.com",
+        "published_date": "2022-11-30T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230221_006_66cbcb2a",
+        "title": "February 21, 2023 - EARNINGS PRESENTATION - 8-K: Current ...",
+        "url": "https://stock.walmart.com/sec-filings/all-sec-filings/content/0000104169-23-000010/earningspresentationfy23.htm",
+        "source": "stock.walmart.com",
+        "published_date": "2023-02-21T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230221_002_de8ffd89",
+        "title": "WMT Q4 2023 Earnings Report on 2/21/2023 - MarketBeatWalmart (WMT) Q4 2023 Earnings Report - TipRanksWalmart (WMT) earnings Q4 2023 - CNBCWalmart Inc. Reports Earnings Results for the Fourth Quarter ...Walmart Inc. (NYSE:WMT) Q4 2023 Earnings Call Transcript",
+        "url": "https://www.marketbeat.com/earnings/reports/2023-2-21-walmart-inc-stock",
+        "source": "marketbeat.com",
+        "published_date": "2023-02-21T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230221_003_d336396b",
+        "title": "Walmart (WMT) earnings Q4 2023 - CNBC",
+        "url": "https://www.cnbc.com/2023/02/21/walmart-wmt-earnings-q4-2023.html",
+        "source": "cnbc.com",
+        "published_date": "2023-02-21T05:01:01+00:00"
+      },
+      {
+        "id": "art_finance_20230315_004_8437f948",
+        "title": "Forex crisis, inflation impact smartphone market as import declines by 32% - Marketing Edge",
+        "url": "https://marketingedge.com.ng/forex-crisis-inflation-impact-smartphone-market-as-import-declines-by-32",
+        "source": "marketingedge.com.ng",
+        "published_date": "2023-03-15T11:02:11+00:00"
+      },
+      {
+        "id": "art_finance_20220816_005_c53451c0",
+        "title": "Walmart Q2 results: 'analysts are bullish on discounters that sell...",
+        "url": "https://invezz.com/news/2022/08/16/walmart-q2-results-send-shares-up-7-0",
+        "source": "invezz.com",
+        "published_date": "2022-08-16T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230221_002_daabd140",
+        "title": "Walmart beats Q4 expectations but is cautious on guidance - KDVR",
+        "url": "https://www.barchart.com/story/news/14393488/walmart-beats-q4-expectations-but-is-cautious-on-guidance",
+        "source": "barchart.com",
+        "published_date": "2023-02-21T09:39:44-06:00"
+      },
+      {
+        "id": "art_finance_20220517_003_2492cbb0",
+        "title": "WMT Earnings: All you need to know about Walmart’s Q1 2023 earnings results - AlphaStreet",
+        "url": "https://news.alphastreet.com/wmt-earnings-all-you-need-to-know-about-walmarts-q1-2023-earnings-results",
+        "source": "news.alphastreet.com",
+        "published_date": "2022-05-17T11:12:42+00:00"
+      },
+      {
+        "id": "art_finance_20230207_002_96ef60ac",
+        "title": "Q4 Corporate Earnings Moving In Opposite Direction of Economic Indicators - See It Market",
+        "url": "https://www.seeitmarket.com/q4-corporate-earnings-moving-in-opposite-direction-of-economic-indicators",
+        "source": "seeitmarket.com",
+        "published_date": "2023-02-07T15:07:15+00:00"
+      },
+      {
+        "id": "art_finance_20230224_002_6b484e66",
+        "title": "U.S. consumer spending posts biggest gain in nearly two years; inflation picks up - Reuters",
+        "url": "https://www.ibtimes.com/us-consumer-spending-posts-biggest-gain-nearly-two-years-inflation-picks-3671489",
+        "source": "ibtimes.com",
+        "published_date": "2023-02-24T13:00:29-05:00"
+      },
+      {
+        "id": "art_finance_20230223_004_4ef85bfd",
+        "title": "Food fight: Consumers confront inflation with frugality - Deloitte",
+        "url": "https://www.deloitte.com/us/en/insights/industry/retail-distribution/consumer-behavior-trends-state-of-the-consumer-tracker/rising-food-prices-inflation.html",
+        "source": "deloitte.com",
+        "published_date": "2023-02-23T04:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230213_005_1ce744bb",
+        "title": "India's retail inflation breaches RBI's tolerance level first time since October - Reuters",
+        "url": "https://worldecomag.com/indias-retail-inflation-breaches-rbis-tolerance-level-first-time-since-october",
+        "source": "worldecomag.com",
+        "published_date": "2023-02-13T09:19:50-05:00"
+      },
+      {
+        "id": "art_finance_20230228_006_f81bee6b",
+        "title": "One quarter of British shoppers struggling as grocery price inflation goes above 17% for the first time - Kantar",
+        "url": "https://www.kantar.com/inspiration/fmcg/2023-wp-a-quarter-of-brits-struggling-as-grocery-price-inflation-goes-above-17-for-the-1st-time",
+        "source": "kantar.com",
+        "published_date": "2023-02-28T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20220411_007_b0b68f62",
+        "title": "Costco and Walmart: A tale of two supply chains - Trellis Group",
+        "url": "https://trellis.net/article/costco-and-walmart-tale-two-supply-chains",
+        "source": "trellis.net",
+        "published_date": "2022-04-11T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230127_008_30b91bf0",
+        "title": "Sam’s Club aims to modernize supply chain with expansion of automated fulfillment - Supply Chain Dive",
+        "url": "https://www.supplychaindive.com/news/sams-club-walmart-modernize-supply-chain-expansion-automated-fulfillment/641409",
+        "source": "supplychaindive.com",
+        "published_date": "2023-01-27T10:50:00+00:00"
+      },
+      {
+        "id": "art_finance_20220517_009_75bd7c85",
+        "title": "Walmart shares fall as higher costs, supply chain problems and inventories eat into profits - CNBC",
+        "url": "https://www.nbclosangeles.com/news/business/money-report/walmart-will-report-earnings-before-the-bell-heres-what-to-expect/2895242",
+        "source": "nbclosangeles.com",
+        "published_date": "2022-05-17T03:31:55-07:00"
+      },
+      {
+        "id": "art_finance_20220826_010_6b947ea8",
+        "title": "Supply Chain News: Walmart and Amazon by the Numbers 2022 - Supply Chain Digest",
+        "url": "https://www.scdigest.com/firstthoughts/22-08-26_Walmart_Amazon_by_the_Numbers.php",
+        "source": "scdigest.com",
+        "published_date": "2022-08-26T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20200214_011_89aa2258",
+        "title": "5 supply chain technologies that deliver competitive advantage - MIT Sloan",
+        "url": "https://mitsloan.mit.edu/ideas-made-to-matter/5-supply-chain-technologies-deliver-competitive-advantage",
+        "source": "mitsloan.mit.edu",
+        "published_date": "2020-02-14T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230221_012_3b054cb7",
+        "title": "Walmart issues cautious 2023 guidance as inflation persists - Retail Dive",
+        "url": "https://www.retaildive.com/news/walmart-cautious-guidance-inflation/643161",
+        "source": "retaildive.com",
+        "published_date": "2023-02-21T12:46:00+00:00"
+      },
+      {
+        "id": "art_finance_20220825_013_2f83f127",
+        "title": "Dollar Tree cuts guidance; taps former Walmart exec as CFO - Chain Store Age",
+        "url": "https://chainstoreage.com/dollar-tree-cuts-guidance-taps-former-walmart-exec-cfo",
+        "source": "chainstoreage.com",
+        "published_date": "2022-08-25T07:00:00+00:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_d6c6e1a2b155",
+      "events_count": 8,
+      "hypotheses_count": 7
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 3,
+      "avg_depth": 2.2,
+      "quality_score": 0.86,
+      "depth_score": 1.0,
+      "confidence_score": 0.79,
+      "strength_score": 0.63,
+      "evidence_score": 1.0,
+      "event_count": 8,
+      "hypothesis_count": 7
+    },
+    "nodes": [
+      {
+        "id": "evt_ad61ce73d358",
+        "title": "Option 2: within recent range",
+        "description": "Question resolves to: within recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-03-17T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_wmt_revenue_growth_acceleration_2023_01_31",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 1,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T01:58:44.076104Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_d162c5ffc2a5",
+        "title": "Option 3: above recent range",
+        "description": "Question resolves to: above recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-03-17T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_wmt_revenue_growth_acceleration_2023_01_31",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 2,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T01:58:44.076110Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_d6c6e1a2b155",
+        "title": "Option 1: below recent range",
+        "description": "Question resolves to: below recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-03-17T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_wmt_revenue_growth_acceleration_2023_01_31",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 0,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T01:58:44.076090Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230101_001_99043136",
+        "title": "Persistent High Inflation",
+        "description": "Persistent high inflation across global and domestic markets, particularly in essential categories like groceries, reduced consumer purchasing power and shifted spending away from discretionary items.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-01T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230213_005_1ce744bb",
+          "art_finance_20230224_002_6b484e66",
+          "art_finance_20230228_006_f81bee6b",
+          "art_finance_20230315_004_8437f948"
+        ],
+        "extracted_for_question_id": "v3_wmt_revenue_growth_acceleration_2023_01_31",
+        "source_article_id": "art_finance_20230213_005_1ce744bb",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wmt_revenue_growth_acceleration_2023_01_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:36:13.870817Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230131_006_156716d7",
+        "title": "U.S. Consumer Spending Posts Biggest Gain in Nearly Two Years",
+        "description": "U.S. consumer spending saw its biggest gain in nearly two years in January 2023, accompanied by accelerated inflation.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-31T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230224_002_6b484e66"
+        ],
+        "extracted_for_question_id": "v3_wmt_revenue_growth_acceleration_2023_01_31",
+        "source_article_id": "art_finance_20230224_002_6b484e66",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wmt_revenue_growth_acceleration_2023_01_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:36:14.073427Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230131_007_551607b0",
+        "title": "Inflation Picks Up, Adding to Financial Market Fears",
+        "description": "Inflation accelerated, adding to financial market fears, which spurred worries about continued interest rate hikes and consumer frugality being sustained.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-31T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230224_002_6b484e66"
+        ],
+        "extracted_for_question_id": "v3_wmt_revenue_growth_acceleration_2023_01_31",
+        "source_article_id": "art_finance_20230224_002_6b484e66",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wmt_revenue_growth_acceleration_2023_01_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:36:14.114005Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230201_002_447c622c",
+        "title": "Increased Consumer Frugality and Shift to Essentials",
+        "description": "Consumers adopted increasingly frugal spending habits, prioritizing essential goods like groceries over discretionary items, directly impacting Walmart's sales mix.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-02-01T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230223_004_4ef85bfd",
+          "art_finance_20230301_003_68b19776"
+        ],
+        "extracted_for_question_id": "v3_wmt_revenue_growth_acceleration_2023_01_31",
+        "source_article_id": "art_finance_20230223_004_4ef85bfd",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wmt_revenue_growth_acceleration_2023_01_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:36:13.911781Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230207_005_0f120e61",
+        "title": "Overall Economic Uncertainty and Accelerating Inflation in Early 2023",
+        "description": "Overall economic uncertainty and accelerating inflation in early 2023 created a challenging operating environment and influenced conservative corporate forecasting.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-02-07T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230224_002_6b484e66",
+          "art_finance_20230207_002_96ef60ac"
+        ],
+        "extracted_for_question_id": "v3_wmt_revenue_growth_acceleration_2023_01_31",
+        "source_article_id": "art_finance_20230224_002_6b484e66",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wmt_revenue_growth_acceleration_2023_01_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:36:14.034702Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230221_003_37ea56e5",
+        "title": "Walmart Beats Q4 2023 Earnings Expectations",
+        "description": "Walmart's Q4 2023 performance beat expectations, driven by strong sales in groceries and a slight rebound in general merchandise, demonstrating robust performance in essential categories.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-02-21T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230221_003_d336396b",
+          "art_finance_20230221_002_daabd140"
+        ],
+        "extracted_for_question_id": "v3_wmt_revenue_growth_acceleration_2023_01_31",
+        "source_article_id": "art_finance_20230221_003_d336396b",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wmt_revenue_growth_acceleration_2023_01_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:36:13.953755Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230221_004_b1608d91",
+        "title": "Walmart Issues Cautious FY2023 Guidance",
+        "description": "Walmart's management issued cautious guidance for fiscal year 2023 due to anticipated continuation of inflationary pressures and impact on discretionary purchases, directly signaling lower expected revenue growth acceleration.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-02-21T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230221_012_3b054cb7",
+          "art_finance_20230221_006_66cbcb2a"
+        ],
+        "extracted_for_question_id": "v3_wmt_revenue_growth_acceleration_2023_01_31",
+        "source_article_id": "art_finance_20230221_012_3b054cb7",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wmt_revenue_growth_acceleration_2023_01_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:36:13.993693Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_wmt_revenue_growth_acceleration_2023_01_31_20260725_063614_001_2472b0f4",
+        "source_event_id": "evt_finance_20230101_001_99043136",
+        "target_event_id": "evt_finance_20230201_002_447c622c",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Persistent high inflation directly leads to consumers becoming more frugal and prioritizing essential spending.",
+        "evidence_article_ids": [
+          "art_finance_20230223_004_4ef85bfd",
+          "art_finance_20230228_006_f81bee6b"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wmt_revenue_growth_acceleration_2023_01_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:36:14.193952Z",
+        "last_confirmed_at": "2026-07-25T06:36:14.193952Z"
+      },
+      {
+        "id": "hyp_v3_wmt_revenue_growth_acceleration_2023_01_31_20260725_063614_002_e8c3e39d",
+        "source_event_id": "evt_finance_20230201_002_447c622c",
+        "target_event_id": "evt_finance_20230221_004_b1608d91",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Increased consumer frugality and shift to essentials directly impacted Walmart's sales mix, leading to cautious guidance.",
+        "evidence_article_ids": [
+          "art_finance_20230221_012_3b054cb7",
+          "art_finance_20230223_004_4ef85bfd"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wmt_revenue_growth_acceleration_2023_01_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:36:14.215915Z",
+        "last_confirmed_at": "2026-07-25T06:36:14.215915Z"
+      },
+      {
+        "id": "hyp_v3_wmt_revenue_growth_acceleration_2023_01_31_20260725_063614_003_bfbbfbfb",
+        "source_event_id": "evt_finance_20230221_004_b1608d91",
+        "target_event_id": "evt_d6c6e1a2b155",
+        "relation_type": "causes",
+        "strength": 0.9,
+        "confidence": 0.95,
+        "time_lag_hours": null,
+        "reasoning": "The cautious guidance directly signaled lower expected revenue growth acceleration, causing the actual outcome.",
+        "evidence_article_ids": [
+          "art_finance_20230221_012_3b054cb7",
+          "art_finance_20230221_006_66cbcb2a"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wmt_revenue_growth_acceleration_2023_01_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:36:14.234816Z",
+        "last_confirmed_at": "2026-07-25T06:36:14.234816Z"
+      },
+      {
+        "id": "hyp_v3_wmt_revenue_growth_acceleration_2023_01_31_20260725_063614_004_822396b7",
+        "source_event_id": "evt_finance_20230207_005_0f120e61",
+        "target_event_id": "evt_finance_20230221_004_b1608d91",
+        "relation_type": "enables",
+        "strength": 0.6,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Overall economic uncertainty and accelerating inflation created an environment that influenced Walmart's conservative forecasting.",
+        "evidence_article_ids": [
+          "art_finance_20230224_002_6b484e66",
+          "art_finance_20230207_002_96ef60ac"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wmt_revenue_growth_acceleration_2023_01_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:36:14.253504Z",
+        "last_confirmed_at": "2026-07-25T06:36:14.253504Z"
+      },
+      {
+        "id": "hyp_v3_wmt_revenue_growth_acceleration_2023_01_31_20260725_063614_005_4ee7e592",
+        "source_event_id": "evt_finance_20230221_003_37ea56e5",
+        "target_event_id": "evt_finance_20230221_004_b1608d91",
+        "relation_type": "inhibits",
+        "strength": 0.4,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Walmart beating Q4 earnings expectations could have led to more optimistic guidance, but was overridden by other factors.",
+        "evidence_article_ids": [
+          "art_finance_20230221_003_d336396b",
+          "art_finance_20230221_002_daabd140"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wmt_revenue_growth_acceleration_2023_01_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:36:14.273118Z",
+        "last_confirmed_at": "2026-07-25T06:36:14.273118Z"
+      },
+      {
+        "id": "hyp_v3_wmt_revenue_growth_acceleration_2023_01_31_20260725_063614_006_50292409",
+        "source_event_id": "evt_finance_20230131_006_156716d7",
+        "target_event_id": "evt_finance_20230221_004_b1608d91",
+        "relation_type": "inhibits",
+        "strength": 0.3,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "The gain in US consumer spending could have indicated stronger future revenue growth, potentially inhibiting cautious guidance, but was offset by inflation concerns.",
+        "evidence_article_ids": [
+          "art_finance_20230224_002_6b484e66"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wmt_revenue_growth_acceleration_2023_01_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:36:14.292035Z",
+        "last_confirmed_at": "2026-07-25T06:36:14.292035Z"
+      },
+      {
+        "id": "hyp_v3_wmt_revenue_growth_acceleration_2023_01_31_20260725_063614_007_0d974dc9",
+        "source_event_id": "evt_finance_20230131_007_551607b0",
+        "target_event_id": "evt_finance_20230221_004_b1608d91",
+        "relation_type": "amplifies",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Accelerating inflation spurred worries about continued interest rate hikes and sustained consumer frugality, amplifying the need for cautious guidance.",
+        "evidence_article_ids": [
+          "art_finance_20230224_002_6b484e66"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wmt_revenue_growth_acceleration_2023_01_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:36:14.310791Z",
+        "last_confirmed_at": "2026-07-25T06:36:14.310791Z"
+      }
+    ],
+    "outcome_impacts": [
+      {
+        "id": "imp_d0ab49c2",
+        "event_id": "evt_finance_20230101_001_99043136",
+        "outcome_event_id": "evt_d6c6e1a2b155",
+        "question_id": "v3_wmt_revenue_growth_acceleration_2023_01_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "Persistent high inflation directly contributed to reduced consumer purchasing power and shifted spending, leading to cautious guidance and ultimately lower revenue growth acceleration.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wmt_revenue_growth_acceleration_2023_01_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:36:24.919145Z",
+        "last_confirmed_at": "2026-07-25T06:36:24.919145Z"
+      },
+      {
+        "id": "imp_0170ebc9",
+        "event_id": "evt_finance_20230201_002_447c622c",
+        "outcome_event_id": "evt_d6c6e1a2b155",
+        "question_id": "v3_wmt_revenue_growth_acceleration_2023_01_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.85,
+        "reasoning": "Increased consumer frugality and shift to essentials directly impacted Walmart's sales mix, reducing demand for higher-margin discretionary goods, which led to the cautious guidance and the outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wmt_revenue_growth_acceleration_2023_01_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:36:24.931768Z",
+        "last_confirmed_at": "2026-07-25T06:36:24.931768Z"
+      },
+      {
+        "id": "imp_1df8339e",
+        "event_id": "evt_finance_20230221_003_37ea56e5",
+        "outcome_event_id": "evt_d6c6e1a2b155",
+        "question_id": "v3_wmt_revenue_growth_acceleration_2023_01_31",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.4,
+        "confidence": 0.7,
+        "reasoning": "Walmart beating Q4 earnings expectations indicated underlying consumer resilience and strong essential spending, which could have pushed against the cautious guidance and the 'below recent range' outcome. However, it was overridden by other factors.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wmt_revenue_growth_acceleration_2023_01_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:36:24.942543Z",
+        "last_confirmed_at": "2026-07-25T06:36:24.942543Z"
+      },
+      {
+        "id": "imp_4cd3d011",
+        "event_id": "evt_finance_20230221_004_b1608d91",
+        "outcome_event_id": "evt_d6c6e1a2b155",
+        "question_id": "v3_wmt_revenue_growth_acceleration_2023_01_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.95,
+        "reasoning": "Walmart's cautious guidance for FY2023 directly signaled lower expected revenue growth acceleration, which is the immediate cause of the outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wmt_revenue_growth_acceleration_2023_01_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:36:24.952749Z",
+        "last_confirmed_at": "2026-07-25T06:36:24.952749Z"
+      },
+      {
+        "id": "imp_d2c6929b",
+        "event_id": "evt_finance_20230207_005_0f120e61",
+        "outcome_event_id": "evt_d6c6e1a2b155",
+        "question_id": "v3_wmt_revenue_growth_acceleration_2023_01_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.8,
+        "reasoning": "Overall economic uncertainty created a challenging operating environment that influenced Walmart's conservative forecasting, contributing to the cautious guidance and the outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wmt_revenue_growth_acceleration_2023_01_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:36:24.964926Z",
+        "last_confirmed_at": "2026-07-25T06:36:24.964926Z"
+      },
+      {
+        "id": "imp_318f7c4c",
+        "event_id": "evt_finance_20230131_006_156716d7",
+        "outcome_event_id": "evt_d6c6e1a2b155",
+        "question_id": "v3_wmt_revenue_growth_acceleration_2023_01_31",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.3,
+        "confidence": 0.6,
+        "reasoning": "The gain in US consumer spending could have indicated stronger future revenue growth, potentially pushing against the cautious guidance and the 'below recent range' outcome. However, this was largely offset by accelerating inflation.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wmt_revenue_growth_acceleration_2023_01_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:36:24.975343Z",
+        "last_confirmed_at": "2026-07-25T06:36:24.975343Z"
+      },
+      {
+        "id": "imp_8521993c",
+        "event_id": "evt_finance_20230131_007_551607b0",
+        "outcome_event_id": "evt_d6c6e1a2b155",
+        "question_id": "v3_wmt_revenue_growth_acceleration_2023_01_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Accelerating inflation spurred worries about continued interest rate hikes and sustained consumer frugality, amplifying the need for cautious guidance and contributing to the outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wmt_revenue_growth_acceleration_2023_01_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:36:24.986034Z",
+        "last_confirmed_at": "2026-07-25T06:36:24.986034Z"
+      },
+      {
+        "id": "imp_3c675832",
+        "event_id": "evt_finance_20230228_008_024c8c82",
+        "outcome_event_id": "evt_d6c6e1a2b155",
+        "question_id": "v3_wmt_revenue_growth_acceleration_2023_01_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.5,
+        "confidence": 0.7,
+        "reasoning": "High grocery price inflation in the UK is an indicator of broader persistent inflationary pressures, contributing to the overall environment that led to cautious guidance and the outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wmt_revenue_growth_acceleration_2023_01_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:36:24.996395Z",
+        "last_confirmed_at": "2026-07-25T06:36:24.996395Z"
+      }
+    ]
+  }
+}

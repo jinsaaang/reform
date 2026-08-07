@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_stl_financial_stress_monthly_change_2025_04",
+  "blueprint_sha256": "f3f856c2fbd69c02691520943584c9c29797d950bfcaca382950ced083bad8cc",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_conditions",
+      "target_operation": "change",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2025-04-01, which range will the monthly financial-stress-index change for St. Louis Fed Financial Stress Index in 2025-04 fall into?",
+    "historical_cutoff": "2025-04-01T00:00:00+00:00",
+    "target_semantics": "The monthly change in the St. Louis Fed Financial Stress Index for April 2025.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The DAG indicates that 'Tariff-war fears drove a rapid shift toward market pessimism' historically influenced market stress.",
+      "Similarly, 'Policy uncertainty weighed on markets' and 'Credit spreads widened' are identified as historical drivers of stress.",
+      "Furthermore, 'Short-term yields rose sharply amid liquidity concerns' is noted as a factor contributing to elevated market stress."
+    ],
+    "counterevidence": "No forecast-time evidence was provided to support or contradict the historical drivers or their mechanisms linking to the target period.",
+    "prospective_target_estimate": "Given the lack of forecast-time evidence, the historical drivers cannot be confirmed or their impact quantified for the target period. Therefore, no prospective estimate can be made.",
+    "option_mapping": "The options are 'below recent range' (-0.145 index points), 'within recent range' (-0.145 to 0.072 index points), and 'above recent range' (0.072 index points). Without supporting evidence, it is impossible to map the likely outcome to these options.",
+    "uncertainty": "The absence of any forecast-time evidence means that the predictive power of the historical drivers for the target period is entirely unknown. All historical causal links require re-testing with current data, which is unavailable.",
+    "dag_derived_lesson": "Historical drivers of a target metric require re-validation with current evidence; the absence of such evidence preserves uncertainty and prevents a confident forecast, even when historical causal pathways are identified."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

@@ -1,0 +1,541 @@
+{
+  "schema_version": "hgf_blueprint_topology_v2",
+  "question_id": "v3_us_retail_sales_monthly_growth_2023_08",
+  "target_definition": {
+    "metric": "monthly retail-sales growth",
+    "unit_or_option_space": [
+      "yes",
+      "no"
+    ],
+    "forecast_horizon": "Remap the historical target family to the current question's exact target period."
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Outcome-redacted topology preserves 7 checkpoints, 7 source edges, and 4 root-to-target paths.",
+    "weaknesses": [
+      "Personal spending and retail sales are related but distinct measures.",
+      "The evidence does not quantify the contribution of labor-market conditions to August retail sales."
+    ]
+  },
+  "search_factors": [
+    {
+      "factor": "U.S. employers added [CURRENT_VALUE_REQUIRED] jobs in [CURRENT_PERIOD_REQUIRED]",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "node_7"
+      ]
+    },
+    {
+      "factor": "Negligible earnings growth and higher unemployment were counter-signals",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "node_8"
+      ]
+    },
+    {
+      "factor": "[CURRENT_PERIOD_REQUIRED] labor-market reports indicated continued resilience",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "node_2"
+      ]
+    },
+    {
+      "factor": "Declining savings and weak income growth constrained households",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "node_5"
+      ]
+    },
+    {
+      "factor": "Consumer confidence pulled back in [CURRENT_PERIOD_REQUIRED]",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "node_6"
+      ]
+    },
+    {
+      "factor": "U.S. consumer spending accelerated entering [CURRENT_PERIOD_REQUIRED]",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "node_1"
+      ]
+    },
+    {
+      "factor": "Reporting described moderate U.S. retail-sales growth in [CURRENT_PERIOD_REQUIRED]",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "node_3"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "checkpoint_1",
+      "role": "driver",
+      "factor": "U.S. employers added [CURRENT_VALUE_REQUIRED] jobs in [CURRENT_PERIOD_REQUIRED]",
+      "mechanism": "The job gain is a directly reported component of the resilient labor-market description.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "node_7"
+      ],
+      "source_edge_ids": [
+        "edge_1"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_2",
+      "role": "counterevidence",
+      "factor": "Negligible earnings growth and higher unemployment were counter-signals",
+      "mechanism": "Weak earnings growth and higher unemployment qualify the resilience narrative.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "node_8"
+      ],
+      "source_edge_ids": [
+        "edge_3"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_3",
+      "role": "mediator",
+      "factor": "[CURRENT_PERIOD_REQUIRED] labor-market reports indicated continued resilience",
+      "mechanism": "Labor resilience may support spending, but the supplied evidence does not identify that causal effect.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "node_2"
+      ],
+      "source_edge_ids": [
+        "edge_2"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_4",
+      "role": "counterevidence",
+      "factor": "Declining savings and weak income growth constrained households",
+      "mechanism": "Lower savings and weak income are retained as constraints alongside observed spending acceleration.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "node_5"
+      ],
+      "source_edge_ids": [
+        "edge_4"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_5",
+      "role": "counterevidence",
+      "factor": "Consumer confidence pulled back in [CURRENT_PERIOD_REQUIRED]",
+      "mechanism": "Lower confidence is a plausible spending headwind, but its realized effect is not measured.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "node_6"
+      ],
+      "source_edge_ids": [
+        "edge_5"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_6",
+      "role": "mediator",
+      "factor": "U.S. consumer spending accelerated entering [CURRENT_PERIOD_REQUIRED]",
+      "mechanism": "Broader spending data support the direction of the later retail-sales report without proving causation.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "node_1"
+      ],
+      "source_edge_ids": [
+        "edge_6"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_7",
+      "role": "mediator",
+      "factor": "Reporting described moderate U.S. retail-sales growth in [CURRENT_PERIOD_REQUIRED]",
+      "mechanism": "Re-test whether this factor has a currently supported link to the exact target metric; do not transfer the historical outcome or magnitude.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "node_3"
+      ],
+      "source_edge_ids": [
+        "edge_7"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "target_bridge",
+      "role": "target_bridge",
+      "factor": "monthly retail-sales growth",
+      "mechanism": "Map only currently supported paths into the exact target operator. Directional support alone is not magnitude or threshold-crossing support.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "A current target baseline and evidence supporting every edge used in the bridge.",
+      "contradiction_signal": "The current target baseline, magnitude evidence, or option boundary contradicts the proposed path.",
+      "historical_support": "medium",
+      "source_event_ids": [],
+      "source_edge_ids": [
+        "edge_7"
+      ],
+      "source_event_type": "target_bridge"
+    }
+  ],
+  "topology": {
+    "checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_5",
+      "checkpoint_6",
+      "checkpoint_7",
+      "target_bridge"
+    ],
+    "root_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_4",
+      "checkpoint_5"
+    ],
+    "target_bridge_id": "target_bridge",
+    "edges": [
+      {
+        "source_checkpoint_id": "checkpoint_1",
+        "target_checkpoint_id": "checkpoint_3",
+        "relationship": "supports",
+        "directionality": "forward",
+        "support_level": "observed",
+        "rationale": "The job gain is a directly reported component of the resilient labor-market description.",
+        "source_edge_ids": [
+          "edge_1"
+        ],
+        "source_article_ids": [
+          "ev_2ce936f4497c70c1",
+          "ev_7754d407ce398394"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_3",
+        "target_checkpoint_id": "checkpoint_6",
+        "relationship": "supports",
+        "directionality": "forward",
+        "support_level": "background_hypothesis",
+        "rationale": "Labor resilience may support spending, but the supplied evidence does not identify that causal effect.",
+        "source_edge_ids": [
+          "edge_2"
+        ],
+        "source_article_ids": [
+          "ev_2ce936f4497c70c1",
+          "ev_988d2e97ef3e4614"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_2",
+        "target_checkpoint_id": "checkpoint_3",
+        "relationship": "counteracts",
+        "directionality": "counteracting",
+        "support_level": "evidence_synthesized",
+        "rationale": "Weak earnings growth and higher unemployment qualify the resilience narrative.",
+        "source_edge_ids": [
+          "edge_3"
+        ],
+        "source_article_ids": [
+          "ev_a9ff1d777c5c09b1",
+          "ev_d2b3dc002b351e86"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_4",
+        "target_checkpoint_id": "checkpoint_6",
+        "relationship": "counteracts",
+        "directionality": "counteracting",
+        "support_level": "evidence_synthesized",
+        "rationale": "Lower savings and weak income are retained as constraints alongside observed spending acceleration.",
+        "source_edge_ids": [
+          "edge_4"
+        ],
+        "source_article_ids": [
+          "ev_988d2e97ef3e4614",
+          "ev_bf53415b27f65175"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_5",
+        "target_checkpoint_id": "checkpoint_6",
+        "relationship": "counteracts",
+        "directionality": "counteracting",
+        "support_level": "background_hypothesis",
+        "rationale": "Lower confidence is a plausible spending headwind, but its realized effect is not measured.",
+        "source_edge_ids": [
+          "edge_5"
+        ],
+        "source_article_ids": [
+          "ev_cd1045ac694c2e49"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_6",
+        "target_checkpoint_id": "checkpoint_7",
+        "relationship": "supports",
+        "directionality": "forward",
+        "support_level": "evidence_synthesized",
+        "rationale": "Broader spending data support the direction of the later retail-sales report without proving causation.",
+        "source_edge_ids": [
+          "edge_6"
+        ],
+        "source_article_ids": [
+          "ev_988d2e97ef3e4614",
+          "art_finance_20230914_003_1410a639"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_7",
+        "target_checkpoint_id": "target_bridge",
+        "relationship": "supports",
+        "directionality": "forward",
+        "support_level": "evidence_synthesized",
+        "rationale": "Historical DAG connected this factor to the redacted target measurement; the realized value and outcome mapping are omitted.",
+        "source_edge_ids": [
+          "edge_7"
+        ],
+        "source_article_ids": [
+          "art_finance_20230914_003_1410a639",
+          "ev_5864034feeac806a"
+        ],
+        "terminal_to_target_bridge": true
+      }
+    ],
+    "paths_truncated": false
+  },
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "checkpoint_1",
+        "checkpoint_3",
+        "checkpoint_6",
+        "checkpoint_7",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "edge_1",
+        "edge_2",
+        "edge_6",
+        "edge_7"
+      ],
+      "relationships": [
+        "supports",
+        "supports",
+        "supports",
+        "supports"
+      ],
+      "path_role": "main_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from U.S. employers added [CURRENT_VALUE_REQUIRED] jobs in [CURRENT_PERIOD_REQUIRED] to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_2",
+        "checkpoint_3",
+        "checkpoint_6",
+        "checkpoint_7",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "edge_3",
+        "edge_2",
+        "edge_6",
+        "edge_7"
+      ],
+      "relationships": [
+        "counteracts",
+        "supports",
+        "supports",
+        "supports"
+      ],
+      "path_role": "counter_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Negligible earnings growth and higher unemployment were counter-signals to the current target; every edge requires current support.",
+      "expected_direction": "mixed",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_4",
+        "checkpoint_6",
+        "checkpoint_7",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "edge_4",
+        "edge_6",
+        "edge_7"
+      ],
+      "relationships": [
+        "counteracts",
+        "supports",
+        "supports"
+      ],
+      "path_role": "counter_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Declining savings and weak income growth constrained households to the current target; every edge requires current support.",
+      "expected_direction": "mixed",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_5",
+        "checkpoint_6",
+        "checkpoint_7",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "edge_5",
+        "edge_6",
+        "edge_7"
+      ],
+      "relationships": [
+        "counteracts",
+        "supports",
+        "supports"
+      ],
+      "path_role": "counter_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Consumer confidence pulled back in [CURRENT_PERIOD_REQUIRED] to the current target; every edge requires current support.",
+      "expected_direction": "mixed",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "Negligible earnings growth and higher unemployment were counter-signals dominates or reverses the leading current path.",
+      "discriminating_evidence": "Compare current evidence for this counter-path with every edge on the leading supported path.",
+      "source_event_ids": [
+        "node_8"
+      ]
+    },
+    {
+      "hypothesis": "Declining savings and weak income growth constrained households dominates or reverses the leading current path.",
+      "discriminating_evidence": "Compare current evidence for this counter-path with every edge on the leading supported path.",
+      "source_event_ids": [
+        "node_5"
+      ]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Does every used checkpoint transition correspond to a preserved edge?",
+    "Which preserved edges are supported, contradicted, or unknown now?",
+    "Does a counter-path dominate the leading supported path?",
+    "Is there evidence for magnitude and boundary crossing, not direction alone?"
+  ],
+  "refinement_metadata": {
+    "model": "deterministic_topology_compiler_v2",
+    "source_graph": "data\\dags\\v3_us_retail_sales_monthly_growth_2023_08\\graph.json",
+    "source_audit_status": "pass_with_caveat",
+    "outcome_nodes_redacted": 1,
+    "target_value_anchors_redacted": 1,
+    "historical_specifics_sanitized": true,
+    "sanitizer": "minimal_value_period_placeholders_v1",
+    "value_replacement_count": 3,
+    "period_replacement_count": 12
+  },
+  "topology_validation": {
+    "status": "pass",
+    "errors": [],
+    "metrics": {
+      "retained_checkpoint_count": 7,
+      "source_edge_count": 7,
+      "emitted_edge_count": 7,
+      "edge_coverage": 1.0,
+      "path_precision": 1.0,
+      "causal_path_count": 4,
+      "outcome_event_leak_count": 0,
+      "outcome_text_leak_count": 0,
+      "realized_value_count": 0,
+      "absolute_period_count": 0
+    }
+  }
+}

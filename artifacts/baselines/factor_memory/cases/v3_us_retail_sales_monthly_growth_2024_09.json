@@ -1,0 +1,207 @@
+{
+  "schema_version": "hgf_blueprint_v1",
+  "question_id": "v3_us_retail_sales_monthly_growth_2024_09",
+  "target_definition": {
+    "metric": "United States monthly retail-sales growth",
+    "unit_or_option_space": "percent monthly change",
+    "forecast_horizon": "target month"
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Labor conditions, purchasing power, consumer spending, and category mix form a reusable retail-sales framework.",
+    "weaknesses": [
+      "The graph has no supported interest-rate transmission path.",
+      "Several category claims and the direct retail-result links are retrospective, so category support is weak and outcome links are excluded."
+    ]
+  },
+  "search_factors": [
+    {
+      "factor": "Labor-market and inflation conditions",
+      "why_search": "Labor and inflation conditions shape household purchasing power.",
+      "preferred_source_types": [
+        "labor release",
+        "inflation release"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240930_011_33057f22",
+        "evt_finance_20240930_017_d2a9f4bf"
+      ]
+    },
+    {
+      "factor": "Consumer purchasing power and spending",
+      "why_search": "Purchasing power and outlays are the central demand transmission channel.",
+      "preferred_source_types": [
+        "income-and-outlays release",
+        "consumer-spending data"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240930_015_7f790401",
+        "evt_finance_20240930_016_a6eb4386"
+      ]
+    },
+    {
+      "factor": "Economic outlook and employment",
+      "why_search": "Economic outlook can reinforce or weaken willingness to spend.",
+      "preferred_source_types": [
+        "regional economic report",
+        "employment release"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240930_013_f374b4af",
+        "evt_finance_20240930_017_d2a9f4bf"
+      ]
+    },
+    {
+      "factor": "Retail category mix",
+      "why_search": "E-commerce and durable-goods categories can make aggregate spending diverge from broad demand conditions.",
+      "preferred_source_types": [
+        "retail category data",
+        "company sales release"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240930_010_68ca9b2f",
+        "evt_finance_20240930_012_2151c41f",
+        "evt_finance_20240930_014_c68393ce"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "purchasing_power",
+      "role": "baseline",
+      "factor": "Labor-market and inflation conditions",
+      "mechanism": "Stable labor and inflation conditions can preserve household purchasing power.",
+      "expected_direction": "up",
+      "evidence_requirement": "Labor conditions and real purchasing-power indicators agree.",
+      "contradiction_signal": "Job conditions weaken or inflation erodes real income.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_finance_20240930_011_33057f22",
+        "evt_finance_20240930_015_7f790401"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_retail_sales_monthly_growth_2024_09_20260725_024325_006_47e45b9b"
+      ]
+    },
+    {
+      "id": "consumer_demand",
+      "role": "driver",
+      "factor": "Consumer purchasing power and spending",
+      "mechanism": "Preserved purchasing power can enable sustained consumer spending.",
+      "expected_direction": "up",
+      "evidence_requirement": "Income, outlays, and consumer-demand measures are mutually reinforcing.",
+      "contradiction_signal": "Households save rather than spend income gains.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_finance_20240930_015_7f790401",
+        "evt_finance_20240930_016_a6eb4386"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_retail_sales_monthly_growth_2024_09_20260725_024325_007_de90a1e3"
+      ]
+    },
+    {
+      "id": "employment_outlook",
+      "role": "mediator",
+      "factor": "Economic outlook and employment",
+      "mechanism": "A stable outlook and job market can reinforce consumer spending.",
+      "expected_direction": "up",
+      "evidence_requirement": "Employment and broader activity indicators remain stable.",
+      "contradiction_signal": "Employment or activity indicators deteriorate.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240930_013_f374b4af",
+        "evt_finance_20240930_017_d2a9f4bf",
+        "evt_finance_20240930_016_a6eb4386"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_retail_sales_monthly_growth_2024_09_20260725_024325_008_c5422e1c",
+        "hyp_v3_us_retail_sales_monthly_growth_2024_09_20260725_024335_013_1b87f823"
+      ]
+    },
+    {
+      "id": "category_mix",
+      "role": "counterevidence",
+      "factor": "Retail category mix",
+      "mechanism": "Concentrated category strength need not translate into broad retail demand.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Compare category-level sales breadth with aggregate consumer spending.",
+      "contradiction_signal": "Strength broadens across discretionary and nondiscretionary categories.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240930_010_68ca9b2f",
+        "evt_finance_20240930_012_2151c41f",
+        "evt_finance_20240930_014_c68393ce"
+      ],
+      "source_edge_ids": []
+    },
+    {
+      "id": "retail_bridge",
+      "role": "target_bridge",
+      "factor": "Household demand and retail breadth",
+      "mechanism": "Purchasing power, consumer demand, and the breadth of category spending combine to determine monthly retail-sales direction.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Reconcile income, outlays, employment, and category-level sales with the aggregate retail series.",
+      "contradiction_signal": "Aggregate retail movement diverges from the household-demand and category evidence.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_finance_20240930_015_7f790401",
+        "evt_finance_20240930_016_a6eb4386",
+        "evt_finance_20240930_010_68ca9b2f"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_retail_sales_monthly_growth_2024_09_20260725_024325_007_de90a1e3",
+        "hyp_v3_us_retail_sales_monthly_growth_2024_09_20260725_024325_008_c5422e1c"
+      ]
+    }
+  ],
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "purchasing_power",
+        "consumer_demand",
+        "retail_bridge"
+      ],
+      "generalized_mechanism": "Stable purchasing power can support household demand and retail sales.",
+      "expected_direction": "up",
+      "applicability_conditions": [
+        "Outlays remain responsive to purchasing power."
+      ],
+      "failure_conditions": [
+        "Households retrench or save income gains."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "employment_outlook",
+        "category_mix",
+        "retail_bridge"
+      ],
+      "generalized_mechanism": "A stable employment backdrop can support retail demand, but narrow category strength may not signal broad growth.",
+      "expected_direction": "mixed",
+      "applicability_conditions": [
+        "Employment conditions remain stable."
+      ],
+      "failure_conditions": [
+        "Category gains are concentrated or employment weakens."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "Category-specific strength masks softer broad household demand.",
+      "discriminating_evidence": "Compare sales breadth and category contributions with income and outlays.",
+      "source_event_ids": [
+        "evt_finance_20240930_010_68ca9b2f",
+        "evt_finance_20240930_012_2151c41f",
+        "evt_finance_20240930_014_c68393ce"
+      ]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Do labor and inflation conditions preserve household purchasing power?",
+    "Do income and outlays point to sustained consumer demand?",
+    "Is category strength broad or concentrated?",
+    "Do aggregate retail data reconcile with household-demand evidence?"
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "schema_version": "1.0",
+  "actual_outcome_event_id": "node_6",
+  "graph": {
+    "nodes": [
+      {
+        "id": "node_1",
+        "label": "Cloud services were reported as a strong target-quarter contributor",
+        "event_type": "indicator",
+        "occurred_date": "2024-04-25",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_cea2aecffa28a6ac",
+          "ev_a4935e06645d6268",
+          "ev_ff2ac61c225886e2",
+          "ev_14427a089dbf52a9"
+        ]
+      },
+      {
+        "id": "node_2",
+        "label": "AI adoption was reported as supporting sales and quarterly results",
+        "event_type": "indicator",
+        "occurred_date": "2024-04-25",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_ff2ac61c225886e2",
+          "ev_14427a089dbf52a9",
+          "ev_5e3e8b0c580b09c8"
+        ]
+      },
+      {
+        "id": "node_3",
+        "label": "Microsoft's target-quarter reporting showed strong overall revenue growth",
+        "event_type": "indicator",
+        "occurred_date": "2024-04-25",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_cea2aecffa28a6ac",
+          "ev_a4935e06645d6268",
+          "ev_ff2ac61c225886e2",
+          "ev_14427a089dbf52a9"
+        ]
+      },
+      {
+        "id": "node_4",
+        "label": "Target-quarter year-over-year revenue growth was 17.03 percent",
+        "event_type": "indicator",
+        "occurred_date": "2024-04-25",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_229f0ffbd032549a"
+        ]
+      },
+      {
+        "id": "node_5",
+        "label": "Target-quarter revenue-growth acceleration was -0.551 percentage points",
+        "event_type": "indicator",
+        "occurred_date": "2024-04-25",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_229f0ffbd032549a"
+        ]
+      },
+      {
+        "id": "node_6",
+        "label": "Resolved outcome: below recent range",
+        "event_type": "outcome",
+        "occurred_date": "2024-04-25",
+        "is_outcome": true,
+        "is_actual_outcome": true,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_229f0ffbd032549a"
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_1",
+        "source": "node_1",
+        "target": "node_3",
+        "relationship": "contributes_to",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_cea2aecffa28a6ac",
+          "ev_a4935e06645d6268",
+          "ev_ff2ac61c225886e2",
+          "ev_14427a089dbf52a9"
+        ],
+        "rationale": "Multiple reports identify cloud strength, but they do not quantify its contribution to consolidated revenue growth."
+      },
+      {
+        "id": "edge_2",
+        "source": "node_2",
+        "target": "node_3",
+        "relationship": "contributes_to",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_ff2ac61c225886e2",
+          "ev_14427a089dbf52a9",
+          "ev_5e3e8b0c580b09c8"
+        ],
+        "rationale": "AI was reported as a booster, while its isolated target-quarter revenue effect remains unquantified."
+      },
+      {
+        "id": "edge_3",
+        "source": "node_3",
+        "target": "node_4",
+        "relationship": "supports",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_cea2aecffa28a6ac",
+          "ev_229f0ffbd032549a"
+        ],
+        "rationale": "Independent descriptions of strong growth are consistent with the official 17.03 percent measurement."
+      },
+      {
+        "id": "edge_4",
+        "source": "node_4",
+        "target": "node_5",
+        "relationship": "input_to",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_229f0ffbd032549a"
+        ],
+        "rationale": "The target-quarter growth rate is one registered input to the quarter-over-quarter growth-acceleration calculation."
+      },
+      {
+        "id": "edge_5",
+        "source": "node_5",
+        "target": "node_6",
+        "relationship": "maps_to",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_229f0ffbd032549a"
+        ],
+        "rationale": "The measured -0.551-point acceleration maps deterministically to below recent range under the registered thresholds."
+      }
+    ]
+  }
+}

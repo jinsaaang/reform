@@ -1,0 +1,482 @@
+{
+  "schema_version": "hgf_blueprint_topology_v2",
+  "question_id": "v3_us_pce_price_monthly_change_2024_02",
+  "target_definition": {
+    "metric": "monthly PCE-price change",
+    "unit_or_option_space": [
+      "yes",
+      "no"
+    ],
+    "forecast_horizon": "Remap the historical target family to the current question's exact target period."
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Outcome-redacted topology preserves 5 checkpoints, 7 source edges, and 5 root-to-target paths.",
+    "weaknesses": []
+  },
+  "search_factors": [
+    {
+      "factor": "U.S. Inflation Trends And Outlook In [CURRENT_PERIOD_REQUIRED]",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240202_012_915d5f9f"
+      ]
+    },
+    {
+      "factor": "Key Fed inflation measure rose [CURRENT_VALUE_REQUIRED] in [CURRENT_PERIOD_REQUIRED] as expected, up [CURRENT_VALUE_REQUIRED] from a year ago",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240229_013_f67d0f09"
+      ]
+    },
+    {
+      "factor": "Federal Reserve Bank of St. Louis publishes analysis on core inflation forecast accuracy.",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240229_014_bf2db14e"
+      ]
+    },
+    {
+      "factor": "Gas and Housing Prices Drive Inflation Higher in [CURRENT_PERIOD_REQUIRED]",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240229_015_b863c44f"
+      ]
+    },
+    {
+      "factor": "Monthly PCE-price change for United States PCE price index in [CURRENT_PERIOD_REQUIRED] was at least [CURRENT_VALUE_REQUIRED]",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240229_021_dbf21b09"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "checkpoint_1",
+      "role": "driver",
+      "factor": "U.S. Inflation Trends And Outlook In [CURRENT_PERIOD_REQUIRED]",
+      "mechanism": "Persistent inflationary pressures in key sectors, notably housing and energy, caused the monthly PCE price change to be at least [CURRENT_VALUE_REQUIRED].",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240202_012_915d5f9f"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2024_02_20260725_013521_010_f20408a2",
+        "hyp_v3_us_pce_price_monthly_change_2024_02_20260725_013521_014_7453891a"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_2",
+      "role": "driver",
+      "factor": "Key Fed inflation measure rose [CURRENT_VALUE_REQUIRED] in [CURRENT_PERIOD_REQUIRED] as expected, up [CURRENT_VALUE_REQUIRED] from a year ago",
+      "mechanism": "The [CURRENT_PERIOD_REQUIRED] PCE data provided an early indication of ongoing inflation, influencing expectations for the [CURRENT_PERIOD_REQUIRED] data and correlating with the eventual outcome.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240229_013_f67d0f09"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2024_02_20260725_013521_011_f6364ffe",
+        "hyp_v3_us_pce_price_monthly_change_2024_02_20260725_013521_015_5bdfea7c"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_3",
+      "role": "driver",
+      "factor": "Federal Reserve Bank of St. Louis publishes analysis on core inflation forecast accuracy.",
+      "mechanism": "Analysis of core inflation forecast accuracy highlights the challenge of predicting inflation, but in this instance, forecasts aligned with the actual outcome, thus correlating with the outcome.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240229_014_bf2db14e"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2024_02_20260725_013521_013_da2dfdfb"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_4",
+      "role": "mediator",
+      "factor": "Gas and Housing Prices Drive Inflation Higher in [CURRENT_PERIOD_REQUIRED]",
+      "mechanism": "Specific sectors like gas and housing driving inflation higher in [CURRENT_PERIOD_REQUIRED] directly contributed to the PCE increase.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240229_015_b863c44f"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2024_02_20260725_013521_012_bde4f112"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_5",
+      "role": "mediator",
+      "factor": "Monthly PCE-price change for United States PCE price index in [CURRENT_PERIOD_REQUIRED] was at least [CURRENT_VALUE_REQUIRED]",
+      "mechanism": "Re-test whether this factor has a currently supported link to the exact target metric; do not transfer the historical outcome or magnitude.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240229_021_dbf21b09"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2024_02_20260725_013537_021_7d8d8b67"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "target_bridge",
+      "role": "target_bridge",
+      "factor": "monthly PCE-price change",
+      "mechanism": "Map only currently supported paths into the exact target operator. Directional support alone is not magnitude or threshold-crossing support.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "A current target baseline and evidence supporting every edge used in the bridge.",
+      "contradiction_signal": "The current target baseline, magnitude evidence, or option boundary contradicts the proposed path.",
+      "historical_support": "medium",
+      "source_event_ids": [],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2024_02_20260725_013537_021_7d8d8b67"
+      ],
+      "source_event_type": "target_bridge"
+    }
+  ],
+  "topology": {
+    "checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_5",
+      "target_bridge"
+    ],
+    "root_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3"
+    ],
+    "target_bridge_id": "target_bridge",
+    "edges": [
+      {
+        "source_checkpoint_id": "checkpoint_1",
+        "target_checkpoint_id": "checkpoint_5",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Persistent inflationary pressures in key sectors, notably housing and energy, caused the monthly PCE price change to be at least [CURRENT_VALUE_REQUIRED].",
+        "source_edge_ids": [
+          "hyp_v3_us_pce_price_monthly_change_2024_02_20260725_013521_010_f20408a2"
+        ],
+        "source_article_ids": [
+          "art_finance_20240202_007_fb4bd2f3"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_2",
+        "target_checkpoint_id": "checkpoint_5",
+        "relationship": "correlates",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "The [CURRENT_PERIOD_REQUIRED] PCE data provided an early indication of ongoing inflation, influencing expectations for the [CURRENT_PERIOD_REQUIRED] data and correlating with the eventual outcome.",
+        "source_edge_ids": [
+          "hyp_v3_us_pce_price_monthly_change_2024_02_20260725_013521_011_f6364ffe"
+        ],
+        "source_article_ids": [
+          "art_finance_20240229_002_84968db8"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_4",
+        "target_checkpoint_id": "checkpoint_5",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Specific sectors like gas and housing driving inflation higher in [CURRENT_PERIOD_REQUIRED] directly contributed to the PCE increase.",
+        "source_edge_ids": [
+          "hyp_v3_us_pce_price_monthly_change_2024_02_20260725_013521_012_bde4f112"
+        ],
+        "source_article_ids": [
+          "art_finance_20240312_003_bbe08cd8"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_3",
+        "target_checkpoint_id": "checkpoint_5",
+        "relationship": "correlates",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Analysis of core inflation forecast accuracy highlights the challenge of predicting inflation, but in this instance, forecasts aligned with the actual outcome, thus correlating with the outcome.",
+        "source_edge_ids": [
+          "hyp_v3_us_pce_price_monthly_change_2024_02_20260725_013521_013_da2dfdfb"
+        ],
+        "source_article_ids": [
+          "art_finance_20240229_004_735f3db8"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_1",
+        "target_checkpoint_id": "checkpoint_4",
+        "relationship": "enables",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Ongoing inflationary pressures enabled specific sectors like gas and housing to drive inflation higher in [CURRENT_PERIOD_REQUIRED].",
+        "source_edge_ids": [
+          "hyp_v3_us_pce_price_monthly_change_2024_02_20260725_013521_014_7453891a"
+        ],
+        "source_article_ids": [
+          "art_finance_20240202_007_fb4bd2f3",
+          "art_finance_20240312_003_bbe08cd8"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_2",
+        "target_checkpoint_id": "checkpoint_4",
+        "relationship": "enables",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "The rise in [CURRENT_PERIOD_REQUIRED] PCE provided an early indication of ongoing inflation, enabling the expectation that [CURRENT_PERIOD_REQUIRED] inflation drivers would also be high.",
+        "source_edge_ids": [
+          "hyp_v3_us_pce_price_monthly_change_2024_02_20260725_013521_015_5bdfea7c"
+        ],
+        "source_article_ids": [
+          "art_finance_20240229_002_84968db8",
+          "art_finance_20240312_003_bbe08cd8"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_5",
+        "target_checkpoint_id": "target_bridge",
+        "relationship": "triggers",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Historical DAG connected this factor to the redacted target measurement; the realized value and outcome mapping are omitted.",
+        "source_edge_ids": [
+          "hyp_v3_us_pce_price_monthly_change_2024_02_20260725_013537_021_7d8d8b67"
+        ],
+        "source_article_ids": [
+          "art_finance_20240329_002_2c157d54"
+        ],
+        "terminal_to_target_bridge": true
+      }
+    ],
+    "paths_truncated": false
+  },
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "checkpoint_1",
+        "checkpoint_5",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2024_02_20260725_013521_010_f20408a2",
+        "hyp_v3_us_pce_price_monthly_change_2024_02_20260725_013537_021_7d8d8b67"
+      ],
+      "relationships": [
+        "causes",
+        "triggers"
+      ],
+      "path_role": "main_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from U.S. Inflation Trends And Outlook In [CURRENT_PERIOD_REQUIRED] to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_1",
+        "checkpoint_4",
+        "checkpoint_5",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2024_02_20260725_013521_014_7453891a",
+        "hyp_v3_us_pce_price_monthly_change_2024_02_20260725_013521_012_bde4f112",
+        "hyp_v3_us_pce_price_monthly_change_2024_02_20260725_013537_021_7d8d8b67"
+      ],
+      "relationships": [
+        "enables",
+        "causes",
+        "triggers"
+      ],
+      "path_role": "supporting_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from U.S. Inflation Trends And Outlook In [CURRENT_PERIOD_REQUIRED] to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_2",
+        "checkpoint_5",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2024_02_20260725_013521_011_f6364ffe",
+        "hyp_v3_us_pce_price_monthly_change_2024_02_20260725_013537_021_7d8d8b67"
+      ],
+      "relationships": [
+        "correlates",
+        "triggers"
+      ],
+      "path_role": "supporting_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Key Fed inflation measure rose [CURRENT_VALUE_REQUIRED] in [CURRENT_PERIOD_REQUIRED] as expected, up [CURRENT_VALUE_REQUIRED] from a year ago to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_2",
+        "checkpoint_4",
+        "checkpoint_5",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2024_02_20260725_013521_015_5bdfea7c",
+        "hyp_v3_us_pce_price_monthly_change_2024_02_20260725_013521_012_bde4f112",
+        "hyp_v3_us_pce_price_monthly_change_2024_02_20260725_013537_021_7d8d8b67"
+      ],
+      "relationships": [
+        "enables",
+        "causes",
+        "triggers"
+      ],
+      "path_role": "supporting_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Key Fed inflation measure rose [CURRENT_VALUE_REQUIRED] in [CURRENT_PERIOD_REQUIRED] as expected, up [CURRENT_VALUE_REQUIRED] from a year ago to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_3",
+        "checkpoint_5",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2024_02_20260725_013521_013_da2dfdfb",
+        "hyp_v3_us_pce_price_monthly_change_2024_02_20260725_013537_021_7d8d8b67"
+      ],
+      "relationships": [
+        "correlates",
+        "triggers"
+      ],
+      "path_role": "supporting_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Federal Reserve Bank of St. Louis publishes analysis on core inflation forecast accuracy. to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "A current factor outside the preserved historical topology dominates the target.",
+      "discriminating_evidence": "Search for current shocks and target observations not explained by any retained path.",
+      "source_event_ids": []
+    }
+  ],
+  "forecast_audit_questions": [
+    "Does every used checkpoint transition correspond to a preserved edge?",
+    "Which preserved edges are supported, contradicted, or unknown now?",
+    "Does a counter-path dominate the leading supported path?",
+    "Is there evidence for magnitude and boundary crossing, not direction alone?"
+  ],
+  "refinement_metadata": {
+    "model": "deterministic_topology_compiler_v2",
+    "source_graph": "data\\dags\\v3_us_pce_price_monthly_change_2024_02\\graph.json",
+    "source_audit_status": "pass",
+    "outcome_nodes_redacted": 2,
+    "target_value_anchors_redacted": 0,
+    "historical_specifics_sanitized": true,
+    "sanitizer": "minimal_value_period_placeholders_v1",
+    "value_replacement_count": 12,
+    "period_replacement_count": 21
+  },
+  "topology_validation": {
+    "status": "pass",
+    "errors": [],
+    "metrics": {
+      "retained_checkpoint_count": 5,
+      "source_edge_count": 7,
+      "emitted_edge_count": 7,
+      "edge_coverage": 1.0,
+      "path_precision": 1.0,
+      "causal_path_count": 5,
+      "outcome_event_leak_count": 0,
+      "outcome_text_leak_count": 0,
+      "realized_value_count": 0,
+      "absolute_period_count": 0
+    }
+  }
+}

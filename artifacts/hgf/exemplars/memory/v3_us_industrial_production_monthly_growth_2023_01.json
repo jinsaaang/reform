@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_us_industrial_production_monthly_growth_2023_01",
+  "blueprint_sha256": "98a4c6eb10252fd7dc80bcdfaeafa91d1164eb64bc01a23245704c8f4f842030",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "macro / industrial activity",
+      "target_operation": "monthly industrial-production growth",
+      "option_geometry": "ordered"
+    },
+    "historical_question": "As of 2023-01-31, which range will the monthly industrial-production growth for United States industrial production in 2023-01 fall into?",
+    "historical_cutoff": "2023-01-31T00:00:00+00:00",
+    "target_semantics": "The monthly growth rate of US industrial production for January 2023, compared to a recent range of -0.298% to 0.02%.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The DAG suggests that strong U.S. job growth in the relevant period could support industrial production. However, without specific forecast-time evidence, the strength and direction of this link remain unconfirmed.",
+      "Another path indicates that manufacturing job gains might support output capacity. Again, the DAG highlights this as a potential driver, but lacks specific evidence to confirm its impact on the target metric for January 2023.",
+      "The DAG also points to manufacturing indicators signaling a recessionary environment as potential counterevidence. The strength and applicability of this signal to the target period are not established by forecast-time evidence."
+    ],
+    "counterevidence": "Manufacturing indicators signaled a recessionary environment, which could negatively impact industrial production. The DAG identifies this as a strong historical factor, but its current applicability and impact are unconfirmed by forecast-time evidence.",
+    "prospective_target_estimate": "Given the lack of specific forecast-time evidence to confirm or deny the causal pathways identified in the DAG, a precise estimate cannot be made. The potential for both positive support from labor markets and negative pressure from recessionary indicators creates significant uncertainty.",
+    "option_mapping": "The target is to determine if January 2023 US industrial production growth was below -0.298%, between -0.298% and 0.02%, or above 0.02%. The DAG provides potential drivers and counter-drivers, but without specific evidence, mapping these to a specific option is not possible.",
+    "uncertainty": "The primary uncertainty stems from the complete absence of forecast-time evidence. The DAG outlines potential causal relationships and counter-evidence, but their current relevance, strength, and direction for January 2023 industrial production growth are unknown. This prevents a confident assessment of whether growth will be below, within, or above the recent range.",
+    "dag_derived_lesson": "A historical causal structure requires current evidence to validate its components and their relationships before it can be used to forecast an outcome. Without such evidence, potential drivers and counter-drivers remain speculative, leading to high uncertainty."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

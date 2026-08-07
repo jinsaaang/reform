@@ -1,0 +1,1061 @@
+{
+  "question": {
+    "id": "v3_us_10y_real_yield_monthly_change_2023_01",
+    "question_text": "As of 2023-01-01, which range will the monthly 10-year real-yield change for United States 10-year real Treasury yield in 2023-01 fall into?",
+    "question_type": "mcq",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 3,
+    "resolution_date": "2023-02-15T23:59:59Z",
+    "estimated_start_time": "2023-01-01T00:00:00Z",
+    "ground_truth": "below recent range",
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: United States 10-year real Treasury yield\nTarget period: 2023-01\nFinancial area: monetary_policy / real rates\nRegion: US\nPre-registered recent-range boundaries: lower -0.135, upper 0.463 percentage points.",
+    "resolution_criteria": "Use FRED series DFII10. Compute the change from the previous monthly observation using mode 'absolute'. Resolve 'below recent range' below -0.135, 'within recent range' from -0.135 inclusive to 0.463 exclusive, and 'above recent range' at or above 0.463 percentage points.",
+    "resolution_reasoning": "The snapshotted target change was -0.3 percentage points; it resolved to 'below recent range'.",
+    "options": [
+      "below recent range",
+      "within recent range",
+      "above recent range"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": null,
+    "graph_built": false,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.204560Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "us_10y_real_yield_monthly_change",
+        "event_cluster_id": "treasury_real_10y_2023-01",
+        "category": "monetary_policy",
+        "original_domain": "monetary_policy",
+        "subdomain": "real rates",
+        "entity": "United States 10-year real Treasury yield",
+        "region": "US",
+        "target_metric": "monthly 10-year real-yield change",
+        "target_period": "2023-01",
+        "forecast_cutoff": "2023-01-01T00:00:00+00:00",
+        "forecast_date_options": [
+          "2023-01-01"
+        ],
+        "resolution_available_at": "2023-02-15T23:59:59+00:00",
+        "horizon_days": 45,
+        "source_type": "fred_series_snapshot",
+        "source_series_id": "DFII10",
+        "source_homepage": "https://fred.stlouisfed.org/series/DFII10",
+        "comparison_rule": "target change bucketed by the lower and upper quartiles of the 8 prior observed changes",
+        "comparison_threshold": 0.22,
+        "comparison_thresholds": {
+          "lower": -0.135,
+          "upper": 0.4625
+        },
+        "change_unit": "percentage points",
+        "threshold_observation_dates": [
+          "2022-04-29",
+          "2022-05-31",
+          "2022-06-30",
+          "2022-07-29",
+          "2022-08-31",
+          "2022-09-30",
+          "2022-10-31",
+          "2022-11-30",
+          "2022-12-30"
+        ],
+        "split": "memory",
+        "family_position": 1,
+        "family_size": 7,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "below recent range",
+        "resolved_class": "below recent range",
+        "resolution_value": 1.28,
+        "target_change": -0.3,
+        "source_observation_date": "2023-01-31",
+        "resolution_document": {
+          "publisher": "Federal Reserve Bank of St. Louis (FRED)",
+          "title": "10-Year Treasury Inflation-Indexed Security, Constant Maturity",
+          "url": "https://fred.stlouisfed.org/series/DFII10"
+        },
+        "source_download_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DFII10&cosd=2019-01-01&coed=2026-06-30",
+        "source_sha256": "4bb35fbd651bdce568157728d46c31b9c1edc389115c1dc9650734a280c83d20",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_faccbc420e85",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 20,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_20230129_006_baddafde",
+        "title": "January FOMC Meeting: Too Soon... - International Business Weekly",
+        "url": "https://internationalbusinessweekly.com/january-fomc-meeting-too-soon-to-declare-victory-but-not-too-soon-to-pause",
+        "source": "internationalbusinessweekly.com",
+        "published_date": "2023-01-29T22:33:33+00:00"
+      },
+      {
+        "id": "art_finance_20130319_007_7e1b6744",
+        "title": "FOMC Meeting Preview: Fed Chairman Ben... | IBTimes",
+        "url": "https://www.ibtimes.com/fomc-meeting-preview-fed-chairman-ben-bernankes-press-conference-provide-clues-when-qe-will-end",
+        "source": "ibtimes.com",
+        "published_date": "2013-03-19T06:11:38-04:00"
+      },
+      {
+        "id": "art_finance_20230122_008_aa598ea5",
+        "title": "Pre January 2023 FOMC Meeting Package - Underlying Inflation",
+        "url": "https://underlyinginflation.com/pre-january-2023-fomc-meeting-package",
+        "source": "underlyinginflation.com",
+        "published_date": "2023-01-22T16:00:15+00:00"
+      },
+      {
+        "id": "art_finance_20230203_009_afe2305e",
+        "title": "US Hiring Surges in January as Unemployment Falls to 3.4% - NJBIA",
+        "url": "https://njbia.org/us-hiring-surges-in-january-as-unemployment-falls-to-3-4",
+        "source": "njbia.org",
+        "published_date": "2023-02-03T17:09:50+00:00"
+      },
+      {
+        "id": "art_finance_20230214_002_74c6ab6f",
+        "title": "Inflation rose 0.5% in January, more than expected and up 6.4% from a year ago",
+        "url": "https://www.cnbc.com/2023/02/14/consumer-price-index-january-2023-.html",
+        "source": "cnbc.com",
+        "published_date": "2023-02-14T13:31:07+00:00"
+      },
+      {
+        "id": "art_finance_20230131_002_fc64b927",
+        "title": "Govt Expects Inflationary Pressure to Calm Down ‘Gradually’",
+        "url": "https://propakistani.pk/2023/01/31/govt-expects-inflationary-pressure-to-calm-down-gradually",
+        "source": "propakistani.pk",
+        "published_date": "2023-01-31T15:19:18+00:00"
+      },
+      {
+        "id": "art_finance_20191004_004_094c2619",
+        "title": "War, Economic Ruin, and Liberty Destruction Will... - GaryDBarnett.com",
+        "url": "https://www.garydbarnett.com/war-economic-ruin-and-liberty-destruction-will-never-end-until-the-federal-reserve-is-abolished",
+        "source": "garydbarnett.com",
+        "published_date": "2019-10-04T14:00:26+00:00"
+      },
+      {
+        "id": "art_finance_20211219_005_44743575",
+        "title": "80% of all US dollars in existence were printed in the... - Tech Startups",
+        "url": "https://techstartups.com/2021/12/18/80-us-dollars-existence-printed-january-2020-october-2021",
+        "source": "techstartups.com",
+        "published_date": "2021-12-19T01:59:08+00:00"
+      },
+      {
+        "id": "art_finance_20080723_002_b1baaead",
+        "title": "Current U.S. Inflation Rates (2000-2026)",
+        "url": "https://www.usinflationcalculator.com/inflation/current-inflation-rates",
+        "source": "usinflationcalculator.com",
+        "published_date": "2008-07-23T03:07:58+00:00"
+      },
+      {
+        "id": "art_finance_20220823_003_63a78def",
+        "title": "Current US Inflation Rate: 1948 to Today | [updated monthly] | Finder",
+        "url": "https://www.finder.com/economics/inflation-cpi",
+        "source": "finder.com",
+        "published_date": "2022-08-23T01:28:48+00:00"
+      },
+      {
+        "id": "art_finance_20110101_004_33483734",
+        "title": "Economic Indicators, Events and Market News Thursday... | FXEmpire",
+        "url": "https://www.fxempire.com/news/article/economic-indicators-events-and-market-news-thursday-april-12-2012-45777",
+        "source": "fxempire.com",
+        "published_date": "2011-01-01T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20141002_005_2373f658",
+        "title": "Forward 1 Month T-bill Rates Fall Again, with Peak Down 0.10% at...",
+        "url": "https://www.kamakuraco.com/forward-1-month-t-bill-rates-fall-again-with-peak-down-0-10-at-3-39-in-april-2021",
+        "source": "kamakuraco.com",
+        "published_date": "2014-10-02T11:23:20+00:00"
+      },
+      {
+        "id": "art_finance_20200314_003_64328fcf",
+        "title": "10-year Treasury yield jumps above 1% after clarity on government...",
+        "url": "https://ramonare.com/10-year-treasury-yield-jumps-1-clarity-government-response-coronavirus",
+        "source": "ramonare.com",
+        "published_date": "2020-03-14T20:14:55+00:00"
+      },
+      {
+        "id": "art_finance_20230102_004_36af1b29",
+        "title": "Global economic forecast for 2023? A stormy start... | The Guardian",
+        "url": "https://www.theguardian.com/business/2023/jan/02/global-economic-forecast-for-2023-a-stormy-start-followed-by-a-ray-of-hope",
+        "source": "theguardian.com",
+        "published_date": "2023-01-02T15:44:33+00:00"
+      },
+      {
+        "id": "art_finance_20181129_002_e1b7b35a",
+        "title": "Macroscope | Why investors are turning to 3-month Treasury bills and...",
+        "url": "https://www.scmp.com/comment/insight-opinion/united-states/article/2175514/why-investors-are-turning-3-month-treasury",
+        "source": "scmp.com",
+        "published_date": "2018-11-29T14:00:15+08:00"
+      },
+      {
+        "id": "art_finance_20230116_002_d8bc1c94",
+        "title": "Weekly Forecast, Jan. 13: Forward U.S. Treasury Yields... | Forex.ca",
+        "url": "https://www.forex.ca/weekly-forecast-jan-13-forward-u-s-treasury-yields-twin-peaks-shrink",
+        "source": "forex.ca",
+        "published_date": "2023-01-16T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20220616_002_093ebaaa",
+        "title": "That was fast: 30-year fixed mortgage rate... - The Falling Darkness",
+        "url": "https://thefallingdarkness.com/that-was-fast-30-year-fixed-mortgage-rate-spikes-to-6-18-wolf-street",
+        "source": "thefallingdarkness.com",
+        "published_date": "2022-06-16T17:20:34+00:00"
+      },
+      {
+        "id": "art_finance_20210219_003_5f88b9d4",
+        "title": "US 30-Year Mortgage Rates Hit A 3-Month High - Christophe Barraud",
+        "url": "https://www.christophe-barraud.com/us-30-year-mortgage-rates-hit-a-3-month-high",
+        "source": "christophe-barraud.com",
+        "published_date": "2021-02-19T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230106_003_69ef7510",
+        "title": "Are You Prepared for a Hard Landing? | Economic Prism",
+        "url": "https://economicprism.com/are-you-prepared-for-a-hard-landing",
+        "source": "economicprism.com",
+        "published_date": "2023-01-06T09:05:59+00:00"
+      },
+      {
+        "id": "art_finance_20160314_002_b4549432",
+        "title": "cnbc.com/federal-reserve",
+        "url": "https://www.cnbc.com/federal-reserve",
+        "source": "cnbc.com",
+        "published_date": "2016-03-14T14:53:33+00:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_faccbc420e85",
+      "events_count": 9,
+      "hypotheses_count": 8
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 5,
+      "avg_depth": 5.0,
+      "quality_score": 0.81,
+      "depth_score": 1.0,
+      "confidence_score": 0.66,
+      "strength_score": 0.54,
+      "evidence_score": 1.0,
+      "event_count": 9,
+      "hypothesis_count": 8
+    },
+    "nodes": [
+      {
+        "id": "evt_0808ac4e454e",
+        "title": "Option 2: within recent range",
+        "description": "Question resolves to: within recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-02-15T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_us_10y_real_yield_monthly_change_2023_01",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 1,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-22T20:19:47.706117Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_acff58972704",
+        "title": "Option 3: above recent range",
+        "description": "Question resolves to: above recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-02-15T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_us_10y_real_yield_monthly_change_2023_01",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 2,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-22T20:19:47.706125Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_faccbc420e85",
+        "title": "Option 1: below recent range",
+        "description": "Question resolves to: below recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-02-15T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_us_10y_real_yield_monthly_change_2023_01",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 0,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-22T20:19:47.706098Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20080723_029_46590645",
+        "title": "Publication of Historical US Inflation Data (2008)",
+        "description": "Historical US inflation data and calculators were made available in 2008, providing tools and information for understanding inflation trends.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2008-07-23T12:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20080723_002_b1baaead"
+        ],
+        "extracted_for_question_id": "v3_us_10y_real_yield_monthly_change_2023_01",
+        "source_article_id": "art_finance_20080723_002_b1baaead",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_10y_real_yield_monthly_change_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-22T22:19:08.946254Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20220823_027_b2c3bec5",
+        "title": "US Inflation Statistics Report Released (August 2022)",
+        "description": "A report detailing US inflation statistics from 1948 to July 2026 was released in August 2022, providing historical context and future projections for inflation.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2022-08-23T10:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20220823_003_63a78def"
+        ],
+        "extracted_for_question_id": "v3_us_10y_real_yield_monthly_change_2023_01",
+        "source_article_id": "art_finance_20220823_003_63a78def",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_10y_real_yield_monthly_change_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-22T22:18:58.166054Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230101_016_4cd42a4a",
+        "title": "Initial Market Hopes for Soft Landing",
+        "description": "Created initial expectations that potential central bank easing would prevent significant changes in real yields.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-01T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230129_006_baddafde"
+        ],
+        "extracted_for_question_id": "v3_us_10y_real_yield_monthly_change_2023_01",
+        "source_article_id": "art_finance_20230129_006_baddafde",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_10y_real_yield_monthly_change_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-22T22:17:47.389225Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230121_001_42a8b125",
+        "title": "Federal Reserve Maintains Hawkish Stance",
+        "description": "Persistent inflationary pressures and a tight labor market reinforced the Fed's hawkish stance, leading to continued aggressive monetary policy.",
+        "event_type": "decision",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-21T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230203_009_afe2305e",
+          "art_finance_20230214_002_74c6ab6f",
+          "art_finance_20230122_008_aa598ea5",
+          "art_finance_20230129_006_baddafde"
+        ],
+        "extracted_for_question_id": "v3_us_10y_real_yield_monthly_change_2023_01",
+        "source_article_id": "art_finance_20230203_009_afe2305e",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_10y_real_yield_monthly_change_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-22T23:29:02.313698Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230122_026_d7c59a59",
+        "title": "Pre-January FOMC Meeting Package Released",
+        "description": "A package released before the January FOMC meeting indicated that while data points to disinflation, the medium-term forecast remains unfavorable, suggesting the Fed needs more evidence before pivoting.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-22T16:00:15Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230122_008_aa598ea5"
+        ],
+        "extracted_for_question_id": "v3_us_10y_real_yield_monthly_change_2023_01",
+        "source_article_id": "art_finance_20230122_008_aa598ea5",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_10y_real_yield_monthly_change_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-22T22:18:35.117291Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230129_025_06dcb9e7",
+        "title": "January FOMC Meeting Discusses Monetary Policy Direction",
+        "description": "The Federal Open Market Operations Committee (FOMC) held a meeting to discuss the nation's monetary policy direction, with market hopes for a soft landing.",
+        "event_type": "decision",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-29T12:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230129_006_baddafde"
+        ],
+        "extracted_for_question_id": "v3_us_10y_real_yield_monthly_change_2023_01",
+        "source_article_id": "art_finance_20230129_006_baddafde",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_10y_real_yield_monthly_change_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-22T22:18:35.101172Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230203_024_b5076da0",
+        "title": "US Hiring Surges in January, Unemployment Falls",
+        "description": "US employers added 517,000 new jobs in January, and the unemployment rate dropped to 3.4%, the lowest since May 1969. This indicates a strong labor market.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-02-03T08:30:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230203_009_afe2305e"
+        ],
+        "extracted_for_question_id": "v3_us_10y_real_yield_monthly_change_2023_01",
+        "source_article_id": "art_finance_20230203_009_afe2305e",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_10y_real_yield_monthly_change_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-22T22:18:25.751586Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230214_023_91175d13",
+        "title": "January CPI Report Shows Higher-than-Expected Inflation",
+        "description": "The Consumer Price Index (CPI) rose 0.5% in January, exceeding expectations and marking a 6.4% increase from the previous year. This indicates persistent inflationary pressures.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-02-14T08:30:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230214_002_74c6ab6f"
+        ],
+        "extracted_for_question_id": "v3_us_10y_real_yield_monthly_change_2023_01",
+        "source_article_id": "art_finance_20230214_002_74c6ab6f",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_10y_real_yield_monthly_change_2023_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-22T22:18:25.733879Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_us_10y_real_yield_monthly_change_2023_01_20260722_221829_008_921c1fad",
+        "source_event_id": "evt_finance_20230214_023_91175d13",
+        "target_event_id": "evt_faccbc420e85",
+        "relation_type": "correlates",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Higher-than-expected inflation typically correlates with changes in real yields.",
+        "evidence_article_ids": [
+          "art_finance_20230214_002_74c6ab6f"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_10y_real_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-22T22:18:29.717194Z",
+        "last_confirmed_at": "2026-07-22T22:18:29.717194Z"
+      },
+      {
+        "id": "hyp_v3_us_10y_real_yield_monthly_change_2023_01_20260722_221829_009_de3521e1",
+        "source_event_id": "evt_finance_20230203_024_b5076da0",
+        "target_event_id": "evt_faccbc420e85",
+        "relation_type": "correlates",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Strong employment data can influence monetary policy expectations and thus real yields.",
+        "evidence_article_ids": [
+          "art_finance_20230203_009_afe2305e"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_10y_real_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-22T22:18:29.730085Z",
+        "last_confirmed_at": "2026-07-22T22:18:29.730085Z"
+      },
+      {
+        "id": "hyp_v3_us_10y_real_yield_monthly_change_2023_01_20260722_221841_010_10bef5f1",
+        "source_event_id": "evt_finance_20230122_026_d7c59a59",
+        "target_event_id": "evt_finance_20230129_025_06dcb9e7",
+        "relation_type": "enables",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "The pre-meeting package provided key information and context for the FOMC meeting discussions and decisions.",
+        "evidence_article_ids": [
+          "art_finance_20230122_008_aa598ea5",
+          "art_finance_20230129_006_baddafde"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_10y_real_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-22T22:18:41.354129Z",
+        "last_confirmed_at": "2026-07-22T22:18:41.354129Z"
+      },
+      {
+        "id": "hyp_v3_us_10y_real_yield_monthly_change_2023_01_20260722_221841_011_a85c444b",
+        "source_event_id": "evt_finance_20230129_025_06dcb9e7",
+        "target_event_id": "evt_finance_20230214_023_91175d13",
+        "relation_type": "correlates",
+        "strength": 0.5,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "FOMC discussions and potential policy signals can influence market expectations and indirectly affect inflation indicators like CPI.",
+        "evidence_article_ids": [
+          "art_finance_20230129_006_baddafde",
+          "art_finance_20230214_002_74c6ab6f"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_10y_real_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-22T22:18:41.367638Z",
+        "last_confirmed_at": "2026-07-22T22:18:41.367638Z"
+      },
+      {
+        "id": "hyp_v3_us_10y_real_yield_monthly_change_2023_01_20260722_221841_012_5cb51a8a",
+        "source_event_id": "evt_finance_20230129_025_06dcb9e7",
+        "target_event_id": "evt_finance_20230203_024_b5076da0",
+        "relation_type": "correlates",
+        "strength": 0.5,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "FOMC discussions on economic conditions and labor markets can correlate with subsequent employment data releases.",
+        "evidence_article_ids": [
+          "art_finance_20230129_006_baddafde",
+          "art_finance_20230203_009_afe2305e"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_10y_real_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-22T22:18:41.379997Z",
+        "last_confirmed_at": "2026-07-22T22:18:41.379997Z"
+      },
+      {
+        "id": "hyp_v3_us_10y_real_yield_monthly_change_2023_01_20260722_221914_013_c5d6c19a",
+        "source_event_id": "evt_finance_20080723_029_46590645",
+        "target_event_id": "evt_finance_20220823_027_b2c3bec5",
+        "relation_type": "enables",
+        "strength": 0.4,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "Historical inflation data provides context and methodology for later inflation reports.",
+        "evidence_article_ids": [
+          "art_finance_20080723_002_b1baaead",
+          "art_finance_20220823_003_63a78def"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_10y_real_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-22T22:19:14.903685Z",
+        "last_confirmed_at": "2026-07-22T22:19:14.903685Z"
+      },
+      {
+        "id": "hyp_v3_us_10y_real_yield_monthly_change_2023_01_20260722_221914_014_98773e41",
+        "source_event_id": "evt_finance_20220823_027_b2c3bec5",
+        "target_event_id": "evt_finance_20230122_026_d7c59a59",
+        "relation_type": "enables",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Earlier inflation reports and trends inform the analysis and outlook presented in the pre-FOMC meeting package.",
+        "evidence_article_ids": [
+          "art_finance_20220823_003_63a78def",
+          "art_finance_20230122_008_aa598ea5"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_10y_real_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-22T22:19:14.921601Z",
+        "last_confirmed_at": "2026-07-22T22:19:14.921601Z"
+      },
+      {
+        "id": "hyp_v3_us_10y_real_yield_monthly_change_2023_01_20260722_232920_001_376893b8",
+        "source_event_id": "evt_finance_20230101_016_4cd42a4a",
+        "target_event_id": "evt_finance_20230121_001_42a8b125",
+        "relation_type": "inhibits",
+        "strength": 0.4,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "Initial market hopes for a soft landing, if realized, would have inhibited the Fed from maintaining such a hawkish stance. However, these hopes were overwhelmed by subsequent data.",
+        "evidence_article_ids": [
+          "art_finance_20230129_006_baddafde"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_10y_real_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-22T23:29:20.241161Z",
+        "last_confirmed_at": "2026-07-22T23:29:20.241161Z"
+      }
+    ],
+    "outcome_impacts": [
+      {
+        "id": "imp_dc7b43e9",
+        "event_id": "evt_finance_20230101_016_4cd42a4a",
+        "outcome_event_id": "evt_faccbc420e85",
+        "question_id": "v3_us_10y_real_yield_monthly_change_2023_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.5,
+        "confidence": 0.7,
+        "reasoning": "Initial market hopes for a soft landing would have counteracted the downward pressure on real yields, making the 'below recent range' outcome less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_10y_real_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-22T22:18:11.419740Z",
+        "last_confirmed_at": "2026-07-22T22:18:11.419740Z"
+      },
+      {
+        "id": "imp_0b309ea2",
+        "event_id": "evt_finance_20230122_017_213197a4",
+        "outcome_event_id": "evt_faccbc420e85",
+        "question_id": "v3_us_10y_real_yield_monthly_change_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.8,
+        "reasoning": "The pre-FOMC hawkish outlook contributed to the expectation of continued Fed tightening, pushing real yields lower.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_10y_real_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-22T22:18:11.451590Z",
+        "last_confirmed_at": "2026-07-22T22:18:11.451590Z"
+      },
+      {
+        "id": "imp_3d804df6",
+        "event_id": "evt_finance_20230129_018_cb436af3",
+        "outcome_event_id": "evt_faccbc420e85",
+        "question_id": "v3_us_10y_real_yield_monthly_change_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.85,
+        "reasoning": "The anticipated 25bp rate hike confirmed the Fed's tightening stance, contributing to downward pressure on real yields.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_10y_real_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-22T22:18:11.465444Z",
+        "last_confirmed_at": "2026-07-22T22:18:11.465444Z"
+      },
+      {
+        "id": "imp_8dddde89",
+        "event_id": "evt_finance_20230203_019_c6ac2010",
+        "outcome_event_id": "evt_faccbc420e85",
+        "question_id": "v3_us_10y_real_yield_monthly_change_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "Strong jobs data fueled expectations of aggressive Fed tightening, which pushed real yields lower.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_10y_real_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-22T22:18:11.476006Z",
+        "last_confirmed_at": "2026-07-22T22:18:11.476006Z"
+      },
+      {
+        "id": "imp_7689c13b",
+        "event_id": "evt_finance_20230214_020_fc38f9c2",
+        "outcome_event_id": "evt_faccbc420e85",
+        "question_id": "v3_us_10y_real_yield_monthly_change_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.95,
+        "reasoning": "Higher-than-expected inflation strongly reinforced the need for continued aggressive Fed action, leading to lower real yields.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_10y_real_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-22T22:18:11.489118Z",
+        "last_confirmed_at": "2026-07-22T22:18:11.489118Z"
+      },
+      {
+        "id": "imp_8342a5a6",
+        "event_id": "evt_finance_20230214_021_307f32c8",
+        "outcome_event_id": "evt_faccbc420e85",
+        "question_id": "v3_us_10y_real_yield_monthly_change_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "Increased likelihood of sustained Fed tightening directly led to downward pressure on real yields.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_10y_real_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-22T22:18:11.502636Z",
+        "last_confirmed_at": "2026-07-22T22:18:11.502636Z"
+      },
+      {
+        "id": "imp_602e2030",
+        "event_id": "evt_finance_20230215_022_57f5a47c",
+        "outcome_event_id": "evt_faccbc420e85",
+        "question_id": "v3_us_10y_real_yield_monthly_change_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 1.0,
+        "confidence": 1.0,
+        "reasoning": "This event is the direct cause of the actual outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_10y_real_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-22T22:18:11.515326Z",
+        "last_confirmed_at": "2026-07-22T22:18:11.515326Z"
+      },
+      {
+        "id": "imp_fa783162",
+        "event_id": "evt_finance_20230214_023_91175d13",
+        "outcome_event_id": "evt_faccbc420e85",
+        "question_id": "v3_us_10y_real_yield_monthly_change_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Higher-than-expected inflation typically leads to higher nominal yields, which can translate to higher real yields if inflation expectations are sticky.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_10y_real_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-22T22:19:31.193386Z",
+        "last_confirmed_at": "2026-07-22T22:19:31.193386Z"
+      },
+      {
+        "id": "imp_447b04d6",
+        "event_id": "evt_finance_20230203_024_b5076da0",
+        "outcome_event_id": "evt_faccbc420e85",
+        "question_id": "v3_us_10y_real_yield_monthly_change_2023_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Strong employment data indicates a robust economy, which can lead to expectations of tighter monetary policy and higher real yields.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_10y_real_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-22T22:19:31.204734Z",
+        "last_confirmed_at": "2026-07-22T22:19:31.204734Z"
+      },
+      {
+        "id": "imp_33d4176d",
+        "event_id": "evt_finance_20230129_025_06dcb9e7",
+        "outcome_event_id": "evt_faccbc420e85",
+        "question_id": "v3_us_10y_real_yield_monthly_change_2023_01",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.6,
+        "reasoning": "FOMC discussions set the tone for future monetary policy, which can indirectly influence real yields.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_10y_real_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-22T22:19:31.215017Z",
+        "last_confirmed_at": "2026-07-22T22:19:31.215017Z"
+      },
+      {
+        "id": "imp_67d965ca",
+        "event_id": "evt_finance_20230122_026_d7c59a59",
+        "outcome_event_id": "evt_faccbc420e85",
+        "question_id": "v3_us_10y_real_yield_monthly_change_2023_01",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.5,
+        "reasoning": "The pre-meeting package provides information that informs FOMC decisions, indirectly influencing real yields.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_10y_real_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-22T22:19:31.229415Z",
+        "last_confirmed_at": "2026-07-22T22:19:31.229415Z"
+      },
+      {
+        "id": "imp_096ae96b",
+        "event_id": "evt_finance_20220823_027_b2c3bec5",
+        "outcome_event_id": "evt_faccbc420e85",
+        "question_id": "v3_us_10y_real_yield_monthly_change_2023_01",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.4,
+        "reasoning": "Historical inflation reports provide context for current inflation trends, which can influence real yields.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_10y_real_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-22T22:19:31.242746Z",
+        "last_confirmed_at": "2026-07-22T22:19:31.242746Z"
+      },
+      {
+        "id": "imp_4c9a4283",
+        "event_id": "evt_finance_20130130_028_5cc15702",
+        "outcome_event_id": "evt_faccbc420e85",
+        "question_id": "v3_us_10y_real_yield_monthly_change_2023_01",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.2,
+        "confidence": 0.3,
+        "reasoning": "Past FOMC decisions provide historical context for monetary policy, with a very indirect influence on current real yields.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_10y_real_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-22T22:19:31.256588Z",
+        "last_confirmed_at": "2026-07-22T22:19:31.256588Z"
+      },
+      {
+        "id": "imp_a7487510",
+        "event_id": "evt_finance_20080723_029_46590645",
+        "outcome_event_id": "evt_faccbc420e85",
+        "question_id": "v3_us_10y_real_yield_monthly_change_2023_01",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.1,
+        "confidence": 0.2,
+        "reasoning": "Publication of historical inflation data provides long-term context but has minimal direct impact on the monthly change in real yields in 2023.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_10y_real_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-22T22:19:31.269989Z",
+        "last_confirmed_at": "2026-07-22T22:19:31.269989Z"
+      },
+      {
+        "id": "imp_5757809d",
+        "event_id": "evt_finance_20230131_030_f90fdba4",
+        "outcome_event_id": "evt_faccbc420e85",
+        "question_id": "v3_us_10y_real_yield_monthly_change_2023_01",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.4,
+        "reasoning": "General economic news and analysis contribute to the overall market sentiment and expectations, indirectly influencing real yields.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_10y_real_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-22T22:19:31.285523Z",
+        "last_confirmed_at": "2026-07-22T22:19:31.285523Z"
+      },
+      {
+        "id": "imp_f4b023a2",
+        "event_id": "evt_finance_20230121_001_42a8b125",
+        "outcome_event_id": "evt_faccbc420e85",
+        "question_id": "v3_us_10y_real_yield_monthly_change_2023_01",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.7,
+        "reasoning": "This event describes the Federal Reserve maintaining a hawkish stance, which could have a complex and somewhat neutral impact on the 10-year real yield change. While a hawkish stance generally implies higher rates, the market might have already priced this in, leading to a less direct impact on the *change* in yield.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_10y_real_yield_monthly_change_2023_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-22T23:29:28.802341Z",
+        "last_confirmed_at": "2026-07-22T23:29:28.802341Z"
+      }
+    ]
+  },
+  "bank_provenance": {
+    "mode": "reused_strict_export",
+    "source": "/home/kong/code/study_kakao/research/forecaster/experiments/finance_500_v3_monetary_policy/all_dags/graphs/v3_us_10y_real_yield_monthly_change_2023_01.json",
+    "seeded_at": "2026-07-24T18:25:39.061206+00:00"
+  }
+}

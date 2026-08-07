@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_us_retail_sales_monthly_growth_2023_08",
+  "blueprint_sha256": "64ce8bc37180513a82a79963a890f225c07b6068f243465e5125edef179d668f",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "macro/consumption",
+      "target_operation": "growth rate",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2023-08-31, will the monthly retail-sales growth for United States retail sales in 2023-08 be at least 0.493 percent?",
+    "historical_cutoff": "2023-08-31T00:00:00+00:00",
+    "target_semantics": "The monthly percentage change in United States retail sales for August 2023.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The DAG indicates that U.S. consumer spending accelerated entering August 2023, which is a potential driver for retail sales growth.",
+      "However, the DAG also highlights that consumer confidence pulled back in August 2023, acting as a potential headwind.",
+      "Furthermore, declining savings and weak income growth are identified as constraints on households, which could limit retail sales."
+    ],
+    "counterevidence": "Consumer confidence pulled back in August 2023, and declining savings alongside weak income growth constrained households.",
+    "prospective_target_estimate": "The evidence is insufficient to determine if the monthly retail-sales growth will be at least 0.493 percent.",
+    "option_mapping": "The 'yes' option corresponds to a monthly retail-sales growth of at least 0.493 percent, and the 'no' option corresponds to a growth less than 0.493 percent.",
+    "uncertainty": "The DAG notes that while labor market resilience is a factor, its direct causal effect on spending is not quantified. Additionally, the realized effect of lower consumer confidence and the specific contribution of labor market conditions to August retail sales are not measured.",
+    "dag_derived_lesson": "When evaluating a target metric, consider both positive drivers and negative counter-signals. The strength and quantified impact of these factors, along with their interrelationships, are crucial for a robust forecast. Evidence that describes trends but does not quantify their specific impact on the target introduces significant uncertainty."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

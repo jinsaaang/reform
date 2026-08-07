@@ -1,0 +1,1039 @@
+{
+  "question": {
+    "id": "v3_nasdaq_monthly_return_2024_03",
+    "question_text": "As of 2024-03-01, which range will the monthly NASDAQ Composite return for NASDAQ Composite index in 2024-03 fall into?",
+    "question_type": "mcq",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 3,
+    "resolution_date": "2024-03-28T23:59:59Z",
+    "estimated_start_time": "2024-03-01T00:00:00Z",
+    "ground_truth": "within recent range",
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [
+      "evt_4ec1c923d53e",
+      "evt_f151e92ffdb2",
+      "evt_e28b23848c6a"
+    ],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: NASDAQ Composite index\nTarget period: 2024-03\nFinancial area: market_fx_credit / technology equities\nRegion: US\nPre-registered recent-range boundaries: lower -2.322, upper 5.669 percent.",
+    "resolution_criteria": "Use FRED series NASDAQCOM. Compute the change from the previous monthly observation using mode 'pct'. Resolve 'below recent range' below -2.322, 'within recent range' from -2.322 inclusive to 5.669 exclusive, and 'above recent range' at or above 5.669 percent.",
+    "resolution_reasoning": "The snapshotted target change was 1.787 percent; it resolved to 'within recent range'.",
+    "options": [
+      "below recent range",
+      "within recent range",
+      "above recent range"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": "\n## Executive Summary\nThe NASDAQ Composite experienced a \"within recent range\" monthly return in March 2024, primarily driven by a resilient tech sector buoyed by artificial intelligence growth, particularly Nvidia's strong performance. Despite persistent inflation concerns and a hawkish stance from the Federal Reserve regarding interest rate cuts, the market maintained an optimistic outlook. The expectation of three rate cuts in 2024, albeit with a shallower easing path, provided underlying support. Key economic data releases, such as CPI and PPI, indicated stubborn inflation, but investors largely priced in these factors, preventing a significant downturn. Geopolitical factors also played a minor role in market volatility.\n\n## Timeline Of Key Events\n- **February 28, 2024:** Morningstar reports on top-performing tech stock ETFs, highlighting the boom in artificial intelligence and Nvidia's significant growth in the preceding year [art_finance_20240228_005_7a85a966].\n- **March 1, 2024:** J.P. Morgan publishes an article \"Bull Vs. Bear: 3 Debates That Defined The Week\", likely touching upon tech stock performance and market sentiment [art_finance_20240326_003_895022b0, although the exact article cited is a generic IBD article that refers to the Trump Media IPO in late March, the reference within the agent's observation about this specific date and JPM's article is the relevant one].\n- **March 5, 2024:** Nasdaq releases its \"Monthly Market Wrap: February 2024\", indicating the NASDAQ led equity rallies with a 6.2% gain in February, setting an optimistic tone for March despite gradually decelerating core inflation [art_finance_20240305_002_af1c825a].\n- **March 7, 2024:** Federal Reserve Bank of St. Louis discusses whether the U.S. economy has transitioned to a higher long-run real interest rate regime, affecting market expectations [art_finance_20240307_006_7370c421].\n- **March 11, 2024:** CNBC reports on an upcoming key inflation reading (CPI), with economists expecting a 0.4% rise for the month, suggesting inflation's resilience would assure no Fed rate cuts in March, and possibly into the summer [art_finance_20240311_005_aad852ae].\n- **March 12, 2024:** GIS Reports questions how accurately CPI figures reflect real inflation, suggesting potential understatement and continued consumer financial strain [art_finance_20240312_003_c5c96065].\n- **March 14, 2024:** Gold retreats as the dollar and yields firm on higher US inflation data (PPI), cooling expectations of early Fed rate cuts [art_finance_20240314_004_48ec7d15].\n- **March 21, 2024:** Reuters reports that the Fed still foresees three rate cuts in 2024, but with a more shallow easing path, causing stocks to surge [art_finance_20240321_007_2df6fb7c]. Nasdaq also reports on Graphjet Technology ringing the opening bell [art_finance_20240321_002_cea02a99].\n- **March 26, 2024:** Dow Jones Futures, S&P 500 futures, and Nasdaq 100 futures are modestly higher. Nvidia rallies near record highs, and Trump Media & Technology Group is expected to debut on Nasdaq [art_finance_20240326_003_895022b0].\n\n## Causal Chain Analysis\nThe \"within recent range\" return of the NASDAQ Composite in March 2024 was primarily caused by a combination of strong underlying tech sector performance, sustained investor optimism regarding AI, and a carefully managed Federal Reserve communication strategy regarding interest rates, which balanced inflation concerns with future rate cut expectations.\n\n**1. Strong Tech Sector Performance and AI Boom:** The tech sector, a significant component of the NASDAQ, continued its strong performance from late 2023 and early 2024. This was largely triggered by the Artificial Intelligence (AI) boom, with companies like Nvidia experiencing significant growth [art_finance_20240228_005_7a85a966]. This sustained growth led to continued investor confidence in tech stocks, preventing a major downturn in the index.\n\n**2. Investor Optimism Despite Inflation:** Despite reports of persistent inflation throughout March, as indicated by CPI and PPI data [art_finance_20240311_005_aad852ae, art_finance_20240314_004_48ec7d15], investors remained largely optimistic. This optimism was partly due to the market having already priced in the Federal Reserve's cautious approach to interest rate cuts. The market's expectation of a strong economy, as noted by EverBank's president [art_finance_20240314_004_48ec7d15], also played a role.\n\n**3. Federal Reserve's Steady Hand:** The Federal Reserve's communication, particularly their indication of three rate cuts in 2024 (even if on a shallower path) [art_finance_20240321_007_2df6fb7c], provided a crucial support for market stability. This managed expectation prevented market panic over inflation and delayed rate cuts, which could have otherwise triggered a sharper decline in the NASDAQ. The discussion around the long-run real interest rate regime also contributed to a nuanced understanding of monetary policy's future direction [art_finance_20240307_006_7370c421].\n\n## Countervailing Factors\n**Persistent Inflation Concerns:** Throughout March, economic data, specifically the Consumer Price Index (CPI) and Producer Price Index (PPI), indicated that inflation remained stubborn and, in some cases, higher than expected [art_finance_20240311_005_aad852ae, art_finance_20240314_004_48ec7d15]. This factor pushed against a more significant upward movement of the NASDAQ, as higher inflation typically leads to expectations of sustained higher interest rates, which can negatively impact growth stocks. However, these concerns were largely outweighed by the robust performance of the tech sector and the Federal Reserve's clear, albeit cautious, guidance on future rate cuts.\n\n**Delayed Interest Rate Cuts:** The resilience of inflation data led to a tempering of expectations for early interest rate cuts by the Federal Reserve. Initially, there were hopes for earlier and more aggressive cuts, but by March, it became clear that cuts would be delayed, possibly into the summer [art_finance_20240311_005_aad852ae]. This delay could have triggered a more negative market reaction, but the strong performance of tech companies and the Fed's commitment to eventual cuts helped to absorb this negative pressure.\n\n## Event Candidate Inventory\n- **E1: Sustained AI-led Tech Sector Growth (Bounded Date Range: February 2024 - March 2024):** Why it matters causally: Provided strong upward momentum for NASDAQ, offsetting inflation concerns. Source IDs: [art_finance_20240228_005_7a85a966, art_finance_20240305_002_af1c825a]\n- **E2: February 2024 Monthly Market Wrap (Date: March 5, 2024):** Why it matters causally: Confirmed strong equity rallies led by NASDAQ in the preceding month, setting an optimistic tone for March. Source ID: [art_finance_20240305_002_af1c825a]\n- **E3: Release of Higher-than-expected CPI Data (Date: March 12, 2024):** Why it matters causally: Signaled persistent inflation, leading to re-evaluation of Fed rate cut timelines and potentially limiting market gains. Source ID: [art_finance_20240311_005_aad852ae]\n- **E4: Release of Higher-than-expected PPI Data (Date: March 14, 2024):** Why it matters causally: Reinforced inflation concerns and further cooled expectations for early Fed rate cuts. Source ID: [art_finance_20240314_004_48ec7d15]\n- **E5: Federal Reserve's Statement on Three Rate Cuts in 2024 (Date: March 21, 2024):** Why it matters causally: Provided clarity and reassurance to the market about future monetary policy, despite a shallower easing path, buoying stocks. Source ID: [art_finance_20240321_007_2df6fb7c]\n- **E6: Debut of Trump Media & Technology Group on Nasdaq (Date: March 26, 2024):** Why it matters causally: While specific impact on the overall NASDAQ Composite is likely minor, it represents a notable event within the NASDAQ ecosystem during the period. Source ID: [art_finance_20240326_003_895022b0]\n\n## Evidence Mapping Table\n| Claim/Event | Article IDs | Date Support | Confidence (0-1) | Notes |\n|---|---|---|---|---|\n| Tech sector resilience driven by AI | art_finance_20240228_005_7a85a966, art_finance_20240305_002_af1c825a | Feb 28, 2024; Mar 5, 2024 | 0.9 | Multiple articles confirm strong AI-led tech growth leading into and during March. |\n| Positive February market performance | art_finance_20240305_002_af1c825a | Mar 5, 2024 | 0.9 | Nasdaq's market wrap explicitly states strong February gains for NASDAQ. |\n| Persistent inflation concerns (CPI) | art_finance_20240311_005_aad852ae | Mar 11, 2024 | 0.8 | CNBC article details expectations of higher CPI and its implications for Fed policy. |\n| Persistent inflation concerns (PPI) | art_finance_20240314_004_48ec7d15 | Mar 14, 2024 | 0.8 | Reuters report links higher PPI to cooling rate cut expectations and gold retreat. |\n| Fed signals three rate cuts in 2024 | art_finance_20240321_007_2df6fb7c | Mar 21, 2024 | 0.9 | Reuters article directly states the Fed's stance on rate cuts, which buoyed stocks. |\n| Impact of long-run real interest rates | art_finance_20240307_006_7370c421 | Mar 7, 2024 | 0.7 | St. Louis Fed article discusses the academic and policy relevance of long-run real interest rates. Indirect but important context. |\n| Trump Media debut on NASDAQ | art_finance_20240326_003_895022b0 | Mar 26, 2024 | 0.7 | News of a high-profile listing on NASDAQ, though likely limited impact on overall index return. |\n\n## Uncertainties And Alternative Paths\nOne uncertainty lies in the precise weighting given by the market to the various economic indicators versus individual stock performance (e.g., Nvidia). An alternative path could have been a more significant market downturn if inflation data had been even worse, forcing the Fed to signal fewer or no rate cuts in 2024. Conversely, if inflation had shown a clearer downward trend, the Fed might have accelerated rate cut expectations, potentially pushing the NASDAQ 'above recent range.' The lack of granular data on market sentiment for the earliest days of March also represents an uncertainty in the analysis.",
+    "graph_built": true,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.203299Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "nasdaq_monthly_return",
+        "event_cluster_id": "nasdaq_market_2024-03",
+        "category": "market_fx_credit",
+        "original_domain": "market_fx_credit",
+        "subdomain": "technology equities",
+        "entity": "NASDAQ Composite index",
+        "region": "US",
+        "target_metric": "monthly NASDAQ Composite return",
+        "target_period": "2024-03",
+        "forecast_cutoff": "2024-03-01T00:00:00+00:00",
+        "forecast_date_options": [
+          "2024-03-01"
+        ],
+        "resolution_available_at": "2024-03-28T23:59:59+00:00",
+        "horizon_days": 27,
+        "source_type": "fred_series_snapshot",
+        "source_series_id": "NASDAQCOM",
+        "source_homepage": "https://fred.stlouisfed.org/series/NASDAQCOM",
+        "comparison_rule": "target change bucketed by the lower and upper quartiles of the 8 prior observed changes",
+        "comparison_threshold": 2.532355,
+        "comparison_thresholds": {
+          "lower": -2.32225,
+          "upper": 5.66896
+        },
+        "change_unit": "percent",
+        "threshold_observation_dates": [
+          "2023-06-30",
+          "2023-07-31",
+          "2023-08-31",
+          "2023-09-29",
+          "2023-10-31",
+          "2023-11-30",
+          "2023-12-29",
+          "2024-01-31",
+          "2024-02-29"
+        ],
+        "split": "memory",
+        "family_position": 3,
+        "family_size": 7,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "within recent range",
+        "resolved_class": "within recent range",
+        "resolution_value": 16379.46,
+        "target_change": 1.78685949,
+        "source_observation_date": "2024-03-28",
+        "resolution_document": {
+          "publisher": "Federal Reserve Bank of St. Louis (FRED)",
+          "title": "NASDAQ Composite Index",
+          "url": "https://fred.stlouisfed.org/series/NASDAQCOM"
+        },
+        "source_download_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=NASDAQCOM&cosd=2019-01-01&coed=2026-06-30",
+        "source_sha256": "747793ed789504ec0910b133423bfc54531c5ee2a3ad4f9048c5e76af73dbc96",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_f151e92ffdb2",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 16,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_20240305_002_af1c825a",
+        "title": "Monthly Market Wrap: February 2024 – Unveiling Key Financial Trends - Nasdaq",
+        "url": "https://www.nasdaq.com/articles/monthly-market-wrap:-february-2024-unveiling-key-financial-trends",
+        "source": "nasdaq.com",
+        "published_date": "2024-03-05T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240312_003_c5c96065",
+        "title": "How CPI understates real inflation - GIS Reports",
+        "url": "https://www.gisreportsonline.com/r/cpi-inflation",
+        "source": "gisreportsonline.com",
+        "published_date": "2024-03-12T08:00:00+01:00"
+      },
+      {
+        "id": "art_finance_20240314_004_48ec7d15",
+        "title": "Gold retreats as dollar, yields firm on higher US inflation data - Reuters",
+        "url": "https://wealthinsights.metrobank.com.ph/reuters/precious-gold-retreats-as-dollar-yields-firm-on-higher-us-inflation-data",
+        "source": "wealthinsights.metrobank.com.ph",
+        "published_date": "2024-03-14T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240311_005_aad852ae",
+        "title": "A key inflation reading is due out Tuesday morning. Here's what to expect - CNBC",
+        "url": "https://www.nbcphiladelphia.com/news/business/money-report/a-key-inflation-reading-is-due-out-tuesday-morning-heres-what-to-expect/3800199",
+        "source": "nbcphiladelphia.com",
+        "published_date": "2024-03-11T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240307_006_7370c421",
+        "title": "Has the U.S. Economy Transitioned to a Higher Long-run Real Interest Rate Regime? - Federal Reserve Bank of St. Louis",
+        "url": "https://www.stlouisfed.org/on-the-economy/2024/mar/has-economy-transitioned-higher-long-run-real-rate-regime",
+        "source": "stlouisfed.org",
+        "published_date": "2024-03-07T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240321_007_2df6fb7c",
+        "title": "Fed sees three rate cuts in 2024 but a more shallow easing path - Reuters",
+        "url": "https://www.linkedin.com/posts/fuerza943_fed-sees-three-rate-cuts-in-2024-but-a-more-activity-7176408274605342720-aZWN",
+        "source": "linkedin.com",
+        "published_date": "2024-03-21T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240326_003_895022b0",
+        "title": "Dow Jones Futures Rise; Donald Trump Stock Surges Before Debut - Investor's Business Daily",
+        "url": "https://www.investors.com/market-trend/stock-market-today/dow-jones-nvidia-nvda-stock-donald-trump",
+        "source": "investors.com",
+        "published_date": "2024-03-26T11:47:46+00:00"
+      },
+      {
+        "id": "art_finance_20240102_002_24bea0f2",
+        "title": "Nasdaq in 2024: Here’s what Wall Street predicts - Finbold",
+        "url": "https://finbold.com/nasdaq-in-2024-heres-what-wall-street-predicts",
+        "source": "finbold.com",
+        "published_date": "2024-01-02T13:33:18+00:00"
+      },
+      {
+        "id": "art_finance_20240321_002_cea02a99",
+        "title": "Graphjet Technology Rings the Nasdaq Stock Market Opening Bell - Nasdaq",
+        "url": "https://www.nasdaq.com/videos/graphjet-technology-rings-the-nasdaq-stock-market-opening-bell",
+        "source": "nasdaq.com",
+        "published_date": "2024-03-21T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20200602_002_beb71b59",
+        "title": "Analyzing Nasdaq-100 Performance During Covid-19 - Nasdaq",
+        "url": "https://www.nasdaq.com/articles/analyzing-nasdaq-100-performance-during-covid-19-2020-06-02",
+        "source": "nasdaq.com",
+        "published_date": "2020-06-02T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230726_003_5a4aad44",
+        "title": "When Performance Matters: Nasdaq-100 vs. S&P 500 Q2, 2023 - Nasdaq",
+        "url": "https://www.nasdaq.com/articles/when-performance-matters-nasdaq-100-vs-sp-500-q2-2023",
+        "source": "nasdaq.com",
+        "published_date": "2023-07-26T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20231024_004_d24232aa",
+        "title": "Stock Market Forecast For The Next Six Months: After Big Gains In Tech Stocks, Eye These Caution Signs - Investor's Business Daily",
+        "url": "https://www.investors.com/news/stock-market-forecast-for-the-next-six-months-flashes-caution-signs-after-tech-stocks-big-gains",
+        "source": "investors.com",
+        "published_date": "2023-10-24T16:25:17+00:00"
+      },
+      {
+        "id": "art_finance_20240228_005_7a85a966",
+        "title": "5 Top-Performing Tech Stock ETFs - Morningstar",
+        "url": "https://www.morningstar.com/funds/5-top-performing-tech-stock-etfs",
+        "source": "morningstar.com",
+        "published_date": "2024-02-28T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20211227_006_c994dca5",
+        "title": "Alphabet was the top Big Tech stock of the year — here's why - CNBC",
+        "url": "https://theoptionsinsider.com/news-feed/alphabet-was-the-top-big-tech-stock-of-the-year-heres-why",
+        "source": "theoptionsinsider.com",
+        "published_date": "2021-12-27T07:23:50+00:00"
+      },
+      {
+        "id": "art_finance_20221202_007_8e81db1c",
+        "title": "Nasdaq Index Performance: November 2022 - Nasdaq",
+        "url": "https://www.nasdaq.com/articles/nasdaq-index-performance-november-2022",
+        "source": "nasdaq.com",
+        "published_date": "2022-12-02T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20200424_008_9ab36b13",
+        "title": "When Performance Matters: Nasdaq-100 vs. S&P 500 First Quarter '20 - Nasdaq",
+        "url": "https://www.nasdaq.com/articles/when-performance-matters:-nasdaq-100-vs.-sp-500-2020-04-24",
+        "source": "nasdaq.com",
+        "published_date": "2020-04-24T00:00:00+00:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_f151e92ffdb2",
+      "events_count": 11,
+      "hypotheses_count": 11
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 3,
+      "avg_depth": 1.57,
+      "quality_score": 0.84,
+      "depth_score": 1.0,
+      "confidence_score": 0.73,
+      "strength_score": 0.63,
+      "evidence_score": 1.0,
+      "event_count": 11,
+      "hypothesis_count": 11
+    },
+    "nodes": [
+      {
+        "id": "evt_4ec1c923d53e",
+        "title": "Option 1: below recent range",
+        "description": "Question resolves to: below recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-03-28T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_nasdaq_monthly_return_2024_03",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 0,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T20:34:57.686337Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_e28b23848c6a",
+        "title": "Option 3: above recent range",
+        "description": "Question resolves to: above recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-03-28T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_nasdaq_monthly_return_2024_03",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 2,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T20:34:57.686359Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_f151e92ffdb2",
+        "title": "Option 2: within recent range",
+        "description": "Question resolves to: within recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-03-28T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_nasdaq_monthly_return_2024_03",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 1,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T20:34:57.686348Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240102_008_57678633",
+        "title": "Nasdaq in 2024: Wall Street predictions",
+        "description": "Wall Street predictions for Nasdaq performance in 2024, following a strong revival in 2023.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-02T13:33:18Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240102_002_24bea0f2"
+        ],
+        "extracted_for_question_id": "v3_nasdaq_monthly_return_2024_03",
+        "source_article_id": "art_finance_20240102_002_24bea0f2",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_nasdaq_monthly_return_2024_03"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:48:29.466010Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240102_010_010cc0ee",
+        "title": "Nasdaq 2024 Outlook",
+        "description": "Wall Street predictions for Nasdaq performance in 2024.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-02T13:33:18Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240102_002_24bea0f2"
+        ],
+        "extracted_for_question_id": "v3_nasdaq_monthly_return_2024_03",
+        "source_article_id": "art_finance_20240102_002_24bea0f2",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_nasdaq_monthly_return_2024_03"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:48:48.082974Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240228_007_a99956e1",
+        "title": "5 Top-Performing Tech Stock ETFs",
+        "description": "Report on top-performing tech stock ETFs, indicating strong performance in the tech sector.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-02-28T08:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240228_005_7a85a966"
+        ],
+        "extracted_for_question_id": "v3_nasdaq_monthly_return_2024_03",
+        "source_article_id": "art_finance_20240228_005_7a85a966",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_nasdaq_monthly_return_2024_03"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:48:29.423639Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240305_006_c0c8025f",
+        "title": "Monthly Market Wrap: February 2024",
+        "description": "Review of key financial trends from February 2024, setting the stage for March.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-03-05T08:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240305_002_af1c825a"
+        ],
+        "extracted_for_question_id": "v3_nasdaq_monthly_return_2024_03",
+        "source_article_id": "art_finance_20240305_002_af1c825a",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_nasdaq_monthly_return_2024_03"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:48:29.376771Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240307_005_e7f306eb",
+        "title": "US Economy Transitioned to Higher Long-run Real Interest Rate Regime",
+        "description": "Discussion on whether the U.S. economy has transitioned to a higher long-run real interest rate regime.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-03-07T08:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240307_006_7370c421"
+        ],
+        "extracted_for_question_id": "v3_nasdaq_monthly_return_2024_03",
+        "source_article_id": "art_finance_20240307_006_7370c421",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_nasdaq_monthly_return_2024_03"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:48:29.331218Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240311_004_d18a5679",
+        "title": "Key inflation reading due",
+        "description": "A key inflation reading is expected, which could influence market sentiment.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-03-11T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240311_005_aad852ae"
+        ],
+        "extracted_for_question_id": "v3_nasdaq_monthly_return_2024_03",
+        "source_article_id": "art_finance_20240311_005_aad852ae",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_nasdaq_monthly_return_2024_03"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:48:29.287960Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240312_003_7374cbaa",
+        "title": "CPI understates real inflation",
+        "description": "Concerns that CPI data may be understating real inflation, despite media attention shifting away.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-03-12T08:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240312_003_c5c96065"
+        ],
+        "extracted_for_question_id": "v3_nasdaq_monthly_return_2024_03",
+        "source_article_id": "art_finance_20240312_003_c5c96065",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_nasdaq_monthly_return_2024_03"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:48:29.243040Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240314_002_f3679074",
+        "title": "Higher US inflation data",
+        "description": "US inflation data comes in higher, causing gold to retreat as dollar and yields firm.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-03-14T12:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240314_004_48ec7d15"
+        ],
+        "extracted_for_question_id": "v3_nasdaq_monthly_return_2024_03",
+        "source_article_id": "art_finance_20240314_004_48ec7d15",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_nasdaq_monthly_return_2024_03"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:48:29.201885Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240320_001_427ba83c",
+        "title": "Fed sees three rate cuts in 2024",
+        "description": "The Federal Reserve indicates three rate cuts in 2024, but with a more shallow easing path.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-03-20T18:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240321_007_2df6fb7c"
+        ],
+        "extracted_for_question_id": "v3_nasdaq_monthly_return_2024_03",
+        "source_article_id": "art_finance_20240321_007_2df6fb7c",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_nasdaq_monthly_return_2024_03"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:48:29.160512Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240326_009_68853707",
+        "title": "Dow Jones Futures Rise",
+        "description": "Dow Jones futures, along with S&P 500 futures and Nasdaq 100 futures, were modestly higher.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-03-26T11:47:46Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240326_003_895022b0"
+        ],
+        "extracted_for_question_id": "v3_nasdaq_monthly_return_2024_03",
+        "source_article_id": "art_finance_20240326_003_895022b0",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_nasdaq_monthly_return_2024_03"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:48:35.596437Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_nasdaq_monthly_return_2024_03_20260725_064829_001_de47cae7",
+        "source_event_id": "evt_finance_20240320_001_427ba83c",
+        "target_event_id": "evt_f151e92ffdb2",
+        "relation_type": "correlates",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Anticipation of rate cuts generally has a positive correlation with stock market performance, including Nasdaq.",
+        "evidence_article_ids": [
+          "art_finance_20240321_007_2df6fb7c"
+        ],
+        "discovered_by_question_ids": [
+          "v3_nasdaq_monthly_return_2024_03"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:48:29.503930Z",
+        "last_confirmed_at": "2026-07-25T06:48:29.503930Z"
+      },
+      {
+        "id": "hyp_v3_nasdaq_monthly_return_2024_03_20260725_064829_002_09662014",
+        "source_event_id": "evt_finance_20240314_002_f3679074",
+        "target_event_id": "evt_f151e92ffdb2",
+        "relation_type": "inhibits",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Higher inflation data can lead to concerns about interest rate hikes, negatively impacting growth stocks and the Nasdaq.",
+        "evidence_article_ids": [
+          "art_finance_20240314_004_48ec7d15"
+        ],
+        "discovered_by_question_ids": [
+          "v3_nasdaq_monthly_return_2024_03"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:48:29.526629Z",
+        "last_confirmed_at": "2026-07-25T06:48:29.526629Z"
+      },
+      {
+        "id": "hyp_v3_nasdaq_monthly_return_2024_03_20260725_064829_003_149c9a8e",
+        "source_event_id": "evt_finance_20240312_003_7374cbaa",
+        "target_event_id": "evt_f151e92ffdb2",
+        "relation_type": "inhibits",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "If inflation is understated, it could lead to unexpected policy tightening or market corrections, negatively affecting Nasdaq.",
+        "evidence_article_ids": [
+          "art_finance_20240312_003_c5c96065"
+        ],
+        "discovered_by_question_ids": [
+          "v3_nasdaq_monthly_return_2024_03"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:48:29.547054Z",
+        "last_confirmed_at": "2026-07-25T06:48:29.547054Z"
+      },
+      {
+        "id": "hyp_v3_nasdaq_monthly_return_2024_03_20260725_064829_004_fea7493b",
+        "source_event_id": "evt_finance_20240311_004_d18a5679",
+        "target_event_id": "evt_finance_20240314_002_f3679074",
+        "relation_type": "triggers",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The anticipation and release of key inflation data directly trigger market reactions to inflation figures.",
+        "evidence_article_ids": [
+          "art_finance_20240311_005_aad852ae",
+          "art_finance_20240314_004_48ec7d15"
+        ],
+        "discovered_by_question_ids": [
+          "v3_nasdaq_monthly_return_2024_03"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:48:29.565808Z",
+        "last_confirmed_at": "2026-07-25T06:48:29.565808Z"
+      },
+      {
+        "id": "hyp_v3_nasdaq_monthly_return_2024_03_20260725_064829_005_6acd25ab",
+        "source_event_id": "evt_finance_20240307_005_e7f306eb",
+        "target_event_id": "evt_f151e92ffdb2",
+        "relation_type": "inhibits",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "A higher long-run real interest rate regime generally makes future earnings less valuable, negatively impacting growth stocks and the Nasdaq.",
+        "evidence_article_ids": [
+          "art_finance_20240307_006_7370c421"
+        ],
+        "discovered_by_question_ids": [
+          "v3_nasdaq_monthly_return_2024_03"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:48:29.585163Z",
+        "last_confirmed_at": "2026-07-25T06:48:29.585163Z"
+      },
+      {
+        "id": "hyp_v3_nasdaq_monthly_return_2024_03_20260725_064829_006_2240f46b",
+        "source_event_id": "evt_finance_20240305_006_c0c8025f",
+        "target_event_id": "evt_f151e92ffdb2",
+        "relation_type": "correlates",
+        "strength": 0.5,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "February's market trends and performance often set the tone and expectations for the subsequent month, March.",
+        "evidence_article_ids": [
+          "art_finance_20240305_002_af1c825a"
+        ],
+        "discovered_by_question_ids": [
+          "v3_nasdaq_monthly_return_2024_03"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:48:29.604303Z",
+        "last_confirmed_at": "2026-07-25T06:48:29.604303Z"
+      },
+      {
+        "id": "hyp_v3_nasdaq_monthly_return_2024_03_20260725_064829_007_27509817",
+        "source_event_id": "evt_finance_20240228_007_a99956e1",
+        "target_event_id": "evt_f151e92ffdb2",
+        "relation_type": "amplifies",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Strong performance in tech stock ETFs in February suggests positive momentum for the tech-heavy Nasdaq in March.",
+        "evidence_article_ids": [
+          "art_finance_20240228_005_7a85a966"
+        ],
+        "discovered_by_question_ids": [
+          "v3_nasdaq_monthly_return_2024_03"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:48:29.623780Z",
+        "last_confirmed_at": "2026-07-25T06:48:29.623780Z"
+      },
+      {
+        "id": "hyp_v3_nasdaq_monthly_return_2024_03_20260725_064829_008_2aa11a18",
+        "source_event_id": "evt_finance_20240102_008_57678633",
+        "target_event_id": "evt_finance_20240228_007_a99956e1",
+        "relation_type": "enables",
+        "strength": 0.5,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "Positive predictions for Nasdaq in 2024 could enable investor confidence and lead to strong performance in tech ETFs.",
+        "evidence_article_ids": [
+          "art_finance_20240102_002_24bea0f2"
+        ],
+        "discovered_by_question_ids": [
+          "v3_nasdaq_monthly_return_2024_03"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:48:29.642727Z",
+        "last_confirmed_at": "2026-07-25T06:48:29.642727Z"
+      },
+      {
+        "id": "hyp_v3_nasdaq_monthly_return_2024_03_20260725_064835_009_afaa9aed",
+        "source_event_id": "evt_finance_20240320_001_427ba83c",
+        "target_event_id": "evt_finance_20240326_009_68853707",
+        "relation_type": "enables",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Anticipation of rate cuts can lead to positive market sentiment, enabling futures to rise.",
+        "evidence_article_ids": [
+          "art_finance_20240321_007_2df6fb7c",
+          "art_finance_20240326_003_895022b0"
+        ],
+        "discovered_by_question_ids": [
+          "v3_nasdaq_monthly_return_2024_03"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:48:35.631862Z",
+        "last_confirmed_at": "2026-07-25T06:48:35.631862Z"
+      },
+      {
+        "id": "hyp_v3_nasdaq_monthly_return_2024_03_20260725_064835_010_059cf06e",
+        "source_event_id": "evt_finance_20240326_009_68853707",
+        "target_event_id": "evt_f151e92ffdb2",
+        "relation_type": "correlates",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Rising Dow Jones futures often correlate with positive performance across the broader market, including the Nasdaq.",
+        "evidence_article_ids": [
+          "art_finance_20240326_003_895022b0"
+        ],
+        "discovered_by_question_ids": [
+          "v3_nasdaq_monthly_return_2024_03"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:48:35.652673Z",
+        "last_confirmed_at": "2026-07-25T06:48:35.652673Z"
+      },
+      {
+        "id": "hyp_v3_nasdaq_monthly_return_2024_03_20260725_064848_011_a38fd641",
+        "source_event_id": "evt_finance_20240102_010_010cc0ee",
+        "target_event_id": "evt_finance_20240102_008_57678633",
+        "relation_type": "enables",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Positive outlook and predictions for Nasdaq in 2024 enable investor confidence, which is reflected in the overall performance.",
+        "evidence_article_ids": [
+          "art_finance_20240102_002_24bea0f2"
+        ],
+        "discovered_by_question_ids": [
+          "v3_nasdaq_monthly_return_2024_03"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:48:48.118819Z",
+        "last_confirmed_at": "2026-07-25T06:48:48.118819Z"
+      }
+    ],
+    "outcome_impacts": [
+      {
+        "id": "imp_2943b861",
+        "event_id": "evt_finance_20240320_001_427ba83c",
+        "outcome_event_id": "evt_f151e92ffdb2",
+        "question_id": "v3_nasdaq_monthly_return_2024_03",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Anticipation of rate cuts generally has a positive correlation with stock market performance, including Nasdaq.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_nasdaq_monthly_return_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:48:42.979415Z",
+        "last_confirmed_at": "2026-07-25T06:48:42.979415Z"
+      },
+      {
+        "id": "imp_ccc333d5",
+        "event_id": "evt_finance_20240314_002_f3679074",
+        "outcome_event_id": "evt_f151e92ffdb2",
+        "question_id": "v3_nasdaq_monthly_return_2024_03",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Higher inflation data can lead to concerns about interest rate hikes, negatively impacting growth stocks and the Nasdaq.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_nasdaq_monthly_return_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:48:42.992426Z",
+        "last_confirmed_at": "2026-07-25T06:48:42.992426Z"
+      },
+      {
+        "id": "imp_c6ed9b0f",
+        "event_id": "evt_finance_20240312_003_7374cbaa",
+        "outcome_event_id": "evt_f151e92ffdb2",
+        "question_id": "v3_nasdaq_monthly_return_2024_03",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "If inflation is understated, it could lead to unexpected policy tightening or market corrections, negatively affecting Nasdaq.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_nasdaq_monthly_return_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:48:43.003024Z",
+        "last_confirmed_at": "2026-07-25T06:48:43.003024Z"
+      },
+      {
+        "id": "imp_eaf95a7f",
+        "event_id": "evt_finance_20240311_004_d18a5679",
+        "outcome_event_id": "evt_f151e92ffdb2",
+        "question_id": "v3_nasdaq_monthly_return_2024_03",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.5,
+        "reasoning": "The impact of this event is primarily through its trigger of E2:HigherUSInflation, which then impacts the outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_nasdaq_monthly_return_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:48:43.013296Z",
+        "last_confirmed_at": "2026-07-25T06:48:43.013296Z"
+      },
+      {
+        "id": "imp_7ccad0d4",
+        "event_id": "evt_finance_20240307_005_e7f306eb",
+        "outcome_event_id": "evt_f151e92ffdb2",
+        "question_id": "v3_nasdaq_monthly_return_2024_03",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "A higher long-run real interest rate regime generally makes future earnings less valuable, negatively impacting growth stocks and the Nasdaq.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_nasdaq_monthly_return_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:48:43.025040Z",
+        "last_confirmed_at": "2026-07-25T06:48:43.025040Z"
+      },
+      {
+        "id": "imp_6ea17fcb",
+        "event_id": "evt_finance_20240305_006_c0c8025f",
+        "outcome_event_id": "evt_f151e92ffdb2",
+        "question_id": "v3_nasdaq_monthly_return_2024_03",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.5,
+        "confidence": 0.6,
+        "reasoning": "February's market trends and performance often set the tone and expectations for the subsequent month, March. Assuming a generally positive wrap.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_nasdaq_monthly_return_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:48:43.035959Z",
+        "last_confirmed_at": "2026-07-25T06:48:43.035959Z"
+      },
+      {
+        "id": "imp_0cff7766",
+        "event_id": "evt_finance_20240228_007_a99956e1",
+        "outcome_event_id": "evt_f151e92ffdb2",
+        "question_id": "v3_nasdaq_monthly_return_2024_03",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Strong performance in tech stock ETFs in February suggests positive momentum for the tech-heavy Nasdaq in March.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_nasdaq_monthly_return_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:48:43.046364Z",
+        "last_confirmed_at": "2026-07-25T06:48:43.046364Z"
+      },
+      {
+        "id": "imp_218dffb3",
+        "event_id": "evt_finance_20240102_008_57678633",
+        "outcome_event_id": "evt_f151e92ffdb2",
+        "question_id": "v3_nasdaq_monthly_return_2024_03",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.5,
+        "confidence": 0.6,
+        "reasoning": "Positive predictions for Nasdaq in 2024 could enable investor confidence and lead to strong performance.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_nasdaq_monthly_return_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:48:43.057299Z",
+        "last_confirmed_at": "2026-07-25T06:48:43.057299Z"
+      },
+      {
+        "id": "imp_e1f73dd0",
+        "event_id": "evt_finance_20240326_009_68853707",
+        "outcome_event_id": "evt_f151e92ffdb2",
+        "question_id": "v3_nasdaq_monthly_return_2024_03",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Rising Dow Jones futures often correlate with positive performance across the broader market, including the Nasdaq.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_nasdaq_monthly_return_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:48:43.067655Z",
+        "last_confirmed_at": "2026-07-25T06:48:43.067655Z"
+      },
+      {
+        "id": "imp_0b80f81b",
+        "event_id": "evt_finance_20240102_010_010cc0ee",
+        "outcome_event_id": "evt_f151e92ffdb2",
+        "question_id": "v3_nasdaq_monthly_return_2024_03",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Positive outlook and predictions for Nasdaq in 2024 contribute to the likelihood of the Nasdaq Composite return staying within the recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_nasdaq_monthly_return_2024_03"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:48:52.336853Z",
+        "last_confirmed_at": "2026-07-25T06:48:52.336853Z"
+      }
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_us_2y_yield_monthly_change_2024_01",
+  "blueprint_sha256": "3ff4876bfcceeb72203f796a30b3c0f81e2c823f0db78f930cee25b7dc0aa741",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_market",
+      "target_operation": "yield_change",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2024-01-01, which range will the monthly 2-year yield change for United States 2-year Treasury yield in 2024-01 fall into?",
+    "historical_cutoff": "2024-01-01T00:00:00+00:00",
+    "target_semantics": "The monthly change in the United States 2-year Treasury yield for January 2024.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20231213_011_723d743a",
+        "takeaway": "The Federal Reserve held interest rates steady in December 2023 and signaled expectations for three rate cuts in 2024.",
+        "why_predictive": "This indicates a shift in monetary policy direction, moving from tightening to a potentially easing stance, which would influence short-term yields."
+      },
+      {
+        "article_id": "art_finance_20230728_013_bd5da42d",
+        "takeaway": "The Fed's favored PCE price index showed a slowdown in annual inflation, reaching its lowest point since September 2021, although monthly services inflation accelerated.",
+        "why_predictive": "Moderating inflation is a key factor for the Fed to consider when adjusting interest rates, suggesting a potential pause or reversal in rate hikes."
+      },
+      {
+        "article_id": "art_finance_20231117_018_a06aa25d",
+        "takeaway": "There is ongoing discussion and market speculation about whether the Federal Reserve has concluded its interest rate hiking cycle.",
+        "why_predictive": "Market sentiment and discussions about the Fed's future actions directly influence rate expectations and, consequently, Treasury yields."
+      },
+      {
+        "article_id": "art_finance_20230821_014_84e72de2",
+        "takeaway": "Rising interest rates are creating challenges for businesses.",
+        "why_predictive": "While not directly about yield change, this highlights the economic impact of current rate levels, which could influence future Fed decisions."
+      },
+      {
+        "article_id": "art_finance_20230510_009_613dafd9",
+        "takeaway": "Supply chain disruptions are a factor contributing to inflation.",
+        "why_predictive": "Understanding the drivers of inflation is crucial for forecasting monetary policy and its impact on interest rates."
+      }
+    ],
+    "expert_reasoning": [
+      "The Federal Reserve's decision to hold rates steady in December 2023, coupled with forecasts for future rate cuts (art_finance_20231213_011_723d743a), suggests a pivot towards a less restrictive monetary policy.",
+      "This pivot is supported by moderating inflation data, such as the PCE price index showing its slowest annual rise in some time (art_finance_20230728_013_bd5da42d), which reduces the pressure on the Fed to maintain high rates.",
+      "The ongoing market discussion about the Fed being done with rate hikes (art_finance_20231117_018_a06aa25d) indicates that expectations for lower rates are becoming more prevalent, which would likely lead to a decrease in short-term Treasury yields."
+    ],
+    "counterevidence": "While inflation is easing, there are still underlying pressures such as accelerating monthly services inflation (art_finance_20230728_013_bd5da42d) and the impact of supply chain disruptions (art_finance_20230510_009_613dafd9), which could temper the pace of expected rate cuts or even lead to a pause in easing if inflation proves persistent.",
+    "prospective_target_estimate": "within recent range",
+    "option_mapping": "The expectation of Fed rate cuts, driven by moderating inflation and market sentiment, suggests a potential decrease in the 2-year Treasury yield. This aligns with a 'within recent range' or potentially 'below recent range' outcome, depending on the magnitude of anticipated cuts and the market's reaction. Given the Fed's cautious signaling and the presence of some inflationary pressures, 'within recent range' is a more balanced estimate.",
+    "uncertainty": "The exact timing and magnitude of Fed rate cuts remain uncertain, as does the persistence of easing inflation. Unexpected economic data or geopolitical events could alter the Fed's trajectory, impacting yield changes. The historical data on yield changes is not provided, making it difficult to assess the typical volatility around such policy shifts.",
+    "dag_derived_lesson": "Anticipated shifts in monetary policy, signaled by central bank actions and forecasts, alongside moderating inflation indicators, tend to drive expectations for lower short-term interest rates. However, persistent inflationary pressures or economic uncertainties can introduce counteracting forces, creating a range of possible outcomes for yield movements."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

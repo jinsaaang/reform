@@ -1,0 +1,516 @@
+{
+  "schema_version": "hgf_blueprint_topology_v2",
+  "question_id": "v3_fed_funds_monthly_change_2024_12",
+  "target_definition": {
+    "metric": "monthly federal-funds-rate change",
+    "unit_or_option_space": [
+      "below recent range",
+      "within recent range",
+      "above recent range"
+    ],
+    "forecast_horizon": "Remap the historical target family to the current question's exact target period."
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Outcome-redacted topology preserves 7 checkpoints, 7 source edges, and 4 root-to-target paths.",
+    "weaknesses": []
+  },
+  "search_factors": [
+    {
+      "factor": "Federal Reserve official warns on stalling inflation progress",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20241202_006_1f80478f"
+      ]
+    },
+    {
+      "factor": "Cautious approach by Federal Reserve",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20241202_012_fc711dbc"
+      ]
+    },
+    {
+      "factor": "Economists expected more aggressive rate cuts in [CURRENT_PERIOD_REQUIRED]",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20241218_009_22b5da74"
+      ]
+    },
+    {
+      "factor": "Inflation remains 'somewhat elevated' and not expected to reach [CURRENT_VALUE_REQUIRED] target until [CURRENT_PERIOD_REQUIRED]",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20241218_010_1b69ede7"
+      ]
+    },
+    {
+      "factor": "Federal Reserve projects fewer rate cuts for [CURRENT_PERIOD_REQUIRED]",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20241218_008_3e44b16b"
+      ]
+    },
+    {
+      "factor": "Cooling inflation tempered by continued cautiousness",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20241218_011_deafcd26"
+      ]
+    },
+    {
+      "factor": "Federal Reserve cuts interest rate by [CURRENT_VALUE_REQUIRED]",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20241218_007_f74be3c4"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "checkpoint_1",
+      "role": "driver",
+      "factor": "Federal Reserve official warns on stalling inflation progress",
+      "mechanism": "Early [CURRENT_PERIOD_REQUIRED] concerns about stalling inflation progress caused a cautious approach by the Federal Reserve.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20241202_006_1f80478f"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_fed_funds_monthly_change_2024_12_20260724_193213_001_b7af3ff1"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_2",
+      "role": "mediator",
+      "factor": "Cautious approach by Federal Reserve",
+      "mechanism": "The cautious approach by the Federal Reserve enabled their decision to cut rates while balancing inflation control.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20241202_012_fc711dbc"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_fed_funds_monthly_change_2024_12_20260724_193213_002_bab4e297"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_3",
+      "role": "driver",
+      "factor": "Economists expected more aggressive rate cuts in [CURRENT_PERIOD_REQUIRED]",
+      "mechanism": "Economists' expectations for more aggressive rate cuts in [CURRENT_PERIOD_REQUIRED] were prevented by the Fed's cautious stance on persistent inflation, leading to fewer projected cuts.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20241218_009_22b5da74"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_fed_funds_monthly_change_2024_12_20260724_193213_006_81cff92d"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_4",
+      "role": "driver",
+      "factor": "Inflation remains 'somewhat elevated' and not expected to reach [CURRENT_VALUE_REQUIRED] target until [CURRENT_PERIOD_REQUIRED]",
+      "mechanism": "The concern that inflation remained 'somewhat elevated' and would not reach its [CURRENT_VALUE_REQUIRED] target until [CURRENT_PERIOD_REQUIRED] amplified the Fed's decision to project only two cuts for [CURRENT_PERIOD_REQUIRED] instead of the anticipated four.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20241218_010_1b69ede7"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_fed_funds_monthly_change_2024_12_20260724_193213_007_6357fac0"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_5",
+      "role": "mediator",
+      "factor": "Federal Reserve projects fewer rate cuts for [CURRENT_PERIOD_REQUIRED]",
+      "mechanism": "Re-test whether this factor has a currently supported link to the exact target metric; do not transfer the historical outcome or magnitude.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20241218_008_3e44b16b"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_fed_funds_monthly_change_2024_12_20260724_193213_005_aa1cc75a"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_6",
+      "role": "driver",
+      "factor": "Cooling inflation tempered by continued cautiousness",
+      "mechanism": "Cooling inflation, tempered by cautiousness, was the primary driver for the Federal Reserve's decision to cut interest rates.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20241218_011_deafcd26"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_fed_funds_monthly_change_2024_12_20260724_193213_003_aa8036f1"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_7",
+      "role": "mediator",
+      "factor": "Federal Reserve cuts interest rate by [CURRENT_VALUE_REQUIRED]",
+      "mechanism": "Re-test whether this factor has a currently supported link to the exact target metric; do not transfer the historical outcome or magnitude.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20241218_007_f74be3c4"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_fed_funds_monthly_change_2024_12_20260724_193213_004_a19ca6eb"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "target_bridge",
+      "role": "target_bridge",
+      "factor": "monthly federal-funds-rate change",
+      "mechanism": "Map only currently supported paths into the exact target operator. Directional support alone is not magnitude or threshold-crossing support.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "A current target baseline and evidence supporting every edge used in the bridge.",
+      "contradiction_signal": "The current target baseline, magnitude evidence, or option boundary contradicts the proposed path.",
+      "historical_support": "medium",
+      "source_event_ids": [],
+      "source_edge_ids": [
+        "hyp_v3_fed_funds_monthly_change_2024_12_20260724_193213_004_a19ca6eb",
+        "hyp_v3_fed_funds_monthly_change_2024_12_20260724_193213_005_aa1cc75a"
+      ],
+      "source_event_type": "target_bridge"
+    }
+  ],
+  "topology": {
+    "checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_5",
+      "checkpoint_6",
+      "checkpoint_7",
+      "target_bridge"
+    ],
+    "root_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_6"
+    ],
+    "target_bridge_id": "target_bridge",
+    "edges": [
+      {
+        "source_checkpoint_id": "checkpoint_1",
+        "target_checkpoint_id": "checkpoint_2",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Early [CURRENT_PERIOD_REQUIRED] concerns about stalling inflation progress caused a cautious approach by the Federal Reserve.",
+        "source_edge_ids": [
+          "hyp_v3_fed_funds_monthly_change_2024_12_20260724_193213_001_b7af3ff1"
+        ],
+        "source_article_ids": [
+          "art_finance_20241202_011_b7861f37"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_2",
+        "target_checkpoint_id": "checkpoint_7",
+        "relationship": "enables",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "The cautious approach by the Federal Reserve enabled their decision to cut rates while balancing inflation control.",
+        "source_edge_ids": [
+          "hyp_v3_fed_funds_monthly_change_2024_12_20260724_193213_002_bab4e297"
+        ],
+        "source_article_ids": [
+          "art_finance_20241202_011_b7861f37",
+          "art_finance_20241218_007_934cf465"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_6",
+        "target_checkpoint_id": "checkpoint_7",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Cooling inflation, tempered by cautiousness, was the primary driver for the Federal Reserve's decision to cut interest rates.",
+        "source_edge_ids": [
+          "hyp_v3_fed_funds_monthly_change_2024_12_20260724_193213_003_aa8036f1"
+        ],
+        "source_article_ids": [
+          "art_finance_20241218_007_934cf465"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_3",
+        "target_checkpoint_id": "checkpoint_5",
+        "relationship": "prevents",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Economists' expectations for more aggressive rate cuts in [CURRENT_PERIOD_REQUIRED] were prevented by the Fed's cautious stance on persistent inflation, leading to fewer projected cuts.",
+        "source_edge_ids": [
+          "hyp_v3_fed_funds_monthly_change_2024_12_20260724_193213_006_81cff92d"
+        ],
+        "source_article_ids": [
+          "art_finance_20241218_007_934cf465"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_4",
+        "target_checkpoint_id": "checkpoint_5",
+        "relationship": "amplifies",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "The concern that inflation remained 'somewhat elevated' and would not reach its [CURRENT_VALUE_REQUIRED] target until [CURRENT_PERIOD_REQUIRED] amplified the Fed's decision to project only two cuts for [CURRENT_PERIOD_REQUIRED] instead of the anticipated four.",
+        "source_edge_ids": [
+          "hyp_v3_fed_funds_monthly_change_2024_12_20260724_193213_007_6357fac0"
+        ],
+        "source_article_ids": [
+          "art_finance_20241218_007_934cf465"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_7",
+        "target_checkpoint_id": "target_bridge",
+        "relationship": "triggers",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Historical DAG connected this factor to the redacted target measurement; the realized value and outcome mapping are omitted.",
+        "source_edge_ids": [
+          "hyp_v3_fed_funds_monthly_change_2024_12_20260724_193213_004_a19ca6eb"
+        ],
+        "source_article_ids": [
+          "art_finance_20241218_007_934cf465",
+          "art_finance_20241218_006_f3983238",
+          "art_finance_20241218_008_f34eb0b0",
+          "art_finance_20241218_004_7128b434"
+        ],
+        "terminal_to_target_bridge": true
+      },
+      {
+        "source_checkpoint_id": "checkpoint_5",
+        "target_checkpoint_id": "target_bridge",
+        "relationship": "correlates",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Historical DAG connected this factor to the redacted target measurement; the realized value and outcome mapping are omitted.",
+        "source_edge_ids": [
+          "hyp_v3_fed_funds_monthly_change_2024_12_20260724_193213_005_aa1cc75a"
+        ],
+        "source_article_ids": [
+          "art_finance_20241218_007_934cf465",
+          "art_finance_20241218_006_f3983238",
+          "art_finance_20241218_008_f34eb0b0"
+        ],
+        "terminal_to_target_bridge": true
+      }
+    ],
+    "paths_truncated": false
+  },
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "checkpoint_1",
+        "checkpoint_2",
+        "checkpoint_7",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_fed_funds_monthly_change_2024_12_20260724_193213_001_b7af3ff1",
+        "hyp_v3_fed_funds_monthly_change_2024_12_20260724_193213_002_bab4e297",
+        "hyp_v3_fed_funds_monthly_change_2024_12_20260724_193213_004_a19ca6eb"
+      ],
+      "relationships": [
+        "causes",
+        "enables",
+        "triggers"
+      ],
+      "path_role": "main_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Federal Reserve official warns on stalling inflation progress to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_3",
+        "checkpoint_5",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_fed_funds_monthly_change_2024_12_20260724_193213_006_81cff92d",
+        "hyp_v3_fed_funds_monthly_change_2024_12_20260724_193213_005_aa1cc75a"
+      ],
+      "relationships": [
+        "prevents",
+        "correlates"
+      ],
+      "path_role": "supporting_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Economists expected more aggressive rate cuts in [CURRENT_PERIOD_REQUIRED] to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_4",
+        "checkpoint_5",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_fed_funds_monthly_change_2024_12_20260724_193213_007_6357fac0",
+        "hyp_v3_fed_funds_monthly_change_2024_12_20260724_193213_005_aa1cc75a"
+      ],
+      "relationships": [
+        "amplifies",
+        "correlates"
+      ],
+      "path_role": "supporting_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Inflation remains 'somewhat elevated' and not expected to reach [CURRENT_VALUE_REQUIRED] target until [CURRENT_PERIOD_REQUIRED] to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_6",
+        "checkpoint_7",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_fed_funds_monthly_change_2024_12_20260724_193213_003_aa8036f1",
+        "hyp_v3_fed_funds_monthly_change_2024_12_20260724_193213_004_a19ca6eb"
+      ],
+      "relationships": [
+        "causes",
+        "triggers"
+      ],
+      "path_role": "supporting_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Cooling inflation tempered by continued cautiousness to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "A current factor outside the preserved historical topology dominates the target.",
+      "discriminating_evidence": "Search for current shocks and target observations not explained by any retained path.",
+      "source_event_ids": []
+    }
+  ],
+  "forecast_audit_questions": [
+    "Does every used checkpoint transition correspond to a preserved edge?",
+    "Which preserved edges are supported, contradicted, or unknown now?",
+    "Does a counter-path dominate the leading supported path?",
+    "Is there evidence for magnitude and boundary crossing, not direction alone?"
+  ],
+  "refinement_metadata": {
+    "model": "deterministic_topology_compiler_v2",
+    "source_graph": "data\\dags\\v3_fed_funds_monthly_change_2024_12\\graph.json",
+    "source_audit_status": "pass",
+    "outcome_nodes_redacted": 3,
+    "target_value_anchors_redacted": 0,
+    "historical_specifics_sanitized": true,
+    "sanitizer": "minimal_value_period_placeholders_v1",
+    "value_replacement_count": 7,
+    "period_replacement_count": 16
+  },
+  "topology_validation": {
+    "status": "pass",
+    "errors": [],
+    "metrics": {
+      "retained_checkpoint_count": 7,
+      "source_edge_count": 7,
+      "emitted_edge_count": 7,
+      "edge_coverage": 1.0,
+      "path_precision": 1.0,
+      "causal_path_count": 4,
+      "outcome_event_leak_count": 0,
+      "outcome_text_leak_count": 0,
+      "realized_value_count": 0,
+      "absolute_period_count": 0
+    }
+  }
+}

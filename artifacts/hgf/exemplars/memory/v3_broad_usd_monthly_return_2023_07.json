@@ -1,0 +1,59 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_broad_usd_monthly_return_2023_07",
+  "blueprint_sha256": "c2303a86c5b8f6edba88500b909e83db10e5f7b4aa01a4fc519fb628c7f21151",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "market_fx_credit",
+      "target_operation": "monthly broad-dollar return",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2023-07-01, which range will the monthly broad-dollar return for Nominal broad U.S. dollar index in 2023-07 fall into?",
+    "historical_cutoff": "2023-07-01T00:00:00+00:00",
+    "target_semantics": "The monthly percentage change of the Nominal broad U.S. dollar index.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20230629_003_0fa65d0f",
+        "takeaway": "The Dollar index hit a two-week high shortly before the cutoff.",
+        "why_predictive": "Indicates recent upward momentum for the dollar index."
+      },
+      {
+        "article_id": "art_finance_20230623_002_37abb383",
+        "takeaway": "The international role of the U.S. dollar remains significant.",
+        "why_predictive": "Suggests underlying stability and continued demand for the dollar."
+      },
+      {
+        "article_id": "art_finance_20230615_007_6d07c29b",
+        "takeaway": "The Federal Reserve held interest rates steady, evaluating the economy after lower inflation readings.",
+        "why_predictive": "Suggests a pause in aggressive rate hikes, which could influence dollar strength."
+      },
+      {
+        "article_id": "art_finance_20230629_008_953c83e9",
+        "takeaway": "Interest rates may need to remain restrictive for some time to reach the Fed's inflation target.",
+        "why_predictive": "Implies a potential for continued higher interest rates, which typically supports the dollar."
+      },
+      {
+        "article_id": "art_finance_20230224_005_a4fcc9a2",
+        "takeaway": "The U.S. dollar had previously surged to seven-week highs after strong inflation data.",
+        "why_predictive": "Shows a historical sensitivity of the dollar to U.S. economic data, particularly inflation."
+      }
+    ],
+    "expert_reasoning": [
+      "The dollar index recently reached a two-week high (art_finance_20230629_003_0fa65d0f), suggesting some upward momentum.",
+      "The Federal Reserve's decision to hold rates steady (art_finance_20230615_007_6d07c29b) and the indication that rates may remain restrictive (art_finance_20230629_008_953c83e9) could support continued dollar strength.",
+      "While past strong inflation data boosted the dollar (art_finance_20230224_005_a4fcc9a2), the recent pause in rate hikes and focus on reaching inflation targets might temper aggressive appreciation."
+    ],
+    "counterevidence": "Concerns about global economic slowdowns (checkpoint_4) and investor cautious sentiment (checkpoint_5) could limit the dollar's upward movement, potentially capping its appreciation.",
+    "prospective_target_estimate": "within recent range",
+    "option_mapping": "The recent upward movement and the potential for continued restrictive monetary policy suggest the dollar could remain strong. However, the recent pause in rate hikes and broader global economic concerns might prevent a significant surge, leading to a return within the recent range.",
+    "uncertainty": "The historical support for key drivers like 'Initial Dollar Strength Early' and 'Anticipation of Federal Reserve Rate Hike' is weak. The interplay between domestic monetary policy signals and global economic concerns introduces significant uncertainty regarding the magnitude of the dollar's movement.",
+    "dag_derived_lesson": "The relationship between monetary policy expectations and global economic sentiment can lead to a capping of currency appreciation, resulting in consolidation within a recent range, even when there are underlying supportive factors."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

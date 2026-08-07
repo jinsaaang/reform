@@ -1,0 +1,916 @@
+{
+  "question": {
+    "id": "v3_us_5y_breakeven_monthly_change_2024_07",
+    "question_text": "As of 2024-07-01, which range will the monthly 5-year breakeven change for United States 5-year breakeven inflation rate in 2024-07 fall into?",
+    "question_type": "mcq",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 3,
+    "resolution_date": "2024-08-15T23:59:59Z",
+    "estimated_start_time": "2024-07-01T00:00:00Z",
+    "ground_truth": "below recent range",
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [
+      "evt_c00b70b0b84c",
+      "evt_c6116bb28367",
+      "evt_724e2137dcaf"
+    ],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: United States 5-year breakeven inflation rate\nTarget period: 2024-07\nFinancial area: monetary_policy / inflation expectations\nRegion: US\nPre-registered recent-range boundaries: lower -0.093, upper 0.068 percentage points.",
+    "resolution_criteria": "Use FRED series T5YIE. Compute the change from the previous monthly observation using mode 'absolute'. Resolve 'below recent range' below -0.093, 'within recent range' from -0.093 inclusive to 0.068 exclusive, and 'above recent range' at or above 0.068 percentage points.",
+    "resolution_reasoning": "The snapshotted target change was -0.11 percentage points; it resolved to 'below recent range'.",
+    "options": [
+      "below recent range",
+      "within recent range",
+      "above recent range"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": "\n## Executive Summary\n\nThe monthly 5-year breakeven inflation rate for the United States in July 2024 fell below its recent range primarily due to a significant moderation in inflation expectations, driven by favorable Consumer Price Index (CPI) data for June and July, and reinforced by the Federal Reserve's dovish stance. The June CPI unexpectedly fell, followed by a tempered July CPI, which signaled easing inflationary pressures. Coupled with the Federal Reserve holding interest rates steady and hinting at future rate cuts, market participants recalibrated their inflation outlook downwards, leading to a decline in breakeven rates. Consumer surveys also indicated a notable reduction in inflation expectations, further solidifying the downward trend.\n\n## Timeline Of Key Events\n\n*   **2024-07-02**: Federal Reserve Bank of St. Louis published an article exploring tail risks in inflation expectations, indicating ongoing focus on future inflation scenarios [art_finance_20240702_006_e62f326f].\n*   **2024-07-10**: Traders grew more confident in a Fed rate cut ahead of a key inflation report [art_finance_20240710_005_79b6f570].\n*   **2024-07-11**: U.S. consumer prices unexpectedly fell in June, and the annual increase was the smallest in a long time, smoothing the path for Fed ease [art_finance_20240711_002_eedaf454, art_finance_20240711_003_4c6e2481].\n*   **2024-07-16**: Federal Reserve Bank of Minneapolis noted that despite cooling prices for new leases, overall housing inflation could remain elevated into 2025, suggesting some persistent pressures [art_finance_20240716_003_ac8727d3].\n*   **2024-07-18**: FedViews from the Federal Reserve Bank of San Francisco provided insights into the economic outlook, likely reflecting the impact of recent inflation data [art_finance_20240718_005_285adde4].\n*   **2024-07-30**: Deloitte analyzed factors keeping inflation elevated, maintaining a cautious tone on inflation's persistence [art_finance_20240730_003_7ce70093].\n*   **2024-07-31**: The Federal Reserve held interest rates steady and hinted at a rate cut ahead, signaling a potential shift towards easing monetary policy [art_finance_20240731_002_d8ff44d1].\n*   **2024-08-12**: The three-year inflation outlook hit a record low in the New York Fed consumer survey [art_finance_20240812_004_cb0c519c], indicating a significant drop in consumer inflation expectations. TradingView discussed whether incoming July inflation data would influence the Fed's decision [art_finance_20240812_006_4bb3c477].\n*   **2024-08-14**: The New York Fed's Survey of Consumer Expectations reiterated a lower inflation outlook [art_finance_20240814_002_6998221f].\n\n## Causal Chain Analysis\n\nThe primary cause for the 5-year breakeven inflation rate falling below its recent range was a **moderation in inflation expectations**. This was directly triggered by favorable **June and July CPI data** [art_finance_20240711_002_eedaf454, art_finance_20240711_003_4c6e2481]. Specifically, the unexpected fall in June's CPI and the subsequently tempered July data signaled to markets that inflationary pressures were easing more rapidly than anticipated. This easing of inflation subsequently **led to a dovish shift in Federal Reserve communication and policy** [art_finance_20240710_005_79b6f570, art_finance_20240731_002_d8ff44d1]. The Fed's decision to hold interest rates steady and hint at future rate cuts in July acted as a proximate trigger, reinforcing market expectations of lower future inflation. Consequently, **market sentiment and consumer expectations for inflation declined significantly** [art_finance_20240812_004_cb0c519c, art_finance_20240814_002_6998221f], directly pushing down the 5-year breakeven inflation rate. The reduction in consumer outlook, reaching record lows, provided strong evidence of this recalibration.\n\n## Countervailing Factors\n\nDespite the overall trend of easing inflation expectations, some factors suggested persistent inflationary pressures, acting as countervailing forces. The Federal Reserve Bank of Minneapolis, for instance, noted that **overall housing inflation could remain elevated into 2025** [art_finance_20240716_003_ac8727d3], even with cooling new lease prices. Similarly, Deloitte's analysis in late July identified factors that were **keeping inflation up** [art_finance_20240730_003_7ce70093]. These perspectives highlighted the complexity of inflation dynamics and suggested that some components of inflation could prove more stubborn. However, these concerns were ultimately **overwhelmed by the stronger signals from headline CPI data and the clear dovish pivot from the Federal Reserve**. The forward-looking market, which primarily influences breakeven rates, placed more weight on the immediate inflation data and the central bank's guidance, overriding the warnings about long-term or sectoral inflationary persistence.\n\n## Event Candidate Inventory\n\n*   **E1 - June CPI Release Indicates Unexpected Fall**: \n    *   date: 2024-07-11\n    *   why it matters causally: This release signaled a significant and unexpected easing of inflationary pressures, directly influencing market inflation expectations downwards.\n    *   source article IDs: [art_finance_20240711_002_eedaf454, art_finance_20240711_003_4c6e2481]\n\n*   **E2 - Federal Reserve Holds Rates Steady and Hints at Cuts**: \n    *   date: 2024-07-31\n    *   why it matters causally: The Fed's dovish stance confirmed market suspicions of impending monetary easing, further reducing long-term inflation expectations.\n    *   source article IDs: [art_finance_20240731_002_d8ff44d1]\n\n*   **E3 - New York Fed Survey Shows Record Low Three-Year Inflation Outlook**: \n    *   date: 2024-08-12\n    *   why it matters causally: This survey provided concrete evidence of consumer and market recalibration of inflation expectations to a significantly lower range.\n    *   source article IDs: [art_finance_20240812_004_cb0c519c, art_finance_20240814_002_6998221f]\n\n## Evidence Mapping Table\n\n| Claim/Event | Article IDs | Date Support | Confidence (0-1) | Notes |\n| :---------- | :---------- | :----------- | :--------------- | :---- |\n| June CPI unexpectedly fell | [art_finance_20240711_002_eedaf454, art_finance_20240711_003_4c6e2481] | 2024-07-11 | 0.95 | Direct reports of CPI data and market reaction |\n| Fed hints at rate cut | [art_finance_20240731_002_d8ff44d1, art_finance_20240710_005_79b6f570] | 2024-07-31 | 0.90 | Reports on FOMC decision and market speculation |\n| Inflation expectations declined | [art_finance_20240812_004_cb0c519c, art_finance_20240814_002_6998221f] | 2024-08-12 | 0.95 | New York Fed consumer survey results |\n| Housing inflation concerns | [art_finance_20240716_003_ac8727d3] | 2024-07-16 | 0.75 | Minneapolis Fed analysis, a minor countervailing factor |\n| Persistent inflation factors | [art_finance_20240730_003_7ce70093] | 2024-07-30 | 0.70 | Deloitte analysis, a minor countervailing factor |\n\n## Uncertainties And Alternative Paths\n\nOne uncertainty is the precise **magnitude of the Fed's future rate cuts** and their timing. While hints were given, specific details were not provided, leaving room for market speculation. An alternative path could have been if the **July CPI data had come in hotter than expected**, which might have negated the dovish sentiment from the June data and the Fed's hints, potentially causing the breakeven rate to remain within or even rise above its recent range. Additionally, an unexpected **escalation of geopolitical tensions** could have disrupted supply chains and increased energy prices, leading to renewed inflationary pressures and offsetting the domestic disinflationary trend.",
+    "graph_built": true,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.205275Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "us_5y_breakeven_monthly_change",
+        "event_cluster_id": "inflation_expectations_2024-07",
+        "category": "monetary_policy",
+        "original_domain": "monetary_policy",
+        "subdomain": "inflation expectations",
+        "entity": "United States 5-year breakeven inflation rate",
+        "region": "US",
+        "target_metric": "monthly 5-year breakeven change",
+        "target_period": "2024-07",
+        "forecast_cutoff": "2024-07-01T00:00:00+00:00",
+        "forecast_date_options": [
+          "2024-07-01"
+        ],
+        "resolution_available_at": "2024-08-15T23:59:59+00:00",
+        "horizon_days": 45,
+        "source_type": "fred_series_snapshot",
+        "source_series_id": "T5YIE",
+        "source_homepage": "https://fred.stlouisfed.org/series/T5YIE",
+        "comparison_rule": "target change bucketed by the lower and upper quartiles of the 8 prior observed changes",
+        "comparison_threshold": -0.025,
+        "comparison_thresholds": {
+          "lower": -0.0925,
+          "upper": 0.0675
+        },
+        "change_unit": "percentage points",
+        "threshold_observation_dates": [
+          "2023-10-31",
+          "2023-11-30",
+          "2023-12-29",
+          "2024-01-31",
+          "2024-02-29",
+          "2024-03-28",
+          "2024-04-30",
+          "2024-05-31",
+          "2024-06-28"
+        ],
+        "split": "memory",
+        "family_position": 4,
+        "family_size": 8,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "below recent range",
+        "resolved_class": "below recent range",
+        "resolution_value": 2.13,
+        "target_change": -0.11,
+        "source_observation_date": "2024-07-31",
+        "resolution_document": {
+          "publisher": "Federal Reserve Bank of St. Louis (FRED)",
+          "title": "5-Year Breakeven Inflation Rate",
+          "url": "https://fred.stlouisfed.org/series/T5YIE"
+        },
+        "source_download_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=T5YIE&cosd=2019-01-01&coed=2026-06-30",
+        "source_sha256": "a2e77c093f557d5be79b3174c6dbd74f065ac59ed61792acd842e75486657170",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_c00b70b0b84c",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 12,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_20240814_002_6998221f",
+        "title": "What The NY Fed's Survey Of Consumer Expectations Just Told Us About Inflation - moneydigest.com",
+        "url": "https://www.moneydigest.com/1642008/new-york-fed-consumer-expectations-survey-inflation-outlook",
+        "source": "moneydigest.com",
+        "published_date": "2024-08-14T14:30:25+00:00"
+      },
+      {
+        "id": "art_finance_20240730_003_7ce70093",
+        "title": "What’s keeping inflation up … and the Fed - Deloitte",
+        "url": "https://www.deloitte.com/us/en/insights/economy/spotlight/reasons-why-inflation-is-above-feds-target-inflation-rate.html",
+        "source": "deloitte.com",
+        "published_date": "2024-07-30T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240718_005_285adde4",
+        "title": "FedViews: July 18, 2024 - Federal Reserve Bank of San Francisco",
+        "url": "https://www.frbsf.org/research-and-insights/publications/fedviews/2024/07/fedviews-july-18-2024",
+        "source": "frbsf.org",
+        "published_date": "2024-07-18T12:00:00-07:00"
+      },
+      {
+        "id": "art_finance_20240731_002_d8ff44d1",
+        "title": "Federal Reserve holds interest rates steady, but hints at rate cut ahead - Axios",
+        "url": "https://www.axios.com/2024/07/31/fed-interest-rate-decision-july",
+        "source": "axios.com",
+        "published_date": "2024-07-31T18:45:09.934000+00:00"
+      },
+      {
+        "id": "art_finance_20240702_006_e62f326f",
+        "title": "Beyond the Mean: Exploring Tail Risks in Inflation Expectations - Federal Reserve Bank of St. Louis",
+        "url": "https://www.stlouisfed.org/on-the-economy/2024/jul/exploring-tail-risks-inflation-expectations",
+        "source": "stlouisfed.org",
+        "published_date": "2024-07-02T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240711_003_4c6e2481",
+        "title": "The U.S. is winning the inflation fight, setting scene for a long-awaited interest rate cut - NBC News",
+        "url": "https://www.nbcnews.com/business/economy/inflation-rate-june-2024-interest-rate-cut-when-how-much-rcna160842",
+        "source": "nbcnews.com",
+        "published_date": "2024-07-11T13:36:05.769000+00:00"
+      },
+      {
+        "id": "art_finance_20240716_003_ac8727d3",
+        "title": "Despite cooling prices for new leases, overall housing inflation could remain elevated into 2025 - Federal Reserve Bank of Minneapolis",
+        "url": "https://www.minneapolisfed.org/article/2024/despite-cooling-prices-for-new-leases-overall-housing-inflation-could-remain-elevated-into-2025",
+        "source": "minneapolisfed.org",
+        "published_date": "2024-07-16T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240812_004_cb0c519c",
+        "title": "Three-year inflation outlook hits record low in New York Fed consumer survey - CNBC",
+        "url": "https://www.cnbc.com/2024/08/12/three-year-inflation-outlook-hits-record-low-in-new-york-fed-consumer-survey.html",
+        "source": "cnbc.com",
+        "published_date": "2024-08-12T15:00:24+00:00"
+      },
+      {
+        "id": "art_finance_20240710_005_79b6f570",
+        "title": "Key inflation report looms on Thursday as traders grow more confident in Fed rate cut - CNBC",
+        "url": "https://www.fastbull.com/news-detail/key-inflation-report-looms-on-thursday-as-traders-4297044_0",
+        "source": "fastbull.com",
+        "published_date": "2024-07-10T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240812_006_4bb3c477",
+        "title": "Fed's Interest Rate Decision: Will Incoming July Inflation Data Tip The Scale? - TradingView",
+        "url": "https://www.tradingview.com/news/benzinga:0a9272619094b:0-fed-s-interest-rate-decision-will-incoming-july-inflation-data-tip-the-scale",
+        "source": "tradingview.com",
+        "published_date": "2024-08-12T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240711_002_eedaf454",
+        "title": "Tame US June CPI smoothes path for Fed ease - Reuters",
+        "url": "https://www.kitco.com/news/off-the-wire/2024-07-11/tame-us-june-cpi-smoothes-path-fed-ease",
+        "source": "kitco.com",
+        "published_date": "2024-07-11T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20080723_008_27840342",
+        "title": "Current US Inflation Rates: 2000-2025",
+        "url": "https://www.usinflationcalculator.com/inflation/current-inflation-rates",
+        "source": "usinflationcalculator.com",
+        "published_date": "2008-07-23T03:07:58+00:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_c00b70b0b84c",
+      "events_count": 9,
+      "hypotheses_count": 9
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 4,
+      "avg_depth": 3.17,
+      "quality_score": 0.9,
+      "depth_score": 1.0,
+      "confidence_score": 0.86,
+      "strength_score": 0.72,
+      "evidence_score": 1.0,
+      "event_count": 9,
+      "hypothesis_count": 9
+    },
+    "nodes": [
+      {
+        "id": "evt_724e2137dcaf",
+        "title": "Option 3: above recent range",
+        "description": "Question resolves to: above recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-08-15T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2024_07",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 2,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T03:07:14.181869Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_c00b70b0b84c",
+        "title": "Option 1: below recent range",
+        "description": "Question resolves to: below recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-08-15T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2024_07",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 0,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T03:07:14.181847Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_c6116bb28367",
+        "title": "Option 2: within recent range",
+        "description": "Question resolves to: within recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-08-15T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2024_07",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 1,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T03:07:14.181862Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240711_030_ad800076",
+        "title": "U.S. Consumer Prices Unexpectedly Fell in June",
+        "description": "U.S. consumer prices unexpectedly fell in June, and the annual increase was the smallest in a long time, smoothing the path for Fed ease.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-11T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240711_002_eedaf454",
+          "art_finance_20240711_003_4c6e2481"
+        ],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2024_07",
+        "source_article_id": "art_finance_20240711_002_eedaf454",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_5y_breakeven_monthly_change_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T03:14:15.843009Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240716_031_10aece87",
+        "title": "Minneapolis Fed Notes Elevated Housing Inflation into 2025",
+        "description": "Federal Reserve Bank of Minneapolis noted that despite cooling prices for new leases, overall housing inflation could remain elevated into 2025, suggesting some persistent pressures.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-16T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240716_003_ac8727d3"
+        ],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2024_07",
+        "source_article_id": "art_finance_20240716_003_ac8727d3",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_5y_breakeven_monthly_change_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T03:14:15.876777Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240730_032_0612cbb7",
+        "title": "Deloitte Analyzes Factors Keeping Inflation Elevated",
+        "description": "Deloitte analyzed factors keeping inflation elevated, maintaining a cautious tone on inflation's persistence.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-30T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240730_003_7ce70093"
+        ],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2024_07",
+        "source_article_id": "art_finance_20240730_003_7ce70093",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_5y_breakeven_monthly_change_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T03:14:15.911350Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240731_033_573f16c3",
+        "title": "Federal Reserve Holds Interest Rates Steady and Hints at Rate Cut",
+        "description": "The Federal Reserve held interest rates steady and hinted at a rate cut ahead, signaling a potential shift towards easing monetary policy.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-31T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240731_002_d8ff44d1"
+        ],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2024_07",
+        "source_article_id": "art_finance_20240731_002_d8ff44d1",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_5y_breakeven_monthly_change_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T03:14:15.945414Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240731_034_70458e82",
+        "title": "Dovish Shift in Federal Reserve Communication and Policy",
+        "description": "The easing of inflation led to a dovish shift in Federal Reserve communication and policy.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-07-31T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240731_002_d8ff44d1"
+        ],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2024_07",
+        "source_article_id": "art_finance_20240731_002_d8ff44d1",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_5y_breakeven_monthly_change_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T03:14:15.979810Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240812_035_7d23922d",
+        "title": "New York Fed Survey Shows Record Low Three-Year Inflation Outlook",
+        "description": "The three-year inflation outlook hit a record low in the New York Fed consumer survey, indicating a significant drop in consumer inflation expectations.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-08-12T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240812_004_cb0c519c",
+          "art_finance_20240814_002_6998221f"
+        ],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2024_07",
+        "source_article_id": "art_finance_20240812_004_cb0c519c",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_5y_breakeven_monthly_change_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T03:14:16.015056Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240812_036_a55d6252",
+        "title": "Moderation in Inflation Expectations",
+        "description": "A significant moderation in inflation expectations, driven by favorable CPI data and reinforced by the Federal Reserve's dovish stance.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-08-12T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240812_004_cb0c519c",
+          "art_finance_20240814_002_6998221f"
+        ],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2024_07",
+        "source_article_id": "art_finance_20240812_004_cb0c519c",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_5y_breakeven_monthly_change_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T03:14:16.172698Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240812_037_ed419516",
+        "title": "Market Sentiment and Consumer Expectations for Inflation Declined Significantly",
+        "description": "Market sentiment and consumer expectations for inflation declined significantly, directly pushing down the 5-year breakeven inflation rate.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-08-12T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240812_004_cb0c519c",
+          "art_finance_20240814_002_6998221f"
+        ],
+        "extracted_for_question_id": "v3_us_5y_breakeven_monthly_change_2024_07",
+        "source_article_id": "art_finance_20240812_004_cb0c519c",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_5y_breakeven_monthly_change_2024_07"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T03:14:16.208210Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2024_07_20260725_031416_015_68e7ad09",
+        "source_event_id": "evt_finance_20240711_030_ad800076",
+        "target_event_id": "evt_finance_20240812_036_a55d6252",
+        "relation_type": "triggers",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The unexpected fall in June's CPI directly signaled easing inflationary pressures, contributing to moderation in inflation expectations.",
+        "evidence_article_ids": [
+          "art_finance_20240711_002_eedaf454",
+          "art_finance_20240711_003_4c6e2481"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T03:14:16.235855Z",
+        "last_confirmed_at": "2026-07-25T03:14:16.235855Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2024_07_20260725_031416_016_c51d1549",
+        "source_event_id": "evt_finance_20240711_030_ad800076",
+        "target_event_id": "evt_finance_20240731_034_70458e82",
+        "relation_type": "enables",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "The easing of inflation indicated by the June CPI data smoothed the path for a more dovish stance from the Fed.",
+        "evidence_article_ids": [
+          "art_finance_20240711_002_eedaf454",
+          "art_finance_20240711_003_4c6e2481"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T03:14:16.254129Z",
+        "last_confirmed_at": "2026-07-25T03:14:16.254129Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2024_07_20260725_031416_017_fdd3fb08",
+        "source_event_id": "evt_finance_20240731_033_573f16c3",
+        "target_event_id": "evt_finance_20240731_034_70458e82",
+        "relation_type": "amplifies",
+        "strength": 0.9,
+        "confidence": 0.95,
+        "time_lag_hours": null,
+        "reasoning": "The Fed's decision to hold rates steady and hint at cuts is a direct manifestation and amplification of a dovish shift in policy.",
+        "evidence_article_ids": [
+          "art_finance_20240731_002_d8ff44d1"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T03:14:16.270324Z",
+        "last_confirmed_at": "2026-07-25T03:14:16.270324Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2024_07_20260725_031416_018_402bfbcc",
+        "source_event_id": "evt_finance_20240731_034_70458e82",
+        "target_event_id": "evt_finance_20240812_036_a55d6252",
+        "relation_type": "amplifies",
+        "strength": 0.8,
+        "confidence": 0.85,
+        "time_lag_hours": null,
+        "reasoning": "The Federal Reserve's dovish stance amplified market participants' recalibration of their inflation outlook downwards.",
+        "evidence_article_ids": [
+          "art_finance_20240731_002_d8ff44d1"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T03:14:16.287067Z",
+        "last_confirmed_at": "2026-07-25T03:14:16.287067Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2024_07_20260725_031416_019_eadea5e3",
+        "source_event_id": "evt_finance_20240812_036_a55d6252",
+        "target_event_id": "evt_finance_20240812_037_ed419516",
+        "relation_type": "causes",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The overall moderation in inflation expectations directly led to a decline in market sentiment and consumer expectations for inflation.",
+        "evidence_article_ids": [
+          "art_finance_20240812_004_cb0c519c",
+          "art_finance_20240814_002_6998221f"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T03:14:16.303282Z",
+        "last_confirmed_at": "2026-07-25T03:14:16.303282Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2024_07_20260725_031416_020_e1eaa95f",
+        "source_event_id": "evt_finance_20240812_037_ed419516",
+        "target_event_id": "evt_c00b70b0b84c",
+        "relation_type": "causes",
+        "strength": 0.95,
+        "confidence": 0.95,
+        "time_lag_hours": null,
+        "reasoning": "The significant decline in market and consumer inflation expectations directly pushed down the 5-year breakeven inflation rate.",
+        "evidence_article_ids": [
+          "art_finance_20240812_004_cb0c519c",
+          "art_finance_20240814_002_6998221f"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T03:14:16.320440Z",
+        "last_confirmed_at": "2026-07-25T03:14:16.320440Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2024_07_20260725_031416_021_16233f83",
+        "source_event_id": "evt_finance_20240812_035_7d23922d",
+        "target_event_id": "evt_finance_20240812_037_ed419516",
+        "relation_type": "amplifies",
+        "strength": 0.85,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The New York Fed survey showing a record low inflation outlook provided concrete evidence and amplified the decline in consumer and market expectations.",
+        "evidence_article_ids": [
+          "art_finance_20240812_004_cb0c519c",
+          "art_finance_20240814_002_6998221f"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T03:14:16.337664Z",
+        "last_confirmed_at": "2026-07-25T03:14:16.337664Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2024_07_20260725_031416_022_9e29c63e",
+        "source_event_id": "evt_finance_20240716_031_10aece87",
+        "target_event_id": "evt_finance_20240812_036_a55d6252",
+        "relation_type": "inhibits",
+        "strength": 0.3,
+        "confidence": 0.75,
+        "time_lag_hours": null,
+        "reasoning": "Concerns about elevated housing inflation could have slightly inhibited the overall moderation of inflation expectations, though ultimately overwhelmed.",
+        "evidence_article_ids": [
+          "art_finance_20240716_003_ac8727d3"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T03:14:16.355186Z",
+        "last_confirmed_at": "2026-07-25T03:14:16.355186Z"
+      },
+      {
+        "id": "hyp_v3_us_5y_breakeven_monthly_change_2024_07_20260725_031416_023_8b7cba16",
+        "source_event_id": "evt_finance_20240730_032_0612cbb7",
+        "target_event_id": "evt_finance_20240812_036_a55d6252",
+        "relation_type": "inhibits",
+        "strength": 0.3,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Deloitte's analysis of persistent inflation factors acted as a minor countervailing force against the overall moderation of inflation expectations.",
+        "evidence_article_ids": [
+          "art_finance_20240730_003_7ce70093"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_07"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T03:14:16.371885Z",
+        "last_confirmed_at": "2026-07-25T03:14:16.371885Z"
+      }
+    ],
+    "outcome_impacts": [
+      {
+        "id": "imp_b64f44db",
+        "event_id": "evt_finance_20240711_030_ad800076",
+        "outcome_event_id": "evt_c00b70b0b84c",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.85,
+        "confidence": 0.9,
+        "reasoning": "The unexpected fall in June's CPI directly signaled easing inflationary pressures, contributing to the breakeven rate falling below its recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T03:14:20.469669Z",
+        "last_confirmed_at": "2026-07-25T03:14:20.469669Z"
+      },
+      {
+        "id": "imp_bde2e5f8",
+        "event_id": "evt_finance_20240731_033_573f16c3",
+        "outcome_event_id": "evt_c00b70b0b84c",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.95,
+        "reasoning": "The Fed's dovish stance, holding rates steady and hinting at cuts, reinforced market expectations of lower future inflation, directly contributing to the outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T03:14:20.482161Z",
+        "last_confirmed_at": "2026-07-25T03:14:20.482161Z"
+      },
+      {
+        "id": "imp_13b47655",
+        "event_id": "evt_finance_20240812_035_7d23922d",
+        "outcome_event_id": "evt_c00b70b0b84c",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.85,
+        "confidence": 0.9,
+        "reasoning": "The record low three-year inflation outlook in the NY Fed survey provided strong evidence of declining consumer and market inflation expectations, directly pushing down the breakeven rate.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T03:14:20.492346Z",
+        "last_confirmed_at": "2026-07-25T03:14:20.492346Z"
+      },
+      {
+        "id": "imp_e4e5fb73",
+        "event_id": "evt_finance_20240716_031_10aece87",
+        "outcome_event_id": "evt_c00b70b0b84c",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2024_07",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.3,
+        "confidence": 0.75,
+        "reasoning": "Concerns about elevated housing inflation into 2025 acted as a minor countervailing factor, suggesting some persistent pressures that could have inhibited the breakeven rate from falling further.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T03:14:20.502829Z",
+        "last_confirmed_at": "2026-07-25T03:14:20.502829Z"
+      },
+      {
+        "id": "imp_e933359e",
+        "event_id": "evt_finance_20240730_032_0612cbb7",
+        "outcome_event_id": "evt_c00b70b0b84c",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2024_07",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.3,
+        "confidence": 0.7,
+        "reasoning": "Deloitte's analysis of factors keeping inflation elevated acted as a minor countervailing force against the overall trend of easing inflation expectations.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T03:14:20.512713Z",
+        "last_confirmed_at": "2026-07-25T03:14:20.512713Z"
+      },
+      {
+        "id": "imp_6c49508d",
+        "event_id": "evt_finance_20240702_028_b4b9bdde",
+        "outcome_event_id": "evt_c00b70b0b84c",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2024_07",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.1,
+        "confidence": 0.6,
+        "reasoning": "The article explores tail risks in inflation expectations, indicating an ongoing focus on future inflation scenarios, but doesn't directly impact the breakeven rate in a specific direction.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T03:14:26.259625Z",
+        "last_confirmed_at": "2026-07-25T03:14:26.259625Z"
+      },
+      {
+        "id": "imp_367a9a43",
+        "event_id": "evt_finance_20240710_029_992b6d06",
+        "outcome_event_id": "evt_c00b70b0b84c",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Traders growing confident in a Fed rate cut suggests an expectation of lower future interest rates, which would contribute to lower inflation expectations and thus a lower breakeven rate.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T03:14:26.270411Z",
+        "last_confirmed_at": "2026-07-25T03:14:26.270411Z"
+      },
+      {
+        "id": "imp_8342d8a3",
+        "event_id": "evt_finance_20240731_034_70458e82",
+        "outcome_event_id": "evt_c00b70b0b84c",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.85,
+        "reasoning": "The dovish shift in Fed communication and policy directly reinforced market expectations of lower future inflation, contributing to the breakeven rate falling.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T03:14:26.280887Z",
+        "last_confirmed_at": "2026-07-25T03:14:26.280887Z"
+      },
+      {
+        "id": "imp_bd998fea",
+        "event_id": "evt_finance_20240812_036_a55d6252",
+        "outcome_event_id": "evt_c00b70b0b84c",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "A significant moderation in inflation expectations is a direct cause for the 5-year breakeven inflation rate falling below its recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T03:14:26.293344Z",
+        "last_confirmed_at": "2026-07-25T03:14:26.293344Z"
+      },
+      {
+        "id": "imp_87a79876",
+        "event_id": "evt_finance_20240812_037_ed419516",
+        "outcome_event_id": "evt_c00b70b0b84c",
+        "question_id": "v3_us_5y_breakeven_monthly_change_2024_07",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.95,
+        "confidence": 0.95,
+        "reasoning": "The significant decline in market sentiment and consumer expectations for inflation directly pushed down the 5-year breakeven inflation rate.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_5y_breakeven_monthly_change_2024_07"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T03:14:26.303393Z",
+        "last_confirmed_at": "2026-07-25T03:14:26.303393Z"
+      }
+    ]
+  }
+}

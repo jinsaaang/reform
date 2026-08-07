@@ -1,0 +1,397 @@
+{
+  "schema_version": "hgf_blueprint_topology_v2",
+  "question_id": "v3_us_30y_yield_monthly_change_2023_01",
+  "target_definition": {
+    "metric": "monthly 30-year yield change",
+    "unit_or_option_space": [
+      "yes",
+      "no"
+    ],
+    "forecast_horizon": "Remap the historical target family to the current question's exact target period."
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Outcome-redacted topology preserves 6 checkpoints, 6 source edges, and 1 root-to-target paths.",
+    "weaknesses": []
+  },
+  "search_factors": [
+    {
+      "factor": "Global Economic Slowdown Concerns",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230102_057_86b4e22c"
+      ]
+    },
+    {
+      "factor": "Inflationary Pressures Persist",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230106_058_0c7a42f9"
+      ]
+    },
+    {
+      "factor": "Central Bank Hawkish Stance",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230116_059_ec2f6d7d"
+      ]
+    },
+    {
+      "factor": "Market Volatility Increases",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230122_060_9903d065"
+      ]
+    },
+    {
+      "factor": "Strong US Jobs Report",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230203_061_8f6b17c9"
+      ]
+    },
+    {
+      "factor": "Fed Rate Hike Expectations Rise",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230214_062_2e33a4b2"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "checkpoint_1",
+      "role": "driver",
+      "factor": "Global Economic Slowdown Concerns",
+      "mechanism": "Global slowdown concerns often accompany persistent inflation.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230102_057_86b4e22c"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_30y_yield_monthly_change_2023_01_20260722_233156_057_3dda5292"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_2",
+      "role": "mediator",
+      "factor": "Inflationary Pressures Persist",
+      "mechanism": "Persistent inflation typically leads central banks to adopt a hawkish stance.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230106_058_0c7a42f9"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_30y_yield_monthly_change_2023_01_20260722_233156_058_65c68d26"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_3",
+      "role": "mediator",
+      "factor": "Central Bank Hawkish Stance",
+      "mechanism": "A hawkish central bank stance often triggers market volatility.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230116_059_ec2f6d7d"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_30y_yield_monthly_change_2023_01_20260722_233156_059_ea17f045"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_4",
+      "role": "mediator",
+      "factor": "Market Volatility Increases",
+      "mechanism": "Market volatility can precede or coincide with significant economic reports like jobs data.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230122_060_9903d065"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_30y_yield_monthly_change_2023_01_20260722_233156_060_33270011"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_5",
+      "role": "mediator",
+      "factor": "Strong US Jobs Report",
+      "mechanism": "A strong jobs report typically increases expectations for further rate hikes.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230203_061_8f6b17c9"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_30y_yield_monthly_change_2023_01_20260722_233156_061_c56167a8"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_6",
+      "role": "mediator",
+      "factor": "Fed Rate Hike Expectations Rise",
+      "mechanism": "Re-test whether this factor has a currently supported link to the exact target metric; do not transfer the historical outcome or magnitude.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230214_062_2e33a4b2"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_30y_yield_monthly_change_2023_01_20260722_233156_062_dab3556b"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "target_bridge",
+      "role": "target_bridge",
+      "factor": "monthly 30-year yield change",
+      "mechanism": "Map only currently supported paths into the exact target operator. Directional support alone is not magnitude or threshold-crossing support.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "A current target baseline and evidence supporting every edge used in the bridge.",
+      "contradiction_signal": "The current target baseline, magnitude evidence, or option boundary contradicts the proposed path.",
+      "historical_support": "medium",
+      "source_event_ids": [],
+      "source_edge_ids": [
+        "hyp_v3_us_30y_yield_monthly_change_2023_01_20260722_233156_062_dab3556b"
+      ],
+      "source_event_type": "target_bridge"
+    }
+  ],
+  "topology": {
+    "checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_5",
+      "checkpoint_6",
+      "target_bridge"
+    ],
+    "root_checkpoint_ids": [
+      "checkpoint_1"
+    ],
+    "target_bridge_id": "target_bridge",
+    "edges": [
+      {
+        "source_checkpoint_id": "checkpoint_1",
+        "target_checkpoint_id": "checkpoint_2",
+        "relationship": "correlates",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Global slowdown concerns often accompany persistent inflation.",
+        "source_edge_ids": [
+          "hyp_v3_us_30y_yield_monthly_change_2023_01_20260722_233156_057_3dda5292"
+        ],
+        "source_article_ids": [
+          "art_finance_20230102_004_36af1b29",
+          "art_finance_20230106_003_69ef7510"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_2",
+        "target_checkpoint_id": "checkpoint_3",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Persistent inflation typically leads central banks to adopt a hawkish stance.",
+        "source_edge_ids": [
+          "hyp_v3_us_30y_yield_monthly_change_2023_01_20260722_233156_058_65c68d26"
+        ],
+        "source_article_ids": [
+          "art_finance_20230106_003_69ef7510",
+          "art_finance_20230116_002_d8bc1c94"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_3",
+        "target_checkpoint_id": "checkpoint_4",
+        "relationship": "triggers",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "A hawkish central bank stance often triggers market volatility.",
+        "source_edge_ids": [
+          "hyp_v3_us_30y_yield_monthly_change_2023_01_20260722_233156_059_ea17f045"
+        ],
+        "source_article_ids": [
+          "art_finance_20230116_002_d8bc1c94",
+          "art_finance_20230122_008_aa598ea5"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_4",
+        "target_checkpoint_id": "checkpoint_5",
+        "relationship": "correlates",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Market volatility can precede or coincide with significant economic reports like jobs data.",
+        "source_edge_ids": [
+          "hyp_v3_us_30y_yield_monthly_change_2023_01_20260722_233156_060_33270011"
+        ],
+        "source_article_ids": [
+          "art_finance_20230122_008_aa598ea5",
+          "art_finance_20230203_009_afe2305e"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_5",
+        "target_checkpoint_id": "checkpoint_6",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "A strong jobs report typically increases expectations for further rate hikes.",
+        "source_edge_ids": [
+          "hyp_v3_us_30y_yield_monthly_change_2023_01_20260722_233156_061_c56167a8"
+        ],
+        "source_article_ids": [
+          "art_finance_20230203_009_afe2305e",
+          "art_finance_20230214_002_74c6ab6f"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_6",
+        "target_checkpoint_id": "target_bridge",
+        "relationship": "amplifies",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Historical DAG connected this factor to the redacted target measurement; the realized value and outcome mapping are omitted.",
+        "source_edge_ids": [
+          "hyp_v3_us_30y_yield_monthly_change_2023_01_20260722_233156_062_dab3556b"
+        ],
+        "source_article_ids": [
+          "art_finance_20230214_002_74c6ab6f"
+        ],
+        "terminal_to_target_bridge": true
+      }
+    ],
+    "paths_truncated": false
+  },
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "checkpoint_1",
+        "checkpoint_2",
+        "checkpoint_3",
+        "checkpoint_4",
+        "checkpoint_5",
+        "checkpoint_6",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_30y_yield_monthly_change_2023_01_20260722_233156_057_3dda5292",
+        "hyp_v3_us_30y_yield_monthly_change_2023_01_20260722_233156_058_65c68d26",
+        "hyp_v3_us_30y_yield_monthly_change_2023_01_20260722_233156_059_ea17f045",
+        "hyp_v3_us_30y_yield_monthly_change_2023_01_20260722_233156_060_33270011",
+        "hyp_v3_us_30y_yield_monthly_change_2023_01_20260722_233156_061_c56167a8",
+        "hyp_v3_us_30y_yield_monthly_change_2023_01_20260722_233156_062_dab3556b"
+      ],
+      "relationships": [
+        "correlates",
+        "causes",
+        "triggers",
+        "correlates",
+        "causes",
+        "amplifies"
+      ],
+      "path_role": "main_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Global Economic Slowdown Concerns to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "A current factor outside the preserved historical topology dominates the target.",
+      "discriminating_evidence": "Search for current shocks and target observations not explained by any retained path.",
+      "source_event_ids": []
+    }
+  ],
+  "forecast_audit_questions": [
+    "Does every used checkpoint transition correspond to a preserved edge?",
+    "Which preserved edges are supported, contradicted, or unknown now?",
+    "Does a counter-path dominate the leading supported path?",
+    "Is there evidence for magnitude and boundary crossing, not direction alone?"
+  ],
+  "refinement_metadata": {
+    "model": "deterministic_topology_compiler_v2",
+    "source_graph": "data\\dags\\v3_us_30y_yield_monthly_change_2023_01\\graph.json",
+    "source_audit_status": "pass",
+    "outcome_nodes_redacted": 2,
+    "target_value_anchors_redacted": 0,
+    "historical_specifics_sanitized": true,
+    "sanitizer": "minimal_value_period_placeholders_v1",
+    "value_replacement_count": 0,
+    "period_replacement_count": 0
+  },
+  "topology_validation": {
+    "status": "pass",
+    "errors": [],
+    "metrics": {
+      "retained_checkpoint_count": 6,
+      "source_edge_count": 6,
+      "emitted_edge_count": 6,
+      "edge_coverage": 1.0,
+      "path_precision": 1.0,
+      "causal_path_count": 1,
+      "outcome_event_leak_count": 0,
+      "outcome_text_leak_count": 0,
+      "realized_value_count": 0,
+      "absolute_period_count": 0
+    }
+  }
+}

@@ -1,0 +1,597 @@
+{
+  "schema_version": "hgf_blueprint_topology_v2",
+  "question_id": "v3_nvda_revenue_growth_acceleration_2025_01_26",
+  "target_definition": {
+    "metric": "quarterly revenue year-over-year growth acceleration",
+    "unit_or_option_space": [
+      "yes",
+      "no"
+    ],
+    "forecast_horizon": "Remap the historical target family to the current question's exact target period."
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Outcome-redacted topology preserves 8 checkpoints, 9 source edges, and 4 root-to-target paths.",
+    "weaknesses": []
+  },
+  "search_factors": [
+    {
+      "factor": "NVIDIA Corporation's Fiscal Quarter ending for [CURRENT_PERIOD_REQUIRED]",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20250126_021_6d476773"
+      ]
+    },
+    {
+      "factor": "NVIDIA's other segments underperform compared to Data Center",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20250226_029_d23d19dc"
+      ]
+    },
+    {
+      "factor": "AI boom drives demand for NVIDIA's Data Center products",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_tech_20250219_024_764e2808"
+      ]
+    },
+    {
+      "factor": "Strong market anticipation and demand for NVIDIA's AI products (Blackwell)",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20250219_020_661f8a69"
+      ]
+    },
+    {
+      "factor": "Launch of new NVIDIA Blackwell architecture products",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_tech_20250219_025_a68e3290"
+      ]
+    },
+    {
+      "factor": "NVIDIA's Data Center segment revenue grows by [CURRENT_VALUE_REQUIRED] year-over-year",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20250226_019_7c0ffeda"
+      ]
+    },
+    {
+      "factor": "NVIDIA's overall revenue growth reported at [CURRENT_VALUE_REQUIRED] year-over-year",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20250226_028_436130f8"
+      ]
+    },
+    {
+      "factor": "NVIDIA's overall revenue growth of [CURRENT_VALUE_REQUIRED] falls [PAST_OUTCOME_REDACTED] threshold",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20250226_022_72f66a14"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "checkpoint_1",
+      "role": "driver",
+      "factor": "NVIDIA Corporation's Fiscal Quarter ending for [CURRENT_PERIOD_REQUIRED]",
+      "mechanism": "The fiscal quarter ending directly triggers the reporting of the revenue for that period.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20250126_021_6d476773"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224844_017_29d678a3"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_2",
+      "role": "counterevidence",
+      "factor": "NVIDIA's other segments underperform compared to Data Center",
+      "mechanism": "Lower growth in other segments inhibited the overall revenue growth from reaching higher levels, despite strong Data Center performance.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20250226_029_d23d19dc"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224844_020_e358594a"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_3",
+      "role": "driver",
+      "factor": "AI boom drives demand for NVIDIA's Data Center products",
+      "mechanism": "The general AI boom amplified market anticipation and demand for NVIDIA's AI products.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_tech_20250219_024_764e2808"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224844_022_4751e312",
+        "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224844_024_ba02f481"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_4",
+      "role": "mediator",
+      "factor": "Strong market anticipation and demand for NVIDIA's AI products (Blackwell)",
+      "mechanism": "Strong market anticipation and demand for AI products directly enabled the high growth in the Data Center segment.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20250219_020_661f8a69"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224844_018_38b9e260"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_5",
+      "role": "mediator",
+      "factor": "Launch of new NVIDIA Blackwell architecture products",
+      "mechanism": "The launch of new Blackwell architecture products directly triggered increased demand and revenue growth in the Data Center segment.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_tech_20250219_025_a68e3290"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224844_023_789c1cec"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_6",
+      "role": "mediator",
+      "factor": "NVIDIA's Data Center segment revenue grows by [CURRENT_VALUE_REQUIRED] year-over-year",
+      "mechanism": "The [CURRENT_VALUE_REQUIRED] growth in the Data Center segment significantly amplified the overall [CURRENT_VALUE_REQUIRED] revenue growth.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20250226_019_7c0ffeda"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224844_019_12fc656b"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_7",
+      "role": "mediator",
+      "factor": "NVIDIA's overall revenue growth reported at [CURRENT_VALUE_REQUIRED] year-over-year",
+      "mechanism": "The reported [CURRENT_VALUE_REQUIRED] year-over-year growth directly caused the overall growth to be below the [CURRENT_VALUE_REQUIRED] threshold.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20250226_028_436130f8"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224844_021_7938507b"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_8",
+      "role": "mediator",
+      "factor": "NVIDIA's overall revenue growth of [CURRENT_VALUE_REQUIRED] falls [PAST_OUTCOME_REDACTED] threshold",
+      "mechanism": "Re-test whether this factor has a currently supported link to the exact target metric; do not transfer the historical outcome or magnitude.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20250226_022_72f66a14"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224849_028_c8b7317c"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "target_bridge",
+      "role": "target_bridge",
+      "factor": "quarterly revenue year-over-year growth acceleration",
+      "mechanism": "Map only currently supported paths into the exact target operator. Directional support alone is not magnitude or threshold-crossing support.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "A current target baseline and evidence supporting every edge used in the bridge.",
+      "contradiction_signal": "The current target baseline, magnitude evidence, or option boundary contradicts the proposed path.",
+      "historical_support": "medium",
+      "source_event_ids": [],
+      "source_edge_ids": [
+        "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224849_028_c8b7317c"
+      ],
+      "source_event_type": "target_bridge"
+    }
+  ],
+  "topology": {
+    "checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_5",
+      "checkpoint_6",
+      "checkpoint_7",
+      "checkpoint_8",
+      "target_bridge"
+    ],
+    "root_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3"
+    ],
+    "target_bridge_id": "target_bridge",
+    "edges": [
+      {
+        "source_checkpoint_id": "checkpoint_1",
+        "target_checkpoint_id": "checkpoint_7",
+        "relationship": "triggers",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "The fiscal quarter ending directly triggers the reporting of the revenue for that period.",
+        "source_edge_ids": [
+          "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224844_017_29d678a3"
+        ],
+        "source_article_ids": [
+          "art_finance_20250126_004_874cd320",
+          "art_finance_20250226_006_55b7d6a2"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_4",
+        "target_checkpoint_id": "checkpoint_6",
+        "relationship": "enables",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Strong market anticipation and demand for AI products directly enabled the high growth in the Data Center segment.",
+        "source_edge_ids": [
+          "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224844_018_38b9e260"
+        ],
+        "source_article_ids": [
+          "art_finance_20250219_002_b9077874",
+          "art_finance_20250226_006_55b7d6a2"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_6",
+        "target_checkpoint_id": "checkpoint_7",
+        "relationship": "amplifies",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "The [CURRENT_VALUE_REQUIRED] growth in the Data Center segment significantly amplified the overall [CURRENT_VALUE_REQUIRED] revenue growth.",
+        "source_edge_ids": [
+          "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224844_019_12fc656b"
+        ],
+        "source_article_ids": [
+          "art_finance_20250226_006_55b7d6a2",
+          "art_finance_20250226_008_3d9c975a"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_2",
+        "target_checkpoint_id": "checkpoint_7",
+        "relationship": "inhibits",
+        "directionality": "counteracting",
+        "support_level": "",
+        "rationale": "Lower growth in other segments inhibited the overall revenue growth from reaching higher levels, despite strong Data Center performance.",
+        "source_edge_ids": [
+          "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224844_020_e358594a"
+        ],
+        "source_article_ids": [
+          "art_finance_20250226_006_55b7d6a2",
+          "art_finance_20250226_008_3d9c975a"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_7",
+        "target_checkpoint_id": "checkpoint_8",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "The reported [CURRENT_VALUE_REQUIRED] year-over-year growth directly caused the overall growth to be below the [CURRENT_VALUE_REQUIRED] threshold.",
+        "source_edge_ids": [
+          "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224844_021_7938507b"
+        ],
+        "source_article_ids": [
+          "art_finance_20250226_006_55b7d6a2",
+          "art_finance_20250226_008_3d9c975a"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_3",
+        "target_checkpoint_id": "checkpoint_4",
+        "relationship": "amplifies",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "The general AI boom amplified market anticipation and demand for NVIDIA's AI products.",
+        "source_edge_ids": [
+          "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224844_022_4751e312"
+        ],
+        "source_article_ids": [
+          "art_finance_20250219_002_b9077874"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_5",
+        "target_checkpoint_id": "checkpoint_6",
+        "relationship": "triggers",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "The launch of new Blackwell architecture products directly triggered increased demand and revenue growth in the Data Center segment.",
+        "source_edge_ids": [
+          "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224844_023_789c1cec"
+        ],
+        "source_article_ids": [
+          "art_finance_20250219_002_b9077874",
+          "art_finance_20250226_006_55b7d6a2"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_3",
+        "target_checkpoint_id": "checkpoint_5",
+        "relationship": "enables",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "The AI boom created a market environment that enabled and incentivized the launch and success of new AI-focused products like Blackwell.",
+        "source_edge_ids": [
+          "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224844_024_ba02f481"
+        ],
+        "source_article_ids": [
+          "art_finance_20250219_002_b9077874"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_8",
+        "target_checkpoint_id": "target_bridge",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Historical DAG connected this factor to the redacted target measurement; the realized value and outcome mapping are omitted.",
+        "source_edge_ids": [
+          "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224849_028_c8b7317c"
+        ],
+        "source_article_ids": [
+          "art_finance_20250226_006_55b7d6a2",
+          "art_finance_20250226_008_3d9c975a"
+        ],
+        "terminal_to_target_bridge": true
+      }
+    ],
+    "paths_truncated": false
+  },
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "checkpoint_1",
+        "checkpoint_7",
+        "checkpoint_8",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224844_017_29d678a3",
+        "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224844_021_7938507b",
+        "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224849_028_c8b7317c"
+      ],
+      "relationships": [
+        "triggers",
+        "causes",
+        "causes"
+      ],
+      "path_role": "main_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from NVIDIA Corporation's Fiscal Quarter ending for [CURRENT_PERIOD_REQUIRED] to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_2",
+        "checkpoint_7",
+        "checkpoint_8",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224844_020_e358594a",
+        "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224844_021_7938507b",
+        "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224849_028_c8b7317c"
+      ],
+      "relationships": [
+        "inhibits",
+        "causes",
+        "causes"
+      ],
+      "path_role": "counter_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from NVIDIA's other segments underperform compared to Data Center to the current target; every edge requires current support.",
+      "expected_direction": "mixed",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_3",
+        "checkpoint_4",
+        "checkpoint_6",
+        "checkpoint_7",
+        "checkpoint_8",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224844_022_4751e312",
+        "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224844_018_38b9e260",
+        "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224844_019_12fc656b",
+        "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224844_021_7938507b",
+        "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224849_028_c8b7317c"
+      ],
+      "relationships": [
+        "amplifies",
+        "enables",
+        "amplifies",
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from AI boom drives demand for NVIDIA's Data Center products to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_3",
+        "checkpoint_5",
+        "checkpoint_6",
+        "checkpoint_7",
+        "checkpoint_8",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224844_024_ba02f481",
+        "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224844_023_789c1cec",
+        "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224844_019_12fc656b",
+        "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224844_021_7938507b",
+        "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224849_028_c8b7317c"
+      ],
+      "relationships": [
+        "enables",
+        "triggers",
+        "amplifies",
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from AI boom drives demand for NVIDIA's Data Center products to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "NVIDIA's other segments underperform compared to Data Center dominates or reverses the leading current path.",
+      "discriminating_evidence": "Compare current evidence for this counter-path with every edge on the leading supported path.",
+      "source_event_ids": [
+        "evt_finance_20250226_029_d23d19dc"
+      ]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Does every used checkpoint transition correspond to a preserved edge?",
+    "Which preserved edges are supported, contradicted, or unknown now?",
+    "Does a counter-path dominate the leading supported path?",
+    "Is there evidence for magnitude and boundary crossing, not direction alone?"
+  ],
+  "refinement_metadata": {
+    "model": "deterministic_topology_compiler_v2",
+    "source_graph": "data\\dags\\v3_nvda_revenue_growth_acceleration_2025_01_26\\graph.json",
+    "source_audit_status": "pass",
+    "outcome_nodes_redacted": 2,
+    "target_value_anchors_redacted": 0,
+    "historical_specifics_sanitized": true,
+    "sanitizer": "minimal_value_period_placeholders_v1",
+    "value_replacement_count": 14,
+    "period_replacement_count": 3
+  },
+  "topology_validation": {
+    "status": "pass",
+    "errors": [],
+    "metrics": {
+      "retained_checkpoint_count": 8,
+      "source_edge_count": 9,
+      "emitted_edge_count": 9,
+      "edge_coverage": 1.0,
+      "path_precision": 1.0,
+      "causal_path_count": 4,
+      "outcome_event_leak_count": 0,
+      "outcome_text_leak_count": 0,
+      "realized_value_count": 0,
+      "absolute_period_count": 0
+    }
+  }
+}

@@ -1,0 +1,1081 @@
+{
+  "question": {
+    "id": "v3_us_m2_monthly_growth_2025_04",
+    "question_text": "As of 2025-04-01, which range will the monthly M2 growth for United States M2 money stock in 2025-04 fall into?",
+    "question_type": "mcq",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 3,
+    "resolution_date": "2025-05-15T23:59:59Z",
+    "estimated_start_time": "2025-04-01T00:00:00Z",
+    "ground_truth": "within recent range",
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [
+      "evt_f074737fbfb4",
+      "evt_089c11b0f5a9",
+      "evt_ee77dcead3fe"
+    ],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: United States M2 money stock\nTarget period: 2025-04\nFinancial area: monetary_policy / money supply\nRegion: US\nPre-registered recent-range boundaries: lower 0.293, upper 0.401 percent.",
+    "resolution_criteria": "Use FRED series M2SL. Compute the change from the previous monthly observation using mode 'pct'. Resolve 'below recent range' below 0.293, 'within recent range' from 0.293 inclusive to 0.401 exclusive, and 'above recent range' at or above 0.401 percent.",
+    "resolution_reasoning": "The snapshotted target change was 0.379 percent; it resolved to 'within recent range'.",
+    "options": [
+      "below recent range",
+      "within recent range",
+      "above recent range"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": "\n## Executive Summary\n\nThe US M2 money stock growth in April 2025 fell within its recent range, primarily influenced by the Federal Reserve's ongoing quantitative tightening (QT) policies which, while still in effect, had a moderating impact on money supply contraction compared to previous periods. The money supply had experienced significant year-over-year declines in 2023 and early 2024, described as the largest drop since the Great Depression. However, by late 2024 and early 2025, the rate of contraction eased, and month-to-month growth showed a moderate upward trend, indicating a stabilization or slight rebound. This stabilization was largely due to the Fed 'backing off' from aggressive monetary tightening, as well as the increasing federal debt, which indirectly adds liquidity to the system. The interplay of these forces led to a M2 growth rate that was neither significantly below nor above the recent moderate trends.\n\n## Timeline Of Key Events\n\n*   **2023-2024:** Significant year-over-year declines in US M2 money supply, marking the largest drop since the Great Depression. [art_finance_20250412_002_22673ad3], [art_finance_20250104_004_c0b95045]\n*   **January 2025:** M2 money supply showed moderate growth, following sustained increases in the second half of 2024. [art_finance_20250412_002_22673ad3]\n*   **March 6, 2025:** Federal Reserve Bank of St. Louis published an article discussing the fiscal origin of the COVID-19 price surge, highlighting the impact of fiscal deficits on inflation. [art_finance_20250306_002_b60381de]\n*   **March 19, 2025:** The Motley Fool reported that the U.S. money supply was rapidly rising since the start of 2024, despite the Fed continuing QT, which could foreshadow a positive stock market recovery. [art_finance_20250319_003_a2176309]\n*   **April 12, 2025:** Mises Institute reported that the money supply growth rate accelerated in February 2025 (to 2.75% year-over-year), reaching near a two-year high, as the Fed was 'backing off' monetary tightening. They noted a moderate growth rate of one to three percent over the past six months. [art_finance_20250412_002_22673ad3]\n*   **April 15, 2025:** Federal Reserve Bank of Cleveland published an economic commentary on \"QT, Ample Reserves, and the Changing Fed Balance Sheet,\" indicating the ongoing quantitative tightening but also the need for ample reserves, suggesting a potential limit to QT's reductive effect on money supply. [art_finance_20250415_002_6f66e679]\n*   **April 24, 2025:** The Federal Reserve (.gov) published an article 'Tracking consumer sentiment versus how consumers are doing based on verified retail purchases', related to broader economic trends and consumer behavior, which indirectly influences money velocity and demand. [art_finance_20250424_003_e7e191ed]\n\n## Causal Chain Analysis\n\nThe stabilization of M2 growth within a recent range by April 2025 was primarily caused by a shift in the dynamics of the Federal Reserve's monetary policy and broader fiscal trends. Initially, aggressive quantitative tightening (QT) by the Federal Reserve, aimed at controlling inflation, led to significant contractions in the M2 money supply throughout 2023 and into early 2024 [art_finance_20250412_002_22673ad3]. This monetary contraction was a direct effort to reduce liquidity and slow economic activity. However, by late 2024 and extending into early 2025, the Federal Reserve began to 'back off' from this aggressive tightening [art_finance_20250412_002_22673ad3]. This measured approach, while still constituting QT, resulted in a less severe reduction in money supply and eventually a moderate month-to-month growth. Concurrently, the U.S. Treasury Department's increased debt to cover revenue shortfalls indirectly added liquidity to the system, counteracting some of the Fed's tightening effects [art_finance_20250319_003_a2176309]. This led to the M2 growth rate returning to a moderate, albeit positive, range rather than continuing the steep declines seen previously, thus falling 'within recent range'. The shift from strong contraction to moderate growth reflects a change in the balance of monetary and fiscal forces at play.\n\n## Countervailing Factors\n\nOne significant countervailing factor was the Federal Reserve's continued quantitative tightening (QT) program. Despite reports of the Fed 'backing off' aggressive tightening, the Cleveland Fed article from April 15, 2025, confirmed that QT was still ongoing, focusing on issues like 'ample reserves' and the changing Fed balance sheet [art_finance_20250415_002_6f66e679]. This policy inherently aimed to reduce the money supply, which would push M2 growth lower. However, the impact of QT was mitigated by several factors. Firstly, the 'backing off' meant a slower pace of balance sheet reduction. Secondly, the necessity of maintaining 'ample reserves' for the banking system placed a floor on how much reserves could be reduced before risking financial instability, thereby limiting the overall effect of QT on M2. Thirdly, increased government spending and borrowing (fiscal deficits), as discussed in the context of COVID-19 price surges [art_finance_20250306_002_b60381de], injected money into the economy, offsetting some of the liquidity drained by QT. These combined forces prevented QT from pushing M2 growth 'below recent range', allowing it to stabilize 'within recent range'.\n\n## Event Candidate Inventory\n\n*   **E1: Aggressive Federal Reserve Quantitative Tightening (2023-Early 2024)**\n    *   **Date:** 2023-01 to 2024-03 (bounded date range)\n    *   **Why it matters causally:** Directly caused significant contractions in US M2 money supply, setting the historical baseline for recent range. \n    *   **Source article IDs:** [art_finance_20250412_002_22673ad3], [art_finance_20250104_004_c0b95045]\n\n*   **E2: Federal Reserve 'Backing Off' Aggressive Monetary Tightening (Late 2024-Early 2025)**\n    *   **Date:** 2024-09 to 2025-02 (bounded date range)\n    *   **Why it matters causally:** Led to a moderation in the rate of M2 contraction and a shift towards moderate positive growth, changing the trajectory of M2. \n    *   **Source article IDs:** [art_finance_20250412_002_22673ad3], [art_finance_20250319_003_a2176309]\n\n*   **E3: Moderate Month-to-Month M2 Growth (January-February 2025)**\n    *   **Date:** 2025-01 to 2025-02 (bounded date range)\n    *   **Why it matters causally:** Proximate trigger indicating the stabilization of M2 growth, directly supporting the 'within recent range' outcome for April 2025. [art_finance_20250412_002_22673ad3]\n\n*   **E4: Ongoing QT and Discussion of Ample Reserves (April 2025)**\n    *   **Date:** 2025-04-15\n    *   **Why it matters causally:** Highlighted the continued but possibly constrained nature of QT, explaining why M2 growth did not rebound more sharply. \n    *   **Source article IDs:** [art_finance_20250415_002_6f66e679]\n\n*   **E5: Impact of Increased Federal Debt on Liquidity (Throughout 2024-Early 2025)**\n    *   **Date:** 2024-01 to 2025-03 (bounded date range)\n    *   **Why it matters causally:** Fiscal policies, particularly increased government debt, acted as a countervailing force to QT, injecting liquidity and contributing to the moderated M2 trends. \n    *   **Source article IDs:** [art_finance_20250319_003_a2176309], [art_finance_20250306_002_b60381de]\n\n## Evidence Mapping Table\n\n| Claim/Event | Article IDs | Date Support | Confidence (0-1) | Notes |\n|---|---|---|---|---|\n| Significant M2 contraction in 2023-early 2024 | [art_finance_20250412_002_22673ad3], [art_finance_20250104_004_c0b95045] | 2025-04-12, 2025-01-04 | 1.0 | Directly stated as historical fact in multiple articles. |\n| Fed 'backing off' aggressive tightening by late 2024-early 2025 | [art_finance_20250412_002_22673ad3], [art_finance_20250319_003_a2176309] | 2025-04-12, 2025-03-19 | 0.9 | explicitly mentioned | \n| Moderate M2 growth in Jan-Feb 2025 | [art_finance_20250412_002_22673ad3] | 2025-04-12 | 1.0 | Specific growth rates cited in the article. |\n| QT ongoing but moderated/constrained | [art_finance_20250415_002_6f66e679] | 2025-04-15 | 0.9 | Article discusses QT but focuses on need for 'ample reserves', implying a moderated approach. |\n| Fiscal deficits influencing liquidity | [art_finance_20250306_002_b60381de], [art_finance_20250319_003_a2176309] | 2025-03-06, 2025-03-19 | 0.8 | Articles discuss fiscal policy impacting inflation and M2 growth. |\n\n## Uncertainties And Alternative Paths\n\nOne uncertainty is the precise definition and quantitative boundaries of 'within recent range' for M2 growth, as the articles provide qualitative descriptions of moderation rather than specific numerical targets for April 2025. Another uncertainty is the extent to which global economic conditions (not extensively covered in the retrieved articles) might have influenced US M2 growth. A plausible alternative causal path could have been a more aggressive or sustained quantitative tightening by the Federal Reserve without sufficient countervailing fiscal stimulus, leading to M2 growth falling 'below recent range'. Conversely, a more significant 'backing off' of QT combined with larger fiscal injections could have pushed M2 growth 'above recent range'. However, the actual outcome reflects a delicate balance of these forces.\n",
+    "graph_built": true,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.205437Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "us_m2_monthly_growth",
+        "event_cluster_id": "us_money_supply_2025-04",
+        "category": "monetary_policy",
+        "original_domain": "monetary_policy",
+        "subdomain": "money supply",
+        "entity": "United States M2 money stock",
+        "region": "US",
+        "target_metric": "monthly M2 growth",
+        "target_period": "2025-04",
+        "forecast_cutoff": "2025-04-01T00:00:00+00:00",
+        "forecast_date_options": [
+          "2025-04-01"
+        ],
+        "resolution_available_at": "2025-05-15T23:59:59+00:00",
+        "horizon_days": 44,
+        "source_type": "fred_series_snapshot",
+        "source_series_id": "M2SL",
+        "source_homepage": "https://fred.stlouisfed.org/series/M2SL",
+        "comparison_rule": "target change bucketed by the lower and upper quartiles of the 8 prior observed changes",
+        "comparison_threshold": 0.337055,
+        "comparison_thresholds": {
+          "lower": 0.292523,
+          "upper": 0.401426
+        },
+        "change_unit": "percent",
+        "threshold_observation_dates": [
+          "2024-07-01",
+          "2024-08-01",
+          "2024-09-01",
+          "2024-10-01",
+          "2024-11-01",
+          "2024-12-01",
+          "2025-01-01",
+          "2025-02-01",
+          "2025-03-01"
+        ],
+        "split": "memory",
+        "family_position": 5,
+        "family_size": 7,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "within recent range",
+        "resolved_class": "within recent range",
+        "resolution_value": 21775.8,
+        "target_change": 0.3789136,
+        "source_observation_date": "2025-04-01",
+        "resolution_document": {
+          "publisher": "Federal Reserve Bank of St. Louis (FRED)",
+          "title": "M2 Money Stock",
+          "url": "https://fred.stlouisfed.org/series/M2SL"
+        },
+        "source_download_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=M2SL&cosd=2019-01-01&coed=2026-06-30",
+        "source_sha256": "32d7423039b30da25a671fecd73a234b8aa7ca77771c6d31437296e895bcf247",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_089c11b0f5a9",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 14,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_20080723_002_1fbeb069",
+        "title": "Current US Inflation Rates: 2000-2025",
+        "url": "https://www.usinflationcalculator.com/inflation/current-inflation-rates",
+        "source": "usinflationcalculator.com",
+        "published_date": "2008-07-23T03:07:58+00:00"
+      },
+      {
+        "id": "art_finance_20250424_003_e7e191ed",
+        "title": "The Fed - Tracking consumer sentiment versus how consumers are doing based on verified retail purchases - Federal Reserve (.gov)",
+        "url": "https://www.federalreserve.gov/econres/notes/feds-notes/tracking-consumer-sentiment-versus-how-consumers-are-doing-based-on-verified-retail-purchases-20250424.html",
+        "source": "federalreserve.gov",
+        "published_date": "2025-04-24T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20200420_005_6ed56322",
+        "title": "US M2 Money Supply YoY (Monthly) - United States - Historic… - YCharts",
+        "url": "https://ycharts.com/indicators/us_m2_money_supply_yoy",
+        "source": "ycharts.com",
+        "published_date": "2020-04-20T21:02:26+00:00"
+      },
+      {
+        "id": "art_finance_20210720_003_6bf6aab0",
+        "title": "United States M2 Money Supply - Investing.com",
+        "url": "https://www.investing.com/economic-calendar/us-m2-money-supply-1999",
+        "source": "investing.com",
+        "published_date": "2021-07-20T16:00:53+00:00"
+      },
+      {
+        "id": "art_finance_20250104_004_c0b95045",
+        "title": "U.S. Money Supply Recently Did Something Last Witnessed During the Great Depression -- and It Historically Foreshadows a Big Move in Stocks - The Motley Fool",
+        "url": "https://www.fool.com/investing/2025/01/04/us-money-supply-great-depression-big-move-stocks",
+        "source": "fool.com",
+        "published_date": "2025-01-04T10:06:00+00:00"
+      },
+      {
+        "id": "art_finance_20250309_002_7a3f097e",
+        "title": "U.S. Money Supply Growth Is Accelerating -- It Could Signal a Huge Change Coming in the Stock Market - The Motley Fool",
+        "url": "https://www.aol.com/u-money-supply-growth-accelerating-091200591.html",
+        "source": "aol.com",
+        "published_date": "2025-03-09T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20250319_003_a2176309",
+        "title": "U.S. Money Supply Is Rapidly Rising -- Is the Stock Market About to Make an Epic Recovery? - The Motley Fool",
+        "url": "https://www.aol.com/u-money-supply-rapidly-rising-101000677.html",
+        "source": "aol.com",
+        "published_date": "2025-03-19T10:10:00+00:00"
+      },
+      {
+        "id": "art_finance_20250412_002_22673ad3",
+        "title": "The Money Supply Keeps Growing as the Fed Backs Off Monetary \"Tightening\" - Mises Institute",
+        "url": "https://mises.org/mises-wire/money-supply-keeps-growing-fed-backs-monetary-tightening",
+        "source": "mises.org",
+        "published_date": "2025-04-12T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20201112_004_a404ffa1",
+        "title": "The Great Recession and Its Aftermath - Federal Reserve History",
+        "url": "https://www.federalreservehistory.org/essays/great-recession-and-its-aftermath",
+        "source": "federalreservehistory.org",
+        "published_date": "2020-11-12T21:55:11+00:00"
+      },
+      {
+        "id": "art_finance_20100721_004_1135f5ad",
+        "title": "FRB: Monetary Policy Report, July 21, 2010 - Part 2: Recent Financial and Economic Developments - Federal Reserve (.gov)",
+        "url": "https://www.federalreserve.gov/monetarypolicy/mpr_20100721_part2.htm",
+        "source": "federalreserve.gov",
+        "published_date": "2010-07-21T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20201121_006_669a015e",
+        "title": "US M2 Money Supply (Monthly) - United States - Historical D… - YCharts",
+        "url": "https://ycharts.com/indicators/us_m2_money_supply",
+        "source": "ycharts.com",
+        "published_date": "2020-11-21T14:07:45+00:00"
+      },
+      {
+        "id": "art_finance_20150717_005_b0af3c1f",
+        "title": "FRB: Annual Report 2014 - Monetary Policy and Economic Developments - Federal Reserve (.gov)",
+        "url": "https://www.federalreserve.gov/publications/annual-report/2014-monetary-policy-and-economic-developments.htm",
+        "source": "federalreserve.gov",
+        "published_date": "2015-07-17T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20250415_002_6f66e679",
+        "title": "QT, Ample Reserves, and the Changing Fed Balance Sheet - Federal Reserve Bank of Cleveland",
+        "url": "https://www.clevelandfed.org/publications/economic-commentary/2025/ec-202505-qt-ample-reserves-changing-fed-balance-sheet",
+        "source": "clevelandfed.org",
+        "published_date": "2025-04-15T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20250306_002_b60381de",
+        "title": "The Fiscal Origin of the COVID-19 Price Surge - Federal Reserve Bank of St. Louis",
+        "url": "https://www.stlouisfed.org/on-the-economy/2025/mar/fiscal-origin-covid19-price-surge",
+        "source": "stlouisfed.org",
+        "published_date": "2025-03-06T08:00:00+00:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_089c11b0f5a9",
+      "events_count": 12,
+      "hypotheses_count": 11
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 6,
+      "avg_depth": 3.17,
+      "quality_score": 0.88,
+      "depth_score": 1.0,
+      "confidence_score": 0.81,
+      "strength_score": 0.69,
+      "evidence_score": 1.0,
+      "event_count": 12,
+      "hypothesis_count": 11
+    },
+    "nodes": [
+      {
+        "id": "evt_089c11b0f5a9",
+        "title": "Option 2: within recent range",
+        "description": "Question resolves to: within recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-05-15T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_us_m2_monthly_growth_2025_04",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 1,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:47:56.052236Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_ee77dcead3fe",
+        "title": "Option 3: above recent range",
+        "description": "Question resolves to: above recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-05-15T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_us_m2_monthly_growth_2025_04",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 2,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:47:56.052246Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_f074737fbfb4",
+        "title": "Option 1: below recent range",
+        "description": "Question resolves to: below recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-05-15T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_us_m2_monthly_growth_2025_04",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 0,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:47:56.052225Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230101_001_5bf90942",
+        "title": "Aggressive Federal Reserve Quantitative Tightening",
+        "description": "The Federal Reserve's aggressive quantitative tightening policies led to significant contractions in the M2 money supply.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-01T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250412_002_22673ad3",
+          "art_finance_20250104_004_c0b95045"
+        ],
+        "extracted_for_question_id": "v3_us_m2_monthly_growth_2025_04",
+        "source_article_id": "art_finance_20250412_002_22673ad3",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_m2_monthly_growth_2025_04"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T07:02:46.192898Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230101_002_b088649d",
+        "title": "Significant Year-over-Year Declines in US M2 Money Supply",
+        "description": "The US M2 money supply experienced significant year-over-year declines, marking the largest drop since the Great Depression.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-01-01T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250412_002_22673ad3",
+          "art_finance_20250104_004_c0b95045"
+        ],
+        "extracted_for_question_id": "v3_us_m2_monthly_growth_2025_04",
+        "source_article_id": "art_finance_20250412_002_22673ad3",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_m2_monthly_growth_2025_04"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T07:02:46.243246Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240101_005_778138f3",
+        "title": "Increased Federal Debt",
+        "description": "Increased federal debt to cover revenue shortfalls indirectly added liquidity to the system, counteracting some of the Fed's tightening effects, ongoing throughout 2024-Early 2025.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-01T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250319_003_a2176309",
+          "art_finance_20250306_002_b60381de"
+        ],
+        "extracted_for_question_id": "v3_us_m2_monthly_growth_2025_04",
+        "source_article_id": "art_finance_20250319_003_a2176309",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_m2_monthly_growth_2025_04"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T07:02:46.378823Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240801_010_3f894ca2",
+        "title": "Moderate M2 Growth Rate (One to Three Percent Over Past Six Months)",
+        "description": "The Mises Institute noted a moderate growth rate of one to three percent over the past six months leading up to February 2025.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-08-01T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250412_002_22673ad3"
+        ],
+        "extracted_for_question_id": "v3_us_m2_monthly_growth_2025_04",
+        "source_article_id": "art_finance_20250412_002_22673ad3",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_m2_monthly_growth_2025_04"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T07:02:46.774388Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240901_003_0ba6f435",
+        "title": "Federal Reserve 'Backing Off' Aggressive Monetary Tightening",
+        "description": "The Federal Reserve began to 'back off' from aggressive monetary tightening, leading to a moderation in the rate of M2 contraction.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-09-01T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250412_002_22673ad3",
+          "art_finance_20250319_003_a2176309"
+        ],
+        "extracted_for_question_id": "v3_us_m2_monthly_growth_2025_04",
+        "source_article_id": "art_finance_20250412_002_22673ad3",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_m2_monthly_growth_2025_04"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T07:02:46.292459Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20241001_009_731d9122",
+        "title": "M2 Money Supply Stabilization or Slight Rebound",
+        "description": "By late 2024 and early 2025, the rate of M2 contraction eased, and month-to-month growth showed a moderate upward trend, indicating a stabilization or slight rebound.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-10-01T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250412_002_22673ad3"
+        ],
+        "extracted_for_question_id": "v3_us_m2_monthly_growth_2025_04",
+        "source_article_id": "art_finance_20250412_002_22673ad3",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_m2_monthly_growth_2025_04"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T07:02:46.553271Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20241101_011_450a1035",
+        "title": "Moderate Upward Trend in M2 Growth",
+        "description": "Month-to-month M2 growth showed a moderate upward trend by late 2024 and early 2025.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-11-01T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250412_002_22673ad3"
+        ],
+        "extracted_for_question_id": "v3_us_m2_monthly_growth_2025_04",
+        "source_article_id": "art_finance_20250412_002_22673ad3",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_m2_monthly_growth_2025_04"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T07:02:46.828006Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20250101_004_24ebfced",
+        "title": "Moderate Month-to-Month M2 Growth",
+        "description": "M2 money supply showed moderate growth in January-February 2025, following sustained increases in the second half of 2024.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-01-01T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250412_002_22673ad3"
+        ],
+        "extracted_for_question_id": "v3_us_m2_monthly_growth_2025_04",
+        "source_article_id": "art_finance_20250412_002_22673ad3",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_m2_monthly_growth_2025_04"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T07:02:46.335876Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20250201_007_36248106",
+        "title": "M2 Money Supply Growth Rate Accelerated in February 2025",
+        "description": "The money supply growth rate accelerated in February 2025 to 2.75% year-over-year, reaching near a two-year high.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-02-01T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250412_002_22673ad3"
+        ],
+        "extracted_for_question_id": "v3_us_m2_monthly_growth_2025_04",
+        "source_article_id": "art_finance_20250412_002_22673ad3",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_m2_monthly_growth_2025_04"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T07:02:46.463560Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20250306_008_e22d977e",
+        "title": "Federal Reserve Bank of St. Louis Discusses Fiscal Origin of COVID-19 Price Surge",
+        "description": "Federal Reserve Bank of St. Louis published an article discussing the fiscal origin of the COVID-19 price surge, highlighting the impact of fiscal deficits on inflation.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-03-06T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250306_002_b60381de"
+        ],
+        "extracted_for_question_id": "v3_us_m2_monthly_growth_2025_04",
+        "source_article_id": "art_finance_20250306_002_b60381de",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_m2_monthly_growth_2025_04"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T07:02:46.509257Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20250415_006_9ab28bbb",
+        "title": "Ongoing QT and Discussion of Ample Reserves",
+        "description": "The Federal Reserve Bank of Cleveland published an economic commentary indicating ongoing quantitative tightening but also the need for ample reserves, suggesting a potential limit to QT's reductive effect on money supply.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-04-15T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250415_002_6f66e679"
+        ],
+        "extracted_for_question_id": "v3_us_m2_monthly_growth_2025_04",
+        "source_article_id": "art_finance_20250415_002_6f66e679",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_m2_monthly_growth_2025_04"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T07:02:46.420251Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_us_m2_monthly_growth_2025_04_20260725_070246_001_0e67cb6b",
+        "source_event_id": "evt_finance_20230101_001_5bf90942",
+        "target_event_id": "evt_finance_20230101_002_b088649d",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Aggressive QT directly led to significant contractions in M2 money supply as stated in the explanation.",
+        "evidence_article_ids": [
+          "art_finance_20250412_002_22673ad3",
+          "art_finance_20250104_004_c0b95045"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2025_04"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T07:02:46.865052Z",
+        "last_confirmed_at": "2026-07-25T07:02:46.865052Z"
+      },
+      {
+        "id": "hyp_v3_us_m2_monthly_growth_2025_04_20260725_070246_002_0cca9b4f",
+        "source_event_id": "evt_finance_20230101_002_b088649d",
+        "target_event_id": "evt_finance_20241001_009_731d9122",
+        "relation_type": "inhibits",
+        "strength": 0.5,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "The previous significant contraction in M2 would naturally inhibit rapid growth, making stabilization a more likely outcome after the Fed backed off.",
+        "evidence_article_ids": [
+          "art_finance_20250412_002_22673ad3",
+          "art_finance_20250104_004_c0b95045"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2025_04"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T07:02:46.885148Z",
+        "last_confirmed_at": "2026-07-25T07:02:46.885148Z"
+      },
+      {
+        "id": "hyp_v3_us_m2_monthly_growth_2025_04_20260725_070246_003_bdbd37a3",
+        "source_event_id": "evt_finance_20240901_003_0ba6f435",
+        "target_event_id": "evt_finance_20241001_009_731d9122",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "The Fed backing off aggressive tightening led to a moderation in M2 contraction and a shift towards stabilization or slight rebound.",
+        "evidence_article_ids": [
+          "art_finance_20250412_002_22673ad3",
+          "art_finance_20250319_003_a2176309"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2025_04"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T07:02:46.904760Z",
+        "last_confirmed_at": "2026-07-25T07:02:46.904760Z"
+      },
+      {
+        "id": "hyp_v3_us_m2_monthly_growth_2025_04_20260725_070246_004_7d08606a",
+        "source_event_id": "evt_finance_20240101_005_778138f3",
+        "target_event_id": "evt_finance_20241001_009_731d9122",
+        "relation_type": "enables",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Increased federal debt indirectly added liquidity, counteracting QT and enabling M2 stabilization or slight rebound.",
+        "evidence_article_ids": [
+          "art_finance_20250319_003_a2176309",
+          "art_finance_20250306_002_b60381de"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2025_04"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T07:02:46.924845Z",
+        "last_confirmed_at": "2026-07-25T07:02:46.924845Z"
+      },
+      {
+        "id": "hyp_v3_us_m2_monthly_growth_2025_04_20260725_070246_005_615e8c2c",
+        "source_event_id": "evt_finance_20241001_009_731d9122",
+        "target_event_id": "evt_finance_20241101_011_450a1035",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The stabilization or slight rebound of M2 growth directly led to a moderate upward trend.",
+        "evidence_article_ids": [
+          "art_finance_20250412_002_22673ad3"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2025_04"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T07:02:46.947989Z",
+        "last_confirmed_at": "2026-07-25T07:02:46.947989Z"
+      },
+      {
+        "id": "hyp_v3_us_m2_monthly_growth_2025_04_20260725_070246_006_1974a528",
+        "source_event_id": "evt_finance_20241101_011_450a1035",
+        "target_event_id": "evt_finance_20250101_004_24ebfced",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The moderate upward trend in M2 growth directly led to moderate month-to-month growth in Jan-Feb 2025.",
+        "evidence_article_ids": [
+          "art_finance_20250412_002_22673ad3"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2025_04"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T07:02:46.968676Z",
+        "last_confirmed_at": "2026-07-25T07:02:46.968676Z"
+      },
+      {
+        "id": "hyp_v3_us_m2_monthly_growth_2025_04_20260725_070246_007_444feb03",
+        "source_event_id": "evt_finance_20250101_004_24ebfced",
+        "target_event_id": "evt_finance_20250201_007_36248106",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Moderate month-to-month growth in Jan-Feb 2025 contributed to the acceleration of M2 growth in February 2025.",
+        "evidence_article_ids": [
+          "art_finance_20250412_002_22673ad3"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2025_04"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T07:02:46.989362Z",
+        "last_confirmed_at": "2026-07-25T07:02:46.989362Z"
+      },
+      {
+        "id": "hyp_v3_us_m2_monthly_growth_2025_04_20260725_070247_008_45306f69",
+        "source_event_id": "evt_finance_20250201_007_36248106",
+        "target_event_id": "evt_089c11b0f5a9",
+        "relation_type": "triggers",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The acceleration of M2 growth in February 2025, reaching near a two-year high, directly indicates that the M2 growth for April 2025 would fall within the recent range.",
+        "evidence_article_ids": [
+          "art_finance_20250412_002_22673ad3"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2025_04"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T07:02:47.009837Z",
+        "last_confirmed_at": "2026-07-25T07:02:47.009837Z"
+      },
+      {
+        "id": "hyp_v3_us_m2_monthly_growth_2025_04_20260725_070247_009_78ea8837",
+        "source_event_id": "evt_finance_20240801_010_3f894ca2",
+        "target_event_id": "evt_089c11b0f5a9",
+        "relation_type": "triggers",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The sustained moderate growth rate over the past six months directly indicates that the M2 growth for April 2025 would fall within the recent range.",
+        "evidence_article_ids": [
+          "art_finance_20250412_002_22673ad3"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2025_04"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T07:02:47.029721Z",
+        "last_confirmed_at": "2026-07-25T07:02:47.029721Z"
+      },
+      {
+        "id": "hyp_v3_us_m2_monthly_growth_2025_04_20260725_070247_010_ebaa2fe7",
+        "source_event_id": "evt_finance_20250415_006_9ab28bbb",
+        "target_event_id": "evt_089c11b0f5a9",
+        "relation_type": "inhibits",
+        "strength": 0.6,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "The ongoing QT, even with ample reserves, would inhibit M2 growth from going significantly above the recent range, thus contributing to it staying within the range.",
+        "evidence_article_ids": [
+          "art_finance_20250415_002_6f66e679"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2025_04"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T07:02:47.051342Z",
+        "last_confirmed_at": "2026-07-25T07:02:47.051342Z"
+      },
+      {
+        "id": "hyp_v3_us_m2_monthly_growth_2025_04_20260725_070247_011_f12df8e1",
+        "source_event_id": "evt_finance_20250306_008_e22d977e",
+        "target_event_id": "evt_089c11b0f5a9",
+        "relation_type": "correlates",
+        "strength": 0.4,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "The discussion of fiscal origin of COVID-19 price surge highlights the impact of fiscal deficits on inflation, which is related to money supply and contributes to the overall context of M2 growth staying within range.",
+        "evidence_article_ids": [
+          "art_finance_20250306_002_b60381de"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2025_04"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T07:02:47.080955Z",
+        "last_confirmed_at": "2026-07-25T07:02:47.080955Z"
+      }
+    ],
+    "outcome_impacts": [
+      {
+        "id": "imp_969525ed",
+        "event_id": "evt_finance_20230101_001_5bf90942",
+        "outcome_event_id": "evt_089c11b0f5a9",
+        "question_id": "v3_us_m2_monthly_growth_2025_04",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Aggressive QT initially caused significant M2 contraction, pushing against the 'within recent range' outcome, but its effects were later moderated.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2025_04"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T07:02:58.696325Z",
+        "last_confirmed_at": "2026-07-25T07:02:58.696325Z"
+      },
+      {
+        "id": "imp_26292c1c",
+        "event_id": "evt_finance_20230101_002_b088649d",
+        "outcome_event_id": "evt_089c11b0f5a9",
+        "question_id": "v3_us_m2_monthly_growth_2025_04",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Significant M2 contraction in 2023-early 2024 initially pushed against the 'within recent range' outcome, but its influence waned as the Fed backed off.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2025_04"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T07:02:58.708046Z",
+        "last_confirmed_at": "2026-07-25T07:02:58.708046Z"
+      },
+      {
+        "id": "imp_49b3bf72",
+        "event_id": "evt_finance_20240901_003_0ba6f435",
+        "outcome_event_id": "evt_089c11b0f5a9",
+        "question_id": "v3_us_m2_monthly_growth_2025_04",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "The Fed backing off aggressive monetary tightening directly contributed to the stabilization and moderate growth of M2, leading to the 'within recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2025_04"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T07:02:58.723315Z",
+        "last_confirmed_at": "2026-07-25T07:02:58.723315Z"
+      },
+      {
+        "id": "imp_091a86d0",
+        "event_id": "evt_finance_20250101_004_24ebfced",
+        "outcome_event_id": "evt_089c11b0f5a9",
+        "question_id": "v3_us_m2_monthly_growth_2025_04",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Moderate month-to-month M2 growth in Jan-Feb 2025 is a direct indicator and contributor to the 'within recent range' outcome for April 2025.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2025_04"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T07:02:58.734220Z",
+        "last_confirmed_at": "2026-07-25T07:02:58.734220Z"
+      },
+      {
+        "id": "imp_d66bd3f7",
+        "event_id": "evt_finance_20240101_005_778138f3",
+        "outcome_event_id": "evt_089c11b0f5a9",
+        "question_id": "v3_us_m2_monthly_growth_2025_04",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Increased federal debt indirectly added liquidity, counteracting QT and enabling the M2 growth to stay 'within recent range'.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2025_04"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T07:02:58.751562Z",
+        "last_confirmed_at": "2026-07-25T07:02:58.751562Z"
+      },
+      {
+        "id": "imp_8997d494",
+        "event_id": "evt_finance_20250415_006_9ab28bbb",
+        "outcome_event_id": "evt_089c11b0f5a9",
+        "question_id": "v3_us_m2_monthly_growth_2025_04",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.8,
+        "reasoning": "Ongoing QT inherently aims to reduce money supply, but the discussion of 'ample reserves' suggests a moderated approach, contributing to the 'within recent range' outcome by preventing further sharp declines.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2025_04"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T07:02:58.762607Z",
+        "last_confirmed_at": "2026-07-25T07:02:58.762607Z"
+      },
+      {
+        "id": "imp_a11511b9",
+        "event_id": "evt_finance_20250201_007_36248106",
+        "outcome_event_id": "evt_089c11b0f5a9",
+        "question_id": "v3_us_m2_monthly_growth_2025_04",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "The acceleration of M2 growth in February 2025 is a strong indicator that the M2 growth for April 2025 would fall 'within recent range'.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2025_04"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T07:02:58.775862Z",
+        "last_confirmed_at": "2026-07-25T07:02:58.775862Z"
+      },
+      {
+        "id": "imp_0a41d954",
+        "event_id": "evt_finance_20250306_008_e22d977e",
+        "outcome_event_id": "evt_089c11b0f5a9",
+        "question_id": "v3_us_m2_monthly_growth_2025_04",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.4,
+        "confidence": 0.6,
+        "reasoning": "The discussion of fiscal deficits and their impact on inflation provides context for the increased liquidity from federal debt, indirectly supporting the 'within recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2025_04"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T07:02:58.787936Z",
+        "last_confirmed_at": "2026-07-25T07:02:58.787936Z"
+      },
+      {
+        "id": "imp_98c28bf3",
+        "event_id": "evt_finance_20241001_009_731d9122",
+        "outcome_event_id": "evt_089c11b0f5a9",
+        "question_id": "v3_us_m2_monthly_growth_2025_04",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "The stabilization or slight rebound of M2 money supply by late 2024 and early 2025 directly set the stage for the 'within recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2025_04"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T07:02:58.802443Z",
+        "last_confirmed_at": "2026-07-25T07:02:58.802443Z"
+      },
+      {
+        "id": "imp_b7583f96",
+        "event_id": "evt_finance_20240801_010_3f894ca2",
+        "outcome_event_id": "evt_089c11b0f5a9",
+        "question_id": "v3_us_m2_monthly_growth_2025_04",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "The sustained moderate growth rate over the past six months leading up to February 2025 is a strong indicator and direct cause for the 'within recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2025_04"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T07:02:58.813207Z",
+        "last_confirmed_at": "2026-07-25T07:02:58.813207Z"
+      },
+      {
+        "id": "imp_551d435f",
+        "event_id": "evt_finance_20241101_011_450a1035",
+        "outcome_event_id": "evt_089c11b0f5a9",
+        "question_id": "v3_us_m2_monthly_growth_2025_04",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "The moderate upward trend in M2 growth by late 2024 and early 2025 directly contributed to the 'within recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2025_04"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T07:02:58.826737Z",
+        "last_confirmed_at": "2026-07-25T07:02:58.826737Z"
+      }
+    ]
+  }
+}

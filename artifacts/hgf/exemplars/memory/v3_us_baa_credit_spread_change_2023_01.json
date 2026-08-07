@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_us_baa_credit_spread_change_2023_01",
+  "blueprint_sha256": "581c5e0dadec68f7e583a9c1a010340c6607c7ffa7fd187be79eeb3e4f3513c5",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "market_fx_credit",
+      "target_operation": "change",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2023-01-01, will the monthly Baa-minus-10-year-Treasury spread change for Moody's Baa corporate yield spread in 2023-01 be at least -0.045 percentage points?",
+    "historical_cutoff": "2023-01-01T00:00:00+00:00",
+    "target_semantics": "The monthly change in the Moody's Baa corporate yield spread relative to the 10-year Treasury yield.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The DAG indicates that the Baa-minus-Treasury spread measures corporate credit compensation, providing a framework for interpreting spread changes.",
+      "Independent historical data on the BAA10Y spread is identified as a driver, suggesting that past trends in this specific spread are relevant.",
+      "The DAG also points to credit reporting on high-yield spreads as a potential driver, implying that broader credit market conditions could influence the Baa spread."
+    ],
+    "counterevidence": "No forecast-time evidence was provided to support or contradict any of the identified drivers or their mechanisms.",
+    "prospective_target_estimate": "The provided DAG does not contain sufficient information to form a prospective estimate. The historical support for the checkpoints is mixed (strong, medium), and the causal paths require re-testing with current evidence, which is absent.",
+    "option_mapping": "The target is to determine if the monthly change in the Baa-minus-10-year-Treasury spread is greater than or equal to -0.045 percentage points. 'Yes' corresponds to a change of -0.045 or more negative, indicating spread compression. 'No' corresponds to a change less than -0.045, indicating spread widening.",
+    "uncertainty": "There is high uncertainty due to the complete lack of forecast-time evidence. The DAG's causal paths require current support, and without it, their applicability cannot be confirmed. The 'mediator' checkpoint also requires re-testing with current evidence.",
+    "dag_derived_lesson": "When evaluating a target metric's change, consider its definitional role, historical data for the specific metric, and broader market conditions. However, all causal links must be re-validated with current evidence; historical support alone is insufficient for a forecast."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

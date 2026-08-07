@@ -1,0 +1,326 @@
+{
+  "schema_version": "hgf_blueprint_topology_v2",
+  "question_id": "v3_us_payroll_monthly_growth_2023_01",
+  "target_definition": {
+    "metric": "monthly payroll growth",
+    "unit_or_option_space": [
+      "below recent range",
+      "within recent range",
+      "above recent range"
+    ],
+    "forecast_horizon": "Remap the historical target family to the current question's exact target period."
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Outcome-redacted topology preserves 4 checkpoints, 4 source edges, and 2 root-to-target paths.",
+    "weaknesses": []
+  },
+  "search_factors": [
+    {
+      "factor": "Market estimate called for [CURRENT_VALUE_REQUIRED] [CURRENT_PERIOD_REQUIRED] payroll gains",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "node_01"
+      ]
+    },
+    {
+      "factor": "Reported [CURRENT_PERIOD_REQUIRED] nonfarm payroll gain was [CURRENT_VALUE_REQUIRED]",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "node_02"
+      ]
+    },
+    {
+      "factor": "[CURRENT_PERIOD_REQUIRED] unemployment rate fell to [CURRENT_VALUE_REQUIRED]",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "node_03"
+      ]
+    },
+    {
+      "factor": "[CURRENT_PERIOD_REQUIRED] labor-market results were stronger than expected",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "node_04"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "checkpoint_1",
+      "role": "driver",
+      "factor": "Market estimate called for [CURRENT_VALUE_REQUIRED] [CURRENT_PERIOD_REQUIRED] payroll gains",
+      "mechanism": "The same report documents the [CURRENT_VALUE_REQUIRED] estimate and the much larger reported [CURRENT_VALUE_REQUIRED] gain; the edge is comparative, not causal.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "node_01"
+      ],
+      "source_edge_ids": [
+        "edge_01"
+      ],
+      "source_event_type": "forecast"
+    },
+    {
+      "id": "checkpoint_2",
+      "role": "mediator",
+      "factor": "Reported [CURRENT_PERIOD_REQUIRED] nonfarm payroll gain was [CURRENT_VALUE_REQUIRED]",
+      "mechanism": "A payroll gain well above the cited estimate supports the stronger-than-expected labor-market interpretation.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "node_02"
+      ],
+      "source_edge_ids": [
+        "edge_02"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_3",
+      "role": "driver",
+      "factor": "[CURRENT_PERIOD_REQUIRED] unemployment rate fell to [CURRENT_VALUE_REQUIRED]",
+      "mechanism": "The lower-than-estimated unemployment rate independently supports the interpretation of labor-market strength.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "node_03"
+      ],
+      "source_edge_ids": [
+        "edge_03"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_4",
+      "role": "mediator",
+      "factor": "[CURRENT_PERIOD_REQUIRED] labor-market results were stronger than expected",
+      "mechanism": "Re-test whether this factor has a currently supported link to the exact target metric; do not transfer the historical outcome or magnitude.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "node_04"
+      ],
+      "source_edge_ids": [
+        "edge_04"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "target_bridge",
+      "role": "target_bridge",
+      "factor": "monthly payroll growth",
+      "mechanism": "Map only currently supported paths into the exact target operator. Directional support alone is not magnitude or threshold-crossing support.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "A current target baseline and evidence supporting every edge used in the bridge.",
+      "contradiction_signal": "The current target baseline, magnitude evidence, or option boundary contradicts the proposed path.",
+      "historical_support": "medium",
+      "source_event_ids": [],
+      "source_edge_ids": [
+        "edge_04"
+      ],
+      "source_event_type": "target_bridge"
+    }
+  ],
+  "topology": {
+    "checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "target_bridge"
+    ],
+    "root_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_3"
+    ],
+    "target_bridge_id": "target_bridge",
+    "edges": [
+      {
+        "source_checkpoint_id": "checkpoint_1",
+        "target_checkpoint_id": "checkpoint_2",
+        "relationship": "contrasts_with",
+        "directionality": "forward",
+        "support_level": "observed",
+        "rationale": "The same report documents the [CURRENT_VALUE_REQUIRED] estimate and the much larger reported [CURRENT_VALUE_REQUIRED] gain; the edge is comparative, not causal.",
+        "source_edge_ids": [
+          "edge_01"
+        ],
+        "source_article_ids": [
+          "ev_4ceca2579e3091f2"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_2",
+        "target_checkpoint_id": "checkpoint_4",
+        "relationship": "supports",
+        "directionality": "forward",
+        "support_level": "evidence_synthesized",
+        "rationale": "A payroll gain well above the cited estimate supports the stronger-than-expected labor-market interpretation.",
+        "source_edge_ids": [
+          "edge_02"
+        ],
+        "source_article_ids": [
+          "ev_4ceca2579e3091f2",
+          "ev_180e605e2a000b0a",
+          "ev_ff92e980797ab25f"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_3",
+        "target_checkpoint_id": "checkpoint_4",
+        "relationship": "supports",
+        "directionality": "forward",
+        "support_level": "evidence_synthesized",
+        "rationale": "The lower-than-estimated unemployment rate independently supports the interpretation of labor-market strength.",
+        "source_edge_ids": [
+          "edge_03"
+        ],
+        "source_article_ids": [
+          "ev_4ceca2579e3091f2"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_4",
+        "target_checkpoint_id": "target_bridge",
+        "relationship": "is_consistent_with",
+        "directionality": "forward",
+        "support_level": "evidence_synthesized",
+        "rationale": "Historical DAG connected this factor to the redacted target measurement; the realized value and outcome mapping are omitted.",
+        "source_edge_ids": [
+          "edge_04"
+        ],
+        "source_article_ids": [
+          "ev_4ceca2579e3091f2",
+          "ev_d37a716ae75fd6db"
+        ],
+        "terminal_to_target_bridge": true
+      }
+    ],
+    "paths_truncated": false
+  },
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "checkpoint_1",
+        "checkpoint_2",
+        "checkpoint_4",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "edge_01",
+        "edge_02",
+        "edge_04"
+      ],
+      "relationships": [
+        "contrasts_with",
+        "supports",
+        "is_consistent_with"
+      ],
+      "path_role": "main_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Market estimate called for [CURRENT_VALUE_REQUIRED] [CURRENT_PERIOD_REQUIRED] payroll gains to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_3",
+        "checkpoint_4",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "edge_03",
+        "edge_04"
+      ],
+      "relationships": [
+        "supports",
+        "is_consistent_with"
+      ],
+      "path_role": "supporting_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from [CURRENT_PERIOD_REQUIRED] unemployment rate fell to [CURRENT_VALUE_REQUIRED] to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "A current factor outside the preserved historical topology dominates the target.",
+      "discriminating_evidence": "Search for current shocks and target observations not explained by any retained path.",
+      "source_event_ids": []
+    }
+  ],
+  "forecast_audit_questions": [
+    "Does every used checkpoint transition correspond to a preserved edge?",
+    "Which preserved edges are supported, contradicted, or unknown now?",
+    "Does a counter-path dominate the leading supported path?",
+    "Is there evidence for magnitude and boundary crossing, not direction alone?"
+  ],
+  "refinement_metadata": {
+    "model": "deterministic_topology_compiler_v2",
+    "source_graph": "data\\dags\\v3_us_payroll_monthly_growth_2023_01\\graph.json",
+    "source_audit_status": "pass",
+    "outcome_nodes_redacted": 1,
+    "target_value_anchors_redacted": 1,
+    "historical_specifics_sanitized": true,
+    "sanitizer": "minimal_value_period_placeholders_v1",
+    "value_replacement_count": 12,
+    "period_replacement_count": 10
+  },
+  "topology_validation": {
+    "status": "pass",
+    "errors": [],
+    "metrics": {
+      "retained_checkpoint_count": 4,
+      "source_edge_count": 4,
+      "emitted_edge_count": 4,
+      "edge_coverage": 1.0,
+      "path_precision": 1.0,
+      "causal_path_count": 2,
+      "outcome_event_leak_count": 0,
+      "outcome_text_leak_count": 0,
+      "realized_value_count": 0,
+      "absolute_period_count": 0
+    }
+  }
+}

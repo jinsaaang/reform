@@ -1,0 +1,873 @@
+{
+  "question": {
+    "id": "v3_global_copper_monthly_return_2023_08",
+    "question_text": "As of 2023-08-01, which range will the monthly copper-price return for Global copper price in 2023-08 fall into?",
+    "question_type": "mcq",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 3,
+    "resolution_date": "2023-09-15T23:59:59Z",
+    "estimated_start_time": "2023-08-01T00:00:00Z",
+    "ground_truth": "below recent range",
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [
+      "evt_6a07e6623d0d",
+      "evt_642c54eec886",
+      "evt_5fb9e6cfa4af"
+    ],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: Global copper price\nTarget period: 2023-08\nFinancial area: energy_commodities / industrial metals\nRegion: US\nPre-registered recent-range boundaries: lower -0.814, upper 2.393 percent.",
+    "resolution_criteria": "Use FRED series PCOPPUSDM. Compute the change from the previous monthly observation using mode 'pct'. Resolve 'below recent range' below -0.814, 'within recent range' from -0.814 inclusive to 2.393 exclusive, and 'above recent range' at or above 2.393 percent.",
+    "resolution_reasoning": "The snapshotted target change was -1.52 percent; it resolved to 'below recent range'.",
+    "options": [
+      "below recent range",
+      "within recent range",
+      "above recent range"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": "\n## Executive Summary\n\nGlobal copper prices in August 2023 fell below the recent range primarily due to prevailing concerns about weak demand from China, the world's largest consumer of copper. Despite some earlier rallies driven by hopes of Chinese stimulus, these were often short-lived or overshadowed by persistent signs of economic slowdown in China's manufacturing sector and property market. Increased inventories on the London Metal Exchange (LME) further contributed to the downward pressure, signaling an oversupplied market relative to the subdued demand.\n\n## Timeline Of Key Events\n\n*   **June 20, 2023:** Copper prices showed short-term volatility, with a 4.29% fall from May to June. While a brief rebound occurred due to news of Chinese stimulus efforts, concerns about China's lackluster economic recovery persisted, specifically in its manufacturing sector. [art_finance_20230620_003_511f0843]\n*   **August 15, 2023:** China's copper price dropped to $8,547 per ton in June, as reported by IndexBox. This reflected a general weakening of the market. [art_finance_20230815_001_8b31a318]\n*   **August 23, 2023:** S&P Global highlighted weak Chinese economic data as a significant factor weighing on copper prices, exacerbating concerns about demand. [art_finance_20230823_001_9318a66f]\n*   **September 13, 2023:** FactSet Insight discussed the supply and demand dynamics of energy transition metals (including copper), indicating ongoing market rebalancing that could lead to price adjustments, potentially downward given the prevailing demand concerns. [art_finance_20230913_001_0381e469]\n\n## Causal Chain Analysis\n\nThe primary root cause for copper prices falling below the recent range was the **weakening economic outlook in China** [art_finance_20230620_003_511f0843]. As the world's largest consumer of industrial metals, China's economic performance heavily dictates global demand. A series of **disappointing manufacturing data and persistent issues within its property sector** [art_finance_20230620_003_511f0843, art_finance_20230823_001_9318a66f] created an intermediate mechanism of **reduced industrial activity and construction demand**. This directly led to the **proximate trigger of increased copper inventories and declining spot prices** [art_finance_20230815_001_8b31a318, art_finance_20230913_001_0381e469], ultimately resulting in the **final outcome of monthly copper-price returns falling below the recent range**.\n\n## Countervailing Factors\n\nPotential countervailing factors included **Chinese government stimulus efforts** [art_finance_20230620_003_511f0843]. In June, news of stimulus measures did cause a brief rebound in copper prices. However, these rallies were often temporary and failed to sustain upward momentum because the underlying economic issues in China, particularly in manufacturing and real estate, were **more persistent and severe than the impact of the stimulus packages** [art_finance_20230620_003_511f0843]. The stimulus was seen as insufficient to counteract the broader demand weakness. Another potential factor was the **demand for copper in the green energy transition** [art_finance_20230913_001_0381e469]. While this provides long-term structural support for copper, in the short-to-medium term (August 2023), the immediate impact of **sluggish global economic activity and weak Chinese demand overwhelmed this underlying positive driver**, preventing it from pushing prices higher.\n\n## Event Candidate Inventory\n\n*   **E1: Weak Chinese Manufacturing data and Property Market Concerns**\n    *   date: June - August 2023 (ongoing)\n    *   why it matters causally: Reduced industrial activity and construction demand in the world's largest copper consumer.\n    *   source article IDs: [art_finance_20230620_003_511f0843], [art_finance_20230823_001_9318a66f]\n\n*   **E2: Chinese Stimulus Measures Announcement**\n    *   date: Late May/June 2023\n    *   why it matters causally: Briefly fueled hopes of demand recovery, causing temporary price rebounds, but ultimately insufficient to counter negative trends.\n    *   source article IDs: [art_finance_20230620_003_511f0843]\n\n*   **E3: Drop in China's Copper Price to $8,547/ton**\n    *   date: June 2023 (reported August 15, 2023)\n    *   why it matters causally: Direct indication of prevailing low prices and weak demand in a key market.\n    *   source article IDs: [art_finance_20230815_001_8b31a318]\n\n*   **E4: General Concerns about Global Economic Slowdown impacting Industrial Metals**\n    *   date: August - September 2023 (ongoing)\n    *   why it matters causally: Broad negative sentiment affecting demand for commodities like copper.\n    *   source article IDs: [art_finance_20230823_001_9318a66f], [art_finance_20230913_001_0381e469]\n\n## Evidence Mapping Table\n\n| Claim/Event | Article IDs | Date Support | Confidence (0-1) | Notes |\n|---|---|---|---|---|\n| Weak Chinese economy leading to reduced copper demand | [art_finance_20230620_003_511f0843], [art_finance_20230823_001_9318a66f] | June 2023, August 2023 | 0.9 | Multiple sources confirm the significant impact of China's economy. |\n| Copper price decline in China | [art_finance_20230815_001_8b31a318] | August 15, 2023 (reporting June data) | 0.8 | Direct evidence of price drop in a key market. |\n| Chinese stimulus measures as a brief positive factor | [art_finance_20230620_003_511f0843] | June 2023 | 0.7 | Acknowledged but their effect was limited and non-sustaining. |\n| Broader supply/demand dynamics contributing to price adjustments | [art_finance_20230913_001_0381e469] | September 13, 2023 | 0.7 | Discusses general market forces for energy transition metals, including copper. |\n\n## Uncertainties And Alternative Paths\n\nOne uncertainty is the full extent and impact of future Chinese stimulus measures; stronger, more comprehensive interventions could have potentially altered the demand outlook. An alternative path could have been significant unexpected supply disruptions (e.g., major mine closures or labor strikes) that could have offset weak demand and pushed prices higher. However, no such major disruptions were evident in the available articles within the focused timeframe that would have meaningfully counteracted the demand-side pressures.\n",
+    "graph_built": true,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.201259Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "global_copper_monthly_return",
+        "event_cluster_id": "industrial_metals_copper_2023-08",
+        "category": "energy_commodities",
+        "original_domain": "energy_commodities",
+        "subdomain": "industrial metals",
+        "entity": "Global copper price",
+        "region": "US",
+        "target_metric": "monthly copper-price return",
+        "target_period": "2023-08",
+        "forecast_cutoff": "2023-08-01T00:00:00+00:00",
+        "forecast_date_options": [
+          "2023-08-01"
+        ],
+        "resolution_available_at": "2023-09-15T23:59:59+00:00",
+        "horizon_days": 45,
+        "source_type": "fred_series_snapshot",
+        "source_series_id": "PCOPPUSDM",
+        "source_homepage": "https://fred.stlouisfed.org/series/PCOPPUSDM",
+        "comparison_rule": "target change bucketed by the lower and upper quartiles of the 8 prior observed changes",
+        "comparison_threshold": 0.211135,
+        "comparison_thresholds": {
+          "lower": -0.813752,
+          "upper": 2.39298
+        },
+        "change_unit": "percent",
+        "threshold_observation_dates": [
+          "2022-11-01",
+          "2022-12-01",
+          "2023-01-01",
+          "2023-02-01",
+          "2023-03-01",
+          "2023-04-01",
+          "2023-05-01",
+          "2023-06-01",
+          "2023-07-01"
+        ],
+        "split": "memory",
+        "family_position": 2,
+        "family_size": 7,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "below recent range",
+        "resolved_class": "below recent range",
+        "resolution_value": 8347.828260869564,
+        "target_change": -1.52006211,
+        "source_observation_date": "2023-08-01",
+        "resolution_document": {
+          "publisher": "Federal Reserve Bank of St. Louis (FRED)",
+          "title": "Global price of Copper",
+          "url": "https://fred.stlouisfed.org/series/PCOPPUSDM"
+        },
+        "source_download_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PCOPPUSDM&cosd=2019-01-01&coed=2026-06-30",
+        "source_sha256": "47304798572ec5fe448f0cdf5fdc5854c4b1c6e6a6ca8cde89153c268f6f1d47",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_6a07e6623d0d",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 14,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_20230811_003_67925000",
+        "title": "Codelco and Anglo American Discuss Mining Pact to Lift Copper Output in Chile - Supply Chain Brain",
+        "url": "https://www.supplychainbrain.com/articles/37887-codelco-and-anglo-american-discuss-mining-pact-to-lift-copper-output-in-chile",
+        "source": "supplychainbrain.com",
+        "published_date": "2023-08-11T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230809_004_fc6045e6",
+        "title": "European industry pushes to define 'green copper' despite the challenge supply chain complexity poses - Fastmarkets",
+        "url": "https://www.fastmarkets.com/insights/european-industry-define-green-copper-despite-supply-chain-complexity",
+        "source": "fastmarkets.com",
+        "published_date": "2023-08-09T08:32:24+00:00"
+      },
+      {
+        "id": "art_finance_20180123_004_347cebbe",
+        "title": "Determining the chaotic behaviour of copper prices in the long-term using annual price data - Nature",
+        "url": "https://www.nature.com/articles/s41599-017-0060-x",
+        "source": "nature.com",
+        "published_date": "2018-01-23T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20201109_005_2d1529da",
+        "title": "Copper price jumps to 28-month high in October ahead of U.S. election - MetalMiner",
+        "url": "https://agmetalminer.com/2020/11/09/copper-mmi-copper-price-reaches-28-month-high",
+        "source": "agmetalminer.com",
+        "published_date": "2020-11-09T10:43:53-05:00"
+      },
+      {
+        "id": "art_finance_20220529_006_c7583a2b",
+        "title": "Global Copper Mining Market Analysis by Reserves, Production, Assets, Demand Drivers and Forecast to 2035 - Global Data",
+        "url": "https://www.globaldata.com/store/report/copper-mining-market-analysis",
+        "source": "globaldata.com",
+        "published_date": "2022-05-29T07:49:19+00:00"
+      },
+      {
+        "id": "art_finance_20210317_007_c6385714",
+        "title": "As Copper Prices Recover, 'COPX' Can Capture Even More Upside - ETF Trends",
+        "url": "https://www.etftrends.com/thematic-investing-channel/as-copper-prices-recover-copx-can-capture-upside",
+        "source": "etftrends.com",
+        "published_date": "2021-03-17T09:56:07-07:00"
+      },
+      {
+        "id": "art_finance_20161112_008_b5238d0f",
+        "title": "Historical Market Correlations: Copper Prices And GDP - See It Market",
+        "url": "https://www.seeitmarket.com/historical-market-correlations-copper-prices-gdp-growth-16254",
+        "source": "seeitmarket.com",
+        "published_date": "2016-11-12T10:34:18-06:00"
+      },
+      {
+        "id": "art_finance_20230118_009_6120c124",
+        "title": "Aluminum Price Forecast: Top Trends That Will Affect Aluminum in 2023 - Investing News Network",
+        "url": "https://investingnews.com/aluminum-forecast",
+        "source": "investingnews.com",
+        "published_date": "2023-01-18T21:55:00+00:00"
+      },
+      {
+        "id": "art_finance_20230913_010_ca97b995",
+        "title": "The Supply and Demand Dynamics of Energy Transition Metals: Past Performance and Future Requirements - FactSet Insight",
+        "url": "https://insight.factset.com/the-supply-and-demand-dynamics-of-energy-transition-metals-past-performance-and-future-requirements",
+        "source": "insight.factset.com",
+        "published_date": "2023-09-13T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20220413_011_92a1b051",
+        "title": "Five Reasons Copper Prices Have Risen - CME Group",
+        "url": "https://www.cmegroup.com/openmarkets/metals/2022/Five-Reasons-Copper-Prices-Have-Risen.html",
+        "source": "cmegroup.com",
+        "published_date": "2022-04-13T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20220715_012_6023b933",
+        "title": "Copper price at lowest level since 2020 as fears over global economy grow - The Guardian",
+        "url": "https://www.theguardian.com/business/2022/jul/15/copper-price-at-lowest-level-since-2020-as-fears-over-global-economy-grow-inflation",
+        "source": "theguardian.com",
+        "published_date": "2022-07-15T12:44:31+00:00"
+      },
+      {
+        "id": "art_finance_20230620_003_511f0843",
+        "title": "Copper MMI: Will the Copper Price Rally Last? - MetalMiner",
+        "url": "https://agmetalminer.com/2023/06/20/will-the-copper-price-rally-last",
+        "source": "agmetalminer.com",
+        "published_date": "2023-06-20T01:00:00-05:00"
+      },
+      {
+        "id": "art_finance_20220823_002_32c5c506",
+        "title": "Two charts show copper price drop may have been overdone - Mining.com",
+        "url": "https://www.mining.com/two-charts-show-copper-price-drop-may-have-been-overdone",
+        "source": "mining.com",
+        "published_date": "2022-08-23T16:50:02+00:00"
+      },
+      {
+        "id": "art_finance_20230816_002_9df1b84c",
+        "title": "The Price of Copper in China Drops to $8,547 per Ton. - IndexBox",
+        "url": "https://www.indexbox.io/blog/china-copper-price-in-june-2023",
+        "source": "indexbox.io",
+        "published_date": "2023-08-16T00:17:08+02:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_6a07e6623d0d",
+      "events_count": 9,
+      "hypotheses_count": 8
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 3,
+      "avg_depth": 2.2,
+      "quality_score": 0.87,
+      "depth_score": 1.0,
+      "confidence_score": 0.79,
+      "strength_score": 0.68,
+      "evidence_score": 1.0,
+      "event_count": 9,
+      "hypothesis_count": 8
+    },
+    "nodes": [
+      {
+        "id": "evt_5fb9e6cfa4af",
+        "title": "Option 3: above recent range",
+        "description": "Question resolves to: above recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-09-15T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_global_copper_monthly_return_2023_08",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 2,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:22:46.928209Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_642c54eec886",
+        "title": "Option 2: within recent range",
+        "description": "Question resolves to: within recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-09-15T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_global_copper_monthly_return_2023_08",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 1,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:22:46.928204Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_6a07e6623d0d",
+        "title": "Option 1: below recent range",
+        "description": "Question resolves to: below recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-09-15T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_global_copper_monthly_return_2023_08",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 0,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:22:46.928190Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230601_001_cee21f12",
+        "title": "Weak Chinese Manufacturing data and Property Market Concerns",
+        "description": "Reduced industrial activity and construction demand in the world's largest copper consumer due to weak manufacturing data and persistent issues within its property sector.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-06-01T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230620_003_511f0843",
+          "art_finance_20230816_002_9df1b84c",
+          "art_finance_20230913_010_ca97b995"
+        ],
+        "extracted_for_question_id": "v3_global_copper_monthly_return_2023_08",
+        "source_article_id": "art_finance_20230620_003_511f0843",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_global_copper_monthly_return_2023_08"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:28:16.989155Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230601_005_837c0a5f",
+        "title": "Reduced Industrial Activity and Construction Demand in China",
+        "description": "Weak Chinese economic data, particularly in manufacturing and property, led to reduced industrial activity and construction demand.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-06-01T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230620_003_511f0843",
+          "art_finance_20230913_010_ca97b995"
+        ],
+        "extracted_for_question_id": "v3_global_copper_monthly_return_2023_08",
+        "source_article_id": "art_finance_20230620_003_511f0843",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_global_copper_monthly_return_2023_08"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:28:17.064535Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230601_007_8325f21f",
+        "title": "Temporary Copper Price Rebound due to Chinese Stimulus",
+        "description": "Brief rebound in copper prices due to news of Chinese stimulus efforts, but ultimately insufficient to counter negative trends.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-06-01T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230620_003_511f0843"
+        ],
+        "extracted_for_question_id": "v3_global_copper_monthly_return_2023_08",
+        "source_article_id": "art_finance_20230620_003_511f0843",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_global_copper_monthly_return_2023_08"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:28:17.098484Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230601_008_3a67d586",
+        "title": "Persistent Underlying Economic Issues in China",
+        "description": "Underlying economic issues in China, particularly in manufacturing and real estate, were more persistent and severe than the impact of stimulus packages.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-06-01T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230620_003_511f0843"
+        ],
+        "extracted_for_question_id": "v3_global_copper_monthly_return_2023_08",
+        "source_article_id": "art_finance_20230620_003_511f0843",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_global_copper_monthly_return_2023_08"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:28:17.114782Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230630_003_593f33e8",
+        "title": "Drop in China's Copper Price to $8,547/ton",
+        "description": "China's copper price dropped to $8,547 per ton in June, reflecting a general weakening of the market.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-06-30T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230816_002_9df1b84c"
+        ],
+        "extracted_for_question_id": "v3_global_copper_monthly_return_2023_08",
+        "source_article_id": "art_finance_20230816_002_9df1b84c",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_global_copper_monthly_return_2023_08"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:28:17.021531Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230801_004_954ee96f",
+        "title": "General Concerns about Global Economic Slowdown impacting Industrial Metals",
+        "description": "Broad negative sentiment affecting demand for commodities like copper due to global economic slowdown.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-08-01T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230913_010_ca97b995"
+        ],
+        "extracted_for_question_id": "v3_global_copper_monthly_return_2023_08",
+        "source_article_id": "art_finance_20230913_010_ca97b995",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_global_copper_monthly_return_2023_08"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:28:17.047625Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230801_006_c4ae53da",
+        "title": "Increased Copper Inventories and Declining Spot Prices",
+        "description": "Reduced demand from China and global economic slowdown led to increased copper inventories and declining spot prices.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-08-01T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230816_002_9df1b84c",
+          "art_finance_20230913_010_ca97b995"
+        ],
+        "extracted_for_question_id": "v3_global_copper_monthly_return_2023_08",
+        "source_article_id": "art_finance_20230816_002_9df1b84c",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_global_copper_monthly_return_2023_08"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:28:17.081240Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_politics_20230601_002_55d6cc3b",
+        "title": "Chinese Stimulus Measures Announcement",
+        "description": "News of Chinese government stimulus measures briefly fueled hopes of demand recovery, causing temporary price rebounds.",
+        "event_type": "indicator",
+        "domain": "politics",
+        "tags": [],
+        "occurred_date": "2023-06-01T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230620_003_511f0843"
+        ],
+        "extracted_for_question_id": "v3_global_copper_monthly_return_2023_08",
+        "source_article_id": "art_finance_20230620_003_511f0843",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_global_copper_monthly_return_2023_08"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:28:17.005005Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_global_copper_monthly_return_2023_08_20260725_042817_001_fa28e3d0",
+        "source_event_id": "evt_finance_20230601_001_cee21f12",
+        "target_event_id": "evt_finance_20230601_005_837c0a5f",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Weak Chinese manufacturing data and property market concerns directly led to reduced industrial activity and construction demand.",
+        "evidence_article_ids": [
+          "art_finance_20230620_003_511f0843",
+          "art_finance_20230913_010_ca97b995"
+        ],
+        "discovered_by_question_ids": [
+          "v3_global_copper_monthly_return_2023_08"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T04:28:17.130762Z",
+        "last_confirmed_at": "2026-07-25T04:28:17.130762Z"
+      },
+      {
+        "id": "hyp_v3_global_copper_monthly_return_2023_08_20260725_042817_002_32413ec0",
+        "source_event_id": "evt_finance_20230601_005_837c0a5f",
+        "target_event_id": "evt_finance_20230801_006_c4ae53da",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Reduced industrial activity and construction demand resulted in increased copper inventories and declining spot prices.",
+        "evidence_article_ids": [
+          "art_finance_20230816_002_9df1b84c",
+          "art_finance_20230913_010_ca97b995"
+        ],
+        "discovered_by_question_ids": [
+          "v3_global_copper_monthly_return_2023_08"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T04:28:17.143457Z",
+        "last_confirmed_at": "2026-07-25T04:28:17.143457Z"
+      },
+      {
+        "id": "hyp_v3_global_copper_monthly_return_2023_08_20260725_042817_003_a4cf7654",
+        "source_event_id": "evt_finance_20230801_006_c4ae53da",
+        "target_event_id": "evt_6a07e6623d0d",
+        "relation_type": "causes",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Increased inventories and declining spot prices directly caused the monthly copper-price returns to fall below the recent range.",
+        "evidence_article_ids": [
+          "art_finance_20230816_002_9df1b84c",
+          "art_finance_20230913_010_ca97b995"
+        ],
+        "discovered_by_question_ids": [
+          "v3_global_copper_monthly_return_2023_08"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T04:28:17.156490Z",
+        "last_confirmed_at": "2026-07-25T04:28:17.156490Z"
+      },
+      {
+        "id": "hyp_v3_global_copper_monthly_return_2023_08_20260725_042817_004_756aae85",
+        "source_event_id": "evt_politics_20230601_002_55d6cc3b",
+        "target_event_id": "evt_finance_20230601_007_8325f21f",
+        "relation_type": "causes",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Chinese stimulus measures briefly caused a temporary rebound in copper prices.",
+        "evidence_article_ids": [
+          "art_finance_20230620_003_511f0843"
+        ],
+        "discovered_by_question_ids": [
+          "v3_global_copper_monthly_return_2023_08"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T04:28:17.169250Z",
+        "last_confirmed_at": "2026-07-25T04:28:17.169250Z"
+      },
+      {
+        "id": "hyp_v3_global_copper_monthly_return_2023_08_20260725_042817_005_70bd570d",
+        "source_event_id": "evt_finance_20230601_007_8325f21f",
+        "target_event_id": "evt_6a07e6623d0d",
+        "relation_type": "inhibits",
+        "strength": 0.4,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "The temporary rebound in copper prices due to stimulus measures briefly inhibited the fall below the recent range, but ultimately failed to sustain upward momentum.",
+        "evidence_article_ids": [
+          "art_finance_20230620_003_511f0843"
+        ],
+        "discovered_by_question_ids": [
+          "v3_global_copper_monthly_return_2023_08"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T04:28:17.182837Z",
+        "last_confirmed_at": "2026-07-25T04:28:17.182837Z"
+      },
+      {
+        "id": "hyp_v3_global_copper_monthly_return_2023_08_20260725_042817_006_3cab2318",
+        "source_event_id": "evt_finance_20230601_008_3a67d586",
+        "target_event_id": "evt_finance_20230801_006_c4ae53da",
+        "relation_type": "amplifies",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Persistent underlying economic issues in China amplified the effect of reduced demand, leading to increased inventories and declining prices.",
+        "evidence_article_ids": [
+          "art_finance_20230620_003_511f0843"
+        ],
+        "discovered_by_question_ids": [
+          "v3_global_copper_monthly_return_2023_08"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T04:28:17.196029Z",
+        "last_confirmed_at": "2026-07-25T04:28:17.196029Z"
+      },
+      {
+        "id": "hyp_v3_global_copper_monthly_return_2023_08_20260725_042817_007_d7f8b106",
+        "source_event_id": "evt_finance_20230801_004_954ee96f",
+        "target_event_id": "evt_finance_20230801_006_c4ae53da",
+        "relation_type": "correlates",
+        "strength": 0.5,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "General concerns about global economic slowdown correlated with increased copper inventories and declining spot prices, indicating broader demand weakness.",
+        "evidence_article_ids": [
+          "art_finance_20230913_010_ca97b995"
+        ],
+        "discovered_by_question_ids": [
+          "v3_global_copper_monthly_return_2023_08"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T04:28:17.208778Z",
+        "last_confirmed_at": "2026-07-25T04:28:17.208778Z"
+      },
+      {
+        "id": "hyp_v3_global_copper_monthly_return_2023_08_20260725_042817_008_339e32e4",
+        "source_event_id": "evt_finance_20230630_003_593f33e8",
+        "target_event_id": "evt_finance_20230801_006_c4ae53da",
+        "relation_type": "correlates",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "The reported drop in China's copper price is a direct indication and correlation of declining spot prices and increased inventories.",
+        "evidence_article_ids": [
+          "art_finance_20230816_002_9df1b84c"
+        ],
+        "discovered_by_question_ids": [
+          "v3_global_copper_monthly_return_2023_08"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T04:28:17.223525Z",
+        "last_confirmed_at": "2026-07-25T04:28:17.223525Z"
+      }
+    ],
+    "outcome_impacts": [
+      {
+        "id": "imp_28b1180f",
+        "event_id": "evt_finance_20230601_001_cee21f12",
+        "outcome_event_id": "evt_6a07e6623d0d",
+        "question_id": "v3_global_copper_monthly_return_2023_08",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "Weak Chinese manufacturing data and property market concerns directly led to reduced demand, making the 'below recent range' outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_global_copper_monthly_return_2023_08"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:28:23.971941Z",
+        "last_confirmed_at": "2026-07-25T04:28:23.971941Z"
+      },
+      {
+        "id": "imp_f72d3ba5",
+        "event_id": "evt_politics_20230601_002_55d6cc3b",
+        "outcome_event_id": "evt_6a07e6623d0d",
+        "question_id": "v3_global_copper_monthly_return_2023_08",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.4,
+        "confidence": 0.6,
+        "reasoning": "Chinese stimulus measures briefly caused a temporary rebound, which would have made the 'below recent range' outcome less likely, but its effect was short-lived.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_global_copper_monthly_return_2023_08"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:28:23.982642Z",
+        "last_confirmed_at": "2026-07-25T04:28:23.982642Z"
+      },
+      {
+        "id": "imp_68016736",
+        "event_id": "evt_finance_20230630_003_593f33e8",
+        "outcome_event_id": "evt_6a07e6623d0d",
+        "question_id": "v3_global_copper_monthly_return_2023_08",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "A direct drop in China's copper price indicates weak demand and contributes to the 'below recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_global_copper_monthly_return_2023_08"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:28:23.994938Z",
+        "last_confirmed_at": "2026-07-25T04:28:23.994938Z"
+      },
+      {
+        "id": "imp_fb683082",
+        "event_id": "evt_finance_20230801_004_954ee96f",
+        "outcome_event_id": "evt_6a07e6623d0d",
+        "question_id": "v3_global_copper_monthly_return_2023_08",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Broad negative sentiment due to global economic slowdown reduces demand for industrial metals, making the 'below recent range' outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_global_copper_monthly_return_2023_08"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:28:24.007542Z",
+        "last_confirmed_at": "2026-07-25T04:28:24.007542Z"
+      },
+      {
+        "id": "imp_9e0500c7",
+        "event_id": "evt_finance_20230601_005_837c0a5f",
+        "outcome_event_id": "evt_6a07e6623d0d",
+        "question_id": "v3_global_copper_monthly_return_2023_08",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "Reduced industrial activity and construction demand in China directly leads to lower copper consumption, contributing to the 'below recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_global_copper_monthly_return_2023_08"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:28:24.018162Z",
+        "last_confirmed_at": "2026-07-25T04:28:24.018162Z"
+      },
+      {
+        "id": "imp_386ad1f3",
+        "event_id": "evt_finance_20230801_006_c4ae53da",
+        "outcome_event_id": "evt_6a07e6623d0d",
+        "question_id": "v3_global_copper_monthly_return_2023_08",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "Increased inventories and declining spot prices are direct indicators of oversupply and weak demand, strongly contributing to the 'below recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_global_copper_monthly_return_2023_08"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:28:24.028087Z",
+        "last_confirmed_at": "2026-07-25T04:28:24.028087Z"
+      },
+      {
+        "id": "imp_71f4dc5a",
+        "event_id": "evt_finance_20230601_007_8325f21f",
+        "outcome_event_id": "evt_6a07e6623d0d",
+        "question_id": "v3_global_copper_monthly_return_2023_08",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.4,
+        "confidence": 0.6,
+        "reasoning": "A temporary rebound in copper prices due to stimulus measures briefly pushed against the 'below recent range' outcome, but its effect was not sustained.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_global_copper_monthly_return_2023_08"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:28:24.038515Z",
+        "last_confirmed_at": "2026-07-25T04:28:24.038515Z"
+      },
+      {
+        "id": "imp_df37f308",
+        "event_id": "evt_finance_20230601_008_3a67d586",
+        "outcome_event_id": "evt_6a07e6623d0d",
+        "question_id": "v3_global_copper_monthly_return_2023_08",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Persistent underlying economic issues in China amplified the demand weakness, making the 'below recent range' outcome more likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_global_copper_monthly_return_2023_08"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:28:24.048285Z",
+        "last_confirmed_at": "2026-07-25T04:28:24.048285Z"
+      }
+    ]
+  }
+}

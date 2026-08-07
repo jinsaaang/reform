@@ -1,0 +1,230 @@
+{
+  "schema_version": "hgf_blueprint_v1",
+  "question_id": "v3_global_copper_monthly_return_2024_09",
+  "target_definition": {
+    "metric": "global copper monthly price return",
+    "unit_or_option_space": "monthly return classification",
+    "forecast_horizon": "target month"
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "China and global industrial demand, supply disruption risk, and broader copper-balance conditions provide reusable mechanisms; cutoff-later macro-policy observations are provenance only.",
+    "weaknesses": [
+      "The graph does not provide independent inventory, dollar, or physical-premium evidence.",
+      "Direct price and return observations are excluded as realized target proxies."
+    ]
+  },
+  "search_factors": [
+    {
+      "factor": "China and global industrial demand",
+      "why_search": "Industrial activity and China demand determine a large share of copper consumption.",
+      "preferred_source_types": [
+        "China activity data",
+        "copper consumption data",
+        "manufacturing surveys"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230412_005_c4f54c16",
+        "evt_finance_20240301_004_f92fcaa4"
+      ]
+    },
+    {
+      "factor": "Supply disruption risk",
+      "why_search": "Mine disruptions can tighten expected copper availability.",
+      "preferred_source_types": [
+        "mine production data",
+        "labor notices",
+        "treatment charges"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240815_002_5c451518",
+        "evt_finance_20240527_003_9eb9d99c"
+      ]
+    },
+    {
+      "factor": "Copper inventories and balance",
+      "why_search": "Inventory and supply-demand data test whether disruptions create a tight physical market.",
+      "preferred_source_types": [
+        "exchange inventories",
+        "warehouse data",
+        "refined copper balance"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240618_005_19424b77",
+        "evt_finance_20240527_004_9a20ab69"
+      ]
+    },
+    {
+      "factor": "Dollar and macro policy",
+      "why_search": "Dollar movements and policy expectations can alter commodity affordability and growth expectations.",
+      "preferred_source_types": [
+        "broad dollar data",
+        "rate futures",
+        "central-bank communications"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240912_001_933f44dd"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "china_demand",
+      "role": "baseline",
+      "factor": "China and global industrial demand",
+      "mechanism": "Stronger industrial activity and China demand can support copper consumption.",
+      "expected_direction": "up",
+      "evidence_requirement": "Verify cutoff-available China activity, imports, fabrication, and manufacturing data.",
+      "contradiction_signal": "Industrial indicators and consumption weaken.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_finance_20230412_005_c4f54c16",
+        "evt_finance_20240301_004_f92fcaa4"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_global_copper_monthly_return_2024_09_20260725_062317_008_be13ca36",
+        "hyp_v3_global_copper_monthly_return_2024_09_20260725_062312_007_3d92bcc8"
+      ]
+    },
+    {
+      "id": "supply_risk",
+      "role": "driver",
+      "factor": "Supply disruption risk",
+      "mechanism": "Verified mine disruption can tighten expected copper supply.",
+      "expected_direction": "up",
+      "evidence_requirement": "Verify disruption duration, lost output, substitute supply, and treatment-charge response.",
+      "contradiction_signal": "Production recovers or alternative supply offsets losses.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240815_002_5c451518",
+        "evt_finance_20240527_003_9eb9d99c"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_global_copper_monthly_return_2024_09_20260725_062246_002_72e8a1a8",
+        "hyp_v3_global_copper_monthly_return_2024_09_20260725_062259_005_13a2ce1b"
+      ]
+    },
+    {
+      "id": "inventory_balance",
+      "role": "mediator",
+      "factor": "Copper inventories and balance",
+      "mechanism": "A tight verified refined-copper balance can transmit demand and supply shocks into price pressure.",
+      "expected_direction": "up",
+      "evidence_requirement": "Verify exchange inventories, bonded stocks, regional premiums, production, and consumption forecasts.",
+      "contradiction_signal": "Inventories build or physical premiums weaken.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240618_005_19424b77",
+        "evt_finance_20240527_004_9a20ab69"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_global_copper_monthly_return_2024_09_20260725_054737_004_6ed2b76a"
+      ]
+    },
+    {
+      "id": "macro_offset",
+      "role": "counterevidence",
+      "factor": "Dollar and macro policy",
+      "mechanism": "Dollar strength or weaker macro expectations can offset a favorable copper-balance mechanism.",
+      "expected_direction": "down",
+      "evidence_requirement": "Use only cutoff-available dollar, rate, and growth data; the cited macro-policy event is after cutoff and cannot be a forecast input.",
+      "contradiction_signal": "Dollar weakens and activity expectations improve.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240912_001_933f44dd"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_global_copper_monthly_return_2024_09_20260725_062246_001_a313b121"
+      ]
+    },
+    {
+      "id": "copper_bridge",
+      "role": "target_bridge",
+      "factor": "Verified copper market balance",
+      "mechanism": "Infer copper direction only after reconciling cutoff-compliant China demand, mine supply, inventories, premiums, dollar conditions, and macro expectations.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Verify current consumption, mine output, exchange and bonded inventories, physical premiums, broad dollar, and policy expectations without using a realized copper move.",
+      "contradiction_signal": "Inventory, premium, dollar, or demand data conflict with the inferred balance.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230412_005_c4f54c16",
+        "evt_finance_20240527_003_9eb9d99c",
+        "evt_finance_20240618_005_19424b77"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_global_copper_monthly_return_2024_09_20260725_062259_006_ea2b5a9a",
+        "hyp_v3_global_copper_monthly_return_2024_09_20260725_054737_004_6ed2b76a"
+      ]
+    }
+  ],
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "china_demand",
+        "inventory_balance",
+        "copper_bridge"
+      ],
+      "generalized_mechanism": "Verified industrial demand can tighten the copper balance when inventories and physical indicators corroborate it.",
+      "expected_direction": "up",
+      "applicability_conditions": [
+        "Consumption data and inventories indicate tightening."
+      ],
+      "failure_conditions": [
+        "Demand weakens or inventories build."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "supply_risk",
+        "inventory_balance",
+        "copper_bridge"
+      ],
+      "generalized_mechanism": "Mine disruption can support copper only when output losses are material and not offset by inventories or other supply.",
+      "expected_direction": "up",
+      "applicability_conditions": [
+        "Lost output and physical tightness are verified."
+      ],
+      "failure_conditions": [
+        "Supply recovers or stocks buffer the disruption."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "macro_offset",
+        "copper_bridge"
+      ],
+      "generalized_mechanism": "Dollar strength or weaker macro expectations can offset a tight-balance copper mechanism.",
+      "expected_direction": "down",
+      "applicability_conditions": [
+        "Cutoff-available FX and macro data confirm the offset."
+      ],
+      "failure_conditions": [
+        "Dollar weakens or growth expectations improve."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "Apparent supply disruptions are offset by inventories and alternative mine output.",
+      "discriminating_evidence": "Compare lost output with exchange stocks, regional premiums, and treatment charges.",
+      "source_event_ids": [
+        "evt_finance_20240815_002_5c451518",
+        "evt_finance_20240618_005_19424b77"
+      ]
+    },
+    {
+      "hypothesis": "China demand weakens enough to dominate supply-risk support.",
+      "discriminating_evidence": "Compare China imports, fabrication, manufacturing, and inventory changes with mine supply.",
+      "source_event_ids": [
+        "evt_finance_20230412_005_c4f54c16",
+        "evt_finance_20240301_004_f92fcaa4"
+      ]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Are all inputs available at cutoff?",
+    "Do China activity and copper consumption support demand?",
+    "Do mine disruptions change verified output and inventories?",
+    "Do dollar and macro conditions offset the physical-balance signal?"
+  ]
+}

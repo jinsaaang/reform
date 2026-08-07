@@ -1,0 +1,923 @@
+{
+  "question": {
+    "id": "v3_wmt_revenue_growth_acceleration_2023_07_31",
+    "question_text": "As of 2023-07-31, which range will Walmart Inc.'s quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2023-07-31 fall into?",
+    "question_type": "mcq",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 4,
+    "resolution_date": "2023-09-01T23:59:59Z",
+    "estimated_start_time": "2023-07-31T00:00:00Z",
+    "ground_truth": "below recent range",
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [
+      "evt_c2f9e4f31bf0",
+      "evt_a4930c78676e",
+      "evt_b95095a0a1cc"
+    ],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: Walmart Inc. (WMT)\nTarget period: fiscal quarter ending 2023-07-31\nFinancial area: corporate_earnings / retail\nRegion: US\nPre-registered growth-acceleration boundaries: lower -0.175, upper 1.922 percentage points.",
+    "resolution_criteria": "Use the issuer's first SEC 10-Q or 10-K containing the target quarter. Compute the change in YoY revenue growth from the prior quarter. Resolve 'below recent range' below -0.175, 'within recent range' from -0.175 inclusive to 1.922 exclusive, and 'above recent range' at or above 1.922 percentage points.",
+    "resolution_reasoning": "The snapshotted target-quarter YoY revenue growth was 5.879 percent and growth acceleration was -1.76 percentage points; it resolved to 'below recent range'.",
+    "options": [
+      "below recent range",
+      "within recent range",
+      "above recent range"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": "\n## Executive Summary\nWalmart Inc.'s quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2023-07-31 fell below its recent range, primarily due to a convergence of factors including moderated consumer spending, strategic inventory reductions, and a shift in consumer preferences towards essential goods. While the company saw strong performance in grocery and e-commerce, it was not enough to offset broader economic pressures and a more conservative outlook. The actual revenue growth, while positive, did not accelerate at a pace consistent with prior periods, leading to the 'below recent range' outcome. This outcome also reflects a more cautious retail environment where promotional activities were necessary to move excess inventory, impacting overall revenue acceleration.\n\n## Timeline Of Key Events\n- **2023-05-29:** Deloitte article highlights tailwinds favoring consumer spending on services, potentially diverting spending from goods retail like Walmart. [art_finance_20230529_004_12313485]\n- **2023-05-31:** Euromonitor reports global inflation trending down, but labor markets pressure services prices, indicating a mixed economic environment impacting consumer purchasing power. [art_finance_20230531_006_cb8554a9]\n- **2023-07-10 - 2023-07-13:** Walmart Plus Week sales event. While contributing to sales, its impact on accelerating year-over-year growth needs to be considered in the context of broader trends and comparisons to competitor events like Amazon Prime Day. [art_finance_20230815_011_54197b51]\n- **2023-08-18:** Walmart raises full-year earnings forecast, driven by grocery and online growth, yet this does not necessarily indicate accelerated *revenue growth* for the prior quarter but rather a positive outlook based on specific performing segments. [art_finance_20230818_002_d7f71c52]\n- **2023-08-23:** Dick's Sporting Goods and Macy's flash warning signs on U.S. consumer spending, indicating a broader slowdown in the retail sector that would impact Walmart's revenue acceleration. [art_finance_20230823_005_7efe2224]\n- **2023-08-25:** Morningstar analyzes Walmart's Q2 earnings report (released around August 21st, 2023), providing insights into the actual performance and market perception. [art_finance_20230825_003_28a3d539]\n- **2023-08-30:** Kohl's cuts inventory, reflecting a trend of retailers managing excess stock, suggesting a challenging environment for revenue growth acceleration in the retail sector. [art_finance_20230830_007_a88bccc9]\n\n## Causal Chain Analysis\nThe 'below recent range' revenue acceleration for Walmart in Q2 2023 was primarily caused by a general softening of consumer discretionary spending (E1) as inflation, while moderating, continued to impact household budgets. This led to consumers prioritizing essential goods like groceries, where Walmart saw strength, over general merchandise (E2). Evidence from Dick's Sporting Goods and Macy's in late August 2023 flashing warning signs about consumer spending supports this trend [art_finance_20230823_005_7efe2224]. As a result of changing consumer demand and cautious outlooks, retailers, including Walmart, engaged in strategic inventory management and promotional activities (E3) to reduce excess stock. This is evidenced by Kohl's inventory cuts [art_finance_20230830_007_a88bccc9]. While Walmart did experience growth in grocery and e-commerce [art_finance_20230818_002_d7f71c52], the acceleration of overall revenue growth was tempered because these positive segments were unable to fully offset the broader macroeconomic headwinds and the impact of promotional pricing. Therefore, the overall year-over-year revenue growth acceleration did not meet prior elevated ranges, resulting in the 'below recent range' outcome for Walmart's fiscal Q2 2023.\n\n## Countervailing Factors\nWalmart's strong performance in grocery sales and continued growth in e-commerce acted as significant countervailing factors. The company even raised its full-year earnings forecast [art_finance_20230818_002_d7f71c52], indicating underlying business strength. However, these positive drivers were not enough to propel the *acceleration* of year-over-year revenue growth beyond the 'below recent range'. The overall retail environment, influenced by cautious consumer spending on discretionary items and the need for promotional pricing, overwhelmed the positive contributions from essential goods and online sales in terms of growth acceleration.\n\n## Event Candidate Inventory\n- **E1:** Moderated Consumer Discretionary Spending. Date: Q2 2023 (bounded range). Why it matters: Direct impact on sales of general merchandise. Source article IDs: [art_finance_20230823_005_7efe2224], [art_finance_20230529_004_12313485], [art_finance_20230531_006_cb8554a9]\n- **E2:** Shift in Consumer Preference towards Essential Goods. Date: Q2 2023 (bounded range). Why it matters: Explains strength in grocery while overall acceleration slows. Source article IDs: [art_finance_20230818_002_d7f71c52]\n- **E3:** Strategic Inventory Management and Promotional Activities by Retailers. Date: Q2 2023 (bounded range). Why it matters: Impacts revenue margins and acceleration due to discounting. Source article IDs: [art_finance_20230830_007_a88bccc9]\n- **E4:** Walmart's Q2 2023 Earnings Report Release. Date: ~2023-08-21. Why it matters: Provides official financial data and outlook. Source article IDs: [art_finance_20230825_003_28a3d539]\n\n## Evidence Mapping Table\n| Claim/Event | Article IDs | Date Support | Confidence (0-1) | Notes |\n| :---------- | :---------- | :----------- | :--------------- | :---- |\n| Moderated Consumer Discretionary Spending | [art_finance_20230823_005_7efe2224], [art_finance_20230529_004_12313485], [art_finance_20230531_006_cb8554a9]| 2023-05-29, 2023-05-31, 2023-08-23 | 0.9 | Multiple sources point to a general slowdown in consumer spending on non-essentials. |\n| Shift in Consumer to Essentials | [art_finance_20230818_002_d7f71c52] | 2023-08-18 | 0.8 | Walmart's grocery strength supports this shift, while other retailers show weakness. |\n| Strategic Inventory Management | [art_finance_20230830_007_a88bccc9] | 2023-08-30 | 0.7 | Kohl's example suggests a broader trend in retail impacting revenue. |\n| Walmart Q2 2023 Earnings Report | [art_finance_20230825_003_28a3d539] | 2023-08-25 | 1.0 | Key article for official figures and context of the outcome. |\n| Walmart Plus Week Sales | [art_finance_20230815_011_54197b51] | 2023-08-15 | 0.6 | Contributed to sales, but its net effect on *acceleration* is less clear. |\n| Walmart eCommerce Growth | [art_finance_20230222_010_421a6588], [art_finance_20230818_002_d7f71c52] | 2023-02-22, 2023-08-18 | 0.8 | Positive factor, but insufficient to drive overall acceleration higher. |\n\n## Uncertainties And Alternative Paths\nOne uncertainty lies in the precise quantitative impact of promotional activities on overall revenue acceleration. While inventory reduction efforts suggest discounting, the exact magnitude of this effect on the year-over-year acceleration is not fully detailed. An alternative path could have been if consumer spending on discretionary items had remained robust, offsetting the need for aggressive promotions and potentially leading to a 'within recent range' or 'above recent range' outcome. Another alternative is if the growth in grocery and e-commerce had been significantly higher, overpowering the headwinds in general merchandise to achieve a higher acceleration. However, the available evidence points to these positive factors being insufficient to overcome the broader economic pressures on the retail sector in Q2 2023.\n",
+    "graph_built": true,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.200871Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "wmt_revenue_growth_acceleration",
+        "event_cluster_id": "wmt_earnings_2023-07-31",
+        "category": "corporate_earnings",
+        "original_domain": "corporate_earnings",
+        "subdomain": "retail",
+        "entity": "Walmart Inc. (WMT)",
+        "region": "US",
+        "target_metric": "quarterly revenue year-over-year growth acceleration",
+        "target_period": "fiscal quarter ending 2023-07-31",
+        "forecast_cutoff": "2023-07-31T00:00:00+00:00",
+        "forecast_date_options": [
+          "2023-07-31"
+        ],
+        "resolution_available_at": "2023-09-01T23:59:59+00:00",
+        "horizon_days": 32,
+        "source_type": "sec_companyfacts_snapshot",
+        "source_series_id": "CIK0000104169:revenue",
+        "source_homepage": "https://www.sec.gov/edgar/browse/?CIK=104169",
+        "comparison_rule": "target YoY revenue-growth acceleration bucketed by quartiles of the four prior quarterly accelerations",
+        "comparison_threshold": 7.638572,
+        "comparison_thresholds": {
+          "lower": -0.174887,
+          "upper": 1.92152
+        },
+        "change_unit": "percent",
+        "threshold_observation_dates": [
+          "2022-04-30",
+          "2022-07-31",
+          "2023-04-30"
+        ],
+        "split": "memory",
+        "family_position": 2,
+        "family_size": 8,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "below recent range",
+        "resolved_class": "below recent range",
+        "resolution_value": 160280000000,
+        "target_change": -1.76002722,
+        "target_yoy_growth": 5.87854486,
+        "target_growth_acceleration": -1.76002722,
+        "source_observation_date": "2023-07-31",
+        "resolution_document": {
+          "publisher": "U.S. Securities and Exchange Commission",
+          "title": "Walmart Inc. 10-Q filed 2023-09-01",
+          "url": "https://www.sec.gov/Archives/edgar/data/104169/000010416923000097/0000104169-23-000097-index.html"
+        },
+        "source_download_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000104169.json",
+        "source_sha256": "8f3d9abe26f7f7842a070f4b639dbd39296144349270eeb0df5659e7510e9cec",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00",
+        "accession_number": "0000104169-23-000097",
+        "xbrl_tag": "RevenueFromContractWithCustomerExcludingAssessedTax"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_c2f9e4f31bf0",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 12,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_20230825_003_28a3d539",
+        "title": "After Earnings, Is Walmart Stock a Buy, a Sell, or Fairly Valued? - Morningstar",
+        "url": "https://www.morningstar.com/stocks/after-earnings-is-walmart-stock-buy-sell-or-fairly-valued-9",
+        "source": "morningstar.com",
+        "published_date": "2023-08-25T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230529_004_12313485",
+        "title": "Tailwinds favor consumer spending on services - Deloitte",
+        "url": "https://www.deloitte.com/us/en/insights/topics/economy/spotlight/consumer-spending-inflation-services.html",
+        "source": "deloitte.com",
+        "published_date": "2023-05-29T18:30:00+00:00"
+      },
+      {
+        "id": "art_finance_20230823_005_7efe2224",
+        "title": "Dick’s Sporting Goods, Macy’s Flash Warning Signs on U.S. Consumer Spending - WSJ",
+        "url": "https://www.linkedin.com/posts/mikeandersonconsulting_dicks-sporting-goods-macys-flash-warning-activity-7100231777209745408-RZi7",
+        "source": "linkedin.com",
+        "published_date": "2023-08-23T21:46:11.589000+00:00"
+      },
+      {
+        "id": "art_finance_20230531_006_cb8554a9",
+        "title": "Global Inflation Tracker Q2 2023: Inflation Trends Down but Labour Markets Pressure Services Prices - Euromonitor",
+        "url": "https://www.euromonitor.com/article/global-inflation-tracker-q2-2023-inflation-trends-down-but-labour-markets-pressure-services-prices",
+        "source": "euromonitor.com",
+        "published_date": "2023-05-31T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230830_007_a88bccc9",
+        "title": "Kohl’s cuts inventory by 14% as it prioritizes discipline - Supply Chain Dive",
+        "url": "https://www.retaildive.com/news/kohls-q2-inventory-Tom-Kingsbury/692268",
+        "source": "retaildive.com",
+        "published_date": "2023-08-30T11:29:00+00:00"
+      },
+      {
+        "id": "art_finance_20220817_008_4cb82104",
+        "title": "Target’s Profit Sinks as Retailer Unloads Unwanted Inventory - WSJ",
+        "url": "https://twitter.com/WSJ/status/1559853831151927297",
+        "source": "twitter.com",
+        "published_date": "2022-08-17T10:45:08+00:00"
+      },
+      {
+        "id": "art_finance_20220726_009_153be020",
+        "title": "Walmart demand is down, but America's warehouses are still filling up on inventory of goods - CNBC",
+        "url": "https://www.nbcdfw.com/news/business/money-report/the-bigger-warehouse-story-behind-the-walmart-consumer-demand-issues/3031981",
+        "source": "nbcdfw.com",
+        "published_date": "2022-07-26T14:16:22-05:00"
+      },
+      {
+        "id": "art_finance_20230818_002_d7f71c52",
+        "title": "Walmart raises full-year earnings forecast as grocery, online growth fuel higher sales - CNBC",
+        "url": "https://medium.com/@butterword/walmart-raises-full-year-earnings-forecast-as-grocery-online-growth-fuel-higher-sales-f66f33c28c28",
+        "source": "medium.com",
+        "published_date": "2023-08-18T01:57:29.559000+00:00"
+      },
+      {
+        "id": "art_finance_20230222_010_421a6588",
+        "title": "Walmart US E-Commerce Sales Growth 2016-2025 - Marketplace Pulse",
+        "url": "https://www.marketplacepulse.com/stats/walmart-us-e-commerce-sales-growth",
+        "source": "marketplacepulse.com",
+        "published_date": "2023-02-22T03:45:02+00:00"
+      },
+      {
+        "id": "art_finance_20230815_011_54197b51",
+        "title": "How did sales growth during Walmart Plus Week compare to that of Amazon Prime Day 2023? - Bloomberg Second Measure",
+        "url": "https://secondmeasure.com/datapoints/amazon-prime-day-2023-walmart-plus-sales-results",
+        "source": "secondmeasure.com",
+        "published_date": "2023-08-15T16:38:01+00:00"
+      },
+      {
+        "id": "art_finance_20230720_012_e312a7d2",
+        "title": "Tesla shares dip after hours as earnings call disappoints - CNBC",
+        "url": "https://www.linkedin.com/posts/lorakolodny_tesla-shares-dip-after-hours-as-earnings-activity-7087827531994697730-h3bn",
+        "source": "linkedin.com",
+        "published_date": "2023-07-20T16:16:09.079000+00:00"
+      },
+      {
+        "id": "art_finance_20230720_013_85baeb07",
+        "title": "Netflix Stock Falls After Q2 Earnings Beat on Paid-Sharing Crackdown - Variety",
+        "url": "https://variety.com/2023/digital/news/netflix-shares-fall-q2-2023-earnings-password-sharing-crackdown-1235674932",
+        "source": "variety.com",
+        "published_date": "2023-07-20T13:50:50+00:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_c2f9e4f31bf0",
+      "events_count": 10,
+      "hypotheses_count": 10
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 3,
+      "avg_depth": 2.0,
+      "quality_score": 0.88,
+      "depth_score": 1.0,
+      "confidence_score": 0.79,
+      "strength_score": 0.72,
+      "evidence_score": 1.0,
+      "event_count": 10,
+      "hypothesis_count": 10
+    },
+    "nodes": [
+      {
+        "id": "evt_a4930c78676e",
+        "title": "Option 2: within recent range",
+        "description": "Question resolves to: within recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-09-01T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_wmt_revenue_growth_acceleration_2023_07_31",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 1,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T05:15:23.323957Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_b95095a0a1cc",
+        "title": "Option 3: above recent range",
+        "description": "Question resolves to: above recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-09-01T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_wmt_revenue_growth_acceleration_2023_07_31",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 2,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T05:15:23.323964Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_c2f9e4f31bf0",
+        "title": "Option 1: below recent range",
+        "description": "Question resolves to: below recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-09-01T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_wmt_revenue_growth_acceleration_2023_07_31",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 0,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T05:15:23.323944Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230529_003_928e2c48",
+        "title": "Consumer Spending Shifts to Services",
+        "description": "Tailwinds favor consumer spending on services, implying a shift in consumer spending away from goods, which could negatively impact retailers like Walmart.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-05-29T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230529_004_12313485"
+        ],
+        "extracted_for_question_id": "v3_wmt_revenue_growth_acceleration_2023_07_31",
+        "source_article_id": "art_finance_20230529_004_12313485",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wmt_revenue_growth_acceleration_2023_07_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:22:07.997279Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230529_004_90537eb6",
+        "title": "Increased Consumer Spending on Services",
+        "description": "Tailwinds favor consumer spending on services, which could indirectly boost retail sales, including grocery and online segments.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-05-29T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230529_004_12313485"
+        ],
+        "extracted_for_question_id": "v3_wmt_revenue_growth_acceleration_2023_07_31",
+        "source_article_id": "art_finance_20230529_004_12313485",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wmt_revenue_growth_acceleration_2023_07_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T05:25:26.922253Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230531_005_64efa136",
+        "title": "Global Inflation Trends Down",
+        "description": "Global inflation is forecast to moderate in Q2 2023, which could positively impact consumer purchasing power and spending.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-05-31T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230531_006_cb8554a9"
+        ],
+        "extracted_for_question_id": "v3_wmt_revenue_growth_acceleration_2023_07_31",
+        "source_article_id": "art_finance_20230531_006_cb8554a9",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wmt_revenue_growth_acceleration_2023_07_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T05:25:29.958498Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230713_006_78b6a126",
+        "title": "Walmart Plus Week Sales Growth",
+        "description": "Walmart Plus Week in July 2023 generated significant sales growth, contributing to overall online growth.",
+        "event_type": "milestone",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-07-13T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230815_011_54197b51"
+        ],
+        "extracted_for_question_id": "v3_wmt_revenue_growth_acceleration_2023_07_31",
+        "source_article_id": "art_finance_20230815_011_54197b51",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wmt_revenue_growth_acceleration_2023_07_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T05:25:33.497509Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230815_002_04560b08",
+        "title": "Walmart+ Week Sales Decline",
+        "description": "Walmart Inc’s U.S. consumer sales decreased week-over-week during Walmart+ Week, while Amazon’s sales increased during Prime Day.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-08-15T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230815_011_54197b51"
+        ],
+        "extracted_for_question_id": "v3_wmt_revenue_growth_acceleration_2023_07_31",
+        "source_article_id": "art_finance_20230815_011_54197b51",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wmt_revenue_growth_acceleration_2023_07_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:22:07.981643Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230817_001_58a93ced",
+        "title": "Walmart Revenue Growth Acceleration",
+        "description": "Walmart raises full-year earnings forecast and experiences higher sales due to grocery and online growth, indicating an acceleration in revenue growth.",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-08-17T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230818_002_d7f71c52",
+          "art_finance_20230825_003_28a3d539"
+        ],
+        "extracted_for_question_id": "v3_wmt_revenue_growth_acceleration_2023_07_31",
+        "source_article_id": "art_finance_20230818_002_d7f71c52",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wmt_revenue_growth_acceleration_2023_07_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": true,
+        "outcome_scenario": "discovered",
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T05:25:11.129277Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230817_002_21a291d9",
+        "title": "Walmart Grocery Growth",
+        "description": "Walmart experiences significant growth in its grocery segment, contributing to higher overall sales.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-08-17T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230818_002_d7f71c52"
+        ],
+        "extracted_for_question_id": "v3_wmt_revenue_growth_acceleration_2023_07_31",
+        "source_article_id": "art_finance_20230818_002_d7f71c52",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wmt_revenue_growth_acceleration_2023_07_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T05:25:15.621465Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230817_003_8612026d",
+        "title": "Walmart Online Growth",
+        "description": "Walmart experiences significant growth in its online sales, contributing to higher overall sales and revenue acceleration.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-08-17T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230818_002_d7f71c52"
+        ],
+        "extracted_for_question_id": "v3_wmt_revenue_growth_acceleration_2023_07_31",
+        "source_article_id": "art_finance_20230818_002_d7f71c52",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wmt_revenue_growth_acceleration_2023_07_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T05:25:20.189352Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230823_001_6995ec19",
+        "title": "Warning Signs on U.S. Consumer Spending",
+        "description": "Dick’s Sporting Goods and Macy’s flash warning signs on U.S. consumer spending, indicating a cautious consumer environment, especially for discretionary items.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-08-23T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230823_005_7efe2224"
+        ],
+        "extracted_for_question_id": "v3_wmt_revenue_growth_acceleration_2023_07_31",
+        "source_article_id": "art_finance_20230823_005_7efe2224",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_wmt_revenue_growth_acceleration_2023_07_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:22:07.965489Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_wmt_revenue_growth_acceleration_2023_07_31_20260725_052523_001_444cd3fd",
+        "source_event_id": "evt_finance_20230817_002_21a291d9",
+        "target_event_id": "evt_finance_20230817_001_58a93ced",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Walmart's significant grocery growth directly contributed to higher overall sales and the accelerated revenue growth reported in the earnings forecast.",
+        "evidence_article_ids": [
+          "art_finance_20230818_002_d7f71c52"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wmt_revenue_growth_acceleration_2023_07_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T05:25:23.215709Z",
+        "last_confirmed_at": "2026-07-25T05:25:23.215709Z"
+      },
+      {
+        "id": "hyp_v3_wmt_revenue_growth_acceleration_2023_07_31_20260725_052523_002_a94687aa",
+        "source_event_id": "evt_finance_20230817_003_8612026d",
+        "target_event_id": "evt_finance_20230817_001_58a93ced",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Walmart's strong online sales growth was a key factor in fueling higher overall sales and the accelerated revenue growth.",
+        "evidence_article_ids": [
+          "art_finance_20230818_002_d7f71c52"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wmt_revenue_growth_acceleration_2023_07_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T05:25:23.228508Z",
+        "last_confirmed_at": "2026-07-25T05:25:23.228508Z"
+      },
+      {
+        "id": "hyp_v3_wmt_revenue_growth_acceleration_2023_07_31_20260725_052529_003_4f05635d",
+        "source_event_id": "evt_finance_20230529_004_90537eb6",
+        "target_event_id": "evt_finance_20230817_002_21a291d9",
+        "relation_type": "enables",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Increased consumer spending, even if primarily on services, can create a more favorable economic environment that enables growth in other retail segments like groceries.",
+        "evidence_article_ids": [
+          "art_finance_20230529_004_12313485"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wmt_revenue_growth_acceleration_2023_07_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T05:25:29.931762Z",
+        "last_confirmed_at": "2026-07-25T05:25:29.931762Z"
+      },
+      {
+        "id": "hyp_v3_wmt_revenue_growth_acceleration_2023_07_31_20260725_052529_004_0929d48b",
+        "source_event_id": "evt_finance_20230529_004_90537eb6",
+        "target_event_id": "evt_finance_20230817_003_8612026d",
+        "relation_type": "enables",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "A general increase in consumer spending can also translate to higher online retail purchases, enabling Walmart's online growth.",
+        "evidence_article_ids": [
+          "art_finance_20230529_004_12313485"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wmt_revenue_growth_acceleration_2023_07_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T05:25:29.946117Z",
+        "last_confirmed_at": "2026-07-25T05:25:29.946117Z"
+      },
+      {
+        "id": "hyp_v3_wmt_revenue_growth_acceleration_2023_07_31_20260725_062223_001_4fc9bca6",
+        "source_event_id": "evt_finance_20230529_003_928e2c48",
+        "target_event_id": "evt_finance_20230823_001_6995ec19",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "A shift in consumer spending towards services can lead to warning signs in goods-focused retail sectors as seen with Dick's and Macy's.",
+        "evidence_article_ids": [
+          "art_finance_20230529_004_12313485",
+          "art_finance_20230823_005_7efe2224"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wmt_revenue_growth_acceleration_2023_07_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:22:23.027747Z",
+        "last_confirmed_at": "2026-07-25T06:22:23.027747Z"
+      },
+      {
+        "id": "hyp_v3_wmt_revenue_growth_acceleration_2023_07_31_20260725_062223_002_be813c71",
+        "source_event_id": "evt_finance_20230823_001_6995ec19",
+        "target_event_id": "evt_c2f9e4f31bf0",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Warning signs in U.S. consumer spending, particularly for discretionary items, directly contribute to lower revenue growth for retailers like Walmart.",
+        "evidence_article_ids": [
+          "art_finance_20230823_005_7efe2224"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wmt_revenue_growth_acceleration_2023_07_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:22:23.045887Z",
+        "last_confirmed_at": "2026-07-25T06:22:23.045887Z"
+      },
+      {
+        "id": "hyp_v3_wmt_revenue_growth_acceleration_2023_07_31_20260725_062223_003_4d24e96d",
+        "source_event_id": "evt_finance_20230815_002_04560b08",
+        "target_event_id": "evt_c2f9e4f31bf0",
+        "relation_type": "causes",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "A decline in sales during a key promotional event like Walmart+ Week directly indicates a struggle in revenue growth.",
+        "evidence_article_ids": [
+          "art_finance_20230815_011_54197b51"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wmt_revenue_growth_acceleration_2023_07_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:22:23.058566Z",
+        "last_confirmed_at": "2026-07-25T06:22:23.058566Z"
+      },
+      {
+        "id": "hyp_v3_wmt_revenue_growth_acceleration_2023_07_31_20260725_062223_004_38bc8271",
+        "source_event_id": "evt_finance_20230529_004_90537eb6",
+        "target_event_id": "evt_finance_20230529_003_928e2c48",
+        "relation_type": "correlates",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The existing event 'Increased Consumer Spending on Services' is directly related to the newly created event 'Consumer Spending Shifts to Services'.",
+        "evidence_article_ids": [
+          "art_finance_20230529_004_12313485"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wmt_revenue_growth_acceleration_2023_07_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:22:23.071461Z",
+        "last_confirmed_at": "2026-07-25T06:22:23.071461Z"
+      },
+      {
+        "id": "hyp_v3_wmt_revenue_growth_acceleration_2023_07_31_20260725_062223_005_bdd0efcb",
+        "source_event_id": "evt_finance_20230531_005_64efa136",
+        "target_event_id": "evt_c2f9e4f31bf0",
+        "relation_type": "inhibits",
+        "strength": 0.4,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "While global inflation trending down could generally boost consumer spending, labor market pressures on services prices might offset some benefits for goods retailers like Walmart, leading to a weak inhibitory effect on revenue growth being below recent range.",
+        "evidence_article_ids": [
+          "art_finance_20230531_006_cb8554a9"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wmt_revenue_growth_acceleration_2023_07_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:22:23.084428Z",
+        "last_confirmed_at": "2026-07-25T06:22:23.084428Z"
+      },
+      {
+        "id": "hyp_v3_wmt_revenue_growth_acceleration_2023_07_31_20260725_062223_006_83d3568e",
+        "source_event_id": "evt_finance_20230713_006_78b6a126",
+        "target_event_id": "evt_finance_20230815_002_04560b08",
+        "relation_type": "inhibits",
+        "strength": 0.7,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Initial reports or expectations of Walmart Plus Week Sales Growth would inhibit a subsequent decline in sales during the same period. However, the article indicates an actual decline, suggesting the 'growth' event might represent an earlier expectation or a different metric.",
+        "evidence_article_ids": [
+          "art_finance_20230713_006_78b6a126",
+          "art_finance_20230815_011_54197b51"
+        ],
+        "discovered_by_question_ids": [
+          "v3_wmt_revenue_growth_acceleration_2023_07_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:22:23.098108Z",
+        "last_confirmed_at": "2026-07-25T06:22:23.098108Z"
+      }
+    ],
+    "outcome_impacts": [
+      {
+        "id": "imp_6be2194d",
+        "event_id": "evt_finance_20230817_002_21a291d9",
+        "outcome_event_id": "evt_c2f9e4f31bf0",
+        "question_id": "v3_wmt_revenue_growth_acceleration_2023_07_31",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Strong grocery growth for Walmart would make it less likely for overall revenue growth to be below recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wmt_revenue_growth_acceleration_2023_07_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:22:23.110529Z",
+        "last_confirmed_at": "2026-07-25T06:22:23.110529Z"
+      },
+      {
+        "id": "imp_346258fd",
+        "event_id": "evt_finance_20230817_003_8612026d",
+        "outcome_event_id": "evt_c2f9e4f31bf0",
+        "question_id": "v3_wmt_revenue_growth_acceleration_2023_07_31",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Strong online growth for Walmart would make it less likely for overall revenue growth to be below recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wmt_revenue_growth_acceleration_2023_07_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:22:23.122359Z",
+        "last_confirmed_at": "2026-07-25T06:22:23.122359Z"
+      },
+      {
+        "id": "imp_6e7fa259",
+        "event_id": "evt_finance_20230529_004_90537eb6",
+        "outcome_event_id": "evt_c2f9e4f31bf0",
+        "question_id": "v3_wmt_revenue_growth_acceleration_2023_07_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Increased consumer spending on services implies less spending on goods, which could lead to Walmart's revenue growth being below recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wmt_revenue_growth_acceleration_2023_07_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:22:23.133015Z",
+        "last_confirmed_at": "2026-07-25T06:22:23.133015Z"
+      },
+      {
+        "id": "imp_cfb3b0f9",
+        "event_id": "evt_finance_20230531_005_64efa136",
+        "outcome_event_id": "evt_c2f9e4f31bf0",
+        "question_id": "v3_wmt_revenue_growth_acceleration_2023_07_31",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.4,
+        "confidence": 0.6,
+        "reasoning": "While lower inflation could generally boost consumer purchasing power, the article also mentions labor market pressures, making the overall impact on Walmart's revenue growth being below recent range weakly negative.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wmt_revenue_growth_acceleration_2023_07_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:22:23.143095Z",
+        "last_confirmed_at": "2026-07-25T06:22:23.143095Z"
+      },
+      {
+        "id": "imp_bad39876",
+        "event_id": "evt_finance_20230713_006_78b6a126",
+        "outcome_event_id": "evt_c2f9e4f31bf0",
+        "question_id": "v3_wmt_revenue_growth_acceleration_2023_07_31",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.5,
+        "confidence": 0.6,
+        "reasoning": "If Walmart Plus Week Sales showed growth, it would make the overall revenue growth being below recent range less likely. However, later data suggests an overall decline during this period.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wmt_revenue_growth_acceleration_2023_07_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:22:23.153850Z",
+        "last_confirmed_at": "2026-07-25T06:22:23.153850Z"
+      },
+      {
+        "id": "imp_5a1b277c",
+        "event_id": "evt_finance_20230823_001_6995ec19",
+        "outcome_event_id": "evt_c2f9e4f31bf0",
+        "question_id": "v3_wmt_revenue_growth_acceleration_2023_07_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.8,
+        "reasoning": "Warning signs on U.S. consumer spending directly increase the likelihood of Walmart's revenue growth being below recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wmt_revenue_growth_acceleration_2023_07_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:22:23.164188Z",
+        "last_confirmed_at": "2026-07-25T06:22:23.164188Z"
+      },
+      {
+        "id": "imp_9b6aa39e",
+        "event_id": "evt_finance_20230815_002_04560b08",
+        "outcome_event_id": "evt_c2f9e4f31bf0",
+        "question_id": "v3_wmt_revenue_growth_acceleration_2023_07_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "A decline in sales during Walmart+ Week directly increases the likelihood of Walmart's revenue growth being below recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wmt_revenue_growth_acceleration_2023_07_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:22:23.174605Z",
+        "last_confirmed_at": "2026-07-25T06:22:23.174605Z"
+      },
+      {
+        "id": "imp_57a6568a",
+        "event_id": "evt_finance_20230529_003_928e2c48",
+        "outcome_event_id": "evt_c2f9e4f31bf0",
+        "question_id": "v3_wmt_revenue_growth_acceleration_2023_07_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "A shift in consumer spending towards services makes it more likely for Walmart's goods-focused revenue growth to be below recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_wmt_revenue_growth_acceleration_2023_07_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:22:23.184542Z",
+        "last_confirmed_at": "2026-07-25T06:22:23.184542Z"
+      }
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_us_5y_breakeven_monthly_change_2024_01",
+  "blueprint_sha256": "ed3b43d55afb6eefaafe582b8d4f2aa1aa8e36ef1617865cd3957d184c19daf1",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "monetary_policy / inflation expectations",
+      "target_operation": "monthly 5-year breakeven change",
+      "option_geometry": "bucketed by recent range"
+    },
+    "historical_question": "As of 2024-01-01, which range will the monthly 5-year breakeven change for United States 5-year breakeven inflation rate in 2024-01 fall into?",
+    "historical_cutoff": "2024-01-01T00:00:00+00:00",
+    "target_semantics": "The monthly change in the United States 5-year breakeven inflation rate for January 2024.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20080723_008_27840342",
+        "takeaway": "Inflation rates have historically shown variability, influenced by various economic factors.",
+        "why_predictive": "Provides general context on inflation dynamics, suggesting that changes are possible and influenced by underlying economic conditions."
+      },
+      {
+        "article_id": "art_finance_20180903_002_b6c8cb88",
+        "takeaway": "Product sales data can be indicative of broader economic activity.",
+        "why_predictive": "While not directly about inflation, strong sales could imply robust economic activity, which might influence inflation expectations and Federal Reserve policy."
+      }
+    ],
+    "expert_reasoning": [
+      "Federal Reserve Officials' Hawkish Remarks (checkpoint_1) reinforced concerns about persistent inflation, suggesting upward pressure on inflation expectations (checkpoint_7).",
+      "The Federal Reserve FOMC Statement (checkpoint_6) emphasized inflation concerns, solidifying expectations of delayed rate cuts and thus persistent inflation (checkpoint_7).",
+      "Strong US GDP Growth (checkpoint_3) led to a repricing of Fed rate cut expectations, contributing to market repricing of Fed rate cut expectations (checkpoint_4).",
+      "Market Reprices Fed Rate Cut Expectations (checkpoint_4) directly contributed to upward pressure on inflation expectations (checkpoint_8).",
+      "Persistent Inflation Concerns (checkpoint_7) contributed to the upward trend in breakeven rates (checkpoint_8).",
+      "Upward Pressure on Inflation Expectations (checkpoint_8) is the direct driver for the monthly 5-year breakeven change (target_bridge)."
+    ],
+    "counterevidence": "Optimism for Future Fed Cuts (checkpoint_2) could have tempered breakeven inflation rates, but the immediate impact of the Fed's firm stance and strong economic data overshadowed these longer-term forecasts. Cooling Inflation Data (checkpoint_5) was also present but outweighed by other factors.",
+    "prospective_target_estimate": "The evidence suggests that hawkish Fed remarks, a firm FOMC statement, and strong economic data are likely to maintain upward pressure on inflation expectations, potentially leading to a positive change in the 5-year breakeven rate.",
+    "option_mapping": "Given the upward pressure on inflation expectations, the monthly change is likely to be positive. The recent range boundaries are -0.123 and 0.095 percentage points. A positive change would likely fall above the recent range.",
+    "uncertainty": "The provided forecast-time evidence is general and does not offer specific quantitative data on the magnitude of these factors or their precise impact on breakeven rates. The historical support for key drivers is weak, and the interplay between hawkish remarks, economic data, and market expectations is complex.",
+    "dag_derived_lesson": "When assessing changes in inflation expectations, it is crucial to evaluate the impact of central bank communications and economic data. Hawkish central bank rhetoric and strong economic indicators can reinforce inflation concerns, leading to upward pressure on inflation expectations, even if some data points suggest cooling. The market's repricing of policy expectations acts as a key mediator in this process. Countervailing factors, such as optimism for future policy easing or disinflationary data, may be present but can be overshadowed by more immediate or forceful drivers."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

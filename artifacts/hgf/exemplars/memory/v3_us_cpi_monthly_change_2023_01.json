@@ -1,0 +1,35 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_us_cpi_monthly_change_2023_01",
+  "blueprint_sha256": "8ad083f9cde68a923775be93c535ea1838a12b06b074077a29004b72feed0310",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "macro / inflation",
+      "target_operation": "monthly CPI change",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2023-01-31, which range will the monthly CPI change for United States CPI in 2023-01 fall into?",
+    "historical_cutoff": "2023-01-31T00:00:00+00:00",
+    "target_semantics": "The monthly percentage change in the US Consumer Price Index for January 2023.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The DAG indicates that persistent demand, driven by factors like improved consumer sentiment and rising inflation expectations, is a potential driver of inflation (checkpoint_1).",
+      "Persistent demand, coupled with supply imbalances, is identified as a mediator that fueled initial inflation and could lead to persistent services inflation (checkpoint_2).",
+      "Continued wage growth and services inflation, particularly in housing, are also highlighted as drivers contributing to persistent inflation (checkpoint_6).",
+      "The DAG also points to the Federal Reserve's monetary policy stance as a counterevidence factor, suggesting it may have prevented further acceleration of inflation (checkpoint_4).",
+      "Similarly, moderation in certain components like energy and goods is noted as counterevidence, potentially offsetting inflationary pressures (checkpoint_5)."
+    ],
+    "counterevidence": "The Federal Reserve's monetary policy stance (checkpoint_4) and moderation in certain components like energy and goods (checkpoint_5) are identified as counterevidence that could temper inflationary pressures.",
+    "prospective_target_estimate": "Given the conflicting signals from demand-side pressures (consumer sentiment, wage growth) and supply-side/policy counterforces (Fed policy, energy moderation), and the weak historical support for all factors, it is difficult to definitively estimate the target range. The evidence does not strongly support a clear direction or magnitude.",
+    "option_mapping": "The target is to determine if the monthly CPI change for January 2023 falls below 0.051%, within the range of 0.051% to 0.657%, or above 0.657%.",
+    "uncertainty": "The historical support for all identified drivers and counterevidence is weak. There is a lack of specific, cutoff-safe evidence to definitively assess the current impact of consumer sentiment, demand-supply imbalances, wage growth, Fed policy, or specific component price changes on the January 2023 CPI. The DAG's structure highlights multiple paths and counter-paths with unknown expected directions, leading to significant uncertainty.",
+    "dag_derived_lesson": "When evaluating a target metric influenced by multiple causal pathways, it is crucial to assess the current evidential support for each link in every path. The presence of both driving and counteracting factors, especially when their historical support is weak, necessitates a cautious approach, acknowledging that the net effect on the target may be indeterminate without stronger, cutoff-safe evidence."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

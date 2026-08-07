@@ -1,0 +1,54 @@
+{
+  "schema_version": "fixed_exemplar_case",
+  "status": "success",
+  "question_id": "v3_us_10y_real_yield_monthly_change_2026_06",
+  "retrieved_memory_question_id": "v3_us_10y_real_yield_monthly_change_2023_01",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "monetary_policy / real rates",
+      "target_operation": "monthly change",
+      "option_geometry": "ordered_categorical"
+    },
+    "historical_question": "As of 2023-01-01, which range will the monthly 10-year real-yield change for United States 10-year real Treasury yield in 2023-01 fall into?",
+    "historical_cutoff": "2023-01-01T00:00:00+00:00",
+    "target_semantics": "The monthly change in the United States 10-year real Treasury yield for January 2023.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20220823_003_63a78def",
+        "takeaway": "The US inflation rate has been high and rising, with recent figures indicating a significant increase.",
+        "why_predictive": "High and rising inflation is a key driver for central bank policy, which in turn influences real yields. Understanding the recent inflation trend provides context for future monetary policy expectations."
+      },
+      {
+        "article_id": "art_finance_20211219_005_44743575",
+        "takeaway": "A substantial portion of US dollars in existence were printed between January 2020 and October 2021, suggesting significant monetary expansion.",
+        "why_predictive": "Large increases in the money supply can contribute to inflation and influence central bank responses, impacting real yields."
+      },
+      {
+        "article_id": "art_finance_20220616_002_093ebaaa",
+        "takeaway": "30-year fixed mortgage rates spiked to 6.18% in mid-June 2022.",
+        "why_predictive": "Mortgage rates are closely tied to longer-term Treasury yields. A significant spike in mortgage rates suggests upward pressure on longer-term nominal yields, and by extension, real yields, especially if inflation expectations remain elevated."
+      },
+      {
+        "article_id": "art_finance_20200314_003_64328fcf",
+        "takeaway": "The 10-year Treasury yield jumped above 1% in March 2020 following clarity on government response to the coronavirus.",
+        "why_predictive": "This shows that significant events and policy responses can lead to rapid changes in 10-year Treasury yields, indicating sensitivity to economic news and policy."
+      }
+    ],
+    "expert_reasoning": [
+      "The US 10-year real Treasury yield is influenced by inflation expectations and monetary policy. Recent data shows persistently high inflation (art_finance_20220823_003_63a78def), which has been exacerbated by significant monetary expansion (art_finance_20211219_005_44743575).",
+      "The Federal Reserve's response to high inflation typically involves tightening monetary policy, which aims to increase interest rates, including real yields. This is supported by the observation that mortgage rates, which are linked to longer-term yields, have spiked (art_finance_20220616_002_093ebaaa).",
+      "Historically, significant economic events and policy clarity have led to notable shifts in 10-year Treasury yields (art_finance_20200314_003_64328fcf). Given the prevailing high inflation and the Fed's likely stance, upward pressure on real yields is expected.",
+      "The recent range boundaries for the monthly 10-year real-yield change are -0.135 to 0.463 percentage points. Considering the inflationary environment and the potential for monetary tightening, a positive change in real yields is plausible."
+    ],
+    "counterevidence": "No direct counterevidence regarding the direction of real yields was found in the provided articles. The articles focus on inflation trends, monetary expansion, and yield movements in response to economic events, all of which generally point towards upward pressure on yields in a high-inflation environment.",
+    "prospective_target_estimate": "Given the sustained high inflation and the historical sensitivity of yields to monetary policy shifts, the monthly change in the 10-year real Treasury yield is likely to be positive. This suggests a move towards the 'above recent range' option.",
+    "option_mapping": "The evidence suggests that the monthly change in the 10-year real Treasury yield for January 2023 will be positive, driven by high inflation and anticipated monetary policy tightening. This aligns with the 'above recent range' option, as the lower bound of the recent range is negative (-0.135).",
+    "uncertainty": "While the trend points towards an increase in real yields, the exact magnitude of the change is uncertain. The Federal Reserve's specific policy actions and market reactions are subject to change, and the precise impact on real yields is difficult to quantify without more granular, forward-looking data on inflation expectations and policy rates.",
+    "dag_derived_lesson": "Sustained high inflation and significant monetary expansion create conditions that typically lead to upward pressure on real yields, especially when central banks are expected to tighten policy. Market-sensitive indicators like mortgage rates can reflect these pressures. However, the precise magnitude of yield changes remains uncertain due to the dynamic nature of policy decisions and market responses."
+  },
+  "hgf_provenance": {
+    "blueprint_schema": "hgf_blueprint_topology_v2",
+    "blueprint_sha256": "b4588dc3f393458487405d541dac0d3cdb1c3311073f95a8cd94b0b170dd36dd",
+    "memory_exemplar_sha256": "65477e3e3adead6095ab883d52c68da641569d20a507e84f8286cfe507b5e91b"
+  }
+}

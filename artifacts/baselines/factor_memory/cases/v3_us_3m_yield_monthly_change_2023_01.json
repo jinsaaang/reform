@@ -1,0 +1,213 @@
+{
+  "schema_version": "hgf_blueprint_v1",
+  "question_id": "v3_us_3m_yield_monthly_change_2023_01",
+  "target_definition": {
+    "metric": "United States three-month Treasury yield monthly change",
+    "unit_or_option_space": "percentage-point threshold classification",
+    "forecast_horizon": "January 2023 monthly observation"
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Inflation, policy stance, and rate expectations form a short-rate transmission chain.",
+    "weaknesses": [
+      "Several nodes are broad historical context.",
+      "The graph lacks a direct observed yield node."
+    ]
+  },
+  "search_factors": [
+    {
+      "factor": "Inflation persistence",
+      "why_search": "Persistent inflation can sustain restrictive policy expectations.",
+      "preferred_source_types": [
+        "inflation release",
+        "central-bank analysis"
+      ],
+      "source_event_ids": [
+        "evt_finance_20221101_010_176e99bf"
+      ]
+    },
+    {
+      "factor": "Federal Reserve policy stance",
+      "why_search": "Expected policy tightening anchors short-term rates.",
+      "preferred_source_types": [
+        "FOMC statement",
+        "policy speech"
+      ],
+      "source_event_ids": [
+        "evt_finance_20221201_011_263364ee"
+      ]
+    },
+    {
+      "factor": "Short-rate market pricing",
+      "why_search": "Forward pricing provides a timely transmission measure.",
+      "preferred_source_types": [
+        "rates market data",
+        "forward curve"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230113_012_c2bddc60",
+        "evt_finance_20230113_016_a797dc1c"
+      ]
+    },
+    {
+      "factor": "Central-bank communication",
+      "why_search": "Communication can reinforce or reverse rate expectations.",
+      "preferred_source_types": [
+        "central-bank speech",
+        "meeting minutes"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230116_032_f5c9eff3"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "inflation_pressure",
+      "role": "baseline",
+      "factor": "Persistent inflation",
+      "mechanism": "Persistent inflation supports demand for restrictive monetary policy.",
+      "expected_direction": "up",
+      "evidence_requirement": "Recent inflation measures and inflation expectations.",
+      "contradiction_signal": "Inflation falls rapidly or expectations ease.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_finance_20221101_010_176e99bf",
+        "evt_finance_20220823_029_bd5411d0"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_3m_yield_monthly_change_2023_01_20260722_212139_008_2e4b7c6b"
+      ]
+    },
+    {
+      "id": "policy_stance",
+      "role": "driver",
+      "factor": "Restrictive Federal Reserve stance",
+      "mechanism": "Expected tightening raises the expected path of short-term policy rates.",
+      "expected_direction": "up",
+      "evidence_requirement": "FOMC actions, guidance, and policy-rate futures.",
+      "contradiction_signal": "Guidance signals a pause or easing.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_finance_20221201_011_263364ee",
+        "evt_finance_20230116_030_d6df9404"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_3m_yield_monthly_change_2023_01_20260722_212139_009_5c89b154"
+      ]
+    },
+    {
+      "id": "market_pricing",
+      "role": "mediator",
+      "factor": "Higher short-rate expectations",
+      "mechanism": "Markets incorporate expected tightening into short-dated rate pricing.",
+      "expected_direction": "up",
+      "evidence_requirement": "Implied policy path and short-rate futures.",
+      "contradiction_signal": "Futures reprice lower despite restrictive guidance.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_finance_20230113_012_c2bddc60",
+        "evt_finance_20230116_031_e46fbecf"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_3m_yield_monthly_change_2023_01_20260722_212139_010_958b1357",
+        "hyp_v3_us_3m_yield_monthly_change_2023_01_20260722_212352_026_1ec69598"
+      ]
+    },
+    {
+      "id": "forward_curve",
+      "role": "driver",
+      "factor": "Rising implied forward rates",
+      "mechanism": "An upward short-rate forward curve signals higher near-term financing rates.",
+      "expected_direction": "up",
+      "evidence_requirement": "Forward curve changes across the observation month.",
+      "contradiction_signal": "The curve flattens or declines.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_finance_20230113_016_a797dc1c",
+        "evt_finance_20230116_020_2510a56a"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_3m_yield_monthly_change_2023_01_20260722_212352_027_308e0e97"
+      ]
+    },
+    {
+      "id": "consolidated_bridge",
+      "role": "target_bridge",
+      "factor": "Short-dated Treasury repricing",
+      "mechanism": "Changes in expected policy rates and forward pricing transmit into three-month Treasury yields.",
+      "expected_direction": "up",
+      "evidence_requirement": "Daily three-month Treasury yields and contemporaneous rate expectations.",
+      "contradiction_signal": "Treasury yields diverge from short-rate pricing.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_finance_20230116_020_2510a56a",
+        "evt_finance_20230116_032_f5c9eff3"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_3m_yield_monthly_change_2023_01_20260722_212306_016_e5f10ddb",
+        "hyp_v3_us_3m_yield_monthly_change_2023_01_20260722_212352_029_5a078663"
+      ]
+    }
+  ],
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "inflation_pressure",
+        "policy_stance",
+        "market_pricing",
+        "consolidated_bridge"
+      ],
+      "generalized_mechanism": "Persistent inflation can sustain restrictive expectations that reprice short-term Treasury yields.",
+      "expected_direction": "up",
+      "applicability_conditions": [
+        "Inflation is policy-relevant.",
+        "Markets view guidance as credible."
+      ],
+      "failure_conditions": [
+        "Inflation surprises lower.",
+        "Risk aversion overwhelms policy pricing."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "policy_stance",
+        "forward_curve",
+        "consolidated_bridge"
+      ],
+      "generalized_mechanism": "Restrictive guidance can lift the forward curve and transmit to short Treasury yields.",
+      "expected_direction": "up",
+      "applicability_conditions": [
+        "Forward markets are liquid.",
+        "Policy communication is clear."
+      ],
+      "failure_conditions": [
+        "Guidance is already priced.",
+        "The curve reverses."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "Markets expect policymakers to slow tightening despite inflation concerns.",
+      "discriminating_evidence": "Short-rate futures decline after policy communication.",
+      "source_event_ids": [
+        "evt_finance_20230116_033_0a9f883a",
+        "evt_finance_20230116_032_f5c9eff3"
+      ]
+    },
+    {
+      "hypothesis": "Recession signals dominate and suppress short Treasury yields.",
+      "discriminating_evidence": "Curve inversion deepens while forward rates fall.",
+      "source_event_ids": [
+        "evt_finance_20181129_034_d613cdf0",
+        "evt_finance_20230113_016_a797dc1c"
+      ]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Did inflation data change the expected policy path?",
+    "Do futures and forward rates confirm higher short-rate pricing?",
+    "Is Treasury-yield movement aligned with the forward curve?"
+  ]
+}

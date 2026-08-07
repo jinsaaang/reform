@@ -1,0 +1,635 @@
+{
+  "schema_version": "hgf_blueprint_topology_v2",
+  "question_id": "v3_tsla_revenue_growth_acceleration_2023_03_31",
+  "target_definition": {
+    "metric": "quarterly revenue year-over-year growth acceleration",
+    "unit_or_option_space": [
+      "below recent range",
+      "within recent range",
+      "above recent range"
+    ],
+    "forecast_horizon": "Remap the historical target family to the current question's exact target period."
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Outcome-redacted topology preserves 8 checkpoints, 9 source edges, and 6 root-to-target paths.",
+    "weaknesses": []
+  },
+  "search_factors": [
+    {
+      "factor": "Tesla Implements Aggressive Price Cuts",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230219_001_8b9e51b3"
+      ]
+    },
+    {
+      "factor": "Increased EV Market Competition",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230402_005_a3d8fec3"
+      ]
+    },
+    {
+      "factor": "[CURRENT_PERIOD_REQUIRED] Vehicle Deliveries Increase",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230403_002_17c0a96e"
+      ]
+    },
+    {
+      "factor": "Tesla Built More Cars Than It Could Sell in [CURRENT_PERIOD_REQUIRED]",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230403_007_5a5d67b4"
+      ]
+    },
+    {
+      "factor": "[CURRENT_PERIOD_REQUIRED] Electric Vehicle Sales Surpass [CURRENT_VALUE_REQUIRED] in US",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230412_008_52acb343"
+      ]
+    },
+    {
+      "factor": "Tesla's Profit Margins Decline",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230419_003_521895f6"
+      ]
+    },
+    {
+      "factor": "Tesla Releases [CURRENT_PERIOD_REQUIRED] Financial Results",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230419_004_fe8819d3"
+      ]
+    },
+    {
+      "factor": "Tesla [CURRENT_PERIOD_REQUIRED] Revenue Sees Year-over-Year Increase",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230419_006_00952144"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "checkpoint_1",
+      "role": "driver",
+      "factor": "Tesla Implements Aggressive Price Cuts",
+      "mechanism": "Aggressive price cuts directly led to an increase in vehicle deliveries.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230219_001_8b9e51b3"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_tsla_revenue_growth_acceleration_2023_03_31_20260724_213958_001_5f718328",
+        "hyp_v3_tsla_revenue_growth_acceleration_2023_03_31_20260724_213958_002_93cb21a9"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_2",
+      "role": "counterevidence",
+      "factor": "Increased EV Market Competition",
+      "mechanism": "Increased competition could have pressured Tesla's market share and sales velocity, indirectly limiting revenue growth acceleration.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230402_005_a3d8fec3"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_tsla_revenue_growth_acceleration_2023_03_31_20260724_213958_007_0705c9c8"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_3",
+      "role": "mediator",
+      "factor": "[CURRENT_PERIOD_REQUIRED] Vehicle Deliveries Increase",
+      "mechanism": "Increased vehicle deliveries directly contributed to the year-over-year revenue increase.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230403_002_17c0a96e"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_tsla_revenue_growth_acceleration_2023_03_31_20260724_213958_003_3e9e1e1f"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_4",
+      "role": "driver",
+      "factor": "Tesla Built More Cars Than It Could Sell in [CURRENT_PERIOD_REQUIRED]",
+      "mechanism": "Tesla building more cars than it could sell suggests a potential oversupply, which could correlate with the need for price cuts and thus declining profit margins.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230403_007_5a5d67b4"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_tsla_revenue_growth_acceleration_2023_03_31_20260724_213958_009_569ca66b"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_5",
+      "role": "driver",
+      "factor": "[CURRENT_PERIOD_REQUIRED] Electric Vehicle Sales Surpass [CURRENT_VALUE_REQUIRED] in US",
+      "mechanism": "A growing overall EV market provided a favorable environment for Tesla's revenue growth.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230412_008_52acb343"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_tsla_revenue_growth_acceleration_2023_03_31_20260724_213958_008_15844c59"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_6",
+      "role": "counterevidence",
+      "factor": "Tesla's Profit Margins Decline",
+      "mechanism": "Re-test whether this factor has a currently supported link to the exact target metric; do not transfer the historical outcome or magnitude.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230419_003_521895f6"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_tsla_revenue_growth_acceleration_2023_03_31_20260724_213958_005_e3dd4241"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_7",
+      "role": "driver",
+      "factor": "Tesla Releases [CURRENT_PERIOD_REQUIRED] Financial Results",
+      "mechanism": "Re-test whether this factor has a currently supported link to the exact target metric; do not transfer the historical outcome or magnitude.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230419_004_fe8819d3"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_tsla_revenue_growth_acceleration_2023_03_31_20260724_213958_006_b0e85d6f"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_8",
+      "role": "mediator",
+      "factor": "Tesla [CURRENT_PERIOD_REQUIRED] Revenue Sees Year-over-Year Increase",
+      "mechanism": "Re-test whether this factor has a currently supported link to the exact target metric; do not transfer the historical outcome or magnitude.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230419_006_00952144"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_tsla_revenue_growth_acceleration_2023_03_31_20260724_213958_004_7a056e28"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "target_bridge",
+      "role": "target_bridge",
+      "factor": "quarterly revenue year-over-year growth acceleration",
+      "mechanism": "Map only currently supported paths into the exact target operator. Directional support alone is not magnitude or threshold-crossing support.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "A current target baseline and evidence supporting every edge used in the bridge.",
+      "contradiction_signal": "The current target baseline, magnitude evidence, or option boundary contradicts the proposed path.",
+      "historical_support": "medium",
+      "source_event_ids": [],
+      "source_edge_ids": [
+        "hyp_v3_tsla_revenue_growth_acceleration_2023_03_31_20260724_213958_004_7a056e28",
+        "hyp_v3_tsla_revenue_growth_acceleration_2023_03_31_20260724_213958_005_e3dd4241",
+        "hyp_v3_tsla_revenue_growth_acceleration_2023_03_31_20260724_213958_006_b0e85d6f"
+      ],
+      "source_event_type": "target_bridge"
+    }
+  ],
+  "topology": {
+    "checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_5",
+      "checkpoint_6",
+      "checkpoint_7",
+      "checkpoint_8",
+      "target_bridge"
+    ],
+    "root_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_4",
+      "checkpoint_5",
+      "checkpoint_7"
+    ],
+    "target_bridge_id": "target_bridge",
+    "edges": [
+      {
+        "source_checkpoint_id": "checkpoint_1",
+        "target_checkpoint_id": "checkpoint_3",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Aggressive price cuts directly led to an increase in vehicle deliveries.",
+        "source_edge_ids": [
+          "hyp_v3_tsla_revenue_growth_acceleration_2023_03_31_20260724_213958_001_5f718328"
+        ],
+        "source_article_ids": [
+          "art_finance_20230403_002_319bd4a0"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_1",
+        "target_checkpoint_id": "checkpoint_6",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "The aggressive price cuts directly resulted in declining profit margins.",
+        "source_edge_ids": [
+          "hyp_v3_tsla_revenue_growth_acceleration_2023_03_31_20260724_213958_002_93cb21a9"
+        ],
+        "source_article_ids": [
+          "art_finance_20230419_004_cc01fc09",
+          "art_finance_20230420_003_1092d25a"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_3",
+        "target_checkpoint_id": "checkpoint_8",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Increased vehicle deliveries directly contributed to the year-over-year revenue increase.",
+        "source_edge_ids": [
+          "hyp_v3_tsla_revenue_growth_acceleration_2023_03_31_20260724_213958_003_3e9e1e1f"
+        ],
+        "source_article_ids": [
+          "art_finance_20230419_004_cc01fc09",
+          "art_finance_20230420_005_bdd4eea2"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_2",
+        "target_checkpoint_id": "checkpoint_8",
+        "relationship": "inhibits",
+        "directionality": "counteracting",
+        "support_level": "",
+        "rationale": "Increased competition could have pressured Tesla's market share and sales velocity, indirectly limiting revenue growth acceleration.",
+        "source_edge_ids": [
+          "hyp_v3_tsla_revenue_growth_acceleration_2023_03_31_20260724_213958_007_0705c9c8"
+        ],
+        "source_article_ids": [
+          "art_finance_20230402_004_2105945e",
+          "art_finance_20230412_003_15382cdc"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_5",
+        "target_checkpoint_id": "checkpoint_8",
+        "relationship": "enables",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "A growing overall EV market provided a favorable environment for Tesla's revenue growth.",
+        "source_edge_ids": [
+          "hyp_v3_tsla_revenue_growth_acceleration_2023_03_31_20260724_213958_008_15844c59"
+        ],
+        "source_article_ids": [
+          "art_finance_20230412_003_15382cdc"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_4",
+        "target_checkpoint_id": "checkpoint_6",
+        "relationship": "correlates",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Tesla building more cars than it could sell suggests a potential oversupply, which could correlate with the need for price cuts and thus declining profit margins.",
+        "source_edge_ids": [
+          "hyp_v3_tsla_revenue_growth_acceleration_2023_03_31_20260724_213958_009_569ca66b"
+        ],
+        "source_article_ids": [
+          "art_finance_20230403_005_e4f98aac"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_8",
+        "target_checkpoint_id": "target_bridge",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Historical DAG connected this factor to the redacted target measurement; the realized value and outcome mapping are omitted.",
+        "source_edge_ids": [
+          "hyp_v3_tsla_revenue_growth_acceleration_2023_03_31_20260724_213958_004_7a056e28"
+        ],
+        "source_article_ids": [
+          "art_finance_20230419_004_cc01fc09",
+          "art_finance_20230420_005_bdd4eea2"
+        ],
+        "terminal_to_target_bridge": true
+      },
+      {
+        "source_checkpoint_id": "checkpoint_6",
+        "target_checkpoint_id": "target_bridge",
+        "relationship": "inhibits",
+        "directionality": "counteracting",
+        "support_level": "",
+        "rationale": "Historical DAG connected this factor to the redacted target measurement; the realized value and outcome mapping are omitted.",
+        "source_edge_ids": [
+          "hyp_v3_tsla_revenue_growth_acceleration_2023_03_31_20260724_213958_005_e3dd4241"
+        ],
+        "source_article_ids": [
+          "art_finance_20230420_003_1092d25a",
+          "art_finance_20230419_004_cc01fc09"
+        ],
+        "terminal_to_target_bridge": true
+      },
+      {
+        "source_checkpoint_id": "checkpoint_7",
+        "target_checkpoint_id": "target_bridge",
+        "relationship": "triggers",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Historical DAG connected this factor to the redacted target measurement; the realized value and outcome mapping are omitted.",
+        "source_edge_ids": [
+          "hyp_v3_tsla_revenue_growth_acceleration_2023_03_31_20260724_213958_006_b0e85d6f"
+        ],
+        "source_article_ids": [
+          "art_finance_20230419_006_618b6d07"
+        ],
+        "terminal_to_target_bridge": true
+      }
+    ],
+    "paths_truncated": false
+  },
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "checkpoint_1",
+        "checkpoint_3",
+        "checkpoint_8",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_tsla_revenue_growth_acceleration_2023_03_31_20260724_213958_001_5f718328",
+        "hyp_v3_tsla_revenue_growth_acceleration_2023_03_31_20260724_213958_003_3e9e1e1f",
+        "hyp_v3_tsla_revenue_growth_acceleration_2023_03_31_20260724_213958_004_7a056e28"
+      ],
+      "relationships": [
+        "causes",
+        "causes",
+        "causes"
+      ],
+      "path_role": "main_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Tesla Implements Aggressive Price Cuts to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_1",
+        "checkpoint_6",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_tsla_revenue_growth_acceleration_2023_03_31_20260724_213958_002_93cb21a9",
+        "hyp_v3_tsla_revenue_growth_acceleration_2023_03_31_20260724_213958_005_e3dd4241"
+      ],
+      "relationships": [
+        "causes",
+        "inhibits"
+      ],
+      "path_role": "counter_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Tesla Implements Aggressive Price Cuts to the current target; every edge requires current support.",
+      "expected_direction": "mixed",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_2",
+        "checkpoint_8",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_tsla_revenue_growth_acceleration_2023_03_31_20260724_213958_007_0705c9c8",
+        "hyp_v3_tsla_revenue_growth_acceleration_2023_03_31_20260724_213958_004_7a056e28"
+      ],
+      "relationships": [
+        "inhibits",
+        "causes"
+      ],
+      "path_role": "counter_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Increased EV Market Competition to the current target; every edge requires current support.",
+      "expected_direction": "mixed",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_4",
+        "checkpoint_6",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_tsla_revenue_growth_acceleration_2023_03_31_20260724_213958_009_569ca66b",
+        "hyp_v3_tsla_revenue_growth_acceleration_2023_03_31_20260724_213958_005_e3dd4241"
+      ],
+      "relationships": [
+        "correlates",
+        "inhibits"
+      ],
+      "path_role": "counter_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Tesla Built More Cars Than It Could Sell in [CURRENT_PERIOD_REQUIRED] to the current target; every edge requires current support.",
+      "expected_direction": "mixed",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_5",
+        "checkpoint_8",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_tsla_revenue_growth_acceleration_2023_03_31_20260724_213958_008_15844c59",
+        "hyp_v3_tsla_revenue_growth_acceleration_2023_03_31_20260724_213958_004_7a056e28"
+      ],
+      "relationships": [
+        "enables",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from [CURRENT_PERIOD_REQUIRED] Electric Vehicle Sales Surpass [CURRENT_VALUE_REQUIRED] in US to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_7",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_tsla_revenue_growth_acceleration_2023_03_31_20260724_213958_006_b0e85d6f"
+      ],
+      "relationships": [
+        "triggers"
+      ],
+      "path_role": "supporting_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Tesla Releases [CURRENT_PERIOD_REQUIRED] Financial Results to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "Increased EV Market Competition dominates or reverses the leading current path.",
+      "discriminating_evidence": "Compare current evidence for this counter-path with every edge on the leading supported path.",
+      "source_event_ids": [
+        "evt_finance_20230402_005_a3d8fec3"
+      ]
+    },
+    {
+      "hypothesis": "Tesla's Profit Margins Decline dominates or reverses the leading current path.",
+      "discriminating_evidence": "Compare current evidence for this counter-path with every edge on the leading supported path.",
+      "source_event_ids": [
+        "evt_finance_20230419_003_521895f6"
+      ]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Does every used checkpoint transition correspond to a preserved edge?",
+    "Which preserved edges are supported, contradicted, or unknown now?",
+    "Does a counter-path dominate the leading supported path?",
+    "Is there evidence for magnitude and boundary crossing, not direction alone?"
+  ],
+  "refinement_metadata": {
+    "model": "deterministic_topology_compiler_v2",
+    "source_graph": "data\\dags\\v3_tsla_revenue_growth_acceleration_2023_03_31\\graph.json",
+    "source_audit_status": "pass",
+    "outcome_nodes_redacted": 3,
+    "target_value_anchors_redacted": 0,
+    "historical_specifics_sanitized": true,
+    "sanitizer": "minimal_value_period_placeholders_v1",
+    "value_replacement_count": 3,
+    "period_replacement_count": 13
+  },
+  "topology_validation": {
+    "status": "pass",
+    "errors": [],
+    "metrics": {
+      "retained_checkpoint_count": 8,
+      "source_edge_count": 9,
+      "emitted_edge_count": 9,
+      "edge_coverage": 1.0,
+      "path_precision": 1.0,
+      "causal_path_count": 6,
+      "outcome_event_leak_count": 0,
+      "outcome_text_leak_count": 0,
+      "realized_value_count": 0,
+      "absolute_period_count": 0
+    }
+  }
+}

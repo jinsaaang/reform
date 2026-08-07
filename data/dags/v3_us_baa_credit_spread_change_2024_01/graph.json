@@ -1,0 +1,145 @@
+{
+  "schema_version": "1.0",
+  "actual_outcome_event_id": "node_6",
+  "graph": {
+    "nodes": [
+      {
+        "id": "node_1",
+        "label": "Markets expected substantial Federal Reserve rate cuts in 2024",
+        "event_type": "indicator",
+        "occurred_date": "2023-12-29",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_515ac8d071f9661f"
+        ]
+      },
+      {
+        "id": "node_2",
+        "label": "Expected rate cuts plausibly supported corporate-credit conditions",
+        "event_type": "indicator",
+        "occurred_date": "2024-01-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_515ac8d071f9661f"
+        ]
+      },
+      {
+        "id": "node_3",
+        "label": "Corporate-credit conditions plausibly favored stable or tighter spreads",
+        "event_type": "indicator",
+        "occurred_date": "2024-01-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_515ac8d071f9661f",
+          "ev_8e14bdc1fde7dd00"
+        ]
+      },
+      {
+        "id": "node_4",
+        "label": "Historical sources documented investment-grade spread behavior and tight-spread regimes",
+        "event_type": "indicator",
+        "occurred_date": "2023-03-03",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_189c75c3ad57e800",
+          "ev_8e14bdc1fde7dd00",
+          "ev_7b8082ea33970ce6"
+        ]
+      },
+      {
+        "id": "node_5",
+        "label": "January Baa-minus-10-year-Treasury spread change was 0 percentage points",
+        "event_type": "indicator",
+        "occurred_date": "2024-01-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_1a1d2b06802ae8f9",
+          "ev_7a7b17ed0db79b26",
+          "ev_0e61237ad71bce3d"
+        ]
+      },
+      {
+        "id": "node_6",
+        "label": "Resolved outcome: yes, the change was at least -0.055 percentage points",
+        "event_type": "outcome",
+        "occurred_date": "2024-01-31",
+        "is_outcome": true,
+        "is_actual_outcome": true,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_1a1d2b06802ae8f9"
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_1",
+        "source": "node_1",
+        "target": "node_2",
+        "relationship": "supports",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_515ac8d071f9661f"
+        ],
+        "rationale": "Expected cuts can support credit, but the supplied article does not identify their January Baa-spread effect."
+      },
+      {
+        "id": "edge_2",
+        "source": "node_2",
+        "target": "node_3",
+        "relationship": "supports",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_515ac8d071f9661f"
+        ],
+        "rationale": "Favorable credit conditions are a plausible input to spread stability rather than an observed causal channel."
+      },
+      {
+        "id": "edge_3",
+        "source": "node_4",
+        "target": "node_3",
+        "relationship": "provides_context_for",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_189c75c3ad57e800",
+          "ev_8e14bdc1fde7dd00",
+          "ev_7b8082ea33970ce6"
+        ],
+        "rationale": "Historical spread regimes provide context but do not determine the January 2024 change."
+      },
+      {
+        "id": "edge_4",
+        "source": "node_3",
+        "target": "node_5",
+        "relationship": "contributes_to",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_515ac8d071f9661f",
+          "ev_1a1d2b06802ae8f9"
+        ],
+        "rationale": "The candidate credit backdrop is a non-exclusive explanation for the observed zero change."
+      },
+      {
+        "id": "edge_5",
+        "source": "node_5",
+        "target": "node_6",
+        "relationship": "maps_to",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_1a1d2b06802ae8f9"
+        ],
+        "rationale": "Zero is at least the registered -0.055-point threshold and maps directly to yes."
+      }
+    ]
+  }
+}

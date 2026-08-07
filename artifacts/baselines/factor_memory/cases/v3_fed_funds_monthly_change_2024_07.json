@@ -1,0 +1,225 @@
+{
+  "schema_version": "hgf_blueprint_v1",
+  "question_id": "v3_fed_funds_monthly_change_2024_07",
+  "target_definition": {
+    "metric": "Monthly effective federal-funds-rate change",
+    "unit_or_option_space": "Monthly percentage-point change classification",
+    "forecast_horizon": "July 2024"
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Inflation progress, labor conditions, and FOMC communication provide a policy-decision framework.",
+    "weaknesses": [
+      "The graph relies on a simplified effective-rate transmission.",
+      "Historical policy context is indirect evidence."
+    ]
+  },
+  "search_factors": [
+    {
+      "factor": "PCE inflation progress",
+      "why_search": "Inflation progress determines confidence in future easing.",
+      "preferred_source_types": [
+        "BEA release",
+        "FOMC statement"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240726_014_e7b83101"
+      ]
+    },
+    {
+      "factor": "Restrictive policy stance",
+      "why_search": "Existing policy stance frames the decision baseline.",
+      "preferred_source_types": [
+        "Federal Reserve report"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240705_016_5c87330e"
+      ]
+    },
+    {
+      "factor": "Labor-market weakness",
+      "why_search": "Employment weakening can create pressure for a policy adjustment.",
+      "preferred_source_types": [
+        "employment release",
+        "FOMC statement"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240701_019_1f905341"
+      ]
+    },
+    {
+      "factor": "Rate-cut expectations",
+      "why_search": "Market expectations may conflict with the policy decision.",
+      "preferred_source_types": [
+        "rate futures",
+        "market reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240716_017_1e007325"
+      ]
+    },
+    {
+      "factor": "Data-dependent strategy",
+      "why_search": "Policy conditionality connects macro data to the decision.",
+      "preferred_source_types": [
+        "FOMC statement",
+        "press conference"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240731_010_297ab801",
+        "evt_finance_20240731_018_164f9fc6"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "pce",
+      "role": "baseline",
+      "factor": "PCE inflation progress",
+      "mechanism": "Moderating but elevated inflation can support caution.",
+      "expected_direction": "neutral",
+      "evidence_requirement": "Compare PCE inflation with the policy objective.",
+      "contradiction_signal": "Inflation falls decisively below expectations.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_finance_20240726_014_e7b83101"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_fed_funds_monthly_change_2024_07_20260724_192757_009_fbb51538"
+      ]
+    },
+    {
+      "id": "strategy",
+      "role": "mediator",
+      "factor": "Data-dependent strategy",
+      "mechanism": "A data-dependent strategy can defer adjustment pending greater confidence.",
+      "expected_direction": "neutral",
+      "evidence_requirement": "Read FOMC rationale and forward guidance.",
+      "contradiction_signal": "Officials signal an immediate adjustment.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_finance_20240731_010_297ab801",
+        "evt_finance_20240731_018_164f9fc6"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_fed_funds_monthly_change_2024_07_20260724_192757_011_20a9bdbe"
+      ]
+    },
+    {
+      "id": "decision_meeting",
+      "role": "driver",
+      "factor": "FOMC decision",
+      "mechanism": "The scheduled meeting produces the target-corridor decision.",
+      "expected_direction": "neutral",
+      "evidence_requirement": "Use the FOMC statement and effective date.",
+      "contradiction_signal": "An unscheduled action occurs.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_finance_20240731_012_cafe23b7",
+        "evt_finance_20240731_015_304d2e5d"
+      ],
+      "source_edge_ids": []
+    },
+    {
+      "id": "market_cuts",
+      "role": "counterevidence",
+      "factor": "Rate-cut expectations",
+      "mechanism": "Cut expectations can pressure policymakers toward an earlier adjustment.",
+      "expected_direction": "down",
+      "evidence_requirement": "Check futures-implied policy probabilities.",
+      "contradiction_signal": "Futures remove expected cuts.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_finance_20240716_017_1e007325"
+      ],
+      "source_edge_ids": []
+    },
+    {
+      "id": "labor",
+      "role": "alternative",
+      "factor": "Labor-market weakness",
+      "mechanism": "Labor weakness can increase the case for easing.",
+      "expected_direction": "down",
+      "evidence_requirement": "Check labor slack and employment momentum.",
+      "contradiction_signal": "Labor demand reaccelerates.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240701_019_1f905341"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_fed_funds_monthly_change_2024_07_20260724_192757_019_7d1f6648"
+      ]
+    },
+    {
+      "id": "target_bridge",
+      "role": "target_bridge",
+      "factor": "Policy decision to effective rate",
+      "mechanism": "The target-corridor decision and effective date determine monthly effective-rate change.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Map the decision and effective-rate observations within the month.",
+      "contradiction_signal": "Effective-rate data diverges from the policy corridor.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_finance_20240731_015_304d2e5d"
+      ],
+      "source_edge_ids": []
+    }
+  ],
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "pce",
+        "strategy",
+        "decision_meeting",
+        "target_bridge"
+      ],
+      "generalized_mechanism": "Inflation progress can inform a cautious strategy and the scheduled policy decision.",
+      "expected_direction": "neutral",
+      "applicability_conditions": [
+        "Inflation remains above the policy objective."
+      ],
+      "failure_conditions": [
+        "New inflation data compels immediate action."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "market_cuts",
+        "labor",
+        "decision_meeting",
+        "target_bridge"
+      ],
+      "generalized_mechanism": "Easing pressure from markets and labor can conflict with the final policy decision.",
+      "expected_direction": "mixed",
+      "applicability_conditions": [
+        "Markets price near-term easing."
+      ],
+      "failure_conditions": [
+        "Inflation concerns dominate decision-making."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "Labor weakness becomes the dominant reason for an earlier adjustment.",
+      "discriminating_evidence": "Compare employment deterioration with inflation progress and policy language.",
+      "source_event_ids": [
+        "evt_finance_20240701_019_1f905341",
+        "evt_finance_20240726_014_e7b83101"
+      ]
+    },
+    {
+      "hypothesis": "Inflation progress gives policymakers confidence to validate market-cut expectations.",
+      "discriminating_evidence": "Compare PCE releases, futures repricing, and FOMC communication.",
+      "source_event_ids": [
+        "evt_finance_20240726_014_e7b83101",
+        "evt_finance_20240716_017_1e007325"
+      ]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Does PCE show sufficient progress toward the policy objective?",
+    "Do labor data strengthen the easing case?",
+    "Does the FOMC statement validate market-cut expectations?"
+  ]
+}

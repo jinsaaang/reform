@@ -1,0 +1,209 @@
+{
+  "schema_version": "hgf_blueprint_v1",
+  "question_id": "v3_brent_monthly_return_2024_01",
+  "target_definition": {
+    "metric": "Brent crude oil monthly price return",
+    "unit_or_option_space": "percent monthly-return classification",
+    "forecast_horizon": "January 2024 monthly observation"
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Demand concerns, OPEC+ management, and Red Sea disruption risk form competing price drivers.",
+    "weaknesses": [
+      "Supply effects are primarily perceived risk rather than measured shortages.",
+      "The graph lacks direct price and inventory observations."
+    ]
+  },
+  "search_factors": [
+    {
+      "factor": "Global oil-demand outlook",
+      "why_search": "Weak demand expectations can pressure crude prices.",
+      "preferred_source_types": [
+        "demand forecast",
+        "macroeconomic data"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240101_020_5d9b8a57"
+      ]
+    },
+    {
+      "factor": "OPEC+ supply management",
+      "why_search": "Supply discipline can provide a price-supporting baseline.",
+      "preferred_source_types": [
+        "OPEC+ communication",
+        "production data"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240103_019_f1d35a93"
+      ]
+    },
+    {
+      "factor": "Red Sea shipping disruption",
+      "why_search": "Shipping avoidance can raise supply-risk premia.",
+      "preferred_source_types": [
+        "shipping data",
+        "security reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240112_023_db4b6ccb"
+      ]
+    },
+    {
+      "factor": "Geopolitical escalation",
+      "why_search": "Conflict escalation can shift the market toward supply concerns.",
+      "preferred_source_types": [
+        "official statement",
+        "security reporting"
+      ],
+      "source_event_ids": [
+        "evt_politics_20240112_018_894c158d"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "demand_outlook",
+      "role": "counterevidence",
+      "factor": "Weak global demand outlook",
+      "mechanism": "Weak growth expectations can reduce expected petroleum consumption.",
+      "expected_direction": "down",
+      "evidence_requirement": "Demand forecasts, economic data, and refinery activity.",
+      "contradiction_signal": "Demand revisions improve broadly.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_finance_20240101_020_5d9b8a57"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_brent_monthly_return_2024_01_20260724_191250_021_8602ff16"
+      ]
+    },
+    {
+      "id": "opec_support",
+      "role": "baseline",
+      "factor": "OPEC+ market management",
+      "mechanism": "Supply control can limit downside pressure during weak demand periods.",
+      "expected_direction": "up",
+      "evidence_requirement": "Production policy and observed supply compliance.",
+      "contradiction_signal": "Production rises or compliance weakens.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_finance_20240103_019_f1d35a93"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_brent_monthly_return_2024_01_20260724_191250_023_4cb9ffd4"
+      ]
+    },
+    {
+      "id": "shipping_risk",
+      "role": "driver",
+      "factor": "Red Sea shipping avoidance",
+      "mechanism": "Route avoidance raises perceived supply disruption and transportation costs.",
+      "expected_direction": "up",
+      "evidence_requirement": "Vessel routing, freight rates, and disruption reports.",
+      "contradiction_signal": "Shipping normalizes without cost pressure.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_politics_20240112_018_894c158d",
+        "evt_finance_20240112_023_db4b6ccb"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_brent_monthly_return_2024_01_20260724_191250_016_4ec27831"
+      ]
+    },
+    {
+      "id": "supply_sentiment",
+      "role": "mediator",
+      "factor": "Shift toward supply concerns",
+      "mechanism": "Visible disruption risk can make supply concerns dominate the price narrative.",
+      "expected_direction": "up",
+      "evidence_requirement": "Market commentary corroborated by physical-flow indicators.",
+      "contradiction_signal": "Demand concerns remain dominant despite disruption.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_finance_20240112_025_8ae42875",
+        "evt_finance_20240112_024_20dd0a6e"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_brent_monthly_return_2024_01_20260724_191250_017_de0cc520",
+        "hyp_v3_brent_monthly_return_2024_01_20260724_191250_019_7a1ee3b0"
+      ]
+    },
+    {
+      "id": "target_bridge",
+      "role": "target_bridge",
+      "factor": "Net oil-market repricing",
+      "mechanism": "Brent monthly return reflects the balance of demand expectations, supply management, and disruption risk.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Daily Brent prices with demand, production, and shipping indicators.",
+      "contradiction_signal": "Price action diverges from all observed fundamentals.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_finance_20240101_020_5d9b8a57",
+        "evt_finance_20240103_019_f1d35a93",
+        "evt_finance_20240112_024_20dd0a6e"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_brent_monthly_return_2024_01_20260724_191250_019_7a1ee3b0"
+      ]
+    }
+  ],
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "shipping_risk",
+        "supply_sentiment",
+        "target_bridge"
+      ],
+      "generalized_mechanism": "Shipping disruption can increase supply-risk premia and support Brent prices.",
+      "expected_direction": "up",
+      "applicability_conditions": [
+        "Routing is materially disrupted.",
+        "Physical supply risk is credible."
+      ],
+      "failure_conditions": [
+        "Alternative routes absorb disruption.",
+        "Demand deteriorates sharply."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "demand_outlook",
+        "opec_support",
+        "target_bridge"
+      ],
+      "generalized_mechanism": "Supply discipline can cushion price pressure from weak demand expectations.",
+      "expected_direction": "mixed",
+      "applicability_conditions": [
+        "OPEC+ compliance is credible.",
+        "Demand weakness is moderate."
+      ],
+      "failure_conditions": [
+        "Supply management weakens.",
+        "Demand forecasts fall further."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "Weak demand dominates because disruption remains temporary and supply is ample.",
+      "discriminating_evidence": "Demand forecasts decline while shipping normalizes.",
+      "source_event_ids": [
+        "evt_finance_20240101_020_5d9b8a57",
+        "evt_finance_20240112_023_db4b6ccb"
+      ]
+    },
+    {
+      "hypothesis": "Supply management, not shipping disruption, is the principal support.",
+      "discriminating_evidence": "Production restraint persists without further shipping deterioration.",
+      "source_event_ids": [
+        "evt_finance_20240103_019_f1d35a93",
+        "evt_finance_20240112_024_20dd0a6e"
+      ]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Do oil-demand forecasts confirm or reverse weakness?",
+    "Are shipping disruptions reflected in routes and freight rates?",
+    "Is OPEC+ supply management observable in production data?"
+  ]
+}

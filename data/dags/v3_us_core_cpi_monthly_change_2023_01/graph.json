@@ -1,0 +1,141 @@
+{
+  "schema_version": "1.0",
+  "actual_outcome_event_id": "node_6",
+  "graph": {
+    "nodes": [
+      {
+        "id": "node_1",
+        "label": "December all-items CPI decline",
+        "event_type": "indicator",
+        "occurred_date": "2022-12-01",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_72f2715c35613c49"
+        ]
+      },
+      {
+        "id": "node_2",
+        "label": "Energy-driven all-items disinflation context",
+        "event_type": "indicator",
+        "occurred_date": "2022-12-01",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_72f2715c35613c49"
+        ]
+      },
+      {
+        "id": "node_3",
+        "label": "Shelter-cost pressure in the January release",
+        "event_type": "indicator",
+        "occurred_date": "2023-01-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "art_finance_20230214_002_bbda1b94",
+          "art_finance_20230215_004_b8d4877a"
+        ]
+      },
+      {
+        "id": "node_4",
+        "label": "Core-price persistence in the January release",
+        "event_type": "indicator",
+        "occurred_date": "2023-01-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "art_finance_20230214_002_bbda1b94",
+          "art_finance_20230214_002_74420cc3"
+        ]
+      },
+      {
+        "id": "node_5",
+        "label": "Core measure is insulated from energy-price moves",
+        "event_type": "milestone",
+        "occurred_date": null,
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_72f2715c35613c49"
+        ]
+      },
+      {
+        "id": "node_6",
+        "label": "Resolved January core CPI monthly-change observation",
+        "event_type": "outcome",
+        "occurred_date": "2023-01-31",
+        "is_outcome": true,
+        "is_actual_outcome": true,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_daf52f126c328ace"
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_1",
+        "source": "node_1",
+        "target": "node_2",
+        "relationship": "supports",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_72f2715c35613c49"
+        ],
+        "rationale": "The December report establishes the all-items disinflation context."
+      },
+      {
+        "id": "edge_2",
+        "source": "node_2",
+        "target": "node_5",
+        "relationship": "supports",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_72f2715c35613c49"
+        ],
+        "rationale": "This is a scope distinction between all-items price movements and the core measure, not a claimed realized causal effect."
+      },
+      {
+        "id": "edge_3",
+        "source": "node_5",
+        "target": "node_4",
+        "relationship": "supports",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_72f2715c35613c49"
+        ],
+        "rationale": "Energy-price context alone does not establish a change in the core measure."
+      },
+      {
+        "id": "edge_4",
+        "source": "node_3",
+        "target": "node_4",
+        "relationship": "contributes_to",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "art_finance_20230214_002_bbda1b94",
+          "art_finance_20230215_004_b8d4877a"
+        ],
+        "rationale": "Contemporary reporting identifies shelter/rents as a source of persistence in the January reading."
+      },
+      {
+        "id": "edge_5",
+        "source": "node_4",
+        "target": "node_6",
+        "relationship": "contributes_to",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "art_finance_20230214_002_bbda1b94",
+          "art_finance_20230214_002_74420cc3"
+        ],
+        "rationale": "The contemporaneous core-inflation assessment is upstream context for the resolved observation; it is not a restatement of the outcome value."
+      }
+    ]
+  }
+}

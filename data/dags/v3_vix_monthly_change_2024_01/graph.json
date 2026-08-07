@@ -1,0 +1,164 @@
+{
+  "schema_version": "1.0",
+  "actual_outcome_event_id": "node_6",
+  "graph": {
+    "nodes": [
+      {
+        "id": "node_7",
+        "label": "Historical January S&P 500 performance was roughly flat on average",
+        "event_type": "indicator",
+        "occurred_date": "2023-12-30",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_e553ecf2a7802e38"
+        ]
+      },
+      {
+        "id": "node_1",
+        "label": "VIX entered 2024 near its lowest level since January 2020",
+        "event_type": "indicator",
+        "occurred_date": "2024-01-02",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_a1273bde50b6133f"
+        ]
+      },
+      {
+        "id": "node_3",
+        "label": "Debt and election concerns supported expectations of higher 2024 volatility",
+        "event_type": "indicator",
+        "occurred_date": "2024-01-05",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_07ba743863d1b732",
+          "ev_d3037193c7d14476"
+        ]
+      },
+      {
+        "id": "node_2",
+        "label": "VIX rose about 10 percent in the first trading hours of 2024",
+        "event_type": "indicator",
+        "occurred_date": "2024-01-05",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_d3037193c7d14476"
+        ]
+      },
+      {
+        "id": "node_4",
+        "label": "A market commentary anticipated a possible VIX rise into mid-January",
+        "event_type": "indicator",
+        "occurred_date": "2024-01-18",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_372ec7c0143a6f02"
+        ]
+      },
+      {
+        "id": "node_5",
+        "label": "January VIX monthly change was 15.26 percent",
+        "event_type": "indicator",
+        "occurred_date": "2024-01-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_c10e96f99bd3b69d"
+        ]
+      },
+      {
+        "id": "node_6",
+        "label": "Resolved outcome: above recent range",
+        "event_type": "outcome",
+        "occurred_date": "2024-01-31T23:59:59Z",
+        "is_outcome": true,
+        "is_actual_outcome": true,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_c10e96f99bd3b69d"
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_1",
+        "source": "node_1",
+        "target": "node_2",
+        "relationship": "provides_baseline_for",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_a1273bde50b6133f",
+          "ev_d3037193c7d14476"
+        ],
+        "rationale": "A low starting level provides context for the percentage increase but does not cause it."
+      },
+      {
+        "id": "edge_2",
+        "source": "node_3",
+        "target": "node_2",
+        "relationship": "supports",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_07ba743863d1b732",
+          "ev_d3037193c7d14476"
+        ],
+        "rationale": "Broad annual concerns are plausible sentiment context, not an identified cause of the early-January move."
+      },
+      {
+        "id": "edge_3",
+        "source": "node_2",
+        "target": "node_5",
+        "relationship": "contributes_to",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_d3037193c7d14476",
+          "ev_c10e96f99bd3b69d"
+        ],
+        "rationale": "The early rise contributed to the month's path, but the official monthly return also reflects later movements."
+      },
+      {
+        "id": "edge_4",
+        "source": "node_4",
+        "target": "node_5",
+        "relationship": "supports",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_372ec7c0143a6f02"
+        ],
+        "rationale": "The commentary was a forecast and did not cause or verify the realized monthly change."
+      },
+      {
+        "id": "edge_5",
+        "source": "node_7",
+        "target": "node_5",
+        "relationship": "counteracts",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_e553ecf2a7802e38"
+        ],
+        "rationale": "Historical stock-market stability is weak counter-context because stock returns and VIX changes are distinct measures."
+      },
+      {
+        "id": "edge_6",
+        "source": "node_5",
+        "target": "node_6",
+        "relationship": "maps_to",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_c10e96f99bd3b69d"
+        ],
+        "rationale": "The 15.26 percent change maps directly to above recent range under the registered boundaries."
+      }
+    ]
+  }
+}

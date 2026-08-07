@@ -1,0 +1,193 @@
+{
+  "schema_version": "1.0",
+  "actual_outcome_event_id": "node_7",
+  "graph": {
+    "nodes": [
+      {
+        "id": "node_5",
+        "label": "Nominal 10-year Treasury yields declined during August",
+        "event_type": "indicator",
+        "occurred_date": "2024-08-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_35fa0afa46e53b89"
+        ]
+      },
+      {
+        "id": "node_3",
+        "label": "Fed policy rates remained high relative to inflation",
+        "event_type": "indicator",
+        "occurred_date": "2024-09-06",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_4cf27f846a339421"
+        ]
+      },
+      {
+        "id": "node_1",
+        "label": "August annual inflation fell to 2.5%",
+        "event_type": "indicator",
+        "occurred_date": "2024-09-11",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_9c2ca7a9bfca8373",
+          "ev_f90a96bf449bb26a",
+          "ev_3a96a1b4b1ec5966"
+        ]
+      },
+      {
+        "id": "node_2",
+        "label": "Markets increased expectations for a Fed rate cut",
+        "event_type": "indicator",
+        "occurred_date": "2024-09-11",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_354b508b1508d71b",
+          "ev_61a6420a2fa26205",
+          "ev_3a96a1b4b1ec5966"
+        ]
+      },
+      {
+        "id": "node_8",
+        "label": "Nominal 10-year yield initially rose four basis points after CPI",
+        "event_type": "indicator",
+        "occurred_date": "2024-09-11",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_9c2ca7a9bfca8373"
+        ]
+      },
+      {
+        "id": "node_4",
+        "label": "September conditions plausibly exerted net downward pressure on real yields",
+        "event_type": "indicator",
+        "occurred_date": "2024-09-30",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_354b508b1508d71b",
+          "ev_61a6420a2fa26205",
+          "ev_4cf27f846a339421"
+        ]
+      },
+      {
+        "id": "node_6",
+        "label": "September 10-year real-yield monthly change measured -0.13 percentage points",
+        "event_type": "measurement",
+        "occurred_date": "2024-10-15",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_a7c576014bb28ec2"
+        ]
+      },
+      {
+        "id": "node_7",
+        "label": "Resolution: 10-year real-yield change was below the recent range",
+        "event_type": "outcome",
+        "occurred_date": "2024-10-15",
+        "is_outcome": true,
+        "is_actual_outcome": true,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_a7c576014bb28ec2"
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_5",
+        "source": "node_5",
+        "target": "node_4",
+        "relationship": "precedes",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_35fa0afa46e53b89"
+        ],
+        "rationale": "The August nominal-yield decline supplies prior-month context but does not itself establish the September real-yield outcome."
+      },
+      {
+        "id": "edge_2",
+        "source": "node_3",
+        "target": "node_2",
+        "relationship": "enables",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_4cf27f846a339421",
+          "ev_354b508b1508d71b"
+        ],
+        "rationale": "Restrictive rates provided room to cut, and contemporaneous reporting documented increased market expectations for a cut."
+      },
+      {
+        "id": "edge_1",
+        "source": "node_1",
+        "target": "node_2",
+        "relationship": "supports",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_9c2ca7a9bfca8373",
+          "ev_354b508b1508d71b",
+          "ev_3a96a1b4b1ec5966"
+        ],
+        "rationale": "The disinflation data supported the reported increase in rate-cut expectations without being treated as a deterministic cause."
+      },
+      {
+        "id": "edge_3",
+        "source": "node_2",
+        "target": "node_4",
+        "relationship": "contributes_to",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_354b508b1508d71b",
+          "ev_61a6420a2fa26205"
+        ],
+        "rationale": "Rate-cut expectations can weigh on yields, but the evidence pack does not isolate their effect on the September 10-year real yield."
+      },
+      {
+        "id": "edge_7",
+        "source": "node_8",
+        "target": "node_4",
+        "relationship": "inhibits",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_9c2ca7a9bfca8373"
+        ],
+        "rationale": "The four-basis-point nominal-yield rise was a counter-movement, but its effect on the monthly real-yield change is not quantified."
+      },
+      {
+        "id": "edge_4",
+        "source": "node_4",
+        "target": "node_6",
+        "relationship": "is_consistent_with",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_a7c576014bb28ec2"
+        ],
+        "rationale": "The hypothesized downward pressure is consistent with the result, while only the official real-yield series establishes the -0.13-point measurement."
+      },
+      {
+        "id": "edge_6",
+        "source": "node_6",
+        "target": "node_7",
+        "relationship": "classifies_as",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_a7c576014bb28ec2"
+        ],
+        "rationale": "A -0.13-point change is below the preregistered -0.097-point boundary and therefore resolves below the recent range."
+      }
+    ]
+  }
+}

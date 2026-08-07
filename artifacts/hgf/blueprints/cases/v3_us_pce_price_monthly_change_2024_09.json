@@ -1,0 +1,612 @@
+{
+  "schema_version": "hgf_blueprint_topology_v2",
+  "question_id": "v3_us_pce_price_monthly_change_2024_09",
+  "target_definition": {
+    "metric": "monthly PCE-price change",
+    "unit_or_option_space": [
+      "yes",
+      "no"
+    ],
+    "forecast_horizon": "Remap the historical target family to the current question's exact target period."
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Outcome-redacted topology preserves 8 checkpoints, 9 source edges, and 5 root-to-target paths.",
+    "weaknesses": []
+  },
+  "search_factors": [
+    {
+      "factor": "Services Prices Increased by [CURRENT_VALUE_REQUIRED] in [CURRENT_PERIOD_REQUIRED]",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240930_002_26b43022"
+      ]
+    },
+    {
+      "factor": "Goods Prices Decreased by [CURRENT_VALUE_REQUIRED] in [CURRENT_PERIOD_REQUIRED]",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240930_003_48498bd4"
+      ]
+    },
+    {
+      "factor": "Initial Unemployment Claims Decreased to [CURRENT_VALUE_REQUIRED] for Week Ending [CURRENT_PERIOD_REQUIRED] (Reflecting [CURRENT_PERIOD_REQUIRED] Conditions)",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240930_005_87937a66"
+      ]
+    },
+    {
+      "factor": "Energy Goods and Services Prices Fell by [CURRENT_VALUE_REQUIRED] in [CURRENT_PERIOD_REQUIRED]",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240930_006_4d74a67f"
+      ]
+    },
+    {
+      "factor": "Strong Labor Market Supports Consumer Confidence and Spending ([CURRENT_PERIOD_REQUIRED])",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240930_007_cef1a61d"
+      ]
+    },
+    {
+      "factor": "Personal Income Increased [CURRENT_VALUE_REQUIRED] and Consumer Spending Rose [CURRENT_VALUE_REQUIRED] in [CURRENT_PERIOD_REQUIRED]",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240930_004_30cca10c"
+      ]
+    },
+    {
+      "factor": "Sustained Inflationary Pressure from Services and Demand",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240930_008_4262c352"
+      ]
+    },
+    {
+      "factor": "US PCE Price Index Increased by [CURRENT_VALUE_REQUIRED] in [CURRENT_PERIOD_REQUIRED]",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20241031_001_61ee7f5c"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "checkpoint_1",
+      "role": "driver",
+      "factor": "Services Prices Increased by [CURRENT_VALUE_REQUIRED] in [CURRENT_PERIOD_REQUIRED]",
+      "mechanism": "The explanation explicitly states that the increase in services prices was a primary driver of the overall PCE increase.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240930_002_26b43022"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2024_09_20260725_014638_001_423a52e1",
+        "hyp_v3_us_pce_price_monthly_change_2024_09_20260725_014638_007_e79376f2"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_2",
+      "role": "counterevidence",
+      "factor": "Goods Prices Decreased by [CURRENT_VALUE_REQUIRED] in [CURRENT_PERIOD_REQUIRED]",
+      "mechanism": "The decrease in goods prices acted as a countervailing force against a higher PCE increase, as stated in the explanation.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240930_003_48498bd4"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2024_09_20260725_014638_002_168df196"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_3",
+      "role": "driver",
+      "factor": "Initial Unemployment Claims Decreased to [CURRENT_VALUE_REQUIRED] for Week Ending [CURRENT_PERIOD_REQUIRED] (Reflecting [CURRENT_PERIOD_REQUIRED] Conditions)",
+      "mechanism": "Declining unemployment benefit filings are a direct indicator of a strong labor market.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240930_005_87937a66"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2024_09_20260725_014638_004_59436981"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_4",
+      "role": "counterevidence",
+      "factor": "Energy Goods and Services Prices Fell by [CURRENT_VALUE_REQUIRED] in [CURRENT_PERIOD_REQUIRED]",
+      "mechanism": "Falling energy prices pushed against a higher overall PCE increase, as stated in the explanation.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240930_006_4d74a67f"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2024_09_20260725_014638_008_d371e807"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_5",
+      "role": "mediator",
+      "factor": "Strong Labor Market Supports Consumer Confidence and Spending ([CURRENT_PERIOD_REQUIRED])",
+      "mechanism": "A strong labor market supports consumer confidence and spending, which in turn contributes to personal income and consumer spending increases.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240930_007_cef1a61d"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2024_09_20260725_014638_005_1838b0ba"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_6",
+      "role": "mediator",
+      "factor": "Personal Income Increased [CURRENT_VALUE_REQUIRED] and Consumer Spending Rose [CURRENT_VALUE_REQUIRED] in [CURRENT_PERIOD_REQUIRED]",
+      "mechanism": "Consistent personal income growth and robust consumer spending fueled demand, contributing to inflationary pressure.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240930_004_30cca10c"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2024_09_20260725_014638_003_dd43a18e"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_7",
+      "role": "mediator",
+      "factor": "Sustained Inflationary Pressure from Services and Demand",
+      "mechanism": "The sustained inflationary pressure, driven by services and demand, directly led to the observed PCE increase.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240930_008_4262c352"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2024_09_20260725_014638_006_58c64c44"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_8",
+      "role": "mediator",
+      "factor": "US PCE Price Index Increased by [CURRENT_VALUE_REQUIRED] in [CURRENT_PERIOD_REQUIRED]",
+      "mechanism": "Re-test whether this factor has a currently supported link to the exact target metric; do not transfer the historical outcome or magnitude.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20241031_001_61ee7f5c"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2024_09_20260725_014643_009_33557146"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "target_bridge",
+      "role": "target_bridge",
+      "factor": "monthly PCE-price change",
+      "mechanism": "Map only currently supported paths into the exact target operator. Directional support alone is not magnitude or threshold-crossing support.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "A current target baseline and evidence supporting every edge used in the bridge.",
+      "contradiction_signal": "The current target baseline, magnitude evidence, or option boundary contradicts the proposed path.",
+      "historical_support": "medium",
+      "source_event_ids": [],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2024_09_20260725_014643_009_33557146"
+      ],
+      "source_event_type": "target_bridge"
+    }
+  ],
+  "topology": {
+    "checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_5",
+      "checkpoint_6",
+      "checkpoint_7",
+      "checkpoint_8",
+      "target_bridge"
+    ],
+    "root_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4"
+    ],
+    "target_bridge_id": "target_bridge",
+    "edges": [
+      {
+        "source_checkpoint_id": "checkpoint_1",
+        "target_checkpoint_id": "checkpoint_8",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "The explanation explicitly states that the increase in services prices was a primary driver of the overall PCE increase.",
+        "source_edge_ids": [
+          "hyp_v3_us_pce_price_monthly_change_2024_09_20260725_014638_001_423a52e1"
+        ],
+        "source_article_ids": [
+          "art_finance_20241031_009_5e24ccb4"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_2",
+        "target_checkpoint_id": "checkpoint_8",
+        "relationship": "inhibits",
+        "directionality": "counteracting",
+        "support_level": "",
+        "rationale": "The decrease in goods prices acted as a countervailing force against a higher PCE increase, as stated in the explanation.",
+        "source_edge_ids": [
+          "hyp_v3_us_pce_price_monthly_change_2024_09_20260725_014638_002_168df196"
+        ],
+        "source_article_ids": [
+          "art_finance_20241031_009_5e24ccb4"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_6",
+        "target_checkpoint_id": "checkpoint_7",
+        "relationship": "amplifies",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Consistent personal income growth and robust consumer spending fueled demand, contributing to inflationary pressure.",
+        "source_edge_ids": [
+          "hyp_v3_us_pce_price_monthly_change_2024_09_20260725_014638_003_dd43a18e"
+        ],
+        "source_article_ids": [
+          "art_finance_20241031_009_5e24ccb4"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_3",
+        "target_checkpoint_id": "checkpoint_5",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Declining unemployment benefit filings are a direct indicator of a strong labor market.",
+        "source_edge_ids": [
+          "hyp_v3_us_pce_price_monthly_change_2024_09_20260725_014638_004_59436981"
+        ],
+        "source_article_ids": [
+          "art_finance_20241031_009_5e24ccb4"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_5",
+        "target_checkpoint_id": "checkpoint_6",
+        "relationship": "enables",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "A strong labor market supports consumer confidence and spending, which in turn contributes to personal income and consumer spending increases.",
+        "source_edge_ids": [
+          "hyp_v3_us_pce_price_monthly_change_2024_09_20260725_014638_005_1838b0ba"
+        ],
+        "source_article_ids": [
+          "art_finance_20241031_009_5e24ccb4"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_7",
+        "target_checkpoint_id": "checkpoint_8",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "The sustained inflationary pressure, driven by services and demand, directly led to the observed PCE increase.",
+        "source_edge_ids": [
+          "hyp_v3_us_pce_price_monthly_change_2024_09_20260725_014638_006_58c64c44"
+        ],
+        "source_article_ids": [
+          "art_finance_20241031_009_5e24ccb4"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_1",
+        "target_checkpoint_id": "checkpoint_7",
+        "relationship": "amplifies",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Rising services prices are a key component of sustained inflationary pressure.",
+        "source_edge_ids": [
+          "hyp_v3_us_pce_price_monthly_change_2024_09_20260725_014638_007_e79376f2"
+        ],
+        "source_article_ids": [
+          "art_finance_20241031_009_5e24ccb4"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_4",
+        "target_checkpoint_id": "checkpoint_8",
+        "relationship": "inhibits",
+        "directionality": "counteracting",
+        "support_level": "",
+        "rationale": "Falling energy prices pushed against a higher overall PCE increase, as stated in the explanation.",
+        "source_edge_ids": [
+          "hyp_v3_us_pce_price_monthly_change_2024_09_20260725_014638_008_d371e807"
+        ],
+        "source_article_ids": [
+          "art_finance_20241031_009_5e24ccb4"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_8",
+        "target_checkpoint_id": "target_bridge",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Historical DAG connected this factor to the redacted target measurement; the realized value and outcome mapping are omitted.",
+        "source_edge_ids": [
+          "hyp_v3_us_pce_price_monthly_change_2024_09_20260725_014643_009_33557146"
+        ],
+        "source_article_ids": [
+          "art_finance_20241031_009_5e24ccb4"
+        ],
+        "terminal_to_target_bridge": true
+      }
+    ],
+    "paths_truncated": false
+  },
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "checkpoint_1",
+        "checkpoint_8",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2024_09_20260725_014638_001_423a52e1",
+        "hyp_v3_us_pce_price_monthly_change_2024_09_20260725_014643_009_33557146"
+      ],
+      "relationships": [
+        "causes",
+        "causes"
+      ],
+      "path_role": "main_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Services Prices Increased by [CURRENT_VALUE_REQUIRED] in [CURRENT_PERIOD_REQUIRED] to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_1",
+        "checkpoint_7",
+        "checkpoint_8",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2024_09_20260725_014638_007_e79376f2",
+        "hyp_v3_us_pce_price_monthly_change_2024_09_20260725_014638_006_58c64c44",
+        "hyp_v3_us_pce_price_monthly_change_2024_09_20260725_014643_009_33557146"
+      ],
+      "relationships": [
+        "amplifies",
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Services Prices Increased by [CURRENT_VALUE_REQUIRED] in [CURRENT_PERIOD_REQUIRED] to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_2",
+        "checkpoint_8",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2024_09_20260725_014638_002_168df196",
+        "hyp_v3_us_pce_price_monthly_change_2024_09_20260725_014643_009_33557146"
+      ],
+      "relationships": [
+        "inhibits",
+        "causes"
+      ],
+      "path_role": "counter_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Goods Prices Decreased by [CURRENT_VALUE_REQUIRED] in [CURRENT_PERIOD_REQUIRED] to the current target; every edge requires current support.",
+      "expected_direction": "mixed",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_3",
+        "checkpoint_5",
+        "checkpoint_6",
+        "checkpoint_7",
+        "checkpoint_8",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2024_09_20260725_014638_004_59436981",
+        "hyp_v3_us_pce_price_monthly_change_2024_09_20260725_014638_005_1838b0ba",
+        "hyp_v3_us_pce_price_monthly_change_2024_09_20260725_014638_003_dd43a18e",
+        "hyp_v3_us_pce_price_monthly_change_2024_09_20260725_014638_006_58c64c44",
+        "hyp_v3_us_pce_price_monthly_change_2024_09_20260725_014643_009_33557146"
+      ],
+      "relationships": [
+        "causes",
+        "enables",
+        "amplifies",
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Initial Unemployment Claims Decreased to [CURRENT_VALUE_REQUIRED] for Week Ending [CURRENT_PERIOD_REQUIRED] (Reflecting [CURRENT_PERIOD_REQUIRED] Conditions) to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_4",
+        "checkpoint_8",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2024_09_20260725_014638_008_d371e807",
+        "hyp_v3_us_pce_price_monthly_change_2024_09_20260725_014643_009_33557146"
+      ],
+      "relationships": [
+        "inhibits",
+        "causes"
+      ],
+      "path_role": "counter_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Energy Goods and Services Prices Fell by [CURRENT_VALUE_REQUIRED] in [CURRENT_PERIOD_REQUIRED] to the current target; every edge requires current support.",
+      "expected_direction": "mixed",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "Goods Prices Decreased by [CURRENT_VALUE_REQUIRED] in [CURRENT_PERIOD_REQUIRED] dominates or reverses the leading current path.",
+      "discriminating_evidence": "Compare current evidence for this counter-path with every edge on the leading supported path.",
+      "source_event_ids": [
+        "evt_finance_20240930_003_48498bd4"
+      ]
+    },
+    {
+      "hypothesis": "Energy Goods and Services Prices Fell by [CURRENT_VALUE_REQUIRED] in [CURRENT_PERIOD_REQUIRED] dominates or reverses the leading current path.",
+      "discriminating_evidence": "Compare current evidence for this counter-path with every edge on the leading supported path.",
+      "source_event_ids": [
+        "evt_finance_20240930_006_4d74a67f"
+      ]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Does every used checkpoint transition correspond to a preserved edge?",
+    "Which preserved edges are supported, contradicted, or unknown now?",
+    "Does a counter-path dominate the leading supported path?",
+    "Is there evidence for magnitude and boundary crossing, not direction alone?"
+  ],
+  "refinement_metadata": {
+    "model": "deterministic_topology_compiler_v2",
+    "source_graph": "data\\dags\\v3_us_pce_price_monthly_change_2024_09\\graph.json",
+    "source_audit_status": "pass",
+    "outcome_nodes_redacted": 2,
+    "target_value_anchors_redacted": 0,
+    "historical_specifics_sanitized": true,
+    "sanitizer": "minimal_value_period_placeholders_v1",
+    "value_replacement_count": 21,
+    "period_replacement_count": 24
+  },
+  "topology_validation": {
+    "status": "pass",
+    "errors": [],
+    "metrics": {
+      "retained_checkpoint_count": 8,
+      "source_edge_count": 9,
+      "emitted_edge_count": 9,
+      "edge_coverage": 1.0,
+      "path_precision": 1.0,
+      "causal_path_count": 5,
+      "outcome_event_leak_count": 0,
+      "outcome_text_leak_count": 0,
+      "realized_value_count": 0,
+      "absolute_period_count": 0
+    }
+  }
+}

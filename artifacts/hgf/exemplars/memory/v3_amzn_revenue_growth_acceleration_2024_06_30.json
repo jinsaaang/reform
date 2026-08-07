@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_amzn_revenue_growth_acceleration_2024_06_30",
+  "blueprint_sha256": "a198314ab1029f77029044950816a7d10d127f5e32a4c64d8533828cdda4beb0",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_growth",
+      "target_operation": "acceleration",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2024-06-30, which range will Amazon.com, Inc.'s quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2024-06-30 fall into?",
+    "historical_cutoff": "2024-06-30T00:00:00+00:00",
+    "target_semantics": "Amazon's year-over-year revenue growth acceleration for the fiscal quarter ending 2024-06-30.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The DAG indicates that 'Consumer Caution and 'Trading Down' to Lower ASP Products' (checkpoint_1) and 'Miss in Advertising Revenue Expectations' (checkpoint_2) are potential drivers that could lead to 'Lower Revenue in Online Stores Segment' (checkpoint_3) and ultimately 'Weaker-than-Expected Overall Revenue for [CURRENT_PERIOD_REQUIRED]' (checkpoint_5).",
+      "The DAG also highlights 'Robust AWS Growth Driven by AI Investments' (checkpoint_4) as a counter-driver that could mitigate overall revenue weakness.",
+      "Given the lack of specific forecast-time evidence, the causal links between these checkpoints and the target metric remain unsupported, making it impossible to determine the direction of the revenue growth acceleration."
+    ],
+    "counterevidence": "The DAG identifies 'Robust AWS Growth Driven by AI Investments' (checkpoint_4) as a factor that could partially offset revenue weakness, suggesting a potential mitigating effect on the overall revenue outcome.",
+    "prospective_target_estimate": "Cannot be determined due to lack of forecast-time evidence.",
+    "option_mapping": "The target metric is the year-over-year revenue growth acceleration for the fiscal quarter ending 2024-06-30. The options are 'below recent range' (less than 0.657 percentage points), 'within recent range' (0.657 to 1.537 percentage points), and 'above recent range' (1.537 percentage points or more).",
+    "uncertainty": "The absence of any forecast-time evidence means that the strength and direction of all identified causal drivers and counter-drivers are unknown. Therefore, the target metric's position relative to the defined ranges cannot be estimated.",
+    "dag_derived_lesson": "When evaluating a target metric, it is crucial to assess all identified causal drivers and counter-drivers. The absence of current evidence supporting the hypothesized mechanisms necessitates a cautious approach, as the net effect on the target metric remains indeterminate."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

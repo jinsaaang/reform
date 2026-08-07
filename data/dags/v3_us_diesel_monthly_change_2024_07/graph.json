@@ -1,0 +1,141 @@
+{
+  "schema_version": "1.0",
+  "actual_outcome_event_id": "node_6",
+  "graph": {
+    "nodes": [
+      {
+        "id": "node_1",
+        "label": "Late-June US diesel-price reference observation",
+        "event_type": "indicator",
+        "occurred_date": "2024-06-24",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_129939243bc59f22"
+        ]
+      },
+      {
+        "id": "node_2",
+        "label": "Late-July US diesel-price target observation",
+        "event_type": "indicator",
+        "occurred_date": "2024-07-29",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_748a59f25ea4b223"
+        ]
+      },
+      {
+        "id": "node_3",
+        "label": "July-over-June diesel-price percentage-change calculation",
+        "event_type": "milestone",
+        "occurred_date": "2024-07-29",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_129939243bc59f22",
+          "ev_748a59f25ea4b223",
+          "ev_37a07840d813ea04"
+        ]
+      },
+      {
+        "id": "node_4",
+        "label": "Observed July retail diesel-price change was -0.027%",
+        "event_type": "indicator",
+        "occurred_date": "2024-07-29",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_37a07840d813ea04"
+        ]
+      },
+      {
+        "id": "node_5",
+        "label": "Pre-registered yes threshold was -1.374%",
+        "event_type": "milestone",
+        "occurred_date": "2024-07-01",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_37a07840d813ea04"
+        ]
+      },
+      {
+        "id": "node_6",
+        "label": "Resolved outcome: Yes, July diesel-price change met the threshold",
+        "event_type": "outcome",
+        "occurred_date": "2024-07-29",
+        "is_outcome": true,
+        "is_actual_outcome": true,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_37a07840d813ea04"
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_1",
+        "source": "node_1",
+        "target": "node_3",
+        "relationship": "input_to",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_129939243bc59f22",
+          "ev_37a07840d813ea04"
+        ],
+        "rationale": "The late-June price is the reference input to the monthly percentage-change calculation."
+      },
+      {
+        "id": "edge_2",
+        "source": "node_2",
+        "target": "node_3",
+        "relationship": "input_to",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_748a59f25ea4b223",
+          "ev_37a07840d813ea04"
+        ],
+        "rationale": "The late-July price is the target input to the monthly percentage-change calculation."
+      },
+      {
+        "id": "edge_3",
+        "source": "node_3",
+        "target": "node_4",
+        "relationship": "yields",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_37a07840d813ea04"
+        ],
+        "rationale": "Applying the pre-specified percentage-change method yields the observed -0.027% monthly change."
+      },
+      {
+        "id": "edge_4",
+        "source": "node_4",
+        "target": "node_6",
+        "relationship": "classified_as",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_37a07840d813ea04"
+        ],
+        "rationale": "The observed -0.027% change is at least the -1.374% threshold."
+      },
+      {
+        "id": "edge_5",
+        "source": "node_5",
+        "target": "node_6",
+        "relationship": "classification_rule_for",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_37a07840d813ea04"
+        ],
+        "rationale": "The pre-registered threshold defines the yes answer category."
+      }
+    ]
+  }
+}

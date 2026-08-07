@@ -1,0 +1,571 @@
+{
+  "schema_version": "hgf_blueprint_topology_v2",
+  "question_id": "v3_us_pce_price_monthly_change_2023_01",
+  "target_definition": {
+    "metric": "monthly PCE-price change",
+    "unit_or_option_space": [
+      "yes",
+      "no"
+    ],
+    "forecast_horizon": "Remap the historical target family to the current question's exact target period."
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Outcome-redacted topology preserves 8 checkpoints, 9 source edges, and 3 root-to-target paths.",
+    "weaknesses": []
+  },
+  "search_factors": [
+    {
+      "factor": "Strong Wage Gains and Social Security Adjustment",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230131_001_86b63c86"
+      ]
+    },
+    {
+      "factor": "Increased Purchasing Power in Economy",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230131_005_65a3a995"
+      ]
+    },
+    {
+      "factor": "Persistent Inflationary Pressures",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230131_006_dbcc1d5b"
+      ]
+    },
+    {
+      "factor": "Robust Consumer Outlays on Goods and Services",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230131_009_c4349f82"
+      ]
+    },
+    {
+      "factor": "Surge in Consumer Spending ([CURRENT_PERIOD_REQUIRED])",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230131_002_bb687683"
+      ]
+    },
+    {
+      "factor": "Increased Demand",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230131_007_f0aa19da"
+      ]
+    },
+    {
+      "factor": "Acceleration of Inflation ([CURRENT_PERIOD_REQUIRED])",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230131_003_000095dd"
+      ]
+    },
+    {
+      "factor": "Monthly PCE-price change for [CURRENT_PERIOD_REQUIRED] at least [CURRENT_VALUE_REQUIRED]",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230131_008_535e070c"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "checkpoint_1",
+      "role": "driver",
+      "factor": "Strong Wage Gains and Social Security Adjustment",
+      "mechanism": "Strong wage gains and Social Security adjustment directly injected purchasing power into the economy.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230131_001_86b63c86"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011224_001_2a43496c"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_2",
+      "role": "mediator",
+      "factor": "Increased Purchasing Power in Economy",
+      "mechanism": "Increased purchasing power fueled robust consumer outlays on both goods and services.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230131_005_65a3a995"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011224_002_bcd61412",
+        "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011243_007_5f25aaa0"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_3",
+      "role": "driver",
+      "factor": "Persistent Inflationary Pressures",
+      "mechanism": "Lingering inflation in core services contributed to the acceleration of inflation.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230131_006_dbcc1d5b"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011224_005_997df0ae"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_4",
+      "role": "mediator",
+      "factor": "Robust Consumer Outlays on Goods and Services",
+      "mechanism": "Robust consumer outlays are a direct manifestation of the surge in consumer spending.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230131_009_c4349f82"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011243_008_8c58c17a"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_5",
+      "role": "mediator",
+      "factor": "Surge in Consumer Spending ([CURRENT_PERIOD_REQUIRED])",
+      "mechanism": "Increased consumer spending directly led to increased demand.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230131_002_bb687683"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011224_003_af6476ae"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_6",
+      "role": "mediator",
+      "factor": "Increased Demand",
+      "mechanism": "Increased demand, coupled with lingering inflation, contributed to an acceleration in inflation.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230131_007_f0aa19da"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011224_004_c0e44dcb"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_7",
+      "role": "mediator",
+      "factor": "Acceleration of Inflation ([CURRENT_PERIOD_REQUIRED])",
+      "mechanism": "The acceleration of inflation directly resulted in the monthly PCE-price change exceeding the threshold.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230131_003_000095dd"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011224_006_f133b6a1"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_8",
+      "role": "mediator",
+      "factor": "Monthly PCE-price change for [CURRENT_PERIOD_REQUIRED] at least [CURRENT_VALUE_REQUIRED]",
+      "mechanism": "Re-test whether this factor has a currently supported link to the exact target metric; do not transfer the historical outcome or magnitude.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230131_008_535e070c"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011243_009_36e333b8"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "target_bridge",
+      "role": "target_bridge",
+      "factor": "monthly PCE-price change",
+      "mechanism": "Map only currently supported paths into the exact target operator. Directional support alone is not magnitude or threshold-crossing support.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "A current target baseline and evidence supporting every edge used in the bridge.",
+      "contradiction_signal": "The current target baseline, magnitude evidence, or option boundary contradicts the proposed path.",
+      "historical_support": "medium",
+      "source_event_ids": [],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011243_009_36e333b8"
+      ],
+      "source_event_type": "target_bridge"
+    }
+  ],
+  "topology": {
+    "checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_5",
+      "checkpoint_6",
+      "checkpoint_7",
+      "checkpoint_8",
+      "target_bridge"
+    ],
+    "root_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_3"
+    ],
+    "target_bridge_id": "target_bridge",
+    "edges": [
+      {
+        "source_checkpoint_id": "checkpoint_1",
+        "target_checkpoint_id": "checkpoint_2",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Strong wage gains and Social Security adjustment directly injected purchasing power into the economy.",
+        "source_edge_ids": [
+          "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011224_001_2a43496c"
+        ],
+        "source_article_ids": [
+          "art_finance_20230224_002_6b484e66"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_2",
+        "target_checkpoint_id": "checkpoint_5",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Increased purchasing power fueled robust consumer outlays on both goods and services.",
+        "source_edge_ids": [
+          "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011224_002_bcd61412"
+        ],
+        "source_article_ids": [
+          "art_finance_20230224_002_6b484e66"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_5",
+        "target_checkpoint_id": "checkpoint_6",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Increased consumer spending directly led to increased demand.",
+        "source_edge_ids": [
+          "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011224_003_af6476ae"
+        ],
+        "source_article_ids": [
+          "art_finance_20230224_002_6b484e66"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_6",
+        "target_checkpoint_id": "checkpoint_7",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Increased demand, coupled with lingering inflation, contributed to an acceleration in inflation.",
+        "source_edge_ids": [
+          "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011224_004_c0e44dcb"
+        ],
+        "source_article_ids": [
+          "art_finance_20230224_002_6b484e66",
+          "art_finance_20230214_002_74420cc3"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_3",
+        "target_checkpoint_id": "checkpoint_7",
+        "relationship": "amplifies",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Lingering inflation in core services contributed to the acceleration of inflation.",
+        "source_edge_ids": [
+          "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011224_005_997df0ae"
+        ],
+        "source_article_ids": [
+          "art_finance_20230224_002_6b484e66",
+          "art_finance_20230214_002_74420cc3"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_7",
+        "target_checkpoint_id": "checkpoint_8",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "The acceleration of inflation directly resulted in the monthly PCE-price change exceeding the threshold.",
+        "source_edge_ids": [
+          "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011224_006_f133b6a1"
+        ],
+        "source_article_ids": [
+          "art_finance_20230224_002_6b484e66",
+          "art_finance_20230214_002_74420cc3"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_2",
+        "target_checkpoint_id": "checkpoint_4",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Increased purchasing power directly led to robust consumer outlays.",
+        "source_edge_ids": [
+          "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011243_007_5f25aaa0"
+        ],
+        "source_article_ids": [
+          "art_finance_20230224_002_6b484e66"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_4",
+        "target_checkpoint_id": "checkpoint_5",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Robust consumer outlays are a direct manifestation of the surge in consumer spending.",
+        "source_edge_ids": [
+          "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011243_008_8c58c17a"
+        ],
+        "source_article_ids": [
+          "art_finance_20230224_002_6b484e66"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_8",
+        "target_checkpoint_id": "target_bridge",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Historical DAG connected this factor to the redacted target measurement; the realized value and outcome mapping are omitted.",
+        "source_edge_ids": [
+          "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011243_009_36e333b8"
+        ],
+        "source_article_ids": [
+          "art_finance_20230224_002_6b484e66",
+          "art_finance_20230214_002_74420cc3"
+        ],
+        "terminal_to_target_bridge": true
+      }
+    ],
+    "paths_truncated": false
+  },
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "checkpoint_1",
+        "checkpoint_2",
+        "checkpoint_5",
+        "checkpoint_6",
+        "checkpoint_7",
+        "checkpoint_8",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011224_001_2a43496c",
+        "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011224_002_bcd61412",
+        "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011224_003_af6476ae",
+        "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011224_004_c0e44dcb",
+        "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011224_006_f133b6a1",
+        "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011243_009_36e333b8"
+      ],
+      "relationships": [
+        "causes",
+        "causes",
+        "causes",
+        "causes",
+        "causes",
+        "causes"
+      ],
+      "path_role": "main_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Strong Wage Gains and Social Security Adjustment to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_1",
+        "checkpoint_2",
+        "checkpoint_4",
+        "checkpoint_5",
+        "checkpoint_6",
+        "checkpoint_7",
+        "checkpoint_8",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011224_001_2a43496c",
+        "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011243_007_5f25aaa0",
+        "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011243_008_8c58c17a",
+        "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011224_003_af6476ae",
+        "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011224_004_c0e44dcb",
+        "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011224_006_f133b6a1",
+        "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011243_009_36e333b8"
+      ],
+      "relationships": [
+        "causes",
+        "causes",
+        "causes",
+        "causes",
+        "causes",
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Strong Wage Gains and Social Security Adjustment to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_3",
+        "checkpoint_7",
+        "checkpoint_8",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011224_005_997df0ae",
+        "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011224_006_f133b6a1",
+        "hyp_v3_us_pce_price_monthly_change_2023_01_20260725_011243_009_36e333b8"
+      ],
+      "relationships": [
+        "amplifies",
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Persistent Inflationary Pressures to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "A current factor outside the preserved historical topology dominates the target.",
+      "discriminating_evidence": "Search for current shocks and target observations not explained by any retained path.",
+      "source_event_ids": []
+    }
+  ],
+  "forecast_audit_questions": [
+    "Does every used checkpoint transition correspond to a preserved edge?",
+    "Which preserved edges are supported, contradicted, or unknown now?",
+    "Does a counter-path dominate the leading supported path?",
+    "Is there evidence for magnitude and boundary crossing, not direction alone?"
+  ],
+  "refinement_metadata": {
+    "model": "deterministic_topology_compiler_v2",
+    "source_graph": "data\\dags\\v3_us_pce_price_monthly_change_2023_01\\graph.json",
+    "source_audit_status": "pass",
+    "outcome_nodes_redacted": 2,
+    "target_value_anchors_redacted": 0,
+    "historical_specifics_sanitized": true,
+    "sanitizer": "minimal_value_period_placeholders_v1",
+    "value_replacement_count": 2,
+    "period_replacement_count": 6
+  },
+  "topology_validation": {
+    "status": "pass",
+    "errors": [],
+    "metrics": {
+      "retained_checkpoint_count": 8,
+      "source_edge_count": 9,
+      "emitted_edge_count": 9,
+      "edge_coverage": 1.0,
+      "path_precision": 1.0,
+      "causal_path_count": 3,
+      "outcome_event_leak_count": 0,
+      "outcome_text_leak_count": 0,
+      "realized_value_count": 0,
+      "absolute_period_count": 0
+    }
+  }
+}

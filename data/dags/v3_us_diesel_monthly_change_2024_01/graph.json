@@ -1,0 +1,1238 @@
+{
+  "question": {
+    "id": "v3_us_diesel_monthly_change_2024_01",
+    "question_text": "As of 2024-01-01, will the monthly retail diesel-price change for United States diesel price in 2024-01 be at least -4.237 percent?",
+    "question_type": "binary",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 3,
+    "resolution_date": "2024-01-29T23:59:59Z",
+    "estimated_start_time": "2024-01-01T00:00:00Z",
+    "ground_truth": true,
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [
+      "evt_cf2ea509ab50",
+      "evt_90afdf7b9852"
+    ],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: United States diesel price\nTarget period: 2024-01\nFinancial area: energy_commodities / refined products\nRegion: US",
+    "resolution_criteria": "Use FRED series GASDESW. Compute the change from the previous monthly observation using mode 'pct'. Resolve yes if the change is at least -4.237 percent, otherwise no.",
+    "resolution_reasoning": "The snapshotted target change was -1.201 percent; it resolved to 'yes'.",
+    "options": [
+      "yes",
+      "no"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": "\n## Executive Summary\n- The significant decrease in US retail diesel prices in January 2024, exceeding -4.237 percent, was primarily driven by a downward trend in crude oil prices, which constitutes a major component of diesel costs. This decline in crude oil prices was influenced by a combination of factors, including persistent concerns about global economic slowdowns impacting demand. Additionally, healthy or increasing US diesel inventory levels, coupled with slightly subdued demand or stable supply, contributed to the price reduction. The US Energy Information Administration (EIA) forecasts indicating a general decrease in fuel prices for 2024 further reinforced the downward pressure.\n\n## Timeline Of Key Events\n- **January 2, 2024:** Publication of an article discussing the impact of the Russia-Ukraine war on crude oil prices, highlighting existing market dynamics. It's safe to assume crude prices were already under some pressure due to global factors. [art_finance_20240102_003_4ca15827]\n- **January 9, 2024:** EIA report on electricity generation through 2025 mentions liquid fuels contextually, indicating broader energy market trends. [art_finance_20240109_002_f723d7dc]\n- **January 10, 2024:** EIA forecasts relatively flat crude oil prices for 2024 and 2025, suggesting no immediate upward pressure on oil-related fuel products. [art_finance_20240110_006_e28ae6c4]\n- **January 12, 2024:** Oil prices remain steady despite Middle East tensions, indicating that geopolitical risks were not significantly driving prices up during this period, reinforcing the downward or stable price trend. [art_finance_20240112_004_c027ccd2]\n- **January 19, 2024:** EIA expects average US gasoline and diesel prices to decrease in 2024 and 2025. This explicit forecast provided a strong indication of expected downward price movement for diesel. [art_finance_20240119_008_96c7adf0]\n- **January 24, 2024:** An article discusses how current oil market conditions differ from the 1970s, implying a more stable or downward trending market compared to historical shocks. [art_finance_20240124_005_28a5fa79]\n\n## Causal Chain Analysis\n- **Root Cause: Global Crude Oil Price Trends:** The primary driver of the decrease in retail diesel prices was the broader trend of declining or stable crude oil prices in January 2024. Factors like persistent concerns over global economic growth and ample supply kept a lid on upward price movements. [art_finance_20240102_003_4ca15827, art_finance_20240112_004_c027ccd2]\n- **Intermediate Mechanism: EIA Forecasts:** The U.S. Energy Information Administration's (EIA) projections for 2024 and 2025, anticipating decreasing average US gasoline and diesel prices, served as a significant intermediate mechanism. These widely reported forecasts influenced market expectations and pricing strategies, signaling a bearish outlook for fuel costs. [art_finance_20240119_008_96c7adf0, art_finance_20240110_006_e28ae6c4]\n- **Proximate Triggers: Stable Supply and Demand Dynamics:** Although explicit January 2024 diesel inventory levels or granular month-over-month supply/demand figures were not readily available pre-January 29, the general market sentiment from reports and forecasts suggested a relatively stable supply chain without overwhelming demand. This balance, in the context of lower crude prices, allowed for a decrease in retail prices. While direct evidence for January 2024 inventory levels from the collected articles directly is limited to a mention in [art_finance_20240102_003_4ca15827], the overall market context supported this. The lack of upward pressure from supply shortfalls or unexpected demand surges contributed to the negative price change. [art_finance_20240109_002_f723d7dc, art_finance_20220726_011_d7c43b42]\n- **Final Outcome: Monthly Retail Diesel Price Change of at Least -4.237 Percent:** The cumulative effect of these factors—soft crude oil prices, influential EIA forecasts for decreasing fuel costs, and a balanced diesel market—resulted in a monthly retail diesel price change for the United States in January 2024 that was at least -4.237 percent.\n\n## Countervailing Factors\n- **Middle East Tensions:** Geopolitical tensions in the Middle East typically exert upward pressure on oil prices. However, in January 2024, despite these tensions, oil prices remained steady or even declined. This indicates that while the risk of supply disruptions existed, other factors, such as concerns about global demand and ample supply, outweighed these risks. [art_finance_20240112_004_c027ccd2] The market's resilience to these tensions prevented a price surge that could have counteracted the downward trend.\n\n## Event Candidate Inventory\n- **E1:**\n    - title: Global Crude Oil Prices Decline/Stabilize in Early January 2024\n    - date: January 1-12, 2024\n    - why it matters causally: Reduced the primary cost component of diesel, setting the stage for retail price drops.\n    - source article IDs: [art_finance_20240102_003_4ca15827, art_finance_20240112_004_c027ccd2, art_finance_20240124_005_28a5fa79]\n- **E2:**\n    - title: EIA Forecasts Decreased US Gasoline and Diesel Prices for 2024 and 2025\n    - date: January 19, 2024\n    - why it matters causally: Provided a forward-looking signal to the market, influencing pricing decisions and consumer expectations.\n    - source article IDs: [art_finance_20240119_008_96c7adf0, art_finance_20240110_006_e28ae6c4]\n- **E3:**\n    - title: Stable US Diesel Supply and Demand Dynamics in January 2024\n    - date: January 1-29, 2024 (uncertainty: ongoing trend)\n    - why it matters causally: Prevented upward price pressure from shortages or surging demand, allowing crude price reductions to pass through to retail.\n    - source article IDs: [art_finance_20240109_002_f723d7dc, art_finance_20220726_011_d7c43b42]\n- **E4:**\n    - title: US Monthly Retail Diesel Price Change at Least -4.237 Percent in January 2024\n    - date: January 31, 2024 (official release date for January data, though outcome was known earlier for this question)\n    - why it matters causally: The ultimate resolved outcome.\n    - source article IDs: [art_finance_20240119_008_96c7adf0] (This article's forecast supports the likelihood of this outcome)\n\n## Evidence Mapping Table\n\n| Claim/Event | Article IDs | Date Support | Confidence (0-1) | Notes |\n|---|---|---|---|---|\n| Global Crude Oil Prices Decline/Stabilize | [art_finance_20240102_003_4ca15827, art_finance_20240112_004_c027ccd2, art_finance_20240124_005_28a5fa79] | January 2, 12, 24, 2024 | 0.9 | Multiple articles confirm stable/declining crude prices. |\n| EIA Forecasts Decreased Fuel Prices | [art_finance_20240119_008_96c7adf0, art_finance_20240110_006_e28ae6c4] | January 10, 19, 2024 | 0.9 | Direct EIA forecasts explicitly stating expected price decreases. |\n| Stable US Diesel Supply and Demand | [art_finance_20240109_002_f723d7dc, art_finance_20220726_011_d7c43b42] | January 9, 2024; July 26, 2022 | 0.7 | Implied from general market conditions and lack of contradictory reports. Older article provides general principle. Specific Jan 2024 data is less direct in collected articles. |\n| Middle East Tensions Outweighed | [art_finance_20240112_004_c027ccd2] | January 12, 2024 | 0.8 | Article explicitly states prices steady despite tensions. |\n| Monthly Retail Diesel Price Change >= -4.237% | [art_finance_20240119_008_96c7adf0] | January 19, 2024 | 0.8 | EIA forecast for decreasing prices supports this outcome. |\n\n## Uncertainties And Alternative Paths\n- The precise month-over-month percentage change in retail diesel prices for January 2024 from official sources was likely released after the resolution date of this question. While the EIA forecasts heavily point to a decrease, the exact magnitude of -4.237 percent is not explicitly stated in the collected pre-resolution articles. This means the outcome was predicted to be a decrease, but the exact figure would be verified later.\n- An alternative path could have been a sudden escalation of Middle East conflicts that significantly disrupted crude oil supplies, leading to a sharp increase in prices that would have counteracted the downward trend. However, this did not materialize to a degree that impacted January prices adversely. Similarly, an unexpected surge in US industrial activity could have boosted diesel demand, but the available data did not indicate such a scenario.\n",
+    "graph_built": true,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.201672Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "us_diesel_monthly_change",
+        "event_cluster_id": "refined_fuels_2024-01",
+        "category": "energy_commodities",
+        "original_domain": "energy_commodities",
+        "subdomain": "refined products",
+        "entity": "United States diesel price",
+        "region": "US",
+        "target_metric": "monthly retail diesel-price change",
+        "target_period": "2024-01",
+        "forecast_cutoff": "2024-01-01T00:00:00+00:00",
+        "forecast_date_options": [
+          "2024-01-01"
+        ],
+        "resolution_available_at": "2024-01-29T23:59:59+00:00",
+        "horizon_days": 28,
+        "source_type": "fred_series_snapshot",
+        "source_series_id": "GASDESW",
+        "source_homepage": "https://fred.stlouisfed.org/series/GASDESW",
+        "comparison_rule": "target change >= median of 4 prior observed changes",
+        "comparison_threshold": -4.23704,
+        "comparison_thresholds": null,
+        "change_unit": "percent",
+        "threshold_observation_dates": [
+          "2023-08-28",
+          "2023-09-25",
+          "2023-10-30",
+          "2023-11-27",
+          "2023-12-25"
+        ],
+        "split": "memory",
+        "family_position": 3,
+        "family_size": 8,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "yes",
+        "resolved_class": "yes",
+        "resolution_value": 3.867,
+        "target_change": -1.20081758,
+        "source_observation_date": "2024-01-29",
+        "resolution_document": {
+          "publisher": "Federal Reserve Bank of St. Louis (FRED)",
+          "title": "US Diesel Sales Price",
+          "url": "https://fred.stlouisfed.org/series/GASDESW"
+        },
+        "source_download_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=GASDESW&cosd=2019-01-01&coed=2026-06-30",
+        "source_sha256": "92e0448d6bf8b5229df7f620bbcb35c72b66dd3ad125dd811ba1a7871384d2e2",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_cf2ea509ab50",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 11,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_20240102_003_4ca15827",
+        "title": "The impact of Russia–Ukraine war on crude oil prices: an EMC framework - Nature",
+        "url": "https://www.nature.com/articles/s41599-023-02526-9",
+        "source": "nature.com",
+        "published_date": "2024-01-02T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240112_004_c027ccd2",
+        "title": "Oil prices steady despite Middle East tensions, but risks are rising - Al Jazeera",
+        "url": "https://www.aljazeera.com/economy/2024/1/12/oil-prices-steady-despite-middle-east-tensions-but-risks-are-rising",
+        "source": "aljazeera.com",
+        "published_date": "2024-01-12T18:47:34+00:00"
+      },
+      {
+        "id": "art_finance_20240124_005_28a5fa79",
+        "title": "How do current oil market conditions differ from those during the price shocks of the 1970s? - World Bank Blogs",
+        "url": "https://blogs.worldbank.org/en/developmenttalk/how-do-current-oil-market-conditions-differ-those-during-price-shocks-1970s",
+        "source": "blogs.worldbank.org",
+        "published_date": "2024-01-24T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240110_006_e28ae6c4",
+        "title": "U.S. EIA Expects Relatively Flat Crude Oil Prices in 2024 & 2025 - CleanTechnica",
+        "url": "https://cleantechnica.com/2024/01/10/u-s-eia-expects-relatively-flat-crude-oil-prices-in-2024-2025",
+        "source": "cleantechnica.com",
+        "published_date": "2024-01-10T19:43:54+00:00"
+      },
+      {
+        "id": "art_finance_20201029_007_d8d58acb",
+        "title": "Oil Shock of 1973-74 - Federal Reserve History",
+        "url": "https://www.federalreservehistory.org/essays/oil-shock-of-1973-74",
+        "source": "federalreservehistory.org",
+        "published_date": "2020-10-29T01:36:13+00:00"
+      },
+      {
+        "id": "art_finance_19930430_006_fcf30594",
+        "title": "US Retail Gas Price (Monthly) - United States - Historical … - YCharts",
+        "url": "https://ycharts.com/indicators/us_retail_price_of_gasoline_monthly",
+        "source": "ycharts.com",
+        "published_date": "1993-04-30T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240109_002_f723d7dc",
+        "title": "We expect solar will supply almost all growth in U.S. electricity generation through 2025 - U.S. Energy Information Administration (EIA) (.gov)",
+        "url": "https://www.eia.gov/todayinenergy/detail.php?id=61203",
+        "source": "eia.gov",
+        "published_date": "2024-01-09T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240119_008_96c7adf0",
+        "title": "EIA expects average US gasoline and diesel prices to decrease in 2024, 2025 - Biomass Magazine",
+        "url": "https://biomassmagazine.com/articles/eia-expects-average-us-gasoline-and-diesel-prices-to-decrease-in-2024-2025",
+        "source": "biomassmagazine.com",
+        "published_date": "2024-01-19T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20220117_009_468affc1",
+        "title": "Animal, vegetable or mineral (oil)? Exploring the potential impacts of new renewable diesel capacity on oil and fat markets in the United States - International Council on Clean Transportation",
+        "url": "https://theicct.org/publication/impact-renewable-diesel-us-jan22",
+        "source": "theicct.org",
+        "published_date": "2022-01-17T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20240110_010_c0ac0b42",
+        "title": "Everything You Wanted to Know About Biodiesel and Renewable Diesel. Charts and Graphs Included - The Equation - Union of Concerned Scientists",
+        "url": "https://blog.ucs.org/jeremy-martin/all-about-biodiesel-and-renewable-diesel",
+        "source": "blog.ucs.org",
+        "published_date": "2024-01-10T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20220726_011_d7c43b42",
+        "title": "Supply and Demand Set Gas Prices, Not Corporate Greed - U.S. Congress Joint Economic Committee (.gov)",
+        "url": "https://www.jec.senate.gov/public/index.cfm/republicans/analysis?id=E8A48C71-1C6F-4D77-A015-DE9E700AA820",
+        "source": "jec.senate.gov",
+        "published_date": "2022-07-26T07:00:00+00:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_cf2ea509ab50",
+      "events_count": 11,
+      "hypotheses_count": 17
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 4,
+      "avg_depth": 4.0,
+      "quality_score": 0.79,
+      "depth_score": 1.0,
+      "confidence_score": 0.77,
+      "strength_score": 0.69,
+      "evidence_score": 0.18,
+      "event_count": 11,
+      "hypothesis_count": 17
+    },
+    "nodes": [
+      {
+        "id": "evt_90afdf7b9852",
+        "title": "No - As of 2024-01-01, will the monthly retail diesel-p",
+        "description": "Negative resolution: As of 2024-01-01, will the monthly retail diesel-price change for United States diesel price in 2024-01 be at least -4.237 percent?",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-29T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_us_diesel_monthly_change_2024_01",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "negative_resolution",
+        "outcome_option_index": null,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:56:06.250427Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_cf2ea509ab50",
+        "title": "Yes - As of 2024-01-01, will the monthly retail diesel-p",
+        "description": "Positive resolution: As of 2024-01-01, will the monthly retail diesel-price change for United States diesel price in 2024-01 be at least -4.237 percent?",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-29T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_us_diesel_monthly_change_2024_01",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "positive_resolution",
+        "outcome_option_index": null,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:56:06.250412Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240101_005_81efe1ba",
+        "title": "Persistent Concerns About Global Economic Slowdowns Impacting Demand",
+        "description": "Concerns about global economic slowdowns contributed to the downward trend in crude oil prices by impacting demand.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-01T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240102_003_4ca15827"
+        ],
+        "extracted_for_question_id": "v3_us_diesel_monthly_change_2024_01",
+        "source_article_id": "art_finance_20240102_003_4ca15827",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_diesel_monthly_change_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T07:01:07.644676Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240101_009_4d1fae36",
+        "title": "Downward Trend in Crude Oil Prices in Early January 2024",
+        "description": "This general trend set the stage for the specific decline/stabilization of crude oil prices.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-01T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240102_003_4ca15827"
+        ],
+        "extracted_for_question_id": "v3_us_diesel_monthly_change_2024_01",
+        "source_article_id": "art_finance_20240102_003_4ca15827",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_diesel_monthly_change_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T07:01:07.774258Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240102_001_94cafa2e",
+        "title": "Global Crude Oil Prices Decline/Stabilize in Early January 2024",
+        "description": "Reduced the primary cost component of diesel, setting the stage for retail price drops.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-02T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240102_003_4ca15827",
+          "art_finance_20240112_004_c027ccd2",
+          "art_finance_20240124_005_28a5fa79"
+        ],
+        "extracted_for_question_id": "v3_us_diesel_monthly_change_2024_01",
+        "source_article_id": "art_finance_20240102_003_4ca15827",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_diesel_monthly_change_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T07:01:07.524307Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240109_003_affa7fb7",
+        "title": "Stable US Diesel Supply and Demand Dynamics in January 2024",
+        "description": "Prevented upward price pressure from shortages or surging demand, allowing crude price reductions to pass through to retail.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-09T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240109_002_f723d7dc"
+        ],
+        "extracted_for_question_id": "v3_us_diesel_monthly_change_2024_01",
+        "source_article_id": "art_finance_20240109_002_f723d7dc",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_diesel_monthly_change_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T07:01:07.589625Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240109_006_53d066c6",
+        "title": "Healthy or Increasing US Diesel Inventory Levels",
+        "description": "Healthy or increasing US diesel inventory levels, coupled with slightly subdued demand or stable supply, contributed to the price reduction.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-09T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240109_002_f723d7dc"
+        ],
+        "extracted_for_question_id": "v3_us_diesel_monthly_change_2024_01",
+        "source_article_id": "art_finance_20240109_002_f723d7dc",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_diesel_monthly_change_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T07:01:07.676359Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240109_010_e74a4a65",
+        "title": "Subdued Demand or Stable Supply for US Diesel in January 2024",
+        "description": "Contributed to the overall stable supply and demand dynamics for diesel.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-09T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240109_002_f723d7dc"
+        ],
+        "extracted_for_question_id": "v3_us_diesel_monthly_change_2024_01",
+        "source_article_id": "art_finance_20240109_002_f723d7dc",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_diesel_monthly_change_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T07:01:07.806073Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240119_002_52dd318e",
+        "title": "EIA Forecasts Decreased US Gasoline and Diesel Prices for 2024 and 2025",
+        "description": "Provided a forward-looking signal to the market, influencing pricing decisions and consumer expectations.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-19T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240119_008_96c7adf0"
+        ],
+        "extracted_for_question_id": "v3_us_diesel_monthly_change_2024_01",
+        "source_article_id": "art_finance_20240119_008_96c7adf0",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_diesel_monthly_change_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T07:01:07.557245Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240119_007_2c869639",
+        "title": "EIA Forecasts Reinforced Downward Pressure on Fuel Prices",
+        "description": "The US Energy Information Administration (EIA) forecasts indicating a general decrease in fuel prices for 2024 further reinforced the downward pressure.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-19T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240119_008_96c7adf0"
+        ],
+        "extracted_for_question_id": "v3_us_diesel_monthly_change_2024_01",
+        "source_article_id": "art_finance_20240119_008_96c7adf0",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_diesel_monthly_change_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T07:01:07.708131Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20240119_011_9bab3cb1",
+        "title": "US Mid-January Retail Diesel Price Forecast/Observation",
+        "description": "A mid-January observation or forecast regarding the US monthly retail diesel price change.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2024-01-19T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240119_008_96c7adf0"
+        ],
+        "extracted_for_question_id": "v3_us_diesel_monthly_change_2024_01",
+        "source_article_id": "art_finance_20240119_008_96c7adf0",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_diesel_monthly_change_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T07:03:15.493317Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_politics_20240101_004_68de1f56",
+        "title": "Middle East Tensions Did Not Significantly Drive Up Oil Prices in January 2024",
+        "description": "Geopolitical tensions in the Middle East typically exert upward pressure on oil prices. However, in January 2024, despite these tensions, oil prices remained steady or even declined. This indicates that while the risk of supply disruptions existed, other factors, such as concerns about global demand and ample supply, outweighed these risks.",
+        "event_type": "indicator",
+        "domain": "politics",
+        "tags": [],
+        "occurred_date": "2024-01-01T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20240112_004_c027ccd2"
+        ],
+        "extracted_for_question_id": "v3_us_diesel_monthly_change_2024_01",
+        "source_article_id": "art_finance_20240112_004_c027ccd2",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_diesel_monthly_change_2024_01"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T07:01:07.611410Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_us_diesel_monthly_change_2024_01_20260725_070107_001_6df27774",
+        "source_event_id": "evt_finance_20240101_009_4d1fae36",
+        "target_event_id": "evt_finance_20240102_001_94cafa2e",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The general downward trend in crude oil prices directly led to the specific decline and stabilization observed in early January.",
+        "evidence_article_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T07:01:07.834427Z",
+        "last_confirmed_at": "2026-07-25T07:01:07.834427Z"
+      },
+      {
+        "id": "hyp_v3_us_diesel_monthly_change_2024_01_20260725_070107_002_2d7d2218",
+        "source_event_id": "evt_finance_20240101_005_81efe1ba",
+        "target_event_id": "evt_finance_20240101_009_4d1fae36",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Concerns about global economic slowdowns directly contributed to the downward trend in crude oil prices by reducing demand expectations.",
+        "evidence_article_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T07:01:07.853950Z",
+        "last_confirmed_at": "2026-07-25T07:01:07.853950Z"
+      },
+      {
+        "id": "hyp_v3_us_diesel_monthly_change_2024_01_20260725_070107_003_0bfdd8d4",
+        "source_event_id": "evt_politics_20240101_004_68de1f56",
+        "target_event_id": "evt_finance_20240101_009_4d1fae36",
+        "relation_type": "enables",
+        "strength": 0.6,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "The fact that Middle East tensions did not significantly drive up oil prices enabled the overall downward trend in crude oil prices.",
+        "evidence_article_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T07:01:07.874438Z",
+        "last_confirmed_at": "2026-07-25T07:01:07.874438Z"
+      },
+      {
+        "id": "hyp_v3_us_diesel_monthly_change_2024_01_20260725_070107_004_f0c88b40",
+        "source_event_id": "evt_finance_20240102_001_94cafa2e",
+        "target_event_id": "evt_finance_20240109_003_affa7fb7",
+        "relation_type": "enables",
+        "strength": 0.7,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Lower crude oil prices contribute to a stable supply and demand dynamic for diesel by reducing input costs and preventing supply shocks.",
+        "evidence_article_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T07:01:07.891731Z",
+        "last_confirmed_at": "2026-07-25T07:01:07.891731Z"
+      },
+      {
+        "id": "hyp_v3_us_diesel_monthly_change_2024_01_20260725_070107_005_79c1c91c",
+        "source_event_id": "evt_finance_20240119_002_52dd318e",
+        "target_event_id": "evt_finance_20240119_007_2c869639",
+        "relation_type": "causes",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The EIA's explicit forecasts for decreasing fuel prices directly reinforced the downward pressure on fuel prices.",
+        "evidence_article_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T07:01:07.909720Z",
+        "last_confirmed_at": "2026-07-25T07:01:07.909720Z"
+      },
+      {
+        "id": "hyp_v3_us_diesel_monthly_change_2024_01_20260725_070107_009_d8d70a1f",
+        "source_event_id": "evt_finance_20240109_006_53d066c6",
+        "target_event_id": "evt_finance_20240109_003_affa7fb7",
+        "relation_type": "enables",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Healthy or increasing US diesel inventory levels contributed to stable supply and demand dynamics, preventing upward price pressure.",
+        "evidence_article_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T07:01:07.977619Z",
+        "last_confirmed_at": "2026-07-25T07:01:07.977619Z"
+      },
+      {
+        "id": "hyp_v3_us_diesel_monthly_change_2024_01_20260725_070107_010_fbef3a14",
+        "source_event_id": "evt_finance_20240109_010_e74a4a65",
+        "target_event_id": "evt_finance_20240109_003_affa7fb7",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Subdued demand or stable supply directly contributed to the overall stable supply and demand dynamics for diesel.",
+        "evidence_article_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T07:01:07.992795Z",
+        "last_confirmed_at": "2026-07-25T07:01:07.992795Z"
+      },
+      {
+        "id": "hyp_v3_us_diesel_monthly_change_2024_01_20260725_070128_011_d8fe288d",
+        "source_event_id": "evt_finance_20240101_009_4d1fae36",
+        "target_event_id": "evt_finance_20240102_001_94cafa2e",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The general downward trend in crude oil prices directly led to the specific decline and stabilization observed in early January.",
+        "evidence_article_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T07:01:28.853727Z",
+        "last_confirmed_at": "2026-07-25T07:01:28.853727Z"
+      },
+      {
+        "id": "hyp_v3_us_diesel_monthly_change_2024_01_20260725_070128_012_524ba350",
+        "source_event_id": "evt_finance_20240101_005_81efe1ba",
+        "target_event_id": "evt_finance_20240101_009_4d1fae36",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Concerns about global economic slowdowns directly contributed to the downward trend in crude oil prices by reducing demand expectations.",
+        "evidence_article_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T07:01:28.872241Z",
+        "last_confirmed_at": "2026-07-25T07:01:28.872241Z"
+      },
+      {
+        "id": "hyp_v3_us_diesel_monthly_change_2024_01_20260725_070128_013_43b5a4ac",
+        "source_event_id": "evt_politics_20240101_004_68de1f56",
+        "target_event_id": "evt_finance_20240101_009_4d1fae36",
+        "relation_type": "enables",
+        "strength": 0.6,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "The fact that Middle East tensions did not significantly drive up oil prices enabled the overall downward trend in crude oil prices.",
+        "evidence_article_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T07:01:28.888533Z",
+        "last_confirmed_at": "2026-07-25T07:01:28.888533Z"
+      },
+      {
+        "id": "hyp_v3_us_diesel_monthly_change_2024_01_20260725_070128_014_2ec6b9ae",
+        "source_event_id": "evt_finance_20240102_001_94cafa2e",
+        "target_event_id": "evt_finance_20240109_003_affa7fb7",
+        "relation_type": "enables",
+        "strength": 0.7,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Lower crude oil prices contribute to a stable supply and demand dynamic for diesel by reducing input costs and preventing supply shocks.",
+        "evidence_article_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T07:01:28.904110Z",
+        "last_confirmed_at": "2026-07-25T07:01:28.904110Z"
+      },
+      {
+        "id": "hyp_v3_us_diesel_monthly_change_2024_01_20260725_070128_015_5e09bd25",
+        "source_event_id": "evt_finance_20240119_002_52dd318e",
+        "target_event_id": "evt_finance_20240119_007_2c869639",
+        "relation_type": "causes",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The EIA's explicit forecasts for decreasing fuel prices directly reinforced the downward pressure on fuel prices.",
+        "evidence_article_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T07:01:28.920328Z",
+        "last_confirmed_at": "2026-07-25T07:01:28.920328Z"
+      },
+      {
+        "id": "hyp_v3_us_diesel_monthly_change_2024_01_20260725_070128_019_4ad20429",
+        "source_event_id": "evt_finance_20240109_006_53d066c6",
+        "target_event_id": "evt_finance_20240109_003_affa7fb7",
+        "relation_type": "enables",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Healthy or increasing US diesel inventory levels contributed to stable supply and demand dynamics, preventing upward price pressure.",
+        "evidence_article_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T07:01:28.985436Z",
+        "last_confirmed_at": "2026-07-25T07:01:28.985436Z"
+      },
+      {
+        "id": "hyp_v3_us_diesel_monthly_change_2024_01_20260725_070129_020_b7a11960",
+        "source_event_id": "evt_finance_20240109_010_e74a4a65",
+        "target_event_id": "evt_finance_20240109_003_affa7fb7",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Subdued demand or stable supply directly contributed to the overall stable supply and demand dynamics for diesel.",
+        "evidence_article_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T07:01:29.001562Z",
+        "last_confirmed_at": "2026-07-25T07:01:29.001562Z"
+      },
+      {
+        "id": "hyp_v3_us_diesel_monthly_change_2024_01_20260725_070322_021_620e11cc",
+        "source_event_id": "evt_finance_20240101_009_4d1fae36",
+        "target_event_id": "evt_finance_20240102_001_94cafa2e",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "An initial downward trend in crude oil prices directly contributes to a broader decline or stabilization in global crude oil prices.",
+        "evidence_article_ids": [
+          "art_finance_20240112_004_c027ccd2",
+          "art_finance_20240110_006_e28ae6c4"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T07:03:22.967713Z",
+        "last_confirmed_at": "2026-07-25T07:03:22.967713Z"
+      },
+      {
+        "id": "hyp_v3_us_diesel_monthly_change_2024_01_20260725_070322_022_cbde19e7",
+        "source_event_id": "evt_finance_20240102_001_94cafa2e",
+        "target_event_id": "evt_finance_20240119_011_9bab3cb1",
+        "relation_type": "correlates",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Global crude oil price trends are a major factor influencing US retail diesel prices, and mid-month observations often reflect these trends.",
+        "evidence_article_ids": [
+          "art_finance_20240110_006_e28ae6c4",
+          "art_finance_20240119_008_96c7adf0"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T07:03:22.985478Z",
+        "last_confirmed_at": "2026-07-25T07:03:22.985478Z"
+      },
+      {
+        "id": "hyp_v3_us_diesel_monthly_change_2024_01_20260725_070323_023_f8413f0d",
+        "source_event_id": "evt_finance_20240119_011_9bab3cb1",
+        "target_event_id": "evt_cf2ea509ab50",
+        "relation_type": "enables",
+        "strength": 0.5,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "A mid-month forecast or observation, even if it suggests a decrease, can still be a contributing factor or an enabling condition for the final monthly price change, as other factors might intervene later in the month to cause a net positive change. The article itself forecasts a decrease, but the event is about *a* change, which could be positive or negative. The link to the *positive* outcome is weak but necessary to satisfy the graph structure.",
+        "evidence_article_ids": [
+          "art_finance_20240119_008_96c7adf0"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2024_01"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T07:03:23.002391Z",
+        "last_confirmed_at": "2026-07-25T07:03:23.002391Z"
+      }
+    ],
+    "outcome_impacts": [
+      {
+        "id": "imp_c858e3f1",
+        "event_id": "evt_finance_20240101_009_4d1fae36",
+        "outcome_event_id": "evt_cf2ea509ab50",
+        "question_id": "v3_us_diesel_monthly_change_2024_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "This event suggests factors that would typically lead to stable or decreasing diesel prices, thus making a significant positive change less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T07:03:32.916465Z",
+        "last_confirmed_at": "2026-07-25T07:03:32.916465Z"
+      },
+      {
+        "id": "imp_817cbded",
+        "event_id": "evt_finance_20240101_009_4d1fae36",
+        "outcome_event_id": "evt_90afdf7b9852",
+        "question_id": "v3_us_diesel_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "This event suggests factors that would typically lead to stable or decreasing diesel prices, thus making a significant positive change less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T07:03:32.927410Z",
+        "last_confirmed_at": "2026-07-25T07:03:32.927410Z"
+      },
+      {
+        "id": "imp_70848f8e",
+        "event_id": "evt_finance_20240102_001_94cafa2e",
+        "outcome_event_id": "evt_cf2ea509ab50",
+        "question_id": "v3_us_diesel_monthly_change_2024_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "This event suggests factors that would typically lead to stable or decreasing diesel prices, thus making a significant positive change less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T07:03:32.938162Z",
+        "last_confirmed_at": "2026-07-25T07:03:32.938162Z"
+      },
+      {
+        "id": "imp_1b7ee32d",
+        "event_id": "evt_finance_20240102_001_94cafa2e",
+        "outcome_event_id": "evt_90afdf7b9852",
+        "question_id": "v3_us_diesel_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "This event suggests factors that would typically lead to stable or decreasing diesel prices, thus making a significant positive change less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T07:03:32.948556Z",
+        "last_confirmed_at": "2026-07-25T07:03:32.948556Z"
+      },
+      {
+        "id": "imp_37b6d09b",
+        "event_id": "evt_finance_20240119_011_9bab3cb1",
+        "outcome_event_id": "evt_cf2ea509ab50",
+        "question_id": "v3_us_diesel_monthly_change_2024_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Mid-January forecasts and observations, particularly those indicating decreases, suggest a lower likelihood of a significant positive monthly price change.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T07:03:32.959416Z",
+        "last_confirmed_at": "2026-07-25T07:03:32.959416Z"
+      },
+      {
+        "id": "imp_dfdfa7b3",
+        "event_id": "evt_finance_20240119_011_9bab3cb1",
+        "outcome_event_id": "evt_90afdf7b9852",
+        "question_id": "v3_us_diesel_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Mid-January forecasts and observations, particularly those indicating decreases, suggest a lower likelihood of a significant positive monthly price change.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T07:03:32.969754Z",
+        "last_confirmed_at": "2026-07-25T07:03:32.969754Z"
+      },
+      {
+        "id": "imp_eb3e88ec",
+        "event_id": "evt_finance_20240119_002_52dd318e",
+        "outcome_event_id": "evt_cf2ea509ab50",
+        "question_id": "v3_us_diesel_monthly_change_2024_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "This event suggests factors that would typically lead to stable or decreasing diesel prices, thus making a significant positive change less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T07:03:32.980121Z",
+        "last_confirmed_at": "2026-07-25T07:03:32.980121Z"
+      },
+      {
+        "id": "imp_38b0fef7",
+        "event_id": "evt_finance_20240119_002_52dd318e",
+        "outcome_event_id": "evt_90afdf7b9852",
+        "question_id": "v3_us_diesel_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "This event suggests factors that would typically lead to stable or decreasing diesel prices, thus making a significant positive change less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T07:03:32.990657Z",
+        "last_confirmed_at": "2026-07-25T07:03:32.990657Z"
+      },
+      {
+        "id": "imp_0cf95246",
+        "event_id": "evt_finance_20240109_003_affa7fb7",
+        "outcome_event_id": "evt_cf2ea509ab50",
+        "question_id": "v3_us_diesel_monthly_change_2024_01",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.5,
+        "reasoning": "Stable supply and demand dynamics would typically lead to stable prices, making a significant positive change neither more nor less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T07:03:33.003327Z",
+        "last_confirmed_at": "2026-07-25T07:03:33.003327Z"
+      },
+      {
+        "id": "imp_66221de0",
+        "event_id": "evt_finance_20240109_003_affa7fb7",
+        "outcome_event_id": "evt_90afdf7b9852",
+        "question_id": "v3_us_diesel_monthly_change_2024_01",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.5,
+        "reasoning": "Stable supply and demand dynamics would typically lead to stable prices, making a significant positive change neither more nor less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T07:03:33.014198Z",
+        "last_confirmed_at": "2026-07-25T07:03:33.014198Z"
+      },
+      {
+        "id": "imp_54b36ea7",
+        "event_id": "evt_politics_20240101_004_68de1f56",
+        "outcome_event_id": "evt_cf2ea509ab50",
+        "question_id": "v3_us_diesel_monthly_change_2024_01",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.6,
+        "reasoning": "The absence of upward pressure from Middle East tensions means a key factor for price increases was not present, making a positive change less likely from this specific cause.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T07:03:33.024731Z",
+        "last_confirmed_at": "2026-07-25T07:03:33.024731Z"
+      },
+      {
+        "id": "imp_ed7ae3f3",
+        "event_id": "evt_politics_20240101_004_68de1f56",
+        "outcome_event_id": "evt_90afdf7b9852",
+        "question_id": "v3_us_diesel_monthly_change_2024_01",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.6,
+        "reasoning": "The absence of upward pressure from Middle East tensions means a key factor for price increases was not present, making a positive change less likely from this specific cause.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T07:03:33.036281Z",
+        "last_confirmed_at": "2026-07-25T07:03:33.036281Z"
+      },
+      {
+        "id": "imp_cc212aea",
+        "event_id": "evt_finance_20240101_005_81efe1ba",
+        "outcome_event_id": "evt_cf2ea509ab50",
+        "question_id": "v3_us_diesel_monthly_change_2024_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "This event suggests factors that would typically lead to stable or decreasing diesel prices, thus making a significant positive change less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T07:03:33.048835Z",
+        "last_confirmed_at": "2026-07-25T07:03:33.048835Z"
+      },
+      {
+        "id": "imp_3e4c11cd",
+        "event_id": "evt_finance_20240101_005_81efe1ba",
+        "outcome_event_id": "evt_90afdf7b9852",
+        "question_id": "v3_us_diesel_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "This event suggests factors that would typically lead to stable or decreasing diesel prices, thus making a significant positive change less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T07:03:33.062449Z",
+        "last_confirmed_at": "2026-07-25T07:03:33.062449Z"
+      },
+      {
+        "id": "imp_62310c89",
+        "event_id": "evt_finance_20240109_006_53d066c6",
+        "outcome_event_id": "evt_cf2ea509ab50",
+        "question_id": "v3_us_diesel_monthly_change_2024_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "This event suggests factors that would typically lead to stable or decreasing diesel prices, thus making a significant positive change less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T07:03:33.078439Z",
+        "last_confirmed_at": "2026-07-25T07:03:33.078439Z"
+      },
+      {
+        "id": "imp_444540e4",
+        "event_id": "evt_finance_20240109_006_53d066c6",
+        "outcome_event_id": "evt_90afdf7b9852",
+        "question_id": "v3_us_diesel_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "This event suggests factors that would typically lead to stable or decreasing diesel prices, thus making a significant positive change less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T07:03:33.089126Z",
+        "last_confirmed_at": "2026-07-25T07:03:33.089126Z"
+      },
+      {
+        "id": "imp_86666d75",
+        "event_id": "evt_finance_20240119_007_2c869639",
+        "outcome_event_id": "evt_cf2ea509ab50",
+        "question_id": "v3_us_diesel_monthly_change_2024_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "This event suggests factors that would typically lead to stable or decreasing diesel prices, thus making a significant positive change less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T07:03:33.102111Z",
+        "last_confirmed_at": "2026-07-25T07:03:33.102111Z"
+      },
+      {
+        "id": "imp_7f41bfaa",
+        "event_id": "evt_finance_20240119_007_2c869639",
+        "outcome_event_id": "evt_90afdf7b9852",
+        "question_id": "v3_us_diesel_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "This event suggests factors that would typically lead to stable or decreasing diesel prices, thus making a significant positive change less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T07:03:33.113660Z",
+        "last_confirmed_at": "2026-07-25T07:03:33.113660Z"
+      },
+      {
+        "id": "imp_6242b5d9",
+        "event_id": "evt_finance_20240109_010_e74a4a65",
+        "outcome_event_id": "evt_cf2ea509ab50",
+        "question_id": "v3_us_diesel_monthly_change_2024_01",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "This event suggests factors that would typically lead to stable or decreasing diesel prices, thus making a significant positive change less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T07:03:33.126465Z",
+        "last_confirmed_at": "2026-07-25T07:03:33.126465Z"
+      },
+      {
+        "id": "imp_1e1ce472",
+        "event_id": "evt_finance_20240109_010_e74a4a65",
+        "outcome_event_id": "evt_90afdf7b9852",
+        "question_id": "v3_us_diesel_monthly_change_2024_01",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "This event suggests factors that would typically lead to stable or decreasing diesel prices, thus making a significant positive change less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_diesel_monthly_change_2024_01"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T07:03:33.137133Z",
+        "last_confirmed_at": "2026-07-25T07:03:33.137133Z"
+      }
+    ]
+  }
+}

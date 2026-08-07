@@ -1,0 +1,226 @@
+{
+  "schema_version": "hgf_blueprint_v1",
+  "question_id": "v3_us_5y_breakeven_monthly_change_2023_07",
+  "target_definition": {
+    "metric": "Monthly 5-year breakeven inflation-rate change",
+    "unit_or_option_space": "Monthly percentage-point change classification",
+    "forecast_horizon": "July 2023"
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Inflation data and policy communications provide a usable expectations framework.",
+    "weaknesses": [
+      "Some links are generic rather than direct.",
+      "Several observations arrive late in the target month."
+    ]
+  },
+  "search_factors": [
+    {
+      "factor": "Underlying inflation pressure",
+      "why_search": "Persistent inflation affects medium-term expectations.",
+      "preferred_source_types": [
+        "inflation release",
+        "survey data"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230701_006_630d961f"
+      ]
+    },
+    {
+      "factor": "Federal Reserve communication",
+      "why_search": "Policy messaging can reprice inflation expectations.",
+      "preferred_source_types": [
+        "FOMC statement",
+        "meeting minutes"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230706_015_9b2b8e9b",
+        "evt_finance_20230726_008_0cf132c8"
+      ]
+    },
+    {
+      "factor": "Market policy reaction",
+      "why_search": "Markets translate policy information into expected inflation.",
+      "preferred_source_types": [
+        "market data",
+        "rate futures"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230726_008_8f88f567"
+      ]
+    },
+    {
+      "factor": "PCE inflation data",
+      "why_search": "PCE is a direct inflation signal for expectations.",
+      "preferred_source_types": [
+        "BEA release"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230728_013_528d0bb8"
+      ]
+    },
+    {
+      "factor": "Growth slowdown risk",
+      "why_search": "Weak growth can reduce inflation expectations.",
+      "preferred_source_types": [
+        "activity release",
+        "forecast survey"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230106_020_59e8f02e",
+        "evt_finance_20230110_014_7d6da2f6"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "inflation_pressure",
+      "role": "baseline",
+      "factor": "Underlying inflation pressure",
+      "mechanism": "Persistent pressure can sustain medium-term inflation expectations.",
+      "expected_direction": "up",
+      "evidence_requirement": "Verify current inflation breadth and momentum.",
+      "contradiction_signal": "Broad disinflation.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_finance_20230701_006_630d961f"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_5y_breakeven_monthly_change_2023_07_20260723_013849_004_966aa4f2"
+      ]
+    },
+    {
+      "id": "fed_message",
+      "role": "driver",
+      "factor": "Federal Reserve communication",
+      "mechanism": "Hawkish communication signals sustained inflation-control efforts.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Check statements and minutes for inflation emphasis.",
+      "contradiction_signal": "Communication signals easing concern.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_finance_20230706_015_9b2b8e9b",
+        "evt_finance_20230726_008_0cf132c8"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_5y_breakeven_monthly_change_2023_07_20260723_013849_005_30988902",
+        "hyp_v3_us_5y_breakeven_monthly_change_2023_07_20260723_013937_014_0bf58469"
+      ]
+    },
+    {
+      "id": "market_reaction",
+      "role": "mediator",
+      "factor": "Market policy reaction",
+      "mechanism": "Policy reactions update market-implied inflation expectations.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Observe inflation swaps and nominal-real yield moves.",
+      "contradiction_signal": "Market pricing ignores policy signal.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_finance_20230726_008_8f88f567"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_5y_breakeven_monthly_change_2023_07_20260723_013849_006_b15ca738"
+      ]
+    },
+    {
+      "id": "pce",
+      "role": "driver",
+      "factor": "PCE inflation data",
+      "mechanism": "Inflation data can directly update medium-term expectations.",
+      "expected_direction": "up",
+      "evidence_requirement": "Compare PCE inflation with consensus.",
+      "contradiction_signal": "PCE undershoots expectations.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_finance_20230728_013_528d0bb8"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_5y_breakeven_monthly_change_2023_07_20260723_013945_018_359cc47e"
+      ]
+    },
+    {
+      "id": "growth_risk",
+      "role": "counterevidence",
+      "factor": "Growth slowdown risk",
+      "mechanism": "A hard landing can suppress expected inflation.",
+      "expected_direction": "down",
+      "evidence_requirement": "Check global activity and demand indicators.",
+      "contradiction_signal": "Growth reaccelerates.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20230106_020_59e8f02e",
+        "evt_finance_20230110_014_7d6da2f6"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_5y_breakeven_monthly_change_2023_07_20260723_013946_025_30f86531"
+      ]
+    },
+    {
+      "id": "target_bridge",
+      "role": "target_bridge",
+      "factor": "Medium-term inflation pricing",
+      "mechanism": "Inflation data and policy repricing combine into the monthly breakeven change.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Measure monthly breakeven movement against inflation and policy surprises.",
+      "contradiction_signal": "Breakevens diverge from inflation-market repricing.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_finance_20230728_013_528d0bb8",
+        "evt_finance_20230726_019_24d7d7cb"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_5y_breakeven_monthly_change_2023_07_20260723_013945_018_359cc47e",
+        "hyp_v3_us_5y_breakeven_monthly_change_2023_07_20260723_013945_019_cbbf94aa"
+      ]
+    }
+  ],
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "inflation_pressure",
+        "fed_message",
+        "market_reaction",
+        "target_bridge"
+      ],
+      "generalized_mechanism": "Persistent inflation and policy communication can reprice inflation expectations.",
+      "expected_direction": "mixed",
+      "applicability_conditions": [
+        "Markets view inflation pressure as durable."
+      ],
+      "failure_conditions": [
+        "Policy credibility suppresses expected inflation."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "pce",
+        "target_bridge"
+      ],
+      "generalized_mechanism": "PCE surprises can directly change medium-term inflation pricing.",
+      "expected_direction": "up",
+      "applicability_conditions": [
+        "PCE materially differs from expectations."
+      ],
+      "failure_conditions": [
+        "Other macro news dominates pricing."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "Growth fears outweigh inflation evidence in expectations pricing.",
+      "discriminating_evidence": "Compare activity releases with inflation-swap and breakeven moves.",
+      "source_event_ids": [
+        "evt_finance_20230106_020_59e8f02e",
+        "evt_finance_20230110_014_7d6da2f6",
+        "evt_finance_20230728_013_528d0bb8"
+      ]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Does PCE surprise relative to consensus?",
+    "Do policy statements alter inflation-market pricing?",
+    "Are growth fears offsetting inflation pressure?"
+  ]
+}

@@ -1,0 +1,208 @@
+{
+  "schema_version": "hgf_blueprint_v1",
+  "question_id": "v3_brent_monthly_return_2024_12",
+  "target_definition": {
+    "metric": "Brent crude oil monthly price return",
+    "unit_or_option_space": "percent monthly-return classification",
+    "forecast_horizon": "December 2024 monthly observation"
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Supply restraint and Asian demand support compete with output and macroeconomic headwinds.",
+    "weaknesses": [
+      "Most evidence links directly to the outcome rather than intermediates.",
+      "The graph lacks direct Brent price observations."
+    ]
+  },
+  "search_factors": [
+    {
+      "factor": "OPEC+ supply restraint",
+      "why_search": "Production restraint can limit crude supply.",
+      "preferred_source_types": [
+        "OPEC+ announcement",
+        "production data"
+      ],
+      "source_event_ids": [
+        "evt_finance_20241205_008_762e3baa",
+        "evt_finance_20241205_018_ada0e5b9"
+      ]
+    },
+    {
+      "factor": "Asian oil-demand growth",
+      "why_search": "Asian consumption can support global crude demand.",
+      "preferred_source_types": [
+        "EIA outlook",
+        "demand data"
+      ],
+      "source_event_ids": [
+        "evt_finance_20241219_009_8bb4eec2"
+      ]
+    },
+    {
+      "factor": "Global oil output",
+      "why_search": "Output increases can create supply pressure.",
+      "preferred_source_types": [
+        "IEA report",
+        "production data"
+      ],
+      "source_event_ids": [
+        "evt_finance_20241226_010_9f57adeb"
+      ]
+    },
+    {
+      "factor": "Economic headwinds",
+      "why_search": "Inflation and growth uncertainty can weaken oil demand.",
+      "preferred_source_types": [
+        "macroeconomic data",
+        "market commentary"
+      ],
+      "source_event_ids": [
+        "evt_finance_20241204_016_af28245d"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "opec_restraint",
+      "role": "baseline",
+      "factor": "OPEC+ production restraint",
+      "mechanism": "Delayed production increases can limit supply and support prices.",
+      "expected_direction": "up",
+      "evidence_requirement": "OPEC+ policy and compliance data.",
+      "contradiction_signal": "Members increase output or compliance weakens.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_finance_20241205_018_ada0e5b9",
+        "evt_finance_20241205_008_762e3baa"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_brent_monthly_return_2024_12_20260724_192454_012_4a3f7cd5"
+      ]
+    },
+    {
+      "id": "asia_demand",
+      "role": "driver",
+      "factor": "Asian demand growth",
+      "mechanism": "Growing Asian consumption can absorb available crude supply.",
+      "expected_direction": "up",
+      "evidence_requirement": "Consumption forecasts and import data.",
+      "contradiction_signal": "Asian demand forecasts are revised lower.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_finance_20241219_009_8bb4eec2"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_brent_monthly_return_2024_12_20260724_192433_002_c17960e9"
+      ]
+    },
+    {
+      "id": "output_growth",
+      "role": "counterevidence",
+      "factor": "Global output increase",
+      "mechanism": "Incremental global output can add supply pressure.",
+      "expected_direction": "down",
+      "evidence_requirement": "IEA output data and inventory change.",
+      "contradiction_signal": "Output declines or inventories draw sharply.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_finance_20241212_015_e335cbf1",
+        "evt_finance_20241226_010_9f57adeb"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_brent_monthly_return_2024_12_20260724_192433_008_fa88418c"
+      ]
+    },
+    {
+      "id": "macro_headwinds",
+      "role": "alternative",
+      "factor": "Economic uncertainty",
+      "mechanism": "Economic headwinds can restrain demand expectations.",
+      "expected_direction": "down",
+      "evidence_requirement": "Inflation, growth, and demand revisions.",
+      "contradiction_signal": "Macro data improve with firm demand.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20241204_016_af28245d"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_brent_monthly_return_2024_12_20260724_192445_011_863f2312"
+      ]
+    },
+    {
+      "id": "target_bridge",
+      "role": "target_bridge",
+      "factor": "Net crude-market balance",
+      "mechanism": "Brent return reflects the balance of supply restraint, demand growth, and incremental output.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Daily Brent prices with production, inventory, and demand indicators.",
+      "contradiction_signal": "Price action diverges from the observed market balance.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_finance_20241205_008_762e3baa",
+        "evt_finance_20241219_009_8bb4eec2",
+        "evt_finance_20241226_010_9f57adeb"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_brent_monthly_return_2024_12_20260724_192433_009_ec40c921"
+      ]
+    }
+  ],
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "opec_restraint",
+        "target_bridge"
+      ],
+      "generalized_mechanism": "Credible supply restraint can cushion Brent against incremental global output.",
+      "expected_direction": "up",
+      "applicability_conditions": [
+        "Compliance is credible.",
+        "Supply restraint is material."
+      ],
+      "failure_conditions": [
+        "Non-OPEC output expands rapidly.",
+        "Compliance fails."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "asia_demand",
+        "output_growth",
+        "target_bridge"
+      ],
+      "generalized_mechanism": "Demand growth can absorb modest output growth when consumption remains firm.",
+      "expected_direction": "mixed",
+      "applicability_conditions": [
+        "Asian demand is robust.",
+        "Output increase is limited."
+      ],
+      "failure_conditions": [
+        "Demand forecasts decline.",
+        "Output growth accelerates."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "Incremental output overwhelms supply restraint.",
+      "discriminating_evidence": "Inventories build despite continued OPEC+ restraint.",
+      "source_event_ids": [
+        "evt_finance_20241226_010_9f57adeb",
+        "evt_finance_20241205_008_762e3baa"
+      ]
+    },
+    {
+      "hypothesis": "Economic headwinds weaken demand faster than Asian growth offsets it.",
+      "discriminating_evidence": "Global demand forecasts decline alongside adverse macro data.",
+      "source_event_ids": [
+        "evt_finance_20241204_016_af28245d",
+        "evt_finance_20241219_009_8bb4eec2"
+      ]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Are OPEC+ cuts being implemented?",
+    "Does Asian demand growth persist in import data?",
+    "Do inventories confirm a balanced crude market?"
+  ]
+}

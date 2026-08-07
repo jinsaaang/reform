@@ -1,0 +1,194 @@
+{
+  "schema_version": "hgf_blueprint_v1",
+  "question_id": "v3_nasdaq_monthly_return_2024_09",
+  "target_definition": {
+    "metric": "Nasdaq Composite monthly return",
+    "unit_or_option_space": "percent monthly return",
+    "forecast_horizon": "target month"
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Inflation, consumer confidence, technology-correction sentiment, and financial-market activity provide limited reusable Nasdaq context.",
+    "weaknesses": [
+      "All direct links to the resolved option are excluded.",
+      "The graph lacks supported tech earnings, valuation, breadth, and policy-rate mechanisms; bridge support is weak and needs current verification."
+    ]
+  },
+  "search_factors": [
+    {
+      "factor": "Inflation and rates",
+      "why_search": "Inflation affects expected discount rates and growth valuations.",
+      "preferred_source_types": [
+        "inflation release",
+        "rate futures"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240911_009_faf324aa",
+        "evt_finance_20240911_003_4931a03e",
+        "evt_finance_20240912_002_24cf25d2"
+      ]
+    },
+    {
+      "factor": "Consumer confidence",
+      "why_search": "Consumer confidence can indicate growth and risk-appetite conditions.",
+      "preferred_source_types": [
+        "consumer survey"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240924_001_71b90a1e"
+      ]
+    },
+    {
+      "factor": "Technology risk sentiment",
+      "why_search": "Technology correction risk can affect growth-equity sentiment.",
+      "preferred_source_types": [
+        "market data",
+        "volatility data"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240903_004_628d6b54"
+      ]
+    },
+    {
+      "factor": "Financial-market activity",
+      "why_search": "M&A activity can indicate financial-market conditions but is indirect for Nasdaq.",
+      "preferred_source_types": [
+        "capital-markets data"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240926_007_a7b320a4"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "inflation",
+      "role": "baseline",
+      "factor": "Inflation and rates",
+      "mechanism": "Lower inflation can reduce expected discount-rate pressure.",
+      "expected_direction": "up",
+      "evidence_requirement": "Inflation cooling and rate futures agree.",
+      "contradiction_signal": "Inflation or rate expectations rise.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240911_009_faf324aa",
+        "evt_finance_20240911_003_4931a03e"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_nasdaq_monthly_return_2024_09_20260725_065731_009_0d4ea786"
+      ]
+    },
+    {
+      "id": "price_data",
+      "role": "driver",
+      "factor": "Inflation and rates",
+      "mechanism": "Consumer-price data can confirm or challenge a disinflation narrative.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Headline and core measures support the same rate view.",
+      "contradiction_signal": "Core inflation diverges.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240911_003_4931a03e",
+        "evt_finance_20240912_002_24cf25d2"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_nasdaq_monthly_return_2024_09_20260725_065718_003_9b46dc3d"
+      ]
+    },
+    {
+      "id": "confidence",
+      "role": "counterevidence",
+      "factor": "Consumer confidence",
+      "mechanism": "Souring confidence can weaken growth and risk appetite.",
+      "expected_direction": "down",
+      "evidence_requirement": "Confidence, spending, and market breadth weaken together.",
+      "contradiction_signal": "Confidence recovers.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240924_001_71b90a1e"
+      ],
+      "source_edge_ids": []
+    },
+    {
+      "id": "tech_risk",
+      "role": "alternative",
+      "factor": "Technology risk sentiment",
+      "mechanism": "Technology correction risk can raise volatility and pressure growth-equity valuations.",
+      "expected_direction": "down",
+      "evidence_requirement": "Volatility, positioning, and earnings revisions worsen together.",
+      "contradiction_signal": "Breadth and revisions improve.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240903_004_628d6b54"
+      ],
+      "source_edge_ids": []
+    },
+    {
+      "id": "bridge",
+      "role": "target_bridge",
+      "factor": "Discount rates and technology risk appetite",
+      "mechanism": "Inflation, expected rates, consumer confidence, tech earnings, valuation, breadth, and risk sentiment combine to determine Nasdaq direction.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Verify current inflation, rate futures, tech earnings, valuations, breadth, confidence, and volatility.",
+      "contradiction_signal": "Nasdaq moves diverge from current drivers.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240911_003_4931a03e",
+        "evt_finance_20240924_001_71b90a1e",
+        "evt_finance_20240903_004_628d6b54"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_nasdaq_monthly_return_2024_09_20260725_065731_009_0d4ea786",
+        "hyp_v3_nasdaq_monthly_return_2024_09_20260725_065718_003_9b46dc3d"
+      ]
+    }
+  ],
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "inflation",
+        "price_data",
+        "bridge"
+      ],
+      "generalized_mechanism": "Disinflation can ease expected discount-rate pressure on growth equities.",
+      "expected_direction": "up",
+      "applicability_conditions": [
+        "Futures confirm easier pricing."
+      ],
+      "failure_conditions": [
+        "Inflation reaccelerates."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "confidence",
+        "tech_risk",
+        "bridge"
+      ],
+      "generalized_mechanism": "Weak confidence and technology risk can pressure growth-equity sentiment.",
+      "expected_direction": "down",
+      "applicability_conditions": [
+        "Volatility and breadth deteriorate."
+      ],
+      "failure_conditions": [
+        "Confidence and earnings breadth improve."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "Disinflation outweighs weaker confidence.",
+      "discriminating_evidence": "Compare rate futures with confidence, breadth, and volatility.",
+      "source_event_ids": [
+        "evt_finance_20240911_003_4931a03e",
+        "evt_finance_20240924_001_71b90a1e"
+      ]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Do inflation and futures support easier rates?",
+    "Are tech earnings and breadth improving?",
+    "Is confidence affecting risk appetite?",
+    "Is technology volatility rising?"
+  ]
+}

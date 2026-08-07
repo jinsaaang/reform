@@ -1,0 +1,210 @@
+{
+  "schema_version": "hgf_blueprint_v1",
+  "question_id": "v3_nvda_revenue_growth_acceleration_2023_01_29",
+  "target_definition": {
+    "metric": "NVIDIA quarterly year-over-year revenue growth",
+    "unit_or_option_space": "percent, assessed against the prior-quarter growth reference",
+    "forecast_horizon": "fiscal quarter ending 2023-01-29"
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "The graph offers a coherent demand-to-segment-to-consolidated-revenue framework for semiconductor earnings monitoring.",
+    "weaknesses": [
+      "Several segment observations were disclosed after the forecast cutoff.",
+      "The graph has limited evidence on segment mix and prior-quarter comparison."
+    ]
+  },
+  "search_factors": [
+    {
+      "factor": "Consumer technology spending",
+      "why_search": "Consumer demand informs gaming GPU sales momentum.",
+      "preferred_source_types": [
+        "macroeconomic release",
+        "retailer commentary"
+      ],
+      "source_event_ids": [
+        "evt_finance_20221001_015_888685e7"
+      ]
+    },
+    {
+      "factor": "Gaming-channel inventories",
+      "why_search": "Inventory corrections can delay GPU purchases and shipments.",
+      "preferred_source_types": [
+        "company earnings release",
+        "channel checks"
+      ],
+      "source_event_ids": [
+        "evt_finance_20221001_016_8691e3f0"
+      ]
+    },
+    {
+      "factor": "Semiconductor industry demand",
+      "why_search": "Industry conditions provide the cross-segment demand baseline.",
+      "preferred_source_types": [
+        "industry association release",
+        "market research"
+      ],
+      "source_event_ids": [
+        "evt_finance_20221231_011_48bb5d8f"
+      ]
+    },
+    {
+      "factor": "Data-center demand",
+      "why_search": "Data-center sales can offset weakness in consumer-facing segments.",
+      "preferred_source_types": [
+        "company earnings release",
+        "cloud-provider commentary"
+      ],
+      "source_event_ids": [
+        "evt_finance_20230129_013_a532b164"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "consumer_spending",
+      "role": "baseline",
+      "factor": "Consumer technology spending",
+      "mechanism": "Weaker discretionary spending reduces demand for gaming hardware.",
+      "expected_direction": "down",
+      "evidence_requirement": "Retail-sales indicators and gaming-market commentary show sustained weakness.",
+      "contradiction_signal": "Consumer electronics demand improves broadly.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_finance_20221001_015_888685e7"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_nvda_revenue_growth_acceleration_2023_01_29_20260724_215120_008_e7515556"
+      ]
+    },
+    {
+      "id": "gaming_inventory",
+      "role": "driver",
+      "factor": "Gaming-channel inventories",
+      "mechanism": "Channel inventory correction suppresses gaming revenue recognition.",
+      "expected_direction": "down",
+      "evidence_requirement": "Management identifies inventory digestion or lower gaming sell-through.",
+      "contradiction_signal": "Channel inventories normalize with improving sell-through.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_finance_20221001_016_8691e3f0",
+        "evt_finance_20230129_012_816af7d8"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_nvda_revenue_growth_acceleration_2023_01_29_20260724_215120_009_0cad6b74",
+        "hyp_v3_nvda_revenue_growth_acceleration_2023_01_29_20260724_215120_012_08571df0"
+      ]
+    },
+    {
+      "id": "industry_demand",
+      "role": "mediator",
+      "factor": "Semiconductor industry demand",
+      "mechanism": "A broad semiconductor downturn lowers the demand backdrop for consolidated sales.",
+      "expected_direction": "down",
+      "evidence_requirement": "Industry sales data and company demand commentary point in the same direction.",
+      "contradiction_signal": "NVIDIA-specific demand diverges materially from industry conditions.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_finance_20220701_017_6ee73055",
+        "evt_finance_20221231_011_48bb5d8f"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_nvda_revenue_growth_acceleration_2023_01_29_20260724_215120_010_4c90a529",
+        "hyp_v3_nvda_revenue_growth_acceleration_2023_01_29_20260724_215120_011_ad7938b6"
+      ]
+    },
+    {
+      "id": "data_center_offset",
+      "role": "counterevidence",
+      "factor": "Data-center demand",
+      "mechanism": "Data-center growth can partially offset weakness in gaming revenue.",
+      "expected_direction": "up",
+      "evidence_requirement": "Data-center revenue is measured on a comparable year-over-year basis.",
+      "contradiction_signal": "Enterprise spending or cloud demand slows sharply.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_finance_20230129_013_a532b164",
+        "evt_finance_20230129_018_79e3e621"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_nvda_revenue_growth_acceleration_2023_01_29_20260724_215120_013_53ab1fc3"
+      ]
+    },
+    {
+      "id": "consolidated_revenue_bridge",
+      "role": "target_bridge",
+      "factor": "Segment contribution to consolidated revenue",
+      "mechanism": "Gaming drag and data-center contribution together determine consolidated revenue growth.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Compare segment revenue contributions with consolidated growth and the preceding quarter.",
+      "contradiction_signal": "Segment trends do not reconcile to consolidated revenue.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_finance_20230129_012_816af7d8",
+        "evt_finance_20230129_013_a532b164",
+        "evt_finance_20230129_018_79e3e621"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_nvda_revenue_growth_acceleration_2023_01_29_20260724_215120_012_08571df0",
+        "hyp_v3_nvda_revenue_growth_acceleration_2023_01_29_20260724_215120_013_53ab1fc3",
+        "hyp_v3_nvda_revenue_growth_acceleration_2023_01_29_20260724_215120_014_9ef5a11d"
+      ]
+    }
+  ],
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "consumer_spending",
+        "gaming_inventory",
+        "consolidated_revenue_bridge"
+      ],
+      "generalized_mechanism": "Weak consumer demand and inventory correction reduce gaming revenue, weighing on consolidated growth.",
+      "expected_direction": "down",
+      "applicability_conditions": [
+        "Gaming is material to consolidated revenue."
+      ],
+      "failure_conditions": [
+        "Data-center growth is large enough to offset gaming weakness."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "industry_demand",
+        "data_center_offset",
+        "consolidated_revenue_bridge"
+      ],
+      "generalized_mechanism": "Industry weakness pressures revenue while resilient data-center demand provides an offset.",
+      "expected_direction": "mixed",
+      "applicability_conditions": [
+        "Industry conditions affect NVIDIA demand."
+      ],
+      "failure_conditions": [
+        "Company-specific product demand diverges from the industry cycle."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "Data-center expansion fully offsets gaming weakness.",
+      "discriminating_evidence": "Compare the dollar contribution of data-center growth with gaming revenue change.",
+      "source_event_ids": [
+        "evt_finance_20230129_012_816af7d8",
+        "evt_finance_20230129_013_a532b164"
+      ]
+    },
+    {
+      "hypothesis": "The semiconductor downturn is mainly consumer-channel specific.",
+      "discriminating_evidence": "Compare gaming-channel trends with enterprise and data-center demand.",
+      "source_event_ids": [
+        "evt_finance_20221231_011_48bb5d8f",
+        "evt_finance_20230129_013_a532b164"
+      ]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Do gaming inventory signals agree with consumer-demand evidence?",
+    "Is data-center growth large enough to offset the gaming drag?",
+    "Do segment contributions reconcile with consolidated revenue growth?",
+    "Are comparisons made using equivalent year-over-year periods?"
+  ]
+}

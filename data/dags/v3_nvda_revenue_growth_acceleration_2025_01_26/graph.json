@@ -1,0 +1,1262 @@
+{
+  "question": {
+    "id": "v3_nvda_revenue_growth_acceleration_2025_01_26",
+    "question_text": "As of 2025-01-26, will NVIDIA Corporation's quarterly revenue year-over-year growth for the fiscal quarter ending 2025-01-26 be at least 93.61 percent?",
+    "question_type": "binary",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 4,
+    "resolution_date": "2025-02-26T23:59:59Z",
+    "estimated_start_time": "2025-01-26T00:00:00Z",
+    "ground_truth": false,
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [
+      "evt_f67b1c96d860",
+      "evt_9816abee6bfc"
+    ],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: NVIDIA Corporation (NVDA)\nTarget period: fiscal quarter ending 2025-01-26\nFinancial area: corporate_earnings / semiconductors\nRegion: US",
+    "resolution_criteria": "Use the issuer's first SEC 10-Q or 10-K containing the target quarter. Resolve yes if YoY revenue growth is at least 93.61 percent, the prior quarter's pre-registered YoY growth rate; otherwise resolve no.",
+    "resolution_reasoning": "The snapshotted target-quarter YoY revenue growth was 77.94 percent and growth acceleration was -15.67 percentage points; it resolved to 'no'.",
+    "options": [
+      "yes",
+      "no"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": "\n## Executive Summary\nNVIDIA Corporation's quarterly revenue year-over-year growth for the fiscal quarter ending 2025-01-26 did not reach at least 93.61 percent, resulting in a 'False' outcome. The company reported a strong 78% year-over-year revenue growth, driven primarily by significant demand in its Data Center segment, which experienced a 93% year-over-year increase. Despite this robust performance in its key AI-driven segment and overall revenue beating Wall Street expectations, the overall growth rate fell short of the 93.61% threshold due to other segments not growing at the same pace.\n\n## Timeline Of Key Events\n- **2025-01-26:** Fiscal Quarter ending for NVIDIA Corporation. This date marks the end of the period for which revenue growth is being assessed. [art_finance_20250126_004_874cd320]\n- **2025-02-19:** The Motley Fool published an article highlighting February 26 (earnings report day) as important, noting \"staggering\" demand for NVIDIA's Blackwell products and high expectations for the company's AI segment. [art_finance_20250219_002_b9077874]\n- **2025-02-26:** NVIDIA officially announced its financial results for the fourth quarter and fiscal year 2025. The company reported a record quarterly revenue of $39.3 billion, a 78% increase year-over-year. Data Center revenue specifically grew by 93% year-over-year. [art_finance_20250226_006_55b7d6a2, art_finance_20250226_008_3d9c975a]\n\n## Causal Chain Analysis\nThe overall revenue growth for NVIDIA in Q4 FY25 was 78% year-over-year [art_finance_20250226_006_55b7d6a2]. This growth was primarily caused by the exceptional demand for NVIDIA's Data Center products, particularly its AI GPUs like the Blackwell architecture, leading to a 93% year-over-year revenue increase in this segment [art_finance_20250226_006_55b7d6a2, art_finance_20250226_008_3d9c975a]. The impressive performance in the Data Center segment was a significant driver, but it was not enough to pull the *total* quarterly revenue growth above the 93.61% threshold because other segments (like Gaming, Professional Visualization, and Automotive, though not explicitly detailed in the provided snippets) did not experience the same explosive growth. This resulted in the overall revenue growth being 78%, which is below the 93.61% target, thereby leading to the 'False' ground truth outcome.\n\n## Countervailing Factors\n\nA significant countervailing factor was the immense growth and demand within NVIDIA's Data Center segment. This segment, fueled by the AI boom and the launch of new products like Blackwell, achieved a 93% year-over-year revenue growth [art_finance_20250226_006_55b7d6a2]. This strong performance pushed the company's overall revenue to record levels and beat Wall Street expectations [art_finance_20250226_008_3d9c975a]. Had this growth rate been sustained across the broader segments or if the Data Center segment represented an even larger proportion of the total revenue, or if the threshold was set for the data center segment instead of total revenue, the outcome could have been different. However, the strong growth in one segment was ultimately overwhelmed by the performance of the company's other segments, which collectively brought the overall year-over-year revenue growth to 78%, below the 93.61% target.\n\n## Event Candidate Inventory\n- **E1:** NVIDIA Corporation reports Q4 FY25 revenue of $39.3 billion (78% YoY growth).\n    - **Date:** 2025-02-26\n    - **Why it matters causally:** This is the direct reported outcome, which is below the 93.61% threshold.\n    - **Source article IDs:** art_finance_20250226_006_55b7d6a2, art_finance_20250226_008_3d9c975a\n\n- **E2:** NVIDIA's Data Center segment revenue grows by 93% year-over-year.\n    - **Date:** 2025-02-26\n    - **Why it matters causally:** This segment's robust growth was a primary driver for overall revenue, yet it was not sufficient to push the total growth above the threshold, indicating that other segments had lower growth.\n    - **Source article IDs:** art_finance_20250226_006_55b7d6a2, art_finance_20250226_008_3d9c975a\n\n- **E3:** Strong market anticipation and demand for NVIDIA's AI products (Blackwell).\n    - **Date:** Leading up to 2025-02-26\n    - **Why it matters causally:** This high expectation and demand fueled the strong Data Center performance, but it also set a high bar for overall revenue growth that was not met.\n    - **Source article IDs:** art_finance_20250219_002_b9077874\n\n## Evidence Mapping Table\n\n| Claim/Event | Article IDs | Date Support | Confidence (0-1) | Notes |\n|---|---|---|---|---|\n| Q4 FY25 Revenue: $39.3 billion | art_finance_20250226_006_55b7d6a2, art_finance_20250226_008_3d9c975a | 2025-02-26 | 1.0 | Official company report and CNBC confirmation. |\n| YoY Revenue Growth: 78% | art_finance_20250226_006_55b7d6a2, art_finance_20250226_008_3d9c975a | 2025-02-26 | 1.0 | Official company report and CNBC confirmation. This is the direct answer to the question. |\n| Data Center Revenue Growth: 93% | art_finance_20250226_006_55b7d6a2, art_finance_20250226_008_3d9c975a | 2025-02-26 | 1.0 | Official company report and CNBC confirmation. Shows strong performance in a key segment. |\n| High expectations for earnings | art_finance_20250219_002_b9077874 | 2025-02-19 | 0.9 | Motley Fool article detailing market sentiment prior to earnings release. |\n\n## Uncertainties And Alternative Paths\n\nOne uncertainty is the precise performance of NVIDIA's non-Data Center segments (e.g., Gaming, Professional Visualization, Automotive) and their exact contribution to the overall revenue growth. While the Data Center segment grew by 93%, the overall growth was 78%, implying that these other segments' growth rates were lower, acting as a drag on the overall average. An alternative path could have involved stronger-than-expected growth in these other segments, or a higher weighting of Data Center revenue within the total, which could have propelled the overall revenue growth past the 93.61% threshold. Another alternative is analyst predictions proving to be slightly off, either in their growth projections for data center or other segments. However, the available evidence heavily supports the reported 78% overall growth as being definitive.",
+    "graph_built": true,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.200611Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "nvda_revenue_growth_acceleration",
+        "event_cluster_id": "nvda_earnings_2025-01-26",
+        "category": "corporate_earnings",
+        "original_domain": "corporate_earnings",
+        "subdomain": "semiconductors",
+        "entity": "NVIDIA Corporation (NVDA)",
+        "region": "US",
+        "target_metric": "quarterly revenue year-over-year growth acceleration",
+        "target_period": "fiscal quarter ending 2025-01-26",
+        "forecast_cutoff": "2025-01-26T00:00:00+00:00",
+        "forecast_date_options": [
+          "2025-01-26"
+        ],
+        "resolution_available_at": "2025-02-26T23:59:59+00:00",
+        "horizon_days": 31,
+        "source_type": "sec_companyfacts_snapshot",
+        "source_series_id": "CIK0001045810:revenue",
+        "source_homepage": "https://www.sec.gov/edgar/browse/?CIK=1045810",
+        "comparison_rule": "target YoY revenue growth >= prior-quarter YoY revenue growth",
+        "comparison_threshold": 93.609272,
+        "comparison_thresholds": null,
+        "change_unit": "percent",
+        "threshold_observation_dates": [
+          "2023-10-29",
+          "2024-01-28",
+          "2024-10-27"
+        ],
+        "split": "memory",
+        "family_position": 5,
+        "family_size": 7,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "no",
+        "resolved_class": "no",
+        "resolution_value": 39331000000,
+        "target_change": 77.94417047,
+        "target_yoy_growth": 77.94417047,
+        "target_growth_acceleration": -15.66510105,
+        "source_observation_date": "2025-01-26",
+        "resolution_document": {
+          "publisher": "U.S. Securities and Exchange Commission",
+          "title": "NVIDIA Corporation 10-K filed 2025-02-26",
+          "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000023/0001045810-25-000023-index.html"
+        },
+        "source_download_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+        "source_sha256": "93edcffe24f55d08284ff1736e41aa1a8e743ab6e4a6eea52cb8e9392b0ae6be",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00",
+        "accession_number": "0001045810-25-000023",
+        "xbrl_tag": "Revenues"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_9816abee6bfc",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 12,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_20250227_003_95221110",
+        "title": "Motley Fool Double Downvidia Q1 Earnings 2025 - Dean Fairfax",
+        "url": "https://onlyfreejet.pages.dev/posts/baylserrwrg-motley-fool-double-downvidia-q1-earnings-2025",
+        "source": "onlyfreejet.pages.dev",
+        "published_date": "2025-02-27T06:13:03+08:00"
+      },
+      {
+        "id": "art_finance_20250126_004_874cd320",
+        "title": "nvda-20250126 - SEC.govand Fiscal 2025 NVIDIA Announces Financial Results for Fourth ...NVIDIA 2025 Q4 Financials - by Ryan Smith - More Than MooreNvidia Corporation (via Public) / Annual Report for Fiscal ...NVIDIA Announces Financial Results for Fourth Quarter and ...$130.5B Nvidia Revenue 2026: Segment Breakdown",
+        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000023/nvda-20250126.htm",
+        "source": "sec.gov",
+        "published_date": "2025-01-26T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20250206_005_5fe8e14b",
+        "title": "Caterer Compass' first-quarter revenue beats expectations - Reuters",
+        "url": "https://uk.finance.yahoo.com/news/compass-group-posts-quarterly-organic-073129455.html",
+        "source": "uk.finance.yahoo.com",
+        "published_date": "2025-02-06T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20250226_006_55b7d6a2",
+        "title": "NVIDIA Announces Financial Results for Fourth Quarter and Fiscal 2025 - NVIDIA Newsroom",
+        "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2025",
+        "source": "nvidianews.nvidia.com",
+        "published_date": "2025-02-26T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20250226_007_64673866",
+        "title": "NVIDIA Announces Financial Results for Fourth Quarter and Fiscal 2025 - TechPowerUp",
+        "url": "https://www.linkedin.com/posts/sergebaccou_nvidia-announces-financial-results-for-fourth-activity-7300781915567972354-M4q4",
+        "source": "linkedin.com",
+        "published_date": "2025-02-26T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20250219_002_b9077874",
+        "title": "Why February 26 will be the most important day yet for Nvidia stock",
+        "url": "https://www.fool.com.au/2025/02/20/why-february-26-will-be-the-most-important-day-yet-for-nvidia-stock-usfeed",
+        "source": "fool.com.au",
+        "published_date": "2025-02-19T23:15:00+00:00"
+      },
+      {
+        "id": "art_finance_20250226_008_3d9c975a",
+        "title": "cnbc.com/2025/02/26/nvidia-nvda-earnings-report-q4-2025.html",
+        "url": "https://www.cnbc.com/2025/02/26/nvidia-nvda-earnings-report-q4-2025.html",
+        "source": "cnbc.com",
+        "published_date": "2025-02-26T17:00:01+00:00"
+      },
+      {
+        "id": "art_finance_20240116_002_980070ff",
+        "title": "Nvidia Q4 Earnings 2024 Date Orlando - Cloe Melony",
+        "url": "https://wylmayraynell.pages.dev/ntkqjim-nvidia-q4-earnings-2024-date-orlando-images-qfouqqr",
+        "source": "wylmayraynell.pages.dev",
+        "published_date": "2024-01-16T00:17:28+00:00"
+      },
+      {
+        "id": "art_finance_20250205_003_b6078dd0",
+        "title": "Veralto Corp (VLTO) Q4 2024 Earnings Call Highlights: Strong Fin",
+        "url": "https://www.gurufocus.com/news/2684172/veralto-corp-vlto-q4-2024-earnings-call-highlights-strong-financial-performance-and-strategic-investments",
+        "source": "gurufocus.com",
+        "published_date": "2025-02-05T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20250206_004_6eb980f8",
+        "title": "Strong Taco Bell sales fuel Yum Brands earnings beat - CNBC",
+        "url": "https://www.nbclosangeles.com/news/business/money-report/strong-taco-bell-sales-fuel-yum-brands-earnings/3626109",
+        "source": "nbclosangeles.com",
+        "published_date": "2025-02-06T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20250218_005_c0204901",
+        "title": "S&P 500 Companies with More International Exposure Are Reporting Earnings Growth Above 20% - FactSet Insight",
+        "url": "https://insight.factset.com/sp-500-companies-with-more-international-exposure-are-reporting-earnings-growth-above-20",
+        "source": "insight.factset.com",
+        "published_date": "2025-02-18T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20250221_006_a8aa8d86",
+        "title": "Chip design software maker Cadence revenue skyrockets with AI demand - Manufacturing Dive",
+        "url": "https://finance.yahoo.com/news/chip-design-software-maker-cadence-113602112.html",
+        "source": "finance.yahoo.com",
+        "published_date": "2025-02-21T08:00:00+00:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_9816abee6bfc",
+      "events_count": 11,
+      "hypotheses_count": 12
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 5,
+      "avg_depth": 4.0,
+      "quality_score": 0.92,
+      "depth_score": 1.0,
+      "confidence_score": 0.88,
+      "strength_score": 0.79,
+      "evidence_score": 1.0,
+      "event_count": 11,
+      "hypothesis_count": 12
+    },
+    "nodes": [
+      {
+        "id": "evt_9816abee6bfc",
+        "title": "No - As of 2025-01-26, will NVIDIA Corporation's quarte",
+        "description": "Negative resolution: As of 2025-01-26, will NVIDIA Corporation's quarterly revenue year-over-year growth for the fiscal quarter ending 2025-01-26 be at least 93.61 percent?",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-02-26T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_nvda_revenue_growth_acceleration_2025_01_26",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "negative_resolution",
+        "outcome_option_index": null,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T22:35:31.162700Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_f67b1c96d860",
+        "title": "Yes - As of 2025-01-26, will NVIDIA Corporation's quarte",
+        "description": "Positive resolution: As of 2025-01-26, will NVIDIA Corporation's quarterly revenue year-over-year growth for the fiscal quarter ending 2025-01-26 be at least 93.61 percent?",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-02-26T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_nvda_revenue_growth_acceleration_2025_01_26",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "positive_resolution",
+        "outcome_option_index": null,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T22:35:31.162688Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20250126_021_6d476773",
+        "title": "NVIDIA Corporation's Fiscal Quarter ending for 2025-01-26",
+        "description": "This date marks the end of the period for which NVIDIA Corporation's revenue growth is being assessed.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-01-26T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250126_004_874cd320"
+        ],
+        "extracted_for_question_id": "v3_nvda_revenue_growth_acceleration_2025_01_26",
+        "source_article_id": "art_finance_20250126_004_874cd320",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_nvda_revenue_growth_acceleration_2025_01_26"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T22:48:44.574432Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20250219_020_661f8a69",
+        "title": "Strong market anticipation and demand for NVIDIA's AI products (Blackwell)",
+        "description": "Leading up to the earnings report, there was strong market anticipation and demand for NVIDIA's AI products, particularly the Blackwell architecture, setting high expectations for the company's performance.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-02-19T23:15:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250219_002_b9077874"
+        ],
+        "extracted_for_question_id": "v3_nvda_revenue_growth_acceleration_2025_01_26",
+        "source_article_id": "art_finance_20250219_002_b9077874",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_nvda_revenue_growth_acceleration_2025_01_26"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T22:48:44.553416Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20250226_019_7c0ffeda",
+        "title": "NVIDIA's Data Center segment revenue grows by 93% year-over-year",
+        "description": "NVIDIA's Data Center segment experienced a significant 93% year-over-year revenue increase, driven by strong demand for its AI GPUs.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-02-26T08:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250226_006_55b7d6a2",
+          "art_finance_20250226_008_3d9c975a"
+        ],
+        "extracted_for_question_id": "v3_nvda_revenue_growth_acceleration_2025_01_26",
+        "source_article_id": "art_finance_20250226_006_55b7d6a2",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_nvda_revenue_growth_acceleration_2025_01_26"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T22:48:44.532212Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20250226_022_72f66a14",
+        "title": "NVIDIA's overall revenue growth of 78% falls below 93.61% threshold",
+        "description": "Despite strong performance in the Data Center segment, NVIDIA's overall quarterly revenue year-over-year growth of 78% did not meet the 93.61% threshold.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-02-26T08:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250226_006_55b7d6a2",
+          "art_finance_20250226_008_3d9c975a"
+        ],
+        "extracted_for_question_id": "v3_nvda_revenue_growth_acceleration_2025_01_26",
+        "source_article_id": "art_finance_20250226_006_55b7d6a2",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_nvda_revenue_growth_acceleration_2025_01_26"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T22:48:44.596172Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20250226_026_9d506d09",
+        "title": "NVIDIA's overall revenue beats Wall Street expectations",
+        "description": "Despite falling short of the 93.61% growth threshold, NVIDIA's overall revenue of $39.3 billion still exceeded Wall Street expectations.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-02-26T08:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250226_008_3d9c975a"
+        ],
+        "extracted_for_question_id": "v3_nvda_revenue_growth_acceleration_2025_01_26",
+        "source_article_id": "art_finance_20250226_008_3d9c975a",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_nvda_revenue_growth_acceleration_2025_01_26"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T22:48:44.676283Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20250226_027_da4f8863",
+        "title": "High expectations for overall revenue growth not met",
+        "description": "The high expectations for NVIDIA's overall revenue growth, fueled by strong AI demand, were not fully met, as the 78% YoY growth fell short of the 93.61% threshold.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-02-26T08:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250226_006_55b7d6a2",
+          "art_finance_20250226_008_3d9c975a"
+        ],
+        "extracted_for_question_id": "v3_nvda_revenue_growth_acceleration_2025_01_26",
+        "source_article_id": "art_finance_20250226_006_55b7d6a2",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_nvda_revenue_growth_acceleration_2025_01_26"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T22:48:44.702115Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20250226_028_436130f8",
+        "title": "NVIDIA's overall revenue growth reported at 78% year-over-year",
+        "description": "NVIDIA officially announced its financial results, reporting an overall revenue growth of 78% year-over-year for the fiscal quarter ending 2025-01-26.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-02-26T08:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250226_006_55b7d6a2",
+          "art_finance_20250226_008_3d9c975a"
+        ],
+        "extracted_for_question_id": "v3_nvda_revenue_growth_acceleration_2025_01_26",
+        "source_article_id": "art_finance_20250226_006_55b7d6a2",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_nvda_revenue_growth_acceleration_2025_01_26"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T22:48:44.730045Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20250226_029_d23d19dc",
+        "title": "NVIDIA's other segments underperform compared to Data Center",
+        "description": "Segments other than Data Center, such as Gaming, Professional Visualization, and Automotive, did not achieve the same high growth rates, leading to a lower overall revenue growth.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-02-26T08:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250226_006_55b7d6a2",
+          "art_finance_20250226_008_3d9c975a"
+        ],
+        "extracted_for_question_id": "v3_nvda_revenue_growth_acceleration_2025_01_26",
+        "source_article_id": "art_finance_20250226_006_55b7d6a2",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_nvda_revenue_growth_acceleration_2025_01_26"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T22:48:44.756423Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_tech_20250219_024_764e2808",
+        "title": "AI boom drives demand for NVIDIA's Data Center products",
+        "description": "The general boom in Artificial Intelligence (AI) technology significantly increased the demand for NVIDIA's Data Center products, including its AI GPUs.",
+        "event_type": "indicator",
+        "domain": "tech",
+        "tags": [],
+        "occurred_date": "2025-02-19T23:15:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250219_002_b9077874"
+        ],
+        "extracted_for_question_id": "v3_nvda_revenue_growth_acceleration_2025_01_26",
+        "source_article_id": "art_finance_20250219_002_b9077874",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_nvda_revenue_growth_acceleration_2025_01_26"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T22:48:44.636954Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_tech_20250219_025_a68e3290",
+        "title": "Launch of new NVIDIA Blackwell architecture products",
+        "description": "The introduction of new NVIDIA Blackwell architecture products contributed to the strong performance and demand within the Data Center segment.",
+        "event_type": "indicator",
+        "domain": "tech",
+        "tags": [],
+        "occurred_date": "2025-02-19T23:15:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250219_002_b9077874"
+        ],
+        "extracted_for_question_id": "v3_nvda_revenue_growth_acceleration_2025_01_26",
+        "source_article_id": "art_finance_20250219_002_b9077874",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_nvda_revenue_growth_acceleration_2025_01_26"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T22:48:44.654163Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224844_017_29d678a3",
+        "source_event_id": "evt_finance_20250126_021_6d476773",
+        "target_event_id": "evt_finance_20250226_028_436130f8",
+        "relation_type": "triggers",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The fiscal quarter ending directly triggers the reporting of the revenue for that period.",
+        "evidence_article_ids": [
+          "art_finance_20250126_004_874cd320",
+          "art_finance_20250226_006_55b7d6a2"
+        ],
+        "discovered_by_question_ids": [
+          "v3_nvda_revenue_growth_acceleration_2025_01_26"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T22:48:44.777162Z",
+        "last_confirmed_at": "2026-07-24T22:48:44.777162Z"
+      },
+      {
+        "id": "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224844_018_38b9e260",
+        "source_event_id": "evt_finance_20250219_020_661f8a69",
+        "target_event_id": "evt_finance_20250226_019_7c0ffeda",
+        "relation_type": "enables",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Strong market anticipation and demand for AI products directly enabled the high growth in the Data Center segment.",
+        "evidence_article_ids": [
+          "art_finance_20250219_002_b9077874",
+          "art_finance_20250226_006_55b7d6a2"
+        ],
+        "discovered_by_question_ids": [
+          "v3_nvda_revenue_growth_acceleration_2025_01_26"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T22:48:44.791632Z",
+        "last_confirmed_at": "2026-07-24T22:48:44.791632Z"
+      },
+      {
+        "id": "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224844_019_12fc656b",
+        "source_event_id": "evt_finance_20250226_019_7c0ffeda",
+        "target_event_id": "evt_finance_20250226_028_436130f8",
+        "relation_type": "amplifies",
+        "strength": 0.7,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The 93% growth in the Data Center segment significantly amplified the overall 78% revenue growth.",
+        "evidence_article_ids": [
+          "art_finance_20250226_006_55b7d6a2",
+          "art_finance_20250226_008_3d9c975a"
+        ],
+        "discovered_by_question_ids": [
+          "v3_nvda_revenue_growth_acceleration_2025_01_26"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T22:48:44.805935Z",
+        "last_confirmed_at": "2026-07-24T22:48:44.805935Z"
+      },
+      {
+        "id": "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224844_020_e358594a",
+        "source_event_id": "evt_finance_20250226_029_d23d19dc",
+        "target_event_id": "evt_finance_20250226_028_436130f8",
+        "relation_type": "inhibits",
+        "strength": 0.6,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Lower growth in other segments inhibited the overall revenue growth from reaching higher levels, despite strong Data Center performance.",
+        "evidence_article_ids": [
+          "art_finance_20250226_006_55b7d6a2",
+          "art_finance_20250226_008_3d9c975a"
+        ],
+        "discovered_by_question_ids": [
+          "v3_nvda_revenue_growth_acceleration_2025_01_26"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T22:48:44.821962Z",
+        "last_confirmed_at": "2026-07-24T22:48:44.821962Z"
+      },
+      {
+        "id": "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224844_021_7938507b",
+        "source_event_id": "evt_finance_20250226_028_436130f8",
+        "target_event_id": "evt_finance_20250226_022_72f66a14",
+        "relation_type": "causes",
+        "strength": 1.0,
+        "confidence": 1.0,
+        "time_lag_hours": null,
+        "reasoning": "The reported 78% year-over-year growth directly caused the overall growth to be below the 93.61% threshold.",
+        "evidence_article_ids": [
+          "art_finance_20250226_006_55b7d6a2",
+          "art_finance_20250226_008_3d9c975a"
+        ],
+        "discovered_by_question_ids": [
+          "v3_nvda_revenue_growth_acceleration_2025_01_26"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T22:48:44.836067Z",
+        "last_confirmed_at": "2026-07-24T22:48:44.836067Z"
+      },
+      {
+        "id": "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224844_022_4751e312",
+        "source_event_id": "evt_tech_20250219_024_764e2808",
+        "target_event_id": "evt_finance_20250219_020_661f8a69",
+        "relation_type": "amplifies",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The general AI boom amplified market anticipation and demand for NVIDIA's AI products.",
+        "evidence_article_ids": [
+          "art_finance_20250219_002_b9077874"
+        ],
+        "discovered_by_question_ids": [
+          "v3_nvda_revenue_growth_acceleration_2025_01_26"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T22:48:44.849705Z",
+        "last_confirmed_at": "2026-07-24T22:48:44.849705Z"
+      },
+      {
+        "id": "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224844_023_789c1cec",
+        "source_event_id": "evt_tech_20250219_025_a68e3290",
+        "target_event_id": "evt_finance_20250226_019_7c0ffeda",
+        "relation_type": "triggers",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The launch of new Blackwell architecture products directly triggered increased demand and revenue growth in the Data Center segment.",
+        "evidence_article_ids": [
+          "art_finance_20250219_002_b9077874",
+          "art_finance_20250226_006_55b7d6a2"
+        ],
+        "discovered_by_question_ids": [
+          "v3_nvda_revenue_growth_acceleration_2025_01_26"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T22:48:44.863790Z",
+        "last_confirmed_at": "2026-07-24T22:48:44.863790Z"
+      },
+      {
+        "id": "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224844_024_ba02f481",
+        "source_event_id": "evt_tech_20250219_024_764e2808",
+        "target_event_id": "evt_tech_20250219_025_a68e3290",
+        "relation_type": "enables",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "The AI boom created a market environment that enabled and incentivized the launch and success of new AI-focused products like Blackwell.",
+        "evidence_article_ids": [
+          "art_finance_20250219_002_b9077874"
+        ],
+        "discovered_by_question_ids": [
+          "v3_nvda_revenue_growth_acceleration_2025_01_26"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T22:48:44.877375Z",
+        "last_confirmed_at": "2026-07-24T22:48:44.877375Z"
+      },
+      {
+        "id": "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224844_025_6032bceb",
+        "source_event_id": "evt_finance_20250226_028_436130f8",
+        "target_event_id": "evt_finance_20250226_026_9d506d09",
+        "relation_type": "causes",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The reported revenue directly caused NVIDIA to exceed Wall Street expectations.",
+        "evidence_article_ids": [
+          "art_finance_20250226_008_3d9c975a"
+        ],
+        "discovered_by_question_ids": [
+          "v3_nvda_revenue_growth_acceleration_2025_01_26"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T22:48:44.891675Z",
+        "last_confirmed_at": "2026-07-24T22:48:44.891675Z"
+      },
+      {
+        "id": "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224844_026_58cfb1b9",
+        "source_event_id": "evt_finance_20250219_020_661f8a69",
+        "target_event_id": "evt_finance_20250226_027_da4f8863",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "The strong anticipation for AI products set high expectations that were ultimately not met by the overall revenue growth.",
+        "evidence_article_ids": [
+          "art_finance_20250219_002_b9077874",
+          "art_finance_20250226_006_55b7d6a2"
+        ],
+        "discovered_by_question_ids": [
+          "v3_nvda_revenue_growth_acceleration_2025_01_26"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T22:48:44.905392Z",
+        "last_confirmed_at": "2026-07-24T22:48:44.905392Z"
+      },
+      {
+        "id": "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224844_027_6e85b43a",
+        "source_event_id": "evt_finance_20250226_029_d23d19dc",
+        "target_event_id": "evt_finance_20250226_027_da4f8863",
+        "relation_type": "amplifies",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Lower growth in other segments amplified the effect of not meeting high expectations for overall revenue growth.",
+        "evidence_article_ids": [
+          "art_finance_20250226_006_55b7d6a2",
+          "art_finance_20250226_008_3d9c975a"
+        ],
+        "discovered_by_question_ids": [
+          "v3_nvda_revenue_growth_acceleration_2025_01_26"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T22:48:44.921523Z",
+        "last_confirmed_at": "2026-07-24T22:48:44.921523Z"
+      },
+      {
+        "id": "hyp_v3_nvda_revenue_growth_acceleration_2025_01_26_20260724_224849_028_c8b7317c",
+        "source_event_id": "evt_finance_20250226_022_72f66a14",
+        "target_event_id": "evt_9816abee6bfc",
+        "relation_type": "causes",
+        "strength": 1.0,
+        "confidence": 1.0,
+        "time_lag_hours": null,
+        "reasoning": "NVIDIA's overall revenue growth falling below the 93.61% threshold directly caused the 'False' outcome.",
+        "evidence_article_ids": [
+          "art_finance_20250226_006_55b7d6a2",
+          "art_finance_20250226_008_3d9c975a"
+        ],
+        "discovered_by_question_ids": [
+          "v3_nvda_revenue_growth_acceleration_2025_01_26"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T22:48:49.588553Z",
+        "last_confirmed_at": "2026-07-24T22:48:49.588553Z"
+      }
+    ],
+    "outcome_impacts": [
+      {
+        "id": "imp_cf77e870",
+        "event_id": "evt_finance_20250226_018_5cb244c1",
+        "outcome_event_id": "evt_9816abee6bfc",
+        "question_id": "v3_nvda_revenue_growth_acceleration_2025_01_26",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 1.0,
+        "reasoning": "The reported 78% YoY growth is below the 93.61% threshold, directly contributing to the 'False' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_nvda_revenue_growth_acceleration_2025_01_26"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:49:03.447321Z",
+        "last_confirmed_at": "2026-07-24T22:49:03.447321Z"
+      },
+      {
+        "id": "imp_ddb425c5",
+        "event_id": "evt_finance_20250226_018_5cb244c1",
+        "outcome_event_id": "evt_f67b1c96d860",
+        "question_id": "v3_nvda_revenue_growth_acceleration_2025_01_26",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.9,
+        "confidence": 1.0,
+        "reasoning": "The reported 78% YoY growth is below the 93.61% threshold, making the 'True' outcome less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_nvda_revenue_growth_acceleration_2025_01_26"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:49:03.459093Z",
+        "last_confirmed_at": "2026-07-24T22:49:03.459093Z"
+      },
+      {
+        "id": "imp_47373bd2",
+        "event_id": "evt_finance_20250226_019_7c0ffeda",
+        "outcome_event_id": "evt_9816abee6bfc",
+        "question_id": "v3_nvda_revenue_growth_acceleration_2025_01_26",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Strong Data Center growth pushed overall revenue higher, but not enough to reach the threshold, thus it was a factor against the 'False' outcome, but ultimately insufficient.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_nvda_revenue_growth_acceleration_2025_01_26"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:49:03.475189Z",
+        "last_confirmed_at": "2026-07-24T22:49:03.475189Z"
+      },
+      {
+        "id": "imp_db242e01",
+        "event_id": "evt_finance_20250226_019_7c0ffeda",
+        "outcome_event_id": "evt_f67b1c96d860",
+        "question_id": "v3_nvda_revenue_growth_acceleration_2025_01_26",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Strong Data Center growth was a major factor pushing towards the 'True' outcome, though ultimately insufficient.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_nvda_revenue_growth_acceleration_2025_01_26"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:49:03.488477Z",
+        "last_confirmed_at": "2026-07-24T22:49:03.488477Z"
+      },
+      {
+        "id": "imp_5b7f37bc",
+        "event_id": "evt_finance_20250219_020_661f8a69",
+        "outcome_event_id": "evt_9816abee6bfc",
+        "question_id": "v3_nvda_revenue_growth_acceleration_2025_01_26",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "High anticipation for AI products contributed to strong Data Center performance, which worked against the 'False' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_nvda_revenue_growth_acceleration_2025_01_26"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:49:03.499595Z",
+        "last_confirmed_at": "2026-07-24T22:49:03.499595Z"
+      },
+      {
+        "id": "imp_c28db7db",
+        "event_id": "evt_finance_20250219_020_661f8a69",
+        "outcome_event_id": "evt_f67b1c96d860",
+        "question_id": "v3_nvda_revenue_growth_acceleration_2025_01_26",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "High anticipation for AI products contributed to strong Data Center performance, which supported the 'True' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_nvda_revenue_growth_acceleration_2025_01_26"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:49:03.511133Z",
+        "last_confirmed_at": "2026-07-24T22:49:03.511133Z"
+      },
+      {
+        "id": "imp_6df476b3",
+        "event_id": "evt_finance_20250126_021_6d476773",
+        "outcome_event_id": "evt_9816abee6bfc",
+        "question_id": "v3_nvda_revenue_growth_acceleration_2025_01_26",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.1,
+        "confidence": 0.9,
+        "reasoning": "This event marks the end of the period, which is a prerequisite for the outcome but does not directly influence its direction.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_nvda_revenue_growth_acceleration_2025_01_26"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:49:03.522317Z",
+        "last_confirmed_at": "2026-07-24T22:49:03.522317Z"
+      },
+      {
+        "id": "imp_88ecfc17",
+        "event_id": "evt_finance_20250126_021_6d476773",
+        "outcome_event_id": "evt_f67b1c96d860",
+        "question_id": "v3_nvda_revenue_growth_acceleration_2025_01_26",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.1,
+        "confidence": 0.9,
+        "reasoning": "This event marks the end of the period, which is a prerequisite for the outcome but does not directly influence its direction.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_nvda_revenue_growth_acceleration_2025_01_26"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:49:03.534477Z",
+        "last_confirmed_at": "2026-07-24T22:49:03.534477Z"
+      },
+      {
+        "id": "imp_82b72b46",
+        "event_id": "evt_finance_20250226_022_72f66a14",
+        "outcome_event_id": "evt_9816abee6bfc",
+        "question_id": "v3_nvda_revenue_growth_acceleration_2025_01_26",
+        "impact_direction": "positive",
+        "impact_magnitude": 1.0,
+        "confidence": 1.0,
+        "reasoning": "This event is the direct cause of the 'False' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_nvda_revenue_growth_acceleration_2025_01_26"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:49:03.545343Z",
+        "last_confirmed_at": "2026-07-24T22:49:03.545343Z"
+      },
+      {
+        "id": "imp_b0f97035",
+        "event_id": "evt_finance_20250226_022_72f66a14",
+        "outcome_event_id": "evt_f67b1c96d860",
+        "question_id": "v3_nvda_revenue_growth_acceleration_2025_01_26",
+        "impact_direction": "negative",
+        "impact_magnitude": 1.0,
+        "confidence": 1.0,
+        "reasoning": "This event directly prevents the 'True' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_nvda_revenue_growth_acceleration_2025_01_26"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:49:03.555542Z",
+        "last_confirmed_at": "2026-07-24T22:49:03.555542Z"
+      },
+      {
+        "id": "imp_eb3c0447",
+        "event_id": "evt_finance_20250226_023_279361dd",
+        "outcome_event_id": "evt_9816abee6bfc",
+        "question_id": "v3_nvda_revenue_growth_acceleration_2025_01_26",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.8,
+        "reasoning": "Lower growth in other segments directly contributed to the overall revenue falling below the threshold, thus supporting the 'False' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_nvda_revenue_growth_acceleration_2025_01_26"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:49:03.566351Z",
+        "last_confirmed_at": "2026-07-24T22:49:03.566351Z"
+      },
+      {
+        "id": "imp_786d1a77",
+        "event_id": "evt_finance_20250226_023_279361dd",
+        "outcome_event_id": "evt_f67b1c96d860",
+        "question_id": "v3_nvda_revenue_growth_acceleration_2025_01_26",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.8,
+        "confidence": 0.8,
+        "reasoning": "Lower growth in other segments directly inhibited the overall revenue from reaching the threshold, thus hindering the 'True' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_nvda_revenue_growth_acceleration_2025_01_26"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:49:03.578363Z",
+        "last_confirmed_at": "2026-07-24T22:49:03.578363Z"
+      },
+      {
+        "id": "imp_3ac10301",
+        "event_id": "evt_tech_20250219_024_764e2808",
+        "outcome_event_id": "evt_9816abee6bfc",
+        "question_id": "v3_nvda_revenue_growth_acceleration_2025_01_26",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "The AI boom fueled Data Center growth, which pushed against the 'False' outcome, but was not enough.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_nvda_revenue_growth_acceleration_2025_01_26"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:49:03.588948Z",
+        "last_confirmed_at": "2026-07-24T22:49:03.588948Z"
+      },
+      {
+        "id": "imp_9ec4ca59",
+        "event_id": "evt_tech_20250219_024_764e2808",
+        "outcome_event_id": "evt_f67b1c96d860",
+        "question_id": "v3_nvda_revenue_growth_acceleration_2025_01_26",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "The AI boom fueled Data Center growth, which supported the 'True' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_nvda_revenue_growth_acceleration_2025_01_26"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:49:03.600064Z",
+        "last_confirmed_at": "2026-07-24T22:49:03.600064Z"
+      },
+      {
+        "id": "imp_3f9152e9",
+        "event_id": "evt_tech_20250219_025_a68e3290",
+        "outcome_event_id": "evt_9816abee6bfc",
+        "question_id": "v3_nvda_revenue_growth_acceleration_2025_01_26",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "The launch of Blackwell products boosted Data Center revenue, working against the 'False' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_nvda_revenue_growth_acceleration_2025_01_26"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:49:03.610662Z",
+        "last_confirmed_at": "2026-07-24T22:49:03.610662Z"
+      },
+      {
+        "id": "imp_a7312f7f",
+        "event_id": "evt_tech_20250219_025_a68e3290",
+        "outcome_event_id": "evt_f67b1c96d860",
+        "question_id": "v3_nvda_revenue_growth_acceleration_2025_01_26",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "The launch of Blackwell products boosted Data Center revenue, supporting the 'True' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_nvda_revenue_growth_acceleration_2025_01_26"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:49:03.621594Z",
+        "last_confirmed_at": "2026-07-24T22:49:03.621594Z"
+      },
+      {
+        "id": "imp_761c0f15",
+        "event_id": "evt_finance_20250226_026_9d506d09",
+        "outcome_event_id": "evt_9816abee6bfc",
+        "question_id": "v3_nvda_revenue_growth_acceleration_2025_01_26",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.5,
+        "confidence": 0.7,
+        "reasoning": "Beating Wall Street expectations indicates strong performance, which worked against the 'False' outcome, even if the specific threshold was not met.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_nvda_revenue_growth_acceleration_2025_01_26"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:49:03.632638Z",
+        "last_confirmed_at": "2026-07-24T22:49:03.632638Z"
+      },
+      {
+        "id": "imp_0a0408e1",
+        "event_id": "evt_finance_20250226_026_9d506d09",
+        "outcome_event_id": "evt_f67b1c96d860",
+        "question_id": "v3_nvda_revenue_growth_acceleration_2025_01_26",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.5,
+        "confidence": 0.7,
+        "reasoning": "Beating Wall Street expectations indicates strong performance, which supported the 'True' outcome, even if the specific threshold was not met.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_nvda_revenue_growth_acceleration_2025_01_26"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:49:03.643592Z",
+        "last_confirmed_at": "2026-07-24T22:49:03.643592Z"
+      },
+      {
+        "id": "imp_e39ac988",
+        "event_id": "evt_finance_20250226_027_da4f8863",
+        "outcome_event_id": "evt_9816abee6bfc",
+        "question_id": "v3_nvda_revenue_growth_acceleration_2025_01_26",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "The failure to meet high expectations directly aligns with the 'False' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_nvda_revenue_growth_acceleration_2025_01_26"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:49:03.654515Z",
+        "last_confirmed_at": "2026-07-24T22:49:03.654515Z"
+      },
+      {
+        "id": "imp_64483600",
+        "event_id": "evt_finance_20250226_027_da4f8863",
+        "outcome_event_id": "evt_f67b1c96d860",
+        "question_id": "v3_nvda_revenue_growth_acceleration_2025_01_26",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "The failure to meet high expectations directly contradicts the 'True' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_nvda_revenue_growth_acceleration_2025_01_26"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:49:03.666952Z",
+        "last_confirmed_at": "2026-07-24T22:49:03.666952Z"
+      },
+      {
+        "id": "imp_9ca91c26",
+        "event_id": "evt_finance_20250226_028_436130f8",
+        "outcome_event_id": "evt_9816abee6bfc",
+        "question_id": "v3_nvda_revenue_growth_acceleration_2025_01_26",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 1.0,
+        "reasoning": "The reported 78% YoY growth is below the 93.61% threshold, directly contributing to the 'False' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_nvda_revenue_growth_acceleration_2025_01_26"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:49:03.677827Z",
+        "last_confirmed_at": "2026-07-24T22:49:03.677827Z"
+      },
+      {
+        "id": "imp_b6c0b3b8",
+        "event_id": "evt_finance_20250226_028_436130f8",
+        "outcome_event_id": "evt_f67b1c96d860",
+        "question_id": "v3_nvda_revenue_growth_acceleration_2025_01_26",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.9,
+        "confidence": 1.0,
+        "reasoning": "The reported 78% YoY growth is below the 93.61% threshold, making the 'True' outcome less likely.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_nvda_revenue_growth_acceleration_2025_01_26"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:49:03.689365Z",
+        "last_confirmed_at": "2026-07-24T22:49:03.689365Z"
+      },
+      {
+        "id": "imp_6d2eb70f",
+        "event_id": "evt_finance_20250226_029_d23d19dc",
+        "outcome_event_id": "evt_9816abee6bfc",
+        "question_id": "v3_nvda_revenue_growth_acceleration_2025_01_26",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.8,
+        "reasoning": "Underperformance of other segments directly contributed to the overall revenue falling below the threshold, thus supporting the 'False' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_nvda_revenue_growth_acceleration_2025_01_26"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:49:03.702125Z",
+        "last_confirmed_at": "2026-07-24T22:49:03.702125Z"
+      },
+      {
+        "id": "imp_37024428",
+        "event_id": "evt_finance_20250226_029_d23d19dc",
+        "outcome_event_id": "evt_f67b1c96d860",
+        "question_id": "v3_nvda_revenue_growth_acceleration_2025_01_26",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.8,
+        "confidence": 0.8,
+        "reasoning": "Underperformance of other segments directly inhibited the overall revenue from reaching the threshold, thus hindering the 'True' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_nvda_revenue_growth_acceleration_2025_01_26"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T22:49:03.712591Z",
+        "last_confirmed_at": "2026-07-24T22:49:03.712591Z"
+      }
+    ]
+  }
+}

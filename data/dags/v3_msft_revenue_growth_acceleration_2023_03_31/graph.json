@@ -1,0 +1,193 @@
+{
+  "schema_version": "1.0",
+  "actual_outcome_event_id": "node_6",
+  "graph": {
+    "nodes": [
+      {
+        "id": "node_1",
+        "label": "Microsoft cloud business showed strong target-quarter performance",
+        "event_type": "indicator",
+        "occurred_date": "2023-03-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_410ed8867ced9866",
+          "ev_2d779a92c3bd7811"
+        ]
+      },
+      {
+        "id": "node_2",
+        "label": "AI-related demand was reported alongside cloud strength",
+        "event_type": "indicator",
+        "occurred_date": "2023-03-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_2d779a92c3bd7811"
+        ]
+      },
+      {
+        "id": "node_3",
+        "label": "Prior-quarter Microsoft YoY revenue growth was approximately 1.970%",
+        "event_type": "indicator",
+        "occurred_date": "2022-12-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_bfb8c5fe50bb72fc"
+        ]
+      },
+      {
+        "id": "node_4",
+        "label": "Windows, Devices, and Xbox were weak in the target quarter",
+        "event_type": "indicator",
+        "occurred_date": "2023-03-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_23da2a3b39771e06",
+          "ev_e6f1e033b7f43b78"
+        ]
+      },
+      {
+        "id": "node_7",
+        "label": "Cloud strength outweighed weaker product segments",
+        "event_type": "milestone",
+        "occurred_date": "2023-03-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_410ed8867ced9866",
+          "ev_2d779a92c3bd7811",
+          "ev_23da2a3b39771e06",
+          "ev_e6f1e033b7f43b78"
+        ]
+      },
+      {
+        "id": "node_5",
+        "label": "Target-quarter Microsoft YoY revenue growth was 7.085%",
+        "event_type": "indicator",
+        "occurred_date": "2023-03-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_bfb8c5fe50bb72fc",
+          "ev_ec44844bb6a5abe9"
+        ]
+      },
+      {
+        "id": "node_8",
+        "label": "Target-minus-prior YoY growth yielded 5.115-point acceleration",
+        "event_type": "milestone",
+        "occurred_date": "2023-03-31",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_bfb8c5fe50bb72fc"
+        ]
+      },
+      {
+        "id": "node_6",
+        "label": "Resolved outcome: Microsoft acceleration was above recent range",
+        "event_type": "outcome",
+        "occurred_date": "2023-04-25",
+        "is_outcome": true,
+        "is_actual_outcome": true,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_bfb8c5fe50bb72fc"
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_1",
+        "source": "node_2",
+        "target": "node_1",
+        "relationship": "possible_contributor_to",
+        "support_level": "background_hypothesis",
+        "article_ids": [
+          "ev_2d779a92c3bd7811"
+        ],
+        "rationale": "The report associates AI demand and cloud strength but does not isolate a causal effect."
+      },
+      {
+        "id": "edge_2",
+        "source": "node_1",
+        "target": "node_7",
+        "relationship": "contributes_to",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_410ed8867ced9866",
+          "ev_2d779a92c3bd7811"
+        ],
+        "rationale": "Cloud is identified as a key positive component of Microsoft's revenue mix."
+      },
+      {
+        "id": "edge_3",
+        "source": "node_4",
+        "target": "node_7",
+        "relationship": "counterbalances",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_23da2a3b39771e06",
+          "ev_e6f1e033b7f43b78"
+        ],
+        "rationale": "Weak product segments supplied a documented offset to cloud strength."
+      },
+      {
+        "id": "edge_4",
+        "source": "node_7",
+        "target": "node_5",
+        "relationship": "contributes_to",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_410ed8867ced9866",
+          "ev_2d779a92c3bd7811",
+          "ev_bfb8c5fe50bb72fc"
+        ],
+        "rationale": "The cloud-led net segment mix is retained as an upstream explanation for the separately reported overall growth rate."
+      },
+      {
+        "id": "edge_5",
+        "source": "node_3",
+        "target": "node_8",
+        "relationship": "input_to",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_bfb8c5fe50bb72fc"
+        ],
+        "rationale": "The prior-quarter YoY rate is the comparison input to growth acceleration."
+      },
+      {
+        "id": "edge_6",
+        "source": "node_5",
+        "target": "node_8",
+        "relationship": "input_to",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_bfb8c5fe50bb72fc"
+        ],
+        "rationale": "The target-quarter YoY rate is the other input to the reported acceleration."
+      },
+      {
+        "id": "edge_7",
+        "source": "node_8",
+        "target": "node_6",
+        "relationship": "classified_as",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_bfb8c5fe50bb72fc"
+        ],
+        "rationale": "The reported 5.115-point acceleration exceeds the pre-registered -1.765-point upper boundary."
+      }
+    ]
+  }
+}

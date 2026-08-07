@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_aapl_revenue_growth_acceleration_2023_12_30",
+  "blueprint_sha256": "390cb758e9cb2bfda1adf1b4cca067cdc8bf782ef9dbd36a4781a35c9cb4fff2",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_growth",
+      "target_operation": "acceleration",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2023-12-30, which range will Apple Inc.'s quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2023-12-30 fall into?",
+    "historical_cutoff": "2023-12-30T00:00:00+00:00",
+    "target_semantics": "Apple Inc.'s year-over-year revenue growth acceleration for the fiscal quarter ending 2023-12-30.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The target metric is revenue growth acceleration, calculated as the change in year-over-year (YoY) revenue growth between the current and prior fiscal quarters.",
+      "To estimate this acceleration, we need to assess both the target period's YoY revenue growth and the prior period's YoY revenue growth.",
+      "The pre-registered boundaries for 'below recent range' (-2.894) and 'above recent range' (1.574) are critical for classifying the final acceleration value."
+    ],
+    "counterevidence": "No forecast-time evidence was provided to support or contradict any potential drivers of Apple's revenue growth or its acceleration.",
+    "prospective_target_estimate": "Given the lack of forecast-time evidence, it is not possible to provide a specific estimate for Apple's revenue growth acceleration.",
+    "option_mapping": "The target metric, Apple's quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2023-12-30, will be mapped to one of three options: 'below recent range' (less than -2.894 percentage points), 'within recent range' (-2.894 to 1.574 percentage points), or 'above recent range' (1.574 percentage points or more).",
+    "uncertainty": "The absence of any forecast-time evidence regarding Apple's financial performance or the broader economic environment makes any prediction highly uncertain. Key drivers such as prior-quarter YoY growth and target-quarter YoY growth cannot be estimated.",
+    "dag_derived_lesson": "When estimating a change in a metric, it is crucial to have evidence for both the current and prior states of the metric. Furthermore, understanding the defined thresholds for classification is essential for mapping the calculated change to the correct outcome category. The absence of evidence for these components leads to high uncertainty."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

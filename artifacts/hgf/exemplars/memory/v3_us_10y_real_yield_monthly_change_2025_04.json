@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_us_10y_real_yield_monthly_change_2025_04",
+  "blueprint_sha256": "544668f4e2226368daed8325d3560fcff06180ecb51c9dc9e9c6ef684b2d284c",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_monetary_policy",
+      "target_operation": "real_yield_change",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2025-04-01, which range will the monthly 10-year real-yield change for United States 10-year real Treasury yield in 2025-04 fall into?",
+    "historical_cutoff": "2025-04-01T00:00:00+00:00",
+    "target_semantics": "The monthly change in the US 10-year real Treasury yield for April 2025.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "Markets anticipated a broad Trump tariff rollout, which intensified trade-war fears.",
+      "These trade-war fears led investors to move toward safe-haven Treasuries, causing nominal Treasury yields to fall.",
+      "The fall in nominal yields, mediated by trade-war and recession risk fears, is a potential driver for the real yield change."
+    ],
+    "counterevidence": "Solid jobs data provided counterpressure to the Treasury rally, potentially limiting the nominal yield decline.",
+    "prospective_target_estimate": "The evidence suggests a potential downward pressure on real yields due to safe-haven flows driven by trade war concerns, but the magnitude is uncertain.",
+    "option_mapping": "The potential for falling nominal yields, if not fully offset by inflation expectations, could lead to a negative real yield change. However, the counterpressure from jobs data and the uncertain impact on inflation expectations make it difficult to definitively place the change within or outside the recent range.",
+    "uncertainty": "The provided evidence does not offer specific magnitudes for the impact of trade war fears, recession risks, or jobs data on nominal and real yields. The relationship between these factors and the target metric is not precisely quantified, leaving significant uncertainty about whether the real yield change will fall below, within, or above the recent range.",
+    "dag_derived_lesson": "Anticipated geopolitical or trade-related events can drive safe-haven asset flows, influencing yield movements. However, the net effect on real yields is contingent on the interplay of these flows with inflation expectations and countervailing economic data, requiring careful consideration of the magnitude and direction of each factor."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

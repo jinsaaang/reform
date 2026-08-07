@@ -1,0 +1,68 @@
+{
+  "schema_version": "fixed_exemplar_case",
+  "status": "success",
+  "question_id": "v3_nasdaq_monthly_return_2026_06",
+  "retrieved_memory_question_id": "v3_nasdaq_monthly_return_2024_09",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "market_fx_credit / technology equities",
+      "target_operation": "monthly NASDAQ Composite return",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2024-09-01, which range will the monthly NASDAQ Composite return for NASDAQ Composite index in 2024-09 fall into?",
+    "historical_cutoff": "2024-09-01T00:00:00+00:00",
+    "target_semantics": "The monthly return percentage for the NASDAQ Composite index in September 2024.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20240517_002_fb949451",
+        "takeaway": "Market sentiment analysis using NLP indicates a focus on market sentiment and highlighted stocks in mid-Q2 2024.",
+        "why_predictive": "Market sentiment can influence stock index performance."
+      },
+      {
+        "article_id": "art_finance_20200814_003_cd04d4ac",
+        "takeaway": "The article discusses financial crisis breakdowns and market collapses.",
+        "why_predictive": "Historical financial crises and market collapses can provide context for understanding potential market volatility."
+      },
+      {
+        "article_id": "art_finance_20210731_006_4f9e51d6",
+        "takeaway": "Big Tech earnings showed strength, but there are concerns about what comes next.",
+        "why_predictive": "The NASDAQ Composite is heavily weighted towards technology companies, making Big Tech earnings a significant driver of its performance."
+      },
+      {
+        "article_id": "art_finance_20080723_002_1fbeb069",
+        "takeaway": "The article provides historical US inflation rates from 2000-2025.",
+        "why_predictive": "Inflation trends are a key macroeconomic factor that can impact stock market returns."
+      },
+      {
+        "article_id": "art_finance_20200602_002_beb71b59",
+        "takeaway": "Analysis of Nasdaq-100 performance during the COVID-19 period.",
+        "why_predictive": "Past performance during significant market events like the COVID-19 pandemic can inform expectations about future performance under certain conditions."
+      },
+      {
+        "article_id": "art_finance_20230726_003_5a4aad44",
+        "takeaway": "Comparison of Nasdaq-100 vs. S&P 500 performance in Q2 2023.",
+        "why_predictive": "Relative performance of major indices can indicate sector strength and market trends."
+      },
+      {
+        "article_id": "art_finance_20221102_011_22996251",
+        "takeaway": "Comparison of Nasdaq-100 vs. S&P 500 performance in Q3 2022.",
+        "why_predictive": "Tracking relative performance of major indices provides insight into market dynamics."
+      }
+    ],
+    "expert_reasoning": [
+      "The NASDAQ Composite, heavily influenced by technology stocks, has historically shown sensitivity to Big Tech earnings and broader market sentiment (art_finance_20210731_006_4f9e51d6, art_finance_20240517_002_fb949451).",
+      "Macroeconomic factors such as inflation trends (art_finance_20080723_002_1fbeb069) and the potential for financial crises (art_finance_20200814_003_cd04d4ac) can also impact the index.",
+      "Past performance during significant events like the COVID-19 pandemic (art_finance_20200602_002_beb71b59) and comparisons with other indices like the S&P 500 (art_finance_20230726_003_5a4aad44, art_finance_20221102_011_22996251) provide context for understanding market dynamics."
+    ],
+    "counterevidence": "No specific counterevidence directly contradicting the potential drivers for the NASDAQ Composite's September 2024 return was found in the provided articles.",
+    "prospective_target_estimate": "The provided evidence does not offer a specific quantitative forecast for the NASDAQ Composite's monthly return in September 2024. The articles highlight potential influences like tech earnings, market sentiment, and inflation, but do not provide directional or magnitude predictions for the target period.",
+    "option_mapping": "Given the lack of specific directional or magnitude forecasts from the provided articles, it is not possible to definitively map the prospective return to 'below recent range', 'within recent range', or 'above recent range'.",
+    "uncertainty": "Significant uncertainty exists due to the absence of direct, forward-looking statements or quantitative data within the provided forecast-time articles that specifically predict the NASDAQ Composite's monthly return for September 2024. The articles offer historical context and identify potential influencing factors, but do not provide a clear basis for estimating the outcome relative to the defined recent range.",
+    "dag_derived_lesson": "The impact of macroeconomic factors and sector-specific performance on a broad market index requires re-evaluation of current evidence at each forecast cutoff, as historical relationships may not hold or may be superseded by new drivers. Reliance on historical patterns alone is insufficient without current supporting data."
+  },
+  "hgf_provenance": {
+    "blueprint_schema": "hgf_blueprint_topology_v2",
+    "blueprint_sha256": "464d5e4a4b296c2369e0fb42ab6695d8d3146967a3c2bb4aff3f59b77c612917",
+    "memory_exemplar_sha256": "615948d52248d1c5b3db8fcd5c183fddc74e3c9ff622f672a1c174708146a38a"
+  }
+}

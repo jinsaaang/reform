@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_us_industrial_production_monthly_growth_2024_09",
+  "blueprint_sha256": "0434c545a0aa86ac4bf32dde382a863230a4daf5c1fdd3500ed90874e2960f4d",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "macro / industrial activity",
+      "target_operation": "monthly industrial-production growth",
+      "option_geometry": "ordered_categorical"
+    },
+    "historical_question": "As of 2024-09-30, which range will the monthly industrial-production growth for United States industrial production in 2024-09 fall into?",
+    "historical_cutoff": "2024-09-30T00:00:00+00:00",
+    "target_semantics": "The monthly growth rate of US industrial production for September 2024, categorized as below, within, or above the recent range of -0.387% to 0.496%.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The DAG indicates that several manufacturing sector indicators, such as the ISM Manufacturing Index remaining below 50, weakened new orders, and weak sector PMI data, are potential drivers of industrial production growth.",
+      "These indicators, along with the observation that U.S. manufacturing contracted for a fifth consecutive month, suggest underlying weakness that could translate into lower industrial production.",
+      "However, a rebound in industrial production is noted as counterevidence, complicating a simple narrative of persistent decline."
+    ],
+    "counterevidence": "The DAG highlights that a rebound in industrial production is considered counterevidence to a persistent decline narrative.",
+    "prospective_target_estimate": "The evidence suggests conflicting signals. While manufacturing weakness points towards lower production, a noted rebound complicates the outlook. Without specific current data, it is difficult to definitively place the target.",
+    "option_mapping": "The target is to determine if September 2024 US industrial production growth was below -0.387%, between -0.387% and 0.496%, or above 0.496%.",
+    "uncertainty": "The absence of forecast-time evidence means the strength and direction of the identified drivers and counterevidence cannot be assessed. The DAG's 'weak' and 'medium' historical support for mediator checkpoints further increases uncertainty regarding the transmission of manufacturing weakness to industrial production.",
+    "dag_derived_lesson": "When evaluating a target metric, consider multiple leading indicators of underlying economic activity. Recognize that direct counterevidence, such as a rebound in the target metric itself, can significantly alter the predictive power of these leading indicators. The strength of historical relationships must be re-evaluated with current data, as transmission mechanisms can weaken or be bypassed."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

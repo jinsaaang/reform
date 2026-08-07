@@ -1,0 +1,233 @@
+{
+  "schema_version": "hgf_blueprint_v1",
+  "question_id": "v3_us_core_cpi_monthly_change_2024_12",
+  "target_definition": {
+    "metric": "United States monthly core CPI change",
+    "unit_or_option_space": "Pre-registered monthly percentage-change threshold classification",
+    "forecast_horizon": "December 2024"
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Energy costs, shelter inflation, broader disinflation, and services-price pressure form a reusable core-inflation framework.",
+    "weaknesses": [
+      "Energy is excluded directly from core CPI and operates indirectly.",
+      "Annual-rate evidence is an imperfect proxy for the monthly calculation."
+    ]
+  },
+  "search_factors": [
+    {
+      "factor": "Energy costs",
+      "why_search": "Energy costs can affect transport and production expenses that feed into core goods and services.",
+      "preferred_source_types": [
+        "energy-price data",
+        "BLS release"
+      ],
+      "source_event_ids": [
+        "evt_finance_20241231_012_1fc9f3fc",
+        "evt_finance_20241231_014_2695b8fb"
+      ]
+    },
+    {
+      "factor": "Shelter inflation",
+      "why_search": "Shelter is a large core-CPI component and its pace materially affects core inflation.",
+      "preferred_source_types": [
+        "BLS CPI release",
+        "rental-market data"
+      ],
+      "source_event_ids": [
+        "evt_finance_20241231_013_aa8b0f11",
+        "evt_finance_20241231_018_ea639401"
+      ]
+    },
+    {
+      "factor": "Broader disinflation",
+      "why_search": "Aggregate disinflation links component price changes to the core CPI trend.",
+      "preferred_source_types": [
+        "BLS CPI release",
+        "macro data"
+      ],
+      "source_event_ids": [
+        "evt_finance_20241231_016_81894e16",
+        "evt_finance_20241231_011_b3e17f80"
+      ]
+    },
+    {
+      "factor": "Services inflation",
+      "why_search": "Persistent services price pressure can offset easing in shelter and energy-related costs.",
+      "preferred_source_types": [
+        "PPI release",
+        "services-price data"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240712_019_bbbec14c"
+      ]
+    },
+    {
+      "factor": "Headline CPI pressure",
+      "why_search": "Headline inflation can signal countervailing food, energy, and goods price movements.",
+      "preferred_source_types": [
+        "BLS CPI release"
+      ],
+      "source_event_ids": [
+        "evt_finance_20241231_015_a9eb0db7"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "energy",
+      "role": "baseline",
+      "factor": "Energy costs",
+      "mechanism": "Lower energy costs can reduce transportation and production expenses.",
+      "expected_direction": "down",
+      "evidence_requirement": "Track retail fuel prices and business-cost pass-through.",
+      "contradiction_signal": "Fuel costs rebound sharply.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_finance_20241231_012_1fc9f3fc",
+        "evt_finance_20241231_017_0b6c2b16"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_core_cpi_monthly_change_2024_12_20260724_231438_009_816845cc",
+        "hyp_v3_us_core_cpi_monthly_change_2024_12_20260724_231438_010_93690cba"
+      ]
+    },
+    {
+      "id": "shelter",
+      "role": "driver",
+      "factor": "Shelter inflation",
+      "mechanism": "Moderating shelter-price growth reduces pressure in a large core component.",
+      "expected_direction": "down",
+      "evidence_requirement": "Check monthly shelter inflation and rental measures.",
+      "contradiction_signal": "Shelter inflation reaccelerates.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_finance_20241231_013_aa8b0f11",
+        "evt_finance_20241231_018_ea639401"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_core_cpi_monthly_change_2024_12_20260724_231438_011_0f6fc12c",
+        "hyp_v3_us_core_cpi_monthly_change_2024_12_20260724_231438_012_9de5c0e4"
+      ]
+    },
+    {
+      "id": "disinflation",
+      "role": "mediator",
+      "factor": "Broader disinflation",
+      "mechanism": "Lower cost pressures and shelter moderation combine into broader disinflation.",
+      "expected_direction": "down",
+      "evidence_requirement": "Reconcile component changes with core CPI.",
+      "contradiction_signal": "Component easing fails to affect core services.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_finance_20241231_016_81894e16",
+        "evt_finance_20241231_017_0b6c2b16",
+        "evt_finance_20241231_018_ea639401"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_core_cpi_monthly_change_2024_12_20260724_231438_010_93690cba",
+        "hyp_v3_us_core_cpi_monthly_change_2024_12_20260724_231438_012_9de5c0e4",
+        "hyp_v3_us_core_cpi_monthly_change_2024_12_20260724_231438_013_26d4283a"
+      ]
+    },
+    {
+      "id": "services",
+      "role": "counterevidence",
+      "factor": "Services inflation",
+      "mechanism": "Persistent services inflation can resist broader disinflation.",
+      "expected_direction": "up",
+      "evidence_requirement": "Track services PPI and core-services CPI.",
+      "contradiction_signal": "Services prices decelerate broadly.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_finance_20240712_019_bbbec14c"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_core_cpi_monthly_change_2024_12_20260724_231438_017_a92d9ff2"
+      ]
+    },
+    {
+      "id": "headline",
+      "role": "alternative",
+      "factor": "Headline CPI pressure",
+      "mechanism": "Headline price increases can coexist with easing in core components.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Compare food and energy effects with core components.",
+      "contradiction_signal": "Headline and core move together due to services.",
+      "historical_support": "medium",
+      "source_event_ids": [
+        "evt_finance_20241231_015_a9eb0db7"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_core_cpi_monthly_change_2024_12_20260724_231438_016_f6db54ca"
+      ]
+    },
+    {
+      "id": "target_bridge",
+      "role": "target_bridge",
+      "factor": "Core component aggregation",
+      "mechanism": "Shelter and other core-component changes aggregate into monthly core CPI.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Use the published core CPI level to calculate the monthly percentage change.",
+      "contradiction_signal": "Component narrative does not reconcile to the published index.",
+      "historical_support": "strong",
+      "source_event_ids": [
+        "evt_finance_20241231_011_b3e17f80",
+        "evt_finance_20241231_013_aa8b0f11",
+        "evt_finance_20241231_016_81894e16"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_us_core_cpi_monthly_change_2024_12_20260724_231438_013_26d4283a"
+      ]
+    }
+  ],
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "energy",
+        "disinflation",
+        "target_bridge"
+      ],
+      "generalized_mechanism": "Lower cost pressure can contribute indirectly to softer core-component inflation.",
+      "expected_direction": "down",
+      "applicability_conditions": [
+        "Business cost reductions pass through to core goods and services."
+      ],
+      "failure_conditions": [
+        "Services-price pressure offsets the pass-through."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "shelter",
+        "disinflation",
+        "target_bridge"
+      ],
+      "generalized_mechanism": "Shelter moderation reduces a major source of core-inflation pressure.",
+      "expected_direction": "down",
+      "applicability_conditions": [
+        "Shelter has material weight in the monthly index."
+      ],
+      "failure_conditions": [
+        "Other core components reaccelerate."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "Persistent services inflation offsets shelter moderation.",
+      "discriminating_evidence": "Compare core-services components with shelter and goods inflation.",
+      "source_event_ids": [
+        "evt_finance_20240712_019_bbbec14c",
+        "evt_finance_20241231_013_aa8b0f11",
+        "evt_finance_20241231_011_b3e17f80"
+      ]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Is shelter inflation continuing to moderate?",
+    "Are energy-cost changes passing through to core components?",
+    "Does services inflation offset easing elsewhere?",
+    "Do component changes reconcile to the published monthly core CPI level?"
+  ]
+}

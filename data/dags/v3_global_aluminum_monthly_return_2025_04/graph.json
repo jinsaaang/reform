@@ -1,0 +1,791 @@
+{
+  "question": {
+    "id": "v3_global_aluminum_monthly_return_2025_04",
+    "question_text": "As of 2025-04-01, will the monthly aluminum-price return for Global aluminum price in 2025-04 be at least 0.521 percent?",
+    "question_type": "binary",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 3,
+    "resolution_date": "2025-05-15T23:59:59Z",
+    "estimated_start_time": "2025-04-01T00:00:00Z",
+    "ground_truth": false,
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [
+      "evt_c23af7d686fe",
+      "evt_45c44076dc48"
+    ],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: Global aluminum price\nTarget period: 2025-04\nFinancial area: energy_commodities / industrial metals\nRegion: US",
+    "resolution_criteria": "Use FRED series PALUMUSDM. Compute the change from the previous monthly observation using mode 'pct'. Resolve yes if the change is at least 0.521 percent, otherwise no.",
+    "resolution_reasoning": "The snapshotted target change was -10.7 percent; it resolved to 'no'.",
+    "options": [
+      "yes",
+      "no"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": "## Executive Summary\nThe monthly global aluminum price return for April 2025 did not reach at least 0.521 percent, primarily due to a significant decline in alumina prices and broader commodity price drops influenced by renewed tariff policies. The average tax-inclusive full cost of China's aluminum industry decreased by 3.7% month-on-month in April, driven by a 10.62% drop in the SMM Alumina Index. Global commodity markets, including metals like copper, experienced price volatility and downturns following new tariff announcements by the Trump administration in early April, fostering economic pessimism and reducing demand across various sectors, which consequently suppressed aluminum prices.\n\n## Timeline Of Key Events\n- **2025-04-01:** Deloitte publishes an article discussing enhancing supply chain resilience in a new era of policy, highlighting the impact of tariffs on manufacturing and supply chains. [art_finance_20250401_003_f0f73688]\n- **2025-04-02 (approx):** President Donald Trump's administration announces new tariffs or tariff threats on various goods, impacting commodity prices. [art_finance_20250404_002_9387e7f6], [art_finance_20250409_004_d11f5138]\n- **2025-04-04:** Commodity prices, including crude oil, copper, and soybeans, drop in response to the newly announced tariffs, indicating pessimism about the global economy. [art_finance_20250404_002_9387e7f6]\n- **2025-04-09:** An article highlights how Trump’s tariffs are harming US critical mineral supply chains, leading to concerns about increased costs and disruptions. [art_finance_20250409_004_d11f5138]\n- **2025-04-25:** Aluminum premiums hedging activity surge, reaching a new open interest record of 73,153 contracts across all four Aluminum premium futures contracts, reflecting increased market volatility and risk management. [art_finance_20250509_003_b34f7b14]\n- **2025-04-26 (approx):** The monthly average SMM Alumina Index for March 26-April 25 drops by 10.62% MoM. This significant pullback in alumina prices directly contributes to a decrease in aluminum production costs. [art_finance_20250506_002_6e706008]\n- **2025-05-06:** Shanghai Metals Market (SMM) reports that alumina prices pulled back significantly, with the cost of aluminum down 3.7% MoM in April. The average spot price of SMM A00 aluminum in April was approximately 20,074 yuan/mt. [art_finance_20250506_002_6e706008]\n- **2025-05-07:** Research and Markets publishes an 'Aluminum Market Report 2025', projecting growth in the global aluminum market by 2035 but also noting that secondary aluminum is expected to experience a higher growth rate, suggesting shifting market dynamics. [art_finance_20250507_005_4e9ec73a]\n\n## Causal Chain Analysis\nThe negative monthly aluminum price return of at least 0.521 percent in April 2025 was primarily caused by a confluence of factors stemming from global economic policies and raw material price shifts.\n\n**Root Cause: Geopolitical and Trade Policies (Tariffs)**\nThe re-introduction and expansion of tariffs by the Trump administration in early April 2025 served as a significant root cause [art_finance_20250404_002_9387e7f6]. These tariffs, aimed at boosting US manufacturing and addressing unfair trade, inadvertently triggered broader economic pessimism and volatility in global commodity markets [art_finance_20250401_003_f0f73688]. Specifically, these policies were noted to be harming US critical mineral supply chains, creating uncertainty and potentially increasing costs for manufacturers. [art_finance_20250409_004_d11f5138]\n\n**Intermediate Mechanism: Commodity Price Drops and Market Pessimism**\nThe tariffs led to an immediate drop in various commodity prices, including key industrial metals like copper, which is often seen as an economic indicator [art_finance_20250404_002_9387e7f6]. This widespread fall in commodity prices indicated a pessimistic outlook on global economic growth, suggesting reduced industrial demand for raw materials, including aluminum. The increasing hedging activity in aluminum premiums also signals heightened market volatility and risk perception [art_finance_20250509_003_b34f7b14].\n\n**Proximate Triggers: Declining Alumina Prices and Aluminum Production Costs**\nThe significant pullback in alumina prices was a direct and immediate trigger for the reduced cost of aluminum production. The SMM Alumina Index saw a substantial month-on-month decrease of 10.62% in the period leading up to April 25, 2025 [art_finance_20250506_002_6e706008]. This reduction in raw material costs directly translated into a 3.7% month-on-month decrease in the average tax-inclusive full cost of China's aluminum industry for April [art_finance_20250506_002_6e706008].\n\n**Final Outcome: Monthly Aluminum Price Return Below 0.521 Percent**\nBecause of the reduced production costs driven by lower alumina prices and the dampened global demand stemming from tariff-induced economic pessimism, the global aluminum price return in April 2025 did not meet the threshold of at least 0.521 percent. The average spot price for SMM A00 aluminum hovered around 20,074 yuan/mt in April 2025, reflecting these market conditions, which resulted in a negative return when compared to the target. [art_finance_20250506_002_6e706008]\n\n## Countervailing Factors\nSeveral factors might have pushed against the actual negative outcome, but ultimately failed to overcome the prevailing downward pressure:\n\n*   **Long-term growth projections for the Aluminum Market:** Despite the short-term negative price return in April 2025, the broader aluminum market is projected to grow significantly to USD 374.1 billion by 2035. This long-term positive outlook was likely overwhelmed by immediate market dynamics. [art_finance_20250507_005_4e9ec73a]\n*   **Increased demand for secondary aluminum:** The Aluminum Market Report 2025 highlighted that secondary aluminum is expected to experience a higher growth rate during the forecast period. While this indicates a positive trend for certain segments of the aluminum market, it was not enough to offset the overall price decline in April 2025, which was largely influenced by primary aluminum production costs and broader commodity market sentiment. [art_finance_20250507_005_4e9ec73a]\n*   **Efforts to enhance supply chain resilience:** Initiatives to derisk supply chains and potentially reshore manufacturing in the US, as discussed by Deloitte, could have theoretically stabilized or increased demand for domestically sourced aluminum. However, the immediate impact of new tariffs and global economic uncertainty negated these potential benefits in April 2025. [art_finance_20250401_003_f0f73688]\n\nThese factors were either long-term trends or initiatives that had not yet materialized sufficiently to counteract the immediate, strong downward pressures from reduced alumina costs and global economic pessimism triggered by trade policies.\n\n## Event Candidate Inventory\n\n*   **E1: Trump Administration Announces New Tariffs**\n    *   **Date:** Early April 2025\n    *   **Why it matters causally:** Triggered widespread economic pessimism, leading to a general downturn in commodity prices, including aluminum. It created uncertainty in global trade and supply chains, affecting demand and investor sentiment.\n    *   **Source article IDs:** [art_finance_20250404_002_9387e7f6], [art_finance_20250409_004_d11f5138], [art_finance_20250401_003_f0f73688]\n\n*   **E2: Global Commodity Prices Drop due to Tariffs**\n    *   **Date:** April 4, 2025\n    *   **Why it matters causally:** Directly reflected reduced demand and economic concerns, influencing aluminum prices downwards. This was a clear signal of market reaction to the new trade policies.\n    *   **Source article IDs:** [art_finance_20250404_002_9387e7f6]\n\n*   **E3: Significant Pullback in Alumina Prices**\n    *   **Date:** March 26-April 25, 2025 (monthly average for April)\n    *   **Why it matters causally:** Alumina is a primary raw material for aluminum production. A significant drop in its price directly reduces production costs, which subsequently impacts the market price of aluminum.\n    *   **Source article IDs:** [art_finance_20250506_002_6e706008]\n\n*   **E4: Cost of China's Aluminum Industry Decreases**\n    *   **Date:** April 2025\n    *   **Why it matters causally:** A 3.7% MoM decrease in production costs for a major aluminum producer like China indicates a fundamental shift in the cost structure, enabling lower selling prices and impacting global benchmarks.\n    *   **Source article IDs:** [art_finance_20250506_002_6e706008]\n\n*   **E5: Surge in Aluminum Premiums Hedging Activity**\n    *   **Date:** April 25, 2025\n    *   **Why it matters causally:** Indicated heightened volatility and risk in the aluminum market, suggesting that market participants were expecting price fluctuations and seeking to mitigate risk, rather than anticipating a significant upward trend.\n    *   **Source article IDs:** [art_finance_20250509_003_b34f7b14]\n\n## Evidence Mapping Table\n\n| Claim/Event | Article IDs | Date Support | Confidence (0-1) | Notes |\n|---|---|---|---|---|\n| Trump Administration announces new tariffs | [art_finance_20250404_002_9387e7f6], [art_finance_20250409_004_d11f5138], [art_finance_20250401_003_f0f73688] | Early April 2025 | 0.9 | Multiple sources confirm new tariffs and their impact on supply chains and commodity prices. |\n| Global commodity prices drop due to tariffs | [art_finance_20250404_002_9387e7f6] | 2025-04-04 | 0.95 | Directly stated in the article, with examples of specific commodities. |\n| Significant pullback in alumina prices | [art_finance_20250506_002_6e706008] | March 26-April 25, 2025 | 1.0 | SMM data provides specific figures for the alumina index drop. |\n| Cost of China's aluminum industry decreases | [art_finance_20250506_002_6e706008] | April 2025 | 1.0 | SMM data clearly states the 3.7% MoM decrease in cost. |\n| Surge in aluminum premiums hedging activity | [art_finance_20250509_003_b34f7b14] | 2025-04-25 | 0.95 | CME Group reports record open interest in aluminum premium futures. |\n| Long-term growth projected for aluminum market | [art_finance_20250507_005_4e9ec73a] | 2025-05-07 | 0.8 | Market report forecasts long-term growth, but not specific to April 2025 returns. |\n| Increased demand for secondary aluminum | [art_finance_20250507_005_4e9ec73a] | 2025-05-07 | 0.8 | Mentioned as a growth area in the market report, but not a strong countervailing force in the immediate term. |\n\n## Uncertainties And Alternative Paths\n*   **Magnitude and scope of tariff impact:** While tariffs were a clear causal factor, the exact extent to which they influenced aluminum prices versus other market forces (e.g., existing supply gluts, general industrial slowdowns) is hard to precisely quantify. A stronger or weaker reaction to tariffs could have altered the outcome.\n*   **Alumina supply dynamics:** The article mentions potential fluctuations in alumina operating capacity and short-term maintenance. If these had led to an increase in alumina prices rather than a decline, the cost of aluminum production would have increased, potentially pushing aluminum prices upwards.\n*   **Global economic resilience:** A more resilient global economy, less sensitive to tariff announcements, could have absorbed the trade shocks without significant commodity price drops, thus preventing the negative aluminum price return.\n*   **Demand for specific aluminum products:** While overall demand seemed to be suppressed, a sudden surge in demand for specific high-value aluminum products (e.g., low-carbon aluminum) could have partially offset the general price decline, if such demand was significant enough.\n",
+    "graph_built": true,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.201189Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "global_aluminum_monthly_return",
+        "event_cluster_id": "industrial_metals_aluminum_2025-04",
+        "category": "energy_commodities",
+        "original_domain": "energy_commodities",
+        "subdomain": "industrial metals",
+        "entity": "Global aluminum price",
+        "region": "US",
+        "target_metric": "monthly aluminum-price return",
+        "target_period": "2025-04",
+        "forecast_cutoff": "2025-04-01T00:00:00+00:00",
+        "forecast_date_options": [
+          "2025-04-01"
+        ],
+        "resolution_available_at": "2025-05-15T23:59:59+00:00",
+        "horizon_days": 44,
+        "source_type": "fred_series_snapshot",
+        "source_series_id": "PALUMUSDM",
+        "source_homepage": "https://fred.stlouisfed.org/series/PALUMUSDM",
+        "comparison_rule": "target change >= median of 4 prior observed changes",
+        "comparison_threshold": 0.52137,
+        "comparison_thresholds": null,
+        "change_unit": "percent",
+        "threshold_observation_dates": [
+          "2024-11-01",
+          "2024-12-01",
+          "2025-01-01",
+          "2025-02-01",
+          "2025-03-01"
+        ],
+        "split": "memory",
+        "family_position": 5,
+        "family_size": 7,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "no",
+        "resolved_class": "no",
+        "resolution_value": 2367.800454545455,
+        "target_change": -10.70290654,
+        "source_observation_date": "2025-04-01",
+        "resolution_document": {
+          "publisher": "Federal Reserve Bank of St. Louis (FRED)",
+          "title": "Global price of Aluminum",
+          "url": "https://fred.stlouisfed.org/series/PALUMUSDM"
+        },
+        "source_download_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PALUMUSDM&cosd=2019-01-01&coed=2026-06-30",
+        "source_sha256": "9893e16fd853592af85ffb3af33f4641c079df933932b3a977c28995201f88fa",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_45c44076dc48",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 10,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_20250423_004_b3c64bed",
+        "title": "Low-Carbon Aluminum Market Size and Revenue Share Analysis to 2034 - Insightace Analytic",
+        "url": "https://www.insightaceanalytic.com/report/low-carbon-aluminum-market-/1861",
+        "source": "insightaceanalytic.com",
+        "published_date": "2025-04-23T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20250506_002_6e706008",
+        "title": "Alumina prices pulled back significantly, with the cost of aluminum down 3.7% MoM in April. [SMM Analysis] - Shanghai Metals Market",
+        "url": "https://news.metal.com/newscontent/103310701-alumina-prices-pulled-back-significantly-with-the-cost-of-aluminum-down-37-mom-in-april-smm-analysis",
+        "source": "news.metal.com",
+        "published_date": "2025-05-06T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20250509_003_b34f7b14",
+        "title": "Beyond Base Price: Hedging Regional Aluminum Premiums in a Volatile World - CME Group",
+        "url": "https://www.cmegroup.com/articles/2025/aluminum-premiums-2025.html",
+        "source": "cmegroup.com",
+        "published_date": "2025-05-09T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20250404_002_9387e7f6",
+        "title": "Commodity prices drop in response to tariffs - marketplace.org",
+        "url": "https://www.marketplace.org/story/2025/04/04/commodities-prices-drop-in-response-to-tariffs",
+        "source": "marketplace.org",
+        "published_date": "2025-04-04T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20250514_002_9cfe7243",
+        "title": "Asia Pacific Aluminum Extrusion Market Size, Share & Trends, 2033 - Market Data Forecast",
+        "url": "https://www.marketdataforecast.com/market-reports/asia-pacific-aluminum-extrusion-market",
+        "source": "marketdataforecast.com",
+        "published_date": "2025-05-14T03:34:20+00:00"
+      },
+      {
+        "id": "art_finance_20250401_003_f0f73688",
+        "title": "Enhancing supply chain resilience in a new era of policy - Deloitte",
+        "url": "https://www.deloitte.com/us/en/insights/industry/manufacturing/managing-supply-chains-amid-tariffs.html",
+        "source": "deloitte.com",
+        "published_date": "2025-04-01T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20250409_004_d11f5138",
+        "title": "Trump’s Tariffs Are Harming US Critical Mineral Supply Chains - Tech Policy Press",
+        "url": "https://techpolicy.press/trumps-tariffs-are-harming-us-critical-mineral-supply-chains",
+        "source": "techpolicy.press",
+        "published_date": "2025-04-09T11:45:04.133000+00:00"
+      },
+      {
+        "id": "art_finance_20250507_005_4e9ec73a",
+        "title": "Aluminum Market Report 2025 | Demand for Secondary Aluminum on the Rise: Anticipating a Higher Growth Rate Through 2035 - Yahoo Finance UK",
+        "url": "https://uk.finance.yahoo.com/news/aluminum-market-report-2025-demand-142000708.html",
+        "source": "uk.finance.yahoo.com",
+        "published_date": "2025-05-07T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20250429_006_ba734dc5",
+        "title": "US Precious Metals Reviews and Complaints 2025 Analysis Released - Newswire.com",
+        "url": "https://www.newswire.com/news/us-precious-metals-reviews-and-complaints-2025-analysis-released",
+        "source": "newswire.com",
+        "published_date": "2025-04-29T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20250407_002_f2de929d",
+        "title": "Stainless steel price forecast 2025 – global & regional market analysis (Asia, Europe, US) - Fastmarkets",
+        "url": "https://www.fastmarkets.com/insights/stainless-steel-price-forecast-2025-global-regional-market-analysis-asia-europe-us",
+        "source": "fastmarkets.com",
+        "published_date": "2025-04-07T14:20:04+00:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_45c44076dc48",
+      "events_count": 8,
+      "hypotheses_count": 7
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 3,
+      "avg_depth": 2.5,
+      "quality_score": 0.91,
+      "depth_score": 1.0,
+      "confidence_score": 0.87,
+      "strength_score": 0.73,
+      "evidence_score": 1.0,
+      "event_count": 8,
+      "hypothesis_count": 7
+    },
+    "nodes": [
+      {
+        "id": "evt_45c44076dc48",
+        "title": "No - As of 2025-04-01, will the monthly aluminum-price ",
+        "description": "Negative resolution: As of 2025-04-01, will the monthly aluminum-price return for Global aluminum price in 2025-04 be at least 0.521 percent?",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-05-15T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_global_aluminum_monthly_return_2025_04",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "negative_resolution",
+        "outcome_option_index": null,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T20:02:54.767435Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_business_20250401_006_003c1658",
+        "title": "Deloitte Publishes Article on Supply Chain Resilience",
+        "description": "Deloitte publishes an article discussing enhancing supply chain resilience in a new era of policy, highlighting the impact of tariffs on manufacturing and supply chains.",
+        "event_type": "indicator",
+        "domain": "business",
+        "tags": [],
+        "occurred_date": "2025-04-01T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250401_003_f0f73688"
+        ],
+        "extracted_for_question_id": "v3_global_aluminum_monthly_return_2025_04",
+        "source_article_id": "art_finance_20250401_003_f0f73688",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_global_aluminum_monthly_return_2025_04"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:14:36.223266Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_c23af7d686fe",
+        "title": "Yes - As of 2025-04-01, will the monthly aluminum-price ",
+        "description": "Positive resolution: As of 2025-04-01, will the monthly aluminum-price return for Global aluminum price in 2025-04 be at least 0.521 percent?",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-05-15T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_global_aluminum_monthly_return_2025_04",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "positive_resolution",
+        "outcome_option_index": null,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T20:02:54.767423Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20250404_002_30d93628",
+        "title": "Global Commodity Prices Drop due to Tariffs",
+        "description": "Commodity prices, including crude oil, copper, and soybeans, drop in response to the newly announced tariffs, indicating pessimism about the global economy.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-04-04T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250404_002_9387e7f6"
+        ],
+        "extracted_for_question_id": "v3_global_aluminum_monthly_return_2025_04",
+        "source_article_id": "art_finance_20250404_002_9387e7f6",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_global_aluminum_monthly_return_2025_04"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:14:36.087790Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20250425_005_dbf5d753",
+        "title": "Surge in Aluminum Premiums Hedging Activity",
+        "description": "Aluminum premiums hedging activity surge, reaching a new open interest record of 73,153 contracts, reflecting increased market volatility and risk management.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-04-25T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250509_003_b34f7b14"
+        ],
+        "extracted_for_question_id": "v3_global_aluminum_monthly_return_2025_04",
+        "source_article_id": "art_finance_20250509_003_b34f7b14",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_global_aluminum_monthly_return_2025_04"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:14:36.197360Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20250426_003_5a92a56b",
+        "title": "Significant Pullback in Alumina Prices",
+        "description": "The monthly average SMM Alumina Index for March 26-April 25 drops by 10.62% MoM, directly contributing to a decrease in aluminum production costs.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-04-26T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250506_002_6e706008"
+        ],
+        "extracted_for_question_id": "v3_global_aluminum_monthly_return_2025_04",
+        "source_article_id": "art_finance_20250506_002_6e706008",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_global_aluminum_monthly_return_2025_04"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:14:36.124953Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20250430_004_033b6352",
+        "title": "Cost of China's Aluminum Industry Decreases",
+        "description": "The average tax-inclusive full cost of China's aluminum industry decreased by 3.7% month-on-month in April, driven by the drop in the SMM Alumina Index.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2025-04-30T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250506_002_6e706008"
+        ],
+        "extracted_for_question_id": "v3_global_aluminum_monthly_return_2025_04",
+        "source_article_id": "art_finance_20250506_002_6e706008",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_global_aluminum_monthly_return_2025_04"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:14:36.161255Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_politics_20250402_001_fe79ae5f",
+        "title": "Trump Administration Announces New Tariffs",
+        "description": "President Donald Trump's administration announces new tariffs or tariff threats on various goods, impacting commodity prices.",
+        "event_type": "indicator",
+        "domain": "politics",
+        "tags": [],
+        "occurred_date": "2025-04-02T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250404_002_9387e7f6",
+          "art_finance_20250409_004_d11f5138"
+        ],
+        "extracted_for_question_id": "v3_global_aluminum_monthly_return_2025_04",
+        "source_article_id": "art_finance_20250404_002_9387e7f6",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_global_aluminum_monthly_return_2025_04"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:14:36.049525Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_politics_20250409_007_8efcce4c",
+        "title": "Trump’s Tariffs Harming US Critical Mineral Supply Chains",
+        "description": "An article highlights how Trump’s tariffs are harming US critical mineral supply chains, leading to concerns about increased costs and disruptions.",
+        "event_type": "indicator",
+        "domain": "politics",
+        "tags": [],
+        "occurred_date": "2025-04-09T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20250409_004_d11f5138"
+        ],
+        "extracted_for_question_id": "v3_global_aluminum_monthly_return_2025_04",
+        "source_article_id": "art_finance_20250409_004_d11f5138",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_global_aluminum_monthly_return_2025_04"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T06:14:36.248496Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_global_aluminum_monthly_return_2025_04_20260725_061436_001_d37b8c72",
+        "source_event_id": "evt_politics_20250402_001_fe79ae5f",
+        "target_event_id": "evt_finance_20250404_002_30d93628",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The announcement of new tariffs directly led to a drop in global commodity prices due to economic pessimism.",
+        "evidence_article_ids": [
+          "art_finance_20250404_002_9387e7f6"
+        ],
+        "discovered_by_question_ids": [
+          "v3_global_aluminum_monthly_return_2025_04"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:14:36.389979Z",
+        "last_confirmed_at": "2026-07-25T06:14:36.389979Z"
+      },
+      {
+        "id": "hyp_v3_global_aluminum_monthly_return_2025_04_20260725_061436_002_61e13b8c",
+        "source_event_id": "evt_politics_20250402_001_fe79ae5f",
+        "target_event_id": "evt_politics_20250409_007_8efcce4c",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.85,
+        "time_lag_hours": null,
+        "reasoning": "Trump's tariffs were highlighted as harming US critical mineral supply chains.",
+        "evidence_article_ids": [
+          "art_finance_20250409_004_d11f5138"
+        ],
+        "discovered_by_question_ids": [
+          "v3_global_aluminum_monthly_return_2025_04"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:14:36.407089Z",
+        "last_confirmed_at": "2026-07-25T06:14:36.407089Z"
+      },
+      {
+        "id": "hyp_v3_global_aluminum_monthly_return_2025_04_20260725_061436_003_15e40e09",
+        "source_event_id": "evt_finance_20250404_002_30d93628",
+        "target_event_id": "evt_finance_20250425_005_dbf5d753",
+        "relation_type": "correlates",
+        "strength": 0.6,
+        "confidence": 0.75,
+        "time_lag_hours": null,
+        "reasoning": "The widespread fall in commodity prices indicated a pessimistic outlook, leading to increased hedging activity in aluminum premiums.",
+        "evidence_article_ids": [
+          "art_finance_20250509_003_b34f7b14",
+          "art_finance_20250404_002_9387e7f6"
+        ],
+        "discovered_by_question_ids": [
+          "v3_global_aluminum_monthly_return_2025_04"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:14:36.424659Z",
+        "last_confirmed_at": "2026-07-25T06:14:36.424659Z"
+      },
+      {
+        "id": "hyp_v3_global_aluminum_monthly_return_2025_04_20260725_061436_004_c4b3f22a",
+        "source_event_id": "evt_finance_20250426_003_5a92a56b",
+        "target_event_id": "evt_finance_20250430_004_033b6352",
+        "relation_type": "causes",
+        "strength": 0.9,
+        "confidence": 1.0,
+        "time_lag_hours": null,
+        "reasoning": "The significant drop in alumina prices directly led to a decrease in the cost of China's aluminum industry.",
+        "evidence_article_ids": [
+          "art_finance_20250506_002_6e706008"
+        ],
+        "discovered_by_question_ids": [
+          "v3_global_aluminum_monthly_return_2025_04"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:14:36.442165Z",
+        "last_confirmed_at": "2026-07-25T06:14:36.442165Z"
+      },
+      {
+        "id": "hyp_v3_global_aluminum_monthly_return_2025_04_20260725_061436_005_734872e7",
+        "source_event_id": "evt_finance_20250404_002_30d93628",
+        "target_event_id": "evt_45c44076dc48",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Reduced demand and economic concerns from dropping commodity prices directly influenced aluminum prices downwards, contributing to the outcome.",
+        "evidence_article_ids": [
+          "art_finance_20250404_002_9387e7f6"
+        ],
+        "discovered_by_question_ids": [
+          "v3_global_aluminum_monthly_return_2025_04"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:14:36.460016Z",
+        "last_confirmed_at": "2026-07-25T06:14:36.460016Z"
+      },
+      {
+        "id": "hyp_v3_global_aluminum_monthly_return_2025_04_20260725_061436_006_7a88bc2e",
+        "source_event_id": "evt_finance_20250430_004_033b6352",
+        "target_event_id": "evt_45c44076dc48",
+        "relation_type": "causes",
+        "strength": 0.9,
+        "confidence": 1.0,
+        "time_lag_hours": null,
+        "reasoning": "A decrease in production costs for a major aluminum producer like China directly impacts global benchmarks and contributes to lower selling prices, leading to the outcome.",
+        "evidence_article_ids": [
+          "art_finance_20250506_002_6e706008"
+        ],
+        "discovered_by_question_ids": [
+          "v3_global_aluminum_monthly_return_2025_04"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:14:36.477381Z",
+        "last_confirmed_at": "2026-07-25T06:14:36.477381Z"
+      },
+      {
+        "id": "hyp_v3_global_aluminum_monthly_return_2025_04_20260725_061436_007_2a43746e",
+        "source_event_id": "evt_business_20250401_006_003c1658",
+        "target_event_id": "evt_politics_20250402_001_fe79ae5f",
+        "relation_type": "correlates",
+        "strength": 0.4,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Deloitte's article discusses the impact of tariffs on supply chains, indicating a correlation with the tariff announcements.",
+        "evidence_article_ids": [
+          "art_finance_20250401_003_f0f73688"
+        ],
+        "discovered_by_question_ids": [
+          "v3_global_aluminum_monthly_return_2025_04"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T06:14:36.496990Z",
+        "last_confirmed_at": "2026-07-25T06:14:36.496990Z"
+      }
+    ],
+    "outcome_impacts": [
+      {
+        "id": "imp_56a30d68",
+        "event_id": "evt_politics_20250402_001_fe79ae5f",
+        "outcome_event_id": "evt_45c44076dc48",
+        "question_id": "v3_global_aluminum_monthly_return_2025_04",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "Trump's tariffs triggered economic pessimism and volatility, suppressing aluminum prices.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_global_aluminum_monthly_return_2025_04"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:14:44.781809Z",
+        "last_confirmed_at": "2026-07-25T06:14:44.781809Z"
+      },
+      {
+        "id": "imp_28e39f29",
+        "event_id": "evt_finance_20250404_002_30d93628",
+        "outcome_event_id": "evt_45c44076dc48",
+        "question_id": "v3_global_aluminum_monthly_return_2025_04",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.85,
+        "confidence": 0.95,
+        "reasoning": "The drop in commodity prices indicated reduced demand and economic concerns, directly influencing aluminum prices downwards.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_global_aluminum_monthly_return_2025_04"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:14:44.794058Z",
+        "last_confirmed_at": "2026-07-25T06:14:44.794058Z"
+      },
+      {
+        "id": "imp_5a7fab75",
+        "event_id": "evt_finance_20250426_003_5a92a56b",
+        "outcome_event_id": "evt_45c44076dc48",
+        "question_id": "v3_global_aluminum_monthly_return_2025_04",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.9,
+        "confidence": 1.0,
+        "reasoning": "Significant pullback in alumina prices directly reduced aluminum production costs, leading to lower selling prices.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_global_aluminum_monthly_return_2025_04"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:14:44.803945Z",
+        "last_confirmed_at": "2026-07-25T06:14:44.803945Z"
+      },
+      {
+        "id": "imp_5db133ac",
+        "event_id": "evt_finance_20250430_004_033b6352",
+        "outcome_event_id": "evt_45c44076dc48",
+        "question_id": "v3_global_aluminum_monthly_return_2025_04",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.9,
+        "confidence": 1.0,
+        "reasoning": "Decreased production costs for China's aluminum industry directly contributed to lower global aluminum prices.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_global_aluminum_monthly_return_2025_04"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:14:44.813978Z",
+        "last_confirmed_at": "2026-07-25T06:14:44.813978Z"
+      },
+      {
+        "id": "imp_34dd301b",
+        "event_id": "evt_finance_20250425_005_dbf5d753",
+        "outcome_event_id": "evt_45c44076dc48",
+        "question_id": "v3_global_aluminum_monthly_return_2025_04",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.6,
+        "confidence": 0.75,
+        "reasoning": "Increased hedging activity signals market volatility and risk, suggesting anticipation of price fluctuations rather than an upward trend.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_global_aluminum_monthly_return_2025_04"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:14:44.825671Z",
+        "last_confirmed_at": "2026-07-25T06:14:44.825671Z"
+      },
+      {
+        "id": "imp_20472cb6",
+        "event_id": "evt_politics_20250409_007_8efcce4c",
+        "outcome_event_id": "evt_45c44076dc48",
+        "question_id": "v3_global_aluminum_monthly_return_2025_04",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.7,
+        "confidence": 0.85,
+        "reasoning": "Tariffs harming US critical mineral supply chains created uncertainty and increased costs, negatively impacting the broader metals market.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_global_aluminum_monthly_return_2025_04"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:14:44.835694Z",
+        "last_confirmed_at": "2026-07-25T06:14:44.835694Z"
+      },
+      {
+        "id": "imp_7a94105e",
+        "event_id": "evt_finance_20250507_009_a1859137",
+        "outcome_event_id": "evt_45c44076dc48",
+        "question_id": "v3_global_aluminum_monthly_return_2025_04",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.3,
+        "confidence": 0.8,
+        "reasoning": "Long-term growth projections for the aluminum market could have theoretically supported prices, but were overwhelmed by immediate negative factors.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_global_aluminum_monthly_return_2025_04"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:14:44.847056Z",
+        "last_confirmed_at": "2026-07-25T06:14:44.847056Z"
+      },
+      {
+        "id": "imp_e5819c1d",
+        "event_id": "evt_finance_20250507_010_9609545d",
+        "outcome_event_id": "evt_45c44076dc48",
+        "question_id": "v3_global_aluminum_monthly_return_2025_04",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.2,
+        "confidence": 0.8,
+        "reasoning": "Increased demand for secondary aluminum indicates a positive trend for certain segments, but was not enough to offset the overall price decline.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_global_aluminum_monthly_return_2025_04"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:14:44.857500Z",
+        "last_confirmed_at": "2026-07-25T06:14:44.857500Z"
+      },
+      {
+        "id": "imp_4d9d3154",
+        "event_id": "evt_business_20250401_006_003c1658",
+        "outcome_event_id": "evt_45c44076dc48",
+        "question_id": "v3_global_aluminum_monthly_return_2025_04",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.1,
+        "confidence": 0.6,
+        "reasoning": "Deloitte's discussion on supply chain resilience is a general indicator and its direct impact on April 2025 aluminum prices is indirect and weak.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_global_aluminum_monthly_return_2025_04"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:14:44.867564Z",
+        "last_confirmed_at": "2026-07-25T06:14:44.867564Z"
+      },
+      {
+        "id": "imp_e100adef",
+        "event_id": "evt_finance_20250507_008_9b52cf26",
+        "outcome_event_id": "evt_45c44076dc48",
+        "question_id": "v3_global_aluminum_monthly_return_2025_04",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.1,
+        "confidence": 0.7,
+        "reasoning": "The market report itself is an indicator of market sentiment and projections, not a direct causal event impacting the April 2025 price return.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_global_aluminum_monthly_return_2025_04"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T06:14:44.877947Z",
+        "last_confirmed_at": "2026-07-25T06:14:44.877947Z"
+      }
+    ]
+  }
+}

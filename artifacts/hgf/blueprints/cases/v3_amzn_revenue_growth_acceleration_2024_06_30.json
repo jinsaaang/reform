@@ -1,0 +1,401 @@
+{
+  "schema_version": "hgf_blueprint_topology_v2",
+  "question_id": "v3_amzn_revenue_growth_acceleration_2024_06_30",
+  "target_definition": {
+    "metric": "quarterly revenue year-over-year growth acceleration",
+    "unit_or_option_space": [
+      "below recent range",
+      "within recent range",
+      "above recent range"
+    ],
+    "forecast_horizon": "Remap the historical target family to the current question's exact target period."
+  },
+  "graph_diagnosis": {
+    "usable": true,
+    "summary": "Outcome-redacted topology preserves 5 checkpoints, 5 source edges, and 3 root-to-target paths.",
+    "weaknesses": []
+  },
+  "search_factors": [
+    {
+      "factor": "Consumer Caution and 'Trading Down' to Lower ASP Products",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240630_020_3b5cb405"
+      ]
+    },
+    {
+      "factor": "Miss in Advertising Revenue Expectations",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240630_021_670d28ca"
+      ]
+    },
+    {
+      "factor": "Lower Revenue in Online Stores Segment",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240630_023_f61ecb2d"
+      ]
+    },
+    {
+      "factor": "Robust AWS Growth Driven by AI Investments",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_tech_20240630_022_32caca89"
+      ]
+    },
+    {
+      "factor": "Weaker-than-Expected Overall Revenue for [CURRENT_PERIOD_REQUIRED]",
+      "why_search": "This factor occupies a preserved position in a validated historical path; verify both the factor and its next edge.",
+      "preferred_source_types": [
+        "official release",
+        "dated independent reporting"
+      ],
+      "source_event_ids": [
+        "evt_finance_20240801_024_c7d9eccf"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "checkpoint_1",
+      "role": "driver",
+      "factor": "Consumer Caution and 'Trading Down' to Lower ASP Products",
+      "mechanism": "Cautious consumer spending directly led to lower average selling prices and slower growth in the online stores segment.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240630_020_3b5cb405"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_amzn_revenue_growth_acceleration_2024_06_30_20260724_185304_013_5b4eaf2e"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_2",
+      "role": "driver",
+      "factor": "Miss in Advertising Revenue Expectations",
+      "mechanism": "The miss in advertising revenue expectations contributed to the overall revenue shortfall for [CURRENT_PERIOD_REQUIRED].",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240630_021_670d28ca"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_amzn_revenue_growth_acceleration_2024_06_30_20260724_185304_015_bffdf56f"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_3",
+      "role": "mediator",
+      "factor": "Lower Revenue in Online Stores Segment",
+      "mechanism": "Lower revenue in the online stores segment was a major contributor to the weaker-than-expected overall [CURRENT_PERIOD_REQUIRED] revenue.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240630_023_f61ecb2d"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_amzn_revenue_growth_acceleration_2024_06_30_20260724_185304_014_957d038f"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_4",
+      "role": "counterevidence",
+      "factor": "Robust AWS Growth Driven by AI Investments",
+      "mechanism": "Robust AWS growth partially mitigated the overall revenue decline, preventing an even weaker [CURRENT_PERIOD_REQUIRED] revenue outcome.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_tech_20240630_022_32caca89"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_amzn_revenue_growth_acceleration_2024_06_30_20260724_185304_020_51129a87"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "checkpoint_5",
+      "role": "mediator",
+      "factor": "Weaker-than-Expected Overall Revenue for [CURRENT_PERIOD_REQUIRED]",
+      "mechanism": "Re-test whether this factor has a currently supported link to the exact target metric; do not transfer the historical outcome or magnitude.",
+      "expected_direction": "unknown",
+      "evidence_requirement": "Current cutoff-safe evidence must directly measure this factor and support every retained outgoing relationship.",
+      "contradiction_signal": "Current evidence contradicts the factor, reverses an outgoing relationship, or leaves a required link unknown.",
+      "historical_support": "weak",
+      "source_event_ids": [
+        "evt_finance_20240801_024_c7d9eccf"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_amzn_revenue_growth_acceleration_2024_06_30_20260724_185315_022_d7933b6e"
+      ],
+      "source_event_type": "indicator"
+    },
+    {
+      "id": "target_bridge",
+      "role": "target_bridge",
+      "factor": "quarterly revenue year-over-year growth acceleration",
+      "mechanism": "Map only currently supported paths into the exact target operator. Directional support alone is not magnitude or threshold-crossing support.",
+      "expected_direction": "mixed",
+      "evidence_requirement": "A current target baseline and evidence supporting every edge used in the bridge.",
+      "contradiction_signal": "The current target baseline, magnitude evidence, or option boundary contradicts the proposed path.",
+      "historical_support": "medium",
+      "source_event_ids": [],
+      "source_edge_ids": [
+        "hyp_v3_amzn_revenue_growth_acceleration_2024_06_30_20260724_185315_022_d7933b6e"
+      ],
+      "source_event_type": "target_bridge"
+    }
+  ],
+  "topology": {
+    "checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_3",
+      "checkpoint_4",
+      "checkpoint_5",
+      "target_bridge"
+    ],
+    "root_checkpoint_ids": [
+      "checkpoint_1",
+      "checkpoint_2",
+      "checkpoint_4"
+    ],
+    "target_bridge_id": "target_bridge",
+    "edges": [
+      {
+        "source_checkpoint_id": "checkpoint_1",
+        "target_checkpoint_id": "checkpoint_3",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Cautious consumer spending directly led to lower average selling prices and slower growth in the online stores segment.",
+        "source_edge_ids": [
+          "hyp_v3_amzn_revenue_growth_acceleration_2024_06_30_20260724_185304_013_5b4eaf2e"
+        ],
+        "source_article_ids": [
+          "art_finance_20240801_004_9b8aa32f",
+          "art_finance_20240801_002_0454806e"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_3",
+        "target_checkpoint_id": "checkpoint_5",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Lower revenue in the online stores segment was a major contributor to the weaker-than-expected overall [CURRENT_PERIOD_REQUIRED] revenue.",
+        "source_edge_ids": [
+          "hyp_v3_amzn_revenue_growth_acceleration_2024_06_30_20260724_185304_014_957d038f"
+        ],
+        "source_article_ids": [
+          "art_finance_20240801_004_9b8aa32f",
+          "art_finance_20240801_002_0454806e"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_2",
+        "target_checkpoint_id": "checkpoint_5",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "The miss in advertising revenue expectations contributed to the overall revenue shortfall for [CURRENT_PERIOD_REQUIRED].",
+        "source_edge_ids": [
+          "hyp_v3_amzn_revenue_growth_acceleration_2024_06_30_20260724_185304_015_bffdf56f"
+        ],
+        "source_article_ids": [
+          "art_finance_20240801_002_0454806e",
+          "art_finance_20240802_013_8791da8e"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_4",
+        "target_checkpoint_id": "checkpoint_5",
+        "relationship": "inhibits",
+        "directionality": "counteracting",
+        "support_level": "",
+        "rationale": "Robust AWS growth partially mitigated the overall revenue decline, preventing an even weaker [CURRENT_PERIOD_REQUIRED] revenue outcome.",
+        "source_edge_ids": [
+          "hyp_v3_amzn_revenue_growth_acceleration_2024_06_30_20260724_185304_020_51129a87"
+        ],
+        "source_article_ids": [
+          "art_finance_20240801_004_9b8aa32f",
+          "art_finance_20240801_002_0454806e"
+        ],
+        "terminal_to_target_bridge": false
+      },
+      {
+        "source_checkpoint_id": "checkpoint_5",
+        "target_checkpoint_id": "target_bridge",
+        "relationship": "causes",
+        "directionality": "forward",
+        "support_level": "",
+        "rationale": "Historical DAG connected this factor to the redacted target measurement; the realized value and outcome mapping are omitted.",
+        "source_edge_ids": [
+          "hyp_v3_amzn_revenue_growth_acceleration_2024_06_30_20260724_185315_022_d7933b6e"
+        ],
+        "source_article_ids": [
+          "art_finance_20240801_004_9b8aa32f",
+          "art_finance_20240801_002_0454806e"
+        ],
+        "terminal_to_target_bridge": true
+      }
+    ],
+    "paths_truncated": false
+  },
+  "causal_paths": [
+    {
+      "checkpoint_ids": [
+        "checkpoint_1",
+        "checkpoint_3",
+        "checkpoint_5",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_amzn_revenue_growth_acceleration_2024_06_30_20260724_185304_013_5b4eaf2e",
+        "hyp_v3_amzn_revenue_growth_acceleration_2024_06_30_20260724_185304_014_957d038f",
+        "hyp_v3_amzn_revenue_growth_acceleration_2024_06_30_20260724_185315_022_d7933b6e"
+      ],
+      "relationships": [
+        "causes",
+        "causes",
+        "causes"
+      ],
+      "path_role": "main_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Consumer Caution and 'Trading Down' to Lower ASP Products to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_2",
+        "checkpoint_5",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_amzn_revenue_growth_acceleration_2024_06_30_20260724_185304_015_bffdf56f",
+        "hyp_v3_amzn_revenue_growth_acceleration_2024_06_30_20260724_185315_022_d7933b6e"
+      ],
+      "relationships": [
+        "causes",
+        "causes"
+      ],
+      "path_role": "supporting_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Miss in Advertising Revenue Expectations to the current target; every edge requires current support.",
+      "expected_direction": "unknown",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    },
+    {
+      "checkpoint_ids": [
+        "checkpoint_4",
+        "checkpoint_5",
+        "target_bridge"
+      ],
+      "source_edge_ids": [
+        "hyp_v3_amzn_revenue_growth_acceleration_2024_06_30_20260724_185304_020_51129a87",
+        "hyp_v3_amzn_revenue_growth_acceleration_2024_06_30_20260724_185315_022_d7933b6e"
+      ],
+      "relationships": [
+        "inhibits",
+        "causes"
+      ],
+      "path_role": "counter_path",
+      "generalized_mechanism": "Re-test the preserved relationship chain from Robust AWS Growth Driven by AI Investments to the current target; every edge requires current support.",
+      "expected_direction": "mixed",
+      "applicability_conditions": [
+        "Every retained relationship is active in the current case.",
+        "Current cutoff-safe evidence supports each intermediate link."
+      ],
+      "failure_conditions": [
+        "Any retained relationship is contradicted or unknown.",
+        "A stronger current mechanism bypasses or dominates this path."
+      ]
+    }
+  ],
+  "alternative_hypotheses": [
+    {
+      "hypothesis": "Robust AWS Growth Driven by AI Investments dominates or reverses the leading current path.",
+      "discriminating_evidence": "Compare current evidence for this counter-path with every edge on the leading supported path.",
+      "source_event_ids": [
+        "evt_tech_20240630_022_32caca89"
+      ]
+    }
+  ],
+  "forecast_audit_questions": [
+    "Does every used checkpoint transition correspond to a preserved edge?",
+    "Which preserved edges are supported, contradicted, or unknown now?",
+    "Does a counter-path dominate the leading supported path?",
+    "Is there evidence for magnitude and boundary crossing, not direction alone?"
+  ],
+  "refinement_metadata": {
+    "model": "deterministic_topology_compiler_v2",
+    "source_graph": "data\\dags\\v3_amzn_revenue_growth_acceleration_2024_06_30\\graph.json",
+    "source_audit_status": "pass",
+    "outcome_nodes_redacted": 3,
+    "target_value_anchors_redacted": 0,
+    "historical_specifics_sanitized": true,
+    "sanitizer": "minimal_value_period_placeholders_v1",
+    "value_replacement_count": 0,
+    "period_replacement_count": 8
+  },
+  "topology_validation": {
+    "status": "pass",
+    "errors": [],
+    "metrics": {
+      "retained_checkpoint_count": 5,
+      "source_edge_count": 5,
+      "emitted_edge_count": 5,
+      "edge_coverage": 1.0,
+      "path_precision": 1.0,
+      "causal_path_count": 3,
+      "outcome_event_leak_count": 0,
+      "outcome_text_leak_count": 0,
+      "realized_value_count": 0,
+      "absolute_period_count": 0
+    }
+  }
+}

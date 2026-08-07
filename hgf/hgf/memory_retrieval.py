@@ -292,7 +292,7 @@ def compile_factor_memory_cards(
     )[:max_factors]
     return json.dumps(
         {
-            "view": "factor_memory_cards",
+            "view": "hgf_search_cards",
             "instructions": (
                 "Use these as query-expansion and coverage hints only. The target "
                 "question remains the search anchor; no historical outcome or edge "

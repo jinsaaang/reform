@@ -1,0 +1,1160 @@
+{
+  "question": {
+    "id": "v3_tsla_revenue_growth_acceleration_2023_03_31",
+    "question_text": "As of 2023-03-31, which range will Tesla, Inc.'s quarterly year-over-year revenue-growth acceleration for the fiscal quarter ending 2023-03-31 fall into?",
+    "question_type": "mcq",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 4,
+    "resolution_date": "2023-04-24T23:59:59Z",
+    "estimated_start_time": "2023-03-31T00:00:00Z",
+    "ground_truth": "within recent range",
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [
+      "evt_9bf094bbfbd4",
+      "evt_b3313628aad8",
+      "evt_eeedec335a3f"
+    ],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: Tesla, Inc. (TSLA)\nTarget period: fiscal quarter ending 2023-03-31\nFinancial area: corporate_earnings / automotive\nRegion: US\nPre-registered growth-acceleration boundaries: lower -23.76, upper 14.66 percentage points.",
+    "resolution_criteria": "Use the issuer's first SEC 10-Q or 10-K containing the target quarter. Compute the change in YoY revenue growth from the prior quarter. Resolve 'below recent range' below -23.76, 'within recent range' from -23.76 inclusive to 14.66 exclusive, and 'above recent range' at or above 14.66 percentage points.",
+    "resolution_reasoning": "The snapshotted target-quarter YoY revenue growth was 24.38 percent and growth acceleration was -12.86 percentage points; it resolved to 'within recent range'.",
+    "options": [
+      "below recent range",
+      "within recent range",
+      "above recent range"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": "\n## Executive Summary\nTesla's Q1 2023 revenue growth acceleration fell within its recent range due to a combination of strong revenue growth driven by increased vehicle deliveries and aggressive price cuts, partially offset by declining profit margins. While revenue increased year-over-year, the rate of increase was tempered by these price reductions, which boosted sales volumes but impacted profitability. The market had widely anticipated these trends, leading to an outcome that aligned with recent performance metrics rather than a significant acceleration or deceleration.\n\n## Timeline Of Key Events\n- **2023-02-19:** Elon Musk's price cuts at Tesla are working to bolster demand, setting a precedent for Q1 performance. [art_finance_20230219_002_0a70dba6]\n- **2023-04-02:** BYD's EV sales grew 2.5 times faster than Tesla in the latest quarter, indicating increasing competition in the EV market. [art_finance_20230402_004_2105945e]\n- **2023-04-03:** Tesla built more cars than it could sell in Q1 2023, suggesting that production outpaced demand at the initial pricing. [art_finance_20230403_005_e4f98aac]\n- **2023-04-03:** Elon Musk's price cuts at Tesla are helping to bolster demand in Q1 deliveries, impacting overall revenue growth dynamics. [art_finance_20230403_002_319bd4a0]\n- **2023-04-12:** Q1 Electric Vehicle Sales Surpass 250,000 in the U.S., with market share jumping to 7.2%, indicating a growing overall EV market that Tesla is part of. [art_finance_20230412_003_15382cdc]\n- **2023-04-19:** Tesla (TSLA) Q1 2023 earnings preview sets expectations for the financial results. [art_finance_20230419_008_de1878fe]\n- **2023-04-19:** Tesla releases its First Quarter 2023 Financial Results. [art_finance_20230419_006_618b6d07]\n- **2023-04-19:** Tesla's Q1 revenue sees year-over-year increase, while profits dropped due to price cuts. [art_finance_20230419_004_cc01fc09]\n- **2023-04-20:** Tesla's Q1 2023 Earnings Show Lower Margins Amid Aggressive Price Cuts. Revenue grew but profit fell. [art_finance_20230420_003_1092d25a]\n- **2023-04-20:** Tesla posts 24% revenue growth in 1st quarter. [art_finance_20230420_005_bdd4eea2]\n\n## Causal Chain Analysis\nThe outcome of Tesla's Q1 2023 year-over-year revenue-growth acceleration falling \"within recent range\" was primarily caused by aggressive price cuts implemented by Tesla [art_finance_20230403_002_319bd4a0]. These price cuts served as an intermediate mechanism, boosting vehicle deliveries and increasing overall revenue [art_finance_20230419_004_cc01fc09, art_finance_20230420_005_bdd4eea2]. However, the same price cuts also resulted in declining profit margins [art_finance_20230420_003_1092d25a], which acted as a countervailing force, preventing a more significant acceleration in revenue growth. The proximate trigger was the release of the Q1 2023 financial results on April 19, 2023 [art_finance_20230419_006_618b6d07], which confirmed both the revenue growth and the margin compression, leading to the outcome being within the expected recent range of performance.\n\n## Countervailing Factors\nThe most significant countervailing factor was Tesla's aggressive price cuts [art_finance_20230403_002_319bd4a0]. While these cuts successfully boosted demand and vehicle deliveries, hence increasing top-line revenue, they simultaneously led to a decrease in profit margins [art_finance_20230420_003_1092d25a]. This reduction in profitability prevented the revenue growth acceleration from reaching the \"above recent range\" option, effectively keeping it \"within recent range.\" Another factor was the increasing competition in the EV market, with companies like BYD growing sales faster than Tesla [art_finance_20230402_004_2105945e], which put pressure on Tesla's market share and could have limited its revenue acceleration.\n\n## Event Candidate Inventory\n- **E1: Tesla Implements Aggressive Price Cuts**\n    - Date: February 2023 (initiated prior to Q1 earnings report)\n    - Why it matters causally: Directly influenced demand and sales volumes for Q1, driving revenue growth while impacting margins.\n    - Source article IDs: [art_finance_20230219_002_0a70dba6, art_finance_20230403_002_319bd4a0]\n- **E2: Q1 2023 Vehicle Deliveries Increase**\n    - Date: Early April 2023 (reporting on Q1 performance)\n    - Why it matters causally: Higher deliveries contributed directly to increased revenue.\n    - Source article IDs: [art_finance_20230403_002_319bd4a0]\n- **E3: Profit Margins Decline**\n    - Date: April 19-20, 2023 (reported with Q1 earnings)\n    - Why it matters causally: Offset the positive impact of increased deliveries on revenue growth acceleration, keeping it within range.\n    - Source article IDs: [art_finance_20230419_004_cc01fc09, art_finance_20230420_003_1092d25a]\n- **E4: Tesla Releases Q1 2023 Financial Results**\n    - Date: 2023-04-19\n    - Why it matters causally: Official confirmation of revenue growth and margin performance, solidifying the market's understanding of the acceleration.\n    - Source article IDs: [art_finance_20230419_006_618b6d07, art_finance_20230419_008_de1878fe]\n- **E5: Increased EV Market Competition**\n    - Date: Early April 2023 (reporting on Q1 performance)\n    - Why it matters causally: Could have pressured Tesla's market share and overall sales velocity, indirectly affecting revenue acceleration.\n    - Source article IDs: [art_finance_20230402_004_2105945e, art_finance_20230412_003_15382cdc]\n\n## Evidence Mapping Table\n| Claim/Event | Article IDs | Date Support | Confidence (0-1) | Notes |\n|---|---|---|---|---|\n| Tesla's aggressive price cuts | [art_finance_20230219_002_0a70dba6, art_finance_20230403_002_319bd4a0] | 2023-02-19, 2023-04-03 | 1.0 | Directly impacted sales and revenue dynamics. |\n| Q1 2023 Revenue Growth | [art_finance_20230419_004_cc01fc09, art_finance_20230420_005_bdd4eea2] | 2023-04-19, 2023-04-20 | 1.0 | Confirmed by official earnings reports. |\n| Declining Profit Margins | [art_finance_20230419_004_cc01fc09, art_finance_20230420_003_1092d25a] | 2023-04-19, 2023-04-20 | 1.0 | Directly linked to price cuts and confirmed by earnings. |\n| Tesla's Q1 Financial Results Release | [art_finance_20230419_006_618b6d07] | 2023-04-19 | 1.0 | Key event solidifying the outcome. |\n| Tesla built more cars than sold Q1 | [art_finance_20230403_005_e4f98aac] | 2023-04-03 | 0.9 | Indicated potential for higher sales if demand kept pace. |\n| Increased EV Market Competition | [art_finance_20230402_004_2105945e, art_finance_20230412_003_15382cdc] | 2023-04-02, 2023-04-12 | 0.8 | Provided context for the market environment Tesla operated in. |\n\n## Uncertainties And Alternative Paths\nOne uncertainty was the precise magnitude of the impact of the price cuts on customer demand. While articles indicated they were \"working,\" the extent to which they stimulated *new* demand versus pulling forward existing demand is unclear. An alternative causal path could have involved Tesla *not* implementing aggressive price cuts; in this scenario, revenue growth might have been lower due to reduced sales volumes, potentially pushing the revenue-growth acceleration to \"below recent range,\" especially given the increased production and market competition. Conversely, if price cuts had been more effectively balanced to maintain margins while boosting sales, a higher acceleration might have been possible, approaching \"above recent range.\" However, given the actual outcome, the combination of increased volume and reduced margins due to the price strategy resulted in the \"within recent range\" outcome.\n",
+    "graph_built": true,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.200654Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "tsla_revenue_growth_acceleration",
+        "event_cluster_id": "tsla_earnings_2023-03-31",
+        "category": "corporate_earnings",
+        "original_domain": "corporate_earnings",
+        "subdomain": "automotive",
+        "entity": "Tesla, Inc. (TSLA)",
+        "region": "US",
+        "target_metric": "quarterly revenue year-over-year growth acceleration",
+        "target_period": "fiscal quarter ending 2023-03-31",
+        "forecast_cutoff": "2023-03-31T00:00:00+00:00",
+        "forecast_date_options": [
+          "2023-03-31"
+        ],
+        "resolution_available_at": "2023-04-24T23:59:59+00:00",
+        "horizon_days": 24,
+        "source_type": "sec_companyfacts_snapshot",
+        "source_series_id": "CIK0001318605:revenue",
+        "source_homepage": "https://www.sec.gov/edgar/browse/?CIK=1318605",
+        "comparison_rule": "target YoY revenue-growth acceleration bucketed by quartiles of the four prior quarterly accelerations",
+        "comparison_threshold": 37.242508,
+        "comparison_thresholds": {
+          "lower": -23.761592,
+          "upper": 14.657329
+        },
+        "change_unit": "percent",
+        "threshold_observation_dates": [
+          "2021-12-31",
+          "2022-03-31",
+          "2022-12-31"
+        ],
+        "split": "memory",
+        "family_position": 1,
+        "family_size": 8,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "within recent range",
+        "resolved_class": "within recent range",
+        "resolution_value": 23329000000,
+        "target_change": -12.8609768,
+        "target_yoy_growth": 24.38153124,
+        "target_growth_acceleration": -12.8609768,
+        "source_observation_date": "2023-03-31",
+        "resolution_document": {
+          "publisher": "U.S. Securities and Exchange Commission",
+          "title": "Tesla, Inc. 10-Q filed 2023-04-24",
+          "url": "https://www.sec.gov/Archives/edgar/data/1318605/000095017023013890/0000950170-23-013890-index.html"
+        },
+        "source_download_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json",
+        "source_sha256": "28efba410dfdf215eae64346dd6ad37bc51eec0177d0477323651b2a80f01e1a",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00",
+        "accession_number": "0000950170-23-013890",
+        "xbrl_tag": "Revenues"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_b3313628aad8",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 11,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_20230219_002_0a70dba6",
+        "title": "Tesla Stock: Timeline of the EV Maker's Rollercoaster Road to Recovery - markets.businessinsider.com",
+        "url": "https://markets.businessinsider.com/news/stocks/tesla-stock-timeline-elon-musk-twitter-deal-price-cuts-2023-2",
+        "source": "markets.businessinsider.com",
+        "published_date": "2023-02-19T08:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230420_003_1092d25a",
+        "title": "Tesla's Q1 2023 Earnings Show Lower Margins Amid Aggressive Price Cuts - Not a Tesla App",
+        "url": "https://www.notateslaapp.com/news/1359/tesla-s-q1-2023-earnings-show-lower-margins-amid-aggressive-price-cuts",
+        "source": "notateslaapp.com",
+        "published_date": "2023-04-20T01:14:01+00:00"
+      },
+      {
+        "id": "art_finance_20230419_004_cc01fc09",
+        "title": "Tesla's Q1 revenue sees year-over-year increase, while profits dropped - Fox Business",
+        "url": "https://www.foxbusiness.com/markets/tesla-q1-revenue-sees-year-over-year-increase-profits-dropped",
+        "source": "foxbusiness.com",
+        "published_date": "2023-04-19T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230420_005_bdd4eea2",
+        "title": "Tesla posts 24% revenue growth in 1st quarter - Anadolu Ajansı",
+        "url": "https://www.aa.com.tr/en/energy/electricity/tesla-posts-24-revenue-growth-in-1st-quarter/37981",
+        "source": "aa.com.tr",
+        "published_date": "2023-04-20T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230419_006_08784575",
+        "title": "Here’s How Tesla’s Stock Performed After Its Last 10 Earnings Reports - Forbes",
+        "url": "https://www.forbes.com/sites/dereksaul/2023/04/19/heres-how-teslas-stock-performed-after-its-last-10-earnings-reports",
+        "source": "forbes.com",
+        "published_date": "2023-04-19T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230419_008_de1878fe",
+        "title": "Tesla (TSLA) Q1 2023 earnings preview: What to expect today - Electrek",
+        "url": "https://electrek.co/2023/04/19/tesla-tsla-q1-2023-earnings-preview",
+        "source": "electrek.co",
+        "published_date": "2023-04-19T12:11:23+00:00"
+      },
+      {
+        "id": "art_finance_20230403_002_319bd4a0",
+        "title": "Elon Musk's price cuts at Tesla are working – for now - Business Insider",
+        "url": "https://www.businessinsider.com/tesla-price-cut-helped-bolster-demand-q1-deliveries-market-share-2023-4",
+        "source": "businessinsider.com",
+        "published_date": "2023-04-03T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230412_003_15382cdc",
+        "title": "Another Record Broken: Q1 Electric Vehicle Sales Surpass 250,000, as EV Market Share in the U.S. Jumps to 7.2% of Total Sales - Cox Automotive Inc.",
+        "url": "https://www.coxautoinc.com/market-insights/q1-2023-ev-sales",
+        "source": "coxautoinc.com",
+        "published_date": "2023-04-12T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230402_004_2105945e",
+        "title": "BYD Grew EV Sales 2.5 Times Faster Than Tesla in the Latest Quarter - Barron's",
+        "url": "https://www.barrons.com/articles/byd-deliveries-first-quarter-9e1082ad",
+        "source": "barrons.com",
+        "published_date": "2023-04-02T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230403_005_e4f98aac",
+        "title": "Tesla built more cars than it could sell in Q1 2023 - Ars Technica",
+        "url": "https://arstechnica.com/cars/2023/04/tesla-built-more-cars-than-it-could-sell-in-q1-2023",
+        "source": "arstechnica.com",
+        "published_date": "2023-04-03T13:13:16+00:00"
+      },
+      {
+        "id": "art_finance_20230419_006_618b6d07",
+        "title": "Tesla Releases First Quarter 2023 Financial Results - Nasdaq",
+        "url": "https://www.nasdaq.com/press-release/tesla-releases-first-quarter-2023-financial-results-2023-04-19",
+        "source": "nasdaq.com",
+        "published_date": "2023-04-19T00:00:00+00:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_b3313628aad8",
+      "events_count": 9,
+      "hypotheses_count": 9
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 3,
+      "avg_depth": 2.0,
+      "quality_score": 0.87,
+      "depth_score": 1.0,
+      "confidence_score": 0.79,
+      "strength_score": 0.67,
+      "evidence_score": 1.0,
+      "event_count": 9,
+      "hypothesis_count": 9
+    },
+    "nodes": [
+      {
+        "id": "evt_9bf094bbfbd4",
+        "title": "Option 1: below recent range",
+        "description": "Question resolves to: below recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-04-24T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_tsla_revenue_growth_acceleration_2023_03_31",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 0,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T21:29:12.987138Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_b3313628aad8",
+        "title": "Option 2: within recent range",
+        "description": "Question resolves to: within recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-04-24T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_tsla_revenue_growth_acceleration_2023_03_31",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 1,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T21:29:12.987148Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_eeedec335a3f",
+        "title": "Option 3: above recent range",
+        "description": "Question resolves to: above recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-04-24T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_tsla_revenue_growth_acceleration_2023_03_31",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 2,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T21:29:12.987158Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230219_001_8b9e51b3",
+        "title": "Tesla Implements Aggressive Price Cuts",
+        "description": "Tesla implemented aggressive price cuts to bolster demand and sales volumes for Q1.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-02-19T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230219_002_0a70dba6",
+          "art_finance_20230403_002_319bd4a0"
+        ],
+        "extracted_for_question_id": "v3_tsla_revenue_growth_acceleration_2023_03_31",
+        "source_article_id": "art_finance_20230219_002_0a70dba6",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_tsla_revenue_growth_acceleration_2023_03_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T21:39:58.578396Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230402_005_a3d8fec3",
+        "title": "Increased EV Market Competition",
+        "description": "The EV market experienced increased competition, with BYD growing sales faster than Tesla.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-04-02T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230402_004_2105945e",
+          "art_finance_20230412_003_15382cdc"
+        ],
+        "extracted_for_question_id": "v3_tsla_revenue_growth_acceleration_2023_03_31",
+        "source_article_id": "art_finance_20230402_004_2105945e",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_tsla_revenue_growth_acceleration_2023_03_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T21:39:58.684191Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230403_002_17c0a96e",
+        "title": "Q1 2023 Vehicle Deliveries Increase",
+        "description": "Tesla's Q1 2023 vehicle deliveries increased, contributing to higher revenue.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-04-03T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230403_002_319bd4a0"
+        ],
+        "extracted_for_question_id": "v3_tsla_revenue_growth_acceleration_2023_03_31",
+        "source_article_id": "art_finance_20230403_002_319bd4a0",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_tsla_revenue_growth_acceleration_2023_03_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T21:39:58.605961Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230403_007_5a5d67b4",
+        "title": "Tesla Built More Cars Than It Could Sell in Q1 2023",
+        "description": "Tesla's production outpaced demand at initial pricing in Q1 2023.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-04-03T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230403_005_e4f98aac"
+        ],
+        "extracted_for_question_id": "v3_tsla_revenue_growth_acceleration_2023_03_31",
+        "source_article_id": "art_finance_20230403_005_e4f98aac",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_tsla_revenue_growth_acceleration_2023_03_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T21:39:58.739345Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230412_008_52acb343",
+        "title": "Q1 Electric Vehicle Sales Surpass 250,000 in US",
+        "description": "The overall US EV market grew significantly in Q1, with sales surpassing 250,000 units and market share jumping to 7.2%.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-04-12T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230412_003_15382cdc"
+        ],
+        "extracted_for_question_id": "v3_tsla_revenue_growth_acceleration_2023_03_31",
+        "source_article_id": "art_finance_20230412_003_15382cdc",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_tsla_revenue_growth_acceleration_2023_03_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T21:39:58.765956Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230419_003_521895f6",
+        "title": "Tesla's Profit Margins Decline",
+        "description": "Tesla's profit margins declined due to aggressive price cuts, offsetting revenue growth.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-04-19T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230419_004_cc01fc09",
+          "art_finance_20230420_003_1092d25a"
+        ],
+        "extracted_for_question_id": "v3_tsla_revenue_growth_acceleration_2023_03_31",
+        "source_article_id": "art_finance_20230419_004_cc01fc09",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_tsla_revenue_growth_acceleration_2023_03_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T21:39:58.634744Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230419_004_fe8819d3",
+        "title": "Tesla Releases Q1 2023 Financial Results",
+        "description": "Tesla officially released its Q1 2023 financial results, confirming revenue growth and margin performance.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-04-19T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230419_006_618b6d07",
+          "art_finance_20230419_008_de1878fe"
+        ],
+        "extracted_for_question_id": "v3_tsla_revenue_growth_acceleration_2023_03_31",
+        "source_article_id": "art_finance_20230419_006_618b6d07",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_tsla_revenue_growth_acceleration_2023_03_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T21:39:58.659573Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230419_006_00952144",
+        "title": "Tesla Q1 Revenue Sees Year-over-Year Increase",
+        "description": "Tesla's Q1 revenue increased year-over-year, driven by increased vehicle deliveries.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-04-19T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230419_004_cc01fc09",
+          "art_finance_20230420_005_bdd4eea2"
+        ],
+        "extracted_for_question_id": "v3_tsla_revenue_growth_acceleration_2023_03_31",
+        "source_article_id": "art_finance_20230419_004_cc01fc09",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_tsla_revenue_growth_acceleration_2023_03_31"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-24T21:39:58.710445Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_tsla_revenue_growth_acceleration_2023_03_31_20260724_213958_001_5f718328",
+        "source_event_id": "evt_finance_20230219_001_8b9e51b3",
+        "target_event_id": "evt_finance_20230403_002_17c0a96e",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Aggressive price cuts directly led to an increase in vehicle deliveries.",
+        "evidence_article_ids": [
+          "art_finance_20230403_002_319bd4a0"
+        ],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T21:39:58.788759Z",
+        "last_confirmed_at": "2026-07-24T21:39:58.788759Z"
+      },
+      {
+        "id": "hyp_v3_tsla_revenue_growth_acceleration_2023_03_31_20260724_213958_002_93cb21a9",
+        "source_event_id": "evt_finance_20230219_001_8b9e51b3",
+        "target_event_id": "evt_finance_20230419_003_521895f6",
+        "relation_type": "causes",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The aggressive price cuts directly resulted in declining profit margins.",
+        "evidence_article_ids": [
+          "art_finance_20230419_004_cc01fc09",
+          "art_finance_20230420_003_1092d25a"
+        ],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T21:39:58.803495Z",
+        "last_confirmed_at": "2026-07-24T21:39:58.803495Z"
+      },
+      {
+        "id": "hyp_v3_tsla_revenue_growth_acceleration_2023_03_31_20260724_213958_003_3e9e1e1f",
+        "source_event_id": "evt_finance_20230403_002_17c0a96e",
+        "target_event_id": "evt_finance_20230419_006_00952144",
+        "relation_type": "causes",
+        "strength": 0.8,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "Increased vehicle deliveries directly contributed to the year-over-year revenue increase.",
+        "evidence_article_ids": [
+          "art_finance_20230419_004_cc01fc09",
+          "art_finance_20230420_005_bdd4eea2"
+        ],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T21:39:58.818458Z",
+        "last_confirmed_at": "2026-07-24T21:39:58.818458Z"
+      },
+      {
+        "id": "hyp_v3_tsla_revenue_growth_acceleration_2023_03_31_20260724_213958_004_7a056e28",
+        "source_event_id": "evt_finance_20230419_006_00952144",
+        "target_event_id": "evt_b3313628aad8",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "The year-over-year revenue growth, tempered by declining margins, led to the revenue growth acceleration falling within the recent range.",
+        "evidence_article_ids": [
+          "art_finance_20230419_004_cc01fc09",
+          "art_finance_20230420_005_bdd4eea2"
+        ],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T21:39:58.832512Z",
+        "last_confirmed_at": "2026-07-24T21:39:58.832512Z"
+      },
+      {
+        "id": "hyp_v3_tsla_revenue_growth_acceleration_2023_03_31_20260724_213958_005_e3dd4241",
+        "source_event_id": "evt_finance_20230419_003_521895f6",
+        "target_event_id": "evt_b3313628aad8",
+        "relation_type": "inhibits",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Declining profit margins prevented a more significant acceleration in revenue growth, keeping it within the recent range.",
+        "evidence_article_ids": [
+          "art_finance_20230420_003_1092d25a",
+          "art_finance_20230419_004_cc01fc09"
+        ],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T21:39:58.847515Z",
+        "last_confirmed_at": "2026-07-24T21:39:58.847515Z"
+      },
+      {
+        "id": "hyp_v3_tsla_revenue_growth_acceleration_2023_03_31_20260724_213958_006_b0e85d6f",
+        "source_event_id": "evt_finance_20230419_004_fe8819d3",
+        "target_event_id": "evt_b3313628aad8",
+        "relation_type": "triggers",
+        "strength": 0.9,
+        "confidence": 0.9,
+        "time_lag_hours": null,
+        "reasoning": "The release of Q1 financial results officially confirmed the revenue and margin performance, solidifying the outcome.",
+        "evidence_article_ids": [
+          "art_finance_20230419_006_618b6d07"
+        ],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T21:39:58.863812Z",
+        "last_confirmed_at": "2026-07-24T21:39:58.863812Z"
+      },
+      {
+        "id": "hyp_v3_tsla_revenue_growth_acceleration_2023_03_31_20260724_213958_007_0705c9c8",
+        "source_event_id": "evt_finance_20230402_005_a3d8fec3",
+        "target_event_id": "evt_finance_20230419_006_00952144",
+        "relation_type": "inhibits",
+        "strength": 0.4,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "Increased competition could have pressured Tesla's market share and sales velocity, indirectly limiting revenue growth acceleration.",
+        "evidence_article_ids": [
+          "art_finance_20230402_004_2105945e",
+          "art_finance_20230412_003_15382cdc"
+        ],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T21:39:58.877720Z",
+        "last_confirmed_at": "2026-07-24T21:39:58.877720Z"
+      },
+      {
+        "id": "hyp_v3_tsla_revenue_growth_acceleration_2023_03_31_20260724_213958_008_15844c59",
+        "source_event_id": "evt_finance_20230412_008_52acb343",
+        "target_event_id": "evt_finance_20230419_006_00952144",
+        "relation_type": "enables",
+        "strength": 0.5,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "A growing overall EV market provided a favorable environment for Tesla's revenue growth.",
+        "evidence_article_ids": [
+          "art_finance_20230412_003_15382cdc"
+        ],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T21:39:58.892496Z",
+        "last_confirmed_at": "2026-07-24T21:39:58.892496Z"
+      },
+      {
+        "id": "hyp_v3_tsla_revenue_growth_acceleration_2023_03_31_20260724_213958_009_569ca66b",
+        "source_event_id": "evt_finance_20230403_007_5a5d67b4",
+        "target_event_id": "evt_finance_20230419_003_521895f6",
+        "relation_type": "correlates",
+        "strength": 0.3,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "Tesla building more cars than it could sell suggests a potential oversupply, which could correlate with the need for price cuts and thus declining profit margins.",
+        "evidence_article_ids": [
+          "art_finance_20230403_005_e4f98aac"
+        ],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-24T21:39:58.906675Z",
+        "last_confirmed_at": "2026-07-24T21:39:58.906675Z"
+      }
+    ],
+    "outcome_impacts": [
+      {
+        "id": "imp_279197c2",
+        "event_id": "evt_finance_20230219_001_8b9e51b3",
+        "outcome_event_id": "evt_b3313628aad8",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2023_03_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "Aggressive price cuts boosted demand and sales, contributing to revenue growth that kept acceleration within range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T21:40:16.494042Z",
+        "last_confirmed_at": "2026-07-24T21:40:16.494042Z"
+      },
+      {
+        "id": "imp_d11c0b6c",
+        "event_id": "evt_finance_20230219_001_8b9e51b3",
+        "outcome_event_id": "evt_eeedec335a3f",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2023_03_31",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "While boosting sales, price cuts also reduced profit margins, preventing a higher acceleration (above recent range).",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T21:40:16.509057Z",
+        "last_confirmed_at": "2026-07-24T21:40:16.509057Z"
+      },
+      {
+        "id": "imp_a6926090",
+        "event_id": "evt_finance_20230219_001_8b9e51b3",
+        "outcome_event_id": "evt_9bf094bbfbd4",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2023_03_31",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "Price cuts successfully bolstered demand, preventing revenue growth acceleration from falling below recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T21:40:16.519502Z",
+        "last_confirmed_at": "2026-07-24T21:40:16.519502Z"
+      },
+      {
+        "id": "imp_36013f8e",
+        "event_id": "evt_finance_20230403_002_17c0a96e",
+        "outcome_event_id": "evt_b3313628aad8",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2023_03_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Increased vehicle deliveries directly contributed to the revenue growth, helping to keep acceleration within range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T21:40:16.532175Z",
+        "last_confirmed_at": "2026-07-24T21:40:16.532175Z"
+      },
+      {
+        "id": "imp_814433d1",
+        "event_id": "evt_finance_20230403_002_17c0a96e",
+        "outcome_event_id": "evt_eeedec335a3f",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2023_03_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Higher deliveries pushed towards a higher acceleration, but other factors limited it to 'within range'.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T21:40:16.542941Z",
+        "last_confirmed_at": "2026-07-24T21:40:16.542941Z"
+      },
+      {
+        "id": "imp_23b6c4be",
+        "event_id": "evt_finance_20230403_002_17c0a96e",
+        "outcome_event_id": "evt_9bf094bbfbd4",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2023_03_31",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Increased deliveries prevented revenue growth acceleration from falling below recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T21:40:16.553009Z",
+        "last_confirmed_at": "2026-07-24T21:40:16.553009Z"
+      },
+      {
+        "id": "imp_a35b00c2",
+        "event_id": "evt_finance_20230419_003_521895f6",
+        "outcome_event_id": "evt_b3313628aad8",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2023_03_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Declining profit margins, while negative for overall profit, tempered the revenue growth acceleration, keeping it within the recent range rather than above.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T21:40:16.563732Z",
+        "last_confirmed_at": "2026-07-24T21:40:16.563732Z"
+      },
+      {
+        "id": "imp_466250a3",
+        "event_id": "evt_finance_20230419_003_521895f6",
+        "outcome_event_id": "evt_eeedec335a3f",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2023_03_31",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "Declining profit margins directly prevented the revenue growth acceleration from reaching 'above recent range'.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T21:40:16.573872Z",
+        "last_confirmed_at": "2026-07-24T21:40:16.573872Z"
+      },
+      {
+        "id": "imp_d326702c",
+        "event_id": "evt_finance_20230419_003_521895f6",
+        "outcome_event_id": "evt_9bf094bbfbd4",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2023_03_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.4,
+        "confidence": 0.6,
+        "reasoning": "While not directly causing a 'below recent range' outcome, declining margins indicate a pressure that could contribute to it if not offset by other factors.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T21:40:16.587136Z",
+        "last_confirmed_at": "2026-07-24T21:40:16.587136Z"
+      },
+      {
+        "id": "imp_2841982e",
+        "event_id": "evt_finance_20230419_004_fe8819d3",
+        "outcome_event_id": "evt_b3313628aad8",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2023_03_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "The release of official results solidified the market's understanding that the acceleration was within the recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T21:40:16.597455Z",
+        "last_confirmed_at": "2026-07-24T21:40:16.597455Z"
+      },
+      {
+        "id": "imp_c71be2db",
+        "event_id": "evt_finance_20230419_004_fe8819d3",
+        "outcome_event_id": "evt_eeedec335a3f",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2023_03_31",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.1,
+        "confidence": 0.5,
+        "reasoning": "The release itself is a confirmation, not a driver of the acceleration being above or below range, but rather confirming it was within.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T21:40:16.608061Z",
+        "last_confirmed_at": "2026-07-24T21:40:16.608061Z"
+      },
+      {
+        "id": "imp_afde640c",
+        "event_id": "evt_finance_20230419_004_fe8819d3",
+        "outcome_event_id": "evt_9bf094bbfbd4",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2023_03_31",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.1,
+        "confidence": 0.5,
+        "reasoning": "The release itself is a confirmation, not a driver of the acceleration being above or below range, but rather confirming it was within.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T21:40:16.620728Z",
+        "last_confirmed_at": "2026-07-24T21:40:16.620728Z"
+      },
+      {
+        "id": "imp_2e2be688",
+        "event_id": "evt_finance_20230402_005_a3d8fec3",
+        "outcome_event_id": "evt_b3313628aad8",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2023_03_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.4,
+        "confidence": 0.6,
+        "reasoning": "Increased competition could have put pressure on Tesla, contributing to the revenue growth acceleration staying within the recent range rather than exceeding it.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T21:40:16.630884Z",
+        "last_confirmed_at": "2026-07-24T21:40:16.630884Z"
+      },
+      {
+        "id": "imp_46293d64",
+        "event_id": "evt_finance_20230402_005_a3d8fec3",
+        "outcome_event_id": "evt_eeedec335a3f",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2023_03_31",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.5,
+        "confidence": 0.7,
+        "reasoning": "Increased competition would make it harder for Tesla to achieve 'above recent range' acceleration.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T21:40:16.640750Z",
+        "last_confirmed_at": "2026-07-24T21:40:16.640750Z"
+      },
+      {
+        "id": "imp_7354589b",
+        "event_id": "evt_finance_20230402_005_a3d8fec3",
+        "outcome_event_id": "evt_9bf094bbfbd4",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2023_03_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.3,
+        "confidence": 0.5,
+        "reasoning": "While not a primary driver, increased competition could contribute to a 'below recent range' outcome if Tesla failed to adapt.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T21:40:16.651133Z",
+        "last_confirmed_at": "2026-07-24T21:40:16.651133Z"
+      },
+      {
+        "id": "imp_fa73f34e",
+        "event_id": "evt_finance_20230419_006_00952144",
+        "outcome_event_id": "evt_b3313628aad8",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2023_03_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "The year-over-year revenue growth, despite margin compression, directly led to the acceleration being within the recent range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T21:40:16.661260Z",
+        "last_confirmed_at": "2026-07-24T21:40:16.661260Z"
+      },
+      {
+        "id": "imp_4424d17e",
+        "event_id": "evt_finance_20230419_006_00952144",
+        "outcome_event_id": "evt_eeedec335a3f",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2023_03_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Strong revenue growth is a prerequisite for 'above recent range' acceleration, even if other factors prevented it.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T21:40:16.671959Z",
+        "last_confirmed_at": "2026-07-24T21:40:16.671959Z"
+      },
+      {
+        "id": "imp_19c184d8",
+        "event_id": "evt_finance_20230419_006_00952144",
+        "outcome_event_id": "evt_9bf094bbfbd4",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2023_03_31",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.9,
+        "confidence": 0.9,
+        "reasoning": "The significant revenue growth directly prevented the acceleration from falling 'below recent range'.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T21:40:16.682071Z",
+        "last_confirmed_at": "2026-07-24T21:40:16.682071Z"
+      },
+      {
+        "id": "imp_f694e9ea",
+        "event_id": "evt_finance_20230403_007_5a5d67b4",
+        "outcome_event_id": "evt_b3313628aad8",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2023_03_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.5,
+        "confidence": 0.6,
+        "reasoning": "Production outpacing demand likely necessitated the price cuts, which in turn helped keep revenue growth acceleration within range.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T21:40:16.692466Z",
+        "last_confirmed_at": "2026-07-24T21:40:16.692466Z"
+      },
+      {
+        "id": "imp_8cd320ce",
+        "event_id": "evt_finance_20230403_007_5a5d67b4",
+        "outcome_event_id": "evt_eeedec335a3f",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2023_03_31",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "If production outpaced demand, it suggests a market saturation or lack of demand at initial prices, hindering 'above recent range' acceleration.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T21:40:16.705453Z",
+        "last_confirmed_at": "2026-07-24T21:40:16.705453Z"
+      },
+      {
+        "id": "imp_c223785d",
+        "event_id": "evt_finance_20230403_007_5a5d67b4",
+        "outcome_event_id": "evt_9bf094bbfbd4",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2023_03_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.4,
+        "confidence": 0.6,
+        "reasoning": "Overproduction could lead to a 'below recent range' outcome if not addressed by measures like price cuts.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T21:40:16.715772Z",
+        "last_confirmed_at": "2026-07-24T21:40:16.715772Z"
+      },
+      {
+        "id": "imp_55861143",
+        "event_id": "evt_finance_20230412_008_52acb343",
+        "outcome_event_id": "evt_b3313628aad8",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2023_03_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "A growing overall EV market provided a favorable environment that enabled Tesla's revenue growth, contributing to the 'within recent range' outcome.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T21:40:16.725849Z",
+        "last_confirmed_at": "2026-07-24T21:40:16.725849Z"
+      },
+      {
+        "id": "imp_a7e07b68",
+        "event_id": "evt_finance_20230412_008_52acb343",
+        "outcome_event_id": "evt_eeedec335a3f",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2023_03_31",
+        "impact_direction": "positive",
+        "impact_magnitude": 0.5,
+        "confidence": 0.6,
+        "reasoning": "A strong overall market is a necessary condition for any company to achieve 'above recent range' growth.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T21:40:16.736717Z",
+        "last_confirmed_at": "2026-07-24T21:40:16.736717Z"
+      },
+      {
+        "id": "imp_710d2851",
+        "event_id": "evt_finance_20230412_008_52acb343",
+        "outcome_event_id": "evt_9bf094bbfbd4",
+        "question_id": "v3_tsla_revenue_growth_acceleration_2023_03_31",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "The robust growth of the overall EV market made it less likely for Tesla's revenue growth acceleration to fall 'below recent range'.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_tsla_revenue_growth_acceleration_2023_03_31"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-24T21:40:16.746841Z",
+        "last_confirmed_at": "2026-07-24T21:40:16.746841Z"
+      }
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_us_30y_yield_monthly_change_2025_04",
+  "blueprint_sha256": "84852b9d1abb6e01776858ba6f8b230500671e36f5dbbd07219842233ebc9bb8",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_market",
+      "target_operation": "threshold_crossing",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2025-04-01, will the monthly 30-year yield change for United States 30-year Treasury yield in 2025-04 be at least 0.065 percentage points?",
+    "historical_cutoff": "2025-04-01T00:00:00+00:00",
+    "target_semantics": "The question asks whether the absolute change in the US 30-year Treasury yield from the previous month's closing value to the current month's closing value will meet or exceed 0.065 percentage points for April 2025.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The core of the prediction relies on calculating the absolute monthly change of the US 30-year Treasury yield. This requires knowing the yield value at the end of March 2025 and the yield value at the end of April 2025.",
+      "The target condition is met if this calculated absolute change is greater than or equal to 0.065 percentage points. The DAG indicates that the calculation of the change itself is a key mediator.",
+      "The DAG also highlights that the pre-registered threshold of 0.065 percentage points is a direct driver for the final 'yes'/'no' determination, acting as a critical checkpoint."
+    ],
+    "counterevidence": "The available evidence does not provide specific yield values for March or April 2025, nor does it offer any qualitative information about market conditions or monetary policy that would directly influence the yield change. The DAG notes that available news evidence describes early-month volatility but does not explain the full-month change.",
+    "prospective_target_estimate": "The DAG indicates that the historical support for the direct calculation of the monthly change and its comparison to the threshold is medium. Without specific yield data or qualitative drivers from the forecast period, a definitive estimate cannot be made.",
+    "option_mapping": "The 'yes' option corresponds to the monthly 30-year yield change being >= 0.065 percentage points. The 'no' option corresponds to the monthly 30-year yield change being < 0.065 percentage points.",
+    "uncertainty": "Significant uncertainty exists due to the lack of forecast-time evidence directly measuring the yield levels for March and April 2025, or providing context for their movement. The DAG also points out that the evidence does not explain the positive full-month change, suggesting a potential gap in understanding the drivers.",
+    "dag_derived_lesson": "A target metric derived from the difference between two observations requires direct evidence for both observations. The comparison of this difference to a pre-defined threshold is a critical step, and the strength of evidence for the observations and the threshold comparison influences the confidence in the final prediction."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

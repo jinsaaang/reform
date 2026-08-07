@@ -1,0 +1,94 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_nasdaq_monthly_return_2023_01",
+  "blueprint_sha256": "3d6860f7dd30749e11b201a26405e85cbf17df3019feffb7a0c4d7bd81710c2d",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "market_fx_credit",
+      "target_operation": "return",
+      "option_geometry": "range"
+    },
+    "historical_question": "As of 2023-01-01, which range will the monthly NASDAQ Composite return for NASDAQ Composite index in 2023-01 fall into?",
+    "historical_cutoff": "2023-01-01T00:00:00+00:00",
+    "target_semantics": "The monthly return of the NASDAQ Composite index for January 2023, categorized as below, within, or above the recent range of -8.718% to 4.017%.",
+    "forecast_time_evidence": [
+      {
+        "article_id": "art_finance_20220615_005_4be689b0",
+        "takeaway": "Inflation in the US and globally was high and increasing as of June 2022.",
+        "why_predictive": "High and rising inflation is a key economic indicator that influences central bank policy and market sentiment, potentially impacting equity returns."
+      },
+      {
+        "article_id": "art_finance_20221017_008_7569224e",
+        "takeaway": "Inflation remained high and widespread in the US in October 2022.",
+        "why_predictive": "Persistent high inflation suggests continued economic pressure and potential for further monetary tightening, which can affect stock market performance."
+      },
+      {
+        "article_id": "art_finance_20220330_007_bd97c262",
+        "takeaway": "Current inflation shares similarities with the Great Inflation of the 1970s.",
+        "why_predictive": "Historical parallels to periods of high inflation can inform expectations about the duration and impact of current inflationary pressures on the economy and markets."
+      },
+      {
+        "article_id": "art_finance_20220302_009_5531dffc",
+        "takeaway": "Inflation was imposing significant costs on consumers as of March 2022.",
+        "why_predictive": "The direct impact of inflation on consumers can lead to reduced spending and affect corporate earnings, indirectly influencing market returns."
+      },
+      {
+        "article_id": "art_finance_20220324_006_e7bdaf8c",
+        "takeaway": "Analysis of inflation rates, including median and trimmed-mean, was being conducted in March 2022.",
+        "why_predictive": "The focus on different inflation metrics suggests an ongoing concern and analysis of price pressures, which are critical for monetary policy decisions."
+      },
+      {
+        "article_id": "art_finance_20220120_002_a28a7ada",
+        "takeaway": "The Federal Reserve was exploring the implications of digital transformation on the US dollar in January 2022.",
+        "why_predictive": "While not directly about inflation or market returns, this indicates the Fed's forward-looking approach to economic and financial systems, which could indirectly relate to policy."
+      },
+      {
+        "article_id": "art_finance_20220525_003_496195a5",
+        "takeaway": "Kansas City Fed President Esther George was announced to retire in May 2022.",
+        "why_predictive": "Changes in leadership at the Federal Reserve can signal shifts in monetary policy or economic outlook, though the direct impact on a single month's return is uncertain."
+      },
+      {
+        "article_id": "art_finance_20220603_010_ef6e3aac",
+        "takeaway": "Consumers listen to corporate earnings reports, which can influence their behavior.",
+        "why_predictive": "Corporate earnings are a fundamental driver of stock prices, and consumer reactions to these reports can amplify market movements."
+      },
+      {
+        "article_id": "art_finance_20200407_011_638a866f",
+        "takeaway": "Companies reporting earnings early can have advantages.",
+        "why_predictive": "The timing of earnings reports can influence market perception and stock performance, especially in volatile periods."
+      },
+      {
+        "article_id": "art_finance_20220217_012_b18ccf75",
+        "takeaway": "The frequency of quarterly earnings reports is a subject of analysis.",
+        "why_predictive": "Understanding the reporting cycle is relevant to the flow of information that impacts stock prices."
+      },
+      {
+        "article_id": "art_finance_20031013_004_619df1c2",
+        "takeaway": "Monetary policy and the economic outlook were discussed in October 2003.",
+        "why_predictive": "Historical discussions on monetary policy and economic outlook can provide context for understanding long-term economic trends, though their direct predictive power for a specific month is limited."
+      },
+      {
+        "article_id": "art_finance_20090718_002_41819a17",
+        "takeaway": "Bloomberg.com is a source for business news.",
+        "why_predictive": "General news sources are relevant for tracking market sentiment and economic developments."
+      }
+    ],
+    "expert_reasoning": [
+      "The persistent high inflation reported throughout 2022 (art_finance_20220615_005_4be689b0, art_finance_20221017_008_7569224e) suggests ongoing economic headwinds that could pressure the NASDAQ Composite.",
+      "The comparison of current inflation to the 1970s (art_finance_20220330_007_bd97c262) implies that inflationary pressures might be persistent, potentially leading to continued restrictive monetary policy.",
+      "While cooling inflation data might be anticipated, the evidence available as of the cutoff points to sustained high inflation, which historically has been a negative factor for growth-oriented stocks like those in the NASDAQ."
+    ],
+    "counterevidence": "Lingering concerns about inflation and the Federal Reserve's long-term policy (checkpoint_4) are present, as evidenced by the continued reporting of high and widespread inflation throughout 2022 (art_finance_20220615_005_4be689b0, art_finance_20221017_008_7569224e). Geopolitical events reminding of global economic instability (checkpoint_10) could also introduce negative market sentiment.",
+    "prospective_target_estimate": "within recent range",
+    "option_mapping": "The evidence suggests that persistent inflation and potential for continued restrictive monetary policy could lead to a subdued or negative return for the NASDAQ Composite. However, the possibility of a technical rebound or shifts in Fed policy cannot be entirely dismissed without more specific forward-looking data. Given the mixed signals and the historical context of high inflation impacting growth stocks, a return within the recent range appears plausible, avoiding extreme positive or negative outcomes.",
+    "uncertainty": "The historical support for key drivers like 'Poor performance of [CURRENT_PERIOD_REQUIRED] stock and bond market, especially tech' and 'General belief in a technical rebound after challenging [CURRENT_PERIOD_REQUIRED]' is weak. Furthermore, the exact impact of cooling inflation data and anticipated Fed policy shifts on the NASDAQ Composite's January return is not definitively established by the provided forecast-time evidence. The potential for geopolitical events to introduce instability also adds to the uncertainty.",
+    "dag_derived_lesson": "When assessing market returns, the persistence of macroeconomic factors like inflation, and the market's reaction to potential central bank policy shifts, are critical drivers. However, the strength of historical parallels and the precise timing of economic data releases introduce significant uncertainty into short-term forecasts, especially when direct evidence for immediate rebound expectations is weak."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

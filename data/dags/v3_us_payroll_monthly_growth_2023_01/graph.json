@@ -1,0 +1,144 @@
+{
+  "schema_version": "1.0",
+  "actual_outcome_event_id": "node_06",
+  "graph": {
+    "nodes": [
+      {
+        "id": "node_01",
+        "label": "Market estimate called for 187,000 January payroll gains",
+        "event_type": "forecast",
+        "occurred_date": "2023-02-03",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_4ceca2579e3091f2"
+        ]
+      },
+      {
+        "id": "node_02",
+        "label": "Reported January nonfarm payroll gain was 517,000",
+        "event_type": "indicator",
+        "occurred_date": "2023-02-03",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_4ceca2579e3091f2",
+          "ev_180e605e2a000b0a",
+          "ev_ff92e980797ab25f"
+        ]
+      },
+      {
+        "id": "node_03",
+        "label": "January unemployment rate fell to 3.4%",
+        "event_type": "indicator",
+        "occurred_date": "2023-02-03",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_4ceca2579e3091f2"
+        ]
+      },
+      {
+        "id": "node_04",
+        "label": "January labor-market results were stronger than expected",
+        "event_type": "indicator",
+        "occurred_date": "2023-02-03",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_4ceca2579e3091f2",
+          "ev_180e605e2a000b0a",
+          "ev_ff92e980797ab25f"
+        ]
+      },
+      {
+        "id": "node_05",
+        "label": "January payroll monthly growth measured 0.281%",
+        "event_type": "measurement",
+        "occurred_date": "2023-02-21",
+        "is_outcome": false,
+        "is_actual_outcome": false,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_d37a716ae75fd6db"
+        ]
+      },
+      {
+        "id": "node_06",
+        "label": "Resolution: payroll growth was above the recent range",
+        "event_type": "outcome",
+        "occurred_date": "2023-02-21",
+        "is_outcome": true,
+        "is_actual_outcome": true,
+        "support_level": "observed",
+        "article_ids": [
+          "ev_d37a716ae75fd6db"
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_01",
+        "source": "node_01",
+        "target": "node_02",
+        "relationship": "contrasts_with",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_4ceca2579e3091f2"
+        ],
+        "rationale": "The same report documents the 187,000 estimate and the much larger reported 517,000 gain; the edge is comparative, not causal."
+      },
+      {
+        "id": "edge_02",
+        "source": "node_02",
+        "target": "node_04",
+        "relationship": "supports",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_4ceca2579e3091f2",
+          "ev_180e605e2a000b0a",
+          "ev_ff92e980797ab25f"
+        ],
+        "rationale": "A payroll gain well above the cited estimate supports the stronger-than-expected labor-market interpretation."
+      },
+      {
+        "id": "edge_03",
+        "source": "node_03",
+        "target": "node_04",
+        "relationship": "supports",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_4ceca2579e3091f2"
+        ],
+        "rationale": "The lower-than-estimated unemployment rate independently supports the interpretation of labor-market strength."
+      },
+      {
+        "id": "edge_04",
+        "source": "node_04",
+        "target": "node_05",
+        "relationship": "is_consistent_with",
+        "support_level": "evidence_synthesized",
+        "article_ids": [
+          "ev_4ceca2579e3091f2",
+          "ev_d37a716ae75fd6db"
+        ],
+        "rationale": "The qualitative labor-market surprise is consistent with the positive payroll growth rate, while the official series independently supplies the 0.281% measurement."
+      },
+      {
+        "id": "edge_05",
+        "source": "node_05",
+        "target": "node_06",
+        "relationship": "classifies_as",
+        "support_level": "observed",
+        "article_ids": [
+          "ev_d37a716ae75fd6db"
+        ],
+        "rationale": "The measured 0.281% rate exceeds the preregistered 0.246% upper boundary and therefore resolves above the recent range."
+      }
+    ]
+  }
+}

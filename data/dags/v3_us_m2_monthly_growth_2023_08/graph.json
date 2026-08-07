@@ -1,0 +1,1353 @@
+{
+  "question": {
+    "id": "v3_us_m2_monthly_growth_2023_08",
+    "question_text": "As of 2023-08-01, which range will the monthly M2 growth for United States M2 money stock in 2023-08 fall into?",
+    "question_type": "mcq",
+    "domain": "finance",
+    "source": "finance_hgf_v1_300",
+    "difficulty": 3,
+    "resolution_date": "2023-09-15T23:59:59Z",
+    "estimated_start_time": "2023-08-01T00:00:00Z",
+    "ground_truth": "within recent range",
+    "ground_truth_hash": null,
+    "target_event_id": null,
+    "outcome_event_ids": [
+      "evt_16838e15a444",
+      "evt_3d02bedf457d",
+      "evt_10997dd235d1"
+    ],
+    "related_event_ids": [],
+    "related_article_ids": [],
+    "context": "Entity: United States M2 money stock\nTarget period: 2023-08\nFinancial area: monetary_policy / money supply\nRegion: US\nPre-registered recent-range boundaries: lower -0.626, upper -0.05 percent.",
+    "resolution_criteria": "Use FRED series M2SL. Compute the change from the previous monthly observation using mode 'pct'. Resolve 'below recent range' below -0.626, 'within recent range' from -0.626 inclusive to -0.05 exclusive, and 'above recent range' at or above -0.05 percent.",
+    "resolution_reasoning": "The snapshotted target change was -0.068 percent; it resolved to 'within recent range'.",
+    "options": [
+      "below recent range",
+      "within recent range",
+      "above recent range"
+    ],
+    "quantity_unit": null,
+    "quantity_bounds": null,
+    "causal_explanation": "\n## Executive Summary\nMonetary policy actions by the Federal Reserve, specifically relating to balance sheet normalization and interest rate management, were key drivers shaping M2 money stock growth in August 2023. While M2 continued its downward trend, the rate of decline remained within recent established ranges, preventing an 'above' or 'below' recent range outcome. Economic indicators showed signs of potential deceleration, contributing to a cautious outlook. The Federal Reserve's continued quantitative tightening and the impact of higher interest rates on the attractiveness of remunerated assets like CDs and Money Market Mutual Funds influenced the rebalancing of liquidity without causing an extreme shift in overall M2 growth.\n\n## Timeline Of Key Events\n- **August 3, 2023**: Discussion around the Taylor Rule remained central to interest rate discussions, indicating ongoing focus on monetary policy adjustments [art_finance_20230803_005_f24c958c].\n- **August 14, 2023**: Publication on the Federal Reserve's two key rates (IORB and ON RRP) highlighted their role in steering the federal funds rate and managing interest rates within the target range [art_finance_20230814_002_5051bc9c].\n- **August 22, 2023**: Research by the Dallas Fed discussed the policy impact of unexpected Fed rate movements, distinguishing between pure policy shocks and information shocks, and their effects on market participants and the economy [art_finance_20230822_004_cae55020].\n- **August 23, 2023**: St. Louis Fed published on the mechanics of Fed Balance Sheet Normalization (Quantitative Tightening), detailing how the Fed has been reducing its balance sheet to drain excess liquidity, with calculations based on data up to August 14, 2023 [art_finance_20230823_002_dca22b4a].\n- **August 24, 2023**: Jackson Hole Economic Policy Symposium began, with Federal Reserve officials and economists discussing structural shifts in the global economy, including remarks by Jerome Powell [art_finance_20230824_006_99d61fe1].\n- **August 24, 2023**: Updates of various economic indicators (Chicago Fed National Activity Index, Aruoba-Diebold-Scotti Business Conditions Index, Conference Board Leading Economic Index) were released, generally indicating a potential slowdown or mild contraction ahead [art_finance_20230824_003_70159730].\n- **September 6, 2023**: Richmond Fed published on the lags in monetary policy transmission, specifically noting a dramatic increase in small CDs and retail Money Market Mutual Fund (MMMF) balances from May 2022 to July 2023, following sharp interest rate increases [art_finance_20230906_003_96dde9f8].\n\n## Causal Chain Analysis\nThe 'within recent range' outcome for M2 growth in August 2023 was primarily caused by the sustained impact of the Federal Reserve's monetary policy actions implemented through quantitative tightening (QT) and elevated interest rates. \n\n**Root Causes:**\n- **Federal Reserve's Monetary Tightening Policy (QT-II):** The Fed continued its balance sheet normalization, or quantitative tightening, which began in June 2022. This policy aims to drain excess liquidity from the banking system [art_finance_20230823_002_dca22b4a]. The reduction in the Fed's balance sheet directly contracts the monetary base, leading to a deceleration in M2 growth. \n- **Higher Interest Rates:** The Federal Open Market Committee (FOMC) had significantly raised its fed funds rate target since late 2021/early 2022, reaching 525 basis points by September 2023 [art_finance_20230906_003_96dde9f8]. These higher rates increase the attractiveness of remunerated assets compared to demand deposits, impacting M2 components.\n\n**Intermediate Mechanisms:**\n- **Shift from Demand Deposits to Time Deposits/MMMFs:** As interest rates rose, households shifted funds from demand deposits (which pay little to no interest) to small Certificates of Deposit (CDs) and retail Money Market Mutual Funds (MMMFs). Small CDs rose from $37 billion in May 2022 to $901 billion in July 2023, and retail MMMFs rose from $928 billion to $1,527 billion over the same period [art_finance_20230906_003_96dde9f8]. This rebalancing within the broader money supply components contributed to the observed M2 dynamics.\n- **Reduced Bank Lending and Credit Creation:** Higher interest rates and reduced reserves due to QT likely dampened bank lending activity, thereby slowing the process of credit creation that expands the money supply. The analysis of policy impact highlighted that pure policy shocks (e.g., unexpected rate hikes) are contractionary, leading to lower economic activity [art_finance_20230822_004_cae55020].\n- **Economic Indicators Suggesting Deceleration:** Economic indicators updated in August 2023, such as the Conference Board's Leading Economic Index (LEI), consistently pointed towards a deceleration in economic activity and a potential mild contraction in the coming months [art_finance_20230824_003_70159730]. This general economic slowdown naturally curtails the demand for money and credit growth.\n\n**Proximate Triggers:**\n- **August Data on M2 Components:** The continuous flow of data in July and August 2023 reflected the ongoing shifts away from less remunerative components of M2 (like checking accounts) towards interest-bearing assets within M2 (like small time deposits and MMMFs). While M2 aggregates continued to decline, the rate of these shifts and the overall decline remained consistent with the trends observed in previous months, thus keeping the August M2 growth 'within recent range'.\n- **Anticipation of Continued Fed Policy:** Market expectations, often informed by discussions at events like the Jackson Hole Symposium [art_finance_20230824_006_99d61fe1] and various Fed publications [art_finance_20230803_005_f24c958c], reinforced the expectation of continued monetary tightening or at least a sustained high-interest-rate environment. This reduced speculative activity that might otherwise rapidly expand the money supply.\n\n**Final Outcome:**\nThe combination of balance sheet reduction, higher interest rates driving a re-composition of M2 components, and a generally decelerating economic environment resulted in M2 growth for August 2023 falling 'within recent range'. The contractionary forces were strong enough to continue the downtrend but not so severe as to push it 'below' the recent range, considering the observed lags in monetary policy transmission [art_finance_20230906_003_96dde9f8].\n\n## Countervailing Factors\n- **Potential for Information Shocks:** The Dallas Fed noted that positive interest rate surprises perceived as 'information shocks' could signal better-than-anticipated economic data, leading to higher prices and economic activity [art_finance_20230822_004_cae55020]. Had such strong positive information shocks materialized and dominated the 'pure policy shock' effects, there could have been a stronger demand for credit and thus M2 growth. However, the economic indicators in August 2023 largely pointed towards deceleration, suggesting information shocks were not strong enough to significantly counteract the contractionary policy.\n- **Persistence of Inflationary Pressures:** The continued discussion around monetary policy and interest rates, as evidenced by the Taylor Rule's centrality [art_finance_20230803_005_f24c958c], indicates that inflation remained a concern. Persistent inflationary pressures could theoretically lead to higher nominal M2 demand if economic actors sought to hold more money to compensate for rising prices. However, the Fed's proactive tightening measures seem to have largely contained this potential upward pressure within the expected range.\n\n## Event Candidate Inventory\n- **E1: Federal Reserve's Continued Quantitative Tightening (QT-II):**\n    - **Date:** Ongoing through August 2023, as per data up to August 14, 2023.\n    - **Why it matters causally:** Directly reduces the monetary base, draining excess liquidity and exerting downward pressure on M2 growth.\n    - **Source article IDs:** [art_finance_20230823_002_dca22b4a]\n\n- **E2: Sustained High Interest Rate Environment:**\n    - **Date:** Throughout August 2023, reflecting FOMC rate hikes through early 2023.\n    - **Why it matters causally:** Makes interest-bearing assets more attractive, leading to shifts from demand deposits to CDs and MMMFs, influencing M2 composition and overall growth.\n    - **Source article IDs:** [art_finance_20230814_002_5051bc9c], [art_finance_20230906_003_96dde9f8]\n\n- **E3: Shift in M2 Components (CDs and MMMFs Increase):**\n    - **Date:** May 2022 to July 2023, with impact evident in August 2023 data.\n    - **Why it matters causally:** A re-composition of M2 aggregates, where funds moved into more remunerative components within M2, helping to stabilize its growth rate within a range despite overall contraction in some parts.\n    - **Source article IDs:** [art_finance_20230906_003_96dde9f8]\n\n- **E4: Economic Indicators Pointing to Deceleration:**\n    - **Date:** August 24, 2023 (release of July indicators).\n    - **Why it matters causally:** Weakening economic outlook reduces demand for credit and money, contributing to a controlled M2 growth environment.\n    - **Source article IDs:** [art_finance_20230824_003_70159730]\n\n- **E5: Jackson Hole Economic Policy Symposium:**\n    - **Date:** August 24-26, 2023.\n    - **Why it matters causally:** Speeches and discussions by Fed officials, including Jerome Powell, reinforced the Fed's commitment to current monetary policy, managing expectations regarding future M2 movements.\n    - **Source article IDs:** [art_finance_20230824_006_99d61fe1]\n\n## Evidence Mapping Table\n\n| Claim/Event | Article IDs | Date Support | Confidence (0-1) | Notes |\n|---|---|---|---|---|\n| Federal Reserve's Continued QT-II drains liquidity | [art_finance_20230823_002_dca22b4a] | August 23, 2023 | 0.9 | Direct explanation of QT mechanics and its impact on liquidity as of August 14, 2023. |\n| Higher interest rates influence money allocation | [art_finance_20230814_002_5051bc9c], [art_finance_20230906_003_96dde9f8] | August 14, 2023, September 6, 2023 | 0.8 | Explains role of IORB/ON RRP and the shift to CDs/MMMFs due to rising rates, covering through July 2023. |\n| Shift from demand deposits to CDs/MMMFs | [art_finance_20230906_003_96dde9f8] | September 6, 2023 | 0.9 | Provides quantitative data on the increase in CDs and MMMFs up to July 2023, directly impacting M2 composition. |\n| Economic indicators suggest future deceleration | [art_finance_20230824_003_70159730] | August 24, 2023 | 0.7 | LEI continued to fall, indicating a likely deceleration or mild contraction, supporting a 'within range' M2 growth rather than expansion. |\n| Fed’s policy announcements manage expectations | [art_finance_20230824_006_99d61fe1], [art_finance_20230803_005_f24c958c] | August 24, 2023 and August 3, 2023 | 0.7 | Jackson Hole discussions and Taylor Rule relevance indicate consistent Fed messaging on monetary policy direction, preventing unexpected M2 shifts.\n\n## Uncertainties And Alternative Paths\n- **Exact Magnitude of M2 Data Release**: While articles discuss the causal factors, the precise numerical M2 growth data for August 2023 is not explicitly stated in the provided articles, which would be the definitive confirmation. The explanation relies on understanding the direction and consistency of trends.\n- **Stronger-than-Expected Economic Rebound**: If economic indicators had significantly surprised on the upside in late August or early September, indicating a robust rebound instead of deceleration, the demand for credit could have temporarily surged, potentially pushing M2 growth above the recent range.\n- **Sudden Shift in Fed Policy or Communication**: An unexpected dovish pivot by the Federal Reserve or a significant change in its communication strategy, perhaps indicated at the Jackson Hole Symposium, could have sparked increased liquidity demand and altered the M2 growth trajectory. However, the discussions at Jackson Hole reinforced structural changes, implying no immediate major policy shift.\n",
+    "graph_built": true,
+    "graph_build_error": null,
+    "is_synthetic": false,
+    "quality_score": null,
+    "quality_dimensions": null,
+    "skip_evidence": false,
+    "skip_reason": null,
+    "quality_warning": null,
+    "created_at": "2026-07-24T18:21:22.205377Z",
+    "updated_at": null,
+    "metadata": {
+      "finance": {
+        "dataset_version": "finance_hgf_v1_300",
+        "family_id": "us_m2_monthly_growth",
+        "event_cluster_id": "us_money_supply_2023-08",
+        "category": "monetary_policy",
+        "original_domain": "monetary_policy",
+        "subdomain": "money supply",
+        "entity": "United States M2 money stock",
+        "region": "US",
+        "target_metric": "monthly M2 growth",
+        "target_period": "2023-08",
+        "forecast_cutoff": "2023-08-01T00:00:00+00:00",
+        "forecast_date_options": [
+          "2023-08-01"
+        ],
+        "resolution_available_at": "2023-09-15T23:59:59+00:00",
+        "horizon_days": 45,
+        "source_type": "fred_series_snapshot",
+        "source_series_id": "M2SL",
+        "source_homepage": "https://fred.stlouisfed.org/series/M2SL",
+        "comparison_rule": "target change bucketed by the lower and upper quartiles of the 8 prior observed changes",
+        "comparison_threshold": -0.159442,
+        "comparison_thresholds": {
+          "lower": -0.625946,
+          "upper": -0.049894
+        },
+        "change_unit": "percent",
+        "threshold_observation_dates": [
+          "2022-11-01",
+          "2022-12-01",
+          "2023-01-01",
+          "2023-02-01",
+          "2023-03-01",
+          "2023-04-01",
+          "2023-05-01",
+          "2023-06-01",
+          "2023-07-01"
+        ],
+        "split": "memory",
+        "family_position": 2,
+        "family_size": 7,
+        "consensus_snapshot": null,
+        "consensus_status": "no_exact_option_space_match"
+      },
+      "benchmark_private": {
+        "resolved_outcome_label": "within recent range",
+        "resolved_class": "within recent range",
+        "resolution_value": 20777.0,
+        "target_change": -0.06781748,
+        "source_observation_date": "2023-08-01",
+        "resolution_document": {
+          "publisher": "Federal Reserve Bank of St. Louis (FRED)",
+          "title": "M2 Money Stock",
+          "url": "https://fred.stlouisfed.org/series/M2SL"
+        },
+        "source_download_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=M2SL&cosd=2019-01-01&coed=2026-06-30",
+        "source_sha256": "32d7423039b30da25a671fecd73a234b8aa7ca77771c6d31437296e895bcf247",
+        "source_retrieved_at": "2026-07-24T18:20:53.280305+00:00"
+      }
+    }
+  },
+  "actual_outcome_event_id": "evt_3d02bedf457d",
+  "evidence": {
+    "satisfied": true,
+    "article_count": 14,
+    "missing_requirements": [],
+    "articles": [
+      {
+        "id": "art_finance_20190622_002_1ff75916",
+        "title": "Factors affecting economic growth - Economics Help",
+        "url": "https://www.economicshelp.org/blog/2671/economics/factors-affecting-economic-growth",
+        "source": "economicshelp.org",
+        "published_date": "2019-06-22T09:40:10+00:00"
+      },
+      {
+        "id": "art_finance_20201112_004_a404ffa1",
+        "title": "The Great Recession and Its Aftermath - Federal Reserve History",
+        "url": "https://www.federalreservehistory.org/essays/great-recession-and-its-aftermath",
+        "source": "federalreservehistory.org",
+        "published_date": "2020-11-12T21:55:11+00:00"
+      },
+      {
+        "id": "art_finance_20200420_005_6ed56322",
+        "title": "US M2 Money Supply YoY (Monthly) - United States - Historic… - YCharts",
+        "url": "https://ycharts.com/indicators/us_m2_money_supply_yoy",
+        "source": "ycharts.com",
+        "published_date": "2020-04-20T21:02:26+00:00"
+      },
+      {
+        "id": "art_finance_20201121_006_669a015e",
+        "title": "US M2 Money Supply (Monthly) - United States - Historical D… - YCharts",
+        "url": "https://ycharts.com/indicators/us_m2_money_supply",
+        "source": "ycharts.com",
+        "published_date": "2020-11-21T14:07:45+00:00"
+      },
+      {
+        "id": "art_finance_20230906_003_96dde9f8",
+        "title": "A Small Contribution to Measuring the Lags in Monetary Policy Transmission - Federal Reserve Bank of Richmond",
+        "url": "https://www.richmondfed.org/publications/research/economic_brief/2023/eb_23-30",
+        "source": "richmondfed.org",
+        "published_date": "2023-09-06T10:42:01+00:00"
+      },
+      {
+        "id": "art_finance_20230824_003_70159730",
+        "title": "Updates Of Economic Indicators August 2023 - EconomicGreenfield",
+        "url": "https://www.economicgreenfield.com/2023/08/24/updates-of-economic-indicators-august-2023",
+        "source": "economicgreenfield.com",
+        "published_date": "2023-08-24T15:33:45+00:00"
+      },
+      {
+        "id": "art_finance_20080723_002_1fbeb069",
+        "title": "Current US Inflation Rates: 2000-2025",
+        "url": "https://www.usinflationcalculator.com/inflation/current-inflation-rates",
+        "source": "usinflationcalculator.com",
+        "published_date": "2008-07-23T03:07:58+00:00"
+      },
+      {
+        "id": "art_finance_20210831_002_24f239dd",
+        "title": "Two more factors have popped up that add to the Fed's inflation worries",
+        "url": "https://www.cnbc.com/2021/08/31/two-more-factors-have-popped-up-that-add-to-the-feds-inflation-worries.html",
+        "source": "cnbc.com",
+        "published_date": "2021-08-31T19:34:20+00:00"
+      },
+      {
+        "id": "art_finance_20230822_004_cae55020",
+        "title": "Policy impact of unexpected Fed rate movements blurred by key information cues - Federal Reserve Bank of Dallas",
+        "url": "https://www.dallasfed.org/research/economics/2023/0822",
+        "source": "dallasfed.org",
+        "published_date": "2023-08-22T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230823_002_dca22b4a",
+        "title": "The Mechanics of Fed Balance Sheet Normalization - Federal Reserve Bank of St. Louis",
+        "url": "https://www.stlouisfed.org/on-the-economy/2023/aug/the-mechanics-of-fed-balance-sheet-normalization",
+        "source": "stlouisfed.org",
+        "published_date": "2023-08-23T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230814_002_5051bc9c",
+        "title": "The Federal Reserve’s Two Key Rates: Similar but Not the Same? - Liberty Street Economics",
+        "url": "https://libertystreeteconomics.newyorkfed.org/2023/08/the-federal-reserves-two-key-rates-similar-but-not-the-same",
+        "source": "libertystreeteconomics.newyorkfed.org",
+        "published_date": "2023-08-14T11:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230803_005_f24c958c",
+        "title": "Taylor Rule Remains Central to Interest Rate Discussions - Atlanta - Federal Reserve Bank",
+        "url": "https://www.atlantafed.org/who-we-are/2023/08/03/taylor-rule-remains-central-to-interest-rate-discussions",
+        "source": "atlantafed.org",
+        "published_date": "2023-08-03T00:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230824_006_99d61fe1",
+        "title": "Jackson Hole Economic Policy Symposium: Structural Shifts in the Global Economy - Federal Reserve Bank of Kansas City",
+        "url": "https://www.kansascityfed.org/research/jackson-hole-economic-symposium/jackson-hole-economic-policy-symposium-structural-shifts-in-the-global-economy",
+        "source": "kansascityfed.org",
+        "published_date": "2023-08-24T07:00:00+00:00"
+      },
+      {
+        "id": "art_finance_20230827_007_9f063e3f",
+        "title": "Gann Chart Analysis GannZilla",
+        "url": "https://gannzilla.com/gann-chart-analysis",
+        "source": "gannzilla.com",
+        "published_date": "2023-08-27T01:52:33+00:00"
+      }
+    ]
+  },
+  "graph": {
+    "built": true,
+    "satisfied": true,
+    "validation": {
+      "status": "pass",
+      "issues": [],
+      "actual_outcome_event_id": "evt_3d02bedf457d",
+      "events_count": 10,
+      "hypotheses_count": 13
+    },
+    "missing_requirements": [],
+    "metrics": {
+      "max_depth": 5,
+      "avg_depth": 2.67,
+      "quality_score": 0.81,
+      "depth_score": 1.0,
+      "confidence_score": 0.67,
+      "strength_score": 0.57,
+      "evidence_score": 1.0,
+      "event_count": 10,
+      "hypothesis_count": 13
+    },
+    "nodes": [
+      {
+        "id": "evt_10997dd235d1",
+        "title": "Option 3: above recent range",
+        "description": "Question resolves to: above recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-09-15T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_us_m2_monthly_growth_2023_08",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 2,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:26:21.072161Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_16838e15a444",
+        "title": "Option 1: below recent range",
+        "description": "Question resolves to: below recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-09-15T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "predicted",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_us_m2_monthly_growth_2023_08",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 0,
+        "is_actual_outcome": false,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:26:21.072142Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_3d02bedf457d",
+        "title": "Option 2: within recent range",
+        "description": "Question resolves to: within recent range",
+        "event_type": "outcome",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-09-15T23:59:59Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [],
+        "extracted_for_question_id": "v3_us_m2_monthly_growth_2023_08",
+        "source_article_id": null,
+        "is_synthetic": false,
+        "metadata": {},
+        "is_outcome": true,
+        "outcome_scenario": "mcq_option",
+        "outcome_option_index": 1,
+        "is_actual_outcome": true,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:26:21.072152Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20200420_090_298194f0",
+        "title": "M2 Money Supply YoY Historical Data",
+        "description": "Historical data for US M2 Money Supply Year-over-Year.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2020-04-20T21:02:26Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20200420_005_6ed56322"
+        ],
+        "extracted_for_question_id": "v3_us_m2_monthly_growth_2023_08",
+        "source_article_id": "art_finance_20200420_005_6ed56322",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_m2_monthly_growth_2023_08"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:41:28.795774Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20201121_089_db17f0e6",
+        "title": "M2 Money Supply Historical Data",
+        "description": "Historical data for US M2 Money Supply.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2020-11-21T14:07:45Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20201121_006_669a015e"
+        ],
+        "extracted_for_question_id": "v3_us_m2_monthly_growth_2023_08",
+        "source_article_id": "art_finance_20201121_006_669a015e",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_m2_monthly_growth_2023_08"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:41:28.757515Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20210831_092_1442f14c",
+        "title": "Two More Factors Add to Fed's Inflation Worries",
+        "description": "Two additional factors have emerged that contribute to the Federal Reserve's concerns about inflation.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2021-08-31T19:34:20Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20210831_002_24f239dd"
+        ],
+        "extracted_for_question_id": "v3_us_m2_monthly_growth_2023_08",
+        "source_article_id": "art_finance_20210831_002_24f239dd",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_m2_monthly_growth_2023_08"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:41:43.372278Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230803_087_f48b7e38",
+        "title": "Taylor Rule Central to Interest Rate Discussions",
+        "description": "The Taylor Rule remains a central topic in discussions about interest rates.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-08-03T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230803_005_f24c958c"
+        ],
+        "extracted_for_question_id": "v3_us_m2_monthly_growth_2023_08",
+        "source_article_id": "art_finance_20230803_005_f24c958c",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_m2_monthly_growth_2023_08"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:41:28.679913Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230814_086_53200064",
+        "title": "Federal Reserve's Two Key Rates",
+        "description": "An article explaining the Federal Reserve’s two key rates and their similarities and differences.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-08-14T11:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230814_002_5051bc9c"
+        ],
+        "extracted_for_question_id": "v3_us_m2_monthly_growth_2023_08",
+        "source_article_id": "art_finance_20230814_002_5051bc9c",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_m2_monthly_growth_2023_08"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:41:28.640629Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230822_085_0b1b803e",
+        "title": "Policy Impact of Unexpected Fed Rate Movements",
+        "description": "Discussion on how the policy impact of unexpected Fed rate movements is blurred by key information cues.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-08-22T07:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230822_004_cae55020"
+        ],
+        "extracted_for_question_id": "v3_us_m2_monthly_growth_2023_08",
+        "source_article_id": "art_finance_20230822_004_cae55020",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_m2_monthly_growth_2023_08"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:41:28.602473Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230823_084_9da1e3c0",
+        "title": "Fed Balance Sheet Normalization Mechanics Discussed",
+        "description": "An article discussing the mechanics of the Federal Reserve's balance sheet normalization process.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-08-23T07:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230823_002_dca22b4a"
+        ],
+        "extracted_for_question_id": "v3_us_m2_monthly_growth_2023_08",
+        "source_article_id": "art_finance_20230823_002_dca22b4a",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_m2_monthly_growth_2023_08"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:41:28.561580Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230824_079_f9be0ed4",
+        "title": "Jackson Hole Economic Policy Symposium",
+        "description": "Jackson Hole Economic Policy Symposium began, with Federal Reserve officials and economists discussing structural shifts in the global economy, including remarks by Jerome Powell.",
+        "event_type": "milestone",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-08-24T00:00:00Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230824_006_99d61fe1"
+        ],
+        "extracted_for_question_id": "v3_us_m2_monthly_growth_2023_08",
+        "source_article_id": "art_finance_20230824_006_99d61fe1",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_m2_monthly_growth_2023_08"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:40:57.578958Z",
+        "updated_at": null
+      },
+      {
+        "id": "evt_finance_20230824_088_e245c5e0",
+        "title": "Updates of Economic Indicators August 2023",
+        "description": "Updates of various economic indicators that predict and/or depict economic activity in August 2023.",
+        "event_type": "indicator",
+        "domain": "finance",
+        "tags": [],
+        "occurred_date": "2023-08-24T15:33:45Z",
+        "predicted_date": null,
+        "resolution_date": null,
+        "status": "occurred",
+        "article_ids": [
+          "art_finance_20230824_003_70159730"
+        ],
+        "extracted_for_question_id": "v3_us_m2_monthly_growth_2023_08",
+        "source_article_id": "art_finance_20230824_003_70159730",
+        "is_synthetic": false,
+        "metadata": {
+          "related_question_ids": [
+            "v3_us_m2_monthly_growth_2023_08"
+          ],
+          "extracted_for_evidence": true
+        },
+        "is_outcome": false,
+        "outcome_scenario": null,
+        "outcome_option_index": null,
+        "is_actual_outcome": null,
+        "review_status": "pending",
+        "review_note": null,
+        "created_at": "2026-07-25T04:41:28.718809Z",
+        "updated_at": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "hyp_v3_us_m2_monthly_growth_2023_08_20260725_044135_064_d8f3fc1f",
+        "source_event_id": "evt_finance_20230824_088_e245c5e0",
+        "target_event_id": "evt_3d02bedf457d",
+        "relation_type": "correlates",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Updates of economic indicators in August 2023 would correlate with M2 monthly growth in the same period.",
+        "evidence_article_ids": [
+          "art_finance_20230824_003_70159730"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2023_08"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T04:41:35.967640Z",
+        "last_confirmed_at": "2026-07-25T04:41:35.967640Z"
+      },
+      {
+        "id": "hyp_v3_us_m2_monthly_growth_2023_08_20260725_044135_065_adc6e740",
+        "source_event_id": "evt_finance_20230814_086_53200064",
+        "target_event_id": "evt_finance_20230822_085_0b1b803e",
+        "relation_type": "enables",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Understanding the Fed's key rates is essential to understanding the impact of rate movements.",
+        "evidence_article_ids": [
+          "art_finance_20230814_002_5051bc9c"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2023_08"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T04:41:35.991586Z",
+        "last_confirmed_at": "2026-07-25T04:41:35.991586Z"
+      },
+      {
+        "id": "hyp_v3_us_m2_monthly_growth_2023_08_20260725_044136_066_8725a5c4",
+        "source_event_id": "evt_finance_20201121_089_db17f0e6",
+        "target_event_id": "evt_3d02bedf457d",
+        "relation_type": "correlates",
+        "strength": 0.4,
+        "confidence": 0.5,
+        "time_lag_hours": null,
+        "reasoning": "Historical M2 money supply data provides context and can correlate with future growth, though with a weaker direct causal link due to time lag.",
+        "evidence_article_ids": [
+          "art_finance_20201121_006_669a015e"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2023_08"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T04:41:36.018871Z",
+        "last_confirmed_at": "2026-07-25T04:41:36.018871Z"
+      },
+      {
+        "id": "hyp_v3_us_m2_monthly_growth_2023_08_20260725_044136_067_ea90a946",
+        "source_event_id": "evt_finance_20200420_090_298194f0",
+        "target_event_id": "evt_3d02bedf457d",
+        "relation_type": "correlates",
+        "strength": 0.4,
+        "confidence": 0.5,
+        "time_lag_hours": null,
+        "reasoning": "Historical M2 money supply YoY data provides context and can correlate with future growth, though with a weaker direct causal link due to time lag.",
+        "evidence_article_ids": [
+          "art_finance_20200420_005_6ed56322"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2023_08"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T04:41:36.038898Z",
+        "last_confirmed_at": "2026-07-25T04:41:36.038898Z"
+      },
+      {
+        "id": "hyp_v3_us_m2_monthly_growth_2023_08_20260725_044219_072_ee8046b7",
+        "source_event_id": "evt_finance_20230824_088_e245c5e0",
+        "target_event_id": "evt_3d02bedf457d",
+        "relation_type": "correlates",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Updates of economic indicators in August 2023 would correlate with M2 monthly growth in the same period.",
+        "evidence_article_ids": [
+          "art_finance_20230824_003_70159730"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2023_08"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T04:42:19.885783Z",
+        "last_confirmed_at": "2026-07-25T04:42:19.885783Z"
+      },
+      {
+        "id": "hyp_v3_us_m2_monthly_growth_2023_08_20260725_044219_073_0d57d087",
+        "source_event_id": "evt_finance_20230824_079_f9be0ed4",
+        "target_event_id": "evt_finance_20230824_088_e245c5e0",
+        "relation_type": "causes",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Discussions at the Jackson Hole Symposium can influence economic indicators.",
+        "evidence_article_ids": [
+          "art_finance_20230824_006_99d61fe1"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2023_08"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T04:42:19.905668Z",
+        "last_confirmed_at": "2026-07-25T04:42:19.905668Z"
+      },
+      {
+        "id": "hyp_v3_us_m2_monthly_growth_2023_08_20260725_044219_074_a61351ea",
+        "source_event_id": "evt_finance_20230823_084_9da1e3c0",
+        "target_event_id": "evt_finance_20230824_088_e245c5e0",
+        "relation_type": "causes",
+        "strength": 0.5,
+        "confidence": 0.6,
+        "time_lag_hours": null,
+        "reasoning": "Fed balance sheet normalization mechanics can influence broader economic indicators.",
+        "evidence_article_ids": [
+          "art_finance_20230823_002_dca22b4a"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2023_08"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T04:42:19.924909Z",
+        "last_confirmed_at": "2026-07-25T04:42:19.924909Z"
+      },
+      {
+        "id": "hyp_v3_us_m2_monthly_growth_2023_08_20260725_044219_075_d358c7c4",
+        "source_event_id": "evt_finance_20230822_085_0b1b803e",
+        "target_event_id": "evt_finance_20230824_088_e245c5e0",
+        "relation_type": "causes",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Policy impact of Fed rate movements directly influences economic indicators.",
+        "evidence_article_ids": [
+          "art_finance_20230822_004_cae55020"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2023_08"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T04:42:19.942746Z",
+        "last_confirmed_at": "2026-07-25T04:42:19.942746Z"
+      },
+      {
+        "id": "hyp_v3_us_m2_monthly_growth_2023_08_20260725_044219_076_674333cc",
+        "source_event_id": "evt_finance_20230814_086_53200064",
+        "target_event_id": "evt_finance_20230822_085_0b1b803e",
+        "relation_type": "enables",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Understanding the Fed's key rates is essential to understanding the impact of rate movements.",
+        "evidence_article_ids": [
+          "art_finance_20230814_002_5051bc9c"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2023_08"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T04:42:19.960701Z",
+        "last_confirmed_at": "2026-07-25T04:42:19.960701Z"
+      },
+      {
+        "id": "hyp_v3_us_m2_monthly_growth_2023_08_20260725_044219_077_24513ff6",
+        "source_event_id": "evt_finance_20230803_087_f48b7e38",
+        "target_event_id": "evt_finance_20230814_086_53200064",
+        "relation_type": "causes",
+        "strength": 0.6,
+        "confidence": 0.7,
+        "time_lag_hours": null,
+        "reasoning": "Discussions around the Taylor Rule influence the understanding and setting of key interest rates.",
+        "evidence_article_ids": [
+          "art_finance_20230803_005_f24c958c"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2023_08"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T04:42:19.978442Z",
+        "last_confirmed_at": "2026-07-25T04:42:19.978442Z"
+      },
+      {
+        "id": "hyp_v3_us_m2_monthly_growth_2023_08_20260725_044219_078_38dd62ab",
+        "source_event_id": "evt_finance_20201121_089_db17f0e6",
+        "target_event_id": "evt_3d02bedf457d",
+        "relation_type": "correlates",
+        "strength": 0.4,
+        "confidence": 0.5,
+        "time_lag_hours": null,
+        "reasoning": "Historical M2 money supply data provides context and can correlate with future growth, though with a weaker direct causal link due to time lag.",
+        "evidence_article_ids": [
+          "art_finance_20201121_006_669a015e"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2023_08"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T04:42:19.998411Z",
+        "last_confirmed_at": "2026-07-25T04:42:19.998411Z"
+      },
+      {
+        "id": "hyp_v3_us_m2_monthly_growth_2023_08_20260725_044220_079_53b1a3ef",
+        "source_event_id": "evt_finance_20200420_090_298194f0",
+        "target_event_id": "evt_3d02bedf457d",
+        "relation_type": "correlates",
+        "strength": 0.4,
+        "confidence": 0.5,
+        "time_lag_hours": null,
+        "reasoning": "Historical M2 money supply YoY data provides context and can correlate with future growth, though with a weaker direct causal link due to time lag.",
+        "evidence_article_ids": [
+          "art_finance_20200420_005_6ed56322"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2023_08"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T04:42:20.016963Z",
+        "last_confirmed_at": "2026-07-25T04:42:20.016963Z"
+      },
+      {
+        "id": "hyp_v3_us_m2_monthly_growth_2023_08_20260725_044220_080_8d5b2c9e",
+        "source_event_id": "evt_finance_20210831_092_1442f14c",
+        "target_event_id": "evt_finance_20230803_087_f48b7e38",
+        "relation_type": "causes",
+        "strength": 0.7,
+        "confidence": 0.8,
+        "time_lag_hours": null,
+        "reasoning": "Inflation worries can lead to discussions around interest rate rules like the Taylor Rule.",
+        "evidence_article_ids": [
+          "art_finance_20210831_002_24f239dd"
+        ],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2023_08"
+        ],
+        "identified_by": "evidence_pipeline",
+        "first_identified_at": "2026-07-25T04:42:20.034862Z",
+        "last_confirmed_at": "2026-07-25T04:42:20.034862Z"
+      }
+    ],
+    "outcome_impacts": [
+      {
+        "id": "imp_f12f2d05",
+        "event_id": "evt_finance_20230824_079_f9be0ed4",
+        "outcome_event_id": "evt_3d02bedf457d",
+        "question_id": "v3_us_m2_monthly_growth_2023_08",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.6,
+        "reasoning": "Jackson Hole Symposium discussions provide context but have an indirect and neutral impact on M2 growth.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2023_08"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:41:43.398962Z",
+        "last_confirmed_at": "2026-07-25T04:41:43.398962Z"
+      },
+      {
+        "id": "imp_956f74fe",
+        "event_id": "evt_finance_20230823_084_9da1e3c0",
+        "outcome_event_id": "evt_3d02bedf457d",
+        "question_id": "v3_us_m2_monthly_growth_2023_08",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.5,
+        "confidence": 0.7,
+        "reasoning": "Fed balance sheet normalization typically reduces liquidity, potentially slowing M2 growth.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2023_08"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:41:43.409400Z",
+        "last_confirmed_at": "2026-07-25T04:41:43.409400Z"
+      },
+      {
+        "id": "imp_243064a0",
+        "event_id": "evt_finance_20230822_085_0b1b803e",
+        "outcome_event_id": "evt_3d02bedf457d",
+        "question_id": "v3_us_m2_monthly_growth_2023_08",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.6,
+        "reasoning": "Unexpected Fed rate movements can have complex and sometimes ambiguous impacts on M2 growth.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2023_08"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:41:43.421421Z",
+        "last_confirmed_at": "2026-07-25T04:41:43.421421Z"
+      },
+      {
+        "id": "imp_f7a5c02c",
+        "event_id": "evt_finance_20230814_086_53200064",
+        "outcome_event_id": "evt_3d02bedf457d",
+        "question_id": "v3_us_m2_monthly_growth_2023_08",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.6,
+        "reasoning": "Understanding Fed's key rates is foundational but has an indirect and neutral impact on M2 growth.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2023_08"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:41:43.432146Z",
+        "last_confirmed_at": "2026-07-25T04:41:43.432146Z"
+      },
+      {
+        "id": "imp_cb0ba333",
+        "event_id": "evt_finance_20230803_087_f48b7e38",
+        "outcome_event_id": "evt_3d02bedf457d",
+        "question_id": "v3_us_m2_monthly_growth_2023_08",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.6,
+        "reasoning": "Taylor Rule discussions influence rate policy, which indirectly affects M2 growth.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2023_08"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:41:43.442065Z",
+        "last_confirmed_at": "2026-07-25T04:41:43.442065Z"
+      },
+      {
+        "id": "imp_753860a6",
+        "event_id": "evt_finance_20230824_088_e245c5e0",
+        "outcome_event_id": "evt_3d02bedf457d",
+        "question_id": "v3_us_m2_monthly_growth_2023_08",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.8,
+        "reasoning": "Economic indicators in August 2023 directly reflect economic activity that influences M2 growth.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2023_08"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:41:43.453915Z",
+        "last_confirmed_at": "2026-07-25T04:41:43.453915Z"
+      },
+      {
+        "id": "imp_a31ade8e",
+        "event_id": "evt_finance_20201121_089_db17f0e6",
+        "outcome_event_id": "evt_3d02bedf457d",
+        "question_id": "v3_us_m2_monthly_growth_2023_08",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.5,
+        "reasoning": "Historical M2 data provides context for current growth trends.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2023_08"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:41:43.464584Z",
+        "last_confirmed_at": "2026-07-25T04:41:43.464584Z"
+      },
+      {
+        "id": "imp_29850b86",
+        "event_id": "evt_finance_20200420_090_298194f0",
+        "outcome_event_id": "evt_3d02bedf457d",
+        "question_id": "v3_us_m2_monthly_growth_2023_08",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.5,
+        "reasoning": "Historical M2 YoY data provides context for current growth trends.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2023_08"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:41:43.477411Z",
+        "last_confirmed_at": "2026-07-25T04:41:43.477411Z"
+      },
+      {
+        "id": "imp_e2c19fdc",
+        "event_id": "evt_finance_20230906_091_9292960d",
+        "outcome_event_id": "evt_3d02bedf457d",
+        "question_id": "v3_us_m2_monthly_growth_2023_08",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.6,
+        "reasoning": "Research on monetary policy transmission lags indirectly informs policy decisions that affect M2 growth.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2023_08"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:41:43.487552Z",
+        "last_confirmed_at": "2026-07-25T04:41:43.487552Z"
+      },
+      {
+        "id": "imp_7aff865e",
+        "event_id": "evt_finance_20210831_092_1442f14c",
+        "outcome_event_id": "evt_3d02bedf457d",
+        "question_id": "v3_us_m2_monthly_growth_2023_08",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Increased inflation worries can lead to tighter monetary policy, potentially slowing M2 growth.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2023_08"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:41:43.497996Z",
+        "last_confirmed_at": "2026-07-25T04:41:43.497996Z"
+      },
+      {
+        "id": "imp_c98ae99a",
+        "event_id": "evt_finance_20230824_079_f9be0ed4",
+        "outcome_event_id": "evt_3d02bedf457d",
+        "question_id": "v3_us_m2_monthly_growth_2023_08",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.6,
+        "reasoning": "Jackson Hole Symposium discussions provide context but have an indirect and neutral impact on M2 growth.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2023_08"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:42:20.046377Z",
+        "last_confirmed_at": "2026-07-25T04:42:20.046377Z"
+      },
+      {
+        "id": "imp_29e22918",
+        "event_id": "evt_finance_20230823_084_9da1e3c0",
+        "outcome_event_id": "evt_3d02bedf457d",
+        "question_id": "v3_us_m2_monthly_growth_2023_08",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.5,
+        "confidence": 0.7,
+        "reasoning": "Fed balance sheet normalization typically reduces liquidity, potentially slowing M2 growth.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2023_08"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:42:20.056093Z",
+        "last_confirmed_at": "2026-07-25T04:42:20.056093Z"
+      },
+      {
+        "id": "imp_f2469020",
+        "event_id": "evt_finance_20230822_085_0b1b803e",
+        "outcome_event_id": "evt_3d02bedf457d",
+        "question_id": "v3_us_m2_monthly_growth_2023_08",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.6,
+        "reasoning": "Unexpected Fed rate movements can have complex and sometimes ambiguous impacts on M2 growth.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2023_08"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:42:20.066464Z",
+        "last_confirmed_at": "2026-07-25T04:42:20.066464Z"
+      },
+      {
+        "id": "imp_1f7c39a0",
+        "event_id": "evt_finance_20230814_086_53200064",
+        "outcome_event_id": "evt_3d02bedf457d",
+        "question_id": "v3_us_m2_monthly_growth_2023_08",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.6,
+        "reasoning": "Understanding Fed's key rates is foundational but has an indirect and neutral impact on M2 growth.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2023_08"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:42:20.076446Z",
+        "last_confirmed_at": "2026-07-25T04:42:20.076446Z"
+      },
+      {
+        "id": "imp_9e0c2963",
+        "event_id": "evt_finance_20230803_087_f48b7e38",
+        "outcome_event_id": "evt_3d02bedf457d",
+        "question_id": "v3_us_m2_monthly_growth_2023_08",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.6,
+        "reasoning": "Taylor Rule discussions influence rate policy, which indirectly affects M2 growth.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2023_08"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:42:20.086775Z",
+        "last_confirmed_at": "2026-07-25T04:42:20.086775Z"
+      },
+      {
+        "id": "imp_eed3a8a3",
+        "event_id": "evt_finance_20230824_088_e245c5e0",
+        "outcome_event_id": "evt_3d02bedf457d",
+        "question_id": "v3_us_m2_monthly_growth_2023_08",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.8,
+        "reasoning": "Economic indicators in August 2023 directly reflect economic activity that influences M2 growth.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2023_08"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:42:20.098368Z",
+        "last_confirmed_at": "2026-07-25T04:42:20.098368Z"
+      },
+      {
+        "id": "imp_5a301108",
+        "event_id": "evt_finance_20201121_089_db17f0e6",
+        "outcome_event_id": "evt_3d02bedf457d",
+        "question_id": "v3_us_m2_monthly_growth_2023_08",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.5,
+        "reasoning": "Historical M2 data provides context for current growth trends.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2023_08"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:42:20.108074Z",
+        "last_confirmed_at": "2026-07-25T04:42:20.108074Z"
+      },
+      {
+        "id": "imp_0726fa4a",
+        "event_id": "evt_finance_20200420_090_298194f0",
+        "outcome_event_id": "evt_3d02bedf457d",
+        "question_id": "v3_us_m2_monthly_growth_2023_08",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.5,
+        "reasoning": "Historical M2 YoY data provides context for current growth trends.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2023_08"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:42:20.119904Z",
+        "last_confirmed_at": "2026-07-25T04:42:20.119904Z"
+      },
+      {
+        "id": "imp_74d5d7f7",
+        "event_id": "evt_finance_20230906_091_9292960d",
+        "outcome_event_id": "evt_3d02bedf457d",
+        "question_id": "v3_us_m2_monthly_growth_2023_08",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.6,
+        "reasoning": "Research on monetary policy transmission lags indirectly informs policy decisions that affect M2 growth.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2023_08"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:42:20.130869Z",
+        "last_confirmed_at": "2026-07-25T04:42:20.130869Z"
+      },
+      {
+        "id": "imp_fa95b545",
+        "event_id": "evt_finance_20210831_092_1442f14c",
+        "outcome_event_id": "evt_3d02bedf457d",
+        "question_id": "v3_us_m2_monthly_growth_2023_08",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Increased inflation worries can lead to tighter monetary policy, potentially slowing M2 growth.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2023_08"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:42:20.140725Z",
+        "last_confirmed_at": "2026-07-25T04:42:20.140725Z"
+      },
+      {
+        "id": "imp_a252474b",
+        "event_id": "evt_finance_20230814_075_a83ebdab",
+        "outcome_event_id": "evt_3d02bedf457d",
+        "question_id": "v3_us_m2_monthly_growth_2023_08",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Federal Reserve's Continued Quantitative Tightening would reduce liquidity and negatively impact M2 growth.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2023_08"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:42:25.788728Z",
+        "last_confirmed_at": "2026-07-25T04:42:25.788728Z"
+      },
+      {
+        "id": "imp_2cb16350",
+        "event_id": "evt_finance_20230801_076_051e1e35",
+        "outcome_event_id": "evt_3d02bedf457d",
+        "question_id": "v3_us_m2_monthly_growth_2023_08",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Sustained High Interest Rate Environment would likely slow down economic activity and M2 growth.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2023_08"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:42:25.801619Z",
+        "last_confirmed_at": "2026-07-25T04:42:25.801619Z"
+      },
+      {
+        "id": "imp_be6ac0c4",
+        "event_id": "evt_finance_20230801_077_56210193",
+        "outcome_event_id": "evt_3d02bedf457d",
+        "question_id": "v3_us_m2_monthly_growth_2023_08",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.6,
+        "reasoning": "A Shift in M2 Components (CDs and MMMFs Increase) indicates a change in how money is held, which can have a neutral to slightly negative impact on overall M2 growth depending on the underlying causes.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2023_08"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:42:25.812723Z",
+        "last_confirmed_at": "2026-07-25T04:42:25.812723Z"
+      },
+      {
+        "id": "imp_e233bb95",
+        "event_id": "evt_finance_20230824_078_d275c36e",
+        "outcome_event_id": "evt_3d02bedf457d",
+        "question_id": "v3_us_m2_monthly_growth_2023_08",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.6,
+        "confidence": 0.7,
+        "reasoning": "Economic Indicators Pointing to Deceleration would suggest a slowdown in economic activity, which typically leads to slower M2 growth.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2023_08"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:42:25.823145Z",
+        "last_confirmed_at": "2026-07-25T04:42:25.823145Z"
+      },
+      {
+        "id": "imp_90f48c1c",
+        "event_id": "evt_finance_20230831_080_52d1d4d3",
+        "outcome_event_id": "evt_3d02bedf457d",
+        "question_id": "v3_us_m2_monthly_growth_2023_08",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.7,
+        "reasoning": "August Data on M2 Components Reflects Shifts provides direct information on M2, so it has a neutral impact as it's a reflection rather than a cause.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2023_08"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:42:25.834101Z",
+        "last_confirmed_at": "2026-07-25T04:42:25.834101Z"
+      },
+      {
+        "id": "imp_6c986016",
+        "event_id": "evt_finance_20230822_081_543276fc",
+        "outcome_event_id": "evt_3d02bedf457d",
+        "question_id": "v3_us_m2_monthly_growth_2023_08",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.7,
+        "confidence": 0.8,
+        "reasoning": "Reduced Bank Lending and Credit Creation directly limits the money supply, leading to negative M2 growth.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2023_08"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:42:25.843975Z",
+        "last_confirmed_at": "2026-07-25T04:42:25.843975Z"
+      },
+      {
+        "id": "imp_29347945",
+        "event_id": "evt_finance_20230803_082_2d17b65d",
+        "outcome_event_id": "evt_3d02bedf457d",
+        "question_id": "v3_us_m2_monthly_growth_2023_08",
+        "impact_direction": "neutral",
+        "impact_magnitude": 0.3,
+        "confidence": 0.6,
+        "reasoning": "Discussion around the Taylor Rule influences rate policy, which indirectly affects M2 growth.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2023_08"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:42:25.855789Z",
+        "last_confirmed_at": "2026-07-25T04:42:25.855789Z"
+      },
+      {
+        "id": "imp_92620181",
+        "event_id": "evt_finance_20230101_083_b2562482",
+        "outcome_event_id": "evt_3d02bedf457d",
+        "question_id": "v3_us_m2_monthly_growth_2023_08",
+        "impact_direction": "negative",
+        "impact_magnitude": 0.8,
+        "confidence": 0.9,
+        "reasoning": "FOMC Significantly Raised Fed Funds Rate Target would lead to higher borrowing costs and reduced money supply growth.",
+        "evidence_article_ids": [],
+        "causal_chain_hypothesis_ids": [],
+        "discovered_by_question_ids": [
+          "v3_us_m2_monthly_growth_2023_08"
+        ],
+        "identified_by": "record_outcome_impact_tool",
+        "first_identified_at": "2026-07-25T04:42:25.866688Z",
+        "last_confirmed_at": "2026-07-25T04:42:25.866688Z"
+      }
+    ]
+  }
+}

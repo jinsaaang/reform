@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_googl_revenue_growth_acceleration_2024_09_30",
+  "blueprint_sha256": "949804194f2331e8da28997839c8ee003d5ebb31077a20fdb8a2733eb3dba3a1",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "corporate_earnings",
+      "target_operation": "year_over_year_growth_acceleration",
+      "option_geometry": "binary"
+    },
+    "historical_question": "As of 2024-09-30, will Alphabet Inc.'s quarterly revenue year-over-year growth for the fiscal quarter ending 2024-09-30 be at least 13.59 percent?",
+    "historical_cutoff": "2024-09-30T00:00:00+00:00",
+    "target_semantics": "Alphabet Inc.'s quarterly revenue year-over-year growth for the fiscal quarter ending 2024-09-30.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The DAG indicates that Alphabet's Strategic AI Investments (checkpoint_3) may have driven enhancements in Google Cloud Services (checkpoint_4), leading to increased Google Cloud revenue (checkpoint_5).",
+      "This increased Google Cloud revenue is posited to have contributed to Alphabet Inc.'s overall quarterly revenue growth (checkpoint_8).",
+      "The DAG also suggests that AI-driven Improvements in YouTube Advertising Capabilities (checkpoint_6) could have boosted YouTube ad revenue (checkpoint_7), also contributing to overall revenue growth (checkpoint_8)."
+    ],
+    "counterevidence": "The DAG identifies a Challenging Macroeconomic Environment (checkpoint_2) as a potential negative factor, which could have counteracted positive drivers.",
+    "prospective_target_estimate": "The available evidence is weak and does not provide sufficient support to estimate whether the year-over-year revenue growth will be at least 13.59 percent.",
+    "option_mapping": "The target metric is whether Alphabet Inc.'s quarterly revenue year-over-year growth for the fiscal quarter ending 2024-09-30 is at least 13.59 percent. The options are 'yes' or 'no'.",
+    "uncertainty": "The historical support for all identified drivers and counterevidence is weak, and there is no specific forecast-time evidence to assess the magnitude or direction of these factors for the target period. The DAG highlights that current evidence must directly measure factors and support outgoing relationships, which is not available.",
+    "dag_derived_lesson": "When evaluating a target metric, it is crucial to assess the strength of evidence supporting causal pathways, particularly for drivers and counterevidence. The absence of current, specific evidence for each link in a causal chain, even if a general relationship is historically supported, introduces significant uncertainty and prevents a confident prediction."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}

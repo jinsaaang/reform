@@ -1,0 +1,33 @@
+{
+  "schema_version": "hgf_memory_exemplar_v1",
+  "memory_question_id": "v3_us_10y_real_yield_monthly_change_2024_03",
+  "blueprint_sha256": "d94c23e9c723c8c04d78d91c7a81572ba203d5e76e9747ffd69edc1cd3dbf7b0",
+  "worked_exemplar": {
+    "task_signature": {
+      "category": "financial_analysis",
+      "target_operation": "predict_real_yield_change",
+      "option_geometry": "ordered_categorical"
+    },
+    "historical_question": "As of 2024-03-01, which range will the monthly 10-year real-yield change for United States 10-year real Treasury yield in 2024-03 fall into?",
+    "historical_cutoff": "2024-03-01T00:00:00+00:00",
+    "target_semantics": "The monthly change in the US 10-year real Treasury yield for March 2024, categorized as below -0.072 percentage points, between -0.072 and 0.227 percentage points, or above 0.227 percentage points.",
+    "forecast_time_evidence": [],
+    "expert_reasoning": [
+      "The strong economic data checkpoint suggests that expectations for rate cuts were pushed later, which would typically put upward pressure on yields.",
+      "The market commentary checkpoint indicates a debate around the timing of Fed cuts, contextualizing Treasury market movements without directly causing them.",
+      "The nominal and TIPS yields checkpoint provides a framework for understanding inflation compensation, which is crucial for real yields, but its specific impact on the target period is not directly supported by forecast-time evidence."
+    ],
+    "counterevidence": "No forecast-time evidence was provided to support or contradict any of the causal checkpoints or their proposed mechanisms linking to the target real yield change.",
+    "prospective_target_estimate": "Given the lack of forecast-time evidence, it is not possible to form a prospective estimate.",
+    "option_mapping": "The options are 'below recent range' (-infinity, -0.0725), 'within recent range' [-0.0725, 0.2275), and 'above recent range' [0.2275, +infinity). Without supporting evidence, mapping is not possible.",
+    "uncertainty": "Extreme uncertainty exists due to the complete absence of forecast-time evidence. The DAG's structure highlights potential drivers and mediators, but without any factual basis from the allowed articles, their influence on the target cannot be assessed.",
+    "dag_derived_lesson": "When evaluating a target metric influenced by multiple interacting factors, it is crucial to have forecast-time evidence that supports each causal link in the proposed chain. The absence of such evidence, even with a well-defined DAG, renders any prediction speculative and highlights the need for empirical validation of each step in the reasoning process."
+  },
+  "generation": {
+    "model": "google/gemini-2.5-flash-lite",
+    "max_tokens": 2400,
+    "temperature": 0.0,
+    "seed_role": "dag-exemplar",
+    "source": "validated_seed"
+  }
+}
