@@ -5,11 +5,6 @@ The adapter preserves the registered model-specific evidence and retrieval
 inputs and delegates execution to the same raw-call recorder and pinned-provider
 wrapper. The loaded method adds an answer-free worked reasoning check while
 leaving probability generation unchanged.
-
-The archived method must resolve its historical ``hgf`` dependencies first, so
-the active source directory is appended to ``hgf.__path__`` before the
-execution-only recorder modules are imported. Those imports therefore follow
-the path setup rather than sitting at the top of the file.
 """
 
 from __future__ import annotations
@@ -21,12 +16,6 @@ import json
 import sys
 from pathlib import Path
 from typing import Any
-
-import hgf as hgf_package
-
-_ACTIVE_HGF_EXTENSION = Path(__file__).resolve().parents[1] / "hgf"
-if str(_ACTIVE_HGF_EXTENSION) not in hgf_package.__path__:
-    hgf_package.__path__.append(str(_ACTIVE_HGF_EXTENSION))
 
 from hgf.forecast_core import _atomic_write
 from hgf_e2e_topology import run as frozen_run
