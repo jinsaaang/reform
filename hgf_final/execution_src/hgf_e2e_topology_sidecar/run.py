@@ -255,17 +255,12 @@ def _case_audit(row: dict[str, Any], raw_calls: list[dict[str, Any]]) -> dict[st
         and "target_bridge" in step_types
     )
     if active_path_ids:
-        # An active transferred path must be explained through both its current
-        # driver and mechanism. Counterevidence is recorded in its dedicated
-        # field and need not be a synthetic step when none exists.
         reasoning_incomplete = not (
             base_trace_complete
             and "driver" in step_types
             and "mechanism" in step_types
         )
     else:
-        # If every historical path is inactive, a baseline, explicit path
-        # rejection or current factor, and target bridge form a complete trace.
         reasoning_incomplete = not (
             base_trace_complete
             and (

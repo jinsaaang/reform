@@ -257,10 +257,6 @@ def _validate_boundary_forecast(
             payload["mapped_option"] = expected
             payload["prediction"] = expected
 
-    # The estimate, mapped label, prediction label, and probability table are
-    # redundant representations of one decision. Normalize only stale labels
-    # when the code-mapped central estimate is already a modal probability.
-    # Probabilities and the numeric estimate are never changed.
     estimate_for_labels = payload.get("latent_target_estimate", {})
     try:
         mapped_for_labels = _option_for_estimate(

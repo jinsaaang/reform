@@ -49,7 +49,11 @@ def _tokens(value: Any) -> set[str]:
 
 
 def _generalize_factor(value: Any) -> str:
-    """Remove historical period, realized value, and outcome literals."""
+    """Remove historical period, realized value, and outcome literals.
+
+    Month names are stripped case-insensitively except for ``May``, which is
+    matched case-sensitively so that the modal verb survives.
+    """
     text = str(value or "").strip()
     text = re.sub(
         r"\b(?:question\s+)?resolves?\b[^,;|]*",
@@ -91,7 +95,6 @@ def _generalize_factor(value: Any) -> str:
         text,
         flags=re.IGNORECASE,
     )
-    # "May" is intentionally case-sensitive to avoid removing the modal verb.
     text = re.sub(r"\bMay\b", " ", text)
     text = re.sub(
         r"\b(?:of|at|was|is)?\s*[+-]?(?:\d+(?:\.\d+)?|\.\d+)\s*"
@@ -244,8 +247,6 @@ def select_relevant_blueprints(
     while candidates and len(selected) < limit:
         def adjusted(item: dict[str, Any]) -> tuple[float, float, str]:
             family_count = selected_families.get(item["family_id"], 0)
-            # Same-family recurrence remains dominant; the small penalty only
-            # admits a closely related family when five near-duplicates exist.
             diversity_penalty = max(0, family_count - 2) * 3
             return (
                 item["score"] - diversity_penalty,
