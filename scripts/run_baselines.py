@@ -44,7 +44,9 @@ def main() -> int:
     output = args.output_dir.expanduser().resolve()
     if output.exists() and not args.dry_run:
         raise FileExistsError(f"fresh output directory required: {output}")
-    selection = (args.selection_file or dataset / "data/questions/selection.json").resolve()
+    selection = (
+        args.selection_file or dataset / "data/questions/selection.json"
+    ).resolve()
     command = [
         sys.executable,
         "-m",

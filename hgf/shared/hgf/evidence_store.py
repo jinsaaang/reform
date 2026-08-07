@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import sqlite3
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
@@ -13,7 +13,7 @@ def _parse_datetime(value: str) -> datetime:
     return (
         parsed
         if parsed.tzinfo is not None
-        else parsed.replace(tzinfo=timezone.utc)
+        else parsed.replace(tzinfo=UTC)
     )
 
 
@@ -27,7 +27,7 @@ def _direct_evidence_pack(
     normalized_cutoff = (
         cutoff
         if cutoff.tzinfo is not None
-        else cutoff.replace(tzinfo=timezone.utc)
+        else cutoff.replace(tzinfo=UTC)
     )
     with sqlite3.connect(str(db_path)) as connection:
         rows = connection.execute(

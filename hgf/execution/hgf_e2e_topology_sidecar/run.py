@@ -71,7 +71,9 @@ def _stage(messages: Any) -> str:
     return "unknown"
 
 
-def _safe_call_arguments(args: tuple[Any, ...], kwargs: dict[str, Any]) -> dict[str, Any]:
+def _safe_call_arguments(
+    args: tuple[Any, ...], kwargs: dict[str, Any]
+) -> dict[str, Any]:
     return {
         "positional_arguments": list(args),
         "keyword_arguments": kwargs,
@@ -195,7 +197,9 @@ def _case_audit(row: dict[str, Any], raw_calls: list[dict[str, Any]]) -> dict[st
         )
         item["call_count"] += 1
         item["error_count"] += int("error" in call)
-        item["empty_content_count"] += int(not str(message.get("content") or "").strip())
+        item["empty_content_count"] += int(
+            not str(message.get("content") or "").strip()
+        )
         item["provider_reasoning_count"] += int(
             bool(message.get("reasoning") or message.get("reasoning_details"))
         )
@@ -271,24 +275,24 @@ def _case_audit(row: dict[str, Any], raw_calls: list[dict[str, Any]]) -> dict[st
         call.get("stage") == "graph_instantiation"
         and not call.get("error")
         and str(
-            (
+
                 ((call.get("response") or {}).get("choices") or [{}])[0].get(
                     "finish_reason"
                 )
                 or ""
-            )
+
         )
         != "error"
         and bool(
             str(
-                (
+
                     (
                         ((call.get("response") or {}).get("choices") or [{}])[0]
                         .get("message")
                         or {}
                     ).get("content")
                     or ""
-                )
+
             ).strip()
         )
         for call in raw_calls

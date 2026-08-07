@@ -11,9 +11,10 @@ import json
 import re
 from typing import Any
 
+from openai import OpenAI
+
 from hgf.exemplar import _call_with_repair
 from hgf.forecast_core import _seed
-from openai import OpenAI
 
 _STOPWORDS = {
     "about",
@@ -400,8 +401,12 @@ def compile_topology_memory(
                 )
             namespaced_edges = [
                 {
-                    "source_checkpoint_id": f"{namespace}:{edge['source_checkpoint_id']}",
-                    "target_checkpoint_id": f"{namespace}:{edge['target_checkpoint_id']}",
+                    "source_checkpoint_id": (
+                        f"{namespace}:{edge['source_checkpoint_id']}"
+                    ),
+                    "target_checkpoint_id": (
+                        f"{namespace}:{edge['target_checkpoint_id']}"
+                    ),
                     "relationship": str(edge.get("relationship") or ""),
                     "directionality": str(edge.get("directionality") or ""),
                     "support_level": str(edge.get("support_level") or ""),
@@ -515,7 +520,11 @@ def route_topology_subgraphs(
         if path_id in selected_ids:
             return False
         new_checkpoints = set(path.get("checkpoint_ids", [])) - selected_checkpoints
-        if selected and len(selected_checkpoints) + len(new_checkpoints) > max_checkpoints:
+        if (
+            selected
+            and len(selected_checkpoints) + len(new_checkpoints)
+            > max_checkpoints
+        ):
             return False
         selected.append(
             {

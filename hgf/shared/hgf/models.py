@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-from datetime import datetime, timedelta, timezone
-from enum import Enum
+from datetime import UTC, datetime, timedelta
+from enum import StrEnum
 from typing import Any
 
 from pydantic import BaseModel, ConfigDict, Field
@@ -28,13 +28,13 @@ class Question(BaseModel):
     context: str | None = None
     resolution_criteria: str | None = None
     options: list[str] | None = None
-    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    created_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
     metadata: dict[str, Any] | None = None
 
     model_config = ConfigDict(extra="allow")
 
 
-class ForecastSlot(str, Enum):
+class ForecastSlot(StrEnum):
     EARLY = "early"
     MID = "mid"
     LATE = "late"
@@ -49,7 +49,7 @@ MIN_EFFECTIVE_SLOT_WINDOW_DAYS = 7
 
 
 def _aware(value: datetime) -> datetime:
-    return value if value.tzinfo is not None else value.replace(tzinfo=timezone.utc)
+    return value if value.tzinfo is not None else value.replace(tzinfo=UTC)
 
 
 def calculate_forecast_context_window(

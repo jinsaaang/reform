@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from typing import Any
 
 
@@ -70,10 +70,10 @@ def _is_temporally_eligible(memory_question: Any, cutoff: datetime) -> bool:
         except ValueError:
             return False
     if resolution.tzinfo is None:
-        resolution = resolution.replace(tzinfo=timezone.utc)
+        resolution = resolution.replace(tzinfo=UTC)
     normalized_cutoff = cutoff
     if normalized_cutoff.tzinfo is None:
-        normalized_cutoff = normalized_cutoff.replace(tzinfo=timezone.utc)
+        normalized_cutoff = normalized_cutoff.replace(tzinfo=UTC)
     return resolution <= normalized_cutoff
 
 

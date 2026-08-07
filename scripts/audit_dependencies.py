@@ -41,7 +41,11 @@ def main() -> int:
                 imports.update(alias.name.split(".", 1)[0] for alias in node.names)
             elif isinstance(node, ast.ImportFrom) and node.module and node.level == 0:
                 imports.add(node.module.split(".", 1)[0])
-        inspected_lines = [] if path.resolve() == Path(__file__).resolve() else source.splitlines()
+        inspected_lines = (
+            []
+            if path.resolve() == Path(__file__).resolve()
+            else source.splitlines()
+        )
         for line_number, line in enumerate(inspected_lines, start=1):
             if FORBIDDEN.search(line):
                 violations.append(

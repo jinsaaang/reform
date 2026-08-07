@@ -30,7 +30,9 @@ def main() -> int:
     questions_root = root / "data/questions"
     test_path = questions_root / "test_questions.jsonl"
     memory_path = questions_root / "memory_questions.jsonl"
-    selection_path = (args.selection_file or questions_root / "selection.json").resolve()
+    selection_path = (
+        args.selection_file or questions_root / "selection.json"
+    ).resolve()
     required = [test_path, memory_path, selection_path]
     missing = [str(path) for path in required if not path.is_file()]
     if missing:
@@ -76,7 +78,8 @@ def main() -> int:
         }
         if not required_columns.issubset(columns):
             bad_databases.append(
-                f"{question_id}: articles table lacks {sorted(required_columns - columns)}"
+                f"{question_id}: articles table lacks "
+                f"{sorted(required_columns - columns)}"
             )
     if bad_databases:
         raise ValueError("invalid E1 evidence databases: " + "; ".join(bad_databases))

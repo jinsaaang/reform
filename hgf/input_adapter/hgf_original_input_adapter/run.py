@@ -127,7 +127,13 @@ def _write_execution_manifest(
     package_root = Path(frozen_run.__file__).resolve().parent
     source_hashes = {
         f"hgf_e2e_topology/{name}": _sha256(package_root / name)
-        for name in ("__init__.py", "core.py", "instantiation.py", "pipeline.py", "run.py")
+        for name in (
+            "__init__.py",
+            "core.py",
+            "instantiation.py",
+            "pipeline.py",
+            "run.py",
+        )
     }
     adapter_root = Path(__file__).resolve().parent
     source_hashes.update(

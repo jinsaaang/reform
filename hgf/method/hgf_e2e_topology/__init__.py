@@ -13,12 +13,12 @@ from .pipeline import (
 )
 
 __all__ = [
+    "attach_graph_audit",
     "call_current_evidence_ledger",
     "call_graph_instantiation",
-    "materialize_current_graph",
-    "attach_graph_audit",
     "call_procedural_topology_reasoning",
-    "render_reasoning_narrative",
     "compile_topology_memory",
+    "materialize_current_graph",
+    "render_reasoning_narrative",
     "route_topology_subgraphs",
 ]

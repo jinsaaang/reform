@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import re
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
@@ -57,7 +57,7 @@ def resolve_forecast_cutoff(
         except ValueError:
             continue
         if cutoff.tzinfo is None:
-            cutoff = cutoff.replace(tzinfo=timezone.utc)
+            cutoff = cutoff.replace(tzinfo=UTC)
         if cutoff >= question.resolution_date:
             raise ValueError(
                 f"Explicit forecast cutoff {cutoff.isoformat()} must predate "

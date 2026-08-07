@@ -7,13 +7,14 @@ import json
 import re
 from typing import Any
 
+from openai import OpenAI
+
 from hgf.exemplar import _call_with_repair
 from hgf.forecast_core import _seed
-from openai import OpenAI
 
 
 def _schema(path_ids: list[str]) -> dict[str, Any]:
-    source_ids = path_ids + ["CURRENT_NEW", "TARGET_CONTRACT"]
+    source_ids = [*path_ids, "CURRENT_NEW", "TARGET_CONTRACT"]
     return {
         "name": "procedural_topology_reasoning",
         "strict": True,
@@ -220,7 +221,10 @@ def _validate(
         errors.append("uncertainty must be explicit")
     if errors:
         return {}, errors
-    payload.setdefault("target_semantics", "Target semantics are defined by the public contract.")
+    payload.setdefault(
+        "target_semantics",
+        "Target semantics are defined by the public contract.",
+    )
     payload.setdefault(
         "evidence_fit",
         {
@@ -284,7 +288,11 @@ def _validate(
             match = re.fullmatch(r"(D\d+):target_bridge", value)
             if match:
                 namespace = match.group(1) + ":"
-                mapped = [path_id for path_id in path_ids if path_id.startswith(namespace)]
+                mapped = [
+                    path_id
+                    for path_id in path_ids
+                    if path_id.startswith(namespace)
+                ]
                 if mapped:
                     expanded_source_ids.extend(mapped)
                     normalizations.append(
@@ -587,19 +595,22 @@ def call_procedural_topology_reasoning(
         "probabilities, or emit a target number. Start with the exact target operation "
         "and current baseline. Use helpful nodes, edges, or partial paths to organize "
         "drivers and mechanisms. Add evidence-backed current factors and intermediate "
-        "reasoning when the historical graph does not cover them. Test counterevidence, "
-        "end with a target bridge, and distinguish target-period magnitude support from "
+        "reasoning when the historical graph does not cover them. Test "
+        "counterevidence, end with a target bridge, and distinguish "
+        "target-period magnitude support from "
         "directional support.\n\n"
         "Current evidence overrides historical structure. A relation marked UNVERIFIED "
         "is uncertain rather than false and may guide a hypothesis, but it is not a "
         "current fact. Never use an explicitly CONTRADICTED relation as positive "
         "support. Use only current article IDs for current factual claims. Select only "
-        "the paths that genuinely contributed to the current synthesis in used_path_ids. "
+        "the paths that genuinely contributed to the current synthesis in "
+        "used_path_ids. "
         "The reasoning may go beyond those paths. When discussing a contradicted "
         "relation, use a counterevidence step rather than a positive driver or "
         "mechanism step.\n\n"
         "The worked reasoning checks show how the same historical DAGs previously "
-        "organized a forecast-time argument. Use them after reading current evidence to "
+        "organized a forecast-time argument. Use them after reading current "
+        "evidence to "
         "check whether the current trace omitted a baseline, causal link, competing "
         "explanation, or uncertainty. Do not copy their historical facts, direction, "
         "estimate, or conclusion. They are not current evidence.\n\n"

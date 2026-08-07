@@ -7,8 +7,9 @@ import json
 import math
 import re
 import time
-from datetime import datetime, timezone
-from typing import Any, Callable
+from collections.abc import Callable
+from datetime import UTC, datetime
+from typing import Any
 
 from openai import OpenAI
 
@@ -442,7 +443,7 @@ def _parse_date(value: Any) -> datetime | None:
         parsed = datetime.fromisoformat(str(value).replace("Z", "+00:00"))
     except ValueError:
         return None
-    return parsed if parsed.tzinfo else parsed.replace(tzinfo=timezone.utc)
+    return parsed if parsed.tzinfo else parsed.replace(tzinfo=UTC)
 
 
 def _exemplar_article_ids(graph: dict[str, Any], cutoff: datetime) -> set[str]:
