@@ -1,36 +1,40 @@
 # Procedural Topology HGF
 
-This branch contains the single canonical implementation used for the final
-five-model experiment. It is intentionally separated from the exploratory HGF
-variants in the research repository.
+Hindsight-Guided Forecasting over a current-instantiated exact topology.
 
-Procedural Topology HGF first organizes current cutoff-safe evidence. It then
-retrieves outcome-redacted Blueprints from resolved events in the same event
-family, instantiates their useful subgraphs with current evidence, and uses the
+The method first organizes current cutoff-safe evidence. It then retrieves
+outcome-redacted Blueprints from resolved events in the same event family,
+instantiates their useful subgraphs with current evidence, and uses the
 verified partial topology as a reasoning scaffold. The forecaster may add
 current factors that are absent from history and must consider counterevidence
 before mapping the resulting direction and magnitude assessment to a single
 probability forecast.
 
-Historical outcomes, option mappings, and probabilities are never passed to
-the forecaster. The implementation does not pool probabilities, adjust a
-posterior, anchor to a baseline prediction, or choose a result by its score.
+Historical outcomes, option mappings, and probabilities are never passed to the
+forecaster. The implementation does not pool probabilities, adjust a posterior,
+anchor to a baseline prediction, or choose a result by its score.
 
-## What is included
+## Layout
 
-- `hgf/method` contains the final HGF method.
-- `hgf/shared` contains frozen shared utilities and the six baseline
-  implementations used by the controlled experiment.
-- `hgf/input_adapter` optionally freezes model-specific evidence and historical
-  retrieval.
-- `hgf/execution` records raw calls and pins an OpenRouter provider.
-- `scripts/run_hgf.py` runs HGF on a compatible benchmark.
-- `scripts/run_baselines.py` runs the six baselines.
-- `scripts/validate_inputs.py` checks the required benchmark artifacts without
-  making an API call.
-- `results` contains compact summaries from the registered five-model run.
+| Path | Contents |
+|---|---|
+| `hgf/method` | The HGF method. |
+| `hgf/shared` | Shared utilities and the six baseline implementations. |
+| `hgf/input_adapter` | Optional replay of frozen model-specific evidence and retrieval. |
+| `hgf/execution` | Raw-call recording and OpenRouter provider pinning. |
+| `scripts/run_hgf.py` | Run HGF on a compatible benchmark. |
+| `scripts/run_baselines.py` | Run the six baselines. |
+| `scripts/validate_inputs.py` | Check benchmark artifacts without an API call. |
+| `scripts/audit_dependencies.py` | Report the runtime's third-party imports. |
 
-## Installation
+The four directories under `hgf/` are `PYTHONPATH` roots, not packages. They
+supply the importable packages `hgf`, `hgf_e2e_topology`,
+`hgf_original_input_adapter`, `hgf_e2e_topology_sidecar`, and
+`hgf_e2e_topology_provider_pinned`.
+
+## Install
+
+Requires Python 3.11 or newer.
 
 ```bash
 python3 -m venv .venv
@@ -39,13 +43,105 @@ python3 -m pip install -r requirements.txt
 export OPENROUTER_API_KEY=YOUR_KEY
 ```
 
-## Validate a benchmark
+The only third-party runtime dependencies are `openai`, `pydantic`, and
+`python-dotenv`. SQLite comes from the standard library.
+
+## Benchmark inputs
+
+The launchers assume historical DAGs have already been converted to the
+canonical topology-preserving Blueprint format. They do not build DAGs.
+
+```text
+BENCHMARK_ROOT/
+  data/
+    questions/
+      test_questions.jsonl
+      memory_questions.jsonl
+      selection.json
+    evidence/
+      e0/<target_question_id>.sqlite
+      e1/<target_question_id>.sqlite
+    memory_bank/
+      manifest.json
+  artifacts/
+    hgf/
+      blueprints/
+        manifest.json
+        cases/*.json
+      exemplars/
+        manifest.json
+        cases/*.json
+    baselines/
+      factor_memory/
+        manifest.json
+        cases/*.json
+```
+
+HGF requires E1 plus the Blueprint and exemplar artifacts under
+`artifacts/hgf`. The six baselines require E0, E1 for Factor Memory, the raw
+DAG manifest, and the factor-memory artifacts; they do not read
+`artifacts/hgf`.
+
+### Questions
+
+Both question files are JSON Lines accepted by the Pydantic `Question` model.
+Each target and historical event needs a stable ID, question text, answer
+options, resolution time, and metadata. The metadata must carry at least these
+fields, either directly or under `finance`, `finfactorbench`, or `benchmark`:
+
+```json
+{
+  "family_id": "recurring_event_family",
+  "target_metric": "metric_name",
+  "category": "category_name",
+  "forecast_date_options": ["2026-01-15"]
+}
+```
+
+Historical events used as memory must resolve before the target forecast
+cutoff. `selection.json` has one field:
+
+```json
+{"question_ids": ["target_001", "target_002"]}
+```
+
+### Evidence databases
+
+Each SQLite file needs an `articles` table with these columns:
+
+```text
+id, title, source, published_date, content, collected_for_question_id
+```
+
+The runtime independently rejects articles at or after the target cutoff.
+
+### Blueprints
+
+The Blueprint manifest schema is `hgf_blueprint_manifest_v1` and every case
+uses `hgf_blueprint_topology_v2`. The manifest must cover every row in
+`memory_questions.jsonl`, and its optional canonical hashes must match. A
+Blueprint preserves checkpoint IDs, directed edges, conditional paths, lag,
+support, confidence, target bridge, and source provenance, while excluding the
+historical answer from the forecast payload.
+
+### Answer-free worked exemplars
+
+The exemplar directory needs one worked exemplar per historical memory
+question. The loader accepts JSON files carrying a historical ID in
+`retrieved_memory_question_id`, `source_question_id`, or `memory_question_id`,
+plus a `worked_exemplar` object. The method strips the historical estimate,
+option mapping, evidence article IDs, and forecast-time evidence before it
+builds the reasoning check.
+
+## Run
+
+Validate the benchmark first; this makes no API call.
 
 ```bash
 python3 scripts/validate_inputs.py --dataset-root /path/to/benchmark
 ```
 
-## Run HGF
+Run HGF:
 
 ```bash
 python3 scripts/run_hgf.py \
@@ -57,14 +153,104 @@ python3 scripts/run_hgf.py \
   --limit 100
 ```
 
-Add both `--evidence-selection-manifest` and `--retrieval-manifest` to replay
-frozen model-specific inputs. If neither is supplied, the same canonical method
-performs deterministic evidence reranking and exact-family Blueprint retrieval
-from the provided benchmark artifacts.
+Run the baselines:
 
-See [docs/METHOD.md](docs/METHOD.md),
-[docs/GENERAL_BENCHMARK.md](docs/GENERAL_BENCHMARK.md), and
-[docs/DEPENDENCY_AUDIT.md](docs/DEPENDENCY_AUDIT.md) before a paper run.
+```bash
+python3 scripts/run_baselines.py \
+  --dataset-root /path/to/benchmark \
+  --model google/gemini-2.5-flash-lite \
+  --output-dir /path/to/runs/gemini_baselines \
+  --workers 20 \
+  --limit 100
+```
+
+Both launchers accept `--dry-run`, which prints the resolved command and exits
+without creating an output directory or calling an API.
+
+### Frozen replay
+
+By default the method reranks current evidence and retrieves compatible
+Blueprints at runtime, which is what you want when transferring it to a new
+benchmark. For a controlled replay, supply both model-specific manifests:
+
+```bash
+python3 scripts/run_hgf.py \
+  --dataset-root /path/to/benchmark \
+  --model MODEL \
+  --provider PROVIDER \
+  --output-dir RUN_DIR \
+  --evidence-selection-manifest INPUTS/evidence.json \
+  --retrieval-manifest INPUTS/retrieval.json
+```
+
+The evidence manifest fixes selected current evidence IDs; the retrieval
+manifest fixes historical memory question IDs. Supplying only one is rejected,
+because that would produce a partially frozen, ambiguous experiment.
+
+## Method
+
+HGF forecasts in six stages.
+
+1. Read the current cutoff-safe E1 evidence and write an evidence ledger
+   covering target semantics, baseline, current drivers, counterevidence, and
+   missing information.
+2. Retrieve up to three outcome-redacted Blueprints from earlier resolved
+   events with the same `family_id` and `target_metric`. Retrieval happens only
+   after current evidence has been read.
+3. Route the Blueprint paths relevant to the current ledger. The original node
+   order and edge relations are not rewritten.
+4. Instantiate those paths with current evidence. Supported and contradicted
+   relations can inform the forecast; unverified historical relations are not
+   treated as current facts.
+5. Produce a reasoning trace from the verified partial topology, current
+   factors missing from history, counterevidence, uncertainty, and an
+   answer-free worked reasoning check. The exemplar supplies reasoning form,
+   not a historical answer or probability.
+6. Map the model's direction and magnitude judgment to the public answer
+   options in a separate boundary call that emits one probability
+   distribution.
+
+The Blueprint is therefore neither a prior forecast nor a complete chain that
+must be followed. It is a reusable expert structure that helps the model check
+and connect current evidence.
+
+### Controls
+
+- Every article must precede the forecast cutoff.
+- Historical events must resolve before the current forecast cutoff.
+- Retrieval requires an exact event family and target metric match.
+- Historical outcomes and probabilities must not enter HGF.
+- No method may read another method's prediction.
+- No probability pooling, posterior adjustment, or result-conditioned retry.
+- A successful run retains current evidence IDs, retrieved Blueprint IDs,
+  reasoning, raw requests and responses, token usage, cost, and latency.
+
+## Baselines
+
+The six baselines split by whether they read resolved-event memory at all.
+
+| `--methods` key | Name | Group | Description |
+|---|---|---|---|
+| `direct_forecast` | Direct Forecast | No-memory | Standard retrieval-augmented forecasting from current evidence. |
+| `structured_reasoning` | Structured Reasoning | No-memory | Builds a forecast DAG from current evidence, still without resolved-event memory. |
+| `factor_memory` | Factor Memory | Resolved-event memory | Retrieves compact historical factors without the relations between them. |
+| `principle_memory` | Principle Memory | Resolved-event memory | Retrieves answer-free forecasting principles distilled into text. |
+| `case_memory` | Case Memory | Resolved-event memory | Retrieves a complete resolved episode: question, evidence, outcome, reasoning. |
+| `structure_memory` | Structure Memory | Resolved-event memory | Retrieves an outcome-redacted past DAG and uses it as-is, without instantiating it against current evidence. |
+
+All six share the model, target contract, output validator, question IDs, and
+probability scorer with HGF. `direct_forecast`, `structured_reasoning`,
+`case_memory`, `principle_memory`, and `structure_memory` use E0;
+`factor_memory` and HGF use E1. E0 and E1 are frozen evidence databases, not
+model predictions. Preserve this contract in comparisons, or report a new
+uniform evidence design as a separate experiment.
+
+Structure Memory and Case Memory inputs need the same semantic leakage audit
+before their numbers are reportable. The launcher does not silently rewrite
+user-provided DAG or case artifacts.
+
+HGF is not one of the six. It is a separate implementation under
+`hgf/method/hgf_e2e_topology`, always run through `scripts/run_hgf.py`.
 
 ## Tests
 
@@ -72,3 +258,7 @@ See [docs/METHOD.md](docs/METHOD.md),
 python3 -m pytest
 python3 scripts/audit_dependencies.py
 ```
+
+## License
+
+MIT. See [LICENSE](LICENSE).
