@@ -7,30 +7,33 @@ import math
 from typing import Any
 
 
-def _is_empty(value: Any) -> bool:
-    if value is None:
-        return True
-    if isinstance(value, str):
-        return not value.strip()
-    if isinstance(value, (list, dict)):
-        return not value
-    return False
-
-
 def conservative_repair_merge(
     *,
     original: Any,
     repaired: Any,
 ) -> Any:
-    """Merge a repair without allowing empty values to erase valid content."""
-    if _is_empty(repaired):
+    """Merge a repair, keeping content the repair left out.
+
+    A field the repair omits keeps its original value, so a repair cannot
+    silently erase content by returning less than it was given. A field the
+    repair states is honoured even when the stated value is empty, because
+    removal is the only way to satisfy an error such as an unknown evidence ID.
+
+    Lists of objects are the exception: they merge element by element and never
+    shrink, so a structured trace cannot be dropped wholesale.
+    """
+    if repaired is None:
         return copy.deepcopy(original)
     if isinstance(original, dict) and isinstance(repaired, dict):
         keys = original.keys() | repaired.keys()
         return {
-            key: conservative_repair_merge(
-                original=original.get(key),
-                repaired=repaired.get(key),
+            key: (
+                conservative_repair_merge(
+                    original=original.get(key),
+                    repaired=repaired[key],
+                )
+                if key in repaired
+                else copy.deepcopy(original[key])
             )
             for key in keys
         }
@@ -39,20 +42,20 @@ def conservative_repair_merge(
         and isinstance(repaired, list)
         and all(isinstance(item, dict) for item in original + repaired)
     ):
-            merged: list[Any] = []
-            for index in range(max(len(original), len(repaired))):
-                if index >= len(repaired):
-                    merged.append(copy.deepcopy(original[index]))
-                elif index >= len(original):
-                    merged.append(copy.deepcopy(repaired[index]))
-                else:
-                    merged.append(
-                        conservative_repair_merge(
-                            original=original[index],
-                            repaired=repaired[index],
-                        )
+        merged: list[Any] = []
+        for index in range(max(len(original), len(repaired))):
+            if index >= len(repaired):
+                merged.append(copy.deepcopy(original[index]))
+            elif index >= len(original):
+                merged.append(copy.deepcopy(repaired[index]))
+            else:
+                merged.append(
+                    conservative_repair_merge(
+                        original=original[index],
+                        repaired=repaired[index],
                     )
-            return merged
+                )
+        return merged
     return copy.deepcopy(repaired)
 
 

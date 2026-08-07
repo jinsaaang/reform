@@ -5,6 +5,7 @@ from types import SimpleNamespace
 
 import pytest
 from hgf.boundary import _neutral_boundary_payload, _validate_boundary_forecast
+from hgf.repair_resilience import conservative_repair_merge
 from hgf_e2e_topology.core import _schema, _validate
 from hgf_e2e_topology.pipeline import compile_worked_reasoning_check
 from hgf_e2e_topology_sidecar.run import _stage
@@ -272,3 +273,61 @@ def test_raw_recorder_names_the_current_reasoning_stage() -> None:
         },
     ]
     assert _stage(messages) == "procedural_reasoning"
+
+
+def test_repair_can_remove_an_invalid_evidence_id() -> None:
+    original = {
+        "magnitude_assessment": {
+            "support": "insufficient",
+            "evidence_ids": ["TARGET_CONTRACT"],
+            "rationale": "no magnitude evidence",
+        }
+    }
+    repaired = {
+        "magnitude_assessment": {
+            "support": "insufficient",
+            "evidence_ids": [],
+            "rationale": "no magnitude evidence",
+        }
+    }
+    merged = conservative_repair_merge(original=original, repaired=repaired)
+    assert merged["magnitude_assessment"]["evidence_ids"] == []
+
+
+def test_repair_keeps_fields_it_does_not_mention() -> None:
+    merged = conservative_repair_merge(
+        original={"kept": "original", "changed": "before"},
+        repaired={"changed": "after"},
+    )
+    assert merged == {"kept": "original", "changed": "after"}
+
+
+def test_repair_cannot_drop_a_structured_trace() -> None:
+    merged = conservative_repair_merge(
+        original={"reasoning_steps": [{"statement": "kept"}]},
+        repaired={"reasoning_steps": []},
+    )
+    assert merged["reasoning_steps"] == [{"statement": "kept"}]
+
+
+def test_repair_merges_every_element_of_a_list() -> None:
+    options = ["below recent range", "within recent range", "above recent range"]
+    original = {
+        "option_probabilities": [
+            {"option": options[1], "probability": 0.7},
+            {"option": options[0], "probability": 0.2},
+            {"option": options[2], "probability": 0.1},
+        ]
+    }
+    repaired = {
+        "option_probabilities": [
+            {"option": options[0], "probability": 0.15},
+            {"option": options[1], "probability": 0.70},
+            {"option": options[2], "probability": 0.15},
+        ]
+    }
+    merged = conservative_repair_merge(original=original, repaired=repaired)
+    assert merged["option_probabilities"] == repaired["option_probabilities"]
+    assert sorted(
+        row["option"] for row in merged["option_probabilities"]
+    ) == sorted(options)
