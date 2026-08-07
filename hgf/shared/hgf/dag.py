@@ -5,7 +5,6 @@ from __future__ import annotations
 import re
 from typing import Any
 
-
 _ANSWER_BUCKET_RE = re.compile(
     r"(?:below\s+\d+(?:\.\d+)?%|"
     r"\d+(?:\.\d+)?%\s+to\s+<\d+(?:\.\d+)?%|"

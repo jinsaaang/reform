@@ -21,7 +21,6 @@ from hgf.forecast_core import (
     _seed,
 )
 
-
 _NUMBER = r"[-+]?(?:\d+(?:\.\d*)?|\.\d+)"
 
 

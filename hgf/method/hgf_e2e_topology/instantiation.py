@@ -2,14 +2,13 @@
 
 from __future__ import annotations
 
-import json
 import copy
+import json
 from typing import Any
-
-from openai import OpenAI
 
 from hgf.exemplar import _call_with_repair
 from hgf.forecast_core import _seed
+from openai import OpenAI
 
 
 def graph_elements(

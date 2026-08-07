@@ -10,7 +10,6 @@ evidence bank (E1).  Every method is checkpointed independently.
 from __future__ import annotations
 
 import argparse
-import base64
 import hashlib
 import json
 import math
@@ -25,20 +24,9 @@ from typing import Any
 from dotenv import find_dotenv, load_dotenv
 from openai import OpenAI
 
-from hgf.question_io import (
-    family_metadata,
-    read_questions,
-    resolve_forecast_cutoff,
-)
-from hgf.memory_bank import (
-    load_factor_blueprint_bank,
-    load_graph_bank,
-)
-from hgf.memory_retrieval import (
-    compile_hgf_search_memory,
-    compile_raw_dag_ablation,
-    select_relevant_blueprints,
-)
+from hgf.boundary import _call_boundary_mapping
+from hgf.contracts import _is_temporally_eligible, _target_contract
+from hgf.evidence_store import _direct_evidence_pack
 from hgf.exemplar import (
     _add_usage,
     _call_with_repair,
@@ -48,9 +36,6 @@ from hgf.exemplar import (
     _rerank_current_evidence,
     _validate_exemplar_forecast,
 )
-from hgf.contracts import _is_temporally_eligible, _target_contract
-from hgf.boundary import _call_boundary_mapping
-from hgf.text_memory import _distill_text_memory
 from hgf.forecast_core import (
     _atomic_write,
     _call_json,
@@ -64,11 +49,24 @@ from hgf.forecast_core import (
     _validate_graph,
     _validate_single_dag_plan,
 )
-from hgf.evidence_store import _direct_evidence_pack
-from hgf.generation import configure_generation
 from hgf.forecast_safety import score_forecast
+from hgf.generation import configure_generation
+from hgf.memory_bank import (
+    load_factor_blueprint_bank,
+    load_graph_bank,
+)
+from hgf.memory_retrieval import (
+    compile_hgf_search_memory,
+    compile_raw_dag_ablation,
+    select_relevant_blueprints,
+)
+from hgf.question_io import (
+    family_metadata,
+    read_questions,
+    resolve_forecast_cutoff,
+)
 from hgf.repair_resilience import neutral_reasoning_payload
-
+from hgf.text_memory import _distill_text_memory
 
 METHODS = (
     "search_only",
@@ -78,9 +76,7 @@ METHODS = (
     "direct_dag",
     "prospective_dag",
 )
-_FACTOR_MEMORY_WIRE_VIEW = base64.b64decode(
-    "aGdmX3NlYXJjaF9jYXJkc192MQ=="
-).decode("utf-8")
+_FACTOR_MEMORY_WIRE_VIEW = "hgf_search_cards_v1"
 
 
 METHOD_LABELS = {

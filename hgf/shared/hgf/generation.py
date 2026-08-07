@@ -4,7 +4,6 @@ from __future__ import annotations
 
 from typing import Any
 
-
 _REASONING_EFFORT: str | None = None
 _MAX_OUTPUT_TOKENS: int | None = None
 _RUN_SEED = 0

@@ -12,15 +12,16 @@ from typing import Any, Callable
 
 from openai import OpenAI
 
+from hgf.forecast_core import (
+    _probabilities,
+)
 from hgf.generation import completion_parameters
 from hgf.question_io import family_metadata
 from hgf.repair_resilience import (
     conservative_repair_merge,
     serialize_neutral_probabilities,
 )
-from hgf.forecast_core import (
-    _probabilities,
-)
+
 _EVIDENCE_STOPWORDS = {
     "about",
     "after",

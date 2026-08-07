@@ -29,7 +29,6 @@ from hgf.forecast_core import _atomic_write
 from hgf.provider_serialization import unwrap_function_envelope
 from hgf_e2e_topology import run as frozen_run
 
-
 _CONTEXT = threading.local()
 _ORIGINAL_RUN_CASE = frozen_run._run_case
 

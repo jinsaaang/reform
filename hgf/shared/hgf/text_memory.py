@@ -23,14 +23,13 @@ from typing import Any
 
 from openai import OpenAI
 
-from hgf.question_io import resolve_forecast_cutoff
+from hgf.contracts import _target_contract
 from hgf.exemplar import (
     _call_with_repair,
     _exemplar_article_ids,
 )
-from hgf.contracts import _target_contract
 from hgf.forecast_core import _atomic_write, _seed
-
+from hgf.question_io import resolve_forecast_cutoff
 
 _WRITE_LOCK = threading.Lock()
 

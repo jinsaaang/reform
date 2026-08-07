@@ -9,7 +9,6 @@ from typing import Any
 
 from hgf.dag import _finance_metadata, _redact_answer_labels
 
-
 _STOPWORDS = {
     "about",
     "after",

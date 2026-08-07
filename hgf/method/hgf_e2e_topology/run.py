@@ -16,11 +16,13 @@ from statistics import fmean
 from typing import Any
 
 from dotenv import find_dotenv, load_dotenv
-from openai import OpenAI
-
 from hgf.baselines import _condition_evidence
 from hgf.boundary import _call_boundary_mapping
-from hgf.contracts import _is_temporally_eligible, _target_contract
+from hgf.contracts import (
+    _is_temporally_eligible,
+    _target_contract,
+    compile_current_target_operator,
+)
 from hgf.exemplar import _rerank_current_evidence
 from hgf.exemplar_selection import load_fixed_exemplar_bank
 from hgf.forecast_core import _atomic_write, _ground_truth_option
@@ -29,7 +31,7 @@ from hgf.generation import configure_generation
 from hgf.memory_bank import load_hgf_blueprint_bank
 from hgf.memory_retrieval import select_relevant_blueprints
 from hgf.question_io import family_metadata, read_questions, resolve_forecast_cutoff
-from hgf.contracts import compile_current_target_operator
+from openai import OpenAI
 
 from .core import (
     attach_graph_audit,
@@ -44,7 +46,6 @@ from .pipeline import (
     route_topology_subgraphs,
     select_forecast_evidence,
 )
-
 
 METHOD = "procedural_topology_hgf_canonical"
 METHOD_LABEL = "Procedural Topology HGF"

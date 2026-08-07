@@ -7,9 +7,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from hgf.models import Question
-from hgf.models import ForecastSlot, get_forecast_date_for_slot
-
+from hgf.models import ForecastSlot, Question, get_forecast_date_for_slot
 
 _AS_OF_DATE_RE = re.compile(r"\bAs\s+of\s+(20\d{2}-\d{2}-\d{2})\b", re.IGNORECASE)
 
