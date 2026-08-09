@@ -16,7 +16,14 @@ def configure_generation(
     max_output_tokens: int | None = None,
     run_seed: int = 0,
 ) -> None:
-    """Configure one experiment process without changing frozen defaults."""
+    """Configure one experiment process without changing frozen defaults.
+
+    Models that expose no native reasoning control are registered with the
+    effort ``"none"``, which means the reasoning field is omitted from the
+    request rather than sent with a low setting.
+    """
+    if reasoning_effort == "none":
+        reasoning_effort = None
     if reasoning_effort is not None and reasoning_effort not in _EFFORTS:
         raise ValueError(f"unsupported reasoning effort: {reasoning_effort}")
     if max_output_tokens is not None and max_output_tokens < 1:

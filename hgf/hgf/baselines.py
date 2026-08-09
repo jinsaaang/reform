@@ -162,7 +162,7 @@ def _parse_args(
     parser.add_argument("--semantic-max-tokens", type=int, default=1200)
     parser.add_argument(
         "--reasoning-effort",
-        choices=("minimal", "low", "medium", "high", "xhigh", "max"),
+        choices=("none", "minimal", "low", "medium", "high", "xhigh", "max"),
     )
     parser.add_argument("--max-output-tokens", type=int)
     parser.add_argument("--run-seed", type=int, default=0)

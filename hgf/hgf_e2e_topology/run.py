@@ -91,7 +91,7 @@ def _parse_args() -> argparse.Namespace:
     parser.add_argument("--boundary-max-tokens", type=int, default=2400)
     parser.add_argument(
         "--reasoning-effort",
-        choices=("minimal", "low", "medium", "high", "xhigh", "max"),
+        choices=("none", "minimal", "low", "medium", "high", "xhigh", "max"),
         default="medium",
     )
     parser.add_argument("--max-output-tokens", type=int, default=16000)
