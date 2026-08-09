@@ -1,11 +1,10 @@
-# ReForm
+# ReFoRM
 
-Forecasting over a current-instantiated exact topology, guided by hindsight
-structure rather than hindsight answers.
+**Re**curring-Event **Fo**recasting with **R**easoning **M**emory.
 
 A forecaster reading only current evidence cannot know which causal relations in
 its domain have held before. A forecaster handed a past outcome learns the
-answer, not the reasoning. ReForm takes the third path: it retrieves the
+answer, not the reasoning. ReFoRM takes the third path: it retrieves the
 *structure* of how earlier events in the same family resolved — outcome-redacted
 — re-tests each relation against current evidence, and forecasts from the
 relations that survive.
@@ -16,7 +15,7 @@ anchor to a baseline prediction, or select a result by its score.
 
 ### Naming
 
-The method is **ReForm** in writing and `hgf` in code — same method, two names.
+The method is **ReFoRM** in writing and `hgf` in code — same method, two names.
 The code identifier is left alone because two of those strings, the
 structured-output schema name and the factor-memory view label, are sent to the
 model; renaming them would change the prompt and make new runs incomparable with
@@ -24,9 +23,9 @@ everything already recorded. The rest are frozen benchmark contracts.
 
 | In the paper | In this repository |
 | --- | --- |
-| ReForm | package `hgf/`, launcher `scripts/run_hgf.py` |
-| ReForm result row | method key `procedural_topology_hgf_canonical` |
-| ReForm schemas | every `hgf_*` schema string |
+| ReFoRM | package `hgf/`, launcher `scripts/run_hgf.py` |
+| ReFoRM result row | method key `procedural_topology_hgf_canonical` |
+| ReFoRM schemas | every `hgf_*` schema string |
 
 ## Install
 
@@ -101,7 +100,7 @@ python3 scripts/run_hgf.py \
 ### Evidence selection
 
 Evidence is selected at run time by a deterministic ranking in
-`hgf/hgf/exemplar.py`, shared by ReForm and every baseline: keyword overlap with
+`hgf/hgf/exemplar.py`, shared by ReFoRM and every baseline: keyword overlap with
 the target, weighted toward title and entity matches, a bonus for official
 sources, and a small recency term. No model call is involved, so the same
 question yields the same evidence on every run and for every model.
@@ -127,7 +126,7 @@ independent attempt.
 
 ## Method
 
-ReForm forecasts in six stages.
+ReFoRM forecasts in six stages.
 
 1. Read the current cutoff-safe E1 evidence and write an evidence ledger
    covering target semantics, baseline, current drivers, counterevidence, and
@@ -155,7 +154,7 @@ evidence.
 - Every article must precede the forecast cutoff.
 - Historical events must resolve before the current forecast cutoff.
 - Retrieval requires an exact event family and target metric match.
-- Historical outcomes and probabilities must not enter ReForm.
+- Historical outcomes and probabilities must not enter ReFoRM.
 - No method may read another method's prediction.
 - No probability pooling, posterior adjustment, or result-conditioned retry.
 - A successful run retains current evidence IDs, retrieved Blueprint IDs,
@@ -173,13 +172,13 @@ evidence.
 | `structure_memory` | Structure Memory | Resolved-event memory | An outcome-redacted past DAG used as-is, without instantiation against current evidence. |
 
 All six share the model, target contract, output validator, question IDs, and
-probability scorer with ReForm. `direct_forecast`, `structured_reasoning`,
+probability scorer with ReFoRM. `direct_forecast`, `structured_reasoning`,
 `case_memory`, `principle_memory`, and `structure_memory` read E0;
-`factor_memory` and ReForm read E1. E0 and E1 are frozen evidence databases, not
+`factor_memory` and ReFoRM read E1. E0 and E1 are frozen evidence databases, not
 model predictions. Preserve this contract in comparisons, or report a uniform
 evidence design as a separate experiment.
 
-ReForm is not one of the six. It is a separate implementation under
+ReFoRM is not one of the six. It is a separate implementation under
 `hgf/hgf_e2e_topology`, always run through `scripts/run_hgf.py`.
 
 ## Reasoning evaluation
@@ -236,16 +235,16 @@ bank contains no Q4 forecast — only a Q3 figure.
 
 | Method | Score | Ground | Valid | Align | Prob | Mech | Decisive quote |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
-| **ReForm** | **4.2** | 5 | 4 | 4 | 3 | 5 | "Derived from Q3 2025 performance (16% YoY growth) and identified positive growth drivers (AI, Cloud, Advertising), tempered by the absence of specific Q4 2025 forecasts" |
+| **ReFoRM** | **4.2** | 5 | 4 | 4 | 3 | 5 | "Derived from Q3 2025 performance (16% YoY growth) and identified positive growth drivers (AI, Cloud, Advertising), tempered by the absence of specific Q4 2025 forecasts" |
 | Factor Memory | 3.6 | 5 | 3 | 4 | 2 | 4 | "No evidence-supported magnitude distinguishes this option; the contract-centered abstention is intentionally broad." |
 | Direct Forecast | 2.2 | 3 | 2 | 2 | 2 | 2 | "Broad range reflecting positive trends and AI-driven growth, but lacking specific Q4 2025 forecasts." |
 | Structure Memory | 1.0 | 1 | 1 | 1 | 1 | 1 | "The broad estimate [-20, 20] has significant overlap with the 'no' interval, including its central estimate (0), making it the most supported option by the estimate." |
 
 The spread is not about who had better evidence — all four read the same bank.
-ReForm anchors to the one quantity that exists and names the gap the quantity
+ReFoRM anchors to the one quantity that exists and names the gap the quantity
 cannot close. Structure Memory invents a ±20 percentage-point band wide enough
 to contain any answer, then treats the band's midpoint as support for the option
-it picked. Direct Forecast notices the same missing forecast ReForm does but
+it picked. Direct Forecast notices the same missing forecast ReFoRM does but
 draws nothing from it.
 
 The failure mode at the bottom of the distribution is consistent. Most
@@ -284,7 +283,7 @@ traces with their quotes.
 | Path | Contents |
 |---|---|
 | `hgf/hgf` | Shared utilities, the six baselines, and benchmark validation. |
-| `hgf/hgf_e2e_topology` | The ReForm method. |
+| `hgf/hgf_e2e_topology` | The ReFoRM method. |
 | `hgf/hgf_e2e_topology_sidecar` | Records every API call alongside the run. |
 | `hgf/hgf_e2e_topology_provider_pinned` | Pins the OpenRouter provider. |
 | `data`, `artifacts` | The benchmark: questions, evidence, DAGs, Blueprints, exemplars. |
@@ -313,7 +312,7 @@ BENCHMARK_ROOT/
     baselines/factor_memory/{manifest.json, cases/*.json}
 ```
 
-ReForm requires E1 plus the Blueprint and exemplar artifacts under
+ReFoRM requires E1 plus the Blueprint and exemplar artifacts under
 `artifacts/hgf`. The six baselines require E0, E1 for Factor Memory, the raw DAG
 manifest, and the factor-memory artifacts.
 
