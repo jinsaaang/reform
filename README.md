@@ -1,13 +1,14 @@
-# Procedural Topology HGF
+# ReForm
 
-Hindsight-Guided Forecasting over a current-instantiated exact topology.
+Forecasting over a current-instantiated exact topology, guided by hindsight
+structure rather than hindsight answers.
 
 A forecaster reading only current evidence has no way to know which causal
 relations in its domain have held before. A forecaster handed a past outcome
-learns the answer, not the reasoning. HGF takes the third path: it retrieves the
-*structure* of how earlier events in the same family resolved — outcome-redacted
-— re-tests each relation against current evidence, and forecasts from the
-relations that survive.
+learns the answer, not the reasoning. ReForm takes the third path: it retrieves
+the *structure* of how earlier events in the same family resolved —
+outcome-redacted — re-tests each relation against current evidence, and
+forecasts from the relations that survive.
 
 Concretely, the method organizes current cutoff-safe evidence first, then
 retrieves outcome-redacted Blueprints from resolved events in the same event
@@ -20,6 +21,24 @@ distribution.
 Historical outcomes, option mappings, and probabilities never reach the
 forecaster. The implementation does not pool probabilities, adjust a posterior,
 anchor to a baseline prediction, or select a result by its score.
+
+### Naming
+
+The method is **ReForm** in writing and `hgf` in code. Same method, two names.
+
+| In the paper | In this repository |
+| --- | --- |
+| ReForm | package `hgf/`, launcher `scripts/run_hgf.py` |
+| ReForm result row | method key `procedural_topology_hgf_canonical` |
+| ReForm case file | `procedural_topology_hgf_canonical.json` |
+| ReForm schemas | every `hgf_*` schema string |
+
+The code identifier stays as it is. Two of those strings — the
+structured-output schema name and the factor-memory view label — are sent to the
+model, so renaming them would change the prompt and make new runs incomparable
+with every run already recorded. The rest are frozen benchmark contracts that
+would require rewriting the dataset. Nothing downstream needs the code to say
+ReForm; read the table above and use the paper's name in write-ups.
 
 ---
 
@@ -36,9 +55,9 @@ deterministic ranking described under [Evidence selection](#evidence-selection).
 | Principle Memory | 0.460±0.035 | 0.2595±0.0152 | 1.1164±0.0670 |
 | Case Memory | 0.453±0.042 | 0.2617±0.0076 | 1.1605±0.0494 |
 | Structure Memory | 0.483±0.012 | 0.2502±0.0050 | 1.0937±0.0026 |
-| **HGF** | **0.530±0.000** | **0.2123±0.0000** | **0.9141±0.0000** |
+| **ReForm** | **0.530±0.000** | **0.2123±0.0000** | **0.9141±0.0000** |
 
-HGF reduces Brier by 9.6 percent against the strongest baseline. Its zero
+ReForm reduces Brier by 9.6 percent against the strongest baseline. Its zero
 standard deviation is a property of the configuration, not a claim of
 stability: with `temperature=0` and a pinned provider the decode is greedy, so
 the run seed cannot change the output. The baselines vary because they are not
@@ -61,7 +80,7 @@ question. Full protocol in [Reasoning evaluation](#reasoning-evaluation).
 
 | Method | Reasoning score | Correct-but-unreasoned |
 | --- | ---: | ---: |
-| **HGF** | **3.73** | **0% (0/53)** |
+| **ReForm** | **3.73** | **0% (0/53)** |
 | Factor Memory | 3.17 | 19% (10/53) |
 | Principle Memory | 2.97 | 30% (13/44) |
 | Case Memory | 2.96 | 24% (10/42) |
@@ -70,15 +89,15 @@ question. Full protocol in [Reasoning evaluation](#reasoning-evaluation).
 | Structure Memory | 2.86 | 37% (18/49) |
 
 Crossing the blind score against correctness separates the two ways of being
-right. Of the 53 questions HGF answered correctly, **none** came from a trace
-the judge scored at or below 2.5; every baseline has 10 to 18 such cases. HGF
+right. Of the 53 questions ReForm answered correctly, **none** came from a trace
+the judge scored at or below 2.5; every baseline has 10 to 18 such cases. ReForm
 also holds the largest wrong-but-reasoned count, 20 against 0–4 for the
 baselines — the expected shape for a method whose errors come from the evidence
 rather than from the argument.
 
 | Method | Right, reasoned | Right, unreasoned | Wrong, reasoned | Wrong, unreasoned |
 | --- | ---: | ---: | ---: | ---: |
-| **HGF** | **19** | **0** | **20** | 1 |
+| **ReForm** | **19** | **0** | **20** | 1 |
 | Factor Memory | 11 | 10 | 4 | 12 |
 | Principle Memory | 6 | 13 | 1 | 11 |
 | Structure Memory | 5 | 18 | 0 | 18 |
@@ -86,7 +105,7 @@ rather than from the argument.
 | Structured Reasoning | 1 | 12 | 1 | 16 |
 | Case Memory | 1 | 10 | 0 | 15 |
 
-HGF leads all five rubric dimensions and takes the top score, alone or tied, in
+ReForm leads all five rubric dimensions and takes the top score, alone or tied, in
 59 of 100 questions against 23 for the next method. Paired by question, its
 narrowest margin — 0.57 over Factor Memory — is 6.5 standard errors.
 
@@ -94,7 +113,7 @@ narrowest margin — 0.57 over Factor Memory — is 6.5 standard errors.
 
 ## Method
 
-HGF forecasts in six stages.
+ReForm forecasts in six stages.
 
 1. Read the current cutoff-safe E1 evidence and write an evidence ledger
    covering target semantics, baseline, current drivers, counterevidence, and
@@ -123,7 +142,7 @@ connect current evidence.
 - Every article must precede the forecast cutoff.
 - Historical events must resolve before the current forecast cutoff.
 - Retrieval requires an exact event family and target metric match.
-- Historical outcomes and probabilities must not enter HGF.
+- Historical outcomes and probabilities must not enter ReForm.
 - No method may read another method's prediction.
 - No probability pooling, posterior adjustment, or result-conditioned retry.
 - A successful run retains current evidence IDs, retrieved Blueprint IDs,
@@ -143,9 +162,9 @@ The six baselines split by whether they read resolved-event memory at all.
 | `structure_memory` | Structure Memory | Resolved-event memory | Retrieves an outcome-redacted past DAG and uses it as-is, without instantiating it against current evidence. |
 
 All six share the model, target contract, output validator, question IDs, and
-probability scorer with HGF. `direct_forecast`, `structured_reasoning`,
+probability scorer with ReForm. `direct_forecast`, `structured_reasoning`,
 `case_memory`, `principle_memory`, and `structure_memory` read E0;
-`factor_memory` and HGF read E1. E0 and E1 are frozen evidence databases, not
+`factor_memory` and ReForm read E1. E0 and E1 are frozen evidence databases, not
 model predictions. Preserve this contract in comparisons, or report a uniform
 evidence design as a separate experiment.
 
@@ -153,7 +172,7 @@ Structure Memory and Case Memory inputs need the same semantic leakage audit
 before their numbers are reportable. The launcher does not silently rewrite
 user-provided DAG or case artifacts.
 
-HGF is not one of the six. It is a separate implementation under
+ReForm is not one of the six. It is a separate implementation under
 `hgf/hgf_e2e_topology`, always run through `scripts/run_hgf.py`.
 
 ---
@@ -207,7 +226,7 @@ omits the reasoning field from the request rather than sending a low value;
 `--disable-native-reasoning` records that choice in the run manifest.
 `openai/gpt-5*` models omit `temperature` automatically.
 
-| Model | HGF provider | Reasoning effort | Native reasoning |
+| Model | ReForm provider | Reasoning effort | Native reasoning |
 | --- | --- | --- | --- |
 | `google/gemini-2.5-flash-lite` | `google-ai-studio` | medium | on |
 | `openai/gpt-5-mini` | `openai` | medium | on |
@@ -226,7 +245,7 @@ python3 scripts/run_hgf.py \
 ### Evidence selection
 
 Evidence is selected at run time by a deterministic ranking in
-`hgf/hgf/exemplar.py`, shared by HGF and every baseline. Each article in the
+`hgf/hgf/exemplar.py`, shared by ReForm and every baseline. Each article in the
 cutoff-safe pool is scored by keyword overlap with the target, weighted toward
 title and entity matches, with a bonus for official sources and a small recency
 term; the top-scoring articles are kept.
@@ -282,7 +301,7 @@ dispatch.
 Because the benchmark does not give every method the same evidence, each packet
 carries both banks, every trace names its own, and the rubric grades each trace
 against its own bank plus its retrieved memory — never against a bank it was not
-given, and never rewarding bank size. Method names are visible: HGF emits a
+given, and never rewarding bank size. Method names are visible: ReForm emits a
 distinctive schema, so blinding was not achievable without discarding the
 content under test. The rubric compensates by scoring checkable properties
 rather than impressions and by instructing judges that verbosity, jargon, and
@@ -326,12 +345,12 @@ their decisive quotes are in `joined.json`.
 | Path | Contents |
 |---|---|
 | `hgf/hgf` | Shared utilities, the six baselines, and benchmark validation. |
-| `hgf/hgf_e2e_topology` | The HGF method. |
+| `hgf/hgf_e2e_topology` | The ReForm method. |
 | `hgf/hgf_e2e_topology_sidecar` | Records every API call alongside the run. |
 | `hgf/hgf_e2e_topology_provider_pinned` | Pins the OpenRouter provider. |
 | `data`, `artifacts` | The benchmark: questions, evidence, DAGs, Blueprints, exemplars. |
 | `eval/reasoning_judge` | Reasoning-quality study: rubric, verdicts, aggregation. |
-| `scripts/run_hgf.py` | Run HGF on a compatible benchmark. |
+| `scripts/run_hgf.py` | Run ReForm on a compatible benchmark. |
 | `scripts/run_baselines.py` | Run the six baselines. |
 | `scripts/validate_inputs.py` | Check benchmark artifacts without an API call. |
 
@@ -366,7 +385,7 @@ BENCHMARK_ROOT/
       factor_memory/{manifest.json, cases/*.json}
 ```
 
-HGF requires E1 plus the Blueprint and exemplar artifacts under `artifacts/hgf`.
+ReForm requires E1 plus the Blueprint and exemplar artifacts under `artifacts/hgf`.
 The six baselines require E0, E1 for Factor Memory, the raw DAG manifest, and
 the factor-memory artifacts; they do not read `artifacts/hgf`.
 
