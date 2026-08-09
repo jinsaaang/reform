@@ -184,18 +184,100 @@ ReForm is not one of the six. It is a separate implementation under
 
 ## Reasoning evaluation
 
-`eval/reasoning_judge/` scores the reasoning behind each forecast, independently
-of whether the forecast was right. An LLM judge grades every trace on five
-dimensions with the ground truth and all metrics withheld; correctness is joined
-back afterwards, which separates a method that argued its way to the answer from
-one that guessed it. `RUBRIC.md` holds the rubric, `verdicts/` the scored
-traces, `joined.json` the scores joined to accuracy and Brier.
+Brier scores the distribution a method emits, not how it got there. On a
+three-way question, a method that invents a threshold-crossing quantity is right
+about a third of the time, and on those questions its Brier is
+indistinguishable from a method that reasoned its way to the same interval.
+`eval/reasoning_judge/` scores the reasoning itself and then crosses it against
+the outcome.
+
+**Protocol.** One judge per question, each an isolated agent, grading all seven
+traces of that question. The judge sees the question, its options and cutoff,
+the evidence bank each trace actually read, and each trace's `reasoning`,
+`forecast` and `probabilities`. It does **not** see the ground truth or any
+metric — a judge that knows the answer reads correct traces charitably and hunts
+for flaws in wrong ones, which collapses the one cell that answers the question.
+Correctness is joined back afterwards by `aggregate.py`.
+
+Because the benchmark does not give every method the same evidence, each packet
+carries both banks, every trace names its own, and grading is against that
+trace's own bank plus its retrieved memory — never against a bank it was not
+given, and never rewarding bank size.
+
+### Rubric
+
+Five dimensions, integers 1–5, anchors defined at 1, 3 and 5. Full text in
+`eval/reasoning_judge/RUBRIC.md`.
+
+| Dimension | The check | 1 | 5 |
+| --- | --- | --- | --- |
+| `evidence_grounding` | Do claims trace to the cited evidence? | Invents or misquotes figures | Every figure traceable, citations match the source |
+| `logical_validity` | Do premises reach the conclusion? | Non-sequitur or self-contradiction | Each step follows; competing considerations resolved |
+| `prediction_alignment` | Does the reasoning entail the option chosen? | Reasoning points elsewhere | Uniquely selects it, and excludes the neighbours |
+| `probability_justification` | Does the mass match declared uncertainty? | Calls a claim unsupported, then bets on it | Support level, admitted gaps and mass all agree |
+| `mechanism_specificity` | Real mechanism or filler? | Fits any question on any indicator | Traces named drivers through to the target |
+
+`prediction_alignment` is the central test: the judge reads the reasoning,
+decides what it implies, and only then compares against the emitted option.
+
+Six binary flags catch categorical defects an average would hide —
+`unsupported_magnitude_leap`, `hallucinated_number`, `internal_contradiction`,
+`boilerplate_only`, `post_hoc_option_fit`, and `admits_own_gap`. The last is a
+**positive** signal: without it the rubric cannot tell honesty from hedging,
+since a trace that says it cannot establish the magnitude and keeps its mass
+flat is doing the right thing. Every score requires a verbatim quote, so any
+judgement can be audited by hand.
+
+### What the scores look like in practice
+
+One question, one evidence bank, seven traces. `v3_googl_revenue_growth_acceleration_2025_12_31`
+asks whether Alphabet's Q4 2025 YoY revenue growth clears 15.95 percent, and the
+bank contains no Q4 forecast — only a Q3 figure.
+
+| Method | Score | Ground | Valid | Align | Prob | Mech | Decisive quote |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
+| **ReForm** | **4.2** | 5 | 4 | 4 | 3 | 5 | "Derived from Q3 2025 performance (16% YoY growth) and identified positive growth drivers (AI, Cloud, Advertising), tempered by the absence of specific Q4 2025 forecasts" |
+| Factor Memory | 3.6 | 5 | 3 | 4 | 2 | 4 | "No evidence-supported magnitude distinguishes this option; the contract-centered abstention is intentionally broad." |
+| Direct Forecast | 2.2 | 3 | 2 | 2 | 2 | 2 | "Broad range reflecting positive trends and AI-driven growth, but lacking specific Q4 2025 forecasts." |
+| Structure Memory | 1.0 | 1 | 1 | 1 | 1 | 1 | "The broad estimate [-20, 20] has significant overlap with the 'no' interval, including its central estimate (0), making it the most supported option by the estimate." |
+
+The spread is not about who had better evidence — all four read the same bank.
+ReForm anchors to the one quantity that exists and names the gap the quantity
+cannot close. Structure Memory invents a ±20 percentage-point band wide enough
+to contain any answer, then treats the band's midpoint as support for the option
+it picked. Direct Forecast notices the same missing forecast ReForm does but
+draws nothing from it.
+
+The failure mode at the bottom of the distribution is consistent. Most
+correct-but-unreasoned traces are a validation failure falling into a fallback
+that cites nothing and declares an even split, after which the forecast stage
+supplies a central estimate and commits most of the mass to it:
+
+> "No evidence-supported point estimate; retain a broad neutral range."
+> — then assigns 0.764 to one option.
+
+> "Central estimate (0.25) falls within the 'yes' interval."
+> — after the reasoning block states no boundary crossing is supported.
+
+Both were scored 1.0–1.4 and both were correct. Counting them as successes is
+exactly what this evaluation is designed to prevent.
+
+### Running it
 
 ```bash
 python3 eval/reasoning_judge/build_packets.py <question-ids.json>
 python3 eval/reasoning_judge/validate.py
 python3 eval/reasoning_judge/aggregate.py
 ```
+
+`build_packets.py` writes one ground-truth-free packet per question and refuses
+to emit one whose trace cites evidence outside its own bank. Judging is the
+manual step: each packet goes to one judge with `RUBRIC.md`, and the verdict
+lands in `verdicts/qNN.json`. `validate.py` rejects malformed, truncated or
+incomplete verdicts — a retried judge overwrites its own file, and a write cut
+off midway still parses far enough to fool a shallow check. `aggregate.py` joins
+the verdicts against the withheld metrics; `joined.json` holds all 700 scored
+traces with their quotes.
 
 ## Repository layout
 
