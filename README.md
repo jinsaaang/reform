@@ -71,19 +71,24 @@ without creating an output directory or calling an API.
 
 ### Model settings
 
-Each model carries its own provider route and reasoning setting. Models with no
-native reasoning control take `--reasoning-effort none`, which omits the
-reasoning field rather than sending a low value; `--disable-native-reasoning`
-records that choice in the run manifest. `openai/gpt-5*` models omit
-`temperature` automatically.
+Each model carries its own provider route and reasoning setting.
+`openai/gpt-5*` models omit `temperature` automatically.
 
-| Model | Provider | Reasoning effort | Native reasoning |
+| Model | Provider | Reasoning effort | `--disable-native-reasoning` |
 | --- | --- | --- | --- |
-| `google/gemini-2.5-flash-lite` | `google-ai-studio` | medium | on |
-| `openai/gpt-5-mini` | `openai` | medium | on |
-| `deepseek/deepseek-v3.2` | `atlas-cloud` | medium | on |
-| `meta-llama/llama-4-maverick` | `deepinfra` | none | off |
-| `minimax/minimax-m2.5` | `auto-latency` | medium | on |
+| `google/gemini-2.5-flash-lite` | `google-ai-studio` | medium | |
+| `openai/gpt-5-mini` | `openai` | medium | |
+| `deepseek/deepseek-v3.2` | `atlas-cloud` | medium | |
+| `qwen/qwen-plus-2025-07-28` | `alibaba` | medium | yes |
+| `meta-llama/llama-4-maverick` | `deepinfra` | none | yes |
+
+Two settings suppress reasoning and they act at different points.
+`--reasoning-effort none` never builds the field; `--disable-native-reasoning`
+strips it from the outgoing request just before the provider policy is attached.
+Either one alone results in a request without a `reasoning` field, and passing
+both is redundant rather than contradictory — Qwen is registered with effort
+`medium` and the flag set, so its requests carry no reasoning field despite the
+effort value.
 
 ```bash
 python3 scripts/run_hgf.py \
