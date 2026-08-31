@@ -22,7 +22,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 WORLDREASONER_ROOT = ROOT / "worldreasoner"
 HGF_ROOT = ROOT / "hgf"
-HGF_170_ROOT = ROOT / "generation" / "hgf_170"
+ARTIFACT_GENERATOR_ROOT = ROOT / "artifact_generator"
 STAGES = ("dags", "blueprints", "exemplars", "forecast")
 
 
@@ -32,6 +32,7 @@ def _args() -> argparse.Namespace:
     parser.add_argument("--test-questions", type=Path, required=True)
     parser.add_argument("--work-dir", type=Path, required=True)
     parser.add_argument("--model", default="google/gemini-2.5-flash-lite")
+    parser.add_argument("--dag-model", default="google/gemini-2.5-flash")
     parser.add_argument(
         "--python",
         type=Path,
@@ -42,7 +43,7 @@ def _args() -> argparse.Namespace:
     parser.add_argument("--memory-question-id", action="append", default=[])
     parser.add_argument("--test-question-id", action="append", default=[])
     parser.add_argument("--dag-workers", type=int, default=2)
-    parser.add_argument("--forecast-workers", type=int, default=1)
+    parser.add_argument("--forecast-workers", type=int, default=20)
     parser.add_argument("--min-evidence-articles", type=int, default=10)
     parser.add_argument("--min-graph-events", type=int, default=8)
     parser.add_argument("--min-graph-depth", type=int, default=3)
@@ -55,7 +56,7 @@ def _args() -> argparse.Namespace:
     )
     parser.add_argument("--live-query-limit", type=int, default=6)
     parser.add_argument("--live-fetch-limit", type=int, default=12)
-    parser.add_argument("--exemplar-workers", type=int, default=4)
+    parser.add_argument("--exemplar-workers", type=int, default=10)
     parser.add_argument("--reasoning-effort", default="medium")
     parser.add_argument("--max-output-tokens", type=int, default=16000)
     parser.add_argument("--run-seed", type=int, default=0)
@@ -192,7 +193,7 @@ def _prepare_question_workspace(
         work_dir / "configs" / "reproduction.json",
         {
             "schema_version": "fresh_pipeline_root_v1",
-            "implementation": "canonical_1_7_0_generation_snapshot",
+            "implementation": "reform_artifact_generator",
         },
     )
 
@@ -211,7 +212,7 @@ def _generator_environment(work_dir: Path) -> dict[str, str]:
     env = os.environ.copy()
     existing = env.get("PYTHONPATH")
     env["PYTHONPATH"] = os.pathsep.join(
-        [str(HGF_170_ROOT), *([existing] if existing else [])]
+        [str(ARTIFACT_GENERATOR_ROOT), *([existing] if existing else [])]
     )
     env["HGF_ROOT"] = str(work_dir)
     return env
@@ -252,7 +253,7 @@ def _build_dags(args: argparse.Namespace, work_dir: Path, count: int) -> None:
             "--output-dir",
             str(output),
             "--model",
-            args.model,
+            args.dag_model,
             "--limit",
             str(count),
             "--shard-index",
@@ -479,7 +480,8 @@ def main() -> int:
         work_dir / "fresh_pipeline.json",
         {
             "schema_version": "reform_fresh_pipeline_v1",
-            "model": args.model,
+            "dag_model": args.dag_model,
+            "forecast_model": args.model,
             "memory_question_ids": [str(row["id"]) for row in memory_rows],
             "test_question_ids": [str(row["id"]) for row in test_rows],
             "uses_frozen_dags": False,

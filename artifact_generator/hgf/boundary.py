@@ -350,7 +350,7 @@ def _validate_boundary_forecast(
                 f"magnitude support {support!r} exceeds prospective target "
                 f"anchor {prospective_anchor_support!r}"
             )
-    # v1.7.0: "within recent range" is a historical interval, not a neutral
+    # "within recent range" is a historical interval, not a neutral
     # abstention bucket.  Zero can legitimately fall outside it.  Therefore
     # weak magnitude evidence must not make the arithmetic mapping impossible;
     # it limits confidence instead.  The expected option is computed from the

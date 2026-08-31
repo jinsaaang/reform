@@ -23,7 +23,7 @@ def _args() -> argparse.Namespace:
     parser.add_argument("--python", type=Path, default=Path(sys.executable))
     parser.add_argument("--provider")
     parser.add_argument("--question-id", action="append", default=[])
-    parser.add_argument("--workers", type=int, default=1)
+    parser.add_argument("--workers", type=int, default=20)
     parser.add_argument("--reasoning-effort", default="medium")
     parser.add_argument("--max-output-tokens", type=int, default=16000)
     parser.add_argument("--run-seed", type=int, default=0)

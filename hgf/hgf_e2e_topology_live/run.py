@@ -51,8 +51,8 @@ from hgf_e2e_topology.pipeline import (
 )
 
 METHOD = "procedural_topology_hgf_canonical"
-METHOD_LABEL = "Procedural Topology HGF"
-IMPLEMENTATION_REVISION = "canonical_v1_6_3"
+METHOD_LABEL = "ReFoRM"
+IMPLEMENTATION_REVISION = "reform"
 _WRITE_LOCK = threading.Lock()
 
 
@@ -566,6 +566,11 @@ def main() -> None:
                 ],
             },
             "probability_postprocessing": "none",
+            "weak_magnitude_outer_range_policy": {
+                "mapping": "arithmetic central-estimate interval is preserved",
+                "direction_only_max_probability": 0.50,
+                "insufficient_max_probability": 0.45,
+            },
             "semantic_forecast_fallback": "disabled",
             "evidence_mode": args.evidence_mode,
             "evidence_bank": "LIVE" if args.evidence_mode == "live" else "E1",

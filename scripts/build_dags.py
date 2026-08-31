@@ -14,7 +14,7 @@ def _args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--memory-questions", type=Path, required=True)
     parser.add_argument("--output-root", type=Path, required=True)
-    parser.add_argument("--model", default="google/gemini-2.5-flash-lite")
+    parser.add_argument("--model", default="google/gemini-2.5-flash")
     parser.add_argument("--python", type=Path, default=Path(sys.executable))
     parser.add_argument("--question-id", action="append", default=[])
     parser.add_argument("--workers", type=int, default=2)
@@ -64,7 +64,7 @@ def main() -> int:
         output / "configs/reproduction.json",
         {
             "schema_version": "fresh_pipeline_root_v1",
-            "implementation": "canonical_1_7_0_generation_snapshot",
+            "implementation": "reform_artifact_generator",
         },
     )
     core._write_json(
@@ -82,6 +82,7 @@ def main() -> int:
     )
     args.python = Path(os.path.abspath(os.path.expanduser(str(args.python))))
     args.dag_workers = args.workers
+    args.dag_model = args.model
     core._build_dags(args, output, len(rows))
     core._materialize_graph_bank(output, rows, 0)
     print(f"DAGs: {len(rows)}/{len(rows)}")

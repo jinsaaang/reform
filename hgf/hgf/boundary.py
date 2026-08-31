@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """Boundary-aware probability mapping for an existing reasoning trace.
 
 The previous prediction and probabilities are hidden from this stage. The
@@ -20,7 +21,15 @@ from hgf.forecast_core import (
     _seed,
 )
 
+
 _NUMBER = r"[-+]?(?:\d+(?:\.\d*)?|\.\d+)"
+
+_WEAK_MAGNITUDE_CONFIDENCE_CAP = {
+    "direction_only": 0.50,
+    "insufficient": 0.45,
+}
+
+
 
 
 def _numeric_boundaries(
@@ -255,30 +264,9 @@ def _validate_boundary_forecast(
             payload["mapped_option"] = expected
             payload["prediction"] = expected
 
-    estimate_for_labels = payload.get("latent_target_estimate", {})
-    try:
-        mapped_for_labels = _option_for_estimate(
-            float(estimate_for_labels["central"]), contract, options
-        )
-    except (KeyError, TypeError, ValueError):
-        mapped_for_labels = ""
-    raw_probabilities: dict[str, float] = {}
-    for row in payload.get("option_probabilities") or []:
-        try:
-            option = str(row.get("option") or "")
-            probability = float(row.get("probability"))
-        except (AttributeError, TypeError, ValueError):
-            continue
-        if option in options and option not in raw_probabilities:
-            raw_probabilities[option] = probability
-    if mapped_for_labels and set(raw_probabilities) == set(options):
-        modal_probability = max(raw_probabilities.values())
-        if raw_probabilities[mapped_for_labels] >= modal_probability - 1e-9:
-            payload["mapped_option"] = mapped_for_labels
-            payload["prediction"] = mapped_for_labels
-
     probabilities, errors = _probabilities(payload, options)
     estimate = payload.get("latent_target_estimate", {})
+    mapped_by_code = ""
     try:
         low = float(estimate["low"])
         central = float(estimate["central"])
@@ -339,7 +327,7 @@ def _validate_boundary_forecast(
         errors.append("boundary_checks must contain every option exactly once")
     mapped = str(payload.get("mapped_option") or "")
 
-    kind, lower_boundary, upper_boundary = _numeric_boundaries(contract)
+    kind, _, _ = _numeric_boundaries(contract)
     support = str(magnitude.get("support") or "")
     if prospective_anchor_support is not None:
         allowed_support = {
@@ -362,75 +350,102 @@ def _validate_boundary_forecast(
                 f"magnitude support {support!r} exceeds prospective target "
                 f"anchor {prospective_anchor_support!r}"
             )
-    if validation_policy == "strict" and kind == "three_way_range":
-        assert upper_boundary is not None
-        within_option = next(
-            option
-            for option in options
-            if option.strip().lower() == "within recent range"
+    # "within recent range" is a historical interval, not a neutral
+    # abstention bucket.  Zero can legitimately fall outside it.  Therefore
+    # weak magnitude evidence must not make the arithmetic mapping impossible;
+    # it limits confidence instead.  The expected option is computed from the
+    # public interval even when the model returned the wrong mapped label, so a
+    # repair receives all interacting constraints in one feedback message.
+    weak_cap = _WEAK_MAGNITUDE_CONFIDENCE_CAP.get(support)
+    expected_is_outer = (
+        kind == "three_way_range"
+        and bool(mapped_by_code)
+        and mapped_by_code.strip().lower() != "within recent range"
+    )
+    probability_total = sum(probabilities.values()) if probabilities else 0.0
+    weak_cap_misapplied_to_non_range = (
+        kind != "three_way_range"
+        and weak_cap is not None
+        and bool(probabilities)
+        and abs(probability_total - 1.0) > 0.011
+        and all(value <= weak_cap + 1e-9 for value in probabilities.values())
+    )
+    if weak_cap_misapplied_to_non_range:
+        # Replace the generic sum error with contract-specific repair feedback.
+        # The weak-support caps were introduced solely for three-option recent-
+        # range contracts and cannot form a valid binary distribution at 0.45.
+        errors = [
+            error
+            for error in errors
+            if not error.startswith("probabilities sum to ")
+        ]
+        errors.append(
+            "weak-support confidence caps apply only to three-option "
+            "recent-range contracts; this binary/non-range contract requires "
+            "option probabilities to sum to 1.0. Keep mapped_option and "
+            f"prediction at {mapped_by_code!r} and revise only "
+            "option_probabilities so they sum to 1.0 and that arithmetic "
+            "option is tied for or higher than every alternative"
         )
-        directional_signal = str(payload.get("directional_signal") or "")
-        sign_alone_identifies_outer_interval = (
-            support == "direction_only"
-            and (
-                (
-                    directional_signal == "down"
-                    and lower_boundary > 0
-                    and mapped.strip().lower() == "below recent range"
-                )
-                or (
-                    directional_signal == "up"
-                    and upper_boundary <= 0
-                    and mapped.strip().lower() == "above recent range"
-                )
+    if (
+        validation_policy == "strict"
+        and expected_is_outer
+        and weak_cap is not None
+        and probabilities
+    ):
+        max_probability = max(probabilities.values())
+        if max_probability > weak_cap + 1e-9:
+            errors.append(
+                "weak magnitude support does not change the arithmetic interval: "
+                f"central maps to {mapped_by_code!r}; keep mapped_option and "
+                f"prediction at {mapped_by_code!r}, but cap every option "
+                f"probability at {weak_cap:.2f} instead of relabeling the result "
+                "or moving the central estimate merely to enter the within-range "
+                "interval"
             )
-        )
-        requires_within_range = support == "insufficient" or (
-            support == "direction_only"
-            and not sign_alone_identifies_outer_interval
-        )
-        if requires_within_range and "central" in locals():
-            within_is_modal = (
-                within_option in probabilities
-                and probabilities[within_option]
-                >= max(probabilities.values(), default=0.0) - 1e-9
-            )
-            central_is_within = lower_boundary <= central < upper_boundary
-            if (
-                mapped != within_option
-                or not central_is_within
-                or not within_is_modal
-            ):
-                if support == "insufficient":
-                    errors.append(
-                        "insufficient magnitude evidence requires an auditable "
-                        "within-range midpoint: place the central estimate inside "
-                        "the public within-range interval and make within recent "
-                        "range the mapped and highest-probability option; "
-                        "uncertainty may remain broad"
-                    )
-                else:
-                    errors.append(
-                        "direction-only evidence does not determine an outer "
-                        "range for these public boundaries: place the central "
-                        "estimate inside the within-range interval and make "
-                        "within recent range the mapped and highest-probability "
-                        "option; use the direction only to skew the remaining "
-                        "probability mass"
-                    )
 
     prediction = str(payload.get("prediction") or "")
-    if prediction != mapped:
-        errors.append("prediction must equal mapped_option")
-    if probabilities:
+    if probabilities and mapped_by_code:
+        expected_probability = probabilities.get(mapped_by_code)
         max_probability = max(probabilities.values())
-        if (
-            prediction not in probabilities
-            or probabilities[prediction] < max_probability - 1e-9
-        ):
-            errors.append(
-                "prediction must equal the highest-probability option"
+        arithmetic_modal_invariant_failed = (
+            mapped != mapped_by_code
+            or prediction != mapped_by_code
+            or expected_probability is None
+            or expected_probability < max_probability - 1e-9
+        )
+        if arithmetic_modal_invariant_failed:
+            # _probabilities reports a generic argmax error. Replace it with
+            # the joint arithmetic instruction below so the repair cannot
+            # satisfy one invariant by breaking the other.
+            errors = [
+                error for error in errors if " is not argmax " not in error
+            ]
+            cap_instruction = (
+                f" Keep every option probability at or below {weak_cap:.2f}."
+                if weak_cap is not None and expected_is_outer
+                else ""
             )
+            errors.append(
+                "the central estimate fixes both mapped_option and prediction at "
+                f"{mapped_by_code!r}; do not change the central estimate, "
+                "mapped_option, or prediction merely to follow another option's "
+                f"probability. Change option_probabilities so {mapped_by_code!r} "
+                "is tied for or higher than every other option."
+                f"{cap_instruction}"
+            )
+    else:
+        if prediction != mapped:
+            errors.append("prediction must equal mapped_option")
+        if probabilities:
+            max_probability = max(probabilities.values())
+            if (
+                prediction not in probabilities
+                or probabilities[prediction] < max_probability - 1e-9
+            ):
+                errors.append(
+                    "prediction must equal the highest-probability option"
+                )
     for field in ("target_operation_check", "uncertainty"):
         if not str(payload.get(field) or "").strip():
             errors.append(f"{field} is empty")
@@ -608,19 +623,23 @@ def _call_boundary_mapping(
         "central estimate with every public boundary. Positive does not "
         "automatically mean above range and negative does not automatically mean "
         "below range. Pay special attention to negative boundaries. Mark the "
-        "arithmetically mapped central option as the exact option with the "
-        "highest probability and allocate probabilities "
+        "arithmetically mapped central option as modal and allocate probabilities "
         "from estimate-range overlap and uncertainty. Use only current evidence "
-        "IDs. Do not invent a latent number merely to complete the mapping. For "
+        "IDs. Do not invent a latent number merely to complete the mapping. "
+        "The within-recent-range interval is not a neutral or abstention bucket: "
+        "zero may lie outside it. Always preserve the arithmetic option for the "
+        "central estimate. When that option is below or above recent range and "
+        "magnitude support is direction_only, keep the mapped option modal but "
+        "cap every option probability at 0.50; when support is insufficient, cap "
+        "every option probability at 0.45. These caps apply only to three-option "
+        "recent-range contracts. For binary or other contracts, probabilities "
+        "must sum to 1.0; do not cap both binary options at 0.45. Reduce "
+        "confidence rather than "
+        "relabeling the estimate as within range or moving the estimate merely "
+        "to enter that interval. For "
         "change, return, growth, or acceleration targets, identify both quantities "
         "required by the public operation and perform the operation in one common "
-        "If prediction disagrees with the probability argmax, revise the "
-        "estimate, labels, and probabilities into one coherent forecast. For a "
-        "three-way recent-range target, insufficient magnitude evidence requires "
-        "the central estimate and modal option to remain within the recent range. "
-        "Direction-only evidence may select an outer range only when its sign "
-        "alone crosses the entire public within-range interval. "
-        f"{magnitude_policy} Keep the estimate broad around the "
+        f"unit. {magnitude_policy} Keep the estimate broad around the "
         "neutral/base-rate region, and avoid a concentrated probability.\n\n"
         f"CURRENT CASE:\n{json.dumps(public_case, ensure_ascii=False)}\n\n"
         "CURRENT-CASE REASONING TRACE (NO OLD ANSWER):\n"
@@ -628,22 +647,21 @@ def _call_boundary_mapping(
         f"CURRENT EVIDENCE:\n{json.dumps(evidence, ensure_ascii=False)}"
         f"{anchor_view}"
     )
-    def validator(payload: dict[str, Any]) -> tuple[dict[str, float], list[str]]:
-        return _validate_boundary_forecast(
-            payload,
-            options=options,
-            contract=contract,
-            evidence_ids=evidence_ids,
-            reasoning_policy="boundary_only",
-            validation_policy=(
-                "strict" if allow_prospective_anchors else "recovery"
-            ),
-            prospective_anchor_support=(
-                str(prospective_anchor.get("support") or "")
-                if prospective_anchor is not None
-                else None
-            ),
-        )
+    validator = lambda payload: _validate_boundary_forecast(
+        payload,
+        options=options,
+        contract=contract,
+        evidence_ids=evidence_ids,
+        reasoning_policy="boundary_only",
+        validation_policy=(
+            "strict" if allow_prospective_anchors else "recovery"
+        ),
+        prospective_anchor_support=(
+            str(prospective_anchor.get("support") or "")
+            if prospective_anchor is not None
+            else None
+        ),
+    )
     return _call_with_repair(
         client,
         model=model,

@@ -186,7 +186,7 @@ def test_unknown_audit_labels_fall_back_without_claiming_dag_use() -> None:
     assert payload["trace_normalization"]["probability_modified"] is False
 
 
-def test_boundary_normalizes_only_redundant_labels() -> None:
+def test_boundary_rejects_inconsistent_labels_without_mutation() -> None:
     options = [
         "below recent range",
         "within recent range",
@@ -214,9 +214,10 @@ def test_boundary_normalizes_only_redundant_labels() -> None:
         reasoning_policy="boundary_only",
         validation_policy="strict",
     )
-    assert errors == []
-    assert payload["mapped_option"] == "within recent range"
-    assert payload["prediction"] == "within recent range"
+    assert any("mapped_option conflicts" in error for error in errors)
+    assert any("central estimate fixes" in error for error in errors)
+    assert payload["mapped_option"] == "above recent range"
+    assert payload["prediction"] == "above recent range"
     assert payload["option_probabilities"] == probabilities_before
 
 

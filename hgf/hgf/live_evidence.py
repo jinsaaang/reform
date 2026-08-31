@@ -2,7 +2,7 @@
 
 This adapter reuses the bundled WorldReasoner search transport.  It exposes
 only target metadata and Blueprint factor labels to search, then returns a
-plain evidence list compatible with the canonical 1.7.0 forecasting pipeline.
+plain evidence list compatible with the canonical ReFoRM forecasting pipeline.
 No DAG paths, relations, historical answers, or target outcomes are sent to
 the search backend.
 """

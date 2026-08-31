@@ -1,4 +1,4 @@
-"""Compile fresh DAGs into 1.7.0 Blueprints and worked exemplars."""
+"""Compile fresh DAGs into ReFoRM Blueprints and worked exemplars."""
 
 from __future__ import annotations
 
@@ -15,7 +15,7 @@ def _args() -> argparse.Namespace:
     parser.add_argument("--artifact-root", type=Path, required=True)
     parser.add_argument("--model", default="google/gemini-2.5-flash-lite")
     parser.add_argument("--python", type=Path, default=Path(sys.executable))
-    parser.add_argument("--workers", type=int, default=4)
+    parser.add_argument("--workers", type=int, default=10)
     parser.add_argument("--reasoning-effort", default="medium")
     parser.add_argument("--blueprints-only", action="store_true")
     return parser.parse_args()
@@ -43,4 +43,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

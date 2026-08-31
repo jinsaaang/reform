@@ -90,10 +90,10 @@ its own databases and audit exports under `--output-root`.
 python3 scripts/build_dags.py \
   --memory-questions my_data/resolved_questions.jsonl \
   --output-root runs/my_artifacts \
-  --model google/gemini-2.5-flash-lite --workers 2
+  --model google/gemini-2.5-flash --workers 2
 ```
 
-Compile those DAGs with the original 1.7.0 topology compiler and generate one
+Compile those DAGs with the ReFoRM topology compiler and generate one
 answer-free worked exemplar per historical question:
 
 ```bash
@@ -123,6 +123,26 @@ Historical inputs require a resolved `ground_truth`. Target questions may omit
 it; predictions and probabilities are still written, while outcome metrics are
 left unset. Every target must share `family_id` and `target_metric` with at least
 one historical question that resolved before its forecast cutoff.
+
+### Reported configuration
+
+The public defaults follow the reported experiment. DAG construction uses
+Gemini 2.5 Flash, targets 8 events with minimum depth 3, requires 10 verified
+articles, and allows 10 search queries over at most 3 evidence rounds. Worked
+exemplars use Gemini 2.5 Flash Lite with a 2,400-token output limit.
+
+| Forecast setting | Value |
+| --- | ---: |
+| Reasoning effort | medium |
+| Parallel workers | 20 |
+| Maximum output tokens | 16,000 |
+| Candidate / ledger / final evidence | 80 / 20 / 14 |
+| Retrieved DAGs / paths | 3 / 3 |
+| Reconstructed checkpoints | 12 |
+| Ledger / graph / reasoning / boundary tokens | 4,000 / 5,000 / 5,000 / 2,400 |
+
+Worker count controls throughput only and can be reduced for provider limits
+without changing prompts, schemas, evidence limits, or reconstruction logic.
 
 ### Model settings
 
@@ -243,7 +263,7 @@ Brier scores the distribution a method emits, not how it got there. On a
 three-way question, a method that invents a threshold-crossing quantity is right
 about a third of the time, and on those questions its Brier is
 indistinguishable from a method that reasoned its way to the same interval.
-`eval/reasoning_judge/` scores the reasoning itself and then crosses it against
+`reasoning_eval/` scores the reasoning itself and then crosses it against
 the outcome.
 
 **Protocol.** One judge per question, each an isolated agent, grading all seven
@@ -262,7 +282,7 @@ given, and never rewarding bank size.
 ### Rubric
 
 Five dimensions, integers 1–5, anchors defined at 1, 3 and 5. Full text in
-`eval/reasoning_judge/RUBRIC.md`.
+`reasoning_eval/RUBRIC.md`.
 
 | Dimension | The check | 1 | 5 |
 | --- | --- | --- | --- |
@@ -320,9 +340,9 @@ exactly what this evaluation is designed to prevent.
 ### Running it
 
 ```bash
-python3 eval/reasoning_judge/build_packets.py <question-ids.json>
-python3 eval/reasoning_judge/validate.py
-python3 eval/reasoning_judge/aggregate.py
+python3 reasoning_eval/build_packets.py <question-ids.json>
+python3 reasoning_eval/validate.py
+python3 reasoning_eval/aggregate.py
 ```
 
 `build_packets.py` writes one ground-truth-free packet per question and refuses
@@ -343,9 +363,9 @@ traces with their quotes.
 | `hgf/hgf_e2e_topology_sidecar` | Records every API call alongside the run. |
 | `hgf/hgf_e2e_topology_provider_pinned` | Pins the OpenRouter provider. |
 | `worldreasoner/` | Original evidence collection and DAG-generation runtime. |
-| `generation/hgf_170/` | Isolated original 1.7.0 Blueprint and exemplar generator. |
+| `artifact_generator/` | Blueprint and worked-exemplar generation. |
 | `data`, `artifacts` | The benchmark: questions, evidence, DAGs, Blueprints, exemplars. |
-| `eval/reasoning_judge` | Reasoning-quality study. |
+| `reasoning_eval/` | Reasoning-quality study. |
 | `scripts/` | Launchers and benchmark validation. |
 
 `hgf/` is the single `PYTHONPATH` root. Each script is a thin launcher: it puts
