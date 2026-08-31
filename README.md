@@ -99,8 +99,15 @@ answer-free worked exemplar per historical question:
 ```bash
 python3 scripts/build_hgf_artifacts.py \
   --artifact-root runs/my_artifacts \
-  --model google/gemini-2.5-flash-lite --workers 4
+  --model google/gemini-2.5-flash-lite --workers 10
 ```
+
+This command recompiles every Blueprint from the DAG bank and generates any
+missing worked exemplar through OpenRouter. Valid existing exemplars are reused
+only when resuming an interrupted build. Pass `--blueprints-only` to stop before
+the model-based exemplar stage. The generated files are written to
+`artifacts/hgf/blueprints/` and `artifacts/hgf/exemplars/` under the supplied
+artifact root.
 
 Forecast later questions using live evidence. Search results are filtered by
 publication date, reranked, and passed directly to ReFoRM in memory. No E0 or E1
@@ -111,7 +118,7 @@ python3 scripts/run_live_forecast.py \
   --artifact-root runs/my_artifacts \
   --test-questions my_data/new_targets.jsonl \
   --output-dir runs/my_live_forecast \
-  --model google/gemini-2.5-flash-lite --workers 1
+  --model google/gemini-2.5-flash-lite --workers 20
 ```
 
 `scripts/run_fresh_pipeline.py` is an optional convenience wrapper that runs
@@ -368,9 +375,10 @@ traces with their quotes.
 | `reasoning_eval/` | Reasoning-quality study. |
 | `scripts/` | Launchers and benchmark validation. |
 
-`hgf/` is the single `PYTHONPATH` root. Each script is a thin launcher: it puts
-that root on `PYTHONPATH` and runs the corresponding module with `python -m`.
-There is no build step; `pip install .` is not supported.
+`hgf/` is the forecasting `PYTHONPATH` root. Each script resolves the required
+source root and invokes its module with `python -m`. Forecasting does not require
+a package-compilation step or `pip install .`; DAG, Blueprint, and exemplar
+construction are the explicit preprocessing commands documented above.
 
 ## Benchmark inputs
 
