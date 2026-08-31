@@ -18,10 +18,24 @@ def _args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--dataset-root", type=Path, required=True)
     parser.add_argument("--model", required=True)
-    parser.add_argument("--provider", required=True)
+    parser.add_argument(
+        "--provider",
+        help="Optional OpenRouter provider tag. Omit to use automatic routing.",
+    )
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--questions-dir", type=Path)
     parser.add_argument("--evidence-dir", type=Path)
+    parser.add_argument(
+        "--evidence-mode", choices=("frozen", "live"), default="frozen"
+    )
+    parser.add_argument(
+        "--live-search-provider",
+        choices=("auto", "google_news", "gdelt", "ddgs", "smolagents"),
+        default="auto",
+    )
+    parser.add_argument("--live-query-limit", type=int, default=6)
+    parser.add_argument("--live-fetch-limit", type=int, default=12)
+    parser.add_argument("--live-fetch-workers", type=int, default=2)
     parser.add_argument("--selection-file", type=Path)
     parser.add_argument("--blueprint-root", type=Path)
     parser.add_argument("--exemplar-root", type=Path)
@@ -52,6 +66,12 @@ def _resolve(value: Path | None, default: Path) -> Path:
 
 def main() -> int:
     args = _args()
+    if args.evidence_mode == "frozen" and not args.provider:
+        raise ValueError("frozen runs require --provider")
+    if args.evidence_mode == "live" and args.provider:
+        raise ValueError("live runs use automatic routing; omit --provider")
+    if args.evidence_mode == "live" and args.disable_native_reasoning:
+        raise ValueError("--disable-native-reasoning is unavailable in live mode")
     dataset = args.dataset_root.expanduser().resolve()
     output = args.output_dir.expanduser().resolve()
     if output.exists() and not (args.dry_run or args.resume):
@@ -70,12 +90,16 @@ def main() -> int:
         args.exemplar_root, dataset / "artifacts" / "hgf" / "exemplars"
     )
 
+    module = (
+        "hgf_e2e_topology_live.run"
+        if args.evidence_mode == "live"
+        else "hgf_e2e_topology_provider_pinned.run"
+    )
     command = [
         sys.executable,
         "-m",
-        "hgf_e2e_topology_provider_pinned.run",
-        "--provider-only",
-        args.provider,
+        module,
+        *(["--provider-only", args.provider] if args.provider else []),
         *(["--disable-native-reasoning"] if args.disable_native_reasoning else []),
         "--model",
         args.model,
@@ -83,6 +107,22 @@ def main() -> int:
         str(questions),
         "--evidence-dir",
         str(evidence),
+        *(
+            [
+                "--evidence-mode",
+                "live",
+                "--live-search-provider",
+                args.live_search_provider,
+                "--live-query-limit",
+                str(args.live_query_limit),
+                "--live-fetch-limit",
+                str(args.live_fetch_limit),
+                "--live-fetch-workers",
+                str(args.live_fetch_workers),
+            ]
+            if args.evidence_mode == "live"
+            else []
+        ),
         "--selection-file",
         str(selection),
         "--blueprint-root",

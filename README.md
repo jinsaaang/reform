@@ -41,6 +41,14 @@ export OPENROUTER_API_KEY=YOUR_KEY
 The only third-party runtime dependencies are `openai`, `pydantic`, and
 `python-dotenv`. SQLite comes from the standard library.
 
+Generating DAGs or collecting live evidence uses the bundled WorldReasoner
+runtime and its separate dependency set:
+
+```bash
+python3 -m pip install -r requirements-generation.txt
+python3 -m playwright install chromium
+```
+
 ## Run
 
 The benchmark ships with the repository, so `--dataset-root .` runs against it
@@ -67,6 +75,54 @@ python3 scripts/run_baselines.py \
 
 Both launchers accept `--dry-run`, which prints the resolved command and exits
 without creating an output directory or calling an API.
+
+## New questions without frozen artifacts
+
+The construction and forecasting stages are independent. A resolved historical
+question can be converted into a reusable artifact bank once, then later target
+questions can be forecast without rebuilding its DAGs.
+
+First generate WorldReasoner DAGs from resolved historical questions. This
+stage searches the web, enforces each historical resolution cutoff, and writes
+its own databases and audit exports under `--output-root`.
+
+```bash
+python3 scripts/build_dags.py \
+  --memory-questions my_data/resolved_questions.jsonl \
+  --output-root runs/my_artifacts \
+  --model google/gemini-2.5-flash-lite --workers 2
+```
+
+Compile those DAGs with the original 1.7.0 topology compiler and generate one
+answer-free worked exemplar per historical question:
+
+```bash
+python3 scripts/build_hgf_artifacts.py \
+  --artifact-root runs/my_artifacts \
+  --model google/gemini-2.5-flash-lite --workers 4
+```
+
+Forecast later questions using live evidence. Search results are filtered by
+publication date, reranked, and passed directly to ReFoRM in memory. No E0 or E1
+SQLite database is read or created by this stage.
+
+```bash
+python3 scripts/run_live_forecast.py \
+  --artifact-root runs/my_artifacts \
+  --test-questions my_data/new_targets.jsonl \
+  --output-dir runs/my_live_forecast \
+  --model google/gemini-2.5-flash-lite --workers 1
+```
+
+`scripts/run_fresh_pipeline.py` is an optional convenience wrapper that runs
+all three commands in order. It is not required, and the DAG and forecast
+stages do not share a process. Every fresh workspace records whether frozen
+DAGs, Blueprints, exemplars, or evidence databases were used.
+
+Historical inputs require a resolved `ground_truth`. Target questions may omit
+it; predictions and probabilities are still written, while outcome metrics are
+left unset. Every target must share `family_id` and `target_metric` with at least
+one historical question that resolved before its forecast cutoff.
 
 ### Model settings
 
@@ -286,6 +342,8 @@ traces with their quotes.
 | `hgf/hgf_e2e_topology` | The ReFoRM method. |
 | `hgf/hgf_e2e_topology_sidecar` | Records every API call alongside the run. |
 | `hgf/hgf_e2e_topology_provider_pinned` | Pins the OpenRouter provider. |
+| `worldreasoner/` | Original evidence collection and DAG-generation runtime. |
+| `generation/hgf_170/` | Isolated original 1.7.0 Blueprint and exemplar generator. |
 | `data`, `artifacts` | The benchmark: questions, evidence, DAGs, Blueprints, exemplars. |
 | `eval/reasoning_judge` | Reasoning-quality study. |
 | `scripts/` | Launchers and benchmark validation. |
@@ -296,9 +354,9 @@ There is no build step; `pip install .` is not supported.
 
 ## Benchmark inputs
 
-The layout below is the contract for pointing the launchers at a different
-benchmark. The launchers assume historical DAGs have already been converted to
-the canonical topology-preserving Blueprint format, and do not build DAGs.
+The layout below is the frozen benchmark contract. `scripts/build_dags.py` and
+`scripts/build_hgf_artifacts.py` can construct its DAG, Blueprint, and exemplar
+portions for a different benchmark.
 
 ```text
 BENCHMARK_ROOT/
