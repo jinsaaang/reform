@@ -2,9 +2,9 @@
 
 **Re**curring-Event **Fo**recasting with **R**easoning **M**emory.
 
-> 📄 **Preprint:** <a href="https://ssrn.com/abstract=7475378"><strong>From Hindsight to Foresight: Adapting Reusable Reasoning Structures from Recurring Financial Events</strong></a>  
-> <sub><i>Sangjin Jin · Junhyeong Lee · Daehee Han · Kangmin Kim · Suhwan Park · Seonghun Jeong · Daekyung Park · Lukasz Szpruch · Zhangyang Wang · Chanyeol Choi · Youngjun Kwak · Yongjae Lee</i></sub>  
-> **DOI:** <a href="https://doi.org/10.2139/ssrn.7475378">10.2139/ssrn.7475378</a> · **SSRN:** <a href="https://ssrn.com/abstract=7475378">ssrn.com/abstract=7475378</a>
+> 📄 **Our paper is available here.**  
+> <a href="https://ssrn.com/abstract=7475378"><strong>From Hindsight to Foresight: Adapting Reusable Reasoning Structures from Recurring Financial Events</strong></a>  
+> <sub><i>Sangjin Jin · Junhyeong Lee · Daehee Han · Kangmin Kim · Suhwan Park · Seonghun Jeong · Daekyung Park · Lukasz Szpruch · Zhangyang Wang · Chanyeol Choi · Youngjun Kwak · Yongjae Lee</i></sub>
 
 A forecaster reading only current evidence cannot know which causal relations in
 its domain have held before. A forecaster handed a past outcome learns the
