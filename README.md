@@ -4,10 +4,14 @@
 
 ---
 
-📄 **Our paper is available here:**
+📄 **Our paper is now available on SSRN:**
 
 > **[From Hindsight to Foresight: Adapting Reusable Reasoning Structures from Recurring Financial Events](https://ssrn.com/abstract=7475378)**  
 > <sub>Sangjin Jin · Junhyeong Lee · Daehee Han · Kangmin Kim · Suhwan Park · Seonghun Jeong · Daekyung Park · Lukasz Szpruch · Zhangyang Wang · Chanyeol Choi · Youngjun Kwak · Yongjae Lee</sub>
+
+### Abstract
+
+> Forecasting real-world events requires reasoning under uncertainty from information available at a fixed cutoff. Recent work has improved how large language models (LLMs) retrieve evidence and produce probabilistic forecasts, but each question is treated independently even when similar events recur. Resolved occurrences carry experience for later forecasts, yet past outcomes and case summaries do not preserve the relationships that made an earlier occurrence informative. We develop ReFoRM (Recurrent-event Forecasting with Reasoning Memory), which organizes reasoning from resolved events into predictive paths, retrieves relevant paths for a later occurrence, and reconstructs their relations using evidence at the new forecast cutoff. We evaluate ReFoRM on the Recurring Financial Events Set, which contains 300 questions across 40 recurring financial event families and uses earlier occurrences as hindsight for 100 forecast targets. Across five LLMs and six baselines, ReFoRM improves categorical and probabilistic forecasting performance. Further analyses show that validating historical relations with current evidence and reconstructing them enhances forecasting. Reasoning evaluation also demonstrates stronger evidence grounding, logical validity, and mechanism specificity.
 
 ---
 
