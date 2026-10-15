@@ -4,13 +4,13 @@ import inspect
 from types import SimpleNamespace
 
 import pytest
-from hgf.boundary import _neutral_boundary_payload, _validate_boundary_forecast
-from hgf.repair_resilience import conservative_repair_merge
-from hgf_e2e_topology.core import _schema, _validate
-from hgf_e2e_topology.pipeline import compile_worked_reasoning_check
-from hgf_e2e_topology_sidecar.run import _stage
+from reform.boundary import _neutral_boundary_payload, _validate_boundary_forecast
+from reform.repair_resilience import conservative_repair_merge
+from reform_forecasting.core import _schema, _validate
+from reform_forecasting.pipeline import compile_worked_reasoning_check
+from reform_recording.run import _stage
 
-from hgf import exemplar
+from reform import exemplar
 
 
 def _step(step_type: str, source_id: str) -> dict[str, object]:
@@ -186,7 +186,7 @@ def test_unknown_audit_labels_fall_back_without_claiming_dag_use() -> None:
     assert payload["trace_normalization"]["probability_modified"] is False
 
 
-def test_boundary_normalizes_only_redundant_labels() -> None:
+def test_boundary_rejects_inconsistent_labels_without_mutation() -> None:
     options = [
         "below recent range",
         "within recent range",
@@ -214,9 +214,10 @@ def test_boundary_normalizes_only_redundant_labels() -> None:
         reasoning_policy="boundary_only",
         validation_policy="strict",
     )
-    assert errors == []
-    assert payload["mapped_option"] == "within recent range"
-    assert payload["prediction"] == "within recent range"
+    assert any("mapped_option conflicts" in error for error in errors)
+    assert any("central estimate fixes" in error for error in errors)
+    assert payload["mapped_option"] == "above recent range"
+    assert payload["prediction"] == "above recent range"
     assert payload["option_probabilities"] == probabilities_before
 
 

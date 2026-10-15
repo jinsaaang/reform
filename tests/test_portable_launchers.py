@@ -11,7 +11,7 @@ def test_hgf_portable_launcher_builds_canonical_command(tmp_path: Path) -> None:
     completed = subprocess.run(
         [
             sys.executable,
-            str(ROOT / "scripts/run_hgf.py"),
+            str(ROOT / "scripts/run_reform.py"),
             "--dataset-root",
             str(tmp_path / "benchmark"),
             "--model",
@@ -28,7 +28,7 @@ def test_hgf_portable_launcher_builds_canonical_command(tmp_path: Path) -> None:
         capture_output=True,
         text=True,
     )
-    assert "hgf_e2e_topology_provider_pinned.run" in completed.stdout
+    assert "reform_provider.run" in completed.stdout
     assert "--blueprint-root" in completed.stdout
     assert "--exemplar-root" in completed.stdout
     assert not (tmp_path / "run").exists()

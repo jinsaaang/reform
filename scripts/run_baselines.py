@@ -9,7 +9,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE_ROOT = ROOT / "hgf"
+SOURCE_ROOT = ROOT / "src"
 METHODS = (
     "direct_forecast",
     "structured_reasoning",
@@ -62,7 +62,7 @@ def main() -> int:
     command = [
         sys.executable,
         "-m",
-        "hgf.baselines",
+        "reform.baselines",
         "--questions-dir",
         str(dataset / "data/questions"),
         "--evidence-dir",

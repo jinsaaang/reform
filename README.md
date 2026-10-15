@@ -1,6 +1,8 @@
 # ReFoRM
 
-**Re**curring-Event **Fo**recasting with **R**easoning **M**emory.
+Official implementation of **ReFoRM** (**Re**curring-Event **Fo**recasting with **R**easoning **M**emory). Our paper has been accepted at **ACM ICAIF 2026** 🇮🇹.
+
+This work was conducted as part of a collaborative research project with **KakaoBank**.
 
 ---
 
@@ -28,17 +30,15 @@ anchor to a baseline prediction, or select a result by its score.
 
 ### Naming
 
-The method is **ReFoRM** in writing and `hgf` in code — same method, two names.
-The code identifier is left alone because two of those strings, the
-structured-output schema name and the factor-memory view label, are sent to the
-model; renaming them would change the prompt and make new runs incomparable with
-everything already recorded. The rest are frozen benchmark contracts.
+The method and its Python package are named **ReFoRM** (`reform`). Archived
+schema and result identifiers remain compatible with the released benchmark;
+model-facing prompts and schema names are preserved.
 
 | In the paper | In this repository |
 | --- | --- |
-| ReFoRM | package `hgf/`, launcher `scripts/run_hgf.py` |
-| ReFoRM result row | method key `procedural_topology_hgf_canonical` |
-| ReFoRM schemas | every `hgf_*` schema string |
+| ReFoRM | package `src/reform/`, launcher `scripts/run_reform.py` |
+| ReFoRM forecasting | `src/reform_forecasting/` |
+| Blueprint and exemplar generation | `scripts/build_reform_artifacts.py` |
 
 ## Install
 
@@ -64,7 +64,7 @@ python3 scripts/validate_inputs.py --dataset-root .
 ```
 
 ```bash
-python3 scripts/run_hgf.py \
+python3 scripts/run_reform.py \
   --dataset-root . \
   --model google/gemini-2.5-flash-lite \
   --provider google-ai-studio \
@@ -103,7 +103,7 @@ both is redundant rather than contradictory — Qwen is registered with effort
 effort value.
 
 ```bash
-python3 scripts/run_hgf.py \
+python3 scripts/run_reform.py \
   --dataset-root . \
   --model meta-llama/llama-4-maverick --provider deepinfra \
   --reasoning-effort none --disable-native-reasoning \
@@ -113,7 +113,7 @@ python3 scripts/run_hgf.py \
 ### Evidence selection
 
 Evidence is selected at run time by a deterministic ranking in
-`hgf/hgf/exemplar.py`, shared by ReFoRM and every baseline: keyword overlap with
+`src/reform/exemplar.py`, shared by ReFoRM and every baseline: keyword overlap with
 the target, weighted toward title and entity matches, a bonus for official
 sources, and a small recency term. No model call is involved, so the same
 question yields the same evidence on every run and for every model.
@@ -192,7 +192,7 @@ model predictions. Preserve this contract in comparisons, or report a uniform
 evidence design as a separate experiment.
 
 ReFoRM is not one of the six. It is a separate implementation under
-`hgf/hgf_e2e_topology`, always run through `scripts/run_hgf.py`.
+`src/reform_forecasting`, always run through `scripts/run_reform.py`.
 
 ## Reasoning evaluation
 
@@ -200,7 +200,7 @@ Brier scores the distribution a method emits, not how it got there. On a
 three-way question, a method that invents a threshold-crossing quantity is right
 about a third of the time, and on those questions its Brier is
 indistinguishable from a method that reasoned its way to the same interval.
-`eval/reasoning_judge/` scores the reasoning itself and then crosses it against
+`reasoning_eval/` scores the reasoning itself and then crosses it against
 the outcome.
 
 **Protocol.** One judge per question, each an isolated agent, grading all seven
@@ -219,7 +219,7 @@ given, and never rewarding bank size.
 ### Rubric
 
 Five dimensions, integers 1–5, anchors defined at 1, 3 and 5. Full text in
-`eval/reasoning_judge/RUBRIC.md`.
+`reasoning_eval/RUBRIC.md`.
 
 | Dimension | The check | 1 | 5 |
 | --- | --- | --- | --- |
@@ -277,9 +277,9 @@ exactly what this evaluation is designed to prevent.
 ### Running it
 
 ```bash
-python3 eval/reasoning_judge/build_packets.py <question-ids.json>
-python3 eval/reasoning_judge/validate.py
-python3 eval/reasoning_judge/aggregate.py
+python3 reasoning_eval/build_packets.py <question-ids.json>
+python3 reasoning_eval/validate.py
+python3 reasoning_eval/aggregate.py
 ```
 
 `build_packets.py` writes one ground-truth-free packet per question and refuses
@@ -295,15 +295,15 @@ traces with their quotes.
 
 | Path | Contents |
 |---|---|
-| `hgf/hgf` | Shared utilities, the six baselines, and benchmark validation. |
-| `hgf/hgf_e2e_topology` | The ReFoRM method. |
-| `hgf/hgf_e2e_topology_sidecar` | Records every API call alongside the run. |
-| `hgf/hgf_e2e_topology_provider_pinned` | Pins the OpenRouter provider. |
+| `src/reform` | Shared utilities, the six baselines, and benchmark validation. |
+| `src/reform_forecasting` | The ReFoRM method. |
+| `src/reform_recording` | Records every API call alongside the run. |
+| `src/reform_provider` | Pins the OpenRouter provider. |
 | `data`, `artifacts` | The benchmark: questions, evidence, DAGs, Blueprints, exemplars. |
-| `eval/reasoning_judge` | Reasoning-quality study. |
+| `reasoning_eval` | Reasoning-quality study. |
 | `scripts/` | Launchers and benchmark validation. |
 
-`hgf/` is the single `PYTHONPATH` root. Each script is a thin launcher: it puts
+`src/` is the single `PYTHONPATH` root. Each script is a thin launcher: it puts
 that root on `PYTHONPATH` and runs the corresponding module with `python -m`.
 There is no build step; `pip install .` is not supported.
 
@@ -320,13 +320,13 @@ BENCHMARK_ROOT/
     evidence/{e0,e1}/<target_question_id>.sqlite
     memory_bank/manifest.json
   artifacts/
-    hgf/blueprints/{manifest.json, cases/*.json}
-    hgf/exemplars/{manifest.json, cases/*.json}
+    reform/blueprints/{manifest.json, cases/*.json}
+    reform/exemplars/{manifest.json, cases/*.json}
     baselines/factor_memory/{manifest.json, cases/*.json}
 ```
 
 ReFoRM requires E1 plus the Blueprint and exemplar artifacts under
-`artifacts/hgf`. The six baselines require E0, E1 for Factor Memory, the raw DAG
+`artifacts/reform`. The six baselines require E0, E1 for Factor Memory, the raw DAG
 manifest, and the factor-memory artifacts.
 
 **Questions.** JSON Lines accepted by the Pydantic `Question` model. Each target
@@ -350,8 +350,8 @@ Historical events used as memory must resolve before the target forecast cutoff.
 `id, title, source, published_date, content, collected_for_question_id`. The
 runtime independently rejects articles at or after the target cutoff.
 
-**Blueprints.** Manifest schema `hgf_blueprint_manifest_v1`, cases
-`hgf_blueprint_topology_v2`. The manifest must cover every row in
+**Blueprints.** The schema identifiers are recorded in the supplied manifest
+and case files. The manifest must cover every row in
 `memory_questions.jsonl`. A Blueprint preserves checkpoint IDs, directed edges,
 conditional paths, lag, support, confidence, target bridge, and source
 provenance, while excluding the historical answer from the forecast payload.
